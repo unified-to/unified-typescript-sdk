@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 5bd36b53552fa02e224d43312e46580b
+  docVersion: "1.0"
+  speakeasyVersion: 1.91.2
+  generationVersion: 2.131.1
 generation:
   comments:
     disableComments: false
@@ -7,8 +12,13 @@ generation:
   sdkClassName: Unified-to
   singleTagPerOp: false
   tagNamespacingDisabled: false
+features:
+  typescript:
+    core: 2.88.1
+    globalSecurity: 2.81.1
+    globalServerURLs: 2.82.0
 typescript:
-  version: 0.0.1
+  version: 0.1.0
   author: Unified
   clientServerStatusCodesAsErrors: true
   maxMethodParams: 0
