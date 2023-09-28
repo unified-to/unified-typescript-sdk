@@ -27,14 +27,14 @@ const sdk = new UnifiedTo({
 sdk.integration.getUnifiedIntegration({
   active: false,
   categories: [
-    GetUnifiedIntegrationCategories.Hris,
+    GetUnifiedIntegrationCategories.Enrich,
   ],
-  limit: 2394.27,
-  offset: 8487.85,
-  order: "ea",
-  sort: "veniam",
+  limit: 7363.95,
+  offset: 8214.4,
+  order: "Nelda Implemented",
+  sort: "cabinet",
   summary: false,
-  updatedGte: new Date("2021-01-26T22:48:04.970Z"),
+  updatedGte: new Date("2022-02-05T00:16:37.455Z"),
 }).then((res: GetUnifiedIntegrationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -75,19 +75,19 @@ const sdk = new UnifiedTo({
 });
 
 sdk.integration.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-  env: "earum",
-  externalXref: "placeat",
-  failureRedirect: "saepe",
-  integrationType: "quod",
-  lang: "odit",
+  env: "Algerian",
+  externalXref: "Cambridgeshire Surinam",
+  failureRedirect: "Designer Drive",
+  integrationType: "program Home",
+  lang: "Plastic program",
   redirect: false,
   scopes: [
-    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.HrisGroupWrite,
+    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.CrmFileRead,
   ],
-  state: "at",
-  subdomain: "ea",
-  successRedirect: "provident",
-  workspaceId: "inventore",
+  state: "Functionality Product",
+  subdomain: "payment Developer Dynamic",
+  successRedirect: "Northeast",
+  workspaceId: "duh empower Kwanza",
 }).then((res: GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -125,7 +125,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.integration.getUnifiedIntegrationIntegrationType({
-  integrationType: "ea",
+  integrationType: "Pizza Electric",
 }).then((res: GetUnifiedIntegrationIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -168,11 +168,11 @@ const sdk = new UnifiedTo({
 sdk.integration.getUnifiedIntegrationWorkspaceWorkspaceId({
   active: false,
   categories: [
-    GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Uc,
+    GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Hris,
   ],
-  env: "quam",
+  env: "North Southeast exercitationem",
   summary: false,
-  workspaceId: "delectus",
+  workspaceId: "Bronze Plastic",
 }).then((res: GetUnifiedIntegrationWorkspaceWorkspaceIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

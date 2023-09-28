@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.job.deleteAtsConnectionIdJobId({
-  connectionId: "adipisci",
-  id: "2e3b49db-e0f2-43b7-b6d9-948d6eded477",
+  connectionId: "Sedan Bedfordshire Hybrid",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,13 +66,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.job.getAtsConnectionIdJob({
-  connectionId: "voluptas",
-  limit: 5378.51,
-  offset: 504.05,
-  order: "reiciendis",
-  query: "minus",
-  sort: "iure",
-  updatedGte: new Date("2022-11-11T00:39:35.207Z"),
+  connectionId: "City katal",
+  limit: 3542.62,
+  offset: 5417.97,
+  order: "publisher",
+  query: "Folding",
+  sort: "Kip gross recontextualize",
+  updatedGte: new Date("2022-10-12T03:36:20.050Z"),
 }).then((res: GetAtsConnectionIdJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,8 +110,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.job.getAtsConnectionIdJobId({
-  connectionId: "iure",
-  id: "a82e5e82-fd28-4d10-80a7-e91392ab44cb",
+  connectionId: "Jazz",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -158,51 +158,51 @@ sdk.job.patchAtsConnectionIdJobId({
   atsJob: {
     addresses: [
       {
-        address1: "architecto",
-        address2: "totam",
-        city: "West Aaron",
-        country: "Aruba",
-        countryCode: "LA",
-        postalCode: "23078-3185",
-        region: "illo",
-        regionCode: "tempora",
+        address1: "Transexual",
+        address2: "Planner redundant Towels",
+        city: "Starkboro",
+        country: "Chad",
+        countryCode: "NU",
+        postalCode: "22603",
+        region: "Cambridgeshire",
+        regionCode: "Account Copernicium at",
       },
     ],
-    closedAt: new Date("2022-05-27T21:54:13.074Z"),
+    closedAt: new Date("2023-01-02T09:14:26.844Z"),
     compensation: [
       {
-        currency: "rem",
+        currency: "Metical",
         frequency: AtsCompensationFrequency.Hour,
-        max: 6129.79,
-        min: 7255.92,
-        type: AtsCompensationType.Equity,
+        max: 1424.24,
+        min: 3626.17,
+        type: AtsCompensationType.Salary,
       },
     ],
-    createdAt: new Date("2022-08-10T22:57:33.587Z"),
+    createdAt: new Date("2022-03-16T15:29:37.822Z"),
     departments: [
-      "aperiam",
+      "Sports",
     ],
-    description: "similique",
-    employmentType: AtsJobEmploymentType.Freelance,
+    description: "Operative bi-directional capability",
+    employmentType: AtsJobEmploymentType.Intern,
     hiringManagerIds: [
-      "pariatur",
+      "Hop",
     ],
-    id: "fde410c3-7daa-4918-aa49-d9625d3caffc",
-    languageLocale: "inventore",
-    name: "Guy Von",
+    id: "<ID>",
+    languageLocale: "hence gracefully invoice",
+    name: "Southeast vacantly Uranium",
     publicJobUrls: [
-      "modi",
+      "Keith",
     ],
     raw: {},
     recruiterIds: [
-      "quaerat",
+      "happily",
     ],
     remote: false,
-    status: AtsJobStatus.Pending,
-    updatedAt: new Date("2022-07-04T21:18:33.130Z"),
+    status: AtsJobStatus.Open,
+    updatedAt: new Date("2023-08-04T07:33:03.088Z"),
   },
-  connectionId: "unde",
-  id: "2bcd440e-a98b-4ecc-a048-6de0d56d73b0",
+  connectionId: "Cis benchmark",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -249,50 +249,50 @@ sdk.job.postAtsConnectionIdJob({
   atsJob: {
     addresses: [
       {
-        address1: "quae",
-        address2: "quis",
-        city: "North Consuelo",
-        country: "Turkmenistan",
-        countryCode: "LK",
-        postalCode: "74149-9447",
-        region: "iure",
-        regionCode: "ullam",
+        address1: "Forward",
+        address2: "Electric fuchsia kelvin",
+        city: "Fort Sibylmouth",
+        country: "Solomon Islands",
+        countryCode: "DO",
+        postalCode: "39037",
+        region: "Rockford",
+        regionCode: "Trafficway eaque athwart",
       },
     ],
-    closedAt: new Date("2022-07-06T19:55:18.068Z"),
+    closedAt: new Date("2022-04-22T19:01:40.265Z"),
     compensation: [
       {
-        currency: "enim",
-        frequency: AtsCompensationFrequency.Week,
-        max: 3432.31,
-        min: 6902.62,
-        type: AtsCompensationType.StockOptions,
+        currency: "Gourde",
+        frequency: AtsCompensationFrequency.Year,
+        max: 5349.62,
+        min: 526.63,
+        type: AtsCompensationType.Equity,
       },
     ],
-    createdAt: new Date("2022-01-28T21:56:06.312Z"),
+    createdAt: new Date("2021-04-02T18:44:02.642Z"),
     departments: [
-      "consectetur",
+      "Polonium",
     ],
-    description: "vero",
-    employmentType: AtsJobEmploymentType.Contractor,
+    description: "Progressive disintermediate matrix",
+    employmentType: AtsJobEmploymentType.Intern,
     hiringManagerIds: [
-      "optio",
+      "itaque",
     ],
-    id: "fcc6a91e-c526-424d-8001-4ef45cea11ac",
-    languageLocale: "minima",
-    name: "Henrietta Powlowski",
+    id: "<ID>",
+    languageLocale: "the joyfully",
+    name: "Other because harbor",
     publicJobUrls: [
-      "nostrum",
+      "coil",
     ],
     raw: {},
     recruiterIds: [
-      "corrupti",
+      "JSON",
     ],
     remote: false,
-    status: AtsJobStatus.Draft,
-    updatedAt: new Date("2022-04-19T01:37:46.134Z"),
+    status: AtsJobStatus.Archived,
+    updatedAt: new Date("2022-05-24T04:21:24.567Z"),
   },
-  connectionId: "eius",
+  connectionId: "Coordinator applications",
 }).then((res: PostAtsConnectionIdJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -339,51 +339,51 @@ sdk.job.putAtsConnectionIdJobId({
   atsJob: {
     addresses: [
       {
-        address1: "voluptatem",
-        address2: "magnam",
-        city: "West Randibury",
-        country: "Rwanda",
-        countryCode: "MK",
-        postalCode: "89820-0695",
-        region: "doloribus",
-        regionCode: "unde",
+        address1: "cotton Washington",
+        address2: "rosin meanwhile male",
+        city: "East Sierra",
+        country: "Somalia",
+        countryCode: "BQ",
+        postalCode: "63475-6123",
+        region: "lighthearted online Bicycle",
+        regionCode: "robust",
       },
     ],
-    closedAt: new Date("2022-03-17T10:24:00.538Z"),
+    closedAt: new Date("2021-05-06T11:53:52.940Z"),
     compensation: [
       {
-        currency: "id",
-        frequency: AtsCompensationFrequency.Week,
-        max: 1012.53,
-        min: 7482.56,
-        type: AtsCompensationType.Salary,
+        currency: "Iranian Rial",
+        frequency: AtsCompensationFrequency.Year,
+        max: 5965.42,
+        min: 5273.81,
+        type: AtsCompensationType.Bonus,
       },
     ],
-    createdAt: new Date("2022-08-21T15:07:46.264Z"),
+    createdAt: new Date("2023-07-19T02:36:00.215Z"),
     departments: [
-      "a",
+      "embrace",
     ],
-    description: "architecto",
-    employmentType: AtsJobEmploymentType.Freelance,
+    description: "Programmable tertiary benchmark",
+    employmentType: AtsJobEmploymentType.Contractor,
     hiringManagerIds: [
-      "vitae",
+      "New",
     ],
-    id: "4718c6fa-2fad-40c0-ac5d-95472cdd14fc",
-    languageLocale: "eius",
-    name: "Miss Bridget King",
+    id: "<ID>",
+    languageLocale: "Facilitator Gasoline application",
+    name: "North impractical",
     publicJobUrls: [
-      "fuga",
+      "clamber",
     ],
     raw: {},
     recruiterIds: [
-      "laudantium",
+      "West",
     ],
     remote: false,
-    status: AtsJobStatus.Draft,
-    updatedAt: new Date("2020-12-28T11:43:36.436Z"),
+    status: AtsJobStatus.Closed,
+    updatedAt: new Date("2023-02-01T04:41:47.094Z"),
   },
-  connectionId: "dignissimos",
-  id: "0c43351c-3dd1-4eb8-b7f7-5f4f23f1c0a5",
+  connectionId: "North",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

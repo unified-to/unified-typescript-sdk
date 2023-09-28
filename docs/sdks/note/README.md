@@ -27,9 +27,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.note.deleteTicketingConnectionIdNoteTicketIdId({
-  connectionId: "recusandae",
-  id: "9085075b-c253-4825-b343-fb0a4e66ea47",
-  ticketId: "exercitationem",
+  connectionId: "DRAM Liaison",
+  id: "<ID>",
+  ticketId: "Tasty exploit",
 }).then((res: DeleteTicketingConnectionIdNoteTicketIdIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -67,14 +67,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.note.getTicketingConnectionIdNoteTicketId({
-  connectionId: "molestiae",
-  limit: 5096.38,
-  offset: 8540.88,
-  order: "ab",
-  query: "voluptate",
-  sort: "et",
-  ticketId: "recusandae",
-  updatedGte: new Date("2022-05-19T12:21:22.703Z"),
+  connectionId: "Account revolutionary",
+  limit: 2310.88,
+  offset: 6688.82,
+  order: "AI",
+  query: "stanch Investor attitude",
+  sort: "Cotton",
+  ticketId: "Handmade Kia",
+  updatedGte: new Date("2022-05-26T17:12:11.333Z"),
 }).then((res: GetTicketingConnectionIdNoteTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,9 +112,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.note.getTicketingConnectionIdNoteTicketIdId({
-  connectionId: "eius",
-  id: "1818fc67-9b6b-42f2-9359-b855d015b62c",
-  ticketId: "quos",
+  connectionId: "for",
+  id: "<ID>",
+  ticketId: "female",
 }).then((res: GetTicketingConnectionIdNoteTicketIdIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,17 +153,17 @@ const sdk = new UnifiedTo({
 
 sdk.note.patchTicketingConnectionIdNoteTicketIdId({
   ticketingNote: {
-    agentId: "cum",
-    createdAt: new Date("2022-07-23T08:55:47.914Z"),
-    customerId: "dolorum",
-    description: "amet",
-    id: "8a8a88c1-4420-40c2-8aeb-1ae1ecf8c349",
+    agentId: "compress Oganesson",
+    createdAt: new Date("2022-02-16T08:13:19.991Z"),
+    customerId: "demystify",
+    description: "Fundamental demand-driven workforce",
+    id: "<ID>",
     raw: {},
-    updatedAt: "modi",
+    updatedAt: "Nissan",
   },
-  connectionId: "commodi",
-  id: "bba7a05a-8b4a-49ec-9b36-88cca3632727",
-  ticketId: "iure",
+  connectionId: "Chicken",
+  id: "<ID>",
+  ticketId: "frictionless convergence officia",
 }).then((res: PatchTicketingConnectionIdNoteTicketIdIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -202,16 +202,16 @@ const sdk = new UnifiedTo({
 
 sdk.note.postTicketingConnectionIdNoteTicketId({
   ticketingNote: {
-    agentId: "sit",
-    createdAt: new Date("2021-04-03T18:27:00.342Z"),
-    customerId: "vel",
-    description: "autem",
-    id: "e97e0541-0334-47d7-8ff2-491145fab9e5",
+    agentId: "Plantation blue",
+    createdAt: new Date("2021-06-11T06:54:31.529Z"),
+    customerId: "asymmetric",
+    description: "Expanded intermediate attitude",
+    id: "<ID>",
     raw: {},
-    updatedAt: "perspiciatis",
+    updatedAt: "naturally",
   },
-  connectionId: "laborum",
-  ticketId: "incidunt",
+  connectionId: "Wagon Sulfur",
+  ticketId: "digital",
 }).then((res: PostTicketingConnectionIdNoteTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -250,17 +250,17 @@ const sdk = new UnifiedTo({
 
 sdk.note.putTicketingConnectionIdNoteTicketIdId({
   ticketingNote: {
-    agentId: "fuga",
-    createdAt: new Date("2022-05-09T22:54:29.590Z"),
-    customerId: "amet",
-    description: "nisi",
-    id: "664eaa6b-f2ff-414e-8c1b-352accedacc5",
+    agentId: "SMTP Cis",
+    createdAt: new Date("2022-07-27T18:14:06.584Z"),
+    customerId: "Carolina",
+    description: "Integrated asymmetric strategy",
+    id: "<ID>",
     raw: {},
-    updatedAt: "consequuntur",
+    updatedAt: "Northeast Morocco supposing",
   },
-  connectionId: "qui",
-  id: "7814eca0-16bc-441e-a134-2d4104a25ef7",
-  ticketId: "quasi",
+  connectionId: "DNS Fermium",
+  id: "<ID>",
+  ticketId: "Southwest round",
 }).then((res: PutTicketingConnectionIdNoteTicketIdIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

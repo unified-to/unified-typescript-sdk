@@ -23,17 +23,17 @@ const sdk = new UnifiedTo({
 });
 
 sdk.apicall.getUnifiedApicall({
-  connectionId: "perspiciatis",
-  createdLte: new Date("2022-03-20T23:16:34.777Z"),
-  env: "consequuntur",
+  connectionId: "delectus green Hybrid",
+  createdLte: new Date("2021-04-02T21:36:49.952Z"),
+  env: "Fantastic Iodine indexing",
   error: false,
-  externalXref: "blanditiis",
-  integrationType: "error",
-  limit: 503.7,
-  offset: 5772.29,
-  order: "rerum",
-  sort: "adipisci",
-  updatedGte: new Date("2020-03-14T00:51:21.656Z"),
+  externalXref: "Music",
+  integrationType: "Soft",
+  limit: 2390.64,
+  offset: 3757.34,
+  order: "mobile envisioneer",
+  sort: "North payment opposite",
+  updatedGte: new Date("2021-08-11T16:18:13.644Z"),
 }).then((res: GetUnifiedApicallResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -71,7 +71,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.apicall.getUnifiedApicallId({
-  id: "49a8d9cb-f486-4333-a3f9-b77f3a410067",
+  id: "<ID>",
 }).then((res: GetUnifiedApicallIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

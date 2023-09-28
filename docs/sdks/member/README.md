@@ -27,9 +27,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.member.deleteMartechConnectionIdListIdMemberId({
-  connectionId: "alias",
-  id: "d2743fd6-c2a1-40e6-8297-8ec256a5b092",
-  listId: "magni",
+  connectionId: "Southwest fib",
+  id: "<ID>",
+  listId: "pascal",
 }).then((res: DeleteMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -67,14 +67,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.member.getMartechConnectionIdListIdMember({
-  connectionId: "iure",
-  limit: 9859.05,
-  listId: "quod",
-  offset: 8111.96,
-  order: "numquam",
-  query: "dignissimos",
-  sort: "natus",
-  updatedGte: new Date("2022-03-19T03:29:08.234Z"),
+  connectionId: "fuchsia economics",
+  limit: 3725.92,
+  listId: "Southwest",
+  offset: 1114.27,
+  order: "emulation",
+  query: "male male",
+  sort: "Arizona Oklahoma Land",
+  updatedGte: new Date("2021-03-19T13:12:48.332Z"),
 }).then((res: GetMartechConnectionIdListIdMemberResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,9 +112,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.member.getMartechConnectionIdListIdMemberId({
-  connectionId: "optio",
-  id: "977bbc57-f389-428a-8600-c58d67d63e4a",
-  listId: "officia",
+  connectionId: "male",
+  id: "<ID>",
+  listId: "Gasoline Home allot",
 }).then((res: GetMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -154,27 +154,27 @@ const sdk = new UnifiedTo({
 
 sdk.member.patchMartechConnectionIdListIdMemberId({
   marketingMember: {
-    createdAt: new Date("2022-08-11T15:05:29.161Z"),
+    createdAt: new Date("2022-06-21T07:15:04.418Z"),
     emails: [
       {
-        email: "Ella32@yahoo.com",
+        email: "Zula_Bogan76@hotmail.com",
         type: MarketingEmailType.Home,
       },
     ],
-    id: "9cfc6c0e-503f-4568-b1f1-d8ed87b28e8a",
+    id: "<ID>",
     listIds: [
-      "a",
+      "gadzooks",
     ],
-    name: "Felipe Schmeler",
+    name: "Haven Hatchback",
     raw: {},
     tags: [
-      "nisi",
+      "mutiny",
     ],
-    updatedAt: new Date("2022-07-05T01:28:10.122Z"),
+    updatedAt: new Date("2021-08-13T23:04:27.910Z"),
   },
-  connectionId: "aliquam",
-  id: "1e43b234-2417-4d13-a3f6-2aa9ae4ae8ab",
-  listId: "numquam",
+  connectionId: "female",
+  id: "<ID>",
+  listId: "yellow overriding Rock",
 }).then((res: PatchMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -214,26 +214,26 @@ const sdk = new UnifiedTo({
 
 sdk.member.postMartechConnectionIdListIdMember({
   marketingMember: {
-    createdAt: new Date("2021-10-26T01:34:29.397Z"),
+    createdAt: new Date("2022-12-27T02:49:51.488Z"),
     emails: [
       {
-        email: "Elena80@hotmail.com",
-        type: MarketingEmailType.Home,
+        email: "Esta.Dach@hotmail.com",
+        type: MarketingEmailType.Other,
       },
     ],
-    id: "e8ba5d4a-a4a5-408b-9380-c29aa8dd71bd",
+    id: "<ID>",
     listIds: [
-      "repellendus",
+      "virtual",
     ],
-    name: "Miss Hubert Emard",
+    name: "dolorum Wooden Granite",
     raw: {},
     tags: [
-      "cum",
+      "Road",
     ],
-    updatedAt: new Date("2022-10-14T03:48:43.146Z"),
+    updatedAt: new Date("2021-06-09T19:47:01.060Z"),
   },
-  connectionId: "labore",
-  listId: "modi",
+  connectionId: "Pennsylvania leverage sheath",
+  listId: "parse exercitationem",
 }).then((res: PostMartechConnectionIdListIdMemberResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -273,27 +273,27 @@ const sdk = new UnifiedTo({
 
 sdk.member.putMartechConnectionIdListIdMemberId({
   marketingMember: {
-    createdAt: new Date("2021-09-21T15:05:12.667Z"),
+    createdAt: new Date("2023-09-24T05:00:50.743Z"),
     emails: [
       {
-        email: "Geoffrey.Mitchell53@hotmail.com",
+        email: "Lorenz_Kautzer@hotmail.com",
         type: MarketingEmailType.Home,
       },
     ],
-    id: "d418bb71-804f-4423-9543-935f377ac5c9",
+    id: "<ID>",
     listIds: [
-      "nam",
+      "SMS",
     ],
-    name: "Gretchen Moore",
+    name: "East platforms",
     raw: {},
     tags: [
-      "suscipit",
+      "Estonia",
     ],
-    updatedAt: new Date("2022-08-12T05:09:42.944Z"),
+    updatedAt: new Date("2023-01-20T05:09:32.775Z"),
   },
-  connectionId: "optio",
-  id: "523105e7-c34c-4ab0-acb8-12a66148944a",
-  listId: "voluptatum",
+  connectionId: "following quia Intelligent",
+  id: "<ID>",
+  listId: "Cab",
 }).then((res: PutMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

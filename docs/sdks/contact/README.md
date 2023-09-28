@@ -39,8 +39,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.deleteCrmConnectionIdContactId({
-  connectionId: "porro",
-  id: "6ab21d29-dfc9-44d6-becd-799390066a6d",
+  connectionId: "chargesheet",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -78,9 +78,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.deleteCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "explicabo",
-  connectionId: "fugiat",
-  id: "00035533-8cec-4086-ba21-e9152cb31191",
+  companyId: "unaware",
+  connectionId: "Nissan",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -118,9 +118,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.deleteCrmConnectionIdContactIdDealDealId({
-  connectionId: "autem",
-  dealId: "ducimus",
-  id: "b8e3c8db-0340-48d6-9364-ffd455906d12",
+  connectionId: "auxiliary ew",
+  dealId: "foreground Electronics Northeast",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdContactIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -158,8 +158,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.deleteUcConnectionIdContactId({
-  connectionId: "commodi",
-  id: "3d48e935-c2c9-4e81-b30b-e3e43202d721",
+  connectionId: "Southeast Modern commonly",
+  id: "<ID>",
 }).then((res: DeleteUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -197,15 +197,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.getCrmConnectionIdContact({
-  companyId: "aliquid",
-  connectionId: "ad",
-  dealId: "voluptate",
-  limit: 4265.94,
-  offset: 3249.99,
-  order: "sit",
-  query: "vel",
-  sort: "laboriosam",
-  updatedGte: new Date("2022-11-27T15:29:14.022Z"),
+  companyId: "Southeast Human Southeast",
+  connectionId: "magenta loose",
+  dealId: "intuitive",
+  limit: 9605,
+  offset: 8572.44,
+  order: "Music Electronics",
+  query: "Elegant",
+  sort: "North Analyst Otis",
+  updatedGte: new Date("2022-09-18T15:42:24.943Z"),
 }).then((res: GetCrmConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -243,8 +243,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.getCrmConnectionIdContactId({
-  connectionId: "rem",
-  id: "70d9d21f-9ad0-430c-8ecc-11a083642906",
+  connectionId: "Account fountain visionary",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -282,14 +282,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.getUcConnectionIdContact({
-  agentId: "laudantium",
-  connectionId: "facilis",
-  limit: 5146.09,
-  offset: 3530.75,
-  order: "aut",
-  query: "quia",
-  sort: "officia",
-  updatedGte: new Date("2022-08-22T02:23:15.742Z"),
+  agentId: "Refined Practical",
+  connectionId: "inasmuch Dodge",
+  limit: 7215.14,
+  offset: 2910.48,
+  order: "Vermont",
+  query: "maroon JBOD",
+  sort: "hertz",
+  updatedGte: new Date("2023-01-29T17:06:35.136Z"),
 }).then((res: GetUcConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -327,8 +327,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.getUcConnectionIdContactId({
-  connectionId: "accusamus",
-  id: "7f73bc84-5e32-40a3-99f4-badf947c9a86",
+  connectionId: "Land",
+  id: "<ID>",
 }).then((res: GetUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -369,43 +369,43 @@ const sdk = new UnifiedTo({
 sdk.contact.patchCrmConnectionIdContactId({
   crmContact: {
     address: {
-      address1: "nihil",
-      address2: "facilis",
-      city: "Goyetteberg",
-      country: "French Polynesia",
-      countryCode: "CH",
-      postalCode: "44350",
-      region: "suscipit",
-      regionCode: "quibusdam",
+      address1: "until instantly Taiwan",
+      address2: "disintermediate ah Southwest",
+      city: "San Antonio",
+      country: "Djibouti",
+      countryCode: "LA",
+      postalCode: "23695",
+      region: "grey around",
+      regionCode: "Folding",
     },
-    company: "Russel, Nader and Little",
+    company: "Johnson - Gerlach",
     companyIds: [
-      "voluptates",
+      "Personal",
     ],
-    createdAt: new Date("2021-11-25T22:17:39.417Z"),
+    createdAt: new Date("2022-07-24T05:16:20.203Z"),
     dealIds: [
-      "illo",
+      "generation",
     ],
     emails: [
       {
-        email: "Nyasia76@hotmail.com",
-        type: CrmEmailType.Home,
+        email: "Leora_Konopelski27@hotmail.com",
+        type: CrmEmailType.Other,
       },
     ],
-    id: "93ec12cd-aad0-4ec7-afed-bd80df448a47",
-    name: "Jackie Fahey DDS",
+    id: "<ID>",
+    name: "Innovative indeed brand",
     raw: {},
     telephones: [
       {
-        telephone: "minima",
-        type: CrmTelephoneType.Other,
+        telephone: "unsung Borders",
+        type: CrmTelephoneType.Home,
       },
     ],
-    title: "Ms.",
-    updatedAt: new Date("2022-12-11T07:04:52.187Z"),
+    title: "withdrawal",
+    updatedAt: new Date("2022-05-05T23:37:21.563Z"),
   },
-  connectionId: "provident",
-  id: "83dabf9e-f3ff-4dd9-b7f0-79af4d35724c",
+  connectionId: "markets radian",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -443,9 +443,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.patchCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "fugiat",
-  connectionId: "soluta",
-  id: "0f4d2811-87d5-4684-8ede-d85a9065e628",
+  companyId: "Folsom Selenium methodologies",
+  connectionId: "Platinum seamless Southwest",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -483,9 +483,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.patchCrmConnectionIdContactIdDealDealId({
-  connectionId: "quidem",
-  dealId: "illum",
-  id: "fc2032b6-c879-4923-b7e1-3584f7ae12c6",
+  connectionId: "pascal Genderflux Metal",
+  dealId: "line",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdContactIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -525,28 +525,28 @@ const sdk = new UnifiedTo({
 
 sdk.contact.patchUcConnectionIdContactId({
   ucContact: {
-    company: "Morissette - Brown",
-    createdAt: new Date("2021-06-15T21:46:49.215Z"),
+    company: "Wilderman, Cremin and Gislason",
+    createdAt: new Date("2023-07-18T06:13:06.229Z"),
     emails: [
       {
-        email: "Nicolas8@gmail.com",
-        type: UcEmailType.Home,
+        email: "Henry.Leannon@gmail.com",
+        type: UcEmailType.Other,
       },
     ],
-    id: "71723053-77dc-4fa8-9df9-75e356686092",
-    name: "Austin Runte",
+    id: "<ID>",
+    name: "quirky digital",
     raw: {},
     telephones: [
       {
-        telephone: "temporibus",
-        type: UcTelephoneType.Fax,
+        telephone: "Lead 24/7 overriding",
+        type: UcTelephoneType.Other,
       },
     ],
-    title: "Mrs.",
-    updatedAt: new Date("2022-09-08T04:57:24.220Z"),
+    title: "Small Legacy",
+    updatedAt: new Date("2022-07-11T16:02:41.922Z"),
   },
-  connectionId: "vitae",
-  id: "1dea1026-d541-4a4d-990f-eb21780bccc0",
+  connectionId: "Bohrium",
+  id: "<ID>",
 }).then((res: PatchUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -587,42 +587,42 @@ const sdk = new UnifiedTo({
 sdk.contact.postCrmConnectionIdContact({
   crmContact: {
     address: {
-      address1: "possimus",
-      address2: "distinctio",
-      city: "Shanahanhaven",
-      country: "Saint Helena",
-      countryCode: "FR",
-      postalCode: "24059-7392",
-      region: "natus",
-      regionCode: "ab",
+      address1: "orchid",
+      address2: "invoice wherever watt",
+      city: "Rempelcester",
+      country: "Nepal",
+      countryCode: "FI",
+      postalCode: "27896-6482",
+      region: "swig",
+      regionCode: "Recumbent",
     },
-    company: "Keeling, Prohaska and Schowalter",
+    company: "Fritsch - Bernhard",
     companyIds: [
-      "ab",
+      "Executive",
     ],
-    createdAt: new Date("2022-07-02T04:44:41.833Z"),
+    createdAt: new Date("2021-07-26T17:34:53.280Z"),
     dealIds: [
-      "porro",
+      "Southwest",
     ],
     emails: [
       {
-        email: "Omer.Graham25@gmail.com",
-        type: CrmEmailType.Work,
+        email: "Colby24@hotmail.com",
+        type: CrmEmailType.Home,
       },
     ],
-    id: "99ea3422-60e9-4b20-8ce7-8a1bd8fb7a0a",
-    name: "Julie Homenick",
+    id: "<ID>",
+    name: "farad",
     raw: {},
     telephones: [
       {
-        telephone: "dignissimos",
+        telephone: "Dynamic withdrawal",
         type: CrmTelephoneType.Work,
       },
     ],
-    title: "Mr.",
-    updatedAt: new Date("2022-01-24T20:30:44.279Z"),
+    title: "second Fresh",
+    updatedAt: new Date("2023-01-03T09:41:22.581Z"),
   },
-  connectionId: "aut",
+  connectionId: "what",
 }).then((res: PostCrmConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -662,27 +662,27 @@ const sdk = new UnifiedTo({
 
 sdk.contact.postUcConnectionIdContact({
   ucContact: {
-    company: "Koch - Windler",
-    createdAt: new Date("2022-08-16T16:49:13.505Z"),
+    company: "Howell and Sons",
+    createdAt: new Date("2022-12-18T04:56:44.573Z"),
     emails: [
       {
-        email: "Sonia_Morar@gmail.com",
+        email: "Garret81@hotmail.com",
         type: UcEmailType.Home,
       },
     ],
-    id: "25b29122-030d-483f-9aeb-7799d22e8c1f",
-    name: "Clifford Mertz",
+    id: "<ID>",
+    name: "Southeast Gasoline extend",
     raw: {},
     telephones: [
       {
-        telephone: "sunt",
+        telephone: "Togo Division Human",
         type: UcTelephoneType.Home,
       },
     ],
-    title: "Dr.",
-    updatedAt: new Date("2020-08-28T22:20:14.231Z"),
+    title: "COM that",
+    updatedAt: new Date("2023-02-07T16:19:58.439Z"),
   },
-  connectionId: "quaerat",
+  connectionId: "Tennessee",
 }).then((res: PostUcConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -723,43 +723,43 @@ const sdk = new UnifiedTo({
 sdk.contact.putCrmConnectionIdContactId({
   crmContact: {
     address: {
-      address1: "magni",
-      address2: "cumque",
-      city: "Isidroview",
-      country: "Singapore",
-      countryCode: "CA",
-      postalCode: "18963-7970",
-      region: "nobis",
-      regionCode: "esse",
+      address1: "idolized",
+      address2: "Southeast Specialist background",
+      city: "New Orlando",
+      country: "Switzerland",
+      countryCode: "GL",
+      postalCode: "95864",
+      region: "Intersex mmm",
+      regionCode: "Specialist",
     },
-    company: "Christiansen - Donnelly",
+    company: "Mann and Sons",
     companyIds: [
-      "alias",
+      "impedit",
     ],
-    createdAt: new Date("2021-05-04T15:01:38.967Z"),
+    createdAt: new Date("2023-10-28T10:36:29.710Z"),
     dealIds: [
-      "numquam",
+      "transmitting",
     ],
     emails: [
       {
-        email: "Will69@gmail.com",
+        email: "Marjorie.Feeney14@hotmail.com",
         type: CrmEmailType.Other,
       },
     ],
-    id: "23fdb14d-b6be-45a6-8599-8e22ae20da16",
-    name: "Sylvester Cormier",
+    id: "<ID>",
+    name: "shuttle",
     raw: {},
     telephones: [
       {
-        telephone: "iusto",
-        type: CrmTelephoneType.Work,
+        telephone: "Bolivia",
+        type: CrmTelephoneType.Mobile,
       },
     ],
-    title: "Miss",
-    updatedAt: new Date("2022-07-01T20:28:02.172Z"),
+    title: "Austria reinvent",
+    updatedAt: new Date("2023-03-20T11:49:01.796Z"),
   },
-  connectionId: "sint",
-  id: "c57e854e-9043-49d2-a246-569462407084",
+  connectionId: "hic truck",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -797,9 +797,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.putCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "delectus",
-  connectionId: "quam",
-  id: "ab37cef0-2225-4194-9b55-410adc669af9",
+  companyId: "till Jazz ugh",
+  connectionId: "Arizona tomorrow Chrysler",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -837,9 +837,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.contact.putCrmConnectionIdContactIdDealDealId({
-  connectionId: "alias",
-  dealId: "deserunt",
-  id: "26c7cdc9-81f0-4689-81d6-bb33cfaa348c",
+  connectionId: "Indiana relationships Coordinator",
+  dealId: "Dinar person",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdContactIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -879,28 +879,28 @@ const sdk = new UnifiedTo({
 
 sdk.contact.putUcConnectionIdContactId({
   ucContact: {
-    company: "Boehm LLC",
-    createdAt: new Date("2022-02-04T10:58:23.701Z"),
+    company: "Feeney, Gusikowski and Douglas",
+    createdAt: new Date("2021-05-15T18:36:56.888Z"),
     emails: [
       {
-        email: "Jerrold.Watsica98@gmail.com",
-        type: UcEmailType.Other,
+        email: "Katrina.Walker@gmail.com",
+        type: UcEmailType.Home,
       },
     ],
-    id: "f0c42b78-f156-4263-98a0-dc766324ccb0",
-    name: "Leticia Leannon",
+    id: "<ID>",
+    name: "Investment Hip Southwest",
     raw: {},
     telephones: [
       {
-        telephone: "inventore",
-        type: UcTelephoneType.Work,
+        telephone: "powerless Shirt",
+        type: UcTelephoneType.Fax,
       },
     ],
-    title: "Dr.",
-    updatedAt: new Date("2022-10-30T04:54:37.407Z"),
+    title: "Wooden Buckinghamshire",
+    updatedAt: new Date("2022-10-29T19:58:07.810Z"),
   },
-  connectionId: "enim",
-  id: "29270b8d-5722-4dd8-95b8-bcf24db95969",
+  connectionId: "doubtfully",
+  id: "<ID>",
 }).then((res: PutUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

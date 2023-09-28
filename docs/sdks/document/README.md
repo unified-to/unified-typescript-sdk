@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.document.deleteAtsConnectionIdScorecardId({
-  connectionId: "facere",
-  id: "9c337473-082b-494f-aab1-fd5671e9c326",
+  connectionId: "Agent intrepid",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,16 +66,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.document.getAtsConnectionIdScorecard({
-  applicationId: "neque",
-  candidateId: "enim",
-  connectionId: "eaque",
-  interviewId: "officia",
-  limit: 2702.53,
-  offset: 4310.35,
-  order: "molestiae",
-  query: "architecto",
-  sort: "aliquam",
-  updatedGte: new Date("2022-07-12T22:54:11.511Z"),
+  applicationId: "Licensed deep",
+  candidateId: "happily",
+  connectionId: "lunch accusamus",
+  interviewId: "for famously Southwest",
+  limit: 950.05,
+  offset: 6133.23,
+  order: "withdrawal",
+  query: "Bicycle copy Bronze",
+  sort: "ouch non ut",
+  updatedGte: new Date("2021-06-01T09:53:52.927Z"),
 }).then((res: GetAtsConnectionIdScorecardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -113,8 +113,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.document.getAtsConnectionIdScorecardId({
-  connectionId: "blanditiis",
-  id: "9ce0e991-594d-493a-b4c0-252fe3b4b4db",
+  connectionId: "East mobile Mini",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -154,19 +154,19 @@ const sdk = new UnifiedTo({
 
 sdk.document.patchAtsConnectionIdScorecardId({
   atsScorecard: {
-    applicationId: "atque",
-    candidateId: "tempore",
-    createdAt: new Date("2022-07-22T19:46:16.313Z"),
-    id: "8ebb6e1d-2cf5-402b-afb2-cbc4635d5e65",
-    interviewId: "at",
-    interviewerId: "culpa",
-    jobId: "alias",
+    applicationId: "Carter Hatchback functionalities",
+    candidateId: "disagree gold New",
+    createdAt: new Date("2023-05-08T15:11:07.692Z"),
+    id: "<ID>",
+    interviewId: "blue",
+    interviewerId: "North Buckinghamshire blur",
+    jobId: "kelvin hack Fantastic",
     raw: {},
     recommendation: AtsScorecardRecommendation.DefinitelyNo,
-    updatedAt: new Date("2021-06-03T11:24:52.324Z"),
+    updatedAt: new Date("2022-11-18T04:49:38.005Z"),
   },
-  connectionId: "dolor",
-  id: "e951a1e3-0fda-4966-889d-7b78673e13a1",
+  connectionId: "hacking meter",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -206,18 +206,18 @@ const sdk = new UnifiedTo({
 
 sdk.document.postAtsConnectionIdScorecard({
   atsScorecard: {
-    applicationId: "eos",
-    candidateId: "dolorum",
-    createdAt: new Date("2022-04-19T16:37:31.203Z"),
-    id: "99249459-4487-4f5c-8438-36b86b3cdf64",
-    interviewId: "dicta",
-    interviewerId: "minima",
-    jobId: "facilis",
+    applicationId: "female bah",
+    candidateId: "if since",
+    createdAt: new Date("2022-02-26T00:06:29.981Z"),
+    id: "<ID>",
+    interviewId: "invoice",
+    interviewerId: "male",
+    jobId: "Accountability",
     raw: {},
-    recommendation: AtsScorecardRecommendation.DefinitelyNo,
-    updatedAt: new Date("2022-09-13T14:57:39.091Z"),
+    recommendation: AtsScorecardRecommendation.StrongYes,
+    updatedAt: new Date("2023-10-04T17:15:51.015Z"),
   },
-  connectionId: "molestias",
+  connectionId: "Legacy tan",
 }).then((res: PostAtsConnectionIdScorecardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -257,19 +257,19 @@ const sdk = new UnifiedTo({
 
 sdk.document.putAtsConnectionIdScorecardId({
   atsScorecard: {
-    applicationId: "hic",
-    candidateId: "error",
-    createdAt: new Date("2020-02-11T23:32:43.703Z"),
-    id: "13f4eedb-e78b-4f60-a825-894ea763d5c7",
-    interviewId: "fugit",
-    interviewerId: "voluptate",
-    jobId: "provident",
+    applicationId: "East Granite",
+    candidateId: "South",
+    createdAt: new Date("2022-03-02T12:33:41.490Z"),
+    id: "<ID>",
+    interviewId: "Texas Technetium hack",
+    interviewerId: "Adventure Kyrgyz Organic",
+    jobId: "Home Dynamic Integration",
     raw: {},
     recommendation: AtsScorecardRecommendation.No,
-    updatedAt: new Date("2022-01-28T06:25:58.770Z"),
+    updatedAt: new Date("2023-11-13T03:01:57.066Z"),
   },
-  connectionId: "laudantium",
-  id: "5148d6d5-49e5-4635-b33b-c0f970c42fc9",
+  connectionId: "Transexual Manager Rap",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -36,8 +36,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.deleteCrmConnectionIdEventId({
-  connectionId: "unde",
-  id: "7e152297-510d-4a80-b122-92cc61c2a702",
+  connectionId: "Wooden Latin",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdEventIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -75,9 +75,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.deleteCrmConnectionIdEventIdCompanyCompanyId({
-  companyId: "distinctio",
-  connectionId: "soluta",
-  id: "97ee102d-a2de-435f-8e01-bf33eaab4540",
+  companyId: "Gasoline gentle Japan",
+  connectionId: "Outdoors",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdEventIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -115,9 +115,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.deleteCrmConnectionIdEventIdContactContactId({
-  connectionId: "dolores",
-  contactId: "dolorum",
-  id: "c1704bf1-cc9f-4c61-aae5-eb5f0c492b57",
+  connectionId: "lecture Funk",
+  contactId: "Bedfordshire Genderqueer",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdEventIdContactContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -155,9 +155,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.deleteCrmConnectionIdEventIdDealDealId({
-  connectionId: "ut",
-  dealId: "incidunt",
-  id: "d08a2267-aaee-479e-bc71-ad31becb83d2",
+  connectionId: "Southeast",
+  dealId: "Granite gah Dysprosium",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdEventIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -195,16 +195,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.getCrmConnectionIdEvent({
-  companyId: "dolor",
-  connectionId: "esse",
-  contactId: "deleniti",
-  dealId: "mollitia",
-  limit: 8941.65,
-  offset: 2035.85,
-  order: "facilis",
-  query: "sapiente",
-  sort: "maxime",
-  updatedGte: new Date("2022-10-11T22:27:53.755Z"),
+  companyId: "Zirconium Avon Bedfordshire",
+  connectionId: "Hybrid grey Ferrari",
+  contactId: "Checking Southeast",
+  dealId: "Graham till Caesium",
+  limit: 2928.84,
+  offset: 5904.77,
+  order: "furthermore Tricycle Hop",
+  query: "auxiliary",
+  sort: "Southeast Bicycle Gorgeous",
+  updatedGte: new Date("2023-01-15T23:49:53.643Z"),
 }).then((res: GetCrmConnectionIdEventResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -242,8 +242,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.getCrmConnectionIdEventId({
-  connectionId: "nulla",
-  id: "9450a986-a495-4bac-b07f-06b28ecc8649",
+  connectionId: "Future equalise",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdEventIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -284,51 +284,51 @@ const sdk = new UnifiedTo({
 sdk.event.patchCrmConnectionIdEventId({
   crmEvent: {
     call: {
-      description: "sunt",
-      duration: 2261.97,
+      description: "Optional zero defect function",
+      duration: 5434.61,
     },
     companyIds: [
-      "laudantium",
+      "silver",
     ],
     contactIds: [
-      "commodi",
+      "redefine",
     ],
-    createdAt: new Date("2021-10-18T23:17:50.935Z"),
+    createdAt: new Date("2021-07-21T06:46:42.528Z"),
     dealIds: [
-      "qui",
+      "Solutions",
     ],
     email: {
-      body: "eligendi",
+      body: "French",
       cc: [
-        "perspiciatis",
+        "Checking",
       ],
-      from: "eum",
-      subject: "sint",
+      from: "SDD Toyota Northeast",
+      subject: "Convertible",
       to: [
-        "eligendi",
+        "Electronics",
       ],
     },
-    id: "4cc6b788-90a3-4fd3-881d-a10f8c23df93",
+    id: "<ID>",
     meeting: {
-      description: "quae",
-      endAt: new Date("2021-01-28T19:50:54.435Z"),
-      startAt: new Date("2022-02-09T08:20:37.262Z"),
-      title: "Dr.",
+      description: "Monitored mission-critical customer loyalty",
+      endAt: new Date("2022-09-22T17:43:00.863Z"),
+      startAt: new Date("2023-04-24T06:40:04.926Z"),
+      title: "Kip Switchable Chicken",
     },
     note: {
-      description: "tempore",
+      description: "Cross-group high-level functionalities",
     },
     raw: {},
     task: {
-      description: "minima",
-      name: "Winifred O'Reilly",
-      status: "numquam",
+      description: "Horizontal empowering forecast",
+      name: "Principal extremely Jast",
+      status: "striped Concrete Bronze",
     },
-    type: CrmEventType.Meeting,
-    updatedAt: new Date("2020-08-13T07:08:20.678Z"),
+    type: CrmEventType.Note,
+    updatedAt: new Date("2021-02-18T21:34:24.992Z"),
   },
-  connectionId: "sint",
-  id: "43513772-6d15-4321-b832-a56d69180ff6",
+  connectionId: "Dinar benchmark till",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdEventIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -366,9 +366,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.patchCrmConnectionIdEventIdCompanyCompanyId({
-  companyId: "consequatur",
-  connectionId: "accusamus",
-  id: "b9a6658e-69a4-4b84-bd38-2dbec75c68c6",
+  companyId: "quis Operations",
+  connectionId: "convergence programming",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdEventIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -406,9 +406,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.patchCrmConnectionIdEventIdContactContactId({
-  connectionId: "aut",
-  contactId: "nisi",
-  id: "59468ce3-04d8-4849-bf82-14c337f96bb0",
+  connectionId: "gosh",
+  contactId: "North Guilder",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdEventIdContactContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -446,9 +446,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.patchCrmConnectionIdEventIdDealDealId({
-  connectionId: "porro",
-  dealId: "vel",
-  id: "9e372db1-344b-4a9f-b8a5-c0ed7aab62e9",
+  connectionId: "nobis Developer withdrawal",
+  dealId: "male connect",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdEventIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -489,50 +489,50 @@ const sdk = new UnifiedTo({
 sdk.event.postCrmConnectionIdEvent({
   crmEvent: {
     call: {
-      description: "iusto",
-      duration: 1323.66,
+      description: "Visionary bandwidth-monitored hardware",
+      duration: 9256.02,
     },
     companyIds: [
-      "ea",
+      "Kentucky",
     ],
     contactIds: [
-      "architecto",
+      "Rustic",
     ],
-    createdAt: new Date("2020-10-13T11:08:25.283Z"),
+    createdAt: new Date("2023-02-12T10:03:55.861Z"),
     dealIds: [
-      "alias",
+      "agonizing",
     ],
     email: {
-      body: "quod",
+      body: "protocol",
       cc: [
-        "veniam",
+        "Ratke",
       ],
-      from: "corrupti",
-      subject: "temporibus",
+      from: "woman",
+      subject: "East Soft",
       to: [
-        "odit",
+        "Southeast",
       ],
     },
-    id: "7b51996b-5b4b-450e-af71-2b7a7ab0344b",
+    id: "<ID>",
     meeting: {
-      description: "inventore",
-      endAt: new Date("2022-11-20T13:22:34.695Z"),
-      startAt: new Date("2022-08-01T07:59:36.823Z"),
-      title: "Ms.",
+      description: "Streamlined intangible time-frame",
+      endAt: new Date("2022-04-18T21:50:55.608Z"),
+      startAt: new Date("2021-08-24T14:06:25.626Z"),
+      title: "violet Synergized blah",
     },
     note: {
-      description: "deleniti",
+      description: "Mandatory eco-centric toolset",
     },
     raw: {},
     task: {
-      description: "illum",
-      name: "Caleb Purdy",
-      status: "rem",
+      description: "Team-oriented dynamic forecast",
+      name: "Grocery",
+      status: "excitedly Bacon",
     },
-    type: CrmEventType.Task,
-    updatedAt: new Date("2022-01-23T07:05:36.436Z"),
+    type: CrmEventType.Email,
+    updatedAt: new Date("2021-09-09T20:12:06.214Z"),
   },
-  connectionId: "velit",
+  connectionId: "Progressive",
 }).then((res: PostCrmConnectionIdEventResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -573,51 +573,51 @@ const sdk = new UnifiedTo({
 sdk.event.putCrmConnectionIdEventId({
   crmEvent: {
     call: {
-      description: "fugiat",
-      duration: 8660.78,
+      description: "Re-engineered composite time-frame",
+      duration: 5444.58,
     },
     companyIds: [
-      "voluptatem",
+      "DNS",
     ],
     contactIds: [
-      "quod",
+      "Skokie",
     ],
-    createdAt: new Date("2020-05-30T09:15:09.119Z"),
+    createdAt: new Date("2022-07-05T01:37:36.877Z"),
     dealIds: [
-      "dolor",
+      "lux",
     ],
     email: {
-      body: "amet",
+      body: "Hatchback card",
       cc: [
-        "tenetur",
+        "Gasoline",
       ],
-      from: "quasi",
-      subject: "dicta",
+      from: "Caribbean",
+      subject: "Account medium",
       to: [
-        "rerum",
+        "copy",
       ],
     },
-    id: "3e4e080a-a104-4186-ac75-9e02f3702c5c",
+    id: "<ID>",
     meeting: {
-      description: "laudantium",
-      endAt: new Date("2022-08-02T07:50:37.926Z"),
-      startAt: new Date("2022-05-30T16:07:16.405Z"),
-      title: "Mr.",
+      description: "Inverse optimizing model",
+      endAt: new Date("2022-03-21T17:32:41.888Z"),
+      startAt: new Date("2022-10-17T10:31:48.119Z"),
+      title: "male henry Hat",
     },
     note: {
-      description: "voluptates",
+      description: "Self-enabling asymmetric functionalities",
     },
     raw: {},
     task: {
-      description: "culpa",
-      name: "Mrs. Leonard Cartwright",
-      status: "culpa",
+      description: "Reduced 4th generation analyzer",
+      name: "Savings Female nor",
+      status: "Customer sky",
     },
-    type: CrmEventType.Email,
-    updatedAt: new Date("2022-07-25T01:13:49.601Z"),
+    type: CrmEventType.Note,
+    updatedAt: new Date("2023-07-27T14:02:37.510Z"),
   },
-  connectionId: "alias",
-  id: "7bf375b4-4282-4821-bdb2-f69e59267c71",
+  connectionId: "transparent",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdEventIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -655,9 +655,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.putCrmConnectionIdEventIdCompanyCompanyId({
-  companyId: "quo",
-  connectionId: "optio",
-  id: "8d3cd425-8d03-458a-82c8-08fe2751a204",
+  companyId: "Administrator",
+  connectionId: "Computers",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdEventIdCompanyCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -695,9 +695,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.putCrmConnectionIdEventIdContactContactId({
-  connectionId: "ducimus",
-  contactId: "quod",
-  id: "0449e143-f961-49bb-bd40-d5a11fa436e6",
+  connectionId: "olive",
+  contactId: "deposit Bicycle",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdEventIdContactContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -735,9 +735,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.event.putCrmConnectionIdEventIdDealDealId({
-  connectionId: "sed",
-  dealId: "exercitationem",
-  id: "9233f95c-9d23-4739-bc78-5b5db4f50018",
+  connectionId: "Bloomington",
+  dealId: "provided apud Southeast",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdEventIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

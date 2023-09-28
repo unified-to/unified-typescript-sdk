@@ -25,7 +25,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.webhook.deleteUnifiedWebhookId({
-  id: "d73809a0-2f06-4e92-a8b5-6065a5074bef",
+  id: "<ID>",
 }).then((res: DeleteUnifiedWebhookIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -63,13 +63,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.webhook.getUnifiedWebhook({
-  env: "cum",
-  limit: 5185.71,
-  object: "laborum",
-  offset: 9427.54,
-  order: "eum",
-  sort: "rem",
-  updatedGte: new Date("2022-05-29T07:20:34.094Z"),
+  env: "Investor methodical Fitness",
+  limit: 8087.22,
+  object: "Franc past salmon",
+  offset: 5240.75,
+  order: "program",
+  sort: "below JSON",
+  updatedGte: new Date("2022-05-29T13:22:55.562Z"),
 }).then((res: GetUnifiedWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -107,7 +107,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.webhook.getUnifiedWebhookId({
-  id: "d2b99404-363a-4096-8c05-3876e39def9c",
+  id: "<ID>",
 }).then((res: GetUnifiedWebhookIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -150,30 +150,30 @@ const sdk = new UnifiedTo({
 
 sdk.webhook.postUnifiedWebhookConnectionIdObject({
   webhook: {
-    checkedAt: new Date("2022-08-13T23:23:14.155Z"),
-    connectionId: "minima",
-    createdAt: new Date("2020-02-03T17:57:01.294Z"),
-    environment: "fugiat",
+    checkedAt: new Date("2021-02-25T07:12:08.980Z"),
+    connectionId: "deposit 1080p Passenger",
+    createdAt: new Date("2023-02-21T14:58:56.193Z"),
+    environment: "Minnesota Soap",
     events: [
       PropertyWebhookEvents.Updated,
     ],
-    hookUrl: "ipsum",
-    id: "54e5cb94-9770-417a-a620-4bb26ca4e999",
+    hookUrl: "Table female ken",
+    id: "<ID>",
     includeRaw: false,
-    integrationType: "quos",
-    interval: 1768.7,
+    integrationType: "chocolate",
+    interval: 1710.16,
     objectType: WebhookObjectType.EnrichCompany,
     subscriptions: [
-      "iure",
+      "female",
     ],
-    updatedAt: new Date("2021-05-13T02:27:36.070Z"),
-    workspaceId: "debitis",
+    updatedAt: new Date("2022-08-02T17:13:06.397Z"),
+    workspaceId: "hertz",
   },
-  connectionId: "reiciendis",
+  connectionId: "Borders",
   events: [
     PostUnifiedWebhookConnectionIdObjectEvents.Created,
   ],
-  object: "perferendis",
+  object: "scalable",
 }).then((res: PostUnifiedWebhookConnectionIdObjectResponse) => {
   if (res.statusCode == 200) {
     // handle response

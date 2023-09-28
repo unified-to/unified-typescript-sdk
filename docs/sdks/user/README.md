@@ -32,8 +32,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.user.deleteCrmConnectionIdUserId({
-  connectionId: "deleniti",
-  id: "b1d187b5-1eb5-4fd3-8bfe-03490cf20254",
+  connectionId: "Intranet Data",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdUserIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -106,13 +106,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.user.getCrmConnectionIdUser({
-  connectionId: "id",
-  limit: 6080.08,
-  offset: 3220.16,
-  order: "unde",
-  query: "consequatur",
-  sort: "quaerat",
-  updatedGte: new Date("2022-03-13T04:13:10.861Z"),
+  connectionId: "suit Electronic Tampa",
+  limit: 2883.34,
+  offset: 8886.55,
+  order: "despite",
+  query: "frightfully Fitness",
+  sort: "success servant",
+  updatedGte: new Date("2023-02-23T05:53:04.259Z"),
 }).then((res: GetCrmConnectionIdUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -150,8 +150,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.user.getCrmConnectionIdUserId({
-  connectionId: "distinctio",
-  id: "462d6bc9-917f-498e-8792-b979a413d6a8",
+  connectionId: "connecting Program",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdUserIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -263,42 +263,42 @@ sdk.user.patchCrmConnectionIdUserId({
   crmUser: {
     active: false,
     address: {
-      address1: "impedit",
-      address2: "perspiciatis",
-      city: "South Josianeberg",
-      country: "Papua New Guinea",
-      countryCode: "TG",
-      postalCode: "40808-6577",
-      region: "repellat",
-      regionCode: "voluptatum",
+      address1: "Customer",
+      address2: "violet groupware blanditiis",
+      city: "South Phoebeshire",
+      country: "Thailand",
+      countryCode: "NO",
+      postalCode: "30801-4594",
+      region: "portals Vanadium",
+      regionCode: "Future",
     },
-    createdAt: new Date("2021-04-22T20:59:04.118Z"),
-    currency: "amet",
-    department: "totam",
-    division: "ex",
+    createdAt: new Date("2023-01-04T02:42:28.788Z"),
+    currency: "Guinea Franc",
+    department: "Gloves global rosin",
+    division: "Berkshire Europium",
     emails: [
       {
-        email: "Bennie_Langosh@gmail.com",
-        type: CrmEmailType.Other,
+        email: "Wade.Dach@gmail.com",
+        type: CrmEmailType.Work,
       },
     ],
-    id: "76c002fa-cb13-4ac2-8c81-43b866c575a1",
-    imageUrl: "recusandae",
-    languageLocale: "quia",
-    name: "Carla Lubowitz",
+    id: "<ID>",
+    imageUrl: "Checking",
+    languageLocale: "Sedan Porsche matrix",
+    name: "superstructure Nissan sedately",
     raw: {},
     telephones: [
       {
-        telephone: "accusantium",
-        type: CrmTelephoneType.Fax,
+        telephone: "unto ubiquitous input",
+        type: CrmTelephoneType.Mobile,
       },
     ],
-    timezone: "accusamus",
-    title: "Mrs.",
-    updatedAt: new Date("2022-04-24T03:57:57.473Z"),
+    timezone: "America/Tijuana",
+    title: "Computer Bicycle",
+    updatedAt: new Date("2021-12-13T16:36:33.886Z"),
   },
-  connectionId: "sit",
-  id: "e8fbc48d-dc7e-469b-9351-0505014dca10",
+  connectionId: "gold generating",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdUserIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -336,16 +336,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.user.patchUnifiedUser({
-  createdAt: new Date("2022-06-17T20:12:07.816Z"),
-  email: "Candido.Hahn@yahoo.com",
-  environment: "impedit",
-  id: "36e94889-2782-4d34-a0b8-fc0d59f57b9f",
+  createdAt: new Date("2022-04-24T15:25:24.483Z"),
+  email: "Emmalee.Quitzon@yahoo.com",
+  environment: "Bicycle",
+  id: "<ID>",
   meta: {},
-  name: "Miss Ian Connelly",
-  updatedAt: new Date("2022-07-09T07:24:05.365Z"),
-  workspaceId: "deleniti",
+  name: "vice compressing",
+  updatedAt: new Date("2023-05-05T16:52:20.023Z"),
+  workspaceId: "Hybrid methodologies",
   workspaceIds: [
-    "aperiam",
+    "Potassium",
   ],
 }).then((res: PatchUnifiedUserResponse) => {
   if (res.statusCode == 200) {
@@ -388,41 +388,41 @@ sdk.user.postCrmConnectionIdUser({
   crmUser: {
     active: false,
     address: {
-      address1: "quos",
-      address2: "maxime",
-      city: "South Nestor",
-      country: "Mongolia",
-      countryCode: "TO",
-      postalCode: "94023",
-      region: "magnam",
-      regionCode: "recusandae",
+      address1: "driver East",
+      address2: "relationships Computer navigate",
+      city: "Homestead",
+      country: "Cayman Islands",
+      countryCode: "BW",
+      postalCode: "34958",
+      region: "South",
+      regionCode: "morph an colossal",
     },
-    createdAt: new Date("2022-12-13T13:34:20.729Z"),
-    currency: "maiores",
-    department: "tempora",
-    division: "reprehenderit",
+    createdAt: new Date("2021-02-02T08:27:21.693Z"),
+    currency: "Cayman Islands Dollar",
+    department: "um",
+    division: "West sievert generating",
     emails: [
       {
-        email: "Stuart22@yahoo.com",
+        email: "Jadon_Schumm45@gmail.com",
         type: CrmEmailType.Home,
       },
     ],
-    id: "483f748e-efcc-4b69-9541-b4b393f35666",
-    imageUrl: "consequuntur",
-    languageLocale: "quis",
-    name: "Tomas Pacocha",
+    id: "<ID>",
+    imageUrl: "radian Borders Southeast",
+    languageLocale: "Silicon Awesome Industrial",
+    name: "Mouse Accounts",
     raw: {},
     telephones: [
       {
-        telephone: "consequuntur",
-        type: CrmTelephoneType.Work,
+        telephone: "ohm Southeast ROI",
+        type: CrmTelephoneType.Mobile,
       },
     ],
-    timezone: "illo",
-    title: "Dr.",
-    updatedAt: new Date("2020-08-23T15:43:14.003Z"),
+    timezone: "Europe/Bratislava",
+    title: "Money",
+    updatedAt: new Date("2023-12-09T10:24:50.054Z"),
   },
-  connectionId: "sequi",
+  connectionId: "competent calculate",
 }).then((res: PostCrmConnectionIdUserResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -464,42 +464,42 @@ sdk.user.putCrmConnectionIdUserId({
   crmUser: {
     active: false,
     address: {
-      address1: "reprehenderit",
-      address2: "sint",
-      city: "Hintzfurt",
-      country: "Martinique",
-      countryCode: "TR",
-      postalCode: "08257-3819",
-      region: "omnis",
-      regionCode: "itaque",
+      address1: "Honduras",
+      address2: "Oxygen Libyan Burundi",
+      city: "North Gertrudefield",
+      country: "Belgium",
+      countryCode: "DK",
+      postalCode: "00781",
+      region: "Wagon",
+      regionCode: "how overriding",
     },
-    createdAt: new Date("2022-11-29T02:49:06.048Z"),
-    currency: "fugiat",
-    department: "provident",
-    division: "voluptatem",
+    createdAt: new Date("2023-03-13T00:47:15.649Z"),
+    currency: "Pakistan Rupee",
+    department: "Tricycle vaguely",
+    division: "Severn bluetooth Argon",
     emails: [
       {
-        email: "Rosanna45@hotmail.com",
-        type: CrmEmailType.Home,
+        email: "Karl_Stehr4@hotmail.com",
+        type: CrmEmailType.Work,
       },
     ],
-    id: "6bfc7677-f0f5-404a-ae48-28fb6daee19c",
-    imageUrl: "explicabo",
-    languageLocale: "nisi",
-    name: "Frank Ryan",
+    id: "<ID>",
+    imageUrl: "AGP romance didactic",
+    languageLocale: "ROI Polarised",
+    name: "olive synthesizing",
     raw: {},
     telephones: [
       {
-        telephone: "quasi",
-        type: CrmTelephoneType.Other,
+        telephone: "Honda Indiana",
+        type: CrmTelephoneType.Fax,
       },
     ],
-    timezone: "maxime",
-    title: "Ms.",
-    updatedAt: new Date("2022-10-11T03:37:06.147Z"),
+    timezone: "Asia/Novosibirsk",
+    title: "compelling red compressing",
+    updatedAt: new Date("2022-09-03T15:59:05.095Z"),
   },
-  connectionId: "vitae",
-  id: "cabdab76-7a44-44dd-8da0-abe58eb3d54b",
+  connectionId: "relationships",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdUserIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -537,16 +537,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.user.putUnifiedUser({
-  createdAt: new Date("2022-11-07T21:46:44.444Z"),
-  email: "Melissa_Dooley30@hotmail.com",
-  environment: "sint",
-  id: "b8e5c18b-25e8-47f6-8823-255be95c0cbc",
+  createdAt: new Date("2023-07-31T04:46:29.769Z"),
+  email: "Selena59@yahoo.com",
+  environment: "Bedfordshire Lucia",
+  id: "<ID>",
   meta: {},
-  name: "Billy Schmeler",
-  updatedAt: new Date("2022-06-05T12:45:52.497Z"),
-  workspaceId: "quae",
+  name: "Bicycle hacking South",
+  updatedAt: new Date("2023-03-15T15:08:26.238Z"),
+  workspaceId: "Card defect",
   workspaceIds: [
-    "quos",
+    "repudiandae",
   ],
 }).then((res: PutUnifiedUserResponse) => {
   if (res.statusCode == 200) {

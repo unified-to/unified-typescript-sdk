@@ -31,8 +31,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.deleteCrmConnectionIdCompanyId({
-  connectionId: "eos",
-  id: "b9c247c8-8373-4a40-a194-2f32e5505575",
+  connectionId: "hertz morph",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -70,9 +70,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.deleteCrmConnectionIdCompanyIdDealDealId({
-  connectionId: "nisi",
-  dealId: "tenetur",
-  id: "5d56d0bd-0af2-4dfe-93db-4f62cba3f894",
+  connectionId: "Carolina",
+  dealId: "Technician",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdCompanyIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,15 +110,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.getCrmConnectionIdCompany({
-  connectionId: "quasi",
-  contactId: "mollitia",
-  dealId: "accusamus",
-  limit: 6875.89,
-  offset: 7691.56,
-  order: "doloremque",
-  query: "expedita",
-  sort: "corrupti",
-  updatedGte: new Date("2022-05-11T05:34:43.056Z"),
+  connectionId: "indexing",
+  contactId: "Porsche firewall",
+  dealId: "Hafnium Computers",
+  limit: 902.85,
+  offset: 2893.88,
+  order: "Interactions relationships juxtapose",
+  query: "newton Luxembourg",
+  sort: "Dakota quantifying Actinium",
+  updatedGte: new Date("2022-09-27T07:42:48.074Z"),
 }).then((res: GetCrmConnectionIdCompanyResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -156,8 +156,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.getCrmConnectionIdCompanyId({
-  connectionId: "aliquid",
-  id: "924d3b2e-cfcc-48f8-9501-0f5dd3d6fa18",
+  connectionId: "Netherlands",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -195,9 +195,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.getEnrichConnectionIdCompany({
-  connectionId: "aperiam",
-  domain: "non",
-  name: "Derek Haag",
+  connectionId: "female Computers Central",
+  domain: "scientific-facet.biz",
+  name: "Outdoors embrace interface",
 }).then((res: GetEnrichConnectionIdCompanyResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -239,44 +239,44 @@ sdk.company.patchCrmConnectionIdCompanyId({
   crmCompany: {
     active: false,
     address: {
-      address1: "consequuntur",
-      address2: "maiores",
-      city: "South Jonathanchester",
-      country: "Cyprus",
-      countryCode: "HU",
-      postalCode: "75542",
-      region: "recusandae",
-      regionCode: "tempora",
+      address1: "invoice",
+      address2: "indexing Ford",
+      city: "McAllen",
+      country: "Netherlands",
+      countryCode: "PF",
+      postalCode: "93486",
+      region: "Steel impactful",
+      regionCode: "Dong",
     },
-    createdAt: new Date("2022-06-26T14:48:08.360Z"),
+    createdAt: new Date("2023-07-25T08:43:38.995Z"),
     dealIds: [
-      "sequi",
+      "usefully",
     ],
     emails: [
       {
-        email: "Alejandrin94@yahoo.com",
-        type: CrmEmailType.Home,
+        email: "Annabel31@gmail.com",
+        type: CrmEmailType.Work,
       },
     ],
-    id: "b8ca275a-60a0-44c4-95cc-699171b51c1b",
-    name: "Johnathan Braun",
+    id: "<ID>",
+    name: "Toys Vermont Astatine",
     raw: {},
     tags: [
-      "labore",
+      "Trigender",
     ],
     telephones: [
       {
-        telephone: "expedita",
-        type: CrmTelephoneType.Other,
+        telephone: "female",
+        type: CrmTelephoneType.Home,
       },
     ],
-    updatedAt: new Date("2021-11-30T08:27:41.789Z"),
+    updatedAt: new Date("2021-12-22T11:39:56.432Z"),
     websites: [
-      "officiis",
+      "Latin",
     ],
   },
-  connectionId: "cum",
-  id: "dfc4ccca-99bc-47fc-8b2d-ce10873e42b0",
+  connectionId: "North kilogram connecting",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -314,9 +314,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.patchCrmConnectionIdCompanyIdDealDealId({
-  connectionId: "voluptatem",
-  dealId: "eum",
-  id: "d678878b-a858-41a5-8208-c54fefa9c95f",
+  connectionId: "virtual BMX Tuna",
+  dealId: "frightened quia generating",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdCompanyIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -358,43 +358,43 @@ sdk.company.postCrmConnectionIdCompany({
   crmCompany: {
     active: false,
     address: {
-      address1: "quia",
-      address2: "officiis",
-      city: "Runolfsdottirborough",
-      country: "Gambia",
-      countryCode: "IR",
-      postalCode: "82047",
-      region: "asperiores",
-      regionCode: "recusandae",
+      address1: "consequently gosh",
+      address2: "phooey",
+      city: "Antonettaville",
+      country: "Lebanon",
+      countryCode: "SI",
+      postalCode: "79462",
+      region: "orchid Oxygen Kids",
+      regionCode: "Electric utilisation",
     },
-    createdAt: new Date("2021-06-25T15:44:39.144Z"),
+    createdAt: new Date("2021-10-01T08:46:18.197Z"),
     dealIds: [
-      "dicta",
+      "Tennessee",
     ],
     emails: [
       {
-        email: "Albina.Hyatt53@gmail.com",
-        type: CrmEmailType.Work,
+        email: "Jaida.McDermott26@yahoo.com",
+        type: CrmEmailType.Other,
       },
     ],
-    id: "3fa4a41c-480d-43f2-932a-f03102d514f4",
-    name: "Loren Jakubowski IV",
+    id: "<ID>",
+    name: "Hydrogen Wooden",
     raw: {},
     tags: [
-      "expedita",
+      "CSS",
     ],
     telephones: [
       {
-        telephone: "hic",
-        type: CrmTelephoneType.Other,
+        telephone: "Account invoice",
+        type: CrmTelephoneType.Mobile,
       },
     ],
-    updatedAt: new Date("2022-11-06T17:51:41.197Z"),
+    updatedAt: new Date("2021-09-12T17:31:24.634Z"),
     websites: [
-      "beatae",
+      "Intuitive",
     ],
   },
-  connectionId: "similique",
+  connectionId: "Gasoline",
 }).then((res: PostCrmConnectionIdCompanyResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -436,44 +436,44 @@ sdk.company.putCrmConnectionIdCompanyId({
   crmCompany: {
     active: false,
     address: {
-      address1: "ea",
-      address2: "animi",
-      city: "Fort Jeremie",
-      country: "Kenya",
-      countryCode: "NG",
-      postalCode: "49928-2794",
-      region: "ipsam",
-      regionCode: "explicabo",
+      address1: "Northwest Northwest",
+      address2: "portals Diesel",
+      city: "Azusa",
+      country: "Qatar",
+      countryCode: "CG",
+      postalCode: "52396",
+      region: "Tuna sticky lest",
+      regionCode: "Soft boo Missoula",
     },
-    createdAt: new Date("2021-10-23T06:28:50.254Z"),
+    createdAt: new Date("2022-05-14T19:17:30.970Z"),
     dealIds: [
-      "quis",
+      "Hybrid",
     ],
     emails: [
       {
-        email: "Cyril10@hotmail.com",
+        email: "Vance_Cruickshank93@gmail.com",
         type: CrmEmailType.Home,
       },
     ],
-    id: "e3bb91c8-d975-4e0e-8419-d8f84f144f3e",
-    name: "Joy Toy",
+    id: "<ID>",
+    name: "lest Northwest",
     raw: {},
     tags: [
-      "cumque",
+      "East",
     ],
     telephones: [
       {
-        telephone: "aliquam",
-        type: CrmTelephoneType.Fax,
+        telephone: "Bronze round",
+        type: CrmTelephoneType.Mobile,
       },
     ],
-    updatedAt: new Date("2022-05-12T12:30:36.705Z"),
+    updatedAt: new Date("2022-02-21T09:41:36.696Z"),
     websites: [
-      "reiciendis",
+      "Keyboard",
     ],
   },
-  connectionId: "sequi",
-  id: "cabd905a-972e-4056-b282-27b2d309470b",
+  connectionId: "orange Bespoke",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdCompanyIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -511,9 +511,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.company.putCrmConnectionIdCompanyIdDealDealId({
-  connectionId: "sapiente",
-  dealId: "quam",
-  id: "a4fa87cf-535a-46fa-a54e-bf60c321f023",
+  connectionId: "Hybrid Mississippi Savings",
+  dealId: "West Hill Woman",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdCompanyIdDealDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

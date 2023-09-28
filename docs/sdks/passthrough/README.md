@@ -26,8 +26,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.passthrough.deletePassthroughConnectionIdPath({
-  connectionId: "fugiat",
-  path: "debitis",
+  connectionId: "Planner Checking Tricycle",
+  path: "/usr/obj",
 }).then((res: DeletePassthroughConnectionIdPathResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -65,8 +65,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.passthrough.getPassthroughConnectionIdPath({
-  connectionId: "minima",
-  path: "ducimus",
+  connectionId: "Global",
+  path: "/private/var",
 }).then((res: GetPassthroughConnectionIdPathResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -104,8 +104,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.passthrough.patchPassthroughConnectionIdPath({
-  connectionId: "est",
-  path: "dicta",
+  connectionId: "average maroon",
+  path: "/proc",
   undefined: {},
 }).then((res: PatchPassthroughConnectionIdPathResponse) => {
   if (res.statusCode == 200) {
@@ -144,8 +144,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.passthrough.postPassthroughConnectionIdPath({
-  connectionId: "architecto",
-  path: "fugiat",
+  connectionId: "Computer Hip",
+  path: "/boot/defaults",
   undefined: {},
 }).then((res: PostPassthroughConnectionIdPathResponse) => {
   if (res.statusCode == 200) {
@@ -184,8 +184,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.passthrough.putPassthroughConnectionIdPath({
-  connectionId: "eum",
-  path: "vitae",
+  connectionId: "Computer Oriental",
+  path: "/usr/local/src",
   undefined: {},
 }).then((res: PutPassthroughConnectionIdPathResponse) => {
   if (res.statusCode == 200) {

@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.deal.deleteCrmConnectionIdDealId({
-  connectionId: "ducimus",
-  id: "ed565076-21c5-48f4-9739-6564c20a0711",
+  connectionId: "Fresh",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,15 +66,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.deal.getCrmConnectionIdDeal({
-  companyId: "similique",
-  connectionId: "omnis",
-  contactId: "commodi",
-  limit: 1166.35,
-  offset: 8489.26,
-  order: "aspernatur",
-  query: "ut",
-  sort: "deserunt",
-  updatedGte: new Date("2022-02-20T22:48:15.284Z"),
+  companyId: "Tools Card copying",
+  connectionId: "Renminbi",
+  contactId: "till payment World",
+  limit: 8656.16,
+  offset: 4455.8,
+  order: "global",
+  query: "Program Bespoke Wisconsin",
+  sort: "Netherlands under",
+  updatedGte: new Date("2022-12-23T01:47:21.816Z"),
 }).then((res: GetCrmConnectionIdDealResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,8 +112,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.deal.getCrmConnectionIdDealId({
-  connectionId: "facilis",
-  id: "b8f532d8-92cf-4781-acb5-12c878240bf5",
+  connectionId: "Concrete Director",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -152,26 +152,26 @@ const sdk = new UnifiedTo({
 
 sdk.deal.patchCrmConnectionIdDealId({
   crmDeal: {
-    amount: 2743.68,
-    closedAt: new Date("2021-02-04T20:36:14.764Z"),
-    createdAt: new Date("2021-12-30T15:49:38.515Z"),
-    currency: "hic",
-    id: "8f1bf0bc-8e1f-4206-95d8-31d0081090f6",
-    lostReason: "nihil",
-    name: "Loretta Howe",
-    pipeline: "doloribus",
-    probability: 1877.7,
+    amount: 7725.78,
+    closedAt: new Date("2021-10-28T08:42:49.591Z"),
+    createdAt: new Date("2023-04-23T15:03:53.999Z"),
+    currency: "Afghani",
+    id: "<ID>",
+    lostReason: "North",
+    name: "midnight",
+    pipeline: "envisioneer Functionality Loan",
+    probability: 7051.73,
     raw: {},
-    source: "id",
-    stage: "ex",
+    source: "Krone",
+    stage: "pascal aliquam gripping",
     tags: [
-      "quos",
+      "where",
     ],
-    updatedAt: new Date("2022-03-17T20:43:59.276Z"),
-    wonReason: "exercitationem",
+    updatedAt: new Date("2022-04-05T10:21:22.505Z"),
+    wonReason: "Savings kilogram",
   },
-  connectionId: "molestiae",
-  id: "68dce742-409a-4215-a086-01489a5f63e3",
+  connectionId: "Chair weber silver",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -210,25 +210,25 @@ const sdk = new UnifiedTo({
 
 sdk.deal.postCrmConnectionIdDeal({
   crmDeal: {
-    amount: 6489.85,
-    closedAt: new Date("2022-04-04T11:17:39.742Z"),
-    createdAt: new Date("2020-05-19T07:26:52.477Z"),
-    currency: "natus",
-    id: "dda33dcd-6348-43e4-a7a9-8e4df37e45b8",
-    lostReason: "omnis",
-    name: "Bernice Schultz I",
-    pipeline: "recusandae",
-    probability: 784.86,
+    amount: 6144.41,
+    closedAt: new Date("2022-07-10T09:55:59.977Z"),
+    createdAt: new Date("2022-01-20T07:28:03.436Z"),
+    currency: "Convertible Marks",
+    id: "<ID>",
+    lostReason: "pfft female",
+    name: "Expressway",
+    pipeline: "withdrawal Extended busily",
+    probability: 7998.22,
     raw: {},
-    source: "ipsum",
-    stage: "error",
+    source: "spiffy sometimes",
+    stage: "transmitter",
     tags: [
-      "numquam",
+      "intermediate",
     ],
-    updatedAt: new Date("2022-08-25T17:34:42.796Z"),
-    wonReason: "consectetur",
+    updatedAt: new Date("2022-10-06T18:34:11.762Z"),
+    wonReason: "Cisgender input HTTP",
   },
-  connectionId: "dicta",
+  connectionId: "accusantium Checking",
 }).then((res: PostCrmConnectionIdDealResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -267,26 +267,26 @@ const sdk = new UnifiedTo({
 
 sdk.deal.putCrmConnectionIdDealId({
   crmDeal: {
-    amount: 551.24,
-    closedAt: new Date("2022-12-18T04:51:10.637Z"),
-    createdAt: new Date("2022-04-06T10:46:32.109Z"),
-    currency: "facere",
-    id: "354c092b-d734-4f02-849d-86f4bb20fe5d",
-    lostReason: "provident",
-    name: "Ashley Schmeler",
-    pipeline: "itaque",
-    probability: 4920.7,
+    amount: 4050.98,
+    closedAt: new Date("2022-01-15T04:05:31.641Z"),
+    createdAt: new Date("2023-06-04T01:28:32.466Z"),
+    currency: "Bermudian Dollar (customarily known as Bermuda Dollar)",
+    id: "<ID>",
+    lostReason: "laudantium Southwest",
+    name: "wail Developer",
+    pipeline: "male Samarium Gourde",
+    probability: 6728.74,
     raw: {},
-    source: "magnam",
-    stage: "excepturi",
+    source: "Stage Gasoline Metal",
+    stage: "Corporate withdrawal Tasty",
     tags: [
-      "placeat",
+      "extranet",
     ],
-    updatedAt: new Date("2021-01-19T07:13:22.442Z"),
-    wonReason: "modi",
+    updatedAt: new Date("2021-10-16T22:38:02.052Z"),
+    wonReason: "phooey",
   },
-  connectionId: "enim",
-  id: "a27f69e2-c9e6-4d10-a9db-3ad4c6b03108",
+  connectionId: "Jazz",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdDealIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -22,15 +22,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.call.getUcConnectionIdCall({
-  agentId: "a",
-  connectionId: "iste",
-  contactId: "dicta",
-  limit: 5524.39,
-  offset: 3563.15,
-  order: "dolore",
-  query: "modi",
-  sort: "itaque",
-  updatedGte: new Date("2022-03-15T19:59:59.350Z"),
+  agentId: "Directives",
+  connectionId: "female than",
+  contactId: "reintermediate Enid Applications",
+  limit: 1980.39,
+  offset: 3478,
+  order: "white Oklahoma Functionality",
+  query: "pricing whether Hillsboro",
+  sort: "Wooden desensitize SCSI",
+  updatedGte: new Date("2021-11-03T12:40:46.997Z"),
 }).then((res: GetUcConnectionIdCallResponse) => {
   if (res.statusCode == 200) {
     // handle response

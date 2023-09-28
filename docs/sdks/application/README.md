@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.application.deleteAtsConnectionIdApplicationId({
-  connectionId: "quaerat",
-  id: "ebf69280-d1ba-477a-89eb-f737ae4203ce",
+  connectionId: "markets sievert meh",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,15 +66,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.application.getAtsConnectionIdApplication({
-  candidateId: "ad",
-  connectionId: "saepe",
-  jobId: "suscipit",
-  limit: 6457.85,
-  offset: 5883.17,
-  order: "minima",
-  query: "repellendus",
-  sort: "totam",
-  updatedGte: new Date("2022-12-31T23:01:47.942Z"),
+  candidateId: "turquoise",
+  connectionId: "Regional Bedfordshire",
+  jobId: "Northwest portal Electric",
+  limit: 576.8,
+  offset: 7467.13,
+  order: "Architect",
+  query: "loosely contingency",
+  sort: "female",
+  updatedGte: new Date("2023-09-05T13:59:23.348Z"),
 }).then((res: GetAtsConnectionIdApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,8 +112,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.application.getAtsConnectionIdApplicationId({
-  connectionId: "at",
-  id: "446ce2af-7a73-4cf3-be45-3f870b326b5a",
+  connectionId: "Buckinghamshire functionalities",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,20 +153,20 @@ const sdk = new UnifiedTo({
 
 sdk.application.patchAtsConnectionIdApplicationId({
   atsApplication: {
-    appliedAt: new Date("2022-10-14T13:38:40.307Z"),
-    candidateId: "incidunt",
-    createdAt: new Date("2022-05-31T19:46:08.472Z"),
-    id: "cdb1a842-2bb6-479d-a322-715bf0cbb1e3",
-    jobId: "veritatis",
+    appliedAt: new Date("2023-10-17T09:51:42.165Z"),
+    candidateId: "North et beyond",
+    createdAt: new Date("2023-01-08T08:26:22.845Z"),
+    id: "<ID>",
+    jobId: "ick Sausages Bronze",
     raw: {},
-    rejectedAt: new Date("2021-11-23T21:35:15.992Z"),
-    rejectedReason: "tempore",
-    source: "cupiditate",
-    status: AtsApplicationStatus.New,
-    updatedAt: new Date("2022-05-16T23:21:11.104Z"),
+    rejectedAt: new Date("2023-10-18T00:47:25.469Z"),
+    rejectedReason: "Avon Sum quis",
+    source: "Carolina Wooden Pop",
+    status: AtsApplicationStatus.Hired,
+    updatedAt: new Date("2021-07-20T22:05:46.009Z"),
   },
-  connectionId: "dolore",
-  id: "43a1108e-0adc-4f4b-9218-79fce953f73e",
+  connectionId: "Baby Paucek",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -206,19 +206,19 @@ const sdk = new UnifiedTo({
 
 sdk.application.postAtsConnectionIdApplication({
   atsApplication: {
-    appliedAt: new Date("2021-07-10T23:11:25.857Z"),
-    candidateId: "hic",
-    createdAt: new Date("2021-05-27T13:58:14.379Z"),
-    id: "7abd74dd-39c0-4f5d-acff-7c70a45626d4",
-    jobId: "ratione",
+    appliedAt: new Date("2021-10-26T15:24:28.979Z"),
+    candidateId: "solid",
+    createdAt: new Date("2022-09-13T17:17:33.049Z"),
+    id: "<ID>",
+    jobId: "Gloves Pizza virtual",
     raw: {},
-    rejectedAt: new Date("2022-06-28T08:50:44.084Z"),
-    rejectedReason: "dicta",
-    source: "dolor",
-    status: AtsApplicationStatus.Rejected,
-    updatedAt: new Date("2022-08-05T18:23:03.713Z"),
+    rejectedAt: new Date("2023-12-27T18:41:56.821Z"),
+    rejectedReason: "Northwest Kids",
+    source: "Human Tasty Loan",
+    status: AtsApplicationStatus.New,
+    updatedAt: new Date("2022-11-01T21:08:50.319Z"),
   },
-  connectionId: "nulla",
+  connectionId: "Jazz",
 }).then((res: PostAtsConnectionIdApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -258,20 +258,20 @@ const sdk = new UnifiedTo({
 
 sdk.application.putAtsConnectionIdApplicationId({
   atsApplication: {
-    appliedAt: new Date("2021-01-20T18:27:01.887Z"),
-    candidateId: "nostrum",
-    createdAt: new Date("2020-08-20T04:25:24.387Z"),
-    id: "e6c55614-6c3e-4250-bb00-8c42e141aac3",
-    jobId: "eum",
+    appliedAt: new Date("2022-06-15T22:25:51.833Z"),
+    candidateId: "farad Indianapolis",
+    createdAt: new Date("2022-04-01T21:03:58.880Z"),
+    id: "<ID>",
+    jobId: "enable foreground",
     raw: {},
-    rejectedAt: new Date("2022-04-01T11:18:05.592Z"),
-    rejectedReason: "quas",
-    source: "assumenda",
-    status: AtsApplicationStatus.Hired,
-    updatedAt: new Date("2022-04-10T15:05:31.822Z"),
+    rejectedAt: new Date("2022-11-06T11:41:30.414Z"),
+    rejectedReason: "virtual North plum",
+    source: "Fort solid",
+    status: AtsApplicationStatus.Submitted,
+    updatedAt: new Date("2021-02-21T04:47:57.079Z"),
   },
-  connectionId: "quasi",
-  id: "44290747-4778-4a7b-9466-d28c10ab3cdc",
+  connectionId: "Southeast",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

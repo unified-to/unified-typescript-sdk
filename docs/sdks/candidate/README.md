@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.candidate.deleteAtsConnectionIdCandidateId({
-  connectionId: "consequuntur",
-  id: "defcce8f-1977-4773-a635-62a7b408f05e",
+  connectionId: "multimedia",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,13 +66,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.candidate.getAtsConnectionIdCandidate({
-  connectionId: "neque",
-  limit: 8163.65,
-  offset: 3071.73,
-  order: "quos",
-  query: "doloribus",
-  sort: "fugiat",
-  updatedGte: new Date("2021-01-28T10:50:17.967Z"),
+  connectionId: "Northwest forceful Moore",
+  limit: 2623.89,
+  offset: 7811.91,
+  order: "Mouse whether deploy",
+  query: "pink",
+  sort: "huzzah thistle",
+  updatedGte: new Date("2022-03-13T15:14:03.645Z"),
 }).then((res: GetAtsConnectionIdCandidateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,8 +110,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.candidate.getAtsConnectionIdCandidateId({
-  connectionId: "velit",
-  id: "13a1f5fd-9425-49c0-b36f-25ea944f3b75",
+  connectionId: "ha Loan",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -152,42 +152,42 @@ const sdk = new UnifiedTo({
 sdk.candidate.patchAtsConnectionIdCandidateId({
   atsCandidate: {
     address: {
-      address1: "ex",
-      address2: "minus",
-      city: "North Tylerview",
-      country: "Senegal",
-      countryCode: "CZ",
-      postalCode: "63113",
-      region: "magni",
-      regionCode: "incidunt",
+      address1: "closely Goyette plus",
+      address2: "culpa",
+      city: "Darrinshire",
+      country: "Mongolia",
+      countryCode: "GW",
+      postalCode: "05275",
+      region: "TLS calculating",
+      regionCode: "up Argon Internal",
     },
-    companyName: "adipisci",
-    createdAt: new Date("2022-07-24T00:20:38.347Z"),
+    companyName: "Fadel, Schulist and Koss",
+    createdAt: new Date("2022-12-09T07:16:54.728Z"),
     emails: [
       {
-        email: "Melyna.Quigley36@yahoo.com",
-        type: AtsEmailType.Home,
+        email: "Gregory63@gmail.com",
+        type: AtsEmailType.Other,
       },
     ],
-    externalId: "consequuntur",
-    id: "3a45cefc-5fde-410a-8ce2-169e510019c6",
-    imageUrl: "quibusdam",
-    name: "Corey Walker",
+    externalId: "Elegant",
+    id: "<ID>",
+    imageUrl: "Tricycle Yttrium Hybrid",
+    name: "ornery whether",
     raw: {},
     tags: [
-      "dignissimos",
+      "Cadillac",
     ],
     telephones: [
       {
-        telephone: "laboriosam",
-        type: AtsTelephoneType.Work,
+        telephone: "Marketing Cotton",
+        type: AtsTelephoneType.Home,
       },
     ],
-    title: "Ms.",
-    updatedAt: new Date("2021-10-28T15:35:10.950Z"),
+    title: "East",
+    updatedAt: new Date("2023-10-31T11:53:36.953Z"),
   },
-  connectionId: "cum",
-  id: "fbbe6949-fb2b-4b4e-8ae6-c3d5db3adebd",
+  connectionId: "redundant Tricycle unloose",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -228,41 +228,41 @@ const sdk = new UnifiedTo({
 sdk.candidate.postAtsConnectionIdCandidate({
   atsCandidate: {
     address: {
-      address1: "ad",
-      address2: "facere",
-      city: "Veumchester",
-      country: "Faroe Islands",
-      countryCode: "SI",
-      postalCode: "03656",
-      region: "est",
-      regionCode: "occaecati",
+      address1: "incubate",
+      address2: "azure Trans",
+      city: "Port Rory",
+      country: "El Salvador",
+      countryCode: "CX",
+      postalCode: "54222-0235",
+      region: "modi fooey",
+      regionCode: "Metal TCP incidunt",
     },
-    companyName: "labore",
-    createdAt: new Date("2022-12-10T16:31:33.706Z"),
+    companyName: "McCullough, Rosenbaum and Daugherty",
+    createdAt: new Date("2023-02-07T05:55:59.357Z"),
     emails: [
       {
-        email: "Green75@gmail.com",
-        type: AtsEmailType.Other,
+        email: "Eleanora.Rogahn44@hotmail.com",
+        type: AtsEmailType.Home,
       },
     ],
-    externalId: "nostrum",
-    id: "e9d9a457-8adc-41ac-a00d-ec001ac802e2",
-    imageUrl: "necessitatibus",
-    name: "Jose Mante",
+    externalId: "South though",
+    id: "<ID>",
+    imageUrl: "Pants",
+    name: "Raleigh",
     raw: {},
     tags: [
-      "laudantium",
+      "morph",
     ],
     telephones: [
       {
-        telephone: "maiores",
-        type: AtsTelephoneType.Work,
+        telephone: "lavender Sedan Folk",
+        type: AtsTelephoneType.Other,
       },
     ],
-    title: "Dr.",
-    updatedAt: new Date("2022-10-06T09:51:21.294Z"),
+    title: "Savings panel",
+    updatedAt: new Date("2022-02-09T15:32:35.578Z"),
   },
-  connectionId: "suscipit",
+  connectionId: "Ngultrum red glean",
 }).then((res: PostAtsConnectionIdCandidateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -303,42 +303,42 @@ const sdk = new UnifiedTo({
 sdk.candidate.putAtsConnectionIdCandidateId({
   atsCandidate: {
     address: {
-      address1: "earum",
-      address2: "doloribus",
-      city: "West Jade",
-      country: "Jersey",
-      countryCode: "RO",
-      postalCode: "28501",
-      region: "impedit",
-      regionCode: "beatae",
+      address1: "archive",
+      address2: "Specialist Kyat",
+      city: "New Dennis",
+      country: "Mauritius",
+      countryCode: "TL",
+      postalCode: "49105-9909",
+      region: "copy olive",
+      regionCode: "withdrawal cumque person",
     },
-    companyName: "incidunt",
-    createdAt: new Date("2022-11-11T05:11:31.731Z"),
+    companyName: "Kuhn and Sons",
+    createdAt: new Date("2022-01-28T10:51:00.922Z"),
     emails: [
       {
-        email: "Maybell.Abshire@yahoo.com",
-        type: AtsEmailType.Work,
+        email: "Hester.Jenkins@gmail.com",
+        type: AtsEmailType.Home,
       },
     ],
-    externalId: "id",
-    id: "668151a4-72af-4923-8594-9f83f350cf87",
-    imageUrl: "aliquid",
-    name: "Tommie Rohan Sr.",
+    externalId: "Loan EXE",
+    id: "<ID>",
+    imageUrl: "deliver executive RSS",
+    name: "because aha black",
     raw: {},
     tags: [
-      "minus",
+      "program",
     ],
     telephones: [
       {
-        telephone: "commodi",
+        telephone: "empower exit Pangender",
         type: AtsTelephoneType.Mobile,
       },
     ],
-    title: "Miss",
-    updatedAt: new Date("2021-08-12T13:33:07.290Z"),
+    title: "Corporate anenst Electronic",
+    updatedAt: new Date("2022-03-30T08:00:53.284Z"),
   },
-  connectionId: "modi",
-  id: "e243cf78-9ffa-4fed-a53e-5ae6e0ac184c",
+  connectionId: "Flerovium azure",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

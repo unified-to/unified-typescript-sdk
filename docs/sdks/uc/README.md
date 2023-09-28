@@ -29,8 +29,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.uc.deleteUcConnectionIdContactId({
-  connectionId: "incidunt",
-  id: "52a9f01f-3442-4c61-be13-3bacde532b65",
+  connectionId: "Southeast Modern commonly",
+  id: "<ID>",
 }).then((res: DeleteUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -68,14 +68,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.uc.getUcConnectionIdAgent({
-  connectionId: "eos",
-  contactId: "laboriosam",
-  limit: 9714.32,
-  offset: 5083.12,
-  order: "suscipit",
-  query: "explicabo",
-  sort: "quos",
-  updatedGte: new Date("2022-10-16T11:52:18.503Z"),
+  connectionId: "Regional East Sedan",
+  contactId: "blue",
+  limit: 7827.68,
+  offset: 2116.69,
+  order: "Bicycle",
+  query: "Bacon officia iterate",
+  sort: "sticky vote lumen",
+  updatedGte: new Date("2021-07-05T19:53:29.041Z"),
 }).then((res: GetUcConnectionIdAgentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -113,15 +113,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.uc.getUcConnectionIdCall({
-  agentId: "hic",
-  connectionId: "eveniet",
-  contactId: "eos",
-  limit: 5126.45,
-  offset: 3151.64,
-  order: "provident",
-  query: "maxime",
-  sort: "officiis",
-  updatedGte: new Date("2022-11-01T07:11:20.903Z"),
+  agentId: "Directives",
+  connectionId: "female than",
+  contactId: "reintermediate Enid Applications",
+  limit: 1980.39,
+  offset: 3478,
+  order: "white Oklahoma Functionality",
+  query: "pricing whether Hillsboro",
+  sort: "Wooden desensitize SCSI",
+  updatedGte: new Date("2021-11-03T12:40:46.997Z"),
 }).then((res: GetUcConnectionIdCallResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -159,14 +159,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.uc.getUcConnectionIdContact({
-  agentId: "consequuntur",
-  connectionId: "quia",
-  limit: 1905.14,
-  offset: 718.84,
-  order: "doloribus",
-  query: "earum",
-  sort: "commodi",
-  updatedGte: new Date("2022-08-09T11:19:33.586Z"),
+  agentId: "Refined Practical",
+  connectionId: "inasmuch Dodge",
+  limit: 7215.14,
+  offset: 2910.48,
+  order: "Vermont",
+  query: "maroon JBOD",
+  sort: "hertz",
+  updatedGte: new Date("2023-01-29T17:06:35.136Z"),
 }).then((res: GetUcConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -204,8 +204,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.uc.getUcConnectionIdContactId({
-  connectionId: "dolore",
-  id: "c41d2fba-5cba-4069-b8d2-91beb810a2aa",
+  connectionId: "Land",
+  id: "<ID>",
 }).then((res: GetUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -245,28 +245,28 @@ const sdk = new UnifiedTo({
 
 sdk.uc.patchUcConnectionIdContactId({
   ucContact: {
-    company: "Kreiger - Gutmann",
-    createdAt: new Date("2022-06-03T00:19:22.099Z"),
+    company: "Wilderman, Cremin and Gislason",
+    createdAt: new Date("2023-07-18T06:13:06.229Z"),
     emails: [
       {
-        email: "Leanna_Walsh26@yahoo.com",
+        email: "Henry.Leannon@gmail.com",
         type: UcEmailType.Other,
       },
     ],
-    id: "cf7b50cf-87f0-48f3-9271-076a24b40c8f",
-    name: "Terry Rau",
+    id: "<ID>",
+    name: "quirky digital",
     raw: {},
     telephones: [
       {
-        telephone: "quae",
-        type: UcTelephoneType.Work,
+        telephone: "Lead 24/7 overriding",
+        type: UcTelephoneType.Other,
       },
     ],
-    title: "Ms.",
-    updatedAt: new Date("2022-02-04T19:42:40.275Z"),
+    title: "Small Legacy",
+    updatedAt: new Date("2022-07-11T16:02:41.922Z"),
   },
-  connectionId: "laudantium",
-  id: "8f86996c-8e22-4be0-a3cf-47893bd23f86",
+  connectionId: "Bohrium",
+  id: "<ID>",
 }).then((res: PatchUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -306,27 +306,27 @@ const sdk = new UnifiedTo({
 
 sdk.uc.postUcConnectionIdContact({
   ucContact: {
-    company: "Abbott - Beatty",
-    createdAt: new Date("2021-10-06T16:45:34.362Z"),
+    company: "Howell and Sons",
+    createdAt: new Date("2022-12-18T04:56:44.573Z"),
     emails: [
       {
-        email: "Ova.Kovacek@gmail.com",
-        type: UcEmailType.Work,
+        email: "Garret81@hotmail.com",
+        type: UcEmailType.Home,
       },
     ],
-    id: "273caa91-18b3-48f1-b61a-331a54dc1029",
-    name: "Johanna Muller",
+    id: "<ID>",
+    name: "Southeast Gasoline extend",
     raw: {},
     telephones: [
       {
-        telephone: "debitis",
-        type: UcTelephoneType.Mobile,
+        telephone: "Togo Division Human",
+        type: UcTelephoneType.Home,
       },
     ],
-    title: "Miss",
-    updatedAt: new Date("2022-05-29T03:50:25.472Z"),
+    title: "COM that",
+    updatedAt: new Date("2023-02-07T16:19:58.439Z"),
   },
-  connectionId: "expedita",
+  connectionId: "Tennessee",
 }).then((res: PostUcConnectionIdContactResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -366,28 +366,28 @@ const sdk = new UnifiedTo({
 
 sdk.uc.putUcConnectionIdContactId({
   ucContact: {
-    company: "Lynch - Zemlak",
-    createdAt: new Date("2022-11-29T18:41:38.693Z"),
+    company: "Feeney, Gusikowski and Douglas",
+    createdAt: new Date("2021-05-15T18:36:56.888Z"),
     emails: [
       {
-        email: "Cary.McKenzie@hotmail.com",
-        type: UcEmailType.Other,
+        email: "Katrina.Walker@gmail.com",
+        type: UcEmailType.Home,
       },
     ],
-    id: "20ee1228-ac3a-4dc6-87d2-40bc11ea4828",
-    name: "Danielle Schamberger",
+    id: "<ID>",
+    name: "Investment Hip Southwest",
     raw: {},
     telephones: [
       {
-        telephone: "aliquid",
+        telephone: "powerless Shirt",
         type: UcTelephoneType.Fax,
       },
     ],
-    title: "Mr.",
-    updatedAt: new Date("2022-10-31T15:11:09.832Z"),
+    title: "Wooden Buckinghamshire",
+    updatedAt: new Date("2022-10-29T19:58:07.810Z"),
   },
-  connectionId: "reiciendis",
-  id: "5b9d3cb1-1a76-487d-b100-e8e2b9b0d746",
+  connectionId: "doubtfully",
+  id: "<ID>",
 }).then((res: PutUcConnectionIdContactIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

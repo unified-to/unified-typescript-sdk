@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.lead.deleteCrmConnectionIdLeadId({
-  connectionId: "totam",
-  id: "6c3ae7d7-b67f-4eef-9e14-2d95b1dbecef",
+  connectionId: "Senior azure",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdLeadIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,13 +66,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.lead.getCrmConnectionIdLead({
-  connectionId: "voluptatibus",
-  limit: 4809.57,
-  offset: 7789.75,
-  order: "non",
-  query: "tempore",
-  sort: "quae",
-  updatedGte: new Date("2022-08-03T04:30:42.588Z"),
+  connectionId: "Computer Hop",
+  limit: 7411.81,
+  offset: 9004.32,
+  order: "Operations candela Integration",
+  query: "impactful transform",
+  sort: "Tala defense Southwest",
+  updatedGte: new Date("2021-09-29T00:37:32.184Z"),
 }).then((res: GetCrmConnectionIdLeadResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,8 +110,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.lead.getCrmConnectionIdLeadId({
-  connectionId: "itaque",
-  id: "9278275e-ea76-4817-8680-63f799b7956c",
+  connectionId: "users Minnesota Bypass",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdLeadIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,39 +153,39 @@ sdk.lead.patchCrmConnectionIdLeadId({
   crmLead: {
     active: false,
     address: {
-      address1: "quae",
-      address2: "quidem",
-      city: "Fort Maddisontown",
-      country: "Paraguay",
-      countryCode: "PY",
-      postalCode: "06209",
-      region: "reprehenderit",
-      regionCode: "quo",
+      address1: "Cambridgeshire",
+      address2: "Oriental farad male",
+      city: "D'Amorebury",
+      country: "Reunion",
+      countryCode: "UY",
+      postalCode: "87017-9001",
+      region: "Buckinghamshire Electric",
+      regionCode: "South gee",
     },
-    companyId: "incidunt",
-    contactId: "id",
-    createdAt: new Date("2021-10-20T07:58:35.149Z"),
-    creatorUserId: "quaerat",
+    companyId: "Gasoline conglomeration Tennessine",
+    contactId: "grow hub",
+    createdAt: new Date("2023-06-09T15:23:12.644Z"),
+    creatorUserId: "voluptates",
     emails: [
       {
-        email: "Giovanni48@gmail.com",
-        type: CrmEmailType.Work,
+        email: "Jeffrey.Denesik52@yahoo.com",
+        type: CrmEmailType.Home,
       },
     ],
-    id: "657b01a0-7c08-4fd3-921c-257930d6f093",
-    name: "Earl Towne",
+    id: "<ID>",
+    name: "whiteboard lumen",
     raw: {},
     telephones: [
       {
-        telephone: "aliquam",
-        type: CrmTelephoneType.Home,
+        telephone: "Cheese before against",
+        type: CrmTelephoneType.Fax,
       },
     ],
-    updatedAt: new Date("2022-04-13T09:05:51.677Z"),
-    userId: "autem",
+    updatedAt: new Date("2022-07-12T14:19:50.007Z"),
+    userId: "Games yellow Towels",
   },
-  connectionId: "ea",
-  id: "dfa1011a-091b-43ec-8b53-862de1a9d14f",
+  connectionId: "brr misuse",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdLeadIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -227,38 +227,38 @@ sdk.lead.postCrmConnectionIdLead({
   crmLead: {
     active: false,
     address: {
-      address1: "debitis",
-      address2: "reprehenderit",
-      city: "Fort Fritzville",
-      country: "Bangladesh",
-      countryCode: "ZA",
-      postalCode: "02028-9722",
-      region: "laudantium",
-      regionCode: "velit",
+      address1: "XSS Country knowledge",
+      address2: "structure",
+      city: "Giovaniton",
+      country: "Ghana",
+      countryCode: "CO",
+      postalCode: "34495-0585",
+      region: "Modern",
+      regionCode: "Diesel",
     },
-    companyId: "natus",
-    contactId: "molestiae",
-    createdAt: new Date("2020-03-03T18:07:31.494Z"),
-    creatorUserId: "hic",
+    companyId: "yuppify",
+    contactId: "demanding scratch male",
+    createdAt: new Date("2023-03-07T11:22:05.657Z"),
+    creatorUserId: "masticate South",
     emails: [
       {
-        email: "Hanna86@yahoo.com",
-        type: CrmEmailType.Work,
+        email: "Gregorio37@gmail.com",
+        type: CrmEmailType.Home,
       },
     ],
-    id: "2090fc15-7ac9-4fe1-961c-e9be41c869dd",
-    name: "Rosemarie Moen V",
+    id: "<ID>",
+    name: "Granite Tools",
     raw: {},
     telephones: [
       {
-        telephone: "repellendus",
+        telephone: "Hassium Balanced male",
         type: CrmTelephoneType.Work,
       },
     ],
-    updatedAt: new Date("2022-04-24T12:06:20.344Z"),
-    userId: "odit",
+    updatedAt: new Date("2021-06-26T11:56:58.926Z"),
+    userId: "Consultant",
   },
-  connectionId: "aut",
+  connectionId: "solutions gosh",
 }).then((res: PostCrmConnectionIdLeadResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -300,39 +300,39 @@ sdk.lead.putCrmConnectionIdLeadId({
   crmLead: {
     active: false,
     address: {
-      address1: "eaque",
-      address2: "deserunt",
-      city: "New Vito",
-      country: "Uruguay",
-      countryCode: "ST",
-      postalCode: "63489",
-      region: "laudantium",
-      regionCode: "sapiente",
+      address1: "Extension",
+      address2: "supposing Dorado Assistant",
+      city: "South Gate",
+      country: "Reunion",
+      countryCode: "IS",
+      postalCode: "73732-2192",
+      region: "JBOD phew",
+      regionCode: "Southeast Framingham female",
     },
-    companyId: "facere",
-    contactId: "laudantium",
-    createdAt: new Date("2022-09-11T02:42:21.444Z"),
-    creatorUserId: "fuga",
+    companyId: "deposit male",
+    contactId: "bunch edge",
+    createdAt: new Date("2021-04-03T18:08:02.798Z"),
+    creatorUserId: "East Panama",
     emails: [
       {
-        email: "Shannon73@yahoo.com",
-        type: CrmEmailType.Other,
+        email: "Jamal20@yahoo.com",
+        type: CrmEmailType.Work,
       },
     ],
-    id: "620cd9c5-afdd-404c-b752-512beae1d87e",
-    name: "Roosevelt Hessel",
+    id: "<ID>",
+    name: "pianist",
     raw: {},
     telephones: [
       {
-        telephone: "quod",
-        type: CrmTelephoneType.Mobile,
+        telephone: "caricature female",
+        type: CrmTelephoneType.Home,
       },
     ],
-    updatedAt: new Date("2021-12-04T00:59:07.070Z"),
-    userId: "eveniet",
+    updatedAt: new Date("2022-08-09T07:11:50.077Z"),
+    userId: "Designer Folding",
   },
-  connectionId: "molestiae",
-  id: "a8831166-2cda-46d7-bc1d-86066237d422",
+  connectionId: "Lanthanum wink Regional",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdLeadIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

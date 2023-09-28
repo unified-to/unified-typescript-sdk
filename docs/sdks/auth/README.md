@@ -26,19 +26,19 @@ const sdk = new UnifiedTo({
 });
 
 sdk.auth.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-  env: "quia",
-  externalXref: "ullam",
-  failureRedirect: "quisquam",
-  integrationType: "dicta",
-  lang: "voluptatibus",
+  env: "Algerian",
+  externalXref: "Cambridgeshire Surinam",
+  failureRedirect: "Designer Drive",
+  integrationType: "program Home",
+  lang: "Plastic program",
   redirect: false,
   scopes: [
-    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.TicketingNoteWrite,
+    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.CrmFileRead,
   ],
-  state: "quae",
-  subdomain: "officiis",
-  successRedirect: "architecto",
-  workspaceId: "architecto",
+  state: "Functionality Product",
+  subdomain: "payment Developer Dynamic",
+  successRedirect: "Northeast",
+  workspaceId: "duh empower Kwanza",
 }).then((res: GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -76,13 +76,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.auth.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
-  env: "enim",
-  failureRedirect: "optio",
-  integrationType: "rem",
+  env: "Rubber",
+  failureRedirect: "gold Cambridgeshire",
+  integrationType: "Plastic services pixel",
   redirect: false,
-  state: "perferendis",
-  successRedirect: "facilis",
-  workspaceId: "reiciendis",
+  state: "Volkswagen Southwest",
+  successRedirect: "drive integrated Bicycle",
+  workspaceId: "Fantastic recontextualize Frozen",
 }).then((res: GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response

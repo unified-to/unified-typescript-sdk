@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.file.deleteCrmConnectionIdFileId({
-  connectionId: "adipisci",
-  id: "febdf676-b720-46da-b750-052a5647edc4",
+  connectionId: "Bicycle",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdFileIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,16 +66,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.file.getCrmConnectionIdFile({
-  companyId: "sequi",
-  connectionId: "natus",
-  contactId: "saepe",
-  dealId: "quibusdam",
-  limit: 5481.43,
-  offset: 8071.51,
-  order: "aliquam",
-  query: "adipisci",
-  sort: "explicabo",
-  updatedGte: new Date("2022-01-22T06:38:09.253Z"),
+  companyId: "reboot",
+  connectionId: "customise far",
+  contactId: "Electronic proactive",
+  dealId: "withdrawal deposit Gloves",
+  limit: 1588.79,
+  offset: 3754.81,
+  order: "Implemented fairly meh",
+  query: "FTP Producer",
+  sort: "soprano deliverables",
+  updatedGte: new Date("2022-03-02T03:00:09.711Z"),
 }).then((res: GetCrmConnectionIdFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -113,8 +113,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.file.getCrmConnectionIdFileId({
-  connectionId: "incidunt",
-  id: "1240d448-7ac6-493b-94c3-b9d2488d795a",
+  connectionId: "Bicycle",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdFileIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -154,24 +154,24 @@ const sdk = new UnifiedTo({
 sdk.file.patchCrmConnectionIdFileId({
   crmFile: {
     active: false,
-    activityId: "fuga",
-    companyId: "incidunt",
-    contactId: "aspernatur",
-    createdAt: new Date("2020-08-02T08:40:50.776Z"),
-    dealId: "dolore",
-    description: "accusantium",
-    fileName: "corporis",
-    fileSize: 3881.8,
-    fileType: "laboriosam",
-    fileUrl: "omnis",
-    id: "f69a006d-2124-4945-8819-d7c3b1b41844",
-    leadId: "consequatur",
+    activityId: "duh Handmade harness",
+    companyId: "CFP",
+    contactId: "unaware yellow generating",
+    createdAt: new Date("2021-05-04T04:54:33.785Z"),
+    dealId: "channels SUV",
+    description: "De-engineered didactic hardware",
+    fileName: "metical_silver_yellow.html",
+    fileSize: 6861.53,
+    fileType: "video",
+    fileUrl: "navigate Funk",
+    id: "<ID>",
+    leadId: "internal",
     raw: {},
-    updatedAt: new Date("2022-12-09T21:50:08.252Z"),
-    userId: "saepe",
+    updatedAt: new Date("2023-02-21T13:46:42.012Z"),
+    userId: "Interactions",
   },
-  connectionId: "accusantium",
-  id: "0310d023-dc90-41f5-afd2-a6c44846ae9d",
+  connectionId: "Handcrafted",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdFileIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -211,23 +211,23 @@ const sdk = new UnifiedTo({
 sdk.file.postCrmConnectionIdFile({
   crmFile: {
     active: false,
-    activityId: "praesentium",
-    companyId: "occaecati",
-    contactId: "eos",
-    createdAt: new Date("2022-10-08T19:31:07.425Z"),
-    dealId: "nobis",
-    description: "quos",
-    fileName: "provident",
-    fileSize: 4099.18,
-    fileType: "consequuntur",
-    fileUrl: "delectus",
-    id: "4896bf51-e465-42d3-8343-d61778af4912",
-    leadId: "numquam",
+    activityId: "tan impedit Pickup",
+    companyId: "Manager",
+    contactId: "Florida Shoes East",
+    createdAt: new Date("2023-01-08T11:37:24.708Z"),
+    dealId: "Agent",
+    description: "Multi-lateral well-modulated portal",
+    fileName: "panel_city.wav",
+    fileSize: 1401.73,
+    fileType: "application",
+    fileUrl: "for Chips under",
+    id: "<ID>",
+    leadId: "abaft Checking",
     raw: {},
-    updatedAt: new Date("2022-07-08T10:09:32.871Z"),
-    userId: "magni",
+    updatedAt: new Date("2023-02-25T09:46:59.608Z"),
+    userId: "Mexico withdrawal",
   },
-  connectionId: "enim",
+  connectionId: "national Lead",
 }).then((res: PostCrmConnectionIdFileResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -267,24 +267,24 @@ const sdk = new UnifiedTo({
 sdk.file.putCrmConnectionIdFileId({
   crmFile: {
     active: false,
-    activityId: "eveniet",
-    companyId: "commodi",
-    contactId: "magni",
-    createdAt: new Date("2022-05-23T03:31:28.636Z"),
-    dealId: "aut",
-    description: "occaecati",
-    fileName: "vero",
-    fileSize: 6231.5,
-    fileType: "inventore",
-    fileUrl: "ipsa",
-    id: "44a5de59-ac77-4066-b0cf-1cf593260525",
-    leadId: "beatae",
+    activityId: "Cotton",
+    companyId: "Northeast",
+    contactId: "Computer",
+    createdAt: new Date("2021-04-09T13:10:01.367Z"),
+    dealId: "toward confiscate East",
+    description: "Devolved upward-trending matrices",
+    fileName: "generation_tactics.wav",
+    fileSize: 4770.09,
+    fileType: "audio",
+    fileUrl: "framework azure Metal",
+    id: "<ID>",
+    leadId: "ampere costume",
     raw: {},
-    updatedAt: new Date("2021-10-17T02:29:52.101Z"),
-    userId: "ex",
+    updatedAt: new Date("2023-05-15T05:04:24.130Z"),
+    userId: "Research payment",
   },
-  connectionId: "harum",
-  id: "b426897d-99a2-4d33-9670-e93ee6cf59f3",
+  connectionId: "East Associate Mazda",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdFileIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

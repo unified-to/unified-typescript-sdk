@@ -33,8 +33,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.deleteHrisConnectionIdEmployeeId({
-  connectionId: "excepturi",
-  id: "3e34316c-f55b-4431-b553-ccf1c204c4ad",
+  connectionId: "Laredo turquoise port",
+  id: "<ID>",
 }).then((res: DeleteHrisConnectionIdEmployeeIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -72,8 +72,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.deleteHrisConnectionIdGroupId({
-  connectionId: "quod",
-  id: "c9904c51-95b8-4648-8efa-78f1e2d3b901",
+  connectionId: "consequently platforms Metal",
+  id: "<ID>",
 }).then((res: DeleteHrisConnectionIdGroupIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -111,13 +111,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.getHrisConnectionIdEmployee({
-  connectionId: "saepe",
-  limit: 289.94,
-  offset: 5725.89,
-  order: "corporis",
-  query: "explicabo",
-  sort: "distinctio",
-  updatedGte: new Date("2021-08-12T22:16:16.253Z"),
+  connectionId: "initiatives greedily project",
+  limit: 1798.52,
+  offset: 6683.19,
+  order: "Sports",
+  query: "TLS",
+  sort: "Jazz Trans",
+  updatedGte: new Date("2021-04-09T17:32:06.988Z"),
 }).then((res: GetHrisConnectionIdEmployeeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -155,8 +155,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.getHrisConnectionIdEmployeeId({
-  connectionId: "tempora",
-  id: "cbb19f71-3d95-4a41-a9c1-387271e18ea9",
+  connectionId: "Keyboard cleverly Rubber",
+  id: "<ID>",
 }).then((res: GetHrisConnectionIdEmployeeIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -194,13 +194,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.getHrisConnectionIdGroup({
-  connectionId: "debitis",
-  limit: 2501.58,
-  offset: 3333.54,
-  order: "illo",
-  query: "illo",
-  sort: "deleniti",
-  updatedGte: new Date("2022-07-26T10:34:40.123Z"),
+  connectionId: "Loan",
+  limit: 3486.96,
+  offset: 9705.73,
+  order: "Coordinator",
+  query: "World",
+  sort: "Dollar",
+  updatedGte: new Date("2021-01-15T16:06:13.340Z"),
 }).then((res: GetHrisConnectionIdGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -238,8 +238,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.hris.getHrisConnectionIdGroupId({
-  connectionId: "optio",
-  id: "c57fbd60-b1a7-48ed-a9a9-d4eea85658c2",
+  connectionId: "behind",
+  id: "<ID>",
 }).then((res: GetHrisConnectionIdGroupIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -287,48 +287,48 @@ const sdk = new UnifiedTo({
 sdk.hris.patchHrisConnectionIdEmployeeId({
   hrisEmployee: {
     address: {
-      address1: "at",
-      address2: "modi",
-      city: "Findlay",
-      country: "Saint Martin",
-      countryCode: "LI",
-      postalCode: "69291-4598",
-      region: "unde",
-      regionCode: "autem",
+      address1: "Tennessee virtual",
+      address2: "Assurance forecast",
+      city: "Baton Rouge",
+      country: "Bahamas",
+      countryCode: "TW",
+      postalCode: "93632",
+      region: "Bailey",
+      regionCode: "navigating Oregon",
     },
-    createdAt: new Date("2022-07-11T08:13:45.102Z"),
-    dateOfBirth: new Date("2022-02-18T07:36:00.073Z"),
-    department: "autem",
-    division: "placeat",
+    createdAt: new Date("2023-01-31T08:11:49.561Z"),
+    dateOfBirth: new Date("2021-10-08T23:14:10.860Z"),
+    department: "soupy web Robust",
+    division: "Corporate loudly quantify",
     emails: [
       {
-        email: "Blaze97@yahoo.com",
+        email: "Wendy_Kovacek@hotmail.com",
         type: HrisEmailType.Other,
       },
     ],
-    employeeNumber: "id",
+    employeeNumber: "hydrate indigo transmit",
     employmentStatus: HrisEmployeeEmploymentStatus.Inactive,
-    employmentType: HrisEmployeeEmploymentType.Intern,
+    employmentType: HrisEmployeeEmploymentType.FullTime,
     gender: HrisEmployeeGender.Intersex,
-    hiredAt: new Date("2020-08-13T08:33:47.369Z"),
-    id: "ef234c95-5b9b-4df2-990a-bd9bbcc2725e",
-    location: "impedit",
-    managerId: "magni",
+    hiredAt: new Date("2021-07-20T11:37:42.486Z"),
+    id: "<ID>",
+    location: "withdrawal wonderfully",
+    managerId: "molestias white Gainesville",
     maritalStatus: HrisEmployeeMaritalStatus.Married,
-    name: "Sabrina Schamberger Sr.",
+    name: "tensely technologies",
     raw: {},
     telephones: [
       {
-        telephone: "totam",
-        type: HrisTelephoneType.Work,
+        telephone: "Northeast Music Hassium",
+        type: HrisTelephoneType.Mobile,
       },
     ],
-    terminatedAt: new Date("2022-06-27T13:37:26.116Z"),
-    title: "Mr.",
-    updatedAt: new Date("2021-10-27T12:07:56.119Z"),
+    terminatedAt: new Date("2023-08-07T01:58:28.622Z"),
+    title: "failing Southwest Kuhn",
+    updatedAt: new Date("2023-05-18T01:32:56.083Z"),
   },
-  connectionId: "excepturi",
-  id: "ef68e45c-8add-4fac-b545-00430c6632b4",
+  connectionId: "South Money past",
+  id: "<ID>",
 }).then((res: PatchHrisConnectionIdEmployeeIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -368,24 +368,24 @@ const sdk = new UnifiedTo({
 
 sdk.hris.patchHrisConnectionIdGroupId({
   hrisGroup: {
-    createdAt: new Date("2022-05-31T02:06:03.542Z"),
-    description: "inventore",
+    createdAt: new Date("2023-10-19T05:30:26.390Z"),
+    description: "Stand-alone asymmetric orchestration",
     employeeIds: [
-      "sapiente",
+      "shootdown",
     ],
-    id: "df01c3e9-1e8f-47bc-a9d4-60a77eceb26d",
+    id: "<ID>",
     isActive: false,
     managerIds: [
-      "architecto",
+      "24/7",
     ],
-    name: "Lorene Bosco",
-    parentId: "qui",
+    name: "Agender trainer",
+    parentId: "Configuration Kids Sedan",
     raw: {},
-    type: HrisGroupType.Department,
-    updatedAt: new Date("2022-12-06T03:55:58.108Z"),
+    type: HrisGroupType.Division,
+    updatedAt: new Date("2021-08-18T16:48:12.885Z"),
   },
-  connectionId: "quisquam",
-  id: "7c0f0f87-3f9d-45c2-9fd3-e0b4a4a4253c",
+  connectionId: "Intersex",
+  id: "<ID>",
 }).then((res: PatchHrisConnectionIdGroupIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -433,47 +433,47 @@ const sdk = new UnifiedTo({
 sdk.hris.postHrisConnectionIdEmployee({
   hrisEmployee: {
     address: {
-      address1: "amet",
-      address2: "ipsa",
-      city: "West Jaunitaland",
-      country: "Bahrain",
-      countryCode: "YE",
-      postalCode: "18494",
-      region: "pariatur",
-      regionCode: "porro",
+      address1: "Southeast ea withdrawal",
+      address2: "Developer",
+      city: "Grand Forks",
+      country: "Cayman Islands",
+      countryCode: "BM",
+      postalCode: "63867-8134",
+      region: "teal Northwest firewall",
+      regionCode: "doubt Diesel COM",
     },
-    createdAt: new Date("2022-09-23T16:00:07.090Z"),
-    dateOfBirth: new Date("2021-07-11T10:12:07.009Z"),
-    department: "itaque",
-    division: "sit",
+    createdAt: new Date("2022-09-25T20:39:21.870Z"),
+    dateOfBirth: new Date("2022-04-06T20:53:56.362Z"),
+    department: "payment mull",
+    division: "Blues red",
     emails: [
       {
-        email: "Timmothy68@yahoo.com",
-        type: HrisEmailType.Home,
+        email: "Jacquelyn8@hotmail.com",
+        type: HrisEmailType.Work,
       },
     ],
-    employeeNumber: "culpa",
-    employmentStatus: HrisEmployeeEmploymentStatus.Active,
-    employmentType: HrisEmployeeEmploymentType.FullTime,
-    gender: HrisEmployeeGender.Female,
-    hiredAt: new Date("2021-01-27T23:42:02.589Z"),
-    id: "12a4ba9d-5998-4819-acfd-0c77c53e7e7d",
-    location: "eius",
-    managerId: "accusamus",
+    employeeNumber: "North Southeast",
+    employmentStatus: HrisEmployeeEmploymentStatus.Inactive,
+    employmentType: HrisEmployeeEmploymentType.Volunteer,
+    gender: HrisEmployeeGender.Intersex,
+    hiredAt: new Date("2021-03-26T14:20:42.258Z"),
+    id: "<ID>",
+    location: "East",
+    managerId: "Maserati",
     maritalStatus: HrisEmployeeMaritalStatus.Single,
-    name: "Sophie Lesch",
+    name: "Xenogender copy",
     raw: {},
     telephones: [
       {
-        telephone: "consequatur",
-        type: HrisTelephoneType.Fax,
+        telephone: "hmph",
+        type: HrisTelephoneType.Work,
       },
     ],
-    terminatedAt: new Date("2021-06-09T00:38:41.199Z"),
-    title: "Mrs.",
-    updatedAt: new Date("2022-06-19T22:55:28.813Z"),
+    terminatedAt: new Date("2022-08-16T03:13:22.861Z"),
+    title: "Regional synthesize",
+    updatedAt: new Date("2022-06-15T02:35:02.446Z"),
   },
-  connectionId: "saepe",
+  connectionId: "past",
 }).then((res: PostHrisConnectionIdEmployeeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -513,23 +513,23 @@ const sdk = new UnifiedTo({
 
 sdk.hris.postHrisConnectionIdGroup({
   hrisGroup: {
-    createdAt: new Date("2022-10-11T00:06:05.180Z"),
-    description: "sint",
+    createdAt: new Date("2021-02-23T15:35:38.483Z"),
+    description: "Configurable stable product",
     employeeIds: [
-      "ea",
+      "Auto",
     ],
-    id: "703fec31-c508-424d-989a-36a6b2d27eb7",
+    id: "<ID>",
     isActive: false,
     managerIds: [
-      "accusantium",
+      "JSON",
     ],
-    name: "Harriet Orn DDS",
-    parentId: "voluptatum",
+    name: "whereas Usability transmitting",
+    parentId: "invoice Cyclocross Electric",
     raw: {},
-    type: HrisGroupType.SubDepartment,
-    updatedAt: new Date("2022-02-14T18:55:03.442Z"),
+    type: HrisGroupType.Group,
+    updatedAt: new Date("2021-04-30T12:40:50.129Z"),
   },
-  connectionId: "commodi",
+  connectionId: "Hybrid Schenectady",
 }).then((res: PostHrisConnectionIdGroupResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -577,48 +577,48 @@ const sdk = new UnifiedTo({
 sdk.hris.putHrisConnectionIdEmployeeId({
   hrisEmployee: {
     address: {
-      address1: "debitis",
-      address2: "commodi",
-      city: "South Izaiahhaven",
-      country: "Paraguay",
-      countryCode: "MS",
-      postalCode: "72740-9977",
-      region: "nisi",
-      regionCode: "occaecati",
+      address1: "Northwest",
+      address2: "and",
+      city: "Uniquefield",
+      country: "Virgin Islands, British",
+      countryCode: "AE",
+      postalCode: "41682",
+      region: "Adventure Avon",
+      regionCode: "bah South",
     },
-    createdAt: new Date("2022-12-15T12:15:10.431Z"),
-    dateOfBirth: new Date("2020-03-31T16:49:34.939Z"),
-    department: "odio",
-    division: "nihil",
+    createdAt: new Date("2023-07-18T13:59:47.040Z"),
+    dateOfBirth: new Date("2022-04-19T17:38:57.783Z"),
+    department: "West auxiliary",
+    division: "volt",
     emails: [
       {
-        email: "Tamia.Doyle@gmail.com",
+        email: "Kenton_Turcotte@gmail.com",
         type: HrisEmailType.Home,
       },
     ],
-    employeeNumber: "iusto",
-    employmentStatus: HrisEmployeeEmploymentStatus.Inactive,
-    employmentType: HrisEmployeeEmploymentType.Other,
-    gender: HrisEmployeeGender.Intersex,
-    hiredAt: new Date("2022-06-18T09:54:51.929Z"),
-    id: "06e61b0d-3087-414c-a0a3-d98637ca85c3",
-    location: "delectus",
-    managerId: "repudiandae",
+    employeeNumber: "DNS coulomb Berkshire",
+    employmentStatus: HrisEmployeeEmploymentStatus.Active,
+    employmentType: HrisEmployeeEmploymentType.Casual,
+    gender: HrisEmployeeGender.Female,
+    hiredAt: new Date("2022-10-08T23:22:26.211Z"),
+    id: "<ID>",
+    location: "East primary",
+    managerId: "Tokelau",
     maritalStatus: HrisEmployeeMaritalStatus.Married,
-    name: "Erin Kris",
+    name: "Bespoke Investment",
     raw: {},
     telephones: [
       {
-        telephone: "harum",
-        type: HrisTelephoneType.Fax,
+        telephone: "East Investment",
+        type: HrisTelephoneType.Other,
       },
     ],
-    terminatedAt: new Date("2021-02-20T15:13:08.610Z"),
-    title: "Mrs.",
-    updatedAt: new Date("2022-01-28T12:53:07.770Z"),
+    terminatedAt: new Date("2022-03-28T08:29:30.386Z"),
+    title: "unless",
+    updatedAt: new Date("2022-06-29T10:38:14.570Z"),
   },
-  connectionId: "placeat",
-  id: "98f13af2-8db2-4cf2-bf4f-3ded356d7e14",
+  connectionId: "Designer Tennessine",
+  id: "<ID>",
 }).then((res: PutHrisConnectionIdEmployeeIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -658,24 +658,24 @@ const sdk = new UnifiedTo({
 
 sdk.hris.putHrisConnectionIdGroupId({
   hrisGroup: {
-    createdAt: new Date("2022-08-29T10:06:09.751Z"),
-    description: "beatae",
+    createdAt: new Date("2022-08-10T12:11:42.375Z"),
+    description: "Decentralized methodical projection",
     employeeIds: [
-      "eligendi",
+      "Credit",
     ],
-    id: "d98196d5-5af6-49a1-84b7-9ae33681c23c",
+    id: "<ID>",
     isActive: false,
     managerIds: [
-      "dolorem",
+      "South",
     ],
-    name: "Grant Klein PhD",
-    parentId: "ab",
+    name: "Jeep brr Northwest",
+    parentId: "quickly Licensed",
     raw: {},
-    type: HrisGroupType.Division,
-    updatedAt: new Date("2020-11-07T15:44:18.546Z"),
+    type: HrisGroupType.BusinessUnit,
+    updatedAt: new Date("2021-11-08T00:11:45.458Z"),
   },
-  connectionId: "quasi",
-  id: "2c5ba825-fe22-4cd5-8ba6-fbfec932af68",
+  connectionId: "vortals interface Gasoline",
+  id: "<ID>",
 }).then((res: PutHrisConnectionIdGroupIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

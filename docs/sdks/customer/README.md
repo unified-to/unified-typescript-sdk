@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.customer.deleteTicketingConnectionIdCustomerId({
-  connectionId: "nulla",
-  id: "acd38ed0-dc67-41dc-bf1e-3af15920c90d",
+  connectionId: "Electric Gloves pish",
+  id: "<ID>",
 }).then((res: DeleteTicketingConnectionIdCustomerIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,13 +66,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.customer.getTicketingConnectionIdCustomer({
-  connectionId: "ab",
-  limit: 7414.54,
-  offset: 2975.19,
-  order: "natus",
-  query: "aperiam",
-  sort: "dicta",
-  updatedGte: new Date("2022-06-25T18:37:10.473Z"),
+  connectionId: "SDD because Salad",
+  limit: 8049.62,
+  offset: 4323.42,
+  order: "override",
+  query: "Rolls 1080p",
+  sort: "quantifying Southeast Kansas",
+  updatedGte: new Date("2023-12-20T19:18:39.254Z"),
 }).then((res: GetTicketingConnectionIdCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,8 +110,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.customer.getTicketingConnectionIdCustomerId({
-  connectionId: "harum",
-  id: "d89c8a32-639d-4a5b-bb69-02b881a94f64",
+  connectionId: "further Ebert",
+  id: "<ID>",
 }).then((res: GetTicketingConnectionIdCustomerIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -151,29 +151,29 @@ const sdk = new UnifiedTo({
 
 sdk.customer.patchTicketingConnectionIdCustomerId({
   ticketingCustomer: {
-    createdAt: new Date("2022-08-10T23:28:30.532Z"),
+    createdAt: new Date("2023-01-22T19:33:25.134Z"),
     emails: [
       {
-        email: "Donny_OKeefe@yahoo.com",
-        type: TicketingEmailType.Work,
+        email: "Ora.Labadie94@yahoo.com",
+        type: TicketingEmailType.Home,
       },
     ],
-    id: "af8c691d-732d-49fb-af94-76a2ae8dcc50",
-    name: "Clifton Nicolas",
+    id: "<ID>",
+    name: "sensitise whiteboard Smyrna",
     raw: {},
     tags: [
-      "dicta",
+      "Hialeah",
     ],
     telephones: [
       {
-        telephone: "eos",
-        type: TicketingTelephoneType.Fax,
+        telephone: "connect",
+        type: TicketingTelephoneType.Work,
       },
     ],
-    updatedAt: new Date("2022-10-15T18:32:49.022Z"),
+    updatedAt: new Date("2023-12-28T17:48:45.929Z"),
   },
-  connectionId: "voluptate",
-  id: "84893075-0a00-4e96-aec7-36d43194398c",
+  connectionId: "Tennessine",
+  id: "<ID>",
 }).then((res: PatchTicketingConnectionIdCustomerIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -213,28 +213,28 @@ const sdk = new UnifiedTo({
 
 sdk.customer.postTicketingConnectionIdCustomer({
   ticketingCustomer: {
-    createdAt: new Date("2022-06-17T14:22:05.995Z"),
+    createdAt: new Date("2022-05-23T15:06:12.012Z"),
     emails: [
       {
-        email: "Nils22@gmail.com",
-        type: TicketingEmailType.Home,
+        email: "Austin44@yahoo.com",
+        type: TicketingEmailType.Work,
       },
     ],
-    id: "8ed3d3ab-7ca3-4c5c-a864-9a70cfd5d698",
-    name: "Rudy Kirlin III",
+    id: "<ID>",
+    name: "Configuration neural",
     raw: {},
     tags: [
-      "magnam",
+      "engineer",
     ],
     telephones: [
       {
-        telephone: "ad",
-        type: TicketingTelephoneType.Work,
+        telephone: "Gasoline North gorgeous",
+        type: TicketingTelephoneType.Fax,
       },
     ],
-    updatedAt: new Date("2022-07-25T05:00:03.848Z"),
+    updatedAt: new Date("2022-10-09T07:25:23.111Z"),
   },
-  connectionId: "voluptate",
+  connectionId: "mole purple",
 }).then((res: PostTicketingConnectionIdCustomerResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -274,29 +274,29 @@ const sdk = new UnifiedTo({
 
 sdk.customer.putTicketingConnectionIdCustomerId({
   ticketingCustomer: {
-    createdAt: new Date("2022-09-26T16:23:23.443Z"),
+    createdAt: new Date("2021-04-21T09:25:32.395Z"),
     emails: [
       {
-        email: "Shanny.Padberg@yahoo.com",
-        type: TicketingEmailType.Other,
+        email: "Shawna42@hotmail.com",
+        type: TicketingEmailType.Home,
       },
     ],
-    id: "492ed14b-8a2c-4195-8545-e955dcc185ea",
-    name: "Miss Lindsay Adams",
+    id: "<ID>",
+    name: "gray",
     raw: {},
     tags: [
-      "cumque",
+      "Associate",
     ],
     telephones: [
       {
-        telephone: "quaerat",
-        type: TicketingTelephoneType.Work,
+        telephone: "Sausages ivory Small",
+        type: TicketingTelephoneType.Mobile,
       },
     ],
-    updatedAt: new Date("2021-05-15T13:31:18.582Z"),
+    updatedAt: new Date("2022-09-01T05:56:15.314Z"),
   },
-  connectionId: "explicabo",
-  id: "daa784ab-a3d2-430e-9f73-811a115382bd",
+  connectionId: "mobile Cotton",
+  id: "<ID>",
 }).then((res: PutTicketingConnectionIdCustomerIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

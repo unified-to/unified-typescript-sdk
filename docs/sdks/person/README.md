@@ -22,11 +22,11 @@ const sdk = new UnifiedTo({
 });
 
 sdk.person.getEnrichConnectionIdPerson({
-  connectionId: "numquam",
-  email: "Donna44@yahoo.com",
-  linkedinUrl: "laboriosam",
-  name: "Phillip Waelchi",
-  twitter: "totam",
+  connectionId: "Iowa Account",
+  email: "Jaiden_Weimann24@gmail.com",
+  linkedinUrl: "paradigms integrate Creative",
+  name: "Investment",
+  twitter: "Hills",
 }).then((res: GetEnrichConnectionIdPersonResponse) => {
   if (res.statusCode == 200) {
     // handle response

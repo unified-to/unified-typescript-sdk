@@ -28,8 +28,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.agent.deleteTicketingConnectionIdAgentId({
-  connectionId: "esse",
-  id: "39205929-396f-4ea7-996e-b10faaa2352c",
+  connectionId: "navigate",
+  id: "<ID>",
 }).then((res: DeleteTicketingConnectionIdAgentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -67,13 +67,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.agent.getTicketingConnectionIdAgent({
-  connectionId: "enim",
-  limit: 6078.31,
-  offset: 3637.11,
-  order: "minima",
-  query: "excepturi",
-  sort: "accusantium",
-  updatedGte: new Date("2022-05-14T11:45:33.094Z"),
+  connectionId: "East Steel Frozen",
+  limit: 8285.04,
+  offset: 5507.07,
+  order: "Korea West Ryan",
+  query: "invoice coulomb soluta",
+  sort: "adored",
+  updatedGte: new Date("2023-11-15T19:25:12.859Z"),
 }).then((res: GetTicketingConnectionIdAgentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -111,8 +111,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.agent.getTicketingConnectionIdAgentId({
-  connectionId: "doloribus",
-  id: "f1a3a2fa-9467-4739-a51a-a52c3f5ad019",
+  connectionId: "Hat gas Cisgender",
+  id: "<ID>",
 }).then((res: GetTicketingConnectionIdAgentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -150,14 +150,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.agent.getUcConnectionIdAgent({
-  connectionId: "temporibus",
-  contactId: "laborum",
-  limit: 960.98,
-  offset: 9719.45,
-  order: "voluptatibus",
-  query: "vero",
-  sort: "nihil",
-  updatedGte: new Date("2021-01-17T23:08:44.457Z"),
+  connectionId: "Regional East Sedan",
+  contactId: "blue",
+  limit: 7827.68,
+  offset: 2116.69,
+  order: "Bicycle",
+  query: "Bacon officia iterate",
+  sort: "sticky vote lumen",
+  updatedGte: new Date("2021-07-05T19:53:29.041Z"),
 }).then((res: GetUcConnectionIdAgentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -197,26 +197,26 @@ const sdk = new UnifiedTo({
 
 sdk.agent.patchTicketingConnectionIdAgentId({
   ticketingAgent: {
-    createdAt: new Date("2022-05-25T05:33:11.349Z"),
+    createdAt: new Date("2022-06-01T22:24:40.372Z"),
     emails: [
       {
-        email: "Myrtis44@yahoo.com",
-        type: TicketingEmailType.Work,
+        email: "Antonette63@gmail.com",
+        type: TicketingEmailType.Home,
       },
     ],
-    id: "f15471b5-e6e1-43b9-9d48-8e1e91e450ad",
-    name: "Joanna Rau",
+    id: "<ID>",
+    name: "Hop",
     raw: {},
     telephones: [
       {
-        telephone: "modi",
+        telephone: "driver",
         type: TicketingTelephoneType.Work,
       },
     ],
-    updatedAt: new Date("2022-05-31T22:08:47.731Z"),
+    updatedAt: new Date("2022-07-09T08:35:36.354Z"),
   },
-  connectionId: "quos",
-  id: "02d502a9-4bb4-4f63-8969-e9a3efa77dfb",
+  connectionId: "Soft Diesel Springs",
+  id: "<ID>",
 }).then((res: PatchTicketingConnectionIdAgentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -256,25 +256,25 @@ const sdk = new UnifiedTo({
 
 sdk.agent.postTicketingConnectionIdAgent({
   ticketingAgent: {
-    createdAt: new Date("2022-09-14T10:27:07.590Z"),
+    createdAt: new Date("2022-12-14T10:20:29.412Z"),
     emails: [
       {
-        email: "Raquel_Jenkins@hotmail.com",
+        email: "Eleazar_Beatty22@gmail.com",
         type: TicketingEmailType.Other,
       },
     ],
-    id: "395efb9b-a88f-43a6-a997-074ba4469b6e",
-    name: "Ms. Julie Gusikowski",
+    id: "<ID>",
+    name: "exploit our wireless",
     raw: {},
     telephones: [
       {
-        telephone: "provident",
-        type: TicketingTelephoneType.Other,
+        telephone: "Korea wireless Ferrari",
+        type: TicketingTelephoneType.Home,
       },
     ],
-    updatedAt: new Date("2022-12-07T10:53:17.121Z"),
+    updatedAt: new Date("2022-04-24T13:41:54.208Z"),
   },
-  connectionId: "mollitia",
+  connectionId: "capacity copy Blues",
 }).then((res: PostTicketingConnectionIdAgentResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -314,26 +314,26 @@ const sdk = new UnifiedTo({
 
 sdk.agent.putTicketingConnectionIdAgentId({
   ticketingAgent: {
-    createdAt: new Date("2021-01-16T22:43:33.071Z"),
+    createdAt: new Date("2022-12-19T19:47:13.993Z"),
     emails: [
       {
-        email: "Holden.Ernser36@gmail.com",
-        type: TicketingEmailType.Work,
+        email: "Augustus_Kessler34@hotmail.com",
+        type: TicketingEmailType.Other,
       },
     ],
-    id: "6fe4c8b7-11e5-4b7f-92ed-028921cddc69",
-    name: "Dr. Rosemary Bartoletti",
+    id: "<ID>",
+    name: "reintermediate impression Refined",
     raw: {},
     telephones: [
       {
-        telephone: "ipsam",
-        type: TicketingTelephoneType.Other,
+        telephone: "asynchronous",
+        type: TicketingTelephoneType.Fax,
       },
     ],
-    updatedAt: new Date("2022-04-12T10:47:34.158Z"),
+    updatedAt: new Date("2021-04-29T18:13:42.824Z"),
   },
-  connectionId: "eaque",
-  id: "d5f0d30c-5fbb-4258-b053-202c73d5fe9b",
+  connectionId: "synergistic Uzbekistan green",
+  id: "<ID>",
 }).then((res: PutTicketingConnectionIdAgentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

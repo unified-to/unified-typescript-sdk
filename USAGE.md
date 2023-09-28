@@ -12,8 +12,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.agent.deleteTicketingConnectionIdAgentId({
-  connectionId: "corrupti",
-  id: "9bd9d8d6-9a67-44e0-b467-cc8796ed151a",
+  connectionId: "navigate",
+  id: "<ID>",
 }).then((res: DeleteTicketingConnectionIdAgentIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

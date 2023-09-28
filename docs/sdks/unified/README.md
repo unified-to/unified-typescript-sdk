@@ -42,7 +42,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.deleteUnifiedConnectionId({
-  id: "d2a7c7d1-ea0e-479f-a9bb-e5f179f650b1",
+  id: "<ID>",
 }).then((res: DeleteUnifiedConnectionIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -115,7 +115,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.deleteUnifiedWebhookId({
-  id: "e707e7e4-3967-413b-acce-072abd61918d",
+  id: "<ID>",
 }).then((res: DeleteUnifiedWebhookIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,17 +153,17 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedApicall({
-  connectionId: "magni",
-  createdLte: new Date("2022-05-24T09:06:17.139Z"),
-  env: "maxime",
+  connectionId: "delectus green Hybrid",
+  createdLte: new Date("2021-04-02T21:36:49.952Z"),
+  env: "Fantastic Iodine indexing",
   error: false,
-  externalXref: "vitae",
-  integrationType: "alias",
-  limit: 8070.07,
-  offset: 1150.28,
-  order: "blanditiis",
-  sort: "ipsam",
-  updatedGte: new Date("2022-08-08T20:31:22.144Z"),
+  externalXref: "Music",
+  integrationType: "Soft",
+  limit: 2390.64,
+  offset: 3757.34,
+  order: "mobile envisioneer",
+  sort: "North payment opposite",
+  updatedGte: new Date("2021-08-11T16:18:13.644Z"),
 }).then((res: GetUnifiedApicallResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -201,7 +201,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedApicallId({
-  id: "fd78be26-2127-4262-8fa5-03962867e72b",
+  id: "<ID>",
 }).then((res: GetUnifiedApicallIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -240,15 +240,15 @@ const sdk = new UnifiedTo({
 
 sdk.unified.getUnifiedConnection({
   categories: [
-    GetUnifiedConnectionCategories.Hris,
+    GetUnifiedConnectionCategories.Ats,
   ],
-  env: "laborum",
-  externalXref: "autem",
-  limit: 3273.73,
-  offset: 603.93,
-  order: "qui",
-  sort: "labore",
-  updatedGte: new Date("2022-11-05T10:44:25.961Z"),
+  env: "copying invoice coulomb",
+  externalXref: "Islands West",
+  limit: 7809.21,
+  offset: 2750.2,
+  order: "Volkswagen architect",
+  sort: "consequently synthesizing Technician",
+  updatedGte: new Date("2021-11-09T20:41:53.442Z"),
 }).then((res: GetUnifiedConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -286,7 +286,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedConnectionId({
-  id: "57f9bb6e-f72a-4508-b1d9-9b661a7def16",
+  id: "<ID>",
 }).then((res: GetUnifiedConnectionIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -326,14 +326,14 @@ const sdk = new UnifiedTo({
 sdk.unified.getUnifiedIntegration({
   active: false,
   categories: [
-    GetUnifiedIntegrationCategories.Crm,
+    GetUnifiedIntegrationCategories.Enrich,
   ],
-  limit: 7216.29,
-  offset: 4263.23,
-  order: "impedit",
-  sort: "optio",
+  limit: 7363.95,
+  offset: 8214.4,
+  order: "Nelda Implemented",
+  sort: "cabinet",
   summary: false,
-  updatedGte: new Date("2022-09-12T15:50:36.450Z"),
+  updatedGte: new Date("2022-02-05T00:16:37.455Z"),
 }).then((res: GetUnifiedIntegrationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -374,19 +374,19 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-  env: "deleniti",
-  externalXref: "dolores",
-  failureRedirect: "dolores",
-  integrationType: "distinctio",
-  lang: "modi",
+  env: "Algerian",
+  externalXref: "Cambridgeshire Surinam",
+  failureRedirect: "Designer Drive",
+  integrationType: "program Home",
+  lang: "Plastic program",
   redirect: false,
   scopes: [
-    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.TicketingTicketRead,
+    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.CrmFileRead,
   ],
-  state: "perspiciatis",
-  subdomain: "totam",
-  successRedirect: "ipsam",
-  workspaceId: "alias",
+  state: "Functionality Product",
+  subdomain: "payment Developer Dynamic",
+  successRedirect: "Northeast",
+  workspaceId: "duh empower Kwanza",
 }).then((res: GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -424,7 +424,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedIntegrationIntegrationType({
-  integrationType: "repudiandae",
+  integrationType: "Pizza Electric",
 }).then((res: GetUnifiedIntegrationIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -467,11 +467,11 @@ const sdk = new UnifiedTo({
 sdk.unified.getUnifiedIntegrationWorkspaceWorkspaceId({
   active: false,
   categories: [
-    GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Ticketing,
+    GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Hris,
   ],
-  env: "magni",
+  env: "North Southeast exercitationem",
   summary: false,
-  workspaceId: "doloribus",
+  workspaceId: "Bronze Plastic",
 }).then((res: GetUnifiedIntegrationWorkspaceWorkspaceIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -579,13 +579,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedWebhook({
-  env: "dolore",
-  limit: 6674.44,
-  object: "veritatis",
-  offset: 9332.28,
-  order: "excepturi",
-  sort: "eligendi",
-  updatedGte: new Date("2022-04-26T06:44:29.423Z"),
+  env: "Investor methodical Fitness",
+  limit: 8087.22,
+  object: "Franc past salmon",
+  offset: 5240.75,
+  order: "program",
+  sort: "below JSON",
+  updatedGte: new Date("2022-05-29T13:22:55.562Z"),
 }).then((res: GetUnifiedWebhookResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -623,7 +623,7 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.getUnifiedWebhookId({
-  id: "e55140e7-5726-4e00-bc2f-0294192518ce",
+  id: "<ID>",
 }).then((res: GetUnifiedWebhookIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -664,48 +664,48 @@ const sdk = new UnifiedTo({
 sdk.unified.patchUnifiedConnectionId({
   connection: {
     auth: {
-      accessToken: "accusamus",
-      apiUrl: "incidunt",
-      appId: "dicta",
-      authorizeUrl: "quo",
-      clientId: "natus",
-      clientSecret: "excepturi",
-      consumerKey: "natus",
-      consumerSecret: "hic",
+      accessToken: "Northwest Cupertino",
+      apiUrl: "Center Curium Electric",
+      appId: "female fragrant",
+      authorizeUrl: "Electric Bicycle payment",
+      clientId: "transmitting North",
+      clientSecret: "mole Gasoline morph",
+      consumerKey: "Keyboard Antimony primary",
+      consumerSecret: "yearly",
       emails: [
-        "ut",
+        "athwart",
       ],
-      expiresIn: 3924.24,
-      expiryDate: new Date("2021-01-28T23:49:19.065Z"),
-      key: "eum",
+      expiresIn: 3185.09,
+      expiryDate: new Date("2022-08-12T13:21:47.977Z"),
+      key: "<key>",
       meta: {},
-      name: "Albert Schmidt MD",
+      name: "inside Rupee",
       otherAuthInfo: [
-        "adipisci",
+        "Future",
       ],
-      pem: "a",
-      refreshToken: "ipsa",
-      state: "sed",
-      token: "sequi",
-      tokenUrl: "minus",
+      pem: "guard Internal",
+      refreshToken: "Diesel",
+      state: "copy Cotton Bicycle",
+      token: "drive gold",
+      tokenUrl: "now",
     },
-    authAwsArn: "suscipit",
+    authAwsArn: "yum",
     categories: [
-      PropertyConnectionCategories.Auth,
+      PropertyConnectionCategories.Hris,
     ],
-    createdAt: new Date("2021-02-21T07:53:55.382Z"),
-    environment: "laboriosam",
-    externalXref: "harum",
-    id: "626012eb-a057-4988-8672-0c3103f1a40c",
-    integrationType: "doloremque",
+    createdAt: new Date("2021-06-18T22:02:30.822Z"),
+    environment: "Northwest Balanced",
+    externalXref: "boo",
+    id: "<ID>",
+    integrationType: "Soft",
     isPaused: false,
     permissions: [
-      PropertyConnectionPermissions.AtsJobRead,
+      PropertyConnectionPermissions.CrmLeadRead,
     ],
-    updatedAt: new Date("2022-02-08T06:53:00.234Z"),
-    workspaceId: "quo",
+    updatedAt: new Date("2022-07-27T15:43:44.767Z"),
+    workspaceId: "extend",
   },
-  id: "8688fd8e-c6fc-4031-a8f0-aaaeee004eba",
+  id: "<ID>",
 }).then((res: PatchUnifiedConnectionIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -743,16 +743,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.patchUnifiedUser({
-  createdAt: new Date("2022-04-05T01:32:39.778Z"),
-  email: "Kavon12@hotmail.com",
-  environment: "harum",
-  id: "e509c508-7131-4f06-b0bc-e55a8687143c",
+  createdAt: new Date("2022-04-24T15:25:24.483Z"),
+  email: "Emmalee.Quitzon@yahoo.com",
+  environment: "Bicycle",
+  id: "<ID>",
   meta: {},
-  name: "Mrs. Darryl Morar",
-  updatedAt: new Date("2021-07-05T20:55:18.206Z"),
-  workspaceId: "sint",
+  name: "vice compressing",
+  updatedAt: new Date("2023-05-05T16:52:20.023Z"),
+  workspaceId: "Hybrid methodologies",
   workspaceIds: [
-    "odio",
+    "Potassium",
   ],
 }).then((res: PatchUnifiedUserResponse) => {
   if (res.statusCode == 200) {
@@ -793,46 +793,46 @@ const sdk = new UnifiedTo({
 
 sdk.unified.postUnifiedConnection({
   auth: {
-    accessToken: "animi",
-    apiUrl: "exercitationem",
-    appId: "repellendus",
-    authorizeUrl: "culpa",
-    clientId: "vel",
-    clientSecret: "ex",
-    consumerKey: "non",
-    consumerSecret: "nobis",
+    accessToken: "asperiores indexing",
+    apiUrl: "plus pace global",
+    appId: "And port",
+    authorizeUrl: "West whiteboard",
+    clientId: "Folk",
+    clientSecret: "Northwest Modern",
+    consumerKey: "Southeast deposit",
+    consumerSecret: "Falls irritating up",
     emails: [
-      "in",
+      "intuitive",
     ],
-    expiresIn: 8765.83,
-    expiryDate: new Date("2022-07-06T05:57:07.995Z"),
-    key: "voluptatum",
+    expiresIn: 4121.5,
+    expiryDate: new Date("2021-01-21T03:25:42.786Z"),
+    key: "<key>",
     meta: {},
-    name: "Neil Grimes",
+    name: "membership Classical schnitzel",
     otherAuthInfo: [
-      "culpa",
+      "Convertible",
     ],
-    pem: "culpa",
-    refreshToken: "odit",
-    state: "laudantium",
-    token: "dolor",
-    tokenUrl: "consequuntur",
+    pem: "magenta Riel bolívar",
+    refreshToken: "Pula",
+    state: "white",
+    token: "Northwest",
+    tokenUrl: "unbutton",
   },
-  authAwsArn: "libero",
+  authAwsArn: "Investor circuit",
   categories: [
-    PropertyConnectionCategories.Martech,
+    PropertyConnectionCategories.Ats,
   ],
-  createdAt: new Date("2022-09-06T07:44:31.963Z"),
-  environment: "totam",
-  externalXref: "laboriosam",
-  id: "2d2a31f9-b14a-4a6b-9ec7-f444232e9a5d",
-  integrationType: "eveniet",
+  createdAt: new Date("2023-01-25T14:37:40.202Z"),
+  environment: "Hat watt",
+  externalXref: "Sausages tan",
+  id: "<ID>",
+  integrationType: "Principal Extended velit",
   isPaused: false,
   permissions: [
-    PropertyConnectionPermissions.AtsInterviewRead,
+    PropertyConnectionPermissions.CrmFileWrite,
   ],
-  updatedAt: new Date("2022-05-01T01:22:05.452Z"),
-  workspaceId: "cumque",
+  updatedAt: new Date("2021-09-22T05:13:05.778Z"),
+  workspaceId: "Auto",
 }).then((res: PostUnifiedConnectionResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -875,30 +875,30 @@ const sdk = new UnifiedTo({
 
 sdk.unified.postUnifiedWebhookConnectionIdObject({
   webhook: {
-    checkedAt: new Date("2021-07-13T18:24:14.540Z"),
-    connectionId: "sed",
-    createdAt: new Date("2021-12-08T04:18:23.721Z"),
-    environment: "cupiditate",
+    checkedAt: new Date("2021-02-25T07:12:08.980Z"),
+    connectionId: "deposit 1080p Passenger",
+    createdAt: new Date("2023-02-21T14:58:56.193Z"),
+    environment: "Minnesota Soap",
     events: [
-      PropertyWebhookEvents.Created,
+      PropertyWebhookEvents.Updated,
     ],
-    hookUrl: "voluptatum",
-    id: "1b58fe68-2e1c-42db-a23d-58e8247d122c",
+    hookUrl: "Table female ken",
+    id: "<ID>",
     includeRaw: false,
-    integrationType: "provident",
-    interval: 9868.06,
-    objectType: WebhookObjectType.CrmLead,
+    integrationType: "chocolate",
+    interval: 1710.16,
+    objectType: WebhookObjectType.EnrichCompany,
     subscriptions: [
-      "iusto",
+      "female",
     ],
-    updatedAt: new Date("2022-07-12T13:27:28.756Z"),
-    workspaceId: "praesentium",
+    updatedAt: new Date("2022-08-02T17:13:06.397Z"),
+    workspaceId: "hertz",
   },
-  connectionId: "maiores",
+  connectionId: "Borders",
   events: [
     PostUnifiedWebhookConnectionIdObjectEvents.Created,
   ],
-  object: "dolores",
+  object: "scalable",
 }).then((res: PostUnifiedWebhookConnectionIdObjectResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -939,48 +939,48 @@ const sdk = new UnifiedTo({
 sdk.unified.putUnifiedConnectionId({
   connection: {
     auth: {
-      accessToken: "ducimus",
-      apiUrl: "occaecati",
-      appId: "nostrum",
-      authorizeUrl: "atque",
-      clientId: "sequi",
-      clientSecret: "commodi",
-      consumerKey: "quam",
-      consumerSecret: "dolor",
+      accessToken: "female Buckinghamshire",
+      apiUrl: "Web",
+      appId: "pumpkin Account",
+      authorizeUrl: "dolorem Hybrid white",
+      clientId: "ohm",
+      clientSecret: "Pennsylvania Executive",
+      consumerKey: "silver Account Accountability",
+      consumerSecret: "Mouse",
       emails: [
-        "voluptas",
+        "oh",
       ],
-      expiresIn: 2226.69,
-      expiryDate: new Date("2020-12-30T11:42:07.241Z"),
-      key: "aut",
+      expiresIn: 8946.31,
+      expiryDate: new Date("2022-01-29T12:35:08.478Z"),
+      key: "<key>",
       meta: {},
-      name: "Velma Baumbach",
+      name: "incidentally shrimp bypass",
       otherAuthInfo: [
-        "doloribus",
+        "invoice",
       ],
-      pem: "deserunt",
-      refreshToken: "officiis",
-      state: "nam",
-      token: "totam",
-      tokenUrl: "ex",
+      pem: "recent midst Northeast",
+      refreshToken: "Product",
+      state: "circuit precious",
+      token: "gee collaborative withdrawal",
+      tokenUrl: "Platinum",
     },
-    authAwsArn: "labore",
+    authAwsArn: "suddenly Fiat",
     categories: [
-      PropertyConnectionCategories.Crm,
+      PropertyConnectionCategories.Uc,
     ],
-    createdAt: new Date("2022-07-24T05:34:55.315Z"),
-    environment: "adipisci",
-    externalXref: "voluptatem",
-    id: "d8f8b89d-9ca6-4075-a56f-c0ebe67155e2",
-    integrationType: "assumenda",
+    createdAt: new Date("2022-09-20T19:51:21.025Z"),
+    environment: "redundant Southeast Camren",
+    externalXref: "firewall",
+    id: "<ID>",
+    integrationType: "Beauty",
     isPaused: false,
     permissions: [
-      PropertyConnectionPermissions.AtsScorecardWrite,
+      PropertyConnectionPermissions.Webhook,
     ],
-    updatedAt: new Date("2022-04-26T12:57:03.822Z"),
-    workspaceId: "ipsum",
+    updatedAt: new Date("2023-12-30T14:20:47.994Z"),
+    workspaceId: "parse Peso Investment",
   },
-  id: "070d6e29-7f58-41fa-baaa-7d801088076f",
+  id: "<ID>",
 }).then((res: PutUnifiedConnectionIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1018,16 +1018,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.unified.putUnifiedUser({
-  createdAt: new Date("2021-12-05T11:57:07.239Z"),
-  email: "Gillian.Walsh62@hotmail.com",
-  environment: "laudantium",
-  id: "14088269-b6a7-40b0-9d82-f94fffbd1e1e",
+  createdAt: new Date("2023-07-31T04:46:29.769Z"),
+  email: "Selena59@yahoo.com",
+  environment: "Bedfordshire Lucia",
+  id: "<ID>",
   meta: {},
-  name: "Debra Stiedemann",
-  updatedAt: new Date("2022-06-05T07:44:58.092Z"),
-  workspaceId: "doloremque",
+  name: "Bicycle hacking South",
+  updatedAt: new Date("2023-03-15T15:08:26.238Z"),
+  workspaceId: "Card defect",
   workspaceIds: [
-    "sequi",
+    "repudiandae",
   ],
 }).then((res: PutUnifiedUserResponse) => {
   if (res.statusCode == 200) {

@@ -22,13 +22,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.login.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
-  env: "veniam",
-  failureRedirect: "nemo",
-  integrationType: "voluptatum",
+  env: "Rubber",
+  failureRedirect: "gold Cambridgeshire",
+  integrationType: "Plastic services pixel",
   redirect: false,
-  state: "quia",
-  successRedirect: "quisquam",
-  workspaceId: "et",
+  state: "Volkswagen Southwest",
+  successRedirect: "drive integrated Bicycle",
+  workspaceId: "Fantastic recontextualize Frozen",
 }).then((res: GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse) => {
   if (res.statusCode == 200) {
     // handle response

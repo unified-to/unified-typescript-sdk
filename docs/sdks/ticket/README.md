@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ticket.deleteTicketingConnectionIdTicketId({
-  connectionId: "vel",
-  id: "e8dbf812-f83b-41ca-aa9f-fc561929cca9",
+  connectionId: "brownie azure payment",
+  id: "<ID>",
 }).then((res: DeleteTicketingConnectionIdTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,15 +66,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ticket.getTicketingConnectionIdTicket({
-  agentId: "nemo",
-  connectionId: "laboriosam",
-  customerId: "eaque",
-  limit: 6814.58,
-  offset: 977.35,
-  order: "adipisci",
-  query: "occaecati",
-  sort: "exercitationem",
-  updatedGte: new Date("2022-11-09T17:01:20.907Z"),
+  agentId: "New",
+  connectionId: "hertz Savings Steel",
+  customerId: "payment biopsy Kids",
+  limit: 7673.64,
+  offset: 5134.74,
+  order: "quantifying orange",
+  query: "male dynamic",
+  sort: "Sedan Tricycle Honda",
+  updatedGte: new Date("2022-08-06T21:30:52.879Z"),
 }).then((res: GetTicketingConnectionIdTicketResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,8 +112,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ticket.getTicketingConnectionIdTicketId({
-  connectionId: "quas",
-  id: "da1d48e7-8e3c-4f8e-9143-da9308b27a08",
+  connectionId: "yellow",
+  id: "<ID>",
 }).then((res: GetTicketingConnectionIdTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -153,25 +153,25 @@ const sdk = new UnifiedTo({
 
 sdk.ticket.patchTicketingConnectionIdTicketId({
   ticketingTicket: {
-    category: "animi",
-    closedAt: new Date("2022-06-11T08:56:14.494Z"),
-    createdAt: new Date("2022-11-29T12:43:22.264Z"),
-    customerId: "voluptatum",
-    description: "eius",
-    id: "439b3de8-756c-4cce-870c-d2147b6e6152",
-    priority: "placeat",
+    category: "Representative calculate",
+    closedAt: new Date("2023-12-03T14:58:54.732Z"),
+    createdAt: new Date("2022-09-11T04:52:37.095Z"),
+    customerId: "indigo extend given",
+    description: "Profound motivating utilisation",
+    id: "<ID>",
+    priority: "Hill Jazz",
     raw: {},
-    source: "voluptatibus",
-    sourceRef: "ipsa",
-    status: TicketingTicketStatus.Active,
-    subject: "quibusdam",
+    source: "West Macedonia City",
+    sourceRef: "orange West doubtfully",
+    status: TicketingTicketStatus.Closed,
+    subject: "Pizza",
     tags: [
-      "doloremque",
+      "definition",
     ],
-    updatedAt: new Date("2021-05-28T17:29:45.347Z"),
+    updatedAt: new Date("2021-10-05T23:17:22.031Z"),
   },
-  connectionId: "eligendi",
-  id: "3a4b9a5b-f935-4dfe-974f-a4b1e9c097ed",
+  connectionId: "engage henry",
+  id: "<ID>",
 }).then((res: PatchTicketingConnectionIdTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -211,24 +211,24 @@ const sdk = new UnifiedTo({
 
 sdk.ticket.postTicketingConnectionIdTicket({
   ticketingTicket: {
-    category: "animi",
-    closedAt: new Date("2022-11-09T20:11:20.304Z"),
-    createdAt: new Date("2022-09-13T02:47:18.896Z"),
-    customerId: "numquam",
-    description: "fugit",
-    id: "e1a9237e-9984-4c80-b479-e891923c18ca",
-    priority: "rem",
+    category: "North",
+    closedAt: new Date("2021-08-03T02:12:35.164Z"),
+    createdAt: new Date("2023-05-12T14:26:26.768Z"),
+    customerId: "mull hierarchy",
+    description: "Triple-buffered solution-oriented info-mediaries",
+    id: "<ID>",
+    priority: "person Idaho",
     raw: {},
-    source: "facere",
-    sourceRef: "vel",
+    source: "Convertible whenever feed",
+    sourceRef: "solid Electric Bespoke",
     status: TicketingTicketStatus.Closed,
-    subject: "porro",
+    subject: "sint uplift",
     tags: [
-      "enim",
+      "Idaho",
     ],
-    updatedAt: new Date("2022-06-24T00:19:38.232Z"),
+    updatedAt: new Date("2022-06-24T01:04:15.890Z"),
   },
-  connectionId: "cupiditate",
+  connectionId: "Oriental outrage",
 }).then((res: PostTicketingConnectionIdTicketResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -268,25 +268,25 @@ const sdk = new UnifiedTo({
 
 sdk.ticket.putTicketingConnectionIdTicketId({
   ticketingTicket: {
-    category: "explicabo",
-    closedAt: new Date("2022-09-23T16:36:11.812Z"),
-    createdAt: new Date("2021-01-13T15:10:22.653Z"),
-    customerId: "consequuntur",
-    description: "doloremque",
-    id: "207e4fae-038c-4d7f-9bc2-cabaf7fc2ccb",
-    priority: "id",
+    category: "North Finland",
+    closedAt: new Date("2023-12-08T00:37:44.739Z"),
+    createdAt: new Date("2023-04-01T07:24:49.830Z"),
+    customerId: "Marketing",
+    description: "Future-proofed high-level system engine",
+    id: "<ID>",
+    priority: "drat knottily",
     raw: {},
-    source: "numquam",
-    sourceRef: "libero",
-    status: TicketingTicketStatus.Closed,
-    subject: "asperiores",
+    source: "Upgradable knuckle",
+    sourceRef: "anenst",
+    status: TicketingTicketStatus.Active,
+    subject: "indexing Wooden Crew",
     tags: [
-      "aperiam",
+      "anti",
     ],
-    updatedAt: new Date("2020-02-02T17:11:25.452Z"),
+    updatedAt: new Date("2023-08-10T07:27:15.153Z"),
   },
-  connectionId: "nisi",
-  id: "8eaedb2e-e70b-4e06-9fb3-6add704080e0",
+  connectionId: "neural orchestrate",
+  id: "<ID>",
 }).then((res: PutTicketingConnectionIdTicketIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.pipeline.deleteCrmConnectionIdPipelineId({
-  connectionId: "laboriosam",
-  id: "73d522b8-28a9-4030-a60f-024c79b4cc64",
+  connectionId: "Customer",
+  id: "<ID>",
 }).then((res: DeleteCrmConnectionIdPipelineIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,13 +66,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.pipeline.getCrmConnectionIdPipeline({
-  connectionId: "eligendi",
-  limit: 1687.36,
-  offset: 7276.04,
-  order: "sequi",
-  query: "culpa",
-  sort: "ratione",
-  updatedGte: new Date("2022-03-30T02:59:59.063Z"),
+  connectionId: "dirty Awesome Checking",
+  limit: 9055.88,
+  offset: 3443.76,
+  order: "glom",
+  query: "panel",
+  sort: "Latin tightly",
+  updatedGte: new Date("2022-03-01T15:47:43.244Z"),
 }).then((res: GetCrmConnectionIdPipelineResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -110,8 +110,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.pipeline.getCrmConnectionIdPipelineId({
-  connectionId: "labore",
-  id: "88ade62f-6aa5-458a-a5e2-083016ca34bb",
+  connectionId: "Tricycle roughly markets",
+  id: "<ID>",
 }).then((res: GetCrmConnectionIdPipelineIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -151,16 +151,16 @@ const sdk = new UnifiedTo({
 sdk.pipeline.patchCrmConnectionIdPipelineId({
   crmPipeline: {
     active: false,
-    createdAt: new Date("2022-01-06T01:33:11.339Z"),
+    createdAt: new Date("2023-08-24T17:39:51.183Z"),
     dealProbability: false,
-    displayOrder: 8302.16,
-    id: "4f62127a-607d-4160-a294-514c3db9ca9f",
-    name: "Brandy Powlowski",
+    displayOrder: 664.58,
+    id: "<ID>",
+    name: "bandwidth",
     raw: {},
-    updatedAt: new Date("2021-03-30T20:29:28.566Z"),
+    updatedAt: new Date("2023-11-27T01:55:15.440Z"),
   },
-  connectionId: "quos",
-  id: "78703493-f49a-4a84-a5a3-283279b719d1",
+  connectionId: "Chips",
+  id: "<ID>",
 }).then((res: PatchCrmConnectionIdPipelineIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -200,15 +200,15 @@ const sdk = new UnifiedTo({
 sdk.pipeline.postCrmConnectionIdPipeline({
   crmPipeline: {
     active: false,
-    createdAt: new Date("2020-05-07T22:58:48.615Z"),
+    createdAt: new Date("2023-12-10T23:55:22.206Z"),
     dealProbability: false,
-    displayOrder: 6422.68,
-    id: "673d86e3-b35e-449a-b135-778ce54cacb0",
-    name: "Chris Terry",
+    displayOrder: 3879.73,
+    id: "<ID>",
+    name: "upward Mayaguez",
     raw: {},
-    updatedAt: new Date("2022-09-03T20:01:11.409Z"),
+    updatedAt: new Date("2021-09-25T10:43:23.679Z"),
   },
-  connectionId: "voluptatem",
+  connectionId: "Lead Health",
 }).then((res: PostCrmConnectionIdPipelineResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -248,16 +248,16 @@ const sdk = new UnifiedTo({
 sdk.pipeline.putCrmConnectionIdPipelineId({
   crmPipeline: {
     active: false,
-    createdAt: new Date("2022-08-22T17:28:32.263Z"),
+    createdAt: new Date("2021-05-16T17:24:47.805Z"),
     dealProbability: false,
-    displayOrder: 6880.36,
-    id: "acf63b21-5186-4ab5-a3a0-22614315d156",
-    name: "Victor Mayer",
+    displayOrder: 5470.76,
+    id: "<ID>",
+    name: "West",
     raw: {},
-    updatedAt: new Date("2022-11-25T09:18:50.894Z"),
+    updatedAt: new Date("2022-02-28T07:49:31.151Z"),
   },
-  connectionId: "officia",
-  id: "fc7186ff-20b7-4a73-9f40-ca0d7657c164",
+  connectionId: "optimizing",
+  id: "<ID>",
 }).then((res: PutCrmConnectionIdPipelineIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

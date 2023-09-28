@@ -27,8 +27,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.interview.deleteAtsConnectionIdInterviewId({
-  connectionId: "minus",
-  id: "7dda70ec-60e6-4075-894d-61c14cd90227",
+  connectionId: "redundant Health Hayes",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -66,14 +66,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.interview.getAtsConnectionIdInterview({
-  applicationId: "recusandae",
-  connectionId: "neque",
-  limit: 4704,
-  offset: 7513.92,
-  order: "eaque",
-  query: "facere",
-  sort: "iste",
-  updatedGte: new Date("2022-07-18T13:22:41.461Z"),
+  applicationId: "Fresh Pickup converse",
+  connectionId: "vortals",
+  limit: 5167.08,
+  offset: 6488.61,
+  order: "Oregon Metal",
+  query: "Account",
+  sort: "haptic",
+  updatedGte: new Date("2021-09-23T19:46:35.825Z"),
 }).then((res: GetAtsConnectionIdInterviewResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -111,8 +111,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.interview.getAtsConnectionIdInterviewId({
-  connectionId: "reiciendis",
-  id: "1a5491ab-e975-41b1-86d2-3e03e69815aa",
+  connectionId: "Loan Gorgeous lux",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -152,24 +152,24 @@ const sdk = new UnifiedTo({
 
 sdk.interview.patchAtsConnectionIdInterviewId({
   atsInterview: {
-    applicationId: "officiis",
-    candidateId: "omnis",
-    createdAt: new Date("2021-02-14T06:16:40.973Z"),
-    endAt: new Date("2020-07-04T00:06:57.464Z"),
-    externalEventXref: "necessitatibus",
-    id: "9e729c9d-4f2d-48a4-8640-ca60db73a2f9",
-    jobId: "dolorem",
-    location: "maiores",
+    applicationId: "SSD green pascal",
+    candidateId: "Buckinghamshire example",
+    createdAt: new Date("2021-08-24T08:30:07.073Z"),
+    endAt: new Date("2021-06-27T04:06:46.373Z"),
+    externalEventXref: "apropos Gadolinium",
+    id: "<ID>",
+    jobId: "transgender transmitting",
+    location: "Investor synthesizing",
     raw: {},
-    startAt: new Date("2022-07-30T22:40:12.837Z"),
+    startAt: new Date("2021-01-19T01:51:02.213Z"),
     status: AtsInterviewStatus.AwaitingFeedback,
-    updatedAt: new Date("2020-08-23T06:10:38.086Z"),
+    updatedAt: new Date("2022-01-21T17:38:09.113Z"),
     userIds: [
-      "quae",
+      "Honda",
     ],
   },
-  connectionId: "possimus",
-  id: "8da56122-026a-4b8f-a774-85c1976af980",
+  connectionId: "Myrl Dram Trail",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -209,23 +209,23 @@ const sdk = new UnifiedTo({
 
 sdk.interview.postAtsConnectionIdInterview({
   atsInterview: {
-    applicationId: "nulla",
-    candidateId: "culpa",
-    createdAt: new Date("2022-05-03T00:35:12.279Z"),
-    endAt: new Date("2022-07-01T18:15:54.042Z"),
-    externalEventXref: "unde",
-    id: "fc44db27-4530-4e5c-87c6-d0cbcfdcd334",
-    jobId: "facilis",
-    location: "autem",
+    applicationId: "round Hat Savings",
+    candidateId: "Northeast",
+    createdAt: new Date("2022-12-27T10:33:09.160Z"),
+    endAt: new Date("2021-11-12T23:57:19.974Z"),
+    externalEventXref: "platforms",
+    id: "<ID>",
+    jobId: "payment panel Identity",
+    location: "Northwest Buckinghamshire",
     raw: {},
-    startAt: new Date("2021-10-11T12:48:40.365Z"),
-    status: AtsInterviewStatus.Scheduled,
-    updatedAt: new Date("2022-04-07T13:36:21.889Z"),
+    startAt: new Date("2022-11-02T05:07:18.592Z"),
+    status: AtsInterviewStatus.Complete,
+    updatedAt: new Date("2023-07-13T16:35:04.177Z"),
     userIds: [
-      "minus",
+      "Chevrolet",
     ],
   },
-  connectionId: "repudiandae",
+  connectionId: "Shoes Northeast SMTP",
 }).then((res: PostAtsConnectionIdInterviewResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -265,24 +265,24 @@ const sdk = new UnifiedTo({
 
 sdk.interview.putAtsConnectionIdInterviewId({
   atsInterview: {
-    applicationId: "quisquam",
-    candidateId: "mollitia",
-    createdAt: new Date("2022-04-26T08:01:34.967Z"),
-    endAt: new Date("2022-04-30T16:16:14.065Z"),
-    externalEventXref: "voluptates",
-    id: "e5e0da8b-9af6-4ad0-9486-e7b413cbe2d1",
-    jobId: "molestiae",
-    location: "ea",
+    applicationId: "Generic capacitor",
+    candidateId: "Road disbelieve",
+    createdAt: new Date("2022-06-22T01:57:06.573Z"),
+    endAt: new Date("2022-05-28T02:29:32.144Z"),
+    externalEventXref: "architectures",
+    id: "<ID>",
+    jobId: "Casper 1080p South",
+    location: "program siemens Cis",
     raw: {},
-    startAt: new Date("2020-07-27T11:23:20.202Z"),
-    status: AtsInterviewStatus.Scheduled,
-    updatedAt: new Date("2022-03-28T14:55:27.491Z"),
+    startAt: new Date("2021-03-14T15:20:41.084Z"),
+    status: AtsInterviewStatus.AwaitingFeedback,
+    updatedAt: new Date("2023-07-14T19:59:39.905Z"),
     userIds: [
-      "adipisci",
+      "East",
     ],
   },
-  connectionId: "pariatur",
-  id: "40f61d17-1157-4cbe-9ee4-f7211840772f",
+  connectionId: "ASCII yet Hybrid",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

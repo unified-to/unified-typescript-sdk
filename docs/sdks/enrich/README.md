@@ -23,9 +23,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.enrich.getEnrichConnectionIdCompany({
-  connectionId: "mollitia",
-  domain: "beatae",
-  name: "Irma Bayer",
+  connectionId: "female Computers Central",
+  domain: "scientific-facet.biz",
+  name: "Outdoors embrace interface",
 }).then((res: GetEnrichConnectionIdCompanyResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -63,11 +63,11 @@ const sdk = new UnifiedTo({
 });
 
 sdk.enrich.getEnrichConnectionIdPerson({
-  connectionId: "at",
-  email: "Curtis.Barrows40@hotmail.com",
-  linkedinUrl: "cupiditate",
-  name: "Ms. Ivan Breitenberg IV",
-  twitter: "temporibus",
+  connectionId: "Iowa Account",
+  email: "Jaiden_Weimann24@gmail.com",
+  linkedinUrl: "paradigms integrate Creative",
+  name: "Investment",
+  twitter: "Hills",
 }).then((res: GetEnrichConnectionIdPersonResponse) => {
   if (res.statusCode == 200) {
     // handle response

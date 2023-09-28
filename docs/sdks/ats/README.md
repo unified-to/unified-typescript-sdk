@@ -51,8 +51,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.deleteAtsConnectionIdApplicationId({
-  connectionId: "fuga",
-  id: "4251904e-523c-47e0-bc71-78e4796f2a70",
+  connectionId: "markets sievert meh",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -90,8 +90,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.deleteAtsConnectionIdCandidateId({
-  connectionId: "porro",
-  id: "688282aa-4825-462f-a22e-9817ee17cbe6",
+  connectionId: "multimedia",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -129,8 +129,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.deleteAtsConnectionIdInterviewId({
-  connectionId: "quasi",
-  id: "e6b7b95b-c0ab-43c2-8c4f-3789fd871f99",
+  connectionId: "redundant Health Hayes",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -168,8 +168,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.deleteAtsConnectionIdJobId({
-  connectionId: "pariatur",
-  id: "d2efd121-aa6f-41e6-b4bd-b04f15756082",
+  connectionId: "Sedan Bedfordshire Hybrid",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -207,8 +207,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.deleteAtsConnectionIdScorecardId({
-  connectionId: "quibusdam",
-  id: "68ea19f1-d170-4513-b9d0-8086a1840394",
+  connectionId: "Agent intrepid",
+  id: "<ID>",
 }).then((res: DeleteAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -246,15 +246,15 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdApplication({
-  candidateId: "impedit",
-  connectionId: "explicabo",
-  jobId: "voluptas",
-  limit: 120.36,
-  offset: 4910.25,
-  order: "dicta",
-  query: "maiores",
-  sort: "natus",
-  updatedGte: new Date("2022-01-10T09:30:55.914Z"),
+  candidateId: "turquoise",
+  connectionId: "Regional Bedfordshire",
+  jobId: "Northwest portal Electric",
+  limit: 576.8,
+  offset: 7467.13,
+  order: "Architect",
+  query: "loosely contingency",
+  sort: "female",
+  updatedGte: new Date("2023-09-05T13:59:23.348Z"),
 }).then((res: GetAtsConnectionIdApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -292,8 +292,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdApplicationId({
-  connectionId: "voluptas",
-  id: "f0642dac-7af5-415c-8413-aa63aae8d678",
+  connectionId: "Buckinghamshire functionalities",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -331,13 +331,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdCandidate({
-  connectionId: "vel",
-  limit: 2870.51,
-  offset: 8225.6,
-  order: "facilis",
-  query: "cum",
-  sort: "commodi",
-  updatedGte: new Date("2022-08-22T09:37:14.602Z"),
+  connectionId: "Northwest forceful Moore",
+  limit: 2623.89,
+  offset: 7811.91,
+  order: "Mouse whether deploy",
+  query: "pink",
+  sort: "huzzah thistle",
+  updatedGte: new Date("2022-03-13T15:14:03.645Z"),
 }).then((res: GetAtsConnectionIdCandidateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -375,8 +375,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdCandidateId({
-  connectionId: "reiciendis",
-  id: "d5e60b37-5ed4-4f6f-bee4-1f33317fe35b",
+  connectionId: "ha Loan",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -414,14 +414,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdInterview({
-  applicationId: "laboriosam",
-  connectionId: "ipsa",
-  limit: 9167.27,
-  offset: 7307.09,
-  order: "vitae",
-  query: "accusamus",
-  sort: "similique",
-  updatedGte: new Date("2022-11-13T12:32:25.289Z"),
+  applicationId: "Fresh Pickup converse",
+  connectionId: "vortals",
+  limit: 5167.08,
+  offset: 6488.61,
+  order: "Oregon Metal",
+  query: "Account",
+  sort: "haptic",
+  updatedGte: new Date("2021-09-23T19:46:35.825Z"),
 }).then((res: GetAtsConnectionIdInterviewResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -459,8 +459,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdInterviewId({
-  connectionId: "voluptas",
-  id: "555ba3c2-8744-4ed5-bb88-f3a8d8f5c0b2",
+  connectionId: "Loan Gorgeous lux",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -498,13 +498,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdJob({
-  connectionId: "reiciendis",
-  limit: 1318.52,
-  offset: 9944.01,
-  order: "facilis",
-  query: "voluptate",
-  sort: "expedita",
-  updatedGte: new Date("2022-05-22T17:05:01.514Z"),
+  connectionId: "City katal",
+  limit: 3542.62,
+  offset: 5417.97,
+  order: "publisher",
+  query: "Folding",
+  sort: "Kip gross recontextualize",
+  updatedGte: new Date("2022-10-12T03:36:20.050Z"),
 }).then((res: GetAtsConnectionIdJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -542,8 +542,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdJobId({
-  connectionId: "dolore",
-  id: "a276b269-16fe-41f0-8f42-94e3698f447f",
+  connectionId: "Jazz",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -581,16 +581,16 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdScorecard({
-  applicationId: "ex",
-  candidateId: "sit",
-  connectionId: "non",
-  interviewId: "officiis",
-  limit: 5058.66,
-  offset: 7086.09,
-  order: "quaerat",
-  query: "incidunt",
-  sort: "ipsam",
-  updatedGte: new Date("2021-06-05T03:46:35.414Z"),
+  applicationId: "Licensed deep",
+  candidateId: "happily",
+  connectionId: "lunch accusamus",
+  interviewId: "for famously Southwest",
+  limit: 950.05,
+  offset: 6133.23,
+  order: "withdrawal",
+  query: "Bicycle copy Bronze",
+  sort: "ouch non ut",
+  updatedGte: new Date("2021-06-01T09:53:52.927Z"),
 }).then((res: GetAtsConnectionIdScorecardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -628,8 +628,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.ats.getAtsConnectionIdScorecardId({
-  connectionId: "sit",
-  id: "ca55efd2-0e45-47e1-858b-6a89fbe3a5aa",
+  connectionId: "East mobile Mini",
+  id: "<ID>",
 }).then((res: GetAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -669,20 +669,20 @@ const sdk = new UnifiedTo({
 
 sdk.ats.patchAtsConnectionIdApplicationId({
   atsApplication: {
-    appliedAt: new Date("2021-03-30T03:48:24.857Z"),
-    candidateId: "tempora",
-    createdAt: new Date("2022-09-14T18:19:59.469Z"),
-    id: "4d0ab407-5088-4e51-8620-65e904f3b119",
-    jobId: "labore",
+    appliedAt: new Date("2023-10-17T09:51:42.165Z"),
+    candidateId: "North et beyond",
+    createdAt: new Date("2023-01-08T08:26:22.845Z"),
+    id: "<ID>",
+    jobId: "ick Sausages Bronze",
     raw: {},
-    rejectedAt: new Date("2021-12-03T11:25:52.746Z"),
-    rejectedReason: "laborum",
-    source: "nam",
-    status: AtsApplicationStatus.Rejected,
-    updatedAt: new Date("2022-12-31T00:19:10.437Z"),
+    rejectedAt: new Date("2023-10-18T00:47:25.469Z"),
+    rejectedReason: "Avon Sum quis",
+    source: "Carolina Wooden Pop",
+    status: AtsApplicationStatus.Hired,
+    updatedAt: new Date("2021-07-20T22:05:46.009Z"),
   },
-  connectionId: "amet",
-  id: "a79f9dfe-0ab7-4da8-a50c-e187f86bc173",
+  connectionId: "Baby Paucek",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -723,42 +723,42 @@ const sdk = new UnifiedTo({
 sdk.ats.patchAtsConnectionIdCandidateId({
   atsCandidate: {
     address: {
-      address1: "assumenda",
-      address2: "ea",
-      city: "Lindaside",
-      country: "Timor-Leste",
-      countryCode: "TK",
-      postalCode: "31495-8653",
-      region: "repudiandae",
-      regionCode: "atque",
+      address1: "closely Goyette plus",
+      address2: "culpa",
+      city: "Darrinshire",
+      country: "Mongolia",
+      countryCode: "GW",
+      postalCode: "05275",
+      region: "TLS calculating",
+      regionCode: "up Argon Internal",
     },
-    companyName: "atque",
-    createdAt: new Date("2022-01-28T23:50:19.904Z"),
+    companyName: "Fadel, Schulist and Koss",
+    createdAt: new Date("2022-12-09T07:16:54.728Z"),
     emails: [
       {
-        email: "Richie.Grant91@hotmail.com",
-        type: AtsEmailType.Work,
+        email: "Gregory63@gmail.com",
+        type: AtsEmailType.Other,
       },
     ],
-    externalId: "accusantium",
-    id: "12563f94-e29e-4973-a922-a57a15be3e06",
-    imageUrl: "ipsa",
-    name: "Frank Krajcik",
+    externalId: "Elegant",
+    id: "<ID>",
+    imageUrl: "Tricycle Yttrium Hybrid",
+    name: "ornery whether",
     raw: {},
     tags: [
-      "cum",
+      "Cadillac",
     ],
     telephones: [
       {
-        telephone: "iure",
-        type: AtsTelephoneType.Mobile,
+        telephone: "Marketing Cotton",
+        type: AtsTelephoneType.Home,
       },
     ],
-    title: "Mr.",
-    updatedAt: new Date("2021-07-27T21:33:31.354Z"),
+    title: "East",
+    updatedAt: new Date("2023-10-31T11:53:36.953Z"),
   },
-  connectionId: "voluptatum",
-  id: "845f0597-a60f-4f2a-94a3-1e94764a3e86",
+  connectionId: "redundant Tricycle unloose",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -798,24 +798,24 @@ const sdk = new UnifiedTo({
 
 sdk.ats.patchAtsConnectionIdInterviewId({
   atsInterview: {
-    applicationId: "nemo",
-    candidateId: "recusandae",
-    createdAt: new Date("2022-05-29T21:22:23.687Z"),
-    endAt: new Date("2022-07-27T09:33:49.991Z"),
-    externalEventXref: "reiciendis",
-    id: "9251a5a9-da66-40ff-97bf-aad4f9efc1b4",
-    jobId: "quis",
-    location: "inventore",
+    applicationId: "SSD green pascal",
+    candidateId: "Buckinghamshire example",
+    createdAt: new Date("2021-08-24T08:30:07.073Z"),
+    endAt: new Date("2021-06-27T04:06:46.373Z"),
+    externalEventXref: "apropos Gadolinium",
+    id: "<ID>",
+    jobId: "transgender transmitting",
+    location: "Investor synthesizing",
     raw: {},
-    startAt: new Date("2022-03-27T16:13:46.480Z"),
-    status: AtsInterviewStatus.Scheduled,
-    updatedAt: new Date("2022-10-04T16:56:27.065Z"),
+    startAt: new Date("2021-01-19T01:51:02.213Z"),
+    status: AtsInterviewStatus.AwaitingFeedback,
+    updatedAt: new Date("2022-01-21T17:38:09.113Z"),
     userIds: [
-      "aspernatur",
+      "Honda",
     ],
   },
-  connectionId: "eum",
-  id: "48dc2f61-5199-4ebf-90e9-fe6c632ca3ae",
+  connectionId: "Myrl Dram Trail",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -862,51 +862,51 @@ sdk.ats.patchAtsConnectionIdJobId({
   atsJob: {
     addresses: [
       {
-        address1: "nulla",
-        address2: "consequatur",
-        city: "North Jessefurt",
-        country: "Moldova",
-        countryCode: "HM",
-        postalCode: "01988",
-        region: "ipsa",
-        regionCode: "tempora",
+        address1: "Transexual",
+        address2: "Planner redundant Towels",
+        city: "Starkboro",
+        country: "Chad",
+        countryCode: "NU",
+        postalCode: "22603",
+        region: "Cambridgeshire",
+        regionCode: "Account Copernicium at",
       },
     ],
-    closedAt: new Date("2022-07-12T06:51:18.031Z"),
+    closedAt: new Date("2023-01-02T09:14:26.844Z"),
     compensation: [
       {
-        currency: "dicta",
-        frequency: AtsCompensationFrequency.Year,
-        max: 4570.59,
-        min: 5083.9,
-        type: AtsCompensationType.Other,
+        currency: "Metical",
+        frequency: AtsCompensationFrequency.Hour,
+        max: 1424.24,
+        min: 3626.17,
+        type: AtsCompensationType.Salary,
       },
     ],
-    createdAt: new Date("2021-09-24T00:59:48.564Z"),
+    createdAt: new Date("2022-03-16T15:29:37.822Z"),
     departments: [
-      "architecto",
+      "Sports",
     ],
-    description: "fugiat",
-    employmentType: AtsJobEmploymentType.FullTime,
+    description: "Operative bi-directional capability",
+    employmentType: AtsJobEmploymentType.Intern,
     hiringManagerIds: [
-      "dicta",
+      "Hop",
     ],
-    id: "7476360a-15db-46a6-a065-9a1adeaab585",
-    languageLocale: "vitae",
-    name: "Ruben Ryan",
+    id: "<ID>",
+    languageLocale: "hence gracefully invoice",
+    name: "Southeast vacantly Uranium",
     publicJobUrls: [
-      "ad",
+      "Keith",
     ],
     raw: {},
     recruiterIds: [
-      "expedita",
+      "happily",
     ],
     remote: false,
-    status: AtsJobStatus.Archived,
-    updatedAt: new Date("2021-07-11T19:18:20.130Z"),
+    status: AtsJobStatus.Open,
+    updatedAt: new Date("2023-08-04T07:33:03.088Z"),
   },
-  connectionId: "aliquid",
-  id: "1891baa0-fe1a-4de0-88e6-f8c5f350d8cd",
+  connectionId: "Cis benchmark",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -946,19 +946,19 @@ const sdk = new UnifiedTo({
 
 sdk.ats.patchAtsConnectionIdScorecardId({
   atsScorecard: {
-    applicationId: "nam",
-    candidateId: "ipsam",
-    createdAt: new Date("2022-07-22T07:25:32.550Z"),
-    id: "41814301-0421-4813-9520-8ece7e253b66",
-    interviewId: "voluptatum",
-    interviewerId: "magnam",
-    jobId: "exercitationem",
+    applicationId: "Carter Hatchback functionalities",
+    candidateId: "disagree gold New",
+    createdAt: new Date("2023-05-08T15:11:07.692Z"),
+    id: "<ID>",
+    interviewId: "blue",
+    interviewerId: "North Buckinghamshire blur",
+    jobId: "kelvin hack Fantastic",
     raw: {},
     recommendation: AtsScorecardRecommendation.DefinitelyNo,
-    updatedAt: new Date("2021-09-26T01:55:33.743Z"),
+    updatedAt: new Date("2022-11-18T04:49:38.005Z"),
   },
-  connectionId: "nobis",
-  id: "6e205e16-deab-43fe-8957-8a64584273a8",
+  connectionId: "hacking meter",
+  id: "<ID>",
 }).then((res: PatchAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -998,19 +998,19 @@ const sdk = new UnifiedTo({
 
 sdk.ats.postAtsConnectionIdApplication({
   atsApplication: {
-    appliedAt: new Date("2022-11-26T09:57:27.688Z"),
-    candidateId: "rem",
-    createdAt: new Date("2022-08-25T11:14:44.041Z"),
-    id: "62309fb0-9299-421a-afb9-f58c4d86e68e",
-    jobId: "modi",
+    appliedAt: new Date("2021-10-26T15:24:28.979Z"),
+    candidateId: "solid",
+    createdAt: new Date("2022-09-13T17:17:33.049Z"),
+    id: "<ID>",
+    jobId: "Gloves Pizza virtual",
     raw: {},
-    rejectedAt: new Date("2021-03-31T11:58:23.065Z"),
-    rejectedReason: "voluptatem",
-    source: "ipsam",
-    status: AtsApplicationStatus.SecondInterview,
-    updatedAt: new Date("2022-11-27T17:29:03.103Z"),
+    rejectedAt: new Date("2023-12-27T18:41:56.821Z"),
+    rejectedReason: "Northwest Kids",
+    source: "Human Tasty Loan",
+    status: AtsApplicationStatus.New,
+    updatedAt: new Date("2022-11-01T21:08:50.319Z"),
   },
-  connectionId: "non",
+  connectionId: "Jazz",
 }).then((res: PostAtsConnectionIdApplicationResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1051,41 +1051,41 @@ const sdk = new UnifiedTo({
 sdk.ats.postAtsConnectionIdCandidate({
   atsCandidate: {
     address: {
-      address1: "maiores",
-      address2: "enim",
-      city: "Ryderfurt",
-      country: "Kenya",
-      countryCode: "GT",
-      postalCode: "63587",
-      region: "hic",
-      regionCode: "necessitatibus",
+      address1: "incubate",
+      address2: "azure Trans",
+      city: "Port Rory",
+      country: "El Salvador",
+      countryCode: "CX",
+      postalCode: "54222-0235",
+      region: "modi fooey",
+      regionCode: "Metal TCP incidunt",
     },
-    companyName: "asperiores",
-    createdAt: new Date("2022-08-16T11:44:46.779Z"),
+    companyName: "McCullough, Rosenbaum and Daugherty",
+    createdAt: new Date("2023-02-07T05:55:59.357Z"),
     emails: [
       {
-        email: "Virginie_Bergnaum67@hotmail.com",
-        type: AtsEmailType.Work,
+        email: "Eleanora.Rogahn44@hotmail.com",
+        type: AtsEmailType.Home,
       },
     ],
-    externalId: "velit",
-    id: "83c2beb4-7737-43c8-972f-64d1db1f2c43",
-    imageUrl: "illo",
-    name: "Dr. Gina Jaskolski",
+    externalId: "South though",
+    id: "<ID>",
+    imageUrl: "Pants",
+    name: "Raleigh",
     raw: {},
     tags: [
-      "eum",
+      "morph",
     ],
     telephones: [
       {
-        telephone: "velit",
-        type: AtsTelephoneType.Home,
+        telephone: "lavender Sedan Folk",
+        type: AtsTelephoneType.Other,
       },
     ],
-    title: "Ms.",
-    updatedAt: new Date("2022-08-25T07:25:33.000Z"),
+    title: "Savings panel",
+    updatedAt: new Date("2022-02-09T15:32:35.578Z"),
   },
-  connectionId: "impedit",
+  connectionId: "Ngultrum red glean",
 }).then((res: PostAtsConnectionIdCandidateResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1125,23 +1125,23 @@ const sdk = new UnifiedTo({
 
 sdk.ats.postAtsConnectionIdInterview({
   atsInterview: {
-    applicationId: "voluptatibus",
-    candidateId: "iste",
-    createdAt: new Date("2022-12-29T01:38:46.899Z"),
-    endAt: new Date("2022-01-26T00:00:57.040Z"),
-    externalEventXref: "velit",
-    id: "a437000a-e6b6-4bc9-b8f7-59eac55a9741",
-    jobId: "vero",
-    location: "consectetur",
+    applicationId: "round Hat Savings",
+    candidateId: "Northeast",
+    createdAt: new Date("2022-12-27T10:33:09.160Z"),
+    endAt: new Date("2021-11-12T23:57:19.974Z"),
+    externalEventXref: "platforms",
+    id: "<ID>",
+    jobId: "payment panel Identity",
+    location: "Northwest Buckinghamshire",
     raw: {},
-    startAt: new Date("2022-12-02T07:11:00.455Z"),
-    status: AtsInterviewStatus.Scheduled,
-    updatedAt: new Date("2022-10-26T04:37:41.230Z"),
+    startAt: new Date("2022-11-02T05:07:18.592Z"),
+    status: AtsInterviewStatus.Complete,
+    updatedAt: new Date("2023-07-13T16:35:04.177Z"),
     userIds: [
-      "iste",
+      "Chevrolet",
     ],
   },
-  connectionId: "ex",
+  connectionId: "Shoes Northeast SMTP",
 }).then((res: PostAtsConnectionIdInterviewResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1188,50 +1188,50 @@ sdk.ats.postAtsConnectionIdJob({
   atsJob: {
     addresses: [
       {
-        address1: "nemo",
-        address2: "soluta",
-        city: "Legroschester",
-        country: "Latvia",
-        countryCode: "BZ",
-        postalCode: "14002",
-        region: "neque",
-        regionCode: "exercitationem",
+        address1: "Forward",
+        address2: "Electric fuchsia kelvin",
+        city: "Fort Sibylmouth",
+        country: "Solomon Islands",
+        countryCode: "DO",
+        postalCode: "39037",
+        region: "Rockford",
+        regionCode: "Trafficway eaque athwart",
       },
     ],
-    closedAt: new Date("2022-09-26T08:50:09.615Z"),
+    closedAt: new Date("2022-04-22T19:01:40.265Z"),
     compensation: [
       {
-        currency: "ipsum",
-        frequency: AtsCompensationFrequency.Hour,
-        max: 8583.38,
-        min: 7143.76,
-        type: AtsCompensationType.Other,
+        currency: "Gourde",
+        frequency: AtsCompensationFrequency.Year,
+        max: 5349.62,
+        min: 526.63,
+        type: AtsCompensationType.Equity,
       },
     ],
-    createdAt: new Date("2022-11-03T21:52:43.365Z"),
+    createdAt: new Date("2021-04-02T18:44:02.642Z"),
     departments: [
-      "nostrum",
+      "Polonium",
     ],
-    description: "omnis",
-    employmentType: AtsJobEmploymentType.Seasonal,
+    description: "Progressive disintermediate matrix",
+    employmentType: AtsJobEmploymentType.Intern,
     hiringManagerIds: [
-      "dicta",
+      "itaque",
     ],
-    id: "abda8c07-0e10-484c-b067-2d1ad879eeb9",
-    languageLocale: "ea",
-    name: "Brittany Prosacco",
+    id: "<ID>",
+    languageLocale: "the joyfully",
+    name: "Other because harbor",
     publicJobUrls: [
-      "officiis",
+      "coil",
     ],
     raw: {},
     recruiterIds: [
-      "voluptatibus",
+      "JSON",
     ],
     remote: false,
-    status: AtsJobStatus.Open,
-    updatedAt: new Date("2022-12-26T08:34:47.406Z"),
+    status: AtsJobStatus.Archived,
+    updatedAt: new Date("2022-05-24T04:21:24.567Z"),
   },
-  connectionId: "quia",
+  connectionId: "Coordinator applications",
 }).then((res: PostAtsConnectionIdJobResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1271,18 +1271,18 @@ const sdk = new UnifiedTo({
 
 sdk.ats.postAtsConnectionIdScorecard({
   atsScorecard: {
-    applicationId: "quidem",
-    candidateId: "fuga",
-    createdAt: new Date("2022-11-24T16:37:12.153Z"),
-    id: "be2d7822-59e3-4ea4-b519-7f92443da7ce",
-    interviewId: "corporis",
-    interviewerId: "qui",
-    jobId: "expedita",
+    applicationId: "female bah",
+    candidateId: "if since",
+    createdAt: new Date("2022-02-26T00:06:29.981Z"),
+    id: "<ID>",
+    interviewId: "invoice",
+    interviewerId: "male",
+    jobId: "Accountability",
     raw: {},
-    recommendation: AtsScorecardRecommendation.Yes,
-    updatedAt: new Date("2022-05-07T19:45:21.246Z"),
+    recommendation: AtsScorecardRecommendation.StrongYes,
+    updatedAt: new Date("2023-10-04T17:15:51.015Z"),
   },
-  connectionId: "placeat",
+  connectionId: "Legacy tan",
 }).then((res: PostAtsConnectionIdScorecardResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1322,20 +1322,20 @@ const sdk = new UnifiedTo({
 
 sdk.ats.putAtsConnectionIdApplicationId({
   atsApplication: {
-    appliedAt: new Date("2022-10-18T12:19:42.762Z"),
-    candidateId: "in",
-    createdAt: new Date("2021-09-13T18:43:27.876Z"),
-    id: "454efb0b-3489-46c3-8a5a-cfbe2fd57075",
-    jobId: "in",
+    appliedAt: new Date("2022-06-15T22:25:51.833Z"),
+    candidateId: "farad Indianapolis",
+    createdAt: new Date("2022-04-01T21:03:58.880Z"),
+    id: "<ID>",
+    jobId: "enable foreground",
     raw: {},
-    rejectedAt: new Date("2022-06-07T17:40:07.973Z"),
-    rejectedReason: "dolores",
-    source: "error",
-    status: AtsApplicationStatus.Reviewing,
-    updatedAt: new Date("2022-07-19T18:05:42.224Z"),
+    rejectedAt: new Date("2022-11-06T11:41:30.414Z"),
+    rejectedReason: "virtual North plum",
+    source: "Fort solid",
+    status: AtsApplicationStatus.Submitted,
+    updatedAt: new Date("2021-02-21T04:47:57.079Z"),
   },
-  connectionId: "pariatur",
-  id: "eac646ec-b573-4409-a3eb-1e5a2b12eb07",
+  connectionId: "Southeast",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdApplicationIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1376,42 +1376,42 @@ const sdk = new UnifiedTo({
 sdk.ats.putAtsConnectionIdCandidateId({
   atsCandidate: {
     address: {
-      address1: "maiores",
-      address2: "veritatis",
-      city: "South Salmacester",
-      country: "Mayotte",
-      countryCode: "MK",
-      postalCode: "33975",
-      region: "enim",
-      regionCode: "hic",
+      address1: "archive",
+      address2: "Specialist Kyat",
+      city: "New Dennis",
+      country: "Mauritius",
+      countryCode: "TL",
+      postalCode: "49105-9909",
+      region: "copy olive",
+      regionCode: "withdrawal cumque person",
     },
-    companyName: "animi",
-    createdAt: new Date("2021-12-19T08:26:48.749Z"),
+    companyName: "Kuhn and Sons",
+    createdAt: new Date("2022-01-28T10:51:00.922Z"),
     emails: [
       {
-        email: "Jazmyne.Bechtelar55@yahoo.com",
+        email: "Hester.Jenkins@gmail.com",
         type: AtsEmailType.Home,
       },
     ],
-    externalId: "assumenda",
-    id: "bb30fcb3-3ea0-455b-997c-d44e2f52d82d",
-    imageUrl: "amet",
-    name: "Virginia Flatley",
+    externalId: "Loan EXE",
+    id: "<ID>",
+    imageUrl: "deliver executive RSS",
+    name: "because aha black",
     raw: {},
     tags: [
-      "nisi",
+      "program",
     ],
     telephones: [
       {
-        telephone: "voluptatibus",
-        type: AtsTelephoneType.Home,
+        telephone: "empower exit Pangender",
+        type: AtsTelephoneType.Mobile,
       },
     ],
-    title: "Ms.",
-    updatedAt: new Date("2022-03-20T12:36:58.674Z"),
+    title: "Corporate anenst Electronic",
+    updatedAt: new Date("2022-03-30T08:00:53.284Z"),
   },
-  connectionId: "quis",
-  id: "6bcdb35f-f2e4-4b27-937a-8cd9e7319c17",
+  connectionId: "Flerovium azure",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdCandidateIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1451,24 +1451,24 @@ const sdk = new UnifiedTo({
 
 sdk.ats.putAtsConnectionIdInterviewId({
   atsInterview: {
-    applicationId: "esse",
-    candidateId: "fugiat",
-    createdAt: new Date("2022-11-12T18:59:18.362Z"),
-    endAt: new Date("2022-01-13T17:49:01.077Z"),
-    externalEventXref: "iusto",
-    id: "7b114eeb-52ff-4785-bc37-814d4c98e0c2",
-    jobId: "nam",
-    location: "expedita",
+    applicationId: "Generic capacitor",
+    candidateId: "Road disbelieve",
+    createdAt: new Date("2022-06-22T01:57:06.573Z"),
+    endAt: new Date("2022-05-28T02:29:32.144Z"),
+    externalEventXref: "architectures",
+    id: "<ID>",
+    jobId: "Casper 1080p South",
+    location: "program siemens Cis",
     raw: {},
-    startAt: new Date("2021-10-26T16:10:32.283Z"),
-    status: AtsInterviewStatus.Complete,
-    updatedAt: new Date("2022-01-06T13:49:40.637Z"),
+    startAt: new Date("2021-03-14T15:20:41.084Z"),
+    status: AtsInterviewStatus.AwaitingFeedback,
+    updatedAt: new Date("2023-07-14T19:59:39.905Z"),
     userIds: [
-      "corporis",
+      "East",
     ],
   },
-  connectionId: "vero",
-  id: "ad636c60-0503-4d8b-b311-80f739ae9e05",
+  connectionId: "ASCII yet Hybrid",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdInterviewIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1515,51 +1515,51 @@ sdk.ats.putAtsConnectionIdJobId({
   atsJob: {
     addresses: [
       {
-        address1: "molestiae",
-        address2: "itaque",
-        city: "Lockmanton",
-        country: "Micronesia",
-        countryCode: "TK",
-        postalCode: "51022",
-        region: "sunt",
-        regionCode: "a",
+        address1: "cotton Washington",
+        address2: "rosin meanwhile male",
+        city: "East Sierra",
+        country: "Somalia",
+        countryCode: "BQ",
+        postalCode: "63475-6123",
+        region: "lighthearted online Bicycle",
+        regionCode: "robust",
       },
     ],
-    closedAt: new Date("2022-06-02T10:52:44.468Z"),
+    closedAt: new Date("2021-05-06T11:53:52.940Z"),
     compensation: [
       {
-        currency: "atque",
-        frequency: AtsCompensationFrequency.OneTime,
-        max: 8682.55,
-        min: 2875.44,
-        type: AtsCompensationType.Equity,
+        currency: "Iranian Rial",
+        frequency: AtsCompensationFrequency.Year,
+        max: 5965.42,
+        min: 5273.81,
+        type: AtsCompensationType.Bonus,
       },
     ],
-    createdAt: new Date("2022-12-20T04:33:32.836Z"),
+    createdAt: new Date("2023-07-19T02:36:00.215Z"),
     departments: [
-      "perferendis",
+      "embrace",
     ],
-    description: "rerum",
-    employmentType: AtsJobEmploymentType.Consultant,
+    description: "Programmable tertiary benchmark",
+    employmentType: AtsJobEmploymentType.Contractor,
     hiringManagerIds: [
-      "aperiam",
+      "New",
     ],
-    id: "7f3c93c7-3b9d-4a3f-aced-a7e23f225741",
-    languageLocale: "illo",
-    name: "Doug Wintheiser",
+    id: "<ID>",
+    languageLocale: "Facilitator Gasoline application",
+    name: "North impractical",
     publicJobUrls: [
-      "in",
+      "clamber",
     ],
     raw: {},
     recruiterIds: [
-      "exercitationem",
+      "West",
     ],
     remote: false,
-    status: AtsJobStatus.Pending,
-    updatedAt: new Date("2022-01-29T18:21:22.366Z"),
+    status: AtsJobStatus.Closed,
+    updatedAt: new Date("2023-02-01T04:41:47.094Z"),
   },
-  connectionId: "modi",
-  id: "72e80285-7a5b-4404-a3a7-d575f1400e76",
+  connectionId: "North",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdJobIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -1599,19 +1599,19 @@ const sdk = new UnifiedTo({
 
 sdk.ats.putAtsConnectionIdScorecardId({
   atsScorecard: {
-    applicationId: "numquam",
-    candidateId: "dolorum",
-    createdAt: new Date("2021-08-23T14:57:18.247Z"),
-    id: "334ec1b7-81b3-46a0-8088-d100efada200",
-    interviewId: "eveniet",
-    interviewerId: "hic",
-    jobId: "voluptatem",
+    applicationId: "East Granite",
+    candidateId: "South",
+    createdAt: new Date("2022-03-02T12:33:41.490Z"),
+    id: "<ID>",
+    interviewId: "Texas Technetium hack",
+    interviewerId: "Adventure Kyrgyz Organic",
+    jobId: "Home Dynamic Integration",
     raw: {},
     recommendation: AtsScorecardRecommendation.No,
-    updatedAt: new Date("2022-10-25T03:32:12.534Z"),
+    updatedAt: new Date("2023-11-13T03:01:57.066Z"),
   },
-  connectionId: "necessitatibus",
-  id: "b2164cf9-ab83-466c-b23f-fda9e06bee48",
+  connectionId: "Transexual Manager Rap",
+  id: "<ID>",
 }).then((res: PutAtsConnectionIdScorecardIdResponse) => {
   if (res.statusCode == 200) {
     // handle response

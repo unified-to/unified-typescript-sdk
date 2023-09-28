@@ -33,8 +33,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.deleteMartechConnectionIdListId({
-  connectionId: "expedita",
-  id: "855e889d-9ef9-432e-9000-a13ad8124208",
+  connectionId: "Minivan",
+  id: "<ID>",
 }).then((res: DeleteMartechConnectionIdListIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -72,9 +72,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.deleteMartechConnectionIdListIdMemberId({
-  connectionId: "voluptates",
-  id: "fd234118-98e7-4387-9efb-e8baebabb794",
-  listId: "voluptas",
+  connectionId: "Southwest fib",
+  id: "<ID>",
+  listId: "pascal",
 }).then((res: DeleteMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -112,13 +112,13 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.getMartechConnectionIdList({
-  connectionId: "neque",
-  limit: 4300.03,
-  offset: 9186.14,
-  order: "excepturi",
-  query: "ipsa",
-  sort: "velit",
-  updatedGte: new Date("2022-12-03T21:28:14.776Z"),
+  connectionId: "silver DeKalb",
+  limit: 9799.48,
+  offset: 4800.63,
+  order: "Bedfordshire",
+  query: "Hip Pass",
+  sort: "since",
+  updatedGte: new Date("2022-03-26T19:40:00.770Z"),
 }).then((res: GetMartechConnectionIdListResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -156,8 +156,8 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.getMartechConnectionIdListId({
-  connectionId: "harum",
-  id: "b9763172-0b77-4a5a-9365-a79f15271f01",
+  connectionId: "Jewelery orange",
+  id: "<ID>",
 }).then((res: GetMartechConnectionIdListIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -195,14 +195,14 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.getMartechConnectionIdListIdMember({
-  connectionId: "quo",
-  limit: 34.09,
-  listId: "illum",
-  offset: 2078.87,
-  order: "commodi",
-  query: "veritatis",
-  sort: "reiciendis",
-  updatedGte: new Date("2020-05-30T08:39:08.252Z"),
+  connectionId: "fuchsia economics",
+  limit: 3725.92,
+  listId: "Southwest",
+  offset: 1114.27,
+  order: "emulation",
+  query: "male male",
+  sort: "Arizona Oklahoma Land",
+  updatedGte: new Date("2021-03-19T13:12:48.332Z"),
 }).then((res: GetMartechConnectionIdListIdMemberResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -240,9 +240,9 @@ const sdk = new UnifiedTo({
 });
 
 sdk.martech.getMartechConnectionIdListIdMemberId({
-  connectionId: "blanditiis",
-  id: "dc5effb4-53e9-4089-a871-fdb4d697bdd9",
-  listId: "quisquam",
+  connectionId: "male",
+  id: "<ID>",
+  listId: "Gasoline Home allot",
 }).then((res: GetMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -281,14 +281,14 @@ const sdk = new UnifiedTo({
 
 sdk.martech.patchMartechConnectionIdListId({
   marketingList: {
-    createdAt: "molestias",
-    id: "85e43734-a5d7-42d9-add7-85be5e7afe55",
-    name: "Kristina Kozey",
+    createdAt: "Funk",
+    id: "<ID>",
+    name: "lime Fiat",
     raw: {},
-    updatedAt: new Date("2022-11-15T19:44:05.359Z"),
+    updatedAt: new Date("2021-01-15T20:51:24.192Z"),
   },
-  connectionId: "laudantium",
-  id: "1f44e3a2-3394-4a68-8c80-d30ff72164d0",
+  connectionId: "male sheepishly Intelligent",
+  id: "<ID>",
 }).then((res: PatchMartechConnectionIdListIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -328,27 +328,27 @@ const sdk = new UnifiedTo({
 
 sdk.martech.patchMartechConnectionIdListIdMemberId({
   marketingMember: {
-    createdAt: new Date("2021-11-04T00:39:44.335Z"),
+    createdAt: new Date("2022-06-21T07:15:04.418Z"),
     emails: [
       {
-        email: "Zora_Volkman@gmail.com",
+        email: "Zula_Bogan76@hotmail.com",
         type: MarketingEmailType.Home,
       },
     ],
-    id: "6553b89e-0009-4c66-92de-7b3562201a6a",
+    id: "<ID>",
     listIds: [
-      "error",
+      "gadzooks",
     ],
-    name: "Ray O'Connell",
+    name: "Haven Hatchback",
     raw: {},
     tags: [
-      "harum",
+      "mutiny",
     ],
-    updatedAt: new Date("2022-04-25T11:53:38.687Z"),
+    updatedAt: new Date("2021-08-13T23:04:27.910Z"),
   },
-  connectionId: "ipsam",
-  id: "b908d4e3-0491-4aa3-9d4a-839f03bab77b",
-  listId: "occaecati",
+  connectionId: "female",
+  id: "<ID>",
+  listId: "yellow overriding Rock",
 }).then((res: PatchMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -387,13 +387,13 @@ const sdk = new UnifiedTo({
 
 sdk.martech.postMartechConnectionIdList({
   marketingList: {
-    createdAt: "quasi",
-    id: "8f031398-4507-4e0e-b9c7-e23ecb060465",
-    name: "Kate Cummerata",
+    createdAt: "synergistic Transexual Steel",
+    id: "<ID>",
+    name: "Virginia whoever Bicycle",
     raw: {},
-    updatedAt: new Date("2022-02-21T18:28:51.367Z"),
+    updatedAt: new Date("2023-04-27T09:56:39.589Z"),
   },
-  connectionId: "autem",
+  connectionId: "Hybrid",
 }).then((res: PostMartechConnectionIdListResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -433,26 +433,26 @@ const sdk = new UnifiedTo({
 
 sdk.martech.postMartechConnectionIdListIdMember({
   marketingMember: {
-    createdAt: new Date("2021-11-13T23:02:04.436Z"),
+    createdAt: new Date("2022-12-27T02:49:51.488Z"),
     emails: [
       {
-        email: "Ines_Swift@yahoo.com",
+        email: "Esta.Dach@hotmail.com",
         type: MarketingEmailType.Other,
       },
     ],
-    id: "8f7f002d-1986-4aa9-9d3a-1d32329e4583",
+    id: "<ID>",
     listIds: [
-      "voluptate",
+      "virtual",
     ],
-    name: "Alberto Wisozk",
+    name: "dolorum Wooden Granite",
     raw: {},
     tags: [
-      "fugiat",
+      "Road",
     ],
-    updatedAt: new Date("2022-04-07T09:46:27.417Z"),
+    updatedAt: new Date("2021-06-09T19:47:01.060Z"),
   },
-  connectionId: "harum",
-  listId: "inventore",
+  connectionId: "Pennsylvania leverage sheath",
+  listId: "parse exercitationem",
 }).then((res: PostMartechConnectionIdListIdMemberResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -491,14 +491,14 @@ const sdk = new UnifiedTo({
 
 sdk.martech.putMartechConnectionIdListId({
   marketingList: {
-    createdAt: "aut",
-    id: "e255fdc4-80d6-4e33-8867-5cbf186856a7",
-    name: "Jaime Conroy",
+    createdAt: "Underpass initiatives",
+    id: "<ID>",
+    name: "North Progressive Assistant",
     raw: {},
-    updatedAt: new Date("2021-03-04T08:28:08.196Z"),
+    updatedAt: new Date("2023-10-03T22:31:39.028Z"),
   },
-  connectionId: "assumenda",
-  id: "0fc282c6-66af-43c3-b558-9bea5d264e41",
+  connectionId: "Security Legacy onto",
+  id: "<ID>",
 }).then((res: PutMartechConnectionIdListIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
@@ -538,27 +538,27 @@ const sdk = new UnifiedTo({
 
 sdk.martech.putMartechConnectionIdListIdMemberId({
   marketingMember: {
-    createdAt: new Date("2022-06-10T00:17:48.769Z"),
+    createdAt: new Date("2023-09-24T05:00:50.743Z"),
     emails: [
       {
-        email: "Mark54@hotmail.com",
-        type: MarketingEmailType.Work,
+        email: "Lorenz_Kautzer@hotmail.com",
+        type: MarketingEmailType.Home,
       },
     ],
-    id: "2e513f6d-9d2a-4d37-8309-9077c10b6879",
+    id: "<ID>",
     listIds: [
-      "sed",
+      "SMS",
     ],
-    name: "Lucy Fahey",
+    name: "East platforms",
     raw: {},
     tags: [
-      "nihil",
+      "Estonia",
     ],
-    updatedAt: new Date("2022-03-31T07:19:18.789Z"),
+    updatedAt: new Date("2023-01-20T05:09:32.775Z"),
   },
-  connectionId: "rem",
-  id: "860543c0-a304-49c3-8f6c-0276e7b21bad",
-  listId: "provident",
+  connectionId: "following quia Intelligent",
+  id: "<ID>",
+  listId: "Cab",
 }).then((res: PutMartechConnectionIdListIdMemberIdResponse) => {
   if (res.statusCode == 200) {
     // handle response
