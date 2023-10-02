@@ -2,7 +2,7 @@
 
 <div align="left">
     <a href="https://speakeasyapi.dev/"><img src="https://custom-icon-badges.demolab.com/badge/-Built%20By%20Speakeasy-212015?style=for-the-badge&logoColor=FBE331&logo=speakeasy&labelColor=545454" /></a>
-    <a href="https://github.com/unified-to/unified-typescript-sdk.git/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/bolt-php/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
+    <a href="https://github.com/unified-to/unified-typescript-sdk.git/actions"><img src="https://img.shields.io/github/actions/workflow/status/unified-to/unified-typescript-sdk/speakeasy_sdk_generation.yml?style=for-the-badge" /></a>
     
 </div>
 
