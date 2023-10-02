@@ -4,22 +4,16 @@
 ### Available Operations
 
 * [deleteCrmConnectionIdContactId](#deletecrmconnectionidcontactid) - Remove a contact
-* [deleteCrmConnectionIdContactIdCompanyCompanyId](#deletecrmconnectionidcontactidcompanycompanyid) - Remove company association from a contact
-* [deleteCrmConnectionIdContactIdDealDealId](#deletecrmconnectionidcontactiddealdealid) - Remove deal association from a contact
 * [deleteUcConnectionIdContactId](#deleteucconnectionidcontactid) - Remove a contact
 * [getCrmConnectionIdContact](#getcrmconnectionidcontact) - List all contacts
 * [getCrmConnectionIdContactId](#getcrmconnectionidcontactid) - Retrieve a contact
 * [getUcConnectionIdContact](#getucconnectionidcontact) - List all contacts
 * [getUcConnectionIdContactId](#getucconnectionidcontactid) - Retrieve a contact
 * [patchCrmConnectionIdContactId](#patchcrmconnectionidcontactid) - Update a contact
-* [patchCrmConnectionIdContactIdCompanyCompanyId](#patchcrmconnectionidcontactidcompanycompanyid) - Associate a company with a contact
-* [patchCrmConnectionIdContactIdDealDealId](#patchcrmconnectionidcontactiddealdealid) - Associate a deal with a contact
 * [patchUcConnectionIdContactId](#patchucconnectionidcontactid) - Update a contact
 * [postCrmConnectionIdContact](#postcrmconnectionidcontact) - Create a contact
 * [postUcConnectionIdContact](#postucconnectionidcontact) - Create a contact
 * [putCrmConnectionIdContactId](#putcrmconnectionidcontactid) - Update a contact
-* [putCrmConnectionIdContactIdCompanyCompanyId](#putcrmconnectionidcontactidcompanycompanyid) - Associate a company with a contact
-* [putCrmConnectionIdContactIdDealDealId](#putcrmconnectionidcontactiddealdealid) - Associate a deal with a contact
 * [putUcConnectionIdContactId](#putucconnectionidcontactid) - Update a contact
 
 ## deleteCrmConnectionIdContactId
@@ -59,86 +53,6 @@ sdk.contact.deleteCrmConnectionIdContactId({
 ### Response
 
 **Promise<[operations.DeleteCrmConnectionIdContactIdResponse](../../models/operations/deletecrmconnectionidcontactidresponse.md)>**
-
-
-## deleteCrmConnectionIdContactIdCompanyCompanyId
-
-Remove company association from a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdContactIdCompanyCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.deleteCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "unaware",
-  connectionId: "Nissan",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                            | [operations.DeleteCrmConnectionIdContactIdCompanyCompanyIdRequest](../../models/operations/deletecrmconnectionidcontactidcompanycompanyidrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
-| `config`                                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                         | :heavy_minus_sign:                                                                                                                                   | Available config options for making requests.                                                                                                        |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdContactIdCompanyCompanyIdResponse](../../models/operations/deletecrmconnectionidcontactidcompanycompanyidresponse.md)>**
-
-
-## deleteCrmConnectionIdContactIdDealDealId
-
-Remove deal association from a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdContactIdDealDealIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.deleteCrmConnectionIdContactIdDealDealId({
-  connectionId: "auxiliary ew",
-  dealId: "foreground Electronics Northeast",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdContactIdDealDealIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                | [operations.DeleteCrmConnectionIdContactIdDealDealIdRequest](../../models/operations/deletecrmconnectionidcontactiddealdealidrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdContactIdDealDealIdResponse](../../models/operations/deletecrmconnectionidcontactiddealdealidresponse.md)>**
 
 
 ## deleteUcConnectionIdContactId
@@ -426,86 +340,6 @@ sdk.contact.patchCrmConnectionIdContactId({
 **Promise<[operations.PatchCrmConnectionIdContactIdResponse](../../models/operations/patchcrmconnectionidcontactidresponse.md)>**
 
 
-## patchCrmConnectionIdContactIdCompanyCompanyId
-
-Associate a company with a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdContactIdCompanyCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.patchCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "Folsom Selenium methodologies",
-  connectionId: "Platinum seamless Southwest",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                          | [operations.PatchCrmConnectionIdContactIdCompanyCompanyIdRequest](../../models/operations/patchcrmconnectionidcontactidcompanycompanyidrequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
-| `config`                                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                       | :heavy_minus_sign:                                                                                                                                 | Available config options for making requests.                                                                                                      |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdContactIdCompanyCompanyIdResponse](../../models/operations/patchcrmconnectionidcontactidcompanycompanyidresponse.md)>**
-
-
-## patchCrmConnectionIdContactIdDealDealId
-
-Associate a deal with a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdContactIdDealDealIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.patchCrmConnectionIdContactIdDealDealId({
-  connectionId: "pascal Genderflux Metal",
-  dealId: "line",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdContactIdDealDealIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                              | [operations.PatchCrmConnectionIdContactIdDealDealIdRequest](../../models/operations/patchcrmconnectionidcontactiddealdealidrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdContactIdDealDealIdResponse](../../models/operations/patchcrmconnectionidcontactiddealdealidresponse.md)>**
-
-
 ## patchUcConnectionIdContactId
 
 Update a contact
@@ -778,86 +612,6 @@ sdk.contact.putCrmConnectionIdContactId({
 ### Response
 
 **Promise<[operations.PutCrmConnectionIdContactIdResponse](../../models/operations/putcrmconnectionidcontactidresponse.md)>**
-
-
-## putCrmConnectionIdContactIdCompanyCompanyId
-
-Associate a company with a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdContactIdCompanyCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.putCrmConnectionIdContactIdCompanyCompanyId({
-  companyId: "till Jazz ugh",
-  connectionId: "Arizona tomorrow Chrysler",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdContactIdCompanyCompanyIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                      | [operations.PutCrmConnectionIdContactIdCompanyCompanyIdRequest](../../models/operations/putcrmconnectionidcontactidcompanycompanyidrequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
-| `config`                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                   | :heavy_minus_sign:                                                                                                                             | Available config options for making requests.                                                                                                  |
-
-
-### Response
-
-**Promise<[operations.PutCrmConnectionIdContactIdCompanyCompanyIdResponse](../../models/operations/putcrmconnectionidcontactidcompanycompanyidresponse.md)>**
-
-
-## putCrmConnectionIdContactIdDealDealId
-
-Associate a deal with a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdContactIdDealDealIdResponse } from "Unified-to/dist/sdk/models/operations";
-
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.putCrmConnectionIdContactIdDealDealId({
-  connectionId: "Indiana relationships Coordinator",
-  dealId: "Dinar person",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdContactIdDealDealIdResponse) => {
-  if (res.statusCode == 200) {
-    // handle response
-  }
-});
-```
-
-### Parameters
-
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                          | [operations.PutCrmConnectionIdContactIdDealDealIdRequest](../../models/operations/putcrmconnectionidcontactiddealdealidrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
-| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
-
-
-### Response
-
-**Promise<[operations.PutCrmConnectionIdContactIdDealDealIdResponse](../../models/operations/putcrmconnectionidcontactiddealdealidresponse.md)>**
 
 
 ## putUcConnectionIdContactId
