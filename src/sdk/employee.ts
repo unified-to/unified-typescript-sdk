@@ -17,7 +17,7 @@ export class Employee {
     }
 
     /**
-     * Remove a Employee
+     * Remove an employee
      */
     async deleteHrisConnectionIdEmployeeId(
         req: operations.DeleteHrisConnectionIdEmployeeIdRequest,
@@ -95,7 +95,7 @@ export class Employee {
     }
 
     /**
-     * List all Employees
+     * List all employees
      */
     async getHrisConnectionIdEmployee(
         req: operations.GetHrisConnectionIdEmployeeRequest,
@@ -180,7 +180,7 @@ export class Employee {
     }
 
     /**
-     * Retrieve a Employee
+     * Retrieve an employee
      */
     async getHrisConnectionIdEmployeeId(
         req: operations.GetHrisConnectionIdEmployeeIdRequest,
@@ -261,7 +261,7 @@ export class Employee {
     }
 
     /**
-     * Update a Employee
+     * Update an employee
      */
     async patchHrisConnectionIdEmployeeId(
         req: operations.PatchHrisConnectionIdEmployeeIdRequest,
@@ -357,7 +357,7 @@ export class Employee {
     }
 
     /**
-     * Create a Employee
+     * Create an employee
      */
     async postHrisConnectionIdEmployee(
         req: operations.PostHrisConnectionIdEmployeeRequest,
@@ -453,7 +453,7 @@ export class Employee {
     }
 
     /**
-     * Update a Employee
+     * Update an employee
      */
     async putHrisConnectionIdEmployeeId(
         req: operations.PutHrisConnectionIdEmployeeIdRequest,

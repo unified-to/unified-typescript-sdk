@@ -17,7 +17,7 @@ export class Group {
     }
 
     /**
-     * Remove a Group
+     * Remove a group
      */
     async deleteHrisConnectionIdGroupId(
         req: operations.DeleteHrisConnectionIdGroupIdRequest,
@@ -95,7 +95,7 @@ export class Group {
     }
 
     /**
-     * List all Groups
+     * List all groups
      */
     async getHrisConnectionIdGroup(
         req: operations.GetHrisConnectionIdGroupRequest,
@@ -180,7 +180,7 @@ export class Group {
     }
 
     /**
-     * Retrieve a Group
+     * Retrieve a group
      */
     async getHrisConnectionIdGroupId(
         req: operations.GetHrisConnectionIdGroupIdRequest,
@@ -258,7 +258,7 @@ export class Group {
     }
 
     /**
-     * Update a Group
+     * Update a group
      */
     async patchHrisConnectionIdGroupId(
         req: operations.PatchHrisConnectionIdGroupIdRequest,
@@ -351,7 +351,7 @@ export class Group {
     }
 
     /**
-     * Create a Group
+     * Create a group
      */
     async postHrisConnectionIdGroup(
         req: operations.PostHrisConnectionIdGroupRequest,
@@ -444,7 +444,7 @@ export class Group {
     }
 
     /**
-     * Update a Group
+     * Update a group
      */
     async putHrisConnectionIdGroupId(
         req: operations.PutHrisConnectionIdGroupIdRequest,

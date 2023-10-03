@@ -17,7 +17,7 @@ export class Hris {
     }
 
     /**
-     * Remove a Employee
+     * Remove an employee
      */
     async deleteHrisConnectionIdEmployeeId(
         req: operations.DeleteHrisConnectionIdEmployeeIdRequest,
@@ -95,7 +95,7 @@ export class Hris {
     }
 
     /**
-     * Remove a Group
+     * Remove a group
      */
     async deleteHrisConnectionIdGroupId(
         req: operations.DeleteHrisConnectionIdGroupIdRequest,
@@ -173,7 +173,7 @@ export class Hris {
     }
 
     /**
-     * List all Employees
+     * List all employees
      */
     async getHrisConnectionIdEmployee(
         req: operations.GetHrisConnectionIdEmployeeRequest,
@@ -258,7 +258,7 @@ export class Hris {
     }
 
     /**
-     * Retrieve a Employee
+     * Retrieve an employee
      */
     async getHrisConnectionIdEmployeeId(
         req: operations.GetHrisConnectionIdEmployeeIdRequest,
@@ -339,7 +339,7 @@ export class Hris {
     }
 
     /**
-     * List all Groups
+     * List all groups
      */
     async getHrisConnectionIdGroup(
         req: operations.GetHrisConnectionIdGroupRequest,
@@ -424,7 +424,7 @@ export class Hris {
     }
 
     /**
-     * Retrieve a Group
+     * Retrieve a group
      */
     async getHrisConnectionIdGroupId(
         req: operations.GetHrisConnectionIdGroupIdRequest,
@@ -502,7 +502,7 @@ export class Hris {
     }
 
     /**
-     * Update a Employee
+     * Update an employee
      */
     async patchHrisConnectionIdEmployeeId(
         req: operations.PatchHrisConnectionIdEmployeeIdRequest,
@@ -598,7 +598,7 @@ export class Hris {
     }
 
     /**
-     * Update a Group
+     * Update a group
      */
     async patchHrisConnectionIdGroupId(
         req: operations.PatchHrisConnectionIdGroupIdRequest,
@@ -691,7 +691,7 @@ export class Hris {
     }
 
     /**
-     * Create a Employee
+     * Create an employee
      */
     async postHrisConnectionIdEmployee(
         req: operations.PostHrisConnectionIdEmployeeRequest,
@@ -787,7 +787,7 @@ export class Hris {
     }
 
     /**
-     * Create a Group
+     * Create a group
      */
     async postHrisConnectionIdGroup(
         req: operations.PostHrisConnectionIdGroupRequest,
@@ -880,7 +880,7 @@ export class Hris {
     }
 
     /**
-     * Update a Employee
+     * Update an employee
      */
     async putHrisConnectionIdEmployeeId(
         req: operations.PutHrisConnectionIdEmployeeIdRequest,
@@ -976,7 +976,7 @@ export class Hris {
     }
 
     /**
-     * Update a Group
+     * Update a group
      */
     async putHrisConnectionIdGroupId(
         req: operations.PutHrisConnectionIdGroupIdRequest,

@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [deleteHrisConnectionIdEmployeeId](#deletehrisconnectionidemployeeid) - Remove a Employee
-* [getHrisConnectionIdEmployee](#gethrisconnectionidemployee) - List all Employees
-* [getHrisConnectionIdEmployeeId](#gethrisconnectionidemployeeid) - Retrieve a Employee
-* [patchHrisConnectionIdEmployeeId](#patchhrisconnectionidemployeeid) - Update a Employee
-* [postHrisConnectionIdEmployee](#posthrisconnectionidemployee) - Create a Employee
-* [putHrisConnectionIdEmployeeId](#puthrisconnectionidemployeeid) - Update a Employee
+* [deleteHrisConnectionIdEmployeeId](#deletehrisconnectionidemployeeid) - Remove an employee
+* [getHrisConnectionIdEmployee](#gethrisconnectionidemployee) - List all employees
+* [getHrisConnectionIdEmployeeId](#gethrisconnectionidemployeeid) - Retrieve an employee
+* [patchHrisConnectionIdEmployeeId](#patchhrisconnectionidemployeeid) - Update an employee
+* [postHrisConnectionIdEmployee](#posthrisconnectionidemployee) - Create an employee
+* [putHrisConnectionIdEmployeeId](#puthrisconnectionidemployeeid) - Update an employee
 
 ## deleteHrisConnectionIdEmployeeId
 
-Remove a Employee
+Remove an employee
 
 ### Example Usage
 
@@ -51,7 +51,7 @@ sdk.employee.deleteHrisConnectionIdEmployeeId({
 
 ## getHrisConnectionIdEmployee
 
-List all Employees
+List all employees
 
 ### Example Usage
 
@@ -95,7 +95,7 @@ sdk.employee.getHrisConnectionIdEmployee({
 
 ## getHrisConnectionIdEmployeeId
 
-Retrieve a Employee
+Retrieve an employee
 
 ### Example Usage
 
@@ -134,7 +134,7 @@ sdk.employee.getHrisConnectionIdEmployeeId({
 
 ## patchHrisConnectionIdEmployeeId
 
-Update a Employee
+Update an employee
 
 ### Example Usage
 
@@ -223,7 +223,7 @@ sdk.employee.patchHrisConnectionIdEmployeeId({
 
 ## postHrisConnectionIdEmployee
 
-Create a Employee
+Create an employee
 
 ### Example Usage
 
@@ -311,7 +311,7 @@ sdk.employee.postHrisConnectionIdEmployee({
 
 ## putHrisConnectionIdEmployeeId
 
-Update a Employee
+Update an employee
 
 ### Example Usage
 

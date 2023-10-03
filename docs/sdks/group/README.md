@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [deleteHrisConnectionIdGroupId](#deletehrisconnectionidgroupid) - Remove a Group
-* [getHrisConnectionIdGroup](#gethrisconnectionidgroup) - List all Groups
-* [getHrisConnectionIdGroupId](#gethrisconnectionidgroupid) - Retrieve a Group
-* [patchHrisConnectionIdGroupId](#patchhrisconnectionidgroupid) - Update a Group
-* [postHrisConnectionIdGroup](#posthrisconnectionidgroup) - Create a Group
-* [putHrisConnectionIdGroupId](#puthrisconnectionidgroupid) - Update a Group
+* [deleteHrisConnectionIdGroupId](#deletehrisconnectionidgroupid) - Remove a group
+* [getHrisConnectionIdGroup](#gethrisconnectionidgroup) - List all groups
+* [getHrisConnectionIdGroupId](#gethrisconnectionidgroupid) - Retrieve a group
+* [patchHrisConnectionIdGroupId](#patchhrisconnectionidgroupid) - Update a group
+* [postHrisConnectionIdGroup](#posthrisconnectionidgroup) - Create a group
+* [putHrisConnectionIdGroupId](#puthrisconnectionidgroupid) - Update a group
 
 ## deleteHrisConnectionIdGroupId
 
-Remove a Group
+Remove a group
 
 ### Example Usage
 
@@ -51,7 +51,7 @@ sdk.group.deleteHrisConnectionIdGroupId({
 
 ## getHrisConnectionIdGroup
 
-List all Groups
+List all groups
 
 ### Example Usage
 
@@ -95,7 +95,7 @@ sdk.group.getHrisConnectionIdGroup({
 
 ## getHrisConnectionIdGroupId
 
-Retrieve a Group
+Retrieve a group
 
 ### Example Usage
 
@@ -134,7 +134,7 @@ sdk.group.getHrisConnectionIdGroupId({
 
 ## patchHrisConnectionIdGroupId
 
-Update a Group
+Update a group
 
 ### Example Usage
 
@@ -191,7 +191,7 @@ sdk.group.patchHrisConnectionIdGroupId({
 
 ## postHrisConnectionIdGroup
 
-Create a Group
+Create a group
 
 ### Example Usage
 
@@ -247,7 +247,7 @@ sdk.group.postHrisConnectionIdGroup({
 
 ## putHrisConnectionIdGroupId
 
-Update a Group
+Update a group
 
 ### Example Usage
 
