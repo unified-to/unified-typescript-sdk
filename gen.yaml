@@ -22,4 +22,4 @@ typescript:
   author: Unified
   clientServerStatusCodesAsErrors: true
   maxMethodParams: 0
-  packageName: Unified-to
+  packageName: unified-to
