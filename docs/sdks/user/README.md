@@ -22,23 +22,24 @@ Remove a user
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdUserIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.deleteCrmConnectionIdUserId({
-  connectionId: "Intranet Data",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdUserIdResponse) => {
+  const res = await sdk.user.deleteCrmConnectionIdUserId({
+    connectionId: "Intranet Data",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -61,20 +62,21 @@ Delete your user object
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteUnifiedUserResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.deleteUnifiedUser().then((res: DeleteUnifiedUserResponse) => {
+  const res = await sdk.user.deleteUnifiedUser();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -96,28 +98,23 @@ List all users
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdUserResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.getCrmConnectionIdUser({
-  connectionId: "suit Electronic Tampa",
-  limit: 2883.34,
-  offset: 8886.55,
-  order: "despite",
-  query: "frightfully Fitness",
-  sort: "success servant",
-  updatedGte: new Date("2023-02-23T05:53:04.259Z"),
-}).then((res: GetCrmConnectionIdUserResponse) => {
+  const res = await sdk.user.getCrmConnectionIdUser({
+    connectionId: "suit Electronic Tampa",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -140,23 +137,24 @@ Retrieve a user
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdUserIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.getCrmConnectionIdUserId({
-  connectionId: "connecting Program",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdUserIdResponse) => {
+  const res = await sdk.user.getCrmConnectionIdUserId({
+    connectionId: "connecting Program",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -179,20 +177,21 @@ Retrieve your user object
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedUserResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.getUnifiedUser().then((res: GetUnifiedUserResponse) => {
+  const res = await sdk.user.getUnifiedUser();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -214,20 +213,21 @@ Retrieve your user token
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedUserTokenResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.getUnifiedUserToken().then((res: GetUnifiedUserTokenResponse) => {
+  const res = await sdk.user.getUnifiedUserToken();
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -249,61 +249,37 @@ Update a user
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdUserIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.user.patchCrmConnectionIdUserId({
-  crmUser: {
-    active: false,
-    address: {
-      address1: "Customer",
-      address2: "violet groupware blanditiis",
-      city: "South Phoebeshire",
-      country: "Thailand",
-      countryCode: "NO",
-      postalCode: "30801-4594",
-      region: "portals Vanadium",
-      regionCode: "Future",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2023-01-04T02:42:28.788Z"),
-    currency: "Guinea Franc",
-    department: "Gloves global rosin",
-    division: "Berkshire Europium",
-    emails: [
-      {
-        email: "Wade.Dach@gmail.com",
-        type: CrmEmailType.Work,
-      },
-    ],
+  });
+
+  const res = await sdk.user.patchCrmConnectionIdUserId({
+    crmUser: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Customer",
+        },
+      ],
+    },
+    connectionId: "violet groupware blanditiis",
     id: "<ID>",
-    imageUrl: "Checking",
-    languageLocale: "Sedan Porsche matrix",
-    name: "superstructure Nissan sedately",
-    raw: {},
-    telephones: [
-      {
-        telephone: "unto ubiquitous input",
-        type: CrmTelephoneType.Mobile,
-      },
-    ],
-    timezone: "America/Tijuana",
-    title: "Computer Bicycle",
-    updatedAt: new Date("2021-12-13T16:36:33.886Z"),
-  },
-  connectionId: "gold generating",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdUserIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -326,32 +302,28 @@ Only the name field is updated.
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchUnifiedUserResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.patchUnifiedUser({
-  createdAt: new Date("2022-04-24T15:25:24.483Z"),
-  email: "Emmalee.Quitzon@yahoo.com",
-  environment: "Bicycle",
-  id: "<ID>",
-  meta: {},
-  name: "vice compressing",
-  updatedAt: new Date("2023-05-05T16:52:20.023Z"),
-  workspaceId: "Hybrid methodologies",
-  workspaceIds: [
-    "Potassium",
-  ],
-}).then((res: PatchUnifiedUserResponse) => {
+  const res = await sdk.user.patchUnifiedUser({
+    meta: {},
+    name: "virtual female",
+    workspaceId: "Jewelery",
+    workspaceIds: [
+      "interfaces",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -374,60 +346,36 @@ Create a user
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdUserResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.user.postCrmConnectionIdUser({
-  crmUser: {
-    active: false,
-    address: {
-      address1: "driver East",
-      address2: "relationships Computer navigate",
-      city: "Homestead",
-      country: "Cayman Islands",
-      countryCode: "BW",
-      postalCode: "34958",
-      region: "South",
-      regionCode: "morph an colossal",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2021-02-02T08:27:21.693Z"),
-    currency: "Cayman Islands Dollar",
-    department: "um",
-    division: "West sievert generating",
-    emails: [
-      {
-        email: "Jadon_Schumm45@gmail.com",
-        type: CrmEmailType.Home,
-      },
-    ],
-    id: "<ID>",
-    imageUrl: "radian Borders Southeast",
-    languageLocale: "Silicon Awesome Industrial",
-    name: "Mouse Accounts",
-    raw: {},
-    telephones: [
-      {
-        telephone: "ohm Southeast ROI",
-        type: CrmTelephoneType.Mobile,
-      },
-    ],
-    timezone: "Europe/Bratislava",
-    title: "Money",
-    updatedAt: new Date("2023-12-09T10:24:50.054Z"),
-  },
-  connectionId: "competent calculate",
-}).then((res: PostCrmConnectionIdUserResponse) => {
+  });
+
+  const res = await sdk.user.postCrmConnectionIdUser({
+    crmUser: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "driver East",
+        },
+      ],
+    },
+    connectionId: "relationships Computer navigate",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -450,61 +398,37 @@ Update a user
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdUserIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.user.putCrmConnectionIdUserId({
-  crmUser: {
-    active: false,
-    address: {
-      address1: "Honduras",
-      address2: "Oxygen Libyan Burundi",
-      city: "North Gertrudefield",
-      country: "Belgium",
-      countryCode: "DK",
-      postalCode: "00781",
-      region: "Wagon",
-      regionCode: "how overriding",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2023-03-13T00:47:15.649Z"),
-    currency: "Pakistan Rupee",
-    department: "Tricycle vaguely",
-    division: "Severn bluetooth Argon",
-    emails: [
-      {
-        email: "Karl_Stehr4@hotmail.com",
-        type: CrmEmailType.Work,
-      },
-    ],
+  });
+
+  const res = await sdk.user.putCrmConnectionIdUserId({
+    crmUser: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Honduras",
+        },
+      ],
+    },
+    connectionId: "Oxygen Libyan Burundi",
     id: "<ID>",
-    imageUrl: "AGP romance didactic",
-    languageLocale: "ROI Polarised",
-    name: "olive synthesizing",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Honda Indiana",
-        type: CrmTelephoneType.Fax,
-      },
-    ],
-    timezone: "Asia/Novosibirsk",
-    title: "compelling red compressing",
-    updatedAt: new Date("2022-09-03T15:59:05.095Z"),
-  },
-  connectionId: "relationships",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdUserIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -527,32 +451,28 @@ Only the name field is updated.
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutUnifiedUserResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.user.putUnifiedUser({
-  createdAt: new Date("2023-07-31T04:46:29.769Z"),
-  email: "Selena59@yahoo.com",
-  environment: "Bedfordshire Lucia",
-  id: "<ID>",
-  meta: {},
-  name: "Bicycle hacking South",
-  updatedAt: new Date("2023-03-15T15:08:26.238Z"),
-  workspaceId: "Card defect",
-  workspaceIds: [
-    "repudiandae",
-  ],
-}).then((res: PutUnifiedUserResponse) => {
+  const res = await sdk.user.putUnifiedUser({
+    meta: {},
+    name: "invoice Convertible Country",
+    workspaceId: "Ergonomic",
+    workspaceIds: [
+      "becquerel",
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

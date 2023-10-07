@@ -15,31 +15,26 @@ Returns all integrations
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedIntegrationCategories, GetUnifiedIntegrationResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
+import { GetUnifiedIntegrationCategories } from "unified-to/dist/sdk/models/operations";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.integration.getUnifiedIntegration({
-  active: false,
-  categories: [
-    GetUnifiedIntegrationCategories.Enrich,
-  ],
-  limit: 7363.95,
-  offset: 8214.4,
-  order: "Nelda Implemented",
-  sort: "cabinet",
-  summary: false,
-  updatedGte: new Date("2022-02-05T00:16:37.455Z"),
-}).then((res: GetUnifiedIntegrationResponse) => {
+  const res = await sdk.integration.getUnifiedIntegration({
+    categories: [
+      GetUnifiedIntegrationCategories.Enrich,
+    ],
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -62,37 +57,28 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import {
-  GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse,
-  GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes,
-} from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
+import { GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes } from "unified-to/dist/sdk/models/operations";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.integration.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-  env: "Algerian",
-  externalXref: "Cambridgeshire Surinam",
-  failureRedirect: "Designer Drive",
-  integrationType: "program Home",
-  lang: "Plastic program",
-  redirect: false,
-  scopes: [
-    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.CrmFileRead,
-  ],
-  state: "Functionality Product",
-  subdomain: "payment Developer Dynamic",
-  successRedirect: "Northeast",
-  workspaceId: "duh empower Kwanza",
-}).then((res: GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse) => {
+  const res = await sdk.integration.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
+    integrationType: "Algerian",
+    scopes: [
+      GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.MartechMemberWrite,
+    ],
+    workspaceId: "hound",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -115,22 +101,23 @@ Retrieve an integration
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedIntegrationIntegrationTypeResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.integration.getUnifiedIntegrationIntegrationType({
-  integrationType: "Pizza Electric",
-}).then((res: GetUnifiedIntegrationIntegrationTypeResponse) => {
+  const res = await sdk.integration.getUnifiedIntegrationIntegrationType({
+    integrationType: "Pizza Electric",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -153,31 +140,27 @@ No authentication required as this is to be used by front-end interface
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import {
-  GetUnifiedIntegrationWorkspaceWorkspaceIdCategories,
-  GetUnifiedIntegrationWorkspaceWorkspaceIdResponse,
-} from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
+import { GetUnifiedIntegrationWorkspaceWorkspaceIdCategories } from "unified-to/dist/sdk/models/operations";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.integration.getUnifiedIntegrationWorkspaceWorkspaceId({
-  active: false,
-  categories: [
-    GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Hris,
-  ],
-  env: "North Southeast exercitationem",
-  summary: false,
-  workspaceId: "Bronze Plastic",
-}).then((res: GetUnifiedIntegrationWorkspaceWorkspaceIdResponse) => {
+  const res = await sdk.integration.getUnifiedIntegrationWorkspaceWorkspaceId({
+    categories: [
+      GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Hris,
+    ],
+    workspaceId: "North Southeast exercitationem",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

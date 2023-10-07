@@ -13,32 +13,21 @@ Returns API Calls
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedApicallResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.apicall.getUnifiedApicall({
-  connectionId: "delectus green Hybrid",
-  createdLte: new Date("2021-04-02T21:36:49.952Z"),
-  env: "Fantastic Iodine indexing",
-  error: false,
-  externalXref: "Music",
-  integrationType: "Soft",
-  limit: 2390.64,
-  offset: 3757.34,
-  order: "mobile envisioneer",
-  sort: "North payment opposite",
-  updatedGte: new Date("2021-08-11T16:18:13.644Z"),
-}).then((res: GetUnifiedApicallResponse) => {
+  const res = await sdk.apicall.getUnifiedApicall({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -61,22 +50,23 @@ Retrieve specific API Call by its ID
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedApicallIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.apicall.getUnifiedApicallId({
-  id: "<ID>",
-}).then((res: GetUnifiedApicallIdResponse) => {
+  const res = await sdk.apicall.getUnifiedApicallId({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

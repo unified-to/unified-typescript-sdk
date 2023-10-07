@@ -25,23 +25,24 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.deleteTicketingConnectionIdAgentId({
-  connectionId: "navigate",
-  id: "<ID>",
-}).then((res: DeleteTicketingConnectionIdAgentIdResponse) => {
+  const res = await sdk.agent.deleteTicketingConnectionIdAgentId({
+    connectionId: "navigate",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 <!-- End SDK Example Usage -->
 

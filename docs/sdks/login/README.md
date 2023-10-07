@@ -12,28 +12,24 @@ Returns an authentication URL for the specified integration.  Once a successful 
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.login.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
-  env: "Rubber",
-  failureRedirect: "gold Cambridgeshire",
-  integrationType: "Plastic services pixel",
-  redirect: false,
-  state: "Volkswagen Southwest",
-  successRedirect: "drive integrated Bicycle",
-  workspaceId: "Fantastic recontextualize Frozen",
-}).then((res: GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse) => {
+  const res = await sdk.login.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
+    integrationType: "Rubber",
+    workspaceId: "gold Cambridgeshire",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

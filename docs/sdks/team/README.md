@@ -17,23 +17,24 @@ Remove a team
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdTeamIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.deleteCrmConnectionIdTeamId({
-  connectionId: "Diverse",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdTeamIdResponse) => {
+  const res = await sdk.team.deleteCrmConnectionIdTeamId({
+    connectionId: "Diverse",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,28 +57,23 @@ List all teams
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdTeamResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.getCrmConnectionIdTeam({
-  connectionId: "bath Lamborghini",
-  limit: 1042.31,
-  offset: 1586.42,
-  order: "Diesel Bike virtual",
-  query: "bakery",
-  sort: "Senior",
-  updatedGte: new Date("2021-12-04T23:56:00.028Z"),
-}).then((res: GetCrmConnectionIdTeamResponse) => {
+  const res = await sdk.team.getCrmConnectionIdTeam({
+    connectionId: "bath Lamborghini",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -100,23 +96,24 @@ Retrieve a team
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdTeamIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.getCrmConnectionIdTeamId({
-  connectionId: "Intelligent invoice Tesla",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdTeamIdResponse) => {
+  const res = await sdk.team.getCrmConnectionIdTeamId({
+    connectionId: "Intelligent invoice Tesla",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -139,34 +136,30 @@ Update a team
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdTeamIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.patchCrmConnectionIdTeamId({
-  crmTeam: {
-    createdAt: new Date("2021-05-20T12:47:48.451Z"),
-    description: "Automated executive emulation",
+  const res = await sdk.team.patchCrmConnectionIdTeamId({
+    crmTeam: {
+      raw: {},
+      userIds: [
+        "Arizona",
+      ],
+    },
+    connectionId: "Internal experiences",
     id: "<ID>",
-    name: "Internal experiences",
-    raw: {},
-    updatedAt: new Date("2022-05-22T09:41:53.599Z"),
-    userIds: [
-      "lumen",
-    ],
-  },
-  connectionId: "up Candace",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdTeamIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -189,33 +182,29 @@ Create a team
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdTeamResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.postCrmConnectionIdTeam({
-  crmTeam: {
-    createdAt: new Date("2022-02-12T08:57:03.070Z"),
-    description: "Organic transitional portal",
-    id: "<ID>",
-    name: "male bandwidth",
-    raw: {},
-    updatedAt: new Date("2022-12-29T15:50:04.365Z"),
-    userIds: [
-      "meter",
-    ],
-  },
-  connectionId: "Guaynabo AGP East",
-}).then((res: PostCrmConnectionIdTeamResponse) => {
+  const res = await sdk.team.postCrmConnectionIdTeam({
+    crmTeam: {
+      raw: {},
+      userIds: [
+        "local",
+      ],
+    },
+    connectionId: "pascal male bandwidth",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -238,34 +227,30 @@ Update a team
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdTeamIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.team.putCrmConnectionIdTeamId({
-  crmTeam: {
-    createdAt: new Date("2023-08-14T23:28:53.515Z"),
-    description: "Inverse multi-tasking task-force",
+  const res = await sdk.team.putCrmConnectionIdTeamId({
+    crmTeam: {
+      raw: {},
+      userIds: [
+        "immense",
+      ],
+    },
+    connectionId: "duh Indonesia",
     id: "<ID>",
-    name: "Indonesia Orchestrator Division",
-    raw: {},
-    updatedAt: new Date("2022-10-23T23:13:25.973Z"),
-    userIds: [
-      "thoroughly",
-    ],
-  },
-  connectionId: "delectus",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdTeamIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -17,24 +17,25 @@ Remove member from a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteMartechConnectionIdListIdMemberIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.deleteMartechConnectionIdListIdMemberId({
-  connectionId: "Southwest fib",
-  id: "<ID>",
-  listId: "pascal",
-}).then((res: DeleteMartechConnectionIdListIdMemberIdResponse) => {
+  const res = await sdk.member.deleteMartechConnectionIdListIdMemberId({
+    connectionId: "Southwest fib",
+    id: "<ID>",
+    listId: "pascal",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,29 +58,24 @@ List all members in a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetMartechConnectionIdListIdMemberResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.getMartechConnectionIdListIdMember({
-  connectionId: "fuchsia economics",
-  limit: 3725.92,
-  listId: "Southwest",
-  offset: 1114.27,
-  order: "emulation",
-  query: "male male",
-  sort: "Arizona Oklahoma Land",
-  updatedGte: new Date("2021-03-19T13:12:48.332Z"),
-}).then((res: GetMartechConnectionIdListIdMemberResponse) => {
+  const res = await sdk.member.getMartechConnectionIdListIdMember({
+    connectionId: "fuchsia economics",
+    listId: "Bronze cackle",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -102,24 +98,25 @@ Retrieve a member from a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetMartechConnectionIdListIdMemberIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.getMartechConnectionIdListIdMemberId({
-  connectionId: "male",
-  id: "<ID>",
-  listId: "Gasoline Home allot",
-}).then((res: GetMartechConnectionIdListIdMemberIdResponse) => {
+  const res = await sdk.member.getMartechConnectionIdListIdMemberId({
+    connectionId: "male",
+    id: "<ID>",
+    listId: "Gasoline Home allot",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -142,44 +139,40 @@ Update a member in a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchMartechConnectionIdListIdMemberIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { MarketingEmailType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.patchMartechConnectionIdListIdMemberId({
-  marketingMember: {
-    createdAt: new Date("2022-06-21T07:15:04.418Z"),
-    emails: [
-      {
-        email: "Zula_Bogan76@hotmail.com",
-        type: MarketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.member.patchMartechConnectionIdListIdMemberId({
+    marketingMember: {
+      emails: [
+        {
+          email: "Otto93@yahoo.com",
+        },
+      ],
+      listIds: [
+        "Accounts",
+      ],
+      raw: {},
+      tags: [
+        "capacitor",
+      ],
+    },
+    connectionId: "yowza online",
     id: "<ID>",
-    listIds: [
-      "gadzooks",
-    ],
-    name: "Haven Hatchback",
-    raw: {},
-    tags: [
-      "mutiny",
-    ],
-    updatedAt: new Date("2021-08-13T23:04:27.910Z"),
-  },
-  connectionId: "female",
-  id: "<ID>",
-  listId: "yellow overriding Rock",
-}).then((res: PatchMartechConnectionIdListIdMemberIdResponse) => {
+    listId: "to XSS",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -202,43 +195,39 @@ Create a member in a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostMartechConnectionIdListIdMemberResponse } from "Unified-to/dist/sdk/models/operations";
-import { MarketingEmailType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.postMartechConnectionIdListIdMember({
-  marketingMember: {
-    createdAt: new Date("2022-12-27T02:49:51.488Z"),
-    emails: [
-      {
-        email: "Esta.Dach@hotmail.com",
-        type: MarketingEmailType.Other,
-      },
-    ],
-    id: "<ID>",
-    listIds: [
-      "virtual",
-    ],
-    name: "dolorum Wooden Granite",
-    raw: {},
-    tags: [
-      "Road",
-    ],
-    updatedAt: new Date("2021-06-09T19:47:01.060Z"),
-  },
-  connectionId: "Pennsylvania leverage sheath",
-  listId: "parse exercitationem",
-}).then((res: PostMartechConnectionIdListIdMemberResponse) => {
+  const res = await sdk.member.postMartechConnectionIdListIdMember({
+    marketingMember: {
+      emails: [
+        {
+          email: "Tomas37@yahoo.com",
+        },
+      ],
+      listIds: [
+        "drive",
+      ],
+      raw: {},
+      tags: [
+        "virtual",
+      ],
+    },
+    connectionId: "dolorum Wooden Granite",
+    listId: "Green Convertible newton",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -261,44 +250,40 @@ Update a member in a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutMartechConnectionIdListIdMemberIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { MarketingEmailType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.member.putMartechConnectionIdListIdMemberId({
-  marketingMember: {
-    createdAt: new Date("2023-09-24T05:00:50.743Z"),
-    emails: [
-      {
-        email: "Lorenz_Kautzer@hotmail.com",
-        type: MarketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.member.putMartechConnectionIdListIdMemberId({
+    marketingMember: {
+      emails: [
+        {
+          email: "Mikayla_Nader@hotmail.com",
+        },
+      ],
+      listIds: [
+        "octave",
+      ],
+      raw: {},
+      tags: [
+        "SMS",
+      ],
+    },
+    connectionId: "East platforms",
     id: "<ID>",
-    listIds: [
-      "SMS",
-    ],
-    name: "East platforms",
-    raw: {},
-    tags: [
-      "Estonia",
-    ],
-    updatedAt: new Date("2023-01-20T05:09:32.775Z"),
-  },
-  connectionId: "following quia Intelligent",
-  id: "<ID>",
-  listId: "Cab",
-}).then((res: PutMartechConnectionIdListIdMemberIdResponse) => {
+    listId: "Frozen",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

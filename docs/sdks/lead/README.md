@@ -17,23 +17,24 @@ Remove a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdLeadIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.lead.deleteCrmConnectionIdLeadId({
-  connectionId: "Senior azure",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdLeadIdResponse) => {
+  const res = await sdk.lead.deleteCrmConnectionIdLeadId({
+    connectionId: "Senior azure",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,28 +57,23 @@ List all leads
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdLeadResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.lead.getCrmConnectionIdLead({
-  connectionId: "Computer Hop",
-  limit: 7411.81,
-  offset: 9004.32,
-  order: "Operations candela Integration",
-  query: "impactful transform",
-  sort: "Tala defense Southwest",
-  updatedGte: new Date("2021-09-29T00:37:32.184Z"),
-}).then((res: GetCrmConnectionIdLeadResponse) => {
+  const res = await sdk.lead.getCrmConnectionIdLead({
+    connectionId: "Computer Hop",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -100,23 +96,24 @@ Retrieve a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdLeadIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.lead.getCrmConnectionIdLeadId({
-  connectionId: "users Minnesota Bypass",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdLeadIdResponse) => {
+  const res = await sdk.lead.getCrmConnectionIdLeadId({
+    connectionId: "users Minnesota Bypass",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -139,58 +136,37 @@ Update a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdLeadIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.lead.patchCrmConnectionIdLeadId({
-  crmLead: {
-    active: false,
-    address: {
-      address1: "Cambridgeshire",
-      address2: "Oriental farad male",
-      city: "D'Amorebury",
-      country: "Reunion",
-      countryCode: "UY",
-      postalCode: "87017-9001",
-      region: "Buckinghamshire Electric",
-      regionCode: "South gee",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyId: "Gasoline conglomeration Tennessine",
-    contactId: "grow hub",
-    createdAt: new Date("2023-06-09T15:23:12.644Z"),
-    creatorUserId: "voluptates",
-    emails: [
-      {
-        email: "Jeffrey.Denesik52@yahoo.com",
-        type: CrmEmailType.Home,
-      },
-    ],
+  });
+
+  const res = await sdk.lead.patchCrmConnectionIdLeadId({
+    crmLead: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Cambridgeshire",
+        },
+      ],
+    },
+    connectionId: "Oriental farad male",
     id: "<ID>",
-    name: "whiteboard lumen",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Cheese before against",
-        type: CrmTelephoneType.Fax,
-      },
-    ],
-    updatedAt: new Date("2022-07-12T14:19:50.007Z"),
-    userId: "Games yellow Towels",
-  },
-  connectionId: "brr misuse",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdLeadIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -213,57 +189,36 @@ Create a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdLeadResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.lead.postCrmConnectionIdLead({
-  crmLead: {
-    active: false,
-    address: {
-      address1: "XSS Country knowledge",
-      address2: "structure",
-      city: "Giovaniton",
-      country: "Ghana",
-      countryCode: "CO",
-      postalCode: "34495-0585",
-      region: "Modern",
-      regionCode: "Diesel",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyId: "yuppify",
-    contactId: "demanding scratch male",
-    createdAt: new Date("2023-03-07T11:22:05.657Z"),
-    creatorUserId: "masticate South",
-    emails: [
-      {
-        email: "Gregorio37@gmail.com",
-        type: CrmEmailType.Home,
-      },
-    ],
-    id: "<ID>",
-    name: "Granite Tools",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Hassium Balanced male",
-        type: CrmTelephoneType.Work,
-      },
-    ],
-    updatedAt: new Date("2021-06-26T11:56:58.926Z"),
-    userId: "Consultant",
-  },
-  connectionId: "solutions gosh",
-}).then((res: PostCrmConnectionIdLeadResponse) => {
+  });
+
+  const res = await sdk.lead.postCrmConnectionIdLead({
+    crmLead: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "XSS Country knowledge",
+        },
+      ],
+    },
+    connectionId: "structure",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -286,58 +241,37 @@ Update a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdLeadIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.lead.putCrmConnectionIdLeadId({
-  crmLead: {
-    active: false,
-    address: {
-      address1: "Extension",
-      address2: "supposing Dorado Assistant",
-      city: "South Gate",
-      country: "Reunion",
-      countryCode: "IS",
-      postalCode: "73732-2192",
-      region: "JBOD phew",
-      regionCode: "Southeast Framingham female",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyId: "deposit male",
-    contactId: "bunch edge",
-    createdAt: new Date("2021-04-03T18:08:02.798Z"),
-    creatorUserId: "East Panama",
-    emails: [
-      {
-        email: "Jamal20@yahoo.com",
-        type: CrmEmailType.Work,
-      },
-    ],
+  });
+
+  const res = await sdk.lead.putCrmConnectionIdLeadId({
+    crmLead: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Extension",
+        },
+      ],
+    },
+    connectionId: "supposing Dorado Assistant",
     id: "<ID>",
-    name: "pianist",
-    raw: {},
-    telephones: [
-      {
-        telephone: "caricature female",
-        type: CrmTelephoneType.Home,
-      },
-    ],
-    updatedAt: new Date("2022-08-09T07:11:50.077Z"),
-    userId: "Designer Folding",
-  },
-  connectionId: "Lanthanum wink Regional",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdLeadIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

@@ -17,23 +17,24 @@ Remove a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteAtsConnectionIdCandidateIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.candidate.deleteAtsConnectionIdCandidateId({
-  connectionId: "multimedia",
-  id: "<ID>",
-}).then((res: DeleteAtsConnectionIdCandidateIdResponse) => {
+  const res = await sdk.candidate.deleteAtsConnectionIdCandidateId({
+    connectionId: "multimedia",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,28 +57,23 @@ List all candidates
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdCandidateResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.candidate.getAtsConnectionIdCandidate({
-  connectionId: "Northwest forceful Moore",
-  limit: 2623.89,
-  offset: 7811.91,
-  order: "Mouse whether deploy",
-  query: "pink",
-  sort: "huzzah thistle",
-  updatedGte: new Date("2022-03-13T15:14:03.645Z"),
-}).then((res: GetAtsConnectionIdCandidateResponse) => {
+  const res = await sdk.candidate.getAtsConnectionIdCandidate({
+    connectionId: "Northwest forceful Moore",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -100,23 +96,24 @@ Retrieve a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdCandidateIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.candidate.getAtsConnectionIdCandidateId({
-  connectionId: "ha Loan",
-  id: "<ID>",
-}).then((res: GetAtsConnectionIdCandidateIdResponse) => {
+  const res = await sdk.candidate.getAtsConnectionIdCandidateId({
+    connectionId: "ha Loan",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -139,60 +136,42 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchAtsConnectionIdCandidateIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.candidate.patchAtsConnectionIdCandidateId({
-  atsCandidate: {
-    address: {
-      address1: "closely Goyette plus",
-      address2: "culpa",
-      city: "Darrinshire",
-      country: "Mongolia",
-      countryCode: "GW",
-      postalCode: "05275",
-      region: "TLS calculating",
-      regionCode: "up Argon Internal",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyName: "Fadel, Schulist and Koss",
-    createdAt: new Date("2022-12-09T07:16:54.728Z"),
-    emails: [
-      {
-        email: "Gregory63@gmail.com",
-        type: AtsEmailType.Other,
-      },
-    ],
-    externalId: "Elegant",
+  });
+
+  const res = await sdk.candidate.patchAtsConnectionIdCandidateId({
+    atsCandidate: {
+      address: {},
+      emails: [
+        {
+          email: "Stella57@hotmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "Chips",
+      ],
+      telephones: [
+        {
+          telephone: "culpa",
+        },
+      ],
+    },
+    connectionId: "Unbranded Country",
     id: "<ID>",
-    imageUrl: "Tricycle Yttrium Hybrid",
-    name: "ornery whether",
-    raw: {},
-    tags: [
-      "Cadillac",
-    ],
-    telephones: [
-      {
-        telephone: "Marketing Cotton",
-        type: AtsTelephoneType.Home,
-      },
-    ],
-    title: "East",
-    updatedAt: new Date("2023-10-31T11:53:36.953Z"),
-  },
-  connectionId: "redundant Tricycle unloose",
-  id: "<ID>",
-}).then((res: PatchAtsConnectionIdCandidateIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -215,59 +194,41 @@ Create a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostAtsConnectionIdCandidateResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.candidate.postAtsConnectionIdCandidate({
-  atsCandidate: {
-    address: {
-      address1: "incubate",
-      address2: "azure Trans",
-      city: "Port Rory",
-      country: "El Salvador",
-      countryCode: "CX",
-      postalCode: "54222-0235",
-      region: "modi fooey",
-      regionCode: "Metal TCP incidunt",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyName: "McCullough, Rosenbaum and Daugherty",
-    createdAt: new Date("2023-02-07T05:55:59.357Z"),
-    emails: [
-      {
-        email: "Eleanora.Rogahn44@hotmail.com",
-        type: AtsEmailType.Home,
-      },
-    ],
-    externalId: "South though",
-    id: "<ID>",
-    imageUrl: "Pants",
-    name: "Raleigh",
-    raw: {},
-    tags: [
-      "morph",
-    ],
-    telephones: [
-      {
-        telephone: "lavender Sedan Folk",
-        type: AtsTelephoneType.Other,
-      },
-    ],
-    title: "Savings panel",
-    updatedAt: new Date("2022-02-09T15:32:35.578Z"),
-  },
-  connectionId: "Ngultrum red glean",
-}).then((res: PostAtsConnectionIdCandidateResponse) => {
+  });
+
+  const res = await sdk.candidate.postAtsConnectionIdCandidate({
+    atsCandidate: {
+      address: {},
+      emails: [
+        {
+          email: "Elmore.Mante@gmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "than",
+      ],
+      telephones: [
+        {
+          telephone: "Wooden siemens Wooden",
+        },
+      ],
+    },
+    connectionId: "Jazz Ball",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -290,60 +251,42 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutAtsConnectionIdCandidateIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.candidate.putAtsConnectionIdCandidateId({
-  atsCandidate: {
-    address: {
-      address1: "archive",
-      address2: "Specialist Kyat",
-      city: "New Dennis",
-      country: "Mauritius",
-      countryCode: "TL",
-      postalCode: "49105-9909",
-      region: "copy olive",
-      regionCode: "withdrawal cumque person",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    companyName: "Kuhn and Sons",
-    createdAt: new Date("2022-01-28T10:51:00.922Z"),
-    emails: [
-      {
-        email: "Hester.Jenkins@gmail.com",
-        type: AtsEmailType.Home,
-      },
-    ],
-    externalId: "Loan EXE",
+  });
+
+  const res = await sdk.candidate.putAtsConnectionIdCandidateId({
+    atsCandidate: {
+      address: {},
+      emails: [
+        {
+          email: "Giovanny_Botsford@gmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "deploy",
+      ],
+      telephones: [
+        {
+          telephone: "knowledge officiis",
+        },
+      ],
+    },
+    connectionId: "Personal Madagascar",
     id: "<ID>",
-    imageUrl: "deliver executive RSS",
-    name: "because aha black",
-    raw: {},
-    tags: [
-      "program",
-    ],
-    telephones: [
-      {
-        telephone: "empower exit Pangender",
-        type: AtsTelephoneType.Mobile,
-      },
-    ],
-    title: "Corporate anenst Electronic",
-    updatedAt: new Date("2022-03-30T08:00:53.284Z"),
-  },
-  connectionId: "Flerovium azure",
-  id: "<ID>",
-}).then((res: PutAtsConnectionIdCandidateIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

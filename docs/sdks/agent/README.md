@@ -18,23 +18,24 @@ Remove a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.deleteTicketingConnectionIdAgentId({
-  connectionId: "navigate",
-  id: "<ID>",
-}).then((res: DeleteTicketingConnectionIdAgentIdResponse) => {
+  const res = await sdk.agent.deleteTicketingConnectionIdAgentId({
+    connectionId: "navigate",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,28 +58,23 @@ List all agents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdAgentResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.getTicketingConnectionIdAgent({
-  connectionId: "East Steel Frozen",
-  limit: 8285.04,
-  offset: 5507.07,
-  order: "Korea West Ryan",
-  query: "invoice coulomb soluta",
-  sort: "adored",
-  updatedGte: new Date("2023-11-15T19:25:12.859Z"),
-}).then((res: GetTicketingConnectionIdAgentResponse) => {
+  const res = await sdk.agent.getTicketingConnectionIdAgent({
+    connectionId: "East Steel Frozen",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,23 +97,24 @@ Retrieve a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.getTicketingConnectionIdAgentId({
-  connectionId: "Hat gas Cisgender",
-  id: "<ID>",
-}).then((res: GetTicketingConnectionIdAgentIdResponse) => {
+  const res = await sdk.agent.getTicketingConnectionIdAgentId({
+    connectionId: "Hat gas Cisgender",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -140,29 +137,23 @@ List all agents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUcConnectionIdAgentResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.getUcConnectionIdAgent({
-  connectionId: "Regional East Sedan",
-  contactId: "blue",
-  limit: 7827.68,
-  offset: 2116.69,
-  order: "Bicycle",
-  query: "Bacon officia iterate",
-  sort: "sticky vote lumen",
-  updatedGte: new Date("2021-07-05T19:53:29.041Z"),
-}).then((res: GetUcConnectionIdAgentResponse) => {
+  const res = await sdk.agent.getUcConnectionIdAgent({
+    connectionId: "Regional East Sedan",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -185,43 +176,38 @@ Update a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.patchTicketingConnectionIdAgentId({
-  ticketingAgent: {
-    createdAt: new Date("2022-06-01T22:24:40.372Z"),
-    emails: [
-      {
-        email: "Antonette63@gmail.com",
-        type: TicketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.agent.patchTicketingConnectionIdAgentId({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Albertha.Bernier63@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Borders parse",
+        },
+      ],
+    },
+    connectionId: "driver",
     id: "<ID>",
-    name: "Hop",
-    raw: {},
-    telephones: [
-      {
-        telephone: "driver",
-        type: TicketingTelephoneType.Work,
-      },
-    ],
-    updatedAt: new Date("2022-07-09T08:35:36.354Z"),
-  },
-  connectionId: "Soft Diesel Springs",
-  id: "<ID>",
-}).then((res: PatchTicketingConnectionIdAgentIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -244,42 +230,37 @@ Create a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdAgentResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.postTicketingConnectionIdAgent({
-  ticketingAgent: {
-    createdAt: new Date("2022-12-14T10:20:29.412Z"),
-    emails: [
-      {
-        email: "Eleazar_Beatty22@gmail.com",
-        type: TicketingEmailType.Other,
-      },
-    ],
-    id: "<ID>",
-    name: "exploit our wireless",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Korea wireless Ferrari",
-        type: TicketingTelephoneType.Home,
-      },
-    ],
-    updatedAt: new Date("2022-04-24T13:41:54.208Z"),
-  },
-  connectionId: "capacity copy Blues",
-}).then((res: PostTicketingConnectionIdAgentResponse) => {
+  const res = await sdk.agent.postTicketingConnectionIdAgent({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Adele80@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Unbranded Sedan",
+        },
+      ],
+    },
+    connectionId: "wireless absent",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -302,43 +283,38 @@ Update a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.agent.putTicketingConnectionIdAgentId({
-  ticketingAgent: {
-    createdAt: new Date("2022-12-19T19:47:13.993Z"),
-    emails: [
-      {
-        email: "Augustus_Kessler34@hotmail.com",
-        type: TicketingEmailType.Other,
-      },
-    ],
+  const res = await sdk.agent.putTicketingConnectionIdAgentId({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Samara_Botsford@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "newton Coordinator Refined",
+        },
+      ],
+    },
+    connectionId: "asynchronous",
     id: "<ID>",
-    name: "reintermediate impression Refined",
-    raw: {},
-    telephones: [
-      {
-        telephone: "asynchronous",
-        type: TicketingTelephoneType.Fax,
-      },
-    ],
-    updatedAt: new Date("2021-04-29T18:13:42.824Z"),
-  },
-  connectionId: "synergistic Uzbekistan green",
-  id: "<ID>",
-}).then((res: PutTicketingConnectionIdAgentIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

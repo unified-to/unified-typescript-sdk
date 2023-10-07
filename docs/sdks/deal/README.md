@@ -17,23 +17,24 @@ Remove a deal
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdDealIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.deleteCrmConnectionIdDealId({
-  connectionId: "Fresh",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdDealIdResponse) => {
+  const res = await sdk.deal.deleteCrmConnectionIdDealId({
+    connectionId: "Fresh",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,30 +57,23 @@ List all deals
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdDealResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.getCrmConnectionIdDeal({
-  companyId: "Tools Card copying",
-  connectionId: "Renminbi",
-  contactId: "till payment World",
-  limit: 8656.16,
-  offset: 4455.8,
-  order: "global",
-  query: "Program Bespoke Wisconsin",
-  sort: "Netherlands under",
-  updatedGte: new Date("2022-12-23T01:47:21.816Z"),
-}).then((res: GetCrmConnectionIdDealResponse) => {
+  const res = await sdk.deal.getCrmConnectionIdDeal({
+    connectionId: "Tools Card copying",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -102,23 +96,24 @@ Retrieve a deal
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdDealIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.getCrmConnectionIdDealId({
-  connectionId: "Concrete Director",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdDealIdResponse) => {
+  const res = await sdk.deal.getCrmConnectionIdDealId({
+    connectionId: "Concrete Director",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -141,42 +136,30 @@ Update a deal
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdDealIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.patchCrmConnectionIdDealId({
-  crmDeal: {
-    amount: 7725.78,
-    closedAt: new Date("2021-10-28T08:42:49.591Z"),
-    createdAt: new Date("2023-04-23T15:03:53.999Z"),
-    currency: "Afghani",
+  const res = await sdk.deal.patchCrmConnectionIdDealId({
+    crmDeal: {
+      raw: {},
+      tags: [
+        "Bicycle",
+      ],
+    },
+    connectionId: "partnerships",
     id: "<ID>",
-    lostReason: "North",
-    name: "midnight",
-    pipeline: "envisioneer Functionality Loan",
-    probability: 7051.73,
-    raw: {},
-    source: "Krone",
-    stage: "pascal aliquam gripping",
-    tags: [
-      "where",
-    ],
-    updatedAt: new Date("2022-04-05T10:21:22.505Z"),
-    wonReason: "Savings kilogram",
-  },
-  connectionId: "Chair weber silver",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdDealIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -199,41 +182,29 @@ Create a deal
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdDealResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.postCrmConnectionIdDeal({
-  crmDeal: {
-    amount: 6144.41,
-    closedAt: new Date("2022-07-10T09:55:59.977Z"),
-    createdAt: new Date("2022-01-20T07:28:03.436Z"),
-    currency: "Convertible Marks",
-    id: "<ID>",
-    lostReason: "pfft female",
-    name: "Expressway",
-    pipeline: "withdrawal Extended busily",
-    probability: 7998.22,
-    raw: {},
-    source: "spiffy sometimes",
-    stage: "transmitter",
-    tags: [
-      "intermediate",
-    ],
-    updatedAt: new Date("2022-10-06T18:34:11.762Z"),
-    wonReason: "Cisgender input HTTP",
-  },
-  connectionId: "accusantium Checking",
-}).then((res: PostCrmConnectionIdDealResponse) => {
+  const res = await sdk.deal.postCrmConnectionIdDeal({
+    crmDeal: {
+      raw: {},
+      tags: [
+        "M2F",
+      ],
+    },
+    connectionId: "Borders pfft",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -256,42 +227,30 @@ Update a deal
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdDealIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.deal.putCrmConnectionIdDealId({
-  crmDeal: {
-    amount: 4050.98,
-    closedAt: new Date("2022-01-15T04:05:31.641Z"),
-    createdAt: new Date("2023-06-04T01:28:32.466Z"),
-    currency: "Bermudian Dollar (customarily known as Bermuda Dollar)",
+  const res = await sdk.deal.putCrmConnectionIdDealId({
+    crmDeal: {
+      raw: {},
+      tags: [
+        "Account",
+      ],
+    },
+    connectionId: "payment",
     id: "<ID>",
-    lostReason: "laudantium Southwest",
-    name: "wail Developer",
-    pipeline: "male Samarium Gourde",
-    probability: 6728.74,
-    raw: {},
-    source: "Stage Gasoline Metal",
-    stage: "Corporate withdrawal Tasty",
-    tags: [
-      "extranet",
-    ],
-    updatedAt: new Date("2021-10-16T22:38:02.052Z"),
-    wonReason: "phooey",
-  },
-  connectionId: "Jazz",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdDealIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

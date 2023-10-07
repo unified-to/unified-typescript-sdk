@@ -13,24 +13,23 @@ Retrieve enrichment information for a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetEnrichConnectionIdCompanyResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.enrich.getEnrichConnectionIdCompany({
-  connectionId: "female Computers Central",
-  domain: "scientific-facet.biz",
-  name: "Outdoors embrace interface",
-}).then((res: GetEnrichConnectionIdCompanyResponse) => {
+  const res = await sdk.enrich.getEnrichConnectionIdCompany({
+    connectionId: "female Computers Central",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -53,26 +52,23 @@ Retrieve enrichment information for a person
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetEnrichConnectionIdPersonResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.enrich.getEnrichConnectionIdPerson({
-  connectionId: "Iowa Account",
-  email: "Jaiden_Weimann24@gmail.com",
-  linkedinUrl: "paradigms integrate Creative",
-  name: "Investment",
-  twitter: "Hills",
-}).then((res: GetEnrichConnectionIdPersonResponse) => {
+  const res = await sdk.enrich.getEnrichConnectionIdPerson({
+    connectionId: "Iowa Account",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

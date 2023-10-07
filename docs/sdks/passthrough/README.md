@@ -16,23 +16,24 @@ Passthrough DELETE
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeletePassthroughConnectionIdPathResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.passthrough.deletePassthroughConnectionIdPath({
-  connectionId: "Planner Checking Tricycle",
-  path: "/usr/obj",
-}).then((res: DeletePassthroughConnectionIdPathResponse) => {
+  const res = await sdk.passthrough.deletePassthroughConnectionIdPath({
+    connectionId: "Planner Checking Tricycle",
+    path: "/usr/obj",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -55,23 +56,24 @@ Passthrough GET
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetPassthroughConnectionIdPathResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.passthrough.getPassthroughConnectionIdPath({
-  connectionId: "Global",
-  path: "/private/var",
-}).then((res: GetPassthroughConnectionIdPathResponse) => {
+  const res = await sdk.passthrough.getPassthroughConnectionIdPath({
+    connectionId: "Global",
+    path: "/private/var",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -94,24 +96,25 @@ Passthrough PUT
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchPassthroughConnectionIdPathResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.passthrough.patchPassthroughConnectionIdPath({
-  connectionId: "average maroon",
-  path: "/proc",
-  undefined: {},
-}).then((res: PatchPassthroughConnectionIdPathResponse) => {
+  const res = await sdk.passthrough.patchPassthroughConnectionIdPath({
+    connectionId: "average maroon",
+    path: "/proc",
+    undefined: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -134,24 +137,25 @@ Passthrough POST
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostPassthroughConnectionIdPathResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.passthrough.postPassthroughConnectionIdPath({
-  connectionId: "Computer Hip",
-  path: "/boot/defaults",
-  undefined: {},
-}).then((res: PostPassthroughConnectionIdPathResponse) => {
+  const res = await sdk.passthrough.postPassthroughConnectionIdPath({
+    connectionId: "Computer Hip",
+    path: "/boot/defaults",
+    undefined: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -174,24 +178,25 @@ Passthrough PUT
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutPassthroughConnectionIdPathResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.passthrough.putPassthroughConnectionIdPath({
-  connectionId: "Computer Oriental",
-  path: "/usr/local/src",
-  undefined: {},
-}).then((res: PutPassthroughConnectionIdPathResponse) => {
+  const res = await sdk.passthrough.putPassthroughConnectionIdPath({
+    connectionId: "Computer Oriental",
+    path: "/usr/local/src",
+    undefined: {},
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

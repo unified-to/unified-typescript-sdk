@@ -17,23 +17,24 @@ Remove a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteMartechConnectionIdListIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.deleteMartechConnectionIdListId({
-  connectionId: "Minivan",
-  id: "<ID>",
-}).then((res: DeleteMartechConnectionIdListIdResponse) => {
+  const res = await sdk.list.deleteMartechConnectionIdListId({
+    connectionId: "Minivan",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,28 +57,23 @@ List all lists
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetMartechConnectionIdListResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.getMartechConnectionIdList({
-  connectionId: "silver DeKalb",
-  limit: 9799.48,
-  offset: 4800.63,
-  order: "Bedfordshire",
-  query: "Hip Pass",
-  sort: "since",
-  updatedGte: new Date("2022-03-26T19:40:00.770Z"),
-}).then((res: GetMartechConnectionIdListResponse) => {
+  const res = await sdk.list.getMartechConnectionIdList({
+    connectionId: "silver DeKalb",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -100,23 +96,24 @@ Retrieve a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetMartechConnectionIdListIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.getMartechConnectionIdListId({
-  connectionId: "Jewelery orange",
-  id: "<ID>",
-}).then((res: GetMartechConnectionIdListIdResponse) => {
+  const res = await sdk.list.getMartechConnectionIdListId({
+    connectionId: "Jewelery orange",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -139,30 +136,27 @@ Update a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchMartechConnectionIdListIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.patchMartechConnectionIdListId({
-  marketingList: {
-    createdAt: "Funk",
+  const res = await sdk.list.patchMartechConnectionIdListId({
+    marketingList: {
+      raw: {},
+    },
+    connectionId: "Funk",
     id: "<ID>",
-    name: "lime Fiat",
-    raw: {},
-    updatedAt: new Date("2021-01-15T20:51:24.192Z"),
-  },
-  connectionId: "male sheepishly Intelligent",
-  id: "<ID>",
-}).then((res: PatchMartechConnectionIdListIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -185,29 +179,26 @@ Create a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostMartechConnectionIdListResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.postMartechConnectionIdList({
-  marketingList: {
-    createdAt: "synergistic Transexual Steel",
-    id: "<ID>",
-    name: "Virginia whoever Bicycle",
-    raw: {},
-    updatedAt: new Date("2023-04-27T09:56:39.589Z"),
-  },
-  connectionId: "Hybrid",
-}).then((res: PostMartechConnectionIdListResponse) => {
+  const res = await sdk.list.postMartechConnectionIdList({
+    marketingList: {
+      raw: {},
+    },
+    connectionId: "synergistic Transexual Steel",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -230,30 +221,27 @@ Update a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutMartechConnectionIdListIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.list.putMartechConnectionIdListId({
-  marketingList: {
-    createdAt: "Underpass initiatives",
+  const res = await sdk.list.putMartechConnectionIdListId({
+    marketingList: {
+      raw: {},
+    },
+    connectionId: "Underpass initiatives",
     id: "<ID>",
-    name: "North Progressive Assistant",
-    raw: {},
-    updatedAt: new Date("2023-10-03T22:31:39.028Z"),
-  },
-  connectionId: "Security Legacy onto",
-  id: "<ID>",
-}).then((res: PutMartechConnectionIdListIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

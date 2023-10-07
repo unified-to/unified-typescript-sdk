@@ -17,24 +17,25 @@ Remove a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.deleteTicketingConnectionIdNoteTicketIdId({
-  connectionId: "DRAM Liaison",
-  id: "<ID>",
-  ticketId: "Tasty exploit",
-}).then((res: DeleteTicketingConnectionIdNoteTicketIdIdResponse) => {
+  const res = await sdk.note.deleteTicketingConnectionIdNoteTicketIdId({
+    connectionId: "DRAM Liaison",
+    id: "<ID>",
+    ticketId: "Tasty exploit",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,29 +58,24 @@ List all notes
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdNoteTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.getTicketingConnectionIdNoteTicketId({
-  connectionId: "Account revolutionary",
-  limit: 2310.88,
-  offset: 6688.82,
-  order: "AI",
-  query: "stanch Investor attitude",
-  sort: "Cotton",
-  ticketId: "Handmade Kia",
-  updatedGte: new Date("2022-05-26T17:12:11.333Z"),
-}).then((res: GetTicketingConnectionIdNoteTicketIdResponse) => {
+  const res = await sdk.note.getTicketingConnectionIdNoteTicketId({
+    connectionId: "Account revolutionary",
+    ticketId: "Associate",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -102,24 +98,25 @@ Retrieve a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.getTicketingConnectionIdNoteTicketIdId({
-  connectionId: "for",
-  id: "<ID>",
-  ticketId: "female",
-}).then((res: GetTicketingConnectionIdNoteTicketIdIdResponse) => {
+  const res = await sdk.note.getTicketingConnectionIdNoteTicketIdId({
+    connectionId: "for",
+    id: "<ID>",
+    ticketId: "female",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -142,33 +139,28 @@ Update a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.patchTicketingConnectionIdNoteTicketIdId({
-  ticketingNote: {
-    agentId: "compress Oganesson",
-    createdAt: new Date("2022-02-16T08:13:19.991Z"),
-    customerId: "demystify",
-    description: "Fundamental demand-driven workforce",
+  const res = await sdk.note.patchTicketingConnectionIdNoteTicketIdId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "compress Oganesson",
     id: "<ID>",
-    raw: {},
-    updatedAt: "Nissan",
-  },
-  connectionId: "Chicken",
-  id: "<ID>",
-  ticketId: "frictionless convergence officia",
-}).then((res: PatchTicketingConnectionIdNoteTicketIdIdResponse) => {
+    ticketId: "York Fantastic",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -191,32 +183,27 @@ Create a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdNoteTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.postTicketingConnectionIdNoteTicketId({
-  ticketingNote: {
-    agentId: "Plantation blue",
-    createdAt: new Date("2021-06-11T06:54:31.529Z"),
-    customerId: "asymmetric",
-    description: "Expanded intermediate attitude",
-    id: "<ID>",
-    raw: {},
-    updatedAt: "naturally",
-  },
-  connectionId: "Wagon Sulfur",
-  ticketId: "digital",
-}).then((res: PostTicketingConnectionIdNoteTicketIdResponse) => {
+  const res = await sdk.note.postTicketingConnectionIdNoteTicketId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "Plantation blue",
+    ticketId: "Ford",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -239,33 +226,28 @@ Update a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.note.putTicketingConnectionIdNoteTicketIdId({
-  ticketingNote: {
-    agentId: "SMTP Cis",
-    createdAt: new Date("2022-07-27T18:14:06.584Z"),
-    customerId: "Carolina",
-    description: "Integrated asymmetric strategy",
+  const res = await sdk.note.putTicketingConnectionIdNoteTicketIdId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "SMTP Cis",
     id: "<ID>",
-    raw: {},
-    updatedAt: "Northeast Morocco supposing",
-  },
-  connectionId: "DNS Fermium",
-  id: "<ID>",
-  ticketId: "Southwest round",
-}).then((res: PutTicketingConnectionIdNoteTicketIdIdResponse) => {
+    ticketId: "East benchmark",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

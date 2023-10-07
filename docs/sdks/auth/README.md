@@ -13,37 +13,28 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import {
-  GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse,
-  GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes,
-} from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
+import { GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes } from "unified-to/dist/sdk/models/operations";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.auth.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-  env: "Algerian",
-  externalXref: "Cambridgeshire Surinam",
-  failureRedirect: "Designer Drive",
-  integrationType: "program Home",
-  lang: "Plastic program",
-  redirect: false,
-  scopes: [
-    GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.CrmFileRead,
-  ],
-  state: "Functionality Product",
-  subdomain: "payment Developer Dynamic",
-  successRedirect: "Northeast",
-  workspaceId: "duh empower Kwanza",
-}).then((res: GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse) => {
+  const res = await sdk.auth.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
+    integrationType: "Algerian",
+    scopes: [
+      GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.MartechMemberWrite,
+    ],
+    workspaceId: "hound",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -66,28 +57,24 @@ Returns an authentication URL for the specified integration.  Once a successful 
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.auth.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
-  env: "Rubber",
-  failureRedirect: "gold Cambridgeshire",
-  integrationType: "Plastic services pixel",
-  redirect: false,
-  state: "Volkswagen Southwest",
-  successRedirect: "drive integrated Bicycle",
-  workspaceId: "Fantastic recontextualize Frozen",
-}).then((res: GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse) => {
+  const res = await sdk.auth.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
+    integrationType: "Rubber",
+    workspaceId: "gold Cambridgeshire",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

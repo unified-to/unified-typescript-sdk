@@ -17,23 +17,24 @@ Remove a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteAtsConnectionIdScorecardIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.deleteAtsConnectionIdScorecardId({
-  connectionId: "Agent intrepid",
-  id: "<ID>",
-}).then((res: DeleteAtsConnectionIdScorecardIdResponse) => {
+  const res = await sdk.document.deleteAtsConnectionIdScorecardId({
+    connectionId: "Agent intrepid",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,31 +57,23 @@ List all scorecards
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdScorecardResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.getAtsConnectionIdScorecard({
-  applicationId: "Licensed deep",
-  candidateId: "happily",
-  connectionId: "lunch accusamus",
-  interviewId: "for famously Southwest",
-  limit: 950.05,
-  offset: 6133.23,
-  order: "withdrawal",
-  query: "Bicycle copy Bronze",
-  sort: "ouch non ut",
-  updatedGte: new Date("2021-06-01T09:53:52.927Z"),
-}).then((res: GetAtsConnectionIdScorecardResponse) => {
+  const res = await sdk.document.getAtsConnectionIdScorecard({
+    connectionId: "Licensed deep",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -103,23 +96,24 @@ Retrieve a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdScorecardIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.getAtsConnectionIdScorecardId({
-  connectionId: "East mobile Mini",
-  id: "<ID>",
-}).then((res: GetAtsConnectionIdScorecardIdResponse) => {
+  const res = await sdk.document.getAtsConnectionIdScorecardId({
+    connectionId: "East mobile Mini",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -142,36 +136,28 @@ Update a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchAtsConnectionIdScorecardIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsScorecardRecommendation } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.patchAtsConnectionIdScorecardId({
-  atsScorecard: {
-    applicationId: "Carter Hatchback functionalities",
-    candidateId: "disagree gold New",
-    createdAt: new Date("2023-05-08T15:11:07.692Z"),
+  const res = await sdk.document.patchAtsConnectionIdScorecardId({
+    atsScorecard: {
+      raw: {},
+    },
+    connectionId: "Carter Hatchback functionalities",
     id: "<ID>",
-    interviewId: "blue",
-    interviewerId: "North Buckinghamshire blur",
-    jobId: "kelvin hack Fantastic",
-    raw: {},
-    recommendation: AtsScorecardRecommendation.DefinitelyNo,
-    updatedAt: new Date("2022-11-18T04:49:38.005Z"),
-  },
-  connectionId: "hacking meter",
-  id: "<ID>",
-}).then((res: PatchAtsConnectionIdScorecardIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -194,35 +180,27 @@ Create a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostAtsConnectionIdScorecardResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsScorecardRecommendation } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.postAtsConnectionIdScorecard({
-  atsScorecard: {
-    applicationId: "female bah",
-    candidateId: "if since",
-    createdAt: new Date("2022-02-26T00:06:29.981Z"),
-    id: "<ID>",
-    interviewId: "invoice",
-    interviewerId: "male",
-    jobId: "Accountability",
-    raw: {},
-    recommendation: AtsScorecardRecommendation.StrongYes,
-    updatedAt: new Date("2023-10-04T17:15:51.015Z"),
-  },
-  connectionId: "Legacy tan",
-}).then((res: PostAtsConnectionIdScorecardResponse) => {
+  const res = await sdk.document.postAtsConnectionIdScorecard({
+    atsScorecard: {
+      raw: {},
+    },
+    connectionId: "female bah",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -245,36 +223,28 @@ Update a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutAtsConnectionIdScorecardIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsScorecardRecommendation } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.document.putAtsConnectionIdScorecardId({
-  atsScorecard: {
-    applicationId: "East Granite",
-    candidateId: "South",
-    createdAt: new Date("2022-03-02T12:33:41.490Z"),
+  const res = await sdk.document.putAtsConnectionIdScorecardId({
+    atsScorecard: {
+      raw: {},
+    },
+    connectionId: "East Granite",
     id: "<ID>",
-    interviewId: "Texas Technetium hack",
-    interviewerId: "Adventure Kyrgyz Organic",
-    jobId: "Home Dynamic Integration",
-    raw: {},
-    recommendation: AtsScorecardRecommendation.No,
-    updatedAt: new Date("2023-11-13T03:01:57.066Z"),
-  },
-  connectionId: "Transexual Manager Rap",
-  id: "<ID>",
-}).then((res: PutAtsConnectionIdScorecardIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

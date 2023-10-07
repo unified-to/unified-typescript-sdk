@@ -15,22 +15,23 @@ Remove webhook subscription
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteUnifiedWebhookIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.webhook.deleteUnifiedWebhookId({
-  id: "<ID>",
-}).then((res: DeleteUnifiedWebhookIdResponse) => {
+  const res = await sdk.webhook.deleteUnifiedWebhookId({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -53,28 +54,21 @@ Returns all registered webhooks
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedWebhookResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.webhook.getUnifiedWebhook({
-  env: "Investor methodical Fitness",
-  limit: 8087.22,
-  object: "Franc past salmon",
-  offset: 5240.75,
-  order: "program",
-  sort: "below JSON",
-  updatedGte: new Date("2022-05-29T13:22:55.562Z"),
-}).then((res: GetUnifiedWebhookResponse) => {
+  const res = await sdk.webhook.getUnifiedWebhook({});
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -97,22 +91,23 @@ Retrieve webhook by its ID
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUnifiedWebhookIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.webhook.getUnifiedWebhookId({
-  id: "<ID>",
-}).then((res: GetUnifiedWebhookIdResponse) => {
+  const res = await sdk.webhook.getUnifiedWebhookId({
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -135,50 +130,43 @@ To maintain compatibility with the webhooks specification and Zapier webhooks, o
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import {
-  PostUnifiedWebhookConnectionIdObjectEvents,
-  PostUnifiedWebhookConnectionIdObjectResponse,
-} from "Unified-to/dist/sdk/models/operations";
-import { PropertyWebhookEvents, WebhookObjectType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { PostUnifiedWebhookConnectionIdObjectEvents } from "unified-to/dist/sdk/models/operations";
+import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.webhook.postUnifiedWebhookConnectionIdObject({
-  webhook: {
-    checkedAt: new Date("2021-02-25T07:12:08.980Z"),
-    connectionId: "deposit 1080p Passenger",
-    createdAt: new Date("2023-02-21T14:58:56.193Z"),
-    environment: "Minnesota Soap",
+  const res = await sdk.webhook.postUnifiedWebhookConnectionIdObject({
+    webhook: {
+      connectionId: "drat",
+      events: [
+        PropertyWebhookEvents.Updated,
+      ],
+      hookUrl: "siemens National",
+      integrationType: "GB Rustic deposit",
+      interval: 6073.96,
+      objectType: WebhookObjectType.CrmContact,
+      subscriptions: [
+        "Diesel",
+      ],
+      workspaceId: "female ken",
+    },
+    connectionId: "chocolate",
     events: [
-      PropertyWebhookEvents.Updated,
+      PostUnifiedWebhookConnectionIdObjectEvents.Updated,
     ],
-    hookUrl: "Table female ken",
-    id: "<ID>",
-    includeRaw: false,
-    integrationType: "chocolate",
-    interval: 1710.16,
-    objectType: WebhookObjectType.EnrichCompany,
-    subscriptions: [
-      "female",
-    ],
-    updatedAt: new Date("2022-08-02T17:13:06.397Z"),
-    workspaceId: "hertz",
-  },
-  connectionId: "Borders",
-  events: [
-    PostUnifiedWebhookConnectionIdObjectEvents.Created,
-  ],
-  object: "scalable",
-}).then((res: PostUnifiedWebhookConnectionIdObjectResponse) => {
+    object: "female driver",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

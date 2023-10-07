@@ -18,23 +18,24 @@ Remove a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.company.deleteCrmConnectionIdCompanyId({
-  connectionId: "hertz morph",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdCompanyIdResponse) => {
+  const res = await sdk.company.deleteCrmConnectionIdCompanyId({
+    connectionId: "hertz morph",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -57,30 +58,23 @@ List all companies
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdCompanyResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.company.getCrmConnectionIdCompany({
-  connectionId: "indexing",
-  contactId: "Porsche firewall",
-  dealId: "Hafnium Computers",
-  limit: 902.85,
-  offset: 2893.88,
-  order: "Interactions relationships juxtapose",
-  query: "newton Luxembourg",
-  sort: "Dakota quantifying Actinium",
-  updatedGte: new Date("2022-09-27T07:42:48.074Z"),
-}).then((res: GetCrmConnectionIdCompanyResponse) => {
+  const res = await sdk.company.getCrmConnectionIdCompany({
+    connectionId: "indexing",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -103,23 +97,24 @@ Retrieve a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.company.getCrmConnectionIdCompanyId({
-  connectionId: "Netherlands",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdCompanyIdResponse) => {
+  const res = await sdk.company.getCrmConnectionIdCompanyId({
+    connectionId: "Netherlands",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -142,24 +137,23 @@ Retrieve enrichment information for a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetEnrichConnectionIdCompanyResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.company.getEnrichConnectionIdCompany({
-  connectionId: "female Computers Central",
-  domain: "scientific-facet.biz",
-  name: "Outdoors embrace interface",
-}).then((res: GetEnrichConnectionIdCompanyResponse) => {
+  const res = await sdk.company.getEnrichConnectionIdCompany({
+    connectionId: "female Computers Central",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -182,63 +176,46 @@ Update a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.company.patchCrmConnectionIdCompanyId({
-  crmCompany: {
-    active: false,
-    address: {
-      address1: "invoice",
-      address2: "indexing Ford",
-      city: "McAllen",
-      country: "Netherlands",
-      countryCode: "PF",
-      postalCode: "93486",
-      region: "Steel impactful",
-      regionCode: "Dong",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2023-07-25T08:43:38.995Z"),
-    dealIds: [
-      "usefully",
-    ],
-    emails: [
-      {
-        email: "Annabel31@gmail.com",
-        type: CrmEmailType.Work,
-      },
-    ],
+  });
+
+  const res = await sdk.company.patchCrmConnectionIdCompanyId({
+    crmCompany: {
+      address: {},
+      dealIds: [
+        "Soft",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      tags: [
+        "invoice",
+      ],
+      telephones: [
+        {
+          telephone: "miniature Quality",
+        },
+      ],
+      websites: [
+        "redefine",
+      ],
+    },
+    connectionId: "invoice National",
     id: "<ID>",
-    name: "Toys Vermont Astatine",
-    raw: {},
-    tags: [
-      "Trigender",
-    ],
-    telephones: [
-      {
-        telephone: "female",
-        type: CrmTelephoneType.Home,
-      },
-    ],
-    updatedAt: new Date("2021-12-22T11:39:56.432Z"),
-    websites: [
-      "Latin",
-    ],
-  },
-  connectionId: "North kilogram connecting",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdCompanyIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -261,62 +238,45 @@ Create a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdCompanyResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.company.postCrmConnectionIdCompany({
-  crmCompany: {
-    active: false,
-    address: {
-      address1: "consequently gosh",
-      address2: "phooey",
-      city: "Antonettaville",
-      country: "Lebanon",
-      countryCode: "SI",
-      postalCode: "79462",
-      region: "orchid Oxygen Kids",
-      regionCode: "Electric utilisation",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2021-10-01T08:46:18.197Z"),
-    dealIds: [
-      "Tennessee",
-    ],
-    emails: [
-      {
-        email: "Jaida.McDermott26@yahoo.com",
-        type: CrmEmailType.Other,
-      },
-    ],
-    id: "<ID>",
-    name: "Hydrogen Wooden",
-    raw: {},
-    tags: [
-      "CSS",
-    ],
-    telephones: [
-      {
-        telephone: "Account invoice",
-        type: CrmTelephoneType.Mobile,
-      },
-    ],
-    updatedAt: new Date("2021-09-12T17:31:24.634Z"),
-    websites: [
-      "Intuitive",
-    ],
-  },
-  connectionId: "Gasoline",
-}).then((res: PostCrmConnectionIdCompanyResponse) => {
+  });
+
+  const res = await sdk.company.postCrmConnectionIdCompany({
+    crmCompany: {
+      address: {},
+      dealIds: [
+        "Personal",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      tags: [
+        "gosh",
+      ],
+      telephones: [
+        {
+          telephone: "phooey",
+        },
+      ],
+      websites: [
+        "primary",
+      ],
+    },
+    connectionId: "neural",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -339,63 +299,46 @@ Update a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdCompanyIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.company.putCrmConnectionIdCompanyId({
-  crmCompany: {
-    active: false,
-    address: {
-      address1: "Northwest Northwest",
-      address2: "portals Diesel",
-      city: "Azusa",
-      country: "Qatar",
-      countryCode: "CG",
-      postalCode: "52396",
-      region: "Tuna sticky lest",
-      regionCode: "Soft boo Missoula",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    createdAt: new Date("2022-05-14T19:17:30.970Z"),
-    dealIds: [
-      "Hybrid",
-    ],
-    emails: [
-      {
-        email: "Vance_Cruickshank93@gmail.com",
-        type: CrmEmailType.Home,
-      },
-    ],
+  });
+
+  const res = await sdk.company.putCrmConnectionIdCompanyId({
+    crmCompany: {
+      address: {},
+      dealIds: [
+        "dicta",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      tags: [
+        "background",
+      ],
+      telephones: [
+        {
+          telephone: "veniam secondary",
+        },
+      ],
+      websites: [
+        "Southwest",
+      ],
+    },
+    connectionId: "Calcium",
     id: "<ID>",
-    name: "lest Northwest",
-    raw: {},
-    tags: [
-      "East",
-    ],
-    telephones: [
-      {
-        telephone: "Bronze round",
-        type: CrmTelephoneType.Mobile,
-      },
-    ],
-    updatedAt: new Date("2022-02-21T09:41:36.696Z"),
-    websites: [
-      "Keyboard",
-    ],
-  },
-  connectionId: "orange Bespoke",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdCompanyIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

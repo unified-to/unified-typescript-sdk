@@ -17,23 +17,24 @@ Remove a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteAtsConnectionIdInterviewIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.deleteAtsConnectionIdInterviewId({
-  connectionId: "redundant Health Hayes",
-  id: "<ID>",
-}).then((res: DeleteAtsConnectionIdInterviewIdResponse) => {
+  const res = await sdk.interview.deleteAtsConnectionIdInterviewId({
+    connectionId: "redundant Health Hayes",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -56,29 +57,23 @@ List all interviews
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdInterviewResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.getAtsConnectionIdInterview({
-  applicationId: "Fresh Pickup converse",
-  connectionId: "vortals",
-  limit: 5167.08,
-  offset: 6488.61,
-  order: "Oregon Metal",
-  query: "Account",
-  sort: "haptic",
-  updatedGte: new Date("2021-09-23T19:46:35.825Z"),
-}).then((res: GetAtsConnectionIdInterviewResponse) => {
+  const res = await sdk.interview.getAtsConnectionIdInterview({
+    connectionId: "Fresh Pickup converse",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,23 +96,24 @@ Retrieve a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetAtsConnectionIdInterviewIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.getAtsConnectionIdInterviewId({
-  connectionId: "Loan Gorgeous lux",
-  id: "<ID>",
-}).then((res: GetAtsConnectionIdInterviewIdResponse) => {
+  const res = await sdk.interview.getAtsConnectionIdInterviewId({
+    connectionId: "Loan Gorgeous lux",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -140,41 +136,31 @@ Update a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchAtsConnectionIdInterviewIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.patchAtsConnectionIdInterviewId({
-  atsInterview: {
-    applicationId: "SSD green pascal",
-    candidateId: "Buckinghamshire example",
-    createdAt: new Date("2021-08-24T08:30:07.073Z"),
-    endAt: new Date("2021-06-27T04:06:46.373Z"),
-    externalEventXref: "apropos Gadolinium",
+  const res = await sdk.interview.patchAtsConnectionIdInterviewId({
+    atsInterview: {
+      raw: {},
+      userIds: [
+        "coulomb",
+      ],
+    },
+    connectionId: "green pascal illo",
     id: "<ID>",
-    jobId: "transgender transmitting",
-    location: "Investor synthesizing",
-    raw: {},
-    startAt: new Date("2021-01-19T01:51:02.213Z"),
-    status: AtsInterviewStatus.AwaitingFeedback,
-    updatedAt: new Date("2022-01-21T17:38:09.113Z"),
-    userIds: [
-      "Honda",
-    ],
-  },
-  connectionId: "Myrl Dram Trail",
-  id: "<ID>",
-}).then((res: PatchAtsConnectionIdInterviewIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -197,40 +183,30 @@ Create a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostAtsConnectionIdInterviewResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.postAtsConnectionIdInterview({
-  atsInterview: {
-    applicationId: "round Hat Savings",
-    candidateId: "Northeast",
-    createdAt: new Date("2022-12-27T10:33:09.160Z"),
-    endAt: new Date("2021-11-12T23:57:19.974Z"),
-    externalEventXref: "platforms",
-    id: "<ID>",
-    jobId: "payment panel Identity",
-    location: "Northwest Buckinghamshire",
-    raw: {},
-    startAt: new Date("2022-11-02T05:07:18.592Z"),
-    status: AtsInterviewStatus.Complete,
-    updatedAt: new Date("2023-07-13T16:35:04.177Z"),
-    userIds: [
-      "Chevrolet",
-    ],
-  },
-  connectionId: "Shoes Northeast SMTP",
-}).then((res: PostAtsConnectionIdInterviewResponse) => {
+  const res = await sdk.interview.postAtsConnectionIdInterview({
+    atsInterview: {
+      raw: {},
+      userIds: [
+        "Tricycle",
+      ],
+    },
+    connectionId: "Hat Savings Electronic",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -253,41 +229,31 @@ Update a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutAtsConnectionIdInterviewIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.interview.putAtsConnectionIdInterviewId({
-  atsInterview: {
-    applicationId: "Generic capacitor",
-    candidateId: "Road disbelieve",
-    createdAt: new Date("2022-06-22T01:57:06.573Z"),
-    endAt: new Date("2022-05-28T02:29:32.144Z"),
-    externalEventXref: "architectures",
+  const res = await sdk.interview.putAtsConnectionIdInterviewId({
+    atsInterview: {
+      raw: {},
+      userIds: [
+        "amet",
+      ],
+    },
+    connectionId: "capacitor Auto",
     id: "<ID>",
-    jobId: "Casper 1080p South",
-    location: "program siemens Cis",
-    raw: {},
-    startAt: new Date("2021-03-14T15:20:41.084Z"),
-    status: AtsInterviewStatus.AwaitingFeedback,
-    updatedAt: new Date("2023-07-14T19:59:39.905Z"),
-    userIds: [
-      "East",
-    ],
-  },
-  connectionId: "ASCII yet Hybrid",
-  id: "<ID>",
-}).then((res: PutAtsConnectionIdInterviewIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

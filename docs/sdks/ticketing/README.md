@@ -35,23 +35,24 @@ Remove a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.deleteTicketingConnectionIdAgentId({
-  connectionId: "navigate",
-  id: "<ID>",
-}).then((res: DeleteTicketingConnectionIdAgentIdResponse) => {
+  const res = await sdk.ticketing.deleteTicketingConnectionIdAgentId({
+    connectionId: "navigate",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -74,23 +75,24 @@ Remove a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdCustomerIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.deleteTicketingConnectionIdCustomerId({
-  connectionId: "Electric Gloves pish",
-  id: "<ID>",
-}).then((res: DeleteTicketingConnectionIdCustomerIdResponse) => {
+  const res = await sdk.ticketing.deleteTicketingConnectionIdCustomerId({
+    connectionId: "Electric Gloves pish",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -113,24 +115,25 @@ Remove a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.deleteTicketingConnectionIdNoteTicketIdId({
-  connectionId: "DRAM Liaison",
-  id: "<ID>",
-  ticketId: "Tasty exploit",
-}).then((res: DeleteTicketingConnectionIdNoteTicketIdIdResponse) => {
+  const res = await sdk.ticketing.deleteTicketingConnectionIdNoteTicketIdId({
+    connectionId: "DRAM Liaison",
+    id: "<ID>",
+    ticketId: "Tasty exploit",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -153,23 +156,24 @@ Remove a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteTicketingConnectionIdTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.deleteTicketingConnectionIdTicketId({
-  connectionId: "brownie azure payment",
-  id: "<ID>",
-}).then((res: DeleteTicketingConnectionIdTicketIdResponse) => {
+  const res = await sdk.ticketing.deleteTicketingConnectionIdTicketId({
+    connectionId: "brownie azure payment",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -192,28 +196,23 @@ List all agents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdAgentResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdAgent({
-  connectionId: "East Steel Frozen",
-  limit: 8285.04,
-  offset: 5507.07,
-  order: "Korea West Ryan",
-  query: "invoice coulomb soluta",
-  sort: "adored",
-  updatedGte: new Date("2023-11-15T19:25:12.859Z"),
-}).then((res: GetTicketingConnectionIdAgentResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdAgent({
+    connectionId: "East Steel Frozen",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -236,23 +235,24 @@ Retrieve a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdAgentId({
-  connectionId: "Hat gas Cisgender",
-  id: "<ID>",
-}).then((res: GetTicketingConnectionIdAgentIdResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdAgentId({
+    connectionId: "Hat gas Cisgender",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -275,28 +275,23 @@ List all customers
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdCustomerResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdCustomer({
-  connectionId: "SDD because Salad",
-  limit: 8049.62,
-  offset: 4323.42,
-  order: "override",
-  query: "Rolls 1080p",
-  sort: "quantifying Southeast Kansas",
-  updatedGte: new Date("2023-12-20T19:18:39.254Z"),
-}).then((res: GetTicketingConnectionIdCustomerResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdCustomer({
+    connectionId: "SDD because Salad",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -319,23 +314,24 @@ Retrieve a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdCustomerIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdCustomerId({
-  connectionId: "further Ebert",
-  id: "<ID>",
-}).then((res: GetTicketingConnectionIdCustomerIdResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdCustomerId({
+    connectionId: "further Ebert",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -358,29 +354,24 @@ List all notes
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdNoteTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdNoteTicketId({
-  connectionId: "Account revolutionary",
-  limit: 2310.88,
-  offset: 6688.82,
-  order: "AI",
-  query: "stanch Investor attitude",
-  sort: "Cotton",
-  ticketId: "Handmade Kia",
-  updatedGte: new Date("2022-05-26T17:12:11.333Z"),
-}).then((res: GetTicketingConnectionIdNoteTicketIdResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdNoteTicketId({
+    connectionId: "Account revolutionary",
+    ticketId: "Associate",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -403,24 +394,25 @@ Retrieve a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdNoteTicketIdId({
-  connectionId: "for",
-  id: "<ID>",
-  ticketId: "female",
-}).then((res: GetTicketingConnectionIdNoteTicketIdIdResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdNoteTicketIdId({
+    connectionId: "for",
+    id: "<ID>",
+    ticketId: "female",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -443,30 +435,23 @@ List all tickets
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdTicketResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdTicket({
-  agentId: "New",
-  connectionId: "hertz Savings Steel",
-  customerId: "payment biopsy Kids",
-  limit: 7673.64,
-  offset: 5134.74,
-  order: "quantifying orange",
-  query: "male dynamic",
-  sort: "Sedan Tricycle Honda",
-  updatedGte: new Date("2022-08-06T21:30:52.879Z"),
-}).then((res: GetTicketingConnectionIdTicketResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdTicket({
+    connectionId: "New",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -489,23 +474,24 @@ Retrieve a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetTicketingConnectionIdTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.getTicketingConnectionIdTicketId({
-  connectionId: "yellow",
-  id: "<ID>",
-}).then((res: GetTicketingConnectionIdTicketIdResponse) => {
+  const res = await sdk.ticketing.getTicketingConnectionIdTicketId({
+    connectionId: "yellow",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -528,43 +514,38 @@ Update a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.patchTicketingConnectionIdAgentId({
-  ticketingAgent: {
-    createdAt: new Date("2022-06-01T22:24:40.372Z"),
-    emails: [
-      {
-        email: "Antonette63@gmail.com",
-        type: TicketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.ticketing.patchTicketingConnectionIdAgentId({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Albertha.Bernier63@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Borders parse",
+        },
+      ],
+    },
+    connectionId: "driver",
     id: "<ID>",
-    name: "Hop",
-    raw: {},
-    telephones: [
-      {
-        telephone: "driver",
-        type: TicketingTelephoneType.Work,
-      },
-    ],
-    updatedAt: new Date("2022-07-09T08:35:36.354Z"),
-  },
-  connectionId: "Soft Diesel Springs",
-  id: "<ID>",
-}).then((res: PatchTicketingConnectionIdAgentIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -587,46 +568,41 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdCustomerIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.patchTicketingConnectionIdCustomerId({
-  ticketingCustomer: {
-    createdAt: new Date("2023-01-22T19:33:25.134Z"),
-    emails: [
-      {
-        email: "Ora.Labadie94@yahoo.com",
-        type: TicketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.ticketing.patchTicketingConnectionIdCustomerId({
+    ticketingCustomer: {
+      emails: [
+        {
+          email: "Jaren_Ryan@hotmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "Waco",
+      ],
+      telephones: [
+        {
+          telephone: "youthfully orange",
+        },
+      ],
+    },
+    connectionId: "Smyrna Hialeah auxiliary",
     id: "<ID>",
-    name: "sensitise whiteboard Smyrna",
-    raw: {},
-    tags: [
-      "Hialeah",
-    ],
-    telephones: [
-      {
-        telephone: "connect",
-        type: TicketingTelephoneType.Work,
-      },
-    ],
-    updatedAt: new Date("2023-12-28T17:48:45.929Z"),
-  },
-  connectionId: "Tennessine",
-  id: "<ID>",
-}).then((res: PatchTicketingConnectionIdCustomerIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -649,33 +625,28 @@ Update a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.patchTicketingConnectionIdNoteTicketIdId({
-  ticketingNote: {
-    agentId: "compress Oganesson",
-    createdAt: new Date("2022-02-16T08:13:19.991Z"),
-    customerId: "demystify",
-    description: "Fundamental demand-driven workforce",
+  const res = await sdk.ticketing.patchTicketingConnectionIdNoteTicketIdId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "compress Oganesson",
     id: "<ID>",
-    raw: {},
-    updatedAt: "Nissan",
-  },
-  connectionId: "Chicken",
-  id: "<ID>",
-  ticketId: "frictionless convergence officia",
-}).then((res: PatchTicketingConnectionIdNoteTicketIdIdResponse) => {
+    ticketId: "York Fantastic",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -698,42 +669,31 @@ Update a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchTicketingConnectionIdTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.patchTicketingConnectionIdTicketId({
-  ticketingTicket: {
-    category: "Representative calculate",
-    closedAt: new Date("2023-12-03T14:58:54.732Z"),
-    createdAt: new Date("2022-09-11T04:52:37.095Z"),
-    customerId: "indigo extend given",
-    description: "Profound motivating utilisation",
+  const res = await sdk.ticketing.patchTicketingConnectionIdTicketId({
+    ticketingTicket: {
+      raw: {},
+      tags: [
+        "Polygender",
+      ],
+    },
+    connectionId: "calculate midst female",
     id: "<ID>",
-    priority: "Hill Jazz",
-    raw: {},
-    source: "West Macedonia City",
-    sourceRef: "orange West doubtfully",
-    status: TicketingTicketStatus.Closed,
-    subject: "Pizza",
-    tags: [
-      "definition",
-    ],
-    updatedAt: new Date("2021-10-05T23:17:22.031Z"),
-  },
-  connectionId: "engage henry",
-  id: "<ID>",
-}).then((res: PatchTicketingConnectionIdTicketIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -756,42 +716,37 @@ Create a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdAgentResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.postTicketingConnectionIdAgent({
-  ticketingAgent: {
-    createdAt: new Date("2022-12-14T10:20:29.412Z"),
-    emails: [
-      {
-        email: "Eleazar_Beatty22@gmail.com",
-        type: TicketingEmailType.Other,
-      },
-    ],
-    id: "<ID>",
-    name: "exploit our wireless",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Korea wireless Ferrari",
-        type: TicketingTelephoneType.Home,
-      },
-    ],
-    updatedAt: new Date("2022-04-24T13:41:54.208Z"),
-  },
-  connectionId: "capacity copy Blues",
-}).then((res: PostTicketingConnectionIdAgentResponse) => {
+  const res = await sdk.ticketing.postTicketingConnectionIdAgent({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Adele80@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Unbranded Sedan",
+        },
+      ],
+    },
+    connectionId: "wireless absent",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -814,45 +769,40 @@ Create a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdCustomerResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.postTicketingConnectionIdCustomer({
-  ticketingCustomer: {
-    createdAt: new Date("2022-05-23T15:06:12.012Z"),
-    emails: [
-      {
-        email: "Austin44@yahoo.com",
-        type: TicketingEmailType.Work,
-      },
-    ],
-    id: "<ID>",
-    name: "Configuration neural",
-    raw: {},
-    tags: [
-      "engineer",
-    ],
-    telephones: [
-      {
-        telephone: "Gasoline North gorgeous",
-        type: TicketingTelephoneType.Fax,
-      },
-    ],
-    updatedAt: new Date("2022-10-09T07:25:23.111Z"),
-  },
-  connectionId: "mole purple",
-}).then((res: PostTicketingConnectionIdCustomerResponse) => {
+  const res = await sdk.ticketing.postTicketingConnectionIdCustomer({
+    ticketingCustomer: {
+      emails: [
+        {
+          email: "Jaquelin.Boyer@yahoo.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "withdrawal",
+      ],
+      telephones: [
+        {
+          telephone: "Configuration neural",
+        },
+      ],
+    },
+    connectionId: "Product Hybrid",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -875,32 +825,27 @@ Create a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdNoteTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.postTicketingConnectionIdNoteTicketId({
-  ticketingNote: {
-    agentId: "Plantation blue",
-    createdAt: new Date("2021-06-11T06:54:31.529Z"),
-    customerId: "asymmetric",
-    description: "Expanded intermediate attitude",
-    id: "<ID>",
-    raw: {},
-    updatedAt: "naturally",
-  },
-  connectionId: "Wagon Sulfur",
-  ticketId: "digital",
-}).then((res: PostTicketingConnectionIdNoteTicketIdResponse) => {
+  const res = await sdk.ticketing.postTicketingConnectionIdNoteTicketId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "Plantation blue",
+    ticketId: "Ford",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -923,41 +868,30 @@ Create a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostTicketingConnectionIdTicketResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.postTicketingConnectionIdTicket({
-  ticketingTicket: {
-    category: "North",
-    closedAt: new Date("2021-08-03T02:12:35.164Z"),
-    createdAt: new Date("2023-05-12T14:26:26.768Z"),
-    customerId: "mull hierarchy",
-    description: "Triple-buffered solution-oriented info-mediaries",
-    id: "<ID>",
-    priority: "person Idaho",
-    raw: {},
-    source: "Convertible whenever feed",
-    sourceRef: "solid Electric Bespoke",
-    status: TicketingTicketStatus.Closed,
-    subject: "sint uplift",
-    tags: [
-      "Idaho",
-    ],
-    updatedAt: new Date("2022-06-24T01:04:15.890Z"),
-  },
-  connectionId: "Oriental outrage",
-}).then((res: PostTicketingConnectionIdTicketResponse) => {
+  const res = await sdk.ticketing.postTicketingConnectionIdTicket({
+    ticketingTicket: {
+      raw: {},
+      tags: [
+        "Alabama",
+      ],
+    },
+    connectionId: "Jewelery",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -980,43 +914,38 @@ Update a agent
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdAgentIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.putTicketingConnectionIdAgentId({
-  ticketingAgent: {
-    createdAt: new Date("2022-12-19T19:47:13.993Z"),
-    emails: [
-      {
-        email: "Augustus_Kessler34@hotmail.com",
-        type: TicketingEmailType.Other,
-      },
-    ],
+  const res = await sdk.ticketing.putTicketingConnectionIdAgentId({
+    ticketingAgent: {
+      emails: [
+        {
+          email: "Samara_Botsford@yahoo.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "newton Coordinator Refined",
+        },
+      ],
+    },
+    connectionId: "asynchronous",
     id: "<ID>",
-    name: "reintermediate impression Refined",
-    raw: {},
-    telephones: [
-      {
-        telephone: "asynchronous",
-        type: TicketingTelephoneType.Fax,
-      },
-    ],
-    updatedAt: new Date("2021-04-29T18:13:42.824Z"),
-  },
-  connectionId: "synergistic Uzbekistan green",
-  id: "<ID>",
-}).then((res: PutTicketingConnectionIdAgentIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1039,46 +968,41 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdCustomerIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.putTicketingConnectionIdCustomerId({
-  ticketingCustomer: {
-    createdAt: new Date("2021-04-21T09:25:32.395Z"),
-    emails: [
-      {
-        email: "Shawna42@hotmail.com",
-        type: TicketingEmailType.Home,
-      },
-    ],
+  const res = await sdk.ticketing.putTicketingConnectionIdCustomerId({
+    ticketingCustomer: {
+      emails: [
+        {
+          email: "Raleigh.Torp42@gmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "copy",
+      ],
+      telephones: [
+        {
+          telephone: "Developer Buckinghamshire Sausages",
+        },
+      ],
+    },
+    connectionId: "kilogram",
     id: "<ID>",
-    name: "gray",
-    raw: {},
-    tags: [
-      "Associate",
-    ],
-    telephones: [
-      {
-        telephone: "Sausages ivory Small",
-        type: TicketingTelephoneType.Mobile,
-      },
-    ],
-    updatedAt: new Date("2022-09-01T05:56:15.314Z"),
-  },
-  connectionId: "mobile Cotton",
-  id: "<ID>",
-}).then((res: PutTicketingConnectionIdCustomerIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1101,33 +1025,28 @@ Update a note
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdNoteTicketIdIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.putTicketingConnectionIdNoteTicketIdId({
-  ticketingNote: {
-    agentId: "SMTP Cis",
-    createdAt: new Date("2022-07-27T18:14:06.584Z"),
-    customerId: "Carolina",
-    description: "Integrated asymmetric strategy",
+  const res = await sdk.ticketing.putTicketingConnectionIdNoteTicketIdId({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "SMTP Cis",
     id: "<ID>",
-    raw: {},
-    updatedAt: "Northeast Morocco supposing",
-  },
-  connectionId: "DNS Fermium",
-  id: "<ID>",
-  ticketId: "Southwest round",
-}).then((res: PutTicketingConnectionIdNoteTicketIdIdResponse) => {
+    ticketId: "East benchmark",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -1150,42 +1069,31 @@ Update a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutTicketingConnectionIdTicketIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.ticketing.putTicketingConnectionIdTicketId({
-  ticketingTicket: {
-    category: "North Finland",
-    closedAt: new Date("2023-12-08T00:37:44.739Z"),
-    createdAt: new Date("2023-04-01T07:24:49.830Z"),
-    customerId: "Marketing",
-    description: "Future-proofed high-level system engine",
+  const res = await sdk.ticketing.putTicketingConnectionIdTicketId({
+    ticketingTicket: {
+      raw: {},
+      tags: [
+        "driver",
+      ],
+    },
+    connectionId: "Finland",
     id: "<ID>",
-    priority: "drat knottily",
-    raw: {},
-    source: "Upgradable knuckle",
-    sourceRef: "anenst",
-    status: TicketingTicketStatus.Active,
-    subject: "indexing Wooden Crew",
-    tags: [
-      "anti",
-    ],
-    updatedAt: new Date("2023-08-10T07:27:15.153Z"),
-  },
-  connectionId: "neural orchestrate",
-  id: "<ID>",
-}).then((res: PutTicketingConnectionIdTicketIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters

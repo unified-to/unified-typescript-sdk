@@ -23,23 +23,24 @@ Remove a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteCrmConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.deleteCrmConnectionIdContactId({
-  connectionId: "chargesheet",
-  id: "<ID>",
-}).then((res: DeleteCrmConnectionIdContactIdResponse) => {
+  const res = await sdk.contact.deleteCrmConnectionIdContactId({
+    connectionId: "chargesheet",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -62,23 +63,24 @@ Remove a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { DeleteUcConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.deleteUcConnectionIdContactId({
-  connectionId: "Southeast Modern commonly",
-  id: "<ID>",
-}).then((res: DeleteUcConnectionIdContactIdResponse) => {
+  const res = await sdk.contact.deleteUcConnectionIdContactId({
+    connectionId: "Southeast Modern commonly",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -101,30 +103,23 @@ List all contacts
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdContactResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.getCrmConnectionIdContact({
-  companyId: "Southeast Human Southeast",
-  connectionId: "magenta loose",
-  dealId: "intuitive",
-  limit: 9605,
-  offset: 8572.44,
-  order: "Music Electronics",
-  query: "Elegant",
-  sort: "North Analyst Otis",
-  updatedGte: new Date("2022-09-18T15:42:24.943Z"),
-}).then((res: GetCrmConnectionIdContactResponse) => {
+  const res = await sdk.contact.getCrmConnectionIdContact({
+    connectionId: "Southeast Human Southeast",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -147,23 +142,24 @@ Retrieve a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetCrmConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.getCrmConnectionIdContactId({
-  connectionId: "Account fountain visionary",
-  id: "<ID>",
-}).then((res: GetCrmConnectionIdContactIdResponse) => {
+  const res = await sdk.contact.getCrmConnectionIdContactId({
+    connectionId: "Account fountain visionary",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -186,29 +182,23 @@ List all contacts
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUcConnectionIdContactResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.getUcConnectionIdContact({
-  agentId: "Refined Practical",
-  connectionId: "inasmuch Dodge",
-  limit: 7215.14,
-  offset: 2910.48,
-  order: "Vermont",
-  query: "maroon JBOD",
-  sort: "hertz",
-  updatedGte: new Date("2023-01-29T17:06:35.136Z"),
-}).then((res: GetUcConnectionIdContactResponse) => {
+  const res = await sdk.contact.getUcConnectionIdContact({
+    connectionId: "Refined Practical",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -231,23 +221,24 @@ Retrieve a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { GetUcConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-to";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.getUcConnectionIdContactId({
-  connectionId: "Land",
-  id: "<ID>",
-}).then((res: GetUcConnectionIdContactIdResponse) => {
+  const res = await sdk.contact.getUcConnectionIdContactId({
+    connectionId: "Land",
+    id: "<ID>",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -270,61 +261,43 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchCrmConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.patchCrmConnectionIdContactId({
-  crmContact: {
-    address: {
-      address1: "until instantly Taiwan",
-      address2: "disintermediate ah Southwest",
-      city: "San Antonio",
-      country: "Djibouti",
-      countryCode: "LA",
-      postalCode: "23695",
-      region: "grey around",
-      regionCode: "Folding",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    company: "Johnson - Gerlach",
-    companyIds: [
-      "Personal",
-    ],
-    createdAt: new Date("2022-07-24T05:16:20.203Z"),
-    dealIds: [
-      "generation",
-    ],
-    emails: [
-      {
-        email: "Leora_Konopelski27@hotmail.com",
-        type: CrmEmailType.Other,
-      },
-    ],
+  });
+
+  const res = await sdk.contact.patchCrmConnectionIdContactId({
+    crmContact: {
+      address: {},
+      companyIds: [
+        "Bicycle",
+      ],
+      dealIds: [
+        "instantly",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "stimulating",
+        },
+      ],
+    },
+    connectionId: "synergy",
     id: "<ID>",
-    name: "Innovative indeed brand",
-    raw: {},
-    telephones: [
-      {
-        telephone: "unsung Borders",
-        type: CrmTelephoneType.Home,
-      },
-    ],
-    title: "withdrawal",
-    updatedAt: new Date("2022-05-05T23:37:21.563Z"),
-  },
-  connectionId: "markets radian",
-  id: "<ID>",
-}).then((res: PatchCrmConnectionIdContactIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -347,45 +320,38 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PatchUcConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { UcEmailType, UcTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.patchUcConnectionIdContactId({
-  ucContact: {
-    company: "Wilderman, Cremin and Gislason",
-    createdAt: new Date("2023-07-18T06:13:06.229Z"),
-    emails: [
-      {
-        email: "Henry.Leannon@gmail.com",
-        type: UcEmailType.Other,
-      },
-    ],
+  const res = await sdk.contact.patchUcConnectionIdContactId({
+    ucContact: {
+      emails: [
+        {
+          email: "Van84@hotmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Denar",
+        },
+      ],
+    },
+    connectionId: "strategy Synergized",
     id: "<ID>",
-    name: "quirky digital",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Lead 24/7 overriding",
-        type: UcTelephoneType.Other,
-      },
-    ],
-    title: "Small Legacy",
-    updatedAt: new Date("2022-07-11T16:02:41.922Z"),
-  },
-  connectionId: "Bohrium",
-  id: "<ID>",
-}).then((res: PatchUcConnectionIdContactIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -408,60 +374,42 @@ Create a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostCrmConnectionIdContactResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.postCrmConnectionIdContact({
-  crmContact: {
-    address: {
-      address1: "orchid",
-      address2: "invoice wherever watt",
-      city: "Rempelcester",
-      country: "Nepal",
-      countryCode: "FI",
-      postalCode: "27896-6482",
-      region: "swig",
-      regionCode: "Recumbent",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    company: "Fritsch - Bernhard",
-    companyIds: [
-      "Executive",
-    ],
-    createdAt: new Date("2021-07-26T17:34:53.280Z"),
-    dealIds: [
-      "Southwest",
-    ],
-    emails: [
-      {
-        email: "Colby24@hotmail.com",
-        type: CrmEmailType.Home,
-      },
-    ],
-    id: "<ID>",
-    name: "farad",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Dynamic withdrawal",
-        type: CrmTelephoneType.Work,
-      },
-    ],
-    title: "second Fresh",
-    updatedAt: new Date("2023-01-03T09:41:22.581Z"),
-  },
-  connectionId: "what",
-}).then((res: PostCrmConnectionIdContactResponse) => {
+  });
+
+  const res = await sdk.contact.postCrmConnectionIdContact({
+    crmContact: {
+      address: {},
+      companyIds: [
+        "integrated",
+      ],
+      dealIds: [
+        "Mobility",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "who SUV",
+        },
+      ],
+    },
+    connectionId: "sievert Tungsten",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -484,44 +432,37 @@ Create a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PostUcConnectionIdContactResponse } from "Unified-to/dist/sdk/models/operations";
-import { UcEmailType, UcTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.postUcConnectionIdContact({
-  ucContact: {
-    company: "Howell and Sons",
-    createdAt: new Date("2022-12-18T04:56:44.573Z"),
-    emails: [
-      {
-        email: "Garret81@hotmail.com",
-        type: UcEmailType.Home,
-      },
-    ],
-    id: "<ID>",
-    name: "Southeast Gasoline extend",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Togo Division Human",
-        type: UcTelephoneType.Home,
-      },
-    ],
-    title: "COM that",
-    updatedAt: new Date("2023-02-07T16:19:58.439Z"),
-  },
-  connectionId: "Tennessee",
-}).then((res: PostUcConnectionIdContactResponse) => {
+  const res = await sdk.contact.postUcConnectionIdContact({
+    ucContact: {
+      emails: [
+        {
+          email: "Gilda_Jacobs@gmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Account Orchestrator",
+        },
+      ],
+    },
+    connectionId: "extend grey Avon",
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -544,61 +485,43 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutCrmConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
-
-sdk.contact.putCrmConnectionIdContactId({
-  crmContact: {
-    address: {
-      address1: "idolized",
-      address2: "Southeast Specialist background",
-      city: "New Orlando",
-      country: "Switzerland",
-      countryCode: "GL",
-      postalCode: "95864",
-      region: "Intersex mmm",
-      regionCode: "Specialist",
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
     },
-    company: "Mann and Sons",
-    companyIds: [
-      "impedit",
-    ],
-    createdAt: new Date("2023-10-28T10:36:29.710Z"),
-    dealIds: [
-      "transmitting",
-    ],
-    emails: [
-      {
-        email: "Marjorie.Feeney14@hotmail.com",
-        type: CrmEmailType.Other,
-      },
-    ],
+  });
+
+  const res = await sdk.contact.putCrmConnectionIdContactId({
+    crmContact: {
+      address: {},
+      companyIds: [
+        "Outdoors",
+      ],
+      dealIds: [
+        "Credit",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Specialist background",
+        },
+      ],
+    },
+    connectionId: "quo gloomy",
     id: "<ID>",
-    name: "shuttle",
-    raw: {},
-    telephones: [
-      {
-        telephone: "Bolivia",
-        type: CrmTelephoneType.Mobile,
-      },
-    ],
-    title: "Austria reinvent",
-    updatedAt: new Date("2023-03-20T11:49:01.796Z"),
-  },
-  connectionId: "hic truck",
-  id: "<ID>",
-}).then((res: PutCrmConnectionIdContactIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
@@ -621,45 +544,38 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "Unified-to";
-import { PutUcConnectionIdContactIdResponse } from "Unified-to/dist/sdk/models/operations";
-import { UcEmailType, UcTelephoneType } from "Unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-to";
+import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-const sdk = new UnifiedTo({
-  security: {
-    jwt: "",
-  },
-});
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
-sdk.contact.putUcConnectionIdContactId({
-  ucContact: {
-    company: "Feeney, Gusikowski and Douglas",
-    createdAt: new Date("2021-05-15T18:36:56.888Z"),
-    emails: [
-      {
-        email: "Katrina.Walker@gmail.com",
-        type: UcEmailType.Home,
-      },
-    ],
+  const res = await sdk.contact.putUcConnectionIdContactId({
+    ucContact: {
+      emails: [
+        {
+          email: "Darien12@hotmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "reboot",
+        },
+      ],
+    },
+    connectionId: "payment hem",
     id: "<ID>",
-    name: "Investment Hip Southwest",
-    raw: {},
-    telephones: [
-      {
-        telephone: "powerless Shirt",
-        type: UcTelephoneType.Fax,
-      },
-    ],
-    title: "Wooden Buckinghamshire",
-    updatedAt: new Date("2022-10-29T19:58:07.810Z"),
-  },
-  connectionId: "doubtfully",
-  id: "<ID>",
-}).then((res: PutUcConnectionIdContactIdResponse) => {
+  });
+
   if (res.statusCode == 200) {
     // handle response
   }
-});
+})();
 ```
 
 ### Parameters
