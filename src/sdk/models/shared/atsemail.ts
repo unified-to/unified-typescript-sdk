@@ -11,6 +11,9 @@ export enum AtsEmailType {
     Other = "OTHER",
 }
 
+/**
+ * An unified email object
+ */
 export class AtsEmail extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })

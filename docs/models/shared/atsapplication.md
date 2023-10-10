@@ -1,5 +1,7 @@
 # AtsApplication
 
+An application is an association object between a candidate and a job
+
 
 ## Fields
 

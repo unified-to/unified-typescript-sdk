@@ -29,6 +29,9 @@ export enum AtsJobStatus {
     Closed = "CLOSED",
 }
 
+/**
+ * An opened position/job
+ */
 export class AtsJob extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: AtsAddress })
     @Expose({ name: "addresses" })

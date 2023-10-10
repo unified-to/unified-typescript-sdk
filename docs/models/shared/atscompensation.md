@@ -1,5 +1,7 @@
 # AtsCompensation
 
+Unified compensation object for a job
+
 
 ## Fields
 

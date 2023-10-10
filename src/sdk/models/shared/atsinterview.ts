@@ -12,6 +12,9 @@ export enum AtsInterviewStatus {
     Complete = "COMPLETE",
 }
 
+/**
+ * An interview between a candidate for a specific job
+ */
 export class AtsInterview extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "application_id" })

@@ -1,5 +1,7 @@
 # AtsScorecard
 
+A scorecard is feedback/assessment of a candidate's interview
+
 
 ## Fields
 

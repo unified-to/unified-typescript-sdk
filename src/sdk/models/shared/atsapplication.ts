@@ -21,6 +21,9 @@ export enum AtsApplicationStatus {
     Rejected = "REJECTED",
 }
 
+/**
+ * An application is an association object between a candidate and a job
+ */
 export class AtsApplication extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "applied_at" })

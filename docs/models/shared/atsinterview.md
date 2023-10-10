@@ -1,5 +1,7 @@
 # AtsInterview
 
+An interview between a candidate for a specific job
+
 
 ## Fields
 

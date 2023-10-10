@@ -13,6 +13,9 @@ export enum AtsScorecardRecommendation {
     StrongYes = "STRONG_YES",
 }
 
+/**
+ * A scorecard is feedback/assessment of a candidate's interview
+ */
 export class AtsScorecard extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "application_id" })

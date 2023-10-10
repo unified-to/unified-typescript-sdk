@@ -1,11 +1,13 @@
 # AtsCandidate
 
+A candidate looking for work
+
 
 ## Fields
 
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `address`                                                                                     | [PropertyAtsCandidateAddress](../../models/shared/propertyatscandidateaddress.md)             | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `address`                                                                                     | [PropertyAtsCandidateAddress](../../models/shared/propertyatscandidateaddress.md)             | :heavy_minus_sign:                                                                            | Unified address object                                                                        |
 | `companyName`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `emails`                                                                                      | [AtsEmail](../../models/shared/atsemail.md)[]                                                 | :heavy_minus_sign:                                                                            | N/A                                                                                           |

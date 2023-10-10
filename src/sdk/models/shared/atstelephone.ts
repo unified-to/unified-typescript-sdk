@@ -13,6 +13,9 @@ export enum AtsTelephoneType {
     Mobile = "MOBILE",
 }
 
+/**
+ * A unified telephone object
+ */
 export class AtsTelephone extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "telephone" })

@@ -1,5 +1,7 @@
 # PropertyAtsCandidateAddress
 
+Unified address object
+
 
 ## Fields
 

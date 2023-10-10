@@ -7,6 +7,9 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PostAtsConnectionIdInterviewRequest extends SpeakeasyBase {
+    /**
+     * An interview between a candidate for a specific job
+     */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     atsInterview?: shared.AtsInterview;
 
