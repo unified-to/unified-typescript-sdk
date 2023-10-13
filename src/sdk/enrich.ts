@@ -19,12 +19,12 @@ export class Enrich {
     /**
      * Retrieve enrichment information for a company
      */
-    async getEnrichConnectionIdCompany(
-        req: operations.GetEnrichConnectionIdCompanyRequest,
+    async listEnrichCompanies(
+        req: operations.ListEnrichCompaniesRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetEnrichConnectionIdCompanyResponse> {
+    ): Promise<operations.ListEnrichCompaniesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetEnrichConnectionIdCompanyRequest(req);
+            req = new operations.ListEnrichCompaniesRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -62,8 +62,8 @@ export class Enrich {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetEnrichConnectionIdCompanyResponse =
-            new operations.GetEnrichConnectionIdCompanyResponse({
+        const res: operations.ListEnrichCompaniesResponse =
+            new operations.ListEnrichCompaniesResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -101,12 +101,12 @@ export class Enrich {
     /**
      * Retrieve enrichment information for a person
      */
-    async getEnrichConnectionIdPerson(
-        req: operations.GetEnrichConnectionIdPersonRequest,
+    async listEnrichPeople(
+        req: operations.ListEnrichPeopleRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetEnrichConnectionIdPersonResponse> {
+    ): Promise<operations.ListEnrichPeopleResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetEnrichConnectionIdPersonRequest(req);
+            req = new operations.ListEnrichPeopleRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -144,12 +144,11 @@ export class Enrich {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetEnrichConnectionIdPersonResponse =
-            new operations.GetEnrichConnectionIdPersonResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListEnrichPeopleResponse = new operations.ListEnrichPeopleResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:

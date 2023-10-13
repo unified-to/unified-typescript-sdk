@@ -3,235 +3,15 @@
 
 ### Available Operations
 
-* [deleteCrmConnectionIdCompanyId](#deletecrmconnectionidcompanyid) - Remove a company
-* [getCrmConnectionIdCompany](#getcrmconnectionidcompany) - List all companies
-* [getCrmConnectionIdCompanyId](#getcrmconnectionidcompanyid) - Retrieve a company
-* [getEnrichConnectionIdCompany](#getenrichconnectionidcompany) - Retrieve enrichment information for a company
-* [patchCrmConnectionIdCompanyId](#patchcrmconnectionidcompanyid) - Update a company
-* [postCrmConnectionIdCompany](#postcrmconnectionidcompany) - Create a company
-* [putCrmConnectionIdCompanyId](#putcrmconnectionidcompanyid) - Update a company
-
-## deleteCrmConnectionIdCompanyId
-
-Remove a company
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.company.deleteCrmConnectionIdCompanyId({
-    connectionId: "hertz morph",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.DeleteCrmConnectionIdCompanyIdRequest](../../models/operations/deletecrmconnectionidcompanyidrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdCompanyIdResponse](../../models/operations/deletecrmconnectionidcompanyidresponse.md)>**
-
-
-## getCrmConnectionIdCompany
-
-List all companies
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.company.getCrmConnectionIdCompany({
-    connectionId: "indexing",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.GetCrmConnectionIdCompanyRequest](../../models/operations/getcrmconnectionidcompanyrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdCompanyResponse](../../models/operations/getcrmconnectionidcompanyresponse.md)>**
-
-
-## getCrmConnectionIdCompanyId
-
-Retrieve a company
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.company.getCrmConnectionIdCompanyId({
-    connectionId: "Netherlands",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetCrmConnectionIdCompanyIdRequest](../../models/operations/getcrmconnectionidcompanyidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdCompanyIdResponse](../../models/operations/getcrmconnectionidcompanyidresponse.md)>**
-
-
-## getEnrichConnectionIdCompany
-
-Retrieve enrichment information for a company
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.company.getEnrichConnectionIdCompany({
-    connectionId: "female Computers Central",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetEnrichConnectionIdCompanyRequest](../../models/operations/getenrichconnectionidcompanyrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
-
-
-### Response
-
-**Promise<[operations.GetEnrichConnectionIdCompanyResponse](../../models/operations/getenrichconnectionidcompanyresponse.md)>**
-
-
-## patchCrmConnectionIdCompanyId
-
-Update a company
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.company.patchCrmConnectionIdCompanyId({
-    crmCompany: {
-      address: {},
-      dealIds: [
-        "Soft",
-      ],
-      emails: [
-        {},
-      ],
-      raw: {},
-      tags: [
-        "invoice",
-      ],
-      telephones: [
-        {
-          telephone: "miniature Quality",
-        },
-      ],
-      websites: [
-        "redefine",
-      ],
-    },
-    connectionId: "invoice National",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PatchCrmConnectionIdCompanyIdRequest](../../models/operations/patchcrmconnectionidcompanyidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdCompanyIdResponse](../../models/operations/patchcrmconnectionidcompanyidresponse.md)>**
-
-
-## postCrmConnectionIdCompany
+* [createCrmCompany](#createcrmcompany) - Create a company
+* [getCrmCompany](#getcrmcompany) - Retrieve a company
+* [listCrmCompanies](#listcrmcompanies) - List all companies
+* [listEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
+* [patchCrmCompany](#patchcrmcompany) - Update a company
+* [removeCrmCompany](#removecrmcompany) - Remove a company
+* [updateCrmCompany](#updatecrmcompany) - Update a company
+
+## createCrmCompany
 
 Create a company
 
@@ -248,29 +28,29 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.company.postCrmConnectionIdCompany({
+  const res = await sdk.company.createCrmCompany({
     crmCompany: {
       address: {},
       dealIds: [
-        "Personal",
+        "connecting",
       ],
       emails: [
         {},
       ],
       raw: {},
       tags: [
-        "gosh",
+        "carouse",
       ],
       telephones: [
         {
-          telephone: "phooey",
+          telephone: "Germany",
         },
       ],
       websites: [
-        "primary",
+        "yippee",
       ],
     },
-    connectionId: "neural",
+    connectionId: "magenta Data woot",
   });
 
   if (res.statusCode == 200) {
@@ -281,18 +61,136 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PostCrmConnectionIdCompanyRequest](../../models/operations/postcrmconnectionidcompanyrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.CreateCrmCompanyRequest](../../models/operations/createcrmcompanyrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.PostCrmConnectionIdCompanyResponse](../../models/operations/postcrmconnectionidcompanyresponse.md)>**
+**Promise<[operations.CreateCrmCompanyResponse](../../models/operations/createcrmcompanyresponse.md)>**
 
 
-## putCrmConnectionIdCompanyId
+## getCrmCompany
+
+Retrieve a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.company.getCrmCompany({
+    connectionId: "THX Strategist deposit",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetCrmCompanyRequest](../../models/operations/getcrmcompanyrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.GetCrmCompanyResponse](../../models/operations/getcrmcompanyresponse.md)>**
+
+
+## listCrmCompanies
+
+List all companies
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.company.listCrmCompanies({
+    connectionId: "Jazz solid Lamborghini",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListCrmCompaniesRequest](../../models/operations/listcrmcompaniesrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.ListCrmCompaniesResponse](../../models/operations/listcrmcompaniesresponse.md)>**
+
+
+## listEnrichCompanies
+
+Retrieve enrichment information for a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.company.listEnrichCompanies({
+    connectionId: "Chips",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.ListEnrichCompaniesRequest](../../models/operations/listenrichcompaniesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.ListEnrichCompaniesResponse](../../models/operations/listenrichcompaniesresponse.md)>**
+
+
+## patchCrmCompany
 
 Update a company
 
@@ -309,29 +207,29 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.company.putCrmConnectionIdCompanyId({
+  const res = await sdk.company.patchCrmCompany({
     crmCompany: {
       address: {},
       dealIds: [
-        "dicta",
+        "Producer",
       ],
       emails: [
         {},
       ],
       raw: {},
       tags: [
-        "background",
+        "Corporate",
       ],
       telephones: [
         {
-          telephone: "veniam secondary",
+          telephone: "haptic Phased",
         },
       ],
       websites: [
-        "Southwest",
+        "Investment",
       ],
     },
-    connectionId: "Calcium",
+    connectionId: "Trans",
     id: "<ID>",
   });
 
@@ -343,13 +241,115 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PutCrmConnectionIdCompanyIdRequest](../../models/operations/putcrmconnectionidcompanyidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.PatchCrmCompanyRequest](../../models/operations/patchcrmcompanyrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
 
-**Promise<[operations.PutCrmConnectionIdCompanyIdResponse](../../models/operations/putcrmconnectionidcompanyidresponse.md)>**
+**Promise<[operations.PatchCrmCompanyResponse](../../models/operations/patchcrmcompanyresponse.md)>**
+
+
+## removeCrmCompany
+
+Remove a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.company.removeCrmCompany({
+    connectionId: "Mayaguez index wireless",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.RemoveCrmCompanyRequest](../../models/operations/removecrmcompanyrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.RemoveCrmCompanyResponse](../../models/operations/removecrmcompanyresponse.md)>**
+
+
+## updateCrmCompany
+
+Update a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.company.updateCrmCompany({
+    crmCompany: {
+      address: {},
+      dealIds: [
+        "SMS",
+      ],
+      emails: [
+        {},
+      ],
+      raw: {},
+      tags: [
+        "barrel",
+      ],
+      telephones: [
+        {
+          telephone: "Account alarm infrastructure",
+        },
+      ],
+      websites: [
+        "Visionary",
+      ],
+    },
+    connectionId: "Southeast ad",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.UpdateCrmCompanyRequest](../../models/operations/updatecrmcompanyrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.UpdateCrmCompanyResponse](../../models/operations/updatecrmcompanyresponse.md)>**
 

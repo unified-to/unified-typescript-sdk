@@ -3,186 +3,14 @@
 
 ### Available Operations
 
-* [deleteCrmConnectionIdLeadId](#deletecrmconnectionidleadid) - Remove a lead
-* [getCrmConnectionIdLead](#getcrmconnectionidlead) - List all leads
-* [getCrmConnectionIdLeadId](#getcrmconnectionidleadid) - Retrieve a lead
-* [patchCrmConnectionIdLeadId](#patchcrmconnectionidleadid) - Update a lead
-* [postCrmConnectionIdLead](#postcrmconnectionidlead) - Create a lead
-* [putCrmConnectionIdLeadId](#putcrmconnectionidleadid) - Update a lead
+* [createCrmLead](#createcrmlead) - Create a lead
+* [getCrmLead](#getcrmlead) - Retrieve a lead
+* [listCrmLeads](#listcrmleads) - List all leads
+* [patchCrmLead](#patchcrmlead) - Update a lead
+* [removeCrmLead](#removecrmlead) - Remove a lead
+* [updateCrmLead](#updatecrmlead) - Update a lead
 
-## deleteCrmConnectionIdLeadId
-
-Remove a lead
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.lead.deleteCrmConnectionIdLeadId({
-    connectionId: "Senior azure",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.DeleteCrmConnectionIdLeadIdRequest](../../models/operations/deletecrmconnectionidleadidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdLeadIdResponse](../../models/operations/deletecrmconnectionidleadidresponse.md)>**
-
-
-## getCrmConnectionIdLead
-
-List all leads
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.lead.getCrmConnectionIdLead({
-    connectionId: "Computer Hop",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetCrmConnectionIdLeadRequest](../../models/operations/getcrmconnectionidleadrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdLeadResponse](../../models/operations/getcrmconnectionidleadresponse.md)>**
-
-
-## getCrmConnectionIdLeadId
-
-Retrieve a lead
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.lead.getCrmConnectionIdLeadId({
-    connectionId: "users Minnesota Bypass",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetCrmConnectionIdLeadIdRequest](../../models/operations/getcrmconnectionidleadidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdLeadIdResponse](../../models/operations/getcrmconnectionidleadidresponse.md)>**
-
-
-## patchCrmConnectionIdLeadId
-
-Update a lead
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.lead.patchCrmConnectionIdLeadId({
-    crmLead: {
-      address: {},
-      emails: [
-        {},
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "Cambridgeshire",
-        },
-      ],
-    },
-    connectionId: "Oriental farad male",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PatchCrmConnectionIdLeadIdRequest](../../models/operations/patchcrmconnectionidleadidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdLeadIdResponse](../../models/operations/patchcrmconnectionidleadidresponse.md)>**
-
-
-## postCrmConnectionIdLead
+## createCrmLead
 
 Create a lead
 
@@ -199,7 +27,7 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.lead.postCrmConnectionIdLead({
+  const res = await sdk.lead.createCrmLead({
     crmLead: {
       address: {},
       emails: [
@@ -208,11 +36,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "XSS Country knowledge",
+          telephone: "port steradian prize",
         },
       ],
     },
-    connectionId: "structure",
+    connectionId: "ability Einsteinium Orchestrator",
   });
 
   if (res.statusCode == 200) {
@@ -223,18 +51,97 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.PostCrmConnectionIdLeadRequest](../../models/operations/postcrmconnectionidleadrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.CreateCrmLeadRequest](../../models/operations/createcrmleadrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.PostCrmConnectionIdLeadResponse](../../models/operations/postcrmconnectionidleadresponse.md)>**
+**Promise<[operations.CreateCrmLeadResponse](../../models/operations/createcrmleadresponse.md)>**
 
 
-## putCrmConnectionIdLeadId
+## getCrmLead
+
+Retrieve a lead
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.lead.getCrmLead({
+    connectionId: "Handmade Keyboard yum",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.GetCrmLeadRequest](../../models/operations/getcrmleadrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+
+
+### Response
+
+**Promise<[operations.GetCrmLeadResponse](../../models/operations/getcrmleadresponse.md)>**
+
+
+## listCrmLeads
+
+List all leads
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.lead.listCrmLeads({
+    connectionId: "International",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.ListCrmLeadsRequest](../../models/operations/listcrmleadsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.ListCrmLeadsResponse](../../models/operations/listcrmleadsresponse.md)>**
+
+
+## patchCrmLead
 
 Update a lead
 
@@ -251,7 +158,7 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.lead.putCrmConnectionIdLeadId({
+  const res = await sdk.lead.patchCrmLead({
     crmLead: {
       address: {},
       emails: [
@@ -260,11 +167,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Extension",
+          telephone: "teal Hat",
         },
       ],
     },
-    connectionId: "supposing Dorado Assistant",
+    connectionId: "Ball Chips",
     id: "<ID>",
   });
 
@@ -276,13 +183,106 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PutCrmConnectionIdLeadIdRequest](../../models/operations/putcrmconnectionidleadidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.PatchCrmLeadRequest](../../models/operations/patchcrmleadrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.PutCrmConnectionIdLeadIdResponse](../../models/operations/putcrmconnectionidleadidresponse.md)>**
+**Promise<[operations.PatchCrmLeadResponse](../../models/operations/patchcrmleadresponse.md)>**
+
+
+## removeCrmLead
+
+Remove a lead
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.lead.removeCrmLead({
+    connectionId: "Southeast",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.RemoveCrmLeadRequest](../../models/operations/removecrmleadrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.RemoveCrmLeadResponse](../../models/operations/removecrmleadresponse.md)>**
+
+
+## updateCrmLead
+
+Update a lead
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.lead.updateCrmLead({
+    crmLead: {
+      address: {},
+      emails: [
+        {},
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "compelling",
+        },
+      ],
+    },
+    connectionId: "Pickup Polestar Checking",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.UpdateCrmLeadRequest](../../models/operations/updatecrmleadrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.UpdateCrmLeadResponse](../../models/operations/updatecrmleadresponse.md)>**
 

@@ -3,12 +3,12 @@
 
 ### Available Operations
 
-* [getUnifiedApicall](#getunifiedapicall) - Returns API Calls
-* [getUnifiedApicallId](#getunifiedapicallid) - Retrieve specific API Call by its ID
+* [getUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
+* [listUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 
 ## getUnifiedApicall
 
-Returns API Calls
+Retrieve specific API Call by its ID
 
 ### Example Usage
 
@@ -22,7 +22,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.apicall.getUnifiedApicall({});
+  const res = await sdk.apicall.getUnifiedApicall({
+    id: "<ID>",
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -43,9 +45,9 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetUnifiedApicallResponse](../../models/operations/getunifiedapicallresponse.md)>**
 
 
-## getUnifiedApicallId
+## listUnifiedApicalls
 
-Retrieve specific API Call by its ID
+Returns API Calls
 
 ### Example Usage
 
@@ -59,9 +61,7 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.apicall.getUnifiedApicallId({
-    id: "<ID>",
-  });
+  const res = await sdk.apicall.listUnifiedApicalls({});
 
   if (res.statusCode == 200) {
     // handle response
@@ -73,11 +73,11 @@ import { UnifiedTo } from "unified-to";
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetUnifiedApicallIdRequest](../../models/operations/getunifiedapicallidrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `request`                                                                                      | [operations.ListUnifiedApicallsRequest](../../models/operations/listunifiedapicallsrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedApicallIdResponse](../../models/operations/getunifiedapicallidresponse.md)>**
+**Promise<[operations.ListUnifiedApicallsResponse](../../models/operations/listunifiedapicallsresponse.md)>**
 

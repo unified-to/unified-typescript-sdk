@@ -8,63 +8,18 @@ import { AxiosResponse } from "axios";
 
 export class GetUnifiedApicallRequest extends SpeakeasyBase {
     /**
-     * Filter the results to just this integration's API calls
+     * ID of the Apicall
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=connection_id" })
-    connectionId?: string;
-
-    /**
-     * Return only results whose updated date is equal or less to this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=created_lte" })
-    createdLte?: Date;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
-    env?: string;
-
-    /**
-     * Filter the results for API Calls with errors
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=error" })
-    error?: boolean;
-
-    /**
-     * Filter the results to only those integrations for your user referenced by this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=external_xref" })
-    externalXref?: string;
-
-    /**
-     * Filter the results for connections with this integration
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=integration_type" })
-    integrationType?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-    limit?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
-    offset?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
-
-    /**
-     * Return only results whose updated date is equal or greater to this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
-    updatedGte?: Date;
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
 export class GetUnifiedApicallResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.ApiCall })
-    apiCalls?: shared.ApiCall[];
+    @SpeakeasyMetadata()
+    apiCall?: shared.ApiCall;
 
     /**
      * HTTP response content type for this operation

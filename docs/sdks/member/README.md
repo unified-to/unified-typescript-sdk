@@ -3,192 +3,14 @@
 
 ### Available Operations
 
-* [deleteMartechConnectionIdListIdMemberId](#deletemartechconnectionidlistidmemberid) - Remove member from a list
-* [getMartechConnectionIdListIdMember](#getmartechconnectionidlistidmember) - List all members in a list
-* [getMartechConnectionIdListIdMemberId](#getmartechconnectionidlistidmemberid) - Retrieve a member from a list
-* [patchMartechConnectionIdListIdMemberId](#patchmartechconnectionidlistidmemberid) - Update a member in a list
-* [postMartechConnectionIdListIdMember](#postmartechconnectionidlistidmember) - Create a member in a list
-* [putMartechConnectionIdListIdMemberId](#putmartechconnectionidlistidmemberid) - Update a member in a list
+* [createMartechMember](#createmartechmember) - Create a member in a list
+* [getMartechMember](#getmartechmember) - Retrieve a member from a list
+* [listMartechMembers](#listmartechmembers) - List all members in a list
+* [patchMartechMember](#patchmartechmember) - Update a member in a list
+* [removeMartechMember](#removemartechmember) - Remove member from a list
+* [updateMartechMember](#updatemartechmember) - Update a member in a list
 
-## deleteMartechConnectionIdListIdMemberId
-
-Remove member from a list
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.member.deleteMartechConnectionIdListIdMemberId({
-    connectionId: "Southwest fib",
-    id: "<ID>",
-    listId: "pascal",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                              | [operations.DeleteMartechConnectionIdListIdMemberIdRequest](../../models/operations/deletemartechconnectionidlistidmemberidrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
-| `config`                                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                           | :heavy_minus_sign:                                                                                                                     | Available config options for making requests.                                                                                          |
-
-
-### Response
-
-**Promise<[operations.DeleteMartechConnectionIdListIdMemberIdResponse](../../models/operations/deletemartechconnectionidlistidmemberidresponse.md)>**
-
-
-## getMartechConnectionIdListIdMember
-
-List all members in a list
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.member.getMartechConnectionIdListIdMember({
-    connectionId: "fuchsia economics",
-    listId: "Bronze cackle",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                    | [operations.GetMartechConnectionIdListIdMemberRequest](../../models/operations/getmartechconnectionidlistidmemberrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
-
-
-### Response
-
-**Promise<[operations.GetMartechConnectionIdListIdMemberResponse](../../models/operations/getmartechconnectionidlistidmemberresponse.md)>**
-
-
-## getMartechConnectionIdListIdMemberId
-
-Retrieve a member from a list
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.member.getMartechConnectionIdListIdMemberId({
-    connectionId: "male",
-    id: "<ID>",
-    listId: "Gasoline Home allot",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetMartechConnectionIdListIdMemberIdRequest](../../models/operations/getmartechconnectionidlistidmemberidrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
-
-
-### Response
-
-**Promise<[operations.GetMartechConnectionIdListIdMemberIdResponse](../../models/operations/getmartechconnectionidlistidmemberidresponse.md)>**
-
-
-## patchMartechConnectionIdListIdMemberId
-
-Update a member in a list
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.member.patchMartechConnectionIdListIdMemberId({
-    marketingMember: {
-      emails: [
-        {
-          email: "Otto93@yahoo.com",
-        },
-      ],
-      listIds: [
-        "Accounts",
-      ],
-      raw: {},
-      tags: [
-        "capacitor",
-      ],
-    },
-    connectionId: "yowza online",
-    id: "<ID>",
-    listId: "to XSS",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.PatchMartechConnectionIdListIdMemberIdRequest](../../models/operations/patchmartechconnectionidlistidmemberidrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
-
-
-### Response
-
-**Promise<[operations.PatchMartechConnectionIdListIdMemberIdResponse](../../models/operations/patchmartechconnectionidlistidmemberidresponse.md)>**
-
-
-## postMartechConnectionIdListIdMember
+## createMartechMember
 
 Create a member in a list
 
@@ -205,23 +27,23 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.member.postMartechConnectionIdListIdMember({
+  const res = await sdk.member.createMartechMember({
     marketingMember: {
       emails: [
         {
-          email: "Tomas37@yahoo.com",
+          email: "Eldridge.Marvin@gmail.com",
         },
       ],
       listIds: [
-        "drive",
+        "input",
       ],
       raw: {},
       tags: [
-        "virtual",
+        "SAS",
       ],
     },
-    connectionId: "dolorum Wooden Granite",
-    listId: "Green Convertible newton",
+    connectionId: "South Electronic calculate",
+    listId: "ew scalable Hassium",
   });
 
   if (res.statusCode == 200) {
@@ -232,18 +54,99 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                                      | Type                                                                                                                           | Required                                                                                                                       | Description                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                      | [operations.PostMartechConnectionIdListIdMemberRequest](../../models/operations/postmartechconnectionidlistidmemberrequest.md) | :heavy_check_mark:                                                                                                             | The request object to use for the request.                                                                                     |
-| `config`                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                   | :heavy_minus_sign:                                                                                                             | Available config options for making requests.                                                                                  |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.CreateMartechMemberRequest](../../models/operations/createmartechmemberrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostMartechConnectionIdListIdMemberResponse](../../models/operations/postmartechconnectionidlistidmemberresponse.md)>**
+**Promise<[operations.CreateMartechMemberResponse](../../models/operations/createmartechmemberresponse.md)>**
 
 
-## putMartechConnectionIdListIdMemberId
+## getMartechMember
+
+Retrieve a member from a list
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.member.getMartechMember({
+    connectionId: "Yuan",
+    id: "<ID>",
+    listId: "vertical Northeast",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetMartechMemberRequest](../../models/operations/getmartechmemberrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.GetMartechMemberResponse](../../models/operations/getmartechmemberresponse.md)>**
+
+
+## listMartechMembers
+
+List all members in a list
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.member.listMartechMembers({
+    connectionId: "Money",
+    listId: "structure",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ListMartechMembersRequest](../../models/operations/listmartechmembersrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.ListMartechMembersResponse](../../models/operations/listmartechmembersresponse.md)>**
+
+
+## patchMartechMember
 
 Update a member in a list
 
@@ -260,24 +163,24 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.member.putMartechConnectionIdListIdMemberId({
+  const res = await sdk.member.patchMartechMember({
     marketingMember: {
       emails: [
         {
-          email: "Mikayla_Nader@hotmail.com",
+          email: "Shana_Boyle@yahoo.com",
         },
       ],
       listIds: [
-        "octave",
+        "Handcrafted",
       ],
       raw: {},
       tags: [
-        "SMS",
+        "Synchronised",
       ],
     },
-    connectionId: "East platforms",
+    connectionId: "Unbranded overriding Money",
     id: "<ID>",
-    listId: "Frozen",
+    listId: "as variant West",
   });
 
   if (res.statusCode == 200) {
@@ -288,13 +191,110 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PutMartechConnectionIdListIdMemberIdRequest](../../models/operations/putmartechconnectionidlistidmemberidrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.PatchMartechMemberRequest](../../models/operations/patchmartechmemberrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PutMartechConnectionIdListIdMemberIdResponse](../../models/operations/putmartechconnectionidlistidmemberidresponse.md)>**
+**Promise<[operations.PatchMartechMemberResponse](../../models/operations/patchmartechmemberresponse.md)>**
+
+
+## removeMartechMember
+
+Remove member from a list
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.member.removeMartechMember({
+    connectionId: "Fitness",
+    id: "<ID>",
+    listId: "HTTP solid",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.RemoveMartechMemberRequest](../../models/operations/removemartechmemberrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.RemoveMartechMemberResponse](../../models/operations/removemartechmemberresponse.md)>**
+
+
+## updateMartechMember
+
+Update a member in a list
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.member.updateMartechMember({
+    marketingMember: {
+      emails: [
+        {
+          email: "Antonette.Kerluke@hotmail.com",
+        },
+      ],
+      listIds: [
+        "connect",
+      ],
+      raw: {},
+      tags: [
+        "Bike",
+      ],
+    },
+    connectionId: "Checking deploy Hermaphrodite",
+    id: "<ID>",
+    listId: "Bespoke below",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.UpdateMartechMemberRequest](../../models/operations/updatemartechmemberrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.UpdateMartechMemberResponse](../../models/operations/updatemartechmemberresponse.md)>**
 

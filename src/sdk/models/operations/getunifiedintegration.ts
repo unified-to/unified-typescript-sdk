@@ -6,51 +6,12 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum GetUnifiedIntegrationCategories {
-    Passthrough = "passthrough",
-    Hris = "hris",
-    Ats = "ats",
-    Auth = "auth",
-    Crm = "crm",
-    Enrich = "enrich",
-    Martech = "martech",
-    Ticketing = "ticketing",
-    Uc = "uc",
-}
-
 export class GetUnifiedIntegrationRequest extends SpeakeasyBase {
     /**
-     * Filter the results for only the workspace's active integrations
+     * Type of the supported integration
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=active" })
-    active?: boolean;
-
-    /**
-     * Filter the results on these categories
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
-    categories?: GetUnifiedIntegrationCategories[];
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-    limit?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
-    offset?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=summary" })
-    summary?: boolean;
-
-    /**
-     * Return only results whose updated date is equal or greater to this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
-    updatedGte?: Date;
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=integration_type" })
+    integrationType: string;
 }
 
 export class GetUnifiedIntegrationResponse extends SpeakeasyBase {
@@ -63,8 +24,8 @@ export class GetUnifiedIntegrationResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.Integration })
-    integrations?: shared.Integration[];
+    @SpeakeasyMetadata()
+    integration?: shared.Integration;
 
     /**
      * HTTP response status code for this operation

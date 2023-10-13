@@ -3,180 +3,14 @@
 
 ### Available Operations
 
-* [deleteTicketingConnectionIdNoteTicketIdId](#deleteticketingconnectionidnoteticketidid) - Remove a note
-* [getTicketingConnectionIdNoteTicketId](#getticketingconnectionidnoteticketid) - List all notes
-* [getTicketingConnectionIdNoteTicketIdId](#getticketingconnectionidnoteticketidid) - Retrieve a note
-* [patchTicketingConnectionIdNoteTicketIdId](#patchticketingconnectionidnoteticketidid) - Update a note
-* [postTicketingConnectionIdNoteTicketId](#postticketingconnectionidnoteticketid) - Create a note
-* [putTicketingConnectionIdNoteTicketIdId](#putticketingconnectionidnoteticketidid) - Update a note
+* [createTicketingNote](#createticketingnote) - Create a note
+* [getTicketingNote](#getticketingnote) - Retrieve a note
+* [listTicketingNotes](#listticketingnotes) - List all notes
+* [patchTicketingNote](#patchticketingnote) - Update a note
+* [removeTicketingNote](#removeticketingnote) - Remove a note
+* [updateTicketingNote](#updateticketingnote) - Update a note
 
-## deleteTicketingConnectionIdNoteTicketIdId
-
-Remove a note
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.note.deleteTicketingConnectionIdNoteTicketIdId({
-    connectionId: "DRAM Liaison",
-    id: "<ID>",
-    ticketId: "Tasty exploit",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                  | [operations.DeleteTicketingConnectionIdNoteTicketIdIdRequest](../../models/operations/deleteticketingconnectionidnoteticketididrequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
-
-
-### Response
-
-**Promise<[operations.DeleteTicketingConnectionIdNoteTicketIdIdResponse](../../models/operations/deleteticketingconnectionidnoteticketididresponse.md)>**
-
-
-## getTicketingConnectionIdNoteTicketId
-
-List all notes
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.note.getTicketingConnectionIdNoteTicketId({
-    connectionId: "Account revolutionary",
-    ticketId: "Associate",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetTicketingConnectionIdNoteTicketIdRequest](../../models/operations/getticketingconnectionidnoteticketidrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
-
-
-### Response
-
-**Promise<[operations.GetTicketingConnectionIdNoteTicketIdResponse](../../models/operations/getticketingconnectionidnoteticketidresponse.md)>**
-
-
-## getTicketingConnectionIdNoteTicketIdId
-
-Retrieve a note
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.note.getTicketingConnectionIdNoteTicketIdId({
-    connectionId: "for",
-    id: "<ID>",
-    ticketId: "female",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.GetTicketingConnectionIdNoteTicketIdIdRequest](../../models/operations/getticketingconnectionidnoteticketididrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
-
-
-### Response
-
-**Promise<[operations.GetTicketingConnectionIdNoteTicketIdIdResponse](../../models/operations/getticketingconnectionidnoteticketididresponse.md)>**
-
-
-## patchTicketingConnectionIdNoteTicketIdId
-
-Update a note
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.note.patchTicketingConnectionIdNoteTicketIdId({
-    ticketingNote: {
-      raw: {},
-    },
-    connectionId: "compress Oganesson",
-    id: "<ID>",
-    ticketId: "York Fantastic",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                | [operations.PatchTicketingConnectionIdNoteTicketIdIdRequest](../../models/operations/patchticketingconnectionidnoteticketididrequest.md) | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `config`                                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                             | :heavy_minus_sign:                                                                                                                       | Available config options for making requests.                                                                                            |
-
-
-### Response
-
-**Promise<[operations.PatchTicketingConnectionIdNoteTicketIdIdResponse](../../models/operations/patchticketingconnectionidnoteticketididresponse.md)>**
-
-
-## postTicketingConnectionIdNoteTicketId
+## createTicketingNote
 
 Create a note
 
@@ -192,12 +26,12 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.note.postTicketingConnectionIdNoteTicketId({
+  const res = await sdk.note.createTicketingNote({
     ticketingNote: {
       raw: {},
     },
-    connectionId: "Plantation blue",
-    ticketId: "Ford",
+    connectionId: "Books kilogram hmph",
+    ticketId: "Dakota function interface",
   });
 
   if (res.statusCode == 200) {
@@ -208,18 +42,99 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                                          | Type                                                                                                                               | Required                                                                                                                           | Description                                                                                                                        |
-| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                          | [operations.PostTicketingConnectionIdNoteTicketIdRequest](../../models/operations/postticketingconnectionidnoteticketidrequest.md) | :heavy_check_mark:                                                                                                                 | The request object to use for the request.                                                                                         |
-| `config`                                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                       | :heavy_minus_sign:                                                                                                                 | Available config options for making requests.                                                                                      |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.CreateTicketingNoteRequest](../../models/operations/createticketingnoterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.PostTicketingConnectionIdNoteTicketIdResponse](../../models/operations/postticketingconnectionidnoteticketidresponse.md)>**
+**Promise<[operations.CreateTicketingNoteResponse](../../models/operations/createticketingnoteresponse.md)>**
 
 
-## putTicketingConnectionIdNoteTicketIdId
+## getTicketingNote
+
+Retrieve a note
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.note.getTicketingNote({
+    connectionId: "joule program",
+    id: "<ID>",
+    ticketId: "Fitness Applications Switchable",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetTicketingNoteRequest](../../models/operations/getticketingnoterequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.GetTicketingNoteResponse](../../models/operations/getticketingnoteresponse.md)>**
+
+
+## listTicketingNotes
+
+List all notes
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.note.listTicketingNotes({
+    connectionId: "Hybrid North",
+    ticketId: "Kroon Marvin Ford",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ListTicketingNotesRequest](../../models/operations/listticketingnotesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.ListTicketingNotesResponse](../../models/operations/listticketingnotesresponse.md)>**
+
+
+## patchTicketingNote
 
 Update a note
 
@@ -235,13 +150,13 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.note.putTicketingConnectionIdNoteTicketIdId({
+  const res = await sdk.note.patchTicketingNote({
     ticketingNote: {
       raw: {},
     },
-    connectionId: "SMTP Cis",
+    connectionId: "Bicycle Southwest Darmstadtium",
     id: "<ID>",
-    ticketId: "East benchmark",
+    ticketId: "index",
   });
 
   if (res.statusCode == 200) {
@@ -252,13 +167,98 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                            | [operations.PutTicketingConnectionIdNoteTicketIdIdRequest](../../models/operations/putticketingconnectionidnoteticketididrequest.md) | :heavy_check_mark:                                                                                                                   | The request object to use for the request.                                                                                           |
-| `config`                                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                         | :heavy_minus_sign:                                                                                                                   | Available config options for making requests.                                                                                        |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.PatchTicketingNoteRequest](../../models/operations/patchticketingnoterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PutTicketingConnectionIdNoteTicketIdIdResponse](../../models/operations/putticketingconnectionidnoteticketididresponse.md)>**
+**Promise<[operations.PatchTicketingNoteResponse](../../models/operations/patchticketingnoteresponse.md)>**
+
+
+## removeTicketingNote
+
+Remove a note
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.note.removeTicketingNote({
+    connectionId: "Granite hm West",
+    id: "<ID>",
+    ticketId: "in",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.RemoveTicketingNoteRequest](../../models/operations/removeticketingnoterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.RemoveTicketingNoteResponse](../../models/operations/removeticketingnoteresponse.md)>**
+
+
+## updateTicketingNote
+
+Update a note
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.note.updateTicketingNote({
+    ticketingNote: {
+      raw: {},
+    },
+    connectionId: "via among Quality",
+    id: "<ID>",
+    ticketId: "Brand when",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.UpdateTicketingNoteRequest](../../models/operations/updateticketingnoterequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.UpdateTicketingNoteResponse](../../models/operations/updateticketingnoteresponse.md)>**
 

@@ -3,19 +3,21 @@
 
 ### Available Operations
 
-* [deleteUnifiedWebhookId](#deleteunifiedwebhookid) - Remove webhook subscription
-* [getUnifiedWebhook](#getunifiedwebhook) - Returns all registered webhooks
-* [getUnifiedWebhookId](#getunifiedwebhookid) - Retrieve webhook by its ID
-* [postUnifiedWebhookConnectionIdObject](#postunifiedwebhookconnectionidobject) - Create webhook subscription
+* [createUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
+* [getUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
+* [listUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
+* [removeUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 
-## deleteUnifiedWebhookId
+## createUnifiedWebhook
 
-Remove webhook subscription
+To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=<hookId>.
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { CreateUnifiedWebhookEvents } from "unified-to/dist/sdk/models/operations";
+import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -24,8 +26,26 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.webhook.deleteUnifiedWebhookId({
-    id: "<ID>",
+  const res = await sdk.webhook.createUnifiedWebhook({
+    webhook: {
+      connectionId: "East male",
+      events: [
+        PropertyWebhookEvents.Created,
+      ],
+      hookUrl: "ah Account Bedfordshire",
+      integrationType: "Tenge",
+      interval: 4915.71,
+      objectType: WebhookObjectType.MartechMember,
+      subscriptions: [
+        "delightfully",
+      ],
+      workspaceId: "up Vatu",
+    },
+    connectionId: "Fitness grey Directives",
+    events: [
+      CreateUnifiedWebhookEvents.Created,
+    ],
+    object: "Chair Kilback",
   });
 
   if (res.statusCode == 200) {
@@ -36,20 +56,20 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.DeleteUnifiedWebhookIdRequest](../../models/operations/deleteunifiedwebhookidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.CreateUnifiedWebhookRequest](../../models/operations/createunifiedwebhookrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.DeleteUnifiedWebhookIdResponse](../../models/operations/deleteunifiedwebhookidresponse.md)>**
+**Promise<[operations.CreateUnifiedWebhookResponse](../../models/operations/createunifiedwebhookresponse.md)>**
 
 
 ## getUnifiedWebhook
 
-Returns all registered webhooks
+Retrieve webhook by its ID
 
 ### Example Usage
 
@@ -63,7 +83,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.webhook.getUnifiedWebhook({});
+  const res = await sdk.webhook.getUnifiedWebhook({
+    id: "<ID>",
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -84,9 +106,9 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetUnifiedWebhookResponse](../../models/operations/getunifiedwebhookresponse.md)>**
 
 
-## getUnifiedWebhookId
+## listUnifiedWebhooks
 
-Retrieve webhook by its ID
+Returns all registered webhooks
 
 ### Example Usage
 
@@ -100,9 +122,7 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.webhook.getUnifiedWebhookId({
-    id: "<ID>",
-  });
+  const res = await sdk.webhook.listUnifiedWebhooks({});
 
   if (res.statusCode == 200) {
     // handle response
@@ -114,25 +134,23 @@ import { UnifiedTo } from "unified-to";
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetUnifiedWebhookIdRequest](../../models/operations/getunifiedwebhookidrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `request`                                                                                      | [operations.ListUnifiedWebhooksRequest](../../models/operations/listunifiedwebhooksrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedWebhookIdResponse](../../models/operations/getunifiedwebhookidresponse.md)>**
+**Promise<[operations.ListUnifiedWebhooksResponse](../../models/operations/listunifiedwebhooksresponse.md)>**
 
 
-## postUnifiedWebhookConnectionIdObject
+## removeUnifiedWebhook
 
-To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=<hookId>.
+Remove webhook subscription
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PostUnifiedWebhookConnectionIdObjectEvents } from "unified-to/dist/sdk/models/operations";
-import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -141,26 +159,8 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
     },
   });
 
-  const res = await sdk.webhook.postUnifiedWebhookConnectionIdObject({
-    webhook: {
-      connectionId: "drat",
-      events: [
-        PropertyWebhookEvents.Updated,
-      ],
-      hookUrl: "siemens National",
-      integrationType: "GB Rustic deposit",
-      interval: 6073.96,
-      objectType: WebhookObjectType.CrmContact,
-      subscriptions: [
-        "Diesel",
-      ],
-      workspaceId: "female ken",
-    },
-    connectionId: "chocolate",
-    events: [
-      PostUnifiedWebhookConnectionIdObjectEvents.Updated,
-    ],
-    object: "female driver",
+  const res = await sdk.webhook.removeUnifiedWebhook({
+    id: "<ID>",
   });
 
   if (res.statusCode == 200) {
@@ -171,13 +171,13 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PostUnifiedWebhookConnectionIdObjectRequest](../../models/operations/postunifiedwebhookconnectionidobjectrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.RemoveUnifiedWebhookRequest](../../models/operations/removeunifiedwebhookrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.PostUnifiedWebhookConnectionIdObjectResponse](../../models/operations/postunifiedwebhookconnectionidobjectresponse.md)>**
+**Promise<[operations.RemoveUnifiedWebhookResponse](../../models/operations/removeunifiedwebhookresponse.md)>**
 

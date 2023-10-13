@@ -6,59 +6,20 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum GetUnifiedConnectionCategories {
-    Passthrough = "passthrough",
-    Hris = "hris",
-    Ats = "ats",
-    Auth = "auth",
-    Crm = "crm",
-    Enrich = "enrich",
-    Martech = "martech",
-    Ticketing = "ticketing",
-    Uc = "uc",
-}
-
 export class GetUnifiedConnectionRequest extends SpeakeasyBase {
     /**
-     * Filter the results on these categories
+     * ID of the Connection
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
-    categories?: GetUnifiedConnectionCategories[];
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
-    env?: string;
-
-    /**
-     * Filter the results to only those integrations for your user referenced by this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=external_xref" })
-    externalXref?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-    limit?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
-    offset?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
-
-    /**
-     * Return only results whose updated date is equal or greater to this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
-    updatedGte?: Date;
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
 export class GetUnifiedConnectionResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.Connection })
-    connections?: shared.Connection[];
+    @SpeakeasyMetadata()
+    connection?: shared.Connection;
 
     /**
      * HTTP response content type for this operation

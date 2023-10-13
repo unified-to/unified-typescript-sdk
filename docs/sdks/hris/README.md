@@ -3,370 +3,20 @@
 
 ### Available Operations
 
-* [deleteHrisConnectionIdEmployeeId](#deletehrisconnectionidemployeeid) - Remove an employee
-* [deleteHrisConnectionIdGroupId](#deletehrisconnectionidgroupid) - Remove a group
-* [getHrisConnectionIdEmployee](#gethrisconnectionidemployee) - List all employees
-* [getHrisConnectionIdEmployeeId](#gethrisconnectionidemployeeid) - Retrieve an employee
-* [getHrisConnectionIdGroup](#gethrisconnectionidgroup) - List all groups
-* [getHrisConnectionIdGroupId](#gethrisconnectionidgroupid) - Retrieve a group
-* [patchHrisConnectionIdEmployeeId](#patchhrisconnectionidemployeeid) - Update an employee
-* [patchHrisConnectionIdGroupId](#patchhrisconnectionidgroupid) - Update a group
-* [postHrisConnectionIdEmployee](#posthrisconnectionidemployee) - Create an employee
-* [postHrisConnectionIdGroup](#posthrisconnectionidgroup) - Create a group
-* [putHrisConnectionIdEmployeeId](#puthrisconnectionidemployeeid) - Update an employee
-* [putHrisConnectionIdGroupId](#puthrisconnectionidgroupid) - Update a group
-
-## deleteHrisConnectionIdEmployeeId
-
-Remove an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.deleteHrisConnectionIdEmployeeId({
-    connectionId: "Laredo turquoise port",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteHrisConnectionIdEmployeeIdRequest](../../models/operations/deletehrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteHrisConnectionIdEmployeeIdResponse](../../models/operations/deletehrisconnectionidemployeeidresponse.md)>**
-
-
-## deleteHrisConnectionIdGroupId
-
-Remove a group
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.deleteHrisConnectionIdGroupId({
-    connectionId: "consequently platforms Metal",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.DeleteHrisConnectionIdGroupIdRequest](../../models/operations/deletehrisconnectionidgroupidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.DeleteHrisConnectionIdGroupIdResponse](../../models/operations/deletehrisconnectionidgroupidresponse.md)>**
-
-
-## getHrisConnectionIdEmployee
-
-List all employees
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.getHrisConnectionIdEmployee({
-    connectionId: "initiatives greedily project",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetHrisConnectionIdEmployeeRequest](../../models/operations/gethrisconnectionidemployeerequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdEmployeeResponse](../../models/operations/gethrisconnectionidemployeeresponse.md)>**
-
-
-## getHrisConnectionIdEmployeeId
-
-Retrieve an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.getHrisConnectionIdEmployeeId({
-    connectionId: "Keyboard cleverly Rubber",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetHrisConnectionIdEmployeeIdRequest](../../models/operations/gethrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdEmployeeIdResponse](../../models/operations/gethrisconnectionidemployeeidresponse.md)>**
-
-
-## getHrisConnectionIdGroup
-
-List all groups
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.getHrisConnectionIdGroup({
-    connectionId: "Loan",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetHrisConnectionIdGroupRequest](../../models/operations/gethrisconnectionidgrouprequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdGroupResponse](../../models/operations/gethrisconnectionidgroupresponse.md)>**
-
-
-## getHrisConnectionIdGroupId
-
-Retrieve a group
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.getHrisConnectionIdGroupId({
-    connectionId: "behind",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetHrisConnectionIdGroupIdRequest](../../models/operations/gethrisconnectionidgroupidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdGroupIdResponse](../../models/operations/gethrisconnectionidgroupidresponse.md)>**
-
-
-## patchHrisConnectionIdEmployeeId
-
-Update an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import {
-  HrisEmailType,
-  HrisEmployeeEmploymentStatus,
-  HrisEmployeeEmploymentType,
-  HrisEmployeeGender,
-  HrisEmployeeMaritalStatus,
-  HrisTelephoneType,
-} from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.patchHrisConnectionIdEmployeeId({
-    hrisEmployee: {
-      address: {},
-      emails: [
-        {
-          email: "Brennan.Senger@yahoo.com",
-        },
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "Assurance forecast",
-        },
-      ],
-    },
-    connectionId: "Bahamas if fictionalise",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchHrisConnectionIdEmployeeIdRequest](../../models/operations/patchhrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchHrisConnectionIdEmployeeIdResponse](../../models/operations/patchhrisconnectionidemployeeidresponse.md)>**
-
-
-## patchHrisConnectionIdGroupId
-
-Update a group
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.hris.patchHrisConnectionIdGroupId({
-    hrisGroup: {
-      employeeIds: [
-        "gosh",
-      ],
-      managerIds: [
-        "Northwest",
-      ],
-      raw: {},
-    },
-    connectionId: "grey East Agender",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PatchHrisConnectionIdGroupIdRequest](../../models/operations/patchhrisconnectionidgroupidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
-
-
-### Response
-
-**Promise<[operations.PatchHrisConnectionIdGroupIdResponse](../../models/operations/patchhrisconnectionidgroupidresponse.md)>**
-
-
-## postHrisConnectionIdEmployee
+* [createHrisEmployee](#createhrisemployee) - Create an employee
+* [createHrisGroup](#createhrisgroup) - Create a group
+* [getHrisEmployee](#gethrisemployee) - Retrieve an employee
+* [getHrisGroup](#gethrisgroup) - Retrieve a group
+* [listHrisEmployees](#listhrisemployees) - List all employees
+* [listHrisGroups](#listhrisgroups) - List all groups
+* [patchHrisEmployee](#patchhrisemployee) - Update an employee
+* [patchHrisGroup](#patchhrisgroup) - Update a group
+* [removeHrisEmployee](#removehrisemployee) - Remove an employee
+* [removeHrisGroup](#removehrisgroup) - Remove a group
+* [updateHrisEmployee](#updatehrisemployee) - Update an employee
+* [updateHrisGroup](#updatehrisgroup) - Update a group
+
+## createHrisEmployee
 
 Create an employee
 
@@ -390,22 +40,22 @@ import {
     },
   });
 
-  const res = await sdk.hris.postHrisConnectionIdEmployee({
+  const res = await sdk.hris.createHrisEmployee({
     hrisEmployee: {
       address: {},
       emails: [
         {
-          email: "Berry.Reinger@hotmail.com",
+          email: "Adriel_Hansen@hotmail.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "Chicken Southwest",
+          telephone: "Gloves with",
         },
       ],
     },
-    connectionId: "generate Forward Diesel",
+    connectionId: "ack Recycled",
   });
 
   if (res.statusCode == 200) {
@@ -416,18 +66,18 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostHrisConnectionIdEmployeeRequest](../../models/operations/posthrisconnectionidemployeerequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateHrisEmployeeRequest](../../models/operations/createhrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostHrisConnectionIdEmployeeResponse](../../models/operations/posthrisconnectionidemployeeresponse.md)>**
+**Promise<[operations.CreateHrisEmployeeResponse](../../models/operations/createhrisemployeeresponse.md)>**
 
 
-## postHrisConnectionIdGroup
+## createHrisGroup
 
 Create a group
 
@@ -444,17 +94,17 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.hris.postHrisConnectionIdGroup({
+  const res = await sdk.hris.createHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "Bhutan",
+        "transmitter",
       ],
       managerIds: [
-        "Polestar",
+        "dependable",
       ],
       raw: {},
     },
-    connectionId: "Cab XSS",
+    connectionId: "Technetium",
   });
 
   if (res.statusCode == 200) {
@@ -465,18 +115,176 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PostHrisConnectionIdGroupRequest](../../models/operations/posthrisconnectionidgrouprequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.CreateHrisGroupRequest](../../models/operations/createhrisgrouprequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
 
-**Promise<[operations.PostHrisConnectionIdGroupResponse](../../models/operations/posthrisconnectionidgroupresponse.md)>**
+**Promise<[operations.CreateHrisGroupResponse](../../models/operations/createhrisgroupresponse.md)>**
 
 
-## putHrisConnectionIdEmployeeId
+## getHrisEmployee
+
+Retrieve an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.getHrisEmployee({
+    connectionId: "Automated",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetHrisEmployeeRequest](../../models/operations/gethrisemployeerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetHrisEmployeeResponse](../../models/operations/gethrisemployeeresponse.md)>**
+
+
+## getHrisGroup
+
+Retrieve a group
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.getHrisGroup({
+    connectionId: "Cedi state Cadillac",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetHrisGroupRequest](../../models/operations/gethrisgrouprequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.GetHrisGroupResponse](../../models/operations/gethrisgroupresponse.md)>**
+
+
+## listHrisEmployees
+
+List all employees
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.listHrisEmployees({
+    connectionId: "Table moratorium",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListHrisEmployeesRequest](../../models/operations/listhrisemployeesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListHrisEmployeesResponse](../../models/operations/listhrisemployeesresponse.md)>**
+
+
+## listHrisGroups
+
+List all groups
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.listHrisGroups({
+    connectionId: "Bronze Rubber",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.ListHrisGroupsRequest](../../models/operations/listhrisgroupsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+
+
+### Response
+
+**Promise<[operations.ListHrisGroupsResponse](../../models/operations/listhrisgroupsresponse.md)>**
+
+
+## patchHrisEmployee
 
 Update an employee
 
@@ -500,22 +308,22 @@ import {
     },
   });
 
-  const res = await sdk.hris.putHrisConnectionIdEmployeeId({
+  const res = await sdk.hris.patchHrisEmployee({
     hrisEmployee: {
       address: {},
       emails: [
         {
-          email: "Bert90@gmail.com",
+          email: "Zetta.Cassin@yahoo.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "mobile",
+          telephone: "shameful",
         },
       ],
     },
-    connectionId: "a online olive",
+    connectionId: "barring transmitting Hybrid",
     id: "<ID>",
   });
 
@@ -527,18 +335,18 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutHrisConnectionIdEmployeeIdRequest](../../models/operations/puthrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchHrisEmployeeRequest](../../models/operations/patchhrisemployeerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutHrisConnectionIdEmployeeIdResponse](../../models/operations/puthrisconnectionidemployeeidresponse.md)>**
+**Promise<[operations.PatchHrisEmployeeResponse](../../models/operations/patchhrisemployeeresponse.md)>**
 
 
-## putHrisConnectionIdGroupId
+## patchHrisGroup
 
 Update a group
 
@@ -555,17 +363,17 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.hris.putHrisConnectionIdGroupId({
+  const res = await sdk.hris.patchHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "panel",
+        "scalable",
       ],
       managerIds: [
-        "And",
+        "Bespoke",
       ],
       raw: {},
     },
-    connectionId: "Small woman solid",
+    connectionId: "bluetooth West",
     id: "<ID>",
   });
 
@@ -577,13 +385,205 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PutHrisConnectionIdGroupIdRequest](../../models/operations/puthrisconnectionidgroupidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.PatchHrisGroupRequest](../../models/operations/patchhrisgrouprequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.PutHrisConnectionIdGroupIdResponse](../../models/operations/puthrisconnectionidgroupidresponse.md)>**
+**Promise<[operations.PatchHrisGroupResponse](../../models/operations/patchhrisgroupresponse.md)>**
+
+
+## removeHrisEmployee
+
+Remove an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.removeHrisEmployee({
+    connectionId: "Architect",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveHrisEmployeeRequest](../../models/operations/removehrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveHrisEmployeeResponse](../../models/operations/removehrisemployeeresponse.md)>**
+
+
+## removeHrisGroup
+
+Remove a group
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.removeHrisGroup({
+    connectionId: "Human Soft Unbranded",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.RemoveHrisGroupRequest](../../models/operations/removehrisgrouprequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.RemoveHrisGroupResponse](../../models/operations/removehrisgroupresponse.md)>**
+
+
+## updateHrisEmployee
+
+Update an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import {
+  HrisEmailType,
+  HrisEmployeeEmploymentStatus,
+  HrisEmployeeEmploymentType,
+  HrisEmployeeGender,
+  HrisEmployeeMaritalStatus,
+  HrisTelephoneType,
+} from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.updateHrisEmployee({
+    hrisEmployee: {
+      address: {},
+      emails: [
+        {
+          email: "Abbie_Aufderhar@gmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Web Borders North",
+        },
+      ],
+    },
+    connectionId: "Jewelery slap",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateHrisEmployeeRequest](../../models/operations/updatehrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateHrisEmployeeResponse](../../models/operations/updatehrisemployeeresponse.md)>**
+
+
+## updateHrisGroup
+
+Update a group
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.hris.updateHrisGroup({
+    hrisGroup: {
+      employeeIds: [
+        "disintermediate",
+      ],
+      managerIds: [
+        "schemas",
+      ],
+      raw: {},
+    },
+    connectionId: "bashfully",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.UpdateHrisGroupRequest](../../models/operations/updatehrisgrouprequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.UpdateHrisGroupResponse](../../models/operations/updatehrisgroupresponse.md)>**
 

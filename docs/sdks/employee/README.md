@@ -3,195 +3,14 @@
 
 ### Available Operations
 
-* [deleteHrisConnectionIdEmployeeId](#deletehrisconnectionidemployeeid) - Remove an employee
-* [getHrisConnectionIdEmployee](#gethrisconnectionidemployee) - List all employees
-* [getHrisConnectionIdEmployeeId](#gethrisconnectionidemployeeid) - Retrieve an employee
-* [patchHrisConnectionIdEmployeeId](#patchhrisconnectionidemployeeid) - Update an employee
-* [postHrisConnectionIdEmployee](#posthrisconnectionidemployee) - Create an employee
-* [putHrisConnectionIdEmployeeId](#puthrisconnectionidemployeeid) - Update an employee
+* [createHrisEmployee](#createhrisemployee) - Create an employee
+* [getHrisEmployee](#gethrisemployee) - Retrieve an employee
+* [listHrisEmployees](#listhrisemployees) - List all employees
+* [patchHrisEmployee](#patchhrisemployee) - Update an employee
+* [removeHrisEmployee](#removehrisemployee) - Remove an employee
+* [updateHrisEmployee](#updatehrisemployee) - Update an employee
 
-## deleteHrisConnectionIdEmployeeId
-
-Remove an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.employee.deleteHrisConnectionIdEmployeeId({
-    connectionId: "Laredo turquoise port",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteHrisConnectionIdEmployeeIdRequest](../../models/operations/deletehrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteHrisConnectionIdEmployeeIdResponse](../../models/operations/deletehrisconnectionidemployeeidresponse.md)>**
-
-
-## getHrisConnectionIdEmployee
-
-List all employees
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.employee.getHrisConnectionIdEmployee({
-    connectionId: "initiatives greedily project",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetHrisConnectionIdEmployeeRequest](../../models/operations/gethrisconnectionidemployeerequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdEmployeeResponse](../../models/operations/gethrisconnectionidemployeeresponse.md)>**
-
-
-## getHrisConnectionIdEmployeeId
-
-Retrieve an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.employee.getHrisConnectionIdEmployeeId({
-    connectionId: "Keyboard cleverly Rubber",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetHrisConnectionIdEmployeeIdRequest](../../models/operations/gethrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetHrisConnectionIdEmployeeIdResponse](../../models/operations/gethrisconnectionidemployeeidresponse.md)>**
-
-
-## patchHrisConnectionIdEmployeeId
-
-Update an employee
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import {
-  HrisEmailType,
-  HrisEmployeeEmploymentStatus,
-  HrisEmployeeEmploymentType,
-  HrisEmployeeGender,
-  HrisEmployeeMaritalStatus,
-  HrisTelephoneType,
-} from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.employee.patchHrisConnectionIdEmployeeId({
-    hrisEmployee: {
-      address: {},
-      emails: [
-        {
-          email: "Brennan.Senger@yahoo.com",
-        },
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "Assurance forecast",
-        },
-      ],
-    },
-    connectionId: "Bahamas if fictionalise",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchHrisConnectionIdEmployeeIdRequest](../../models/operations/patchhrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchHrisConnectionIdEmployeeIdResponse](../../models/operations/patchhrisconnectionidemployeeidresponse.md)>**
-
-
-## postHrisConnectionIdEmployee
+## createHrisEmployee
 
 Create an employee
 
@@ -215,22 +34,22 @@ import {
     },
   });
 
-  const res = await sdk.employee.postHrisConnectionIdEmployee({
+  const res = await sdk.employee.createHrisEmployee({
     hrisEmployee: {
       address: {},
       emails: [
         {
-          email: "Berry.Reinger@hotmail.com",
+          email: "Adriel_Hansen@hotmail.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "Chicken Southwest",
+          telephone: "Gloves with",
         },
       ],
     },
-    connectionId: "generate Forward Diesel",
+    connectionId: "ack Recycled",
   });
 
   if (res.statusCode == 200) {
@@ -241,18 +60,97 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostHrisConnectionIdEmployeeRequest](../../models/operations/posthrisconnectionidemployeerequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateHrisEmployeeRequest](../../models/operations/createhrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostHrisConnectionIdEmployeeResponse](../../models/operations/posthrisconnectionidemployeeresponse.md)>**
+**Promise<[operations.CreateHrisEmployeeResponse](../../models/operations/createhrisemployeeresponse.md)>**
 
 
-## putHrisConnectionIdEmployeeId
+## getHrisEmployee
+
+Retrieve an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.employee.getHrisEmployee({
+    connectionId: "Automated",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetHrisEmployeeRequest](../../models/operations/gethrisemployeerequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetHrisEmployeeResponse](../../models/operations/gethrisemployeeresponse.md)>**
+
+
+## listHrisEmployees
+
+List all employees
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.employee.listHrisEmployees({
+    connectionId: "Table moratorium",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListHrisEmployeesRequest](../../models/operations/listhrisemployeesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListHrisEmployeesResponse](../../models/operations/listhrisemployeesresponse.md)>**
+
+
+## patchHrisEmployee
 
 Update an employee
 
@@ -276,22 +174,22 @@ import {
     },
   });
 
-  const res = await sdk.employee.putHrisConnectionIdEmployeeId({
+  const res = await sdk.employee.patchHrisEmployee({
     hrisEmployee: {
       address: {},
       emails: [
         {
-          email: "Bert90@gmail.com",
+          email: "Zetta.Cassin@yahoo.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "mobile",
+          telephone: "shameful",
         },
       ],
     },
-    connectionId: "a online olive",
+    connectionId: "barring transmitting Hybrid",
     id: "<ID>",
   });
 
@@ -303,13 +201,115 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutHrisConnectionIdEmployeeIdRequest](../../models/operations/puthrisconnectionidemployeeidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchHrisEmployeeRequest](../../models/operations/patchhrisemployeerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutHrisConnectionIdEmployeeIdResponse](../../models/operations/puthrisconnectionidemployeeidresponse.md)>**
+**Promise<[operations.PatchHrisEmployeeResponse](../../models/operations/patchhrisemployeeresponse.md)>**
+
+
+## removeHrisEmployee
+
+Remove an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.employee.removeHrisEmployee({
+    connectionId: "Architect",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveHrisEmployeeRequest](../../models/operations/removehrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveHrisEmployeeResponse](../../models/operations/removehrisemployeeresponse.md)>**
+
+
+## updateHrisEmployee
+
+Update an employee
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import {
+  HrisEmailType,
+  HrisEmployeeEmploymentStatus,
+  HrisEmployeeEmploymentType,
+  HrisEmployeeGender,
+  HrisEmployeeMaritalStatus,
+  HrisTelephoneType,
+} from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.employee.updateHrisEmployee({
+    hrisEmployee: {
+      address: {},
+      emails: [
+        {
+          email: "Abbie_Aufderhar@gmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Web Borders North",
+        },
+      ],
+    },
+    connectionId: "Jewelery slap",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateHrisEmployeeRequest](../../models/operations/updatehrisemployeerequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateHrisEmployeeResponse](../../models/operations/updatehrisemployeeresponse.md)>**
 

@@ -22,12 +22,12 @@ export class Login {
      * @remarks
      * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and emails are returned.
      */
-    async getUnifiedIntegrationLoginWorkspaceIdIntegrationType(
-        req: operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeRequest,
+    async getUnifiedIntegrationLogin(
+        req: operations.GetUnifiedIntegrationLoginRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse> {
+    ): Promise<operations.GetUnifiedIntegrationLoginResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeRequest(req);
+            req = new operations.GetUnifiedIntegrationLoginRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -69,8 +69,8 @@ export class Login {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse =
-            new operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse({
+        const res: operations.GetUnifiedIntegrationLoginResponse =
+            new operations.GetUnifiedIntegrationLoginResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -79,8 +79,7 @@ export class Login {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getUnifiedIntegrationLoginWorkspaceIdIntegrationType200ApplicationJSONString =
-                        decodedRes;
+                    res.getUnifiedIntegrationLogin200ApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

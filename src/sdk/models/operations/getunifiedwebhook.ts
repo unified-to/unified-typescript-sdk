@@ -7,32 +7,11 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class GetUnifiedWebhookRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
-    env?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
-    limit?: number;
-
     /**
-     * Filter the results for webhooks for only this object
+     * ID of the Webhook
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=object" })
-    object?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
-    offset?: number;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
-
-    /**
-     * Return only results whose updated date is equal or greater to this value
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
-    updatedGte?: Date;
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
 export class GetUnifiedWebhookResponse extends SpeakeasyBase {
@@ -57,6 +36,6 @@ export class GetUnifiedWebhookResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.Webhook })
-    webhooks?: shared.Webhook[];
+    @SpeakeasyMetadata()
+    webhook?: shared.Webhook;
 }

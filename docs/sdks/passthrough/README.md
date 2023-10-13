@@ -3,134 +3,13 @@
 
 ### Available Operations
 
-* [deletePassthroughConnectionIdPath](#deletepassthroughconnectionidpath) - Passthrough DELETE
-* [getPassthroughConnectionIdPath](#getpassthroughconnectionidpath) - Passthrough GET
-* [patchPassthroughConnectionIdPath](#patchpassthroughconnectionidpath) - Passthrough PUT
-* [postPassthroughConnectionIdPath](#postpassthroughconnectionidpath) - Passthrough POST
-* [putPassthroughConnectionIdPath](#putpassthroughconnectionidpath) - Passthrough PUT
+* [createPassthrough](#createpassthrough) - Passthrough POST
+* [listPassthroughs](#listpassthroughs) - Passthrough GET
+* [patchPassthrough](#patchpassthrough) - Passthrough PUT
+* [removePassthrough](#removepassthrough) - Passthrough DELETE
+* [updatePassthrough](#updatepassthrough) - Passthrough PUT
 
-## deletePassthroughConnectionIdPath
-
-Passthrough DELETE
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.passthrough.deletePassthroughConnectionIdPath({
-    connectionId: "Planner Checking Tricycle",
-    path: "/usr/obj",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                  | [operations.DeletePassthroughConnectionIdPathRequest](../../models/operations/deletepassthroughconnectionidpathrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
-
-
-### Response
-
-**Promise<[operations.DeletePassthroughConnectionIdPathResponse](../../models/operations/deletepassthroughconnectionidpathresponse.md)>**
-
-
-## getPassthroughConnectionIdPath
-
-Passthrough GET
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.passthrough.getPassthroughConnectionIdPath({
-    connectionId: "Global",
-    path: "/private/var",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.GetPassthroughConnectionIdPathRequest](../../models/operations/getpassthroughconnectionidpathrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
-
-
-### Response
-
-**Promise<[operations.GetPassthroughConnectionIdPathResponse](../../models/operations/getpassthroughconnectionidpathresponse.md)>**
-
-
-## patchPassthroughConnectionIdPath
-
-Passthrough PUT
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.passthrough.patchPassthroughConnectionIdPath({
-    connectionId: "average maroon",
-    path: "/proc",
-    undefined: {},
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.PatchPassthroughConnectionIdPathRequest](../../models/operations/patchpassthroughconnectionidpathrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.PatchPassthroughConnectionIdPathResponse](../../models/operations/patchpassthroughconnectionidpathresponse.md)>**
-
-
-## postPassthroughConnectionIdPath
+## createPassthrough
 
 Passthrough POST
 
@@ -146,9 +25,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.passthrough.postPassthroughConnectionIdPath({
-    connectionId: "Computer Hip",
-    path: "/boot/defaults",
+  const res = await sdk.passthrough.createPassthrough({
+    connectionId: "UTF8",
+    path: "/home",
     undefined: {},
   });
 
@@ -160,18 +39,58 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PostPassthroughConnectionIdPathRequest](../../models/operations/postpassthroughconnectionidpathrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreatePassthroughRequest](../../models/operations/createpassthroughrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PostPassthroughConnectionIdPathResponse](../../models/operations/postpassthroughconnectionidpathresponse.md)>**
+**Promise<[operations.CreatePassthroughResponse](../../models/operations/createpassthroughresponse.md)>**
 
 
-## putPassthroughConnectionIdPath
+## listPassthroughs
+
+Passthrough GET
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.passthrough.listPassthroughs({
+    connectionId: "circuit Loan",
+    path: "/usr",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListPassthroughsRequest](../../models/operations/listpassthroughsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.ListPassthroughsResponse](../../models/operations/listpassthroughsresponse.md)>**
+
+
+## patchPassthrough
 
 Passthrough PUT
 
@@ -187,9 +106,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.passthrough.putPassthroughConnectionIdPath({
-    connectionId: "Computer Oriental",
-    path: "/usr/local/src",
+  const res = await sdk.passthrough.patchPassthrough({
+    connectionId: "VGA",
+    path: "/opt/lib",
     undefined: {},
   });
 
@@ -201,13 +120,94 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.PutPassthroughConnectionIdPathRequest](../../models/operations/putpassthroughconnectionidpathrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.PatchPassthroughRequest](../../models/operations/patchpassthroughrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.PutPassthroughConnectionIdPathResponse](../../models/operations/putpassthroughconnectionidpathresponse.md)>**
+**Promise<[operations.PatchPassthroughResponse](../../models/operations/patchpassthroughresponse.md)>**
+
+
+## removePassthrough
+
+Passthrough DELETE
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.passthrough.removePassthrough({
+    connectionId: "Maine",
+    path: "/boot",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.RemovePassthroughRequest](../../models/operations/removepassthroughrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.RemovePassthroughResponse](../../models/operations/removepassthroughresponse.md)>**
+
+
+## updatePassthrough
+
+Passthrough PUT
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.passthrough.updatePassthrough({
+    connectionId: "Manager",
+    path: "/private/var",
+    undefined: {},
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.UpdatePassthroughRequest](../../models/operations/updatepassthroughrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.UpdatePassthroughResponse](../../models/operations/updatepassthroughresponse.md)>**
 

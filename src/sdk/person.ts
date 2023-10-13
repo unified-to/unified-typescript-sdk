@@ -19,12 +19,12 @@ export class Person {
     /**
      * Retrieve enrichment information for a person
      */
-    async getEnrichConnectionIdPerson(
-        req: operations.GetEnrichConnectionIdPersonRequest,
+    async listEnrichPeople(
+        req: operations.ListEnrichPeopleRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetEnrichConnectionIdPersonResponse> {
+    ): Promise<operations.ListEnrichPeopleResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetEnrichConnectionIdPersonRequest(req);
+            req = new operations.ListEnrichPeopleRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -62,12 +62,11 @@ export class Person {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetEnrichConnectionIdPersonResponse =
-            new operations.GetEnrichConnectionIdPersonResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListEnrichPeopleResponse = new operations.ListEnrichPeopleResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:

@@ -3,179 +3,14 @@
 
 ### Available Operations
 
-* [deleteCrmConnectionIdDealId](#deletecrmconnectioniddealid) - Remove a deal
-* [getCrmConnectionIdDeal](#getcrmconnectioniddeal) - List all deals
-* [getCrmConnectionIdDealId](#getcrmconnectioniddealid) - Retrieve a deal
-* [patchCrmConnectionIdDealId](#patchcrmconnectioniddealid) - Update a deal
-* [postCrmConnectionIdDeal](#postcrmconnectioniddeal) - Create a deal
-* [putCrmConnectionIdDealId](#putcrmconnectioniddealid) - Update a deal
+* [createCrmDeal](#createcrmdeal) - Create a deal
+* [getCrmDeal](#getcrmdeal) - Retrieve a deal
+* [listCrmDeals](#listcrmdeals) - List all deals
+* [patchCrmDeal](#patchcrmdeal) - Update a deal
+* [removeCrmDeal](#removecrmdeal) - Remove a deal
+* [updateCrmDeal](#updatecrmdeal) - Update a deal
 
-## deleteCrmConnectionIdDealId
-
-Remove a deal
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.deal.deleteCrmConnectionIdDealId({
-    connectionId: "Fresh",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.DeleteCrmConnectionIdDealIdRequest](../../models/operations/deletecrmconnectioniddealidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdDealIdResponse](../../models/operations/deletecrmconnectioniddealidresponse.md)>**
-
-
-## getCrmConnectionIdDeal
-
-List all deals
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.deal.getCrmConnectionIdDeal({
-    connectionId: "Tools Card copying",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetCrmConnectionIdDealRequest](../../models/operations/getcrmconnectioniddealrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdDealResponse](../../models/operations/getcrmconnectioniddealresponse.md)>**
-
-
-## getCrmConnectionIdDealId
-
-Retrieve a deal
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.deal.getCrmConnectionIdDealId({
-    connectionId: "Concrete Director",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetCrmConnectionIdDealIdRequest](../../models/operations/getcrmconnectioniddealidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdDealIdResponse](../../models/operations/getcrmconnectioniddealidresponse.md)>**
-
-
-## patchCrmConnectionIdDealId
-
-Update a deal
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.deal.patchCrmConnectionIdDealId({
-    crmDeal: {
-      raw: {},
-      tags: [
-        "Bicycle",
-      ],
-    },
-    connectionId: "partnerships",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PatchCrmConnectionIdDealIdRequest](../../models/operations/patchcrmconnectioniddealidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdDealIdResponse](../../models/operations/patchcrmconnectioniddealidresponse.md)>**
-
-
-## postCrmConnectionIdDeal
+## createCrmDeal
 
 Create a deal
 
@@ -191,14 +26,14 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.deal.postCrmConnectionIdDeal({
+  const res = await sdk.deal.createCrmDeal({
     crmDeal: {
       raw: {},
       tags: [
-        "M2F",
+        "Toys",
       ],
     },
-    connectionId: "Borders pfft",
+    connectionId: "Music Rap",
   });
 
   if (res.statusCode == 200) {
@@ -209,18 +44,97 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.PostCrmConnectionIdDealRequest](../../models/operations/postcrmconnectioniddealrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.CreateCrmDealRequest](../../models/operations/createcrmdealrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.PostCrmConnectionIdDealResponse](../../models/operations/postcrmconnectioniddealresponse.md)>**
+**Promise<[operations.CreateCrmDealResponse](../../models/operations/createcrmdealresponse.md)>**
 
 
-## putCrmConnectionIdDealId
+## getCrmDeal
+
+Retrieve a deal
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.deal.getCrmDeal({
+    connectionId: "male orange",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.GetCrmDealRequest](../../models/operations/getcrmdealrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
+| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
+
+
+### Response
+
+**Promise<[operations.GetCrmDealResponse](../../models/operations/getcrmdealresponse.md)>**
+
+
+## listCrmDeals
+
+List all deals
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.deal.listCrmDeals({
+    connectionId: "Lamborghini",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.ListCrmDealsRequest](../../models/operations/listcrmdealsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.ListCrmDealsResponse](../../models/operations/listcrmdealsresponse.md)>**
+
+
+## patchCrmDeal
 
 Update a deal
 
@@ -236,14 +150,14 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.deal.putCrmConnectionIdDealId({
+  const res = await sdk.deal.patchCrmDeal({
     crmDeal: {
       raw: {},
       tags: [
-        "Account",
+        "consign",
       ],
     },
-    connectionId: "payment",
+    connectionId: "Platinum female",
     id: "<ID>",
   });
 
@@ -255,13 +169,99 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PutCrmConnectionIdDealIdRequest](../../models/operations/putcrmconnectioniddealidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.PatchCrmDealRequest](../../models/operations/patchcrmdealrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.PutCrmConnectionIdDealIdResponse](../../models/operations/putcrmconnectioniddealidresponse.md)>**
+**Promise<[operations.PatchCrmDealResponse](../../models/operations/patchcrmdealresponse.md)>**
+
+
+## removeCrmDeal
+
+Remove a deal
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.deal.removeCrmDeal({
+    connectionId: "Nihonium",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.RemoveCrmDealRequest](../../models/operations/removecrmdealrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.RemoveCrmDealResponse](../../models/operations/removecrmdealresponse.md)>**
+
+
+## updateCrmDeal
+
+Update a deal
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.deal.updateCrmDeal({
+    crmDeal: {
+      raw: {},
+      tags: [
+        "South",
+      ],
+    },
+    connectionId: "Shirt",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.UpdateCrmDealRequest](../../models/operations/updatecrmdealrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.UpdateCrmDealResponse](../../models/operations/updatecrmdealresponse.md)>**
 

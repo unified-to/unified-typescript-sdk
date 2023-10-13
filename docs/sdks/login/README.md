@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [getUnifiedIntegrationLoginWorkspaceIdIntegrationType](#getunifiedintegrationloginworkspaceidintegrationtype) - Sign in a user
+* [getUnifiedIntegrationLogin](#getunifiedintegrationlogin) - Sign in a user
 
-## getUnifiedIntegrationLoginWorkspaceIdIntegrationType
+## getUnifiedIntegrationLogin
 
 Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and emails are returned.
 
@@ -21,9 +21,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.login.getUnifiedIntegrationLoginWorkspaceIdIntegrationType({
-    integrationType: "Rubber",
-    workspaceId: "gold Cambridgeshire",
+  const res = await sdk.login.getUnifiedIntegrationLogin({
+    integrationType: "Bicycle markets Soft",
+    workspaceId: "bus Strontium",
   });
 
   if (res.statusCode == 200) {
@@ -34,13 +34,13 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                                                                        | Type                                                                                                                                                             | Required                                                                                                                                                         | Description                                                                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                        | [operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeRequest](../../models/operations/getunifiedintegrationloginworkspaceidintegrationtyperequest.md) | :heavy_check_mark:                                                                                                                                               | The request object to use for the request.                                                                                                                       |
-| `config`                                                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                     | :heavy_minus_sign:                                                                                                                                               | Available config options for making requests.                                                                                                                    |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.GetUnifiedIntegrationLoginRequest](../../models/operations/getunifiedintegrationloginrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedIntegrationLoginWorkspaceIdIntegrationTypeResponse](../../models/operations/getunifiedintegrationloginworkspaceidintegrationtyperesponse.md)>**
+**Promise<[operations.GetUnifiedIntegrationLoginResponse](../../models/operations/getunifiedintegrationloginresponse.md)>**
 

@@ -3,177 +3,14 @@
 
 ### Available Operations
 
-* [deleteAtsConnectionIdScorecardId](#deleteatsconnectionidscorecardid) - Remove a scorecard
-* [getAtsConnectionIdScorecard](#getatsconnectionidscorecard) - List all scorecards
-* [getAtsConnectionIdScorecardId](#getatsconnectionidscorecardid) - Retrieve a scorecard
-* [patchAtsConnectionIdScorecardId](#patchatsconnectionidscorecardid) - Update a scorecard
-* [postAtsConnectionIdScorecard](#postatsconnectionidscorecard) - Create a scorecard
-* [putAtsConnectionIdScorecardId](#putatsconnectionidscorecardid) - Update a scorecard
+* [createAtsScorecard](#createatsscorecard) - Create a scorecard
+* [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
+* [listAtsScorecards](#listatsscorecards) - List all scorecards
+* [patchAtsScorecard](#patchatsscorecard) - Update a scorecard
+* [removeAtsScorecard](#removeatsscorecard) - Remove a scorecard
+* [updateAtsScorecard](#updateatsscorecard) - Update a scorecard
 
-## deleteAtsConnectionIdScorecardId
-
-Remove a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.document.deleteAtsConnectionIdScorecardId({
-    connectionId: "Agent intrepid",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteAtsConnectionIdScorecardIdRequest](../../models/operations/deleteatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdScorecardIdResponse](../../models/operations/deleteatsconnectionidscorecardidresponse.md)>**
-
-
-## getAtsConnectionIdScorecard
-
-List all scorecards
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.document.getAtsConnectionIdScorecard({
-    connectionId: "Licensed deep",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAtsConnectionIdScorecardRequest](../../models/operations/getatsconnectionidscorecardrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdScorecardResponse](../../models/operations/getatsconnectionidscorecardresponse.md)>**
-
-
-## getAtsConnectionIdScorecardId
-
-Retrieve a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.document.getAtsConnectionIdScorecardId({
-    connectionId: "East mobile Mini",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdScorecardIdRequest](../../models/operations/getatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdScorecardIdResponse](../../models/operations/getatsconnectionidscorecardidresponse.md)>**
-
-
-## patchAtsConnectionIdScorecardId
-
-Update a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.document.patchAtsConnectionIdScorecardId({
-    atsScorecard: {
-      raw: {},
-    },
-    connectionId: "Carter Hatchback functionalities",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchAtsConnectionIdScorecardIdRequest](../../models/operations/patchatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdScorecardIdResponse](../../models/operations/patchatsconnectionidscorecardidresponse.md)>**
-
-
-## postAtsConnectionIdScorecard
+## createAtsScorecard
 
 Create a scorecard
 
@@ -190,11 +27,11 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.document.postAtsConnectionIdScorecard({
+  const res = await sdk.document.createAtsScorecard({
     atsScorecard: {
       raw: {},
     },
-    connectionId: "female bah",
+    connectionId: "Northwest Account",
   });
 
   if (res.statusCode == 200) {
@@ -205,18 +42,97 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostAtsConnectionIdScorecardRequest](../../models/operations/postatsconnectionidscorecardrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateAtsScorecardRequest](../../models/operations/createatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdScorecardResponse](../../models/operations/postatsconnectionidscorecardresponse.md)>**
+**Promise<[operations.CreateAtsScorecardResponse](../../models/operations/createatsscorecardresponse.md)>**
 
 
-## putAtsConnectionIdScorecardId
+## getAtsScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.document.getAtsScorecard({
+    connectionId: "Executive",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsScorecardRequest](../../models/operations/getatsscorecardrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsScorecardResponse](../../models/operations/getatsscorecardresponse.md)>**
+
+
+## listAtsScorecards
+
+List all scorecards
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.document.listAtsScorecards({
+    connectionId: "Hybrid Bugatti",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAtsScorecardsRequest](../../models/operations/listatsscorecardsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListAtsScorecardsResponse](../../models/operations/listatsscorecardsresponse.md)>**
+
+
+## patchAtsScorecard
 
 Update a scorecard
 
@@ -233,11 +149,11 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.document.putAtsConnectionIdScorecardId({
+  const res = await sdk.document.patchAtsScorecard({
     atsScorecard: {
       raw: {},
     },
-    connectionId: "East Granite",
+    connectionId: "eek",
     id: "<ID>",
   });
 
@@ -249,13 +165,97 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutAtsConnectionIdScorecardIdRequest](../../models/operations/putatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchAtsScorecardRequest](../../models/operations/patchatsscorecardrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdScorecardIdResponse](../../models/operations/putatsconnectionidscorecardidresponse.md)>**
+**Promise<[operations.PatchAtsScorecardResponse](../../models/operations/patchatsscorecardresponse.md)>**
+
+
+## removeAtsScorecard
+
+Remove a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.document.removeAtsScorecard({
+    connectionId: "Cambridgeshire maximized",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveAtsScorecardRequest](../../models/operations/removeatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsScorecardResponse](../../models/operations/removeatsscorecardresponse.md)>**
+
+
+## updateAtsScorecard
+
+Update a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.document.updateAtsScorecard({
+    atsScorecard: {
+      raw: {},
+    },
+    connectionId: "grey",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAtsScorecardRequest](../../models/operations/updateatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsScorecardResponse](../../models/operations/updateatsscorecardresponse.md)>**
 

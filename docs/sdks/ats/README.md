@@ -3,895 +3,38 @@
 
 ### Available Operations
 
-* [deleteAtsConnectionIdApplicationId](#deleteatsconnectionidapplicationid) - Remove an application
-* [deleteAtsConnectionIdCandidateId](#deleteatsconnectionidcandidateid) - Remove a candidate
-* [deleteAtsConnectionIdInterviewId](#deleteatsconnectionidinterviewid) - Remove a interview
-* [deleteAtsConnectionIdJobId](#deleteatsconnectionidjobid) - Remove a job
-* [deleteAtsConnectionIdScorecardId](#deleteatsconnectionidscorecardid) - Remove a scorecard
-* [getAtsConnectionIdApplication](#getatsconnectionidapplication) - List all applications
-* [getAtsConnectionIdApplicationId](#getatsconnectionidapplicationid) - Retrieve an application
-* [getAtsConnectionIdCandidate](#getatsconnectionidcandidate) - List all candidates
-* [getAtsConnectionIdCandidateId](#getatsconnectionidcandidateid) - Retrieve a candidate
-* [getAtsConnectionIdInterview](#getatsconnectionidinterview) - List all interviews
-* [getAtsConnectionIdInterviewId](#getatsconnectionidinterviewid) - Retrieve a interview
-* [getAtsConnectionIdJob](#getatsconnectionidjob) - List all jobs
-* [getAtsConnectionIdJobId](#getatsconnectionidjobid) - Retrieve a job
-* [getAtsConnectionIdScorecard](#getatsconnectionidscorecard) - List all scorecards
-* [getAtsConnectionIdScorecardId](#getatsconnectionidscorecardid) - Retrieve a scorecard
-* [patchAtsConnectionIdApplicationId](#patchatsconnectionidapplicationid) - Update an application
-* [patchAtsConnectionIdCandidateId](#patchatsconnectionidcandidateid) - Update a candidate
-* [patchAtsConnectionIdInterviewId](#patchatsconnectionidinterviewid) - Update a interview
-* [patchAtsConnectionIdJobId](#patchatsconnectionidjobid) - Update a job
-* [patchAtsConnectionIdScorecardId](#patchatsconnectionidscorecardid) - Update a scorecard
-* [postAtsConnectionIdApplication](#postatsconnectionidapplication) - Create an application
-* [postAtsConnectionIdCandidate](#postatsconnectionidcandidate) - Create a candidate
-* [postAtsConnectionIdInterview](#postatsconnectionidinterview) - Create a interview
-* [postAtsConnectionIdJob](#postatsconnectionidjob) - Create a job
-* [postAtsConnectionIdScorecard](#postatsconnectionidscorecard) - Create a scorecard
-* [putAtsConnectionIdApplicationId](#putatsconnectionidapplicationid) - Update an application
-* [putAtsConnectionIdCandidateId](#putatsconnectionidcandidateid) - Update a candidate
-* [putAtsConnectionIdInterviewId](#putatsconnectionidinterviewid) - Update a interview
-* [putAtsConnectionIdJobId](#putatsconnectionidjobid) - Update a job
-* [putAtsConnectionIdScorecardId](#putatsconnectionidscorecardid) - Update a scorecard
-
-## deleteAtsConnectionIdApplicationId
-
-Remove an application
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.deleteAtsConnectionIdApplicationId({
-    connectionId: "markets sievert meh",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                    | [operations.DeleteAtsConnectionIdApplicationIdRequest](../../models/operations/deleteatsconnectionidapplicationidrequest.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
-| `config`                                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                 | :heavy_minus_sign:                                                                                                           | Available config options for making requests.                                                                                |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdApplicationIdResponse](../../models/operations/deleteatsconnectionidapplicationidresponse.md)>**
-
-
-## deleteAtsConnectionIdCandidateId
-
-Remove a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.deleteAtsConnectionIdCandidateId({
-    connectionId: "multimedia",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteAtsConnectionIdCandidateIdRequest](../../models/operations/deleteatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdCandidateIdResponse](../../models/operations/deleteatsconnectionidcandidateidresponse.md)>**
-
-
-## deleteAtsConnectionIdInterviewId
-
-Remove a interview
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.deleteAtsConnectionIdInterviewId({
-    connectionId: "redundant Health Hayes",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteAtsConnectionIdInterviewIdRequest](../../models/operations/deleteatsconnectionidinterviewidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdInterviewIdResponse](../../models/operations/deleteatsconnectionidinterviewidresponse.md)>**
-
-
-## deleteAtsConnectionIdJobId
-
-Remove a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.deleteAtsConnectionIdJobId({
-    connectionId: "Sedan Bedfordshire Hybrid",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.DeleteAtsConnectionIdJobIdRequest](../../models/operations/deleteatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdJobIdResponse](../../models/operations/deleteatsconnectionidjobidresponse.md)>**
-
-
-## deleteAtsConnectionIdScorecardId
-
-Remove a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.deleteAtsConnectionIdScorecardId({
-    connectionId: "Agent intrepid",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteAtsConnectionIdScorecardIdRequest](../../models/operations/deleteatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdScorecardIdResponse](../../models/operations/deleteatsconnectionidscorecardidresponse.md)>**
-
-
-## getAtsConnectionIdApplication
-
-List all applications
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdApplication({
-    connectionId: "turquoise",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdApplicationRequest](../../models/operations/getatsconnectionidapplicationrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdApplicationResponse](../../models/operations/getatsconnectionidapplicationresponse.md)>**
-
-
-## getAtsConnectionIdApplicationId
-
-Retrieve an application
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdApplicationId({
-    connectionId: "Buckinghamshire functionalities",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.GetAtsConnectionIdApplicationIdRequest](../../models/operations/getatsconnectionidapplicationidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdApplicationIdResponse](../../models/operations/getatsconnectionidapplicationidresponse.md)>**
-
-
-## getAtsConnectionIdCandidate
-
-List all candidates
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdCandidate({
-    connectionId: "Northwest forceful Moore",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAtsConnectionIdCandidateRequest](../../models/operations/getatsconnectionidcandidaterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdCandidateResponse](../../models/operations/getatsconnectionidcandidateresponse.md)>**
-
-
-## getAtsConnectionIdCandidateId
-
-Retrieve a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdCandidateId({
-    connectionId: "ha Loan",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdCandidateIdRequest](../../models/operations/getatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdCandidateIdResponse](../../models/operations/getatsconnectionidcandidateidresponse.md)>**
-
-
-## getAtsConnectionIdInterview
-
-List all interviews
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdInterview({
-    connectionId: "Fresh Pickup converse",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAtsConnectionIdInterviewRequest](../../models/operations/getatsconnectionidinterviewrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdInterviewResponse](../../models/operations/getatsconnectionidinterviewresponse.md)>**
-
-
-## getAtsConnectionIdInterviewId
-
-Retrieve a interview
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdInterviewId({
-    connectionId: "Loan Gorgeous lux",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdInterviewIdRequest](../../models/operations/getatsconnectionidinterviewidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdInterviewIdResponse](../../models/operations/getatsconnectionidinterviewidresponse.md)>**
-
-
-## getAtsConnectionIdJob
-
-List all jobs
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdJob({
-    connectionId: "City katal",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetAtsConnectionIdJobRequest](../../models/operations/getatsconnectionidjobrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdJobResponse](../../models/operations/getatsconnectionidjobresponse.md)>**
-
-
-## getAtsConnectionIdJobId
-
-Retrieve a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdJobId({
-    connectionId: "Jazz",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAtsConnectionIdJobIdRequest](../../models/operations/getatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdJobIdResponse](../../models/operations/getatsconnectionidjobidresponse.md)>**
-
-
-## getAtsConnectionIdScorecard
-
-List all scorecards
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdScorecard({
-    connectionId: "Licensed deep",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAtsConnectionIdScorecardRequest](../../models/operations/getatsconnectionidscorecardrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdScorecardResponse](../../models/operations/getatsconnectionidscorecardresponse.md)>**
-
-
-## getAtsConnectionIdScorecardId
-
-Retrieve a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.getAtsConnectionIdScorecardId({
-    connectionId: "East mobile Mini",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdScorecardIdRequest](../../models/operations/getatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdScorecardIdResponse](../../models/operations/getatsconnectionidscorecardidresponse.md)>**
-
-
-## patchAtsConnectionIdApplicationId
-
-Update an application
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.patchAtsConnectionIdApplicationId({
-    atsApplication: {
-      raw: {},
-    },
-    connectionId: "mole Northeast Southwest",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                  | [operations.PatchAtsConnectionIdApplicationIdRequest](../../models/operations/patchatsconnectionidapplicationidrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
-| `config`                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                               | :heavy_minus_sign:                                                                                                         | Available config options for making requests.                                                                              |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdApplicationIdResponse](../../models/operations/patchatsconnectionidapplicationidresponse.md)>**
-
-
-## patchAtsConnectionIdCandidateId
-
-Update a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.patchAtsConnectionIdCandidateId({
-    atsCandidate: {
-      address: {},
-      emails: [
-        {
-          email: "Stella57@hotmail.com",
-        },
-      ],
-      raw: {},
-      tags: [
-        "Chips",
-      ],
-      telephones: [
-        {
-          telephone: "culpa",
-        },
-      ],
-    },
-    connectionId: "Unbranded Country",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchAtsConnectionIdCandidateIdRequest](../../models/operations/patchatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdCandidateIdResponse](../../models/operations/patchatsconnectionidcandidateidresponse.md)>**
-
-
-## patchAtsConnectionIdInterviewId
-
-Update a interview
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.patchAtsConnectionIdInterviewId({
-    atsInterview: {
-      raw: {},
-      userIds: [
-        "coulomb",
-      ],
-    },
-    connectionId: "green pascal illo",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchAtsConnectionIdInterviewIdRequest](../../models/operations/patchatsconnectionidinterviewidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdInterviewIdResponse](../../models/operations/patchatsconnectionidinterviewidresponse.md)>**
-
-
-## patchAtsConnectionIdJobId
-
-Update a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.patchAtsConnectionIdJobId({
-    atsJob: {
-      addresses: [
-        {},
-      ],
-      compensation: [
-        {
-          type: AtsCompensationType.Bonus,
-        },
-      ],
-      departments: [
-        "Transexual",
-      ],
-      hiringManagerIds: [
-        "leach",
-      ],
-      publicJobUrls: [
-        "national",
-      ],
-      raw: {},
-      recruiterIds: [
-        "Kia",
-      ],
-    },
-    connectionId: "Ferrari Facilitator",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAtsConnectionIdJobIdRequest](../../models/operations/patchatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdJobIdResponse](../../models/operations/patchatsconnectionidjobidresponse.md)>**
-
-
-## patchAtsConnectionIdScorecardId
-
-Update a scorecard
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.ats.patchAtsConnectionIdScorecardId({
-    atsScorecard: {
-      raw: {},
-    },
-    connectionId: "Carter Hatchback functionalities",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchAtsConnectionIdScorecardIdRequest](../../models/operations/patchatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdScorecardIdResponse](../../models/operations/patchatsconnectionidscorecardidresponse.md)>**
-
-
-## postAtsConnectionIdApplication
+* [createAtsApplication](#createatsapplication) - Create an application
+* [createAtsCandidate](#createatscandidate) - Create a candidate
+* [createAtsInterview](#createatsinterview) - Create a interview
+* [createAtsJob](#createatsjob) - Create a job
+* [createAtsScorecard](#createatsscorecard) - Create a scorecard
+* [getAtsApplication](#getatsapplication) - Retrieve an application
+* [getAtsCandidate](#getatscandidate) - Retrieve a candidate
+* [getAtsInterview](#getatsinterview) - Retrieve a interview
+* [getAtsJob](#getatsjob) - Retrieve a job
+* [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
+* [listAtsApplications](#listatsapplications) - List all applications
+* [listAtsCandidates](#listatscandidates) - List all candidates
+* [listAtsInterviews](#listatsinterviews) - List all interviews
+* [listAtsJobs](#listatsjobs) - List all jobs
+* [listAtsScorecards](#listatsscorecards) - List all scorecards
+* [patchAtsApplication](#patchatsapplication) - Update an application
+* [patchAtsCandidate](#patchatscandidate) - Update a candidate
+* [patchAtsInterview](#patchatsinterview) - Update a interview
+* [patchAtsJob](#patchatsjob) - Update a job
+* [patchAtsScorecard](#patchatsscorecard) - Update a scorecard
+* [removeAtsApplication](#removeatsapplication) - Remove an application
+* [removeAtsCandidate](#removeatscandidate) - Remove a candidate
+* [removeAtsInterview](#removeatsinterview) - Remove a interview
+* [removeAtsJob](#removeatsjob) - Remove a job
+* [removeAtsScorecard](#removeatsscorecard) - Remove a scorecard
+* [updateAtsApplication](#updateatsapplication) - Update an application
+* [updateAtsCandidate](#updateatscandidate) - Update a candidate
+* [updateAtsInterview](#updateatsinterview) - Update a interview
+* [updateAtsJob](#updateatsjob) - Update a job
+* [updateAtsScorecard](#updateatsscorecard) - Update a scorecard
+
+## createAtsApplication
 
 Create an application
 
@@ -908,11 +51,11 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.postAtsConnectionIdApplication({
+  const res = await sdk.ats.createAtsApplication({
     atsApplication: {
       raw: {},
     },
-    connectionId: "Berkshire",
+    connectionId: "incidentally Mandatory meanwhile",
   });
 
   if (res.statusCode == 200) {
@@ -923,18 +66,18 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.PostAtsConnectionIdApplicationRequest](../../models/operations/postatsconnectionidapplicationrequest.md) | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.CreateAtsApplicationRequest](../../models/operations/createatsapplicationrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdApplicationResponse](../../models/operations/postatsconnectionidapplicationresponse.md)>**
+**Promise<[operations.CreateAtsApplicationResponse](../../models/operations/createatsapplicationresponse.md)>**
 
 
-## postAtsConnectionIdCandidate
+## createAtsCandidate
 
 Create a candidate
 
@@ -951,25 +94,25 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.ats.postAtsConnectionIdCandidate({
+  const res = await sdk.ats.createAtsCandidate({
     atsCandidate: {
       address: {},
       emails: [
         {
-          email: "Elmore.Mante@gmail.com",
+          email: "Robin_Feeney@hotmail.com",
         },
       ],
       raw: {},
       tags: [
-        "than",
+        "radian",
       ],
       telephones: [
         {
-          telephone: "Wooden siemens Wooden",
+          telephone: "but Pop fluid",
         },
       ],
     },
-    connectionId: "Jazz Ball",
+    connectionId: "bypass Creative Legacy",
   });
 
   if (res.statusCode == 200) {
@@ -980,18 +123,18 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostAtsConnectionIdCandidateRequest](../../models/operations/postatsconnectionidcandidaterequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateAtsCandidateRequest](../../models/operations/createatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdCandidateResponse](../../models/operations/postatsconnectionidcandidateresponse.md)>**
+**Promise<[operations.CreateAtsCandidateResponse](../../models/operations/createatscandidateresponse.md)>**
 
 
-## postAtsConnectionIdInterview
+## createAtsInterview
 
 Create a interview
 
@@ -1008,14 +151,14 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.postAtsConnectionIdInterview({
+  const res = await sdk.ats.createAtsInterview({
     atsInterview: {
       raw: {},
       userIds: [
-        "Tricycle",
+        "Metrics",
       ],
     },
-    connectionId: "Hat Savings Electronic",
+    connectionId: "Frozen",
   });
 
   if (res.statusCode == 200) {
@@ -1026,18 +169,18 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostAtsConnectionIdInterviewRequest](../../models/operations/postatsconnectionidinterviewrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateAtsInterviewRequest](../../models/operations/createatsinterviewrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdInterviewResponse](../../models/operations/postatsconnectionidinterviewresponse.md)>**
+**Promise<[operations.CreateAtsInterviewResponse](../../models/operations/createatsinterviewresponse.md)>**
 
 
-## postAtsConnectionIdJob
+## createAtsJob
 
 Create a job
 
@@ -1059,7 +202,7 @@ import {
     },
   });
 
-  const res = await sdk.ats.postAtsConnectionIdJob({
+  const res = await sdk.ats.createAtsJob({
     atsJob: {
       addresses: [
         {},
@@ -1070,20 +213,20 @@ import {
         },
       ],
       departments: [
-        "Forward",
+        "Loan",
       ],
       hiringManagerIds: [
-        "Americium",
+        "driver",
       ],
       publicJobUrls: [
-        "shiny",
+        "Transmasculine",
       ],
       raw: {},
       recruiterIds: [
-        "yellow",
+        "Mini",
       ],
     },
-    connectionId: "neatly Diesel virtual",
+    connectionId: "Savings Customer Loan",
   });
 
   if (res.statusCode == 200) {
@@ -1094,18 +237,18 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PostAtsConnectionIdJobRequest](../../models/operations/postatsconnectionidjobrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.CreateAtsJobRequest](../../models/operations/createatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdJobResponse](../../models/operations/postatsconnectionidjobresponse.md)>**
+**Promise<[operations.CreateAtsJobResponse](../../models/operations/createatsjobresponse.md)>**
 
 
-## postAtsConnectionIdScorecard
+## createAtsScorecard
 
 Create a scorecard
 
@@ -1122,11 +265,11 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.postAtsConnectionIdScorecard({
+  const res = await sdk.ats.createAtsScorecard({
     atsScorecard: {
       raw: {},
     },
-    connectionId: "female bah",
+    connectionId: "Northwest Account",
   });
 
   if (res.statusCode == 200) {
@@ -1137,18 +280,413 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostAtsConnectionIdScorecardRequest](../../models/operations/postatsconnectionidscorecardrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateAtsScorecardRequest](../../models/operations/createatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdScorecardResponse](../../models/operations/postatsconnectionidscorecardresponse.md)>**
+**Promise<[operations.CreateAtsScorecardResponse](../../models/operations/createatsscorecardresponse.md)>**
 
 
-## putAtsConnectionIdApplicationId
+## getAtsApplication
+
+Retrieve an application
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsApplication({
+    connectionId: "anenst Balboa",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetAtsApplicationRequest](../../models/operations/getatsapplicationrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.GetAtsApplicationResponse](../../models/operations/getatsapplicationresponse.md)>**
+
+
+## getAtsCandidate
+
+Retrieve a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsCandidate({
+    connectionId: "Markets",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsCandidateRequest](../../models/operations/getatscandidaterequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsCandidateResponse](../../models/operations/getatscandidateresponse.md)>**
+
+
+## getAtsInterview
+
+Retrieve a interview
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsInterview({
+    connectionId: "syndicate longingly Mobility",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsInterviewRequest](../../models/operations/getatsinterviewrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsInterviewResponse](../../models/operations/getatsinterviewresponse.md)>**
+
+
+## getAtsJob
+
+Retrieve a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsJob({
+    connectionId: "runway",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [operations.GetAtsJobRequest](../../models/operations/getatsjobrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+
+
+### Response
+
+**Promise<[operations.GetAtsJobResponse](../../models/operations/getatsjobresponse.md)>**
+
+
+## getAtsScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsScorecard({
+    connectionId: "Executive",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsScorecardRequest](../../models/operations/getatsscorecardrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsScorecardResponse](../../models/operations/getatsscorecardresponse.md)>**
+
+
+## listAtsApplications
+
+List all applications
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsApplications({
+    connectionId: "Summit",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.ListAtsApplicationsRequest](../../models/operations/listatsapplicationsrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.ListAtsApplicationsResponse](../../models/operations/listatsapplicationsresponse.md)>**
+
+
+## listAtsCandidates
+
+List all candidates
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsCandidates({
+    connectionId: "mole clearly",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAtsCandidatesRequest](../../models/operations/listatscandidatesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListAtsCandidatesResponse](../../models/operations/listatscandidatesresponse.md)>**
+
+
+## listAtsInterviews
+
+List all interviews
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsInterviews({
+    connectionId: "Northeast",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAtsInterviewsRequest](../../models/operations/listatsinterviewsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListAtsInterviewsResponse](../../models/operations/listatsinterviewsresponse.md)>**
+
+
+## listAtsJobs
+
+List all jobs
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsJobs({
+    connectionId: "niches SQL",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListAtsJobsRequest](../../models/operations/listatsjobsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+
+
+### Response
+
+**Promise<[operations.ListAtsJobsResponse](../../models/operations/listatsjobsresponse.md)>**
+
+
+## listAtsScorecards
+
+List all scorecards
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsScorecards({
+    connectionId: "Hybrid Bugatti",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAtsScorecardsRequest](../../models/operations/listatsscorecardsrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListAtsScorecardsResponse](../../models/operations/listatsscorecardsresponse.md)>**
+
+
+## patchAtsApplication
 
 Update an application
 
@@ -1165,11 +703,11 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.putAtsConnectionIdApplicationId({
+  const res = await sdk.ats.patchAtsApplication({
     atsApplication: {
       raw: {},
     },
-    connectionId: "input Electric",
+    connectionId: "South grey",
     id: "<ID>",
   });
 
@@ -1181,18 +719,18 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PutAtsConnectionIdApplicationIdRequest](../../models/operations/putatsconnectionidapplicationidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.PatchAtsApplicationRequest](../../models/operations/patchatsapplicationrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdApplicationIdResponse](../../models/operations/putatsconnectionidapplicationidresponse.md)>**
+**Promise<[operations.PatchAtsApplicationResponse](../../models/operations/patchatsapplicationresponse.md)>**
 
 
-## putAtsConnectionIdCandidateId
+## patchAtsCandidate
 
 Update a candidate
 
@@ -1209,25 +747,25 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.ats.putAtsConnectionIdCandidateId({
+  const res = await sdk.ats.patchAtsCandidate({
     atsCandidate: {
       address: {},
       emails: [
         {
-          email: "Giovanny_Botsford@gmail.com",
+          email: "Tracy.Collins13@gmail.com",
         },
       ],
       raw: {},
       tags: [
-        "deploy",
+        "Credit",
       ],
       telephones: [
         {
-          telephone: "knowledge officiis",
+          telephone: "payment Books",
         },
       ],
     },
-    connectionId: "Personal Madagascar",
+    connectionId: "World Van transitional",
     id: "<ID>",
   });
 
@@ -1239,18 +777,18 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutAtsConnectionIdCandidateIdRequest](../../models/operations/putatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchAtsCandidateRequest](../../models/operations/patchatscandidaterequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdCandidateIdResponse](../../models/operations/putatsconnectionidcandidateidresponse.md)>**
+**Promise<[operations.PatchAtsCandidateResponse](../../models/operations/patchatscandidateresponse.md)>**
 
 
-## putAtsConnectionIdInterviewId
+## patchAtsInterview
 
 Update a interview
 
@@ -1267,14 +805,14 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.putAtsConnectionIdInterviewId({
+  const res = await sdk.ats.patchAtsInterview({
     atsInterview: {
       raw: {},
       userIds: [
-        "amet",
+        "courageously",
       ],
     },
-    connectionId: "capacitor Auto",
+    connectionId: "Francium",
     id: "<ID>",
   });
 
@@ -1286,18 +824,18 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutAtsConnectionIdInterviewIdRequest](../../models/operations/putatsconnectionidinterviewidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchAtsInterviewRequest](../../models/operations/patchatsinterviewrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdInterviewIdResponse](../../models/operations/putatsconnectionidinterviewidresponse.md)>**
+**Promise<[operations.PatchAtsInterviewResponse](../../models/operations/patchatsinterviewresponse.md)>**
 
 
-## putAtsConnectionIdJobId
+## patchAtsJob
 
 Update a job
 
@@ -1319,31 +857,31 @@ import {
     },
   });
 
-  const res = await sdk.ats.putAtsConnectionIdJobId({
+  const res = await sdk.ats.patchAtsJob({
     atsJob: {
       addresses: [
         {},
       ],
       compensation: [
         {
-          type: AtsCompensationType.StockOptions,
+          type: AtsCompensationType.Bonus,
         },
       ],
       departments: [
-        "cotton",
+        "indigo",
       ],
       hiringManagerIds: [
-        "Washington",
+        "Bedfordshire",
       ],
       publicJobUrls: [
-        "Hybrid",
+        "North",
       ],
       raw: {},
       recruiterIds: [
-        "henry",
+        "mainland",
       ],
     },
-    connectionId: "male Intelligent",
+    connectionId: "gold Principal",
     id: "<ID>",
   });
 
@@ -1355,18 +893,18 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.PutAtsConnectionIdJobIdRequest](../../models/operations/putatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.PatchAtsJobRequest](../../models/operations/patchatsjobrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdJobIdResponse](../../models/operations/putatsconnectionidjobidresponse.md)>**
+**Promise<[operations.PatchAtsJobResponse](../../models/operations/patchatsjobresponse.md)>**
 
 
-## putAtsConnectionIdScorecardId
+## patchAtsScorecard
 
 Update a scorecard
 
@@ -1383,11 +921,11 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.ats.putAtsConnectionIdScorecardId({
+  const res = await sdk.ats.patchAtsScorecard({
     atsScorecard: {
       raw: {},
     },
-    connectionId: "East Granite",
+    connectionId: "eek",
     id: "<ID>",
   });
 
@@ -1399,13 +937,475 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutAtsConnectionIdScorecardIdRequest](../../models/operations/putatsconnectionidscorecardidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchAtsScorecardRequest](../../models/operations/patchatsscorecardrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdScorecardIdResponse](../../models/operations/putatsconnectionidscorecardidresponse.md)>**
+**Promise<[operations.PatchAtsScorecardResponse](../../models/operations/patchatsscorecardresponse.md)>**
+
+
+## removeAtsApplication
+
+Remove an application
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsApplication({
+    connectionId: "sexy mesh application",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.RemoveAtsApplicationRequest](../../models/operations/removeatsapplicationrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsApplicationResponse](../../models/operations/removeatsapplicationresponse.md)>**
+
+
+## removeAtsCandidate
+
+Remove a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsCandidate({
+    connectionId: "Accountability Recumbent Ball",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveAtsCandidateRequest](../../models/operations/removeatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsCandidateResponse](../../models/operations/removeatscandidateresponse.md)>**
+
+
+## removeAtsInterview
+
+Remove a interview
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsInterview({
+    connectionId: "Polynesia redefine pfft",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveAtsInterviewRequest](../../models/operations/removeatsinterviewrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsInterviewResponse](../../models/operations/removeatsinterviewresponse.md)>**
+
+
+## removeAtsJob
+
+Remove a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsJob({
+    connectionId: "Aruba",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.RemoveAtsJobRequest](../../models/operations/removeatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsJobResponse](../../models/operations/removeatsjobresponse.md)>**
+
+
+## removeAtsScorecard
+
+Remove a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsScorecard({
+    connectionId: "Cambridgeshire maximized",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveAtsScorecardRequest](../../models/operations/removeatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsScorecardResponse](../../models/operations/removeatsscorecardresponse.md)>**
+
+
+## updateAtsApplication
+
+Update an application
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsApplication({
+    atsApplication: {
+      raw: {},
+    },
+    connectionId: "Rosie",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.UpdateAtsApplicationRequest](../../models/operations/updateatsapplicationrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsApplicationResponse](../../models/operations/updateatsapplicationresponse.md)>**
+
+
+## updateAtsCandidate
+
+Update a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsCandidate({
+    atsCandidate: {
+      address: {},
+      emails: [
+        {
+          email: "Gaetano86@hotmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "B2C",
+      ],
+      telephones: [
+        {
+          telephone: "DNS monetize Dynamic",
+        },
+      ],
+    },
+    connectionId: "Zackery male Gloves",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAtsCandidateRequest](../../models/operations/updateatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsCandidateResponse](../../models/operations/updateatscandidateresponse.md)>**
+
+
+## updateAtsInterview
+
+Update a interview
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsInterview({
+    atsInterview: {
+      raw: {},
+      userIds: [
+        "maroon",
+      ],
+    },
+    connectionId: "Account omnis Gorgeous",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAtsInterviewRequest](../../models/operations/updateatsinterviewrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsInterviewResponse](../../models/operations/updateatsinterviewresponse.md)>**
+
+
+## updateAtsJob
+
+Update a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import {
+  AtsCompensationFrequency,
+  AtsCompensationType,
+  AtsJobEmploymentType,
+  AtsJobStatus,
+} from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsJob({
+    atsJob: {
+      addresses: [
+        {},
+      ],
+      compensation: [
+        {
+          type: AtsCompensationType.Equity,
+        },
+      ],
+      departments: [
+        "Plastic",
+      ],
+      hiringManagerIds: [
+        "West",
+      ],
+      publicJobUrls: [
+        "Direct",
+      ],
+      raw: {},
+      recruiterIds: [
+        "SMS",
+      ],
+    },
+    connectionId: "euthanise system",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.UpdateAtsJobRequest](../../models/operations/updateatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsJobResponse](../../models/operations/updateatsjobresponse.md)>**
+
+
+## updateAtsScorecard
+
+Update a scorecard
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsScorecard({
+    atsScorecard: {
+      raw: {},
+    },
+    connectionId: "grey",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAtsScorecardRequest](../../models/operations/updateatsscorecardrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsScorecardResponse](../../models/operations/updateatsscorecardresponse.md)>**
 

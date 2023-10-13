@@ -17,14 +17,110 @@ export class Application {
     }
 
     /**
-     * Remove an application
+     * Create an application
      */
-    async deleteAtsConnectionIdApplicationId(
-        req: operations.DeleteAtsConnectionIdApplicationIdRequest,
+    async createAtsApplication(
+        req: operations.CreateAtsApplicationRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.DeleteAtsConnectionIdApplicationIdResponse> {
+    ): Promise<operations.CreateAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteAtsConnectionIdApplicationIdRequest(req);
+            req = new operations.CreateAtsApplicationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/application", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsApplication", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateAtsApplicationResponse =
+            new operations.CreateAtsApplicationResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.atsApplication = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AtsApplication
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Retrieve an application
+     */
+    async getAtsApplication(
+        req: operations.GetAtsApplicationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetAtsApplicationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetAtsApplicationRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -53,7 +149,7 @@ export class Application {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "delete",
+            method: "get",
             headers: headers,
             responseType: "arraybuffer",
             ...config,
@@ -65,25 +161,19 @@ export class Application {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.DeleteAtsConnectionIdApplicationIdResponse =
-            new operations.DeleteAtsConnectionIdApplicationIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetAtsApplicationResponse = new operations.GetAtsApplicationResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-            default:
+            case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.deleteAtsConnectionIdApplicationIdDefaultApplicationJSONString = decodedRes;
+                    res.atsApplication = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AtsApplication
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -93,6 +183,14 @@ export class Application {
                     );
                 }
                 break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
         }
 
         return res;
@@ -101,12 +199,12 @@ export class Application {
     /**
      * List all applications
      */
-    async getAtsConnectionIdApplication(
-        req: operations.GetAtsConnectionIdApplicationRequest,
+    async listAtsApplications(
+        req: operations.ListAtsApplicationsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAtsConnectionIdApplicationResponse> {
+    ): Promise<operations.ListAtsApplicationsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAtsConnectionIdApplicationRequest(req);
+            req = new operations.ListAtsApplicationsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -144,8 +242,8 @@ export class Application {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAtsConnectionIdApplicationResponse =
-            new operations.GetAtsConnectionIdApplicationResponse({
+        const res: operations.ListAtsApplicationsResponse =
+            new operations.ListAtsApplicationsResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -184,99 +282,14 @@ export class Application {
     }
 
     /**
-     * Retrieve an application
-     */
-    async getAtsConnectionIdApplicationId(
-        req: operations.GetAtsConnectionIdApplicationIdRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetAtsConnectionIdApplicationIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAtsConnectionIdApplicationIdRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ats/{connection_id}/application/{id}",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.GetAtsConnectionIdApplicationIdResponse =
-            new operations.GetAtsConnectionIdApplicationIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsApplication = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AtsApplication
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
      * Update an application
      */
-    async patchAtsConnectionIdApplicationId(
-        req: operations.PatchAtsConnectionIdApplicationIdRequest,
+    async patchAtsApplication(
+        req: operations.PatchAtsApplicationRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchAtsConnectionIdApplicationIdResponse> {
+    ): Promise<operations.PatchAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAtsConnectionIdApplicationIdRequest(req);
+            req = new operations.PatchAtsApplicationRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -332,8 +345,8 @@ export class Application {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchAtsConnectionIdApplicationIdResponse =
-            new operations.PatchAtsConnectionIdApplicationIdResponse({
+        const res: operations.PatchAtsApplicationResponse =
+            new operations.PatchAtsApplicationResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -369,31 +382,25 @@ export class Application {
     }
 
     /**
-     * Create an application
+     * Remove an application
      */
-    async postAtsConnectionIdApplication(
-        req: operations.PostAtsConnectionIdApplicationRequest,
+    async removeAtsApplication(
+        req: operations.RemoveAtsApplicationRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PostAtsConnectionIdApplicationResponse> {
+    ): Promise<operations.RemoveAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostAtsConnectionIdApplicationRequest(req);
+            req = new operations.RemoveAtsApplicationRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/application", req);
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsApplication", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
+        const url: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/application/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -403,11 +410,7 @@ export class Application {
             globalSecurity = new shared.Security(globalSecurity);
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
@@ -415,10 +418,9 @@ export class Application {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "post",
+            method: "delete",
             headers: headers,
             responseType: "arraybuffer",
-            data: reqBody,
             ...config,
         });
 
@@ -428,20 +430,25 @@ export class Application {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PostAtsConnectionIdApplicationResponse =
-            new operations.PostAtsConnectionIdApplicationResponse({
+        const res: operations.RemoveAtsApplicationResponse =
+            new operations.RemoveAtsApplicationResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case httpRes?.status == 200:
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsApplication = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AtsApplication
-                    );
+                    res.removeAtsApplicationDefaultApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -451,14 +458,6 @@ export class Application {
                     );
                 }
                 break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
         }
 
         return res;
@@ -467,12 +466,12 @@ export class Application {
     /**
      * Update an application
      */
-    async putAtsConnectionIdApplicationId(
-        req: operations.PutAtsConnectionIdApplicationIdRequest,
+    async updateAtsApplication(
+        req: operations.UpdateAtsApplicationRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PutAtsConnectionIdApplicationIdResponse> {
+    ): Promise<operations.UpdateAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutAtsConnectionIdApplicationIdRequest(req);
+            req = new operations.UpdateAtsApplicationRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -528,8 +527,8 @@ export class Application {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PutAtsConnectionIdApplicationIdResponse =
-            new operations.PutAtsConnectionIdApplicationIdResponse({
+        const res: operations.UpdateAtsApplicationResponse =
+            new operations.UpdateAtsApplicationResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,

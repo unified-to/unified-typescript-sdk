@@ -3,10 +3,10 @@
 
 ### Available Operations
 
-* [getEnrichConnectionIdCompany](#getenrichconnectionidcompany) - Retrieve enrichment information for a company
-* [getEnrichConnectionIdPerson](#getenrichconnectionidperson) - Retrieve enrichment information for a person
+* [listEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
+* [listEnrichPeople](#listenrichpeople) - Retrieve enrichment information for a person
 
-## getEnrichConnectionIdCompany
+## listEnrichCompanies
 
 Retrieve enrichment information for a company
 
@@ -22,8 +22,8 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.enrich.getEnrichConnectionIdCompany({
-    connectionId: "female Computers Central",
+  const res = await sdk.enrich.listEnrichCompanies({
+    connectionId: "Chips",
   });
 
   if (res.statusCode == 200) {
@@ -34,18 +34,18 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetEnrichConnectionIdCompanyRequest](../../models/operations/getenrichconnectionidcompanyrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.ListEnrichCompaniesRequest](../../models/operations/listenrichcompaniesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetEnrichConnectionIdCompanyResponse](../../models/operations/getenrichconnectionidcompanyresponse.md)>**
+**Promise<[operations.ListEnrichCompaniesResponse](../../models/operations/listenrichcompaniesresponse.md)>**
 
 
-## getEnrichConnectionIdPerson
+## listEnrichPeople
 
 Retrieve enrichment information for a person
 
@@ -61,8 +61,8 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.enrich.getEnrichConnectionIdPerson({
-    connectionId: "Iowa Account",
+  const res = await sdk.enrich.listEnrichPeople({
+    connectionId: "Passenger",
   });
 
   if (res.statusCode == 200) {
@@ -73,13 +73,13 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetEnrichConnectionIdPersonRequest](../../models/operations/getenrichconnectionidpersonrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListEnrichPeopleRequest](../../models/operations/listenrichpeoplerequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
 
-**Promise<[operations.GetEnrichConnectionIdPersonResponse](../../models/operations/getenrichconnectionidpersonresponse.md)>**
+**Promise<[operations.ListEnrichPeopleResponse](../../models/operations/listenrichpeopleresponse.md)>**
 

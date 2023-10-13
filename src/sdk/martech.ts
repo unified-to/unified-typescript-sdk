@@ -17,14 +17,209 @@ export class Martech {
     }
 
     /**
-     * Remove a list
+     * Create a list
      */
-    async deleteMartechConnectionIdListId(
-        req: operations.DeleteMartechConnectionIdListIdRequest,
+    async createMartechList(
+        req: operations.CreateMartechListRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.DeleteMartechConnectionIdListIdResponse> {
+    ): Promise<operations.CreateMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteMartechConnectionIdListIdRequest(req);
+            req = new operations.CreateMartechListRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingList", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateMartechListResponse = new operations.CreateMartechListResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.marketingList = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingList
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Create a member in a list
+     */
+    async createMartechMember(
+        req: operations.CreateMartechMemberRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreateMartechMemberResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.CreateMartechMemberRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/martech/{connection_id}/{list_id}/member",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingMember", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateMartechMemberResponse =
+            new operations.CreateMartechMemberResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.marketingMember = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingMember
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Retrieve a list
+     */
+    async getMartechList(
+        req: operations.GetMartechListRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetMartechListResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetMartechListRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -49,7 +244,7 @@ export class Martech {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "delete",
+            method: "get",
             headers: headers,
             responseType: "arraybuffer",
             ...config,
@@ -61,25 +256,19 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.DeleteMartechConnectionIdListIdResponse =
-            new operations.DeleteMartechConnectionIdListIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetMartechListResponse = new operations.GetMartechListResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-            default:
+            case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.deleteMartechConnectionIdListIdDefaultApplicationJSONString = decodedRes;
+                    res.marketingList = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingList
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -89,20 +278,28 @@ export class Martech {
                     );
                 }
                 break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
         }
 
         return res;
     }
 
     /**
-     * Remove member from a list
+     * Retrieve a member from a list
      */
-    async deleteMartechConnectionIdListIdMemberId(
-        req: operations.DeleteMartechConnectionIdListIdMemberIdRequest,
+    async getMartechMember(
+        req: operations.GetMartechMemberRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.DeleteMartechConnectionIdListIdMemberIdResponse> {
+    ): Promise<operations.GetMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteMartechConnectionIdListIdMemberIdRequest(req);
+            req = new operations.GetMartechMemberRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -131,7 +328,7 @@ export class Martech {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "delete",
+            method: "get",
             headers: headers,
             responseType: "arraybuffer",
             ...config,
@@ -143,26 +340,19 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.DeleteMartechConnectionIdListIdMemberIdResponse =
-            new operations.DeleteMartechConnectionIdListIdMemberIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetMartechMemberResponse = new operations.GetMartechMemberResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-            default:
+            case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.deleteMartechConnectionIdListIdMemberIdDefaultApplicationJSONString =
-                        decodedRes;
+                    res.marketingMember = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingMember
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -172,6 +362,14 @@ export class Martech {
                     );
                 }
                 break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
         }
 
         return res;
@@ -180,12 +378,12 @@ export class Martech {
     /**
      * List all lists
      */
-    async getMartechConnectionIdList(
-        req: operations.GetMartechConnectionIdListRequest,
+    async listMartechLists(
+        req: operations.ListMartechListsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetMartechConnectionIdListResponse> {
+    ): Promise<operations.ListMartechListsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetMartechConnectionIdListRequest(req);
+            req = new operations.ListMartechListsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -223,12 +421,11 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetMartechConnectionIdListResponse =
-            new operations.GetMartechConnectionIdListResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListMartechListsResponse = new operations.ListMartechListsResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
@@ -263,95 +460,14 @@ export class Martech {
     }
 
     /**
-     * Retrieve a list
-     */
-    async getMartechConnectionIdListId(
-        req: operations.GetMartechConnectionIdListIdRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetMartechConnectionIdListIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetMartechConnectionIdListIdRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list/{id}", req);
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.GetMartechConnectionIdListIdResponse =
-            new operations.GetMartechConnectionIdListIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingList = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingList
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
      * List all members in a list
      */
-    async getMartechConnectionIdListIdMember(
-        req: operations.GetMartechConnectionIdListIdMemberRequest,
+    async listMartechMembers(
+        req: operations.ListMartechMembersRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetMartechConnectionIdListIdMemberResponse> {
+    ): Promise<operations.ListMartechMembersResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetMartechConnectionIdListIdMemberRequest(req);
+            req = new operations.ListMartechMembersRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -393,8 +509,8 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetMartechConnectionIdListIdMemberResponse =
-            new operations.GetMartechConnectionIdListIdMemberResponse({
+        const res: operations.ListMartechMembersResponse =
+            new operations.ListMartechMembersResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -433,14 +549,286 @@ export class Martech {
     }
 
     /**
-     * Retrieve a member from a list
+     * Update a list
      */
-    async getMartechConnectionIdListIdMemberId(
-        req: operations.GetMartechConnectionIdListIdMemberIdRequest,
+    async patchMartechList(
+        req: operations.PatchMartechListRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetMartechConnectionIdListIdMemberIdResponse> {
+    ): Promise<operations.PatchMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetMartechConnectionIdListIdMemberIdRequest(req);
+            req = new operations.PatchMartechListRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list/{id}", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingList", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "patch",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PatchMartechListResponse = new operations.PatchMartechListResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.marketingList = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingList
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a member in a list
+     */
+    async patchMartechMember(
+        req: operations.PatchMartechMemberRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PatchMartechMemberResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PatchMartechMemberRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(
+            baseURL,
+            "/martech/{connection_id}/{list_id}/member/{id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingMember", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "patch",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PatchMartechMemberResponse =
+            new operations.PatchMartechMemberResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.marketingMember = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.MarketingMember
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Remove a list
+     */
+    async removeMartechList(
+        req: operations.RemoveMartechListRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.RemoveMartechListResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.RemoveMartechListRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list/{id}", req);
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "delete",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.RemoveMartechListResponse = new operations.RemoveMartechListResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.removeMartechListDefaultApplicationJSONString = decodedRes;
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Remove member from a list
+     */
+    async removeMartechMember(
+        req: operations.RemoveMartechMemberRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.RemoveMartechMemberResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.RemoveMartechMemberRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -469,7 +857,7 @@ export class Martech {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "get",
+            method: "delete",
             headers: headers,
             responseType: "arraybuffer",
             ...config,
@@ -481,20 +869,25 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetMartechConnectionIdListIdMemberIdResponse =
-            new operations.GetMartechConnectionIdListIdMemberIdResponse({
+        const res: operations.RemoveMartechMemberResponse =
+            new operations.RemoveMartechMemberResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case httpRes?.status == 200:
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingMember = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingMember
-                    );
+                    res.removeMartechMemberDefaultApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -504,14 +897,6 @@ export class Martech {
                     );
                 }
                 break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
         }
 
         return res;
@@ -520,404 +905,12 @@ export class Martech {
     /**
      * Update a list
      */
-    async patchMartechConnectionIdListId(
-        req: operations.PatchMartechConnectionIdListIdRequest,
+    async updateMartechList(
+        req: operations.UpdateMartechListRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchMartechConnectionIdListIdResponse> {
+    ): Promise<operations.UpdateMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchMartechConnectionIdListIdRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list/{id}", req);
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingList", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "patch",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PatchMartechConnectionIdListIdResponse =
-            new operations.PatchMartechConnectionIdListIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingList = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingList
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Update a member in a list
-     */
-    async patchMartechConnectionIdListIdMemberId(
-        req: operations.PatchMartechConnectionIdListIdMemberIdRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PatchMartechConnectionIdListIdMemberIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchMartechConnectionIdListIdMemberIdRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member/{id}",
-            req
-        );
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingMember", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "patch",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PatchMartechConnectionIdListIdMemberIdResponse =
-            new operations.PatchMartechConnectionIdListIdMemberIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingMember = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingMember
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Create a list
-     */
-    async postMartechConnectionIdList(
-        req: operations.PostMartechConnectionIdListRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PostMartechConnectionIdListResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostMartechConnectionIdListRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/list", req);
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingList", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "post",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PostMartechConnectionIdListResponse =
-            new operations.PostMartechConnectionIdListResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingList = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingList
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Create a member in a list
-     */
-    async postMartechConnectionIdListIdMember(
-        req: operations.PostMartechConnectionIdListIdMemberRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PostMartechConnectionIdListIdMemberResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostMartechConnectionIdListIdMemberRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member",
-            req
-        );
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "marketingMember", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "post",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PostMartechConnectionIdListIdMemberResponse =
-            new operations.PostMartechConnectionIdListIdMemberResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.marketingMember = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.MarketingMember
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Update a list
-     */
-    async putMartechConnectionIdListId(
-        req: operations.PutMartechConnectionIdListIdRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PutMartechConnectionIdListIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutMartechConnectionIdListIdRequest(req);
+            req = new operations.UpdateMartechListRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -969,12 +962,11 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PutMartechConnectionIdListIdResponse =
-            new operations.PutMartechConnectionIdListIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.UpdateMartechListResponse = new operations.UpdateMartechListResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
@@ -1008,12 +1000,12 @@ export class Martech {
     /**
      * Update a member in a list
      */
-    async putMartechConnectionIdListIdMemberId(
-        req: operations.PutMartechConnectionIdListIdMemberIdRequest,
+    async updateMartechMember(
+        req: operations.UpdateMartechMemberRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PutMartechConnectionIdListIdMemberIdResponse> {
+    ): Promise<operations.UpdateMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutMartechConnectionIdListIdMemberIdRequest(req);
+            req = new operations.UpdateMartechMemberRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -1069,8 +1061,8 @@ export class Martech {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PutMartechConnectionIdListIdMemberIdResponse =
-            new operations.PutMartechConnectionIdListIdMemberIdResponse({
+        const res: operations.UpdateMartechMemberResponse =
+            new operations.UpdateMartechMemberResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,

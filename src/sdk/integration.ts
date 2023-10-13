@@ -17,7 +17,7 @@ export class Integration {
     }
 
     /**
-     * Returns all integrations
+     * Retrieve an integration
      */
     async getUnifiedIntegration(
         req: operations.GetUnifiedIntegrationRequest,
@@ -31,7 +31,11 @@ export class Integration {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = baseURL.replace(/\/$/, "") + "/unified/integration";
+        const url: string = utils.generateURL(
+            baseURL,
+            "/unified/integration/{integration_type}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -42,14 +46,13 @@ export class Integration {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -72,12 +75,9 @@ export class Integration {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.integrations = [];
-                    const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.integrations = utils.objectToClass(
+                    res.integration = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.Integration,
-                        resFieldDepth
+                        shared.Integration
                     );
                 } else {
                     throw new errors.SDKError(
@@ -107,12 +107,12 @@ export class Integration {
      * @remarks
      * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
      */
-    async getUnifiedIntegrationAuthWorkspaceIdIntegrationType(
-        req: operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeRequest,
+    async getUnifiedIntegrationAuth(
+        req: operations.GetUnifiedIntegrationAuthRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse> {
+    ): Promise<operations.GetUnifiedIntegrationAuthResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeRequest(req);
+            req = new operations.GetUnifiedIntegrationAuthRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -154,8 +154,8 @@ export class Integration {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse =
-            new operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse({
+        const res: operations.GetUnifiedIntegrationAuthResponse =
+            new operations.GetUnifiedIntegrationAuthResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -164,93 +164,7 @@ export class Integration {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getUnifiedIntegrationAuthWorkspaceIdIntegrationType200ApplicationJSONString =
-                        decodedRes;
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Retrieve an integration
-     */
-    async getUnifiedIntegrationIntegrationType(
-        req: operations.GetUnifiedIntegrationIntegrationTypeRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetUnifiedIntegrationIntegrationTypeResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUnifiedIntegrationIntegrationTypeRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/unified/integration/{integration_type}",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.GetUnifiedIntegrationIntegrationTypeResponse =
-            new operations.GetUnifiedIntegrationIntegrationTypeResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.integration = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.Integration
-                    );
+                    res.getUnifiedIntegrationAuth200ApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -279,12 +193,12 @@ export class Integration {
      * @remarks
      * No authentication required as this is to be used by front-end interface
      */
-    async getUnifiedIntegrationWorkspaceWorkspaceId(
-        req: operations.GetUnifiedIntegrationWorkspaceWorkspaceIdRequest,
+    async listUnifiedIntegrationWorkspaces(
+        req: operations.ListUnifiedIntegrationWorkspacesRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetUnifiedIntegrationWorkspaceWorkspaceIdResponse> {
+    ): Promise<operations.ListUnifiedIntegrationWorkspacesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUnifiedIntegrationWorkspaceWorkspaceIdRequest(req);
+            req = new operations.ListUnifiedIntegrationWorkspacesRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -326,8 +240,93 @@ export class Integration {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetUnifiedIntegrationWorkspaceWorkspaceIdResponse =
-            new operations.GetUnifiedIntegrationWorkspaceWorkspaceIdResponse({
+        const res: operations.ListUnifiedIntegrationWorkspacesResponse =
+            new operations.ListUnifiedIntegrationWorkspacesResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.integrations = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.integrations = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.Integration,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Returns all integrations
+     */
+    async listUnifiedIntegrations(
+        req: operations.ListUnifiedIntegrationsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.ListUnifiedIntegrationsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.ListUnifiedIntegrationsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = baseURL.replace(/\/$/, "") + "/unified/integration";
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.ListUnifiedIntegrationsResponse =
+            new operations.ListUnifiedIntegrationsResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,

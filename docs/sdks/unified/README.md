@@ -3,36 +3,32 @@
 
 ### Available Operations
 
-* [deleteUnifiedConnectionId](#deleteunifiedconnectionid) - Remove connection
-* [deleteUnifiedUser](#deleteunifieduser) - Delete your user object
-* [deleteUnifiedWebhookId](#deleteunifiedwebhookid) - Remove webhook subscription
-* [getUnifiedApicall](#getunifiedapicall) - Returns API Calls
-* [getUnifiedApicallId](#getunifiedapicallid) - Retrieve specific API Call by its ID
-* [getUnifiedConnection](#getunifiedconnection) - List all connections
-* [getUnifiedConnectionId](#getunifiedconnectionid) - Retrieve connection
-* [getUnifiedIntegration](#getunifiedintegration) - Returns all integrations
-* [getUnifiedIntegrationAuthWorkspaceIdIntegrationType](#getunifiedintegrationauthworkspaceidintegrationtype) - Create connection indirectly
-* [getUnifiedIntegrationIntegrationType](#getunifiedintegrationintegrationtype) - Retrieve an integration
-* [getUnifiedIntegrationWorkspaceWorkspaceId](#getunifiedintegrationworkspaceworkspaceid) - Returns all activated integrations in a workspace
-* [getUnifiedUser](#getunifieduser) - Retrieve your user object
-* [getUnifiedUserToken](#getunifiedusertoken) - Retrieve your user token
-* [getUnifiedWebhook](#getunifiedwebhook) - Returns all registered webhooks
-* [getUnifiedWebhookId](#getunifiedwebhookid) - Retrieve webhook by its ID
-* [patchUnifiedConnectionId](#patchunifiedconnectionid) - Update connection
-* [patchUnifiedUser](#patchunifieduser) - Updates your user object
-* [postUnifiedConnection](#postunifiedconnection) - Create connection
-* [postUnifiedWebhookConnectionIdObject](#postunifiedwebhookconnectionidobject) - Create webhook subscription
-* [putUnifiedConnectionId](#putunifiedconnectionid) - Update connection
-* [putUnifiedUser](#putunifieduser) - Updates your user object
+* [createUnifiedConnection](#createunifiedconnection) - Create connection
+* [createUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
+* [getUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
+* [getUnifiedConnection](#getunifiedconnection) - Retrieve connection
+* [getUnifiedIntegration](#getunifiedintegration) - Retrieve an integration
+* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
+* [getUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
+* [listUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
+* [listUnifiedConnections](#listunifiedconnections) - List all connections
+* [listUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
+* [listUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
+* [listUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
+* [patchUnifiedConnection](#patchunifiedconnection) - Update connection
+* [removeUnifiedConnection](#removeunifiedconnection) - Remove connection
+* [removeUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
+* [updateUnifiedConnection](#updateunifiedconnection) - Update connection
 
-## deleteUnifiedConnectionId
+## createUnifiedConnection
 
-Remove connection
+Create connection
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -41,46 +37,24 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.deleteUnifiedConnectionId({
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.DeleteUnifiedConnectionIdRequest](../../models/operations/deleteunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.DeleteUnifiedConnectionIdResponse](../../models/operations/deleteunifiedconnectionidresponse.md)>**
-
-
-## deleteUnifiedUser
-
-Delete your user object
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
+  const res = await sdk.unified.createUnifiedConnection({
+    auth: {
+      emails: [
+        "likewise",
+      ],
+      meta: {},
+      otherAuthInfo: [
+        "Rwanda",
+      ],
     },
+    categories: [
+      PropertyConnectionCategories.Crm,
+    ],
+    integrationType: "Maserati",
+    permissions: [
+      PropertyConnectionPermissions.CrmLeadWrite,
+    ],
   });
-
-  const res = await sdk.unified.deleteUnifiedUser();
 
   if (res.statusCode == 200) {
     // handle response
@@ -92,22 +66,25 @@ import { UnifiedTo } from "unified-to";
 
 | Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.Connection](../../models/shared/connection.md)       | :heavy_check_mark:                                           | The request object to use for the request.                   |
 | `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.DeleteUnifiedUserResponse](../../models/operations/deleteunifieduserresponse.md)>**
+**Promise<[operations.CreateUnifiedConnectionResponse](../../models/operations/createunifiedconnectionresponse.md)>**
 
 
-## deleteUnifiedWebhookId
+## createUnifiedWebhook
 
-Remove webhook subscription
+To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=<hookId>.
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { CreateUnifiedWebhookEvents } from "unified-to/dist/sdk/models/operations";
+import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -116,8 +93,26 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.deleteUnifiedWebhookId({
-    id: "<ID>",
+  const res = await sdk.unified.createUnifiedWebhook({
+    webhook: {
+      connectionId: "East male",
+      events: [
+        PropertyWebhookEvents.Created,
+      ],
+      hookUrl: "ah Account Bedfordshire",
+      integrationType: "Tenge",
+      interval: 4915.71,
+      objectType: WebhookObjectType.MartechMember,
+      subscriptions: [
+        "delightfully",
+      ],
+      workspaceId: "up Vatu",
+    },
+    connectionId: "Fitness grey Directives",
+    events: [
+      CreateUnifiedWebhookEvents.Created,
+    ],
+    object: "Chair Kilback",
   });
 
   if (res.statusCode == 200) {
@@ -128,20 +123,20 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.DeleteUnifiedWebhookIdRequest](../../models/operations/deleteunifiedwebhookidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.CreateUnifiedWebhookRequest](../../models/operations/createunifiedwebhookrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
 
-**Promise<[operations.DeleteUnifiedWebhookIdResponse](../../models/operations/deleteunifiedwebhookidresponse.md)>**
+**Promise<[operations.CreateUnifiedWebhookResponse](../../models/operations/createunifiedwebhookresponse.md)>**
 
 
 ## getUnifiedApicall
 
-Returns API Calls
+Retrieve specific API Call by its ID
 
 ### Example Usage
 
@@ -155,7 +150,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.getUnifiedApicall({});
+  const res = await sdk.unified.getUnifiedApicall({
+    id: "<ID>",
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -176,54 +173,14 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetUnifiedApicallResponse](../../models/operations/getunifiedapicallresponse.md)>**
 
 
-## getUnifiedApicallId
-
-Retrieve specific API Call by its ID
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedApicallId({
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetUnifiedApicallIdRequest](../../models/operations/getunifiedapicallidrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedApicallIdResponse](../../models/operations/getunifiedapicallidresponse.md)>**
-
-
 ## getUnifiedConnection
 
-List all connections
+Retrieve connection
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -233,9 +190,7 @@ import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/opera
   });
 
   const res = await sdk.unified.getUnifiedConnection({
-    categories: [
-      GetUnifiedConnectionCategories.Ats,
-    ],
+    id: "<ID>",
   });
 
   if (res.statusCode == 200) {
@@ -257,54 +212,14 @@ import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/opera
 **Promise<[operations.GetUnifiedConnectionResponse](../../models/operations/getunifiedconnectionresponse.md)>**
 
 
-## getUnifiedConnectionId
-
-Retrieve connection
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedConnectionId({
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetUnifiedConnectionIdRequest](../../models/operations/getunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedConnectionIdResponse](../../models/operations/getunifiedconnectionidresponse.md)>**
-
-
 ## getUnifiedIntegration
 
-Returns all integrations
+Retrieve an integration
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -314,9 +229,7 @@ import { GetUnifiedIntegrationCategories } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.unified.getUnifiedIntegration({
-    categories: [
-      GetUnifiedIntegrationCategories.Enrich,
-    ],
+    integrationType: "Berkelium panel",
   });
 
   if (res.statusCode == 200) {
@@ -338,7 +251,7 @@ import { GetUnifiedIntegrationCategories } from "unified-to/dist/sdk/models/oper
 **Promise<[operations.GetUnifiedIntegrationResponse](../../models/operations/getunifiedintegrationresponse.md)>**
 
 
-## getUnifiedIntegrationAuthWorkspaceIdIntegrationType
+## getUnifiedIntegrationAuth
 
 Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
 
@@ -346,7 +259,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes } from "unified-to/dist/sdk/models/operations";
+import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -355,12 +268,12 @@ import { GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes } from "unifi
     },
   });
 
-  const res = await sdk.unified.getUnifiedIntegrationAuthWorkspaceIdIntegrationType({
-    integrationType: "Algerian",
+  const res = await sdk.unified.getUnifiedIntegrationAuth({
+    integrationType: "Reggae Van pascal",
     scopes: [
-      GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes.MartechMemberWrite,
+      GetUnifiedIntegrationAuthScopes.AtsScorecardRead,
     ],
-    workspaceId: "hound",
+    workspaceId: "Xenogender North groupware",
   });
 
   if (res.statusCode == 200) {
@@ -371,174 +284,20 @@ import { GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeScopes } from "unifi
 
 ### Parameters
 
-| Parameter                                                                                                                                                      | Type                                                                                                                                                           | Required                                                                                                                                                       | Description                                                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                                                      | [operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeRequest](../../models/operations/getunifiedintegrationauthworkspaceidintegrationtyperequest.md) | :heavy_check_mark:                                                                                                                                             | The request object to use for the request.                                                                                                                     |
-| `config`                                                                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                                                   | :heavy_minus_sign:                                                                                                                                             | Available config options for making requests.                                                                                                                  |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.GetUnifiedIntegrationAuthRequest](../../models/operations/getunifiedintegrationauthrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedIntegrationAuthWorkspaceIdIntegrationTypeResponse](../../models/operations/getunifiedintegrationauthworkspaceidintegrationtyperesponse.md)>**
-
-
-## getUnifiedIntegrationIntegrationType
-
-Retrieve an integration
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedIntegrationIntegrationType({
-    integrationType: "Pizza Electric",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.GetUnifiedIntegrationIntegrationTypeRequest](../../models/operations/getunifiedintegrationintegrationtyperequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedIntegrationIntegrationTypeResponse](../../models/operations/getunifiedintegrationintegrationtyperesponse.md)>**
-
-
-## getUnifiedIntegrationWorkspaceWorkspaceId
-
-No authentication required as this is to be used by front-end interface
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationWorkspaceWorkspaceIdCategories } from "unified-to/dist/sdk/models/operations";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedIntegrationWorkspaceWorkspaceId({
-    categories: [
-      GetUnifiedIntegrationWorkspaceWorkspaceIdCategories.Hris,
-    ],
-    workspaceId: "North Southeast exercitationem",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                  | Type                                                                                                                                       | Required                                                                                                                                   | Description                                                                                                                                |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                  | [operations.GetUnifiedIntegrationWorkspaceWorkspaceIdRequest](../../models/operations/getunifiedintegrationworkspaceworkspaceidrequest.md) | :heavy_check_mark:                                                                                                                         | The request object to use for the request.                                                                                                 |
-| `config`                                                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                               | :heavy_minus_sign:                                                                                                                         | Available config options for making requests.                                                                                              |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedIntegrationWorkspaceWorkspaceIdResponse](../../models/operations/getunifiedintegrationworkspaceworkspaceidresponse.md)>**
-
-
-## getUnifiedUser
-
-Retrieve your user object
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedUser();
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedUserResponse](../../models/operations/getunifieduserresponse.md)>**
-
-
-## getUnifiedUserToken
-
-Retrieve your user token
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.getUnifiedUserToken();
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
-
-
-### Response
-
-**Promise<[operations.GetUnifiedUserTokenResponse](../../models/operations/getunifiedusertokenresponse.md)>**
+**Promise<[operations.GetUnifiedIntegrationAuthResponse](../../models/operations/getunifiedintegrationauthresponse.md)>**
 
 
 ## getUnifiedWebhook
 
-Returns all registered webhooks
+Retrieve webhook by its ID
 
 ### Example Usage
 
@@ -552,7 +311,9 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.getUnifiedWebhook({});
+  const res = await sdk.unified.getUnifiedWebhook({
+    id: "<ID>",
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -573,9 +334,9 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetUnifiedWebhookResponse](../../models/operations/getunifiedwebhookresponse.md)>**
 
 
-## getUnifiedWebhookId
+## listUnifiedApicalls
 
-Retrieve webhook by its ID
+Returns API Calls
 
 ### Example Usage
 
@@ -589,9 +350,7 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.getUnifiedWebhookId({
-    id: "<ID>",
-  });
+  const res = await sdk.unified.listUnifiedApicalls({});
 
   if (res.statusCode == 200) {
     // handle response
@@ -603,24 +362,24 @@ import { UnifiedTo } from "unified-to";
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetUnifiedWebhookIdRequest](../../models/operations/getunifiedwebhookidrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `request`                                                                                      | [operations.ListUnifiedApicallsRequest](../../models/operations/listunifiedapicallsrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 | `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedWebhookIdResponse](../../models/operations/getunifiedwebhookidresponse.md)>**
+**Promise<[operations.ListUnifiedApicallsResponse](../../models/operations/listunifiedapicallsresponse.md)>**
 
 
-## patchUnifiedConnectionId
+## listUnifiedConnections
 
-Update connection
+List all connections
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -629,124 +388,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     },
   });
 
-  const res = await sdk.unified.patchUnifiedConnectionId({
-    connection: {
-      auth: {
-        emails: [
-          "Executive",
-        ],
-        meta: {},
-        otherAuthInfo: [
-          "Cupertino",
-        ],
-      },
-      categories: [
-        PropertyConnectionCategories.Martech,
-      ],
-      integrationType: "India",
-      permissions: [
-        PropertyConnectionPermissions.AtsApplicationWrite,
-      ],
-    },
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PatchUnifiedConnectionIdRequest](../../models/operations/patchunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.PatchUnifiedConnectionIdResponse](../../models/operations/patchunifiedconnectionidresponse.md)>**
-
-
-## patchUnifiedUser
-
-Only the name field is updated.
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.patchUnifiedUser({
-    meta: {},
-    name: "virtual female",
-    workspaceId: "Jewelery",
-    workspaceIds: [
-      "interfaces",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.User](../../models/shared/user.md)                   | :heavy_check_mark:                                           | The request object to use for the request.                   |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
-
-
-### Response
-
-**Promise<[operations.PatchUnifiedUserResponse](../../models/operations/patchunifieduserresponse.md)>**
-
-
-## postUnifiedConnection
-
-Create connection
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.unified.postUnifiedConnection({
-    auth: {
-      emails: [
-        "RSS",
-      ],
-      meta: {},
-      otherAuthInfo: [
-        "locate",
-      ],
-    },
+  const res = await sdk.unified.listUnifiedConnections({
     categories: [
-      PropertyConnectionCategories.Crm,
-    ],
-    integrationType: "plus pace global",
-    permissions: [
-      PropertyConnectionPermissions.TicketingAgentWrite,
+      ListUnifiedConnectionsCategories.Crm,
     ],
   });
 
@@ -758,27 +402,26 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.Connection](../../models/shared/connection.md)       | :heavy_check_mark:                                           | The request object to use for the request.                   |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.ListUnifiedConnectionsRequest](../../models/operations/listunifiedconnectionsrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.PostUnifiedConnectionResponse](../../models/operations/postunifiedconnectionresponse.md)>**
+**Promise<[operations.ListUnifiedConnectionsResponse](../../models/operations/listunifiedconnectionsresponse.md)>**
 
 
-## postUnifiedWebhookConnectionIdObject
+## listUnifiedIntegrationWorkspaces
 
-To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=<hookId>.
+No authentication required as this is to be used by front-end interface
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PostUnifiedWebhookConnectionIdObjectEvents } from "unified-to/dist/sdk/models/operations";
-import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
+import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -787,26 +430,11 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
     },
   });
 
-  const res = await sdk.unified.postUnifiedWebhookConnectionIdObject({
-    webhook: {
-      connectionId: "drat",
-      events: [
-        PropertyWebhookEvents.Updated,
-      ],
-      hookUrl: "siemens National",
-      integrationType: "GB Rustic deposit",
-      interval: 6073.96,
-      objectType: WebhookObjectType.CrmContact,
-      subscriptions: [
-        "Diesel",
-      ],
-      workspaceId: "female ken",
-    },
-    connectionId: "chocolate",
-    events: [
-      PostUnifiedWebhookConnectionIdObjectEvents.Updated,
+  const res = await sdk.unified.listUnifiedIntegrationWorkspaces({
+    categories: [
+      ListUnifiedIntegrationWorkspacesCategories.Martech,
     ],
-    object: "female driver",
+    workspaceId: "Country Market Representative",
   });
 
   if (res.statusCode == 200) {
@@ -817,18 +445,97 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
 
 ### Parameters
 
-| Parameter                                                                                                                        | Type                                                                                                                             | Required                                                                                                                         | Description                                                                                                                      |
-| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                                        | [operations.PostUnifiedWebhookConnectionIdObjectRequest](../../models/operations/postunifiedwebhookconnectionidobjectrequest.md) | :heavy_check_mark:                                                                                                               | The request object to use for the request.                                                                                       |
-| `config`                                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                                     | :heavy_minus_sign:                                                                                                               | Available config options for making requests.                                                                                    |
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                | [operations.ListUnifiedIntegrationWorkspacesRequest](../../models/operations/listunifiedintegrationworkspacesrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
 
 
 ### Response
 
-**Promise<[operations.PostUnifiedWebhookConnectionIdObjectResponse](../../models/operations/postunifiedwebhookconnectionidobjectresponse.md)>**
+**Promise<[operations.ListUnifiedIntegrationWorkspacesResponse](../../models/operations/listunifiedintegrationworkspacesresponse.md)>**
 
 
-## putUnifiedConnectionId
+## listUnifiedIntegrations
+
+Returns all integrations
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/operations";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.unified.listUnifiedIntegrations({
+    categories: [
+      ListUnifiedIntegrationsCategories.Auth,
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListUnifiedIntegrationsRequest](../../models/operations/listunifiedintegrationsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.ListUnifiedIntegrationsResponse](../../models/operations/listunifiedintegrationsresponse.md)>**
+
+
+## listUnifiedWebhooks
+
+Returns all registered webhooks
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.unified.listUnifiedWebhooks({});
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.ListUnifiedWebhooksRequest](../../models/operations/listunifiedwebhooksrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+
+
+### Response
+
+**Promise<[operations.ListUnifiedWebhooksResponse](../../models/operations/listunifiedwebhooksresponse.md)>**
+
+
+## patchUnifiedConnection
 
 Update connection
 
@@ -845,21 +552,21 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     },
   });
 
-  const res = await sdk.unified.putUnifiedConnectionId({
+  const res = await sdk.unified.patchUnifiedConnection({
     connection: {
       auth: {
         emails: [
-          "Assurance",
+          "International",
         ],
         meta: {},
         otherAuthInfo: [
-          "Avon",
+          "square",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Martech,
+        PropertyConnectionCategories.Ats,
       ],
-      integrationType: "Web",
+      integrationType: "Montana",
       permissions: [
         PropertyConnectionPermissions.CrmFileRead,
       ],
@@ -877,18 +584,18 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutUnifiedConnectionIdRequest](../../models/operations/putunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `request`                                                                                            | [operations.PatchUnifiedConnectionRequest](../../models/operations/patchunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutUnifiedConnectionIdResponse](../../models/operations/putunifiedconnectionidresponse.md)>**
+**Promise<[operations.PatchUnifiedConnectionResponse](../../models/operations/patchunifiedconnectionresponse.md)>**
 
 
-## putUnifiedUser
+## removeUnifiedConnection
 
-Only the name field is updated.
+Remove connection
 
 ### Example Usage
 
@@ -902,13 +609,8 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.unified.putUnifiedUser({
-    meta: {},
-    name: "invoice Convertible Country",
-    workspaceId: "Ergonomic",
-    workspaceIds: [
-      "becquerel",
-    ],
+  const res = await sdk.unified.removeUnifiedConnection({
+    id: "<ID>",
   });
 
   if (res.statusCode == 200) {
@@ -919,13 +621,110 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.User](../../models/shared/user.md)                   | :heavy_check_mark:                                           | The request object to use for the request.                   |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.RemoveUnifiedConnectionRequest](../../models/operations/removeunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
 
-**Promise<[operations.PutUnifiedUserResponse](../../models/operations/putunifieduserresponse.md)>**
+**Promise<[operations.RemoveUnifiedConnectionResponse](../../models/operations/removeunifiedconnectionresponse.md)>**
+
+
+## removeUnifiedWebhook
+
+Remove webhook subscription
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.unified.removeUnifiedWebhook({
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.RemoveUnifiedWebhookRequest](../../models/operations/removeunifiedwebhookrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+
+
+### Response
+
+**Promise<[operations.RemoveUnifiedWebhookResponse](../../models/operations/removeunifiedwebhookresponse.md)>**
+
+
+## updateUnifiedConnection
+
+Update connection
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.unified.updateUnifiedConnection({
+    connection: {
+      auth: {
+        emails: [
+          "tan",
+        ],
+        meta: {},
+        otherAuthInfo: [
+          "revitalize",
+        ],
+      },
+      categories: [
+        PropertyConnectionCategories.Crm,
+      ],
+      integrationType: "from",
+      permissions: [
+        PropertyConnectionPermissions.AtsApplicationRead,
+      ],
+    },
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.UpdateUnifiedConnectionRequest](../../models/operations/updateunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.UpdateUnifiedConnectionResponse](../../models/operations/updateunifiedconnectionresponse.md)>**
 

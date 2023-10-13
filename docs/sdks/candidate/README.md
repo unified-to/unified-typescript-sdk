@@ -3,191 +3,14 @@
 
 ### Available Operations
 
-* [deleteAtsConnectionIdCandidateId](#deleteatsconnectionidcandidateid) - Remove a candidate
-* [getAtsConnectionIdCandidate](#getatsconnectionidcandidate) - List all candidates
-* [getAtsConnectionIdCandidateId](#getatsconnectionidcandidateid) - Retrieve a candidate
-* [patchAtsConnectionIdCandidateId](#patchatsconnectionidcandidateid) - Update a candidate
-* [postAtsConnectionIdCandidate](#postatsconnectionidcandidate) - Create a candidate
-* [putAtsConnectionIdCandidateId](#putatsconnectionidcandidateid) - Update a candidate
+* [createAtsCandidate](#createatscandidate) - Create a candidate
+* [getAtsCandidate](#getatscandidate) - Retrieve a candidate
+* [listAtsCandidates](#listatscandidates) - List all candidates
+* [patchAtsCandidate](#patchatscandidate) - Update a candidate
+* [removeAtsCandidate](#removeatscandidate) - Remove a candidate
+* [updateAtsCandidate](#updateatscandidate) - Update a candidate
 
-## deleteAtsConnectionIdCandidateId
-
-Remove a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.candidate.deleteAtsConnectionIdCandidateId({
-    connectionId: "multimedia",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                | [operations.DeleteAtsConnectionIdCandidateIdRequest](../../models/operations/deleteatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
-| `config`                                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                             | :heavy_minus_sign:                                                                                                       | Available config options for making requests.                                                                            |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdCandidateIdResponse](../../models/operations/deleteatsconnectionidcandidateidresponse.md)>**
-
-
-## getAtsConnectionIdCandidate
-
-List all candidates
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.candidate.getAtsConnectionIdCandidate({
-    connectionId: "Northwest forceful Moore",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAtsConnectionIdCandidateRequest](../../models/operations/getatsconnectionidcandidaterequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdCandidateResponse](../../models/operations/getatsconnectionidcandidateresponse.md)>**
-
-
-## getAtsConnectionIdCandidateId
-
-Retrieve a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.candidate.getAtsConnectionIdCandidateId({
-    connectionId: "ha Loan",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetAtsConnectionIdCandidateIdRequest](../../models/operations/getatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdCandidateIdResponse](../../models/operations/getatsconnectionidcandidateidresponse.md)>**
-
-
-## patchAtsConnectionIdCandidateId
-
-Update a candidate
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.candidate.patchAtsConnectionIdCandidateId({
-    atsCandidate: {
-      address: {},
-      emails: [
-        {
-          email: "Stella57@hotmail.com",
-        },
-      ],
-      raw: {},
-      tags: [
-        "Chips",
-      ],
-      telephones: [
-        {
-          telephone: "culpa",
-        },
-      ],
-    },
-    connectionId: "Unbranded Country",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                              | [operations.PatchAtsConnectionIdCandidateIdRequest](../../models/operations/patchatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                     | The request object to use for the request.                                                                             |
-| `config`                                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                           | :heavy_minus_sign:                                                                                                     | Available config options for making requests.                                                                          |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdCandidateIdResponse](../../models/operations/patchatsconnectionidcandidateidresponse.md)>**
-
-
-## postAtsConnectionIdCandidate
+## createAtsCandidate
 
 Create a candidate
 
@@ -204,25 +27,25 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.candidate.postAtsConnectionIdCandidate({
+  const res = await sdk.candidate.createAtsCandidate({
     atsCandidate: {
       address: {},
       emails: [
         {
-          email: "Elmore.Mante@gmail.com",
+          email: "Robin_Feeney@hotmail.com",
         },
       ],
       raw: {},
       tags: [
-        "than",
+        "radian",
       ],
       telephones: [
         {
-          telephone: "Wooden siemens Wooden",
+          telephone: "but Pop fluid",
         },
       ],
     },
-    connectionId: "Jazz Ball",
+    connectionId: "bypass Creative Legacy",
   });
 
   if (res.statusCode == 200) {
@@ -233,18 +56,97 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PostAtsConnectionIdCandidateRequest](../../models/operations/postatsconnectionidcandidaterequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.CreateAtsCandidateRequest](../../models/operations/createatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdCandidateResponse](../../models/operations/postatsconnectionidcandidateresponse.md)>**
+**Promise<[operations.CreateAtsCandidateResponse](../../models/operations/createatscandidateresponse.md)>**
 
 
-## putAtsConnectionIdCandidateId
+## getAtsCandidate
+
+Retrieve a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.candidate.getAtsCandidate({
+    connectionId: "Markets",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsCandidateRequest](../../models/operations/getatscandidaterequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsCandidateResponse](../../models/operations/getatscandidateresponse.md)>**
+
+
+## listAtsCandidates
+
+List all candidates
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.candidate.listAtsCandidates({
+    connectionId: "mole clearly",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAtsCandidatesRequest](../../models/operations/listatscandidatesrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.ListAtsCandidatesResponse](../../models/operations/listatscandidatesresponse.md)>**
+
+
+## patchAtsCandidate
 
 Update a candidate
 
@@ -261,25 +163,25 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
     },
   });
 
-  const res = await sdk.candidate.putAtsConnectionIdCandidateId({
+  const res = await sdk.candidate.patchAtsCandidate({
     atsCandidate: {
       address: {},
       emails: [
         {
-          email: "Giovanny_Botsford@gmail.com",
+          email: "Tracy.Collins13@gmail.com",
         },
       ],
       raw: {},
       tags: [
-        "deploy",
+        "Credit",
       ],
       telephones: [
         {
-          telephone: "knowledge officiis",
+          telephone: "payment Books",
         },
       ],
     },
-    connectionId: "Personal Madagascar",
+    connectionId: "World Van transitional",
     id: "<ID>",
   });
 
@@ -291,13 +193,111 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PutAtsConnectionIdCandidateIdRequest](../../models/operations/putatsconnectionidcandidateidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.PatchAtsCandidateRequest](../../models/operations/patchatscandidaterequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdCandidateIdResponse](../../models/operations/putatsconnectionidcandidateidresponse.md)>**
+**Promise<[operations.PatchAtsCandidateResponse](../../models/operations/patchatscandidateresponse.md)>**
+
+
+## removeAtsCandidate
+
+Remove a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.candidate.removeAtsCandidate({
+    connectionId: "Accountability Recumbent Ball",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.RemoveAtsCandidateRequest](../../models/operations/removeatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsCandidateResponse](../../models/operations/removeatscandidateresponse.md)>**
+
+
+## updateAtsCandidate
+
+Update a candidate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.candidate.updateAtsCandidate({
+    atsCandidate: {
+      address: {},
+      emails: [
+        {
+          email: "Gaetano86@hotmail.com",
+        },
+      ],
+      raw: {},
+      tags: [
+        "B2C",
+      ],
+      telephones: [
+        {
+          telephone: "DNS monetize Dynamic",
+        },
+      ],
+    },
+    connectionId: "Zackery male Gloves",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.UpdateAtsCandidateRequest](../../models/operations/updateatscandidaterequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsCandidateResponse](../../models/operations/updateatscandidateresponse.md)>**
 

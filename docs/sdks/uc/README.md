@@ -3,267 +3,16 @@
 
 ### Available Operations
 
-* [deleteUcConnectionIdContactId](#deleteucconnectionidcontactid) - Remove a contact
-* [getUcConnectionIdAgent](#getucconnectionidagent) - List all agents
-* [getUcConnectionIdCall](#getucconnectionidcall) - List all calls
-* [getUcConnectionIdContact](#getucconnectionidcontact) - List all contacts
-* [getUcConnectionIdContactId](#getucconnectionidcontactid) - Retrieve a contact
-* [patchUcConnectionIdContactId](#patchucconnectionidcontactid) - Update a contact
-* [postUcConnectionIdContact](#postucconnectionidcontact) - Create a contact
-* [putUcConnectionIdContactId](#putucconnectionidcontactid) - Update a contact
-
-## deleteUcConnectionIdContactId
-
-Remove a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.deleteUcConnectionIdContactId({
-    connectionId: "Southeast Modern commonly",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.DeleteUcConnectionIdContactIdRequest](../../models/operations/deleteucconnectionidcontactidrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
-
-
-### Response
-
-**Promise<[operations.DeleteUcConnectionIdContactIdResponse](../../models/operations/deleteucconnectionidcontactidresponse.md)>**
-
-
-## getUcConnectionIdAgent
-
-List all agents
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.getUcConnectionIdAgent({
-    connectionId: "Regional East Sedan",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetUcConnectionIdAgentRequest](../../models/operations/getucconnectionidagentrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.GetUcConnectionIdAgentResponse](../../models/operations/getucconnectionidagentresponse.md)>**
-
-
-## getUcConnectionIdCall
-
-List all calls
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.getUcConnectionIdCall({
-    connectionId: "Directives",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetUcConnectionIdCallRequest](../../models/operations/getucconnectionidcallrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
-
-
-### Response
-
-**Promise<[operations.GetUcConnectionIdCallResponse](../../models/operations/getucconnectionidcallresponse.md)>**
-
-
-## getUcConnectionIdContact
-
-List all contacts
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.getUcConnectionIdContact({
-    connectionId: "Refined Practical",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetUcConnectionIdContactRequest](../../models/operations/getucconnectionidcontactrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.GetUcConnectionIdContactResponse](../../models/operations/getucconnectionidcontactresponse.md)>**
-
-
-## getUcConnectionIdContactId
-
-Retrieve a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.getUcConnectionIdContactId({
-    connectionId: "Land",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetUcConnectionIdContactIdRequest](../../models/operations/getucconnectionidcontactidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.GetUcConnectionIdContactIdResponse](../../models/operations/getucconnectionidcontactidresponse.md)>**
-
-
-## patchUcConnectionIdContactId
-
-Update a contact
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.patchUcConnectionIdContactId({
-    ucContact: {
-      emails: [
-        {
-          email: "Van84@hotmail.com",
-        },
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "Denar",
-        },
-      ],
-    },
-    connectionId: "strategy Synergized",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PatchUcConnectionIdContactIdRequest](../../models/operations/patchucconnectionidcontactidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
-
-
-### Response
-
-**Promise<[operations.PatchUcConnectionIdContactIdResponse](../../models/operations/patchucconnectionidcontactidresponse.md)>**
-
-
-## postUcConnectionIdContact
+* [createUcContact](#createuccontact) - Create a contact
+* [getUcContact](#getuccontact) - Retrieve a contact
+* [listUcAgents](#listucagents) - List all agents
+* [listUcCalls](#listuccalls) - List all calls
+* [listUcContacts](#listuccontacts) - List all contacts
+* [patchUcContact](#patchuccontact) - Update a contact
+* [removeUcContact](#removeuccontact) - Remove a contact
+* [updateUcContact](#updateuccontact) - Update a contact
+
+## createUcContact
 
 Create a contact
 
@@ -280,21 +29,21 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
     },
   });
 
-  const res = await sdk.uc.postUcConnectionIdContact({
+  const res = await sdk.uc.createUcContact({
     ucContact: {
       emails: [
         {
-          email: "Gilda_Jacobs@gmail.com",
+          email: "Dulce_Becker30@yahoo.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "Account Orchestrator",
+          telephone: "indigo indeed",
         },
       ],
     },
-    connectionId: "extend grey Avon",
+    connectionId: "meanwhile",
   });
 
   if (res.statusCode == 200) {
@@ -305,18 +54,175 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PostUcConnectionIdContactRequest](../../models/operations/postucconnectionidcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.CreateUcContactRequest](../../models/operations/createuccontactrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
 
-**Promise<[operations.PostUcConnectionIdContactResponse](../../models/operations/postucconnectionidcontactresponse.md)>**
+**Promise<[operations.CreateUcContactResponse](../../models/operations/createuccontactresponse.md)>**
 
 
-## putUcConnectionIdContactId
+## getUcContact
+
+Retrieve a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.getUcContact({
+    connectionId: "JBOD ivory fool",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetUcContactRequest](../../models/operations/getuccontactrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.GetUcContactResponse](../../models/operations/getuccontactresponse.md)>**
+
+
+## listUcAgents
+
+List all agents
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.listUcAgents({
+    connectionId: "Representative",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.ListUcAgentsRequest](../../models/operations/listucagentsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.ListUcAgentsResponse](../../models/operations/listucagentsresponse.md)>**
+
+
+## listUcCalls
+
+List all calls
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.listUcCalls({
+    connectionId: "optical",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListUcCallsRequest](../../models/operations/listuccallsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+
+
+### Response
+
+**Promise<[operations.ListUcCallsResponse](../../models/operations/listuccallsresponse.md)>**
+
+
+## listUcContacts
+
+List all contacts
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.listUcContacts({
+    connectionId: "Bicycle male",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.ListUcContactsRequest](../../models/operations/listuccontactsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+
+
+### Response
+
+**Promise<[operations.ListUcContactsResponse](../../models/operations/listuccontactsresponse.md)>**
+
+
+## patchUcContact
 
 Update a contact
 
@@ -333,21 +239,21 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
     },
   });
 
-  const res = await sdk.uc.putUcConnectionIdContactId({
+  const res = await sdk.uc.patchUcContact({
     ucContact: {
       emails: [
         {
-          email: "Darien12@hotmail.com",
+          email: "Norene_Boehm97@hotmail.com",
         },
       ],
       raw: {},
       telephones: [
         {
-          telephone: "reboot",
+          telephone: "male",
         },
       ],
     },
-    connectionId: "payment hem",
+    connectionId: "South Pants candela",
     id: "<ID>",
   });
 
@@ -359,13 +265,107 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.PutUcConnectionIdContactIdRequest](../../models/operations/putucconnectionidcontactidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.PatchUcContactRequest](../../models/operations/patchuccontactrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.PutUcConnectionIdContactIdResponse](../../models/operations/putucconnectionidcontactidresponse.md)>**
+**Promise<[operations.PatchUcContactResponse](../../models/operations/patchuccontactresponse.md)>**
+
+
+## removeUcContact
+
+Remove a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.removeUcContact({
+    connectionId: "Configurable",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.RemoveUcContactRequest](../../models/operations/removeuccontactrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.RemoveUcContactResponse](../../models/operations/removeuccontactresponse.md)>**
+
+
+## updateUcContact
+
+Update a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.uc.updateUcContact({
+    ucContact: {
+      emails: [
+        {
+          email: "Kianna.Witting90@gmail.com",
+        },
+      ],
+      raw: {},
+      telephones: [
+        {
+          telephone: "Illinois Electronic Northwest",
+        },
+      ],
+    },
+    connectionId: "Cruiser",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.UpdateUcContactRequest](../../models/operations/updateuccontactrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.UpdateUcContactResponse](../../models/operations/updateuccontactresponse.md)>**
 

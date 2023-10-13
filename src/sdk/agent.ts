@@ -17,14 +17,110 @@ export class Agent {
     }
 
     /**
-     * Remove a agent
+     * Create a agent
      */
-    async deleteTicketingConnectionIdAgentId(
-        req: operations.DeleteTicketingConnectionIdAgentIdRequest,
+    async createTicketingAgent(
+        req: operations.CreateTicketingAgentRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.DeleteTicketingConnectionIdAgentIdResponse> {
+    ): Promise<operations.CreateTicketingAgentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.DeleteTicketingConnectionIdAgentIdRequest(req);
+            req = new operations.CreateTicketingAgentRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/agent", req);
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "ticketingAgent", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: url,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateTicketingAgentResponse =
+            new operations.CreateTicketingAgentResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(contentType, `application/json`)) {
+                    res.ticketingAgent = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TicketingAgent
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + contentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Retrieve a agent
+     */
+    async getTicketingAgent(
+        req: operations.GetTicketingAgentRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetTicketingAgentResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetTicketingAgentRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -53,7 +149,7 @@ export class Agent {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "delete",
+            method: "get",
             headers: headers,
             responseType: "arraybuffer",
             ...config,
@@ -65,25 +161,19 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.DeleteTicketingConnectionIdAgentIdResponse =
-            new operations.DeleteTicketingConnectionIdAgentIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetTicketingAgentResponse = new operations.GetTicketingAgentResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-            default:
+            case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.deleteTicketingConnectionIdAgentIdDefaultApplicationJSONString = decodedRes;
+                    res.ticketingAgent = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.TicketingAgent
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -93,6 +183,14 @@ export class Agent {
                     );
                 }
                 break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
         }
 
         return res;
@@ -101,12 +199,12 @@ export class Agent {
     /**
      * List all agents
      */
-    async getTicketingConnectionIdAgent(
-        req: operations.GetTicketingConnectionIdAgentRequest,
+    async listTicketingAgents(
+        req: operations.ListTicketingAgentsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetTicketingConnectionIdAgentResponse> {
+    ): Promise<operations.ListTicketingAgentsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetTicketingConnectionIdAgentRequest(req);
+            req = new operations.ListTicketingAgentsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -144,8 +242,8 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetTicketingConnectionIdAgentResponse =
-            new operations.GetTicketingConnectionIdAgentResponse({
+        const res: operations.ListTicketingAgentsResponse =
+            new operations.ListTicketingAgentsResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -184,99 +282,14 @@ export class Agent {
     }
 
     /**
-     * Retrieve a agent
-     */
-    async getTicketingConnectionIdAgentId(
-        req: operations.GetTicketingConnectionIdAgentIdRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetTicketingConnectionIdAgentIdResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetTicketingConnectionIdAgentIdRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/agent/{id}",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: url,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.GetTicketingConnectionIdAgentIdResponse =
-            new operations.GetTicketingConnectionIdAgentIdResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(contentType, `application/json`)) {
-                    res.ticketingAgent = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.TicketingAgent
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + contentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
      * List all agents
      */
-    async getUcConnectionIdAgent(
-        req: operations.GetUcConnectionIdAgentRequest,
+    async listUcAgents(
+        req: operations.ListUcAgentsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetUcConnectionIdAgentResponse> {
+    ): Promise<operations.ListUcAgentsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUcConnectionIdAgentRequest(req);
+            req = new operations.ListUcAgentsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -314,12 +327,11 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetUcConnectionIdAgentResponse =
-            new operations.GetUcConnectionIdAgentResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListUcAgentsResponse = new operations.ListUcAgentsResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
@@ -356,12 +368,12 @@ export class Agent {
     /**
      * Update a agent
      */
-    async patchTicketingConnectionIdAgentId(
-        req: operations.PatchTicketingConnectionIdAgentIdRequest,
+    async patchTicketingAgent(
+        req: operations.PatchTicketingAgentRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchTicketingConnectionIdAgentIdResponse> {
+    ): Promise<operations.PatchTicketingAgentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchTicketingConnectionIdAgentIdRequest(req);
+            req = new operations.PatchTicketingAgentRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -417,8 +429,8 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchTicketingConnectionIdAgentIdResponse =
-            new operations.PatchTicketingConnectionIdAgentIdResponse({
+        const res: operations.PatchTicketingAgentResponse =
+            new operations.PatchTicketingAgentResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
@@ -454,31 +466,25 @@ export class Agent {
     }
 
     /**
-     * Create a agent
+     * Remove a agent
      */
-    async postTicketingConnectionIdAgent(
-        req: operations.PostTicketingConnectionIdAgentRequest,
+    async removeTicketingAgent(
+        req: operations.RemoveTicketingAgentRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PostTicketingConnectionIdAgentResponse> {
+    ): Promise<operations.RemoveTicketingAgentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PostTicketingConnectionIdAgentRequest(req);
+            req = new operations.RemoveTicketingAgentRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/agent", req);
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "ticketingAgent", "json");
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
+        const url: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/agent/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -488,11 +494,7 @@ export class Agent {
             globalSecurity = new shared.Security(globalSecurity);
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
@@ -500,10 +502,9 @@ export class Agent {
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
             url: url,
-            method: "post",
+            method: "delete",
             headers: headers,
             responseType: "arraybuffer",
-            data: reqBody,
             ...config,
         });
 
@@ -513,20 +514,25 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PostTicketingConnectionIdAgentResponse =
-            new operations.PostTicketingConnectionIdAgentResponse({
+        const res: operations.RemoveTicketingAgentResponse =
+            new operations.RemoveTicketingAgentResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
-            case httpRes?.status == 200:
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.ticketingAgent = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.TicketingAgent
-                    );
+                    res.removeTicketingAgentDefaultApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -536,14 +542,6 @@ export class Agent {
                     );
                 }
                 break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
         }
 
         return res;
@@ -552,12 +550,12 @@ export class Agent {
     /**
      * Update a agent
      */
-    async putTicketingConnectionIdAgentId(
-        req: operations.PutTicketingConnectionIdAgentIdRequest,
+    async updateTicketingAgent(
+        req: operations.UpdateTicketingAgentRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PutTicketingConnectionIdAgentIdResponse> {
+    ): Promise<operations.UpdateTicketingAgentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PutTicketingConnectionIdAgentIdRequest(req);
+            req = new operations.UpdateTicketingAgentRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -613,8 +611,8 @@ export class Agent {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PutTicketingConnectionIdAgentIdResponse =
-            new operations.PutTicketingConnectionIdAgentIdResponse({
+        const res: operations.UpdateTicketingAgentResponse =
+            new operations.UpdateTicketingAgentResponse({
                 statusCode: httpRes.status,
                 contentType: contentType,
                 rawResponse: httpRes,

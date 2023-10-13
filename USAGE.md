@@ -3,6 +3,7 @@
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -11,9 +12,21 @@ import { UnifiedTo } from "unified-to";
         },
     });
 
-    const res = await sdk.agent.deleteTicketingConnectionIdAgentId({
-        connectionId: "navigate",
-        id: "<ID>",
+    const res = await sdk.agent.createTicketingAgent({
+        ticketingAgent: {
+            emails: [
+                {
+                    email: "Paolo.Cole8@yahoo.com",
+                },
+            ],
+            raw: {},
+            telephones: [
+                {
+                    telephone: "scarcely Soap navigating",
+                },
+            ],
+        },
+        connectionId: "smoothly Algeria",
     });
 
     if (res.statusCode == 200) {

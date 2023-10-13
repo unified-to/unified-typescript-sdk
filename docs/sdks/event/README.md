@@ -3,198 +3,14 @@
 
 ### Available Operations
 
-* [deleteCrmConnectionIdEventId](#deletecrmconnectionideventid) - Remove a event
-* [getCrmConnectionIdEvent](#getcrmconnectionidevent) - List all events
-* [getCrmConnectionIdEventId](#getcrmconnectionideventid) - Retrieve a event
-* [patchCrmConnectionIdEventId](#patchcrmconnectionideventid) - Update a event
-* [postCrmConnectionIdEvent](#postcrmconnectionidevent) - Create a event
-* [putCrmConnectionIdEventId](#putcrmconnectionideventid) - Update a event
+* [createCrmEvent](#createcrmevent) - Create a event
+* [getCrmEvent](#getcrmevent) - Retrieve a event
+* [listCrmEvents](#listcrmevents) - List all events
+* [patchCrmEvent](#patchcrmevent) - Update a event
+* [removeCrmEvent](#removecrmevent) - Remove a event
+* [updateCrmEvent](#updatecrmevent) - Update a event
 
-## deleteCrmConnectionIdEventId
-
-Remove a event
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.event.deleteCrmConnectionIdEventId({
-    connectionId: "Wooden Latin",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.DeleteCrmConnectionIdEventIdRequest](../../models/operations/deletecrmconnectionideventidrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
-
-
-### Response
-
-**Promise<[operations.DeleteCrmConnectionIdEventIdResponse](../../models/operations/deletecrmconnectionideventidresponse.md)>**
-
-
-## getCrmConnectionIdEvent
-
-List all events
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.event.getCrmConnectionIdEvent({
-    connectionId: "Zirconium Avon Bedfordshire",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetCrmConnectionIdEventRequest](../../models/operations/getcrmconnectionideventrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdEventResponse](../../models/operations/getcrmconnectionideventresponse.md)>**
-
-
-## getCrmConnectionIdEventId
-
-Retrieve a event
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.event.getCrmConnectionIdEventId({
-    connectionId: "Future equalise",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.GetCrmConnectionIdEventIdRequest](../../models/operations/getcrmconnectionideventidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.GetCrmConnectionIdEventIdResponse](../../models/operations/getcrmconnectionideventidresponse.md)>**
-
-
-## patchCrmConnectionIdEventId
-
-Update a event
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEventType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.event.patchCrmConnectionIdEventId({
-    crmEvent: {
-      call: {},
-      companyIds: [
-        "parse",
-      ],
-      contactIds: [
-        "intranet",
-      ],
-      dealIds: [
-        "silver",
-      ],
-      email: {
-        cc: [
-          "redefine",
-        ],
-        to: [
-          "Baby",
-        ],
-      },
-      meeting: {},
-      note: {},
-      raw: {},
-      task: {},
-    },
-    connectionId: "Steel",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PatchCrmConnectionIdEventIdRequest](../../models/operations/patchcrmconnectionideventidrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
-
-
-### Response
-
-**Promise<[operations.PatchCrmConnectionIdEventIdResponse](../../models/operations/patchcrmconnectionideventidresponse.md)>**
-
-
-## postCrmConnectionIdEvent
+## createCrmEvent
 
 Create a event
 
@@ -211,24 +27,24 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.event.postCrmConnectionIdEvent({
+  const res = await sdk.event.createCrmEvent({
     crmEvent: {
       call: {},
       companyIds: [
-        "carburize",
+        "repeatedly",
       ],
       contactIds: [
-        "SDR",
+        "Sedan",
       ],
       dealIds: [
-        "Kentucky",
+        "altruistic",
       ],
       email: {
         cc: [
-          "Rustic",
+          "Hills",
         ],
         to: [
-          "male",
+          "Bronze",
         ],
       },
       meeting: {},
@@ -236,7 +52,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Hat",
+    connectionId: "Savings",
   });
 
   if (res.statusCode == 200) {
@@ -247,18 +63,97 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PostCrmConnectionIdEventRequest](../../models/operations/postcrmconnectionideventrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.CreateCrmEventRequest](../../models/operations/createcrmeventrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
 
-**Promise<[operations.PostCrmConnectionIdEventResponse](../../models/operations/postcrmconnectionideventresponse.md)>**
+**Promise<[operations.CreateCrmEventResponse](../../models/operations/createcrmeventresponse.md)>**
 
 
-## putCrmConnectionIdEventId
+## getCrmEvent
+
+Retrieve a event
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.event.getCrmEvent({
+    connectionId: "Metal South blockchains",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.GetCrmEventRequest](../../models/operations/getcrmeventrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+
+
+### Response
+
+**Promise<[operations.GetCrmEventResponse](../../models/operations/getcrmeventresponse.md)>**
+
+
+## listCrmEvents
+
+List all events
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.event.listCrmEvents({
+    connectionId: "invoice gratefully",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.ListCrmEventsRequest](../../models/operations/listcrmeventsrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+
+
+### Response
+
+**Promise<[operations.ListCrmEventsResponse](../../models/operations/listcrmeventsresponse.md)>**
+
+
+## patchCrmEvent
 
 Update a event
 
@@ -275,24 +170,24 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
     },
   });
 
-  const res = await sdk.event.putCrmConnectionIdEventId({
+  const res = await sdk.event.patchCrmEvent({
     crmEvent: {
       call: {},
       companyIds: [
-        "Iron",
+        "XML",
       ],
       contactIds: [
-        "marshmallow",
+        "Accountability",
       ],
       dealIds: [
-        "DNS",
+        "copying",
       ],
       email: {
         cc: [
-          "Skokie",
+          "after",
         ],
         to: [
-          "calculating",
+          "Research",
         ],
       },
       meeting: {},
@@ -300,7 +195,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Blues firewall engineer",
+    connectionId: "female",
     id: "<ID>",
   });
 
@@ -312,13 +207,118 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PutCrmConnectionIdEventIdRequest](../../models/operations/putcrmconnectionideventidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.PatchCrmEventRequest](../../models/operations/patchcrmeventrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
 
-**Promise<[operations.PutCrmConnectionIdEventIdResponse](../../models/operations/putcrmconnectionideventidresponse.md)>**
+**Promise<[operations.PatchCrmEventResponse](../../models/operations/patchcrmeventresponse.md)>**
+
+
+## removeCrmEvent
+
+Remove a event
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.event.removeCrmEvent({
+    connectionId: "card",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.RemoveCrmEventRequest](../../models/operations/removecrmeventrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+
+
+### Response
+
+**Promise<[operations.RemoveCrmEventResponse](../../models/operations/removecrmeventresponse.md)>**
+
+
+## updateCrmEvent
+
+Update a event
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { CrmEventType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.event.updateCrmEvent({
+    crmEvent: {
+      call: {},
+      companyIds: [
+        "Account",
+      ],
+      contactIds: [
+        "DRAM",
+      ],
+      dealIds: [
+        "input",
+      ],
+      email: {
+        cc: [
+          "Bicycle",
+        ],
+        to: [
+          "Wagon",
+        ],
+      },
+      meeting: {},
+      note: {},
+      raw: {},
+      task: {},
+    },
+    connectionId: "Accountability",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.UpdateCrmEventRequest](../../models/operations/updatecrmeventrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+
+
+### Response
+
+**Promise<[operations.UpdateCrmEventResponse](../../models/operations/updatecrmeventresponse.md)>**
 

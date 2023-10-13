@@ -3,21 +3,22 @@
 
 ### Available Operations
 
-* [deleteUnifiedConnectionId](#deleteunifiedconnectionid) - Remove connection
-* [getUnifiedConnection](#getunifiedconnection) - List all connections
-* [getUnifiedConnectionId](#getunifiedconnectionid) - Retrieve connection
-* [patchUnifiedConnectionId](#patchunifiedconnectionid) - Update connection
-* [postUnifiedConnection](#postunifiedconnection) - Create connection
-* [putUnifiedConnectionId](#putunifiedconnectionid) - Update connection
+* [createUnifiedConnection](#createunifiedconnection) - Create connection
+* [getUnifiedConnection](#getunifiedconnection) - Retrieve connection
+* [listUnifiedConnections](#listunifiedconnections) - List all connections
+* [patchUnifiedConnection](#patchunifiedconnection) - Update connection
+* [removeUnifiedConnection](#removeunifiedconnection) - Remove connection
+* [updateUnifiedConnection](#updateunifiedconnection) - Update connection
 
-## deleteUnifiedConnectionId
+## createUnifiedConnection
 
-Remove connection
+Create connection
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -26,8 +27,23 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.connection.deleteUnifiedConnectionId({
-    id: "<ID>",
+  const res = await sdk.connection.createUnifiedConnection({
+    auth: {
+      emails: [
+        "likewise",
+      ],
+      meta: {},
+      otherAuthInfo: [
+        "Rwanda",
+      ],
+    },
+    categories: [
+      PropertyConnectionCategories.Crm,
+    ],
+    integrationType: "Maserati",
+    permissions: [
+      PropertyConnectionPermissions.CrmLeadWrite,
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -38,26 +54,25 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.DeleteUnifiedConnectionIdRequest](../../models/operations/deleteunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.Connection](../../models/shared/connection.md)       | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
 
 
 ### Response
 
-**Promise<[operations.DeleteUnifiedConnectionIdResponse](../../models/operations/deleteunifiedconnectionidresponse.md)>**
+**Promise<[operations.CreateUnifiedConnectionResponse](../../models/operations/createunifiedconnectionresponse.md)>**
 
 
 ## getUnifiedConnection
 
-List all connections
+Retrieve connection
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -67,9 +82,7 @@ import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/opera
   });
 
   const res = await sdk.connection.getUnifiedConnection({
-    categories: [
-      GetUnifiedConnectionCategories.Ats,
-    ],
+    id: "<ID>",
   });
 
   if (res.statusCode == 200) {
@@ -91,14 +104,15 @@ import { GetUnifiedConnectionCategories } from "unified-to/dist/sdk/models/opera
 **Promise<[operations.GetUnifiedConnectionResponse](../../models/operations/getunifiedconnectionresponse.md)>**
 
 
-## getUnifiedConnectionId
+## listUnifiedConnections
 
-Retrieve connection
+List all connections
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -107,8 +121,10 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.connection.getUnifiedConnectionId({
-    id: "<ID>",
+  const res = await sdk.connection.listUnifiedConnections({
+    categories: [
+      ListUnifiedConnectionsCategories.Crm,
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -121,129 +137,16 @@ import { UnifiedTo } from "unified-to";
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetUnifiedConnectionIdRequest](../../models/operations/getunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `request`                                                                                            | [operations.ListUnifiedConnectionsRequest](../../models/operations/listunifiedconnectionsrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedConnectionIdResponse](../../models/operations/getunifiedconnectionidresponse.md)>**
+**Promise<[operations.ListUnifiedConnectionsResponse](../../models/operations/listunifiedconnectionsresponse.md)>**
 
 
-## patchUnifiedConnectionId
-
-Update connection
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.connection.patchUnifiedConnectionId({
-    connection: {
-      auth: {
-        emails: [
-          "Executive",
-        ],
-        meta: {},
-        otherAuthInfo: [
-          "Cupertino",
-        ],
-      },
-      categories: [
-        PropertyConnectionCategories.Martech,
-      ],
-      integrationType: "India",
-      permissions: [
-        PropertyConnectionPermissions.AtsApplicationWrite,
-      ],
-    },
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PatchUnifiedConnectionIdRequest](../../models/operations/patchunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
-
-
-### Response
-
-**Promise<[operations.PatchUnifiedConnectionIdResponse](../../models/operations/patchunifiedconnectionidresponse.md)>**
-
-
-## postUnifiedConnection
-
-Create connection
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.connection.postUnifiedConnection({
-    auth: {
-      emails: [
-        "RSS",
-      ],
-      meta: {},
-      otherAuthInfo: [
-        "locate",
-      ],
-    },
-    categories: [
-      PropertyConnectionCategories.Crm,
-    ],
-    integrationType: "plus pace global",
-    permissions: [
-      PropertyConnectionPermissions.TicketingAgentWrite,
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.Connection](../../models/shared/connection.md)       | :heavy_check_mark:                                           | The request object to use for the request.                   |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
-
-
-### Response
-
-**Promise<[operations.PostUnifiedConnectionResponse](../../models/operations/postunifiedconnectionresponse.md)>**
-
-
-## putUnifiedConnectionId
+## patchUnifiedConnection
 
 Update connection
 
@@ -260,21 +163,21 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     },
   });
 
-  const res = await sdk.connection.putUnifiedConnectionId({
+  const res = await sdk.connection.patchUnifiedConnection({
     connection: {
       auth: {
         emails: [
-          "Assurance",
+          "International",
         ],
         meta: {},
         otherAuthInfo: [
-          "Avon",
+          "square",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Martech,
+        PropertyConnectionCategories.Ats,
       ],
-      integrationType: "Web",
+      integrationType: "Montana",
       permissions: [
         PropertyConnectionPermissions.CrmFileRead,
       ],
@@ -292,11 +195,108 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutUnifiedConnectionIdRequest](../../models/operations/putunifiedconnectionidrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `request`                                                                                            | [operations.PatchUnifiedConnectionRequest](../../models/operations/patchunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.PutUnifiedConnectionIdResponse](../../models/operations/putunifiedconnectionidresponse.md)>**
+**Promise<[operations.PatchUnifiedConnectionResponse](../../models/operations/patchunifiedconnectionresponse.md)>**
+
+
+## removeUnifiedConnection
+
+Remove connection
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.connection.removeUnifiedConnection({
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.RemoveUnifiedConnectionRequest](../../models/operations/removeunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.RemoveUnifiedConnectionResponse](../../models/operations/removeunifiedconnectionresponse.md)>**
+
+
+## updateUnifiedConnection
+
+Update connection
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.connection.updateUnifiedConnection({
+    connection: {
+      auth: {
+        emails: [
+          "tan",
+        ],
+        meta: {},
+        otherAuthInfo: [
+          "revitalize",
+        ],
+      },
+      categories: [
+        PropertyConnectionCategories.Crm,
+      ],
+      integrationType: "from",
+      permissions: [
+        PropertyConnectionPermissions.AtsApplicationRead,
+      ],
+    },
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.UpdateUnifiedConnectionRequest](../../models/operations/updateunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.UpdateUnifiedConnectionResponse](../../models/operations/updateunifiedconnectionresponse.md)>**
 

@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [getUcConnectionIdCall](#getucconnectionidcall) - List all calls
+* [listUcCalls](#listuccalls) - List all calls
 
-## getUcConnectionIdCall
+## listUcCalls
 
 List all calls
 
@@ -21,8 +21,8 @@ import { UnifiedTo } from "unified-to";
     },
   });
 
-  const res = await sdk.call.getUcConnectionIdCall({
-    connectionId: "Directives",
+  const res = await sdk.call.listUcCalls({
+    connectionId: "optical",
   });
 
   if (res.statusCode == 200) {
@@ -33,13 +33,13 @@ import { UnifiedTo } from "unified-to";
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetUcConnectionIdCallRequest](../../models/operations/getucconnectionidcallrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListUcCallsRequest](../../models/operations/listuccallsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.GetUcConnectionIdCallResponse](../../models/operations/getucconnectionidcallresponse.md)>**
+**Promise<[operations.ListUcCallsResponse](../../models/operations/listuccallsresponse.md)>**
 

@@ -19,12 +19,12 @@ export class Call {
     /**
      * List all calls
      */
-    async getUcConnectionIdCall(
-        req: operations.GetUcConnectionIdCallRequest,
+    async listUcCalls(
+        req: operations.ListUcCallsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetUcConnectionIdCallResponse> {
+    ): Promise<operations.ListUcCallsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetUcConnectionIdCallRequest(req);
+            req = new operations.ListUcCallsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -62,12 +62,11 @@ export class Call {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetUcConnectionIdCallResponse =
-            new operations.GetUcConnectionIdCallResponse({
-                statusCode: httpRes.status,
-                contentType: contentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListUcCallsResponse = new operations.ListUcCallsResponse({
+            statusCode: httpRes.status,
+            contentType: contentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:

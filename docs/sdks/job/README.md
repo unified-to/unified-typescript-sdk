@@ -3,202 +3,14 @@
 
 ### Available Operations
 
-* [deleteAtsConnectionIdJobId](#deleteatsconnectionidjobid) - Remove a job
-* [getAtsConnectionIdJob](#getatsconnectionidjob) - List all jobs
-* [getAtsConnectionIdJobId](#getatsconnectionidjobid) - Retrieve a job
-* [patchAtsConnectionIdJobId](#patchatsconnectionidjobid) - Update a job
-* [postAtsConnectionIdJob](#postatsconnectionidjob) - Create a job
-* [putAtsConnectionIdJobId](#putatsconnectionidjobid) - Update a job
+* [createAtsJob](#createatsjob) - Create a job
+* [getAtsJob](#getatsjob) - Retrieve a job
+* [listAtsJobs](#listatsjobs) - List all jobs
+* [patchAtsJob](#patchatsjob) - Update a job
+* [removeAtsJob](#removeatsjob) - Remove a job
+* [updateAtsJob](#updateatsjob) - Update a job
 
-## deleteAtsConnectionIdJobId
-
-Remove a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.job.deleteAtsConnectionIdJobId({
-    connectionId: "Sedan Bedfordshire Hybrid",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.DeleteAtsConnectionIdJobIdRequest](../../models/operations/deleteatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.DeleteAtsConnectionIdJobIdResponse](../../models/operations/deleteatsconnectionidjobidresponse.md)>**
-
-
-## getAtsConnectionIdJob
-
-List all jobs
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.job.getAtsConnectionIdJob({
-    connectionId: "City katal",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.GetAtsConnectionIdJobRequest](../../models/operations/getatsconnectionidjobrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdJobResponse](../../models/operations/getatsconnectionidjobresponse.md)>**
-
-
-## getAtsConnectionIdJobId
-
-Retrieve a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.job.getAtsConnectionIdJobId({
-    connectionId: "Jazz",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAtsConnectionIdJobIdRequest](../../models/operations/getatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
-
-
-### Response
-
-**Promise<[operations.GetAtsConnectionIdJobIdResponse](../../models/operations/getatsconnectionidjobidresponse.md)>**
-
-
-## patchAtsConnectionIdJobId
-
-Update a job
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.job.patchAtsConnectionIdJobId({
-    atsJob: {
-      addresses: [
-        {},
-      ],
-      compensation: [
-        {
-          type: AtsCompensationType.Bonus,
-        },
-      ],
-      departments: [
-        "Transexual",
-      ],
-      hiringManagerIds: [
-        "leach",
-      ],
-      publicJobUrls: [
-        "national",
-      ],
-      raw: {},
-      recruiterIds: [
-        "Kia",
-      ],
-    },
-    connectionId: "Ferrari Facilitator",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAtsConnectionIdJobIdRequest](../../models/operations/patchatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.PatchAtsConnectionIdJobIdResponse](../../models/operations/patchatsconnectionidjobidresponse.md)>**
-
-
-## postAtsConnectionIdJob
+## createAtsJob
 
 Create a job
 
@@ -220,7 +32,7 @@ import {
     },
   });
 
-  const res = await sdk.job.postAtsConnectionIdJob({
+  const res = await sdk.job.createAtsJob({
     atsJob: {
       addresses: [
         {},
@@ -231,20 +43,20 @@ import {
         },
       ],
       departments: [
-        "Forward",
+        "Loan",
       ],
       hiringManagerIds: [
-        "Americium",
+        "driver",
       ],
       publicJobUrls: [
-        "shiny",
+        "Transmasculine",
       ],
       raw: {},
       recruiterIds: [
-        "yellow",
+        "Mini",
       ],
     },
-    connectionId: "neatly Diesel virtual",
+    connectionId: "Savings Customer Loan",
   });
 
   if (res.statusCode == 200) {
@@ -255,18 +67,97 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PostAtsConnectionIdJobRequest](../../models/operations/postatsconnectionidjobrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.CreateAtsJobRequest](../../models/operations/createatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
 
-**Promise<[operations.PostAtsConnectionIdJobResponse](../../models/operations/postatsconnectionidjobresponse.md)>**
+**Promise<[operations.CreateAtsJobResponse](../../models/operations/createatsjobresponse.md)>**
 
 
-## putAtsConnectionIdJobId
+## getAtsJob
+
+Retrieve a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.job.getAtsJob({
+    connectionId: "runway",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [operations.GetAtsJobRequest](../../models/operations/getatsjobrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| `config`                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)               | :heavy_minus_sign:                                                         | Available config options for making requests.                              |
+
+
+### Response
+
+**Promise<[operations.GetAtsJobResponse](../../models/operations/getatsjobresponse.md)>**
+
+
+## listAtsJobs
+
+List all jobs
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.job.listAtsJobs({
+    connectionId: "niches SQL",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListAtsJobsRequest](../../models/operations/listatsjobsrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
+
+
+### Response
+
+**Promise<[operations.ListAtsJobsResponse](../../models/operations/listatsjobsresponse.md)>**
+
+
+## patchAtsJob
 
 Update a job
 
@@ -288,31 +179,31 @@ import {
     },
   });
 
-  const res = await sdk.job.putAtsConnectionIdJobId({
+  const res = await sdk.job.patchAtsJob({
     atsJob: {
       addresses: [
         {},
       ],
       compensation: [
         {
-          type: AtsCompensationType.StockOptions,
+          type: AtsCompensationType.Bonus,
         },
       ],
       departments: [
-        "cotton",
+        "indigo",
       ],
       hiringManagerIds: [
-        "Washington",
+        "Bedfordshire",
       ],
       publicJobUrls: [
-        "Hybrid",
+        "North",
       ],
       raw: {},
       recruiterIds: [
-        "henry",
+        "mainland",
       ],
     },
-    connectionId: "male Intelligent",
+    connectionId: "gold Principal",
     id: "<ID>",
   });
 
@@ -324,13 +215,122 @@ import {
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.PutAtsConnectionIdJobIdRequest](../../models/operations/putatsconnectionidjobidrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.PatchAtsJobRequest](../../models/operations/patchatsjobrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| `config`                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                   | :heavy_minus_sign:                                                             | Available config options for making requests.                                  |
 
 
 ### Response
 
-**Promise<[operations.PutAtsConnectionIdJobIdResponse](../../models/operations/putatsconnectionidjobidresponse.md)>**
+**Promise<[operations.PatchAtsJobResponse](../../models/operations/patchatsjobresponse.md)>**
+
+
+## removeAtsJob
+
+Remove a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.job.removeAtsJob({
+    connectionId: "Aruba",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.RemoveAtsJobRequest](../../models/operations/removeatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsJobResponse](../../models/operations/removeatsjobresponse.md)>**
+
+
+## updateAtsJob
+
+Update a job
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import {
+  AtsCompensationFrequency,
+  AtsCompensationType,
+  AtsJobEmploymentType,
+  AtsJobStatus,
+} from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.job.updateAtsJob({
+    atsJob: {
+      addresses: [
+        {},
+      ],
+      compensation: [
+        {
+          type: AtsCompensationType.Equity,
+        },
+      ],
+      departments: [
+        "Plastic",
+      ],
+      hiringManagerIds: [
+        "West",
+      ],
+      publicJobUrls: [
+        "Direct",
+      ],
+      raw: {},
+      recruiterIds: [
+        "SMS",
+      ],
+    },
+    connectionId: "euthanise system",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.UpdateAtsJobRequest](../../models/operations/updateatsjobrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsJobResponse](../../models/operations/updateatsjobresponse.md)>**
 
