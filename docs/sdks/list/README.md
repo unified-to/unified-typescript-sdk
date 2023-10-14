@@ -31,6 +31,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Architect responsive",
+    fields: [
+      "Recycled",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -70,6 +73,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.list.getMartechList({
     connectionId: "Franklin Bicycle Victoria",
+    fields: [
+      "Fish",
+    ],
     id: "<ID>",
   });
 
@@ -110,6 +116,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.list.listMartechLists({
     connectionId: "DeKalb magenta black",
+    fields: [
+      "provided",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -152,6 +161,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Operations Liaison",
+    fields: [
+      "phooey",
+    ],
     id: "<ID>",
   });
 
@@ -235,6 +247,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Secured Kia Stroman",
+    fields: [
+      "invoice",
+    ],
     id: "<ID>",
   });
 

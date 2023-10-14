@@ -34,6 +34,9 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Music Rap",
+    fields: [
+      "wind",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -73,6 +76,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.deal.getCrmDeal({
     connectionId: "male orange",
+    fields: [
+      "Reduced",
+    ],
     id: "<ID>",
   });
 
@@ -113,6 +119,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.deal.listCrmDeals({
     connectionId: "Lamborghini",
+    fields: [
+      "female",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -158,6 +167,9 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Platinum female",
+    fields: [
+      "Berkshire",
+    ],
     id: "<ID>",
   });
 
@@ -244,6 +256,9 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Shirt",
+    fields: [
+      "whiteboard",
+    ],
     id: "<ID>",
   });
 

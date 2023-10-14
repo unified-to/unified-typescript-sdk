@@ -16,6 +16,12 @@ export class ListUcAgentsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
     contactId?: string;
 
+    /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 

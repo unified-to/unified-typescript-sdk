@@ -19,6 +19,12 @@ export class ListAtsInterviewsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
+    /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 

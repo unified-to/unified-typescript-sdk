@@ -25,6 +25,12 @@ export class ListCrmContactsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=deal_id" })
     dealId?: string;
 
+    /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 

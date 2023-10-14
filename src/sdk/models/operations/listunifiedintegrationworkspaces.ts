@@ -19,6 +19,9 @@ export enum ListUnifiedIntegrationWorkspacesCategories {
 }
 
 export class ListUnifiedIntegrationWorkspacesRequest extends SpeakeasyBase {
+    /**
+     * Filter the results for only the workspace's active integrations
+     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=active" })
     active?: boolean;
 
@@ -31,8 +34,17 @@ export class ListUnifiedIntegrationWorkspacesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
     env?: string;
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
+    limit?: number;
+
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
+    offset?: number;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=summary" })
     summary?: boolean;
+
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
+    updatedGte?: string;
 
     /**
      * The ID of the workspace

@@ -50,6 +50,9 @@ import {
       ],
     },
     connectionId: "ack Recycled",
+    fields: [
+      "Southwest",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -89,6 +92,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.employee.getHrisEmployee({
     connectionId: "Automated",
+    fields: [
+      "West",
+    ],
     id: "<ID>",
   });
 
@@ -129,6 +135,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.employee.listHrisEmployees({
     connectionId: "Table moratorium",
+    fields: [
+      "payment",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -190,6 +199,9 @@ import {
       ],
     },
     connectionId: "barring transmitting Hybrid",
+    fields: [
+      "Mesa",
+    ],
     id: "<ID>",
   });
 
@@ -292,6 +304,9 @@ import {
       ],
     },
     connectionId: "Jewelery slap",
+    fields: [
+      "secrete",
+    ],
     id: "<ID>",
   });
 

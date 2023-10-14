@@ -45,6 +45,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Osmium blissfully",
+    fields: [
+      "24/7",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -84,6 +87,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.customer.getTicketingCustomer({
     connectionId: "benchmark",
+    fields: [
+      "Cambridgeshire",
+    ],
     id: "<ID>",
   });
 
@@ -124,6 +130,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.customer.listTicketingCustomers({
     connectionId: "Carrollton yellow",
+    fields: [
+      "until",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -180,6 +189,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Fermium Northeast Metal",
+    fields: [
+      "Rustic",
+    ],
     id: "<ID>",
   });
 
@@ -277,6 +289,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Avon Southwest",
+    fields: [
+      "Soft",
+    ],
     id: "<ID>",
   });
 

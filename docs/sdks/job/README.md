@@ -57,6 +57,9 @@ import {
       ],
     },
     connectionId: "Savings Customer Loan",
+    fields: [
+      "SMS",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -96,6 +99,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.job.getAtsJob({
     connectionId: "runway",
+    fields: [
+      "Bronze",
+    ],
     id: "<ID>",
   });
 
@@ -136,6 +142,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.job.listAtsJobs({
     connectionId: "niches SQL",
+    fields: [
+      "1080p",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -204,6 +213,9 @@ import {
       ],
     },
     connectionId: "gold Principal",
+    fields: [
+      "BMW",
+    ],
     id: "<ID>",
   });
 
@@ -313,6 +325,9 @@ import {
       ],
     },
     connectionId: "euthanise system",
+    fields: [
+      "payment",
+    ],
     id: "<ID>",
   });
 

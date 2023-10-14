@@ -31,6 +31,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "ASCII Wooden the",
+    fields: [
+      "Tungsten",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -70,6 +73,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.file.getCrmFile({
     connectionId: "ease",
+    fields: [
+      "bypassing",
+    ],
     id: "<ID>",
   });
 
@@ -110,6 +116,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.file.listCrmFiles({
     connectionId: "lavender Genderflux Southeast",
+    fields: [
+      "invoice",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -152,6 +161,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "bluetooth",
+    fields: [
+      "Bronze",
+    ],
     id: "<ID>",
   });
 
@@ -235,6 +247,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Orchestrator",
+    fields: [
+      "male",
+    ],
     id: "<ID>",
   });
 

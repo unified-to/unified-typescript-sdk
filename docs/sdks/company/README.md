@@ -51,6 +51,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "magenta Data woot",
+    fields: [
+      "payment",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -90,6 +93,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.company.getCrmCompany({
     connectionId: "THX Strategist deposit",
+    fields: [
+      "snag",
+    ],
     id: "<ID>",
   });
 
@@ -130,6 +136,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.company.listCrmCompanies({
     connectionId: "Jazz solid Lamborghini",
+    fields: [
+      "Sleek",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -230,6 +239,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Trans",
+    fields: [
+      "Money",
+    ],
     id: "<ID>",
   });
 
@@ -332,6 +344,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Southeast ad",
+    fields: [
+      "Practical",
+    ],
     id: "<ID>",
   });
 

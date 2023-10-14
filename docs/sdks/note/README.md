@@ -31,7 +31,10 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Books kilogram hmph",
-    ticketId: "Dakota function interface",
+    fields: [
+      "yowza",
+    ],
+    ticketId: "Markets executive Hoeger",
   });
 
   if (res.statusCode == 200) {
@@ -71,8 +74,11 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.note.getTicketingNote({
     connectionId: "joule program",
+    fields: [
+      "SUV",
+    ],
     id: "<ID>",
-    ticketId: "Fitness Applications Switchable",
+    ticketId: "payment Architect",
   });
 
   if (res.statusCode == 200) {
@@ -112,7 +118,10 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.note.listTicketingNotes({
     connectionId: "Hybrid North",
-    ticketId: "Kroon Marvin Ford",
+    fields: [
+      "hosepipe",
+    ],
+    ticketId: "Marvin",
   });
 
   if (res.statusCode == 200) {
@@ -155,8 +164,11 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Bicycle Southwest Darmstadtium",
+    fields: [
+      "Plastic",
+    ],
     id: "<ID>",
-    ticketId: "index",
+    ticketId: "Investor bypass EXE",
   });
 
   if (res.statusCode == 200) {
@@ -240,8 +252,11 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "via among Quality",
+    fields: [
+      "bluetooth",
+    ],
     id: "<ID>",
-    ticketId: "Brand when",
+    ticketId: "when",
   });
 
   if (res.statusCode == 200) {

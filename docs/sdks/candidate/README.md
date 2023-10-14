@@ -46,6 +46,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "bypass Creative Legacy",
+    fields: [
+      "Bronze",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -85,6 +88,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.candidate.getAtsCandidate({
     connectionId: "Markets",
+    fields: [
+      "payment",
+    ],
     id: "<ID>",
   });
 
@@ -125,6 +131,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.candidate.listAtsCandidates({
     connectionId: "mole clearly",
+    fields: [
+      "Van",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -182,6 +191,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "World Van transitional",
+    fields: [
+      "green",
+    ],
     id: "<ID>",
   });
 
@@ -280,6 +292,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Zackery male Gloves",
+    fields: [
+      "threadbare",
+    ],
     id: "<ID>",
   });
 

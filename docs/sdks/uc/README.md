@@ -44,6 +44,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "meanwhile",
+    fields: [
+      "whose",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -83,6 +86,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.uc.getUcContact({
     connectionId: "JBOD ivory fool",
+    fields: [
+      "Mouse",
+    ],
     id: "<ID>",
   });
 
@@ -123,6 +129,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.uc.listUcAgents({
     connectionId: "Representative",
+    fields: [
+      "olive",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -162,6 +171,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.uc.listUcCalls({
     connectionId: "optical",
+    fields: [
+      "South",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -201,6 +213,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.uc.listUcContacts({
     connectionId: "Bicycle male",
+    fields: [
+      "East",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -254,6 +269,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "South Pants candela",
+    fields: [
+      "Investor",
+    ],
     id: "<ID>",
   });
 
@@ -348,6 +366,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "Cruiser",
+    fields: [
+      "Awesome",
+    ],
     id: "<ID>",
   });
 

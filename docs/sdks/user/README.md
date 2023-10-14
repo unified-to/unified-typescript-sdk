@@ -41,6 +41,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Incredible Virginia",
+    fields: [
+      "Keyboard",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -80,6 +83,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.user.getCrmUser({
     connectionId: "Bespoke Dollar",
+    fields: [
+      "unto",
+    ],
     id: "<ID>",
   });
 
@@ -120,6 +126,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.user.listCrmUsers({
     connectionId: "careless Costa",
+    fields: [
+      "olive",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -172,6 +181,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "katal Industrial Classical",
+    fields: [
+      "boo",
+    ],
     id: "<ID>",
   });
 
@@ -265,6 +277,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Savings",
+    fields: [
+      "Corwin",
+    ],
     id: "<ID>",
   });
 

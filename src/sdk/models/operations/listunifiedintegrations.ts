@@ -31,6 +31,9 @@ export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
     categories?: ListUnifiedIntegrationsCategories[];
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
+    env?: string;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 
@@ -46,11 +49,8 @@ export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=summary" })
     summary?: boolean;
 
-    /**
-     * Return only results whose updated date is equal or greater to this value
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
-    updatedGte?: Date;
+    updatedGte?: string;
 }
 
 export class ListUnifiedIntegrationsResponse extends SpeakeasyBase {

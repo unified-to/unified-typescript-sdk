@@ -26,6 +26,12 @@ export class ListAtsScorecardsRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
+    /**
      * The interview ID to filter results
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=interview_id" })

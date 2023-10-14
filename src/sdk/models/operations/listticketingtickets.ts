@@ -25,6 +25,12 @@ export class ListTicketingTicketsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=customer_id" })
     customerId?: string;
 
+    /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 

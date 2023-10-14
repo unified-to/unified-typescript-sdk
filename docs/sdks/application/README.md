@@ -32,6 +32,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "incidentally Mandatory meanwhile",
+    fields: [
+      "Human",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -71,6 +74,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.application.getAtsApplication({
     connectionId: "anenst Balboa",
+    fields: [
+      "navigate",
+    ],
     id: "<ID>",
   });
 
@@ -111,6 +117,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.application.listAtsApplications({
     connectionId: "Summit",
+    fields: [
+      "violet",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -154,6 +163,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "South grey",
+    fields: [
+      "Technician",
+    ],
     id: "<ID>",
   });
 
@@ -238,6 +250,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Rosie",
+    fields: [
+      "triangular",
+    ],
     id: "<ID>",
   });
 

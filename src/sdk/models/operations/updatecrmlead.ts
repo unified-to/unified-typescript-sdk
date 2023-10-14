@@ -17,6 +17,12 @@ export class UpdateCrmLeadRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
+    /**
      * ID of the Lead
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })

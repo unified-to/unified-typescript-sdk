@@ -60,6 +60,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "smoothly Algeria",
+    fields: [
+      "payment",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -116,6 +119,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Osmium blissfully",
+    fields: [
+      "24/7",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -158,7 +164,10 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Books kilogram hmph",
-    ticketId: "Dakota function interface",
+    fields: [
+      "yowza",
+    ],
+    ticketId: "Markets executive Hoeger",
   });
 
   if (res.statusCode == 200) {
@@ -205,6 +214,9 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "indigo",
+    fields: [
+      "silver",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -244,6 +256,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.getTicketingAgent({
     connectionId: "Lamborghini",
+    fields: [
+      "SAS",
+    ],
     id: "<ID>",
   });
 
@@ -284,6 +299,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.getTicketingCustomer({
     connectionId: "benchmark",
+    fields: [
+      "Cambridgeshire",
+    ],
     id: "<ID>",
   });
 
@@ -324,8 +342,11 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.getTicketingNote({
     connectionId: "joule program",
+    fields: [
+      "SUV",
+    ],
     id: "<ID>",
-    ticketId: "Fitness Applications Switchable",
+    ticketId: "payment Architect",
   });
 
   if (res.statusCode == 200) {
@@ -365,6 +386,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.getTicketingTicket({
     connectionId: "Zimbabwe Dollar",
+    fields: [
+      "Alaska",
+    ],
     id: "<ID>",
   });
 
@@ -405,6 +429,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.listTicketingAgents({
     connectionId: "Mazda",
+    fields: [
+      "Home",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -444,6 +471,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.listTicketingCustomers({
     connectionId: "Carrollton yellow",
+    fields: [
+      "until",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -483,7 +513,10 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.listTicketingNotes({
     connectionId: "Hybrid North",
-    ticketId: "Kroon Marvin Ford",
+    fields: [
+      "hosepipe",
+    ],
+    ticketId: "Marvin",
   });
 
   if (res.statusCode == 200) {
@@ -523,6 +556,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.ticketing.listTicketingTickets({
     connectionId: "Tools Southwest",
+    fields: [
+      "invoice",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -576,6 +612,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "by",
+    fields: [
+      "Bedfordshire",
+    ],
     id: "<ID>",
   });
 
@@ -633,6 +672,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Fermium Northeast Metal",
+    fields: [
+      "Rustic",
+    ],
     id: "<ID>",
   });
 
@@ -676,8 +718,11 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Bicycle Southwest Darmstadtium",
+    fields: [
+      "Plastic",
+    ],
     id: "<ID>",
-    ticketId: "index",
+    ticketId: "Investor bypass EXE",
   });
 
   if (res.statusCode == 200) {
@@ -724,6 +769,9 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Pizza Concrete",
+    fields: [
+      "redefine",
+    ],
     id: "<ID>",
   });
 
@@ -939,6 +987,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "beside Usability Bedfordshire",
+    fields: [
+      "SSD",
+    ],
     id: "<ID>",
   });
 
@@ -996,6 +1047,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Avon Southwest",
+    fields: [
+      "Soft",
+    ],
     id: "<ID>",
   });
 
@@ -1039,8 +1093,11 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "via among Quality",
+    fields: [
+      "bluetooth",
+    ],
     id: "<ID>",
-    ticketId: "Brand when",
+    ticketId: "when",
   });
 
   if (res.statusCode == 200) {
@@ -1087,6 +1144,9 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Agender caring optimal",
+    fields: [
+      "tan",
+    ],
     id: "<ID>",
   });
 

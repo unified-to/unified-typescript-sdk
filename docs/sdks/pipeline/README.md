@@ -31,6 +31,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Paradigm Vista fuchsia",
+    fields: [
+      "Hatchback",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -70,6 +73,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.pipeline.getCrmPipeline({
     connectionId: "withdrawal Southeast",
+    fields: [
+      "evolve",
+    ],
     id: "<ID>",
   });
 
@@ -110,6 +116,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.pipeline.listCrmPipelines({
     connectionId: "primary",
+    fields: [
+      "female",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -152,6 +161,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "imperfect Costa Southwest",
+    fields: [
+      "excluding",
+    ],
     id: "<ID>",
   });
 
@@ -235,6 +247,9 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "needily",
+    fields: [
+      "Androgyne",
+    ],
     id: "<ID>",
   });
 

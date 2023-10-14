@@ -20,6 +20,12 @@ export class ListAtsApplicationsRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
+     * Comma-delimited fields to return
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
+
+    /**
      * The job ID to filter results
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })

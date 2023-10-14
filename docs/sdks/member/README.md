@@ -43,7 +43,10 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "South Electronic calculate",
-    listId: "ew scalable Hassium",
+    fields: [
+      "translate",
+    ],
+    listId: "scalable",
   });
 
   if (res.statusCode == 200) {
@@ -83,8 +86,11 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.member.getMartechMember({
     connectionId: "Yuan",
+    fields: [
+      "Gibraltar",
+    ],
     id: "<ID>",
-    listId: "vertical Northeast",
+    listId: "Iceland",
   });
 
   if (res.statusCode == 200) {
@@ -124,7 +130,10 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.member.listMartechMembers({
     connectionId: "Money",
-    listId: "structure",
+    fields: [
+      "Practical",
+    ],
+    listId: "Thallium Bike outrageous",
   });
 
   if (res.statusCode == 200) {
@@ -179,8 +188,11 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Unbranded overriding Money",
+    fields: [
+      "Brand",
+    ],
     id: "<ID>",
-    listId: "as variant West",
+    listId: "West integrated",
   });
 
   if (res.statusCode == 200) {
@@ -276,8 +288,11 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Checking deploy Hermaphrodite",
+    fields: [
+      "navigate",
+    ],
     id: "<ID>",
-    listId: "Bespoke below",
+    listId: "methodologies state Computer",
   });
 
   if (res.statusCode == 200) {

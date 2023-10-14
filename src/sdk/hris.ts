@@ -56,13 +56,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -152,13 +153,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -230,13 +232,14 @@ export class Hris {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -310,13 +313,14 @@ export class Hris {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -569,13 +573,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -664,13 +669,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -911,13 +917,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -1007,13 +1014,14 @@ export class Hris {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

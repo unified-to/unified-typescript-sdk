@@ -56,6 +56,9 @@ import {
       ],
     },
     connectionId: "ack Recycled",
+    fields: [
+      "Southwest",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -105,6 +108,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Technetium",
+    fields: [
+      "Tactics",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -144,6 +150,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.hris.getHrisEmployee({
     connectionId: "Automated",
+    fields: [
+      "West",
+    ],
     id: "<ID>",
   });
 
@@ -184,6 +193,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.hris.getHrisGroup({
     connectionId: "Cedi state Cadillac",
+    fields: [
+      "optical",
+    ],
     id: "<ID>",
   });
 
@@ -224,6 +236,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.hris.listHrisEmployees({
     connectionId: "Table moratorium",
+    fields: [
+      "payment",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -263,6 +278,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.hris.listHrisGroups({
     connectionId: "Bronze Rubber",
+    fields: [
+      "feel",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -324,6 +342,9 @@ import {
       ],
     },
     connectionId: "barring transmitting Hybrid",
+    fields: [
+      "Mesa",
+    ],
     id: "<ID>",
   });
 
@@ -374,6 +395,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bluetooth West",
+    fields: [
+      "Intersex",
+    ],
     id: "<ID>",
   });
 
@@ -516,6 +540,9 @@ import {
       ],
     },
     connectionId: "Jewelery slap",
+    fields: [
+      "secrete",
+    ],
     id: "<ID>",
   });
 
@@ -566,6 +593,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bashfully",
+    fields: [
+      "Avon",
+    ],
     id: "<ID>",
   });
 

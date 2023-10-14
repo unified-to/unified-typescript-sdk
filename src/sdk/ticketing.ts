@@ -56,13 +56,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -156,13 +157,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -229,7 +231,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}",
+            "/ticketing/{connection_id}/{ticket_id}/note",
             req
         );
 
@@ -256,13 +258,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -352,13 +355,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -438,13 +442,14 @@ export class Ticketing {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -522,13 +527,14 @@ export class Ticketing {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -594,7 +600,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}/{id}",
+            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -607,13 +613,14 @@ export class Ticketing {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -691,13 +698,14 @@ export class Ticketing {
         }
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -933,7 +941,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}",
+            "/ticketing/{connection_id}/{ticket_id}/note",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -1134,13 +1142,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1238,13 +1247,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1311,7 +1321,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}/{id}",
+            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
             req
         );
 
@@ -1338,13 +1348,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1438,13 +1449,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1675,7 +1687,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}/{id}",
+            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -1866,13 +1878,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -1970,13 +1983,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -2043,7 +2057,7 @@ export class Ticketing {
         );
         const url: string = utils.generateURL(
             baseURL,
-            "/ticketing/{connection_id}/note/{ticket_id}/{id}",
+            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
             req
         );
 
@@ -2070,13 +2084,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -2170,13 +2185,14 @@ export class Ticketing {
             ...config?.headers,
             ...properties.headers,
         };
+        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: url + queryParams,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

@@ -53,6 +53,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Cambridgeshire Passenger Producer",
+    fields: [
+      "Krypton",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -106,6 +109,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "meanwhile",
+    fields: [
+      "whose",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -145,6 +151,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.contact.getCrmContact({
     connectionId: "Oregon",
+    fields: [
+      "methodology",
+    ],
     id: "<ID>",
   });
 
@@ -185,6 +194,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.contact.getUcContact({
     connectionId: "JBOD ivory fool",
+    fields: [
+      "Mouse",
+    ],
     id: "<ID>",
   });
 
@@ -225,6 +237,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.contact.listCrmContacts({
     connectionId: "Awesome index steradian",
+    fields: [
+      "District",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -264,6 +279,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.contact.listUcContacts({
     connectionId: "Bicycle male",
+    fields: [
+      "East",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -322,6 +340,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Future Diesel",
+    fields: [
+      "syndicate",
+    ],
     id: "<ID>",
   });
 
@@ -376,6 +397,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "South Pants candela",
+    fields: [
+      "Investor",
+    ],
     id: "<ID>",
   });
 
@@ -515,6 +539,9 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "man panel",
+    fields: [
+      "Mauritania",
+    ],
     id: "<ID>",
   });
 
@@ -569,6 +596,9 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "Cruiser",
+    fields: [
+      "Awesome",
+    ],
     id: "<ID>",
   });
 

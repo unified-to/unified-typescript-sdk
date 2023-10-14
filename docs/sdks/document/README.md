@@ -32,6 +32,9 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Northwest Account",
+    fields: [
+      "Yuan",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -71,6 +74,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.document.getAtsScorecard({
     connectionId: "Executive",
+    fields: [
+      "Berkelium",
+    ],
     id: "<ID>",
   });
 
@@ -111,6 +117,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.document.listAtsScorecards({
     connectionId: "Hybrid Bugatti",
+    fields: [
+      "frantically",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -154,6 +163,9 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "eek",
+    fields: [
+      "engage",
+    ],
     id: "<ID>",
   });
 
@@ -238,6 +250,9 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "grey",
+    fields: [
+      "Baby",
+    ],
     id: "<ID>",
   });
 

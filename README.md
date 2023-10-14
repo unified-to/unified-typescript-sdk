@@ -50,6 +50,7 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
             ],
         },
         connectionId: "smoothly Algeria",
+        fields: ["payment"],
     });
 
     if (res.statusCode == 200) {

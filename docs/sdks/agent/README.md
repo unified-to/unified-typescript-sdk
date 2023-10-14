@@ -43,6 +43,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "smoothly Algeria",
+    fields: [
+      "payment",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -82,6 +85,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.agent.getTicketingAgent({
     connectionId: "Lamborghini",
+    fields: [
+      "SAS",
+    ],
     id: "<ID>",
   });
 
@@ -122,6 +128,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.agent.listTicketingAgents({
     connectionId: "Mazda",
+    fields: [
+      "Home",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -161,6 +170,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.agent.listUcAgents({
     connectionId: "Representative",
+    fields: [
+      "olive",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -214,6 +226,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "by",
+    fields: [
+      "Bedfordshire",
+    ],
     id: "<ID>",
   });
 
@@ -308,6 +323,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "beside Usability Bedfordshire",
+    fields: [
+      "SSD",
+    ],
     id: "<ID>",
   });
 

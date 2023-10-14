@@ -38,6 +38,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Technetium",
+    fields: [
+      "Tactics",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -77,6 +80,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.group.getHrisGroup({
     connectionId: "Cedi state Cadillac",
+    fields: [
+      "optical",
+    ],
     id: "<ID>",
   });
 
@@ -117,6 +123,9 @@ import { UnifiedTo } from "unified-to";
 
   const res = await sdk.group.listHrisGroups({
     connectionId: "Bronze Rubber",
+    fields: [
+      "feel",
+    ],
   });
 
   if (res.statusCode == 200) {
@@ -166,6 +175,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bluetooth West",
+    fields: [
+      "Intersex",
+    ],
     id: "<ID>",
   });
 
@@ -256,6 +268,9 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bashfully",
+    fields: [
+      "Avon",
+    ],
     id: "<ID>",
   });
 
