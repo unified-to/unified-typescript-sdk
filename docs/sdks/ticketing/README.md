@@ -60,9 +60,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "smoothly Algeria",
-    fields: [
-      "payment",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -119,9 +116,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Osmium blissfully",
-    fields: [
-      "24/7",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -164,10 +158,7 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Books kilogram hmph",
-    fields: [
-      "yowza",
-    ],
-    ticketId: "Markets executive Hoeger",
+    ticketId: "Dakota function interface",
   });
 
   if (res.statusCode == 200) {
@@ -214,9 +205,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "indigo",
-    fields: [
-      "silver",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -612,9 +600,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "by",
-    fields: [
-      "Bedfordshire",
-    ],
     id: "<ID>",
   });
 
@@ -672,9 +657,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Fermium Northeast Metal",
-    fields: [
-      "Rustic",
-    ],
     id: "<ID>",
   });
 
@@ -718,11 +700,8 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Bicycle Southwest Darmstadtium",
-    fields: [
-      "Plastic",
-    ],
     id: "<ID>",
-    ticketId: "Investor bypass EXE",
+    ticketId: "index",
   });
 
   if (res.statusCode == 200) {
@@ -769,9 +748,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Pizza Concrete",
-    fields: [
-      "redefine",
-    ],
     id: "<ID>",
   });
 
@@ -987,9 +963,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "beside Usability Bedfordshire",
-    fields: [
-      "SSD",
-    ],
     id: "<ID>",
   });
 
@@ -1047,9 +1020,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Avon Southwest",
-    fields: [
-      "Soft",
-    ],
     id: "<ID>",
   });
 
@@ -1093,11 +1063,8 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "via among Quality",
-    fields: [
-      "bluetooth",
-    ],
     id: "<ID>",
-    ticketId: "when",
+    ticketId: "Brand when",
   });
 
   if (res.statusCode == 200) {
@@ -1144,9 +1111,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Agender caring optimal",
-    fields: [
-      "tan",
-    ],
     id: "<ID>",
   });
 

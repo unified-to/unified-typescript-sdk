@@ -35,9 +35,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "indigo",
-    fields: [
-      "silver",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -169,9 +166,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Pizza Concrete",
-    fields: [
-      "redefine",
-    ],
     id: "<ID>",
   });
 
@@ -259,9 +253,6 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Agender caring optimal",
-    fields: [
-      "tan",
-    ],
     id: "<ID>",
   });
 

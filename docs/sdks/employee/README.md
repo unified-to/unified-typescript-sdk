@@ -50,9 +50,6 @@ import {
       ],
     },
     connectionId: "ack Recycled",
-    fields: [
-      "Southwest",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -199,9 +196,6 @@ import {
       ],
     },
     connectionId: "barring transmitting Hybrid",
-    fields: [
-      "Mesa",
-    ],
     id: "<ID>",
   });
 
@@ -304,9 +298,6 @@ import {
       ],
     },
     connectionId: "Jewelery slap",
-    fields: [
-      "secrete",
-    ],
     id: "<ID>",
   });
 

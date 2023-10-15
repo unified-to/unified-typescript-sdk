@@ -34,9 +34,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Music Rap",
-    fields: [
-      "wind",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -167,9 +164,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Platinum female",
-    fields: [
-      "Berkshire",
-    ],
     id: "<ID>",
   });
 
@@ -256,9 +250,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Shirt",
-    fields: [
-      "whiteboard",
-    ],
     id: "<ID>",
   });
 

@@ -43,9 +43,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "smoothly Algeria",
-    fields: [
-      "payment",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -226,9 +223,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "by",
-    fields: [
-      "Bedfordshire",
-    ],
     id: "<ID>",
   });
 
@@ -323,9 +317,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "beside Usability Bedfordshire",
-    fields: [
-      "SSD",
-    ],
     id: "<ID>",
   });
 

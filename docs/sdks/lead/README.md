@@ -41,9 +41,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "ability Einsteinium Orchestrator",
-    fields: [
-      "orchid",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -181,9 +178,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Ball Chips",
-    fields: [
-      "Southwest",
-    ],
     id: "<ID>",
   });
 
@@ -277,9 +271,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Pickup Polestar Checking",
-    fields: [
-      "Concrete",
-    ],
     id: "<ID>",
   });
 

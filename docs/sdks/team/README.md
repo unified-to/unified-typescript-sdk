@@ -34,9 +34,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "as New Senior",
-    fields: [
-      "Buckinghamshire",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -167,9 +164,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Transexual compress redefine",
-    fields: [
-      "gold",
-    ],
     id: "<ID>",
   });
 
@@ -256,9 +250,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Dakota",
-    fields: [
-      "female",
-    ],
     id: "<ID>",
   });
 

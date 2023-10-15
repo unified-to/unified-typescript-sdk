@@ -98,9 +98,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "magenta Data woot",
-    fields: [
-      "payment",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -159,9 +156,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Cambridgeshire Passenger Producer",
-    fields: [
-      "Krypton",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -207,9 +201,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Music Rap",
-    fields: [
-      "wind",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -274,9 +265,6 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       task: {},
     },
     connectionId: "Savings",
-    fields: [
-      "within",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -319,9 +307,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "ASCII Wooden the",
-    fields: [
-      "Tungsten",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -374,9 +359,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "ability Einsteinium Orchestrator",
-    fields: [
-      "orchid",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -419,9 +401,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Paradigm Vista fuchsia",
-    fields: [
-      "Hatchback",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -467,9 +446,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "as New Senior",
-    fields: [
-      "Buckinghamshire",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -522,9 +498,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Incredible Virginia",
-    fields: [
-      "Keyboard",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -1351,9 +1324,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Trans",
-    fields: [
-      "Money",
-    ],
     id: "<ID>",
   });
 
@@ -1413,9 +1383,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Future Diesel",
-    fields: [
-      "syndicate",
-    ],
     id: "<ID>",
   });
 
@@ -1462,9 +1429,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Platinum female",
-    fields: [
-      "Berkshire",
-    ],
     id: "<ID>",
   });
 
@@ -1530,9 +1494,6 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       task: {},
     },
     connectionId: "female",
-    fields: [
-      "Connecticut",
-    ],
     id: "<ID>",
   });
 
@@ -1576,9 +1537,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "bluetooth",
-    fields: [
-      "Bronze",
-    ],
     id: "<ID>",
   });
 
@@ -1632,9 +1590,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Ball Chips",
-    fields: [
-      "Southwest",
-    ],
     id: "<ID>",
   });
 
@@ -1678,9 +1633,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "imperfect Costa Southwest",
-    fields: [
-      "excluding",
-    ],
     id: "<ID>",
   });
 
@@ -1727,9 +1679,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Transexual compress redefine",
-    fields: [
-      "gold",
-    ],
     id: "<ID>",
   });
 
@@ -1783,9 +1732,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "katal Industrial Classical",
-    fields: [
-      "boo",
-    ],
     id: "<ID>",
   });
 
@@ -2208,9 +2154,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Southeast ad",
-    fields: [
-      "Practical",
-    ],
     id: "<ID>",
   });
 
@@ -2270,9 +2213,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "man panel",
-    fields: [
-      "Mauritania",
-    ],
     id: "<ID>",
   });
 
@@ -2319,9 +2259,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Shirt",
-    fields: [
-      "whiteboard",
-    ],
     id: "<ID>",
   });
 
@@ -2387,9 +2324,6 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       task: {},
     },
     connectionId: "Accountability",
-    fields: [
-      "Manager",
-    ],
     id: "<ID>",
   });
 
@@ -2433,9 +2367,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Orchestrator",
-    fields: [
-      "male",
-    ],
     id: "<ID>",
   });
 
@@ -2489,9 +2420,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Pickup Polestar Checking",
-    fields: [
-      "Concrete",
-    ],
     id: "<ID>",
   });
 
@@ -2535,9 +2463,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "needily",
-    fields: [
-      "Androgyne",
-    ],
     id: "<ID>",
   });
 
@@ -2584,9 +2509,6 @@ import { UnifiedTo } from "unified-to";
       ],
     },
     connectionId: "Dakota",
-    fields: [
-      "female",
-    ],
     id: "<ID>",
   });
 
@@ -2640,9 +2562,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Savings",
-    fields: [
-      "Corwin",
-    ],
     id: "<ID>",
   });
 

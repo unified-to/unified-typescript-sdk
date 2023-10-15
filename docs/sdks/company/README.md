@@ -51,9 +51,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "magenta Data woot",
-    fields: [
-      "payment",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -239,9 +236,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Trans",
-    fields: [
-      "Money",
-    ],
     id: "<ID>",
   });
 
@@ -344,9 +338,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Southeast ad",
-    fields: [
-      "Practical",
-    ],
     id: "<ID>",
   });
 

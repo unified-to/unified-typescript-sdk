@@ -31,10 +31,7 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Books kilogram hmph",
-    fields: [
-      "yowza",
-    ],
-    ticketId: "Markets executive Hoeger",
+    ticketId: "Dakota function interface",
   });
 
   if (res.statusCode == 200) {
@@ -164,11 +161,8 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Bicycle Southwest Darmstadtium",
-    fields: [
-      "Plastic",
-    ],
     id: "<ID>",
-    ticketId: "Investor bypass EXE",
+    ticketId: "index",
   });
 
   if (res.statusCode == 200) {
@@ -252,11 +246,8 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "via among Quality",
-    fields: [
-      "bluetooth",
-    ],
     id: "<ID>",
-    ticketId: "when",
+    ticketId: "Brand when",
   });
 
   if (res.statusCode == 200) {

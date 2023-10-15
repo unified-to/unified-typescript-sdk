@@ -56,9 +56,6 @@ import {
       ],
     },
     connectionId: "ack Recycled",
-    fields: [
-      "Southwest",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -108,9 +105,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Technetium",
-    fields: [
-      "Tactics",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -342,9 +336,6 @@ import {
       ],
     },
     connectionId: "barring transmitting Hybrid",
-    fields: [
-      "Mesa",
-    ],
     id: "<ID>",
   });
 
@@ -395,9 +386,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bluetooth West",
-    fields: [
-      "Intersex",
-    ],
     id: "<ID>",
   });
 
@@ -540,9 +528,6 @@ import {
       ],
     },
     connectionId: "Jewelery slap",
-    fields: [
-      "secrete",
-    ],
     id: "<ID>",
   });
 
@@ -593,9 +578,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bashfully",
-    fields: [
-      "Avon",
-    ],
     id: "<ID>",
   });
 

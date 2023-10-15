@@ -35,9 +35,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Frozen",
-    fields: [
-      "deposit",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -169,9 +166,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Francium",
-    fields: [
-      "Cambridgeshire",
-    ],
     id: "<ID>",
   });
 
@@ -259,9 +253,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Account omnis Gorgeous",
-    fields: [
-      "magenta",
-    ],
     id: "<ID>",
   });
 

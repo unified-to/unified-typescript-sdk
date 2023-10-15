@@ -45,9 +45,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Osmium blissfully",
-    fields: [
-      "24/7",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -189,9 +186,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Fermium Northeast Metal",
-    fields: [
-      "Rustic",
-    ],
     id: "<ID>",
   });
 
@@ -289,9 +283,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
     },
     connectionId: "Avon Southwest",
-    fields: [
-      "Soft",
-    ],
     id: "<ID>",
   });
 

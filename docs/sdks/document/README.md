@@ -32,9 +32,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Northwest Account",
-    fields: [
-      "Yuan",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -163,9 +160,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "eek",
-    fields: [
-      "engage",
-    ],
     id: "<ID>",
   });
 
@@ -250,9 +244,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "grey",
-    fields: [
-      "Baby",
-    ],
     id: "<ID>",
   });
 

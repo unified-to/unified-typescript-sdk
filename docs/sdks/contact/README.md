@@ -53,9 +53,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Cambridgeshire Passenger Producer",
-    fields: [
-      "Krypton",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -109,9 +106,6 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "meanwhile",
-    fields: [
-      "whose",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -340,9 +334,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Future Diesel",
-    fields: [
-      "syndicate",
-    ],
     id: "<ID>",
   });
 
@@ -397,9 +388,6 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "South Pants candela",
-    fields: [
-      "Investor",
-    ],
     id: "<ID>",
   });
 
@@ -539,9 +527,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "man panel",
-    fields: [
-      "Mauritania",
-    ],
     id: "<ID>",
   });
 
@@ -596,9 +581,6 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       ],
     },
     connectionId: "Cruiser",
-    fields: [
-      "Awesome",
-    ],
     id: "<ID>",
   });
 

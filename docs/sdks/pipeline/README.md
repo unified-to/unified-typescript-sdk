@@ -31,9 +31,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Paradigm Vista fuchsia",
-    fields: [
-      "Hatchback",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -161,9 +158,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "imperfect Costa Southwest",
-    fields: [
-      "excluding",
-    ],
     id: "<ID>",
   });
 
@@ -247,9 +241,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "needily",
-    fields: [
-      "Androgyne",
-    ],
     id: "<ID>",
   });
 

@@ -31,9 +31,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Architect responsive",
-    fields: [
-      "Recycled",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -161,9 +158,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Operations Liaison",
-    fields: [
-      "phooey",
-    ],
     id: "<ID>",
   });
 
@@ -247,9 +241,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Secured Kia Stroman",
-    fields: [
-      "invoice",
-    ],
     id: "<ID>",
   });
 

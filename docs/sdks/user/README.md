@@ -41,9 +41,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Incredible Virginia",
-    fields: [
-      "Keyboard",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -181,9 +178,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "katal Industrial Classical",
-    fields: [
-      "boo",
-    ],
     id: "<ID>",
   });
 
@@ -277,9 +271,6 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Savings",
-    fields: [
-      "Corwin",
-    ],
     id: "<ID>",
   });
 

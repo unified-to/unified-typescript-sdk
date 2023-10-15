@@ -31,9 +31,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "ASCII Wooden the",
-    fields: [
-      "Tungsten",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -161,9 +158,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "bluetooth",
-    fields: [
-      "Bronze",
-    ],
     id: "<ID>",
   });
 
@@ -247,9 +241,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "Orchestrator",
-    fields: [
-      "male",
-    ],
     id: "<ID>",
   });
 

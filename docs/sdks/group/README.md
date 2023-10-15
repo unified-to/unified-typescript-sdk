@@ -38,9 +38,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Technetium",
-    fields: [
-      "Tactics",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -175,9 +172,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bluetooth West",
-    fields: [
-      "Intersex",
-    ],
     id: "<ID>",
   });
 
@@ -268,9 +262,6 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "bashfully",
-    fields: [
-      "Avon",
-    ],
     id: "<ID>",
   });
 

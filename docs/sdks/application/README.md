@@ -32,9 +32,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "incidentally Mandatory meanwhile",
-    fields: [
-      "Human",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -163,9 +160,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "South grey",
-    fields: [
-      "Technician",
-    ],
     id: "<ID>",
   });
 
@@ -250,9 +244,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Rosie",
-    fields: [
-      "triangular",
-    ],
     id: "<ID>",
   });
 

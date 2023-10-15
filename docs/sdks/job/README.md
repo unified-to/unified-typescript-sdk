@@ -57,9 +57,6 @@ import {
       ],
     },
     connectionId: "Savings Customer Loan",
-    fields: [
-      "SMS",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -213,9 +210,6 @@ import {
       ],
     },
     connectionId: "gold Principal",
-    fields: [
-      "BMW",
-    ],
     id: "<ID>",
   });
 
@@ -325,9 +319,6 @@ import {
       ],
     },
     connectionId: "euthanise system",
-    fields: [
-      "payment",
-    ],
     id: "<ID>",
   });
 

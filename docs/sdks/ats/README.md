@@ -56,9 +56,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "incidentally Mandatory meanwhile",
-    fields: [
-      "Human",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -116,9 +113,6 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "bypass Creative Legacy",
-    fields: [
-      "Bronze",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -165,9 +159,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Frozen",
-    fields: [
-      "deposit",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -236,9 +227,6 @@ import {
       ],
     },
     connectionId: "Savings Customer Loan",
-    fields: [
-      "SMS",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -282,9 +270,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Northwest Account",
-    fields: [
-      "Yuan",
-    ],
   });
 
   if (res.statusCode == 200) {
@@ -753,9 +738,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "South grey",
-    fields: [
-      "Technician",
-    ],
     id: "<ID>",
   });
 
@@ -814,9 +796,6 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "World Van transitional",
-    fields: [
-      "green",
-    ],
     id: "<ID>",
   });
 
@@ -864,9 +843,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Francium",
-    fields: [
-      "Cambridgeshire",
-    ],
     id: "<ID>",
   });
 
@@ -936,9 +912,6 @@ import {
       ],
     },
     connectionId: "gold Principal",
-    fields: [
-      "BMW",
-    ],
     id: "<ID>",
   });
 
@@ -983,9 +956,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "eek",
-    fields: [
-      "engage",
-    ],
     id: "<ID>",
   });
 
@@ -1230,9 +1200,6 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "Rosie",
-    fields: [
-      "triangular",
-    ],
     id: "<ID>",
   });
 
@@ -1291,9 +1258,6 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
     },
     connectionId: "Zackery male Gloves",
-    fields: [
-      "threadbare",
-    ],
     id: "<ID>",
   });
 
@@ -1341,9 +1305,6 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Account omnis Gorgeous",
-    fields: [
-      "magenta",
-    ],
     id: "<ID>",
   });
 
@@ -1413,9 +1374,6 @@ import {
       ],
     },
     connectionId: "euthanise system",
-    fields: [
-      "payment",
-    ],
     id: "<ID>",
   });
 
@@ -1460,9 +1418,6 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
       raw: {},
     },
     connectionId: "grey",
-    fields: [
-      "Baby",
-    ],
     id: "<ID>",
   });
 

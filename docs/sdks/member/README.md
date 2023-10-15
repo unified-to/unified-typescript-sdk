@@ -43,10 +43,7 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "South Electronic calculate",
-    fields: [
-      "translate",
-    ],
-    listId: "scalable",
+    listId: "ew scalable Hassium",
   });
 
   if (res.statusCode == 200) {
@@ -188,11 +185,8 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Unbranded overriding Money",
-    fields: [
-      "Brand",
-    ],
     id: "<ID>",
-    listId: "West integrated",
+    listId: "as variant West",
   });
 
   if (res.statusCode == 200) {
@@ -288,11 +282,8 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "Checking deploy Hermaphrodite",
-    fields: [
-      "navigate",
-    ],
     id: "<ID>",
-    listId: "methodologies state Computer",
+    listId: "Bespoke below",
   });
 
   if (res.statusCode == 200) {

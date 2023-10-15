@@ -56,14 +56,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -156,14 +155,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -592,14 +590,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -692,14 +689,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -948,14 +944,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -1048,14 +1043,13 @@ export class Martech {
             ...config?.headers,
             ...properties.headers,
         };
-        const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: url,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
