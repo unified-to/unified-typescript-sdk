@@ -11,10 +11,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmUser extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "active" })
-    active?: boolean;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "address" })
     @Type(() => PropertyCrmUserAddress)
     address?: PropertyCrmUserAddress;
@@ -48,6 +44,10 @@ export class CrmUser extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "image_url" })
     imageUrl?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_active" })
+    isActive?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "language_locale" })

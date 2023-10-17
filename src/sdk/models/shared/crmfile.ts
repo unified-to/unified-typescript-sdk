@@ -8,10 +8,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmFile extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "active" })
-    active?: boolean;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "activity_id" })
     activityId?: string;
 
@@ -55,6 +51,10 @@ export class CrmFile extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_active" })
+    isActive?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "lead_id" })

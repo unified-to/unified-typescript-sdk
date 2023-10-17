@@ -8,10 +8,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmPipeline extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "active" })
-    active?: boolean;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
@@ -27,6 +23,10 @@ export class CrmPipeline extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_active" })
+    isActive?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
