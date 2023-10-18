@@ -33,7 +33,7 @@ import { UnifiedTo } from "unified-to";
         "Toys",
       ],
     },
-    connectionId: "Music Rap",
+    connectionId: "hacking",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.getCrmDeal({
-    connectionId: "male orange",
+    connectionId: "payment",
     fields: [
-      "Reduced",
+      "mint",
     ],
     id: "<ID>",
   });
@@ -115,9 +115,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.listCrmDeals({
-    connectionId: "Lamborghini",
+    connectionId: "Southeast",
     fields: [
-      "female",
+      "synthesize",
     ],
   });
 
@@ -163,7 +163,7 @@ import { UnifiedTo } from "unified-to";
         "consign",
       ],
     },
-    connectionId: "Platinum female",
+    connectionId: "withdrawal",
     id: "<ID>",
   });
 
@@ -203,7 +203,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.removeCrmDeal({
-    connectionId: "Nihonium",
+    connectionId: "Handmade",
     id: "<ID>",
   });
 
@@ -249,7 +249,7 @@ import { UnifiedTo } from "unified-to";
         "South",
       ],
     },
-    connectionId: "Shirt",
+    connectionId: "global",
     id: "<ID>",
   });
 

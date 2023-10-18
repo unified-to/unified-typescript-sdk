@@ -25,7 +25,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.integration.getUnifiedIntegration({
-    integrationType: "Berkelium panel",
+    integrationType: "Mobility",
   });
 
   if (res.statusCode == 200) {
@@ -65,11 +65,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.integration.getUnifiedIntegrationAuth({
-    integrationType: "Reggae Van pascal",
+    integrationType: "supposing",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.AtsScorecardRead,
+      GetUnifiedIntegrationAuthScopes.TicketingNoteRead,
     ],
-    workspaceId: "Xenogender North groupware",
+    workspaceId: "Van",
   });
 
   if (res.statusCode == 200) {
@@ -112,7 +112,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
     categories: [
       ListUnifiedIntegrationWorkspacesCategories.Martech,
     ],
-    workspaceId: "Country Market Representative",
+    workspaceId: "supposing",
   });
 
   if (res.statusCode == 200) {

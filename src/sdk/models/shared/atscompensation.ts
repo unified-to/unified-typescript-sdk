@@ -23,9 +23,6 @@ export enum AtsCompensationType {
     Other = "OTHER",
 }
 
-/**
- * Unified compensation object for a job
- */
 export class AtsCompensation extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })

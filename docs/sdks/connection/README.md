@@ -40,9 +40,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     categories: [
       PropertyConnectionCategories.Crm,
     ],
-    integrationType: "Maserati",
+    integrationType: "revolutionize",
     permissions: [
-      PropertyConnectionPermissions.CrmLeadWrite,
+      PropertyConnectionPermissions.TicketingAgentWrite,
     ],
   });
 
@@ -177,9 +177,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       categories: [
         PropertyConnectionCategories.Ats,
       ],
-      integrationType: "Montana",
+      integrationType: "Northeast",
       permissions: [
-        PropertyConnectionPermissions.CrmFileRead,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -274,9 +274,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       categories: [
         PropertyConnectionCategories.Crm,
       ],
-      integrationType: "from",
+      integrationType: "Cambridgeshire",
       permissions: [
-        PropertyConnectionPermissions.AtsApplicationRead,
+        PropertyConnectionPermissions.CrmTeamWrite,
       ],
     },
     id: "<ID>",

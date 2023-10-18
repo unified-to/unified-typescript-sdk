@@ -23,7 +23,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.enrich.listEnrichCompanies({
-    connectionId: "Chips",
+    connectionId: "Bike",
   });
 
   if (res.statusCode == 200) {
@@ -62,7 +62,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.enrich.listEnrichPeople({
-    connectionId: "Passenger",
+    connectionId: "Southwest",
   });
 
   if (res.statusCode == 200) {

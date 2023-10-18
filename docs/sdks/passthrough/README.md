@@ -26,8 +26,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.createPassthrough({
-    connectionId: "UTF8",
-    path: "/home",
+    connectionId: "turquoise",
+    path: "/var",
     undefined: {},
   });
 
@@ -67,8 +67,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.listPassthroughs({
-    connectionId: "circuit Loan",
-    path: "/usr",
+    connectionId: "nisi",
+    path: "/etc/ppp",
   });
 
   if (res.statusCode == 200) {
@@ -107,8 +107,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.patchPassthrough({
-    connectionId: "VGA",
-    path: "/opt/lib",
+    connectionId: "brand",
+    path: "/var/mail",
     undefined: {},
   });
 
@@ -148,8 +148,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.removePassthrough({
-    connectionId: "Maine",
-    path: "/boot",
+    connectionId: "North",
+    path: "/opt/bin",
   });
 
   if (res.statusCode == 200) {
@@ -188,8 +188,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.updatePassthrough({
-    connectionId: "Manager",
-    path: "/private/var",
+    connectionId: "Northwest",
+    path: "/var/mail",
     undefined: {},
   });
 

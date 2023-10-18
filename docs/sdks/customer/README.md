@@ -40,11 +40,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "Cargo Georgia earum",
+          telephone: "tepid",
         },
       ],
     },
-    connectionId: "Osmium blissfully",
+    connectionId: "Bedfordshire",
   });
 
   if (res.statusCode == 200) {
@@ -83,9 +83,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.customer.getTicketingCustomer({
-    connectionId: "benchmark",
+    connectionId: "Berkshire",
     fields: [
-      "Cambridgeshire",
+      "Gloves",
     ],
     id: "<ID>",
   });
@@ -126,9 +126,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.customer.listTicketingCustomers({
-    connectionId: "Carrollton yellow",
+    connectionId: "adapter",
     fields: [
-      "until",
+      "Unions",
     ],
   });
 
@@ -181,11 +181,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "psst",
+          telephone: "Frozen",
         },
       ],
     },
-    connectionId: "Fermium Northeast Metal",
+    connectionId: "calculating",
     id: "<ID>",
   });
 
@@ -225,7 +225,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.customer.removeTicketingCustomer({
-    connectionId: "salmon",
+    connectionId: "West",
     id: "<ID>",
   });
 
@@ -278,11 +278,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "navigating",
+          telephone: "Sleek",
         },
       ],
     },
-    connectionId: "Avon Southwest",
+    connectionId: "Bolivia",
     id: "<ID>",
   });
 

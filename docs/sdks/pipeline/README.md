@@ -30,7 +30,7 @@ import { UnifiedTo } from "unified-to";
     crmPipeline: {
       raw: {},
     },
-    connectionId: "Paradigm Vista fuchsia",
+    connectionId: "Mazda",
   });
 
   if (res.statusCode == 200) {
@@ -69,9 +69,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.pipeline.getCrmPipeline({
-    connectionId: "withdrawal Southeast",
+    connectionId: "withdrawal",
     fields: [
-      "evolve",
+      "online",
     ],
     id: "<ID>",
   });
@@ -112,9 +112,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.pipeline.listCrmPipelines({
-    connectionId: "primary",
+    connectionId: "Southeast",
     fields: [
-      "female",
+      "Concrete",
     ],
   });
 
@@ -157,7 +157,7 @@ import { UnifiedTo } from "unified-to";
     crmPipeline: {
       raw: {},
     },
-    connectionId: "imperfect Costa Southwest",
+    connectionId: "unimpressively",
     id: "<ID>",
   });
 
@@ -197,7 +197,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.pipeline.removeCrmPipeline({
-    connectionId: "Hybrid merrily",
+    connectionId: "protocol",
     id: "<ID>",
   });
 
@@ -240,7 +240,7 @@ import { UnifiedTo } from "unified-to";
     crmPipeline: {
       raw: {},
     },
-    connectionId: "needily",
+    connectionId: "functionalities",
     id: "<ID>",
   });
 

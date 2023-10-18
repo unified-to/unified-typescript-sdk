@@ -45,11 +45,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
             raw: {},
             telephones: [
                 {
-                    telephone: "scarcely Soap navigating",
+                    telephone: "Seaborgium",
                 },
             ],
         },
-        connectionId: "smoothly Algeria",
+        connectionId: "Manager",
     });
 
     if (res.statusCode == 200) {

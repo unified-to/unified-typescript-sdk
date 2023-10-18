@@ -38,11 +38,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "scarcely Soap navigating",
+          telephone: "Seaborgium",
         },
       ],
     },
-    connectionId: "smoothly Algeria",
+    connectionId: "Manager",
   });
 
   if (res.statusCode == 200) {
@@ -81,9 +81,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.agent.getTicketingAgent({
-    connectionId: "Lamborghini",
+    connectionId: "Tennessee",
     fields: [
-      "SAS",
+      "connect",
     ],
     id: "<ID>",
   });
@@ -124,9 +124,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.agent.listTicketingAgents({
-    connectionId: "Mazda",
+    connectionId: "transparent",
     fields: [
-      "Home",
+      "Corporate",
     ],
   });
 
@@ -166,9 +166,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.agent.listUcAgents({
-    connectionId: "Representative",
+    connectionId: "Ohio",
     fields: [
-      "olive",
+      "huzzah",
     ],
   });
 
@@ -218,11 +218,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "envious",
+          telephone: "fuchsia",
         },
       ],
     },
-    connectionId: "by",
+    connectionId: "Small",
     id: "<ID>",
   });
 
@@ -262,7 +262,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.agent.removeTicketingAgent({
-    connectionId: "monitor",
+    connectionId: "Northwest",
     id: "<ID>",
   });
 
@@ -312,11 +312,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "female",
+          telephone: "Philippines",
         },
       ],
     },
-    connectionId: "beside Usability Bedfordshire",
+    connectionId: "SMS",
     id: "<ID>",
   });
 

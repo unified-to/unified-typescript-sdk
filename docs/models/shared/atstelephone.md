@@ -1,7 +1,5 @@
 # AtsTelephone
 
-A unified telephone object
-
 
 ## Fields
 

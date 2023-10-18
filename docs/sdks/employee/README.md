@@ -45,11 +45,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "Gloves with",
+          telephone: "composite",
         },
       ],
     },
-    connectionId: "ack Recycled",
+    connectionId: "redefine",
   });
 
   if (res.statusCode == 200) {
@@ -88,9 +88,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.employee.getHrisEmployee({
-    connectionId: "Automated",
+    connectionId: "Louisiana",
     fields: [
-      "West",
+      "Afghanistan",
     ],
     id: "<ID>",
   });
@@ -131,9 +131,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.employee.listHrisEmployees({
-    connectionId: "Table moratorium",
+    connectionId: "overriding",
     fields: [
-      "payment",
+      "Krona",
     ],
   });
 
@@ -191,11 +191,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "shameful",
+          telephone: "cyan",
         },
       ],
     },
-    connectionId: "barring transmitting Hybrid",
+    connectionId: "farad",
     id: "<ID>",
   });
 
@@ -235,7 +235,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.employee.removeHrisEmployee({
-    connectionId: "Architect",
+    connectionId: "Chicken",
     id: "<ID>",
   });
 
@@ -293,11 +293,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "Web Borders North",
+          telephone: "Mazda",
         },
       ],
     },
-    connectionId: "Jewelery slap",
+    connectionId: "Brand",
     id: "<ID>",
   });
 

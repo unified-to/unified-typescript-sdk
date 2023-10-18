@@ -1,7 +1,5 @@
 # AtsEmail
 
-An unified email object
-
 
 ## Fields
 

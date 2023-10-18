@@ -36,11 +36,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "await male",
+          telephone: "zero",
         },
       ],
     },
-    connectionId: "Incredible Virginia",
+    connectionId: "male",
   });
 
   if (res.statusCode == 200) {
@@ -79,9 +79,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.user.getCrmUser({
-    connectionId: "Bespoke Dollar",
+    connectionId: "adipisci",
     fields: [
-      "unto",
+      "connect",
     ],
     id: "<ID>",
   });
@@ -122,9 +122,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.user.listCrmUsers({
-    connectionId: "careless Costa",
+    connectionId: "CFA",
     fields: [
-      "olive",
+      "Costa",
     ],
   });
 
@@ -173,11 +173,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Bronze composite",
+          telephone: "Demiflux",
         },
       ],
     },
-    connectionId: "katal Industrial Classical",
+    connectionId: "grey",
     id: "<ID>",
   });
 
@@ -217,7 +217,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.user.removeCrmUser({
-    connectionId: "Southeast",
+    connectionId: "yellow",
     id: "<ID>",
   });
 
@@ -266,11 +266,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Idaho green",
+          telephone: "benchmark",
         },
       ],
     },
-    connectionId: "Savings",
+    connectionId: "Rustic",
     id: "<ID>",
   });
 

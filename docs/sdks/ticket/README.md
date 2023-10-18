@@ -34,7 +34,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "sky",
       ],
     },
-    connectionId: "indigo",
+    connectionId: "Cheese",
   });
 
   if (res.statusCode == 200) {
@@ -73,9 +73,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.getTicketingTicket({
-    connectionId: "Zimbabwe Dollar",
+    connectionId: "Marks",
     fields: [
-      "Alaska",
+      "Dollar",
     ],
     id: "<ID>",
   });
@@ -116,9 +116,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.listTicketingTickets({
-    connectionId: "Tools Southwest",
+    connectionId: "Cisgender",
     fields: [
-      "invoice",
+      "archive",
     ],
   });
 
@@ -165,7 +165,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "Bespoke",
       ],
     },
-    connectionId: "Pizza Concrete",
+    connectionId: "program",
     id: "<ID>",
   });
 
@@ -205,7 +205,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.removeTicketingTicket({
-    connectionId: "Handmade",
+    connectionId: "communities",
     id: "<ID>",
   });
 
@@ -252,7 +252,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "Rhode",
       ],
     },
-    connectionId: "Agender caring optimal",
+    connectionId: "gee",
     id: "<ID>",
   });
 

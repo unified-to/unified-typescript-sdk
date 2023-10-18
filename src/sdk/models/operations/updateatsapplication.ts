@@ -7,9 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class UpdateAtsApplicationRequest extends SpeakeasyBase {
-    /**
-     * An application is an association object between a candidate and a job
-     */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     atsApplication?: shared.AtsApplication;
 

@@ -31,7 +31,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "Northwest Account",
+    connectionId: "Brunei",
   });
 
   if (res.statusCode == 200) {
@@ -70,9 +70,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.document.getAtsScorecard({
-    connectionId: "Executive",
+    connectionId: "Cordoba",
     fields: [
-      "Berkelium",
+      "Nissan",
     ],
     id: "<ID>",
   });
@@ -113,9 +113,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.document.listAtsScorecards({
-    connectionId: "Hybrid Bugatti",
+    connectionId: "synthesizing",
     fields: [
-      "frantically",
+      "surprised",
     ],
   });
 
@@ -159,7 +159,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "eek",
+    connectionId: "Falls",
     id: "<ID>",
   });
 
@@ -199,7 +199,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.document.removeAtsScorecard({
-    connectionId: "Cambridgeshire maximized",
+    connectionId: "approach",
     id: "<ID>",
   });
 
@@ -243,7 +243,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "grey",
+    connectionId: "East",
     id: "<ID>",
   });
 

@@ -52,7 +52,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Savings",
+    connectionId: "Northwest",
   });
 
   if (res.statusCode == 200) {
@@ -91,9 +91,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.getCrmEvent({
-    connectionId: "Metal South blockchains",
+    connectionId: "Technetium",
     fields: [
-      "comics",
+      "Ergonomic",
     ],
     id: "<ID>",
   });
@@ -134,9 +134,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.listCrmEvents({
-    connectionId: "invoice gratefully",
+    connectionId: "withdrawal",
     fields: [
-      "impactful",
+      "empower",
     ],
   });
 
@@ -201,7 +201,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "female",
+    connectionId: "Metal",
     id: "<ID>",
   });
 
@@ -241,7 +241,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.removeCrmEvent({
-    connectionId: "card",
+    connectionId: "enterprise",
     id: "<ID>",
   });
 
@@ -306,7 +306,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Accountability",
+    connectionId: "Borders",
     id: "<ID>",
   });
 

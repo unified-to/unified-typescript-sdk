@@ -48,11 +48,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "towards",
+          telephone: "Chips",
         },
       ],
     },
-    connectionId: "Cambridgeshire Passenger Producer",
+    connectionId: "superb",
   });
 
   if (res.statusCode == 200) {
@@ -101,11 +101,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "indigo indeed",
+          telephone: "challenge",
         },
       ],
     },
-    connectionId: "meanwhile",
+    connectionId: "azure",
   });
 
   if (res.statusCode == 200) {
@@ -144,9 +144,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.getCrmContact({
-    connectionId: "Oregon",
+    connectionId: "North",
     fields: [
-      "methodology",
+      "Silver",
     ],
     id: "<ID>",
   });
@@ -187,9 +187,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.getUcContact({
-    connectionId: "JBOD ivory fool",
+    connectionId: "for",
     fields: [
-      "Mouse",
+      "deposit",
     ],
     id: "<ID>",
   });
@@ -230,9 +230,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.listCrmContacts({
-    connectionId: "Awesome index steradian",
+    connectionId: "female",
     fields: [
-      "District",
+      "Research",
     ],
   });
 
@@ -272,9 +272,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.listUcContacts({
-    connectionId: "Bicycle male",
+    connectionId: "application",
     fields: [
-      "East",
+      "Xenogender",
     ],
   });
 
@@ -329,11 +329,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Practical",
+          telephone: "morph",
         },
       ],
     },
-    connectionId: "Future Diesel",
+    connectionId: "array",
     id: "<ID>",
   });
 
@@ -383,11 +383,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "male",
+          telephone: "Borders",
         },
       ],
     },
-    connectionId: "South Pants candela",
+    connectionId: "Carolina",
     id: "<ID>",
   });
 
@@ -427,7 +427,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.removeCrmContact({
-    connectionId: "Folk granular Concrete",
+    connectionId: "plum",
     id: "<ID>",
   });
 
@@ -467,7 +467,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.removeUcContact({
-    connectionId: "Configurable",
+    connectionId: "Plastic",
     id: "<ID>",
   });
 
@@ -522,11 +522,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Analyst Des green",
+          telephone: "relieved",
         },
       ],
     },
-    connectionId: "man panel",
+    connectionId: "backing",
     id: "<ID>",
   });
 
@@ -576,11 +576,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Illinois Electronic Northwest",
+          telephone: "Convertible",
         },
       ],
     },
-    connectionId: "Cruiser",
+    connectionId: "Wooden",
     id: "<ID>",
   });
 

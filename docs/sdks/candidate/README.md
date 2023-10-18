@@ -41,11 +41,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "but Pop fluid",
+          telephone: "who",
         },
       ],
     },
-    connectionId: "bypass Creative Legacy",
+    connectionId: "New",
   });
 
   if (res.statusCode == 200) {
@@ -84,9 +84,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.getAtsCandidate({
-    connectionId: "Markets",
+    connectionId: "Generic",
     fields: [
-      "payment",
+      "hub",
     ],
     id: "<ID>",
   });
@@ -127,9 +127,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.listAtsCandidates({
-    connectionId: "mole clearly",
+    connectionId: "Mobility",
     fields: [
-      "Van",
+      "Cambridgeshire",
     ],
   });
 
@@ -183,11 +183,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "payment Books",
+          telephone: "esse",
         },
       ],
     },
-    connectionId: "World Van transitional",
+    connectionId: "Dynamic",
     id: "<ID>",
   });
 
@@ -227,7 +227,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.removeAtsCandidate({
-    connectionId: "Accountability Recumbent Ball",
+    connectionId: "male",
     id: "<ID>",
   });
 
@@ -281,11 +281,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "DNS monetize Dynamic",
+          telephone: "now",
         },
       ],
     },
-    connectionId: "Zackery male Gloves",
+    connectionId: "Gloves",
     id: "<ID>",
   });
 

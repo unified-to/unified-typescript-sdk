@@ -33,7 +33,7 @@ import { UnifiedTo } from "unified-to";
         "exercitationem",
       ],
     },
-    connectionId: "as New Senior",
+    connectionId: "who",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.team.getCrmTeam({
-    connectionId: "digital awful",
+    connectionId: "online",
     fields: [
-      "Peru",
+      "Outdoors",
     ],
     id: "<ID>",
   });
@@ -115,9 +115,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.team.listCrmTeams({
-    connectionId: "Classical microchip Wooden",
+    connectionId: "Celsius",
     fields: [
-      "Lutetium",
+      "microchip",
     ],
   });
 
@@ -163,7 +163,7 @@ import { UnifiedTo } from "unified-to";
         "Account",
       ],
     },
-    connectionId: "Transexual compress redefine",
+    connectionId: "Customer",
     id: "<ID>",
   });
 
@@ -203,7 +203,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.team.removeCrmTeam({
-    connectionId: "Sol",
+    connectionId: "Cotton",
     id: "<ID>",
   });
 
@@ -249,7 +249,7 @@ import { UnifiedTo } from "unified-to";
         "Carbon",
       ],
     },
-    connectionId: "Dakota",
+    connectionId: "East",
     id: "<ID>",
   });
 

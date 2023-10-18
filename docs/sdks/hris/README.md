@@ -51,11 +51,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "Gloves with",
+          telephone: "composite",
         },
       ],
     },
-    connectionId: "ack Recycled",
+    connectionId: "redefine",
   });
 
   if (res.statusCode == 200) {
@@ -104,7 +104,7 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       ],
       raw: {},
     },
-    connectionId: "Technetium",
+    connectionId: "South",
   });
 
   if (res.statusCode == 200) {
@@ -143,9 +143,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.getHrisEmployee({
-    connectionId: "Automated",
+    connectionId: "Louisiana",
     fields: [
-      "West",
+      "Afghanistan",
     ],
     id: "<ID>",
   });
@@ -186,9 +186,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.getHrisGroup({
-    connectionId: "Cedi state Cadillac",
+    connectionId: "likewise",
     fields: [
-      "optical",
+      "while",
     ],
     id: "<ID>",
   });
@@ -229,9 +229,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.listHrisEmployees({
-    connectionId: "Table moratorium",
+    connectionId: "overriding",
     fields: [
-      "payment",
+      "Krona",
     ],
   });
 
@@ -271,9 +271,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.listHrisGroups({
-    connectionId: "Bronze Rubber",
+    connectionId: "Northwest",
     fields: [
-      "feel",
+      "however",
     ],
   });
 
@@ -331,11 +331,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "shameful",
+          telephone: "cyan",
         },
       ],
     },
-    connectionId: "barring transmitting Hybrid",
+    connectionId: "farad",
     id: "<ID>",
   });
 
@@ -385,7 +385,7 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       ],
       raw: {},
     },
-    connectionId: "bluetooth West",
+    connectionId: "indexing",
     id: "<ID>",
   });
 
@@ -425,7 +425,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.removeHrisEmployee({
-    connectionId: "Architect",
+    connectionId: "Chicken",
     id: "<ID>",
   });
 
@@ -465,7 +465,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.removeHrisGroup({
-    connectionId: "Human Soft Unbranded",
+    connectionId: "glistening",
     id: "<ID>",
   });
 
@@ -523,11 +523,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "Web Borders North",
+          telephone: "Mazda",
         },
       ],
     },
-    connectionId: "Jewelery slap",
+    connectionId: "Brand",
     id: "<ID>",
   });
 
@@ -577,7 +577,7 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
       ],
       raw: {},
     },
-    connectionId: "bashfully",
+    connectionId: "Southwest",
     id: "<ID>",
   });
 

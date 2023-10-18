@@ -7,9 +7,6 @@ import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
 export class PatchAtsScorecardRequest extends SpeakeasyBase {
-    /**
-     * A scorecard is feedback/assessment of a candidate's interview
-     */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     atsScorecard?: shared.AtsScorecard;
 

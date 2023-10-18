@@ -30,7 +30,7 @@ import { UnifiedTo } from "unified-to";
     crmFile: {
       raw: {},
     },
-    connectionId: "ASCII Wooden the",
+    connectionId: "loyally",
   });
 
   if (res.statusCode == 200) {
@@ -69,9 +69,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.file.getCrmFile({
-    connectionId: "ease",
+    connectionId: "Southwest",
     fields: [
-      "bypassing",
+      "sexy",
     ],
     id: "<ID>",
   });
@@ -112,9 +112,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.file.listCrmFiles({
-    connectionId: "lavender Genderflux Southeast",
+    connectionId: "Bicycle",
     fields: [
-      "invoice",
+      "Genderflux",
     ],
   });
 
@@ -157,7 +157,7 @@ import { UnifiedTo } from "unified-to";
     crmFile: {
       raw: {},
     },
-    connectionId: "bluetooth",
+    connectionId: "Health",
     id: "<ID>",
   });
 
@@ -197,7 +197,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.file.removeCrmFile({
-    connectionId: "cash",
+    connectionId: "Zambia",
     id: "<ID>",
   });
 
@@ -240,7 +240,7 @@ import { UnifiedTo } from "unified-to";
     crmFile: {
       raw: {},
     },
-    connectionId: "Orchestrator",
+    connectionId: "Plano",
     id: "<ID>",
   });
 

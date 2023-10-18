@@ -24,11 +24,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.auth.getUnifiedIntegrationAuth({
-    integrationType: "Reggae Van pascal",
+    integrationType: "supposing",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.AtsScorecardRead,
+      GetUnifiedIntegrationAuthScopes.TicketingNoteRead,
     ],
-    workspaceId: "Xenogender North groupware",
+    workspaceId: "Van",
   });
 
   if (res.statusCode == 200) {
@@ -67,8 +67,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.auth.getUnifiedIntegrationLogin({
-    integrationType: "Bicycle markets Soft",
-    workspaceId: "bus Strontium",
+    integrationType: "when",
+    workspaceId: "Tricycle",
   });
 
   if (res.statusCode == 200) {

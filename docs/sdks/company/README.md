@@ -43,14 +43,14 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "Germany",
+          telephone: "Car",
         },
       ],
       websites: [
-        "yippee",
+        "experiences",
       ],
     },
-    connectionId: "magenta Data woot",
+    connectionId: "soluta",
   });
 
   if (res.statusCode == 200) {
@@ -89,9 +89,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.company.getCrmCompany({
-    connectionId: "THX Strategist deposit",
+    connectionId: "forenenst",
     fields: [
-      "snag",
+      "Mini",
     ],
     id: "<ID>",
   });
@@ -132,9 +132,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.company.listCrmCompanies({
-    connectionId: "Jazz solid Lamborghini",
+    connectionId: "override",
     fields: [
-      "Sleek",
+      "withdrawal",
     ],
   });
 
@@ -174,7 +174,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.company.listEnrichCompanies({
-    connectionId: "Chips",
+    connectionId: "Bike",
   });
 
   if (res.statusCode == 200) {
@@ -228,14 +228,14 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "haptic Phased",
+          telephone: "indexing",
         },
       ],
       websites: [
-        "Investment",
+        "array",
       ],
     },
-    connectionId: "Trans",
+    connectionId: "Genderflux",
     id: "<ID>",
   });
 
@@ -275,7 +275,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.company.removeCrmCompany({
-    connectionId: "Mayaguez index wireless",
+    connectionId: "although",
     id: "<ID>",
   });
 
@@ -330,14 +330,14 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "Account alarm infrastructure",
+          telephone: "except",
         },
       ],
       websites: [
-        "Visionary",
+        "enterprise",
       ],
     },
-    connectionId: "Southeast ad",
+    connectionId: "alarm",
     id: "<ID>",
   });
 

@@ -28,24 +28,24 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
 
   const res = await sdk.webhook.createUnifiedWebhook({
     webhook: {
-      connectionId: "East male",
+      connectionId: "Lead",
       events: [
-        PropertyWebhookEvents.Created,
+        PropertyWebhookEvents.Updated,
       ],
-      hookUrl: "ah Account Bedfordshire",
-      integrationType: "Tenge",
-      interval: 4915.71,
-      objectType: WebhookObjectType.MartechMember,
+      hookUrl: "male",
+      integrationType: "Representative",
+      interval: 9342.25,
+      objectType: WebhookObjectType.CrmDeal,
       subscriptions: [
-        "delightfully",
+        "Account",
       ],
-      workspaceId: "up Vatu",
+      workspaceId: "Bedfordshire",
     },
-    connectionId: "Fitness grey Directives",
+    connectionId: "East",
     events: [
-      CreateUnifiedWebhookEvents.Created,
+      CreateUnifiedWebhookEvents.Updated,
     ],
-    object: "Chair Kilback",
+    object: "wireless",
   });
 
   if (res.statusCode == 200) {

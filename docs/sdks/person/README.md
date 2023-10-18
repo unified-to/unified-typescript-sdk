@@ -22,7 +22,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.person.listEnrichPeople({
-    connectionId: "Passenger",
+    connectionId: "Southwest",
   });
 
   if (res.statusCode == 200) {

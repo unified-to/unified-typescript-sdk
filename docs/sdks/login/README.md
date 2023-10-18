@@ -22,8 +22,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.login.getUnifiedIntegrationLogin({
-    integrationType: "Bicycle markets Soft",
-    workspaceId: "bus Strontium",
+    integrationType: "when",
+    workspaceId: "Tricycle",
   });
 
   if (res.statusCode == 200) {

@@ -55,11 +55,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "scarcely Soap navigating",
+          telephone: "Seaborgium",
         },
       ],
     },
-    connectionId: "smoothly Algeria",
+    connectionId: "Manager",
   });
 
   if (res.statusCode == 200) {
@@ -111,11 +111,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "Cargo Georgia earum",
+          telephone: "tepid",
         },
       ],
     },
-    connectionId: "Osmium blissfully",
+    connectionId: "Bedfordshire",
   });
 
   if (res.statusCode == 200) {
@@ -157,8 +157,8 @@ import { UnifiedTo } from "unified-to";
     ticketingNote: {
       raw: {},
     },
-    connectionId: "Books kilogram hmph",
-    ticketId: "Dakota function interface",
+    connectionId: "Cruiser",
+    ticketId: "kilogram",
   });
 
   if (res.statusCode == 200) {
@@ -204,7 +204,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "sky",
       ],
     },
-    connectionId: "indigo",
+    connectionId: "Cheese",
   });
 
   if (res.statusCode == 200) {
@@ -243,9 +243,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.getTicketingAgent({
-    connectionId: "Lamborghini",
+    connectionId: "Tennessee",
     fields: [
-      "SAS",
+      "connect",
     ],
     id: "<ID>",
   });
@@ -286,9 +286,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.getTicketingCustomer({
-    connectionId: "benchmark",
+    connectionId: "Berkshire",
     fields: [
-      "Cambridgeshire",
+      "Gloves",
     ],
     id: "<ID>",
   });
@@ -329,12 +329,12 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.getTicketingNote({
-    connectionId: "joule program",
+    connectionId: "SSD",
     fields: [
-      "SUV",
+      "intranet",
     ],
     id: "<ID>",
-    ticketId: "payment Architect",
+    ticketId: "Fresh",
   });
 
   if (res.statusCode == 200) {
@@ -373,9 +373,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.getTicketingTicket({
-    connectionId: "Zimbabwe Dollar",
+    connectionId: "Marks",
     fields: [
-      "Alaska",
+      "Dollar",
     ],
     id: "<ID>",
   });
@@ -416,9 +416,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.listTicketingAgents({
-    connectionId: "Mazda",
+    connectionId: "transparent",
     fields: [
-      "Home",
+      "Corporate",
     ],
   });
 
@@ -458,9 +458,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.listTicketingCustomers({
-    connectionId: "Carrollton yellow",
+    connectionId: "adapter",
     fields: [
-      "until",
+      "Unions",
     ],
   });
 
@@ -500,11 +500,11 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.listTicketingNotes({
-    connectionId: "Hybrid North",
+    connectionId: "Data",
     fields: [
-      "hosepipe",
+      "because",
     ],
-    ticketId: "Marvin",
+    ticketId: "Zimbabwe",
   });
 
   if (res.statusCode == 200) {
@@ -543,9 +543,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.listTicketingTickets({
-    connectionId: "Tools Southwest",
+    connectionId: "Cisgender",
     fields: [
-      "invoice",
+      "archive",
     ],
   });
 
@@ -595,11 +595,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "envious",
+          telephone: "fuchsia",
         },
       ],
     },
-    connectionId: "by",
+    connectionId: "Small",
     id: "<ID>",
   });
 
@@ -652,11 +652,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "psst",
+          telephone: "Frozen",
         },
       ],
     },
-    connectionId: "Fermium Northeast Metal",
+    connectionId: "calculating",
     id: "<ID>",
   });
 
@@ -699,9 +699,9 @@ import { UnifiedTo } from "unified-to";
     ticketingNote: {
       raw: {},
     },
-    connectionId: "Bicycle Southwest Darmstadtium",
+    connectionId: "soon",
     id: "<ID>",
-    ticketId: "index",
+    ticketId: "Strategist",
   });
 
   if (res.statusCode == 200) {
@@ -747,7 +747,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "Bespoke",
       ],
     },
-    connectionId: "Pizza Concrete",
+    connectionId: "program",
     id: "<ID>",
   });
 
@@ -787,7 +787,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.removeTicketingAgent({
-    connectionId: "monitor",
+    connectionId: "Northwest",
     id: "<ID>",
   });
 
@@ -827,7 +827,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.removeTicketingCustomer({
-    connectionId: "salmon",
+    connectionId: "West",
     id: "<ID>",
   });
 
@@ -867,9 +867,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.removeTicketingNote({
-    connectionId: "Granite hm West",
+    connectionId: "Bicycle",
     id: "<ID>",
-    ticketId: "in",
+    ticketId: "hm",
   });
 
   if (res.statusCode == 200) {
@@ -908,7 +908,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticketing.removeTicketingTicket({
-    connectionId: "Handmade",
+    connectionId: "communities",
     id: "<ID>",
   });
 
@@ -958,11 +958,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       raw: {},
       telephones: [
         {
-          telephone: "female",
+          telephone: "Philippines",
         },
       ],
     },
-    connectionId: "beside Usability Bedfordshire",
+    connectionId: "SMS",
     id: "<ID>",
   });
 
@@ -1015,11 +1015,11 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
       ],
       telephones: [
         {
-          telephone: "navigating",
+          telephone: "Sleek",
         },
       ],
     },
-    connectionId: "Avon Southwest",
+    connectionId: "Bolivia",
     id: "<ID>",
   });
 
@@ -1062,9 +1062,9 @@ import { UnifiedTo } from "unified-to";
     ticketingNote: {
       raw: {},
     },
-    connectionId: "via among Quality",
+    connectionId: "lavender",
     id: "<ID>",
-    ticketId: "Brand when",
+    ticketId: "waterspout",
   });
 
   if (res.statusCode == 200) {
@@ -1110,7 +1110,7 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
         "Rhode",
       ],
     },
-    connectionId: "Agender caring optimal",
+    connectionId: "gee",
     id: "<ID>",
   });
 

@@ -50,9 +50,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     categories: [
       PropertyConnectionCategories.Crm,
     ],
-    integrationType: "Maserati",
+    integrationType: "revolutionize",
     permissions: [
-      PropertyConnectionPermissions.CrmLeadWrite,
+      PropertyConnectionPermissions.TicketingAgentWrite,
     ],
   });
 
@@ -95,24 +95,24 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
 
   const res = await sdk.unified.createUnifiedWebhook({
     webhook: {
-      connectionId: "East male",
+      connectionId: "Lead",
       events: [
-        PropertyWebhookEvents.Created,
+        PropertyWebhookEvents.Updated,
       ],
-      hookUrl: "ah Account Bedfordshire",
-      integrationType: "Tenge",
-      interval: 4915.71,
-      objectType: WebhookObjectType.MartechMember,
+      hookUrl: "male",
+      integrationType: "Representative",
+      interval: 9342.25,
+      objectType: WebhookObjectType.CrmDeal,
       subscriptions: [
-        "delightfully",
+        "Account",
       ],
-      workspaceId: "up Vatu",
+      workspaceId: "Bedfordshire",
     },
-    connectionId: "Fitness grey Directives",
+    connectionId: "East",
     events: [
-      CreateUnifiedWebhookEvents.Created,
+      CreateUnifiedWebhookEvents.Updated,
     ],
-    object: "Chair Kilback",
+    object: "wireless",
   });
 
   if (res.statusCode == 200) {
@@ -229,7 +229,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.unified.getUnifiedIntegration({
-    integrationType: "Berkelium panel",
+    integrationType: "Mobility",
   });
 
   if (res.statusCode == 200) {
@@ -269,11 +269,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.unified.getUnifiedIntegrationAuth({
-    integrationType: "Reggae Van pascal",
+    integrationType: "supposing",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.AtsScorecardRead,
+      GetUnifiedIntegrationAuthScopes.TicketingNoteRead,
     ],
-    workspaceId: "Xenogender North groupware",
+    workspaceId: "Van",
   });
 
   if (res.statusCode == 200) {
@@ -434,7 +434,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
     categories: [
       ListUnifiedIntegrationWorkspacesCategories.Martech,
     ],
-    workspaceId: "Country Market Representative",
+    workspaceId: "supposing",
   });
 
   if (res.statusCode == 200) {
@@ -566,9 +566,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       categories: [
         PropertyConnectionCategories.Ats,
       ],
-      integrationType: "Montana",
+      integrationType: "Northeast",
       permissions: [
-        PropertyConnectionPermissions.CrmFileRead,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -702,9 +702,9 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       categories: [
         PropertyConnectionCategories.Crm,
       ],
-      integrationType: "from",
+      integrationType: "Cambridgeshire",
       permissions: [
-        PropertyConnectionPermissions.AtsApplicationRead,
+        PropertyConnectionPermissions.CrmTeamWrite,
       ],
     },
     id: "<ID>",

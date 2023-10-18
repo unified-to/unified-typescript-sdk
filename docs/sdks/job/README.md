@@ -56,7 +56,7 @@ import {
         "Mini",
       ],
     },
-    connectionId: "Savings Customer Loan",
+    connectionId: "health",
   });
 
   if (res.statusCode == 200) {
@@ -95,9 +95,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.getAtsJob({
-    connectionId: "runway",
+    connectionId: "Southwest",
     fields: [
-      "Bronze",
+      "panel",
     ],
     id: "<ID>",
   });
@@ -138,9 +138,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.listAtsJobs({
-    connectionId: "niches SQL",
+    connectionId: "firmware",
     fields: [
-      "1080p",
+      "Praseodymium",
     ],
   });
 
@@ -209,7 +209,7 @@ import {
         "mainland",
       ],
     },
-    connectionId: "gold Principal",
+    connectionId: "microchip",
     id: "<ID>",
   });
 
@@ -249,7 +249,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.removeAtsJob({
-    connectionId: "Aruba",
+    connectionId: "Northeast",
     id: "<ID>",
   });
 
@@ -318,7 +318,7 @@ import {
         "SMS",
       ],
     },
-    connectionId: "euthanise system",
+    connectionId: "asperiores",
     id: "<ID>",
   });
 

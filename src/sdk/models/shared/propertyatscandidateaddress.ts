@@ -5,9 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-/**
- * Unified address object
- */
 export class PropertyAtsCandidateAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address1" })

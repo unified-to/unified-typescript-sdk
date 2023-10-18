@@ -42,8 +42,8 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         "SAS",
       ],
     },
-    connectionId: "South Electronic calculate",
-    listId: "ew scalable Hassium",
+    connectionId: "bobcat",
+    listId: "global",
   });
 
   if (res.statusCode == 200) {
@@ -82,12 +82,12 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.getMartechMember({
-    connectionId: "Yuan",
+    connectionId: "Japan",
     fields: [
-      "Gibraltar",
+      "orange",
     ],
     id: "<ID>",
-    listId: "Iceland",
+    listId: "Gibraltar",
   });
 
   if (res.statusCode == 200) {
@@ -126,11 +126,11 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.listMartechMembers({
-    connectionId: "Money",
+    connectionId: "Frida",
     fields: [
-      "Practical",
+      "structure",
     ],
-    listId: "Thallium Bike outrageous",
+    listId: "Thallium",
   });
 
   if (res.statusCode == 200) {
@@ -184,9 +184,9 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         "Synchronised",
       ],
     },
-    connectionId: "Unbranded overriding Money",
+    connectionId: "electric",
     id: "<ID>",
-    listId: "as variant West",
+    listId: "psst",
   });
 
   if (res.statusCode == 200) {
@@ -225,9 +225,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.removeMartechMember({
-    connectionId: "Fitness",
+    connectionId: "integrated",
     id: "<ID>",
-    listId: "HTTP solid",
+    listId: "Analyst",
   });
 
   if (res.statusCode == 200) {
@@ -281,9 +281,9 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         "Bike",
       ],
     },
-    connectionId: "Checking deploy Hermaphrodite",
+    connectionId: "Hyundai",
     id: "<ID>",
-    listId: "Bespoke below",
+    listId: "North",
   });
 
   if (res.statusCode == 200) {

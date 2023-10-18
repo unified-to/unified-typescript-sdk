@@ -34,7 +34,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "Metrics",
       ],
     },
-    connectionId: "Frozen",
+    connectionId: "Bar",
   });
 
   if (res.statusCode == 200) {
@@ -73,9 +73,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.getAtsInterview({
-    connectionId: "syndicate longingly Mobility",
+    connectionId: "yum",
     fields: [
-      "grease",
+      "programming",
     ],
     id: "<ID>",
   });
@@ -116,9 +116,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.listAtsInterviews({
-    connectionId: "Northeast",
+    connectionId: "Bronze",
     fields: [
-      "Ergonomic",
+      "Wooden",
     ],
   });
 
@@ -165,7 +165,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "courageously",
       ],
     },
-    connectionId: "Francium",
+    connectionId: "Handmade",
     id: "<ID>",
   });
 
@@ -205,7 +205,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.removeAtsInterview({
-    connectionId: "Polynesia redefine pfft",
+    connectionId: "green",
     id: "<ID>",
   });
 
@@ -252,7 +252,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "maroon",
       ],
     },
-    connectionId: "Account omnis Gorgeous",
+    connectionId: "maroon",
     id: "<ID>",
   });
 

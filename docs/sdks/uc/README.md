@@ -39,11 +39,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "indigo indeed",
+          telephone: "challenge",
         },
       ],
     },
-    connectionId: "meanwhile",
+    connectionId: "azure",
   });
 
   if (res.statusCode == 200) {
@@ -82,9 +82,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.getUcContact({
-    connectionId: "JBOD ivory fool",
+    connectionId: "for",
     fields: [
-      "Mouse",
+      "deposit",
     ],
     id: "<ID>",
   });
@@ -125,9 +125,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.listUcAgents({
-    connectionId: "Representative",
+    connectionId: "Ohio",
     fields: [
-      "olive",
+      "huzzah",
     ],
   });
 
@@ -167,9 +167,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.listUcCalls({
-    connectionId: "optical",
+    connectionId: "Liberia",
     fields: [
-      "South",
+      "Cargo",
     ],
   });
 
@@ -209,9 +209,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.listUcContacts({
-    connectionId: "Bicycle male",
+    connectionId: "application",
     fields: [
-      "East",
+      "Xenogender",
     ],
   });
 
@@ -261,11 +261,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "male",
+          telephone: "Borders",
         },
       ],
     },
-    connectionId: "South Pants candela",
+    connectionId: "Carolina",
     id: "<ID>",
   });
 
@@ -305,7 +305,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.removeUcContact({
-    connectionId: "Configurable",
+    connectionId: "Plastic",
     id: "<ID>",
   });
 
@@ -355,11 +355,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Illinois Electronic Northwest",
+          telephone: "Convertible",
         },
       ],
     },
-    connectionId: "Cruiser",
+    connectionId: "Wooden",
     id: "<ID>",
   });
 

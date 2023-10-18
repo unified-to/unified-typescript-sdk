@@ -55,7 +55,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "incidentally Mandatory meanwhile",
+    connectionId: "Hassium",
   });
 
   if (res.statusCode == 200) {
@@ -108,11 +108,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "but Pop fluid",
+          telephone: "who",
         },
       ],
     },
-    connectionId: "bypass Creative Legacy",
+    connectionId: "New",
   });
 
   if (res.statusCode == 200) {
@@ -158,7 +158,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "Metrics",
       ],
     },
-    connectionId: "Frozen",
+    connectionId: "Bar",
   });
 
   if (res.statusCode == 200) {
@@ -226,7 +226,7 @@ import {
         "Mini",
       ],
     },
-    connectionId: "Savings Customer Loan",
+    connectionId: "health",
   });
 
   if (res.statusCode == 200) {
@@ -269,7 +269,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "Northwest Account",
+    connectionId: "Brunei",
   });
 
   if (res.statusCode == 200) {
@@ -308,9 +308,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsApplication({
-    connectionId: "anenst Balboa",
+    connectionId: "mobile",
     fields: [
-      "navigate",
+      "Key",
     ],
     id: "<ID>",
   });
@@ -351,9 +351,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsCandidate({
-    connectionId: "Markets",
+    connectionId: "Generic",
     fields: [
-      "payment",
+      "hub",
     ],
     id: "<ID>",
   });
@@ -394,9 +394,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsInterview({
-    connectionId: "syndicate longingly Mobility",
+    connectionId: "yum",
     fields: [
-      "grease",
+      "programming",
     ],
     id: "<ID>",
   });
@@ -437,9 +437,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsJob({
-    connectionId: "runway",
+    connectionId: "Southwest",
     fields: [
-      "Bronze",
+      "panel",
     ],
     id: "<ID>",
   });
@@ -480,9 +480,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsScorecard({
-    connectionId: "Executive",
+    connectionId: "Cordoba",
     fields: [
-      "Berkelium",
+      "Nissan",
     ],
     id: "<ID>",
   });
@@ -523,9 +523,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsApplications({
-    connectionId: "Summit",
+    connectionId: "Cambodia",
     fields: [
-      "violet",
+      "models",
     ],
   });
 
@@ -565,9 +565,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsCandidates({
-    connectionId: "mole clearly",
+    connectionId: "Mobility",
     fields: [
-      "Van",
+      "Cambridgeshire",
     ],
   });
 
@@ -607,9 +607,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsInterviews({
-    connectionId: "Northeast",
+    connectionId: "Bronze",
     fields: [
-      "Ergonomic",
+      "Wooden",
     ],
   });
 
@@ -649,9 +649,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsJobs({
-    connectionId: "niches SQL",
+    connectionId: "firmware",
     fields: [
-      "1080p",
+      "Praseodymium",
     ],
   });
 
@@ -691,9 +691,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsScorecards({
-    connectionId: "Hybrid Bugatti",
+    connectionId: "synthesizing",
     fields: [
-      "frantically",
+      "surprised",
     ],
   });
 
@@ -737,7 +737,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "South grey",
+    connectionId: "Lead",
     id: "<ID>",
   });
 
@@ -791,11 +791,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "payment Books",
+          telephone: "esse",
         },
       ],
     },
-    connectionId: "World Van transitional",
+    connectionId: "Dynamic",
     id: "<ID>",
   });
 
@@ -842,7 +842,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "courageously",
       ],
     },
-    connectionId: "Francium",
+    connectionId: "Handmade",
     id: "<ID>",
   });
 
@@ -911,7 +911,7 @@ import {
         "mainland",
       ],
     },
-    connectionId: "gold Principal",
+    connectionId: "microchip",
     id: "<ID>",
   });
 
@@ -955,7 +955,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "eek",
+    connectionId: "Falls",
     id: "<ID>",
   });
 
@@ -995,7 +995,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsApplication({
-    connectionId: "sexy mesh application",
+    connectionId: "gently",
     id: "<ID>",
   });
 
@@ -1035,7 +1035,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsCandidate({
-    connectionId: "Accountability Recumbent Ball",
+    connectionId: "male",
     id: "<ID>",
   });
 
@@ -1075,7 +1075,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsInterview({
-    connectionId: "Polynesia redefine pfft",
+    connectionId: "green",
     id: "<ID>",
   });
 
@@ -1115,7 +1115,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsJob({
-    connectionId: "Aruba",
+    connectionId: "Northeast",
     id: "<ID>",
   });
 
@@ -1155,7 +1155,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsScorecard({
-    connectionId: "Cambridgeshire maximized",
+    connectionId: "approach",
     id: "<ID>",
   });
 
@@ -1199,7 +1199,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Rosie",
+    connectionId: "Keyboard",
     id: "<ID>",
   });
 
@@ -1253,11 +1253,11 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       telephones: [
         {
-          telephone: "DNS monetize Dynamic",
+          telephone: "now",
         },
       ],
     },
-    connectionId: "Zackery male Gloves",
+    connectionId: "Gloves",
     id: "<ID>",
   });
 
@@ -1304,7 +1304,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
         "maroon",
       ],
     },
-    connectionId: "Account omnis Gorgeous",
+    connectionId: "maroon",
     id: "<ID>",
   });
 
@@ -1373,7 +1373,7 @@ import {
         "SMS",
       ],
     },
-    connectionId: "euthanise system",
+    connectionId: "asperiores",
     id: "<ID>",
   });
 
@@ -1417,7 +1417,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "grey",
+    connectionId: "East",
     id: "<ID>",
   });
 
