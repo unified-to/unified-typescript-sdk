@@ -11,9 +11,6 @@ export enum ApiCallType {
     Inbound = "inbound",
 }
 
-/**
- * An API call made to Unified or a API callback/webhook made from Unified
- */
 export class ApiCall extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "connection_id" })

@@ -42,7 +42,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     ],
     integrationType: "revolutionize",
     permissions: [
-      PropertyConnectionPermissions.TicketingAgentWrite,
+      PropertyConnectionPermissions.CrmPipelineWrite,
     ],
   });
 
@@ -179,7 +179,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "Northeast",
       permissions: [
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmLeadRead,
       ],
     },
     id: "<ID>",
@@ -276,7 +276,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "Cambridgeshire",
       permissions: [
-        PropertyConnectionPermissions.CrmTeamWrite,
+        PropertyConnectionPermissions.CrmEventWrite,
       ],
     },
     id: "<ID>",

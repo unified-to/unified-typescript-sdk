@@ -52,7 +52,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     ],
     integrationType: "revolutionize",
     permissions: [
-      PropertyConnectionPermissions.TicketingAgentWrite,
+      PropertyConnectionPermissions.CrmPipelineWrite,
     ],
   });
 
@@ -102,7 +102,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "male",
       integrationType: "Representative",
       interval: 9342.25,
-      objectType: WebhookObjectType.CrmDeal,
+      objectType: WebhookObjectType.CrmContact,
       subscriptions: [
         "Account",
       ],
@@ -271,7 +271,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "supposing",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.TicketingNoteRead,
+      GetUnifiedIntegrationAuthScopes.TicketingCustomerRead,
     ],
     workspaceId: "Van",
   });
@@ -568,7 +568,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "Northeast",
       permissions: [
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmLeadRead,
       ],
     },
     id: "<ID>",
@@ -704,7 +704,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "Cambridgeshire",
       permissions: [
-        PropertyConnectionPermissions.CrmTeamWrite,
+        PropertyConnectionPermissions.CrmEventWrite,
       ],
     },
     id: "<ID>",

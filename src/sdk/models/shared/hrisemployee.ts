@@ -52,6 +52,10 @@ export class HrisEmployee extends SpeakeasyBase {
     createdAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "currency" })
+    currency?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "date_of_birth" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     dateOfBirth?: Date;
@@ -95,6 +99,14 @@ export class HrisEmployee extends SpeakeasyBase {
     id?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "image_url" })
+    imageUrl?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "language_locale" })
+    languageLocale?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "location" })
     location?: string;
 
@@ -124,6 +136,10 @@ export class HrisEmployee extends SpeakeasyBase {
     @Expose({ name: "terminated_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     terminatedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "timezone" })
+    timezone?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "title" })

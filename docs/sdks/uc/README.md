@@ -5,7 +5,6 @@
 
 * [createUcContact](#createuccontact) - Create a contact
 * [getUcContact](#getuccontact) - Retrieve a contact
-* [listUcAgents](#listucagents) - List all agents
 * [listUcCalls](#listuccalls) - List all calls
 * [listUcContacts](#listuccontacts) - List all contacts
 * [patchUcContact](#patchuccontact) - Update a contact
@@ -106,48 +105,6 @@ import { UnifiedTo } from "unified-to";
 ### Response
 
 **Promise<[operations.GetUcContactResponse](../../models/operations/getuccontactresponse.md)>**
-
-
-## listUcAgents
-
-List all agents
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.uc.listUcAgents({
-    connectionId: "Ohio",
-    fields: [
-      "huzzah",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListUcAgentsRequest](../../models/operations/listucagentsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
-
-
-### Response
-
-**Promise<[operations.ListUcAgentsResponse](../../models/operations/listucagentsresponse.md)>**
 
 
 ## listUcCalls

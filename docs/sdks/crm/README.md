@@ -10,8 +10,6 @@
 * [createCrmFile](#createcrmfile) - Create a file
 * [createCrmLead](#createcrmlead) - Create a lead
 * [createCrmPipeline](#createcrmpipeline) - Create a pipeline
-* [createCrmTeam](#createcrmteam) - Create a team
-* [createCrmUser](#createcrmuser) - Create a user
 * [getCrmCompany](#getcrmcompany) - Retrieve a company
 * [getCrmContact](#getcrmcontact) - Retrieve a contact
 * [getCrmDeal](#getcrmdeal) - Retrieve a deal
@@ -19,8 +17,6 @@
 * [getCrmFile](#getcrmfile) - Retrieve a file
 * [getCrmLead](#getcrmlead) - Retrieve a lead
 * [getCrmPipeline](#getcrmpipeline) - Retrieve a pipeline
-* [getCrmTeam](#getcrmteam) - Retrieve a team
-* [getCrmUser](#getcrmuser) - Retrieve a user
 * [listCrmCompanies](#listcrmcompanies) - List all companies
 * [listCrmContacts](#listcrmcontacts) - List all contacts
 * [listCrmDeals](#listcrmdeals) - List all deals
@@ -28,8 +24,6 @@
 * [listCrmFiles](#listcrmfiles) - List all files
 * [listCrmLeads](#listcrmleads) - List all leads
 * [listCrmPipelines](#listcrmpipelines) - List all pipelines
-* [listCrmTeams](#listcrmteams) - List all teams
-* [listCrmUsers](#listcrmusers) - List all users
 * [patchCrmCompany](#patchcrmcompany) - Update a company
 * [patchCrmContact](#patchcrmcontact) - Update a contact
 * [patchCrmDeal](#patchcrmdeal) - Update a deal
@@ -37,8 +31,6 @@
 * [patchCrmFile](#patchcrmfile) - Update a file
 * [patchCrmLead](#patchcrmlead) - Update a lead
 * [patchCrmPipeline](#patchcrmpipeline) - Update a pipeline
-* [patchCrmTeam](#patchcrmteam) - Update a team
-* [patchCrmUser](#patchcrmuser) - Update a user
 * [removeCrmCompany](#removecrmcompany) - Remove a company
 * [removeCrmContact](#removecrmcontact) - Remove a contact
 * [removeCrmDeal](#removecrmdeal) - Remove a deal
@@ -46,8 +38,6 @@
 * [removeCrmFile](#removecrmfile) - Remove a file
 * [removeCrmLead](#removecrmlead) - Remove a lead
 * [removeCrmPipeline](#removecrmpipeline) - Remove a pipeline
-* [removeCrmTeam](#removecrmteam) - Remove a team
-* [removeCrmUser](#removecrmuser) - Remove a user
 * [updateCrmCompany](#updatecrmcompany) - Update a company
 * [updateCrmContact](#updatecrmcontact) - Update a contact
 * [updateCrmDeal](#updatecrmdeal) - Update a deal
@@ -55,8 +45,6 @@
 * [updateCrmFile](#updatecrmfile) - Update a file
 * [updateCrmLead](#updatecrmlead) - Update a lead
 * [updateCrmPipeline](#updatecrmpipeline) - Update a pipeline
-* [updateCrmTeam](#updatecrmteam) - Update a team
-* [updateCrmUser](#updatecrmuser) - Update a user
 
 ## createCrmCompany
 
@@ -422,103 +410,6 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.CreateCrmPipelineResponse](../../models/operations/createcrmpipelineresponse.md)>**
 
 
-## createCrmTeam
-
-Create a team
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.createCrmTeam({
-    crmTeam: {
-      raw: {},
-      userIds: [
-        "exercitationem",
-      ],
-    },
-    connectionId: "who",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.CreateCrmTeamRequest](../../models/operations/createcrmteamrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.CreateCrmTeamResponse](../../models/operations/createcrmteamresponse.md)>**
-
-
-## createCrmUser
-
-Create a user
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.createCrmUser({
-    crmUser: {
-      address: {},
-      emails: [
-        {},
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "zero",
-        },
-      ],
-    },
-    connectionId: "male",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.CreateCrmUserRequest](../../models/operations/createcrmuserrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.CreateCrmUserResponse](../../models/operations/createcrmuserresponse.md)>**
-
-
 ## getCrmCompany
 
 Retrieve a company
@@ -820,92 +711,6 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetCrmPipelineResponse](../../models/operations/getcrmpipelineresponse.md)>**
 
 
-## getCrmTeam
-
-Retrieve a team
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.getCrmTeam({
-    connectionId: "online",
-    fields: [
-      "Outdoors",
-    ],
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetCrmTeamRequest](../../models/operations/getcrmteamrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
-
-
-### Response
-
-**Promise<[operations.GetCrmTeamResponse](../../models/operations/getcrmteamresponse.md)>**
-
-
-## getCrmUser
-
-Retrieve a user
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.getCrmUser({
-    connectionId: "adipisci",
-    fields: [
-      "connect",
-    ],
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetCrmUserRequest](../../models/operations/getcrmuserrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `config`                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                 | :heavy_minus_sign:                                                           | Available config options for making requests.                                |
-
-
-### Response
-
-**Promise<[operations.GetCrmUserResponse](../../models/operations/getcrmuserresponse.md)>**
-
-
 ## listCrmCompanies
 
 List all companies
@@ -1198,90 +1003,6 @@ import { UnifiedTo } from "unified-to";
 ### Response
 
 **Promise<[operations.ListCrmPipelinesResponse](../../models/operations/listcrmpipelinesresponse.md)>**
-
-
-## listCrmTeams
-
-List all teams
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.listCrmTeams({
-    connectionId: "Celsius",
-    fields: [
-      "microchip",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListCrmTeamsRequest](../../models/operations/listcrmteamsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
-
-
-### Response
-
-**Promise<[operations.ListCrmTeamsResponse](../../models/operations/listcrmteamsresponse.md)>**
-
-
-## listCrmUsers
-
-List all users
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.listCrmUsers({
-    connectionId: "CFA",
-    fields: [
-      "Costa",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListCrmUsersRequest](../../models/operations/listcrmusersrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
-
-
-### Response
-
-**Promise<[operations.ListCrmUsersResponse](../../models/operations/listcrmusersresponse.md)>**
 
 
 ## patchCrmCompany
@@ -1655,105 +1376,6 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.PatchCrmPipelineResponse](../../models/operations/patchcrmpipelineresponse.md)>**
 
 
-## patchCrmTeam
-
-Update a team
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.patchCrmTeam({
-    crmTeam: {
-      raw: {},
-      userIds: [
-        "Account",
-      ],
-    },
-    connectionId: "Customer",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.PatchCrmTeamRequest](../../models/operations/patchcrmteamrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
-
-
-### Response
-
-**Promise<[operations.PatchCrmTeamResponse](../../models/operations/patchcrmteamresponse.md)>**
-
-
-## patchCrmUser
-
-Update a user
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.patchCrmUser({
-    crmUser: {
-      address: {},
-      emails: [
-        {},
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "Demiflux",
-        },
-      ],
-    },
-    connectionId: "grey",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.PatchCrmUserRequest](../../models/operations/patchcrmuserrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
-
-
-### Response
-
-**Promise<[operations.PatchCrmUserResponse](../../models/operations/patchcrmuserresponse.md)>**
-
-
 ## removeCrmCompany
 
 Remove a company
@@ -2032,86 +1654,6 @@ import { UnifiedTo } from "unified-to";
 ### Response
 
 **Promise<[operations.RemoveCrmPipelineResponse](../../models/operations/removecrmpipelineresponse.md)>**
-
-
-## removeCrmTeam
-
-Remove a team
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.removeCrmTeam({
-    connectionId: "Cotton",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.RemoveCrmTeamRequest](../../models/operations/removecrmteamrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.RemoveCrmTeamResponse](../../models/operations/removecrmteamresponse.md)>**
-
-
-## removeCrmUser
-
-Remove a user
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.removeCrmUser({
-    connectionId: "yellow",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.RemoveCrmUserRequest](../../models/operations/removecrmuserrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.RemoveCrmUserResponse](../../models/operations/removecrmuserresponse.md)>**
 
 
 ## updateCrmCompany
@@ -2483,103 +2025,4 @@ import { UnifiedTo } from "unified-to";
 ### Response
 
 **Promise<[operations.UpdateCrmPipelineResponse](../../models/operations/updatecrmpipelineresponse.md)>**
-
-
-## updateCrmTeam
-
-Update a team
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.updateCrmTeam({
-    crmTeam: {
-      raw: {},
-      userIds: [
-        "Carbon",
-      ],
-    },
-    connectionId: "East",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.UpdateCrmTeamRequest](../../models/operations/updatecrmteamrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.UpdateCrmTeamResponse](../../models/operations/updatecrmteamresponse.md)>**
-
-
-## updateCrmUser
-
-Update a user
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
-
-(async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
-
-  const res = await sdk.crm.updateCrmUser({
-    crmUser: {
-      address: {},
-      emails: [
-        {},
-      ],
-      raw: {},
-      telephones: [
-        {
-          telephone: "benchmark",
-        },
-      ],
-    },
-    connectionId: "Rustic",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-})();
-```
-
-### Parameters
-
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.UpdateCrmUserRequest](../../models/operations/updatecrmuserrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
-
-
-### Response
-
-**Promise<[operations.UpdateCrmUserResponse](../../models/operations/updatecrmuserresponse.md)>**
 

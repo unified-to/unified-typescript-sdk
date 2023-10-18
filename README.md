@@ -26,7 +26,6 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 <!-- Start SDK Example Usage -->
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -35,21 +34,8 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
         },
     });
 
-    const res = await sdk.agent.createTicketingAgent({
-        ticketingAgent: {
-            emails: [
-                {
-                    email: "Paolo.Cole8@yahoo.com",
-                },
-            ],
-            raw: {},
-            telephones: [
-                {
-                    telephone: "Seaborgium",
-                },
-            ],
-        },
-        connectionId: "Manager",
+    const res = await sdk.apicall.getUnifiedApicall({
+        id: "<ID>",
     });
 
     if (res.statusCode == 200) {
@@ -63,16 +49,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
-
-### [agent](docs/sdks/agent/README.md)
-
-* [createTicketingAgent](docs/sdks/agent/README.md#createticketingagent) - Create a agent
-* [getTicketingAgent](docs/sdks/agent/README.md#getticketingagent) - Retrieve a agent
-* [listTicketingAgents](docs/sdks/agent/README.md#listticketingagents) - List all agents
-* [listUcAgents](docs/sdks/agent/README.md#listucagents) - List all agents
-* [patchTicketingAgent](docs/sdks/agent/README.md#patchticketingagent) - Update a agent
-* [removeTicketingAgent](docs/sdks/agent/README.md#removeticketingagent) - Remove a agent
-* [updateTicketingAgent](docs/sdks/agent/README.md#updateticketingagent) - Update a agent
 
 ### [apicall](docs/sdks/apicall/README.md)
 
@@ -182,8 +158,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [createCrmFile](docs/sdks/crm/README.md#createcrmfile) - Create a file
 * [createCrmLead](docs/sdks/crm/README.md#createcrmlead) - Create a lead
 * [createCrmPipeline](docs/sdks/crm/README.md#createcrmpipeline) - Create a pipeline
-* [createCrmTeam](docs/sdks/crm/README.md#createcrmteam) - Create a team
-* [createCrmUser](docs/sdks/crm/README.md#createcrmuser) - Create a user
 * [getCrmCompany](docs/sdks/crm/README.md#getcrmcompany) - Retrieve a company
 * [getCrmContact](docs/sdks/crm/README.md#getcrmcontact) - Retrieve a contact
 * [getCrmDeal](docs/sdks/crm/README.md#getcrmdeal) - Retrieve a deal
@@ -191,8 +165,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [getCrmFile](docs/sdks/crm/README.md#getcrmfile) - Retrieve a file
 * [getCrmLead](docs/sdks/crm/README.md#getcrmlead) - Retrieve a lead
 * [getCrmPipeline](docs/sdks/crm/README.md#getcrmpipeline) - Retrieve a pipeline
-* [getCrmTeam](docs/sdks/crm/README.md#getcrmteam) - Retrieve a team
-* [getCrmUser](docs/sdks/crm/README.md#getcrmuser) - Retrieve a user
 * [listCrmCompanies](docs/sdks/crm/README.md#listcrmcompanies) - List all companies
 * [listCrmContacts](docs/sdks/crm/README.md#listcrmcontacts) - List all contacts
 * [listCrmDeals](docs/sdks/crm/README.md#listcrmdeals) - List all deals
@@ -200,8 +172,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [listCrmFiles](docs/sdks/crm/README.md#listcrmfiles) - List all files
 * [listCrmLeads](docs/sdks/crm/README.md#listcrmleads) - List all leads
 * [listCrmPipelines](docs/sdks/crm/README.md#listcrmpipelines) - List all pipelines
-* [listCrmTeams](docs/sdks/crm/README.md#listcrmteams) - List all teams
-* [listCrmUsers](docs/sdks/crm/README.md#listcrmusers) - List all users
 * [patchCrmCompany](docs/sdks/crm/README.md#patchcrmcompany) - Update a company
 * [patchCrmContact](docs/sdks/crm/README.md#patchcrmcontact) - Update a contact
 * [patchCrmDeal](docs/sdks/crm/README.md#patchcrmdeal) - Update a deal
@@ -209,8 +179,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [patchCrmFile](docs/sdks/crm/README.md#patchcrmfile) - Update a file
 * [patchCrmLead](docs/sdks/crm/README.md#patchcrmlead) - Update a lead
 * [patchCrmPipeline](docs/sdks/crm/README.md#patchcrmpipeline) - Update a pipeline
-* [patchCrmTeam](docs/sdks/crm/README.md#patchcrmteam) - Update a team
-* [patchCrmUser](docs/sdks/crm/README.md#patchcrmuser) - Update a user
 * [removeCrmCompany](docs/sdks/crm/README.md#removecrmcompany) - Remove a company
 * [removeCrmContact](docs/sdks/crm/README.md#removecrmcontact) - Remove a contact
 * [removeCrmDeal](docs/sdks/crm/README.md#removecrmdeal) - Remove a deal
@@ -218,8 +186,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [removeCrmFile](docs/sdks/crm/README.md#removecrmfile) - Remove a file
 * [removeCrmLead](docs/sdks/crm/README.md#removecrmlead) - Remove a lead
 * [removeCrmPipeline](docs/sdks/crm/README.md#removecrmpipeline) - Remove a pipeline
-* [removeCrmTeam](docs/sdks/crm/README.md#removecrmteam) - Remove a team
-* [removeCrmUser](docs/sdks/crm/README.md#removecrmuser) - Remove a user
 * [updateCrmCompany](docs/sdks/crm/README.md#updatecrmcompany) - Update a company
 * [updateCrmContact](docs/sdks/crm/README.md#updatecrmcontact) - Update a contact
 * [updateCrmDeal](docs/sdks/crm/README.md#updatecrmdeal) - Update a deal
@@ -227,8 +193,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [updateCrmFile](docs/sdks/crm/README.md#updatecrmfile) - Update a file
 * [updateCrmLead](docs/sdks/crm/README.md#updatecrmlead) - Update a lead
 * [updateCrmPipeline](docs/sdks/crm/README.md#updatecrmpipeline) - Update a pipeline
-* [updateCrmTeam](docs/sdks/crm/README.md#updatecrmteam) - Update a team
-* [updateCrmUser](docs/sdks/crm/README.md#updatecrmuser) - Update a user
 
 ### [customer](docs/sdks/customer/README.md)
 
@@ -414,15 +378,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [removeCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
 * [updateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
 
-### [team](docs/sdks/team/README.md)
-
-* [createCrmTeam](docs/sdks/team/README.md#createcrmteam) - Create a team
-* [getCrmTeam](docs/sdks/team/README.md#getcrmteam) - Retrieve a team
-* [listCrmTeams](docs/sdks/team/README.md#listcrmteams) - List all teams
-* [patchCrmTeam](docs/sdks/team/README.md#patchcrmteam) - Update a team
-* [removeCrmTeam](docs/sdks/team/README.md#removecrmteam) - Remove a team
-* [updateCrmTeam](docs/sdks/team/README.md#updatecrmteam) - Update a team
-
 ### [ticket](docs/sdks/ticket/README.md)
 
 * [createTicketingTicket](docs/sdks/ticket/README.md#createticketingticket) - Create a ticket
@@ -434,27 +389,21 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 
 ### [ticketing](docs/sdks/ticketing/README.md)
 
-* [createTicketingAgent](docs/sdks/ticketing/README.md#createticketingagent) - Create a agent
 * [createTicketingCustomer](docs/sdks/ticketing/README.md#createticketingcustomer) - Create a customer
 * [createTicketingNote](docs/sdks/ticketing/README.md#createticketingnote) - Create a note
 * [createTicketingTicket](docs/sdks/ticketing/README.md#createticketingticket) - Create a ticket
-* [getTicketingAgent](docs/sdks/ticketing/README.md#getticketingagent) - Retrieve a agent
 * [getTicketingCustomer](docs/sdks/ticketing/README.md#getticketingcustomer) - Retrieve a customer
 * [getTicketingNote](docs/sdks/ticketing/README.md#getticketingnote) - Retrieve a note
 * [getTicketingTicket](docs/sdks/ticketing/README.md#getticketingticket) - Retrieve a ticket
-* [listTicketingAgents](docs/sdks/ticketing/README.md#listticketingagents) - List all agents
 * [listTicketingCustomers](docs/sdks/ticketing/README.md#listticketingcustomers) - List all customers
 * [listTicketingNotes](docs/sdks/ticketing/README.md#listticketingnotes) - List all notes
 * [listTicketingTickets](docs/sdks/ticketing/README.md#listticketingtickets) - List all tickets
-* [patchTicketingAgent](docs/sdks/ticketing/README.md#patchticketingagent) - Update a agent
 * [patchTicketingCustomer](docs/sdks/ticketing/README.md#patchticketingcustomer) - Update a customer
 * [patchTicketingNote](docs/sdks/ticketing/README.md#patchticketingnote) - Update a note
 * [patchTicketingTicket](docs/sdks/ticketing/README.md#patchticketingticket) - Update a ticket
-* [removeTicketingAgent](docs/sdks/ticketing/README.md#removeticketingagent) - Remove a agent
 * [removeTicketingCustomer](docs/sdks/ticketing/README.md#removeticketingcustomer) - Remove a customer
 * [removeTicketingNote](docs/sdks/ticketing/README.md#removeticketingnote) - Remove a note
 * [removeTicketingTicket](docs/sdks/ticketing/README.md#removeticketingticket) - Remove a ticket
-* [updateTicketingAgent](docs/sdks/ticketing/README.md#updateticketingagent) - Update a agent
 * [updateTicketingCustomer](docs/sdks/ticketing/README.md#updateticketingcustomer) - Update a customer
 * [updateTicketingNote](docs/sdks/ticketing/README.md#updateticketingnote) - Update a note
 * [updateTicketingTicket](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
@@ -463,7 +412,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 
 * [createUcContact](docs/sdks/uc/README.md#createuccontact) - Create a contact
 * [getUcContact](docs/sdks/uc/README.md#getuccontact) - Retrieve a contact
-* [listUcAgents](docs/sdks/uc/README.md#listucagents) - List all agents
 * [listUcCalls](docs/sdks/uc/README.md#listuccalls) - List all calls
 * [listUcContacts](docs/sdks/uc/README.md#listuccontacts) - List all contacts
 * [patchUcContact](docs/sdks/uc/README.md#patchuccontact) - Update a contact
@@ -488,15 +436,6 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
 * [removeUnifiedConnection](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
 * [removeUnifiedWebhook](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 * [updateUnifiedConnection](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
-
-### [user](docs/sdks/user/README.md)
-
-* [createCrmUser](docs/sdks/user/README.md#createcrmuser) - Create a user
-* [getCrmUser](docs/sdks/user/README.md#getcrmuser) - Retrieve a user
-* [listCrmUsers](docs/sdks/user/README.md#listcrmusers) - List all users
-* [patchCrmUser](docs/sdks/user/README.md#patchcrmuser) - Update a user
-* [removeCrmUser](docs/sdks/user/README.md#removecrmuser) - Remove a user
-* [updateCrmUser](docs/sdks/user/README.md#updatecrmuser) - Update a user
 
 ### [webhook](docs/sdks/webhook/README.md)
 

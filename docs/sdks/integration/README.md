@@ -67,7 +67,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.integration.getUnifiedIntegrationAuth({
     integrationType: "supposing",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.TicketingNoteRead,
+      GetUnifiedIntegrationAuthScopes.TicketingCustomerRead,
     ],
     workspaceId: "Van",
   });

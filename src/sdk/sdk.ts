@@ -3,7 +3,6 @@
  */
 
 import * as utils from "../internal/utils";
-import { Agent } from "./agent";
 import { Apicall } from "./apicall";
 import { Application } from "./application";
 import { Ats } from "./ats";
@@ -36,12 +35,10 @@ import { Note } from "./note";
 import { Passthrough } from "./passthrough";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
-import { Team } from "./team";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
 import { Uc } from "./uc";
 import { Unified } from "./unified";
-import { User } from "./user";
 import { Webhook } from "./webhook";
 import axios from "axios";
 import { AxiosInstance } from "axios";
@@ -96,9 +93,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.4.6";
+    sdkVersion = "0.4.7";
     genVersion = "2.161.0";
-    userAgent = "speakeasy-sdk/typescript 0.4.6 2.161.0 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.4.7 2.161.0 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -109,7 +106,6 @@ export class SDKConfiguration {
  * Unified.to API: One API to Rule Them All
  */
 export class UnifiedTo {
-    public agent: Agent;
     public apicall: Apicall;
     public application: Application;
     public ats: Ats;
@@ -141,12 +137,10 @@ export class UnifiedTo {
     public passthrough: Passthrough;
     public person: Person;
     public pipeline: Pipeline;
-    public team: Team;
     public ticket: Ticket;
     public ticketing: Ticketing;
     public uc: Uc;
     public unified: Unified;
-    public user: User;
     public webhook: Webhook;
 
     private sdkConfiguration: SDKConfiguration;
@@ -167,7 +161,6 @@ export class UnifiedTo {
             retryConfig: props?.retryConfig,
         });
 
-        this.agent = new Agent(this.sdkConfiguration);
         this.apicall = new Apicall(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
@@ -199,12 +192,10 @@ export class UnifiedTo {
         this.passthrough = new Passthrough(this.sdkConfiguration);
         this.person = new Person(this.sdkConfiguration);
         this.pipeline = new Pipeline(this.sdkConfiguration);
-        this.team = new Team(this.sdkConfiguration);
         this.ticket = new Ticket(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);
         this.uc = new Uc(this.sdkConfiguration);
         this.unified = new Unified(this.sdkConfiguration);
-        this.user = new User(this.sdkConfiguration);
         this.webhook = new Webhook(this.sdkConfiguration);
     }
 }

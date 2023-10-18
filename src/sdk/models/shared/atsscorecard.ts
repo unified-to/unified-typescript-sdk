@@ -23,6 +23,10 @@ export class AtsScorecard extends SpeakeasyBase {
     candidateId?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "comment" })
+    comment?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;

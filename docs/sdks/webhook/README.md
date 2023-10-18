@@ -35,7 +35,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "male",
       integrationType: "Representative",
       interval: 9342.25,
-      objectType: WebhookObjectType.CrmDeal,
+      objectType: WebhookObjectType.CrmContact,
       subscriptions: [
         "Account",
       ],
