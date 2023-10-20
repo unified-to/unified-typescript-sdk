@@ -37,6 +37,12 @@ export class ListAtsScorecardsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=interview_id" })
     interviewId?: string;
 
+    /**
+     * The job ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })
+    jobId?: string;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 
