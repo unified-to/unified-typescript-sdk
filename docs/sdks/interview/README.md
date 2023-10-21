@@ -31,10 +31,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "Metrics",
+        "string",
       ],
     },
-    connectionId: "Bar",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -73,9 +73,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.getAtsInterview({
-    connectionId: "yum",
+    connectionId: "string",
     fields: [
-      "programming",
+      "string",
     ],
     id: "<ID>",
   });
@@ -116,9 +116,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.listAtsInterviews({
-    connectionId: "Bronze",
+    connectionId: "string",
     fields: [
-      "Wooden",
+      "string",
     ],
   });
 
@@ -162,10 +162,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "courageously",
+        "string",
       ],
     },
-    connectionId: "Handmade",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -205,7 +205,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.interview.removeAtsInterview({
-    connectionId: "green",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -249,10 +249,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "maroon",
+        "string",
       ],
     },
-    connectionId: "maroon",
+    connectionId: "string",
     id: "<ID>",
   });
 

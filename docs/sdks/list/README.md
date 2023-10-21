@@ -30,7 +30,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "Latin",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -69,9 +69,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.list.getMartechList({
-    connectionId: "red",
+    connectionId: "string",
     fields: [
-      "users",
+      "string",
     ],
     id: "<ID>",
   });
@@ -112,9 +112,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.list.listMartechLists({
-    connectionId: "above",
+    connectionId: "string",
     fields: [
-      "Fantastic",
+      "string",
     ],
   });
 
@@ -157,7 +157,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "Classical",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -197,7 +197,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.list.removeMartechList({
-    connectionId: "Northwest",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -240,7 +240,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "innocently",
+    connectionId: "string",
     id: "<ID>",
   });
 

@@ -38,11 +38,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "challenge",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "azure",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -81,9 +81,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.getUcContact({
-    connectionId: "for",
+    connectionId: "string",
     fields: [
-      "deposit",
+      "string",
     ],
     id: "<ID>",
   });
@@ -124,9 +124,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.listUcCalls({
-    connectionId: "Liberia",
+    connectionId: "string",
     fields: [
-      "Cargo",
+      "string",
     ],
   });
 
@@ -166,9 +166,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.listUcContacts({
-    connectionId: "application",
+    connectionId: "string",
     fields: [
-      "Xenogender",
+      "string",
     ],
   });
 
@@ -218,11 +218,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Borders",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Carolina",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -262,7 +262,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.uc.removeUcContact({
-    connectionId: "Plastic",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -312,11 +312,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Convertible",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Wooden",
+    connectionId: "string",
     id: "<ID>",
   });
 

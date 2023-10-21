@@ -36,7 +36,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "Latin",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -83,15 +83,15 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "input",
+        "string",
       ],
       raw: {},
       tags: [
-        "SAS",
+        "string",
       ],
     },
-    connectionId: "bobcat",
-    listId: "global",
+    connectionId: "string",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -130,9 +130,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.getMartechList({
-    connectionId: "red",
+    connectionId: "string",
     fields: [
-      "users",
+      "string",
     ],
     id: "<ID>",
   });
@@ -173,12 +173,12 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.getMartechMember({
-    connectionId: "Japan",
+    connectionId: "string",
     fields: [
-      "orange",
+      "string",
     ],
     id: "<ID>",
-    listId: "Gibraltar",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -217,9 +217,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.listMartechLists({
-    connectionId: "above",
+    connectionId: "string",
     fields: [
-      "Fantastic",
+      "string",
     ],
   });
 
@@ -259,11 +259,11 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.listMartechMembers({
-    connectionId: "Frida",
+    connectionId: "string",
     fields: [
-      "structure",
+      "string",
     ],
-    listId: "Thallium",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -305,7 +305,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "Classical",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -353,16 +353,16 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "Handcrafted",
+        "string",
       ],
       raw: {},
       tags: [
-        "Synchronised",
+        "string",
       ],
     },
-    connectionId: "electric",
+    connectionId: "string",
     id: "<ID>",
-    listId: "psst",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -401,7 +401,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.removeMartechList({
-    connectionId: "Northwest",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -441,9 +441,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.martech.removeMartechMember({
-    connectionId: "integrated",
+    connectionId: "string",
     id: "<ID>",
-    listId: "Analyst",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -485,7 +485,7 @@ import { UnifiedTo } from "unified-to";
     marketingList: {
       raw: {},
     },
-    connectionId: "innocently",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -533,16 +533,16 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "connect",
+        "string",
       ],
       raw: {},
       tags: [
-        "Bike",
+        "string",
       ],
     },
-    connectionId: "Hyundai",
+    connectionId: "string",
     id: "<ID>",
-    listId: "North",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {

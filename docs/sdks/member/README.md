@@ -35,15 +35,15 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "input",
+        "string",
       ],
       raw: {},
       tags: [
-        "SAS",
+        "string",
       ],
     },
-    connectionId: "bobcat",
-    listId: "global",
+    connectionId: "string",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -82,12 +82,12 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.getMartechMember({
-    connectionId: "Japan",
+    connectionId: "string",
     fields: [
-      "orange",
+      "string",
     ],
     id: "<ID>",
-    listId: "Gibraltar",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -126,11 +126,11 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.listMartechMembers({
-    connectionId: "Frida",
+    connectionId: "string",
     fields: [
-      "structure",
+      "string",
     ],
-    listId: "Thallium",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -177,16 +177,16 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "Handcrafted",
+        "string",
       ],
       raw: {},
       tags: [
-        "Synchronised",
+        "string",
       ],
     },
-    connectionId: "electric",
+    connectionId: "string",
     id: "<ID>",
-    listId: "psst",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -225,9 +225,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.member.removeMartechMember({
-    connectionId: "integrated",
+    connectionId: "string",
     id: "<ID>",
-    listId: "Analyst",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -274,16 +274,16 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
         },
       ],
       listIds: [
-        "connect",
+        "string",
       ],
       raw: {},
       tags: [
-        "Bike",
+        "string",
       ],
     },
-    connectionId: "Hyundai",
+    connectionId: "string",
     id: "<ID>",
-    listId: "North",
+    listId: "string",
   });
 
   if (res.statusCode == 200) {

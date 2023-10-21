@@ -30,10 +30,10 @@ import { UnifiedTo } from "unified-to";
     crmDeal: {
       raw: {},
       tags: [
-        "Toys",
+        "string",
       ],
     },
-    connectionId: "hacking",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.getCrmDeal({
-    connectionId: "payment",
+    connectionId: "string",
     fields: [
-      "mint",
+      "string",
     ],
     id: "<ID>",
   });
@@ -115,9 +115,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.listCrmDeals({
-    connectionId: "Southeast",
+    connectionId: "string",
     fields: [
-      "synthesize",
+      "string",
     ],
   });
 
@@ -160,10 +160,10 @@ import { UnifiedTo } from "unified-to";
     crmDeal: {
       raw: {},
       tags: [
-        "consign",
+        "string",
       ],
     },
-    connectionId: "withdrawal",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -203,7 +203,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.deal.removeCrmDeal({
-    connectionId: "Handmade",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -246,10 +246,10 @@ import { UnifiedTo } from "unified-to";
     crmDeal: {
       raw: {},
       tags: [
-        "South",
+        "string",
       ],
     },
-    connectionId: "global",
+    connectionId: "string",
     id: "<ID>",
   });
 

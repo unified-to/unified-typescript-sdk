@@ -37,15 +37,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "radian",
+        "string",
       ],
       telephones: [
         {
-          telephone: "who",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "New",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -84,9 +84,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.getAtsCandidate({
-    connectionId: "Generic",
+    connectionId: "string",
     fields: [
-      "hub",
+      "string",
     ],
     id: "<ID>",
   });
@@ -127,9 +127,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.listAtsCandidates({
-    connectionId: "Mobility",
+    connectionId: "string",
     fields: [
-      "Cambridgeshire",
+      "string",
     ],
   });
 
@@ -179,15 +179,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "Credit",
+        "string",
       ],
       telephones: [
         {
-          telephone: "esse",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Dynamic",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -227,7 +227,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.candidate.removeAtsCandidate({
-    connectionId: "male",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -277,15 +277,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "B2C",
+        "string",
       ],
       telephones: [
         {
-          telephone: "now",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Gloves",
+    connectionId: "string",
     id: "<ID>",
   });
 

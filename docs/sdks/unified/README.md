@@ -40,19 +40,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
   const res = await sdk.unified.createUnifiedConnection({
     auth: {
       emails: [
-        "likewise",
+        "string",
       ],
       meta: {},
       otherAuthInfo: [
-        "Rwanda",
+        "string",
       ],
     },
     categories: [
-      PropertyConnectionCategories.Crm,
+      PropertyConnectionCategories.Uc,
     ],
-    integrationType: "revolutionize",
+    integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmPipelineWrite,
+      PropertyConnectionPermissions.CrmDealWrite,
     ],
   });
 
@@ -95,24 +95,24 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
 
   const res = await sdk.unified.createUnifiedWebhook({
     webhook: {
-      connectionId: "Lead",
+      connectionId: "string",
       events: [
-        PropertyWebhookEvents.Updated,
+        PropertyWebhookEvents.Created,
       ],
-      hookUrl: "male",
-      integrationType: "Representative",
-      interval: 9342.25,
-      objectType: WebhookObjectType.CrmContact,
+      hookUrl: "string",
+      integrationType: "string",
+      interval: 188.12,
+      objectType: WebhookObjectType.CrmLead,
       subscriptions: [
-        "Account",
+        "string",
       ],
-      workspaceId: "Bedfordshire",
+      workspaceId: "string",
     },
-    connectionId: "East",
+    connectionId: "string",
     events: [
-      CreateUnifiedWebhookEvents.Updated,
+      CreateUnifiedWebhookEvents.Created,
     ],
-    object: "wireless",
+    object: "string",
   });
 
   if (res.statusCode == 200) {
@@ -229,7 +229,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.unified.getUnifiedIntegration({
-    integrationType: "Mobility",
+    integrationType: "string",
   });
 
   if (res.statusCode == 200) {
@@ -269,11 +269,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.unified.getUnifiedIntegrationAuth({
-    integrationType: "supposing",
+    integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.TicketingCustomerRead,
+      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
     ],
-    workspaceId: "Van",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -434,7 +434,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
     categories: [
       ListUnifiedIntegrationWorkspacesCategories.Martech,
     ],
-    workspaceId: "supposing",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -556,19 +556,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     connection: {
       auth: {
         emails: [
-          "International",
+          "string",
         ],
         meta: {},
         otherAuthInfo: [
-          "square",
+          "string",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Ats,
+        PropertyConnectionCategories.Enrich,
       ],
-      integrationType: "Northeast",
+      integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.MartechMemberWrite,
       ],
     },
     id: "<ID>",
@@ -692,19 +692,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     connection: {
       auth: {
         emails: [
-          "tan",
+          "string",
         ],
         meta: {},
         otherAuthInfo: [
-          "revitalize",
+          "string",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Crm,
+        PropertyConnectionCategories.Ticketing,
       ],
-      integrationType: "Cambridgeshire",
+      integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmEventWrite,
+        PropertyConnectionPermissions.CrmLeadRead,
       ],
     },
     id: "<ID>",

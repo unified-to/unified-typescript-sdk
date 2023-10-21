@@ -25,7 +25,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.integration.getUnifiedIntegration({
-    integrationType: "Mobility",
+    integrationType: "string",
   });
 
   if (res.statusCode == 200) {
@@ -65,11 +65,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.integration.getUnifiedIntegrationAuth({
-    integrationType: "supposing",
+    integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.TicketingCustomerRead,
+      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
     ],
-    workspaceId: "Van",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -112,7 +112,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
     categories: [
       ListUnifiedIntegrationWorkspacesCategories.Martech,
     ],
-    workspaceId: "supposing",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {

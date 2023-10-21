@@ -22,9 +22,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.call.listUcCalls({
-    connectionId: "Liberia",
+    connectionId: "string",
     fields: [
-      "Cargo",
+      "string",
     ],
   });
 

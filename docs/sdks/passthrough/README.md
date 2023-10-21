@@ -26,8 +26,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.createPassthrough({
-    connectionId: "turquoise",
-    path: "/var",
+    connectionId: "string",
+    path: "/etc/periodic",
     undefined: {},
   });
 
@@ -67,8 +67,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.listPassthroughs({
-    connectionId: "nisi",
-    path: "/etc/ppp",
+    connectionId: "string",
+    path: "/selinux",
   });
 
   if (res.statusCode == 200) {
@@ -107,8 +107,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.patchPassthrough({
-    connectionId: "brand",
-    path: "/var/mail",
+    connectionId: "string",
+    path: "/mnt",
     undefined: {},
   });
 
@@ -148,8 +148,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.removePassthrough({
-    connectionId: "North",
-    path: "/opt/bin",
+    connectionId: "string",
+    path: "/Applications",
   });
 
   if (res.statusCode == 200) {
@@ -188,8 +188,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.passthrough.updatePassthrough({
-    connectionId: "Northwest",
-    path: "/var/mail",
+    connectionId: "string",
+    path: "/dev",
     undefined: {},
   });
 

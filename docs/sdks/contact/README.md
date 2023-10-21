@@ -37,10 +37,10 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     crmContact: {
       address: {},
       companyIds: [
-        "Mendelevium",
+        "string",
       ],
       dealIds: [
-        "Account",
+        "string",
       ],
       emails: [
         {},
@@ -48,11 +48,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Chips",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "superb",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -101,11 +101,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "challenge",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "azure",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -144,9 +144,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.getCrmContact({
-    connectionId: "North",
+    connectionId: "string",
     fields: [
-      "Silver",
+      "string",
     ],
     id: "<ID>",
   });
@@ -187,9 +187,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.getUcContact({
-    connectionId: "for",
+    connectionId: "string",
     fields: [
-      "deposit",
+      "string",
     ],
     id: "<ID>",
   });
@@ -230,9 +230,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.listCrmContacts({
-    connectionId: "female",
+    connectionId: "string",
     fields: [
-      "Research",
+      "string",
     ],
   });
 
@@ -272,9 +272,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.listUcContacts({
-    connectionId: "application",
+    connectionId: "string",
     fields: [
-      "Xenogender",
+      "string",
     ],
   });
 
@@ -318,10 +318,10 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     crmContact: {
       address: {},
       companyIds: [
-        "architecture",
+        "string",
       ],
       dealIds: [
-        "Buckinghamshire",
+        "string",
       ],
       emails: [
         {},
@@ -329,11 +329,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "morph",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "array",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -383,11 +383,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Borders",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Carolina",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -427,7 +427,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.removeCrmContact({
-    connectionId: "plum",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -467,7 +467,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.contact.removeUcContact({
-    connectionId: "Plastic",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -511,10 +511,10 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     crmContact: {
       address: {},
       companyIds: [
-        "Universal",
+        "string",
       ],
       dealIds: [
-        "Harbors",
+        "string",
       ],
       emails: [
         {},
@@ -522,11 +522,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "relieved",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "backing",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -576,11 +576,11 @@ import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared"
       raw: {},
       telephones: [
         {
-          telephone: "Convertible",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Wooden",
+    connectionId: "string",
     id: "<ID>",
   });
 

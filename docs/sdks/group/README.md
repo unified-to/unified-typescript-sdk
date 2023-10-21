@@ -30,14 +30,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.group.createHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "transmitter",
+        "string",
       ],
       managerIds: [
-        "dependable",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "South",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -76,9 +76,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.group.getHrisGroup({
-    connectionId: "likewise",
+    connectionId: "string",
     fields: [
-      "while",
+      "string",
     ],
     id: "<ID>",
   });
@@ -119,9 +119,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.group.listHrisGroups({
-    connectionId: "Northwest",
+    connectionId: "string",
     fields: [
-      "however",
+      "string",
     ],
   });
 
@@ -164,14 +164,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.group.patchHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "scalable",
+        "string",
       ],
       managerIds: [
-        "Bespoke",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "indexing",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -211,7 +211,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.group.removeHrisGroup({
-    connectionId: "glistening",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -254,14 +254,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.group.updateHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "disintermediate",
+        "string",
       ],
       managerIds: [
-        "schemas",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "Southwest",
+    connectionId: "string",
     id: "<ID>",
   });
 

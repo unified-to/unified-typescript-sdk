@@ -31,20 +31,20 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
     crmEvent: {
       call: {},
       companyIds: [
-        "repeatedly",
+        "string",
       ],
       contactIds: [
-        "Sedan",
+        "string",
       ],
       dealIds: [
-        "altruistic",
+        "string",
       ],
       email: {
         cc: [
-          "Hills",
+          "string",
         ],
         to: [
-          "Bronze",
+          "string",
         ],
       },
       meeting: {},
@@ -52,7 +52,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Northwest",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -91,9 +91,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.getCrmEvent({
-    connectionId: "Technetium",
+    connectionId: "string",
     fields: [
-      "Ergonomic",
+      "string",
     ],
     id: "<ID>",
   });
@@ -134,9 +134,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.listCrmEvents({
-    connectionId: "withdrawal",
+    connectionId: "string",
     fields: [
-      "empower",
+      "string",
     ],
   });
 
@@ -180,20 +180,20 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
     crmEvent: {
       call: {},
       companyIds: [
-        "XML",
+        "string",
       ],
       contactIds: [
-        "Accountability",
+        "string",
       ],
       dealIds: [
-        "copying",
+        "string",
       ],
       email: {
         cc: [
-          "after",
+          "string",
         ],
         to: [
-          "Research",
+          "string",
         ],
       },
       meeting: {},
@@ -201,7 +201,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Metal",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -241,7 +241,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.event.removeCrmEvent({
-    connectionId: "enterprise",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -285,20 +285,20 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
     crmEvent: {
       call: {},
       companyIds: [
-        "Account",
+        "string",
       ],
       contactIds: [
-        "DRAM",
+        "string",
       ],
       dealIds: [
-        "input",
+        "string",
       ],
       email: {
         cc: [
-          "Bicycle",
+          "string",
         ],
         to: [
-          "Wagon",
+          "string",
         ],
       },
       meeting: {},
@@ -306,7 +306,7 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
       raw: {},
       task: {},
     },
-    connectionId: "Borders",
+    connectionId: "string",
     id: "<ID>",
   });
 

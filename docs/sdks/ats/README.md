@@ -55,7 +55,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Hassium",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -104,15 +104,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "radian",
+        "string",
       ],
       telephones: [
         {
-          telephone: "who",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "New",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -155,10 +155,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "Metrics",
+        "string",
       ],
     },
-    connectionId: "Bar",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -213,20 +213,20 @@ import {
         },
       ],
       departments: [
-        "Loan",
+        "string",
       ],
       hiringManagerIds: [
-        "driver",
+        "string",
       ],
       publicJobUrls: [
-        "Transmasculine",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "Mini",
+        "string",
       ],
     },
-    connectionId: "health",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -269,7 +269,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "Brunei",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -308,9 +308,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsApplication({
-    connectionId: "mobile",
+    connectionId: "string",
     fields: [
-      "Key",
+      "string",
     ],
     id: "<ID>",
   });
@@ -351,9 +351,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsCandidate({
-    connectionId: "Generic",
+    connectionId: "string",
     fields: [
-      "hub",
+      "string",
     ],
     id: "<ID>",
   });
@@ -394,9 +394,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsInterview({
-    connectionId: "yum",
+    connectionId: "string",
     fields: [
-      "programming",
+      "string",
     ],
     id: "<ID>",
   });
@@ -437,9 +437,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsJob({
-    connectionId: "Southwest",
+    connectionId: "string",
     fields: [
-      "panel",
+      "string",
     ],
     id: "<ID>",
   });
@@ -480,9 +480,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.getAtsScorecard({
-    connectionId: "Cordoba",
+    connectionId: "string",
     fields: [
-      "Nissan",
+      "string",
     ],
     id: "<ID>",
   });
@@ -523,9 +523,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsApplications({
-    connectionId: "Cambodia",
+    connectionId: "string",
     fields: [
-      "models",
+      "string",
     ],
   });
 
@@ -565,9 +565,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsCandidates({
-    connectionId: "Mobility",
+    connectionId: "string",
     fields: [
-      "Cambridgeshire",
+      "string",
     ],
   });
 
@@ -607,9 +607,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsInterviews({
-    connectionId: "Bronze",
+    connectionId: "string",
     fields: [
-      "Wooden",
+      "string",
     ],
   });
 
@@ -649,9 +649,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsJobs({
-    connectionId: "firmware",
+    connectionId: "string",
     fields: [
-      "Praseodymium",
+      "string",
     ],
   });
 
@@ -691,9 +691,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.listAtsScorecards({
-    connectionId: "synthesizing",
+    connectionId: "string",
     fields: [
-      "surprised",
+      "string",
     ],
   });
 
@@ -737,7 +737,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Lead",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -787,15 +787,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "Credit",
+        "string",
       ],
       telephones: [
         {
-          telephone: "esse",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Dynamic",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -839,10 +839,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "courageously",
+        "string",
       ],
     },
-    connectionId: "Handmade",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -898,20 +898,20 @@ import {
         },
       ],
       departments: [
-        "indigo",
+        "string",
       ],
       hiringManagerIds: [
-        "Bedfordshire",
+        "string",
       ],
       publicJobUrls: [
-        "North",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "mainland",
+        "string",
       ],
     },
-    connectionId: "microchip",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -955,7 +955,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "Falls",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -995,7 +995,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsApplication({
-    connectionId: "gently",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1035,7 +1035,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsCandidate({
-    connectionId: "male",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1075,7 +1075,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsInterview({
-    connectionId: "green",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1115,7 +1115,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsJob({
-    connectionId: "Northeast",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1155,7 +1155,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ats.removeAtsScorecard({
-    connectionId: "approach",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1199,7 +1199,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Keyboard",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1249,15 +1249,15 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
       ],
       raw: {},
       tags: [
-        "B2C",
+        "string",
       ],
       telephones: [
         {
-          telephone: "now",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Gloves",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1301,10 +1301,10 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
     atsInterview: {
       raw: {},
       userIds: [
-        "maroon",
+        "string",
       ],
     },
-    connectionId: "maroon",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1360,20 +1360,20 @@ import {
         },
       ],
       departments: [
-        "Plastic",
+        "string",
       ],
       hiringManagerIds: [
-        "West",
+        "string",
       ],
       publicJobUrls: [
-        "Direct",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "SMS",
+        "string",
       ],
     },
-    connectionId: "asperiores",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -1417,7 +1417,7 @@ import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
     atsScorecard: {
       raw: {},
     },
-    connectionId: "East",
+    connectionId: "string",
     id: "<ID>",
   });
 

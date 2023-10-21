@@ -36,11 +36,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Designer",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Soft",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -79,9 +79,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.lead.getCrmLead({
-    connectionId: "how",
+    connectionId: "string",
     fields: [
-      "Curium",
+      "string",
     ],
     id: "<ID>",
   });
@@ -122,9 +122,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.lead.listCrmLeads({
-    connectionId: "Implementation",
+    connectionId: "string",
     fields: [
-      "dam",
+      "string",
     ],
   });
 
@@ -173,11 +173,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "deposit",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Bike",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -217,7 +217,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.lead.removeCrmLead({
-    connectionId: "Springs",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -266,11 +266,11 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
       raw: {},
       telephones: [
         {
-          telephone: "Northwest",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "violation",
+    connectionId: "string",
     id: "<ID>",
   });
 

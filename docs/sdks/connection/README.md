@@ -30,19 +30,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
   const res = await sdk.connection.createUnifiedConnection({
     auth: {
       emails: [
-        "likewise",
+        "string",
       ],
       meta: {},
       otherAuthInfo: [
-        "Rwanda",
+        "string",
       ],
     },
     categories: [
-      PropertyConnectionCategories.Crm,
+      PropertyConnectionCategories.Uc,
     ],
-    integrationType: "revolutionize",
+    integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmPipelineWrite,
+      PropertyConnectionPermissions.CrmDealWrite,
     ],
   });
 
@@ -167,19 +167,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     connection: {
       auth: {
         emails: [
-          "International",
+          "string",
         ],
         meta: {},
         otherAuthInfo: [
-          "square",
+          "string",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Ats,
+        PropertyConnectionCategories.Enrich,
       ],
-      integrationType: "Northeast",
+      integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.MartechMemberWrite,
       ],
     },
     id: "<ID>",
@@ -264,19 +264,19 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     connection: {
       auth: {
         emails: [
-          "tan",
+          "string",
         ],
         meta: {},
         otherAuthInfo: [
-          "revitalize",
+          "string",
         ],
       },
       categories: [
-        PropertyConnectionCategories.Crm,
+        PropertyConnectionCategories.Ticketing,
       ],
-      integrationType: "Cambridgeshire",
+      integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmEventWrite,
+        PropertyConnectionPermissions.CrmLeadRead,
       ],
     },
     id: "<ID>",

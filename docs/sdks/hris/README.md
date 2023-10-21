@@ -51,11 +51,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "composite",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "redefine",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -97,14 +97,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.hris.createHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "transmitter",
+        "string",
       ],
       managerIds: [
-        "dependable",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "South",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -143,9 +143,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.getHrisEmployee({
-    connectionId: "Louisiana",
+    connectionId: "string",
     fields: [
-      "Afghanistan",
+      "string",
     ],
     id: "<ID>",
   });
@@ -186,9 +186,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.getHrisGroup({
-    connectionId: "likewise",
+    connectionId: "string",
     fields: [
-      "while",
+      "string",
     ],
     id: "<ID>",
   });
@@ -229,9 +229,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.listHrisEmployees({
-    connectionId: "overriding",
+    connectionId: "string",
     fields: [
-      "Krona",
+      "string",
     ],
   });
 
@@ -271,9 +271,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.listHrisGroups({
-    connectionId: "Northwest",
+    connectionId: "string",
     fields: [
-      "however",
+      "string",
     ],
   });
 
@@ -331,11 +331,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "cyan",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "farad",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -378,14 +378,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.hris.patchHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "scalable",
+        "string",
       ],
       managerIds: [
-        "Bespoke",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "indexing",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -425,7 +425,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.removeHrisEmployee({
-    connectionId: "Chicken",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -465,7 +465,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.hris.removeHrisGroup({
-    connectionId: "glistening",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -523,11 +523,11 @@ import {
       raw: {},
       telephones: [
         {
-          telephone: "Mazda",
+          telephone: "string",
         },
       ],
     },
-    connectionId: "Brand",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -570,14 +570,14 @@ import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
   const res = await sdk.hris.updateHrisGroup({
     hrisGroup: {
       employeeIds: [
-        "disintermediate",
+        "string",
       ],
       managerIds: [
-        "schemas",
+        "string",
       ],
       raw: {},
     },
-    connectionId: "Southwest",
+    connectionId: "string",
     id: "<ID>",
   });
 

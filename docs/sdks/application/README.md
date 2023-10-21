@@ -31,7 +31,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Hassium",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -70,9 +70,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.application.getAtsApplication({
-    connectionId: "mobile",
+    connectionId: "string",
     fields: [
-      "Key",
+      "string",
     ],
     id: "<ID>",
   });
@@ -113,9 +113,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.application.listAtsApplications({
-    connectionId: "Cambodia",
+    connectionId: "string",
     fields: [
-      "models",
+      "string",
     ],
   });
 
@@ -159,7 +159,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Lead",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -199,7 +199,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.application.removeAtsApplication({
-    connectionId: "gently",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -243,7 +243,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
     atsApplication: {
       raw: {},
     },
-    connectionId: "Keyboard",
+    connectionId: "string",
     id: "<ID>",
   });
 

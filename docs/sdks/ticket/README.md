@@ -31,10 +31,10 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
     ticketingTicket: {
       raw: {},
       tags: [
-        "sky",
+        "string",
       ],
     },
-    connectionId: "Cheese",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -73,9 +73,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.getTicketingTicket({
-    connectionId: "Marks",
+    connectionId: "string",
     fields: [
-      "Dollar",
+      "string",
     ],
     id: "<ID>",
   });
@@ -116,9 +116,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.listTicketingTickets({
-    connectionId: "Cisgender",
+    connectionId: "string",
     fields: [
-      "archive",
+      "string",
     ],
   });
 
@@ -162,10 +162,10 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
     ticketingTicket: {
       raw: {},
       tags: [
-        "Bespoke",
+        "string",
       ],
     },
-    connectionId: "program",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -205,7 +205,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.ticket.removeTicketingTicket({
-    connectionId: "communities",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -249,10 +249,10 @@ import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
     ticketingTicket: {
       raw: {},
       tags: [
-        "Rhode",
+        "string",
       ],
     },
-    connectionId: "gee",
+    connectionId: "string",
     id: "<ID>",
   });
 

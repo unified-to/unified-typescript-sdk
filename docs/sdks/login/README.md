@@ -22,8 +22,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.login.getUnifiedIntegrationLogin({
-    integrationType: "when",
-    workspaceId: "Tricycle",
+    integrationType: "string",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {

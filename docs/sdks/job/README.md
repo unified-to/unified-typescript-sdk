@@ -43,20 +43,20 @@ import {
         },
       ],
       departments: [
-        "Loan",
+        "string",
       ],
       hiringManagerIds: [
-        "driver",
+        "string",
       ],
       publicJobUrls: [
-        "Transmasculine",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "Mini",
+        "string",
       ],
     },
-    connectionId: "health",
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -95,9 +95,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.getAtsJob({
-    connectionId: "Southwest",
+    connectionId: "string",
     fields: [
-      "panel",
+      "string",
     ],
     id: "<ID>",
   });
@@ -138,9 +138,9 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.listAtsJobs({
-    connectionId: "firmware",
+    connectionId: "string",
     fields: [
-      "Praseodymium",
+      "string",
     ],
   });
 
@@ -196,20 +196,20 @@ import {
         },
       ],
       departments: [
-        "indigo",
+        "string",
       ],
       hiringManagerIds: [
-        "Bedfordshire",
+        "string",
       ],
       publicJobUrls: [
-        "North",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "mainland",
+        "string",
       ],
     },
-    connectionId: "microchip",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -249,7 +249,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.job.removeAtsJob({
-    connectionId: "Northeast",
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -305,20 +305,20 @@ import {
         },
       ],
       departments: [
-        "Plastic",
+        "string",
       ],
       hiringManagerIds: [
-        "West",
+        "string",
       ],
       publicJobUrls: [
-        "Direct",
+        "string",
       ],
       raw: {},
       recruiterIds: [
-        "SMS",
+        "string",
       ],
     },
-    connectionId: "asperiores",
+    connectionId: "string",
     id: "<ID>",
   });
 

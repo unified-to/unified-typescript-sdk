@@ -24,11 +24,11 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   });
 
   const res = await sdk.auth.getUnifiedIntegrationAuth({
-    integrationType: "supposing",
+    integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.TicketingCustomerRead,
+      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
     ],
-    workspaceId: "Van",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -67,8 +67,8 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.auth.getUnifiedIntegrationLogin({
-    integrationType: "when",
-    workspaceId: "Tricycle",
+    integrationType: "string",
+    workspaceId: "string",
   });
 
   if (res.statusCode == 200) {
