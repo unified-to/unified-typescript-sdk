@@ -5,31 +5,37 @@
 
 * [createAtsApplication](#createatsapplication) - Create an application
 * [createAtsCandidate](#createatscandidate) - Create a candidate
+* [createAtsDocument](#createatsdocument) - Create a document
 * [createAtsInterview](#createatsinterview) - Create a interview
 * [createAtsJob](#createatsjob) - Create a job
 * [createAtsScorecard](#createatsscorecard) - Create a scorecard
 * [getAtsApplication](#getatsapplication) - Retrieve an application
 * [getAtsCandidate](#getatscandidate) - Retrieve a candidate
+* [getAtsDocument](#getatsdocument) - Retrieve a document
 * [getAtsInterview](#getatsinterview) - Retrieve a interview
 * [getAtsJob](#getatsjob) - Retrieve a job
 * [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
 * [listAtsApplications](#listatsapplications) - List all applications
 * [listAtsCandidates](#listatscandidates) - List all candidates
+* [listAtsDocuments](#listatsdocuments) - List all documents
 * [listAtsInterviews](#listatsinterviews) - List all interviews
 * [listAtsJobs](#listatsjobs) - List all jobs
 * [listAtsScorecards](#listatsscorecards) - List all scorecards
 * [patchAtsApplication](#patchatsapplication) - Update an application
 * [patchAtsCandidate](#patchatscandidate) - Update a candidate
+* [patchAtsDocument](#patchatsdocument) - Update a document
 * [patchAtsInterview](#patchatsinterview) - Update a interview
 * [patchAtsJob](#patchatsjob) - Update a job
 * [patchAtsScorecard](#patchatsscorecard) - Update a scorecard
 * [removeAtsApplication](#removeatsapplication) - Remove an application
 * [removeAtsCandidate](#removeatscandidate) - Remove a candidate
+* [removeAtsDocument](#removeatsdocument) - Remove a document
 * [removeAtsInterview](#removeatsinterview) - Remove a interview
 * [removeAtsJob](#removeatsjob) - Remove a job
 * [removeAtsScorecard](#removeatsscorecard) - Remove a scorecard
 * [updateAtsApplication](#updateatsapplication) - Update an application
 * [updateAtsCandidate](#updateatscandidate) - Update a candidate
+* [updateAtsDocument](#updateatsdocument) - Update a document
 * [updateAtsInterview](#updateatsinterview) - Update a interview
 * [updateAtsJob](#updateatsjob) - Update a job
 * [updateAtsScorecard](#updateatsscorecard) - Update a scorecard
@@ -132,6 +138,49 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 ### Response
 
 **Promise<[operations.CreateAtsCandidateResponse](../../models/operations/createatscandidateresponse.md)>**
+
+
+## createAtsDocument
+
+Create a document
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.createAtsDocument({
+    atsDocument: {
+      raw: {},
+    },
+    connectionId: "string",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreateAtsDocumentRequest](../../models/operations/createatsdocumentrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.CreateAtsDocumentResponse](../../models/operations/createatsdocumentresponse.md)>**
 
 
 ## createAtsInterview
@@ -377,6 +426,49 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.GetAtsCandidateResponse](../../models/operations/getatscandidateresponse.md)>**
 
 
+## getAtsDocument
+
+Retrieve a document
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.getAtsDocument({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetAtsDocumentRequest](../../models/operations/getatsdocumentrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+
+
+### Response
+
+**Promise<[operations.GetAtsDocumentResponse](../../models/operations/getatsdocumentresponse.md)>**
+
+
 ## getAtsInterview
 
 Retrieve a interview
@@ -588,6 +680,48 @@ import { UnifiedTo } from "unified-to";
 ### Response
 
 **Promise<[operations.ListAtsCandidatesResponse](../../models/operations/listatscandidatesresponse.md)>**
+
+
+## listAtsDocuments
+
+List all documents
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.listAtsDocuments({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListAtsDocumentsRequest](../../models/operations/listatsdocumentsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.ListAtsDocumentsResponse](../../models/operations/listatsdocumentsresponse.md)>**
 
 
 ## listAtsInterviews
@@ -816,6 +950,50 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 ### Response
 
 **Promise<[operations.PatchAtsCandidateResponse](../../models/operations/patchatscandidateresponse.md)>**
+
+
+## patchAtsDocument
+
+Update a document
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.patchAtsDocument({
+    atsDocument: {
+      raw: {},
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.PatchAtsDocumentRequest](../../models/operations/patchatsdocumentrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+
+
+### Response
+
+**Promise<[operations.PatchAtsDocumentResponse](../../models/operations/patchatsdocumentresponse.md)>**
 
 
 ## patchAtsInterview
@@ -1058,6 +1236,46 @@ import { UnifiedTo } from "unified-to";
 **Promise<[operations.RemoveAtsCandidateResponse](../../models/operations/removeatscandidateresponse.md)>**
 
 
+## removeAtsDocument
+
+Remove a document
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.removeAtsDocument({
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.RemoveAtsDocumentRequest](../../models/operations/removeatsdocumentrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.RemoveAtsDocumentResponse](../../models/operations/removeatsdocumentresponse.md)>**
+
+
 ## removeAtsInterview
 
 Remove a interview
@@ -1278,6 +1496,50 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 ### Response
 
 **Promise<[operations.UpdateAtsCandidateResponse](../../models/operations/updateatscandidateresponse.md)>**
+
+
+## updateAtsDocument
+
+Update a document
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+
+(async() => {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
+
+  const res = await sdk.ats.updateAtsDocument({
+    atsDocument: {
+      raw: {},
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+})();
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.UpdateAtsDocumentRequest](../../models/operations/updateatsdocumentrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
+
+
+### Response
+
+**Promise<[operations.UpdateAtsDocumentResponse](../../models/operations/updateatsdocumentresponse.md)>**
 
 
 ## updateAtsInterview

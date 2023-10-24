@@ -17,7 +17,7 @@ export class PatchAtsScorecardRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
-     * ID of the Document
+     * ID of the Scorecard
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;

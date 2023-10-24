@@ -9,7 +9,7 @@ import * as shared from "./models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
-export class Document {
+export class Scorecard {
     private sdkConfiguration: SDKConfiguration;
 
     constructor(sdkConfig: SDKConfiguration) {
@@ -17,26 +17,26 @@ export class Document {
     }
 
     /**
-     * Create a document
+     * Create a scorecard
      */
-    async createAtsDocument(
-        req: operations.CreateAtsDocumentRequest,
+    async createAtsScorecard(
+        req: operations.CreateAtsScorecardRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.CreateAtsDocumentResponse> {
+    ): Promise<operations.CreateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateAtsDocumentRequest(req);
+            req = new operations.CreateAtsScorecardRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsDocument", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsScorecard", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -76,18 +76,19 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.CreateAtsDocumentResponse = new operations.CreateAtsDocumentResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
+        const res: operations.CreateAtsScorecardResponse =
+            new operations.CreateAtsScorecardResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsDocument = utils.objectToClass(
+                    res.atsScorecard = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AtsDocument
+                        shared.AtsScorecard
                     );
                 } else {
                     throw new errors.SDKError(
@@ -112,21 +113,21 @@ export class Document {
     }
 
     /**
-     * Retrieve a document
+     * Retrieve a scorecard
      */
-    async getAtsDocument(
-        req: operations.GetAtsDocumentRequest,
+    async getAtsScorecard(
+        req: operations.GetAtsScorecardRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAtsDocumentResponse> {
+    ): Promise<operations.GetAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAtsDocumentRequest(req);
+            req = new operations.GetAtsScorecardRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -157,7 +158,7 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAtsDocumentResponse = new operations.GetAtsDocumentResponse({
+        const res: operations.GetAtsScorecardResponse = new operations.GetAtsScorecardResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -166,9 +167,9 @@ export class Document {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsDocument = utils.objectToClass(
+                    res.atsScorecard = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AtsDocument
+                        shared.AtsScorecard
                     );
                 } else {
                     throw new errors.SDKError(
@@ -193,21 +194,21 @@ export class Document {
     }
 
     /**
-     * List all documents
+     * List all scorecards
      */
-    async listAtsDocuments(
-        req: operations.ListAtsDocumentsRequest,
+    async listAtsScorecards(
+        req: operations.ListAtsScorecardsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.ListAtsDocumentsResponse> {
+    ): Promise<operations.ListAtsScorecardsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAtsDocumentsRequest(req);
+            req = new operations.ListAtsScorecardsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -238,7 +239,7 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.ListAtsDocumentsResponse = new operations.ListAtsDocumentsResponse({
+        const res: operations.ListAtsScorecardsResponse = new operations.ListAtsScorecardsResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -247,11 +248,11 @@ export class Document {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsDocuments = [];
+                    res.atsScorecards = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.atsDocuments = utils.objectToClass(
+                    res.atsScorecards = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AtsDocument,
+                        shared.AtsScorecard,
                         resFieldDepth
                     );
                 } else {
@@ -277,26 +278,26 @@ export class Document {
     }
 
     /**
-     * Update a document
+     * Update a scorecard
      */
-    async patchAtsDocument(
-        req: operations.PatchAtsDocumentRequest,
+    async patchAtsScorecard(
+        req: operations.PatchAtsScorecardRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchAtsDocumentResponse> {
+    ): Promise<operations.PatchAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAtsDocumentRequest(req);
+            req = new operations.PatchAtsScorecardRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsDocument", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsScorecard", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -336,7 +337,7 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchAtsDocumentResponse = new operations.PatchAtsDocumentResponse({
+        const res: operations.PatchAtsScorecardResponse = new operations.PatchAtsScorecardResponse({
             statusCode: httpRes.status,
             contentType: contentType,
             rawResponse: httpRes,
@@ -345,9 +346,9 @@ export class Document {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsDocument = utils.objectToClass(
+                    res.atsScorecard = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AtsDocument
+                        shared.AtsScorecard
                     );
                 } else {
                     throw new errors.SDKError(
@@ -372,21 +373,21 @@ export class Document {
     }
 
     /**
-     * Remove a document
+     * Remove a scorecard
      */
-    async removeAtsDocument(
-        req: operations.RemoveAtsDocumentRequest,
+    async removeAtsScorecard(
+        req: operations.RemoveAtsScorecardRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.RemoveAtsDocumentResponse> {
+    ): Promise<operations.RemoveAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.RemoveAtsDocumentRequest(req);
+            req = new operations.RemoveAtsScorecardRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -416,11 +417,12 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.RemoveAtsDocumentResponse = new operations.RemoveAtsDocumentResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
+        const res: operations.RemoveAtsScorecardResponse =
+            new operations.RemoveAtsScorecardResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case (httpRes?.status >= 400 && httpRes?.status < 500) ||
@@ -433,7 +435,7 @@ export class Document {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsDocumentDefaultApplicationJSONString = decodedRes;
+                    res.removeAtsScorecardDefaultApplicationJSONString = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -449,26 +451,26 @@ export class Document {
     }
 
     /**
-     * Update a document
+     * Update a scorecard
      */
-    async updateAtsDocument(
-        req: operations.UpdateAtsDocumentRequest,
+    async updateAtsScorecard(
+        req: operations.UpdateAtsScorecardRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.UpdateAtsDocumentResponse> {
+    ): Promise<operations.UpdateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateAtsDocumentRequest(req);
+            req = new operations.UpdateAtsScorecardRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsDocument", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "atsScorecard", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -508,18 +510,19 @@ export class Document {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.UpdateAtsDocumentResponse = new operations.UpdateAtsDocumentResponse({
-            statusCode: httpRes.status,
-            contentType: contentType,
-            rawResponse: httpRes,
-        });
+        const res: operations.UpdateAtsScorecardResponse =
+            new operations.UpdateAtsScorecardResponse({
+                statusCode: httpRes.status,
+                contentType: contentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.atsDocument = utils.objectToClass(
+                    res.atsScorecard = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AtsDocument
+                        shared.AtsScorecard
                     );
                 } else {
                     throw new errors.SDKError(

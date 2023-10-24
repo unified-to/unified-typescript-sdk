@@ -68,31 +68,37 @@ import { UnifiedTo } from "unified-to";
 
 * [createAtsApplication](docs/sdks/ats/README.md#createatsapplication) - Create an application
 * [createAtsCandidate](docs/sdks/ats/README.md#createatscandidate) - Create a candidate
+* [createAtsDocument](docs/sdks/ats/README.md#createatsdocument) - Create a document
 * [createAtsInterview](docs/sdks/ats/README.md#createatsinterview) - Create a interview
 * [createAtsJob](docs/sdks/ats/README.md#createatsjob) - Create a job
 * [createAtsScorecard](docs/sdks/ats/README.md#createatsscorecard) - Create a scorecard
 * [getAtsApplication](docs/sdks/ats/README.md#getatsapplication) - Retrieve an application
 * [getAtsCandidate](docs/sdks/ats/README.md#getatscandidate) - Retrieve a candidate
+* [getAtsDocument](docs/sdks/ats/README.md#getatsdocument) - Retrieve a document
 * [getAtsInterview](docs/sdks/ats/README.md#getatsinterview) - Retrieve a interview
 * [getAtsJob](docs/sdks/ats/README.md#getatsjob) - Retrieve a job
 * [getAtsScorecard](docs/sdks/ats/README.md#getatsscorecard) - Retrieve a scorecard
 * [listAtsApplications](docs/sdks/ats/README.md#listatsapplications) - List all applications
 * [listAtsCandidates](docs/sdks/ats/README.md#listatscandidates) - List all candidates
+* [listAtsDocuments](docs/sdks/ats/README.md#listatsdocuments) - List all documents
 * [listAtsInterviews](docs/sdks/ats/README.md#listatsinterviews) - List all interviews
 * [listAtsJobs](docs/sdks/ats/README.md#listatsjobs) - List all jobs
 * [listAtsScorecards](docs/sdks/ats/README.md#listatsscorecards) - List all scorecards
 * [patchAtsApplication](docs/sdks/ats/README.md#patchatsapplication) - Update an application
 * [patchAtsCandidate](docs/sdks/ats/README.md#patchatscandidate) - Update a candidate
+* [patchAtsDocument](docs/sdks/ats/README.md#patchatsdocument) - Update a document
 * [patchAtsInterview](docs/sdks/ats/README.md#patchatsinterview) - Update a interview
 * [patchAtsJob](docs/sdks/ats/README.md#patchatsjob) - Update a job
 * [patchAtsScorecard](docs/sdks/ats/README.md#patchatsscorecard) - Update a scorecard
 * [removeAtsApplication](docs/sdks/ats/README.md#removeatsapplication) - Remove an application
 * [removeAtsCandidate](docs/sdks/ats/README.md#removeatscandidate) - Remove a candidate
+* [removeAtsDocument](docs/sdks/ats/README.md#removeatsdocument) - Remove a document
 * [removeAtsInterview](docs/sdks/ats/README.md#removeatsinterview) - Remove a interview
 * [removeAtsJob](docs/sdks/ats/README.md#removeatsjob) - Remove a job
 * [removeAtsScorecard](docs/sdks/ats/README.md#removeatsscorecard) - Remove a scorecard
 * [updateAtsApplication](docs/sdks/ats/README.md#updateatsapplication) - Update an application
 * [updateAtsCandidate](docs/sdks/ats/README.md#updateatscandidate) - Update a candidate
+* [updateAtsDocument](docs/sdks/ats/README.md#updateatsdocument) - Update a document
 * [updateAtsInterview](docs/sdks/ats/README.md#updateatsinterview) - Update a interview
 * [updateAtsJob](docs/sdks/ats/README.md#updateatsjob) - Update a job
 * [updateAtsScorecard](docs/sdks/ats/README.md#updateatsscorecard) - Update a scorecard
@@ -214,12 +220,12 @@ import { UnifiedTo } from "unified-to";
 
 ### [document](docs/sdks/document/README.md)
 
-* [createAtsScorecard](docs/sdks/document/README.md#createatsscorecard) - Create a scorecard
-* [getAtsScorecard](docs/sdks/document/README.md#getatsscorecard) - Retrieve a scorecard
-* [listAtsScorecards](docs/sdks/document/README.md#listatsscorecards) - List all scorecards
-* [patchAtsScorecard](docs/sdks/document/README.md#patchatsscorecard) - Update a scorecard
-* [removeAtsScorecard](docs/sdks/document/README.md#removeatsscorecard) - Remove a scorecard
-* [updateAtsScorecard](docs/sdks/document/README.md#updateatsscorecard) - Update a scorecard
+* [createAtsDocument](docs/sdks/document/README.md#createatsdocument) - Create a document
+* [getAtsDocument](docs/sdks/document/README.md#getatsdocument) - Retrieve a document
+* [listAtsDocuments](docs/sdks/document/README.md#listatsdocuments) - List all documents
+* [patchAtsDocument](docs/sdks/document/README.md#patchatsdocument) - Update a document
+* [removeAtsDocument](docs/sdks/document/README.md#removeatsdocument) - Remove a document
+* [updateAtsDocument](docs/sdks/document/README.md#updateatsdocument) - Update a document
 
 ### [employee](docs/sdks/employee/README.md)
 
@@ -377,6 +383,15 @@ import { UnifiedTo } from "unified-to";
 * [patchCrmPipeline](docs/sdks/pipeline/README.md#patchcrmpipeline) - Update a pipeline
 * [removeCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
 * [updateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
+
+### [scorecard](docs/sdks/scorecard/README.md)
+
+* [createAtsScorecard](docs/sdks/scorecard/README.md#createatsscorecard) - Create a scorecard
+* [getAtsScorecard](docs/sdks/scorecard/README.md#getatsscorecard) - Retrieve a scorecard
+* [listAtsScorecards](docs/sdks/scorecard/README.md#listatsscorecards) - List all scorecards
+* [patchAtsScorecard](docs/sdks/scorecard/README.md#patchatsscorecard) - Update a scorecard
+* [removeAtsScorecard](docs/sdks/scorecard/README.md#removeatsscorecard) - Remove a scorecard
+* [updateAtsScorecard](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
 
 ### [ticket](docs/sdks/ticket/README.md)
 

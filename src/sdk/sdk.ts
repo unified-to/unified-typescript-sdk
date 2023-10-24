@@ -35,6 +35,7 @@ import { Note } from "./note";
 import { Passthrough } from "./passthrough";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
+import { Scorecard } from "./scorecard";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
 import { Uc } from "./uc";
@@ -93,9 +94,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.6.1";
+    sdkVersion = "0.6.2";
     genVersion = "2.169.3";
-    userAgent = "speakeasy-sdk/typescript 0.6.1 2.169.3 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.6.2 2.169.3 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -137,6 +138,7 @@ export class UnifiedTo {
     public passthrough: Passthrough;
     public person: Person;
     public pipeline: Pipeline;
+    public scorecard: Scorecard;
     public ticket: Ticket;
     public ticketing: Ticketing;
     public uc: Uc;
@@ -192,6 +194,7 @@ export class UnifiedTo {
         this.passthrough = new Passthrough(this.sdkConfiguration);
         this.person = new Person(this.sdkConfiguration);
         this.pipeline = new Pipeline(this.sdkConfiguration);
+        this.scorecard = new Scorecard(this.sdkConfiguration);
         this.ticket = new Ticket(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);
         this.uc = new Uc(this.sdkConfiguration);

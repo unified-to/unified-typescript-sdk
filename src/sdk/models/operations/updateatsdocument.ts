@@ -6,9 +6,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export class UpdateAtsScorecardRequest extends SpeakeasyBase {
+export class UpdateAtsDocumentRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    atsScorecard?: shared.AtsScorecard;
+    atsDocument?: shared.AtsDocument;
 
     /**
      * ID of the connection
@@ -17,18 +17,18 @@ export class UpdateAtsScorecardRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
-     * ID of the Scorecard
+     * ID of the Document
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
 }
 
-export class UpdateAtsScorecardResponse extends SpeakeasyBase {
+export class UpdateAtsDocumentResponse extends SpeakeasyBase {
     /**
      * Successful
      */
     @SpeakeasyMetadata()
-    atsScorecard?: shared.AtsScorecard;
+    atsDocument?: shared.AtsDocument;
 
     /**
      * HTTP response content type for this operation
