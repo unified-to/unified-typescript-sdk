@@ -31,7 +31,6 @@ import { UnifiedTo } from "unified-to";
       raw: {},
     },
     connectionId: "string",
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -75,7 +74,6 @@ import { UnifiedTo } from "unified-to";
       "string",
     ],
     id: "<ID>",
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -118,7 +116,6 @@ import { UnifiedTo } from "unified-to";
     fields: [
       "string",
     ],
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -162,7 +159,6 @@ import { UnifiedTo } from "unified-to";
     },
     connectionId: "string",
     id: "<ID>",
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -203,7 +199,6 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.note.removeTicketingNote({
     connectionId: "string",
     id: "<ID>",
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -247,7 +242,6 @@ import { UnifiedTo } from "unified-to";
     },
     connectionId: "string",
     id: "<ID>",
-    ticketId: "string",
   });
 
   if (res.statusCode == 200) {

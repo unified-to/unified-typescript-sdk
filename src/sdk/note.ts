@@ -31,11 +31,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -131,11 +127,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -216,11 +208,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -305,11 +293,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -405,11 +389,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -487,11 +467,7 @@ export class Note {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/ticketing/{connection_id}/{ticket_id}/note/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 

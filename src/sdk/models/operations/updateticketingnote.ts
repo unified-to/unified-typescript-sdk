@@ -21,12 +21,6 @@ export class UpdateTicketingNoteRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
-
-    /**
-     * ID of the ticket
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=ticket_id" })
-    ticketId: string;
 }
 
 export class UpdateTicketingNoteResponse extends SpeakeasyBase {

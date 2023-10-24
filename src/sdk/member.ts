@@ -17,7 +17,7 @@ export class Member {
     }
 
     /**
-     * Create a member in a list
+     * Create a member
      */
     async createMartechMember(
         req: operations.CreateMartechMemberRequest,
@@ -31,11 +31,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -117,7 +113,7 @@ export class Member {
     }
 
     /**
-     * Retrieve a member from a list
+     * Retrieve a member
      */
     async getMartechMember(
         req: operations.GetMartechMemberRequest,
@@ -131,11 +127,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -202,7 +194,7 @@ export class Member {
     }
 
     /**
-     * List all members in a list
+     * List all members
      */
     async listMartechMembers(
         req: operations.ListMartechMembersRequest,
@@ -216,11 +208,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -291,7 +279,7 @@ export class Member {
     }
 
     /**
-     * Update a member in a list
+     * Update a member
      */
     async patchMartechMember(
         req: operations.PatchMartechMemberRequest,
@@ -305,11 +293,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -391,7 +375,7 @@ export class Member {
     }
 
     /**
-     * Remove member from a list
+     * Remove member
      */
     async removeMartechMember(
         req: operations.RemoveMartechMemberRequest,
@@ -405,11 +389,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -473,7 +453,7 @@ export class Member {
     }
 
     /**
-     * Update a member in a list
+     * Update a member
      */
     async updateMartechMember(
         req: operations.UpdateMartechMemberRequest,
@@ -487,11 +467,7 @@ export class Member {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
-            baseURL,
-            "/martech/{connection_id}/{list_id}/member/{id}",
-            req
-        );
+        const url: string = utils.generateURL(baseURL, "/martech/{connection_id}/member/{id}", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 

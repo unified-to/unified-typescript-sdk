@@ -34,6 +34,10 @@ export class TicketingNote extends SpeakeasyBase {
     raw: PropertyTicketingNoteRaw;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "ticket_id" })
+    ticketId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })
     updatedAt?: string;
 }

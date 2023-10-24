@@ -23,10 +23,10 @@ export class ListMartechMembersRequest extends SpeakeasyBase {
     limit?: number;
 
     /**
-     * ID of the list
+     * Usually required
      */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=list_id" })
-    listId: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=list_id" })
+    listId?: string;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
     offset?: number;

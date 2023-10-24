@@ -327,26 +327,26 @@ import { UnifiedTo } from "unified-to";
 ### [martech](docs/sdks/martech/README.md)
 
 * [createMartechList](docs/sdks/martech/README.md#createmartechlist) - Create a list
-* [createMartechMember](docs/sdks/martech/README.md#createmartechmember) - Create a member in a list
+* [createMartechMember](docs/sdks/martech/README.md#createmartechmember) - Create a member
 * [getMartechList](docs/sdks/martech/README.md#getmartechlist) - Retrieve a list
-* [getMartechMember](docs/sdks/martech/README.md#getmartechmember) - Retrieve a member from a list
+* [getMartechMember](docs/sdks/martech/README.md#getmartechmember) - Retrieve a member
 * [listMartechLists](docs/sdks/martech/README.md#listmartechlists) - List all lists
-* [listMartechMembers](docs/sdks/martech/README.md#listmartechmembers) - List all members in a list
+* [listMartechMembers](docs/sdks/martech/README.md#listmartechmembers) - List all members
 * [patchMartechList](docs/sdks/martech/README.md#patchmartechlist) - Update a list
-* [patchMartechMember](docs/sdks/martech/README.md#patchmartechmember) - Update a member in a list
+* [patchMartechMember](docs/sdks/martech/README.md#patchmartechmember) - Update a member
 * [removeMartechList](docs/sdks/martech/README.md#removemartechlist) - Remove a list
-* [removeMartechMember](docs/sdks/martech/README.md#removemartechmember) - Remove member from a list
+* [removeMartechMember](docs/sdks/martech/README.md#removemartechmember) - Remove member
 * [updateMartechList](docs/sdks/martech/README.md#updatemartechlist) - Update a list
-* [updateMartechMember](docs/sdks/martech/README.md#updatemartechmember) - Update a member in a list
+* [updateMartechMember](docs/sdks/martech/README.md#updatemartechmember) - Update a member
 
 ### [member](docs/sdks/member/README.md)
 
-* [createMartechMember](docs/sdks/member/README.md#createmartechmember) - Create a member in a list
-* [getMartechMember](docs/sdks/member/README.md#getmartechmember) - Retrieve a member from a list
-* [listMartechMembers](docs/sdks/member/README.md#listmartechmembers) - List all members in a list
-* [patchMartechMember](docs/sdks/member/README.md#patchmartechmember) - Update a member in a list
-* [removeMartechMember](docs/sdks/member/README.md#removemartechmember) - Remove member from a list
-* [updateMartechMember](docs/sdks/member/README.md#updatemartechmember) - Update a member in a list
+* [createMartechMember](docs/sdks/member/README.md#createmartechmember) - Create a member
+* [getMartechMember](docs/sdks/member/README.md#getmartechmember) - Retrieve a member
+* [listMartechMembers](docs/sdks/member/README.md#listmartechmembers) - List all members
+* [patchMartechMember](docs/sdks/member/README.md#patchmartechmember) - Update a member
+* [removeMartechMember](docs/sdks/member/README.md#removemartechmember) - Remove member
+* [updateMartechMember](docs/sdks/member/README.md#updatemartechmember) - Update a member
 
 ### [note](docs/sdks/note/README.md)
 

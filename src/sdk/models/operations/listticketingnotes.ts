@@ -38,10 +38,10 @@ export class ListTicketingNotesRequest extends SpeakeasyBase {
     sort?: string;
 
     /**
-     * ID of the ticket
+     * Usually required
      */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=ticket_id" })
-    ticketId: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=ticket_id" })
+    ticketId?: string;
 
     /**
      * Return only results whose updated date is equal or greater to this value

@@ -18,12 +18,6 @@ export class CreateMartechMemberRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
-
-    /**
-     * ID of the list
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=list_id" })
-    listId: string;
 }
 
 export class CreateMartechMemberResponse extends SpeakeasyBase {

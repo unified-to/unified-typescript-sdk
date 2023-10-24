@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [createMartechMember](#createmartechmember) - Create a member in a list
-* [getMartechMember](#getmartechmember) - Retrieve a member from a list
-* [listMartechMembers](#listmartechmembers) - List all members in a list
-* [patchMartechMember](#patchmartechmember) - Update a member in a list
-* [removeMartechMember](#removemartechmember) - Remove member from a list
-* [updateMartechMember](#updatemartechmember) - Update a member in a list
+* [createMartechMember](#createmartechmember) - Create a member
+* [getMartechMember](#getmartechmember) - Retrieve a member
+* [listMartechMembers](#listmartechmembers) - List all members
+* [patchMartechMember](#patchmartechmember) - Update a member
+* [removeMartechMember](#removemartechmember) - Remove member
+* [updateMartechMember](#updatemartechmember) - Update a member
 
 ## createMartechMember
 
-Create a member in a list
+Create a member
 
 ### Example Usage
 
@@ -43,7 +43,6 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
       ],
     },
     connectionId: "string",
-    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -67,7 +66,7 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 ## getMartechMember
 
-Retrieve a member from a list
+Retrieve a member
 
 ### Example Usage
 
@@ -87,7 +86,6 @@ import { UnifiedTo } from "unified-to";
       "string",
     ],
     id: "<ID>",
-    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -111,7 +109,7 @@ import { UnifiedTo } from "unified-to";
 
 ## listMartechMembers
 
-List all members in a list
+List all members
 
 ### Example Usage
 
@@ -130,7 +128,6 @@ import { UnifiedTo } from "unified-to";
     fields: [
       "string",
     ],
-    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -154,7 +151,7 @@ import { UnifiedTo } from "unified-to";
 
 ## patchMartechMember
 
-Update a member in a list
+Update a member
 
 ### Example Usage
 
@@ -186,7 +183,6 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
     },
     connectionId: "string",
     id: "<ID>",
-    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -210,7 +206,7 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 ## removeMartechMember
 
-Remove member from a list
+Remove member
 
 ### Example Usage
 
@@ -227,7 +223,6 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.member.removeMartechMember({
     connectionId: "string",
     id: "<ID>",
-    listId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -251,7 +246,7 @@ import { UnifiedTo } from "unified-to";
 
 ## updateMartechMember
 
-Update a member in a list
+Update a member
 
 ### Example Usage
 
@@ -283,7 +278,6 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
     },
     connectionId: "string",
     id: "<ID>",
-    listId: "string",
   });
 
   if (res.statusCode == 200) {

@@ -17,12 +17,6 @@ export class RemoveMartechMemberRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
-
-    /**
-     * ID of the list
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=list_id" })
-    listId: string;
 }
 
 export class RemoveMartechMemberResponse extends SpeakeasyBase {

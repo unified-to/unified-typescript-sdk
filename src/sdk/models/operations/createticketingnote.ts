@@ -15,12 +15,6 @@ export class CreateTicketingNoteRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
-
-    /**
-     * ID of the ticket
-     */
-    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=ticket_id" })
-    ticketId: string;
 }
 
 export class CreateTicketingNoteResponse extends SpeakeasyBase {
