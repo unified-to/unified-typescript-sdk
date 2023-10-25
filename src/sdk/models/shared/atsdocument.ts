@@ -48,7 +48,7 @@ export class AtsDocument extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyAtsDocumentRaw)
-    raw: PropertyAtsDocumentRaw;
+    raw?: PropertyAtsDocumentRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
