@@ -48,6 +48,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
     object: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -87,6 +88,7 @@ import { UnifiedTo } from "unified-to";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -123,6 +125,7 @@ import { UnifiedTo } from "unified-to";
   });
 
   const res = await sdk.webhook.listUnifiedWebhooks({});
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -162,6 +165,7 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.webhook.removeUnifiedWebhook({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

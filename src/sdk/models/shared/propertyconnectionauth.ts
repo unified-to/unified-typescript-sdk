@@ -84,6 +84,15 @@ export class PropertyConnectionAuth extends SpeakeasyBase {
     refreshToken?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "refresh_token_expires_date" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    refreshTokenExpiresDate?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "refresh_token_expires_in" })
+    refreshTokenExpiresIn?: number;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "state" })
     state?: string;
 

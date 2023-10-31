@@ -43,6 +43,7 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     connectionId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -86,6 +87,7 @@ import { UnifiedTo } from "unified-to";
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -127,6 +129,7 @@ import { UnifiedTo } from "unified-to";
       "string",
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -181,6 +184,7 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -220,6 +224,7 @@ import { UnifiedTo } from "unified-to";
     connectionId: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -273,6 +278,7 @@ import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/share
     connectionId: "string",
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

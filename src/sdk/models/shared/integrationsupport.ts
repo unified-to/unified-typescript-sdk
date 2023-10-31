@@ -49,6 +49,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listDealId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_invoice_id" })
+    listInvoiceId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_job_id" })
     listJobId?: boolean;
 

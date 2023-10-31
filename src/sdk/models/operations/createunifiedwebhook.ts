@@ -12,9 +12,6 @@ export enum CreateUnifiedWebhookEvents {
 }
 
 export class CreateUnifiedWebhookRequest extends SpeakeasyBase {
-    /**
-     * A webhook is used to POST new/updated information to your server.
-     */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     webhook?: shared.Webhook;
 

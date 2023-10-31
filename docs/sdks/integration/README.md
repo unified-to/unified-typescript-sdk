@@ -28,6 +28,7 @@ import { UnifiedTo } from "unified-to";
     integrationType: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -72,6 +73,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
     workspaceId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -115,6 +117,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
     workspaceId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -156,6 +159,7 @@ import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/op
       ListUnifiedIntegrationsCategories.Auth,
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response

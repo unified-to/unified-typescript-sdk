@@ -46,6 +46,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     ],
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -84,6 +85,7 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.connection.getUnifiedConnection({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -126,6 +128,7 @@ import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/ope
       ListUnifiedConnectionsCategories.Crm,
     ],
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -185,6 +188,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     id: "<ID>",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -223,6 +227,7 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.connection.removeUnifiedConnection({
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
@@ -281,6 +286,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     },
     id: "<ID>",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

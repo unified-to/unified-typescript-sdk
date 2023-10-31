@@ -31,6 +31,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
     workspaceId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -70,6 +71,7 @@ import { UnifiedTo } from "unified-to";
     integrationType: "string",
     workspaceId: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response

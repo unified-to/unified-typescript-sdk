@@ -26,6 +26,7 @@ import { UnifiedTo } from "unified-to";
     connectionId: "string",
   });
 
+
   if (res.statusCode == 200) {
     // handle response
   }
@@ -64,6 +65,7 @@ import { UnifiedTo } from "unified-to";
   const res = await sdk.enrich.listEnrichPeople({
     connectionId: "string",
   });
+
 
   if (res.statusCode == 200) {
     // handle response
