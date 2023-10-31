@@ -16,6 +16,7 @@ export enum ListUnifiedConnectionsCategories {
     Martech = "martech",
     Ticketing = "ticketing",
     Uc = "uc",
+    Accounting = "accounting",
 }
 
 export class ListUnifiedConnectionsRequest extends SpeakeasyBase {

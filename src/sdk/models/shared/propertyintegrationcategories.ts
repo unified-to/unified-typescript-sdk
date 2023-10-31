@@ -12,4 +12,5 @@ export enum PropertyIntegrationCategories {
     Martech = "martech",
     Ticketing = "ticketing",
     Uc = "uc",
+    Accounting = "accounting",
 }

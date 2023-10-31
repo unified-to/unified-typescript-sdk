@@ -35,7 +35,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: WebhookObjectType.CrmLead,
+      objectType: WebhookObjectType.CrmEvent,
       subscriptions: [
         "string",
       ],

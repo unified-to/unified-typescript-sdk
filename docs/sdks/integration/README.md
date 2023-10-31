@@ -68,7 +68,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.integration.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
+      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });
@@ -112,7 +112,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
 
   const res = await sdk.integration.listUnifiedIntegrationWorkspaces({
     categories: [
-      ListUnifiedIntegrationWorkspacesCategories.Martech,
+      ListUnifiedIntegrationWorkspacesCategories.Ticketing,
     ],
     workspaceId: "string",
   });

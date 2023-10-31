@@ -26,6 +26,11 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 <!-- Start SDK Example Usage -->
 ```typescript
 import { UnifiedTo } from "unified-to";
+import {
+    AccountingCustomerTaxExemption,
+    AccountingEmailType,
+    AccountingTelephoneType,
+} from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -34,8 +39,23 @@ import { UnifiedTo } from "unified-to";
         },
     });
 
-    const res = await sdk.apicall.getUnifiedApicall({
-        id: "<ID>",
+    const res = await sdk.accounting.createAccountingCustomer({
+        accountingCustomer: {
+            billingAddress: {},
+            emails: [
+                {
+                    email: "Kevon_Schultz42@gmail.com",
+                },
+            ],
+            raw: {},
+            shippingAddress: {},
+            telephones: [
+                {
+                    telephone: "string",
+                },
+            ],
+        },
+        connectionId: "string",
     });
 
     if (res.statusCode == 200) {
@@ -49,6 +69,27 @@ import { UnifiedTo } from "unified-to";
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+
+### [accounting](docs/sdks/accounting/README.md)
+
+* [createAccountingCustomer](docs/sdks/accounting/README.md#createaccountingcustomer) - Create a customer
+* [createAccountingInvoice](docs/sdks/accounting/README.md#createaccountinginvoice) - Create a invoice
+* [createAccountingPayment](docs/sdks/accounting/README.md#createaccountingpayment) - Create a payment
+* [getAccountingCustomer](docs/sdks/accounting/README.md#getaccountingcustomer) - Retrieve a customer
+* [getAccountingInvoice](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve a invoice
+* [getAccountingPayment](docs/sdks/accounting/README.md#getaccountingpayment) - Retrieve a payment
+* [listAccountingCustomers](docs/sdks/accounting/README.md#listaccountingcustomers) - List all customers
+* [listAccountingInvoices](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
+* [listAccountingPayments](docs/sdks/accounting/README.md#listaccountingpayments) - List all payments
+* [patchAccountingCustomer](docs/sdks/accounting/README.md#patchaccountingcustomer) - Update a customer
+* [patchAccountingInvoice](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update a invoice
+* [patchAccountingPayment](docs/sdks/accounting/README.md#patchaccountingpayment) - Update a payment
+* [removeAccountingCustomer](docs/sdks/accounting/README.md#removeaccountingcustomer) - Remove a customer
+* [removeAccountingInvoice](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove a invoice
+* [removeAccountingPayment](docs/sdks/accounting/README.md#removeaccountingpayment) - Remove a payment
+* [updateAccountingCustomer](docs/sdks/accounting/README.md#updateaccountingcustomer) - Update a customer
+* [updateAccountingInvoice](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update a invoice
+* [updateAccountingPayment](docs/sdks/accounting/README.md#updateaccountingpayment) - Update a payment
 
 ### [apicall](docs/sdks/apicall/README.md)
 
@@ -202,11 +243,17 @@ import { UnifiedTo } from "unified-to";
 
 ### [customer](docs/sdks/customer/README.md)
 
+* [createAccountingCustomer](docs/sdks/customer/README.md#createaccountingcustomer) - Create a customer
 * [createTicketingCustomer](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
+* [getAccountingCustomer](docs/sdks/customer/README.md#getaccountingcustomer) - Retrieve a customer
 * [getTicketingCustomer](docs/sdks/customer/README.md#getticketingcustomer) - Retrieve a customer
+* [listAccountingCustomers](docs/sdks/customer/README.md#listaccountingcustomers) - List all customers
 * [listTicketingCustomers](docs/sdks/customer/README.md#listticketingcustomers) - List all customers
+* [patchAccountingCustomer](docs/sdks/customer/README.md#patchaccountingcustomer) - Update a customer
 * [patchTicketingCustomer](docs/sdks/customer/README.md#patchticketingcustomer) - Update a customer
+* [removeAccountingCustomer](docs/sdks/customer/README.md#removeaccountingcustomer) - Remove a customer
 * [removeTicketingCustomer](docs/sdks/customer/README.md#removeticketingcustomer) - Remove a customer
+* [updateAccountingCustomer](docs/sdks/customer/README.md#updateaccountingcustomer) - Update a customer
 * [updateTicketingCustomer](docs/sdks/customer/README.md#updateticketingcustomer) - Update a customer
 
 ### [deal](docs/sdks/deal/README.md)
@@ -299,6 +346,15 @@ import { UnifiedTo } from "unified-to";
 * [removeAtsInterview](docs/sdks/interview/README.md#removeatsinterview) - Remove a interview
 * [updateAtsInterview](docs/sdks/interview/README.md#updateatsinterview) - Update a interview
 
+### [invoice](docs/sdks/invoice/README.md)
+
+* [createAccountingInvoice](docs/sdks/invoice/README.md#createaccountinginvoice) - Create a invoice
+* [getAccountingInvoice](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve a invoice
+* [listAccountingInvoices](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
+* [patchAccountingInvoice](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update a invoice
+* [removeAccountingInvoice](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove a invoice
+* [updateAccountingInvoice](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update a invoice
+
 ### [job](docs/sdks/job/README.md)
 
 * [createAtsJob](docs/sdks/job/README.md#createatsjob) - Create a job
@@ -370,6 +426,15 @@ import { UnifiedTo } from "unified-to";
 * [patchPassthrough](docs/sdks/passthrough/README.md#patchpassthrough) - Passthrough PUT
 * [removePassthrough](docs/sdks/passthrough/README.md#removepassthrough) - Passthrough DELETE
 * [updatePassthrough](docs/sdks/passthrough/README.md#updatepassthrough) - Passthrough PUT
+
+### [payment](docs/sdks/payment/README.md)
+
+* [createAccountingPayment](docs/sdks/payment/README.md#createaccountingpayment) - Create a payment
+* [getAccountingPayment](docs/sdks/payment/README.md#getaccountingpayment) - Retrieve a payment
+* [listAccountingPayments](docs/sdks/payment/README.md#listaccountingpayments) - List all payments
+* [patchAccountingPayment](docs/sdks/payment/README.md#patchaccountingpayment) - Update a payment
+* [removeAccountingPayment](docs/sdks/payment/README.md#removeaccountingpayment) - Remove a payment
+* [updateAccountingPayment](docs/sdks/payment/README.md#updateaccountingpayment) - Update a payment
 
 ### [person](docs/sdks/person/README.md)
 
@@ -480,8 +545,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -503,6 +566,11 @@ For example:
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import {
+    AccountingCustomerTaxExemption,
+    AccountingEmailType,
+    AccountingTelephoneType,
+} from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -512,8 +580,23 @@ import { UnifiedTo } from "unified-to";
         serverIdx: 1,
     });
 
-    const res = await sdk.apicall.getUnifiedApicall({
-        id: "<ID>",
+    const res = await sdk.accounting.createAccountingCustomer({
+        accountingCustomer: {
+            billingAddress: {},
+            emails: [
+                {
+                    email: "Kevon_Schultz42@gmail.com",
+                },
+            ],
+            raw: {},
+            shippingAddress: {},
+            telephones: [
+                {
+                    telephone: "string",
+                },
+            ],
+        },
+        connectionId: "string",
     });
 
     if (res.statusCode == 200) {
@@ -531,6 +614,11 @@ The default server can also be overridden globally by passing a URL to the `serv
 
 ```typescript
 import { UnifiedTo } from "unified-to";
+import {
+    AccountingCustomerTaxExemption,
+    AccountingEmailType,
+    AccountingTelephoneType,
+} from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -540,8 +628,23 @@ import { UnifiedTo } from "unified-to";
         serverURL: "https://api.unified.to",
     });
 
-    const res = await sdk.apicall.getUnifiedApicall({
-        id: "<ID>",
+    const res = await sdk.accounting.createAccountingCustomer({
+        accountingCustomer: {
+            billingAddress: {},
+            emails: [
+                {
+                    email: "Kevon_Schultz42@gmail.com",
+                },
+            ],
+            raw: {},
+            shippingAddress: {},
+            telephones: [
+                {
+                    telephone: "string",
+                },
+            ],
+        },
+        connectionId: "string",
     });
 
     if (res.statusCode == 200) {
@@ -573,8 +676,6 @@ const httpClient = axios.create({
 
 const sdk = new UnifiedTo({defaultClient: httpClient});
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

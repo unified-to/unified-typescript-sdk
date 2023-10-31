@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import { Accounting } from "./accounting";
 import { Apicall } from "./apicall";
 import { Application } from "./application";
 import { Ats } from "./ats";
@@ -24,6 +25,7 @@ import { Group } from "./group";
 import { Hris } from "./hris";
 import { Integration } from "./integration";
 import { Interview } from "./interview";
+import { Invoice } from "./invoice";
 import { Job } from "./job";
 import { Lead } from "./lead";
 import { List } from "./list";
@@ -33,6 +35,7 @@ import { Member } from "./member";
 import * as shared from "./models/shared";
 import { Note } from "./note";
 import { Passthrough } from "./passthrough";
+import { Payment } from "./payment";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
 import { Scorecard } from "./scorecard";
@@ -94,9 +97,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.7.1";
+    sdkVersion = "0.7.2";
     genVersion = "2.173.0";
-    userAgent = "speakeasy-sdk/typescript 0.7.1 2.173.0 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.7.2 2.173.0 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -107,6 +110,7 @@ export class SDKConfiguration {
  * Unified.to API: One API to Rule Them All
  */
 export class UnifiedTo {
+    public accounting: Accounting;
     public apicall: Apicall;
     public application: Application;
     public ats: Ats;
@@ -128,6 +132,7 @@ export class UnifiedTo {
     public hris: Hris;
     public integration: Integration;
     public interview: Interview;
+    public invoice: Invoice;
     public job: Job;
     public lead: Lead;
     public list: List;
@@ -136,6 +141,7 @@ export class UnifiedTo {
     public member: Member;
     public note: Note;
     public passthrough: Passthrough;
+    public payment: Payment;
     public person: Person;
     public pipeline: Pipeline;
     public scorecard: Scorecard;
@@ -163,6 +169,7 @@ export class UnifiedTo {
             retryConfig: props?.retryConfig,
         });
 
+        this.accounting = new Accounting(this.sdkConfiguration);
         this.apicall = new Apicall(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
@@ -184,6 +191,7 @@ export class UnifiedTo {
         this.hris = new Hris(this.sdkConfiguration);
         this.integration = new Integration(this.sdkConfiguration);
         this.interview = new Interview(this.sdkConfiguration);
+        this.invoice = new Invoice(this.sdkConfiguration);
         this.job = new Job(this.sdkConfiguration);
         this.lead = new Lead(this.sdkConfiguration);
         this.list = new List(this.sdkConfiguration);
@@ -192,6 +200,7 @@ export class UnifiedTo {
         this.member = new Member(this.sdkConfiguration);
         this.note = new Note(this.sdkConfiguration);
         this.passthrough = new Passthrough(this.sdkConfiguration);
+        this.payment = new Payment(this.sdkConfiguration);
         this.person = new Person(this.sdkConfiguration);
         this.pipeline = new Pipeline(this.sdkConfiguration);
         this.scorecard = new Scorecard(this.sdkConfiguration);

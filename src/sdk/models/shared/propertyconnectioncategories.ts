@@ -12,4 +12,5 @@ export enum PropertyConnectionCategories {
     Martech = "martech",
     Ticketing = "ticketing",
     Uc = "uc",
+    Accounting = "accounting",
 }

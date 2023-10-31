@@ -48,11 +48,11 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
     },
     categories: [
-      PropertyConnectionCategories.Uc,
+      PropertyConnectionCategories.Accounting,
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmDealWrite,
+      PropertyConnectionPermissions.CrmCompanyWrite,
     ],
   });
 
@@ -103,7 +103,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: WebhookObjectType.CrmLead,
+      objectType: WebhookObjectType.CrmEvent,
       subscriptions: [
         "string",
       ],
@@ -276,7 +276,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
+      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });
@@ -398,7 +398,7 @@ import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/ope
 
   const res = await sdk.unified.listUnifiedConnections({
     categories: [
-      ListUnifiedConnectionsCategories.Crm,
+      ListUnifiedConnectionsCategories.Enrich,
     ],
   });
 
@@ -441,7 +441,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
 
   const res = await sdk.unified.listUnifiedIntegrationWorkspaces({
     categories: [
-      ListUnifiedIntegrationWorkspacesCategories.Martech,
+      ListUnifiedIntegrationWorkspacesCategories.Ticketing,
     ],
     workspaceId: "string",
   });
@@ -576,11 +576,11 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
         ],
       },
       categories: [
-        PropertyConnectionCategories.Enrich,
+        PropertyConnectionCategories.Martech,
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechMemberWrite,
+        PropertyConnectionPermissions.MartechListWrite,
       ],
     },
     id: "<ID>",
@@ -719,7 +719,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.CrmDealWrite,
       ],
     },
     id: "<ID>",

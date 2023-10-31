@@ -16,6 +16,7 @@ export enum ListUnifiedIntegrationWorkspacesCategories {
     Martech = "martech",
     Ticketing = "ticketing",
     Uc = "uc",
+    Accounting = "accounting",
 }
 
 export class ListUnifiedIntegrationWorkspacesRequest extends SpeakeasyBase {

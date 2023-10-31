@@ -26,7 +26,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.auth.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisGroupRead,
+      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });

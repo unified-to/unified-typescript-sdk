@@ -38,11 +38,11 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
     },
     categories: [
-      PropertyConnectionCategories.Uc,
+      PropertyConnectionCategories.Accounting,
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmDealWrite,
+      PropertyConnectionPermissions.CrmCompanyWrite,
     ],
   });
 
@@ -125,7 +125,7 @@ import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/ope
 
   const res = await sdk.connection.listUnifiedConnections({
     categories: [
-      ListUnifiedConnectionsCategories.Crm,
+      ListUnifiedConnectionsCategories.Enrich,
     ],
   });
 
@@ -178,11 +178,11 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
         ],
       },
       categories: [
-        PropertyConnectionCategories.Enrich,
+        PropertyConnectionCategories.Martech,
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechMemberWrite,
+        PropertyConnectionPermissions.MartechListWrite,
       ],
     },
     id: "<ID>",
@@ -281,7 +281,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.CrmDealWrite,
       ],
     },
     id: "<ID>",

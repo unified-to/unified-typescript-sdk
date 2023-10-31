@@ -7,6 +7,12 @@ import { AxiosResponse } from "axios";
 
 export enum GetUnifiedIntegrationAuthScopes {
     AuthLogin = "auth_login",
+    AccountingInvoiceRead = "accounting_invoice_read",
+    AccountingInvoiceWrite = "accounting_invoice_write",
+    AccountingCustomerRead = "accounting_customer_read",
+    AccountingCustomerWrite = "accounting_customer_write",
+    AccountingPaymentRead = "accounting_payment_read",
+    AccountingPaymentWrite = "accounting_payment_write",
     AtsScorecardRead = "ats_scorecard_read",
     AtsScorecardWrite = "ats_scorecard_write",
     AtsApplicationRead = "ats_application_read",
