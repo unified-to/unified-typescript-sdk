@@ -42,5 +42,5 @@ export class RemoveUcContactResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeUcContactDefaultApplicationJSONString?: string;
+    res?: string;
 }

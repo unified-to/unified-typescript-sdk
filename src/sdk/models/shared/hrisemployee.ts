@@ -9,7 +9,7 @@ import { PropertyHrisEmployeeAddress } from "./propertyhrisemployeeaddress";
 import { PropertyHrisEmployeeRaw } from "./propertyhrisemployeeraw";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum HrisEmployeeEmploymentStatus {
+export enum EmploymentStatus {
     Active = "ACTIVE",
     Inactive = "INACTIVE",
 }
@@ -35,7 +35,7 @@ export enum HrisEmployeeGender {
     NonBinary = "NON_BINARY",
 }
 
-export enum HrisEmployeeMaritalStatus {
+export enum MaritalStatus {
     Married = "MARRIED",
     Single = "SINGLE",
 }
@@ -79,7 +79,7 @@ export class HrisEmployee extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "employment_status" })
-    employmentStatus?: HrisEmployeeEmploymentStatus;
+    employmentStatus?: EmploymentStatus;
 
     @SpeakeasyMetadata()
     @Expose({ name: "employment_type" })
@@ -116,7 +116,7 @@ export class HrisEmployee extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "marital_status" })
-    maritalStatus?: HrisEmployeeMaritalStatus;
+    maritalStatus?: MaritalStatus;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

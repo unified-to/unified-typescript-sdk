@@ -1,5 +1,5 @@
 # Auth
-(*auth*)
+(*.auth*)
 
 ### Available Operations
 
@@ -14,7 +14,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/operations";
+import { Scopes } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -26,7 +26,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.auth.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
+      Scopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });

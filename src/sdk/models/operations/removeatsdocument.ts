@@ -42,5 +42,5 @@ export class RemoveAtsDocumentResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeAtsDocumentDefaultApplicationJSONString?: string;
+    res?: string;
 }

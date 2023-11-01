@@ -42,5 +42,5 @@ export class RemoveAtsInterviewResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeAtsInterviewDefaultApplicationJSONString?: string;
+    res?: string;
 }

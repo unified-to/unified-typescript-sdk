@@ -42,5 +42,5 @@ export class RemoveAccountingCustomerResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeAccountingCustomerDefaultApplicationJSONString?: string;
+    res?: string;
 }

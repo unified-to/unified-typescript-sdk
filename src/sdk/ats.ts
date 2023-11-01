@@ -2218,7 +2218,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsApplicationDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2296,7 +2296,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsCandidateDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2373,7 +2373,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsDocumentDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2451,7 +2451,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsInterviewDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2528,7 +2528,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsJobDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2606,7 +2606,7 @@ export class Ats {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsScorecardDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

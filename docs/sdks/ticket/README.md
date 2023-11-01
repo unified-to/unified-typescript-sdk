@@ -1,5 +1,5 @@
 # Ticket
-(*ticket*)
+(*.ticket*)
 
 ### Available Operations
 

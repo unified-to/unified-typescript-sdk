@@ -42,5 +42,5 @@ export class RemoveHrisEmployeeResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeHrisEmployeeDefaultApplicationJSONString?: string;
+    res?: string;
 }

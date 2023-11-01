@@ -2509,7 +2509,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmCompanyDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2586,7 +2586,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmContactDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2663,7 +2663,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmDealDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2740,7 +2740,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmEventDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2817,7 +2817,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmFileDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2894,7 +2894,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmLeadDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -2971,7 +2971,7 @@ export class Crm {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmPipelineDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

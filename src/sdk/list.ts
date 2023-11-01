@@ -433,7 +433,7 @@ export class List {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeMartechListDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

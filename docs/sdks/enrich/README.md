@@ -1,5 +1,5 @@
 # Enrich
-(*enrich*)
+(*.enrich*)
 
 ### Available Operations
 

@@ -1,5 +1,5 @@
 # Webhook
-(*webhook*)
+(*.webhook*)
 
 ### Available Operations
 
@@ -16,8 +16,8 @@ To maintain compatibility with the webhooks specification and Zapier webhooks, o
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { CreateUnifiedWebhookEvents } from "unified-to/dist/sdk/models/operations";
-import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
+import { Events } from "unified-to/dist/sdk/models/operations";
+import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -35,7 +35,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: WebhookObjectType.CrmEvent,
+      objectType: ObjectType.CrmEvent,
       subscriptions: [
         "string",
       ],
@@ -43,7 +43,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
     },
     connectionId: "string",
     events: [
-      CreateUnifiedWebhookEvents.Created,
+      Events.Created,
     ],
     object: "string",
   });

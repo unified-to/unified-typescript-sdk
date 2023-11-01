@@ -3,11 +3,7 @@
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-    AccountingCustomerTaxExemption,
-    AccountingEmailType,
-    AccountingTelephoneType,
-} from "unified-to/dist/sdk/models/shared";
+import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({

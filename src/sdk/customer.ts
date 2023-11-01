@@ -833,7 +833,7 @@ export class Customer {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAccountingCustomerDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -915,7 +915,7 @@ export class Customer {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeTicketingCustomerDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

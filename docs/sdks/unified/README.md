@@ -1,5 +1,5 @@
 # Unified
-(*unified*)
+(*.unified*)
 
 ### Available Operations
 
@@ -84,8 +84,8 @@ To maintain compatibility with the webhooks specification and Zapier webhooks, o
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { CreateUnifiedWebhookEvents } from "unified-to/dist/sdk/models/operations";
-import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/models/shared";
+import { Events } from "unified-to/dist/sdk/models/operations";
+import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -103,7 +103,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: WebhookObjectType.CrmEvent,
+      objectType: ObjectType.CrmEvent,
       subscriptions: [
         "string",
       ],
@@ -111,7 +111,7 @@ import { PropertyWebhookEvents, WebhookObjectType } from "unified-to/dist/sdk/mo
     },
     connectionId: "string",
     events: [
-      CreateUnifiedWebhookEvents.Created,
+      Events.Created,
     ],
     object: "string",
   });
@@ -264,7 +264,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/operations";
+import { Scopes } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -276,7 +276,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
+      Scopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });
@@ -387,7 +387,7 @@ List all connections
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/operations";
+import { Categories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -398,7 +398,7 @@ import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/ope
 
   const res = await sdk.unified.listUnifiedConnections({
     categories: [
-      ListUnifiedConnectionsCategories.Enrich,
+      Categories.Enrich,
     ],
   });
 
@@ -430,7 +430,7 @@ No authentication required as this is to be used by front-end interface
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/models/operations";
+import { QueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -441,7 +441,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
 
   const res = await sdk.unified.listUnifiedIntegrationWorkspaces({
     categories: [
-      ListUnifiedIntegrationWorkspacesCategories.Ticketing,
+      QueryParamCategories.Ticketing,
     ],
     workspaceId: "string",
   });
@@ -474,7 +474,7 @@ Returns all integrations
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/operations";
+import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -485,7 +485,7 @@ import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/op
 
   const res = await sdk.unified.listUnifiedIntegrations({
     categories: [
-      ListUnifiedIntegrationsCategories.Auth,
+      ListUnifiedIntegrationsQueryParamCategories.Auth,
     ],
   });
 

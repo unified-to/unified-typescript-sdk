@@ -1,4 +1,4 @@
-# ListUnifiedIntegrationWorkspacesCategories
+# Categories
 
 
 ## Values

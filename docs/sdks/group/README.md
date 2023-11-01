@@ -1,5 +1,5 @@
 # Group
-(*group*)
+(*.group*)
 
 ### Available Operations
 

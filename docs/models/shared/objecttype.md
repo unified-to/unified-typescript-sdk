@@ -1,4 +1,4 @@
-# WebhookObjectType
+# ObjectType
 
 
 ## Values

@@ -42,5 +42,5 @@ export class RemoveHrisGroupResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeHrisGroupDefaultApplicationJSONString?: string;
+    res?: string;
 }

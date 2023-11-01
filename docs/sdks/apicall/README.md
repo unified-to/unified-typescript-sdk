@@ -1,5 +1,5 @@
 # Apicall
-(*apicall*)
+(*.apicall*)
 
 ### Available Operations
 

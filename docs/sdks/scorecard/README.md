@@ -1,5 +1,5 @@
 # Scorecard
-(*scorecard*)
+(*.scorecard*)
 
 ### Available Operations
 
@@ -18,7 +18,7 @@ Create a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -149,7 +149,7 @@ Update a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -235,7 +235,7 @@ Update a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({

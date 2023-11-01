@@ -435,7 +435,7 @@ export class Interview {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsInterviewDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

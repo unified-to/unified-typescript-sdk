@@ -42,5 +42,5 @@ export class RemoveCrmFileResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeCrmFileDefaultApplicationJSONString?: string;
+    res?: string;
 }

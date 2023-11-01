@@ -1,5 +1,5 @@
 # Martech
-(*martech*)
+(*.martech*)
 
 ### Available Operations
 

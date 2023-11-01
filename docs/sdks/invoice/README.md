@@ -1,5 +1,5 @@
 # Invoice
-(*invoice*)
+(*.invoice*)
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# ListUnifiedConnectionsCategories
+# ListUnifiedIntegrationsQueryParamCategories
 
 
 ## Values

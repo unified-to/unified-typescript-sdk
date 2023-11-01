@@ -1,5 +1,5 @@
 # Ats
-(*ats*)
+(*.ats*)
 
 ### Available Operations
 
@@ -48,7 +48,7 @@ Create an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -241,12 +241,7 @@ Create a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -310,7 +305,7 @@ Create a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -876,7 +871,7 @@ Update an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1073,12 +1068,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1143,7 +1133,7 @@ Update a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1434,7 +1424,7 @@ Update an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1631,12 +1621,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1701,7 +1686,7 @@ Update a scorecard
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AtsScorecardRecommendation } from "unified-to/dist/sdk/models/shared";
+import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({

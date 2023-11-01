@@ -1,5 +1,5 @@
 # Ticketing
-(*ticketing*)
+(*.ticketing*)
 
 ### Available Operations
 

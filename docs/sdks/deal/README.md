@@ -1,5 +1,5 @@
 # Deal
-(*deal*)
+(*.deal*)
 
 ### Available Operations
 

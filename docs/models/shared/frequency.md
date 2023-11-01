@@ -1,4 +1,4 @@
-# AtsCompensationFrequency
+# Frequency
 
 
 ## Values

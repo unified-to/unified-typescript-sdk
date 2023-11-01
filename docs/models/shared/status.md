@@ -1,4 +1,4 @@
-# AtsApplicationStatus
+# Status
 
 
 ## Values

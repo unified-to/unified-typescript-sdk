@@ -506,7 +506,7 @@ export class Company {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmCompanyDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

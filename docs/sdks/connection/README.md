@@ -1,5 +1,5 @@
 # Connection
-(*connection*)
+(*.connection*)
 
 ### Available Operations
 
@@ -114,7 +114,7 @@ List all connections
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/operations";
+import { Categories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -125,7 +125,7 @@ import { ListUnifiedConnectionsCategories } from "unified-to/dist/sdk/models/ope
 
   const res = await sdk.connection.listUnifiedConnections({
     categories: [
-      ListUnifiedConnectionsCategories.Enrich,
+      Categories.Enrich,
     ],
   });
 

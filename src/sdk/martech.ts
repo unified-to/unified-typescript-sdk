@@ -791,7 +791,7 @@ export class Martech {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeMartechListDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -869,7 +869,7 @@ export class Martech {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeMartechMemberDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

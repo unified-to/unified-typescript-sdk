@@ -42,5 +42,5 @@ export class RemoveTicketingNoteResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeTicketingNoteDefaultApplicationJSONString?: string;
+    res?: string;
 }

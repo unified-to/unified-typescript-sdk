@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum AccountingEmailType {
+export enum TypeT {
     Work = "WORK",
     Home = "HOME",
     Other = "OTHER",
@@ -18,5 +18,5 @@ export class AccountingEmail extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type?: AccountingEmailType;
+    type?: TypeT;
 }

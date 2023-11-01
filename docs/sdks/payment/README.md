@@ -1,5 +1,5 @@
 # Payment
-(*payment*)
+(*.payment*)
 
 ### Available Operations
 

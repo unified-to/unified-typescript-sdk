@@ -1,4 +1,4 @@
-# AtsJobEmploymentType
+# EmploymentType
 
 
 ## Values

@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
-export enum GetUnifiedIntegrationAuthScopes {
+export enum Scopes {
     AuthLogin = "auth_login",
     AccountingInvoiceRead = "accounting_invoice_read",
     AccountingInvoiceWrite = "accounting_invoice_write",
@@ -89,7 +89,7 @@ export class GetUnifiedIntegrationAuthRequest extends SpeakeasyBase {
     redirect?: boolean;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=scopes" })
-    scopes?: GetUnifiedIntegrationAuthScopes[];
+    scopes?: Scopes[];
 
     /**
      * Extra state to send back to your success URL
@@ -136,5 +136,5 @@ export class GetUnifiedIntegrationAuthResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    getUnifiedIntegrationAuth200ApplicationJSONString?: string;
+    res?: string;
 }

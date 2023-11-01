@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyAtsScorecardRaw } from "./propertyatsscorecardraw";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum AtsScorecardRecommendation {
+export enum Recommendation {
     DefinitelyNo = "DEFINITELY_NO",
     No = "NO",
     Yes = "YES",
@@ -54,7 +54,7 @@ export class AtsScorecard extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "recommendation" })
-    recommendation?: AtsScorecardRecommendation;
+    recommendation?: Recommendation;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

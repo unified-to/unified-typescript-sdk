@@ -1,5 +1,5 @@
 # Document
-(*document*)
+(*.document*)
 
 ### Available Operations
 

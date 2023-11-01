@@ -1,5 +1,5 @@
 # Interview
-(*interview*)
+(*.interview*)
 
 ### Available Operations
 

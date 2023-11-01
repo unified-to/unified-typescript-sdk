@@ -1,4 +1,4 @@
-# GetUnifiedIntegrationAuthScopes
+# Scopes
 
 
 ## Values

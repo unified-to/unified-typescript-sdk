@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum ListUnifiedConnectionsCategories {
+export enum Categories {
     Passthrough = "passthrough",
     Hris = "hris",
     Ats = "ats",
@@ -24,7 +24,7 @@ export class ListUnifiedConnectionsRequest extends SpeakeasyBase {
      * Filter the results on these categories
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
-    categories?: ListUnifiedConnectionsCategories[];
+    categories?: Categories[];
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
     env?: string;

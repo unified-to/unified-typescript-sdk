@@ -66,5 +66,5 @@ export class GetUnifiedIntegrationLoginResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    getUnifiedIntegrationLogin200ApplicationJSONString?: string;
+    res?: string;
 }

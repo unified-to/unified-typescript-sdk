@@ -42,5 +42,5 @@ export class RemoveCrmContactResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeCrmContactDefaultApplicationJSONString?: string;
+    res?: string;
 }

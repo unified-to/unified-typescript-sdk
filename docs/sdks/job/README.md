@@ -1,5 +1,5 @@
 # Job
-(*job*)
+(*.job*)
 
 ### Available Operations
 
@@ -18,12 +18,7 @@ Create a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -174,12 +169,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -285,12 +275,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import {
-  AtsCompensationFrequency,
-  AtsCompensationType,
-  AtsJobEmploymentType,
-  AtsJobStatus,
-} from "unified-to/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({

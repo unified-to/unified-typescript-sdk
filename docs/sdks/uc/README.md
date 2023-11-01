@@ -1,5 +1,5 @@
 # Uc
-(*uc*)
+(*.uc*)
 
 ### Available Operations
 

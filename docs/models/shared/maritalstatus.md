@@ -1,4 +1,4 @@
-# HrisEmployeeMaritalStatus
+# MaritalStatus
 
 
 ## Values

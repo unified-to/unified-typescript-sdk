@@ -770,7 +770,7 @@ export class Contact {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeCrmContactDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -847,7 +847,7 @@ export class Contact {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeUcContactDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

@@ -435,7 +435,7 @@ export class Employee {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeHrisEmployeeDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

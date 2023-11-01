@@ -8,7 +8,7 @@ import { AtsCompensation } from "./atscompensation";
 import { PropertyAtsJobRaw } from "./propertyatsjobraw";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum AtsJobEmploymentType {
+export enum EmploymentType {
     FullTime = "FULL_TIME",
     PartTime = "PART_TIME",
     Contractor = "CONTRACTOR",
@@ -60,7 +60,7 @@ export class AtsJob extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "employment_type" })
-    employmentType?: AtsJobEmploymentType;
+    employmentType?: EmploymentType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "hiring_manager_ids" })

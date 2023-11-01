@@ -435,7 +435,7 @@ export class Candidate {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAtsCandidateDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

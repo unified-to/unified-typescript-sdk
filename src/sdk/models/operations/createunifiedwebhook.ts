@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum CreateUnifiedWebhookEvents {
+export enum Events {
     Updated = "updated",
     Created = "created",
 }
@@ -25,7 +25,7 @@ export class CreateUnifiedWebhookRequest extends SpeakeasyBase {
      * Which events to subscribe to.
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=events" })
-    events?: CreateUnifiedWebhookEvents[];
+    events?: Events[];
 
     /**
      * The object to subscribe to

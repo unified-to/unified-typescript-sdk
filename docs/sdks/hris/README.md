@@ -1,5 +1,5 @@
 # Hris
-(*hris*)
+(*.hris*)
 
 ### Available Operations
 
@@ -25,12 +25,12 @@ Create an employee
 ```typescript
 import { UnifiedTo } from "unified-to";
 import {
+  EmploymentStatus,
   HrisEmailType,
-  HrisEmployeeEmploymentStatus,
   HrisEmployeeEmploymentType,
   HrisEmployeeGender,
-  HrisEmployeeMaritalStatus,
   HrisTelephoneType,
+  MaritalStatus,
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
@@ -311,12 +311,12 @@ Update an employee
 ```typescript
 import { UnifiedTo } from "unified-to";
 import {
+  EmploymentStatus,
   HrisEmailType,
-  HrisEmployeeEmploymentStatus,
   HrisEmployeeEmploymentType,
   HrisEmployeeGender,
-  HrisEmployeeMaritalStatus,
   HrisTelephoneType,
+  MaritalStatus,
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
@@ -507,12 +507,12 @@ Update an employee
 ```typescript
 import { UnifiedTo } from "unified-to";
 import {
+  EmploymentStatus,
   HrisEmailType,
-  HrisEmployeeEmploymentStatus,
   HrisEmployeeEmploymentType,
   HrisEmployeeGender,
-  HrisEmployeeMaritalStatus,
   HrisTelephoneType,
+  MaritalStatus,
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {

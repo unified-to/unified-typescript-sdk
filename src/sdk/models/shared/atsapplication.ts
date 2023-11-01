@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyAtsApplicationRaw } from "./propertyatsapplicationraw";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum AtsApplicationStatus {
+export enum Status {
     New = "NEW",
     Reviewing = "REVIEWING",
     Screening = "SCREENING",
@@ -65,7 +65,7 @@ export class AtsApplication extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: AtsApplicationStatus;
+    status?: Status;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

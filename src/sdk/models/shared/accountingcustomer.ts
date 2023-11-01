@@ -10,7 +10,7 @@ import { PropertyAccountingCustomerRaw } from "./propertyaccountingcustomerraw";
 import { PropertyAccountingCustomerShippingAddress } from "./propertyaccountingcustomershippingaddress";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum AccountingCustomerTaxExemption {
+export enum TaxExemption {
     FederalGov = "FEDERAL_GOV",
     RegionGov = "REGION_GOV",
     LocalGov = "LOCAL_GOV",
@@ -68,7 +68,7 @@ export class AccountingCustomer extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "tax_exemption" })
-    taxExemption?: AccountingCustomerTaxExemption;
+    taxExemption?: TaxExemption;
 
     @SpeakeasyMetadata({ elemType: AccountingTelephone })
     @Expose({ name: "telephones" })

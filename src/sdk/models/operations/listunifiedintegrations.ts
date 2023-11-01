@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
 import { AxiosResponse } from "axios";
 
-export enum ListUnifiedIntegrationsCategories {
+export enum ListUnifiedIntegrationsQueryParamCategories {
     Passthrough = "passthrough",
     Hris = "hris",
     Ats = "ats",
@@ -30,7 +30,7 @@ export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {
      * Filter the results on these categories
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
-    categories?: ListUnifiedIntegrationsCategories[];
+    categories?: ListUnifiedIntegrationsQueryParamCategories[];
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
     env?: string;

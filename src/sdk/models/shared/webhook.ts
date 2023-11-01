@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyWebhookEvents } from "./propertywebhookevents";
 import { Expose, Transform } from "class-transformer";
 
-export enum WebhookObjectType {
+export enum ObjectType {
     AccountingCustomer = "accounting_customer",
     AccountingInvoice = "accounting_invoice",
     AccountingPayment = "accounting_payment",
@@ -85,7 +85,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "object_type" })
-    objectType: WebhookObjectType;
+    objectType: ObjectType;
 
     /**
      * integration-specific subscriptions IDs

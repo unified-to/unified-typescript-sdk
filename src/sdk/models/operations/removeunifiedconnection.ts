@@ -36,5 +36,5 @@ export class RemoveUnifiedConnectionResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeUnifiedConnectionDefaultApplicationJSONString?: string;
+    res?: string;
 }

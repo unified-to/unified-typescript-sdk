@@ -1183,7 +1183,7 @@ export class Ticketing {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeTicketingCustomerDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -1261,7 +1261,7 @@ export class Ticketing {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeTicketingNoteDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -1343,7 +1343,7 @@ export class Ticketing {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeTicketingTicketDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

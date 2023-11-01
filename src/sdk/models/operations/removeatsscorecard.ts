@@ -42,5 +42,5 @@ export class RemoveAtsScorecardResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeAtsScorecardDefaultApplicationJSONString?: string;
+    res?: string;
 }

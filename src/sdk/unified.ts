@@ -513,7 +513,7 @@ export class Unified {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.getUnifiedIntegrationAuth200ApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -1201,7 +1201,7 @@ export class Unified {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeUnifiedConnectionDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -1279,7 +1279,7 @@ export class Unified {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeUnifiedWebhookDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

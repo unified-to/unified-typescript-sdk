@@ -1,5 +1,5 @@
 # Event
-(*event*)
+(*.event*)
 
 ### Available Operations
 

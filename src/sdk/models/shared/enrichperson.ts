@@ -10,7 +10,7 @@ import { PropertyEnrichPersonAddress } from "./propertyenrichpersonaddress";
 import { PropertyEnrichPersonRaw } from "./propertyenrichpersonraw";
 import { Expose, Transform, Type } from "class-transformer";
 
-export enum EnrichPersonGender {
+export enum Gender {
     Male = "MALE",
     Female = "FEMALE",
 }
@@ -62,7 +62,7 @@ export class EnrichPerson extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "gender" })
-    gender?: EnrichPersonGender;
+    gender?: Gender;
 
     @SpeakeasyMetadata()
     @Expose({ name: "github_url" })

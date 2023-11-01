@@ -781,7 +781,7 @@ export class Hris {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeHrisEmployeeDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,
@@ -858,7 +858,7 @@ export class Hris {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeHrisGroupDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

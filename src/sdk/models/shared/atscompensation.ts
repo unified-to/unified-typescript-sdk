@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export enum AtsCompensationFrequency {
+export enum Frequency {
     OneTime = "ONE_TIME",
     Day = "DAY",
     Quarter = "QUARTER",
@@ -30,7 +30,7 @@ export class AtsCompensation extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "frequency" })
-    frequency?: AtsCompensationFrequency;
+    frequency?: Frequency;
 
     @SpeakeasyMetadata()
     @Expose({ name: "max" })

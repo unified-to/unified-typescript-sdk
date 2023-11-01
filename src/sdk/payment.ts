@@ -458,7 +458,7 @@ export class Payment {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeAccountingPaymentDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

@@ -450,7 +450,7 @@ export class Ticket {
                 );
             default:
                 if (utils.matchContentType(contentType, `application/json`)) {
-                    res.removeTicketingTicketDefaultApplicationJSONString = decodedRes;
+                    res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + contentType,

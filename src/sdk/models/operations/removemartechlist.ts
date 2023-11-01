@@ -42,5 +42,5 @@ export class RemoveMartechListResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    removeMartechListDefaultApplicationJSONString?: string;
+    res?: string;
 }

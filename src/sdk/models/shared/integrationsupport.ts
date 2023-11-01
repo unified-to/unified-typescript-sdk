@@ -8,7 +8,7 @@ import { PropertyIntegrationSupportOutboundFields } from "./propertyintegrations
 import { PropertyIntegrationSupportWebhookEvents } from "./propertyintegrationsupportwebhookevents";
 import { Expose, Type } from "class-transformer";
 
-export enum IntegrationSupportWebhookType {
+export enum WebhookType {
     Virtual = "virtual",
     None = "none",
     Native = "native",
@@ -123,5 +123,5 @@ export class IntegrationSupport extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "webhook_type" })
-    webhookType?: IntegrationSupportWebhookType;
+    webhookType?: WebhookType;
 }

@@ -1,5 +1,5 @@
 # Integration
-(*integration*)
+(*.integration*)
 
 ### Available Operations
 
@@ -56,7 +56,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/operations";
+import { Scopes } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -68,7 +68,7 @@ import { GetUnifiedIntegrationAuthScopes } from "unified-to/dist/sdk/models/oper
   const res = await sdk.integration.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      GetUnifiedIntegrationAuthScopes.HrisEmployeeWrite,
+      Scopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });
@@ -101,7 +101,7 @@ No authentication required as this is to be used by front-end interface
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/models/operations";
+import { QueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -112,7 +112,7 @@ import { ListUnifiedIntegrationWorkspacesCategories } from "unified-to/dist/sdk/
 
   const res = await sdk.integration.listUnifiedIntegrationWorkspaces({
     categories: [
-      ListUnifiedIntegrationWorkspacesCategories.Ticketing,
+      QueryParamCategories.Ticketing,
     ],
     workspaceId: "string",
   });
@@ -145,7 +145,7 @@ Returns all integrations
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/operations";
+import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -156,7 +156,7 @@ import { ListUnifiedIntegrationsCategories } from "unified-to/dist/sdk/models/op
 
   const res = await sdk.integration.listUnifiedIntegrations({
     categories: [
-      ListUnifiedIntegrationsCategories.Auth,
+      ListUnifiedIntegrationsQueryParamCategories.Auth,
     ],
   });
 
