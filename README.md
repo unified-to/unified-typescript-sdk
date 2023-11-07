@@ -87,19 +87,38 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateAccountingInvoice](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update a invoice
 * [updateAccountingPayment](docs/sdks/accounting/README.md#updateaccountingpayment) - Update a payment
 
-### [.apicall](docs/sdks/apicall/README.md)
+### [.customer](docs/sdks/customer/README.md)
 
-* [getUnifiedApicall](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
-* [listUnifiedApicalls](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
+* [createAccountingCustomer](docs/sdks/customer/README.md#createaccountingcustomer) - Create a customer
+* [createTicketingCustomer](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
+* [getAccountingCustomer](docs/sdks/customer/README.md#getaccountingcustomer) - Retrieve a customer
+* [getTicketingCustomer](docs/sdks/customer/README.md#getticketingcustomer) - Retrieve a customer
+* [listAccountingCustomers](docs/sdks/customer/README.md#listaccountingcustomers) - List all customers
+* [listTicketingCustomers](docs/sdks/customer/README.md#listticketingcustomers) - List all customers
+* [patchAccountingCustomer](docs/sdks/customer/README.md#patchaccountingcustomer) - Update a customer
+* [patchTicketingCustomer](docs/sdks/customer/README.md#patchticketingcustomer) - Update a customer
+* [removeAccountingCustomer](docs/sdks/customer/README.md#removeaccountingcustomer) - Remove a customer
+* [removeTicketingCustomer](docs/sdks/customer/README.md#removeticketingcustomer) - Remove a customer
+* [updateAccountingCustomer](docs/sdks/customer/README.md#updateaccountingcustomer) - Update a customer
+* [updateTicketingCustomer](docs/sdks/customer/README.md#updateticketingcustomer) - Update a customer
 
-### [.application](docs/sdks/application/README.md)
+### [.invoice](docs/sdks/invoice/README.md)
 
-* [createAtsApplication](docs/sdks/application/README.md#createatsapplication) - Create an application
-* [getAtsApplication](docs/sdks/application/README.md#getatsapplication) - Retrieve an application
-* [listAtsApplications](docs/sdks/application/README.md#listatsapplications) - List all applications
-* [patchAtsApplication](docs/sdks/application/README.md#patchatsapplication) - Update an application
-* [removeAtsApplication](docs/sdks/application/README.md#removeatsapplication) - Remove an application
-* [updateAtsApplication](docs/sdks/application/README.md#updateatsapplication) - Update an application
+* [createAccountingInvoice](docs/sdks/invoice/README.md#createaccountinginvoice) - Create a invoice
+* [getAccountingInvoice](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve a invoice
+* [listAccountingInvoices](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
+* [patchAccountingInvoice](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update a invoice
+* [removeAccountingInvoice](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove a invoice
+* [updateAccountingInvoice](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update a invoice
+
+### [.payment](docs/sdks/payment/README.md)
+
+* [createAccountingPayment](docs/sdks/payment/README.md#createaccountingpayment) - Create a payment
+* [getAccountingPayment](docs/sdks/payment/README.md#getaccountingpayment) - Retrieve a payment
+* [listAccountingPayments](docs/sdks/payment/README.md#listaccountingpayments) - List all payments
+* [patchAccountingPayment](docs/sdks/payment/README.md#patchaccountingpayment) - Update a payment
+* [removeAccountingPayment](docs/sdks/payment/README.md#removeaccountingpayment) - Remove a payment
+* [updateAccountingPayment](docs/sdks/payment/README.md#updateaccountingpayment) - Update a payment
 
 ### [.ats](docs/sdks/ats/README.md)
 
@@ -140,14 +159,14 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateAtsJob](docs/sdks/ats/README.md#updateatsjob) - Update a job
 * [updateAtsScorecard](docs/sdks/ats/README.md#updateatsscorecard) - Update a scorecard
 
-### [.auth](docs/sdks/auth/README.md)
+### [.application](docs/sdks/application/README.md)
 
-* [getUnifiedIntegrationAuth](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
-* [getUnifiedIntegrationLogin](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
-
-### [.call](docs/sdks/call/README.md)
-
-* [listUcCalls](docs/sdks/call/README.md#listuccalls) - List all calls
+* [createAtsApplication](docs/sdks/application/README.md#createatsapplication) - Create an application
+* [getAtsApplication](docs/sdks/application/README.md#getatsapplication) - Retrieve an application
+* [listAtsApplications](docs/sdks/application/README.md#listatsapplications) - List all applications
+* [patchAtsApplication](docs/sdks/application/README.md#patchatsapplication) - Update an application
+* [removeAtsApplication](docs/sdks/application/README.md#removeatsapplication) - Remove an application
+* [updateAtsApplication](docs/sdks/application/README.md#updateatsapplication) - Update an application
 
 ### [.candidate](docs/sdks/candidate/README.md)
 
@@ -158,39 +177,41 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [removeAtsCandidate](docs/sdks/candidate/README.md#removeatscandidate) - Remove a candidate
 * [updateAtsCandidate](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
 
-### [.company](docs/sdks/company/README.md)
+### [.document](docs/sdks/document/README.md)
 
-* [createCrmCompany](docs/sdks/company/README.md#createcrmcompany) - Create a company
-* [getCrmCompany](docs/sdks/company/README.md#getcrmcompany) - Retrieve a company
-* [listCrmCompanies](docs/sdks/company/README.md#listcrmcompanies) - List all companies
-* [listEnrichCompanies](docs/sdks/company/README.md#listenrichcompanies) - Retrieve enrichment information for a company
-* [patchCrmCompany](docs/sdks/company/README.md#patchcrmcompany) - Update a company
-* [removeCrmCompany](docs/sdks/company/README.md#removecrmcompany) - Remove a company
-* [updateCrmCompany](docs/sdks/company/README.md#updatecrmcompany) - Update a company
+* [createAtsDocument](docs/sdks/document/README.md#createatsdocument) - Create a document
+* [getAtsDocument](docs/sdks/document/README.md#getatsdocument) - Retrieve a document
+* [listAtsDocuments](docs/sdks/document/README.md#listatsdocuments) - List all documents
+* [patchAtsDocument](docs/sdks/document/README.md#patchatsdocument) - Update a document
+* [removeAtsDocument](docs/sdks/document/README.md#removeatsdocument) - Remove a document
+* [updateAtsDocument](docs/sdks/document/README.md#updateatsdocument) - Update a document
 
-### [.connection](docs/sdks/connection/README.md)
+### [.interview](docs/sdks/interview/README.md)
 
-* [createUnifiedConnection](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
-* [getUnifiedConnection](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
-* [listUnifiedConnections](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
-* [patchUnifiedConnection](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
-* [removeUnifiedConnection](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
-* [updateUnifiedConnection](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
+* [createAtsInterview](docs/sdks/interview/README.md#createatsinterview) - Create a interview
+* [getAtsInterview](docs/sdks/interview/README.md#getatsinterview) - Retrieve a interview
+* [listAtsInterviews](docs/sdks/interview/README.md#listatsinterviews) - List all interviews
+* [patchAtsInterview](docs/sdks/interview/README.md#patchatsinterview) - Update a interview
+* [removeAtsInterview](docs/sdks/interview/README.md#removeatsinterview) - Remove a interview
+* [updateAtsInterview](docs/sdks/interview/README.md#updateatsinterview) - Update a interview
 
-### [.contact](docs/sdks/contact/README.md)
+### [.job](docs/sdks/job/README.md)
 
-* [createCrmContact](docs/sdks/contact/README.md#createcrmcontact) - Create a contact
-* [createUcContact](docs/sdks/contact/README.md#createuccontact) - Create a contact
-* [getCrmContact](docs/sdks/contact/README.md#getcrmcontact) - Retrieve a contact
-* [getUcContact](docs/sdks/contact/README.md#getuccontact) - Retrieve a contact
-* [listCrmContacts](docs/sdks/contact/README.md#listcrmcontacts) - List all contacts
-* [listUcContacts](docs/sdks/contact/README.md#listuccontacts) - List all contacts
-* [patchCrmContact](docs/sdks/contact/README.md#patchcrmcontact) - Update a contact
-* [patchUcContact](docs/sdks/contact/README.md#patchuccontact) - Update a contact
-* [removeCrmContact](docs/sdks/contact/README.md#removecrmcontact) - Remove a contact
-* [removeUcContact](docs/sdks/contact/README.md#removeuccontact) - Remove a contact
-* [updateCrmContact](docs/sdks/contact/README.md#updatecrmcontact) - Update a contact
-* [updateUcContact](docs/sdks/contact/README.md#updateuccontact) - Update a contact
+* [createAtsJob](docs/sdks/job/README.md#createatsjob) - Create a job
+* [getAtsJob](docs/sdks/job/README.md#getatsjob) - Retrieve a job
+* [listAtsJobs](docs/sdks/job/README.md#listatsjobs) - List all jobs
+* [patchAtsJob](docs/sdks/job/README.md#patchatsjob) - Update a job
+* [removeAtsJob](docs/sdks/job/README.md#removeatsjob) - Remove a job
+* [updateAtsJob](docs/sdks/job/README.md#updateatsjob) - Update a job
+
+### [.scorecard](docs/sdks/scorecard/README.md)
+
+* [createAtsScorecard](docs/sdks/scorecard/README.md#createatsscorecard) - Create a scorecard
+* [getAtsScorecard](docs/sdks/scorecard/README.md#getatsscorecard) - Retrieve a scorecard
+* [listAtsScorecards](docs/sdks/scorecard/README.md#listatsscorecards) - List all scorecards
+* [patchAtsScorecard](docs/sdks/scorecard/README.md#patchatsscorecard) - Update a scorecard
+* [removeAtsScorecard](docs/sdks/scorecard/README.md#removeatsscorecard) - Remove a scorecard
+* [updateAtsScorecard](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
 
 ### [.crm](docs/sdks/crm/README.md)
 
@@ -237,20 +258,30 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateCrmLead](docs/sdks/crm/README.md#updatecrmlead) - Update a lead
 * [updateCrmPipeline](docs/sdks/crm/README.md#updatecrmpipeline) - Update a pipeline
 
-### [.customer](docs/sdks/customer/README.md)
+### [.company](docs/sdks/company/README.md)
 
-* [createAccountingCustomer](docs/sdks/customer/README.md#createaccountingcustomer) - Create a customer
-* [createTicketingCustomer](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
-* [getAccountingCustomer](docs/sdks/customer/README.md#getaccountingcustomer) - Retrieve a customer
-* [getTicketingCustomer](docs/sdks/customer/README.md#getticketingcustomer) - Retrieve a customer
-* [listAccountingCustomers](docs/sdks/customer/README.md#listaccountingcustomers) - List all customers
-* [listTicketingCustomers](docs/sdks/customer/README.md#listticketingcustomers) - List all customers
-* [patchAccountingCustomer](docs/sdks/customer/README.md#patchaccountingcustomer) - Update a customer
-* [patchTicketingCustomer](docs/sdks/customer/README.md#patchticketingcustomer) - Update a customer
-* [removeAccountingCustomer](docs/sdks/customer/README.md#removeaccountingcustomer) - Remove a customer
-* [removeTicketingCustomer](docs/sdks/customer/README.md#removeticketingcustomer) - Remove a customer
-* [updateAccountingCustomer](docs/sdks/customer/README.md#updateaccountingcustomer) - Update a customer
-* [updateTicketingCustomer](docs/sdks/customer/README.md#updateticketingcustomer) - Update a customer
+* [createCrmCompany](docs/sdks/company/README.md#createcrmcompany) - Create a company
+* [getCrmCompany](docs/sdks/company/README.md#getcrmcompany) - Retrieve a company
+* [listCrmCompanies](docs/sdks/company/README.md#listcrmcompanies) - List all companies
+* [listEnrichCompanies](docs/sdks/company/README.md#listenrichcompanies) - Retrieve enrichment information for a company
+* [patchCrmCompany](docs/sdks/company/README.md#patchcrmcompany) - Update a company
+* [removeCrmCompany](docs/sdks/company/README.md#removecrmcompany) - Remove a company
+* [updateCrmCompany](docs/sdks/company/README.md#updatecrmcompany) - Update a company
+
+### [.contact](docs/sdks/contact/README.md)
+
+* [createCrmContact](docs/sdks/contact/README.md#createcrmcontact) - Create a contact
+* [createUcContact](docs/sdks/contact/README.md#createuccontact) - Create a contact
+* [getCrmContact](docs/sdks/contact/README.md#getcrmcontact) - Retrieve a contact
+* [getUcContact](docs/sdks/contact/README.md#getuccontact) - Retrieve a contact
+* [listCrmContacts](docs/sdks/contact/README.md#listcrmcontacts) - List all contacts
+* [listUcContacts](docs/sdks/contact/README.md#listuccontacts) - List all contacts
+* [patchCrmContact](docs/sdks/contact/README.md#patchcrmcontact) - Update a contact
+* [patchUcContact](docs/sdks/contact/README.md#patchuccontact) - Update a contact
+* [removeCrmContact](docs/sdks/contact/README.md#removecrmcontact) - Remove a contact
+* [removeUcContact](docs/sdks/contact/README.md#removeuccontact) - Remove a contact
+* [updateCrmContact](docs/sdks/contact/README.md#updatecrmcontact) - Update a contact
+* [updateUcContact](docs/sdks/contact/README.md#updateuccontact) - Update a contact
 
 ### [.deal](docs/sdks/deal/README.md)
 
@@ -260,29 +291,6 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [patchCrmDeal](docs/sdks/deal/README.md#patchcrmdeal) - Update a deal
 * [removeCrmDeal](docs/sdks/deal/README.md#removecrmdeal) - Remove a deal
 * [updateCrmDeal](docs/sdks/deal/README.md#updatecrmdeal) - Update a deal
-
-### [.document](docs/sdks/document/README.md)
-
-* [createAtsDocument](docs/sdks/document/README.md#createatsdocument) - Create a document
-* [getAtsDocument](docs/sdks/document/README.md#getatsdocument) - Retrieve a document
-* [listAtsDocuments](docs/sdks/document/README.md#listatsdocuments) - List all documents
-* [patchAtsDocument](docs/sdks/document/README.md#patchatsdocument) - Update a document
-* [removeAtsDocument](docs/sdks/document/README.md#removeatsdocument) - Remove a document
-* [updateAtsDocument](docs/sdks/document/README.md#updateatsdocument) - Update a document
-
-### [.employee](docs/sdks/employee/README.md)
-
-* [createHrisEmployee](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
-* [getHrisEmployee](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
-* [listHrisEmployees](docs/sdks/employee/README.md#listhrisemployees) - List all employees
-* [patchHrisEmployee](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
-* [removeHrisEmployee](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
-* [updateHrisEmployee](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
-
-### [.enrich](docs/sdks/enrich/README.md)
-
-* [listEnrichCompanies](docs/sdks/enrich/README.md#listenrichcompanies) - Retrieve enrichment information for a company
-* [listEnrichPeople](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
 
 ### [.event](docs/sdks/event/README.md)
 
@@ -302,14 +310,32 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [removeCrmFile](docs/sdks/file/README.md#removecrmfile) - Remove a file
 * [updateCrmFile](docs/sdks/file/README.md#updatecrmfile) - Update a file
 
-### [.group](docs/sdks/group/README.md)
+### [.lead](docs/sdks/lead/README.md)
 
-* [createHrisGroup](docs/sdks/group/README.md#createhrisgroup) - Create a group
-* [getHrisGroup](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
-* [listHrisGroups](docs/sdks/group/README.md#listhrisgroups) - List all groups
-* [patchHrisGroup](docs/sdks/group/README.md#patchhrisgroup) - Update a group
-* [removeHrisGroup](docs/sdks/group/README.md#removehrisgroup) - Remove a group
-* [updateHrisGroup](docs/sdks/group/README.md#updatehrisgroup) - Update a group
+* [createCrmLead](docs/sdks/lead/README.md#createcrmlead) - Create a lead
+* [getCrmLead](docs/sdks/lead/README.md#getcrmlead) - Retrieve a lead
+* [listCrmLeads](docs/sdks/lead/README.md#listcrmleads) - List all leads
+* [patchCrmLead](docs/sdks/lead/README.md#patchcrmlead) - Update a lead
+* [removeCrmLead](docs/sdks/lead/README.md#removecrmlead) - Remove a lead
+* [updateCrmLead](docs/sdks/lead/README.md#updatecrmlead) - Update a lead
+
+### [.pipeline](docs/sdks/pipeline/README.md)
+
+* [createCrmPipeline](docs/sdks/pipeline/README.md#createcrmpipeline) - Create a pipeline
+* [getCrmPipeline](docs/sdks/pipeline/README.md#getcrmpipeline) - Retrieve a pipeline
+* [listCrmPipelines](docs/sdks/pipeline/README.md#listcrmpipelines) - List all pipelines
+* [patchCrmPipeline](docs/sdks/pipeline/README.md#patchcrmpipeline) - Update a pipeline
+* [removeCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
+* [updateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
+
+### [.enrich](docs/sdks/enrich/README.md)
+
+* [listEnrichCompanies](docs/sdks/enrich/README.md#listenrichcompanies) - Retrieve enrichment information for a company
+* [listEnrichPeople](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
+
+### [.person](docs/sdks/person/README.md)
+
+* [listEnrichPeople](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
 
 ### [.hris](docs/sdks/hris/README.md)
 
@@ -326,61 +352,23 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateHrisEmployee](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
 * [updateHrisGroup](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 
-### [.integration](docs/sdks/integration/README.md)
+### [.employee](docs/sdks/employee/README.md)
 
-* [getUnifiedIntegration](docs/sdks/integration/README.md#getunifiedintegration) - Retrieve an integration
-* [getUnifiedIntegrationAuth](docs/sdks/integration/README.md#getunifiedintegrationauth) - Create connection indirectly
-* [listUnifiedIntegrationWorkspaces](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
-* [listUnifiedIntegrations](docs/sdks/integration/README.md#listunifiedintegrations) - Returns all integrations
+* [createHrisEmployee](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
+* [getHrisEmployee](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
+* [listHrisEmployees](docs/sdks/employee/README.md#listhrisemployees) - List all employees
+* [patchHrisEmployee](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
+* [removeHrisEmployee](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
+* [updateHrisEmployee](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
 
-### [.interview](docs/sdks/interview/README.md)
+### [.group](docs/sdks/group/README.md)
 
-* [createAtsInterview](docs/sdks/interview/README.md#createatsinterview) - Create a interview
-* [getAtsInterview](docs/sdks/interview/README.md#getatsinterview) - Retrieve a interview
-* [listAtsInterviews](docs/sdks/interview/README.md#listatsinterviews) - List all interviews
-* [patchAtsInterview](docs/sdks/interview/README.md#patchatsinterview) - Update a interview
-* [removeAtsInterview](docs/sdks/interview/README.md#removeatsinterview) - Remove a interview
-* [updateAtsInterview](docs/sdks/interview/README.md#updateatsinterview) - Update a interview
-
-### [.invoice](docs/sdks/invoice/README.md)
-
-* [createAccountingInvoice](docs/sdks/invoice/README.md#createaccountinginvoice) - Create a invoice
-* [getAccountingInvoice](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve a invoice
-* [listAccountingInvoices](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
-* [patchAccountingInvoice](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update a invoice
-* [removeAccountingInvoice](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove a invoice
-* [updateAccountingInvoice](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update a invoice
-
-### [.job](docs/sdks/job/README.md)
-
-* [createAtsJob](docs/sdks/job/README.md#createatsjob) - Create a job
-* [getAtsJob](docs/sdks/job/README.md#getatsjob) - Retrieve a job
-* [listAtsJobs](docs/sdks/job/README.md#listatsjobs) - List all jobs
-* [patchAtsJob](docs/sdks/job/README.md#patchatsjob) - Update a job
-* [removeAtsJob](docs/sdks/job/README.md#removeatsjob) - Remove a job
-* [updateAtsJob](docs/sdks/job/README.md#updateatsjob) - Update a job
-
-### [.lead](docs/sdks/lead/README.md)
-
-* [createCrmLead](docs/sdks/lead/README.md#createcrmlead) - Create a lead
-* [getCrmLead](docs/sdks/lead/README.md#getcrmlead) - Retrieve a lead
-* [listCrmLeads](docs/sdks/lead/README.md#listcrmleads) - List all leads
-* [patchCrmLead](docs/sdks/lead/README.md#patchcrmlead) - Update a lead
-* [removeCrmLead](docs/sdks/lead/README.md#removecrmlead) - Remove a lead
-* [updateCrmLead](docs/sdks/lead/README.md#updatecrmlead) - Update a lead
-
-### [.list](docs/sdks/list/README.md)
-
-* [createMartechList](docs/sdks/list/README.md#createmartechlist) - Create a list
-* [getMartechList](docs/sdks/list/README.md#getmartechlist) - Retrieve a list
-* [listMartechLists](docs/sdks/list/README.md#listmartechlists) - List all lists
-* [patchMartechList](docs/sdks/list/README.md#patchmartechlist) - Update a list
-* [removeMartechList](docs/sdks/list/README.md#removemartechlist) - Remove a list
-* [updateMartechList](docs/sdks/list/README.md#updatemartechlist) - Update a list
-
-### [.login](docs/sdks/login/README.md)
-
-* [getUnifiedIntegrationLogin](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
+* [createHrisGroup](docs/sdks/group/README.md#createhrisgroup) - Create a group
+* [getHrisGroup](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
+* [listHrisGroups](docs/sdks/group/README.md#listhrisgroups) - List all groups
+* [patchHrisGroup](docs/sdks/group/README.md#patchhrisgroup) - Update a group
+* [removeHrisGroup](docs/sdks/group/README.md#removehrisgroup) - Remove a group
+* [updateHrisGroup](docs/sdks/group/README.md#updatehrisgroup) - Update a group
 
 ### [.martech](docs/sdks/martech/README.md)
 
@@ -397,6 +385,15 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateMartechList](docs/sdks/martech/README.md#updatemartechlist) - Update a list
 * [updateMartechMember](docs/sdks/martech/README.md#updatemartechmember) - Update a member
 
+### [.list](docs/sdks/list/README.md)
+
+* [createMartechList](docs/sdks/list/README.md#createmartechlist) - Create a list
+* [getMartechList](docs/sdks/list/README.md#getmartechlist) - Retrieve a list
+* [listMartechLists](docs/sdks/list/README.md#listmartechlists) - List all lists
+* [patchMartechList](docs/sdks/list/README.md#patchmartechlist) - Update a list
+* [removeMartechList](docs/sdks/list/README.md#removemartechlist) - Remove a list
+* [updateMartechList](docs/sdks/list/README.md#updatemartechlist) - Update a list
+
 ### [.member](docs/sdks/member/README.md)
 
 * [createMartechMember](docs/sdks/member/README.md#createmartechmember) - Create a member
@@ -406,15 +403,6 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [removeMartechMember](docs/sdks/member/README.md#removemartechmember) - Remove member
 * [updateMartechMember](docs/sdks/member/README.md#updatemartechmember) - Update a member
 
-### [.note](docs/sdks/note/README.md)
-
-* [createTicketingNote](docs/sdks/note/README.md#createticketingnote) - Create a note
-* [getTicketingNote](docs/sdks/note/README.md#getticketingnote) - Retrieve a note
-* [listTicketingNotes](docs/sdks/note/README.md#listticketingnotes) - List all notes
-* [patchTicketingNote](docs/sdks/note/README.md#patchticketingnote) - Update a note
-* [removeTicketingNote](docs/sdks/note/README.md#removeticketingnote) - Remove a note
-* [updateTicketingNote](docs/sdks/note/README.md#updateticketingnote) - Update a note
-
 ### [.passthrough](docs/sdks/passthrough/README.md)
 
 * [createPassthrough](docs/sdks/passthrough/README.md#createpassthrough) - Passthrough POST
@@ -422,46 +410,6 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [patchPassthrough](docs/sdks/passthrough/README.md#patchpassthrough) - Passthrough PUT
 * [removePassthrough](docs/sdks/passthrough/README.md#removepassthrough) - Passthrough DELETE
 * [updatePassthrough](docs/sdks/passthrough/README.md#updatepassthrough) - Passthrough PUT
-
-### [.payment](docs/sdks/payment/README.md)
-
-* [createAccountingPayment](docs/sdks/payment/README.md#createaccountingpayment) - Create a payment
-* [getAccountingPayment](docs/sdks/payment/README.md#getaccountingpayment) - Retrieve a payment
-* [listAccountingPayments](docs/sdks/payment/README.md#listaccountingpayments) - List all payments
-* [patchAccountingPayment](docs/sdks/payment/README.md#patchaccountingpayment) - Update a payment
-* [removeAccountingPayment](docs/sdks/payment/README.md#removeaccountingpayment) - Remove a payment
-* [updateAccountingPayment](docs/sdks/payment/README.md#updateaccountingpayment) - Update a payment
-
-### [.person](docs/sdks/person/README.md)
-
-* [listEnrichPeople](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
-
-### [.pipeline](docs/sdks/pipeline/README.md)
-
-* [createCrmPipeline](docs/sdks/pipeline/README.md#createcrmpipeline) - Create a pipeline
-* [getCrmPipeline](docs/sdks/pipeline/README.md#getcrmpipeline) - Retrieve a pipeline
-* [listCrmPipelines](docs/sdks/pipeline/README.md#listcrmpipelines) - List all pipelines
-* [patchCrmPipeline](docs/sdks/pipeline/README.md#patchcrmpipeline) - Update a pipeline
-* [removeCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
-* [updateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
-
-### [.scorecard](docs/sdks/scorecard/README.md)
-
-* [createAtsScorecard](docs/sdks/scorecard/README.md#createatsscorecard) - Create a scorecard
-* [getAtsScorecard](docs/sdks/scorecard/README.md#getatsscorecard) - Retrieve a scorecard
-* [listAtsScorecards](docs/sdks/scorecard/README.md#listatsscorecards) - List all scorecards
-* [patchAtsScorecard](docs/sdks/scorecard/README.md#patchatsscorecard) - Update a scorecard
-* [removeAtsScorecard](docs/sdks/scorecard/README.md#removeatsscorecard) - Remove a scorecard
-* [updateAtsScorecard](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
-
-### [.ticket](docs/sdks/ticket/README.md)
-
-* [createTicketingTicket](docs/sdks/ticket/README.md#createticketingticket) - Create a ticket
-* [getTicketingTicket](docs/sdks/ticket/README.md#getticketingticket) - Retrieve a ticket
-* [listTicketingTickets](docs/sdks/ticket/README.md#listticketingtickets) - List all tickets
-* [patchTicketingTicket](docs/sdks/ticket/README.md#patchticketingticket) - Update a ticket
-* [removeTicketingTicket](docs/sdks/ticket/README.md#removeticketingticket) - Remove a ticket
-* [updateTicketingTicket](docs/sdks/ticket/README.md#updateticketingticket) - Update a ticket
 
 ### [.ticketing](docs/sdks/ticketing/README.md)
 
@@ -484,6 +432,24 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [updateTicketingNote](docs/sdks/ticketing/README.md#updateticketingnote) - Update a note
 * [updateTicketingTicket](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
 
+### [.note](docs/sdks/note/README.md)
+
+* [createTicketingNote](docs/sdks/note/README.md#createticketingnote) - Create a note
+* [getTicketingNote](docs/sdks/note/README.md#getticketingnote) - Retrieve a note
+* [listTicketingNotes](docs/sdks/note/README.md#listticketingnotes) - List all notes
+* [patchTicketingNote](docs/sdks/note/README.md#patchticketingnote) - Update a note
+* [removeTicketingNote](docs/sdks/note/README.md#removeticketingnote) - Remove a note
+* [updateTicketingNote](docs/sdks/note/README.md#updateticketingnote) - Update a note
+
+### [.ticket](docs/sdks/ticket/README.md)
+
+* [createTicketingTicket](docs/sdks/ticket/README.md#createticketingticket) - Create a ticket
+* [getTicketingTicket](docs/sdks/ticket/README.md#getticketingticket) - Retrieve a ticket
+* [listTicketingTickets](docs/sdks/ticket/README.md#listticketingtickets) - List all tickets
+* [patchTicketingTicket](docs/sdks/ticket/README.md#patchticketingticket) - Update a ticket
+* [removeTicketingTicket](docs/sdks/ticket/README.md#removeticketingticket) - Remove a ticket
+* [updateTicketingTicket](docs/sdks/ticket/README.md#updateticketingticket) - Update a ticket
+
 ### [.uc](docs/sdks/uc/README.md)
 
 * [createUcContact](docs/sdks/uc/README.md#createuccontact) - Create a contact
@@ -493,6 +459,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [patchUcContact](docs/sdks/uc/README.md#patchuccontact) - Update a contact
 * [removeUcContact](docs/sdks/uc/README.md#removeuccontact) - Remove a contact
 * [updateUcContact](docs/sdks/uc/README.md#updateuccontact) - Update a contact
+
+### [.call](docs/sdks/call/README.md)
+
+* [listUcCalls](docs/sdks/call/README.md#listuccalls) - List all calls
 
 ### [.unified](docs/sdks/unified/README.md)
 
@@ -512,6 +482,36 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [removeUnifiedConnection](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
 * [removeUnifiedWebhook](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 * [updateUnifiedConnection](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
+
+### [.apicall](docs/sdks/apicall/README.md)
+
+* [getUnifiedApicall](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
+* [listUnifiedApicalls](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
+
+### [.connection](docs/sdks/connection/README.md)
+
+* [createUnifiedConnection](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
+* [getUnifiedConnection](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
+* [listUnifiedConnections](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
+* [patchUnifiedConnection](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
+* [removeUnifiedConnection](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
+* [updateUnifiedConnection](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
+
+### [.integration](docs/sdks/integration/README.md)
+
+* [getUnifiedIntegration](docs/sdks/integration/README.md#getunifiedintegration) - Retrieve an integration
+* [getUnifiedIntegrationAuth](docs/sdks/integration/README.md#getunifiedintegrationauth) - Create connection indirectly
+* [listUnifiedIntegrationWorkspaces](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
+* [listUnifiedIntegrations](docs/sdks/integration/README.md#listunifiedintegrations) - Returns all integrations
+
+### [.auth](docs/sdks/auth/README.md)
+
+* [getUnifiedIntegrationAuth](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
+* [getUnifiedIntegrationLogin](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
+
+### [.login](docs/sdks/login/README.md)
+
+* [getUnifiedIntegrationLogin](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
 
 ### [.webhook](docs/sdks/webhook/README.md)
 
@@ -559,17 +559,16 @@ You can override the default server globally by passing a server index to the `s
 
 For example:
 
-
 ```typescript
 import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
+        serverIdx: 1,
         security: {
             jwt: "",
         },
-        serverIdx: 1,
     });
 
     const res = await sdk.accounting.createAccountingCustomer({
@@ -603,17 +602,16 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 
-
 ```typescript
 import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
+        serverURL: "https://api.unified.to",
         security: {
             jwt: "",
         },
-        serverURL: "https://api.unified.to",
     });
 
     const res = await sdk.accounting.createAccountingCustomer({
@@ -665,6 +663,60 @@ const httpClient = axios.create({
 const sdk = new UnifiedTo({defaultClient: httpClient});
 ```
 <!-- End Custom HTTP Client -->
+
+
+
+<!-- Start Authentication -->
+
+# Authentication
+
+## Per-Client Security Schemes
+
+Your SDK supports the following security scheme globally:
+
+| Name    | Type    | Scheme  |
+| ------- | ------- | ------- |
+| `jwt`   | apiKey  | API key |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+
+```typescript
+import { UnifiedTo } from "unified-to";
+import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+
+(async () => {
+    const sdk = new UnifiedTo({
+        security: {
+            jwt: "",
+        },
+    });
+
+    const res = await sdk.accounting.createAccountingCustomer({
+        accountingCustomer: {
+            billingAddress: {},
+            emails: [
+                {
+                    email: "Kevon_Schultz42@gmail.com",
+                },
+            ],
+            raw: {},
+            shippingAddress: {},
+            telephones: [
+                {
+                    telephone: "string",
+                },
+            ],
+        },
+        connectionId: "string",
+    });
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+})();
+
+```
+<!-- End Authentication -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
