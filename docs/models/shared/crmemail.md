@@ -1,9 +1,0 @@
-# CrmEmail
-
-
-## Fields
-
-| Field                                                      | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `email`                                                    | *string*                                                   | :heavy_minus_sign:                                         | N/A                                                        |
-| `type`                                                     | [shared.CrmEmailType](../../models/shared/crmemailtype.md) | :heavy_minus_sign:                                         | N/A                                                        |

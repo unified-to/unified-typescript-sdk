@@ -31,7 +31,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -62,7 +66,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -126,7 +130,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -144,7 +152,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -207,7 +215,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -225,7 +237,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -291,7 +303,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -322,7 +338,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -386,7 +402,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -403,7 +423,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -463,7 +483,11 @@ export class Pipeline {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -494,7 +518,7 @@ export class Pipeline {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

@@ -30,6 +30,10 @@ export class AtsDocument extends SpeakeasyBase {
     createdAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "document_data" })
+    documentData?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "document_url" })
     documentUrl?: string;
 

@@ -1,20 +1,20 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 7b1cb43287adc82723644e87b73cba93
+  docChecksum: 6639616828c5ad26c6ebed036fc6e678
   docVersion: "1.0"
-  speakeasyVersion: 1.114.1
-  generationVersion: 2.181.1
+  speakeasyVersion: 1.116.0
+  generationVersion: 2.185.0
 generation:
   comments: {}
   sdkClassName: Unified-to
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
 features:
   typescript:
-    core: 3.1.0
+    core: 3.1.2
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 typescript:
-  version: 0.9.0
+  version: 0.9.1
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
@@ -26,7 +26,9 @@ typescript:
       operations: sdk/models/operations
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
+  inputModelSuffix: input
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   maxMethodParams: 0
+  outputModelSuffix: output
   packageName: unified-to
   repoSubDirectory: .

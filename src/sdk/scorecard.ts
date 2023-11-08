@@ -31,7 +31,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -62,7 +66,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -127,7 +131,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -145,7 +153,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -208,7 +216,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -226,7 +238,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -292,7 +304,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -323,7 +339,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -387,7 +403,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -404,7 +424,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -465,7 +485,11 @@ export class Scorecard {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -496,7 +520,7 @@ export class Scorecard {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

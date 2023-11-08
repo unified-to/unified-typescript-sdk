@@ -31,7 +31,7 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/hris/{connection_id}/group", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -62,7 +62,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -123,7 +123,11 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/group/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -141,7 +145,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -201,7 +205,7 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/hris/{connection_id}/group", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -219,7 +223,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -285,7 +289,11 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/group/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -316,7 +324,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -377,7 +385,11 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/group/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -394,7 +406,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -454,7 +466,11 @@ export class Group {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/hris/{connection_id}/group/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/group/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -485,7 +501,7 @@ export class Group {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

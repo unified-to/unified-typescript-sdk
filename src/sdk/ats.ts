@@ -31,7 +31,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/application", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/application",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -62,7 +66,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -127,7 +131,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -158,7 +166,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -223,7 +231,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -254,7 +266,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -318,7 +330,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -349,7 +365,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -414,7 +430,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -445,7 +461,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -506,7 +522,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -537,7 +557,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -602,7 +622,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ats/{connection_id}/application/{id}",
             req
@@ -624,7 +644,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -687,7 +707,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -705,7 +729,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -768,7 +792,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -786,7 +814,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -849,7 +877,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -867,7 +899,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -930,7 +962,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/job/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -948,7 +984,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1008,7 +1044,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1026,7 +1066,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1089,7 +1129,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/application", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/application",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1107,7 +1151,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1174,7 +1218,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1192,7 +1240,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1258,7 +1306,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1276,7 +1328,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1342,7 +1394,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1360,7 +1416,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1426,7 +1482,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1444,7 +1500,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1510,7 +1566,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1528,7 +1588,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1594,7 +1654,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ats/{connection_id}/application/{id}",
             req
@@ -1629,7 +1689,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1694,7 +1754,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1725,7 +1789,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1789,7 +1853,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1820,7 +1888,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1884,7 +1952,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1915,7 +1987,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1979,7 +2051,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/job/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2010,7 +2086,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2071,7 +2147,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2102,7 +2182,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2166,7 +2246,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ats/{connection_id}/application/{id}",
             req
@@ -2187,7 +2267,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2248,7 +2328,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2265,7 +2349,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2326,7 +2410,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2343,7 +2431,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2403,7 +2491,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2420,7 +2512,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2481,7 +2573,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/job/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2498,7 +2594,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2558,7 +2654,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2575,7 +2675,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2636,7 +2736,7 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ats/{connection_id}/application/{id}",
             req
@@ -2671,7 +2771,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -2736,7 +2836,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/candidate/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/candidate/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2767,7 +2871,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -2832,7 +2936,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/document/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/document/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2863,7 +2971,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -2927,7 +3035,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/interview/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/interview/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2958,7 +3070,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3023,7 +3135,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/job/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/job/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3054,7 +3170,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3115,7 +3231,11 @@ export class Ats {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ats/{connection_id}/scorecard/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ats/{connection_id}/scorecard/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3146,7 +3266,7 @@ export class Ats {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

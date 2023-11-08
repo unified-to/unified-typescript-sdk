@@ -31,7 +31,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -62,7 +66,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -123,7 +127,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -154,7 +162,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -215,7 +223,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -246,7 +254,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -307,7 +315,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/event", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -338,7 +346,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -399,7 +407,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/file", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -430,7 +438,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -491,7 +499,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead", req);
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -522,7 +530,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -583,7 +591,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -614,7 +626,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -678,7 +690,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -696,7 +712,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -756,7 +772,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -774,7 +794,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -834,7 +854,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/deal/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -852,7 +876,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -912,7 +936,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/event/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -930,7 +958,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -990,7 +1018,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/file/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1008,7 +1040,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1068,7 +1100,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/lead/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1086,7 +1122,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1146,7 +1182,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1164,7 +1204,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1227,7 +1267,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1245,7 +1289,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1311,7 +1355,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1329,7 +1377,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1395,7 +1443,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1413,7 +1461,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1479,7 +1527,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/event", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1497,7 +1545,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1563,7 +1611,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/file", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1581,7 +1629,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1647,7 +1695,7 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead", req);
+        const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1665,7 +1713,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1731,7 +1779,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1749,7 +1801,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -1815,7 +1867,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1846,7 +1902,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1907,7 +1963,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1938,7 +1998,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1999,7 +2059,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/deal/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2030,7 +2094,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2091,7 +2155,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/event/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2122,7 +2190,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2183,7 +2251,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/file/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2214,7 +2286,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2275,7 +2347,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/lead/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2306,7 +2382,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2367,7 +2443,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -2398,7 +2478,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -2462,7 +2542,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2479,7 +2563,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2539,7 +2623,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2556,7 +2644,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2616,7 +2704,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/deal/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2633,7 +2725,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2693,7 +2785,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/event/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2710,7 +2806,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2770,7 +2866,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/file/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2787,7 +2887,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2847,7 +2947,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/lead/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2864,7 +2968,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -2924,7 +3028,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -2941,7 +3049,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -3001,7 +3109,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/company/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/company/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3032,7 +3144,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3093,7 +3205,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/contact/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/contact/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3124,7 +3240,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3185,7 +3301,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/deal/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/deal/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3216,7 +3336,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3277,7 +3397,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/event/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/event/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3308,7 +3432,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3369,7 +3493,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/file/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/file/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3400,7 +3528,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3461,7 +3589,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/lead/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3492,7 +3624,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -3553,7 +3685,11 @@ export class Crm {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/crm/{connection_id}/pipeline/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/crm/{connection_id}/pipeline/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -3584,7 +3720,7 @@ export class Crm {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",

@@ -31,7 +31,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/customer", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/customer",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -66,7 +70,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -131,7 +135,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -162,7 +170,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -227,7 +235,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/ticket", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/ticket",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -258,7 +270,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "post",
             headers: headers,
             responseType: "arraybuffer",
@@ -323,7 +335,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/customer/{id}",
             req
@@ -345,7 +357,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -409,7 +421,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -427,7 +443,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -490,7 +506,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/ticket/{id}",
             req
@@ -512,7 +528,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -576,7 +592,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/customer", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/customer",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -594,7 +614,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -661,7 +681,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -679,7 +703,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -746,7 +770,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/ticket", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/ticket",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -764,7 +792,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url + queryParams,
+            url: operationUrl + queryParams,
             method: "get",
             headers: headers,
             responseType: "arraybuffer",
@@ -831,7 +859,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/customer/{id}",
             req
@@ -870,7 +898,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -935,7 +963,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -966,7 +998,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1031,7 +1063,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/ticket/{id}",
             req
@@ -1066,7 +1098,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "patch",
             headers: headers,
             responseType: "arraybuffer",
@@ -1131,7 +1163,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/customer/{id}",
             req
@@ -1152,7 +1184,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -1213,7 +1245,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note/{id}",
+            req
+        );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
         let globalSecurity = this.sdkConfiguration.security;
         if (typeof globalSecurity === "function") {
@@ -1230,7 +1266,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -1291,7 +1327,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/ticket/{id}",
             req
@@ -1312,7 +1348,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "delete",
             headers: headers,
             responseType: "arraybuffer",
@@ -1373,7 +1409,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/customer/{id}",
             req
@@ -1412,7 +1448,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -1477,7 +1513,11 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(baseURL, "/ticketing/{connection_id}/note/{id}", req);
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/ticketing/{connection_id}/note/{id}",
+            req
+        );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
@@ -1508,7 +1548,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
@@ -1573,7 +1613,7 @@ export class Ticketing {
             this.sdkConfiguration.serverURL,
             this.sdkConfiguration.serverDefaults
         );
-        const url: string = utils.generateURL(
+        const operationUrl: string = utils.generateURL(
             baseURL,
             "/ticketing/{connection_id}/ticket/{id}",
             req
@@ -1608,7 +1648,7 @@ export class Ticketing {
 
         const httpRes: AxiosResponse = await client.request({
             validateStatus: () => true,
-            url: url,
+            url: operationUrl,
             method: "put",
             headers: headers,
             responseType: "arraybuffer",
