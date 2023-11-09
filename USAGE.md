@@ -1,6 +1,4 @@
 <!-- Start SDK Example Usage -->
-
-
 ```typescript
 import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
