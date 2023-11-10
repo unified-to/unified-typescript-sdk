@@ -1,9 +1,9 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 6639616828c5ad26c6ebed036fc6e678
+  docChecksum: 971f963bb8131d7583f1525d9455db1e
   docVersion: "1.0"
-  speakeasyVersion: 1.118.1
-  generationVersion: 2.187.4
+  speakeasyVersion: 1.118.3
+  generationVersion: 2.187.7
 generation:
   comments: {}
   sdkClassName: Unified-to
@@ -16,7 +16,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.0
 typescript:
-  version: 0.9.2
+  version: 0.9.3
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

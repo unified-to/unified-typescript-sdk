@@ -58,6 +58,10 @@ export class CrmLead extends SpeakeasyBase {
     @Expose({ name: "source" })
     source?: string;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "status" })
+    status?: string;
+
     @SpeakeasyMetadata({ elemType: CrmTelephone })
     @Expose({ name: "telephones" })
     @Type(() => CrmTelephone)
