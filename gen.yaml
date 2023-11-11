@@ -5,9 +5,15 @@ management:
   speakeasyVersion: 1.118.3
   generationVersion: 2.187.7
 generation:
-  comments: {}
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
+  repoURL: https://github.com/unified-to/unified-python-sdk.git
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
   usageSnippets:
     optionalPropertyRendering: withExample
 features:
