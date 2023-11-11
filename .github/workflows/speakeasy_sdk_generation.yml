@@ -21,7 +21,6 @@ jobs:
       languages: |
         - typescript
       mode: direct
-      openapi_doc_auth_header: ""
       openapi_docs: |
         - https://api-eu.unified.to/openapi.json
       speakeasy_version: latest
