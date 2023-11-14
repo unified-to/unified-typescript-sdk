@@ -26,7 +26,7 @@ export class ListAtsApplicationsRequest extends SpeakeasyBase {
     fields?: string[];
 
     /**
-     * The job ID to filter results
+     * The job ID
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })
     jobId?: string;
