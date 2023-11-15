@@ -32,8 +32,7 @@ export class Integration extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
-    @Transform(({ value }) => new Date(value), { toClassOnly: true })
-    createdAt?: Date;
+    createdAt?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "fa_icon" })
@@ -102,8 +101,7 @@ export class Integration extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })
-    @Transform(({ value }) => new Date(value), { toClassOnly: true })
-    updatedAt?: Date;
+    updatedAt?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "web_url" })
