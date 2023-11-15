@@ -5,13 +5,17 @@ management:
   speakeasyVersion: 1.119.2
   generationVersion: 2.188.3
 generation:
-  comments: {}
-  sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
-  usageSnippets:
-    optionalPropertyRendering: withExample
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
   flattenGlobalSecurity: true
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  sdkClassName: Unified-to
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+  usageSnippets:
+    optionalPropertyRendering: withExample
 features:
   typescript:
     core: 3.1.3
