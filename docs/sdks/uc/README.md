@@ -22,11 +22,7 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.createUcContact({
     ucContact: {
@@ -78,11 +74,7 @@ Retrieve a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.getUcContact({
     connectionId: "string",
@@ -125,11 +117,7 @@ List all calls
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.listUcCalls({
     connectionId: "string",
@@ -171,11 +159,7 @@ List all contacts
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.listUcContacts({
     connectionId: "string",
@@ -218,11 +202,7 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.patchUcContact({
     ucContact: {
@@ -275,11 +255,7 @@ Remove a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.removeUcContact({
     connectionId: "string",
@@ -320,11 +296,7 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.uc.updateUcContact({
     ucContact: {

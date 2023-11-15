@@ -15,11 +15,7 @@ Retrieve enrichment information for a person
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.person.listEnrichPeople({
     connectionId: "string",

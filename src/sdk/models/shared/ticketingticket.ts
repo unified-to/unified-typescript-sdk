@@ -45,7 +45,7 @@ export class TicketingTicket extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyTicketingTicketRaw)
-    raw: PropertyTicketingTicketRaw;
+    raw?: PropertyTicketingTicketRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "source" })

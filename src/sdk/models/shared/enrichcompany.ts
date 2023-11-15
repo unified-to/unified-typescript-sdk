@@ -87,7 +87,7 @@ export class EnrichCompany extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyEnrichCompanyRaw)
-    raw: PropertyEnrichCompanyRaw;
+    raw?: PropertyEnrichCompanyRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "revenue" })

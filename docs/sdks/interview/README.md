@@ -21,11 +21,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.createAtsInterview({
     atsInterview: {
@@ -70,11 +66,7 @@ Retrieve a interview
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.getAtsInterview({
     connectionId: "string",
@@ -117,11 +109,7 @@ List all interviews
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.listAtsInterviews({
     connectionId: "string",
@@ -164,11 +152,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.patchAtsInterview({
     atsInterview: {
@@ -214,11 +198,7 @@ Remove a interview
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.removeAtsInterview({
     connectionId: "string",
@@ -259,11 +239,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.interview.updateAtsInterview({
     atsInterview: {

@@ -20,11 +20,7 @@ Create a invoice
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.createAccountingInvoice({
     accountingInvoice: {
@@ -71,11 +67,7 @@ Retrieve a invoice
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.getAccountingInvoice({
     connectionId: "string",
@@ -118,11 +110,7 @@ List all invoices
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.listAccountingInvoices({
     connectionId: "string",
@@ -164,11 +152,7 @@ Update a invoice
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.patchAccountingInvoice({
     accountingInvoice: {
@@ -216,11 +200,7 @@ Remove a invoice
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.removeAccountingInvoice({
     connectionId: "string",
@@ -260,11 +240,7 @@ Update a invoice
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.invoice.updateAccountingInvoice({
     accountingInvoice: {

@@ -34,11 +34,7 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.createHrisEmployee({
     hrisEmployee: {
@@ -92,11 +88,7 @@ import { UnifiedTo } from "unified-to";
 import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.createHrisGroup({
     hrisGroup: {
@@ -144,11 +136,7 @@ Retrieve an employee
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.getHrisEmployee({
     connectionId: "string",
@@ -191,11 +179,7 @@ Retrieve a group
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.getHrisGroup({
     connectionId: "string",
@@ -238,11 +222,7 @@ List all employees
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.listHrisEmployees({
     connectionId: "string",
@@ -284,11 +264,7 @@ List all groups
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.listHrisGroups({
     connectionId: "string",
@@ -338,11 +314,7 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.patchHrisEmployee({
     hrisEmployee: {
@@ -397,11 +369,7 @@ import { UnifiedTo } from "unified-to";
 import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.patchHrisGroup({
     hrisGroup: {
@@ -450,11 +418,7 @@ Remove an employee
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.removeHrisEmployee({
     connectionId: "string",
@@ -494,11 +458,7 @@ Remove a group
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.removeHrisGroup({
     connectionId: "string",
@@ -546,11 +506,7 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.updateHrisEmployee({
     hrisEmployee: {
@@ -605,11 +561,7 @@ import { UnifiedTo } from "unified-to";
 import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.hris.updateHrisGroup({
     hrisGroup: {

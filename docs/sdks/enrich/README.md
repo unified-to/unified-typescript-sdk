@@ -16,11 +16,7 @@ Retrieve enrichment information for a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.enrich.listEnrichCompanies({
     connectionId: "string",
@@ -59,11 +55,7 @@ Retrieve enrichment information for a person
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.enrich.listEnrichPeople({
     connectionId: "string",

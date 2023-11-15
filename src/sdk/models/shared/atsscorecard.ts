@@ -50,7 +50,7 @@ export class AtsScorecard extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyAtsScorecardRaw)
-    raw: PropertyAtsScorecardRaw;
+    raw?: PropertyAtsScorecardRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "recommendation" })

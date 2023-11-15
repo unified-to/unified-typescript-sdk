@@ -57,11 +57,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmCompany({
     crmCompany: {
@@ -122,11 +118,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmContact({
     crmContact: {
@@ -183,11 +175,7 @@ Create a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmDeal({
     crmDeal: {
@@ -233,11 +221,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmEvent({
     crmEvent: {
@@ -300,11 +284,7 @@ Create a file
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmFile({
     crmFile: {
@@ -347,11 +327,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmLead({
     crmLead: {
@@ -402,11 +378,7 @@ Create a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.createCrmPipeline({
     crmPipeline: {
@@ -448,11 +420,7 @@ Retrieve a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmCompany({
     connectionId: "string",
@@ -495,11 +463,7 @@ Retrieve a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmContact({
     connectionId: "string",
@@ -542,11 +506,7 @@ Retrieve a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmDeal({
     connectionId: "string",
@@ -589,11 +549,7 @@ Retrieve a event
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmEvent({
     connectionId: "string",
@@ -636,11 +592,7 @@ Retrieve a file
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmFile({
     connectionId: "string",
@@ -683,11 +635,7 @@ Retrieve a lead
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmLead({
     connectionId: "string",
@@ -730,11 +678,7 @@ Retrieve a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.getCrmPipeline({
     connectionId: "string",
@@ -777,11 +721,7 @@ List all companies
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmCompanies({
     connectionId: "string",
@@ -823,11 +763,7 @@ List all contacts
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmContacts({
     connectionId: "string",
@@ -869,11 +805,7 @@ List all deals
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmDeals({
     connectionId: "string",
@@ -915,11 +847,7 @@ List all events
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmEvents({
     connectionId: "string",
@@ -961,11 +889,7 @@ List all files
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmFiles({
     connectionId: "string",
@@ -1007,11 +931,7 @@ List all leads
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmLeads({
     connectionId: "string",
@@ -1053,11 +973,7 @@ List all pipelines
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.listCrmPipelines({
     connectionId: "string",
@@ -1100,11 +1016,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmCompany({
     crmCompany: {
@@ -1166,11 +1078,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmContact({
     crmContact: {
@@ -1228,11 +1136,7 @@ Update a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmDeal({
     crmDeal: {
@@ -1279,11 +1183,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmEvent({
     crmEvent: {
@@ -1347,11 +1247,7 @@ Update a file
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmFile({
     crmFile: {
@@ -1395,11 +1291,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmLead({
     crmLead: {
@@ -1451,11 +1343,7 @@ Update a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.patchCrmPipeline({
     crmPipeline: {
@@ -1498,11 +1386,7 @@ Remove a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmCompany({
     connectionId: "string",
@@ -1542,11 +1426,7 @@ Remove a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmContact({
     connectionId: "string",
@@ -1586,11 +1466,7 @@ Remove a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmDeal({
     connectionId: "string",
@@ -1630,11 +1506,7 @@ Remove a event
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmEvent({
     connectionId: "string",
@@ -1674,11 +1546,7 @@ Remove a file
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmFile({
     connectionId: "string",
@@ -1718,11 +1586,7 @@ Remove a lead
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmLead({
     connectionId: "string",
@@ -1762,11 +1626,7 @@ Remove a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.removeCrmPipeline({
     connectionId: "string",
@@ -1807,11 +1667,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmCompany({
     crmCompany: {
@@ -1873,11 +1729,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmContact({
     crmContact: {
@@ -1935,11 +1787,7 @@ Update a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmDeal({
     crmDeal: {
@@ -1986,11 +1834,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmEvent({
     crmEvent: {
@@ -2054,11 +1898,7 @@ Update a file
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmFile({
     crmFile: {
@@ -2102,11 +1942,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmLead({
     crmLead: {
@@ -2158,11 +1994,7 @@ Update a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.crm.updateCrmPipeline({
     crmPipeline: {

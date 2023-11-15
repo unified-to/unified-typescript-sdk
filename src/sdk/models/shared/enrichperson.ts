@@ -94,7 +94,7 @@ export class EnrichPerson extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyEnrichPersonRaw)
-    raw: PropertyEnrichPersonRaw;
+    raw?: PropertyEnrichPersonRaw;
 
     /**
      * An array of telephones for this person

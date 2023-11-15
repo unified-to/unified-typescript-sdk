@@ -36,7 +36,7 @@ export class UcCall extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyUcCallRaw)
-    raw: PropertyUcCallRaw;
+    raw?: PropertyUcCallRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "start_at" })

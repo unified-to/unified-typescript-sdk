@@ -21,11 +21,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.createCrmEvent({
     crmEvent: {
@@ -88,11 +84,7 @@ Retrieve a event
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.getCrmEvent({
     connectionId: "string",
@@ -135,11 +127,7 @@ List all events
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.listCrmEvents({
     connectionId: "string",
@@ -182,11 +170,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.patchCrmEvent({
     crmEvent: {
@@ -250,11 +234,7 @@ Remove a event
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.removeCrmEvent({
     connectionId: "string",
@@ -295,11 +275,7 @@ import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.event.updateCrmEvent({
     crmEvent: {

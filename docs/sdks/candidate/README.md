@@ -21,11 +21,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.createAtsCandidate({
     atsCandidate: {
@@ -81,11 +77,7 @@ Retrieve a candidate
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.getAtsCandidate({
     connectionId: "string",
@@ -128,11 +120,7 @@ List all candidates
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.listAtsCandidates({
     connectionId: "string",
@@ -175,11 +163,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.patchAtsCandidate({
     atsCandidate: {
@@ -236,11 +220,7 @@ Remove a candidate
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.removeAtsCandidate({
     connectionId: "string",
@@ -281,11 +261,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.candidate.updateAtsCandidate({
     atsCandidate: {

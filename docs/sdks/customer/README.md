@@ -27,11 +27,7 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.createAccountingCustomer({
     accountingCustomer: {
@@ -86,11 +82,7 @@ import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.createTicketingCustomer({
     ticketingCustomer: {
@@ -145,11 +137,7 @@ Retrieve a customer
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.getAccountingCustomer({
     connectionId: "string",
@@ -192,11 +180,7 @@ Retrieve a customer
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.getTicketingCustomer({
     connectionId: "string",
@@ -239,11 +223,7 @@ List all customers
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.listAccountingCustomers({
     connectionId: "string",
@@ -285,11 +265,7 @@ List all customers
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.listTicketingCustomers({
     connectionId: "string",
@@ -332,11 +308,7 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.patchAccountingCustomer({
     accountingCustomer: {
@@ -392,11 +364,7 @@ import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.patchTicketingCustomer({
     ticketingCustomer: {
@@ -452,11 +420,7 @@ Remove a customer
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.removeAccountingCustomer({
     connectionId: "string",
@@ -496,11 +460,7 @@ Remove a customer
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.removeTicketingCustomer({
     connectionId: "string",
@@ -541,11 +501,7 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.updateAccountingCustomer({
     accountingCustomer: {
@@ -601,11 +557,7 @@ import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.customer.updateTicketingCustomer({
     ticketingCustomer: {

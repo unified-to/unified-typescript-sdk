@@ -21,11 +21,7 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.createAtsApplication({
     atsApplication: {
@@ -67,11 +63,7 @@ Retrieve an application
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.getAtsApplication({
     connectionId: "string",
@@ -114,11 +106,7 @@ List all applications
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.listAtsApplications({
     connectionId: "string",
@@ -161,11 +149,7 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.patchAtsApplication({
     atsApplication: {
@@ -208,11 +192,7 @@ Remove an application
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.removeAtsApplication({
     connectionId: "string",
@@ -253,11 +233,7 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.application.updateAtsApplication({
     atsApplication: {

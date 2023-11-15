@@ -21,11 +21,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.createAtsJob({
     atsJob: {
@@ -87,11 +83,7 @@ Retrieve a job
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.getAtsJob({
     connectionId: "string",
@@ -134,11 +126,7 @@ List all jobs
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.listAtsJobs({
     connectionId: "string",
@@ -181,11 +169,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.patchAtsJob({
     atsJob: {
@@ -248,11 +232,7 @@ Remove a job
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.removeAtsJob({
     connectionId: "string",
@@ -293,11 +273,7 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.job.updateAtsJob({
     atsJob: {

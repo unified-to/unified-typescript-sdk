@@ -16,11 +16,7 @@ Retrieve specific API Call by its ID
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.apicall.getUnifiedApicall({
     id: "<ID>",
@@ -59,11 +55,7 @@ Returns API Calls
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.apicall.listUnifiedApicalls({});
 

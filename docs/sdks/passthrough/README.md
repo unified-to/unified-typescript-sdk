@@ -19,11 +19,7 @@ Passthrough POST
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.passthrough.createPassthrough({
     connectionId: "string",
@@ -64,11 +60,7 @@ Passthrough GET
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.passthrough.listPassthroughs({
     connectionId: "string",
@@ -108,11 +100,7 @@ Passthrough PUT
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.passthrough.patchPassthrough({
     connectionId: "string",
@@ -153,11 +141,7 @@ Passthrough DELETE
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.passthrough.removePassthrough({
     connectionId: "string",
@@ -197,11 +181,7 @@ Passthrough PUT
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.passthrough.updatePassthrough({
     connectionId: "string",

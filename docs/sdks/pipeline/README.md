@@ -20,11 +20,7 @@ Create a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.createCrmPipeline({
     crmPipeline: {
@@ -66,11 +62,7 @@ Retrieve a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.getCrmPipeline({
     connectionId: "string",
@@ -113,11 +105,7 @@ List all pipelines
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.listCrmPipelines({
     connectionId: "string",
@@ -159,11 +147,7 @@ Update a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.patchCrmPipeline({
     crmPipeline: {
@@ -206,11 +190,7 @@ Remove a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.removeCrmPipeline({
     connectionId: "string",
@@ -250,11 +230,7 @@ Update a pipeline
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.pipeline.updateCrmPipeline({
     crmPipeline: {

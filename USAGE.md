@@ -4,11 +4,7 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
-    const sdk = new UnifiedTo({
-        security: {
-            jwt: "",
-        },
-    });
+    const sdk = new UnifiedTo();
 
     const res = await sdk.accounting.createAccountingCustomer({
         accountingCustomer: {
