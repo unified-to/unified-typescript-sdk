@@ -69,6 +69,10 @@ export class CrmEvent extends SpeakeasyBase {
     @Expose({ name: "id" })
     id?: string;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "lead_ids" })
+    leadIds?: string[];
+
     /**
      * The meeting object, when type = meeting
      */

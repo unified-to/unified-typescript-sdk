@@ -243,6 +243,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
           "string",
         ],
       },
+      leadIds: [
+        "string",
+      ],
       meeting: {},
       note: {},
       raw: {},
@@ -1205,6 +1208,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
           "string",
         ],
       },
+      leadIds: [
+        "string",
+      ],
       meeting: {},
       note: {},
       raw: {},
@@ -1856,6 +1862,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
           "string",
         ],
       },
+      leadIds: [
+        "string",
+      ],
       meeting: {},
       note: {},
       raw: {},
