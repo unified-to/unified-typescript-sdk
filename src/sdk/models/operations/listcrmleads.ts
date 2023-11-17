@@ -8,10 +8,22 @@ import { AxiosResponse } from "axios";
 
 export class ListCrmLeadsRequest extends SpeakeasyBase {
     /**
+     * The company ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=company_id" })
+    companyId?: string;
+
+    /**
      * ID of the connection
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
+
+    /**
+     * The contact ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
+    contactId?: string;
 
     /**
      * Comma-delimited fields to return
