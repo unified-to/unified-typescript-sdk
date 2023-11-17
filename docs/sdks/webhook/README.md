@@ -20,7 +20,11 @@ import { Events } from "unified-to/dist/sdk/models/operations";
 import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.webhook.createUnifiedWebhook({
     webhook: {
@@ -77,7 +81,11 @@ Retrieve webhook by its ID
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.webhook.getUnifiedWebhook({
     id: "<ID>",
@@ -116,7 +124,11 @@ Returns all registered webhooks
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.webhook.listUnifiedWebhooks({});
 
@@ -153,7 +165,11 @@ Remove webhook subscription
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.webhook.removeUnifiedWebhook({
     id: "<ID>",

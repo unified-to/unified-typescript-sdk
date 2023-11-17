@@ -22,7 +22,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.createCrmCompany({
     crmCompany: {
@@ -82,7 +86,11 @@ Retrieve a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.getCrmCompany({
     connectionId: "string",
@@ -125,7 +133,11 @@ List all companies
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.listCrmCompanies({
     connectionId: "string",
@@ -167,7 +179,11 @@ Retrieve enrichment information for a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.listEnrichCompanies({
     connectionId: "string",
@@ -207,7 +223,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.patchCrmCompany({
     crmCompany: {
@@ -268,7 +288,11 @@ Remove a company
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.removeCrmCompany({
     connectionId: "string",
@@ -309,7 +333,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.company.updateCrmCompany({
     crmCompany: {

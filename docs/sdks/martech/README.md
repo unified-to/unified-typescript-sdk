@@ -26,7 +26,11 @@ Create a list
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.createMartechList({
     marketingList: {
@@ -69,7 +73,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.createMartechMember({
     marketingMember: {
@@ -122,7 +130,11 @@ Retrieve a list
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.getMartechList({
     connectionId: "string",
@@ -165,7 +177,11 @@ Retrieve a member
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.getMartechMember({
     connectionId: "string",
@@ -208,7 +224,11 @@ List all lists
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.listMartechLists({
     connectionId: "string",
@@ -250,7 +270,11 @@ List all members
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.listMartechMembers({
     connectionId: "string",
@@ -292,7 +316,11 @@ Update a list
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.patchMartechList({
     marketingList: {
@@ -336,7 +364,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.patchMartechMember({
     marketingMember: {
@@ -390,7 +422,11 @@ Remove a list
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.removeMartechList({
     connectionId: "string",
@@ -430,7 +466,11 @@ Remove member
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.removeMartechMember({
     connectionId: "string",
@@ -470,7 +510,11 @@ Update a list
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.updateMartechList({
     marketingList: {
@@ -514,7 +558,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.martech.updateMartechMember({
     marketingMember: {

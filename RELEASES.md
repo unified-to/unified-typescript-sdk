@@ -247,3 +247,11 @@ Based on:
 - Speakeasy CLI 1.120.2 (2.191.3) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [typescript v0.9.7] .
+
+## 2023-11-17 13:01:49
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.120.5 (2.192.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.9.8] .

@@ -28,7 +28,11 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.createHrisEmployee({
     hrisEmployee: {
@@ -81,7 +85,11 @@ Retrieve an employee
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.getHrisEmployee({
     connectionId: "string",
@@ -124,7 +132,11 @@ List all employees
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.listHrisEmployees({
     connectionId: "string",
@@ -174,7 +186,11 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.patchHrisEmployee({
     hrisEmployee: {
@@ -228,7 +244,11 @@ Remove an employee
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.removeHrisEmployee({
     connectionId: "string",
@@ -276,7 +296,11 @@ import {
 } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.employee.updateHrisEmployee({
     hrisEmployee: {

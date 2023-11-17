@@ -27,7 +27,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.createCrmContact({
     crmContact: {
@@ -85,7 +89,11 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.createUcContact({
     ucContact: {
@@ -137,7 +145,11 @@ Retrieve a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.getCrmContact({
     connectionId: "string",
@@ -180,7 +192,11 @@ Retrieve a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.getUcContact({
     connectionId: "string",
@@ -223,7 +239,11 @@ List all contacts
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.listCrmContacts({
     connectionId: "string",
@@ -265,7 +285,11 @@ List all contacts
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.listUcContacts({
     connectionId: "string",
@@ -308,7 +332,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.patchCrmContact({
     crmContact: {
@@ -367,7 +395,11 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.patchUcContact({
     ucContact: {
@@ -420,7 +452,11 @@ Remove a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.removeCrmContact({
     connectionId: "string",
@@ -460,7 +496,11 @@ Remove a contact
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.removeUcContact({
     connectionId: "string",
@@ -501,7 +541,11 @@ import { UnifiedTo } from "unified-to";
 import { CrmEmailType, CrmTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.updateCrmContact({
     crmContact: {
@@ -560,7 +604,11 @@ import { UnifiedTo } from "unified-to";
 import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.contact.updateUcContact({
     ucContact: {

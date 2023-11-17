@@ -18,7 +18,11 @@ Retrieve an integration
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.integration.getUnifiedIntegration({
     integrationType: "string",
@@ -153,7 +157,11 @@ import { UnifiedTo } from "unified-to";
 import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.integration.listUnifiedIntegrations({
     categories: [

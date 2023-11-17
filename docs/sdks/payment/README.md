@@ -20,7 +20,11 @@ Create a payment
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.createAccountingPayment({
     accountingPayment: {
@@ -65,7 +69,11 @@ Retrieve a payment
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.getAccountingPayment({
     connectionId: "string",
@@ -108,7 +116,11 @@ List all payments
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.listAccountingPayments({
     connectionId: "string",
@@ -150,7 +162,11 @@ Update a payment
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.patchAccountingPayment({
     accountingPayment: {
@@ -196,7 +212,11 @@ Remove a payment
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.removeAccountingPayment({
     connectionId: "string",
@@ -236,7 +256,11 @@ Update a payment
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.payment.updateAccountingPayment({
     accountingPayment: {

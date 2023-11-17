@@ -21,7 +21,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.createMartechMember({
     marketingMember: {
@@ -74,7 +78,11 @@ Retrieve a member
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.getMartechMember({
     connectionId: "string",
@@ -117,7 +125,11 @@ List all members
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.listMartechMembers({
     connectionId: "string",
@@ -160,7 +172,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.patchMartechMember({
     marketingMember: {
@@ -214,7 +230,11 @@ Remove member
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.removeMartechMember({
     connectionId: "string",
@@ -255,7 +275,11 @@ import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.member.updateMartechMember({
     marketingMember: {

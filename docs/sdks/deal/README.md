@@ -20,7 +20,11 @@ Create a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.createCrmDeal({
     crmDeal: {
@@ -65,7 +69,11 @@ Retrieve a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.getCrmDeal({
     connectionId: "string",
@@ -108,7 +116,11 @@ List all deals
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.listCrmDeals({
     connectionId: "string",
@@ -150,7 +162,11 @@ Update a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.patchCrmDeal({
     crmDeal: {
@@ -196,7 +212,11 @@ Remove a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.removeCrmDeal({
     connectionId: "string",
@@ -236,7 +256,11 @@ Update a deal
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.deal.updateCrmDeal({
     crmDeal: {

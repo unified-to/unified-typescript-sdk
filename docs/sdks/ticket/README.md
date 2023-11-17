@@ -21,7 +21,11 @@ import { UnifiedTo } from "unified-to";
 import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.createTicketingTicket({
     ticketingTicket: {
@@ -66,7 +70,11 @@ Retrieve a ticket
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.getTicketingTicket({
     connectionId: "string",
@@ -109,7 +117,11 @@ List all tickets
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.listTicketingTickets({
     connectionId: "string",
@@ -152,7 +164,11 @@ import { UnifiedTo } from "unified-to";
 import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.patchTicketingTicket({
     ticketingTicket: {
@@ -198,7 +214,11 @@ Remove a ticket
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.removeTicketingTicket({
     connectionId: "string",
@@ -239,7 +259,11 @@ import { UnifiedTo } from "unified-to";
 import { TicketingTicketStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ticket.updateTicketingTicket({
     ticketingTicket: {

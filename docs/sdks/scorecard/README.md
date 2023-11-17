@@ -21,7 +21,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.createAtsScorecard({
     atsScorecard: {
@@ -63,7 +67,11 @@ Retrieve a scorecard
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.getAtsScorecard({
     connectionId: "string",
@@ -106,7 +114,11 @@ List all scorecards
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.listAtsScorecards({
     connectionId: "string",
@@ -149,7 +161,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.patchAtsScorecard({
     atsScorecard: {
@@ -192,7 +208,11 @@ Remove a scorecard
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.removeAtsScorecard({
     connectionId: "string",
@@ -233,7 +253,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.scorecard.updateAtsScorecard({
     atsScorecard: {

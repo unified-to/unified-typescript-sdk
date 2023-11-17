@@ -51,7 +51,11 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsApplication({
     atsApplication: {
@@ -94,7 +98,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsCandidate({
     atsCandidate: {
@@ -151,7 +159,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsDocument({
     atsDocument: {
@@ -194,7 +206,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsInterview({
     atsInterview: {
@@ -240,7 +256,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsJob({
     atsJob: {
@@ -303,7 +323,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.createAtsScorecard({
     atsScorecard: {
@@ -345,7 +369,11 @@ Retrieve an application
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsApplication({
     connectionId: "string",
@@ -388,7 +416,11 @@ Retrieve a candidate
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsCandidate({
     connectionId: "string",
@@ -431,7 +463,11 @@ Retrieve a document
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsDocument({
     connectionId: "string",
@@ -474,7 +510,11 @@ Retrieve a interview
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsInterview({
     connectionId: "string",
@@ -517,7 +557,11 @@ Retrieve a job
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsJob({
     connectionId: "string",
@@ -560,7 +604,11 @@ Retrieve a scorecard
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.getAtsScorecard({
     connectionId: "string",
@@ -603,7 +651,11 @@ List all applications
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsApplications({
     connectionId: "string",
@@ -645,7 +697,11 @@ List all candidates
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsCandidates({
     connectionId: "string",
@@ -687,7 +743,11 @@ List all documents
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsDocuments({
     connectionId: "string",
@@ -729,7 +789,11 @@ List all interviews
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsInterviews({
     connectionId: "string",
@@ -771,7 +835,11 @@ List all jobs
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsJobs({
     connectionId: "string",
@@ -813,7 +881,11 @@ List all scorecards
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.listAtsScorecards({
     connectionId: "string",
@@ -856,7 +928,11 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsApplication({
     atsApplication: {
@@ -900,7 +976,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsCandidate({
     atsCandidate: {
@@ -958,7 +1038,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsDocument({
     atsDocument: {
@@ -1002,7 +1086,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsInterview({
     atsInterview: {
@@ -1049,7 +1137,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsJob({
     atsJob: {
@@ -1113,7 +1205,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.patchAtsScorecard({
     atsScorecard: {
@@ -1156,7 +1252,11 @@ Remove an application
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsApplication({
     connectionId: "string",
@@ -1196,7 +1296,11 @@ Remove a candidate
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsCandidate({
     connectionId: "string",
@@ -1236,7 +1340,11 @@ Remove a document
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsDocument({
     connectionId: "string",
@@ -1276,7 +1384,11 @@ Remove a interview
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsInterview({
     connectionId: "string",
@@ -1316,7 +1428,11 @@ Remove a job
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsJob({
     connectionId: "string",
@@ -1356,7 +1472,11 @@ Remove a scorecard
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.removeAtsScorecard({
     connectionId: "string",
@@ -1397,7 +1517,11 @@ import { UnifiedTo } from "unified-to";
 import { Status } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsApplication({
     atsApplication: {
@@ -1441,7 +1565,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsCandidate({
     atsCandidate: {
@@ -1499,7 +1627,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsDocument({
     atsDocument: {
@@ -1543,7 +1675,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsInterview({
     atsInterview: {
@@ -1590,7 +1726,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsJob({
     atsJob: {
@@ -1654,7 +1794,11 @@ import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.ats.updateAtsScorecard({
     atsScorecard: {

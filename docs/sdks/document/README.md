@@ -21,7 +21,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.createAtsDocument({
     atsDocument: {
@@ -63,7 +67,11 @@ Retrieve a document
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.getAtsDocument({
     connectionId: "string",
@@ -106,7 +114,11 @@ List all documents
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.listAtsDocuments({
     connectionId: "string",
@@ -149,7 +161,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.patchAtsDocument({
     atsDocument: {
@@ -192,7 +208,11 @@ Remove a document
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.removeAtsDocument({
     connectionId: "string",
@@ -233,7 +253,11 @@ import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.document.updateAtsDocument({
     atsDocument: {

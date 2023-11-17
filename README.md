@@ -31,7 +31,11 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
-    const sdk = new UnifiedTo();
+    const sdk = new UnifiedTo({
+        security: {
+            jwt: "",
+        },
+    });
 
     const res = await sdk.accounting.createAccountingCustomer({
         accountingCustomer: {
@@ -551,7 +555,11 @@ import { UnifiedTo } from "unified-to";
 import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
-    const sdk = new UnifiedTo();
+    const sdk = new UnifiedTo({
+        security: {
+            jwt: "",
+        },
+    });
 
     let res;
     try {
@@ -606,6 +614,9 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 (async () => {
     const sdk = new UnifiedTo({
         serverIdx: 1,
+        security: {
+            jwt: "",
+        },
     });
 
     const res = await sdk.accounting.createAccountingCustomer({
@@ -645,6 +656,9 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 (async () => {
     const sdk = new UnifiedTo({
         serverURL: "https://api.unified.to",
+        security: {
+            jwt: "",
+        },
     });
 
     const res = await sdk.accounting.createAccountingCustomer({

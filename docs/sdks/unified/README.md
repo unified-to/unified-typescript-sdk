@@ -31,7 +31,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.createUnifiedConnection({
     auth: {
@@ -87,7 +91,11 @@ import { Events } from "unified-to/dist/sdk/models/operations";
 import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.createUnifiedWebhook({
     webhook: {
@@ -144,7 +152,11 @@ Retrieve specific API Call by its ID
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.getUnifiedApicall({
     id: "<ID>",
@@ -183,7 +195,11 @@ Retrieve connection
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.getUnifiedConnection({
     id: "<ID>",
@@ -222,7 +238,11 @@ Retrieve an integration
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.getUnifiedIntegration({
     integrationType: "string",
@@ -309,7 +329,11 @@ Retrieve webhook by its ID
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.getUnifiedWebhook({
     id: "<ID>",
@@ -348,7 +372,11 @@ Returns API Calls
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.listUnifiedApicalls({});
 
@@ -386,7 +414,11 @@ import { UnifiedTo } from "unified-to";
 import { Categories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.listUnifiedConnections({
     categories: [
@@ -475,7 +507,11 @@ import { UnifiedTo } from "unified-to";
 import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.listUnifiedIntegrations({
     categories: [
@@ -516,7 +552,11 @@ Returns all registered webhooks
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.listUnifiedWebhooks({});
 
@@ -554,7 +594,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.patchUnifiedConnection({
     connection: {
@@ -611,7 +655,11 @@ Remove connection
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.removeUnifiedConnection({
     id: "<ID>",
@@ -650,7 +698,11 @@ Remove webhook subscription
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.removeUnifiedWebhook({
     id: "<ID>",
@@ -690,7 +742,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.unified.updateUnifiedConnection({
     connection: {

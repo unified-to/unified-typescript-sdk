@@ -21,7 +21,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.createUnifiedConnection({
     auth: {
@@ -75,7 +79,11 @@ Retrieve connection
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.getUnifiedConnection({
     id: "<ID>",
@@ -115,7 +123,11 @@ import { UnifiedTo } from "unified-to";
 import { Categories } from "unified-to/dist/sdk/models/operations";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.listUnifiedConnections({
     categories: [
@@ -157,7 +169,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.patchUnifiedConnection({
     connection: {
@@ -214,7 +230,11 @@ Remove connection
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.removeUnifiedConnection({
     id: "<ID>",
@@ -254,7 +274,11 @@ import { UnifiedTo } from "unified-to";
 import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.connection.updateUnifiedConnection({
     connection: {

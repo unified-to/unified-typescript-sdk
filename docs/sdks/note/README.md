@@ -20,7 +20,11 @@ Create a note
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.createTicketingNote({
     ticketingNote: {
@@ -62,7 +66,11 @@ Retrieve a note
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.getTicketingNote({
     connectionId: "string",
@@ -105,7 +113,11 @@ List all notes
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.listTicketingNotes({
     connectionId: "string",
@@ -147,7 +159,11 @@ Update a note
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.patchTicketingNote({
     ticketingNote: {
@@ -190,7 +206,11 @@ Remove a note
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.removeTicketingNote({
     connectionId: "string",
@@ -230,7 +250,11 @@ Update a note
 import { UnifiedTo } from "unified-to";
 
 (async() => {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "",
+    },
+  });
 
   const res = await sdk.note.updateTicketingNote({
     ticketingNote: {
