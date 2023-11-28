@@ -112,6 +112,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
           email: "Robin_Feeney@hotmail.com",
         },
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -990,6 +993,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
           email: "Tracy.Collins13@gmail.com",
         },
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -1578,6 +1584,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
         {
           email: "Gaetano86@hotmail.com",
         },
+      ],
+      linkUrls: [
+        "string",
       ],
       raw: {},
       tags: [

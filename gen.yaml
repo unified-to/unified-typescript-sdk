@@ -1,13 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 1a9a5c39e1201cb72dcb10f3874eb813
+  docChecksum: f070c99c2158d59a655dbe110588384f
   docVersion: "1.0"
-  speakeasyVersion: 1.121.1
-  generationVersion: 2.194.1
+  speakeasyVersion: 1.123.0
+  generationVersion: 2.202.2
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-go-sdk.git
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   baseServerURL: ""
@@ -18,7 +18,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.9.10
+  version: 0.9.11
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

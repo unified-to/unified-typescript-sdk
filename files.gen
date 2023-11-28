@@ -334,7 +334,6 @@ src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
 src/sdk/models/shared/index.ts
-USAGE.md
 docs/sdk/models/operations/createaccountingcustomerrequest.md
 docs/sdk/models/operations/createaccountingcustomerresponse.md
 docs/sdk/models/operations/createaccountinginvoicerequest.md
@@ -858,4 +857,5 @@ docs/sdks/integration/README.md
 docs/sdks/auth/README.md
 docs/sdks/login/README.md
 docs/sdks/webhook/README.md
+USAGE.md
 .gitattributes

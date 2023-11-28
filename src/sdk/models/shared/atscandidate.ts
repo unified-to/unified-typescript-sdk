@@ -41,6 +41,13 @@ export class AtsCandidate extends SpeakeasyBase {
     @Expose({ name: "image_url" })
     imageUrl?: string;
 
+    /**
+     * a list of social media links associated with the candidate. eg. LinkedIn URL
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "link_urls" })
+    linkUrls?: string[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;

@@ -20,6 +20,10 @@ export class CrmLead extends SpeakeasyBase {
     companyId?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "company_name" })
+    companyName?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "contact_id" })
     contactId?: string;
 

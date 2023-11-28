@@ -484,7 +484,7 @@ export class Unified {
         const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json";
+        headers["Accept"] = "text/plain";
 
         headers["user-agent"] = this.sdkConfiguration.userAgent;
 
@@ -512,7 +512,7 @@ export class Unified {
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
+                if (utils.matchContentType(responseContentType, `text/plain`)) {
                     res.res = decodedRes;
                 } else {
                     throw new errors.SDKError(
