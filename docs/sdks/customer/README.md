@@ -24,7 +24,7 @@ Create a customer
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -329,7 +329,7 @@ Update a customer
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -538,7 +538,7 @@ Update a customer
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({

@@ -29,7 +29,7 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -38,21 +38,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
         },
     });
 
-    const res = await sdk.accounting.createAccountingCustomer({
-        accountingCustomer: {
-            billingAddress: {},
-            emails: [
-                {
-                    email: "Kevon_Schultz42@gmail.com",
-                },
-            ],
+    const res = await sdk.accounting.createAccountingAccount({
+        accountingAccount: {
+            name: "string",
             raw: {},
-            shippingAddress: {},
-            telephones: [
-                {
-                    telephone: "string",
-                },
-            ],
         },
         connectionId: "string",
     });
@@ -70,24 +59,45 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 
 ### [accounting](docs/sdks/accounting/README.md)
 
+* [createAccountingAccount](docs/sdks/accounting/README.md#createaccountingaccount) - Create an account
 * [createAccountingCustomer](docs/sdks/accounting/README.md#createaccountingcustomer) - Create a customer
 * [createAccountingInvoice](docs/sdks/accounting/README.md#createaccountinginvoice) - Create a invoice
 * [createAccountingPayment](docs/sdks/accounting/README.md#createaccountingpayment) - Create a payment
+* [createAccountingTransaction](docs/sdks/accounting/README.md#createaccountingtransaction) - Create a transaction
+* [getAccountingAccount](docs/sdks/accounting/README.md#getaccountingaccount) - Retrieve an account
 * [getAccountingCustomer](docs/sdks/accounting/README.md#getaccountingcustomer) - Retrieve a customer
 * [getAccountingInvoice](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve a invoice
 * [getAccountingPayment](docs/sdks/accounting/README.md#getaccountingpayment) - Retrieve a payment
+* [getAccountingTransaction](docs/sdks/accounting/README.md#getaccountingtransaction) - Retrieve a transaction
+* [listAccountingAccounts](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
 * [listAccountingCustomers](docs/sdks/accounting/README.md#listaccountingcustomers) - List all customers
 * [listAccountingInvoices](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
 * [listAccountingPayments](docs/sdks/accounting/README.md#listaccountingpayments) - List all payments
+* [listAccountingTransactions](docs/sdks/accounting/README.md#listaccountingtransactions) - List all transactions
+* [patchAccountingAccount](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
 * [patchAccountingCustomer](docs/sdks/accounting/README.md#patchaccountingcustomer) - Update a customer
 * [patchAccountingInvoice](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update a invoice
 * [patchAccountingPayment](docs/sdks/accounting/README.md#patchaccountingpayment) - Update a payment
+* [patchAccountingTransaction](docs/sdks/accounting/README.md#patchaccountingtransaction) - Update a transaction
+* [removeAccountingAccount](docs/sdks/accounting/README.md#removeaccountingaccount) - Remove an account
 * [removeAccountingCustomer](docs/sdks/accounting/README.md#removeaccountingcustomer) - Remove a customer
 * [removeAccountingInvoice](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove a invoice
 * [removeAccountingPayment](docs/sdks/accounting/README.md#removeaccountingpayment) - Remove a payment
+* [removeAccountingTransaction](docs/sdks/accounting/README.md#removeaccountingtransaction) - Remove a transaction
+* [updateAccountingAccount](docs/sdks/accounting/README.md#updateaccountingaccount) - Update an account
 * [updateAccountingCustomer](docs/sdks/accounting/README.md#updateaccountingcustomer) - Update a customer
 * [updateAccountingInvoice](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update a invoice
 * [updateAccountingPayment](docs/sdks/accounting/README.md#updateaccountingpayment) - Update a payment
+* [updateAccountingTransaction](docs/sdks/accounting/README.md#updateaccountingtransaction) - Update a transaction
+
+### [account](docs/sdks/account/README.md)
+
+* [createAccountingAccount](docs/sdks/account/README.md#createaccountingaccount) - Create an account
+* [getAccountingAccount](docs/sdks/account/README.md#getaccountingaccount) - Retrieve an account
+* [listAccountingAccounts](docs/sdks/account/README.md#listaccountingaccounts) - List all accounts
+* [patchAccountingAccount](docs/sdks/account/README.md#patchaccountingaccount) - Update an account
+* [removeAccountingAccount](docs/sdks/account/README.md#removeaccountingaccount) - Remove an account
+* [updateAccountingAccount](docs/sdks/account/README.md#updateaccountingaccount) - Update an account
 
 ### [customer](docs/sdks/customer/README.md)
 
@@ -121,6 +131,15 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 * [patchAccountingPayment](docs/sdks/payment/README.md#patchaccountingpayment) - Update a payment
 * [removeAccountingPayment](docs/sdks/payment/README.md#removeaccountingpayment) - Remove a payment
 * [updateAccountingPayment](docs/sdks/payment/README.md#updateaccountingpayment) - Update a payment
+
+### [transaction](docs/sdks/transaction/README.md)
+
+* [createAccountingTransaction](docs/sdks/transaction/README.md#createaccountingtransaction) - Create a transaction
+* [getAccountingTransaction](docs/sdks/transaction/README.md#getaccountingtransaction) - Retrieve a transaction
+* [listAccountingTransactions](docs/sdks/transaction/README.md#listaccountingtransactions) - List all transactions
+* [patchAccountingTransaction](docs/sdks/transaction/README.md#patchaccountingtransaction) - Update a transaction
+* [removeAccountingTransaction](docs/sdks/transaction/README.md#removeaccountingtransaction) - Remove a transaction
+* [updateAccountingTransaction](docs/sdks/transaction/README.md#updateaccountingtransaction) - Update a transaction
 
 ### [ats](docs/sdks/ats/README.md)
 
@@ -538,7 +557,7 @@ Example
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -549,21 +568,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 
     let res;
     try {
-        res = await sdk.accounting.createAccountingCustomer({
-            accountingCustomer: {
-                billingAddress: {},
-                emails: [
-                    {
-                        email: "Kevon_Schultz42@gmail.com",
-                    },
-                ],
+        res = await sdk.accounting.createAccountingAccount({
+            accountingAccount: {
+                name: "string",
                 raw: {},
-                shippingAddress: {},
-                telephones: [
-                    {
-                        telephone: "string",
-                    },
-                ],
             },
             connectionId: "string",
         });
@@ -595,7 +603,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -605,21 +613,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
         },
     });
 
-    const res = await sdk.accounting.createAccountingCustomer({
-        accountingCustomer: {
-            billingAddress: {},
-            emails: [
-                {
-                    email: "Kevon_Schultz42@gmail.com",
-                },
-            ],
+    const res = await sdk.accounting.createAccountingAccount({
+        accountingAccount: {
+            name: "string",
             raw: {},
-            shippingAddress: {},
-            telephones: [
-                {
-                    telephone: "string",
-                },
-            ],
         },
         connectionId: "string",
     });
@@ -637,7 +634,7 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -647,21 +644,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
         },
     });
 
-    const res = await sdk.accounting.createAccountingCustomer({
-        accountingCustomer: {
-            billingAddress: {},
-            emails: [
-                {
-                    email: "Kevon_Schultz42@gmail.com",
-                },
-            ],
+    const res = await sdk.accounting.createAccountingAccount({
+        accountingAccount: {
+            name: "string",
             raw: {},
-            shippingAddress: {},
-            telephones: [
-                {
-                    telephone: "string",
-                },
-            ],
         },
         connectionId: "string",
     });
@@ -711,7 +697,7 @@ This SDK supports the following security scheme globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sdk/models/shared";
+import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
 (async () => {
     const sdk = new UnifiedTo({
@@ -720,21 +706,10 @@ import { AccountingTelephoneType, TaxExemption, TypeT } from "unified-to/dist/sd
         },
     });
 
-    const res = await sdk.accounting.createAccountingCustomer({
-        accountingCustomer: {
-            billingAddress: {},
-            emails: [
-                {
-                    email: "Kevon_Schultz42@gmail.com",
-                },
-            ],
+    const res = await sdk.accounting.createAccountingAccount({
+        accountingAccount: {
+            name: "string",
             raw: {},
-            shippingAddress: {},
-            telephones: [
-                {
-                    telephone: "string",
-                },
-            ],
         },
         connectionId: "string",
     });

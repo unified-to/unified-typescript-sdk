@@ -7,6 +7,8 @@ import { PropertyWebhookEvents } from "./propertywebhookevents";
 import { Expose, Transform } from "class-transformer";
 
 export enum ObjectType {
+    AccountingAccount = "accounting_account",
+    AccountingTransaction = "accounting_transaction",
     AccountingCustomer = "accounting_customer",
     AccountingInvoice = "accounting_invoice",
     AccountingPayment = "accounting_payment",

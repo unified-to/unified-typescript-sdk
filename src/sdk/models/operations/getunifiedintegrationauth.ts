@@ -7,6 +7,8 @@ import { AxiosResponse } from "axios";
 
 export enum Scopes {
     AuthLogin = "auth_login",
+    AccountingAccountRead = "accounting_account_read",
+    AccountingTransactionWrite = "accounting_transaction_write",
     AccountingInvoiceRead = "accounting_invoice_read",
     AccountingInvoiceWrite = "accounting_invoice_write",
     AccountingCustomerRead = "accounting_customer_read",

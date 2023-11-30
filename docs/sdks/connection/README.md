@@ -42,7 +42,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmCompanyWrite,
+      PropertyConnectionPermissions.AtsDocumentWrite,
     ],
   });
 
@@ -191,7 +191,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechListWrite,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -296,7 +296,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmDealWrite,
+        PropertyConnectionPermissions.CrmDealRead,
       ],
     },
     id: "<ID>",

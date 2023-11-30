@@ -35,7 +35,7 @@ import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/sh
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: ObjectType.CrmEvent,
+      objectType: ObjectType.CrmDeal,
       subscriptions: [
         "string",
       ],

@@ -4,6 +4,7 @@
 
 import * as utils from "../internal/utils";
 import * as shared from "../sdk/models/shared";
+import { Account } from "./account";
 import { Accounting } from "./accounting";
 import { Apicall } from "./apicall";
 import { Application } from "./application";
@@ -41,6 +42,7 @@ import { Pipeline } from "./pipeline";
 import { Scorecard } from "./scorecard";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
+import { Transaction } from "./transaction";
 import { Uc } from "./uc";
 import { Unified } from "./unified";
 import { Webhook } from "./webhook";
@@ -97,9 +99,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.9.11";
+    sdkVersion = "0.9.12";
     genVersion = "2.202.2";
-    userAgent = "speakeasy-sdk/typescript 0.9.11 2.202.2 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.9.12 2.202.2 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -111,9 +113,11 @@ export class SDKConfiguration {
  */
 export class UnifiedTo {
     public accounting: Accounting;
+    public account: Account;
     public customer: Customer;
     public invoice: Invoice;
     public payment: Payment;
+    public transaction: Transaction;
     public ats: Ats;
     public application: Application;
     public candidate: Candidate;
@@ -170,9 +174,11 @@ export class UnifiedTo {
         });
 
         this.accounting = new Accounting(this.sdkConfiguration);
+        this.account = new Account(this.sdkConfiguration);
         this.customer = new Customer(this.sdkConfiguration);
         this.invoice = new Invoice(this.sdkConfiguration);
         this.payment = new Payment(this.sdkConfiguration);
+        this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
         this.candidate = new Candidate(this.sdkConfiguration);

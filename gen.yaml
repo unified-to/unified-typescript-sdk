@@ -1,13 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: f070c99c2158d59a655dbe110588384f
+  docChecksum: 64de366e0a8235cfd2461d26552c8b62
   docVersion: "1.0"
   speakeasyVersion: 1.123.0
   generationVersion: 2.202.2
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-python-sdk.git
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   baseServerURL: ""
@@ -18,7 +18,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.9.11
+  version: 0.9.12
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

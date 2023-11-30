@@ -48,7 +48,7 @@ Create an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { Status } from "unified-to/dist/sdk/models/shared";
+import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -928,7 +928,7 @@ Update an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { Status } from "unified-to/dist/sdk/models/shared";
+import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({
@@ -1520,7 +1520,7 @@ Update an application
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { Status } from "unified-to/dist/sdk/models/shared";
+import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
 (async() => {
   const sdk = new UnifiedTo({

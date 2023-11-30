@@ -52,7 +52,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.CrmCompanyWrite,
+      PropertyConnectionPermissions.AtsDocumentWrite,
     ],
   });
 
@@ -106,7 +106,7 @@ import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/sh
       hookUrl: "string",
       integrationType: "string",
       interval: 188.12,
-      objectType: ObjectType.CrmEvent,
+      objectType: ObjectType.CrmDeal,
       subscriptions: [
         "string",
       ],
@@ -616,7 +616,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechListWrite,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -764,7 +764,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmDealWrite,
+        PropertyConnectionPermissions.CrmDealRead,
       ],
     },
     id: "<ID>",
