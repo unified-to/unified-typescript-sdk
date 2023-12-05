@@ -7,7 +7,7 @@ management:
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   baseServerURL: ""
