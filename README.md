@@ -31,7 +31,7 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         security: {
             jwt: "",
@@ -49,7 +49,9 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 <!-- End SDK Example Usage [usage] -->
@@ -559,7 +561,7 @@ Example
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         security: {
             jwt: "",
@@ -575,12 +577,19 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
             },
             connectionId: "string",
         });
-    } catch (e) {}
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
 
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 <!-- End Error Handling [errors] -->
@@ -605,7 +614,7 @@ You can override the default server globally by passing a server index to the `s
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         serverIdx: 1,
         security: {
@@ -624,7 +633,9 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 
@@ -636,7 +647,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         serverURL: "https://api.unified.to",
         security: {
@@ -655,7 +666,9 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 <!-- End Server Selection [server] -->
@@ -665,13 +678,13 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 <!-- Start Custom HTTP Client [http-client] -->
 ## Custom HTTP Client
 
-The Typescript SDK makes API calls using the (axios)[https://axios-http.com/docs/intro] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
+The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs/intro) HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `AxiosInstance` object.
 
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-from unified-to import UnifiedTo;
-import axios;
+import { unified-to } from "UnifiedTo";
+import axios from "axios";
 
 const httpClient = axios.create({
     headers: {'x-custom-header': 'someValue'}
@@ -699,7 +712,7 @@ You can set the security parameters through the `security` optional parameter wh
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         security: {
             jwt: "",
@@ -717,7 +730,9 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 <!-- End Authentication [security] -->

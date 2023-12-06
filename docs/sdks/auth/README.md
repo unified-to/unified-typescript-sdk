@@ -16,7 +16,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 import { UnifiedTo } from "unified-to";
 import { Scopes } from "unified-to/dist/sdk/models/operations";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -34,7 +34,9 @@ import { Scopes } from "unified-to/dist/sdk/models/operations";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -63,7 +65,7 @@ Returns an authentication URL for the specified integration.  Once a successful 
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -78,7 +80,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

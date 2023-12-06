@@ -26,7 +26,7 @@ Create a customer
 import { UnifiedTo } from "unified-to";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -55,7 +55,9 @@ import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unif
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -85,7 +87,7 @@ Create a customer
 import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -115,7 +117,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -144,7 +148,7 @@ Retrieve a customer
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -162,7 +166,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -191,7 +197,7 @@ Retrieve a customer
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -209,7 +215,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -238,7 +246,7 @@ List all customers
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -255,7 +263,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -284,7 +294,7 @@ List all customers
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -301,7 +311,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -331,7 +343,7 @@ Update a customer
 import { UnifiedTo } from "unified-to";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -361,7 +373,9 @@ import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unif
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -391,7 +405,7 @@ Update a customer
 import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -422,7 +436,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -451,7 +467,7 @@ Remove a customer
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -466,7 +482,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -495,7 +513,7 @@ Remove a customer
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -510,7 +528,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -540,7 +560,7 @@ Update a customer
 import { UnifiedTo } from "unified-to";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -570,7 +590,9 @@ import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unif
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -600,7 +622,7 @@ Update a customer
 import { UnifiedTo } from "unified-to";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -631,7 +653,9 @@ import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

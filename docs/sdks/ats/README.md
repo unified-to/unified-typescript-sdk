@@ -50,7 +50,7 @@ Create an application
 import { UnifiedTo } from "unified-to";
 import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -67,7 +67,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -97,7 +99,7 @@ Create a candidate
 import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -131,7 +133,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -161,7 +165,7 @@ Create a document
 import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -178,7 +182,9 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -208,7 +214,7 @@ Create a interview
 import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -228,7 +234,9 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -258,7 +266,7 @@ Create a job
 import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -295,7 +303,9 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -325,7 +335,7 @@ Create a scorecard
 import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -342,7 +352,9 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -371,7 +383,7 @@ Retrieve an application
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -389,7 +401,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -418,7 +432,7 @@ Retrieve a candidate
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -436,7 +450,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -465,7 +481,7 @@ Retrieve a document
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -483,7 +499,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -512,7 +530,7 @@ Retrieve a interview
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -530,7 +548,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -559,7 +579,7 @@ Retrieve a job
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -577,7 +597,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -606,7 +628,7 @@ Retrieve a scorecard
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -624,7 +646,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -653,7 +677,7 @@ List all applications
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -670,7 +694,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -699,7 +725,7 @@ List all candidates
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -716,7 +742,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -745,7 +773,7 @@ List all documents
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -762,7 +790,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -791,7 +821,7 @@ List all interviews
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -808,7 +838,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -837,7 +869,7 @@ List all jobs
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -854,7 +886,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -883,7 +917,7 @@ List all scorecards
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -900,7 +934,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -930,7 +966,7 @@ Update an application
 import { UnifiedTo } from "unified-to";
 import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -948,7 +984,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -978,7 +1016,7 @@ Update a candidate
 import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1013,7 +1051,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1043,7 +1083,7 @@ Update a document
 import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1061,7 +1101,9 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1091,7 +1133,7 @@ Update a interview
 import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1112,7 +1154,9 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1142,7 +1186,7 @@ Update a job
 import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1180,7 +1224,9 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1210,7 +1256,7 @@ Update a scorecard
 import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1228,7 +1274,9 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1257,7 +1305,7 @@ Remove an application
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1272,7 +1320,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1301,7 +1351,7 @@ Remove a candidate
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1316,7 +1366,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1345,7 +1397,7 @@ Remove a document
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1360,7 +1412,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1389,7 +1443,7 @@ Remove a interview
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1404,7 +1458,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1433,7 +1489,7 @@ Remove a job
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1448,7 +1504,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1477,7 +1535,7 @@ Remove a scorecard
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1492,7 +1550,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1522,7 +1582,7 @@ Update an application
 import { UnifiedTo } from "unified-to";
 import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1540,7 +1600,9 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1570,7 +1632,7 @@ Update a candidate
 import { UnifiedTo } from "unified-to";
 import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1605,7 +1667,9 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1635,7 +1699,7 @@ Update a document
 import { UnifiedTo } from "unified-to";
 import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1653,7 +1717,9 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1683,7 +1749,7 @@ Update a interview
 import { UnifiedTo } from "unified-to";
 import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1704,7 +1770,9 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1734,7 +1802,7 @@ Update a job
 import { UnifiedTo } from "unified-to";
 import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1772,7 +1840,9 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -1802,7 +1872,7 @@ Update a scorecard
 import { UnifiedTo } from "unified-to";
 import { Recommendation } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -1820,7 +1890,9 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

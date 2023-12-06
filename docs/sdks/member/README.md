@@ -20,7 +20,7 @@ Create a member
 import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -48,7 +48,9 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -77,7 +79,7 @@ Retrieve a member
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -95,7 +97,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -124,7 +128,7 @@ List all members
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -141,7 +145,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -171,7 +177,7 @@ Update a member
 import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -200,7 +206,9 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -229,7 +237,7 @@ Remove member
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -244,7 +252,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -274,7 +284,7 @@ Update a member
 import { UnifiedTo } from "unified-to";
 import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -303,7 +313,9 @@ import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

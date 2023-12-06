@@ -20,7 +20,7 @@ Create a event
 import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -61,7 +61,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -90,7 +92,7 @@ Retrieve a event
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -108,7 +110,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -137,7 +141,7 @@ List all events
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -154,7 +158,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -184,7 +190,7 @@ Update a event
 import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -226,7 +232,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -255,7 +263,7 @@ Remove a event
 ```typescript
 import { UnifiedTo } from "unified-to";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -270,7 +278,9 @@ import { UnifiedTo } from "unified-to";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters
@@ -300,7 +310,7 @@ Update a event
 import { UnifiedTo } from "unified-to";
 import { CrmEventType } from "unified-to/dist/sdk/models/shared";
 
-(async() => {
+async function run() {
   const sdk = new UnifiedTo({
     security: {
       jwt: "",
@@ -342,7 +352,9 @@ import { CrmEventType } from "unified-to/dist/sdk/models/shared";
   if (res.statusCode == 200) {
     // handle response
   }
-})();
+}
+
+run();
 ```
 
 ### Parameters

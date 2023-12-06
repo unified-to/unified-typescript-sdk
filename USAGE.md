@@ -3,7 +3,7 @@
 import { UnifiedTo } from "unified-to";
 import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 
-(async () => {
+async function run() {
     const sdk = new UnifiedTo({
         security: {
             jwt: "",
@@ -21,7 +21,9 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
     if (res.statusCode == 200) {
         // handle response
     }
-})();
+}
+
+run();
 
 ```
 <!-- End SDK Example Usage [usage] -->

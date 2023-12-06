@@ -1,13 +1,13 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 48141d070052399b50fd75ba9841a3a5
+  docChecksum: c7fba951c5401aed070e23f0715adc11
   docVersion: "1.0"
-  speakeasyVersion: 1.124.0
-  generationVersion: 2.202.2
+  speakeasyVersion: 1.125.2
+  generationVersion: 2.210.6
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-csharp-sdk.git
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   baseServerURL: ""
@@ -18,7 +18,7 @@ features:
     globalSecurity: 2.82.0
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.9.13
+  version: 0.9.14
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
