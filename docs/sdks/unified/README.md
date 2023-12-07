@@ -50,6 +50,9 @@ async function run() {
     categories: [
       PropertyConnectionCategories.Accounting,
     ],
+    cursorsCache: [
+      {},
+    ],
     integrationType: "string",
     permissions: [
       PropertyConnectionPermissions.AtsDocumentWrite,
@@ -638,6 +641,9 @@ async function run() {
       categories: [
         PropertyConnectionCategories.Martech,
       ],
+      cursorsCache: [
+        {},
+      ],
       integrationType: "string",
       permissions: [
         PropertyConnectionPermissions.MartechListRead,
@@ -791,6 +797,9 @@ async function run() {
       },
       categories: [
         PropertyConnectionCategories.Ticketing,
+      ],
+      cursorsCache: [
+        {},
       ],
       integrationType: "string",
       permissions: [
