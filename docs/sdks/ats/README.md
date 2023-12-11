@@ -53,7 +53,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -102,7 +102,7 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -168,7 +168,7 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -217,7 +217,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -269,7 +269,7 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -338,7 +338,7 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -386,7 +386,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -435,7 +435,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -484,7 +484,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -533,7 +533,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -582,7 +582,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -631,7 +631,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -680,7 +680,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -728,7 +728,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -776,7 +776,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -824,7 +824,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -872,7 +872,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -920,7 +920,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -969,7 +969,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1019,7 +1019,7 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1086,7 +1086,7 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1136,7 +1136,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1189,7 +1189,7 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1259,7 +1259,7 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1308,7 +1308,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1354,7 +1354,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1400,7 +1400,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1446,7 +1446,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1492,7 +1492,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1538,7 +1538,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1585,7 +1585,7 @@ import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1635,7 +1635,7 @@ import { AtsEmailType, AtsTelephoneType } from "unified-to/dist/sdk/models/share
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1702,7 +1702,7 @@ import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1752,7 +1752,7 @@ import { AtsInterviewStatus } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1805,7 +1805,7 @@ import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "un
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -1875,7 +1875,7 @@ import { Recommendation } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 

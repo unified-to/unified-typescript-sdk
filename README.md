@@ -34,7 +34,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
     const sdk = new UnifiedTo({
         security: {
-            jwt: "",
+            jwt: "<YOUR_API_KEY_HERE>",
         },
     });
 
@@ -564,7 +564,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
     const sdk = new UnifiedTo({
         security: {
-            jwt: "",
+            jwt: "<YOUR_API_KEY_HERE>",
         },
     });
 
@@ -618,7 +618,7 @@ async function run() {
     const sdk = new UnifiedTo({
         serverIdx: 1,
         security: {
-            jwt: "",
+            jwt: "<YOUR_API_KEY_HERE>",
         },
     });
 
@@ -651,7 +651,7 @@ async function run() {
     const sdk = new UnifiedTo({
         serverURL: "https://api.unified.to",
         security: {
-            jwt: "",
+            jwt: "<YOUR_API_KEY_HERE>",
         },
     });
 
@@ -715,7 +715,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
     const sdk = new UnifiedTo({
         security: {
-            jwt: "",
+            jwt: "<YOUR_API_KEY_HERE>",
         },
     });
 

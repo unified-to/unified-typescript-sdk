@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: cfb75b8dc3da8bb645caad8efc27e1dd
   docVersion: "1.0"
-  speakeasyVersion: 1.125.2
-  generationVersion: 2.210.6
+  speakeasyVersion: 1.126.0
+  generationVersion: 2.213.3
 generation:
   comments: {}
   sdkClassName: Unified-to
@@ -14,11 +14,11 @@ generation:
   flattenGlobalSecurity: true
 features:
   typescript:
-    core: 3.1.4
-    globalSecurity: 2.82.0
+    core: 3.3.0
+    globalSecurity: 2.82.1
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.9.15
+  version: 0.10.0
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
@@ -36,3 +36,4 @@ typescript:
   outputModelSuffix: output
   packageName: unified-to
   repoSubDirectory: .
+  templateVersion: v1

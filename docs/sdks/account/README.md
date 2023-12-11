@@ -23,7 +23,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -72,7 +72,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -121,7 +121,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -170,7 +170,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -220,7 +220,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -267,7 +267,7 @@ import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 

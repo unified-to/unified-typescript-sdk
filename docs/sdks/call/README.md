@@ -17,7 +17,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 

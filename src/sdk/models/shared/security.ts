@@ -8,5 +8,5 @@ export class Security extends SpeakeasyBase {
     @SpeakeasyMetadata({
         data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
     })
-    jwt: string;
+    jwt?: string;
 }

@@ -23,7 +23,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -86,7 +86,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -132,7 +132,7 @@ import { Categories } from "unified-to/dist/sdk/models/operations";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -180,7 +180,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -246,7 +246,7 @@ import { UnifiedTo } from "unified-to";
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
@@ -292,7 +292,7 @@ import { PropertyConnectionCategories, PropertyConnectionPermissions } from "uni
 async function run() {
   const sdk = new UnifiedTo({
     security: {
-      jwt: "",
+      jwt: "<YOUR_API_KEY_HERE>",
     },
   });
 
