@@ -38,6 +38,11 @@ export class AtsApplication extends SpeakeasyBase {
     createdAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "hired_at" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    hiredAt?: Date;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
 
