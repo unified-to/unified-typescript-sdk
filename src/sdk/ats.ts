@@ -1204,7 +1204,7 @@ export class Ats {
     }
 
     /**
-     * List all application statuss
+     * List all application statuses
      */
     async listAtsApplicationstatuses(
         req: operations.ListAtsApplicationstatusesRequest,

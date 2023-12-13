@@ -17,7 +17,7 @@ export class Applicationstatus {
     }
 
     /**
-     * List all application statuss
+     * List all application statuses
      */
     async listAtsApplicationstatuses(
         req: operations.ListAtsApplicationstatusesRequest,

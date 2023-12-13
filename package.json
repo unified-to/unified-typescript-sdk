@@ -1,6 +1,6 @@
 {
   "name": "unified-to",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "author": "Unified",
   "scripts": {
     "prepare": "tsc --build",

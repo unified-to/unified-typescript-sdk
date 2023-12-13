@@ -16,7 +16,7 @@
 * [getAtsJob](#getatsjob) - Retrieve a job
 * [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
 * [listAtsApplications](#listatsapplications) - List all applications
-* [listAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuss
+* [listAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuses
 * [listAtsCandidates](#listatscandidates) - List all candidates
 * [listAtsDocuments](#listatsdocuments) - List all documents
 * [listAtsInterviews](#listatsinterviews) - List all interviews
@@ -719,7 +719,7 @@ run();
 
 ## listAtsApplicationstatuses
 
-List all application statuss
+List all application statuses
 
 ### Example Usage
 
