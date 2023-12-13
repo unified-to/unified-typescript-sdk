@@ -69,6 +69,7 @@ export * from "./listaccountinginvoices";
 export * from "./listaccountingpayments";
 export * from "./listaccountingtransactions";
 export * from "./listatsapplications";
+export * from "./listatsapplicationstatuses";
 export * from "./listatscandidates";
 export * from "./listatsdocuments";
 export * from "./listatsinterviews";

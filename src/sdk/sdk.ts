@@ -8,6 +8,7 @@ import { Account } from "./account";
 import { Accounting } from "./accounting";
 import { Apicall } from "./apicall";
 import { Application } from "./application";
+import { Applicationstatus } from "./applicationstatus";
 import { Ats } from "./ats";
 import { Auth } from "./auth";
 import { Call } from "./call";
@@ -99,9 +100,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.10.1";
+    sdkVersion = "0.10.2";
     genVersion = "2.214.3";
-    userAgent = "speakeasy-sdk/typescript 0.10.1 2.214.3 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.10.2 2.214.3 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -120,6 +121,7 @@ export class UnifiedTo {
     public transaction: Transaction;
     public ats: Ats;
     public application: Application;
+    public applicationstatus: Applicationstatus;
     public candidate: Candidate;
     public document: Document;
     public interview: Interview;
@@ -181,6 +183,7 @@ export class UnifiedTo {
         this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
+        this.applicationstatus = new Applicationstatus(this.sdkConfiguration);
         this.candidate = new Candidate(this.sdkConfiguration);
         this.document = new Document(this.sdkConfiguration);
         this.interview = new Interview(this.sdkConfiguration);

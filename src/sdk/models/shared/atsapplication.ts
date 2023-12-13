@@ -51,6 +51,10 @@ export class AtsApplication extends SpeakeasyBase {
     jobId?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "original_status" })
+    originalStatus?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyAtsApplicationRaw)
     raw?: PropertyAtsApplicationRaw;

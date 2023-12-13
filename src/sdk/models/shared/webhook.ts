@@ -13,6 +13,7 @@ export enum ObjectType {
     AccountingInvoice = "accounting_invoice",
     AccountingPayment = "accounting_payment",
     AtsApplication = "ats_application",
+    AtsApplicationstatus = "ats_applicationstatus",
     AtsCandidate = "ats_candidate",
     AtsDocument = "ats_document",
     AtsInterview = "ats_interview",

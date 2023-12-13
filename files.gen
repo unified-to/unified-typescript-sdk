@@ -6,6 +6,7 @@ src/sdk/payment.ts
 src/sdk/transaction.ts
 src/sdk/ats.ts
 src/sdk/application.ts
+src/sdk/applicationstatus.ts
 src/sdk/candidate.ts
 src/sdk/document.ts
 src/sdk/interview.ts
@@ -109,6 +110,7 @@ src/sdk/models/operations/getatsinterview.ts
 src/sdk/models/operations/getatsjob.ts
 src/sdk/models/operations/getatsscorecard.ts
 src/sdk/models/operations/listatsapplications.ts
+src/sdk/models/operations/listatsapplicationstatuses.ts
 src/sdk/models/operations/listatscandidates.ts
 src/sdk/models/operations/listatsdocuments.ts
 src/sdk/models/operations/listatsinterviews.ts
@@ -278,6 +280,8 @@ src/sdk/models/shared/atscompensation.ts
 src/sdk/models/shared/atsaddress.ts
 src/sdk/models/shared/atsscorecard.ts
 src/sdk/models/shared/propertyatsscorecardraw.ts
+src/sdk/models/shared/atsstatus.ts
+src/sdk/models/shared/propertyatsstatusraw.ts
 src/sdk/models/shared/crmcompany.ts
 src/sdk/models/shared/crmtelephone.ts
 src/sdk/models/shared/propertycrmcompanyraw.ts
@@ -451,6 +455,8 @@ docs/sdk/models/operations/getatsscorecardrequest.md
 docs/sdk/models/operations/getatsscorecardresponse.md
 docs/sdk/models/operations/listatsapplicationsrequest.md
 docs/sdk/models/operations/listatsapplicationsresponse.md
+docs/sdk/models/operations/listatsapplicationstatusesrequest.md
+docs/sdk/models/operations/listatsapplicationstatusesresponse.md
 docs/sdk/models/operations/listatscandidatesrequest.md
 docs/sdk/models/operations/listatscandidatesresponse.md
 docs/sdk/models/operations/listatsdocumentsrequest.md
@@ -774,6 +780,9 @@ docs/sdk/models/shared/atsaddress.md
 docs/sdk/models/shared/recommendation.md
 docs/sdk/models/shared/atsscorecard.md
 docs/sdk/models/shared/propertyatsscorecardraw.md
+docs/sdk/models/shared/atsstatusstatus.md
+docs/sdk/models/shared/atsstatus.md
+docs/sdk/models/shared/propertyatsstatusraw.md
 docs/sdk/models/shared/crmcompany.md
 docs/sdk/models/shared/crmtelephonetype.md
 docs/sdk/models/shared/crmtelephone.md
@@ -876,6 +885,7 @@ docs/sdks/payment/README.md
 docs/sdks/transaction/README.md
 docs/sdks/ats/README.md
 docs/sdks/application/README.md
+docs/sdks/applicationstatus/README.md
 docs/sdks/candidate/README.md
 docs/sdks/document/README.md
 docs/sdks/interview/README.md

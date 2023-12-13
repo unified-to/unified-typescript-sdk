@@ -16,6 +16,7 @@
 * [getAtsJob](#getatsjob) - Retrieve a job
 * [getAtsScorecard](#getatsscorecard) - Retrieve a scorecard
 * [listAtsApplications](#listatsapplications) - List all applications
+* [listAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuss
 * [listAtsCandidates](#listatscandidates) - List all candidates
 * [listAtsDocuments](#listatsdocuments) - List all documents
 * [listAtsInterviews](#listatsinterviews) - List all interviews
@@ -710,6 +711,54 @@ run();
 ### Response
 
 **Promise<[operations.ListAtsApplicationsResponse](../../sdk/models/operations/listatsapplicationsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## listAtsApplicationstatuses
+
+List all application statuss
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.ats.listAtsApplicationstatuses({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.ListAtsApplicationstatusesRequest](../../sdk/models/operations/listatsapplicationstatusesrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+
+
+### Response
+
+**Promise<[operations.ListAtsApplicationstatusesResponse](../../sdk/models/operations/listatsapplicationstatusesresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
