@@ -33,7 +33,7 @@ export class AtsStatus extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "original_status" })
-    originalStatus: string;
+    originalStatus?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

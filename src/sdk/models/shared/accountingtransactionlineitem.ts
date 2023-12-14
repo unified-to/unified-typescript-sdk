@@ -16,7 +16,7 @@ export class AccountingTransactionLineitem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
-    id: string;
+    id?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "invoice_id" })

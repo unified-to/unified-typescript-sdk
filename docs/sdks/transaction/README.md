@@ -33,7 +33,6 @@ async function run() {
       id: "<ID>",
       lineItems: [
         {
-          id: "<ID>",
           totalAmount: 4969.62,
         },
       ],
@@ -189,7 +188,6 @@ async function run() {
       id: "<ID>",
       lineItems: [
         {
-          id: "<ID>",
           totalAmount: 5633.69,
         },
       ],
@@ -295,7 +293,6 @@ async function run() {
       id: "<ID>",
       lineItems: [
         {
-          id: "<ID>",
           totalAmount: 6498.37,
         },
       ],
