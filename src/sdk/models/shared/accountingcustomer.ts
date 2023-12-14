@@ -70,6 +70,10 @@ export class AccountingCustomer extends SpeakeasyBase {
     @Expose({ name: "tax_exemption" })
     taxExemption?: TaxExemption;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "tax_number" })
+    taxNumber?: string;
+
     @SpeakeasyMetadata({ elemType: AccountingTelephone })
     @Expose({ name: "telephones" })
     @Type(() => AccountingTelephone)
