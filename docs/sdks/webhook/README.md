@@ -17,7 +17,7 @@ To maintain compatibility with the webhooks specification and Zapier webhooks, o
 ```typescript
 import { UnifiedTo } from "unified-to";
 import { Events } from "unified-to/dist/sdk/models/operations";
-import { ObjectType, PropertyWebhookEvents } from "unified-to/dist/sdk/models/shared";
+import { Event, ObjectType, PropertyWebhookEvents, WebhookWebhookType } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -28,22 +28,24 @@ async function run() {
 
   const res = await sdk.webhook.createUnifiedWebhook({
     webhook: {
-      connectionId: "string",
+      event: Event.Created,
       events: [
-        PropertyWebhookEvents.Created,
+        PropertyWebhookEvents.Updated,
       ],
       hookUrl: "string",
-      integrationType: "string",
-      interval: 188.12,
-      objectType: ObjectType.CrmDeal,
+      interval: 4583.16,
+      meta: {},
+      objectType: ObjectType.HrisEmployee,
+      runs: [
+        "string",
+      ],
       subscriptions: [
         "string",
       ],
-      workspaceId: "string",
     },
     connectionId: "string",
     events: [
-      Events.Created,
+      Events.Updated,
     ],
     object: "string",
   });

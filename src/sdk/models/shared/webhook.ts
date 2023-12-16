@@ -4,7 +4,13 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyWebhookEvents } from "./propertywebhookevents";
-import { Expose, Transform } from "class-transformer";
+import { PropertyWebhookMeta } from "./propertywebhookmeta";
+import { Expose, Transform, Type } from "class-transformer";
+
+export enum Event {
+    Updated = "updated",
+    Created = "created",
+}
 
 export enum ObjectType {
     AccountingAccount = "accounting_account",
@@ -40,6 +46,12 @@ export enum ObjectType {
     EnrichCompany = "enrich_company",
 }
 
+export enum WebhookWebhookType {
+    Virtual = "virtual",
+    None = "none",
+    Native = "native",
+}
+
 /**
  * A webhook is used to POST new/updated information to your server.
  */
@@ -51,7 +63,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "connection_id" })
-    connectionId: string;
+    connectionId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
@@ -63,8 +75,16 @@ export class Webhook extends SpeakeasyBase {
     environment?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "event" })
+    event: Event;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "events" })
     events: PropertyWebhookEvents[];
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "fields" })
+    fields?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "hook_url" })
@@ -80,15 +100,27 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration_type" })
-    integrationType: string;
+    integrationType?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "interval" })
     interval: number;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "meta" })
+    @Type(() => PropertyWebhookMeta)
+    meta?: PropertyWebhookMeta;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "object_type" })
     objectType: ObjectType;
+
+    /**
+     * An array of the most revent virtual webhook runs
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "runs" })
+    runs?: string[];
 
     /**
      * integration-specific subscriptions IDs
@@ -103,6 +135,10 @@ export class Webhook extends SpeakeasyBase {
     updatedAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "webhook_type" })
+    webhookType?: WebhookWebhookType;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "workspace_id" })
-    workspaceId: string;
+    workspaceId?: string;
 }
