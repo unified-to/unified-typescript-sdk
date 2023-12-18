@@ -49,6 +49,10 @@ export class AccountingLineitem extends SpeakeasyBase {
     taxAmount?: number;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "taxrate_id" })
+    taxrateId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "total_amount" })
     totalAmount: number;
 

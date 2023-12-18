@@ -7,31 +7,39 @@
 * [createAccountingCustomer](#createaccountingcustomer) - Create a customer
 * [createAccountingInvoice](#createaccountinginvoice) - Create a invoice
 * [createAccountingPayment](#createaccountingpayment) - Create a payment
+* [createAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [createAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [getAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [getAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
+* [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [getAccountingPayment](#getaccountingpayment) - Retrieve a payment
+* [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [getAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [listAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [listAccountingCustomers](#listaccountingcustomers) - List all customers
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
+* [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [listAccountingPayments](#listaccountingpayments) - List all payments
+* [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [listAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [patchAccountingAccount](#patchaccountingaccount) - Update an account
 * [patchAccountingCustomer](#patchaccountingcustomer) - Update a customer
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
 * [patchAccountingPayment](#patchaccountingpayment) - Update a payment
+* [patchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [patchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [removeAccountingAccount](#removeaccountingaccount) - Remove an account
 * [removeAccountingCustomer](#removeaccountingcustomer) - Remove a customer
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
 * [removeAccountingPayment](#removeaccountingpayment) - Remove a payment
+* [removeAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [removeAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [updateAccountingAccount](#updateaccountingaccount) - Update an account
 * [updateAccountingCustomer](#updateaccountingcustomer) - Update a customer
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
 * [updateAccountingPayment](#updateaccountingpayment) - Update a payment
+* [updateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 * [updateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
 
 ## createAccountingAccount
@@ -249,6 +257,56 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
+## createAccountingTaxrate
+
+Create a taxrate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.createAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 1719.1,
+      raw: {},
+    },
+    connectionId: "string",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingTaxrateRequest](../../sdk/models/operations/createaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.CreateAccountingTaxrateResponse](../../sdk/models/operations/createaccountingtaxrateresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
 ## createAccountingTransaction
 
 Create a transaction
@@ -454,6 +512,55 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
+## getAccountingOrganization
+
+Retrieve an organization
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.getAccountingOrganization({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.GetAccountingOrganizationRequest](../../sdk/models/operations/getaccountingorganizationrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+
+
+### Response
+
+**Promise<[operations.GetAccountingOrganizationResponse](../../sdk/models/operations/getaccountingorganizationresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
 ## getAccountingPayment
 
 Retrieve a payment
@@ -497,6 +604,55 @@ run();
 ### Response
 
 **Promise<[operations.GetAccountingPaymentResponse](../../sdk/models/operations/getaccountingpaymentresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## getAccountingTaxrate
+
+Retrieve a taxrate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.getAccountingTaxrate({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingTaxrateRequest](../../sdk/models/operations/getaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+
+
+### Response
+
+**Promise<[operations.GetAccountingTaxrateResponse](../../sdk/models/operations/getaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -696,6 +852,54 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
+## listAccountingOrganizations
+
+List all organizations
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.listAccountingOrganizations({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.ListAccountingOrganizationsRequest](../../sdk/models/operations/listaccountingorganizationsrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+
+
+### Response
+
+**Promise<[operations.ListAccountingOrganizationsResponse](../../sdk/models/operations/listaccountingorganizationsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
 ## listAccountingPayments
 
 List all payments
@@ -738,6 +942,54 @@ run();
 ### Response
 
 **Promise<[operations.ListAccountingPaymentsResponse](../../sdk/models/operations/listaccountingpaymentsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## listAccountingTaxrates
+
+List all taxrates
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.listAccountingTaxrates({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingTaxratesRequest](../../sdk/models/operations/listaccountingtaxratesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+
+
+### Response
+
+**Promise<[operations.ListAccountingTaxratesResponse](../../sdk/models/operations/listaccountingtaxratesresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1011,6 +1263,57 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
+## patchAccountingTaxrate
+
+Update a taxrate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.patchAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 5991.47,
+      raw: {},
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingTaxrateRequest](../../sdk/models/operations/patchaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+
+
+### Response
+
+**Promise<[operations.PatchAccountingTaxrateResponse](../../sdk/models/operations/patchaccountingtaxrateresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
 ## patchAccountingTransaction
 
 Update a transaction
@@ -1248,6 +1551,52 @@ run();
 ### Response
 
 **Promise<[operations.RemoveAccountingPaymentResponse](../../sdk/models/operations/removeaccountingpaymentresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## removeAccountingTaxrate
+
+Remove a taxrate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.removeAccountingTaxrate({
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingTaxrateRequest](../../sdk/models/operations/removeaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.RemoveAccountingTaxrateResponse](../../sdk/models/operations/removeaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1513,6 +1862,57 @@ run();
 ### Response
 
 **Promise<[operations.UpdateAccountingPaymentResponse](../../sdk/models/operations/updateaccountingpaymentresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## updateAccountingTaxrate
+
+Update a taxrate
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-to";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.updateAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 3382.78,
+      raw: {},
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingTaxrateRequest](../../sdk/models/operations/updateaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.UpdateAccountingTaxrateResponse](../../sdk/models/operations/updateaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

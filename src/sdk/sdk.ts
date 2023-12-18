@@ -36,11 +36,13 @@ import { Login } from "./login";
 import { Martech } from "./martech";
 import { Member } from "./member";
 import { Note } from "./note";
+import { Organization } from "./organization";
 import { Passthrough } from "./passthrough";
 import { Payment } from "./payment";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
 import { Scorecard } from "./scorecard";
+import { Taxrate } from "./taxrate";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
 import { Transaction } from "./transaction";
@@ -100,9 +102,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.10.6";
+    sdkVersion = "0.10.7";
     genVersion = "2.214.10";
-    userAgent = "speakeasy-sdk/typescript 0.10.6 2.214.10 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.10.7 2.214.10 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -117,7 +119,9 @@ export class UnifiedTo {
     public account: Account;
     public customer: Customer;
     public invoice: Invoice;
+    public organization: Organization;
     public payment: Payment;
+    public taxrate: Taxrate;
     public transaction: Transaction;
     public ats: Ats;
     public application: Application;
@@ -179,7 +183,9 @@ export class UnifiedTo {
         this.account = new Account(this.sdkConfiguration);
         this.customer = new Customer(this.sdkConfiguration);
         this.invoice = new Invoice(this.sdkConfiguration);
+        this.organization = new Organization(this.sdkConfiguration);
         this.payment = new Payment(this.sdkConfiguration);
+        this.taxrate = new Taxrate(this.sdkConfiguration);
         this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);

@@ -55,7 +55,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsDocumentRead,
+      PropertyConnectionPermissions.AtsJobWrite,
     ],
   });
 
@@ -111,7 +111,7 @@ async function run() {
       hookUrl: "string",
       interval: 4583.16,
       meta: {},
-      objectType: ObjectType.HrisEmployee,
+      objectType: ObjectType.CrmPipeline,
       runs: [
         "string",
       ],
@@ -306,7 +306,7 @@ async function run() {
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      Scopes.HrisEmployeeWrite,
+      Scopes.HrisEmployeeRead,
     ],
     workspaceId: "string",
   });
@@ -805,7 +805,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmContactWrite,
+        PropertyConnectionPermissions.CrmContactRead,
       ],
     },
     id: "<ID>",

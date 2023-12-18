@@ -1,24 +1,23 @@
-# Connection
-(*connection*)
+# Taxrate
+(*taxrate*)
 
 ### Available Operations
 
-* [createUnifiedConnection](#createunifiedconnection) - Create connection
-* [getUnifiedConnection](#getunifiedconnection) - Retrieve connection
-* [listUnifiedConnections](#listunifiedconnections) - List all connections
-* [patchUnifiedConnection](#patchunifiedconnection) - Update connection
-* [removeUnifiedConnection](#removeunifiedconnection) - Remove connection
-* [updateUnifiedConnection](#updateunifiedconnection) - Update connection
+* [createAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
+* [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
+* [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
+* [patchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
+* [removeAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
+* [updateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 
-## createUnifiedConnection
+## createAccountingTaxrate
 
-Create connection
+Create a taxrate
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -27,26 +26,13 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.createUnifiedConnection({
-    auth: {
-      emails: [
-        "string",
-      ],
-      meta: {},
-      otherAuthInfo: [
-        "string",
-      ],
+  const res = await sdk.taxrate.createAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 1719.1,
+      raw: {},
     },
-    categories: [
-      PropertyConnectionCategories.Accounting,
-    ],
-    cursorsCache: [
-      {},
-    ],
-    integrationType: "string",
-    permissions: [
-      PropertyConnectionPermissions.AtsJobWrite,
-    ],
+    connectionId: "string",
   });
 
   if (res.statusCode == 200) {
@@ -59,24 +45,24 @@ run();
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.Connection](../../sdk/models/shared/connection.md)   | :heavy_check_mark:                                           | The request object to use for the request.                   |
-| `config`                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config) | :heavy_minus_sign:                                           | Available config options for making requests.                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingTaxrateRequest](../../sdk/models/operations/createaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.CreateUnifiedConnectionResponse](../../sdk/models/operations/createunifiedconnectionresponse.md)>**
+**Promise<[operations.CreateAccountingTaxrateResponse](../../sdk/models/operations/createaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-## getUnifiedConnection
+## getAccountingTaxrate
 
-Retrieve connection
+Retrieve a taxrate
 
 ### Example Usage
 
@@ -90,7 +76,11 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.getUnifiedConnection({
+  const res = await sdk.taxrate.getAccountingTaxrate({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
     id: "<ID>",
   });
 
@@ -106,28 +96,27 @@ run();
 
 | Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetUnifiedConnectionRequest](../../sdk/models/operations/getunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `request`                                                                                            | [operations.GetAccountingTaxrateRequest](../../sdk/models/operations/getaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 | `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetUnifiedConnectionResponse](../../sdk/models/operations/getunifiedconnectionresponse.md)>**
+**Promise<[operations.GetAccountingTaxrateResponse](../../sdk/models/operations/getaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-## listUnifiedConnections
+## listAccountingTaxrates
 
-List all connections
+List all taxrates
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { Categories } from "unified-to/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -136,9 +125,10 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.listUnifiedConnections({
-    categories: [
-      Categories.Enrich,
+  const res = await sdk.taxrate.listAccountingTaxrates({
+    connectionId: "string",
+    fields: [
+      "string",
     ],
   });
 
@@ -154,28 +144,27 @@ run();
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListUnifiedConnectionsRequest](../../sdk/models/operations/listunifiedconnectionsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `request`                                                                                                | [operations.ListAccountingTaxratesRequest](../../sdk/models/operations/listaccountingtaxratesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.ListUnifiedConnectionsResponse](../../sdk/models/operations/listunifiedconnectionsresponse.md)>**
+**Promise<[operations.ListAccountingTaxratesResponse](../../sdk/models/operations/listaccountingtaxratesresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-## patchUnifiedConnection
+## patchAccountingTaxrate
 
-Update connection
+Update a taxrate
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -184,28 +173,13 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.patchUnifiedConnection({
-    connection: {
-      auth: {
-        emails: [
-          "string",
-        ],
-        meta: {},
-        otherAuthInfo: [
-          "string",
-        ],
-      },
-      categories: [
-        PropertyConnectionCategories.Martech,
-      ],
-      cursorsCache: [
-        {},
-      ],
-      integrationType: "string",
-      permissions: [
-        PropertyConnectionPermissions.CrmPipelineWrite,
-      ],
+  const res = await sdk.taxrate.patchAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 5991.47,
+      raw: {},
     },
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -221,22 +195,22 @@ run();
 
 | Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
 | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PatchUnifiedConnectionRequest](../../sdk/models/operations/patchunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `request`                                                                                                | [operations.PatchAccountingTaxrateRequest](../../sdk/models/operations/patchaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 | `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.PatchUnifiedConnectionResponse](../../sdk/models/operations/patchunifiedconnectionresponse.md)>**
+**Promise<[operations.PatchAccountingTaxrateResponse](../../sdk/models/operations/patchaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-## removeUnifiedConnection
+## removeAccountingTaxrate
 
-Remove connection
+Remove a taxrate
 
 ### Example Usage
 
@@ -250,7 +224,8 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.removeUnifiedConnection({
+  const res = await sdk.taxrate.removeAccountingTaxrate({
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -266,28 +241,27 @@ run();
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.RemoveUnifiedConnectionRequest](../../sdk/models/operations/removeunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `request`                                                                                                  | [operations.RemoveAccountingTaxrateRequest](../../sdk/models/operations/removeaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 | `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.RemoveUnifiedConnectionResponse](../../sdk/models/operations/removeunifiedconnectionresponse.md)>**
+**Promise<[operations.RemoveAccountingTaxrateResponse](../../sdk/models/operations/removeaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 400-600         | */*             |
 
-## updateUnifiedConnection
+## updateAccountingTaxrate
 
-Update connection
+Update a taxrate
 
 ### Example Usage
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -296,28 +270,13 @@ async function run() {
     },
   });
 
-  const res = await sdk.connection.updateUnifiedConnection({
-    connection: {
-      auth: {
-        emails: [
-          "string",
-        ],
-        meta: {},
-        otherAuthInfo: [
-          "string",
-        ],
-      },
-      categories: [
-        PropertyConnectionCategories.Ticketing,
-      ],
-      cursorsCache: [
-        {},
-      ],
-      integrationType: "string",
-      permissions: [
-        PropertyConnectionPermissions.CrmContactRead,
-      ],
+  const res = await sdk.taxrate.updateAccountingTaxrate({
+    accountingTaxrate: {
+      name: "string",
+      rate: 3382.78,
+      raw: {},
     },
+    connectionId: "string",
     id: "<ID>",
   });
 
@@ -333,13 +292,13 @@ run();
 
 | Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.UpdateUnifiedConnectionRequest](../../sdk/models/operations/updateunifiedconnectionrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `request`                                                                                                  | [operations.UpdateAccountingTaxrateRequest](../../sdk/models/operations/updateaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 | `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.UpdateUnifiedConnectionResponse](../../sdk/models/operations/updateunifiedconnectionresponse.md)>**
+**Promise<[operations.UpdateAccountingTaxrateResponse](../../sdk/models/operations/updateaccountingtaxrateresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
