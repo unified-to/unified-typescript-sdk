@@ -109,6 +109,10 @@ export class Webhook extends SpeakeasyBase {
     interval: number;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "is_healthy" })
+    isHealthy?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "meta" })
     @Type(() => PropertyWebhookMeta)
     meta?: PropertyWebhookMeta;

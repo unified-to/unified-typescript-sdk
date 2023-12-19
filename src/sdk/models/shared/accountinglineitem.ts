@@ -24,12 +24,16 @@ export class AccountingLineitem extends SpeakeasyBase {
     itemDescription?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "item_identifier" })
-    itemIdentifier?: string;
+    @Expose({ name: "item_id" })
+    itemId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "item_name" })
     itemName?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "item_sku" })
+    itemSku?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notes" })
