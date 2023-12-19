@@ -20,6 +20,7 @@ export enum Scopes {
     AccountingTaxrateRead = "accounting_taxrate_read",
     AccountingTaxrateWrite = "accounting_taxrate_write",
     AccountingOrganizationRead = "accounting_organization_read",
+    AccountingItemRead = "accounting_item_read",
     AtsScorecardRead = "ats_scorecard_read",
     AtsScorecardWrite = "ats_scorecard_write",
     AtsApplicationRead = "ats_application_read",

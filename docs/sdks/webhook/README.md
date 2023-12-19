@@ -35,7 +35,7 @@ async function run() {
       hookUrl: "string",
       interval: 4583.16,
       meta: {},
-      objectType: ObjectType.CrmPipeline,
+      objectType: ObjectType.CrmLead,
       runs: [
         "string",
       ],

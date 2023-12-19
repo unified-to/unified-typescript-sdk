@@ -45,7 +45,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobWrite,
+      PropertyConnectionPermissions.AtsJobRead,
     ],
   });
 
@@ -203,7 +203,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmPipelineWrite,
+        PropertyConnectionPermissions.CrmPipelineRead,
       ],
     },
     id: "<ID>",
@@ -315,7 +315,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmContactRead,
+        PropertyConnectionPermissions.CrmCompanyWrite,
       ],
     },
     id: "<ID>",

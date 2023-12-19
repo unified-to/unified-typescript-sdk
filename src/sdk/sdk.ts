@@ -29,6 +29,7 @@ import { Hris } from "./hris";
 import { Integration } from "./integration";
 import { Interview } from "./interview";
 import { Invoice } from "./invoice";
+import { Item } from "./item";
 import { Job } from "./job";
 import { Lead } from "./lead";
 import { List } from "./list";
@@ -102,9 +103,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.10.9";
+    sdkVersion = "0.10.10";
     genVersion = "2.220.3";
-    userAgent = "speakeasy-sdk/typescript 0.10.9 2.220.3 1.0 unified-to";
+    userAgent = "speakeasy-sdk/typescript 0.10.10 2.220.3 1.0 unified-to";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -119,6 +120,7 @@ export class UnifiedTo {
     public account: Account;
     public customer: Customer;
     public invoice: Invoice;
+    public item: Item;
     public organization: Organization;
     public payment: Payment;
     public taxrate: Taxrate;
@@ -183,6 +185,7 @@ export class UnifiedTo {
         this.account = new Account(this.sdkConfiguration);
         this.customer = new Customer(this.sdkConfiguration);
         this.invoice = new Invoice(this.sdkConfiguration);
+        this.item = new Item(this.sdkConfiguration);
         this.organization = new Organization(this.sdkConfiguration);
         this.payment = new Payment(this.sdkConfiguration);
         this.taxrate = new Taxrate(this.sdkConfiguration);

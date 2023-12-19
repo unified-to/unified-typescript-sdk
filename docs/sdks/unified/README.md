@@ -55,7 +55,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobWrite,
+      PropertyConnectionPermissions.AtsJobRead,
     ],
   });
 
@@ -111,7 +111,7 @@ async function run() {
       hookUrl: "string",
       interval: 4583.16,
       meta: {},
-      objectType: ObjectType.CrmPipeline,
+      objectType: ObjectType.CrmLead,
       runs: [
         "string",
       ],
@@ -648,7 +648,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmPipelineWrite,
+        PropertyConnectionPermissions.CrmPipelineRead,
       ],
     },
     id: "<ID>",
@@ -805,7 +805,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmContactRead,
+        PropertyConnectionPermissions.CrmCompanyWrite,
       ],
     },
     id: "<ID>",

@@ -2,6 +2,7 @@ src/sdk/accounting.ts
 src/sdk/account.ts
 src/sdk/customer.ts
 src/sdk/invoice.ts
+src/sdk/item.ts
 src/sdk/organization.ts
 src/sdk/payment.ts
 src/sdk/taxrate.ts
@@ -66,12 +67,14 @@ tsconfig.json
 src/sdk/models/operations/createaccountingaccount.ts
 src/sdk/models/operations/createaccountingcustomer.ts
 src/sdk/models/operations/createaccountinginvoice.ts
+src/sdk/models/operations/createaccountingitem.ts
 src/sdk/models/operations/createaccountingpayment.ts
 src/sdk/models/operations/createaccountingtaxrate.ts
 src/sdk/models/operations/createaccountingtransaction.ts
 src/sdk/models/operations/getaccountingaccount.ts
 src/sdk/models/operations/getaccountingcustomer.ts
 src/sdk/models/operations/getaccountinginvoice.ts
+src/sdk/models/operations/getaccountingitem.ts
 src/sdk/models/operations/getaccountingorganization.ts
 src/sdk/models/operations/getaccountingpayment.ts
 src/sdk/models/operations/getaccountingtaxrate.ts
@@ -79,6 +82,7 @@ src/sdk/models/operations/getaccountingtransaction.ts
 src/sdk/models/operations/listaccountingaccounts.ts
 src/sdk/models/operations/listaccountingcustomers.ts
 src/sdk/models/operations/listaccountinginvoices.ts
+src/sdk/models/operations/listaccountingitems.ts
 src/sdk/models/operations/listaccountingorganizations.ts
 src/sdk/models/operations/listaccountingpayments.ts
 src/sdk/models/operations/listaccountingtaxrates.ts
@@ -86,18 +90,21 @@ src/sdk/models/operations/listaccountingtransactions.ts
 src/sdk/models/operations/patchaccountingaccount.ts
 src/sdk/models/operations/patchaccountingcustomer.ts
 src/sdk/models/operations/patchaccountinginvoice.ts
+src/sdk/models/operations/patchaccountingitem.ts
 src/sdk/models/operations/patchaccountingpayment.ts
 src/sdk/models/operations/patchaccountingtaxrate.ts
 src/sdk/models/operations/patchaccountingtransaction.ts
 src/sdk/models/operations/removeaccountingaccount.ts
 src/sdk/models/operations/removeaccountingcustomer.ts
 src/sdk/models/operations/removeaccountinginvoice.ts
+src/sdk/models/operations/removeaccountingitem.ts
 src/sdk/models/operations/removeaccountingpayment.ts
 src/sdk/models/operations/removeaccountingtaxrate.ts
 src/sdk/models/operations/removeaccountingtransaction.ts
 src/sdk/models/operations/updateaccountingaccount.ts
 src/sdk/models/operations/updateaccountingcustomer.ts
 src/sdk/models/operations/updateaccountinginvoice.ts
+src/sdk/models/operations/updateaccountingitem.ts
 src/sdk/models/operations/updateaccountingpayment.ts
 src/sdk/models/operations/updateaccountingtaxrate.ts
 src/sdk/models/operations/updateaccountingtransaction.ts
@@ -264,6 +271,8 @@ src/sdk/models/shared/propertyaccountingcustomerbillingaddress.ts
 src/sdk/models/shared/accountinginvoice.ts
 src/sdk/models/shared/propertyaccountinginvoiceraw.ts
 src/sdk/models/shared/accountinglineitem.ts
+src/sdk/models/shared/accountingitem.ts
+src/sdk/models/shared/propertyaccountingitemraw.ts
 src/sdk/models/shared/accountingpayment.ts
 src/sdk/models/shared/propertyaccountingpaymentraw.ts
 src/sdk/models/shared/accountingtaxrate.ts
@@ -379,6 +388,8 @@ docs/sdk/models/operations/createaccountingcustomerrequest.md
 docs/sdk/models/operations/createaccountingcustomerresponse.md
 docs/sdk/models/operations/createaccountinginvoicerequest.md
 docs/sdk/models/operations/createaccountinginvoiceresponse.md
+docs/sdk/models/operations/createaccountingitemrequest.md
+docs/sdk/models/operations/createaccountingitemresponse.md
 docs/sdk/models/operations/createaccountingpaymentrequest.md
 docs/sdk/models/operations/createaccountingpaymentresponse.md
 docs/sdk/models/operations/createaccountingtaxraterequest.md
@@ -391,6 +402,8 @@ docs/sdk/models/operations/getaccountingcustomerrequest.md
 docs/sdk/models/operations/getaccountingcustomerresponse.md
 docs/sdk/models/operations/getaccountinginvoicerequest.md
 docs/sdk/models/operations/getaccountinginvoiceresponse.md
+docs/sdk/models/operations/getaccountingitemrequest.md
+docs/sdk/models/operations/getaccountingitemresponse.md
 docs/sdk/models/operations/getaccountingorganizationrequest.md
 docs/sdk/models/operations/getaccountingorganizationresponse.md
 docs/sdk/models/operations/getaccountingpaymentrequest.md
@@ -405,6 +418,8 @@ docs/sdk/models/operations/listaccountingcustomersrequest.md
 docs/sdk/models/operations/listaccountingcustomersresponse.md
 docs/sdk/models/operations/listaccountinginvoicesrequest.md
 docs/sdk/models/operations/listaccountinginvoicesresponse.md
+docs/sdk/models/operations/listaccountingitemsrequest.md
+docs/sdk/models/operations/listaccountingitemsresponse.md
 docs/sdk/models/operations/listaccountingorganizationsrequest.md
 docs/sdk/models/operations/listaccountingorganizationsresponse.md
 docs/sdk/models/operations/listaccountingpaymentsrequest.md
@@ -419,6 +434,8 @@ docs/sdk/models/operations/patchaccountingcustomerrequest.md
 docs/sdk/models/operations/patchaccountingcustomerresponse.md
 docs/sdk/models/operations/patchaccountinginvoicerequest.md
 docs/sdk/models/operations/patchaccountinginvoiceresponse.md
+docs/sdk/models/operations/patchaccountingitemrequest.md
+docs/sdk/models/operations/patchaccountingitemresponse.md
 docs/sdk/models/operations/patchaccountingpaymentrequest.md
 docs/sdk/models/operations/patchaccountingpaymentresponse.md
 docs/sdk/models/operations/patchaccountingtaxraterequest.md
@@ -431,6 +448,8 @@ docs/sdk/models/operations/removeaccountingcustomerrequest.md
 docs/sdk/models/operations/removeaccountingcustomerresponse.md
 docs/sdk/models/operations/removeaccountinginvoicerequest.md
 docs/sdk/models/operations/removeaccountinginvoiceresponse.md
+docs/sdk/models/operations/removeaccountingitemrequest.md
+docs/sdk/models/operations/removeaccountingitemresponse.md
 docs/sdk/models/operations/removeaccountingpaymentrequest.md
 docs/sdk/models/operations/removeaccountingpaymentresponse.md
 docs/sdk/models/operations/removeaccountingtaxraterequest.md
@@ -443,6 +462,8 @@ docs/sdk/models/operations/updateaccountingcustomerrequest.md
 docs/sdk/models/operations/updateaccountingcustomerresponse.md
 docs/sdk/models/operations/updateaccountinginvoicerequest.md
 docs/sdk/models/operations/updateaccountinginvoiceresponse.md
+docs/sdk/models/operations/updateaccountingitemrequest.md
+docs/sdk/models/operations/updateaccountingitemresponse.md
 docs/sdk/models/operations/updateaccountingpaymentrequest.md
 docs/sdk/models/operations/updateaccountingpaymentresponse.md
 docs/sdk/models/operations/updateaccountingtaxraterequest.md
@@ -773,6 +794,8 @@ docs/sdk/models/shared/propertyaccountingcustomerbillingaddress.md
 docs/sdk/models/shared/accountinginvoice.md
 docs/sdk/models/shared/propertyaccountinginvoiceraw.md
 docs/sdk/models/shared/accountinglineitem.md
+docs/sdk/models/shared/accountingitem.md
+docs/sdk/models/shared/propertyaccountingitemraw.md
 docs/sdk/models/shared/accountingpayment.md
 docs/sdk/models/shared/propertyaccountingpaymentraw.md
 docs/sdk/models/shared/accountingtaxrate.md
@@ -921,6 +944,7 @@ docs/sdks/accounting/README.md
 docs/sdks/account/README.md
 docs/sdks/customer/README.md
 docs/sdks/invoice/README.md
+docs/sdks/item/README.md
 docs/sdks/organization/README.md
 docs/sdks/payment/README.md
 docs/sdks/taxrate/README.md
