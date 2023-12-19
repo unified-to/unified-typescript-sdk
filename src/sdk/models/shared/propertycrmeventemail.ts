@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 /**
  * The email object, when type = email
@@ -19,6 +19,11 @@ export class PropertyCrmEventEmail extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "cc" })
     cc?: string[];
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "created_at" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    createdAt?: Date;
 
     @SpeakeasyMetadata()
     @Expose({ name: "from" })

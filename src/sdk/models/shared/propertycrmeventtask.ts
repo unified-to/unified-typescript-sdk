@@ -3,7 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 /**
  * The task object, when type = task
@@ -12,6 +12,11 @@ export class PropertyCrmEventTask extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "description" })
     description?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "due_at" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    dueAt?: Date;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

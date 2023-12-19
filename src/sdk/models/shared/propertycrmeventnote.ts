@@ -3,12 +3,17 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 /**
  * The note object, when type = note
  */
 export class PropertyCrmEventNote extends SpeakeasyBase {
+    @SpeakeasyMetadata()
+    @Expose({ name: "created_at" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    createdAt?: Date;
+
     @SpeakeasyMetadata()
     @Expose({ name: "description" })
     description?: string;
