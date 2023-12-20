@@ -371,7 +371,6 @@ src/sdk/models/shared/propertyconnectionauth.ts
 src/sdk/models/shared/propertypropertyconnectionauthmeta.ts
 src/sdk/models/shared/webhook.ts
 src/sdk/models/shared/propertywebhookmeta.ts
-src/sdk/models/shared/propertywebhookevents.ts
 src/sdk/models/shared/apicall.ts
 src/sdk/models/shared/integration.ts
 src/sdk/models/shared/integrationsupport.ts
@@ -929,7 +928,6 @@ docs/sdk/models/shared/objecttype.md
 docs/sdk/models/shared/webhookwebhooktype.md
 docs/sdk/models/shared/webhook.md
 docs/sdk/models/shared/propertywebhookmeta.md
-docs/sdk/models/shared/propertywebhookevents.md
 docs/sdk/models/shared/apicalltype.md
 docs/sdk/models/shared/apicall.md
 docs/sdk/models/shared/integration.md

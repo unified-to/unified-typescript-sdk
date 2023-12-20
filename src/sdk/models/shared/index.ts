@@ -108,7 +108,6 @@ export * from "./propertyticketingticketraw";
 export * from "./propertyuccallraw";
 export * from "./propertyuccalltelephone";
 export * from "./propertyuccontactraw";
-export * from "./propertywebhookevents";
 export * from "./propertywebhookmeta";
 export * from "./security";
 export * from "./ticketingcustomer";

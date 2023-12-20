@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyWebhookEvents } from "./propertywebhookevents";
 import { PropertyWebhookMeta } from "./propertywebhookmeta";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -66,7 +65,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "connection_id" })
-    connectionId?: string;
+    connectionId: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
@@ -82,10 +81,6 @@ export class Webhook extends SpeakeasyBase {
     event: Event;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "events" })
-    events?: PropertyWebhookEvents[];
-
-    @SpeakeasyMetadata()
     @Expose({ name: "fields" })
     fields?: string;
 
@@ -96,10 +91,6 @@ export class Webhook extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "include_raw" })
-    includeRaw?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "integration_type" })
@@ -128,13 +119,6 @@ export class Webhook extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "runs" })
     runs?: string[];
-
-    /**
-     * integration-specific subscriptions IDs
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "subscriptions" })
-    subscriptions?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

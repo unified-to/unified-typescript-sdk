@@ -92,7 +92,7 @@ The data payload received by your server is described at https://docs.unified.to
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { Event, ObjectType, PropertyWebhookEvents, WebhookWebhookType } from "unified-to/dist/sdk/models/shared";
+import { Event, ObjectType, WebhookWebhookType } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -103,18 +103,13 @@ async function run() {
 
   const res = await sdk.unified.createUnifiedWebhook({
     webhook: {
+      connectionId: "string",
       event: Event.Created,
-      events: [
-        PropertyWebhookEvents.Updated,
-      ],
       hookUrl: "string",
-      interval: 4583.16,
+      interval: 188.12,
       meta: {},
-      objectType: ObjectType.CrmLead,
+      objectType: ObjectType.CrmCompany,
       runs: [
-        "string",
-      ],
-      subscriptions: [
         "string",
       ],
     },
