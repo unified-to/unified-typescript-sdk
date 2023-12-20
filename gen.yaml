@@ -7,12 +7,13 @@ management:
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  repoURL: https://github.com/unified-to/unified-python-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
-  baseServerURL: ""
+  useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: false
+  baseServerURL: ""
   flattenGlobalSecurity: true
 features:
   typescript:
