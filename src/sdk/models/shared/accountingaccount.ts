@@ -24,9 +24,6 @@ export enum TypeT {
     Other = "OTHER",
 }
 
-/**
- * A user's bank account
- */
 export class AccountingAccount extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "balance" })

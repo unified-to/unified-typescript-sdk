@@ -32,7 +32,6 @@ export * from "./createticketingnote";
 export * from "./createticketingticket";
 export * from "./createuccontact";
 export * from "./createunifiedconnection";
-export * from "./createunifiedwebhook";
 export * from "./getaccountingaccount";
 export * from "./getaccountingcustomer";
 export * from "./getaccountinginvoice";

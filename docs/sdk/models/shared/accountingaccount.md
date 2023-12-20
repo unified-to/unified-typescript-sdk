@@ -1,7 +1,5 @@
 # AccountingAccount
 
-A user's bank account
-
 
 ## Fields
 

@@ -1,27 +1,27 @@
 configVersion: 1.0.0
 management:
-  docChecksum: 1ca6a94b0008b0e587bb768016b947eb
+  docChecksum: 627753f46b198309f0bfd918a43cac89
   docVersion: "1.0"
-  speakeasyVersion: 1.127.2
-  generationVersion: 2.220.3
+  speakeasyVersion: 1.128.0
+  generationVersion: 2.221.0
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-python-sdk.git
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
-  useClassNamesForArrayFields: true
+  baseServerURL: ""
   fixes:
     nameResolutionDec2023: false
-  baseServerURL: ""
   flattenGlobalSecurity: true
+  useClassNamesForArrayFields: true
 features:
   typescript:
     core: 3.3.9
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.10.10
+  version: 0.10.11
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

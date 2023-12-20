@@ -56,6 +56,7 @@ export * from "./propertyaccountingcustomerraw";
 export * from "./propertyaccountingcustomershippingaddress";
 export * from "./propertyaccountinginvoiceraw";
 export * from "./propertyaccountingitemraw";
+export * from "./propertyaccountinglineitemraw";
 export * from "./propertyaccountingorganizationaddress";
 export * from "./propertyaccountingorganizationraw";
 export * from "./propertyaccountingpaymentraw";

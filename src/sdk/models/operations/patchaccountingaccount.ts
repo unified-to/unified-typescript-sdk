@@ -7,9 +7,6 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class PatchAccountingAccountRequest extends SpeakeasyBase {
-    /**
-     * A user's bank account
-     */
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     accountingAccount?: shared.AccountingAccount;
 

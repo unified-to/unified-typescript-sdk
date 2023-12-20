@@ -20,7 +20,7 @@ export class Login {
      * Sign in a user
      *
      * @remarks
-     * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and emails are returned.
+     * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
      */
     async getUnifiedIntegrationLogin(
         req: operations.GetUnifiedIntegrationLoginRequest,

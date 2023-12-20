@@ -244,7 +244,6 @@ src/sdk/models/operations/updateticketingnote.ts
 src/sdk/models/operations/updateticketingticket.ts
 src/sdk/models/operations/listuccalls.ts
 src/sdk/models/operations/createunifiedconnection.ts
-src/sdk/models/operations/createunifiedwebhook.ts
 src/sdk/models/operations/getunifiedapicall.ts
 src/sdk/models/operations/getunifiedconnection.ts
 src/sdk/models/operations/getunifiedintegration.ts
@@ -271,6 +270,7 @@ src/sdk/models/shared/propertyaccountingcustomerbillingaddress.ts
 src/sdk/models/shared/accountinginvoice.ts
 src/sdk/models/shared/propertyaccountinginvoiceraw.ts
 src/sdk/models/shared/accountinglineitem.ts
+src/sdk/models/shared/propertyaccountinglineitemraw.ts
 src/sdk/models/shared/accountingitem.ts
 src/sdk/models/shared/propertyaccountingitemraw.ts
 src/sdk/models/shared/accountingpayment.ts
@@ -368,9 +368,6 @@ src/sdk/models/shared/propertyconnectionpermissions.ts
 src/sdk/models/shared/propertyconnectioncategories.ts
 src/sdk/models/shared/propertyconnectionauth.ts
 src/sdk/models/shared/propertypropertyconnectionauthmeta.ts
-src/sdk/models/shared/webhook.ts
-src/sdk/models/shared/propertywebhookmeta.ts
-src/sdk/models/shared/propertywebhookevents.ts
 src/sdk/models/shared/apicall.ts
 src/sdk/models/shared/integration.ts
 src/sdk/models/shared/integrationsupport.ts
@@ -378,6 +375,9 @@ src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
 src/sdk/models/shared/propertyintegrationsupportoutboundfields.ts
 src/sdk/models/shared/propertyintegrationsupportinboundfields.ts
 src/sdk/models/shared/propertyintegrationcategories.ts
+src/sdk/models/shared/webhook.ts
+src/sdk/models/shared/propertywebhookmeta.ts
+src/sdk/models/shared/propertywebhookevents.ts
 src/sdk/models/shared/security.ts
 src/sdk/models/errors/index.ts
 src/sdk/models/operations/index.ts
@@ -741,9 +741,6 @@ docs/sdk/models/operations/updateticketingticketresponse.md
 docs/sdk/models/operations/listuccallsrequest.md
 docs/sdk/models/operations/listuccallsresponse.md
 docs/sdk/models/operations/createunifiedconnectionresponse.md
-docs/sdk/models/operations/events.md
-docs/sdk/models/operations/createunifiedwebhookrequest.md
-docs/sdk/models/operations/createunifiedwebhookresponse.md
 docs/sdk/models/operations/getunifiedapicallrequest.md
 docs/sdk/models/operations/getunifiedapicallresponse.md
 docs/sdk/models/operations/getunifiedconnectionrequest.md
@@ -794,6 +791,7 @@ docs/sdk/models/shared/propertyaccountingcustomerbillingaddress.md
 docs/sdk/models/shared/accountinginvoice.md
 docs/sdk/models/shared/propertyaccountinginvoiceraw.md
 docs/sdk/models/shared/accountinglineitem.md
+docs/sdk/models/shared/propertyaccountinglineitemraw.md
 docs/sdk/models/shared/accountingitem.md
 docs/sdk/models/shared/propertyaccountingitemraw.md
 docs/sdk/models/shared/accountingpayment.md
@@ -923,12 +921,6 @@ docs/sdk/models/shared/propertyconnectionpermissions.md
 docs/sdk/models/shared/propertyconnectioncategories.md
 docs/sdk/models/shared/propertyconnectionauth.md
 docs/sdk/models/shared/propertypropertyconnectionauthmeta.md
-docs/sdk/models/shared/event.md
-docs/sdk/models/shared/objecttype.md
-docs/sdk/models/shared/webhookwebhooktype.md
-docs/sdk/models/shared/webhook.md
-docs/sdk/models/shared/propertywebhookmeta.md
-docs/sdk/models/shared/propertywebhookevents.md
 docs/sdk/models/shared/apicalltype.md
 docs/sdk/models/shared/apicall.md
 docs/sdk/models/shared/integration.md
@@ -938,6 +930,12 @@ docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
 docs/sdk/models/shared/propertyintegrationsupportoutboundfields.md
 docs/sdk/models/shared/propertyintegrationsupportinboundfields.md
 docs/sdk/models/shared/propertyintegrationcategories.md
+docs/sdk/models/shared/event.md
+docs/sdk/models/shared/objecttype.md
+docs/sdk/models/shared/webhookwebhooktype.md
+docs/sdk/models/shared/webhook.md
+docs/sdk/models/shared/propertywebhookmeta.md
+docs/sdk/models/shared/propertywebhookevents.md
 docs/sdk/models/shared/security.md
 docs/sdks/unifiedto/README.md
 docs/sdks/accounting/README.md

@@ -179,6 +179,7 @@ async function run() {
     accountingInvoice: {
       lineitems: [
         {
+          raw: {},
           totalAmount: 6736.06,
         },
       ],
@@ -1329,6 +1330,7 @@ async function run() {
     accountingInvoice: {
       lineitems: [
         {
+          raw: {},
           totalAmount: 7374.1,
         },
       ],
@@ -2030,6 +2032,7 @@ async function run() {
     accountingInvoice: {
       lineitems: [
         {
+          raw: {},
           totalAmount: 6974.28,
         },
       ],
