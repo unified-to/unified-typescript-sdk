@@ -83,7 +83,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "events" })
-    events: PropertyWebhookEvents[];
+    events?: PropertyWebhookEvents[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "fields" })
