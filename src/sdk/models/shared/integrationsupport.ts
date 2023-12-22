@@ -69,6 +69,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listOrder?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_parent_id" })
+    listParentId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_query" })
     listQuery?: boolean;
 

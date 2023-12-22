@@ -32,7 +32,7 @@ async function run() {
       hookUrl: "string",
       interval: 188.12,
       meta: {},
-      objectType: ObjectType.CrmCompany,
+      objectType: ObjectType.CrmContact,
       runs: [
         "string",
       ],

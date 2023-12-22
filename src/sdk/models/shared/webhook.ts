@@ -46,6 +46,7 @@ export enum ObjectType {
     UcCall = "uc_call",
     EnrichPerson = "enrich_person",
     EnrichCompany = "enrich_company",
+    StorageFile = "storage_file",
 }
 
 export enum WebhookWebhookType {

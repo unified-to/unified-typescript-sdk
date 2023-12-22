@@ -369,11 +369,17 @@ run();
 ### [file](docs/sdks/file/README.md)
 
 * [createCrmFile](docs/sdks/file/README.md#createcrmfile) - Create a file
+* [createStorageFile](docs/sdks/file/README.md#createstoragefile) - Create a file
 * [getCrmFile](docs/sdks/file/README.md#getcrmfile) - Retrieve a file
+* [getStorageFile](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
 * [listCrmFiles](docs/sdks/file/README.md#listcrmfiles) - List all files
+* [listStorageFiles](docs/sdks/file/README.md#liststoragefiles) - List all files
 * [patchCrmFile](docs/sdks/file/README.md#patchcrmfile) - Update a file
+* [patchStorageFile](docs/sdks/file/README.md#patchstoragefile) - Update a file
 * [removeCrmFile](docs/sdks/file/README.md#removecrmfile) - Remove a file
+* [removeStorageFile](docs/sdks/file/README.md#removestoragefile) - Remove a file
 * [updateCrmFile](docs/sdks/file/README.md#updatecrmfile) - Update a file
+* [updateStorageFile](docs/sdks/file/README.md#updatestoragefile) - Update a file
 
 ### [lead](docs/sdks/lead/README.md)
 
@@ -475,6 +481,15 @@ run();
 * [patchPassthrough](docs/sdks/passthrough/README.md#patchpassthrough) - Passthrough PUT
 * [removePassthrough](docs/sdks/passthrough/README.md#removepassthrough) - Passthrough DELETE
 * [updatePassthrough](docs/sdks/passthrough/README.md#updatepassthrough) - Passthrough PUT
+
+### [storage](docs/sdks/storage/README.md)
+
+* [createStorageFile](docs/sdks/storage/README.md#createstoragefile) - Create a file
+* [getStorageFile](docs/sdks/storage/README.md#getstoragefile) - Retrieve a file
+* [listStorageFiles](docs/sdks/storage/README.md#liststoragefiles) - List all files
+* [patchStorageFile](docs/sdks/storage/README.md#patchstoragefile) - Update a file
+* [removeStorageFile](docs/sdks/storage/README.md#removestoragefile) - Remove a file
+* [updateStorageFile](docs/sdks/storage/README.md#updatestoragefile) - Update a file
 
 ### [ticketing](docs/sdks/ticketing/README.md)
 

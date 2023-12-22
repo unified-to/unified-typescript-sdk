@@ -39,3 +39,4 @@
 | `UcCall`                 | uc_call                  |
 | `EnrichPerson`           | enrich_person            |
 | `EnrichCompany`          | enrich_company           |
+| `StorageFile`            | storage_file             |

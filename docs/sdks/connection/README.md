@@ -38,14 +38,14 @@ async function run() {
       ],
     },
     categories: [
-      PropertyConnectionCategories.Accounting,
+      PropertyConnectionCategories.Storage,
     ],
     cursorsCache: [
       {},
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobRead,
+      PropertyConnectionPermissions.AtsJobWrite,
     ],
   });
 
@@ -196,14 +196,14 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Martech,
+        PropertyConnectionCategories.Ticketing,
       ],
       cursorsCache: [
         {},
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmPipelineRead,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -308,14 +308,14 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Ticketing,
+        PropertyConnectionCategories.Uc,
       ],
       cursorsCache: [
         {},
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.CrmContactRead,
       ],
     },
     id: "<ID>",

@@ -48,14 +48,14 @@ async function run() {
       ],
     },
     categories: [
-      PropertyConnectionCategories.Accounting,
+      PropertyConnectionCategories.Storage,
     ],
     cursorsCache: [
       {},
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobRead,
+      PropertyConnectionPermissions.AtsJobWrite,
     ],
   });
 
@@ -108,7 +108,7 @@ async function run() {
       hookUrl: "string",
       interval: 188.12,
       meta: {},
-      objectType: ObjectType.CrmCompany,
+      objectType: ObjectType.CrmContact,
       runs: [
         "string",
       ],
@@ -295,7 +295,7 @@ async function run() {
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      Scopes.HrisEmployeeRead,
+      Scopes.HrisGroupRead,
     ],
     workspaceId: "string",
   });
@@ -480,7 +480,7 @@ async function run() {
 
   const res = await sdk.unified.listUnifiedIntegrationWorkspaces({
     categories: [
-      QueryParamCategories.Ticketing,
+      QueryParamCategories.Uc,
     ],
     workspaceId: "string",
   });
@@ -630,14 +630,14 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Martech,
+        PropertyConnectionCategories.Ticketing,
       ],
       cursorsCache: [
         {},
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmPipelineRead,
+        PropertyConnectionPermissions.MartechListRead,
       ],
     },
     id: "<ID>",
@@ -787,14 +787,14 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Ticketing,
+        PropertyConnectionCategories.Uc,
       ],
       cursorsCache: [
         {},
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.CrmContactRead,
       ],
     },
     id: "<ID>",

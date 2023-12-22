@@ -17,6 +17,7 @@ export enum ListUnifiedIntegrationsQueryParamCategories {
     Ticketing = "ticketing",
     Uc = "uc",
     Accounting = "accounting",
+    Storage = "storage",
 }
 
 export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {

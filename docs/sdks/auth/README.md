@@ -26,7 +26,7 @@ async function run() {
   const res = await sdk.auth.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      Scopes.HrisEmployeeRead,
+      Scopes.HrisGroupRead,
     ],
     workspaceId: "string",
   });

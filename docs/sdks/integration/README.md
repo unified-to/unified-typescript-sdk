@@ -73,7 +73,7 @@ async function run() {
   const res = await sdk.integration.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      Scopes.HrisEmployeeRead,
+      Scopes.HrisGroupRead,
     ],
     workspaceId: "string",
   });
@@ -122,7 +122,7 @@ async function run() {
 
   const res = await sdk.integration.listUnifiedIntegrationWorkspaces({
     categories: [
-      QueryParamCategories.Ticketing,
+      QueryParamCategories.Uc,
     ],
     workspaceId: "string",
   });
