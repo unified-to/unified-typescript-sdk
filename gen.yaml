@@ -10,11 +10,11 @@ generation:
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
-  baseServerURL: ""
+  useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: false
+  baseServerURL: ""
   flattenGlobalSecurity: true
-  useClassNamesForArrayFields: true
 features:
   typescript:
     core: 3.3.9
