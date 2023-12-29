@@ -37,6 +37,9 @@ async function run() {
       emails: [
         {},
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -246,6 +249,9 @@ async function run() {
       emails: [
         {},
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -359,6 +365,9 @@ async function run() {
       ],
       emails: [
         {},
+      ],
+      linkUrls: [
+        "string",
       ],
       raw: {},
       tags: [

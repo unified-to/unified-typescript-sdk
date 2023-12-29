@@ -30,18 +30,34 @@ export class CrmCompany extends SpeakeasyBase {
     @Expose({ name: "deal_ids" })
     dealIds?: string[];
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
+
     @SpeakeasyMetadata({ elemType: CrmEmail })
     @Expose({ name: "emails" })
     @Type(() => CrmEmail)
     emails?: CrmEmail[];
 
     @SpeakeasyMetadata()
+    @Expose({ name: "employees" })
+    employees?: number;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "industry" })
+    industry?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "is_active" })
     isActive?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "link_urls" })
+    linkUrls?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
@@ -63,6 +79,10 @@ export class CrmCompany extends SpeakeasyBase {
     @Expose({ name: "telephones" })
     @Type(() => CrmTelephone)
     telephones?: CrmTelephone[];
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "timezone" })
+    timezone?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

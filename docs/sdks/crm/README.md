@@ -72,6 +72,9 @@ async function run() {
       emails: [
         {},
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -236,7 +239,7 @@ Create a event
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { CrmEventType } from "unified-to/dist/sdk/models/shared";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -1160,6 +1163,9 @@ async function run() {
       emails: [
         {},
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -1327,7 +1333,7 @@ Update a event
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { CrmEventType } from "unified-to/dist/sdk/models/shared";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -1898,6 +1904,9 @@ async function run() {
       emails: [
         {},
       ],
+      linkUrls: [
+        "string",
+      ],
       raw: {},
       tags: [
         "string",
@@ -2065,7 +2074,7 @@ Update a event
 
 ```typescript
 import { UnifiedTo } from "unified-to";
-import { CrmEventType } from "unified-to/dist/sdk/models/shared";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

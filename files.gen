@@ -880,6 +880,7 @@ docs/sdk/models/shared/crmdeal.md
 docs/sdk/models/shared/propertycrmdealraw.md
 docs/sdk/models/shared/crmeventtype.md
 docs/sdk/models/shared/crmevent.md
+docs/sdk/models/shared/propertycrmeventtaskstatus.md
 docs/sdk/models/shared/propertycrmeventtask.md
 docs/sdk/models/shared/propertycrmeventraw.md
 docs/sdk/models/shared/propertycrmeventnote.md

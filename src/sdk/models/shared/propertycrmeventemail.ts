@@ -34,7 +34,7 @@ export class PropertyCrmEventEmail extends SpeakeasyBase {
     subject?: string;
 
     /**
-     * The event email's to name & email (name <test@test.com>)
+     * The event email's "to" name & email (name <test@test.com>)
      */
     @SpeakeasyMetadata()
     @Expose({ name: "to" })

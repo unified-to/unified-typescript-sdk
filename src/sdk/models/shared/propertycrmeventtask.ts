@@ -5,6 +5,13 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Transform } from "class-transformer";
 
+export enum PropertyCrmEventTaskStatus {
+    Completed = "COMPLETED",
+    NotStarted = "NOT_STARTED",
+    WorkInProgress = "WORK_IN_PROGRESS",
+    Deferred = "DEFERRED",
+}
+
 /**
  * The task object, when type = task
  */
@@ -24,5 +31,5 @@ export class PropertyCrmEventTask extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
-    status?: string;
+    status?: PropertyCrmEventTaskStatus;
 }
