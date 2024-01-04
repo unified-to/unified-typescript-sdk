@@ -51,6 +51,12 @@ export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=summary" })
     summary?: boolean;
 
+    /**
+     * Filter the results for only this integration type
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
+    type?: string;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: string;
 }

@@ -66,7 +66,6 @@ export * from "./getticketingticket";
 export * from "./getuccontact";
 export * from "./getunifiedapicall";
 export * from "./getunifiedconnection";
-export * from "./getunifiedintegration";
 export * from "./getunifiedintegrationauth";
 export * from "./getunifiedintegrationlogin";
 export * from "./getunifiedwebhook";

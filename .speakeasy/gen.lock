@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: e3411ce3831f158718f8cc0477e33856
+  docChecksum: 56cbb60774d35fb7bb0337c12bcc7948
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.225.0
-  releaseVersion: 0.10.17
-  configChecksum: ecb820e4f65cbfe9efd1770f2a7d3ce6
+  generationVersion: 2.225.2
+  releaseVersion: 0.10.18
+  configChecksum: 7426354dd32e44538a3a71d0b39522c4
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
 features:
   typescript:
-    core: 3.4.0
+    core: 3.4.1
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 generatedFiles:
@@ -272,7 +272,6 @@ generatedFiles:
   - src/sdk/models/operations/createunifiedwebhook.ts
   - src/sdk/models/operations/getunifiedapicall.ts
   - src/sdk/models/operations/getunifiedconnection.ts
-  - src/sdk/models/operations/getunifiedintegration.ts
   - src/sdk/models/operations/getunifiedintegrationauth.ts
   - src/sdk/models/operations/getunifiedwebhook.ts
   - src/sdk/models/operations/listunifiedapicalls.ts
@@ -788,8 +787,6 @@ generatedFiles:
   - docs/sdk/models/operations/getunifiedapicallresponse.md
   - docs/sdk/models/operations/getunifiedconnectionrequest.md
   - docs/sdk/models/operations/getunifiedconnectionresponse.md
-  - docs/sdk/models/operations/getunifiedintegrationrequest.md
-  - docs/sdk/models/operations/getunifiedintegrationresponse.md
   - docs/sdk/models/operations/scopes.md
   - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
   - docs/sdk/models/operations/getunifiedintegrationauthresponse.md
