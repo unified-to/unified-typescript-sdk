@@ -280,9 +280,6 @@ async function run() {
 
   const res = await sdk.accounting.createAccountingPayment({
     accountingPayment: {
-      invoiceIds: [
-        "string",
-      ],
       raw: {},
     },
     connectionId: "string",
@@ -1433,9 +1430,6 @@ async function run() {
 
   const res = await sdk.accounting.patchAccountingPayment({
     accountingPayment: {
-      invoiceIds: [
-        "string",
-      ],
       raw: {},
     },
     connectionId: "string",
@@ -2135,9 +2129,6 @@ async function run() {
 
   const res = await sdk.accounting.updateAccountingPayment({
     accountingPayment: {
-      invoiceIds: [
-        "string",
-      ],
       raw: {},
     },
     connectionId: "string",

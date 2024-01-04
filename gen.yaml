@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: a9825a86d81034301b0f56cc9b76ba30
+  docChecksum: e3411ce3831f158718f8cc0477e33856
   docVersion: "1.0"
   speakeasyVersion: 1.129.1
   generationVersion: 2.223.3
@@ -21,7 +21,7 @@ features:
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 typescript:
-  version: 0.10.16
+  version: 0.10.17
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

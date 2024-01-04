@@ -25,8 +25,8 @@ export class AccountingPayment extends SpeakeasyBase {
     id?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "invoice_ids" })
-    invoiceIds?: string[];
+    @Expose({ name: "invoice_id" })
+    invoiceId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notes" })
