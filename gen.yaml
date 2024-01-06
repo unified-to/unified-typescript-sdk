@@ -3,13 +3,12 @@ generation:
   sdkClassName: Unified-to
   usageSnippets:
     optionalPropertyRendering: withExample
-  useClassNamesForArrayFields: false
   fixes:
     nameResolutionDec2023: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 0.10.18
+  version: 0.11.0
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false

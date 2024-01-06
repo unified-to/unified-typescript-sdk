@@ -14,8 +14,8 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Scopes } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Scopes } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -64,8 +64,8 @@ No authentication required as this is to be used by front-end interface
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { QueryParamCategories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { QueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -113,8 +113,8 @@ Returns all integrations
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { ListUnifiedIntegrationsQueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({

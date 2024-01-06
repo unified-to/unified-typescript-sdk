@@ -17,8 +17,8 @@ Create connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -81,7 +81,7 @@ Retrieve connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -126,8 +126,8 @@ List all connections
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Categories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Categories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -174,8 +174,8 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -241,7 +241,7 @@ Remove connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -286,8 +286,8 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

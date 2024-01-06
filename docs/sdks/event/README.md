@@ -17,8 +17,8 @@ Create a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -90,7 +90,7 @@ Retrieve a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -139,7 +139,7 @@ List all events
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -187,8 +187,8 @@ Update a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -261,7 +261,7 @@ Remove a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -307,8 +307,8 @@ Update a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

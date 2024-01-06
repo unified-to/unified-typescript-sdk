@@ -13,7 +13,7 @@ Retrieve enrichment information for a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -58,7 +58,7 @@ Retrieve enrichment information for a person
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({

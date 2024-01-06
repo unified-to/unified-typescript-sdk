@@ -23,7 +23,7 @@ Create a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -71,8 +71,8 @@ Create a member
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -131,7 +131,7 @@ Retrieve a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -180,7 +180,7 @@ Retrieve a member
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -229,7 +229,7 @@ List all lists
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -277,7 +277,7 @@ List all members
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -325,7 +325,7 @@ Update a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -374,8 +374,8 @@ Update a member
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -435,7 +435,7 @@ Remove a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -481,7 +481,7 @@ Remove member
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -527,7 +527,7 @@ Update a list
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -576,8 +576,8 @@ Update a member
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { MarketingEmailType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

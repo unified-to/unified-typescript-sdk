@@ -26,8 +26,8 @@ Create connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -90,8 +90,8 @@ The data payload received by your server is described at https://docs.unified.to
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Event, ObjectType, WebhookWebhookType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Event, ObjectType, WebhookWebhookType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -146,7 +146,7 @@ Retrieve specific API Call by its ID
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -191,7 +191,7 @@ Retrieve connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -236,8 +236,8 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Scopes } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Scopes } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -286,7 +286,7 @@ Retrieve webhook by its ID
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -331,7 +331,7 @@ Returns API Calls
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -374,8 +374,8 @@ List all connections
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Categories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Categories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -422,8 +422,8 @@ No authentication required as this is to be used by front-end interface
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { QueryParamCategories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { QueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -471,8 +471,8 @@ Returns all integrations
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { ListUnifiedIntegrationsQueryParamCategories } from "unified-to/dist/sdk/models/operations";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { ListUnifiedIntegrationsQueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -519,7 +519,7 @@ Returns all registered webhooks
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -562,8 +562,8 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -629,7 +629,7 @@ Remove connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -674,7 +674,7 @@ Remove webhook subscription
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -719,8 +719,8 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

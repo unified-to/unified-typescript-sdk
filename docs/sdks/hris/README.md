@@ -23,7 +23,7 @@ Create an employee
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -31,7 +31,7 @@ import {
   HrisEmployeeGender,
   HrisTelephoneType,
   MaritalStatus,
-} from "unified-to/dist/sdk/models/shared";
+} from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -90,8 +90,8 @@ Create a group
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { HrisGroupType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -145,7 +145,7 @@ Retrieve an employee
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -194,7 +194,7 @@ Retrieve a group
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -243,7 +243,7 @@ List all employees
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -291,7 +291,7 @@ List all groups
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -339,7 +339,7 @@ Update an employee
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -347,7 +347,7 @@ import {
   HrisEmployeeGender,
   HrisTelephoneType,
   MaritalStatus,
-} from "unified-to/dist/sdk/models/shared";
+} from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -407,8 +407,8 @@ Update a group
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { HrisGroupType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -463,7 +463,7 @@ Remove an employee
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -509,7 +509,7 @@ Remove a group
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -555,7 +555,7 @@ Update an employee
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -563,7 +563,7 @@ import {
   HrisEmployeeGender,
   HrisTelephoneType,
   MaritalStatus,
-} from "unified-to/dist/sdk/models/shared";
+} from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -623,8 +623,8 @@ Update a group
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { HrisGroupType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { HrisGroupType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

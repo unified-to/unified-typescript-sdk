@@ -18,8 +18,8 @@ Create a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { UcEmailType, UcTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -77,7 +77,7 @@ Retrieve a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -126,7 +126,7 @@ List all calls
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -174,7 +174,7 @@ List all contacts
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -222,8 +222,8 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { UcEmailType, UcTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -282,7 +282,7 @@ Remove a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -328,8 +328,8 @@ Update a contact
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { UcEmailType, UcTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { UcEmailType, UcTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

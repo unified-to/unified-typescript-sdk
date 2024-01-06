@@ -4,15 +4,15 @@ management:
   docChecksum: 56cbb60774d35fb7bb0337c12bcc7948
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 0.10.18
-  configChecksum: 7426354dd32e44538a3a71d0b39522c4
+  generationVersion: 2.228.1
+  releaseVersion: 0.11.0
+  configChecksum: e9cb081adfc0e6e2d610651b386c5d4b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
 features:
   typescript:
-    core: 3.4.1
+    core: 3.4.2
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 generatedFiles:

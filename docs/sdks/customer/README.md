@@ -23,8 +23,8 @@ Create a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -84,8 +84,8 @@ Create a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -146,7 +146,7 @@ Retrieve a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -195,7 +195,7 @@ Retrieve a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -244,7 +244,7 @@ List all customers
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -292,7 +292,7 @@ List all customers
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -340,8 +340,8 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -402,8 +402,8 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -465,7 +465,7 @@ Remove a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -511,7 +511,7 @@ Remove a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -557,8 +557,8 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -619,8 +619,8 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

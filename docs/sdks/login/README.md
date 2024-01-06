@@ -12,7 +12,7 @@ Returns an authentication URL for the specified integration.  Once a successful 
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({

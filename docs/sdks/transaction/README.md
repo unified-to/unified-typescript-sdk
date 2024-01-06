@@ -17,8 +17,8 @@ Create a transaction
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingTransactionType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -75,7 +75,7 @@ Retrieve a transaction
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -124,7 +124,7 @@ List all transactions
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -172,8 +172,8 @@ Update a transaction
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingTransactionType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -231,7 +231,7 @@ Remove a transaction
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -277,8 +277,8 @@ Update a transaction
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AccountingTransactionType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

@@ -17,8 +17,8 @@ Create a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -66,7 +66,7 @@ Retrieve a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -115,7 +115,7 @@ List all documents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -163,8 +163,8 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -213,7 +213,7 @@ Remove a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -259,8 +259,8 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsDocumentType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

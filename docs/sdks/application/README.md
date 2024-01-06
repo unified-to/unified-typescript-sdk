@@ -17,8 +17,8 @@ Create an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -66,7 +66,7 @@ Retrieve an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -115,7 +115,7 @@ List all applications
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -163,8 +163,8 @@ Update an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -213,7 +213,7 @@ Remove an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -259,8 +259,8 @@ Update an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { AtsApplicationStatus } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

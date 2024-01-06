@@ -17,8 +17,8 @@ Create an account
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -67,7 +67,7 @@ Retrieve an account
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -116,7 +116,7 @@ List all accounts
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -164,8 +164,8 @@ Update an account
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -215,7 +215,7 @@ Remove an account
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -261,8 +261,8 @@ Update an account
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Status, TypeT } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

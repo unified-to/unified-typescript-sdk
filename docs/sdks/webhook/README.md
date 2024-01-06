@@ -15,8 +15,8 @@ The data payload received by your server is described at https://docs.unified.to
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { Event, ObjectType, WebhookWebhookType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { Event, ObjectType, WebhookWebhookType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -71,7 +71,7 @@ Retrieve webhook by its ID
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -116,7 +116,7 @@ Returns all registered webhooks
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -159,7 +159,7 @@ Remove webhook subscription
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({

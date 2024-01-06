@@ -17,8 +17,8 @@ Create a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -73,7 +73,7 @@ Retrieve a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -122,7 +122,7 @@ List all files
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -170,8 +170,8 @@ Update a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -227,7 +227,7 @@ Remove a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
+import { UnifiedTo } from "unified-typescript-sdk";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -273,8 +273,8 @@ Update a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-to";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-to/dist/sdk/models/shared";
+import { UnifiedTo } from "unified-typescript-sdk";
+import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
