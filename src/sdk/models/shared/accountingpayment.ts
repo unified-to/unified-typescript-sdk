@@ -8,6 +8,10 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class AccountingPayment extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "account_id" })
+    accountId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
