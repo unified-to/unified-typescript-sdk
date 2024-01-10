@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 01195f78bbf8ee1be66b14db611dedcf
+  docChecksum: 950b786dbc2a674691ac70d56758142c
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.230.1
-  releaseVersion: 0.12.0
-  configChecksum: 0cc3b927565f6638333186fab501ea45
+  generationVersion: 2.230.3
+  releaseVersion: 0.12.1
+  configChecksum: fcf8629831969c350e9915dd100537e3
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
 features:
   typescript:
-    core: 3.4.3
+    core: 3.4.5
     globalSecurity: 2.82.2
     globalServerURLs: 2.82.1
 generatedFiles:
@@ -280,9 +280,11 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedintegrations.ts
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchunifiedconnection.ts
+  - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
   - src/sdk/models/operations/removeunifiedconnection.ts
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedconnection.ts
+  - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
   - src/sdk/models/operations/getunifiedintegrationlogin.ts
   - src/sdk/models/shared/accountingaccount.ts
   - src/sdk/models/shared/propertyaccountingaccountraw.ts
@@ -807,12 +809,16 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedwebhooksresponse.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
   - docs/sdk/models/operations/patchunifiedconnectionresponse.md
+  - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/operations/patchunifiedwebhooktriggerresponse.md
   - docs/sdk/models/operations/removeunifiedconnectionrequest.md
   - docs/sdk/models/operations/removeunifiedconnectionresponse.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookresponse.md
   - docs/sdk/models/operations/updateunifiedconnectionrequest.md
   - docs/sdk/models/operations/updateunifiedconnectionresponse.md
+  - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/operations/updateunifiedwebhooktriggerresponse.md
   - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
   - docs/sdk/models/operations/getunifiedintegrationloginresponse.md
   - docs/sdk/models/shared/status.md
