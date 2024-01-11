@@ -18,6 +18,7 @@ Create a invoice
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -169,6 +170,7 @@ Update a invoice
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -270,6 +272,7 @@ Update a invoice
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({

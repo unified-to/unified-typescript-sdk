@@ -90,6 +90,10 @@ export class CrmCompany extends SpeakeasyBase {
     updatedAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "websites" })
     websites?: string[];
 }

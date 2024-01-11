@@ -8,10 +8,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class TicketingNote extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "agent_id" })
-    agentId?: string;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
@@ -40,4 +36,8 @@ export class TicketingNote extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })
     updatedAt?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
 }

@@ -21,10 +21,6 @@ export class IntegrationSupport extends SpeakeasyBase {
     inboundFields?: PropertyIntegrationSupportInboundFields;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "list_agent_id" })
-    listAgentId?: boolean;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "list_application_id" })
     listApplicationId?: boolean;
 
@@ -91,6 +87,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_updated_gte" })
     listUpdatedGte?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_user_id" })
+    listUserId?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "methods" })

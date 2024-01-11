@@ -7,9 +7,6 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListUcCallsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=agent_id" })
-    agentId?: string;
-
     /**
      * ID of the connection
      */
@@ -48,6 +45,9 @@ export class ListUcCallsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
+
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
+    userId?: string;
 }
 
 export class ListUcCallsResponse extends SpeakeasyBase {

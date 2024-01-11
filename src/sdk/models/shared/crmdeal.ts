@@ -74,6 +74,10 @@ export class CrmDeal extends SpeakeasyBase {
     updatedAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "won_reason" })
     wonReason?: string;
 }

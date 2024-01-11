@@ -71,4 +71,8 @@ export class TicketingTicket extends SpeakeasyBase {
     @Expose({ name: "updated_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     updatedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
 }

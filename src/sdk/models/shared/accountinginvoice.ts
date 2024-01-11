@@ -7,6 +7,12 @@ import { AccountingLineitem } from "./accountinglineitem";
 import { PropertyAccountingInvoiceRaw } from "./propertyaccountinginvoiceraw";
 import { Expose, Transform, Type } from "class-transformer";
 
+export enum AccountingInvoiceStatus {
+    Draft = "DRAFT",
+    Voided = "VOIDED",
+    Authorized = "AUTHORIZED",
+}
+
 export class AccountingInvoice extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "balance_amount" })
@@ -82,6 +88,10 @@ export class AccountingInvoice extends SpeakeasyBase {
     @Expose({ name: "refunded_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     refundedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "status" })
+    status?: AccountingInvoiceStatus;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tax_amount" })

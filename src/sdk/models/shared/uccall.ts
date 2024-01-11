@@ -9,10 +9,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class UcCall extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "agency_id" })
-    agencyId: string;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "contact_id" })
     contactId?: string;
 
@@ -55,4 +51,8 @@ export class UcCall extends SpeakeasyBase {
     @Expose({ name: "updated_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     updatedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
 }

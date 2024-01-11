@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 950b786dbc2a674691ac70d56758142c
+  docChecksum: 354896ac4fb0afd646aa3e018c90dfd9
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.230.3
-  releaseVersion: 0.12.1
-  configChecksum: fcf8629831969c350e9915dd100537e3
+  releaseVersion: 0.12.2
+  configChecksum: 6b634819e4c32b85f7d9d6dd2a42c968
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -834,6 +834,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/propertyaccountingcustomerbillingaddress.md
+  - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/propertyaccountinginvoiceraw.md
   - docs/sdk/models/shared/accountinglineitem.md

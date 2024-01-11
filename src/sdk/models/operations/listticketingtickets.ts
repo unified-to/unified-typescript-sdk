@@ -8,12 +8,6 @@ import { AxiosResponse } from "axios";
 
 export class ListTicketingTicketsRequest extends SpeakeasyBase {
     /**
-     * The agent ID to filter results
-     */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=agent_id" })
-    agentId?: string;
-
-    /**
      * ID of the connection
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
@@ -54,6 +48,12 @@ export class ListTicketingTicketsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
+
+    /**
+     * The user/agent ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
+    userId?: string;
 }
 
 export class ListTicketingTicketsResponse extends SpeakeasyBase {

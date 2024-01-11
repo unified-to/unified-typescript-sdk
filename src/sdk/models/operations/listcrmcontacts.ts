@@ -54,6 +54,12 @@ export class ListCrmContactsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
+
+    /**
+     * The user/owner ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
+    userId?: string;
 }
 
 export class ListCrmContactsResponse extends SpeakeasyBase {
