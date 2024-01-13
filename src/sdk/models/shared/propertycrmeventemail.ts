@@ -10,6 +10,10 @@ import { Expose, Transform } from "class-transformer";
  */
 export class PropertyCrmEventEmail extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "attachment_file_ids" })
+    attachmentFileIds?: string[];
+
+    @SpeakeasyMetadata()
     @Expose({ name: "body" })
     body?: string;
 

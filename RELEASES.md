@@ -503,3 +503,11 @@ Based on:
 - Speakeasy CLI 1.134.1 (2.230.3) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [typescript v0.12.2] .
+
+## 2024-01-13 00:09:11
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.140.0 (2.231.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.12.3] .

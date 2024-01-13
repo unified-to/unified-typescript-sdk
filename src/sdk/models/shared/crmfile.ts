@@ -8,10 +8,6 @@ import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmFile extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "activity_id" })
-    activityId?: string;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "company_id" })
     companyId?: string;
 
@@ -33,20 +29,12 @@ export class CrmFile extends SpeakeasyBase {
     description?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "file_name" })
-    fileName?: string;
+    @Expose({ name: "download_url" })
+    downloadUrl?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "file_size" })
-    fileSize?: number;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "file_type" })
-    fileType?: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "file_url" })
-    fileUrl?: string;
+    @Expose({ name: "event_id" })
+    eventId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
@@ -61,9 +49,21 @@ export class CrmFile extends SpeakeasyBase {
     leadId?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "mime_type" })
+    mimeType?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "name" })
+    name?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     @Type(() => PropertyCrmFileRaw)
     raw?: PropertyCrmFileRaw;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "size" })
+    size?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

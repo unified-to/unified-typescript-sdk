@@ -261,6 +261,9 @@ async function run() {
         "string",
       ],
       email: {
+        attachmentFileIds: [
+          "string",
+        ],
         cc: [
           "string",
         ],
@@ -1355,6 +1358,9 @@ async function run() {
         "string",
       ],
       email: {
+        attachmentFileIds: [
+          "string",
+        ],
         cc: [
           "string",
         ],
@@ -2096,6 +2102,9 @@ async function run() {
         "string",
       ],
       email: {
+        attachmentFileIds: [
+          "string",
+        ],
         cc: [
           "string",
         ],
