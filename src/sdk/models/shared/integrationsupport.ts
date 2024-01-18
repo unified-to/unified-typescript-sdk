@@ -21,6 +21,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     inboundFields?: PropertyIntegrationSupportInboundFields;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_account_id" })
+    listAccountId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_application_id" })
     listApplicationId?: boolean;
 
@@ -45,6 +49,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listDealId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_interview_id" })
+    listInterviewId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_invoice_id" })
     listInvoiceId?: boolean;
 
@@ -55,6 +63,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_limit" })
     listLimit?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_list_id" })
+    listListId?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_offset" })
