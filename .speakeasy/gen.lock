@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: fcf38ba1245f7399c1338dc1ef8df2e7
+  docChecksum: ede9055e4403162b0dc1469530be3da9
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 0.12.4
-  configChecksum: 41b9e185495cb3778f31555ac6a507df
+  generationVersion: 2.235.3
+  releaseVersion: 0.12.5
+  configChecksum: 8fdb2ef928085544ba9f004e5e4ebcc5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -38,7 +38,6 @@ generatedFiles:
   - src/sdk/contact.ts
   - src/sdk/deal.ts
   - src/sdk/event.ts
-  - src/sdk/file.ts
   - src/sdk/lead.ts
   - src/sdk/pipeline.ts
   - src/sdk/enrich.ts
@@ -51,6 +50,7 @@ generatedFiles:
   - src/sdk/member.ts
   - src/sdk/passthrough.ts
   - src/sdk/storage.ts
+  - src/sdk/file.ts
   - src/sdk/ticketing.ts
   - src/sdk/note.ts
   - src/sdk/ticket.ts
@@ -174,42 +174,36 @@ generatedFiles:
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createcrmdeal.ts
   - src/sdk/models/operations/createcrmevent.ts
-  - src/sdk/models/operations/createcrmfile.ts
   - src/sdk/models/operations/createcrmlead.ts
   - src/sdk/models/operations/createcrmpipeline.ts
   - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmcontact.ts
   - src/sdk/models/operations/getcrmdeal.ts
   - src/sdk/models/operations/getcrmevent.ts
-  - src/sdk/models/operations/getcrmfile.ts
   - src/sdk/models/operations/getcrmlead.ts
   - src/sdk/models/operations/getcrmpipeline.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmcontacts.ts
   - src/sdk/models/operations/listcrmdeals.ts
   - src/sdk/models/operations/listcrmevents.ts
-  - src/sdk/models/operations/listcrmfiles.ts
   - src/sdk/models/operations/listcrmleads.ts
   - src/sdk/models/operations/listcrmpipelines.ts
   - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmcontact.ts
   - src/sdk/models/operations/patchcrmdeal.ts
   - src/sdk/models/operations/patchcrmevent.ts
-  - src/sdk/models/operations/patchcrmfile.ts
   - src/sdk/models/operations/patchcrmlead.ts
   - src/sdk/models/operations/patchcrmpipeline.ts
   - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmcontact.ts
   - src/sdk/models/operations/removecrmdeal.ts
   - src/sdk/models/operations/removecrmevent.ts
-  - src/sdk/models/operations/removecrmfile.ts
   - src/sdk/models/operations/removecrmlead.ts
   - src/sdk/models/operations/removecrmpipeline.ts
   - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
   - src/sdk/models/operations/updatecrmevent.ts
-  - src/sdk/models/operations/updatecrmfile.ts
   - src/sdk/models/operations/updatecrmlead.ts
   - src/sdk/models/operations/updatecrmpipeline.ts
   - src/sdk/models/operations/listenrichcompanies.ts
@@ -219,12 +213,6 @@ generatedFiles:
   - src/sdk/models/operations/patchuccontact.ts
   - src/sdk/models/operations/removeuccontact.ts
   - src/sdk/models/operations/updateuccontact.ts
-  - src/sdk/models/operations/createstoragefile.ts
-  - src/sdk/models/operations/getstoragefile.ts
-  - src/sdk/models/operations/liststoragefiles.ts
-  - src/sdk/models/operations/patchstoragefile.ts
-  - src/sdk/models/operations/removestoragefile.ts
-  - src/sdk/models/operations/updatestoragefile.ts
   - src/sdk/models/operations/listenrichpeople.ts
   - src/sdk/models/operations/createhrisemployee.ts
   - src/sdk/models/operations/createhrisgroup.ts
@@ -255,6 +243,12 @@ generatedFiles:
   - src/sdk/models/operations/patchpassthrough.ts
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/updatepassthrough.ts
+  - src/sdk/models/operations/createstoragefile.ts
+  - src/sdk/models/operations/getstoragefile.ts
+  - src/sdk/models/operations/liststoragefiles.ts
+  - src/sdk/models/operations/patchstoragefile.ts
+  - src/sdk/models/operations/removestoragefile.ts
+  - src/sdk/models/operations/updatestoragefile.ts
   - src/sdk/models/operations/createticketingnote.ts
   - src/sdk/models/operations/createticketingticket.ts
   - src/sdk/models/operations/getticketingnote.ts
@@ -350,8 +344,6 @@ generatedFiles:
   - src/sdk/models/shared/propertycrmeventmeeting.ts
   - src/sdk/models/shared/propertycrmeventemail.ts
   - src/sdk/models/shared/propertycrmeventcall.ts
-  - src/sdk/models/shared/crmfile.ts
-  - src/sdk/models/shared/propertycrmfileraw.ts
   - src/sdk/models/shared/crmlead.ts
   - src/sdk/models/shared/propertycrmleadraw.ts
   - src/sdk/models/shared/propertycrmleadaddress.ts
@@ -365,10 +357,6 @@ generatedFiles:
   - src/sdk/models/shared/uctelephone.ts
   - src/sdk/models/shared/propertyuccontactraw.ts
   - src/sdk/models/shared/ucemail.ts
-  - src/sdk/models/shared/storagefile.ts
-  - src/sdk/models/shared/propertystoragefileraw.ts
-  - src/sdk/models/shared/storagepermission.ts
-  - src/sdk/models/shared/propertystoragepermissionroles.ts
   - src/sdk/models/shared/enrichperson.ts
   - src/sdk/models/shared/enrichpersonworkhistory.ts
   - src/sdk/models/shared/propertyenrichpersonraw.ts
@@ -387,6 +375,10 @@ generatedFiles:
   - src/sdk/models/shared/propertymarketingmemberraw.ts
   - src/sdk/models/shared/marketingemail.ts
   - src/sdk/models/shared/undefined.ts
+  - src/sdk/models/shared/storagefile.ts
+  - src/sdk/models/shared/propertystoragefileraw.ts
+  - src/sdk/models/shared/storagepermission.ts
+  - src/sdk/models/shared/propertystoragepermissionroles.ts
   - src/sdk/models/shared/ticketingnote.ts
   - src/sdk/models/shared/propertyticketingnoteraw.ts
   - src/sdk/models/shared/ticketingticket.ts
@@ -594,8 +586,6 @@ generatedFiles:
   - docs/sdk/models/operations/createcrmdealresponse.md
   - docs/sdk/models/operations/createcrmeventrequest.md
   - docs/sdk/models/operations/createcrmeventresponse.md
-  - docs/sdk/models/operations/createcrmfilerequest.md
-  - docs/sdk/models/operations/createcrmfileresponse.md
   - docs/sdk/models/operations/createcrmleadrequest.md
   - docs/sdk/models/operations/createcrmleadresponse.md
   - docs/sdk/models/operations/createcrmpipelinerequest.md
@@ -608,8 +598,6 @@ generatedFiles:
   - docs/sdk/models/operations/getcrmdealresponse.md
   - docs/sdk/models/operations/getcrmeventrequest.md
   - docs/sdk/models/operations/getcrmeventresponse.md
-  - docs/sdk/models/operations/getcrmfilerequest.md
-  - docs/sdk/models/operations/getcrmfileresponse.md
   - docs/sdk/models/operations/getcrmleadrequest.md
   - docs/sdk/models/operations/getcrmleadresponse.md
   - docs/sdk/models/operations/getcrmpipelinerequest.md
@@ -622,8 +610,6 @@ generatedFiles:
   - docs/sdk/models/operations/listcrmdealsresponse.md
   - docs/sdk/models/operations/listcrmeventsrequest.md
   - docs/sdk/models/operations/listcrmeventsresponse.md
-  - docs/sdk/models/operations/listcrmfilesrequest.md
-  - docs/sdk/models/operations/listcrmfilesresponse.md
   - docs/sdk/models/operations/listcrmleadsrequest.md
   - docs/sdk/models/operations/listcrmleadsresponse.md
   - docs/sdk/models/operations/listcrmpipelinesrequest.md
@@ -636,8 +622,6 @@ generatedFiles:
   - docs/sdk/models/operations/patchcrmdealresponse.md
   - docs/sdk/models/operations/patchcrmeventrequest.md
   - docs/sdk/models/operations/patchcrmeventresponse.md
-  - docs/sdk/models/operations/patchcrmfilerequest.md
-  - docs/sdk/models/operations/patchcrmfileresponse.md
   - docs/sdk/models/operations/patchcrmleadrequest.md
   - docs/sdk/models/operations/patchcrmleadresponse.md
   - docs/sdk/models/operations/patchcrmpipelinerequest.md
@@ -650,8 +634,6 @@ generatedFiles:
   - docs/sdk/models/operations/removecrmdealresponse.md
   - docs/sdk/models/operations/removecrmeventrequest.md
   - docs/sdk/models/operations/removecrmeventresponse.md
-  - docs/sdk/models/operations/removecrmfilerequest.md
-  - docs/sdk/models/operations/removecrmfileresponse.md
   - docs/sdk/models/operations/removecrmleadrequest.md
   - docs/sdk/models/operations/removecrmleadresponse.md
   - docs/sdk/models/operations/removecrmpipelinerequest.md
@@ -664,8 +646,6 @@ generatedFiles:
   - docs/sdk/models/operations/updatecrmdealresponse.md
   - docs/sdk/models/operations/updatecrmeventrequest.md
   - docs/sdk/models/operations/updatecrmeventresponse.md
-  - docs/sdk/models/operations/updatecrmfilerequest.md
-  - docs/sdk/models/operations/updatecrmfileresponse.md
   - docs/sdk/models/operations/updatecrmleadrequest.md
   - docs/sdk/models/operations/updatecrmleadresponse.md
   - docs/sdk/models/operations/updatecrmpipelinerequest.md
@@ -684,18 +664,6 @@ generatedFiles:
   - docs/sdk/models/operations/removeuccontactresponse.md
   - docs/sdk/models/operations/updateuccontactrequest.md
   - docs/sdk/models/operations/updateuccontactresponse.md
-  - docs/sdk/models/operations/createstoragefilerequest.md
-  - docs/sdk/models/operations/createstoragefileresponse.md
-  - docs/sdk/models/operations/getstoragefilerequest.md
-  - docs/sdk/models/operations/getstoragefileresponse.md
-  - docs/sdk/models/operations/liststoragefilesrequest.md
-  - docs/sdk/models/operations/liststoragefilesresponse.md
-  - docs/sdk/models/operations/patchstoragefilerequest.md
-  - docs/sdk/models/operations/patchstoragefileresponse.md
-  - docs/sdk/models/operations/removestoragefilerequest.md
-  - docs/sdk/models/operations/removestoragefileresponse.md
-  - docs/sdk/models/operations/updatestoragefilerequest.md
-  - docs/sdk/models/operations/updatestoragefileresponse.md
   - docs/sdk/models/operations/listenrichpeoplerequest.md
   - docs/sdk/models/operations/listenrichpeopleresponse.md
   - docs/sdk/models/operations/createhrisemployeerequest.md
@@ -756,6 +724,18 @@ generatedFiles:
   - docs/sdk/models/operations/removepassthroughresponse.md
   - docs/sdk/models/operations/updatepassthroughrequest.md
   - docs/sdk/models/operations/updatepassthroughresponse.md
+  - docs/sdk/models/operations/createstoragefilerequest.md
+  - docs/sdk/models/operations/createstoragefileresponse.md
+  - docs/sdk/models/operations/getstoragefilerequest.md
+  - docs/sdk/models/operations/getstoragefileresponse.md
+  - docs/sdk/models/operations/liststoragefilesrequest.md
+  - docs/sdk/models/operations/liststoragefilesresponse.md
+  - docs/sdk/models/operations/patchstoragefilerequest.md
+  - docs/sdk/models/operations/patchstoragefileresponse.md
+  - docs/sdk/models/operations/removestoragefilerequest.md
+  - docs/sdk/models/operations/removestoragefileresponse.md
+  - docs/sdk/models/operations/updatestoragefilerequest.md
+  - docs/sdk/models/operations/updatestoragefileresponse.md
   - docs/sdk/models/operations/createticketingnoterequest.md
   - docs/sdk/models/operations/createticketingnoteresponse.md
   - docs/sdk/models/operations/createticketingticketrequest.md
@@ -909,8 +889,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertycrmeventmeeting.md
   - docs/sdk/models/shared/propertycrmeventemail.md
   - docs/sdk/models/shared/propertycrmeventcall.md
-  - docs/sdk/models/shared/crmfile.md
-  - docs/sdk/models/shared/propertycrmfileraw.md
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/propertycrmleadraw.md
   - docs/sdk/models/shared/propertycrmleadaddress.md
@@ -927,11 +905,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertyuccontactraw.md
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/ucemail.md
-  - docs/sdk/models/shared/storagefiletype.md
-  - docs/sdk/models/shared/storagefile.md
-  - docs/sdk/models/shared/propertystoragefileraw.md
-  - docs/sdk/models/shared/storagepermission.md
-  - docs/sdk/models/shared/propertystoragepermissionroles.md
   - docs/sdk/models/shared/gender.md
   - docs/sdk/models/shared/enrichperson.md
   - docs/sdk/models/shared/enrichpersonworkhistory.md
@@ -960,6 +933,11 @@ generatedFiles:
   - docs/sdk/models/shared/marketingemailtype.md
   - docs/sdk/models/shared/marketingemail.md
   - docs/sdk/models/shared/undefined.md
+  - docs/sdk/models/shared/storagefiletype.md
+  - docs/sdk/models/shared/storagefile.md
+  - docs/sdk/models/shared/propertystoragefileraw.md
+  - docs/sdk/models/shared/storagepermission.md
+  - docs/sdk/models/shared/propertystoragepermissionroles.md
   - docs/sdk/models/shared/ticketingnote.md
   - docs/sdk/models/shared/propertyticketingnoteraw.md
   - docs/sdk/models/shared/ticketingticketstatus.md
@@ -1012,7 +990,6 @@ generatedFiles:
   - docs/sdks/contact/README.md
   - docs/sdks/deal/README.md
   - docs/sdks/event/README.md
-  - docs/sdks/file/README.md
   - docs/sdks/lead/README.md
   - docs/sdks/pipeline/README.md
   - docs/sdks/enrich/README.md
@@ -1025,6 +1002,7 @@ generatedFiles:
   - docs/sdks/member/README.md
   - docs/sdks/passthrough/README.md
   - docs/sdks/storage/README.md
+  - docs/sdks/file/README.md
   - docs/sdks/ticketing/README.md
   - docs/sdks/note/README.md
   - docs/sdks/ticket/README.md

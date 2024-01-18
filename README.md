@@ -284,42 +284,36 @@ run();
 * [createCrmContact](docs/sdks/crm/README.md#createcrmcontact) - Create a contact
 * [createCrmDeal](docs/sdks/crm/README.md#createcrmdeal) - Create a deal
 * [createCrmEvent](docs/sdks/crm/README.md#createcrmevent) - Create a event
-* [createCrmFile](docs/sdks/crm/README.md#createcrmfile) - Create a file
 * [createCrmLead](docs/sdks/crm/README.md#createcrmlead) - Create a lead
 * [createCrmPipeline](docs/sdks/crm/README.md#createcrmpipeline) - Create a pipeline
 * [getCrmCompany](docs/sdks/crm/README.md#getcrmcompany) - Retrieve a company
 * [getCrmContact](docs/sdks/crm/README.md#getcrmcontact) - Retrieve a contact
 * [getCrmDeal](docs/sdks/crm/README.md#getcrmdeal) - Retrieve a deal
 * [getCrmEvent](docs/sdks/crm/README.md#getcrmevent) - Retrieve a event
-* [getCrmFile](docs/sdks/crm/README.md#getcrmfile) - Retrieve a file
 * [getCrmLead](docs/sdks/crm/README.md#getcrmlead) - Retrieve a lead
 * [getCrmPipeline](docs/sdks/crm/README.md#getcrmpipeline) - Retrieve a pipeline
 * [listCrmCompanies](docs/sdks/crm/README.md#listcrmcompanies) - List all companies
 * [listCrmContacts](docs/sdks/crm/README.md#listcrmcontacts) - List all contacts
 * [listCrmDeals](docs/sdks/crm/README.md#listcrmdeals) - List all deals
 * [listCrmEvents](docs/sdks/crm/README.md#listcrmevents) - List all events
-* [listCrmFiles](docs/sdks/crm/README.md#listcrmfiles) - List all files
 * [listCrmLeads](docs/sdks/crm/README.md#listcrmleads) - List all leads
 * [listCrmPipelines](docs/sdks/crm/README.md#listcrmpipelines) - List all pipelines
 * [patchCrmCompany](docs/sdks/crm/README.md#patchcrmcompany) - Update a company
 * [patchCrmContact](docs/sdks/crm/README.md#patchcrmcontact) - Update a contact
 * [patchCrmDeal](docs/sdks/crm/README.md#patchcrmdeal) - Update a deal
 * [patchCrmEvent](docs/sdks/crm/README.md#patchcrmevent) - Update a event
-* [patchCrmFile](docs/sdks/crm/README.md#patchcrmfile) - Update a file
 * [patchCrmLead](docs/sdks/crm/README.md#patchcrmlead) - Update a lead
 * [patchCrmPipeline](docs/sdks/crm/README.md#patchcrmpipeline) - Update a pipeline
 * [removeCrmCompany](docs/sdks/crm/README.md#removecrmcompany) - Remove a company
 * [removeCrmContact](docs/sdks/crm/README.md#removecrmcontact) - Remove a contact
 * [removeCrmDeal](docs/sdks/crm/README.md#removecrmdeal) - Remove a deal
 * [removeCrmEvent](docs/sdks/crm/README.md#removecrmevent) - Remove a event
-* [removeCrmFile](docs/sdks/crm/README.md#removecrmfile) - Remove a file
 * [removeCrmLead](docs/sdks/crm/README.md#removecrmlead) - Remove a lead
 * [removeCrmPipeline](docs/sdks/crm/README.md#removecrmpipeline) - Remove a pipeline
 * [updateCrmCompany](docs/sdks/crm/README.md#updatecrmcompany) - Update a company
 * [updateCrmContact](docs/sdks/crm/README.md#updatecrmcontact) - Update a contact
 * [updateCrmDeal](docs/sdks/crm/README.md#updatecrmdeal) - Update a deal
 * [updateCrmEvent](docs/sdks/crm/README.md#updatecrmevent) - Update a event
-* [updateCrmFile](docs/sdks/crm/README.md#updatecrmfile) - Update a file
 * [updateCrmLead](docs/sdks/crm/README.md#updatecrmlead) - Update a lead
 * [updateCrmPipeline](docs/sdks/crm/README.md#updatecrmpipeline) - Update a pipeline
 
@@ -365,21 +359,6 @@ run();
 * [patchCrmEvent](docs/sdks/event/README.md#patchcrmevent) - Update a event
 * [removeCrmEvent](docs/sdks/event/README.md#removecrmevent) - Remove a event
 * [updateCrmEvent](docs/sdks/event/README.md#updatecrmevent) - Update a event
-
-### [file](docs/sdks/file/README.md)
-
-* [createCrmFile](docs/sdks/file/README.md#createcrmfile) - Create a file
-* [createStorageFile](docs/sdks/file/README.md#createstoragefile) - Create a file
-* [getCrmFile](docs/sdks/file/README.md#getcrmfile) - Retrieve a file
-* [getStorageFile](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
-* [listCrmFiles](docs/sdks/file/README.md#listcrmfiles) - List all files
-* [listStorageFiles](docs/sdks/file/README.md#liststoragefiles) - List all files
-* [patchCrmFile](docs/sdks/file/README.md#patchcrmfile) - Update a file
-* [patchStorageFile](docs/sdks/file/README.md#patchstoragefile) - Update a file
-* [removeCrmFile](docs/sdks/file/README.md#removecrmfile) - Remove a file
-* [removeStorageFile](docs/sdks/file/README.md#removestoragefile) - Remove a file
-* [updateCrmFile](docs/sdks/file/README.md#updatecrmfile) - Update a file
-* [updateStorageFile](docs/sdks/file/README.md#updatestoragefile) - Update a file
 
 ### [lead](docs/sdks/lead/README.md)
 
@@ -490,6 +469,15 @@ run();
 * [patchStorageFile](docs/sdks/storage/README.md#patchstoragefile) - Update a file
 * [removeStorageFile](docs/sdks/storage/README.md#removestoragefile) - Remove a file
 * [updateStorageFile](docs/sdks/storage/README.md#updatestoragefile) - Update a file
+
+### [file](docs/sdks/file/README.md)
+
+* [createStorageFile](docs/sdks/file/README.md#createstoragefile) - Create a file
+* [getStorageFile](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
+* [listStorageFiles](docs/sdks/file/README.md#liststoragefiles) - List all files
+* [patchStorageFile](docs/sdks/file/README.md#patchstoragefile) - Update a file
+* [removeStorageFile](docs/sdks/file/README.md#removestoragefile) - Remove a file
+* [updateStorageFile](docs/sdks/file/README.md#updatestoragefile) - Update a file
 
 ### [ticketing](docs/sdks/ticketing/README.md)
 

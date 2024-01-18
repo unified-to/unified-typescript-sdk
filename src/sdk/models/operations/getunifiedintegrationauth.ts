@@ -44,8 +44,6 @@ export enum Scopes {
     CrmEventWrite = "crm_event_write",
     CrmLeadRead = "crm_lead_read",
     CrmLeadWrite = "crm_lead_write",
-    CrmFileRead = "crm_file_read",
-    CrmFileWrite = "crm_file_write",
     CrmPipelineRead = "crm_pipeline_read",
     CrmPipelineWrite = "crm_pipeline_write",
     MartechListRead = "martech_list_read",

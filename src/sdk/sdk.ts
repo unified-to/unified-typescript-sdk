@@ -104,9 +104,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.12.4";
-    genVersion = "2.234.3";
-    userAgent = "speakeasy-sdk/typescript 0.12.4 2.234.3 1.0 unified-typescript-sdk";
+    sdkVersion = "0.12.5";
+    genVersion = "2.235.3";
+    userAgent = "speakeasy-sdk/typescript 0.12.5 2.235.3 1.0 unified-typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -139,7 +139,6 @@ export class UnifiedTo {
     public contact: Contact;
     public deal: Deal;
     public event: Event;
-    public file: File;
     public lead: Lead;
     public pipeline: Pipeline;
     public enrich: Enrich;
@@ -152,6 +151,7 @@ export class UnifiedTo {
     public member: Member;
     public passthrough: Passthrough;
     public storage: Storage;
+    public file: File;
     public ticketing: Ticketing;
     public note: Note;
     public ticket: Ticket;
@@ -205,7 +205,6 @@ export class UnifiedTo {
         this.contact = new Contact(this.sdkConfiguration);
         this.deal = new Deal(this.sdkConfiguration);
         this.event = new Event(this.sdkConfiguration);
-        this.file = new File(this.sdkConfiguration);
         this.lead = new Lead(this.sdkConfiguration);
         this.pipeline = new Pipeline(this.sdkConfiguration);
         this.enrich = new Enrich(this.sdkConfiguration);
@@ -218,6 +217,7 @@ export class UnifiedTo {
         this.member = new Member(this.sdkConfiguration);
         this.passthrough = new Passthrough(this.sdkConfiguration);
         this.storage = new Storage(this.sdkConfiguration);
+        this.file = new File(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);
         this.note = new Note(this.sdkConfiguration);
         this.ticket = new Ticket(this.sdkConfiguration);

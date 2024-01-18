@@ -24,7 +24,6 @@
 | `CrmContact`             | crm_contact              |
 | `CrmDeal`                | crm_deal                 |
 | `CrmEvent`               | crm_event                |
-| `CrmFile`                | crm_file                 |
 | `CrmLead`                | crm_lead                 |
 | `CrmPipeline`            | crm_pipeline             |
 | `HrisEmployee`           | hris_employee            |
