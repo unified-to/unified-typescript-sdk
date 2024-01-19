@@ -97,6 +97,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listSortByUpdatedAt?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_ticket_id" })
+    listTicketId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_updated_gte" })
     listUpdatedGte?: boolean;
 
