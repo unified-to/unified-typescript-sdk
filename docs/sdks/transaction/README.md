@@ -18,7 +18,6 @@ Create a transaction
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -29,16 +28,14 @@ async function run() {
 
   const res = await sdk.transaction.createAccountingTransaction({
     accountingTransaction: {
-      accountId: "string",
       id: "<ID>",
       lineItems: [
         {
+          accountId: "string",
           totalAmount: 4969.62,
         },
       ],
       raw: {},
-      totalAmount: 6267.93,
-      type: AccountingTransactionType.Spend,
     },
     connectionId: "string",
   });
@@ -173,7 +170,6 @@ Update a transaction
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -184,16 +180,14 @@ async function run() {
 
   const res = await sdk.transaction.patchAccountingTransaction({
     accountingTransaction: {
-      accountId: "string",
       id: "<ID>",
       lineItems: [
         {
+          accountId: "string",
           totalAmount: 5633.69,
         },
       ],
       raw: {},
-      totalAmount: 4558.63,
-      type: AccountingTransactionType.Spend,
     },
     connectionId: "string",
     id: "<ID>",
@@ -278,7 +272,6 @@ Update a transaction
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingTransactionType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -289,16 +282,14 @@ async function run() {
 
   const res = await sdk.transaction.updateAccountingTransaction({
     accountingTransaction: {
-      accountId: "string",
       id: "<ID>",
       lineItems: [
         {
+          accountId: "string",
           totalAmount: 6498.37,
         },
       ],
       raw: {},
-      totalAmount: 5659.17,
-      type: AccountingTransactionType.Spend,
     },
     connectionId: "string",
     id: "<ID>",

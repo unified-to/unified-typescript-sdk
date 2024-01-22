@@ -7,16 +7,7 @@ import { AccountingTransactionLineitem } from "./accountingtransactionlineitem";
 import { PropertyAccountingTransactionRaw } from "./propertyaccountingtransactionraw";
 import { Expose, Type } from "class-transformer";
 
-export enum AccountingTransactionType {
-    Receive = "RECEIVE",
-    Spend = "SPEND",
-}
-
 export class AccountingTransaction extends SpeakeasyBase {
-    @SpeakeasyMetadata()
-    @Expose({ name: "account_id" })
-    accountId: string;
-
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     createdAt?: string;
@@ -52,12 +43,8 @@ export class AccountingTransaction extends SpeakeasyBase {
     taxAmount?: number;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "total_amount" })
-    totalAmount: number;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "type" })
-    type: AccountingTransactionType;
+    @Expose({ name: "taxrate_id" })
+    taxrateId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

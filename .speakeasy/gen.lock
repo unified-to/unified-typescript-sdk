@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 87ac93817bed9842e1b2eb20030d9710
+  docChecksum: 7d5b03724fae01f8b6071020b3d073d9
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 0.12.7
-  configChecksum: a99cad38aeae670b54e1efb28078a1f5
+  generationVersion: 2.237.3
+  releaseVersion: 0.12.8
+  configChecksum: fd2aeba074b32570ab38fffea02f5dfa
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -825,7 +825,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertyaccountingpaymentraw.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/propertyaccountingtaxrateraw.md
-  - docs/sdk/models/shared/accountingtransactiontype.md
   - docs/sdk/models/shared/accountingtransaction.md
   - docs/sdk/models/shared/propertyaccountingtransactionraw.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md

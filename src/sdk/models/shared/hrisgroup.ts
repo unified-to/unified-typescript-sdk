@@ -27,10 +27,6 @@ export class HrisGroup extends SpeakeasyBase {
     description?: string;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "employee_ids" })
-    employeeIds?: string[];
-
-    @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
 
@@ -63,4 +59,8 @@ export class HrisGroup extends SpeakeasyBase {
     @Expose({ name: "updated_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     updatedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "user_ids" })
+    userIds?: string[];
 }

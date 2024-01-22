@@ -29,13 +29,13 @@ async function run() {
 
   const res = await sdk.group.createHrisGroup({
     hrisGroup: {
-      employeeIds: [
-        "string",
-      ],
       managerIds: [
         "string",
       ],
       raw: {},
+      userIds: [
+        "string",
+      ],
     },
     connectionId: "string",
   });
@@ -181,13 +181,13 @@ async function run() {
 
   const res = await sdk.group.patchHrisGroup({
     hrisGroup: {
-      employeeIds: [
-        "string",
-      ],
       managerIds: [
         "string",
       ],
       raw: {},
+      userIds: [
+        "string",
+      ],
     },
     connectionId: "string",
     id: "<ID>",
@@ -283,13 +283,13 @@ async function run() {
 
   const res = await sdk.group.updateHrisGroup({
     hrisGroup: {
-      employeeIds: [
-        "string",
-      ],
       managerIds: [
         "string",
       ],
       raw: {},
+      userIds: [
+        "string",
+      ],
     },
     connectionId: "string",
     id: "<ID>",

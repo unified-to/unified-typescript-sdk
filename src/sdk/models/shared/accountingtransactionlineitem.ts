@@ -7,6 +7,10 @@ import { Expose } from "class-transformer";
 
 export class AccountingTransactionLineitem extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "account_id" })
+    accountId: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "customer_id" })
     customerId?: string;
 

@@ -30,10 +30,6 @@ export class AccountingAccount extends SpeakeasyBase {
     balance?: number;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "bank_account_number" })
-    bankAccountNumber?: string;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
