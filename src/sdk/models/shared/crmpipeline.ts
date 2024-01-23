@@ -14,7 +14,7 @@ export class CrmPipeline extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "deal_probability" })
-    dealProbability?: boolean;
+    dealProbability?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "display_order" })
