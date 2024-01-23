@@ -5,9 +5,9 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AccountingEmail } from "./accountingemail";
 import { AccountingTelephone } from "./accountingtelephone";
-import { PropertyAccountingCustomerBillingAddress } from "./propertyaccountingcustomerbillingaddress";
-import { PropertyAccountingCustomerRaw } from "./propertyaccountingcustomerraw";
-import { PropertyAccountingCustomerShippingAddress } from "./propertyaccountingcustomershippingaddress";
+import { PropertyAccountingContactBillingAddress } from "./propertyaccountingcontactbillingaddress";
+import { PropertyAccountingContactRaw } from "./propertyaccountingcontactraw";
+import { PropertyAccountingContactShippingAddress } from "./propertyaccountingcontactshippingaddress";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum TaxExemption {
@@ -24,11 +24,11 @@ export enum TaxExemption {
     Other = "OTHER",
 }
 
-export class AccountingCustomer extends SpeakeasyBase {
+export class AccountingContact extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "billing_address" })
-    @Type(() => PropertyAccountingCustomerBillingAddress)
-    billingAddress?: PropertyAccountingCustomerBillingAddress;
+    @Type(() => PropertyAccountingContactBillingAddress)
+    billingAddress?: PropertyAccountingContactBillingAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
@@ -53,18 +53,26 @@ export class AccountingCustomer extends SpeakeasyBase {
     isActive?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "is_customer" })
+    isCustomer?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_supplier" })
+    isSupplier?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAccountingCustomerRaw)
-    raw?: PropertyAccountingCustomerRaw;
+    @Type(() => PropertyAccountingContactRaw)
+    raw?: PropertyAccountingContactRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "shipping_address" })
-    @Type(() => PropertyAccountingCustomerShippingAddress)
-    shippingAddress?: PropertyAccountingCustomerShippingAddress;
+    @Type(() => PropertyAccountingContactShippingAddress)
+    shippingAddress?: PropertyAccountingContactShippingAddress;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tax_exemption" })

@@ -1,4 +1,4 @@
-# RemoveAccountingCustomerResponse
+# RemoveAccountingContactResponse
 
 
 ## Fields

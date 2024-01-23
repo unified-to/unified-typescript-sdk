@@ -6,9 +6,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class PatchAccountingCustomerRequest extends SpeakeasyBase {
+export class PatchAccountingContactRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    accountingCustomer?: shared.AccountingCustomer;
+    accountingContact?: shared.AccountingContact;
 
     /**
      * ID of the connection
@@ -17,18 +17,18 @@ export class PatchAccountingCustomerRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
-     * ID of the Customer
+     * ID of the Contact
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
 }
 
-export class PatchAccountingCustomerResponse extends SpeakeasyBase {
+export class PatchAccountingContactResponse extends SpeakeasyBase {
     /**
      * Successful
      */
     @SpeakeasyMetadata()
-    accountingCustomer?: shared.AccountingCustomer;
+    accountingContact?: shared.AccountingContact;
 
     /**
      * HTTP response content type for this operation

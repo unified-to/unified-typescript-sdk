@@ -4,4 +4,4 @@
 
 import { SpeakeasyBase } from "../../../internal/utils";
 
-export class PropertyAccountingCustomerRaw extends SpeakeasyBase {}
+export class PropertyAccountingContactRaw extends SpeakeasyBase {}

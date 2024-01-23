@@ -14,10 +14,10 @@ export class ListAccountingPaymentsRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
-     * The customer ID to filter results
+     * The customer/supplier ID to filter results
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=customer_id" })
-    customerId?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
+    contactId?: string;
 
     /**
      * Comma-delimited fields to return

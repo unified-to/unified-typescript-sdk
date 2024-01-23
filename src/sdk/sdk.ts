@@ -104,9 +104,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.12.9";
+    sdkVersion = "0.12.10";
     genVersion = "2.237.3";
-    userAgent = "speakeasy-sdk/typescript 0.12.9 2.237.3 1.0 unified-typescript-sdk";
+    userAgent = "speakeasy-sdk/typescript 0.12.10 2.237.3 1.0 unified-typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -119,7 +119,7 @@ export class SDKConfiguration {
 export class UnifiedTo {
     public accounting: Accounting;
     public account: Account;
-    public customer: Customer;
+    public contact: Contact;
     public invoice: Invoice;
     public item: Item;
     public organization: Organization;
@@ -136,7 +136,6 @@ export class UnifiedTo {
     public scorecard: Scorecard;
     public crm: Crm;
     public company: Company;
-    public contact: Contact;
     public deal: Deal;
     public event: Event;
     public lead: Lead;
@@ -153,6 +152,7 @@ export class UnifiedTo {
     public storage: Storage;
     public file: File;
     public ticketing: Ticketing;
+    public customer: Customer;
     public note: Note;
     public ticket: Ticket;
     public uc: Uc;
@@ -185,7 +185,7 @@ export class UnifiedTo {
 
         this.accounting = new Accounting(this.sdkConfiguration);
         this.account = new Account(this.sdkConfiguration);
-        this.customer = new Customer(this.sdkConfiguration);
+        this.contact = new Contact(this.sdkConfiguration);
         this.invoice = new Invoice(this.sdkConfiguration);
         this.item = new Item(this.sdkConfiguration);
         this.organization = new Organization(this.sdkConfiguration);
@@ -202,7 +202,6 @@ export class UnifiedTo {
         this.scorecard = new Scorecard(this.sdkConfiguration);
         this.crm = new Crm(this.sdkConfiguration);
         this.company = new Company(this.sdkConfiguration);
-        this.contact = new Contact(this.sdkConfiguration);
         this.deal = new Deal(this.sdkConfiguration);
         this.event = new Event(this.sdkConfiguration);
         this.lead = new Lead(this.sdkConfiguration);
@@ -219,6 +218,7 @@ export class UnifiedTo {
         this.storage = new Storage(this.sdkConfiguration);
         this.file = new File(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);
+        this.customer = new Customer(this.sdkConfiguration);
         this.note = new Note(this.sdkConfiguration);
         this.ticket = new Ticket(this.sdkConfiguration);
         this.uc = new Uc(this.sdkConfiguration);

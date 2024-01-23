@@ -3,18 +3,85 @@
 
 ### Available Operations
 
+* [createAccountingContact](#createaccountingcontact) - Create a contact
 * [createCrmContact](#createcrmcontact) - Create a contact
 * [createUcContact](#createuccontact) - Create a contact
+* [getAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [getCrmContact](#getcrmcontact) - Retrieve a contact
 * [getUcContact](#getuccontact) - Retrieve a contact
+* [listAccountingContacts](#listaccountingcontacts) - List all contacts
 * [listCrmContacts](#listcrmcontacts) - List all contacts
 * [listUcContacts](#listuccontacts) - List all contacts
+* [patchAccountingContact](#patchaccountingcontact) - Update a contact
 * [patchCrmContact](#patchcrmcontact) - Update a contact
 * [patchUcContact](#patchuccontact) - Update a contact
+* [removeAccountingContact](#removeaccountingcontact) - Remove a contact
 * [removeCrmContact](#removecrmcontact) - Remove a contact
 * [removeUcContact](#removeuccontact) - Remove a contact
+* [updateAccountingContact](#updateaccountingcontact) - Update a contact
 * [updateCrmContact](#updatecrmcontact) - Update a contact
 * [updateUcContact](#updateuccontact) - Update a contact
+
+## createAccountingContact
+
+Create a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.createAccountingContact({
+    accountingContact: {
+      billingAddress: {},
+      emails: [
+        {
+          email: "Mac36@gmail.com",
+        },
+      ],
+      raw: {},
+      shippingAddress: {},
+      telephones: [
+        {
+          telephone: "string",
+        },
+      ],
+    },
+    connectionId: "string",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingContactRequest](../../sdk/models/operations/createaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.CreateAccountingContactResponse](../../sdk/models/operations/createaccountingcontactresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
 
 ## createCrmContact
 
@@ -139,6 +206,55 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## getAccountingContact
+
+Retrieve a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.getAccountingContact({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingContactRequest](../../sdk/models/operations/getaccountingcontactrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+
+
+### Response
+
+**Promise<[operations.GetAccountingContactResponse](../../sdk/models/operations/getaccountingcontactresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## getCrmContact
 
 Retrieve a contact
@@ -237,6 +353,54 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## listAccountingContacts
+
+List all contacts
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.listAccountingContacts({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingContactsRequest](../../sdk/models/operations/listaccountingcontactsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+
+
+### Response
+
+**Promise<[operations.ListAccountingContactsResponse](../../sdk/models/operations/listaccountingcontactsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## listCrmContacts
 
 List all contacts
@@ -327,6 +491,68 @@ run();
 ### Response
 
 **Promise<[operations.ListUcContactsResponse](../../sdk/models/operations/listuccontactsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## patchAccountingContact
+
+Update a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.patchAccountingContact({
+    accountingContact: {
+      billingAddress: {},
+      emails: [
+        {
+          email: "Sylvester.Kuhic@yahoo.com",
+        },
+      ],
+      raw: {},
+      shippingAddress: {},
+      telephones: [
+        {
+          telephone: "string",
+        },
+      ],
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingContactRequest](../../sdk/models/operations/patchaccountingcontactrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+
+
+### Response
+
+**Promise<[operations.PatchAccountingContactResponse](../../sdk/models/operations/patchaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -458,6 +684,52 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## removeAccountingContact
+
+Remove a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.removeAccountingContact({
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingContactRequest](../../sdk/models/operations/removeaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.RemoveAccountingContactResponse](../../sdk/models/operations/removeaccountingcontactresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## removeCrmContact
 
 Remove a contact
@@ -544,6 +816,68 @@ run();
 ### Response
 
 **Promise<[operations.RemoveUcContactResponse](../../sdk/models/operations/removeuccontactresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## updateAccountingContact
+
+Update a contact
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.contact.updateAccountingContact({
+    accountingContact: {
+      billingAddress: {},
+      emails: [
+        {
+          email: "Kaci_Hane@hotmail.com",
+        },
+      ],
+      raw: {},
+      shippingAddress: {},
+      telephones: [
+        {
+          telephone: "string",
+        },
+      ],
+    },
+    connectionId: "string",
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingContactRequest](../../sdk/models/operations/updateaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+
+
+### Response
+
+**Promise<[operations.UpdateAccountingContactResponse](../../sdk/models/operations/updateaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

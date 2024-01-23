@@ -3,7 +3,7 @@
  */
 
 export * from "./accountingaccount";
-export * from "./accountingcustomer";
+export * from "./accountingcontact";
 export * from "./accountingemail";
 export * from "./accountinginvoice";
 export * from "./accountingitem";
@@ -50,9 +50,9 @@ export * from "./marketingemail";
 export * from "./marketinglist";
 export * from "./marketingmember";
 export * from "./propertyaccountingaccountraw";
-export * from "./propertyaccountingcustomerbillingaddress";
-export * from "./propertyaccountingcustomerraw";
-export * from "./propertyaccountingcustomershippingaddress";
+export * from "./propertyaccountingcontactbillingaddress";
+export * from "./propertyaccountingcontactraw";
+export * from "./propertyaccountingcontactshippingaddress";
 export * from "./propertyaccountinginvoiceraw";
 export * from "./propertyaccountingitemraw";
 export * from "./propertyaccountinglineitemraw";

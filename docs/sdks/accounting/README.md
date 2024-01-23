@@ -4,14 +4,14 @@
 ### Available Operations
 
 * [createAccountingAccount](#createaccountingaccount) - Create an account
-* [createAccountingCustomer](#createaccountingcustomer) - Create a customer
+* [createAccountingContact](#createaccountingcontact) - Create a contact
 * [createAccountingInvoice](#createaccountinginvoice) - Create a invoice
 * [createAccountingItem](#createaccountingitem) - Create an item
 * [createAccountingPayment](#createaccountingpayment) - Create a payment
 * [createAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [createAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [getAccountingAccount](#getaccountingaccount) - Retrieve an account
-* [getAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
+* [getAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
 * [getAccountingItem](#getaccountingitem) - Retrieve an item
 * [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
@@ -19,7 +19,7 @@
 * [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [getAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [listAccountingAccounts](#listaccountingaccounts) - List all accounts
-* [listAccountingCustomers](#listaccountingcustomers) - List all customers
+* [listAccountingContacts](#listaccountingcontacts) - List all contacts
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [listAccountingItems](#listaccountingitems) - List all items
 * [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
@@ -27,21 +27,21 @@
 * [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [listAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [patchAccountingAccount](#patchaccountingaccount) - Update an account
-* [patchAccountingCustomer](#patchaccountingcustomer) - Update a customer
+* [patchAccountingContact](#patchaccountingcontact) - Update a contact
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
 * [patchAccountingItem](#patchaccountingitem) - Update an item
 * [patchAccountingPayment](#patchaccountingpayment) - Update a payment
 * [patchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [patchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [removeAccountingAccount](#removeaccountingaccount) - Remove an account
-* [removeAccountingCustomer](#removeaccountingcustomer) - Remove a customer
+* [removeAccountingContact](#removeaccountingcontact) - Remove a contact
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
 * [removeAccountingItem](#removeaccountingitem) - Remove an item
 * [removeAccountingPayment](#removeaccountingpayment) - Remove a payment
 * [removeAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [removeAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [updateAccountingAccount](#updateaccountingaccount) - Update an account
-* [updateAccountingCustomer](#updateaccountingcustomer) - Update a customer
+* [updateAccountingContact](#updateaccountingcontact) - Update a contact
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
 * [updateAccountingItem](#updateaccountingitem) - Update an item
 * [updateAccountingPayment](#updateaccountingpayment) - Update a payment
@@ -98,9 +98,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## createAccountingCustomer
+## createAccountingContact
 
-Create a customer
+Create a contact
 
 ### Example Usage
 
@@ -115,12 +115,12 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.createAccountingCustomer({
-    accountingCustomer: {
+  const res = await sdk.accounting.createAccountingContact({
+    accountingContact: {
       billingAddress: {},
       emails: [
         {
-          email: "Kevon_Schultz42@gmail.com",
+          email: "Mac36@gmail.com",
         },
       ],
       raw: {},
@@ -144,15 +144,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingCustomerRequest](../../sdk/models/operations/createaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingContactRequest](../../sdk/models/operations/createaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.CreateAccountingCustomerResponse](../../sdk/models/operations/createaccountingcustomerresponse.md)>**
+**Promise<[operations.CreateAccountingContactResponse](../../sdk/models/operations/createaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -465,9 +465,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## getAccountingCustomer
+## getAccountingContact
 
-Retrieve a customer
+Retrieve a contact
 
 ### Example Usage
 
@@ -481,7 +481,7 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.getAccountingCustomer({
+  const res = await sdk.accounting.getAccountingContact({
     connectionId: "string",
     fields: [
       "string",
@@ -499,15 +499,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingCustomerRequest](../../sdk/models/operations/getaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingContactRequest](../../sdk/models/operations/getaccountingcontactrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
 
-**Promise<[operations.GetAccountingCustomerResponse](../../sdk/models/operations/getaccountingcustomerresponse.md)>**
+**Promise<[operations.GetAccountingContactResponse](../../sdk/models/operations/getaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -856,9 +856,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## listAccountingCustomers
+## listAccountingContacts
 
-List all customers
+List all contacts
 
 ### Example Usage
 
@@ -872,7 +872,7 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.listAccountingCustomers({
+  const res = await sdk.accounting.listAccountingContacts({
     connectionId: "string",
     fields: [
       "string",
@@ -889,15 +889,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingCustomersRequest](../../sdk/models/operations/listaccountingcustomersrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingContactsRequest](../../sdk/models/operations/listaccountingcontactsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.ListAccountingCustomersResponse](../../sdk/models/operations/listaccountingcustomersresponse.md)>**
+**Promise<[operations.ListAccountingContactsResponse](../../sdk/models/operations/listaccountingcontactsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1243,9 +1243,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## patchAccountingCustomer
+## patchAccountingContact
 
-Update a customer
+Update a contact
 
 ### Example Usage
 
@@ -1260,12 +1260,12 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.patchAccountingCustomer({
-    accountingCustomer: {
+  const res = await sdk.accounting.patchAccountingContact({
+    accountingContact: {
       billingAddress: {},
       emails: [
         {
-          email: "Trever_Orn@hotmail.com",
+          email: "Sylvester.Kuhic@yahoo.com",
         },
       ],
       raw: {},
@@ -1290,15 +1290,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingCustomerRequest](../../sdk/models/operations/patchaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingContactRequest](../../sdk/models/operations/patchaccountingcontactrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
 
-**Promise<[operations.PatchAccountingCustomerResponse](../../sdk/models/operations/patchaccountingcustomerresponse.md)>**
+**Promise<[operations.PatchAccountingContactResponse](../../sdk/models/operations/patchaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1613,9 +1613,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## removeAccountingCustomer
+## removeAccountingContact
 
-Remove a customer
+Remove a contact
 
 ### Example Usage
 
@@ -1629,7 +1629,7 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.removeAccountingCustomer({
+  const res = await sdk.accounting.removeAccountingContact({
     connectionId: "string",
     id: "<ID>",
   });
@@ -1644,15 +1644,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingCustomerRequest](../../sdk/models/operations/removeaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingContactRequest](../../sdk/models/operations/removeaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.RemoveAccountingCustomerResponse](../../sdk/models/operations/removeaccountingcustomerresponse.md)>**
+**Promise<[operations.RemoveAccountingContactResponse](../../sdk/models/operations/removeaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1940,9 +1940,9 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## updateAccountingCustomer
+## updateAccountingContact
 
-Update a customer
+Update a contact
 
 ### Example Usage
 
@@ -1957,12 +1957,12 @@ async function run() {
     },
   });
 
-  const res = await sdk.accounting.updateAccountingCustomer({
-    accountingCustomer: {
+  const res = await sdk.accounting.updateAccountingContact({
+    accountingContact: {
       billingAddress: {},
       emails: [
         {
-          email: "Myrtice_Jacobi77@hotmail.com",
+          email: "Kaci_Hane@hotmail.com",
         },
       ],
       raw: {},
@@ -1987,15 +1987,15 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingCustomerRequest](../../sdk/models/operations/updateaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingContactRequest](../../sdk/models/operations/updateaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
 
-**Promise<[operations.UpdateAccountingCustomerResponse](../../sdk/models/operations/updateaccountingcustomerresponse.md)>**
+**Promise<[operations.UpdateAccountingContactResponse](../../sdk/models/operations/updateaccountingcontactresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

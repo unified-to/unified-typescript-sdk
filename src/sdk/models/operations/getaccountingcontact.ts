@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class GetAccountingCustomerRequest extends SpeakeasyBase {
+export class GetAccountingContactRequest extends SpeakeasyBase {
     /**
      * ID of the connection
      */
@@ -20,18 +20,18 @@ export class GetAccountingCustomerRequest extends SpeakeasyBase {
     fields?: string[];
 
     /**
-     * ID of the Customer
+     * ID of the Contact
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
 }
 
-export class GetAccountingCustomerResponse extends SpeakeasyBase {
+export class GetAccountingContactResponse extends SpeakeasyBase {
     /**
      * Successful
      */
     @SpeakeasyMetadata()
-    accountingCustomer?: shared.AccountingCustomer;
+    accountingContact?: shared.AccountingContact;
 
     /**
      * HTTP response content type for this operation

@@ -1,4 +1,4 @@
-# PropertyAccountingCustomerBillingAddress
+# PropertyAccountingContactBillingAddress
 
 
 ## Fields

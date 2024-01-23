@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
-export class PropertyAccountingCustomerShippingAddress extends SpeakeasyBase {
+export class PropertyAccountingContactShippingAddress extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address1" })
     address1?: string;

@@ -3,79 +3,12 @@
 
 ### Available Operations
 
-* [createAccountingCustomer](#createaccountingcustomer) - Create a customer
 * [createTicketingCustomer](#createticketingcustomer) - Create a customer
-* [getAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
 * [getTicketingCustomer](#getticketingcustomer) - Retrieve a customer
-* [listAccountingCustomers](#listaccountingcustomers) - List all customers
 * [listTicketingCustomers](#listticketingcustomers) - List all customers
-* [patchAccountingCustomer](#patchaccountingcustomer) - Update a customer
 * [patchTicketingCustomer](#patchticketingcustomer) - Update a customer
-* [removeAccountingCustomer](#removeaccountingcustomer) - Remove a customer
 * [removeTicketingCustomer](#removeticketingcustomer) - Remove a customer
-* [updateAccountingCustomer](#updateaccountingcustomer) - Update a customer
 * [updateTicketingCustomer](#updateticketingcustomer) - Update a customer
-
-## createAccountingCustomer
-
-Create a customer
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.createAccountingCustomer({
-    accountingCustomer: {
-      billingAddress: {},
-      emails: [
-        {
-          email: "Kevon_Schultz42@gmail.com",
-        },
-      ],
-      raw: {},
-      shippingAddress: {},
-      telephones: [
-        {
-          telephone: "string",
-        },
-      ],
-    },
-    connectionId: "string",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingCustomerRequest](../../sdk/models/operations/createaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.CreateAccountingCustomerResponse](../../sdk/models/operations/createaccountingcustomerresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
 
 ## createTicketingCustomer
 
@@ -139,55 +72,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## getAccountingCustomer
-
-Retrieve a customer
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.getAccountingCustomer({
-    connectionId: "string",
-    fields: [
-      "string",
-    ],
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingCustomerRequest](../../sdk/models/operations/getaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
-
-
-### Response
-
-**Promise<[operations.GetAccountingCustomerResponse](../../sdk/models/operations/getaccountingcustomerresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## getTicketingCustomer
 
 Retrieve a customer
@@ -237,54 +121,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## listAccountingCustomers
-
-List all customers
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.listAccountingCustomers({
-    connectionId: "string",
-    fields: [
-      "string",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingCustomersRequest](../../sdk/models/operations/listaccountingcustomersrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.ListAccountingCustomersResponse](../../sdk/models/operations/listaccountingcustomersresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## listTicketingCustomers
 
 List all customers
@@ -327,68 +163,6 @@ run();
 ### Response
 
 **Promise<[operations.ListTicketingCustomersResponse](../../sdk/models/operations/listticketingcustomersresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## patchAccountingCustomer
-
-Update a customer
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.patchAccountingCustomer({
-    accountingCustomer: {
-      billingAddress: {},
-      emails: [
-        {
-          email: "Trever_Orn@hotmail.com",
-        },
-      ],
-      raw: {},
-      shippingAddress: {},
-      telephones: [
-        {
-          telephone: "string",
-        },
-      ],
-    },
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingCustomerRequest](../../sdk/models/operations/patchaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
-
-
-### Response
-
-**Promise<[operations.PatchAccountingCustomerResponse](../../sdk/models/operations/patchaccountingcustomerresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -458,52 +232,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## removeAccountingCustomer
-
-Remove a customer
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.removeAccountingCustomer({
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingCustomerRequest](../../sdk/models/operations/removeaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.RemoveAccountingCustomerResponse](../../sdk/models/operations/removeaccountingcustomerresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## removeTicketingCustomer
 
 Remove a customer
@@ -544,68 +272,6 @@ run();
 ### Response
 
 **Promise<[operations.RemoveTicketingCustomerResponse](../../sdk/models/operations/removeticketingcustomerresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## updateAccountingCustomer
-
-Update a customer
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "unified-typescript-sdk/dist/sdk/models/shared";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.customer.updateAccountingCustomer({
-    accountingCustomer: {
-      billingAddress: {},
-      emails: [
-        {
-          email: "Myrtice_Jacobi77@hotmail.com",
-        },
-      ],
-      raw: {},
-      shippingAddress: {},
-      telephones: [
-        {
-          telephone: "string",
-        },
-      ],
-    },
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingCustomerRequest](../../sdk/models/operations/updateaccountingcustomerrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
-
-
-### Response
-
-**Promise<[operations.UpdateAccountingCustomerResponse](../../sdk/models/operations/updateaccountingcustomerresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

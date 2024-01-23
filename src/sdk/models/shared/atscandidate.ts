@@ -9,6 +9,15 @@ import { PropertyAtsCandidateAddress } from "./propertyatscandidateaddress";
 import { PropertyAtsCandidateRaw } from "./propertyatscandidateraw";
 import { Expose, Transform, Type } from "class-transformer";
 
+export enum Origin {
+    Agency = "AGENCY",
+    Applied = "APPLIED",
+    Internal = "INTERNAL",
+    Referred = "REFERRED",
+    Sourced = "SOURCED",
+    University = "UNIVERSITY",
+}
+
 export class AtsCandidate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "address" })
@@ -51,6 +60,10 @@ export class AtsCandidate extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "origin" })
+    origin?: Origin;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class ListAccountingCustomersRequest extends SpeakeasyBase {
+export class ListAccountingContactsRequest extends SpeakeasyBase {
     /**
      * ID of the connection
      */
@@ -38,18 +38,24 @@ export class ListAccountingCustomersRequest extends SpeakeasyBase {
     sort?: string;
 
     /**
+     * The type of contact to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
+    type?: string;
+
+    /**
      * Return only results whose updated date is equal or greater to this value
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 }
 
-export class ListAccountingCustomersResponse extends SpeakeasyBase {
+export class ListAccountingContactsResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.AccountingCustomer })
-    accountingCustomers?: shared.AccountingCustomer[];
+    @SpeakeasyMetadata({ elemType: shared.AccountingContact })
+    accountingContacts?: shared.AccountingContact[];
 
     /**
      * HTTP response content type for this operation

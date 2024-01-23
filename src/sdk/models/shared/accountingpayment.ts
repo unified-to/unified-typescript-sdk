@@ -12,6 +12,10 @@ export class AccountingPayment extends SpeakeasyBase {
     accountId?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "contact_id" })
+    contactId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
@@ -19,10 +23,6 @@ export class AccountingPayment extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "currency" })
     currency?: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "customer_id" })
-    customerId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })

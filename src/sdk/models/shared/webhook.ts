@@ -14,7 +14,7 @@ export enum Event {
 export enum ObjectType {
     AccountingAccount = "accounting_account",
     AccountingTransaction = "accounting_transaction",
-    AccountingCustomer = "accounting_customer",
+    AccountingContact = "accounting_contact",
     AccountingInvoice = "accounting_invoice",
     AccountingPayment = "accounting_payment",
     AccountingTaxrate = "accounting_taxrate",

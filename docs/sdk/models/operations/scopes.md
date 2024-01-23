@@ -12,8 +12,8 @@
 | `AccountingTransactionWrite` | accounting_transaction_write |
 | `AccountingInvoiceRead`      | accounting_invoice_read      |
 | `AccountingInvoiceWrite`     | accounting_invoice_write     |
-| `AccountingCustomerRead`     | accounting_customer_read     |
-| `AccountingCustomerWrite`    | accounting_customer_write    |
+| `AccountingContactRead`      | accounting_contact_read      |
+| `AccountingContactWrite`     | accounting_contact_write     |
 | `AccountingPaymentRead`      | accounting_payment_read      |
 | `AccountingPaymentWrite`     | accounting_payment_write     |
 | `AccountingTaxrateRead`      | accounting_taxrate_read      |

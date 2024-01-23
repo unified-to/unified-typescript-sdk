@@ -98,7 +98,7 @@ Create a candidate
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsEmailType, AtsTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -1063,7 +1063,7 @@ Update a candidate
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsEmailType, AtsTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -1679,7 +1679,7 @@ Update a candidate
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsEmailType, AtsTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
