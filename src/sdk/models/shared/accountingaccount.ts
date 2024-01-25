@@ -51,6 +51,10 @@ export class AccountingAccount extends SpeakeasyBase {
     id?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "is_payable" })
+    isPayable?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name: string;
 
