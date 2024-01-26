@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5160b83a94b66b2e0ad89d7f5d90cf8c
+  docChecksum: e6d7bb30e178bd0903f2f07c8ad4601f
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.239.4
-  releaseVersion: 0.12.11
-  configChecksum: 07c71fa042f0be3632feb081273a5055
+  releaseVersion: 0.12.12
+  configChecksum: 7af69b572b81878748305d86b7452d30
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -291,7 +291,6 @@ generatedFiles:
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/propertyaccountinginvoiceraw.ts
   - src/sdk/models/shared/accountinglineitem.ts
-  - src/sdk/models/shared/propertyaccountinglineitemraw.ts
   - src/sdk/models/shared/accountingitem.ts
   - src/sdk/models/shared/propertyaccountingitemraw.ts
   - src/sdk/models/shared/accountingpayment.ts
@@ -818,7 +817,6 @@ generatedFiles:
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/propertyaccountinginvoiceraw.md
   - docs/sdk/models/shared/accountinglineitem.md
-  - docs/sdk/models/shared/propertyaccountinglineitemraw.md
   - docs/sdk/models/shared/accountingitem.md
   - docs/sdk/models/shared/propertyaccountingitemraw.md
   - docs/sdk/models/shared/accountingpayment.md

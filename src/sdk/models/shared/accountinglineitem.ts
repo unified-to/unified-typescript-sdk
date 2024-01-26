@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyAccountingLineitemRaw } from "./propertyaccountinglineitemraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export class AccountingLineitem extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -43,11 +42,6 @@ export class AccountingLineitem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "notes" })
     notes?: string;
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "raw" })
-    @Type(() => PropertyAccountingLineitemRaw)
-    raw?: PropertyAccountingLineitemRaw;
 
     @SpeakeasyMetadata()
     @Expose({ name: "refunded_amount" })
