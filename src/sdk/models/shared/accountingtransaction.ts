@@ -28,6 +28,14 @@ export class AccountingTransaction extends SpeakeasyBase {
     @Type(() => AccountingTransactionLineitem)
     lineItems?: AccountingTransactionLineitem[];
 
+    /**
+     * new field name
+     */
+    @SpeakeasyMetadata({ elemType: AccountingTransactionLineitem })
+    @Expose({ name: "lineitems" })
+    @Type(() => AccountingTransactionLineitem)
+    lineitems?: AccountingTransactionLineitem[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;

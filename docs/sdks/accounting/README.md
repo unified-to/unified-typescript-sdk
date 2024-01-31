@@ -397,6 +397,12 @@ async function run() {
           totalAmount: 4969.62,
         },
       ],
+      lineitems: [
+        {
+          accountId: "string",
+          totalAmount: 6267.93,
+        },
+      ],
       raw: {
         "key": "string",
       },
@@ -1560,6 +1566,12 @@ async function run() {
           totalAmount: 5633.69,
         },
       ],
+      lineitems: [
+        {
+          accountId: "string",
+          totalAmount: 4558.63,
+        },
+      ],
       raw: {
         "key": "string",
       },
@@ -2268,6 +2280,12 @@ async function run() {
         {
           accountId: "string",
           totalAmount: 6498.37,
+        },
+      ],
+      lineitems: [
+        {
+          accountId: "string",
+          totalAmount: 5659.17,
         },
       ],
       raw: {

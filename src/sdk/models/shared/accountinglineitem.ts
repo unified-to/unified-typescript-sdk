@@ -44,6 +44,10 @@ export class AccountingLineitem extends SpeakeasyBase {
     notes?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "refund_amount" })
+    refundAmount?: number;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "refunded_amount" })
     refundedAmount?: number;
 
