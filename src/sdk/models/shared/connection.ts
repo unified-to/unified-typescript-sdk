@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyConnectionAuth } from "./propertyconnectionauth";
 import { PropertyConnectionCategories } from "./propertyconnectioncategories";
 import { PropertyConnectionPermissions } from "./propertyconnectionpermissions";
-import { Undefined } from "./undefined";
 import { Expose, Transform, Type } from "class-transformer";
 
 /**
@@ -37,10 +36,9 @@ export class Connection extends SpeakeasyBase {
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
 
-    @SpeakeasyMetadata({ elemType: Undefined })
+    @SpeakeasyMetadata()
     @Expose({ name: "cursors_cache" })
-    @Type(() => Undefined)
-    cursorsCache?: Undefined[];
+    cursorsCache?: Record<string, any>[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "environment" })

@@ -38,7 +38,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -201,7 +203,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -314,7 +318,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

@@ -30,7 +30,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 1719.1,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -177,7 +179,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 5991.47,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -274,7 +278,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 3382.78,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

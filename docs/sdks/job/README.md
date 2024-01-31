@@ -46,7 +46,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],
@@ -212,7 +214,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],
@@ -328,7 +332,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],

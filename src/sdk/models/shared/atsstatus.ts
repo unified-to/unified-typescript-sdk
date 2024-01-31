@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyAtsStatusRaw } from "./propertyatsstatusraw";
-import { Expose, Type } from "class-transformer";
+import { Expose } from "class-transformer";
 
 export enum AtsStatusStatus {
     New = "NEW",
@@ -37,8 +36,7 @@ export class AtsStatus extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAtsStatusRaw)
-    raw?: PropertyAtsStatusRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })

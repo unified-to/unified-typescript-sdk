@@ -32,7 +32,9 @@ async function run() {
       managerIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -184,7 +186,9 @@ async function run() {
       managerIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -286,7 +290,9 @@ async function run() {
       managerIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],

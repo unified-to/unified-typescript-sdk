@@ -29,7 +29,9 @@ async function run() {
   const res = await sdk.item.createAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -175,7 +177,9 @@ async function run() {
   const res = await sdk.item.patchAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -271,7 +275,9 @@ async function run() {
   const res = await sdk.item.updateAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

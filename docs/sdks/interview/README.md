@@ -29,7 +29,9 @@ async function run() {
 
   const res = await sdk.interview.createAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -178,7 +180,9 @@ async function run() {
 
   const res = await sdk.interview.patchAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -277,7 +281,9 @@ async function run() {
 
   const res = await sdk.interview.updateAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],

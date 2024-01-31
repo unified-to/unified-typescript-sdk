@@ -36,7 +36,9 @@ async function run() {
           ],
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -189,7 +191,9 @@ async function run() {
           ],
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -292,7 +296,9 @@ async function run() {
           ],
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

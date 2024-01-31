@@ -26,9 +26,11 @@ async function run() {
   });
 
   const res = await sdk.passthrough.createPassthrough({
+    requestBody: {
+      "key": "string",
+    },
     connectionId: "string",
     path: "/etc/periodic",
-    undefined: {},
   });
 
   if (res.statusCode == 200) {
@@ -119,9 +121,11 @@ async function run() {
   });
 
   const res = await sdk.passthrough.patchPassthrough({
+    requestBody: {
+      "key": "string",
+    },
     connectionId: "string",
     path: "/mnt",
-    undefined: {},
   });
 
   if (res.statusCode == 200) {
@@ -212,9 +216,11 @@ async function run() {
   });
 
   const res = await sdk.passthrough.updatePassthrough({
+    requestBody: {
+      "key": "string",
+    },
     connectionId: "string",
     path: "/dev",
-    undefined: {},
   });
 
   if (res.statusCode == 200) {

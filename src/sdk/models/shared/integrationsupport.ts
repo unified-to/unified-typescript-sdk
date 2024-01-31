@@ -3,10 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyIntegrationSupportInboundFields } from "./propertyintegrationsupportinboundfields";
-import { PropertyIntegrationSupportOutboundFields } from "./propertyintegrationsupportoutboundfields";
 import { PropertyIntegrationSupportWebhookEvents } from "./propertyintegrationsupportwebhookevents";
-import { Expose, Type } from "class-transformer";
+import { Expose } from "class-transformer";
 
 export enum WebhookType {
     Virtual = "virtual",
@@ -17,8 +15,7 @@ export enum WebhookType {
 export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "inbound_fields" })
-    @Type(() => PropertyIntegrationSupportInboundFields)
-    inboundFields?: PropertyIntegrationSupportInboundFields;
+    inboundFields?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_account_id" })
@@ -114,8 +111,7 @@ export class IntegrationSupport extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "outbound_fields" })
-    @Type(() => PropertyIntegrationSupportOutboundFields)
-    outboundFields?: PropertyIntegrationSupportOutboundFields;
+    outboundFields?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_domain" })

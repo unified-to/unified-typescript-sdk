@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyCrmDealRaw } from "./propertycrmdealraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 /**
  * A deal represents an opportunity with companies and/or contacts
@@ -53,8 +52,7 @@ export class CrmDeal extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyCrmDealRaw)
-    raw?: PropertyCrmDealRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "source" })

@@ -68,7 +68,9 @@ async function run() {
   const res = await sdk.accounting.createAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -123,7 +125,9 @@ async function run() {
           email: "Mac36@gmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -183,7 +187,9 @@ async function run() {
           totalAmount: 6736.06,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -232,7 +238,9 @@ async function run() {
   const res = await sdk.accounting.createAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -280,7 +288,9 @@ async function run() {
 
   const res = await sdk.accounting.createAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -330,7 +340,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 1719.1,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -385,7 +397,9 @@ async function run() {
           totalAmount: 4969.62,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -1211,7 +1225,9 @@ async function run() {
   const res = await sdk.accounting.patchAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1267,7 +1283,9 @@ async function run() {
           email: "Sylvester.Kuhic@yahoo.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -1328,7 +1346,9 @@ async function run() {
           totalAmount: 7374.1,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1378,7 +1398,9 @@ async function run() {
   const res = await sdk.accounting.patchAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1427,7 +1449,9 @@ async function run() {
 
   const res = await sdk.accounting.patchAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1478,7 +1502,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 5991.47,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1534,7 +1560,9 @@ async function run() {
           totalAmount: 5633.69,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1907,7 +1935,9 @@ async function run() {
   const res = await sdk.accounting.updateAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1963,7 +1993,9 @@ async function run() {
           email: "Kaci_Hane@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -2024,7 +2056,9 @@ async function run() {
           totalAmount: 6974.28,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -2074,7 +2108,9 @@ async function run() {
   const res = await sdk.accounting.updateAccountingItem({
     accountingItem: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -2123,7 +2159,9 @@ async function run() {
 
   const res = await sdk.accounting.updateAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -2174,7 +2212,9 @@ async function run() {
     accountingTaxrate: {
       name: "string",
       rate: 3382.78,
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -2230,7 +2270,9 @@ async function run() {
           totalAmount: 6498.37,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

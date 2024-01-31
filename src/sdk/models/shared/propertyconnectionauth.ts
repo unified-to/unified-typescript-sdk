@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyPropertyConnectionAuthMeta } from "./propertypropertyconnectionauthmeta";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 /**
  * An authentication object that represents a specific authorized user's connection to an integration.
@@ -61,8 +60,7 @@ export class PropertyConnectionAuth extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => PropertyPropertyConnectionAuthMeta)
-    meta?: PropertyPropertyConnectionAuthMeta;
+    meta?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })

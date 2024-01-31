@@ -34,7 +34,9 @@ async function run() {
 
   const res = await sdk.martech.createMartechList({
     marketingList: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -91,7 +93,9 @@ async function run() {
       listIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -336,7 +340,9 @@ async function run() {
 
   const res = await sdk.martech.patchMartechList({
     marketingList: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -394,7 +400,9 @@ async function run() {
       listIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -538,7 +546,9 @@ async function run() {
 
   const res = await sdk.martech.updateMartechList({
     marketingList: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -596,7 +606,9 @@ async function run() {
       listIds: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

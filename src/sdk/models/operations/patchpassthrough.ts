@@ -3,10 +3,15 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class PatchPassthroughRequest extends SpeakeasyBase {
+    /**
+     * integration-specific payload
+     */
+    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
+    requestBody?: Record<string, any>;
+
     /**
      * ID of the connection
      */
@@ -15,12 +20,6 @@ export class PatchPassthroughRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=path" })
     path: string;
-
-    /**
-     * integration-specific payload
-     */
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    undefined?: shared.Undefined;
 }
 
 export class PatchPassthroughResponse extends SpeakeasyBase {
@@ -46,5 +45,5 @@ export class PatchPassthroughResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    undefined?: shared.Undefined;
+    undefined?: Record<string, any>;
 }

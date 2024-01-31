@@ -69,7 +69,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -139,7 +141,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -192,7 +196,9 @@ async function run() {
 
   const res = await sdk.crm.createCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -270,7 +276,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",
@@ -324,7 +332,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -377,7 +387,9 @@ async function run() {
 
   const res = await sdk.crm.createCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -1018,7 +1030,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1089,7 +1103,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -1143,7 +1159,9 @@ async function run() {
 
   const res = await sdk.crm.patchCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1222,7 +1240,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",
@@ -1277,7 +1297,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -1331,7 +1353,9 @@ async function run() {
 
   const res = await sdk.crm.patchCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1667,7 +1691,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1738,7 +1764,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -1792,7 +1820,9 @@ async function run() {
 
   const res = await sdk.crm.updateCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1871,7 +1901,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",
@@ -1926,7 +1958,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -1980,7 +2014,9 @@ async function run() {
 
   const res = await sdk.crm.updateCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

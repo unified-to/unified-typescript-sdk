@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyStorageFileRaw } from "./propertystoragefileraw";
 import { StoragePermission } from "./storagepermission";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -49,8 +48,7 @@ export class StorageFile extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyStorageFileRaw)
-    raw?: PropertyStorageFileRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "size" })

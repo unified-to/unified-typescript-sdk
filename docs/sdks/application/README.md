@@ -29,7 +29,9 @@ async function run() {
 
   const res = await sdk.application.createAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -175,7 +177,9 @@ async function run() {
 
   const res = await sdk.application.patchAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -271,7 +275,9 @@ async function run() {
 
   const res = await sdk.application.updateAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

@@ -29,7 +29,9 @@ async function run() {
 
   const res = await sdk.ticket.createTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -178,7 +180,9 @@ async function run() {
 
   const res = await sdk.ticket.patchTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -277,7 +281,9 @@ async function run() {
 
   const res = await sdk.ticket.updateTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

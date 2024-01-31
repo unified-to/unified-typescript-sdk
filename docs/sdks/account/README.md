@@ -30,7 +30,9 @@ async function run() {
   const res = await sdk.account.createAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -177,7 +179,9 @@ async function run() {
   const res = await sdk.account.patchAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -274,7 +278,9 @@ async function run() {
   const res = await sdk.account.updateAccountingAccount({
     accountingAccount: {
       name: "string",
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

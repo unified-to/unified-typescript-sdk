@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyAtsDocumentRaw } from "./propertyatsdocumentraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum AtsDocumentType {
     Resume = "RESUME",
@@ -51,8 +50,7 @@ export class AtsDocument extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAtsDocumentRaw)
-    raw?: PropertyAtsDocumentRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

@@ -28,7 +28,9 @@ async function run() {
 
   const res = await sdk.pipeline.createCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -173,7 +175,9 @@ async function run() {
 
   const res = await sdk.pipeline.patchCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -268,7 +272,9 @@ async function run() {
 
   const res = await sdk.pipeline.updateCrmPipeline({
     crmPipeline: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

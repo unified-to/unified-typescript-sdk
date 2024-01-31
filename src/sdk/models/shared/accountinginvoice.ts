@@ -4,7 +4,6 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AccountingLineitem } from "./accountinglineitem";
-import { PropertyAccountingInvoiceRaw } from "./propertyaccountinginvoiceraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum AccountingInvoiceStatus {
@@ -73,8 +72,7 @@ export class AccountingInvoice extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAccountingInvoiceRaw)
-    raw?: PropertyAccountingInvoiceRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "refund_amount" })

@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AtsEmail } from "./atsemail";
 import { AtsTelephone } from "./atstelephone";
 import { PropertyAtsCandidateAddress } from "./propertyatscandidateaddress";
-import { PropertyAtsCandidateRaw } from "./propertyatscandidateraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum Origin {
@@ -67,8 +66,7 @@ export class AtsCandidate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAtsCandidateRaw)
-    raw?: PropertyAtsCandidateRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tags" })

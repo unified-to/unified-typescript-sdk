@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CrmEmail } from "./crmemail";
 import { CrmTelephone } from "./crmtelephone";
 import { PropertyCrmCompanyAddress } from "./propertycrmcompanyaddress";
-import { PropertyCrmCompanyRaw } from "./propertycrmcompanyraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 /**
@@ -68,8 +67,7 @@ export class CrmCompany extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyCrmCompanyRaw)
-    raw?: PropertyCrmCompanyRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tags" })

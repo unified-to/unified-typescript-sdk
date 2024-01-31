@@ -7,7 +7,6 @@ import { EnrichEmail } from "./enrichemail";
 import { EnrichPersonWorkHistory } from "./enrichpersonworkhistory";
 import { EnrichTelephone } from "./enrichtelephone";
 import { PropertyEnrichPersonAddress } from "./propertyenrichpersonaddress";
-import { PropertyEnrichPersonRaw } from "./propertyenrichpersonraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum Gender {
@@ -93,8 +92,7 @@ export class EnrichPerson extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyEnrichPersonRaw)
-    raw?: PropertyEnrichPersonRaw;
+    raw?: Record<string, any>;
 
     /**
      * An array of telephones for this person

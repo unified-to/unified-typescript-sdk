@@ -28,7 +28,9 @@ async function run() {
 
   const res = await sdk.deal.createCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -176,7 +178,9 @@ async function run() {
 
   const res = await sdk.deal.patchCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -274,7 +278,9 @@ async function run() {
 
   const res = await sdk.deal.updateCrmDeal({
     crmDeal: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

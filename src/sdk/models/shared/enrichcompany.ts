@@ -5,7 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { EnrichTelephone } from "./enrichtelephone";
 import { PropertyEnrichCompanyAddress } from "./propertyenrichcompanyaddress";
-import { PropertyEnrichCompanyRaw } from "./propertyenrichcompanyraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 /**
@@ -86,8 +85,7 @@ export class EnrichCompany extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyEnrichCompanyRaw)
-    raw?: PropertyEnrichCompanyRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "revenue" })

@@ -34,7 +34,9 @@ async function run() {
           email: "Guadalupe78@yahoo.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -193,7 +195,9 @@ async function run() {
           email: "Raymundo93@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -302,7 +306,9 @@ async function run() {
           email: "Mohamed.Friesen@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

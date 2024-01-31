@@ -4,7 +4,6 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { MarketingEmail } from "./marketingemail";
-import { PropertyMarketingMemberRaw } from "./propertymarketingmemberraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 /**
@@ -44,8 +43,7 @@ export class MarketingMember extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyMarketingMemberRaw)
-    raw?: PropertyMarketingMemberRaw;
+    raw?: Record<string, any>;
 
     /**
      * An array of tags associated with this member

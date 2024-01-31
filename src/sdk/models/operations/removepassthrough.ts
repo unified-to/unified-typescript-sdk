@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class RemovePassthroughRequest extends SpeakeasyBase {
@@ -40,5 +39,5 @@ export class RemovePassthroughResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    undefined?: shared.Undefined;
+    undefined?: Record<string, any>;
 }

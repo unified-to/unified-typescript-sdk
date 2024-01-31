@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyUcContactRaw } from "./propertyuccontactraw";
 import { UcEmail } from "./ucemail";
 import { UcTelephone } from "./uctelephone";
 import { Expose, Transform, Type } from "class-transformer";
@@ -42,8 +41,7 @@ export class UcContact extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyUcContactRaw)
-    raw?: PropertyUcContactRaw;
+    raw?: Record<string, any>;
 
     /**
      * An array of telephones for this contact

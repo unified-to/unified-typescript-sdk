@@ -13,7 +13,9 @@ async function run() {
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
             name: "string",
-            raw: {},
+            raw: {
+                key: "string",
+            },
         },
         connectionId: "string",
     });

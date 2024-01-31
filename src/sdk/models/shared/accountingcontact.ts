@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AccountingEmail } from "./accountingemail";
 import { AccountingTelephone } from "./accountingtelephone";
 import { PropertyAccountingContactBillingAddress } from "./propertyaccountingcontactbillingaddress";
-import { PropertyAccountingContactRaw } from "./propertyaccountingcontactraw";
 import { PropertyAccountingContactShippingAddress } from "./propertyaccountingcontactshippingaddress";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -66,8 +65,7 @@ export class AccountingContact extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAccountingContactRaw)
-    raw?: PropertyAccountingContactRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "shipping_address" })

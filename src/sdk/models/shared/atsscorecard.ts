@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyAtsScorecardRaw } from "./propertyatsscorecardraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum Recommendation {
     DefinitelyNo = "DEFINITELY_NO",
@@ -49,8 +48,7 @@ export class AtsScorecard extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAtsScorecardRaw)
-    raw?: PropertyAtsScorecardRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "recommendation" })

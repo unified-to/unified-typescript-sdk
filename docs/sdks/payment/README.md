@@ -28,7 +28,9 @@ async function run() {
 
   const res = await sdk.payment.createAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -173,7 +175,9 @@ async function run() {
 
   const res = await sdk.payment.patchAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -268,7 +272,9 @@ async function run() {
 
   const res = await sdk.payment.updateAccountingPayment({
     accountingPayment: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { HrisEmail } from "./hrisemail";
 import { HrisTelephone } from "./hristelephone";
 import { PropertyHrisEmployeeAddress } from "./propertyhrisemployeeaddress";
-import { PropertyHrisEmployeeRaw } from "./propertyhrisemployeeraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum EmploymentStatus {
@@ -124,8 +123,7 @@ export class HrisEmployee extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyHrisEmployeeRaw)
-    raw?: PropertyHrisEmployeeRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata({ elemType: HrisTelephone })
     @Expose({ name: "telephones" })

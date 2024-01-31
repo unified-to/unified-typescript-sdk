@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyWebhookMeta } from "./propertywebhookmeta";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum Event {
     Updated = "updated",
@@ -106,8 +105,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "meta" })
-    @Type(() => PropertyWebhookMeta)
-    meta?: PropertyWebhookMeta;
+    meta?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "object_type" })

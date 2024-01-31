@@ -6,7 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CrmEmail } from "./crmemail";
 import { CrmTelephone } from "./crmtelephone";
 import { PropertyCrmLeadAddress } from "./propertycrmleadaddress";
-import { PropertyCrmLeadRaw } from "./propertycrmleadraw";
 import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmLead extends SpeakeasyBase {
@@ -55,8 +54,7 @@ export class CrmLead extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyCrmLeadRaw)
-    raw?: PropertyCrmLeadRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "source" })

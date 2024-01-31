@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyHrisGroupRaw } from "./propertyhrisgroupraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum HrisGroupType {
     Team = "TEAM",
@@ -48,8 +47,7 @@ export class HrisGroup extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyHrisGroupRaw)
-    raw?: PropertyHrisGroupRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

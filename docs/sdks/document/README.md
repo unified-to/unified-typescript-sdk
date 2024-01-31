@@ -29,7 +29,9 @@ async function run() {
 
   const res = await sdk.document.createAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -175,7 +177,9 @@ async function run() {
 
   const res = await sdk.document.patchAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -271,7 +275,9 @@ async function run() {
 
   const res = await sdk.document.updateAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

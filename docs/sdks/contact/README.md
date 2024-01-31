@@ -47,7 +47,9 @@ async function run() {
           email: "Mac36@gmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -112,7 +114,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -171,7 +175,9 @@ async function run() {
           email: "Dulce_Becker30@yahoo.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -522,7 +528,9 @@ async function run() {
           email: "Sylvester.Kuhic@yahoo.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -588,7 +596,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -648,7 +658,9 @@ async function run() {
           email: "Norene_Boehm97@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -847,7 +859,9 @@ async function run() {
           email: "Kaci_Hane@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       shippingAddress: {},
       telephones: [
         {
@@ -913,7 +927,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -973,7 +989,9 @@ async function run() {
           email: "Kianna.Witting90@gmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",

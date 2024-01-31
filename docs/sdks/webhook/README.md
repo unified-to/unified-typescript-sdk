@@ -33,7 +33,9 @@ async function run() {
       event: Event.Created,
       hookUrl: "string",
       interval: 188.12,
-      meta: {},
+      meta: {
+        "key": "string",
+      },
       objectType: ObjectType.CrmCompany,
       runs: [
         "string",

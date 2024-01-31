@@ -40,7 +40,7 @@ export class Passthrough {
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "undefined", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -89,7 +89,7 @@ export class Passthrough {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.undefined = utils.objectToClass(JSON.parse(decodedRes), shared.Undefined);
+                    res.undefined = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -170,7 +170,7 @@ export class Passthrough {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.undefined = utils.objectToClass(JSON.parse(decodedRes), shared.Undefined);
+                    res.undefined = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -217,7 +217,7 @@ export class Passthrough {
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "undefined", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -266,7 +266,7 @@ export class Passthrough {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.undefined = utils.objectToClass(JSON.parse(decodedRes), shared.Undefined);
+                    res.undefined = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -347,7 +347,7 @@ export class Passthrough {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.undefined = utils.objectToClass(JSON.parse(decodedRes), shared.Undefined);
+                    res.undefined = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -394,7 +394,7 @@ export class Passthrough {
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "undefined", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "requestBody", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -443,7 +443,7 @@ export class Passthrough {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.undefined = utils.objectToClass(JSON.parse(decodedRes), shared.Undefined);
+                    res.undefined = utils.objectToClass(JSON.parse(decodedRes));
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,

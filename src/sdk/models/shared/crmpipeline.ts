@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyCrmPipelineRaw } from "./propertycrmpipelineraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export class CrmPipeline extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -34,8 +33,7 @@ export class CrmPipeline extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyCrmPipelineRaw)
-    raw?: PropertyCrmPipelineRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

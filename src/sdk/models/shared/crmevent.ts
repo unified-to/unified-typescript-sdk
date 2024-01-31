@@ -7,7 +7,6 @@ import { PropertyCrmEventCall } from "./propertycrmeventcall";
 import { PropertyCrmEventEmail } from "./propertycrmeventemail";
 import { PropertyCrmEventMeeting } from "./propertycrmeventmeeting";
 import { PropertyCrmEventNote } from "./propertycrmeventnote";
-import { PropertyCrmEventRaw } from "./propertycrmeventraw";
 import { PropertyCrmEventTask } from "./propertycrmeventtask";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -94,8 +93,7 @@ export class CrmEvent extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyCrmEventRaw)
-    raw?: PropertyCrmEventRaw;
+    raw?: Record<string, any>;
 
     /**
      * The task object, when type = task

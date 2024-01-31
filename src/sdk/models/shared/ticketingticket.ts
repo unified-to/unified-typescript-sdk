@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyTicketingTicketRaw } from "./propertyticketingticketraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum TicketingTicketStatus {
     Active = "ACTIVE",
@@ -44,8 +43,7 @@ export class TicketingTicket extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyTicketingTicketRaw)
-    raw?: PropertyTicketingTicketRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "source" })

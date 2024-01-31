@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyUcCallRaw } from "./propertyuccallraw";
 import { PropertyUcCallTelephone } from "./propertyuccalltelephone";
 import { Expose, Transform, Type } from "class-transformer";
 
@@ -31,8 +30,7 @@ export class UcCall extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyUcCallRaw)
-    raw?: PropertyUcCallRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "start_at" })

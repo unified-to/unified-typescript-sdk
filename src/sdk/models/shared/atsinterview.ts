@@ -3,8 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyAtsInterviewRaw } from "./propertyatsinterviewraw";
-import { Expose, Transform, Type } from "class-transformer";
+import { Expose, Transform } from "class-transformer";
 
 export enum AtsInterviewStatus {
     Scheduled = "SCHEDULED",
@@ -49,8 +48,7 @@ export class AtsInterview extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyAtsInterviewRaw)
-    raw?: PropertyAtsInterviewRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "start_at" })

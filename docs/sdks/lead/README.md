@@ -33,7 +33,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -188,7 +190,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",
@@ -293,7 +297,9 @@ async function run() {
       emails: [
         {},
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       telephones: [
         {
           telephone: "string",

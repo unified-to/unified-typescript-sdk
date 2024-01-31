@@ -35,7 +35,9 @@ async function run() {
           totalAmount: 4969.62,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -187,7 +189,9 @@ async function run() {
           totalAmount: 5633.69,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -289,7 +293,9 @@ async function run() {
           totalAmount: 6498.37,
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

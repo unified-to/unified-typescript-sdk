@@ -46,7 +46,9 @@ async function run() {
           email: "Guadalupe78@yahoo.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -102,7 +104,9 @@ async function run() {
 
   const res = await sdk.ticketing.createTicketingNote({
     ticketingNote: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -151,7 +155,9 @@ async function run() {
 
   const res = await sdk.ticketing.createTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -499,7 +505,9 @@ async function run() {
           email: "Raymundo93@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -556,7 +564,9 @@ async function run() {
 
   const res = await sdk.ticketing.patchTicketingNote({
     ticketingNote: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -606,7 +616,9 @@ async function run() {
 
   const res = await sdk.ticketing.patchTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -802,7 +814,9 @@ async function run() {
           email: "Mohamed.Friesen@hotmail.com",
         },
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -859,7 +873,9 @@ async function run() {
 
   const res = await sdk.ticketing.updateTicketingNote({
     ticketingNote: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -909,7 +925,9 @@ async function run() {
 
   const res = await sdk.ticketing.updateTicketingTicket({
     ticketingTicket: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],

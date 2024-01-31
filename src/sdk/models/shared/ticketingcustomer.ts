@@ -3,7 +3,6 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PropertyTicketingCustomerRaw } from "./propertyticketingcustomerraw";
 import { TicketingEmail } from "./ticketingemail";
 import { TicketingTelephone } from "./ticketingtelephone";
 import { Expose, Transform, Type } from "class-transformer";
@@ -29,8 +28,7 @@ export class TicketingCustomer extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
-    @Type(() => PropertyTicketingCustomerRaw)
-    raw?: PropertyTicketingCustomerRaw;
+    raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tags" })

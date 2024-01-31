@@ -55,7 +55,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",
@@ -228,7 +230,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",
@@ -351,7 +355,9 @@ async function run() {
       ],
       meeting: {},
       note: {},
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       task: {},
     },
     connectionId: "string",

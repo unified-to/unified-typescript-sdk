@@ -60,7 +60,9 @@ async function run() {
 
   const res = await sdk.ats.createAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -118,7 +120,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -175,7 +179,9 @@ async function run() {
 
   const res = await sdk.ats.createAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -224,7 +230,9 @@ async function run() {
 
   const res = await sdk.ats.createAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -293,7 +301,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],
@@ -345,7 +355,9 @@ async function run() {
 
   const res = await sdk.ats.createAtsScorecard({
     atsScorecard: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
   });
@@ -1024,7 +1036,9 @@ async function run() {
 
   const res = await sdk.ats.patchAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1083,7 +1097,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1141,7 +1157,9 @@ async function run() {
 
   const res = await sdk.ats.patchAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1191,7 +1209,9 @@ async function run() {
 
   const res = await sdk.ats.patchAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -1261,7 +1281,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],
@@ -1314,7 +1336,9 @@ async function run() {
 
   const res = await sdk.ats.patchAtsScorecard({
     atsScorecard: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1640,7 +1664,9 @@ async function run() {
 
   const res = await sdk.ats.updateAtsApplication({
     atsApplication: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1699,7 +1725,9 @@ async function run() {
       linkUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       tags: [
         "string",
       ],
@@ -1757,7 +1785,9 @@ async function run() {
 
   const res = await sdk.ats.updateAtsDocument({
     atsDocument: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",
@@ -1807,7 +1837,9 @@ async function run() {
 
   const res = await sdk.ats.updateAtsInterview({
     atsInterview: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       userIds: [
         "string",
       ],
@@ -1877,7 +1909,9 @@ async function run() {
       publicJobUrls: [
         "string",
       ],
-      raw: {},
+      raw: {
+        "key": "string",
+      },
       recruiterIds: [
         "string",
       ],
@@ -1930,7 +1964,9 @@ async function run() {
 
   const res = await sdk.ats.updateAtsScorecard({
     atsScorecard: {
-      raw: {},
+      raw: {
+        "key": "string",
+      },
     },
     connectionId: "string",
     id: "<ID>",

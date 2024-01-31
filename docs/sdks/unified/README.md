@@ -43,7 +43,9 @@ async function run() {
       emails: [
         "string",
       ],
-      meta: {},
+      meta: {
+        "key": "string",
+      },
       otherAuthInfo: [
         "string",
       ],
@@ -52,7 +54,9 @@ async function run() {
       PropertyConnectionCategories.Storage,
     ],
     cursorsCache: [
-      {},
+      {
+        "key": "string",
+      },
     ],
     integrationType: "string",
     permissions: [
@@ -108,7 +112,9 @@ async function run() {
       event: Event.Created,
       hookUrl: "string",
       interval: 188.12,
-      meta: {},
+      meta: {
+        "key": "string",
+      },
       objectType: ObjectType.CrmCompany,
       runs: [
         "string",
@@ -580,7 +586,9 @@ async function run() {
         emails: [
           "string",
         ],
-        meta: {},
+        meta: {
+          "key": "string",
+        },
         otherAuthInfo: [
           "string",
         ],
@@ -589,7 +597,9 @@ async function run() {
         PropertyConnectionCategories.Ticketing,
       ],
       cursorsCache: [
-        {},
+        {
+          "key": "string",
+        },
       ],
       integrationType: "string",
       permissions: [
@@ -782,7 +792,9 @@ async function run() {
         emails: [
           "string",
         ],
-        meta: {},
+        meta: {
+          "key": "string",
+        },
         otherAuthInfo: [
           "string",
         ],
@@ -791,7 +803,9 @@ async function run() {
         PropertyConnectionCategories.Uc,
       ],
       cursorsCache: [
-        {},
+        {
+          "key": "string",
+        },
       ],
       integrationType: "string",
       permissions: [
