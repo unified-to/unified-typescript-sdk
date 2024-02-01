@@ -48,10 +48,6 @@ export class AccountingLineitem extends SpeakeasyBase {
     refundAmount?: number;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "refunded_amount" })
-    refundedAmount?: number;
-
-    @SpeakeasyMetadata()
     @Expose({ name: "refunded_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     refundedAt?: Date;

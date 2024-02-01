@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: dd7e435592a9ea6528f806cf1e9e4701
+  docChecksum: a19ba4935c486a523296da7841502792
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.239.4
-  releaseVersion: 0.12.14
-  configChecksum: f6a7e45d033d27befb57674e4b48a26f
+  generationVersion: 2.246.3
+  releaseVersion: 0.12.15
+  configChecksum: 946ae80ae158ec2c582538149aefafe1
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -20,7 +20,6 @@ generatedFiles:
   - src/sdk/account.ts
   - src/sdk/contact.ts
   - src/sdk/invoice.ts
-  - src/sdk/item.ts
   - src/sdk/organization.ts
   - src/sdk/payment.ts
   - src/sdk/taxrate.ts
@@ -33,6 +32,11 @@ generatedFiles:
   - src/sdk/interview.ts
   - src/sdk/job.ts
   - src/sdk/scorecard.ts
+  - src/sdk/commerce.ts
+  - src/sdk/collection.ts
+  - src/sdk/inventory.ts
+  - src/sdk/item.ts
+  - src/sdk/location.ts
   - src/sdk/crm.ts
   - src/sdk/company.ts
   - src/sdk/deal.ts
@@ -86,14 +90,12 @@ generatedFiles:
   - src/sdk/models/operations/createaccountingaccount.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
-  - src/sdk/models/operations/createaccountingitem.ts
   - src/sdk/models/operations/createaccountingpayment.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
   - src/sdk/models/operations/createaccountingtransaction.ts
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
-  - src/sdk/models/operations/getaccountingitem.ts
   - src/sdk/models/operations/getaccountingorganization.ts
   - src/sdk/models/operations/getaccountingpayment.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
@@ -101,7 +103,6 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingaccounts.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
-  - src/sdk/models/operations/listaccountingitems.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
   - src/sdk/models/operations/listaccountingpayments.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
@@ -109,21 +110,18 @@ generatedFiles:
   - src/sdk/models/operations/patchaccountingaccount.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
-  - src/sdk/models/operations/patchaccountingitem.ts
   - src/sdk/models/operations/patchaccountingpayment.ts
   - src/sdk/models/operations/patchaccountingtaxrate.ts
   - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/removeaccountingaccount.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
-  - src/sdk/models/operations/removeaccountingitem.ts
   - src/sdk/models/operations/removeaccountingpayment.ts
   - src/sdk/models/operations/removeaccountingtaxrate.ts
   - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
-  - src/sdk/models/operations/updateaccountingitem.ts
   - src/sdk/models/operations/updateaccountingpayment.ts
   - src/sdk/models/operations/updateaccountingtaxrate.ts
   - src/sdk/models/operations/updateaccountingtransaction.ts
@@ -176,6 +174,30 @@ generatedFiles:
   - src/sdk/models/operations/updateatsinterview.ts
   - src/sdk/models/operations/updateatsjob.ts
   - src/sdk/models/operations/updateatsscorecard.ts
+  - src/sdk/models/operations/createcommercecollection.ts
+  - src/sdk/models/operations/createcommerceinventory.ts
+  - src/sdk/models/operations/createcommerceitem.ts
+  - src/sdk/models/operations/createcommercelocation.ts
+  - src/sdk/models/operations/getcommercecollection.ts
+  - src/sdk/models/operations/getcommerceinventory.ts
+  - src/sdk/models/operations/getcommerceitem.ts
+  - src/sdk/models/operations/getcommercelocation.ts
+  - src/sdk/models/operations/listcommercecollections.ts
+  - src/sdk/models/operations/listcommerceinventories.ts
+  - src/sdk/models/operations/listcommerceitems.ts
+  - src/sdk/models/operations/listcommercelocations.ts
+  - src/sdk/models/operations/patchcommercecollection.ts
+  - src/sdk/models/operations/patchcommerceinventory.ts
+  - src/sdk/models/operations/patchcommerceitem.ts
+  - src/sdk/models/operations/patchcommercelocation.ts
+  - src/sdk/models/operations/removecommercecollection.ts
+  - src/sdk/models/operations/removecommerceinventory.ts
+  - src/sdk/models/operations/removecommerceitem.ts
+  - src/sdk/models/operations/removecommercelocation.ts
+  - src/sdk/models/operations/updatecommercecollection.ts
+  - src/sdk/models/operations/updatecommerceinventory.ts
+  - src/sdk/models/operations/updatecommerceitem.ts
+  - src/sdk/models/operations/updatecommercelocation.ts
   - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmdeal.ts
   - src/sdk/models/operations/createcrmevent.ts
@@ -288,7 +310,6 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/accountinglineitem.ts
-  - src/sdk/models/shared/accountingitem.ts
   - src/sdk/models/shared/accountingpayment.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtransaction.ts
@@ -314,6 +335,15 @@ generatedFiles:
   - src/sdk/models/shared/atsaddress.ts
   - src/sdk/models/shared/atsscorecard.ts
   - src/sdk/models/shared/atsstatus.ts
+  - src/sdk/models/shared/commercecollection.ts
+  - src/sdk/models/shared/commerceitemmedia.ts
+  - src/sdk/models/shared/commerceinventory.ts
+  - src/sdk/models/shared/commerceitem.ts
+  - src/sdk/models/shared/commerceitemvariant.ts
+  - src/sdk/models/shared/commerceitemprice.ts
+  - src/sdk/models/shared/commerceitemoption.ts
+  - src/sdk/models/shared/commercelocation.ts
+  - src/sdk/models/shared/propertycommercelocationaddress.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/propertycrmcompanyaddress.ts
   - src/sdk/models/shared/crmdeal.ts
@@ -371,8 +401,6 @@ generatedFiles:
   - docs/sdk/models/operations/createaccountingcontactresponse.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/createaccountingitemrequest.md
-  - docs/sdk/models/operations/createaccountingitemresponse.md
   - docs/sdk/models/operations/createaccountingpaymentrequest.md
   - docs/sdk/models/operations/createaccountingpaymentresponse.md
   - docs/sdk/models/operations/createaccountingtaxraterequest.md
@@ -385,8 +413,6 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingcontactresponse.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
   - docs/sdk/models/operations/getaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/getaccountingitemrequest.md
-  - docs/sdk/models/operations/getaccountingitemresponse.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
   - docs/sdk/models/operations/getaccountingorganizationresponse.md
   - docs/sdk/models/operations/getaccountingpaymentrequest.md
@@ -401,8 +427,6 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingcontactsresponse.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesresponse.md
-  - docs/sdk/models/operations/listaccountingitemsrequest.md
-  - docs/sdk/models/operations/listaccountingitemsresponse.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsresponse.md
   - docs/sdk/models/operations/listaccountingpaymentsrequest.md
@@ -417,8 +441,6 @@ generatedFiles:
   - docs/sdk/models/operations/patchaccountingcontactresponse.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/patchaccountingitemrequest.md
-  - docs/sdk/models/operations/patchaccountingitemresponse.md
   - docs/sdk/models/operations/patchaccountingpaymentrequest.md
   - docs/sdk/models/operations/patchaccountingpaymentresponse.md
   - docs/sdk/models/operations/patchaccountingtaxraterequest.md
@@ -431,8 +453,6 @@ generatedFiles:
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/removeaccountingitemrequest.md
-  - docs/sdk/models/operations/removeaccountingitemresponse.md
   - docs/sdk/models/operations/removeaccountingpaymentrequest.md
   - docs/sdk/models/operations/removeaccountingpaymentresponse.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
@@ -445,8 +465,6 @@ generatedFiles:
   - docs/sdk/models/operations/updateaccountingcontactresponse.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/updateaccountingitemrequest.md
-  - docs/sdk/models/operations/updateaccountingitemresponse.md
   - docs/sdk/models/operations/updateaccountingpaymentrequest.md
   - docs/sdk/models/operations/updateaccountingpaymentresponse.md
   - docs/sdk/models/operations/updateaccountingtaxraterequest.md
@@ -551,6 +569,54 @@ generatedFiles:
   - docs/sdk/models/operations/updateatsjobresponse.md
   - docs/sdk/models/operations/updateatsscorecardrequest.md
   - docs/sdk/models/operations/updateatsscorecardresponse.md
+  - docs/sdk/models/operations/createcommercecollectionrequest.md
+  - docs/sdk/models/operations/createcommercecollectionresponse.md
+  - docs/sdk/models/operations/createcommerceinventoryrequest.md
+  - docs/sdk/models/operations/createcommerceinventoryresponse.md
+  - docs/sdk/models/operations/createcommerceitemrequest.md
+  - docs/sdk/models/operations/createcommerceitemresponse.md
+  - docs/sdk/models/operations/createcommercelocationrequest.md
+  - docs/sdk/models/operations/createcommercelocationresponse.md
+  - docs/sdk/models/operations/getcommercecollectionrequest.md
+  - docs/sdk/models/operations/getcommercecollectionresponse.md
+  - docs/sdk/models/operations/getcommerceinventoryrequest.md
+  - docs/sdk/models/operations/getcommerceinventoryresponse.md
+  - docs/sdk/models/operations/getcommerceitemrequest.md
+  - docs/sdk/models/operations/getcommerceitemresponse.md
+  - docs/sdk/models/operations/getcommercelocationrequest.md
+  - docs/sdk/models/operations/getcommercelocationresponse.md
+  - docs/sdk/models/operations/listcommercecollectionsrequest.md
+  - docs/sdk/models/operations/listcommercecollectionsresponse.md
+  - docs/sdk/models/operations/listcommerceinventoriesrequest.md
+  - docs/sdk/models/operations/listcommerceinventoriesresponse.md
+  - docs/sdk/models/operations/listcommerceitemsrequest.md
+  - docs/sdk/models/operations/listcommerceitemsresponse.md
+  - docs/sdk/models/operations/listcommercelocationsrequest.md
+  - docs/sdk/models/operations/listcommercelocationsresponse.md
+  - docs/sdk/models/operations/patchcommercecollectionrequest.md
+  - docs/sdk/models/operations/patchcommercecollectionresponse.md
+  - docs/sdk/models/operations/patchcommerceinventoryrequest.md
+  - docs/sdk/models/operations/patchcommerceinventoryresponse.md
+  - docs/sdk/models/operations/patchcommerceitemrequest.md
+  - docs/sdk/models/operations/patchcommerceitemresponse.md
+  - docs/sdk/models/operations/patchcommercelocationrequest.md
+  - docs/sdk/models/operations/patchcommercelocationresponse.md
+  - docs/sdk/models/operations/removecommercecollectionrequest.md
+  - docs/sdk/models/operations/removecommercecollectionresponse.md
+  - docs/sdk/models/operations/removecommerceinventoryrequest.md
+  - docs/sdk/models/operations/removecommerceinventoryresponse.md
+  - docs/sdk/models/operations/removecommerceitemrequest.md
+  - docs/sdk/models/operations/removecommerceitemresponse.md
+  - docs/sdk/models/operations/removecommercelocationrequest.md
+  - docs/sdk/models/operations/removecommercelocationresponse.md
+  - docs/sdk/models/operations/updatecommercecollectionrequest.md
+  - docs/sdk/models/operations/updatecommercecollectionresponse.md
+  - docs/sdk/models/operations/updatecommerceinventoryrequest.md
+  - docs/sdk/models/operations/updatecommerceinventoryresponse.md
+  - docs/sdk/models/operations/updatecommerceitemrequest.md
+  - docs/sdk/models/operations/updatecommerceitemresponse.md
+  - docs/sdk/models/operations/updatecommercelocationrequest.md
+  - docs/sdk/models/operations/updatecommercelocationresponse.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcompanyresponse.md
   - docs/sdk/models/operations/createcrmdealrequest.md
@@ -776,7 +842,6 @@ generatedFiles:
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinglineitem.md
-  - docs/sdk/models/shared/accountingitem.md
   - docs/sdk/models/shared/accountingpayment.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtransaction.md
@@ -818,6 +883,18 @@ generatedFiles:
   - docs/sdk/models/shared/atsscorecard.md
   - docs/sdk/models/shared/atsstatusstatus.md
   - docs/sdk/models/shared/atsstatus.md
+  - docs/sdk/models/shared/commercecollection.md
+  - docs/sdk/models/shared/commerceitemmediatype.md
+  - docs/sdk/models/shared/commerceitemmedia.md
+  - docs/sdk/models/shared/commerceinventory.md
+  - docs/sdk/models/shared/commerceitem.md
+  - docs/sdk/models/shared/sizeunit.md
+  - docs/sdk/models/shared/weightunit.md
+  - docs/sdk/models/shared/commerceitemvariant.md
+  - docs/sdk/models/shared/commerceitemprice.md
+  - docs/sdk/models/shared/commerceitemoption.md
+  - docs/sdk/models/shared/commercelocation.md
+  - docs/sdk/models/shared/propertycommercelocationaddress.md
   - docs/sdk/models/shared/crmcompany.md
   - docs/sdk/models/shared/propertycrmcompanyaddress.md
   - docs/sdk/models/shared/crmdeal.md
@@ -894,7 +971,6 @@ generatedFiles:
   - docs/sdks/account/README.md
   - docs/sdks/contact/README.md
   - docs/sdks/invoice/README.md
-  - docs/sdks/item/README.md
   - docs/sdks/organization/README.md
   - docs/sdks/payment/README.md
   - docs/sdks/taxrate/README.md
@@ -907,6 +983,11 @@ generatedFiles:
   - docs/sdks/interview/README.md
   - docs/sdks/job/README.md
   - docs/sdks/scorecard/README.md
+  - docs/sdks/commerce/README.md
+  - docs/sdks/collection/README.md
+  - docs/sdks/inventory/README.md
+  - docs/sdks/item/README.md
+  - docs/sdks/location/README.md
   - docs/sdks/crm/README.md
   - docs/sdks/company/README.md
   - docs/sdks/deal/README.md

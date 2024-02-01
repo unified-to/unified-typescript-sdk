@@ -18,6 +18,7 @@ export enum Categories {
     Uc = "uc",
     Accounting = "accounting",
     Storage = "storage",
+    Commerce = "commerce",
 }
 
 export class ListUnifiedConnectionsRequest extends SpeakeasyBase {

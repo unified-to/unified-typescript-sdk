@@ -29,16 +29,10 @@ async function run() {
   const res = await sdk.transaction.createAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 4969.62,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 6267.93,
+          totalAmount: 4969.62,
         },
       ],
       raw: {
@@ -189,16 +183,10 @@ async function run() {
   const res = await sdk.transaction.patchAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 5633.69,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 4558.63,
+          totalAmount: 5633.69,
         },
       ],
       raw: {
@@ -299,16 +287,10 @@ async function run() {
   const res = await sdk.transaction.updateAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 6498.37,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 5659.17,
+          totalAmount: 6498.37,
         },
       ],
       raw: {

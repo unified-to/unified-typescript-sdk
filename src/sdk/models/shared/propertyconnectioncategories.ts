@@ -14,4 +14,5 @@ export enum PropertyConnectionCategories {
     Uc = "uc",
     Accounting = "accounting",
     Storage = "storage",
+    Commerce = "commerce",
 }

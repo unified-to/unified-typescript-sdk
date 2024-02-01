@@ -40,7 +40,7 @@ async function run() {
       ],
     },
     categories: [
-      PropertyConnectionCategories.Storage,
+      PropertyConnectionCategories.Commerce,
     ],
     cursorsCache: [
       {
@@ -49,7 +49,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobRead,
+      PropertyConnectionPermissions.AtsCandidateRead,
     ],
   });
 
@@ -142,7 +142,7 @@ async function run() {
 
   const res = await sdk.connection.listUnifiedConnections({
     categories: [
-      Categories.Enrich,
+      Categories.Martech,
     ],
   });
 
@@ -211,7 +211,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmPipelineRead,
       ],
     },
     id: "<ID>",
@@ -318,7 +318,7 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Uc,
+        PropertyConnectionCategories.Accounting,
       ],
       cursorsCache: [
         {
@@ -327,7 +327,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.AtsDocumentRead,
       ],
     },
     id: "<ID>",

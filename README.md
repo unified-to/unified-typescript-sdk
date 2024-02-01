@@ -66,14 +66,12 @@ run();
 * [createAccountingAccount](docs/sdks/accounting/README.md#createaccountingaccount) - Create an account
 * [createAccountingContact](docs/sdks/accounting/README.md#createaccountingcontact) - Create a contact
 * [createAccountingInvoice](docs/sdks/accounting/README.md#createaccountinginvoice) - Create a invoice
-* [createAccountingItem](docs/sdks/accounting/README.md#createaccountingitem) - Create an item
 * [createAccountingPayment](docs/sdks/accounting/README.md#createaccountingpayment) - Create a payment
 * [createAccountingTaxrate](docs/sdks/accounting/README.md#createaccountingtaxrate) - Create a taxrate
 * [createAccountingTransaction](docs/sdks/accounting/README.md#createaccountingtransaction) - Create a transaction
 * [getAccountingAccount](docs/sdks/accounting/README.md#getaccountingaccount) - Retrieve an account
 * [getAccountingContact](docs/sdks/accounting/README.md#getaccountingcontact) - Retrieve a contact
 * [getAccountingInvoice](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve a invoice
-* [getAccountingItem](docs/sdks/accounting/README.md#getaccountingitem) - Retrieve an item
 * [getAccountingOrganization](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
 * [getAccountingPayment](docs/sdks/accounting/README.md#getaccountingpayment) - Retrieve a payment
 * [getAccountingTaxrate](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
@@ -81,7 +79,6 @@ run();
 * [listAccountingAccounts](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
 * [listAccountingContacts](docs/sdks/accounting/README.md#listaccountingcontacts) - List all contacts
 * [listAccountingInvoices](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
-* [listAccountingItems](docs/sdks/accounting/README.md#listaccountingitems) - List all items
 * [listAccountingOrganizations](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
 * [listAccountingPayments](docs/sdks/accounting/README.md#listaccountingpayments) - List all payments
 * [listAccountingTaxrates](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
@@ -89,21 +86,18 @@ run();
 * [patchAccountingAccount](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
 * [patchAccountingContact](docs/sdks/accounting/README.md#patchaccountingcontact) - Update a contact
 * [patchAccountingInvoice](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update a invoice
-* [patchAccountingItem](docs/sdks/accounting/README.md#patchaccountingitem) - Update an item
 * [patchAccountingPayment](docs/sdks/accounting/README.md#patchaccountingpayment) - Update a payment
 * [patchAccountingTaxrate](docs/sdks/accounting/README.md#patchaccountingtaxrate) - Update a taxrate
 * [patchAccountingTransaction](docs/sdks/accounting/README.md#patchaccountingtransaction) - Update a transaction
 * [removeAccountingAccount](docs/sdks/accounting/README.md#removeaccountingaccount) - Remove an account
 * [removeAccountingContact](docs/sdks/accounting/README.md#removeaccountingcontact) - Remove a contact
 * [removeAccountingInvoice](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove a invoice
-* [removeAccountingItem](docs/sdks/accounting/README.md#removeaccountingitem) - Remove an item
 * [removeAccountingPayment](docs/sdks/accounting/README.md#removeaccountingpayment) - Remove a payment
 * [removeAccountingTaxrate](docs/sdks/accounting/README.md#removeaccountingtaxrate) - Remove a taxrate
 * [removeAccountingTransaction](docs/sdks/accounting/README.md#removeaccountingtransaction) - Remove a transaction
 * [updateAccountingAccount](docs/sdks/accounting/README.md#updateaccountingaccount) - Update an account
 * [updateAccountingContact](docs/sdks/accounting/README.md#updateaccountingcontact) - Update a contact
 * [updateAccountingInvoice](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update a invoice
-* [updateAccountingItem](docs/sdks/accounting/README.md#updateaccountingitem) - Update an item
 * [updateAccountingPayment](docs/sdks/accounting/README.md#updateaccountingpayment) - Update a payment
 * [updateAccountingTaxrate](docs/sdks/accounting/README.md#updateaccountingtaxrate) - Update a taxrate
 * [updateAccountingTransaction](docs/sdks/accounting/README.md#updateaccountingtransaction) - Update a transaction
@@ -146,15 +140,6 @@ run();
 * [patchAccountingInvoice](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update a invoice
 * [removeAccountingInvoice](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove a invoice
 * [updateAccountingInvoice](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update a invoice
-
-### [item](docs/sdks/item/README.md)
-
-* [createAccountingItem](docs/sdks/item/README.md#createaccountingitem) - Create an item
-* [getAccountingItem](docs/sdks/item/README.md#getaccountingitem) - Retrieve an item
-* [listAccountingItems](docs/sdks/item/README.md#listaccountingitems) - List all items
-* [patchAccountingItem](docs/sdks/item/README.md#patchaccountingitem) - Update an item
-* [removeAccountingItem](docs/sdks/item/README.md#removeaccountingitem) - Remove an item
-* [updateAccountingItem](docs/sdks/item/README.md#updateaccountingitem) - Update an item
 
 ### [organization](docs/sdks/organization/README.md)
 
@@ -285,6 +270,69 @@ run();
 * [patchAtsScorecard](docs/sdks/scorecard/README.md#patchatsscorecard) - Update a scorecard
 * [removeAtsScorecard](docs/sdks/scorecard/README.md#removeatsscorecard) - Remove a scorecard
 * [updateAtsScorecard](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
+
+### [commerce](docs/sdks/commerce/README.md)
+
+* [createCommerceCollection](docs/sdks/commerce/README.md#createcommercecollection) - Create a collection
+* [createCommerceInventory](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
+* [createCommerceItem](docs/sdks/commerce/README.md#createcommerceitem) - Create an item/product
+* [createCommerceLocation](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
+* [getCommerceCollection](docs/sdks/commerce/README.md#getcommercecollection) - Retrieve a collection
+* [getCommerceInventory](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
+* [getCommerceItem](docs/sdks/commerce/README.md#getcommerceitem) - Retrieve an item/product
+* [getCommerceLocation](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
+* [listCommerceCollections](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
+* [listCommerceInventories](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
+* [listCommerceItems](docs/sdks/commerce/README.md#listcommerceitems) - List all items/products
+* [listCommerceLocations](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
+* [patchCommerceCollection](docs/sdks/commerce/README.md#patchcommercecollection) - Update a collection
+* [patchCommerceInventory](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
+* [patchCommerceItem](docs/sdks/commerce/README.md#patchcommerceitem) - Update an item/product
+* [patchCommerceLocation](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
+* [removeCommerceCollection](docs/sdks/commerce/README.md#removecommercecollection) - Remove a collection
+* [removeCommerceInventory](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
+* [removeCommerceItem](docs/sdks/commerce/README.md#removecommerceitem) - Remove an item/product
+* [removeCommerceLocation](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
+* [updateCommerceCollection](docs/sdks/commerce/README.md#updatecommercecollection) - Update a collection
+* [updateCommerceInventory](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
+* [updateCommerceItem](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item/product
+* [updateCommerceLocation](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+
+### [collection](docs/sdks/collection/README.md)
+
+* [createCommerceCollection](docs/sdks/collection/README.md#createcommercecollection) - Create a collection
+* [getCommerceCollection](docs/sdks/collection/README.md#getcommercecollection) - Retrieve a collection
+* [listCommerceCollections](docs/sdks/collection/README.md#listcommercecollections) - List all collections
+* [patchCommerceCollection](docs/sdks/collection/README.md#patchcommercecollection) - Update a collection
+* [removeCommerceCollection](docs/sdks/collection/README.md#removecommercecollection) - Remove a collection
+* [updateCommerceCollection](docs/sdks/collection/README.md#updatecommercecollection) - Update a collection
+
+### [inventory](docs/sdks/inventory/README.md)
+
+* [createCommerceInventory](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
+* [getCommerceInventory](docs/sdks/inventory/README.md#getcommerceinventory) - Retrieve an inventory
+* [listCommerceInventories](docs/sdks/inventory/README.md#listcommerceinventories) - List all inventories
+* [patchCommerceInventory](docs/sdks/inventory/README.md#patchcommerceinventory) - Update an inventory
+* [removeCommerceInventory](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
+* [updateCommerceInventory](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
+
+### [item](docs/sdks/item/README.md)
+
+* [createCommerceItem](docs/sdks/item/README.md#createcommerceitem) - Create an item/product
+* [getCommerceItem](docs/sdks/item/README.md#getcommerceitem) - Retrieve an item/product
+* [listCommerceItems](docs/sdks/item/README.md#listcommerceitems) - List all items/products
+* [patchCommerceItem](docs/sdks/item/README.md#patchcommerceitem) - Update an item/product
+* [removeCommerceItem](docs/sdks/item/README.md#removecommerceitem) - Remove an item/product
+* [updateCommerceItem](docs/sdks/item/README.md#updatecommerceitem) - Update an item/product
+
+### [location](docs/sdks/location/README.md)
+
+* [createCommerceLocation](docs/sdks/location/README.md#createcommercelocation) - Create a location
+* [getCommerceLocation](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
+* [listCommerceLocations](docs/sdks/location/README.md#listcommercelocations) - List all locations
+* [patchCommerceLocation](docs/sdks/location/README.md#patchcommercelocation) - Update a location
+* [removeCommerceLocation](docs/sdks/location/README.md#removecommercelocation) - Remove a location
+* [updateCommerceLocation](docs/sdks/location/README.md#updatecommercelocation) - Update a location
 
 ### [crm](docs/sdks/crm/README.md)
 

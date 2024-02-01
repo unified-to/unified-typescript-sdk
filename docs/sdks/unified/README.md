@@ -51,7 +51,7 @@ async function run() {
       ],
     },
     categories: [
-      PropertyConnectionCategories.Storage,
+      PropertyConnectionCategories.Commerce,
     ],
     cursorsCache: [
       {
@@ -60,7 +60,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsJobRead,
+      PropertyConnectionPermissions.AtsCandidateRead,
     ],
   });
 
@@ -115,7 +115,7 @@ async function run() {
       meta: {
         "key": "string",
       },
-      objectType: ObjectType.CrmCompany,
+      objectType: ObjectType.AtsJob,
       runs: [
         "string",
       ],
@@ -394,7 +394,7 @@ async function run() {
 
   const res = await sdk.unified.listUnifiedConnections({
     categories: [
-      Categories.Enrich,
+      Categories.Martech,
     ],
   });
 
@@ -442,7 +442,7 @@ async function run() {
 
   const res = await sdk.unified.listUnifiedIntegrationWorkspaces({
     categories: [
-      QueryParamCategories.Uc,
+      QueryParamCategories.Accounting,
     ],
     workspaceId: "string",
   });
@@ -491,7 +491,7 @@ async function run() {
 
   const res = await sdk.unified.listUnifiedIntegrations({
     categories: [
-      ListUnifiedIntegrationsQueryParamCategories.Auth,
+      ListUnifiedIntegrationsQueryParamCategories.Crm,
     ],
   });
 
@@ -603,7 +603,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmPipelineRead,
       ],
     },
     id: "<ID>",
@@ -800,7 +800,7 @@ async function run() {
         ],
       },
       categories: [
-        PropertyConnectionCategories.Uc,
+        PropertyConnectionCategories.Accounting,
       ],
       cursorsCache: [
         {
@@ -809,7 +809,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.AtsDocumentRead,
       ],
     },
     id: "<ID>",

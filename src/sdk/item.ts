@@ -17,14 +17,14 @@ export class Item {
     }
 
     /**
-     * Create an item
+     * Create an item/product
      */
-    async createAccountingItem(
-        req: operations.CreateAccountingItemRequest,
+    async createCommerceItem(
+        req: operations.CreateCommerceItemRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.CreateAccountingItemResponse> {
+    ): Promise<operations.CreateCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateAccountingItemRequest(req);
+            req = new operations.CreateCommerceItemRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -33,14 +33,14 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item",
+            "/commerce/{connection_id}/item",
             req
         );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "accountingItem", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "commerceItem", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -80,8 +80,8 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.CreateAccountingItemResponse =
-            new operations.CreateAccountingItemResponse({
+        const res: operations.CreateCommerceItemResponse =
+            new operations.CreateCommerceItemResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -90,9 +90,9 @@ export class Item {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingItem = utils.objectToClass(
+                    res.commerceItem = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingItem
+                        shared.CommerceItem
                     );
                 } else {
                     throw new errors.SDKError(
@@ -117,14 +117,14 @@ export class Item {
     }
 
     /**
-     * Retrieve an item
+     * Retrieve an item/product
      */
-    async getAccountingItem(
-        req: operations.GetAccountingItemRequest,
+    async getCommerceItem(
+        req: operations.GetCommerceItemRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAccountingItemResponse> {
+    ): Promise<operations.GetCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAccountingItemRequest(req);
+            req = new operations.GetCommerceItemRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -133,7 +133,7 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item/{id}",
+            "/commerce/{connection_id}/item/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -166,7 +166,7 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAccountingItemResponse = new operations.GetAccountingItemResponse({
+        const res: operations.GetCommerceItemResponse = new operations.GetCommerceItemResponse({
             statusCode: httpRes.status,
             contentType: responseContentType,
             rawResponse: httpRes,
@@ -175,9 +175,9 @@ export class Item {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingItem = utils.objectToClass(
+                    res.commerceItem = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingItem
+                        shared.CommerceItem
                     );
                 } else {
                     throw new errors.SDKError(
@@ -202,14 +202,14 @@ export class Item {
     }
 
     /**
-     * List all items
+     * List all items/products
      */
-    async listAccountingItems(
-        req: operations.ListAccountingItemsRequest,
+    async listCommerceItems(
+        req: operations.ListCommerceItemsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.ListAccountingItemsResponse> {
+    ): Promise<operations.ListCommerceItemsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAccountingItemsRequest(req);
+            req = new operations.ListCommerceItemsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -218,7 +218,7 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item",
+            "/commerce/{connection_id}/item",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -251,21 +251,20 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.ListAccountingItemsResponse =
-            new operations.ListAccountingItemsResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.ListCommerceItemsResponse = new operations.ListCommerceItemsResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingItems = [];
+                    res.commerceItems = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.accountingItems = utils.objectToClass(
+                    res.commerceItems = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingItem,
+                        shared.CommerceItem,
                         resFieldDepth
                     );
                 } else {
@@ -291,14 +290,14 @@ export class Item {
     }
 
     /**
-     * Update an item
+     * Update an item/product
      */
-    async patchAccountingItem(
-        req: operations.PatchAccountingItemRequest,
+    async patchCommerceItem(
+        req: operations.PatchCommerceItemRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchAccountingItemResponse> {
+    ): Promise<operations.PatchCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAccountingItemRequest(req);
+            req = new operations.PatchCommerceItemRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -307,14 +306,14 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item/{id}",
+            "/commerce/{connection_id}/item/{id}",
             req
         );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "accountingItem", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "commerceItem", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -354,19 +353,18 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchAccountingItemResponse =
-            new operations.PatchAccountingItemResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.PatchCommerceItemResponse = new operations.PatchCommerceItemResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingItem = utils.objectToClass(
+                    res.commerceItem = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingItem
+                        shared.CommerceItem
                     );
                 } else {
                     throw new errors.SDKError(
@@ -391,14 +389,14 @@ export class Item {
     }
 
     /**
-     * Remove an item
+     * Remove an item/product
      */
-    async removeAccountingItem(
-        req: operations.RemoveAccountingItemRequest,
+    async removeCommerceItem(
+        req: operations.RemoveCommerceItemRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.RemoveAccountingItemResponse> {
+    ): Promise<operations.RemoveCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.RemoveAccountingItemRequest(req);
+            req = new operations.RemoveCommerceItemRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -407,7 +405,7 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item/{id}",
+            "/commerce/{connection_id}/item/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -439,8 +437,8 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.RemoveAccountingItemResponse =
-            new operations.RemoveAccountingItemResponse({
+        const res: operations.RemoveCommerceItemResponse =
+            new operations.RemoveCommerceItemResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -473,14 +471,14 @@ export class Item {
     }
 
     /**
-     * Update an item
+     * Update an item/product
      */
-    async updateAccountingItem(
-        req: operations.UpdateAccountingItemRequest,
+    async updateCommerceItem(
+        req: operations.UpdateCommerceItemRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.UpdateAccountingItemResponse> {
+    ): Promise<operations.UpdateCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateAccountingItemRequest(req);
+            req = new operations.UpdateCommerceItemRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -489,14 +487,14 @@ export class Item {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/item/{id}",
+            "/commerce/{connection_id}/item/{id}",
             req
         );
 
         let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
 
         try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "accountingItem", "json");
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "commerceItem", "json");
         } catch (e: unknown) {
             if (e instanceof Error) {
                 throw new Error(`Error serializing request body, cause: ${e.message}`);
@@ -536,8 +534,8 @@ export class Item {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.UpdateAccountingItemResponse =
-            new operations.UpdateAccountingItemResponse({
+        const res: operations.UpdateCommerceItemResponse =
+            new operations.UpdateCommerceItemResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -546,9 +544,9 @@ export class Item {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingItem = utils.objectToClass(
+                    res.commerceItem = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingItem
+                        shared.CommerceItem
                     );
                 } else {
                     throw new errors.SDKError(

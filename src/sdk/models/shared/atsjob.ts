@@ -78,6 +78,10 @@ export class AtsJob extends SpeakeasyBase {
     name?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "number_of_openings" })
+    numberOfOpenings?: number;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "public_job_urls" })
     publicJobUrls?: string[];
 

@@ -6,14 +6,12 @@
 * [createAccountingAccount](#createaccountingaccount) - Create an account
 * [createAccountingContact](#createaccountingcontact) - Create a contact
 * [createAccountingInvoice](#createaccountinginvoice) - Create a invoice
-* [createAccountingItem](#createaccountingitem) - Create an item
 * [createAccountingPayment](#createaccountingpayment) - Create a payment
 * [createAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [createAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [getAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [getAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
-* [getAccountingItem](#getaccountingitem) - Retrieve an item
 * [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [getAccountingPayment](#getaccountingpayment) - Retrieve a payment
 * [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
@@ -21,7 +19,6 @@
 * [listAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [listAccountingContacts](#listaccountingcontacts) - List all contacts
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
-* [listAccountingItems](#listaccountingitems) - List all items
 * [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [listAccountingPayments](#listaccountingpayments) - List all payments
 * [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
@@ -29,21 +26,18 @@
 * [patchAccountingAccount](#patchaccountingaccount) - Update an account
 * [patchAccountingContact](#patchaccountingcontact) - Update a contact
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
-* [patchAccountingItem](#patchaccountingitem) - Update an item
 * [patchAccountingPayment](#patchaccountingpayment) - Update a payment
 * [patchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [patchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [removeAccountingAccount](#removeaccountingaccount) - Remove an account
 * [removeAccountingContact](#removeaccountingcontact) - Remove a contact
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
-* [removeAccountingItem](#removeaccountingitem) - Remove an item
 * [removeAccountingPayment](#removeaccountingpayment) - Remove a payment
 * [removeAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [removeAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [updateAccountingAccount](#updateaccountingaccount) - Update an account
 * [updateAccountingContact](#updateaccountingcontact) - Update a contact
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
-* [updateAccountingItem](#updateaccountingitem) - Update an item
 * [updateAccountingPayment](#updateaccountingpayment) - Update a payment
 * [updateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 * [updateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
@@ -219,57 +213,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## createAccountingItem
-
-Create an item
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.createAccountingItem({
-    accountingItem: {
-      name: "string",
-      raw: {
-        "key": "string",
-      },
-    },
-    connectionId: "string",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.CreateAccountingItemRequest](../../sdk/models/operations/createaccountingitemrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.CreateAccountingItemResponse](../../sdk/models/operations/createaccountingitemresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## createAccountingPayment
 
 Create a payment
@@ -391,16 +334,10 @@ async function run() {
   const res = await sdk.accounting.createAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 4969.62,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 6267.93,
+          totalAmount: 4969.62,
         },
       ],
       raw: {
@@ -576,55 +513,6 @@ run();
 ### Response
 
 **Promise<[operations.GetAccountingInvoiceResponse](../../sdk/models/operations/getaccountinginvoiceresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## getAccountingItem
-
-Retrieve an item
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.getAccountingItem({
-    connectionId: "string",
-    fields: [
-      "string",
-    ],
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetAccountingItemRequest](../../sdk/models/operations/getaccountingitemrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
-
-
-### Response
-
-**Promise<[operations.GetAccountingItemResponse](../../sdk/models/operations/getaccountingitemresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -965,54 +853,6 @@ run();
 ### Response
 
 **Promise<[operations.ListAccountingInvoicesResponse](../../sdk/models/operations/listaccountinginvoicesresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## listAccountingItems
-
-List all items
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.listAccountingItems({
-    connectionId: "string",
-    fields: [
-      "string",
-    ],
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.ListAccountingItemsRequest](../../sdk/models/operations/listaccountingitemsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
-
-
-### Response
-
-**Promise<[operations.ListAccountingItemsResponse](../../sdk/models/operations/listaccountingitemsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1385,58 +1225,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## patchAccountingItem
-
-Update an item
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.patchAccountingItem({
-    accountingItem: {
-      name: "string",
-      raw: {
-        "key": "string",
-      },
-    },
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.PatchAccountingItemRequest](../../sdk/models/operations/patchaccountingitemrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
-
-
-### Response
-
-**Promise<[operations.PatchAccountingItemResponse](../../sdk/models/operations/patchaccountingitemresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## patchAccountingPayment
 
 Update a payment
@@ -1560,16 +1348,10 @@ async function run() {
   const res = await sdk.accounting.patchAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 5633.69,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 4558.63,
+          totalAmount: 5633.69,
         },
       ],
       raw: {
@@ -1737,52 +1519,6 @@ run();
 ### Response
 
 **Promise<[operations.RemoveAccountingInvoiceResponse](../../sdk/models/operations/removeaccountinginvoiceresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
-## removeAccountingItem
-
-Remove an item
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.removeAccountingItem({
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.RemoveAccountingItemRequest](../../sdk/models/operations/removeaccountingitemrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.RemoveAccountingItemResponse](../../sdk/models/operations/removeaccountingitemresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -2101,58 +1837,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
-## updateAccountingItem
-
-Update an item
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-
-async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
-
-  const res = await sdk.accounting.updateAccountingItem({
-    accountingItem: {
-      name: "string",
-      raw: {
-        "key": "string",
-      },
-    },
-    connectionId: "string",
-    id: "<ID>",
-  });
-
-  if (res.statusCode == 200) {
-    // handle response
-  }
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.UpdateAccountingItemRequest](../../sdk/models/operations/updateaccountingitemrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
-
-
-### Response
-
-**Promise<[operations.UpdateAccountingItemResponse](../../sdk/models/operations/updateaccountingitemresponse.md)>**
-### Errors
-
-| Error Object    | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4xx-5xx         | */*             |
-
 ## updateAccountingPayment
 
 Update a payment
@@ -2276,16 +1960,10 @@ async function run() {
   const res = await sdk.accounting.updateAccountingTransaction({
     accountingTransaction: {
       id: "<ID>",
-      lineItems: [
-        {
-          accountId: "string",
-          totalAmount: 6498.37,
-        },
-      ],
       lineitems: [
         {
           accountId: "string",
-          totalAmount: 5659.17,
+          totalAmount: 6498.37,
         },
       ],
       raw: {

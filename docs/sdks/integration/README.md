@@ -76,7 +76,7 @@ async function run() {
 
   const res = await sdk.integration.listUnifiedIntegrationWorkspaces({
     categories: [
-      QueryParamCategories.Uc,
+      QueryParamCategories.Accounting,
     ],
     workspaceId: "string",
   });
@@ -125,7 +125,7 @@ async function run() {
 
   const res = await sdk.integration.listUnifiedIntegrations({
     categories: [
-      ListUnifiedIntegrationsQueryParamCategories.Auth,
+      ListUnifiedIntegrationsQueryParamCategories.Crm,
     ],
   });
 
