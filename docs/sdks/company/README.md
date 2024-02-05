@@ -4,7 +4,9 @@
 ### Available Operations
 
 * [createCrmCompany](#createcrmcompany) - Create a company
+* [getAtsCompany](#getatscompany) - Retrieve a company
 * [getCrmCompany](#getcrmcompany) - Retrieve a company
+* [listAtsCompanies](#listatscompanies) - List all companies
 * [listCrmCompanies](#listcrmcompanies) - List all companies
 * [listEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
 * [patchCrmCompany](#patchcrmcompany) - Update a company
@@ -83,6 +85,55 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## getAtsCompany
+
+Retrieve a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.company.getAtsCompany({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsCompanyRequest](../../sdk/models/operations/getatscompanyrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsCompanyResponse](../../sdk/models/operations/getatscompanyresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## getCrmCompany
 
 Retrieve a company
@@ -126,6 +177,54 @@ run();
 ### Response
 
 **Promise<[operations.GetCrmCompanyResponse](../../sdk/models/operations/getcrmcompanyresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## listAtsCompanies
+
+List all companies
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.company.listAtsCompanies({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ListAtsCompaniesRequest](../../sdk/models/operations/listatscompaniesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.ListAtsCompaniesResponse](../../sdk/models/operations/listatscompaniesresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

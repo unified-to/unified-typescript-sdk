@@ -60,7 +60,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsCandidateRead,
+      PropertyConnectionPermissions.AtsCandidateWrite,
     ],
   });
 
@@ -115,7 +115,7 @@ async function run() {
       meta: {
         "key": "string",
       },
-      objectType: ObjectType.AtsJob,
+      objectType: ObjectType.AtsScorecard,
       runs: [
         "string",
       ],
@@ -257,7 +257,7 @@ async function run() {
   const res = await sdk.unified.getUnifiedIntegrationAuth({
     integrationType: "string",
     scopes: [
-      Scopes.HrisGroupRead,
+      Scopes.HrisEmployeeWrite,
     ],
     workspaceId: "string",
   });
@@ -809,7 +809,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.AtsDocumentRead,
+        PropertyConnectionPermissions.AtsCompanyRead,
       ],
     },
     id: "<ID>",

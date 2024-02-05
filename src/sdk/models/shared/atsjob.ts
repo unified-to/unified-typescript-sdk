@@ -39,6 +39,10 @@ export class AtsJob extends SpeakeasyBase {
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     closedAt?: Date;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "company_id" })
+    companyId?: string;
+
     @SpeakeasyMetadata({ elemType: AtsCompensation })
     @Expose({ name: "compensation" })
     @Type(() => AtsCompensation)

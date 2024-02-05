@@ -108,9 +108,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.12.15";
-    genVersion = "2.246.3";
-    userAgent = "speakeasy-sdk/typescript 0.12.15 2.246.3 1.0 unified-typescript-sdk";
+    sdkVersion = "0.13.0";
+    genVersion = "2.249.1";
+    userAgent = "speakeasy-sdk/typescript 0.13.0 2.249.1 1.0 unified-typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -133,6 +133,7 @@ export class UnifiedTo {
     public application: Application;
     public applicationstatus: Applicationstatus;
     public candidate: Candidate;
+    public company: Company;
     public document: Document;
     public interview: Interview;
     public job: Job;
@@ -143,7 +144,6 @@ export class UnifiedTo {
     public item: Item;
     public location: Location;
     public crm: Crm;
-    public company: Company;
     public deal: Deal;
     public event: Event;
     public lead: Lead;
@@ -203,6 +203,7 @@ export class UnifiedTo {
         this.application = new Application(this.sdkConfiguration);
         this.applicationstatus = new Applicationstatus(this.sdkConfiguration);
         this.candidate = new Candidate(this.sdkConfiguration);
+        this.company = new Company(this.sdkConfiguration);
         this.document = new Document(this.sdkConfiguration);
         this.interview = new Interview(this.sdkConfiguration);
         this.job = new Job(this.sdkConfiguration);
@@ -213,7 +214,6 @@ export class UnifiedTo {
         this.item = new Item(this.sdkConfiguration);
         this.location = new Location(this.sdkConfiguration);
         this.crm = new Crm(this.sdkConfiguration);
-        this.company = new Company(this.sdkConfiguration);
         this.deal = new Deal(this.sdkConfiguration);
         this.event = new Event(this.sdkConfiguration);
         this.lead = new Lead(this.sdkConfiguration);

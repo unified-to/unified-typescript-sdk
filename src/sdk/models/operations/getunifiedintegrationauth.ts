@@ -39,6 +39,7 @@ export enum Scopes {
     AtsInterviewWrite = "ats_interview_write",
     AtsJobRead = "ats_job_read",
     AtsJobWrite = "ats_job_write",
+    AtsCompanyRead = "ats_company_read",
     AtsDocumentRead = "ats_document_read",
     AtsDocumentWrite = "ats_document_write",
     CrmCompanyRead = "crm_company_read",

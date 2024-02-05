@@ -29,6 +29,7 @@ export enum ObjectType {
     AtsInterview = "ats_interview",
     AtsJob = "ats_job",
     AtsScorecard = "ats_scorecard",
+    AtsCompany = "ats_company",
     CrmCompany = "crm_company",
     CrmContact = "crm_contact",
     CrmDeal = "crm_deal",

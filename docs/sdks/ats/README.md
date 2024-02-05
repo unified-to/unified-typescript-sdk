@@ -11,6 +11,7 @@
 * [createAtsScorecard](#createatsscorecard) - Create a scorecard
 * [getAtsApplication](#getatsapplication) - Retrieve an application
 * [getAtsCandidate](#getatscandidate) - Retrieve a candidate
+* [getAtsCompany](#getatscompany) - Retrieve a company
 * [getAtsDocument](#getatsdocument) - Retrieve a document
 * [getAtsInterview](#getatsinterview) - Retrieve a interview
 * [getAtsJob](#getatsjob) - Retrieve a job
@@ -18,6 +19,7 @@
 * [listAtsApplications](#listatsapplications) - List all applications
 * [listAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuses
 * [listAtsCandidates](#listatscandidates) - List all candidates
+* [listAtsCompanies](#listatscompanies) - List all companies
 * [listAtsDocuments](#listatsdocuments) - List all documents
 * [listAtsInterviews](#listatsinterviews) - List all interviews
 * [listAtsJobs](#listatsjobs) - List all jobs
@@ -485,6 +487,55 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## getAtsCompany
+
+Retrieve a company
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.ats.getAtsCompany({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAtsCompanyRequest](../../sdk/models/operations/getatscompanyrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+
+
+### Response
+
+**Promise<[operations.GetAtsCompanyResponse](../../sdk/models/operations/getatscompanyresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## getAtsDocument
 
 Retrieve a document
@@ -819,6 +870,54 @@ run();
 ### Response
 
 **Promise<[operations.ListAtsCandidatesResponse](../../sdk/models/operations/listatscandidatesresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## listAtsCompanies
+
+List all companies
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.ats.listAtsCompanies({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.ListAtsCompaniesRequest](../../sdk/models/operations/listatscompaniesrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
+| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+
+
+### Response
+
+**Promise<[operations.ListAtsCompaniesResponse](../../sdk/models/operations/listatscompaniesresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

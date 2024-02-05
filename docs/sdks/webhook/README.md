@@ -36,7 +36,7 @@ async function run() {
       meta: {
         "key": "string",
       },
-      objectType: ObjectType.AtsJob,
+      objectType: ObjectType.AtsScorecard,
       runs: [
         "string",
       ],

@@ -24,6 +24,10 @@ export class AtsCandidate extends SpeakeasyBase {
     address?: PropertyAtsCandidateAddress;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "company_id" })
+    companyId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "company_name" })
     companyName?: string;
 

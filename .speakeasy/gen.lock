@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: a19ba4935c486a523296da7841502792
+  docChecksum: 18ccf953df89af94fa8ee7505288f024
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.246.3
-  releaseVersion: 0.12.15
-  configChecksum: 946ae80ae158ec2c582538149aefafe1
+  generationVersion: 2.249.1
+  releaseVersion: 0.13.0
+  configChecksum: 0bf348f7b75cedcc24ff87d66ddfe4e0
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -28,6 +28,7 @@ generatedFiles:
   - src/sdk/application.ts
   - src/sdk/applicationstatus.ts
   - src/sdk/candidate.ts
+  - src/sdk/company.ts
   - src/sdk/document.ts
   - src/sdk/interview.ts
   - src/sdk/job.ts
@@ -38,7 +39,6 @@ generatedFiles:
   - src/sdk/item.ts
   - src/sdk/location.ts
   - src/sdk/crm.ts
-  - src/sdk/company.ts
   - src/sdk/deal.ts
   - src/sdk/event.ts
   - src/sdk/lead.ts
@@ -145,6 +145,7 @@ generatedFiles:
   - src/sdk/models/operations/createatsscorecard.ts
   - src/sdk/models/operations/getatsapplication.ts
   - src/sdk/models/operations/getatscandidate.ts
+  - src/sdk/models/operations/getatscompany.ts
   - src/sdk/models/operations/getatsdocument.ts
   - src/sdk/models/operations/getatsinterview.ts
   - src/sdk/models/operations/getatsjob.ts
@@ -152,6 +153,7 @@ generatedFiles:
   - src/sdk/models/operations/listatsapplications.ts
   - src/sdk/models/operations/listatsapplicationstatuses.ts
   - src/sdk/models/operations/listatscandidates.ts
+  - src/sdk/models/operations/listatscompanies.ts
   - src/sdk/models/operations/listatsdocuments.ts
   - src/sdk/models/operations/listatsinterviews.ts
   - src/sdk/models/operations/listatsjobs.ts
@@ -174,6 +176,13 @@ generatedFiles:
   - src/sdk/models/operations/updateatsinterview.ts
   - src/sdk/models/operations/updateatsjob.ts
   - src/sdk/models/operations/updateatsscorecard.ts
+  - src/sdk/models/operations/createcrmcompany.ts
+  - src/sdk/models/operations/getcrmcompany.ts
+  - src/sdk/models/operations/listcrmcompanies.ts
+  - src/sdk/models/operations/listenrichcompanies.ts
+  - src/sdk/models/operations/patchcrmcompany.ts
+  - src/sdk/models/operations/removecrmcompany.ts
+  - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/createcommercecollection.ts
   - src/sdk/models/operations/createcommerceinventory.ts
   - src/sdk/models/operations/createcommerceitem.ts
@@ -198,37 +207,30 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
-  - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmdeal.ts
   - src/sdk/models/operations/createcrmevent.ts
   - src/sdk/models/operations/createcrmlead.ts
   - src/sdk/models/operations/createcrmpipeline.ts
-  - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmdeal.ts
   - src/sdk/models/operations/getcrmevent.ts
   - src/sdk/models/operations/getcrmlead.ts
   - src/sdk/models/operations/getcrmpipeline.ts
-  - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmdeals.ts
   - src/sdk/models/operations/listcrmevents.ts
   - src/sdk/models/operations/listcrmleads.ts
   - src/sdk/models/operations/listcrmpipelines.ts
-  - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmdeal.ts
   - src/sdk/models/operations/patchcrmevent.ts
   - src/sdk/models/operations/patchcrmlead.ts
   - src/sdk/models/operations/patchcrmpipeline.ts
-  - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmdeal.ts
   - src/sdk/models/operations/removecrmevent.ts
   - src/sdk/models/operations/removecrmlead.ts
   - src/sdk/models/operations/removecrmpipeline.ts
-  - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmdeal.ts
   - src/sdk/models/operations/updatecrmevent.ts
   - src/sdk/models/operations/updatecrmlead.ts
   - src/sdk/models/operations/updatecrmpipeline.ts
-  - src/sdk/models/operations/listenrichcompanies.ts
   - src/sdk/models/operations/listenrichpeople.ts
   - src/sdk/models/operations/createhrisemployee.ts
   - src/sdk/models/operations/createhrisgroup.ts
@@ -334,7 +336,14 @@ generatedFiles:
   - src/sdk/models/shared/atscompensation.ts
   - src/sdk/models/shared/atsaddress.ts
   - src/sdk/models/shared/atsscorecard.ts
+  - src/sdk/models/shared/atscompany.ts
+  - src/sdk/models/shared/propertyatscompanyaddress.ts
   - src/sdk/models/shared/atsstatus.ts
+  - src/sdk/models/shared/crmcompany.ts
+  - src/sdk/models/shared/propertycrmcompanyaddress.ts
+  - src/sdk/models/shared/enrichcompany.ts
+  - src/sdk/models/shared/enrichtelephone.ts
+  - src/sdk/models/shared/propertyenrichcompanyaddress.ts
   - src/sdk/models/shared/commercecollection.ts
   - src/sdk/models/shared/commerceitemmedia.ts
   - src/sdk/models/shared/commerceinventory.ts
@@ -344,8 +353,6 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemoption.ts
   - src/sdk/models/shared/commercelocation.ts
   - src/sdk/models/shared/propertycommercelocationaddress.ts
-  - src/sdk/models/shared/crmcompany.ts
-  - src/sdk/models/shared/propertycrmcompanyaddress.ts
   - src/sdk/models/shared/crmdeal.ts
   - src/sdk/models/shared/crmevent.ts
   - src/sdk/models/shared/propertycrmeventtask.ts
@@ -356,9 +363,6 @@ generatedFiles:
   - src/sdk/models/shared/crmlead.ts
   - src/sdk/models/shared/propertycrmleadaddress.ts
   - src/sdk/models/shared/crmpipeline.ts
-  - src/sdk/models/shared/enrichcompany.ts
-  - src/sdk/models/shared/enrichtelephone.ts
-  - src/sdk/models/shared/propertyenrichcompanyaddress.ts
   - src/sdk/models/shared/enrichperson.ts
   - src/sdk/models/shared/enrichpersonworkhistory.ts
   - src/sdk/models/shared/enrichemail.ts
@@ -511,6 +515,8 @@ generatedFiles:
   - docs/sdk/models/operations/getatsapplicationresponse.md
   - docs/sdk/models/operations/getatscandidaterequest.md
   - docs/sdk/models/operations/getatscandidateresponse.md
+  - docs/sdk/models/operations/getatscompanyrequest.md
+  - docs/sdk/models/operations/getatscompanyresponse.md
   - docs/sdk/models/operations/getatsdocumentrequest.md
   - docs/sdk/models/operations/getatsdocumentresponse.md
   - docs/sdk/models/operations/getatsinterviewrequest.md
@@ -525,6 +531,8 @@ generatedFiles:
   - docs/sdk/models/operations/listatsapplicationstatusesresponse.md
   - docs/sdk/models/operations/listatscandidatesrequest.md
   - docs/sdk/models/operations/listatscandidatesresponse.md
+  - docs/sdk/models/operations/listatscompaniesrequest.md
+  - docs/sdk/models/operations/listatscompaniesresponse.md
   - docs/sdk/models/operations/listatsdocumentsrequest.md
   - docs/sdk/models/operations/listatsdocumentsresponse.md
   - docs/sdk/models/operations/listatsinterviewsrequest.md
@@ -569,6 +577,20 @@ generatedFiles:
   - docs/sdk/models/operations/updateatsjobresponse.md
   - docs/sdk/models/operations/updateatsscorecardrequest.md
   - docs/sdk/models/operations/updateatsscorecardresponse.md
+  - docs/sdk/models/operations/createcrmcompanyrequest.md
+  - docs/sdk/models/operations/createcrmcompanyresponse.md
+  - docs/sdk/models/operations/getcrmcompanyrequest.md
+  - docs/sdk/models/operations/getcrmcompanyresponse.md
+  - docs/sdk/models/operations/listcrmcompaniesrequest.md
+  - docs/sdk/models/operations/listcrmcompaniesresponse.md
+  - docs/sdk/models/operations/listenrichcompaniesrequest.md
+  - docs/sdk/models/operations/listenrichcompaniesresponse.md
+  - docs/sdk/models/operations/patchcrmcompanyrequest.md
+  - docs/sdk/models/operations/patchcrmcompanyresponse.md
+  - docs/sdk/models/operations/removecrmcompanyrequest.md
+  - docs/sdk/models/operations/removecrmcompanyresponse.md
+  - docs/sdk/models/operations/updatecrmcompanyrequest.md
+  - docs/sdk/models/operations/updatecrmcompanyresponse.md
   - docs/sdk/models/operations/createcommercecollectionrequest.md
   - docs/sdk/models/operations/createcommercecollectionresponse.md
   - docs/sdk/models/operations/createcommerceinventoryrequest.md
@@ -617,8 +639,6 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceitemresponse.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
   - docs/sdk/models/operations/updatecommercelocationresponse.md
-  - docs/sdk/models/operations/createcrmcompanyrequest.md
-  - docs/sdk/models/operations/createcrmcompanyresponse.md
   - docs/sdk/models/operations/createcrmdealrequest.md
   - docs/sdk/models/operations/createcrmdealresponse.md
   - docs/sdk/models/operations/createcrmeventrequest.md
@@ -627,8 +647,6 @@ generatedFiles:
   - docs/sdk/models/operations/createcrmleadresponse.md
   - docs/sdk/models/operations/createcrmpipelinerequest.md
   - docs/sdk/models/operations/createcrmpipelineresponse.md
-  - docs/sdk/models/operations/getcrmcompanyrequest.md
-  - docs/sdk/models/operations/getcrmcompanyresponse.md
   - docs/sdk/models/operations/getcrmdealrequest.md
   - docs/sdk/models/operations/getcrmdealresponse.md
   - docs/sdk/models/operations/getcrmeventrequest.md
@@ -637,8 +655,6 @@ generatedFiles:
   - docs/sdk/models/operations/getcrmleadresponse.md
   - docs/sdk/models/operations/getcrmpipelinerequest.md
   - docs/sdk/models/operations/getcrmpipelineresponse.md
-  - docs/sdk/models/operations/listcrmcompaniesrequest.md
-  - docs/sdk/models/operations/listcrmcompaniesresponse.md
   - docs/sdk/models/operations/listcrmdealsrequest.md
   - docs/sdk/models/operations/listcrmdealsresponse.md
   - docs/sdk/models/operations/listcrmeventsrequest.md
@@ -647,8 +663,6 @@ generatedFiles:
   - docs/sdk/models/operations/listcrmleadsresponse.md
   - docs/sdk/models/operations/listcrmpipelinesrequest.md
   - docs/sdk/models/operations/listcrmpipelinesresponse.md
-  - docs/sdk/models/operations/patchcrmcompanyrequest.md
-  - docs/sdk/models/operations/patchcrmcompanyresponse.md
   - docs/sdk/models/operations/patchcrmdealrequest.md
   - docs/sdk/models/operations/patchcrmdealresponse.md
   - docs/sdk/models/operations/patchcrmeventrequest.md
@@ -657,8 +671,6 @@ generatedFiles:
   - docs/sdk/models/operations/patchcrmleadresponse.md
   - docs/sdk/models/operations/patchcrmpipelinerequest.md
   - docs/sdk/models/operations/patchcrmpipelineresponse.md
-  - docs/sdk/models/operations/removecrmcompanyrequest.md
-  - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmdealrequest.md
   - docs/sdk/models/operations/removecrmdealresponse.md
   - docs/sdk/models/operations/removecrmeventrequest.md
@@ -667,8 +679,6 @@ generatedFiles:
   - docs/sdk/models/operations/removecrmleadresponse.md
   - docs/sdk/models/operations/removecrmpipelinerequest.md
   - docs/sdk/models/operations/removecrmpipelineresponse.md
-  - docs/sdk/models/operations/updatecrmcompanyrequest.md
-  - docs/sdk/models/operations/updatecrmcompanyresponse.md
   - docs/sdk/models/operations/updatecrmdealrequest.md
   - docs/sdk/models/operations/updatecrmdealresponse.md
   - docs/sdk/models/operations/updatecrmeventrequest.md
@@ -677,8 +687,6 @@ generatedFiles:
   - docs/sdk/models/operations/updatecrmleadresponse.md
   - docs/sdk/models/operations/updatecrmpipelinerequest.md
   - docs/sdk/models/operations/updatecrmpipelineresponse.md
-  - docs/sdk/models/operations/listenrichcompaniesrequest.md
-  - docs/sdk/models/operations/listenrichcompaniesresponse.md
   - docs/sdk/models/operations/listenrichpeoplerequest.md
   - docs/sdk/models/operations/listenrichpeopleresponse.md
   - docs/sdk/models/operations/createhrisemployeerequest.md
@@ -881,8 +889,16 @@ generatedFiles:
   - docs/sdk/models/shared/atsaddress.md
   - docs/sdk/models/shared/recommendation.md
   - docs/sdk/models/shared/atsscorecard.md
+  - docs/sdk/models/shared/atscompany.md
+  - docs/sdk/models/shared/propertyatscompanyaddress.md
   - docs/sdk/models/shared/atsstatusstatus.md
   - docs/sdk/models/shared/atsstatus.md
+  - docs/sdk/models/shared/crmcompany.md
+  - docs/sdk/models/shared/propertycrmcompanyaddress.md
+  - docs/sdk/models/shared/enrichcompany.md
+  - docs/sdk/models/shared/enrichtelephonetype.md
+  - docs/sdk/models/shared/enrichtelephone.md
+  - docs/sdk/models/shared/propertyenrichcompanyaddress.md
   - docs/sdk/models/shared/commercecollection.md
   - docs/sdk/models/shared/commerceitemmediatype.md
   - docs/sdk/models/shared/commerceitemmedia.md
@@ -895,8 +911,6 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemoption.md
   - docs/sdk/models/shared/commercelocation.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
-  - docs/sdk/models/shared/crmcompany.md
-  - docs/sdk/models/shared/propertycrmcompanyaddress.md
   - docs/sdk/models/shared/crmdeal.md
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmevent.md
@@ -909,10 +923,6 @@ generatedFiles:
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/propertycrmleadaddress.md
   - docs/sdk/models/shared/crmpipeline.md
-  - docs/sdk/models/shared/enrichcompany.md
-  - docs/sdk/models/shared/enrichtelephonetype.md
-  - docs/sdk/models/shared/enrichtelephone.md
-  - docs/sdk/models/shared/propertyenrichcompanyaddress.md
   - docs/sdk/models/shared/gender.md
   - docs/sdk/models/shared/enrichperson.md
   - docs/sdk/models/shared/enrichpersonworkhistory.md
@@ -979,6 +989,7 @@ generatedFiles:
   - docs/sdks/application/README.md
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/candidate/README.md
+  - docs/sdks/company/README.md
   - docs/sdks/document/README.md
   - docs/sdks/interview/README.md
   - docs/sdks/job/README.md
@@ -989,7 +1000,6 @@ generatedFiles:
   - docs/sdks/item/README.md
   - docs/sdks/location/README.md
   - docs/sdks/crm/README.md
-  - docs/sdks/company/README.md
   - docs/sdks/deal/README.md
   - docs/sdks/event/README.md
   - docs/sdks/lead/README.md
