@@ -30,6 +30,12 @@ export class PatchPassthroughResponse extends SpeakeasyBase {
     contentType: string;
 
     /**
+     * Successful
+     */
+    @SpeakeasyMetadata()
+    result?: Record<string, any>;
+
+    /**
      * HTTP response status code for this operation
      */
     @SpeakeasyMetadata()
@@ -40,10 +46,4 @@ export class PatchPassthroughResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse: AxiosResponse;
-
-    /**
-     * Successful
-     */
-    @SpeakeasyMetadata()
-    undefined?: Record<string, any>;
 }
