@@ -17,7 +17,7 @@ export class Item {
     }
 
     /**
-     * Create an item/product
+     * Create an item
      */
     async createCommerceItem(
         req: operations.CreateCommerceItemRequest,
@@ -117,7 +117,7 @@ export class Item {
     }
 
     /**
-     * Retrieve an item/product
+     * Retrieve an item
      */
     async getCommerceItem(
         req: operations.GetCommerceItemRequest,
@@ -202,7 +202,7 @@ export class Item {
     }
 
     /**
-     * List all items/products
+     * List all items
      */
     async listCommerceItems(
         req: operations.ListCommerceItemsRequest,
@@ -290,7 +290,7 @@ export class Item {
     }
 
     /**
-     * Update an item/product
+     * Update an item
      */
     async patchCommerceItem(
         req: operations.PatchCommerceItemRequest,
@@ -389,7 +389,7 @@ export class Item {
     }
 
     /**
-     * Remove an item/product
+     * Remove an item
      */
     async removeCommerceItem(
         req: operations.RemoveCommerceItemRequest,
@@ -471,7 +471,7 @@ export class Item {
     }
 
     /**
-     * Update an item/product
+     * Update an item
      */
     async updateCommerceItem(
         req: operations.UpdateCommerceItemRequest,

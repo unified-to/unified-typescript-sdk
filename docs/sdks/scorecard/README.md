@@ -29,6 +29,11 @@ async function run() {
 
   const res = await sdk.scorecard.createAtsScorecard({
     atsScorecard: {
+      questions: [
+        {
+          text: "string",
+        },
+      ],
       raw: {
         "key": "string",
       },
@@ -177,6 +182,11 @@ async function run() {
 
   const res = await sdk.scorecard.patchAtsScorecard({
     atsScorecard: {
+      questions: [
+        {
+          text: "string",
+        },
+      ],
       raw: {
         "key": "string",
       },
@@ -275,6 +285,11 @@ async function run() {
 
   const res = await sdk.scorecard.updateAtsScorecard({
     atsScorecard: {
+      questions: [
+        {
+          text: "string",
+        },
+      ],
       raw: {
         "key": "string",
       },

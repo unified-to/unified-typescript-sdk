@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose, Transform } from "class-transformer";
+import { AtsScorecardQuestion } from "./atsscorecardquestion";
+import { Expose, Transform, Type } from "class-transformer";
 
 export enum Recommendation {
     DefinitelyNo = "DEFINITELY_NO",
@@ -45,6 +46,11 @@ export class AtsScorecard extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "job_id" })
     jobId?: string;
+
+    @SpeakeasyMetadata({ elemType: AtsScorecardQuestion })
+    @Expose({ name: "questions" })
+    @Type(() => AtsScorecardQuestion)
+    questions?: AtsScorecardQuestion[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

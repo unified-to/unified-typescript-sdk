@@ -24,6 +24,7 @@ export * from "./atsemail";
 export * from "./atsinterview";
 export * from "./atsjob";
 export * from "./atsscorecard";
+export * from "./atsscorecardquestion";
 export * from "./atsstatus";
 export * from "./atstelephone";
 export * from "./commercecollection";

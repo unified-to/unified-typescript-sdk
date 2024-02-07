@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: e16aa34043cd80d620a23e298a14e5c0
+  docChecksum: 6de3144fa3dee858558168257bc841a5
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.250.12
-  releaseVersion: 0.14.1
-  configChecksum: b5fc06062b286c0cc08037b8e8bdb836
+  generationVersion: 2.250.16
+  releaseVersion: 0.14.2
+  configChecksum: 3073aedc71aefaa14939f1a3fd4274dc
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -336,6 +336,7 @@ generatedFiles:
   - src/sdk/models/shared/atscompensation.ts
   - src/sdk/models/shared/atsaddress.ts
   - src/sdk/models/shared/atsscorecard.ts
+  - src/sdk/models/shared/atsscorecardquestion.ts
   - src/sdk/models/shared/atscompany.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts
   - src/sdk/models/shared/atsstatus.ts
@@ -889,6 +890,7 @@ generatedFiles:
   - docs/sdk/models/shared/atsaddress.md
   - docs/sdk/models/shared/recommendation.md
   - docs/sdk/models/shared/atsscorecard.md
+  - docs/sdk/models/shared/atsscorecardquestion.md
   - docs/sdk/models/shared/atscompany.md
   - docs/sdk/models/shared/propertyatscompanyaddress.md
   - docs/sdk/models/shared/atsstatusstatus.md
