@@ -115,6 +115,10 @@ export class Webhook extends SpeakeasyBase {
     @Expose({ name: "object_type" })
     objectType: ObjectType;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "page_max_limit" })
+    pageMaxLimit?: number;
+
     /**
      * An array of the most revent virtual webhook runs
      */
