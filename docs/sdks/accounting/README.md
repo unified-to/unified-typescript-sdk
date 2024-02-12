@@ -14,6 +14,8 @@
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
 * [getAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [getAccountingPayment](#getaccountingpayment) - Retrieve a payment
+* [getAccountingPayout](#getaccountingpayout) - Retrieve a payout
+* [getAccountingRefund](#getaccountingrefund) - Retrieve a refund
 * [getAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [getAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [listAccountingAccounts](#listaccountingaccounts) - List all accounts
@@ -21,6 +23,8 @@
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [listAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [listAccountingPayments](#listaccountingpayments) - List all payments
+* [listAccountingPayouts](#listaccountingpayouts) - List all payouts
+* [listAccountingRefunds](#listaccountingrefunds) - List all refunds
 * [listAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [listAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [patchAccountingAccount](#patchaccountingaccount) - Update an account
@@ -617,6 +621,104 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4xx-5xx         | */*             |
 
+## getAccountingPayout
+
+Retrieve a payout
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.getAccountingPayout({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountingPayoutRequest](../../sdk/models/operations/getaccountingpayoutrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+
+
+### Response
+
+**Promise<[operations.GetAccountingPayoutResponse](../../sdk/models/operations/getaccountingpayoutresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## getAccountingRefund
+
+Retrieve a refund
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.getAccountingRefund({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+    id: "<ID>",
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountingRefundRequest](../../sdk/models/operations/getaccountingrefundrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+
+
+### Response
+
+**Promise<[operations.GetAccountingRefundResponse](../../sdk/models/operations/getaccountingrefundresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
 ## getAccountingTaxrate
 
 Retrieve a taxrate
@@ -949,6 +1051,102 @@ run();
 ### Response
 
 **Promise<[operations.ListAccountingPaymentsResponse](../../sdk/models/operations/listaccountingpaymentsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## listAccountingPayouts
+
+List all payouts
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.listAccountingPayouts({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListAccountingPayoutsRequest](../../sdk/models/operations/listaccountingpayoutsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.ListAccountingPayoutsResponse](../../sdk/models/operations/listaccountingpayoutsresponse.md)>**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+## listAccountingRefunds
+
+List all refunds
+
+### Example Usage
+
+```typescript
+import { UnifiedTo } from "unified-typescript-sdk";
+
+async function run() {
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
+
+  const res = await sdk.accounting.listAccountingRefunds({
+    connectionId: "string",
+    fields: [
+      "string",
+    ],
+  });
+
+  if (res.statusCode == 200) {
+    // handle response
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListAccountingRefundsRequest](../../sdk/models/operations/listaccountingrefundsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+
+
+### Response
+
+**Promise<[operations.ListAccountingRefundsResponse](../../sdk/models/operations/listaccountingrefundsresponse.md)>**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

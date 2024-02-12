@@ -19,6 +19,10 @@
 | `AccountingTaxrateRead`      | accounting_taxrate_read      |
 | `AccountingTaxrateWrite`     | accounting_taxrate_write     |
 | `AccountingOrganizationRead` | accounting_organization_read |
+| `AccountingRefundRead`       | accounting_refund_read       |
+| `AccountingRefundWrite`      | accounting_refund_write      |
+| `AccountingPayoutRead`       | accounting_payout_read       |
+| `AccountingPayoutWrite`      | accounting_payout_write      |
 | `CommerceItemRead`           | commerce_item_read           |
 | `CommerceItemWrite`          | commerce_item_write          |
 | `CommerceCollectionRead`     | commerce_collection_read     |

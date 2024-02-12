@@ -639,3 +639,11 @@ Based on:
 - Speakeasy CLI 1.170.3 (2.250.16) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [typescript v0.14.2] .
+
+## 2024-02-12 00:50:12
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.177.1 (2.252.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.14.3] .

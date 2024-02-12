@@ -32,6 +32,7 @@ import { Integration } from "./integration";
 import { Interview } from "./interview";
 import { Inventory } from "./inventory";
 import { Invoice } from "./invoice";
+import { Issue } from "./issue";
 import { Item } from "./item";
 import { Job } from "./job";
 import { Lead } from "./lead";
@@ -44,8 +45,10 @@ import { Note } from "./note";
 import { Organization } from "./organization";
 import { Passthrough } from "./passthrough";
 import { Payment } from "./payment";
+import { Payout } from "./payout";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
+import { Refund } from "./refund";
 import { Scorecard } from "./scorecard";
 import { Storage } from "./storage";
 import { Taxrate } from "./taxrate";
@@ -108,9 +111,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.14.2";
-    genVersion = "2.250.16";
-    userAgent = "speakeasy-sdk/typescript 0.14.2 2.250.16 1.0 unified-typescript-sdk";
+    sdkVersion = "0.14.3";
+    genVersion = "2.252.2";
+    userAgent = "speakeasy-sdk/typescript 0.14.3 2.252.2 1.0 unified-typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -127,6 +130,8 @@ export class UnifiedTo {
     public invoice: Invoice;
     public organization: Organization;
     public payment: Payment;
+    public payout: Payout;
+    public refund: Refund;
     public taxrate: Taxrate;
     public transaction: Transaction;
     public ats: Ats;
@@ -171,6 +176,7 @@ export class UnifiedTo {
     public integration: Integration;
     public auth: Auth;
     public login: Login;
+    public issue: Issue;
     public webhook: Webhook;
 
     private sdkConfiguration: SDKConfiguration;
@@ -197,6 +203,8 @@ export class UnifiedTo {
         this.invoice = new Invoice(this.sdkConfiguration);
         this.organization = new Organization(this.sdkConfiguration);
         this.payment = new Payment(this.sdkConfiguration);
+        this.payout = new Payout(this.sdkConfiguration);
+        this.refund = new Refund(this.sdkConfiguration);
         this.taxrate = new Taxrate(this.sdkConfiguration);
         this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
@@ -241,6 +249,7 @@ export class UnifiedTo {
         this.integration = new Integration(this.sdkConfiguration);
         this.auth = new Auth(this.sdkConfiguration);
         this.login = new Login(this.sdkConfiguration);
+        this.issue = new Issue(this.sdkConfiguration);
         this.webhook = new Webhook(this.sdkConfiguration);
     }
 }
