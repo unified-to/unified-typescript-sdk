@@ -18,6 +18,8 @@ export enum ObjectType {
     AccountingPayment = "accounting_payment",
     AccountingTaxrate = "accounting_taxrate",
     AccountingOrganization = "accounting_organization",
+    AccountingPayout = "accounting_payout",
+    AccountingRefund = "accounting_refund",
     CommerceItem = "commerce_item",
     CommerceCollection = "commerce_collection",
     CommerceInventory = "commerce_inventory",
@@ -101,7 +103,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "interval" })
-    interval: number;
+    interval?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "is_healthy" })

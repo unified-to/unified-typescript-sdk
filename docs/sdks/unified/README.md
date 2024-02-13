@@ -61,7 +61,7 @@ async function run() {
     ],
     integrationType: "string",
     permissions: [
-      PropertyConnectionPermissions.AtsCandidateWrite,
+      PropertyConnectionPermissions.AtsApplicationstatusRead,
     ],
   });
 
@@ -112,11 +112,10 @@ async function run() {
       connectionId: "string",
       event: Event.Created,
       hookUrl: "string",
-      interval: 188.12,
       meta: {
         "key": "string",
       },
-      objectType: ObjectType.AtsScorecard,
+      objectType: ObjectType.AccountingAccount,
       runs: [
         "string",
       ],
@@ -647,7 +646,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.CrmPipelineRead,
+        PropertyConnectionPermissions.CrmLeadWrite,
       ],
     },
     id: "<ID>",
@@ -853,7 +852,7 @@ async function run() {
       ],
       integrationType: "string",
       permissions: [
-        PropertyConnectionPermissions.AtsCompanyRead,
+        PropertyConnectionPermissions.AtsJobWrite,
       ],
     },
     id: "<ID>",

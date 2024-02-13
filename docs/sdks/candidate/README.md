@@ -41,6 +41,9 @@ async function run() {
       raw: {
         "key": "string",
       },
+      sources: [
+        "string",
+      ],
       tags: [
         "string",
       ],
@@ -206,6 +209,9 @@ async function run() {
       raw: {
         "key": "string",
       },
+      sources: [
+        "string",
+      ],
       tags: [
         "string",
       ],
@@ -321,6 +327,9 @@ async function run() {
       raw: {
         "key": "string",
       },
+      sources: [
+        "string",
+      ],
       tags: [
         "string",
       ],

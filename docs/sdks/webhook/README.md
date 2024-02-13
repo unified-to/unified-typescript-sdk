@@ -32,11 +32,10 @@ async function run() {
       connectionId: "string",
       event: Event.Created,
       hookUrl: "string",
-      interval: 188.12,
       meta: {
         "key": "string",
       },
-      objectType: ObjectType.AtsScorecard,
+      objectType: ObjectType.AccountingAccount,
       runs: [
         "string",
       ],

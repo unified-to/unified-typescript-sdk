@@ -73,6 +73,10 @@ export class AtsCandidate extends SpeakeasyBase {
     raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "sources" })
+    sources?: string[];
+
+    @SpeakeasyMetadata()
     @Expose({ name: "tags" })
     tags?: string[];
 

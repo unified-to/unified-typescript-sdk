@@ -17,6 +17,8 @@ export enum PropertyConnectionPermissions {
     AccountingTaxrateRead = "accounting_taxrate_read",
     AccountingTaxrateWrite = "accounting_taxrate_write",
     AccountingOrganizationRead = "accounting_organization_read",
+    AccountingPayoutRead = "accounting_payout_read",
+    AccountingRefundRead = "accounting_refund_read",
     CommerceItemRead = "commerce_item_read",
     CommerceItemWrite = "commerce_item_write",
     CommerceCollectionRead = "commerce_collection_read",
