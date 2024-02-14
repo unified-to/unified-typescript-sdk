@@ -19,8 +19,20 @@ export class ListCommerceInventoriesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
+    /**
+     * The item/product ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=item_id" })
+    itemId?: string;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
+
+    /**
+     * The location ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=location_id" })
+    locationId?: string;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
     offset?: number;
