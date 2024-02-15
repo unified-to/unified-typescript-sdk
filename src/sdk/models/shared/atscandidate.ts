@@ -36,6 +36,11 @@ export class AtsCandidate extends SpeakeasyBase {
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "date_of_birth" })
+    @Transform(({ value }) => new Date(value), { toClassOnly: true })
+    dateOfBirth?: Date;
+
     @SpeakeasyMetadata({ elemType: AtsEmail })
     @Expose({ name: "emails" })
     @Type(() => AtsEmail)
