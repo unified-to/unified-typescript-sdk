@@ -29,15 +29,15 @@ async function run() {
 
   const res = await sdk.webhook.createUnifiedWebhook({
     webhook: {
-      connectionId: "string",
+      connectionId: "<value>",
       event: Event.Created,
-      hookUrl: "string",
+      hookUrl: "<value>",
       meta: {
-        "key": "string",
+        "key": "<value>",
       },
       objectType: ObjectType.AccountingAccount,
       runs: [
-        "string",
+        "<value>",
       ],
     },
   });
@@ -84,7 +84,7 @@ async function run() {
   });
 
   const res = await sdk.webhook.getUnifiedWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -172,7 +172,7 @@ async function run() {
   });
 
   const res = await sdk.webhook.patchUnifiedWebhookTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -217,7 +217,7 @@ async function run() {
   });
 
   const res = await sdk.webhook.removeUnifiedWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -262,7 +262,7 @@ async function run() {
   });
 
   const res = await sdk.webhook.updateUnifiedWebhookTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

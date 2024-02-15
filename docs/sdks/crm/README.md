@@ -61,30 +61,30 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -133,24 +133,24 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -197,13 +197,13 @@ async function run() {
   const res = await sdk.crm.createCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -252,36 +252,36 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -333,15 +333,15 @@ async function run() {
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -388,10 +388,10 @@ async function run() {
   const res = await sdk.crm.createCrmPipeline({
     crmPipeline: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -436,11 +436,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmCompany({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -485,11 +485,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmContact({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -534,11 +534,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmDeal({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -583,11 +583,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmEvent({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -632,11 +632,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmLead({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -681,11 +681,11 @@ async function run() {
   });
 
   const res = await sdk.crm.getCrmPipeline({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -730,9 +730,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -778,9 +778,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmContacts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -826,9 +826,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmDeals({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -874,9 +874,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmEvents({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -922,9 +922,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmLeads({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -970,9 +970,9 @@ async function run() {
   });
 
   const res = await sdk.crm.listCrmPipelines({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1022,31 +1022,31 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1095,25 +1095,25 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1160,14 +1160,14 @@ async function run() {
   const res = await sdk.crm.patchCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1216,37 +1216,37 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1298,16 +1298,16 @@ async function run() {
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1354,11 +1354,11 @@ async function run() {
   const res = await sdk.crm.patchCrmPipeline({
     crmPipeline: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1403,8 +1403,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmCompany({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1449,8 +1449,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmContact({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1495,8 +1495,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmDeal({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1541,8 +1541,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmEvent({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1587,8 +1587,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmLead({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1633,8 +1633,8 @@ async function run() {
   });
 
   const res = await sdk.crm.removeCrmPipeline({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1683,31 +1683,31 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1756,25 +1756,25 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1821,14 +1821,14 @@ async function run() {
   const res = await sdk.crm.updateCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1877,37 +1877,37 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1959,16 +1959,16 @@ async function run() {
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2015,11 +2015,11 @@ async function run() {
   const res = await sdk.crm.updateCrmPipeline({
     crmPipeline: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

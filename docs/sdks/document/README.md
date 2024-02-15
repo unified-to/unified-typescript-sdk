@@ -30,10 +30,10 @@ async function run() {
   const res = await sdk.document.createAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -78,11 +78,11 @@ async function run() {
   });
 
   const res = await sdk.document.getAtsDocument({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -127,9 +127,9 @@ async function run() {
   });
 
   const res = await sdk.document.listAtsDocuments({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -178,11 +178,11 @@ async function run() {
   const res = await sdk.document.patchAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -227,8 +227,8 @@ async function run() {
   });
 
   const res = await sdk.document.removeAtsDocument({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -276,11 +276,11 @@ async function run() {
   const res = await sdk.document.updateAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

@@ -63,10 +63,10 @@ async function run() {
   const res = await sdk.ats.createAtsApplication({
     atsApplication: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -120,24 +120,24 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -185,10 +185,10 @@ async function run() {
   const res = await sdk.ats.createAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -236,13 +236,13 @@ async function run() {
   const res = await sdk.ats.createAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -298,22 +298,22 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -362,14 +362,14 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -414,11 +414,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsApplication({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -463,11 +463,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsCandidate({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -512,11 +512,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsCompany({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -561,11 +561,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsDocument({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -610,11 +610,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsInterview({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -659,11 +659,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsJob({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -708,11 +708,11 @@ async function run() {
   });
 
   const res = await sdk.ats.getAtsScorecard({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -757,9 +757,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsApplications({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -805,9 +805,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsApplicationstatuses({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -853,9 +853,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsCandidates({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -901,9 +901,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -949,9 +949,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsDocuments({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -997,9 +997,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsInterviews({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1045,9 +1045,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsJobs({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1093,9 +1093,9 @@ async function run() {
   });
 
   const res = await sdk.ats.listAtsScorecards({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1144,11 +1144,11 @@ async function run() {
   const res = await sdk.ats.patchAtsApplication({
     atsApplication: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1202,25 +1202,25 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1268,11 +1268,11 @@ async function run() {
   const res = await sdk.ats.patchAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1320,14 +1320,14 @@ async function run() {
   const res = await sdk.ats.patchAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1383,23 +1383,23 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1448,15 +1448,15 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1501,8 +1501,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsApplication({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1547,8 +1547,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsCandidate({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1593,8 +1593,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsDocument({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1639,8 +1639,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsInterview({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1685,8 +1685,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsJob({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1731,8 +1731,8 @@ async function run() {
   });
 
   const res = await sdk.ats.removeAtsScorecard({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1780,11 +1780,11 @@ async function run() {
   const res = await sdk.ats.updateAtsApplication({
     atsApplication: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1838,25 +1838,25 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1904,11 +1904,11 @@ async function run() {
   const res = await sdk.ats.updateAtsDocument({
     atsDocument: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1956,14 +1956,14 @@ async function run() {
   const res = await sdk.ats.updateAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2019,23 +2019,23 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2084,15 +2084,15 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

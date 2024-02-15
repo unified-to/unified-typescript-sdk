@@ -24,11 +24,11 @@ async function run() {
   });
 
   const res = await sdk.auth.getUnifiedIntegrationAuth({
-    integrationType: "string",
+    integrationType: "<value>",
     scopes: [
       Scopes.HrisEmployeeWrite,
     ],
-    workspaceId: "string",
+    workspaceId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -73,8 +73,8 @@ async function run() {
   });
 
   const res = await sdk.auth.getUnifiedIntegrationLogin({
-    integrationType: "string",
-    workspaceId: "string",
+    integrationType: "<value>",
+    workspaceId: "<value>",
   });
 
   if (res.statusCode == 200) {

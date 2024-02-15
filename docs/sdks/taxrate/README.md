@@ -28,13 +28,13 @@ async function run() {
 
   const res = await sdk.taxrate.createAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 1719.1,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -79,11 +79,11 @@ async function run() {
   });
 
   const res = await sdk.taxrate.getAccountingTaxrate({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -128,9 +128,9 @@ async function run() {
   });
 
   const res = await sdk.taxrate.listAccountingTaxrates({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -177,14 +177,14 @@ async function run() {
 
   const res = await sdk.taxrate.patchAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 5991.47,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -229,8 +229,8 @@ async function run() {
   });
 
   const res = await sdk.taxrate.removeAccountingTaxrate({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -276,14 +276,14 @@ async function run() {
 
   const res = await sdk.taxrate.updateAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 3382.78,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

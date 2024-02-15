@@ -23,7 +23,7 @@ async function run() {
   });
 
   const res = await sdk.apicall.getUnifiedApicall({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

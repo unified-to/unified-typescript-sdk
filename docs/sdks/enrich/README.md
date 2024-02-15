@@ -23,7 +23,7 @@ async function run() {
   });
 
   const res = await sdk.enrich.listEnrichCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -68,7 +68,7 @@ async function run() {
   });
 
   const res = await sdk.enrich.listEnrichPeople({
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {

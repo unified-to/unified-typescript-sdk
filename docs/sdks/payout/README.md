@@ -23,11 +23,11 @@ async function run() {
   });
 
   const res = await sdk.payout.getAccountingPayout({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ async function run() {
   });
 
   const res = await sdk.payout.listAccountingPayouts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 

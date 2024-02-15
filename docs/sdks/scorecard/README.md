@@ -31,14 +31,14 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -83,11 +83,11 @@ async function run() {
   });
 
   const res = await sdk.scorecard.getAtsScorecard({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -132,9 +132,9 @@ async function run() {
   });
 
   const res = await sdk.scorecard.listAtsScorecards({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -184,15 +184,15 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -237,8 +237,8 @@ async function run() {
   });
 
   const res = await sdk.scorecard.removeAtsScorecard({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -287,15 +287,15 @@ async function run() {
     atsScorecard: {
       questions: [
         {
-          text: "string",
+          text: "<value>",
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

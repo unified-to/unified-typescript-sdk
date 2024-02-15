@@ -30,16 +30,16 @@ async function run() {
   const res = await sdk.group.createHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -84,11 +84,11 @@ async function run() {
   });
 
   const res = await sdk.group.getHrisGroup({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -133,9 +133,9 @@ async function run() {
   });
 
   const res = await sdk.group.listHrisGroups({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -184,17 +184,17 @@ async function run() {
   const res = await sdk.group.patchHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -239,8 +239,8 @@ async function run() {
   });
 
   const res = await sdk.group.removeHrisGroup({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -288,17 +288,17 @@ async function run() {
   const res = await sdk.group.updateHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

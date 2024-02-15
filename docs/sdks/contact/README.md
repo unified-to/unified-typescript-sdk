@@ -48,16 +48,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -106,24 +106,24 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -176,15 +176,15 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -229,11 +229,11 @@ async function run() {
   });
 
   const res = await sdk.contact.getAccountingContact({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -278,11 +278,11 @@ async function run() {
   });
 
   const res = await sdk.contact.getCrmContact({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -327,11 +327,11 @@ async function run() {
   });
 
   const res = await sdk.contact.getUcContact({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -376,9 +376,9 @@ async function run() {
   });
 
   const res = await sdk.contact.listAccountingContacts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -424,9 +424,9 @@ async function run() {
   });
 
   const res = await sdk.contact.listCrmContacts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -472,9 +472,9 @@ async function run() {
   });
 
   const res = await sdk.contact.listUcContacts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -529,17 +529,17 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -588,25 +588,25 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -659,16 +659,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -713,8 +713,8 @@ async function run() {
   });
 
   const res = await sdk.contact.removeAccountingContact({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -759,8 +759,8 @@ async function run() {
   });
 
   const res = await sdk.contact.removeCrmContact({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -805,8 +805,8 @@ async function run() {
   });
 
   const res = await sdk.contact.removeUcContact({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -860,17 +860,17 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -919,25 +919,25 @@ async function run() {
     crmContact: {
       address: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -990,16 +990,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

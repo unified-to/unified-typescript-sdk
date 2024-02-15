@@ -42,13 +42,13 @@ async function run() {
   const res = await sdk.unified.createUnifiedConnection({
     auth: {
       emails: [
-        "string",
+        "<value>",
       ],
       meta: {
-        "key": "string",
+        "key": "<value>",
       },
       otherAuthInfo: [
-        "string",
+        "<value>",
       ],
     },
     categories: [
@@ -56,10 +56,10 @@ async function run() {
     ],
     cursorsCache: [
       {
-        "key": "string",
+        "key": "<value>",
       },
     ],
-    integrationType: "string",
+    integrationType: "<value>",
     permissions: [
       PropertyConnectionPermissions.AtsApplicationstatusRead,
     ],
@@ -109,15 +109,15 @@ async function run() {
 
   const res = await sdk.unified.createUnifiedWebhook({
     webhook: {
-      connectionId: "string",
+      connectionId: "<value>",
       event: Event.Created,
-      hookUrl: "string",
+      hookUrl: "<value>",
       meta: {
-        "key": "string",
+        "key": "<value>",
       },
       objectType: ObjectType.AccountingAccount,
       runs: [
-        "string",
+        "<value>",
       ],
     },
   });
@@ -164,7 +164,7 @@ async function run() {
   });
 
   const res = await sdk.unified.getUnifiedApicall({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -209,7 +209,7 @@ async function run() {
   });
 
   const res = await sdk.unified.getUnifiedConnection({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -255,11 +255,11 @@ async function run() {
   });
 
   const res = await sdk.unified.getUnifiedIntegrationAuth({
-    integrationType: "string",
+    integrationType: "<value>",
     scopes: [
       Scopes.HrisEmployeeWrite,
     ],
-    workspaceId: "string",
+    workspaceId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -304,7 +304,7 @@ async function run() {
   });
 
   const res = await sdk.unified.getUnifiedWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -444,7 +444,7 @@ async function run() {
     categories: [
       QueryParamCategories.Accounting,
     ],
-    workspaceId: "string",
+    workspaceId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -627,13 +627,13 @@ async function run() {
     connection: {
       auth: {
         emails: [
-          "string",
+          "<value>",
         ],
         meta: {
-          "key": "string",
+          "key": "<value>",
         },
         otherAuthInfo: [
-          "string",
+          "<value>",
         ],
       },
       categories: [
@@ -641,15 +641,15 @@ async function run() {
       ],
       cursorsCache: [
         {
-          "key": "string",
+          "key": "<value>",
         },
       ],
-      integrationType: "string",
+      integrationType: "<value>",
       permissions: [
         PropertyConnectionPermissions.CrmLeadWrite,
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -694,7 +694,7 @@ async function run() {
   });
 
   const res = await sdk.unified.patchUnifiedWebhookTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -739,7 +739,7 @@ async function run() {
   });
 
   const res = await sdk.unified.removeUnifiedConnection({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -784,7 +784,7 @@ async function run() {
   });
 
   const res = await sdk.unified.removeUnifiedWebhook({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -833,13 +833,13 @@ async function run() {
     connection: {
       auth: {
         emails: [
-          "string",
+          "<value>",
         ],
         meta: {
-          "key": "string",
+          "key": "<value>",
         },
         otherAuthInfo: [
-          "string",
+          "<value>",
         ],
       },
       categories: [
@@ -847,15 +847,15 @@ async function run() {
       ],
       cursorsCache: [
         {
-          "key": "string",
+          "key": "<value>",
         },
       ],
-      integrationType: "string",
+      integrationType: "<value>",
       permissions: [
         PropertyConnectionPermissions.AtsJobWrite,
       ],
     },
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -900,7 +900,7 @@ async function run() {
   });
 
   const res = await sdk.unified.updateUnifiedWebhookTrigger({
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

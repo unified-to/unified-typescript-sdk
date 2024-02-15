@@ -49,15 +49,15 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -105,16 +105,16 @@ async function run() {
   const res = await sdk.hris.createHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -159,11 +159,11 @@ async function run() {
   });
 
   const res = await sdk.hris.getHrisEmployee({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -208,11 +208,11 @@ async function run() {
   });
 
   const res = await sdk.hris.getHrisGroup({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -257,9 +257,9 @@ async function run() {
   });
 
   const res = await sdk.hris.listHrisEmployees({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -305,9 +305,9 @@ async function run() {
   });
 
   const res = await sdk.hris.listHrisGroups({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -369,16 +369,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -426,17 +426,17 @@ async function run() {
   const res = await sdk.hris.patchHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -481,8 +481,8 @@ async function run() {
   });
 
   const res = await sdk.hris.removeHrisEmployee({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -527,8 +527,8 @@ async function run() {
   });
 
   const res = await sdk.hris.removeHrisGroup({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -589,16 +589,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -646,17 +646,17 @@ async function run() {
   const res = await sdk.hris.updateHrisGroup({
     hrisGroup: {
       managerIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

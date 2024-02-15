@@ -65,12 +65,12 @@ async function run() {
 
   const res = await sdk.accounting.createAccountingAccount({
     accountingAccount: {
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -124,16 +124,16 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -186,10 +186,10 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -236,10 +236,10 @@ async function run() {
   const res = await sdk.accounting.createAccountingPayment({
     accountingPayment: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -285,13 +285,13 @@ async function run() {
 
   const res = await sdk.accounting.createAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 1719.1,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -337,18 +337,18 @@ async function run() {
 
   const res = await sdk.accounting.createAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 4969.62,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -393,11 +393,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingAccount({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -442,11 +442,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingContact({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -491,11 +491,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingInvoice({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -540,11 +540,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingOrganization({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -589,11 +589,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingPayment({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -638,11 +638,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingPayout({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -687,11 +687,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingRefund({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -736,11 +736,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingTaxrate({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -785,11 +785,11 @@ async function run() {
   });
 
   const res = await sdk.accounting.getAccountingTransaction({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -834,9 +834,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingAccounts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -882,9 +882,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingContacts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -930,9 +930,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingInvoices({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -978,9 +978,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingOrganizations({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1026,9 +1026,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingPayments({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1074,9 +1074,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingPayouts({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1122,9 +1122,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingRefunds({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1170,9 +1170,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingTaxrates({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1218,9 +1218,9 @@ async function run() {
   });
 
   const res = await sdk.accounting.listAccountingTransactions({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -1268,13 +1268,13 @@ async function run() {
 
   const res = await sdk.accounting.patchAccountingAccount({
     accountingAccount: {
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1328,17 +1328,17 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1391,11 +1391,11 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1442,11 +1442,11 @@ async function run() {
   const res = await sdk.accounting.patchAccountingPayment({
     accountingPayment: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1492,14 +1492,14 @@ async function run() {
 
   const res = await sdk.accounting.patchAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 5991.47,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1545,19 +1545,19 @@ async function run() {
 
   const res = await sdk.accounting.patchAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 5633.69,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1602,8 +1602,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingAccount({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1648,8 +1648,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingContact({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1694,8 +1694,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingInvoice({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1740,8 +1740,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingPayment({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1786,8 +1786,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingTaxrate({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1832,8 +1832,8 @@ async function run() {
   });
 
   const res = await sdk.accounting.removeAccountingTransaction({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1880,13 +1880,13 @@ async function run() {
 
   const res = await sdk.accounting.updateAccountingAccount({
     accountingAccount: {
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1940,17 +1940,17 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       shippingAddress: {},
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2003,11 +2003,11 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2054,11 +2054,11 @@ async function run() {
   const res = await sdk.accounting.updateAccountingPayment({
     accountingPayment: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2104,14 +2104,14 @@ async function run() {
 
   const res = await sdk.accounting.updateAccountingTaxrate({
     accountingTaxrate: {
-      name: "string",
+      name: "<value>",
       rate: 3382.78,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -2157,19 +2157,19 @@ async function run() {
 
   const res = await sdk.accounting.updateAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 6498.37,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

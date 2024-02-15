@@ -35,10 +35,10 @@ async function run() {
   const res = await sdk.martech.createMartechList({
     marketingList: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -91,16 +91,16 @@ async function run() {
         },
       ],
       listIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -145,11 +145,11 @@ async function run() {
   });
 
   const res = await sdk.martech.getMartechList({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -194,11 +194,11 @@ async function run() {
   });
 
   const res = await sdk.martech.getMartechMember({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -243,9 +243,9 @@ async function run() {
   });
 
   const res = await sdk.martech.listMartechLists({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -291,9 +291,9 @@ async function run() {
   });
 
   const res = await sdk.martech.listMartechMembers({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -341,11 +341,11 @@ async function run() {
   const res = await sdk.martech.patchMartechList({
     marketingList: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -398,17 +398,17 @@ async function run() {
         },
       ],
       listIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -453,8 +453,8 @@ async function run() {
   });
 
   const res = await sdk.martech.removeMartechList({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -499,8 +499,8 @@ async function run() {
   });
 
   const res = await sdk.martech.removeMartechMember({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -547,11 +547,11 @@ async function run() {
   const res = await sdk.martech.updateMartechList({
     marketingList: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -604,17 +604,17 @@ async function run() {
         },
       ],
       listIds: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

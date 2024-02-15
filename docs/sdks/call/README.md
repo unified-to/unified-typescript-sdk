@@ -22,9 +22,9 @@ async function run() {
   });
 
   const res = await sdk.call.listUcCalls({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 

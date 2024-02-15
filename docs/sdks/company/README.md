@@ -34,30 +34,30 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -102,11 +102,11 @@ async function run() {
   });
 
   const res = await sdk.company.getAtsCompany({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -151,11 +151,11 @@ async function run() {
   });
 
   const res = await sdk.company.getCrmCompany({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -200,9 +200,9 @@ async function run() {
   });
 
   const res = await sdk.company.listAtsCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -248,9 +248,9 @@ async function run() {
   });
 
   const res = await sdk.company.listCrmCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -296,7 +296,7 @@ async function run() {
   });
 
   const res = await sdk.company.listEnrichCompanies({
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -345,31 +345,31 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -414,8 +414,8 @@ async function run() {
   });
 
   const res = await sdk.company.removeCrmCompany({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -464,31 +464,31 @@ async function run() {
     crmCompany: {
       address: {},
       dealIds: [
-        "string",
+        "<value>",
       ],
       emails: [
         {},
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
       websites: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

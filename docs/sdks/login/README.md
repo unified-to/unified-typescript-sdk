@@ -22,8 +22,8 @@ async function run() {
   });
 
   const res = await sdk.login.getUnifiedIntegrationLogin({
-    integrationType: "string",
-    workspaceId: "string",
+    integrationType: "<value>",
+    workspaceId: "<value>",
   });
 
   if (res.statusCode == 200) {

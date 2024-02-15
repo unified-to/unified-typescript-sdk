@@ -34,12 +34,12 @@ async function run() {
           url: "http://loud-minister.name",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -48,13 +48,13 @@ async function run() {
               url: "http://other-external.info",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -64,12 +64,12 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -114,11 +114,11 @@ async function run() {
   });
 
   const res = await sdk.item.getCommerceItem({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -163,9 +163,9 @@ async function run() {
   });
 
   const res = await sdk.item.listCommerceItems({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -218,12 +218,12 @@ async function run() {
           url: "http://frank-galley.biz",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -232,13 +232,13 @@ async function run() {
               url: "http://irresponsible-reason.biz",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -248,13 +248,13 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -299,8 +299,8 @@ async function run() {
   });
 
   const res = await sdk.item.removeCommerceItem({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -352,12 +352,12 @@ async function run() {
           url: "https://aggressive-major-league.org",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -366,13 +366,13 @@ async function run() {
               url: "https://reasonable-cast.biz",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -382,13 +382,13 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

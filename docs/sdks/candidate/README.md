@@ -36,24 +36,24 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -98,11 +98,11 @@ async function run() {
   });
 
   const res = await sdk.candidate.getAtsCandidate({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -147,9 +147,9 @@ async function run() {
   });
 
   const res = await sdk.candidate.listAtsCandidates({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -204,25 +204,25 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -267,8 +267,8 @@ async function run() {
   });
 
   const res = await sdk.candidate.removeAtsCandidate({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -322,25 +322,25 @@ async function run() {
         },
       ],
       linkUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       sources: [
-        "string",
+        "<value>",
       ],
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

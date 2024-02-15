@@ -40,12 +40,12 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "string",
+            name: "<value>",
             raw: {
-                key: "string",
+                key: "<value>",
             },
         },
-        connectionId: "string",
+        connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -692,12 +692,12 @@ async function run() {
     try {
         res = await sdk.accounting.createAccountingAccount({
             accountingAccount: {
-                name: "string",
+                name: "<value>",
                 raw: {
-                    key: "string",
+                    key: "<value>",
                 },
             },
-            connectionId: "string",
+            connectionId: "<value>",
         });
     } catch (err) {
         if (err instanceof errors.SDKError) {
@@ -746,12 +746,12 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "string",
+            name: "<value>",
             raw: {
-                key: "string",
+                key: "<value>",
             },
         },
-        connectionId: "string",
+        connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -781,12 +781,12 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "string",
+            name: "<value>",
             raw: {
-                key: "string",
+                key: "<value>",
             },
         },
-        connectionId: "string",
+        connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {
@@ -847,12 +847,12 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "string",
+            name: "<value>",
             raw: {
-                key: "string",
+                key: "<value>",
             },
         },
-        connectionId: "string",
+        connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {

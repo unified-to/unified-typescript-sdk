@@ -27,9 +27,9 @@ async function run() {
 
   const res = await sdk.passthrough.createPassthrough({
     requestBody: {
-      "key": "string",
+      "key": "<value>",
     },
-    connectionId: "string",
+    connectionId: "<value>",
     path: "/etc/periodic",
   });
 
@@ -75,7 +75,7 @@ async function run() {
   });
 
   const res = await sdk.passthrough.listPassthroughs({
-    connectionId: "string",
+    connectionId: "<value>",
     path: "/selinux",
   });
 
@@ -122,9 +122,9 @@ async function run() {
 
   const res = await sdk.passthrough.patchPassthrough({
     requestBody: {
-      "key": "string",
+      "key": "<value>",
     },
-    connectionId: "string",
+    connectionId: "<value>",
     path: "/mnt",
   });
 
@@ -170,7 +170,7 @@ async function run() {
   });
 
   const res = await sdk.passthrough.removePassthrough({
-    connectionId: "string",
+    connectionId: "<value>",
     path: "/Applications",
   });
 
@@ -217,9 +217,9 @@ async function run() {
 
   const res = await sdk.passthrough.updatePassthrough({
     requestBody: {
-      "key": "string",
+      "key": "<value>",
     },
-    connectionId: "string",
+    connectionId: "<value>",
     path: "/dev",
   });
 

@@ -29,13 +29,13 @@ async function run() {
   const res = await sdk.deal.createCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -80,11 +80,11 @@ async function run() {
   });
 
   const res = await sdk.deal.getCrmDeal({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -129,9 +129,9 @@ async function run() {
   });
 
   const res = await sdk.deal.listCrmDeals({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -179,14 +179,14 @@ async function run() {
   const res = await sdk.deal.patchCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -231,8 +231,8 @@ async function run() {
   });
 
   const res = await sdk.deal.removeCrmDeal({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -279,14 +279,14 @@ async function run() {
   const res = await sdk.deal.updateCrmDeal({
     crmDeal: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

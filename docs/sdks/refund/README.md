@@ -23,11 +23,11 @@ async function run() {
   });
 
   const res = await sdk.refund.getAccountingRefund({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ async function run() {
   });
 
   const res = await sdk.refund.listAccountingRefunds({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 

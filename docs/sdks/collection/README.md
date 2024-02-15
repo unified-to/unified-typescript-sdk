@@ -29,24 +29,24 @@ async function run() {
 
   const res = await sdk.collection.createCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "http://uneven-mattress.name",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -91,11 +91,11 @@ async function run() {
   });
 
   const res = await sdk.collection.getCommerceCollection({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -140,9 +140,9 @@ async function run() {
   });
 
   const res = await sdk.collection.listCommerceCollections({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -190,25 +190,25 @@ async function run() {
 
   const res = await sdk.collection.patchCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "http://personal-sorrow.com",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -253,8 +253,8 @@ async function run() {
   });
 
   const res = await sdk.collection.removeCommerceCollection({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -301,25 +301,25 @@ async function run() {
 
   const res = await sdk.collection.updateCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "https://stupid-entity.org",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

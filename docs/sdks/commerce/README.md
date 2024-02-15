@@ -47,24 +47,24 @@ async function run() {
 
   const res = await sdk.commerce.createCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "http://uneven-mattress.name",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -112,10 +112,10 @@ async function run() {
     commerceInventory: {
       available: 5165.08,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -167,12 +167,12 @@ async function run() {
           url: "http://loud-minister.name",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -181,13 +181,13 @@ async function run() {
               url: "http://other-external.info",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -197,12 +197,12 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -249,12 +249,12 @@ async function run() {
   const res = await sdk.commerce.createCommerceLocation({
     commerceLocation: {
       address: {},
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -299,11 +299,11 @@ async function run() {
   });
 
   const res = await sdk.commerce.getCommerceCollection({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -348,11 +348,11 @@ async function run() {
   });
 
   const res = await sdk.commerce.getCommerceInventory({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -397,11 +397,11 @@ async function run() {
   });
 
   const res = await sdk.commerce.getCommerceItem({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -446,11 +446,11 @@ async function run() {
   });
 
   const res = await sdk.commerce.getCommerceLocation({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -495,9 +495,9 @@ async function run() {
   });
 
   const res = await sdk.commerce.listCommerceCollections({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -543,9 +543,9 @@ async function run() {
   });
 
   const res = await sdk.commerce.listCommerceInventories({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -591,9 +591,9 @@ async function run() {
   });
 
   const res = await sdk.commerce.listCommerceItems({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -639,9 +639,9 @@ async function run() {
   });
 
   const res = await sdk.commerce.listCommerceLocations({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -689,25 +689,25 @@ async function run() {
 
   const res = await sdk.commerce.patchCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "http://personal-sorrow.com",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -755,11 +755,11 @@ async function run() {
     commerceInventory: {
       available: 615.23,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -811,12 +811,12 @@ async function run() {
           url: "http://frank-galley.biz",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -825,13 +825,13 @@ async function run() {
               url: "http://irresponsible-reason.biz",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -841,13 +841,13 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -894,13 +894,13 @@ async function run() {
   const res = await sdk.commerce.patchCommerceLocation({
     commerceLocation: {
       address: {},
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -945,8 +945,8 @@ async function run() {
   });
 
   const res = await sdk.commerce.removeCommerceCollection({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -991,8 +991,8 @@ async function run() {
   });
 
   const res = await sdk.commerce.removeCommerceInventory({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1037,8 +1037,8 @@ async function run() {
   });
 
   const res = await sdk.commerce.removeCommerceItem({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1083,8 +1083,8 @@ async function run() {
   });
 
   const res = await sdk.commerce.removeCommerceLocation({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1131,25 +1131,25 @@ async function run() {
 
   const res = await sdk.commerce.updateCommerceCollection({
     commerceCollection: {
-      id: "<ID>",
+      id: "<id>",
       itemIds: [
-        "string",
+        "<value>",
       ],
       media: [
         {
           url: "https://stupid-entity.org",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1197,11 +1197,11 @@ async function run() {
     commerceInventory: {
       available: 9360.02,
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1253,12 +1253,12 @@ async function run() {
           url: "https://aggressive-major-league.org",
         },
       ],
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       variants: [
         {
@@ -1267,13 +1267,13 @@ async function run() {
               url: "https://reasonable-cast.biz",
             },
           ],
-          name: "string",
+          name: "<value>",
           options: [
             {
-              id: "<ID>",
-              name: "string",
+              id: "<id>",
+              name: "<value>",
               values: [
-                "string",
+                "<value>",
               ],
             },
           ],
@@ -1283,13 +1283,13 @@ async function run() {
             },
           ],
           tags: [
-            "string",
+            "<value>",
           ],
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -1336,13 +1336,13 @@ async function run() {
   const res = await sdk.commerce.updateCommerceLocation({
     commerceLocation: {
       address: {},
-      name: "string",
+      name: "<value>",
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

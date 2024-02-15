@@ -23,11 +23,11 @@ async function run() {
   });
 
   const res = await sdk.organization.getAccountingOrganization({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -72,9 +72,9 @@ async function run() {
   });
 
   const res = await sdk.organization.listAccountingOrganizations({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 

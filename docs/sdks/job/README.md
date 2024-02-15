@@ -38,22 +38,22 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -98,11 +98,11 @@ async function run() {
   });
 
   const res = await sdk.job.getAtsJob({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -147,9 +147,9 @@ async function run() {
   });
 
   const res = await sdk.job.listAtsJobs({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -206,23 +206,23 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -267,8 +267,8 @@ async function run() {
   });
 
   const res = await sdk.job.removeAtsJob({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -324,23 +324,23 @@ async function run() {
         },
       ],
       departments: [
-        "string",
+        "<value>",
       ],
       hiringManagerIds: [
-        "string",
+        "<value>",
       ],
       publicJobUrls: [
-        "string",
+        "<value>",
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       recruiterIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

@@ -22,9 +22,9 @@ async function run() {
   });
 
   const res = await sdk.applicationstatus.listAtsApplicationstatuses({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 

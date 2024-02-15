@@ -31,36 +31,36 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -105,11 +105,11 @@ async function run() {
   });
 
   const res = await sdk.event.getCrmEvent({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -154,9 +154,9 @@ async function run() {
   });
 
   const res = await sdk.event.listCrmEvents({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -206,37 +206,37 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -281,8 +281,8 @@ async function run() {
   });
 
   const res = await sdk.event.removeCrmEvent({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -331,37 +331,37 @@ async function run() {
     crmEvent: {
       call: {},
       companyIds: [
-        "string",
+        "<value>",
       ],
       contactIds: [
-        "string",
+        "<value>",
       ],
       dealIds: [
-        "string",
+        "<value>",
       ],
       email: {
         attachmentFileIds: [
-          "string",
+          "<value>",
         ],
         cc: [
-          "string",
+          "<value>",
         ],
         to: [
-          "string",
+          "<value>",
         ],
       },
       leadIds: [
-        "string",
+        "<value>",
       ],
       meeting: {},
       note: {},
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       task: {},
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

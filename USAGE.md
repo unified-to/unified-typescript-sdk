@@ -12,12 +12,12 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "string",
+            name: "<value>",
             raw: {
-                key: "string",
+                key: "<value>",
             },
         },
-        connectionId: "string",
+        connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {

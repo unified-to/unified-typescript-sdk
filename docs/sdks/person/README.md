@@ -22,7 +22,7 @@ async function run() {
   });
 
   const res = await sdk.person.listEnrichPeople({
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {

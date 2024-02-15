@@ -28,18 +28,18 @@ async function run() {
 
   const res = await sdk.transaction.createAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 4969.62,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -84,11 +84,11 @@ async function run() {
   });
 
   const res = await sdk.transaction.getAccountingTransaction({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -133,9 +133,9 @@ async function run() {
   });
 
   const res = await sdk.transaction.listAccountingTransactions({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -182,19 +182,19 @@ async function run() {
 
   const res = await sdk.transaction.patchAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 5633.69,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -239,8 +239,8 @@ async function run() {
   });
 
   const res = await sdk.transaction.removeAccountingTransaction({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -286,19 +286,19 @@ async function run() {
 
   const res = await sdk.transaction.updateAccountingTransaction({
     accountingTransaction: {
-      id: "<ID>",
+      id: "<id>",
       lineitems: [
         {
-          accountId: "string",
+          accountId: "<value>",
           totalAmount: 6498.37,
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

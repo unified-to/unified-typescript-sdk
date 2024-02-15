@@ -47,18 +47,18 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -105,10 +105,10 @@ async function run() {
   const res = await sdk.ticketing.createTicketingNote({
     ticketingNote: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -156,13 +156,13 @@ async function run() {
   const res = await sdk.ticketing.createTicketingTicket({
     ticketingTicket: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -207,11 +207,11 @@ async function run() {
   });
 
   const res = await sdk.ticketing.getTicketingCustomer({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -256,11 +256,11 @@ async function run() {
   });
 
   const res = await sdk.ticketing.getTicketingNote({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -305,11 +305,11 @@ async function run() {
   });
 
   const res = await sdk.ticketing.getTicketingTicket({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -354,9 +354,9 @@ async function run() {
   });
 
   const res = await sdk.ticketing.listTicketingCustomers({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -402,9 +402,9 @@ async function run() {
   });
 
   const res = await sdk.ticketing.listTicketingNotes({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -450,9 +450,9 @@ async function run() {
   });
 
   const res = await sdk.ticketing.listTicketingTickets({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -506,19 +506,19 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -565,11 +565,11 @@ async function run() {
   const res = await sdk.ticketing.patchTicketingNote({
     ticketingNote: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -617,14 +617,14 @@ async function run() {
   const res = await sdk.ticketing.patchTicketingTicket({
     ticketingTicket: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -669,8 +669,8 @@ async function run() {
   });
 
   const res = await sdk.ticketing.removeTicketingCustomer({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -715,8 +715,8 @@ async function run() {
   });
 
   const res = await sdk.ticketing.removeTicketingNote({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -761,8 +761,8 @@ async function run() {
   });
 
   const res = await sdk.ticketing.removeTicketingTicket({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -815,19 +815,19 @@ async function run() {
         },
       ],
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
       telephones: [
         {
-          telephone: "string",
+          telephone: "<value>",
         },
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -874,11 +874,11 @@ async function run() {
   const res = await sdk.ticketing.updateTicketingNote({
     ticketingNote: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -926,14 +926,14 @@ async function run() {
   const res = await sdk.ticketing.updateTicketingTicket({
     ticketingTicket: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       tags: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {

@@ -30,13 +30,13 @@ async function run() {
   const res = await sdk.interview.createAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
+    connectionId: "<value>",
   });
 
   if (res.statusCode == 200) {
@@ -81,11 +81,11 @@ async function run() {
   });
 
   const res = await sdk.interview.getAtsInterview({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
-    id: "<ID>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -130,9 +130,9 @@ async function run() {
   });
 
   const res = await sdk.interview.listAtsInterviews({
-    connectionId: "string",
+    connectionId: "<value>",
     fields: [
-      "string",
+      "<value>",
     ],
   });
 
@@ -181,14 +181,14 @@ async function run() {
   const res = await sdk.interview.patchAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -233,8 +233,8 @@ async function run() {
   });
 
   const res = await sdk.interview.removeAtsInterview({
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
@@ -282,14 +282,14 @@ async function run() {
   const res = await sdk.interview.updateAtsInterview({
     atsInterview: {
       raw: {
-        "key": "string",
+        "key": "<value>",
       },
       userIds: [
-        "string",
+        "<value>",
       ],
     },
-    connectionId: "string",
-    id: "<ID>",
+    connectionId: "<value>",
+    id: "<id>",
   });
 
   if (res.statusCode == 200) {
