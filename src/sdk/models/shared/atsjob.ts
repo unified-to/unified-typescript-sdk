@@ -5,6 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AtsAddress } from "./atsaddress";
 import { AtsCompensation } from "./atscompensation";
+import { AtsJobQuestion } from "./atsjobquestion";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum EmploymentType {
@@ -88,6 +89,11 @@ export class AtsJob extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "public_job_urls" })
     publicJobUrls?: string[];
+
+    @SpeakeasyMetadata({ elemType: AtsJobQuestion })
+    @Expose({ name: "questions" })
+    @Type(() => AtsJobQuestion)
+    questions?: AtsJobQuestion[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

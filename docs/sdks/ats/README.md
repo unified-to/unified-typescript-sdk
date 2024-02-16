@@ -62,6 +62,12 @@ async function run() {
 
   const res = await sdk.ats.createAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },
@@ -278,7 +284,7 @@ Create a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -305,6 +311,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.File,
+        },
       ],
       raw: {
         "key": "<value>",
@@ -1143,6 +1158,12 @@ async function run() {
 
   const res = await sdk.ats.patchAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },
@@ -1363,7 +1384,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -1390,6 +1411,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.Date,
+        },
       ],
       raw: {
         "key": "<value>",
@@ -1779,6 +1809,12 @@ async function run() {
 
   const res = await sdk.ats.updateAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },
@@ -1999,7 +2035,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -2026,6 +2062,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.Date,
+        },
       ],
       raw: {
         "key": "<value>",

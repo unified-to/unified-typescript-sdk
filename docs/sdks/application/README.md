@@ -29,6 +29,12 @@ async function run() {
 
   const res = await sdk.application.createAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },
@@ -177,6 +183,12 @@ async function run() {
 
   const res = await sdk.application.patchAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },
@@ -275,6 +287,12 @@ async function run() {
 
   const res = await sdk.application.updateAtsApplication({
     atsApplication: {
+      answers: [
+        {
+          answer: "<value>",
+          questionId: "<value>",
+        },
+      ],
       raw: {
         "key": "<value>",
       },

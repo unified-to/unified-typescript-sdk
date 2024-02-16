@@ -18,7 +18,7 @@ Create a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -45,6 +45,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.File,
+        },
       ],
       raw: {
         "key": "<value>",
@@ -186,7 +195,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -213,6 +222,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.Date,
+        },
       ],
       raw: {
         "key": "<value>",
@@ -304,7 +322,7 @@ Update a job
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { AtsCompensationType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo({
@@ -331,6 +349,15 @@ async function run() {
       ],
       publicJobUrls: [
         "<value>",
+      ],
+      questions: [
+        {
+          options: [
+            "<value>",
+          ],
+          question: "<value>",
+          type: AtsJobQuestionType.Date,
+        },
       ],
       raw: {
         "key": "<value>",

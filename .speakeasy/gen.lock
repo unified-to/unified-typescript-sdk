@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5c191fdb16f8d76a3eb09c714f56170d
+  docChecksum: 119b9584a5fe294470614e38361fae09
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 0.14.7
-  configChecksum: f196093f703341cc13f79052664706f0
+  generationVersion: 2.259.1
+  releaseVersion: 0.14.8
+  configChecksum: 252c867e9b2492a80b043208c4e33433
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -336,6 +336,7 @@ generatedFiles:
   - src/sdk/models/shared/uctelephone.ts
   - src/sdk/models/shared/ucemail.ts
   - src/sdk/models/shared/atsapplication.ts
+  - src/sdk/models/shared/atsapplicationanswer.ts
   - src/sdk/models/shared/atscandidate.ts
   - src/sdk/models/shared/atstelephone.ts
   - src/sdk/models/shared/atsemail.ts
@@ -343,6 +344,7 @@ generatedFiles:
   - src/sdk/models/shared/atsdocument.ts
   - src/sdk/models/shared/atsinterview.ts
   - src/sdk/models/shared/atsjob.ts
+  - src/sdk/models/shared/atsjobquestion.ts
   - src/sdk/models/shared/atscompensation.ts
   - src/sdk/models/shared/atsaddress.ts
   - src/sdk/models/shared/atsscorecard.ts
@@ -895,6 +897,7 @@ generatedFiles:
   - docs/sdk/models/shared/ucemail.md
   - docs/sdk/models/shared/atsapplicationstatus.md
   - docs/sdk/models/shared/atsapplication.md
+  - docs/sdk/models/shared/atsapplicationanswer.md
   - docs/sdk/models/shared/origin.md
   - docs/sdk/models/shared/atscandidate.md
   - docs/sdk/models/shared/atstelephonetype.md
@@ -909,6 +912,8 @@ generatedFiles:
   - docs/sdk/models/shared/employmenttype.md
   - docs/sdk/models/shared/atsjobstatus.md
   - docs/sdk/models/shared/atsjob.md
+  - docs/sdk/models/shared/atsjobquestiontype.md
+  - docs/sdk/models/shared/atsjobquestion.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/atscompensationtype.md
   - docs/sdk/models/shared/atscompensation.md

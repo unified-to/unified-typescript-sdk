@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose, Transform } from "class-transformer";
+import { AtsApplicationAnswer } from "./atsapplicationanswer";
+import { Expose, Transform, Type } from "class-transformer";
 
 export enum AtsApplicationStatus {
     New = "NEW",
@@ -22,6 +23,11 @@ export enum AtsApplicationStatus {
 }
 
 export class AtsApplication extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: AtsApplicationAnswer })
+    @Expose({ name: "answers" })
+    @Type(() => AtsApplicationAnswer)
+    answers?: AtsApplicationAnswer[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "applied_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
