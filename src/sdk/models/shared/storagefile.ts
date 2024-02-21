@@ -26,6 +26,10 @@ export class StorageFile extends SpeakeasyBase {
     downloadUrl?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "hash" })
+    hash?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
 
