@@ -8,6 +8,7 @@ import { Expose, Transform } from "class-transformer";
 export enum Event {
     Updated = "updated",
     Created = "created",
+    Deleted = "deleted",
 }
 
 export enum ObjectType {

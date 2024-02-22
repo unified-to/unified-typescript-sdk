@@ -5,4 +5,5 @@
 export enum PropertyIntegrationSupportWebhookEvents {
     Updated = "updated",
     Created = "created",
+    Deleted = "deleted",
 }
