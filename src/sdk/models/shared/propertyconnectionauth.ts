@@ -42,6 +42,10 @@ export class PropertyConnectionAuth extends SpeakeasyBase {
     consumerSecret?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "dev_api_key" })
+    devApiKey?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "emails" })
     emails?: string[];
 
