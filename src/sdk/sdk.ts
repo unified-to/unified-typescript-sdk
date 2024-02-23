@@ -6,6 +6,7 @@ import * as utils from "../internal/utils";
 import * as shared from "../sdk/models/shared";
 import { Account } from "./account";
 import { Accounting } from "./accounting";
+import { Activity } from "./activity";
 import { Apicall } from "./apicall";
 import { Application } from "./application";
 import { Applicationstatus } from "./applicationstatus";
@@ -111,9 +112,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.14.11";
+    sdkVersion = "0.14.12";
     genVersion = "2.269.0";
-    userAgent = "speakeasy-sdk/typescript 0.14.11 2.269.0 1.0 unified-typescript-sdk";
+    userAgent = "speakeasy-sdk/typescript 0.14.12 2.269.0 1.0 unified-typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -135,6 +136,7 @@ export class UnifiedTo {
     public taxrate: Taxrate;
     public transaction: Transaction;
     public ats: Ats;
+    public activity: Activity;
     public application: Application;
     public applicationstatus: Applicationstatus;
     public candidate: Candidate;
@@ -208,6 +210,7 @@ export class UnifiedTo {
         this.taxrate = new Taxrate(this.sdkConfiguration);
         this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
+        this.activity = new Activity(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
         this.applicationstatus = new Applicationstatus(this.sdkConfiguration);
         this.candidate = new Candidate(this.sdkConfiguration);

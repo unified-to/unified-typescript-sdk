@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 540edc51c35db4343817668bdfafdaa0
+  docChecksum: 7bd6e19ec36f960e56c7d65cda36a422
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.269.0
-  releaseVersion: 0.14.11
-  configChecksum: 7c93c973ec4426a93a39726a0f595460
+  releaseVersion: 0.14.12
+  configChecksum: 5cdb1b65a075c0fa5b0711aad3cd2fcb
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -27,6 +27,7 @@ generatedFiles:
   - src/sdk/taxrate.ts
   - src/sdk/transaction.ts
   - src/sdk/ats.ts
+  - src/sdk/activity.ts
   - src/sdk/application.ts
   - src/sdk/applicationstatus.ts
   - src/sdk/candidate.ts
@@ -144,12 +145,14 @@ generatedFiles:
   - src/sdk/models/operations/removeuccontact.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updateuccontact.ts
+  - src/sdk/models/operations/createatsactivity.ts
   - src/sdk/models/operations/createatsapplication.ts
   - src/sdk/models/operations/createatscandidate.ts
   - src/sdk/models/operations/createatsdocument.ts
   - src/sdk/models/operations/createatsinterview.ts
   - src/sdk/models/operations/createatsjob.ts
   - src/sdk/models/operations/createatsscorecard.ts
+  - src/sdk/models/operations/getatsactivity.ts
   - src/sdk/models/operations/getatsapplication.ts
   - src/sdk/models/operations/getatscandidate.ts
   - src/sdk/models/operations/getatscompany.ts
@@ -157,6 +160,7 @@ generatedFiles:
   - src/sdk/models/operations/getatsinterview.ts
   - src/sdk/models/operations/getatsjob.ts
   - src/sdk/models/operations/getatsscorecard.ts
+  - src/sdk/models/operations/listatsactivities.ts
   - src/sdk/models/operations/listatsapplications.ts
   - src/sdk/models/operations/listatsapplicationstatuses.ts
   - src/sdk/models/operations/listatscandidates.ts
@@ -165,18 +169,21 @@ generatedFiles:
   - src/sdk/models/operations/listatsinterviews.ts
   - src/sdk/models/operations/listatsjobs.ts
   - src/sdk/models/operations/listatsscorecards.ts
+  - src/sdk/models/operations/patchatsactivity.ts
   - src/sdk/models/operations/patchatsapplication.ts
   - src/sdk/models/operations/patchatscandidate.ts
   - src/sdk/models/operations/patchatsdocument.ts
   - src/sdk/models/operations/patchatsinterview.ts
   - src/sdk/models/operations/patchatsjob.ts
   - src/sdk/models/operations/patchatsscorecard.ts
+  - src/sdk/models/operations/removeatsactivity.ts
   - src/sdk/models/operations/removeatsapplication.ts
   - src/sdk/models/operations/removeatscandidate.ts
   - src/sdk/models/operations/removeatsdocument.ts
   - src/sdk/models/operations/removeatsinterview.ts
   - src/sdk/models/operations/removeatsjob.ts
   - src/sdk/models/operations/removeatsscorecard.ts
+  - src/sdk/models/operations/updateatsactivity.ts
   - src/sdk/models/operations/updateatsapplication.ts
   - src/sdk/models/operations/updateatscandidate.ts
   - src/sdk/models/operations/updateatsdocument.ts
@@ -335,6 +342,7 @@ generatedFiles:
   - src/sdk/models/shared/uccontact.ts
   - src/sdk/models/shared/uctelephone.ts
   - src/sdk/models/shared/ucemail.ts
+  - src/sdk/models/shared/atsactivity.ts
   - src/sdk/models/shared/atsapplication.ts
   - src/sdk/models/shared/atsapplicationanswer.ts
   - src/sdk/models/shared/atscandidate.ts
@@ -521,6 +529,8 @@ generatedFiles:
   - docs/sdk/models/operations/updatecrmcontactresponse.md
   - docs/sdk/models/operations/updateuccontactrequest.md
   - docs/sdk/models/operations/updateuccontactresponse.md
+  - docs/sdk/models/operations/createatsactivityrequest.md
+  - docs/sdk/models/operations/createatsactivityresponse.md
   - docs/sdk/models/operations/createatsapplicationrequest.md
   - docs/sdk/models/operations/createatsapplicationresponse.md
   - docs/sdk/models/operations/createatscandidaterequest.md
@@ -533,6 +543,8 @@ generatedFiles:
   - docs/sdk/models/operations/createatsjobresponse.md
   - docs/sdk/models/operations/createatsscorecardrequest.md
   - docs/sdk/models/operations/createatsscorecardresponse.md
+  - docs/sdk/models/operations/getatsactivityrequest.md
+  - docs/sdk/models/operations/getatsactivityresponse.md
   - docs/sdk/models/operations/getatsapplicationrequest.md
   - docs/sdk/models/operations/getatsapplicationresponse.md
   - docs/sdk/models/operations/getatscandidaterequest.md
@@ -547,6 +559,8 @@ generatedFiles:
   - docs/sdk/models/operations/getatsjobresponse.md
   - docs/sdk/models/operations/getatsscorecardrequest.md
   - docs/sdk/models/operations/getatsscorecardresponse.md
+  - docs/sdk/models/operations/listatsactivitiesrequest.md
+  - docs/sdk/models/operations/listatsactivitiesresponse.md
   - docs/sdk/models/operations/listatsapplicationsrequest.md
   - docs/sdk/models/operations/listatsapplicationsresponse.md
   - docs/sdk/models/operations/listatsapplicationstatusesrequest.md
@@ -563,6 +577,8 @@ generatedFiles:
   - docs/sdk/models/operations/listatsjobsresponse.md
   - docs/sdk/models/operations/listatsscorecardsrequest.md
   - docs/sdk/models/operations/listatsscorecardsresponse.md
+  - docs/sdk/models/operations/patchatsactivityrequest.md
+  - docs/sdk/models/operations/patchatsactivityresponse.md
   - docs/sdk/models/operations/patchatsapplicationrequest.md
   - docs/sdk/models/operations/patchatsapplicationresponse.md
   - docs/sdk/models/operations/patchatscandidaterequest.md
@@ -575,6 +591,8 @@ generatedFiles:
   - docs/sdk/models/operations/patchatsjobresponse.md
   - docs/sdk/models/operations/patchatsscorecardrequest.md
   - docs/sdk/models/operations/patchatsscorecardresponse.md
+  - docs/sdk/models/operations/removeatsactivityrequest.md
+  - docs/sdk/models/operations/removeatsactivityresponse.md
   - docs/sdk/models/operations/removeatsapplicationrequest.md
   - docs/sdk/models/operations/removeatsapplicationresponse.md
   - docs/sdk/models/operations/removeatscandidaterequest.md
@@ -587,6 +605,8 @@ generatedFiles:
   - docs/sdk/models/operations/removeatsjobresponse.md
   - docs/sdk/models/operations/removeatsscorecardrequest.md
   - docs/sdk/models/operations/removeatsscorecardresponse.md
+  - docs/sdk/models/operations/updateatsactivityrequest.md
+  - docs/sdk/models/operations/updateatsactivityresponse.md
   - docs/sdk/models/operations/updateatsapplicationrequest.md
   - docs/sdk/models/operations/updateatsapplicationresponse.md
   - docs/sdk/models/operations/updateatscandidaterequest.md
@@ -895,6 +915,8 @@ generatedFiles:
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/ucemail.md
+  - docs/sdk/models/shared/atsactivitytype.md
+  - docs/sdk/models/shared/atsactivity.md
   - docs/sdk/models/shared/atsapplicationstatus.md
   - docs/sdk/models/shared/atsapplication.md
   - docs/sdk/models/shared/atsapplicationanswer.md
@@ -1023,6 +1045,7 @@ generatedFiles:
   - docs/sdks/taxrate/README.md
   - docs/sdks/transaction/README.md
   - docs/sdks/ats/README.md
+  - docs/sdks/activity/README.md
   - docs/sdks/application/README.md
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/candidate/README.md

@@ -6,7 +6,13 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class ListAtsApplicationsRequest extends SpeakeasyBase {
+export class ListAtsActivitiesRequest extends SpeakeasyBase {
+    /**
+     * The application ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=application_id" })
+    applicationId?: string;
+
     /**
      * The candidate ID to filter results
      */
@@ -20,10 +26,22 @@ export class ListAtsApplicationsRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
+     * The document ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=document_id" })
+    documentId?: string;
+
+    /**
      * Comma-delimited fields to return
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
+
+    /**
+     * The interview ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=interview_id" })
+    interviewId?: string;
 
     /**
      * The job ID to filter results
@@ -54,14 +72,20 @@ export class ListAtsApplicationsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
+
+    /**
+     * The user ID to filter results
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
+    userId?: string;
 }
 
-export class ListAtsApplicationsResponse extends SpeakeasyBase {
+export class ListAtsActivitiesResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.AtsApplication })
-    atsApplications?: shared.AtsApplication[];
+    @SpeakeasyMetadata({ elemType: shared.AtsActivity })
+    atsActivities?: shared.AtsActivity[];
 
     /**
      * HTTP response content type for this operation

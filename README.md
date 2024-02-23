@@ -189,12 +189,14 @@ run();
 
 ### [ats](docs/sdks/ats/README.md)
 
+* [createAtsActivity](docs/sdks/ats/README.md#createatsactivity) - Create an activity
 * [createAtsApplication](docs/sdks/ats/README.md#createatsapplication) - Create an application
 * [createAtsCandidate](docs/sdks/ats/README.md#createatscandidate) - Create a candidate
 * [createAtsDocument](docs/sdks/ats/README.md#createatsdocument) - Create a document
 * [createAtsInterview](docs/sdks/ats/README.md#createatsinterview) - Create a interview
 * [createAtsJob](docs/sdks/ats/README.md#createatsjob) - Create a job
 * [createAtsScorecard](docs/sdks/ats/README.md#createatsscorecard) - Create a scorecard
+* [getAtsActivity](docs/sdks/ats/README.md#getatsactivity) - Retrieve an activity
 * [getAtsApplication](docs/sdks/ats/README.md#getatsapplication) - Retrieve an application
 * [getAtsCandidate](docs/sdks/ats/README.md#getatscandidate) - Retrieve a candidate
 * [getAtsCompany](docs/sdks/ats/README.md#getatscompany) - Retrieve a company
@@ -202,6 +204,7 @@ run();
 * [getAtsInterview](docs/sdks/ats/README.md#getatsinterview) - Retrieve a interview
 * [getAtsJob](docs/sdks/ats/README.md#getatsjob) - Retrieve a job
 * [getAtsScorecard](docs/sdks/ats/README.md#getatsscorecard) - Retrieve a scorecard
+* [listAtsActivities](docs/sdks/ats/README.md#listatsactivities) - List all activities
 * [listAtsApplications](docs/sdks/ats/README.md#listatsapplications) - List all applications
 * [listAtsApplicationstatuses](docs/sdks/ats/README.md#listatsapplicationstatuses) - List all application statuses
 * [listAtsCandidates](docs/sdks/ats/README.md#listatscandidates) - List all candidates
@@ -210,24 +213,36 @@ run();
 * [listAtsInterviews](docs/sdks/ats/README.md#listatsinterviews) - List all interviews
 * [listAtsJobs](docs/sdks/ats/README.md#listatsjobs) - List all jobs
 * [listAtsScorecards](docs/sdks/ats/README.md#listatsscorecards) - List all scorecards
+* [patchAtsActivity](docs/sdks/ats/README.md#patchatsactivity) - Update an activity
 * [patchAtsApplication](docs/sdks/ats/README.md#patchatsapplication) - Update an application
 * [patchAtsCandidate](docs/sdks/ats/README.md#patchatscandidate) - Update a candidate
 * [patchAtsDocument](docs/sdks/ats/README.md#patchatsdocument) - Update a document
 * [patchAtsInterview](docs/sdks/ats/README.md#patchatsinterview) - Update a interview
 * [patchAtsJob](docs/sdks/ats/README.md#patchatsjob) - Update a job
 * [patchAtsScorecard](docs/sdks/ats/README.md#patchatsscorecard) - Update a scorecard
+* [removeAtsActivity](docs/sdks/ats/README.md#removeatsactivity) - Remove an activity
 * [removeAtsApplication](docs/sdks/ats/README.md#removeatsapplication) - Remove an application
 * [removeAtsCandidate](docs/sdks/ats/README.md#removeatscandidate) - Remove a candidate
 * [removeAtsDocument](docs/sdks/ats/README.md#removeatsdocument) - Remove a document
 * [removeAtsInterview](docs/sdks/ats/README.md#removeatsinterview) - Remove a interview
 * [removeAtsJob](docs/sdks/ats/README.md#removeatsjob) - Remove a job
 * [removeAtsScorecard](docs/sdks/ats/README.md#removeatsscorecard) - Remove a scorecard
+* [updateAtsActivity](docs/sdks/ats/README.md#updateatsactivity) - Update an activity
 * [updateAtsApplication](docs/sdks/ats/README.md#updateatsapplication) - Update an application
 * [updateAtsCandidate](docs/sdks/ats/README.md#updateatscandidate) - Update a candidate
 * [updateAtsDocument](docs/sdks/ats/README.md#updateatsdocument) - Update a document
 * [updateAtsInterview](docs/sdks/ats/README.md#updateatsinterview) - Update a interview
 * [updateAtsJob](docs/sdks/ats/README.md#updateatsjob) - Update a job
 * [updateAtsScorecard](docs/sdks/ats/README.md#updateatsscorecard) - Update a scorecard
+
+### [activity](docs/sdks/activity/README.md)
+
+* [createAtsActivity](docs/sdks/activity/README.md#createatsactivity) - Create an activity
+* [getAtsActivity](docs/sdks/activity/README.md#getatsactivity) - Retrieve an activity
+* [listAtsActivities](docs/sdks/activity/README.md#listatsactivities) - List all activities
+* [patchAtsActivity](docs/sdks/activity/README.md#patchatsactivity) - Update an activity
+* [removeAtsActivity](docs/sdks/activity/README.md#removeatsactivity) - Remove an activity
+* [updateAtsActivity](docs/sdks/activity/README.md#updateatsactivity) - Update an activity
 
 ### [application](docs/sdks/application/README.md)
 
