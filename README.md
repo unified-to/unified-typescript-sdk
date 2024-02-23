@@ -29,7 +29,6 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
