@@ -21,6 +21,7 @@ export class Account {
      */
     async createAccountingAccount(
         req: operations.CreateAccountingAccountRequest,
+        security: operations.CreateAccountingAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAccountingAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -51,14 +52,10 @@ export class Account {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateAccountingAccountSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -125,6 +122,7 @@ export class Account {
      */
     async getAccountingAccount(
         req: operations.GetAccountingAccountRequest,
+        security: operations.GetAccountingAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAccountingAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -141,14 +139,10 @@ export class Account {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetAccountingAccountSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -211,6 +205,7 @@ export class Account {
      */
     async listAccountingAccounts(
         req: operations.ListAccountingAccountsRequest,
+        security: operations.ListAccountingAccountsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAccountingAccountsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -227,14 +222,10 @@ export class Account {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListAccountingAccountsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -300,6 +291,7 @@ export class Account {
      */
     async patchAccountingAccount(
         req: operations.PatchAccountingAccountRequest,
+        security: operations.PatchAccountingAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAccountingAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -330,14 +322,10 @@ export class Account {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchAccountingAccountSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -404,6 +392,7 @@ export class Account {
      */
     async removeAccountingAccount(
         req: operations.RemoveAccountingAccountRequest,
+        security: operations.RemoveAccountingAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAccountingAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -420,14 +409,10 @@ export class Account {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveAccountingAccountSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -486,6 +471,7 @@ export class Account {
      */
     async updateAccountingAccount(
         req: operations.UpdateAccountingAccountRequest,
+        security: operations.UpdateAccountingAccountSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAccountingAccountResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -516,14 +502,10 @@ export class Account {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateAccountingAccountSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

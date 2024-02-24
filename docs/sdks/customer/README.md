@@ -18,14 +18,14 @@ Create a customer
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: CreateTicketingCustomerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.createTicketingCustomer({
     ticketingCustomer: {
@@ -47,7 +47,7 @@ async function run() {
       ],
     },
     connectionId: "<value>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -59,10 +59,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.CreateTicketingCustomerRequest](../../sdk/models/operations/createticketingcustomerrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.CreateTicketingCustomerRequest](../../sdk/models/operations/createticketingcustomerrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `security`                                                                                                   | [operations.CreateTicketingCustomerSecurity](../../sdk/models/operations/createticketingcustomersecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
@@ -82,13 +83,13 @@ Retrieve a customer
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { GetTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: GetTicketingCustomerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.getTicketingCustomer({
     connectionId: "<value>",
@@ -96,7 +97,7 @@ async function run() {
       "<value>",
     ],
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -108,10 +109,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetTicketingCustomerRequest](../../sdk/models/operations/getticketingcustomerrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.GetTicketingCustomerRequest](../../sdk/models/operations/getticketingcustomerrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `security`                                                                                             | [operations.GetTicketingCustomerSecurity](../../sdk/models/operations/getticketingcustomersecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -131,20 +133,20 @@ List all customers
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { ListTicketingCustomersSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListTicketingCustomersSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.listTicketingCustomers({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -156,10 +158,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListTicketingCustomersRequest](../../sdk/models/operations/listticketingcustomersrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.ListTicketingCustomersRequest](../../sdk/models/operations/listticketingcustomersrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `security`                                                                                                 | [operations.ListTicketingCustomersSecurity](../../sdk/models/operations/listticketingcustomerssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -179,14 +182,14 @@ Update a customer
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { PatchTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: PatchTicketingCustomerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.patchTicketingCustomer({
     ticketingCustomer: {
@@ -209,7 +212,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -221,10 +224,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PatchTicketingCustomerRequest](../../sdk/models/operations/patchticketingcustomerrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.PatchTicketingCustomerRequest](../../sdk/models/operations/patchticketingcustomerrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `security`                                                                                                 | [operations.PatchTicketingCustomerSecurity](../../sdk/models/operations/patchticketingcustomersecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -244,18 +248,18 @@ Remove a customer
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { RemoveTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: RemoveTicketingCustomerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.removeTicketingCustomer({
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -267,10 +271,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.RemoveTicketingCustomerRequest](../../sdk/models/operations/removeticketingcustomerrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.RemoveTicketingCustomerRequest](../../sdk/models/operations/removeticketingcustomerrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `security`                                                                                                   | [operations.RemoveTicketingCustomerSecurity](../../sdk/models/operations/removeticketingcustomersecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
@@ -290,14 +295,14 @@ Update a customer
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { UpdateTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: UpdateTicketingCustomerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.customer.updateTicketingCustomer({
     ticketingCustomer: {
@@ -320,7 +325,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -332,10 +337,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.UpdateTicketingCustomerRequest](../../sdk/models/operations/updateticketingcustomerrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.UpdateTicketingCustomerRequest](../../sdk/models/operations/updateticketingcustomerrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `security`                                                                                                   | [operations.UpdateTicketingCustomerSecurity](../../sdk/models/operations/updateticketingcustomersecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response

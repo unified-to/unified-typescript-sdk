@@ -21,6 +21,7 @@ export class Scorecard {
      */
     async createAtsScorecard(
         req: operations.CreateAtsScorecardRequest,
+        security: operations.CreateAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -47,14 +48,10 @@ export class Scorecard {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateAtsScorecardSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -121,6 +118,7 @@ export class Scorecard {
      */
     async getAtsScorecard(
         req: operations.GetAtsScorecardRequest,
+        security: operations.GetAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -137,14 +135,10 @@ export class Scorecard {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetAtsScorecardSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -206,6 +200,7 @@ export class Scorecard {
      */
     async listAtsScorecards(
         req: operations.ListAtsScorecardsRequest,
+        security: operations.ListAtsScorecardsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsScorecardsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -222,14 +217,10 @@ export class Scorecard {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListAtsScorecardsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -294,6 +285,7 @@ export class Scorecard {
      */
     async patchAtsScorecard(
         req: operations.PatchAtsScorecardRequest,
+        security: operations.PatchAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -320,14 +312,10 @@ export class Scorecard {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchAtsScorecardSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -393,6 +381,7 @@ export class Scorecard {
      */
     async removeAtsScorecard(
         req: operations.RemoveAtsScorecardRequest,
+        security: operations.RemoveAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -409,14 +398,10 @@ export class Scorecard {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveAtsScorecardSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -475,6 +460,7 @@ export class Scorecard {
      */
     async updateAtsScorecard(
         req: operations.UpdateAtsScorecardRequest,
+        security: operations.UpdateAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -501,14 +487,10 @@ export class Scorecard {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateAtsScorecardSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

@@ -21,6 +21,7 @@ export class List {
      */
     async createMartechList(
         req: operations.CreateMartechListRequest,
+        security: operations.CreateMartechListSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -47,14 +48,10 @@ export class List {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateMartechListSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -120,6 +117,7 @@ export class List {
      */
     async getMartechList(
         req: operations.GetMartechListRequest,
+        security: operations.GetMartechListSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -136,14 +134,10 @@ export class List {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetMartechListSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -205,6 +199,7 @@ export class List {
      */
     async listMartechLists(
         req: operations.ListMartechListsRequest,
+        security: operations.ListMartechListsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListMartechListsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -221,14 +216,10 @@ export class List {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListMartechListsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -293,6 +284,7 @@ export class List {
      */
     async patchMartechList(
         req: operations.PatchMartechListRequest,
+        security: operations.PatchMartechListSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -319,14 +311,10 @@ export class List {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchMartechListSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -392,6 +380,7 @@ export class List {
      */
     async removeMartechList(
         req: operations.RemoveMartechListRequest,
+        security: operations.RemoveMartechListSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -408,14 +397,10 @@ export class List {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveMartechListSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -473,6 +458,7 @@ export class List {
      */
     async updateMartechList(
         req: operations.UpdateMartechListRequest,
+        security: operations.UpdateMartechListSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateMartechListResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -499,14 +485,10 @@ export class List {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateMartechListSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

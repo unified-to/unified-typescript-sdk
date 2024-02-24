@@ -5,6 +5,13 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
+export class RemoveAccountingContactSecurity extends SpeakeasyBase {
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
+    })
+    jwt: string;
+}
+
 export class RemoveAccountingContactRequest extends SpeakeasyBase {
     /**
      * ID of the connection

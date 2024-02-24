@@ -21,6 +21,7 @@ export class Payout {
      */
     async getAccountingPayout(
         req: operations.GetAccountingPayoutRequest,
+        security: operations.GetAccountingPayoutSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAccountingPayoutResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -37,14 +38,10 @@ export class Payout {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetAccountingPayoutSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -107,6 +104,7 @@ export class Payout {
      */
     async listAccountingPayouts(
         req: operations.ListAccountingPayoutsRequest,
+        security: operations.ListAccountingPayoutsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAccountingPayoutsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -123,14 +121,10 @@ export class Payout {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListAccountingPayoutsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";

@@ -6,6 +6,13 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
+export class UpdateTicketingNoteSecurity extends SpeakeasyBase {
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
+    })
+    jwt: string;
+}
+
 export class UpdateTicketingNoteRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
     ticketingNote?: shared.TicketingNote;

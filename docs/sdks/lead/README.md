@@ -18,14 +18,14 @@ Create a lead
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: CreateCrmLeadSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.createCrmLead({
     crmLead: {
@@ -43,7 +43,7 @@ async function run() {
       ],
     },
     connectionId: "<value>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -55,10 +55,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.CreateCrmLeadRequest](../../sdk/models/operations/createcrmleadrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.CreateCrmLeadRequest](../../sdk/models/operations/createcrmleadrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.CreateCrmLeadSecurity](../../sdk/models/operations/createcrmleadsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
@@ -78,13 +79,13 @@ Retrieve a lead
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { GetCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: GetCrmLeadSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.getCrmLead({
     connectionId: "<value>",
@@ -92,7 +93,7 @@ async function run() {
       "<value>",
     ],
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -104,10 +105,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetCrmLeadRequest](../../sdk/models/operations/getcrmleadrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.GetCrmLeadRequest](../../sdk/models/operations/getcrmleadrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `security`                                                                         | [operations.GetCrmLeadSecurity](../../sdk/models/operations/getcrmleadsecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
 
 
 ### Response
@@ -127,20 +129,20 @@ List all leads
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { ListCrmLeadsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListCrmLeadsSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.listCrmLeads({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -152,10 +154,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.ListCrmLeadsRequest](../../sdk/models/operations/listcrmleadsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ListCrmLeadsRequest](../../sdk/models/operations/listcrmleadsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `security`                                                                             | [operations.ListCrmLeadsSecurity](../../sdk/models/operations/listcrmleadssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
@@ -175,14 +178,14 @@ Update a lead
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { PatchCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: PatchCrmLeadSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.patchCrmLead({
     crmLead: {
@@ -201,7 +204,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -213,10 +216,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.PatchCrmLeadRequest](../../sdk/models/operations/patchcrmleadrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.PatchCrmLeadRequest](../../sdk/models/operations/patchcrmleadrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `security`                                                                             | [operations.PatchCrmLeadSecurity](../../sdk/models/operations/patchcrmleadsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
@@ -236,18 +240,18 @@ Remove a lead
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { RemoveCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: RemoveCrmLeadSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.removeCrmLead({
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -259,10 +263,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.RemoveCrmLeadRequest](../../sdk/models/operations/removecrmleadrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.RemoveCrmLeadRequest](../../sdk/models/operations/removecrmleadrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.RemoveCrmLeadSecurity](../../sdk/models/operations/removecrmleadsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
@@ -282,14 +287,14 @@ Update a lead
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { UpdateCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: UpdateCrmLeadSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.lead.updateCrmLead({
     crmLead: {
@@ -308,7 +313,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -320,10 +325,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.UpdateCrmLeadRequest](../../sdk/models/operations/updatecrmleadrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.UpdateCrmLeadRequest](../../sdk/models/operations/updatecrmleadrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.UpdateCrmLeadSecurity](../../sdk/models/operations/updatecrmleadsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response

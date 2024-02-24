@@ -21,6 +21,7 @@ export class Item {
      */
     async createCommerceItem(
         req: operations.CreateCommerceItemRequest,
+        security: operations.CreateCommerceItemSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -47,14 +48,10 @@ export class Item {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateCommerceItemSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -121,6 +118,7 @@ export class Item {
      */
     async getCommerceItem(
         req: operations.GetCommerceItemRequest,
+        security: operations.GetCommerceItemSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -137,14 +135,10 @@ export class Item {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetCommerceItemSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -206,6 +200,7 @@ export class Item {
      */
     async listCommerceItems(
         req: operations.ListCommerceItemsRequest,
+        security: operations.ListCommerceItemsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCommerceItemsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -222,14 +217,10 @@ export class Item {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListCommerceItemsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -294,6 +285,7 @@ export class Item {
      */
     async patchCommerceItem(
         req: operations.PatchCommerceItemRequest,
+        security: operations.PatchCommerceItemSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -320,14 +312,10 @@ export class Item {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchCommerceItemSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -393,6 +381,7 @@ export class Item {
      */
     async removeCommerceItem(
         req: operations.RemoveCommerceItemRequest,
+        security: operations.RemoveCommerceItemSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -409,14 +398,10 @@ export class Item {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveCommerceItemSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -475,6 +460,7 @@ export class Item {
      */
     async updateCommerceItem(
         req: operations.UpdateCommerceItemRequest,
+        security: operations.UpdateCommerceItemSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCommerceItemResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -501,14 +487,10 @@ export class Item {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateCommerceItemSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

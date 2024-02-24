@@ -18,14 +18,14 @@ Create a member
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateMartechMemberSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: CreateMartechMemberSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.createMartechMember({
     marketingMember: {
@@ -45,7 +45,7 @@ async function run() {
       ],
     },
     connectionId: "<value>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -57,10 +57,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.CreateMartechMemberRequest](../../sdk/models/operations/createmartechmemberrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.CreateMartechMemberRequest](../../sdk/models/operations/createmartechmemberrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.CreateMartechMemberSecurity](../../sdk/models/operations/createmartechmembersecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -80,13 +81,13 @@ Retrieve a member
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { GetMartechMemberSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: GetMartechMemberSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.getMartechMember({
     connectionId: "<value>",
@@ -94,7 +95,7 @@ async function run() {
       "<value>",
     ],
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -106,10 +107,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetMartechMemberRequest](../../sdk/models/operations/getmartechmemberrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.GetMartechMemberRequest](../../sdk/models/operations/getmartechmemberrequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `security`                                                                                     | [operations.GetMartechMemberSecurity](../../sdk/models/operations/getmartechmembersecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -129,20 +131,20 @@ List all members
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { ListMartechMembersSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListMartechMembersSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.listMartechMembers({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -154,10 +156,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.ListMartechMembersRequest](../../sdk/models/operations/listmartechmembersrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.ListMartechMembersRequest](../../sdk/models/operations/listmartechmembersrequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `security`                                                                                         | [operations.ListMartechMembersSecurity](../../sdk/models/operations/listmartechmemberssecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -177,14 +180,14 @@ Update a member
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { PatchMartechMemberSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: PatchMartechMemberSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.patchMartechMember({
     marketingMember: {
@@ -205,7 +208,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -217,10 +220,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PatchMartechMemberRequest](../../sdk/models/operations/patchmartechmemberrequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PatchMartechMemberRequest](../../sdk/models/operations/patchmartechmemberrequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `security`                                                                                         | [operations.PatchMartechMemberSecurity](../../sdk/models/operations/patchmartechmembersecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -240,18 +244,18 @@ Remove member
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { RemoveMartechMemberSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: RemoveMartechMemberSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.removeMartechMember({
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -263,10 +267,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.RemoveMartechMemberRequest](../../sdk/models/operations/removemartechmemberrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.RemoveMartechMemberRequest](../../sdk/models/operations/removemartechmemberrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.RemoveMartechMemberSecurity](../../sdk/models/operations/removemartechmembersecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -286,14 +291,14 @@ Update a member
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { UpdateMartechMemberSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { MarketingEmailType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: UpdateMartechMemberSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.member.updateMartechMember({
     marketingMember: {
@@ -314,7 +319,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -326,10 +331,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.UpdateMartechMemberRequest](../../sdk/models/operations/updatemartechmemberrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.UpdateMartechMemberRequest](../../sdk/models/operations/updatemartechmemberrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.UpdateMartechMemberSecurity](../../sdk/models/operations/updatemartechmembersecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response

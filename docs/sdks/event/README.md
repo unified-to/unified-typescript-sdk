@@ -18,14 +18,14 @@ Create a event
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: CreateCrmEventSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.createCrmEvent({
     crmEvent: {
@@ -61,7 +61,7 @@ async function run() {
       task: {},
     },
     connectionId: "<value>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -73,10 +73,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.CreateCrmEventRequest](../../sdk/models/operations/createcrmeventrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreateCrmEventRequest](../../sdk/models/operations/createcrmeventrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.CreateCrmEventSecurity](../../sdk/models/operations/createcrmeventsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
@@ -96,13 +97,13 @@ Retrieve a event
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { GetCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: GetCrmEventSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.getCrmEvent({
     connectionId: "<value>",
@@ -110,7 +111,7 @@ async function run() {
       "<value>",
     ],
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -122,10 +123,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.GetCrmEventRequest](../../sdk/models/operations/getcrmeventrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetCrmEventRequest](../../sdk/models/operations/getcrmeventrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `security`                                                                           | [operations.GetCrmEventSecurity](../../sdk/models/operations/getcrmeventsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
@@ -145,20 +147,20 @@ List all events
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { ListCrmEventsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListCrmEventsSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.listCrmEvents({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -170,10 +172,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.ListCrmEventsRequest](../../sdk/models/operations/listcrmeventsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListCrmEventsRequest](../../sdk/models/operations/listcrmeventsrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.ListCrmEventsSecurity](../../sdk/models/operations/listcrmeventssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
@@ -193,14 +196,14 @@ Update a event
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { PatchCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: PatchCrmEventSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.patchCrmEvent({
     crmEvent: {
@@ -237,7 +240,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -249,10 +252,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PatchCrmEventRequest](../../sdk/models/operations/patchcrmeventrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.PatchCrmEventRequest](../../sdk/models/operations/patchcrmeventrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
+| `security`                                                                               | [operations.PatchCrmEventSecurity](../../sdk/models/operations/patchcrmeventsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
 
 
 ### Response
@@ -272,18 +276,18 @@ Remove a event
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { RemoveCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: RemoveCrmEventSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.removeCrmEvent({
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -295,10 +299,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.RemoveCrmEventRequest](../../sdk/models/operations/removecrmeventrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.RemoveCrmEventRequest](../../sdk/models/operations/removecrmeventrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.RemoveCrmEventSecurity](../../sdk/models/operations/removecrmeventsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
@@ -318,14 +323,14 @@ Update a event
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { UpdateCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: UpdateCrmEventSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.event.updateCrmEvent({
     crmEvent: {
@@ -362,7 +367,7 @@ async function run() {
     },
     connectionId: "<value>",
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -374,10 +379,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.UpdateCrmEventRequest](../../sdk/models/operations/updatecrmeventrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.UpdateCrmEventRequest](../../sdk/models/operations/updatecrmeventrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.UpdateCrmEventSecurity](../../sdk/models/operations/updatecrmeventsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response

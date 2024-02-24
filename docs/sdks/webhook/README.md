@@ -18,14 +18,14 @@ The data payload received by your server is described at https://docs.unified.to
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateUnifiedWebhookSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { Event, ObjectType, WebhookWebhookType } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: CreateUnifiedWebhookSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.webhook.createUnifiedWebhook({
     webhook: {
@@ -40,7 +40,7 @@ async function run() {
         "<value>",
       ],
     },
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -52,10 +52,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.CreateUnifiedWebhookRequest](../../sdk/models/operations/createunifiedwebhookrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.CreateUnifiedWebhookRequest](../../sdk/models/operations/createunifiedwebhookrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `security`                                                                                             | [operations.CreateUnifiedWebhookSecurity](../../sdk/models/operations/createunifiedwebhooksecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -75,17 +76,17 @@ Retrieve webhook by its ID
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { GetUnifiedWebhookSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: GetUnifiedWebhookSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.webhook.getUnifiedWebhook({
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -97,10 +98,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetUnifiedWebhookRequest](../../sdk/models/operations/getunifiedwebhookrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.GetUnifiedWebhookRequest](../../sdk/models/operations/getunifiedwebhookrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `security`                                                                                       | [operations.GetUnifiedWebhookSecurity](../../sdk/models/operations/getunifiedwebhooksecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -120,15 +122,15 @@ Returns all registered webhooks
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { ListUnifiedWebhooksSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListUnifiedWebhooksSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
-  const res = await sdk.webhook.listUnifiedWebhooks({});
+  const res = await sdk.webhook.listUnifiedWebhooks({}, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -140,10 +142,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.ListUnifiedWebhooksRequest](../../sdk/models/operations/listunifiedwebhooksrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.ListUnifiedWebhooksRequest](../../sdk/models/operations/listunifiedwebhooksrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.ListUnifiedWebhooksSecurity](../../sdk/models/operations/listunifiedwebhookssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -163,17 +166,17 @@ Trigger webhook
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { PatchUnifiedWebhookTriggerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: PatchUnifiedWebhookTriggerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.webhook.patchUnifiedWebhookTrigger({
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -185,10 +188,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.PatchUnifiedWebhookTriggerRequest](../../sdk/models/operations/patchunifiedwebhooktriggerrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.PatchUnifiedWebhookTriggerRequest](../../sdk/models/operations/patchunifiedwebhooktriggerrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `security`                                                                                                         | [operations.PatchUnifiedWebhookTriggerSecurity](../../sdk/models/operations/patchunifiedwebhooktriggersecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
@@ -208,17 +212,17 @@ Remove webhook subscription
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { RemoveUnifiedWebhookSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: RemoveUnifiedWebhookSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.webhook.removeUnifiedWebhook({
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -230,10 +234,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.RemoveUnifiedWebhookRequest](../../sdk/models/operations/removeunifiedwebhookrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.RemoveUnifiedWebhookRequest](../../sdk/models/operations/removeunifiedwebhookrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `security`                                                                                             | [operations.RemoveUnifiedWebhookSecurity](../../sdk/models/operations/removeunifiedwebhooksecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -253,17 +258,17 @@ Trigger webhook
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { UpdateUnifiedWebhookTriggerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: UpdateUnifiedWebhookTriggerSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.webhook.updateUnifiedWebhookTrigger({
     id: "<id>",
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -275,10 +280,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.UpdateUnifiedWebhookTriggerRequest](../../sdk/models/operations/updateunifiedwebhooktriggerrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                            | [operations.UpdateUnifiedWebhookTriggerRequest](../../sdk/models/operations/updateunifiedwebhooktriggerrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
+| `security`                                                                                                           | [operations.UpdateUnifiedWebhookTriggerSecurity](../../sdk/models/operations/updateunifiedwebhooktriggersecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
+| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
 
 
 ### Response

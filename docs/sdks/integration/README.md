@@ -18,11 +18,7 @@ import { UnifiedTo } from "unified-typescript-sdk";
 import { Scopes } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.integration.getUnifiedIntegrationAuth({
     integrationType: "<value>",
@@ -68,11 +64,7 @@ import { UnifiedTo } from "unified-typescript-sdk";
 import { QueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
 
   const res = await sdk.integration.listUnifiedIntegrationWorkspaces({
     categories: [
@@ -114,20 +106,19 @@ Returns all integrations
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
-import { ListUnifiedIntegrationsQueryParamCategories } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { ListUnifiedIntegrationsQueryParamCategories, ListUnifiedIntegrationsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo({
-    security: {
-      jwt: "<YOUR_API_KEY_HERE>",
-    },
-  });
+  const sdk = new UnifiedTo();
+const operationSecurity: ListUnifiedIntegrationsSecurity = {
+  jwt: "<YOUR_API_KEY_HERE>",
+};
 
   const res = await sdk.integration.listUnifiedIntegrations({
     categories: [
       ListUnifiedIntegrationsQueryParamCategories.Crm,
     ],
-  });
+  }, operationSecurity);
 
   if (res.statusCode == 200) {
     // handle response
@@ -139,10 +130,11 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListUnifiedIntegrationsRequest](../../sdk/models/operations/listunifiedintegrationsrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.ListUnifiedIntegrationsRequest](../../sdk/models/operations/listunifiedintegrationsrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `security`                                                                                                   | [operations.ListUnifiedIntegrationsSecurity](../../sdk/models/operations/listunifiedintegrationssecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response

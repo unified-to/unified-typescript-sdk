@@ -21,6 +21,7 @@ export class Taxrate {
      */
     async createAccountingTaxrate(
         req: operations.CreateAccountingTaxrateRequest,
+        security: operations.CreateAccountingTaxrateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAccountingTaxrateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -51,14 +52,10 @@ export class Taxrate {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateAccountingTaxrateSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -125,6 +122,7 @@ export class Taxrate {
      */
     async getAccountingTaxrate(
         req: operations.GetAccountingTaxrateRequest,
+        security: operations.GetAccountingTaxrateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAccountingTaxrateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -141,14 +139,10 @@ export class Taxrate {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetAccountingTaxrateSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -211,6 +205,7 @@ export class Taxrate {
      */
     async listAccountingTaxrates(
         req: operations.ListAccountingTaxratesRequest,
+        security: operations.ListAccountingTaxratesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAccountingTaxratesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -227,14 +222,10 @@ export class Taxrate {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListAccountingTaxratesSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -300,6 +291,7 @@ export class Taxrate {
      */
     async patchAccountingTaxrate(
         req: operations.PatchAccountingTaxrateRequest,
+        security: operations.PatchAccountingTaxrateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAccountingTaxrateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -330,14 +322,10 @@ export class Taxrate {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchAccountingTaxrateSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -404,6 +392,7 @@ export class Taxrate {
      */
     async removeAccountingTaxrate(
         req: operations.RemoveAccountingTaxrateRequest,
+        security: operations.RemoveAccountingTaxrateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAccountingTaxrateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -420,14 +409,10 @@ export class Taxrate {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveAccountingTaxrateSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -486,6 +471,7 @@ export class Taxrate {
      */
     async updateAccountingTaxrate(
         req: operations.UpdateAccountingTaxrateRequest,
+        security: operations.UpdateAccountingTaxrateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAccountingTaxrateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -516,14 +502,10 @@ export class Taxrate {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateAccountingTaxrateSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

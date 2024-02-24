@@ -6,6 +6,13 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
+export class CreateCrmContactSecurity extends SpeakeasyBase {
+    @SpeakeasyMetadata({
+        data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
+    })
+    jwt: string;
+}
+
 export class CreateCrmContactRequest extends SpeakeasyBase {
     /**
      * A contact represents a person that optionally is associated with a deal and/or a company

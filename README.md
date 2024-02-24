@@ -29,23 +29,27 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-    const sdk = new UnifiedTo({
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
-    });
+    const sdk = new UnifiedTo();
+    const operationSecurity: CreateAccountingAccountSecurity = {
+        jwt: "<YOUR_API_KEY_HERE>",
+    };
 
-    const res = await sdk.accounting.createAccountingAccount({
-        accountingAccount: {
-            name: "<value>",
-            raw: {
-                key: "<value>",
+    const res = await sdk.accounting.createAccountingAccount(
+        {
+            accountingAccount: {
+                name: "<value>",
+                raw: {
+                    key: "<value>",
+                },
             },
+            connectionId: "<value>",
         },
-        connectionId: "<value>",
-    });
+        operationSecurity
+    );
 
     if (res.statusCode == 200) {
         // handle response
@@ -693,26 +697,29 @@ Example
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-    const sdk = new UnifiedTo({
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
-    });
+    const sdk = new UnifiedTo();
+    const operationSecurity: CreateAccountingAccountSecurity = {
+        jwt: "<YOUR_API_KEY_HERE>",
+    };
 
     let res;
     try {
-        res = await sdk.accounting.createAccountingAccount({
-            accountingAccount: {
-                name: "<value>",
-                raw: {
-                    key: "<value>",
+        res = await sdk.accounting.createAccountingAccount(
+            {
+                accountingAccount: {
+                    name: "<value>",
+                    raw: {
+                        key: "<value>",
+                    },
                 },
+                connectionId: "<value>",
             },
-            connectionId: "<value>",
-        });
+            operationSecurity
+        );
     } catch (err) {
         if (err instanceof errors.SDKError) {
             console.error(err); // handle exception
@@ -748,25 +755,29 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
         serverIdx: 1,
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
     });
+    const operationSecurity: CreateAccountingAccountSecurity = {
+        jwt: "<YOUR_API_KEY_HERE>",
+    };
 
-    const res = await sdk.accounting.createAccountingAccount({
-        accountingAccount: {
-            name: "<value>",
-            raw: {
-                key: "<value>",
+    const res = await sdk.accounting.createAccountingAccount(
+        {
+            accountingAccount: {
+                name: "<value>",
+                raw: {
+                    key: "<value>",
+                },
             },
+            connectionId: "<value>",
         },
-        connectionId: "<value>",
-    });
+        operationSecurity
+    );
 
     if (res.statusCode == 200) {
         // handle response
@@ -783,25 +794,29 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "unified-typescript-sdk";
+import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
         serverURL: "https://api.unified.to",
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
     });
+    const operationSecurity: CreateAccountingAccountSecurity = {
+        jwt: "<YOUR_API_KEY_HERE>",
+    };
 
-    const res = await sdk.accounting.createAccountingAccount({
-        accountingAccount: {
-            name: "<value>",
-            raw: {
-                key: "<value>",
+    const res = await sdk.accounting.createAccountingAccount(
+        {
+            accountingAccount: {
+                name: "<value>",
+                raw: {
+                    key: "<value>",
+                },
             },
+            connectionId: "<value>",
         },
-        connectionId: "<value>",
-    });
+        operationSecurity
+    );
 
     if (res.statusCode == 200) {
         // handle response
@@ -835,49 +850,6 @@ const sdk = new UnifiedTo({defaultClient: httpClient});
 <!-- End Custom HTTP Client [http-client] -->
 
 
-
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name    | Type    | Scheme  |
-| ------- | ------- | ------- |
-| `jwt`   | apiKey  | API key |
-
-You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
-```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
-
-async function run() {
-    const sdk = new UnifiedTo({
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
-    });
-
-    const res = await sdk.accounting.createAccountingAccount({
-        accountingAccount: {
-            name: "<value>",
-            raw: {
-                key: "<value>",
-            },
-        },
-        connectionId: "<value>",
-    });
-
-    if (res.statusCode == 200) {
-        // handle response
-    }
-}
-
-run();
-
-```
-<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

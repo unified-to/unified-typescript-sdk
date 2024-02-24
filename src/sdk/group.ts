@@ -21,6 +21,7 @@ export class Group {
      */
     async createHrisGroup(
         req: operations.CreateHrisGroupRequest,
+        security: operations.CreateHrisGroupSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateHrisGroupResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -43,14 +44,10 @@ export class Group {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateHrisGroupSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -113,6 +110,7 @@ export class Group {
      */
     async getHrisGroup(
         req: operations.GetHrisGroupRequest,
+        security: operations.GetHrisGroupSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetHrisGroupResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -129,14 +127,10 @@ export class Group {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetHrisGroupSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -195,6 +189,7 @@ export class Group {
      */
     async listHrisGroups(
         req: operations.ListHrisGroupsRequest,
+        security: operations.ListHrisGroupsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListHrisGroupsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -207,14 +202,10 @@ export class Group {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/hris/{connection_id}/group", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListHrisGroupsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -279,6 +270,7 @@ export class Group {
      */
     async patchHrisGroup(
         req: operations.PatchHrisGroupRequest,
+        security: operations.PatchHrisGroupSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchHrisGroupResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -305,14 +297,10 @@ export class Group {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchHrisGroupSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -375,6 +363,7 @@ export class Group {
      */
     async removeHrisGroup(
         req: operations.RemoveHrisGroupRequest,
+        security: operations.RemoveHrisGroupSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveHrisGroupResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -391,14 +380,10 @@ export class Group {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveHrisGroupSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -456,6 +441,7 @@ export class Group {
      */
     async updateHrisGroup(
         req: operations.UpdateHrisGroupRequest,
+        security: operations.UpdateHrisGroupSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateHrisGroupResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -482,14 +468,10 @@ export class Group {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateHrisGroupSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

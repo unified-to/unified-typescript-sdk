@@ -21,6 +21,7 @@ export class Uc {
      */
     async createUcContact(
         req: operations.CreateUcContactRequest,
+        security: operations.CreateUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -43,14 +44,10 @@ export class Uc {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreateUcContactSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -113,6 +110,7 @@ export class Uc {
      */
     async getUcContact(
         req: operations.GetUcContactRequest,
+        security: operations.GetUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -129,14 +127,10 @@ export class Uc {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.GetUcContactSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -195,6 +189,7 @@ export class Uc {
      */
     async listUcCalls(
         req: operations.ListUcCallsRequest,
+        security: operations.ListUcCallsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListUcCallsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -207,14 +202,10 @@ export class Uc {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/uc/{connection_id}/call", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListUcCallsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -279,6 +270,7 @@ export class Uc {
      */
     async listUcContacts(
         req: operations.ListUcContactsRequest,
+        security: operations.ListUcContactsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListUcContactsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -291,14 +283,10 @@ export class Uc {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/uc/{connection_id}/contact", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListUcContactsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -363,6 +351,7 @@ export class Uc {
      */
     async patchUcContact(
         req: operations.PatchUcContactRequest,
+        security: operations.PatchUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -389,14 +378,10 @@ export class Uc {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchUcContactSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -459,6 +444,7 @@ export class Uc {
      */
     async removeUcContact(
         req: operations.RemoveUcContactRequest,
+        security: operations.RemoveUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -475,14 +461,10 @@ export class Uc {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemoveUcContactSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -540,6 +522,7 @@ export class Uc {
      */
     async updateUcContact(
         req: operations.UpdateUcContactRequest,
+        security: operations.UpdateUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -566,14 +549,10 @@ export class Uc {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdateUcContactSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

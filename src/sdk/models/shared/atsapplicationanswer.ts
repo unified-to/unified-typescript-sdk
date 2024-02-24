@@ -7,8 +7,8 @@ import { Expose } from "class-transformer";
 
 export class AtsApplicationAnswer extends SpeakeasyBase {
     @SpeakeasyMetadata()
-    @Expose({ name: "answer" })
-    answer: string;
+    @Expose({ name: "answers" })
+    answers: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "question_id" })

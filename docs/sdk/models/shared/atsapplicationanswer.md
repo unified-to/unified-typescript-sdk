@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `answer`           | *string*           | :heavy_check_mark: | N/A                |
+| `answers`          | *string*[]         | :heavy_check_mark: | N/A                |
 | `questionId`       | *string*           | :heavy_check_mark: | N/A                |

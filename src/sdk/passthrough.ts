@@ -5,7 +5,6 @@
 import * as utils from "../internal/utils";
 import * as errors from "../sdk/models/errors";
 import * as operations from "../sdk/models/operations";
-import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
@@ -21,6 +20,7 @@ export class Passthrough {
      */
     async createPassthrough(
         req: operations.CreatePassthroughRequest,
+        security: operations.CreatePassthroughSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreatePassthroughResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -47,14 +47,10 @@ export class Passthrough {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.CreatePassthroughSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -117,6 +113,7 @@ export class Passthrough {
      */
     async listPassthroughs(
         req: operations.ListPassthroughsRequest,
+        security: operations.ListPassthroughsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListPassthroughsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -133,14 +130,10 @@ export class Passthrough {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.ListPassthroughsSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -198,6 +191,7 @@ export class Passthrough {
      */
     async patchPassthrough(
         req: operations.PatchPassthroughRequest,
+        security: operations.PatchPassthroughSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchPassthroughResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -224,14 +218,10 @@ export class Passthrough {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.PatchPassthroughSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -294,6 +284,7 @@ export class Passthrough {
      */
     async removePassthrough(
         req: operations.RemovePassthroughRequest,
+        security: operations.RemovePassthroughSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemovePassthroughResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -310,14 +301,10 @@ export class Passthrough {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.RemovePassthroughSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -375,6 +362,7 @@ export class Passthrough {
      */
     async updatePassthrough(
         req: operations.UpdatePassthroughRequest,
+        security: operations.UpdatePassthroughSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdatePassthroughResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -401,14 +389,10 @@ export class Passthrough {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
+        if (!(security instanceof utils.SpeakeasyBase)) {
+            security = new operations.UpdatePassthroughSecurity(security);
         }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
+        const properties = utils.parseSecurityProperties(security);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
