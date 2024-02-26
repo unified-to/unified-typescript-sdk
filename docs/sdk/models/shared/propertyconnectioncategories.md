@@ -17,3 +17,4 @@
 | `Accounting`  | accounting    |
 | `Storage`     | storage       |
 | `Commerce`    | commerce      |
+| `Payment`     | payment       |

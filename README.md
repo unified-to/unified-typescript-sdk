@@ -63,6 +63,7 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -97,6 +98,7 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -191,3 +193,60 @@ run();
 
 ```
 <!-- End Authentication [security] -->
+
+<!-- No SDK Installation -->
+<!-- No SDK Example Usage -->
+<!-- No SDK Available Operations -->
+<!-- Start Error Handling [errors] -->
+## Error Handling
+
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or throw an error.  If Error objects are specified in your OpenAPI Spec, the SDK will throw the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |
+
+Example
+
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
+
+async function run() {
+    const sdk = new UnifiedTo({
+        security: {
+            jwt: "<YOUR_API_KEY_HERE>",
+        },
+    });
+
+    let res;
+    try {
+        res = await sdk.accounting.createAccountingAccount({
+            accountingAccount: {
+                name: "<value>",
+                raw: {
+                    key: "<value>",
+                },
+            },
+            connectionId: "<value>",
+        });
+    } catch (err) {
+        if (err instanceof errors.SDKError) {
+            console.error(err); // handle exception
+            throw err;
+        }
+    }
+
+    if (res.statusCode == 200) {
+        // handle response
+    }
+}
+
+run();
+
+```
+<!-- End Error Handling [errors] -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+

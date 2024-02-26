@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 7b981c3199081a2591af224351cdfba2
+  docChecksum: 035d8051316127eb4999660b4f25f88a
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.272.7
-  releaseVersion: 1.0.0
-  configChecksum: dd7165fadf0c2ff95a431729af9cb05f
+  releaseVersion: 1.0.1
+  configChecksum: 766ebeefdc55e2f82eace4d5ba61ce5a
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -22,9 +22,6 @@ generatedFiles:
   - src/sdk/contact.ts
   - src/sdk/invoice.ts
   - src/sdk/organization.ts
-  - src/sdk/payment.ts
-  - src/sdk/payout.ts
-  - src/sdk/refund.ts
   - src/sdk/taxrate.ts
   - src/sdk/transaction.ts
   - src/sdk/ats.ts
@@ -56,6 +53,10 @@ generatedFiles:
   - src/sdk/list.ts
   - src/sdk/member.ts
   - src/sdk/passthrough.ts
+  - src/sdk/payment.ts
+  - src/sdk/link.ts
+  - src/sdk/payout.ts
+  - src/sdk/refund.ts
   - src/sdk/storage.ts
   - src/sdk/file.ts
   - src/sdk/ticketing.ts
@@ -95,43 +96,33 @@ generatedFiles:
   - src/sdk/models/operations/createaccountingaccount.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
-  - src/sdk/models/operations/createaccountingpayment.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
   - src/sdk/models/operations/createaccountingtransaction.ts
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
   - src/sdk/models/operations/getaccountingorganization.ts
-  - src/sdk/models/operations/getaccountingpayment.ts
-  - src/sdk/models/operations/getaccountingpayout.ts
-  - src/sdk/models/operations/getaccountingrefund.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
   - src/sdk/models/operations/getaccountingtransaction.ts
   - src/sdk/models/operations/listaccountingaccounts.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
-  - src/sdk/models/operations/listaccountingpayments.ts
-  - src/sdk/models/operations/listaccountingpayouts.ts
-  - src/sdk/models/operations/listaccountingrefunds.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
   - src/sdk/models/operations/listaccountingtransactions.ts
   - src/sdk/models/operations/patchaccountingaccount.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
-  - src/sdk/models/operations/patchaccountingpayment.ts
   - src/sdk/models/operations/patchaccountingtaxrate.ts
   - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/removeaccountingaccount.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
-  - src/sdk/models/operations/removeaccountingpayment.ts
   - src/sdk/models/operations/removeaccountingtaxrate.ts
   - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
-  - src/sdk/models/operations/updateaccountingpayment.ts
   - src/sdk/models/operations/updateaccountingtaxrate.ts
   - src/sdk/models/operations/updateaccountingtransaction.ts
   - src/sdk/models/operations/createcrmcontact.ts
@@ -276,6 +267,22 @@ generatedFiles:
   - src/sdk/models/operations/patchpassthrough.ts
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/updatepassthrough.ts
+  - src/sdk/models/operations/createpaymentlink.ts
+  - src/sdk/models/operations/createpaymentpayment.ts
+  - src/sdk/models/operations/getpaymentlink.ts
+  - src/sdk/models/operations/getpaymentpayment.ts
+  - src/sdk/models/operations/getpaymentpayout.ts
+  - src/sdk/models/operations/getpaymentrefund.ts
+  - src/sdk/models/operations/listpaymentlinks.ts
+  - src/sdk/models/operations/listpaymentpayments.ts
+  - src/sdk/models/operations/listpaymentpayouts.ts
+  - src/sdk/models/operations/listpaymentrefunds.ts
+  - src/sdk/models/operations/patchpaymentlink.ts
+  - src/sdk/models/operations/patchpaymentpayment.ts
+  - src/sdk/models/operations/removepaymentlink.ts
+  - src/sdk/models/operations/removepaymentpayment.ts
+  - src/sdk/models/operations/updatepaymentlink.ts
+  - src/sdk/models/operations/updatepaymentpayment.ts
   - src/sdk/models/operations/createstoragefile.ts
   - src/sdk/models/operations/getstoragefile.ts
   - src/sdk/models/operations/liststoragefiles.ts
@@ -328,14 +335,11 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/accountinglineitem.ts
-  - src/sdk/models/shared/accountingpayment.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtransaction.ts
   - src/sdk/models/shared/accountingtransactionlineitem.ts
   - src/sdk/models/shared/accountingorganization.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
-  - src/sdk/models/shared/accountingpayout.ts
-  - src/sdk/models/shared/accountingrefund.ts
   - src/sdk/models/shared/crmcontact.ts
   - src/sdk/models/shared/crmtelephone.ts
   - src/sdk/models/shared/crmemail.ts
@@ -397,6 +401,11 @@ generatedFiles:
   - src/sdk/models/shared/marketinglist.ts
   - src/sdk/models/shared/marketingmember.ts
   - src/sdk/models/shared/marketingemail.ts
+  - src/sdk/models/shared/paymentlink.ts
+  - src/sdk/models/shared/paymenntlinklineitem.ts
+  - src/sdk/models/shared/paymentpayment.ts
+  - src/sdk/models/shared/paymentpayout.ts
+  - src/sdk/models/shared/paymentrefund.ts
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
   - src/sdk/models/shared/propertystoragepermissionroles.ts
@@ -428,8 +437,6 @@ generatedFiles:
   - docs/sdk/models/operations/createaccountingcontactresponse.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/createaccountingpaymentrequest.md
-  - docs/sdk/models/operations/createaccountingpaymentresponse.md
   - docs/sdk/models/operations/createaccountingtaxraterequest.md
   - docs/sdk/models/operations/createaccountingtaxrateresponse.md
   - docs/sdk/models/operations/createaccountingtransactionrequest.md
@@ -442,12 +449,6 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountinginvoiceresponse.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
   - docs/sdk/models/operations/getaccountingorganizationresponse.md
-  - docs/sdk/models/operations/getaccountingpaymentrequest.md
-  - docs/sdk/models/operations/getaccountingpaymentresponse.md
-  - docs/sdk/models/operations/getaccountingpayoutrequest.md
-  - docs/sdk/models/operations/getaccountingpayoutresponse.md
-  - docs/sdk/models/operations/getaccountingrefundrequest.md
-  - docs/sdk/models/operations/getaccountingrefundresponse.md
   - docs/sdk/models/operations/getaccountingtaxraterequest.md
   - docs/sdk/models/operations/getaccountingtaxrateresponse.md
   - docs/sdk/models/operations/getaccountingtransactionrequest.md
@@ -460,12 +461,6 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountinginvoicesresponse.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsresponse.md
-  - docs/sdk/models/operations/listaccountingpaymentsrequest.md
-  - docs/sdk/models/operations/listaccountingpaymentsresponse.md
-  - docs/sdk/models/operations/listaccountingpayoutsrequest.md
-  - docs/sdk/models/operations/listaccountingpayoutsresponse.md
-  - docs/sdk/models/operations/listaccountingrefundsrequest.md
-  - docs/sdk/models/operations/listaccountingrefundsresponse.md
   - docs/sdk/models/operations/listaccountingtaxratesrequest.md
   - docs/sdk/models/operations/listaccountingtaxratesresponse.md
   - docs/sdk/models/operations/listaccountingtransactionsrequest.md
@@ -476,8 +471,6 @@ generatedFiles:
   - docs/sdk/models/operations/patchaccountingcontactresponse.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/patchaccountingpaymentrequest.md
-  - docs/sdk/models/operations/patchaccountingpaymentresponse.md
   - docs/sdk/models/operations/patchaccountingtaxraterequest.md
   - docs/sdk/models/operations/patchaccountingtaxrateresponse.md
   - docs/sdk/models/operations/patchaccountingtransactionrequest.md
@@ -488,8 +481,6 @@ generatedFiles:
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/removeaccountingpaymentrequest.md
-  - docs/sdk/models/operations/removeaccountingpaymentresponse.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
   - docs/sdk/models/operations/removeaccountingtaxrateresponse.md
   - docs/sdk/models/operations/removeaccountingtransactionrequest.md
@@ -500,8 +491,6 @@ generatedFiles:
   - docs/sdk/models/operations/updateaccountingcontactresponse.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountinginvoiceresponse.md
-  - docs/sdk/models/operations/updateaccountingpaymentrequest.md
-  - docs/sdk/models/operations/updateaccountingpaymentresponse.md
   - docs/sdk/models/operations/updateaccountingtaxraterequest.md
   - docs/sdk/models/operations/updateaccountingtaxrateresponse.md
   - docs/sdk/models/operations/updateaccountingtransactionrequest.md
@@ -790,6 +779,38 @@ generatedFiles:
   - docs/sdk/models/operations/removepassthroughresponse.md
   - docs/sdk/models/operations/updatepassthroughrequest.md
   - docs/sdk/models/operations/updatepassthroughresponse.md
+  - docs/sdk/models/operations/createpaymentlinkrequest.md
+  - docs/sdk/models/operations/createpaymentlinkresponse.md
+  - docs/sdk/models/operations/createpaymentpaymentrequest.md
+  - docs/sdk/models/operations/createpaymentpaymentresponse.md
+  - docs/sdk/models/operations/getpaymentlinkrequest.md
+  - docs/sdk/models/operations/getpaymentlinkresponse.md
+  - docs/sdk/models/operations/getpaymentpaymentrequest.md
+  - docs/sdk/models/operations/getpaymentpaymentresponse.md
+  - docs/sdk/models/operations/getpaymentpayoutrequest.md
+  - docs/sdk/models/operations/getpaymentpayoutresponse.md
+  - docs/sdk/models/operations/getpaymentrefundrequest.md
+  - docs/sdk/models/operations/getpaymentrefundresponse.md
+  - docs/sdk/models/operations/listpaymentlinksrequest.md
+  - docs/sdk/models/operations/listpaymentlinksresponse.md
+  - docs/sdk/models/operations/listpaymentpaymentsrequest.md
+  - docs/sdk/models/operations/listpaymentpaymentsresponse.md
+  - docs/sdk/models/operations/listpaymentpayoutsrequest.md
+  - docs/sdk/models/operations/listpaymentpayoutsresponse.md
+  - docs/sdk/models/operations/listpaymentrefundsrequest.md
+  - docs/sdk/models/operations/listpaymentrefundsresponse.md
+  - docs/sdk/models/operations/patchpaymentlinkrequest.md
+  - docs/sdk/models/operations/patchpaymentlinkresponse.md
+  - docs/sdk/models/operations/patchpaymentpaymentrequest.md
+  - docs/sdk/models/operations/patchpaymentpaymentresponse.md
+  - docs/sdk/models/operations/removepaymentlinkrequest.md
+  - docs/sdk/models/operations/removepaymentlinkresponse.md
+  - docs/sdk/models/operations/removepaymentpaymentrequest.md
+  - docs/sdk/models/operations/removepaymentpaymentresponse.md
+  - docs/sdk/models/operations/updatepaymentlinkrequest.md
+  - docs/sdk/models/operations/updatepaymentlinkresponse.md
+  - docs/sdk/models/operations/updatepaymentpaymentrequest.md
+  - docs/sdk/models/operations/updatepaymentpaymentresponse.md
   - docs/sdk/models/operations/createstoragefilerequest.md
   - docs/sdk/models/operations/createstoragefileresponse.md
   - docs/sdk/models/operations/getstoragefilerequest.md
@@ -895,16 +916,11 @@ generatedFiles:
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinglineitem.md
-  - docs/sdk/models/shared/accountingpayment.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtransaction.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
   - docs/sdk/models/shared/accountingorganization.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
-  - docs/sdk/models/shared/accountingpayoutstatus.md
-  - docs/sdk/models/shared/accountingpayout.md
-  - docs/sdk/models/shared/accountingrefundstatus.md
-  - docs/sdk/models/shared/accountingrefund.md
   - docs/sdk/models/shared/crmcontact.md
   - docs/sdk/models/shared/crmtelephonetype.md
   - docs/sdk/models/shared/crmtelephone.md
@@ -1000,6 +1016,13 @@ generatedFiles:
   - docs/sdk/models/shared/marketingmember.md
   - docs/sdk/models/shared/marketingemailtype.md
   - docs/sdk/models/shared/marketingemail.md
+  - docs/sdk/models/shared/paymentlink.md
+  - docs/sdk/models/shared/paymenntlinklineitem.md
+  - docs/sdk/models/shared/paymentpayment.md
+  - docs/sdk/models/shared/paymentpayoutstatus.md
+  - docs/sdk/models/shared/paymentpayout.md
+  - docs/sdk/models/shared/paymentrefundstatus.md
+  - docs/sdk/models/shared/paymentrefund.md
   - docs/sdk/models/shared/storagefiletype.md
   - docs/sdk/models/shared/storagefile.md
   - docs/sdk/models/shared/storagepermission.md
@@ -1034,61 +1057,5 @@ generatedFiles:
   - docs/sdk/models/shared/issuetype.md
   - docs/sdk/models/shared/issue.md
   - docs/sdk/models/shared/security.md
-  - docs/sdks/unifiedto/README.md
-  - docs/sdks/accounting/README.md
-  - docs/sdks/account/README.md
-  - docs/sdks/contact/README.md
-  - docs/sdks/invoice/README.md
-  - docs/sdks/organization/README.md
-  - docs/sdks/payment/README.md
-  - docs/sdks/payout/README.md
-  - docs/sdks/refund/README.md
-  - docs/sdks/taxrate/README.md
-  - docs/sdks/transaction/README.md
-  - docs/sdks/ats/README.md
-  - docs/sdks/activity/README.md
-  - docs/sdks/application/README.md
-  - docs/sdks/applicationstatus/README.md
-  - docs/sdks/candidate/README.md
-  - docs/sdks/company/README.md
-  - docs/sdks/document/README.md
-  - docs/sdks/interview/README.md
-  - docs/sdks/job/README.md
-  - docs/sdks/scorecard/README.md
-  - docs/sdks/commerce/README.md
-  - docs/sdks/collection/README.md
-  - docs/sdks/inventory/README.md
-  - docs/sdks/item/README.md
-  - docs/sdks/location/README.md
-  - docs/sdks/crm/README.md
-  - docs/sdks/deal/README.md
-  - docs/sdks/event/README.md
-  - docs/sdks/lead/README.md
-  - docs/sdks/pipeline/README.md
-  - docs/sdks/enrich/README.md
-  - docs/sdks/person/README.md
-  - docs/sdks/hris/README.md
-  - docs/sdks/employee/README.md
-  - docs/sdks/group/README.md
-  - docs/sdks/martech/README.md
-  - docs/sdks/list/README.md
-  - docs/sdks/member/README.md
-  - docs/sdks/passthrough/README.md
-  - docs/sdks/storage/README.md
-  - docs/sdks/file/README.md
-  - docs/sdks/ticketing/README.md
-  - docs/sdks/customer/README.md
-  - docs/sdks/note/README.md
-  - docs/sdks/ticket/README.md
-  - docs/sdks/uc/README.md
-  - docs/sdks/call/README.md
-  - docs/sdks/unified/README.md
-  - docs/sdks/apicall/README.md
-  - docs/sdks/connection/README.md
-  - docs/sdks/integration/README.md
-  - docs/sdks/auth/README.md
-  - docs/sdks/login/README.md
-  - docs/sdks/issue/README.md
-  - docs/sdks/webhook/README.md
   - USAGE.md
   - .gitattributes

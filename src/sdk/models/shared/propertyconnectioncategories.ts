@@ -15,4 +15,5 @@ export enum PropertyConnectionCategories {
     Accounting = "accounting",
     Storage = "storage",
     Commerce = "commerce",
+    Payment = "payment",
 }

@@ -19,12 +19,12 @@ export class Payout {
     /**
      * Retrieve a payout
      */
-    async getAccountingPayout(
-        req: operations.GetAccountingPayoutRequest,
+    async getPaymentPayout(
+        req: operations.GetPaymentPayoutRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAccountingPayoutResponse> {
+    ): Promise<operations.GetPaymentPayoutResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAccountingPayoutRequest(req);
+            req = new operations.GetPaymentPayoutRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -33,7 +33,7 @@ export class Payout {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/payout/{id}",
+            "/payment/{connection_id}/payout/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -66,19 +66,18 @@ export class Payout {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAccountingPayoutResponse =
-            new operations.GetAccountingPayoutResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetPaymentPayoutResponse = new operations.GetPaymentPayoutResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingPayout = utils.objectToClass(
+                    res.paymentPayout = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingPayout
+                        shared.PaymentPayout
                     );
                 } else {
                     throw new errors.SDKError(
@@ -105,12 +104,12 @@ export class Payout {
     /**
      * List all payouts
      */
-    async listAccountingPayouts(
-        req: operations.ListAccountingPayoutsRequest,
+    async listPaymentPayouts(
+        req: operations.ListPaymentPayoutsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.ListAccountingPayoutsResponse> {
+    ): Promise<operations.ListPaymentPayoutsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAccountingPayoutsRequest(req);
+            req = new operations.ListPaymentPayoutsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -119,7 +118,7 @@ export class Payout {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/payout",
+            "/payment/{connection_id}/payout",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -152,8 +151,8 @@ export class Payout {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.ListAccountingPayoutsResponse =
-            new operations.ListAccountingPayoutsResponse({
+        const res: operations.ListPaymentPayoutsResponse =
+            new operations.ListPaymentPayoutsResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -162,11 +161,11 @@ export class Payout {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingPayouts = [];
+                    res.paymentPayouts = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.accountingPayouts = utils.objectToClass(
+                    res.paymentPayouts = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingPayout,
+                        shared.PaymentPayout,
                         resFieldDepth
                     );
                 } else {

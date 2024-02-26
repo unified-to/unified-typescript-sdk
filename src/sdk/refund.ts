@@ -19,12 +19,12 @@ export class Refund {
     /**
      * Retrieve a refund
      */
-    async getAccountingRefund(
-        req: operations.GetAccountingRefundRequest,
+    async getPaymentRefund(
+        req: operations.GetPaymentRefundRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAccountingRefundResponse> {
+    ): Promise<operations.GetPaymentRefundResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAccountingRefundRequest(req);
+            req = new operations.GetPaymentRefundRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -33,7 +33,7 @@ export class Refund {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/refund/{id}",
+            "/payment/{connection_id}/refund/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -66,19 +66,18 @@ export class Refund {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAccountingRefundResponse =
-            new operations.GetAccountingRefundResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
+        const res: operations.GetPaymentRefundResponse = new operations.GetPaymentRefundResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingRefund = utils.objectToClass(
+                    res.paymentRefund = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingRefund
+                        shared.PaymentRefund
                     );
                 } else {
                     throw new errors.SDKError(
@@ -105,12 +104,12 @@ export class Refund {
     /**
      * List all refunds
      */
-    async listAccountingRefunds(
-        req: operations.ListAccountingRefundsRequest,
+    async listPaymentRefunds(
+        req: operations.ListPaymentRefundsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.ListAccountingRefundsResponse> {
+    ): Promise<operations.ListPaymentRefundsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAccountingRefundsRequest(req);
+            req = new operations.ListPaymentRefundsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -119,7 +118,7 @@ export class Refund {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/refund",
+            "/payment/{connection_id}/refund",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -152,8 +151,8 @@ export class Refund {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.ListAccountingRefundsResponse =
-            new operations.ListAccountingRefundsResponse({
+        const res: operations.ListPaymentRefundsResponse =
+            new operations.ListPaymentRefundsResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -162,11 +161,11 @@ export class Refund {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingRefunds = [];
+                    res.paymentRefunds = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.accountingRefunds = utils.objectToClass(
+                    res.paymentRefunds = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingRefund,
+                        shared.PaymentRefund,
                         resFieldDepth
                     );
                 } else {

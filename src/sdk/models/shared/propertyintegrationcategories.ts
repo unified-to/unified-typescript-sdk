@@ -15,4 +15,5 @@ export enum PropertyIntegrationCategories {
     Accounting = "accounting",
     Storage = "storage",
     Commerce = "commerce",
+    Payment = "payment",
 }

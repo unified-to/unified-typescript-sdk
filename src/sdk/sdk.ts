@@ -37,6 +37,7 @@ import { Issue } from "./issue";
 import { Item } from "./item";
 import { Job } from "./job";
 import { Lead } from "./lead";
+import { Link } from "./link";
 import { List } from "./list";
 import { Location } from "./location";
 import { Login } from "./login";
@@ -112,9 +113,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.0.0";
+    sdkVersion = "1.0.1";
     genVersion = "2.272.7";
-    userAgent = "speakeasy-sdk/typescript 1.0.0 2.272.7 1.0 @unified-api/typescript-sdk";
+    userAgent = "speakeasy-sdk/typescript 1.0.1 2.272.7 1.0 @unified-api/typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -130,9 +131,6 @@ export class UnifiedTo {
     public contact: Contact;
     public invoice: Invoice;
     public organization: Organization;
-    public payment: Payment;
-    public payout: Payout;
-    public refund: Refund;
     public taxrate: Taxrate;
     public transaction: Transaction;
     public ats: Ats;
@@ -164,6 +162,10 @@ export class UnifiedTo {
     public list: List;
     public member: Member;
     public passthrough: Passthrough;
+    public payment: Payment;
+    public link: Link;
+    public payout: Payout;
+    public refund: Refund;
     public storage: Storage;
     public file: File;
     public ticketing: Ticketing;
@@ -204,9 +206,6 @@ export class UnifiedTo {
         this.contact = new Contact(this.sdkConfiguration);
         this.invoice = new Invoice(this.sdkConfiguration);
         this.organization = new Organization(this.sdkConfiguration);
-        this.payment = new Payment(this.sdkConfiguration);
-        this.payout = new Payout(this.sdkConfiguration);
-        this.refund = new Refund(this.sdkConfiguration);
         this.taxrate = new Taxrate(this.sdkConfiguration);
         this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
@@ -238,6 +237,10 @@ export class UnifiedTo {
         this.list = new List(this.sdkConfiguration);
         this.member = new Member(this.sdkConfiguration);
         this.passthrough = new Passthrough(this.sdkConfiguration);
+        this.payment = new Payment(this.sdkConfiguration);
+        this.link = new Link(this.sdkConfiguration);
+        this.payout = new Payout(this.sdkConfiguration);
+        this.refund = new Refund(this.sdkConfiguration);
         this.storage = new Storage(this.sdkConfiguration);
         this.file = new File(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);

@@ -19,6 +19,7 @@ export enum QueryParamCategories {
     Accounting = "accounting",
     Storage = "storage",
     Commerce = "commerce",
+    Payment = "payment",
 }
 
 export class ListUnifiedIntegrationWorkspacesRequest extends SpeakeasyBase {
