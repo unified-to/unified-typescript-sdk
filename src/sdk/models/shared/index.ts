@@ -88,6 +88,7 @@ export * from "./propertyintegrationcategories";
 export * from "./propertyintegrationsupportwebhookevents";
 export * from "./propertystoragepermissionroles";
 export * from "./propertyuccalltelephone";
+export * from "./security";
 export * from "./storagefile";
 export * from "./storagepermission";
 export * from "./ticketingcustomer";

@@ -21,7 +21,6 @@ export class File {
      */
     async createStorageFile(
         req: operations.CreateStorageFileRequest,
-        security: operations.CreateStorageFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateStorageFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class File {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateStorageFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -117,7 +120,6 @@ export class File {
      */
     async getStorageFile(
         req: operations.GetStorageFileRequest,
-        security: operations.GetStorageFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetStorageFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -134,10 +136,14 @@ export class File {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetStorageFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -199,7 +205,6 @@ export class File {
      */
     async listStorageFiles(
         req: operations.ListStorageFilesRequest,
-        security: operations.ListStorageFilesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListStorageFilesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -216,10 +221,14 @@ export class File {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListStorageFilesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -284,7 +293,6 @@ export class File {
      */
     async patchStorageFile(
         req: operations.PatchStorageFileRequest,
-        security: operations.PatchStorageFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchStorageFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -311,10 +319,14 @@ export class File {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchStorageFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -380,7 +392,6 @@ export class File {
      */
     async removeStorageFile(
         req: operations.RemoveStorageFileRequest,
-        security: operations.RemoveStorageFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveStorageFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -397,10 +408,14 @@ export class File {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveStorageFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -458,7 +473,6 @@ export class File {
      */
     async updateStorageFile(
         req: operations.UpdateStorageFileRequest,
-        security: operations.UpdateStorageFileSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateStorageFileResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -485,10 +499,14 @@ export class File {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateStorageFileSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

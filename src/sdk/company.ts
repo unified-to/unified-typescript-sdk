@@ -21,7 +21,6 @@ export class Company {
      */
     async createCrmCompany(
         req: operations.CreateCrmCompanyRequest,
-        security: operations.CreateCrmCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCrmCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Company {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCrmCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -114,7 +117,6 @@ export class Company {
      */
     async getAtsCompany(
         req: operations.GetAtsCompanyRequest,
-        security: operations.GetAtsCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -131,10 +133,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -193,7 +199,6 @@ export class Company {
      */
     async getCrmCompany(
         req: operations.GetCrmCompanyRequest,
-        security: operations.GetCrmCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCrmCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -210,10 +215,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCrmCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -272,7 +281,6 @@ export class Company {
      */
     async listAtsCompanies(
         req: operations.ListAtsCompaniesRequest,
-        security: operations.ListAtsCompaniesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsCompaniesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -289,10 +297,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsCompaniesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -357,7 +369,6 @@ export class Company {
      */
     async listCrmCompanies(
         req: operations.ListCrmCompaniesRequest,
-        security: operations.ListCrmCompaniesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCrmCompaniesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -374,10 +385,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCrmCompaniesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -442,7 +457,6 @@ export class Company {
      */
     async listEnrichCompanies(
         req: operations.ListEnrichCompaniesRequest,
-        security: operations.ListEnrichCompaniesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListEnrichCompaniesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -459,10 +473,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListEnrichCompaniesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -525,7 +543,6 @@ export class Company {
      */
     async patchCrmCompany(
         req: operations.PatchCrmCompanyRequest,
-        security: operations.PatchCrmCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCrmCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -552,10 +569,14 @@ export class Company {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCrmCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -618,7 +639,6 @@ export class Company {
      */
     async removeCrmCompany(
         req: operations.RemoveCrmCompanyRequest,
-        security: operations.RemoveCrmCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCrmCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -635,10 +655,14 @@ export class Company {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCrmCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -696,7 +720,6 @@ export class Company {
      */
     async updateCrmCompany(
         req: operations.UpdateCrmCompanyRequest,
-        security: operations.UpdateCrmCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCrmCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -723,10 +746,14 @@ export class Company {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCrmCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

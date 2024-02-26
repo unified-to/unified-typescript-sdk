@@ -18,7 +18,6 @@ Create an employee
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateHrisEmployeeSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -29,10 +28,11 @@ import {
 } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateHrisEmployeeSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.createHrisEmployee({
     hrisEmployee: {
@@ -52,7 +52,7 @@ const operationSecurity: CreateHrisEmployeeSecurity = {
       ],
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -64,11 +64,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.CreateHrisEmployeeRequest](../../sdk/models/operations/createhrisemployeerequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.CreateHrisEmployeeSecurity](../../sdk/models/operations/createhrisemployeesecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.CreateHrisEmployeeRequest](../../sdk/models/operations/createhrisemployeerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -88,13 +87,13 @@ Retrieve an employee
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetHrisEmployeeSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetHrisEmployeeSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.getHrisEmployee({
     connectionId: "<value>",
@@ -102,7 +101,7 @@ const operationSecurity: GetHrisEmployeeSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -114,11 +113,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.GetHrisEmployeeRequest](../../sdk/models/operations/gethrisemployeerequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.GetHrisEmployeeSecurity](../../sdk/models/operations/gethrisemployeesecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
-| `config`                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                 | :heavy_minus_sign:                                                                           | Available config options for making requests.                                                |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.GetHrisEmployeeRequest](../../sdk/models/operations/gethrisemployeerequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `config`                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                               | :heavy_minus_sign:                                                                         | Available config options for making requests.                                              |
 
 
 ### Response
@@ -138,20 +136,20 @@ List all employees
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListHrisEmployeesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListHrisEmployeesSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.listHrisEmployees({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -163,11 +161,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.ListHrisEmployeesRequest](../../sdk/models/operations/listhrisemployeesrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.ListHrisEmployeesSecurity](../../sdk/models/operations/listhrisemployeessecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.ListHrisEmployeesRequest](../../sdk/models/operations/listhrisemployeesrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -187,7 +184,6 @@ Update an employee
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchHrisEmployeeSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -198,10 +194,11 @@ import {
 } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchHrisEmployeeSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.patchHrisEmployee({
     hrisEmployee: {
@@ -222,7 +219,7 @@ const operationSecurity: PatchHrisEmployeeSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -234,11 +231,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.PatchHrisEmployeeRequest](../../sdk/models/operations/patchhrisemployeerequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.PatchHrisEmployeeSecurity](../../sdk/models/operations/patchhrisemployeesecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
-| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.PatchHrisEmployeeRequest](../../sdk/models/operations/patchhrisemployeerequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `config`                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                   | :heavy_minus_sign:                                                                             | Available config options for making requests.                                                  |
 
 
 ### Response
@@ -258,18 +254,18 @@ Remove an employee
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveHrisEmployeeSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveHrisEmployeeSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.removeHrisEmployee({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -281,11 +277,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.RemoveHrisEmployeeRequest](../../sdk/models/operations/removehrisemployeerequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.RemoveHrisEmployeeSecurity](../../sdk/models/operations/removehrisemployeesecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.RemoveHrisEmployeeRequest](../../sdk/models/operations/removehrisemployeerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response
@@ -305,7 +300,6 @@ Update an employee
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateHrisEmployeeSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import {
   EmploymentStatus,
   HrisEmailType,
@@ -316,10 +310,11 @@ import {
 } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateHrisEmployeeSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.employee.updateHrisEmployee({
     hrisEmployee: {
@@ -340,7 +335,7 @@ const operationSecurity: UpdateHrisEmployeeSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -352,11 +347,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.UpdateHrisEmployeeRequest](../../sdk/models/operations/updatehrisemployeerequest.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.UpdateHrisEmployeeSecurity](../../sdk/models/operations/updatehrisemployeesecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
-| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.UpdateHrisEmployeeRequest](../../sdk/models/operations/updatehrisemployeerequest.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
+| `config`                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                     | :heavy_minus_sign:                                                                               | Available config options for making requests.                                                    |
 
 
 ### Response

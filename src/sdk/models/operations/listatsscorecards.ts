@@ -6,13 +6,6 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class ListAtsScorecardsSecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
-    })
-    jwt: string;
-}
-
 export class ListAtsScorecardsRequest extends SpeakeasyBase {
     /**
      * The application ID to filter results

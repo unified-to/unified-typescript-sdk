@@ -15,7 +15,11 @@ Returns an authentication URL for the specified integration.  Once a successful 
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 async function run() {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.login.getUnifiedIntegrationLogin({
     integrationType: "<value>",

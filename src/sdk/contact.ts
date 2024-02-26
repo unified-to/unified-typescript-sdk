@@ -21,7 +21,6 @@ export class Contact {
      */
     async createAccountingContact(
         req: operations.CreateAccountingContactRequest,
-        security: operations.CreateAccountingContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAccountingContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -52,10 +51,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAccountingContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -122,7 +125,6 @@ export class Contact {
      */
     async createCrmContact(
         req: operations.CreateCrmContactRequest,
-        security: operations.CreateCrmContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCrmContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -149,10 +151,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCrmContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -215,7 +221,6 @@ export class Contact {
      */
     async createUcContact(
         req: operations.CreateUcContactRequest,
-        security: operations.CreateUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -238,10 +243,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateUcContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -304,7 +313,6 @@ export class Contact {
      */
     async getAccountingContact(
         req: operations.GetAccountingContactRequest,
-        security: operations.GetAccountingContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAccountingContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -321,10 +329,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAccountingContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -387,7 +399,6 @@ export class Contact {
      */
     async getCrmContact(
         req: operations.GetCrmContactRequest,
-        security: operations.GetCrmContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCrmContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -404,10 +415,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCrmContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -466,7 +481,6 @@ export class Contact {
      */
     async getUcContact(
         req: operations.GetUcContactRequest,
-        security: operations.GetUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -483,10 +497,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetUcContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -545,7 +563,6 @@ export class Contact {
      */
     async listAccountingContacts(
         req: operations.ListAccountingContactsRequest,
-        security: operations.ListAccountingContactsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAccountingContactsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -562,10 +579,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAccountingContactsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -631,7 +652,6 @@ export class Contact {
      */
     async listCrmContacts(
         req: operations.ListCrmContactsRequest,
-        security: operations.ListCrmContactsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCrmContactsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -648,10 +668,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCrmContactsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -716,7 +740,6 @@ export class Contact {
      */
     async listUcContacts(
         req: operations.ListUcContactsRequest,
-        security: operations.ListUcContactsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListUcContactsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -729,10 +752,14 @@ export class Contact {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/uc/{connection_id}/contact", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListUcContactsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -797,7 +824,6 @@ export class Contact {
      */
     async patchAccountingContact(
         req: operations.PatchAccountingContactRequest,
-        security: operations.PatchAccountingContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAccountingContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -828,10 +854,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAccountingContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -898,7 +928,6 @@ export class Contact {
      */
     async patchCrmContact(
         req: operations.PatchCrmContactRequest,
-        security: operations.PatchCrmContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCrmContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -925,10 +954,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCrmContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -991,7 +1024,6 @@ export class Contact {
      */
     async patchUcContact(
         req: operations.PatchUcContactRequest,
-        security: operations.PatchUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1018,10 +1050,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchUcContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -1084,7 +1120,6 @@ export class Contact {
      */
     async removeAccountingContact(
         req: operations.RemoveAccountingContactRequest,
-        security: operations.RemoveAccountingContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAccountingContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1101,10 +1136,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAccountingContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -1163,7 +1202,6 @@ export class Contact {
      */
     async removeCrmContact(
         req: operations.RemoveCrmContactRequest,
-        security: operations.RemoveCrmContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCrmContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1180,10 +1218,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCrmContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -1241,7 +1283,6 @@ export class Contact {
      */
     async removeUcContact(
         req: operations.RemoveUcContactRequest,
-        security: operations.RemoveUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1258,10 +1299,14 @@ export class Contact {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveUcContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -1319,7 +1364,6 @@ export class Contact {
      */
     async updateAccountingContact(
         req: operations.UpdateAccountingContactRequest,
-        security: operations.UpdateAccountingContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAccountingContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1350,10 +1394,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAccountingContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -1420,7 +1468,6 @@ export class Contact {
      */
     async updateCrmContact(
         req: operations.UpdateCrmContactRequest,
-        security: operations.UpdateCrmContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCrmContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1447,10 +1494,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCrmContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -1513,7 +1564,6 @@ export class Contact {
      */
     async updateUcContact(
         req: operations.UpdateUcContactRequest,
-        security: operations.UpdateUcContactSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateUcContactResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1540,10 +1590,14 @@ export class Contact {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateUcContactSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

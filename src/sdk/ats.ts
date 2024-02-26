@@ -21,7 +21,6 @@ export class Ats {
      */
     async createAtsActivity(
         req: operations.CreateAtsActivityRequest,
-        security: operations.CreateAtsActivitySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsActivityResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsActivitySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -117,7 +120,6 @@ export class Ats {
      */
     async createAtsApplication(
         req: operations.CreateAtsApplicationRequest,
-        security: operations.CreateAtsApplicationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -144,10 +146,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsApplicationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -214,7 +220,6 @@ export class Ats {
      */
     async createAtsCandidate(
         req: operations.CreateAtsCandidateRequest,
-        security: operations.CreateAtsCandidateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsCandidateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -241,10 +246,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsCandidateSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -311,7 +320,6 @@ export class Ats {
      */
     async createAtsDocument(
         req: operations.CreateAtsDocumentRequest,
-        security: operations.CreateAtsDocumentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsDocumentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -338,10 +346,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsDocumentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -407,7 +419,6 @@ export class Ats {
      */
     async createAtsInterview(
         req: operations.CreateAtsInterviewRequest,
-        security: operations.CreateAtsInterviewSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsInterviewResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -434,10 +445,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsInterviewSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -504,7 +519,6 @@ export class Ats {
      */
     async createAtsJob(
         req: operations.CreateAtsJobRequest,
-        security: operations.CreateAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -527,10 +541,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -593,7 +611,6 @@ export class Ats {
      */
     async createAtsScorecard(
         req: operations.CreateAtsScorecardRequest,
-        security: operations.CreateAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -620,10 +637,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsScorecardSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -690,7 +711,6 @@ export class Ats {
      */
     async getAtsActivity(
         req: operations.GetAtsActivityRequest,
-        security: operations.GetAtsActivitySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsActivityResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -707,10 +727,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsActivitySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -772,7 +796,6 @@ export class Ats {
      */
     async getAtsApplication(
         req: operations.GetAtsApplicationRequest,
-        security: operations.GetAtsApplicationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -789,10 +812,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsApplicationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -854,7 +881,6 @@ export class Ats {
      */
     async getAtsCandidate(
         req: operations.GetAtsCandidateRequest,
-        security: operations.GetAtsCandidateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsCandidateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -871,10 +897,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsCandidateSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -936,7 +966,6 @@ export class Ats {
      */
     async getAtsCompany(
         req: operations.GetAtsCompanyRequest,
-        security: operations.GetAtsCompanySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsCompanyResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -953,10 +982,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsCompanySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1015,7 +1048,6 @@ export class Ats {
      */
     async getAtsDocument(
         req: operations.GetAtsDocumentRequest,
-        security: operations.GetAtsDocumentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsDocumentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1032,10 +1064,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsDocumentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1097,7 +1133,6 @@ export class Ats {
      */
     async getAtsInterview(
         req: operations.GetAtsInterviewRequest,
-        security: operations.GetAtsInterviewSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsInterviewResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1114,10 +1149,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsInterviewSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1179,7 +1218,6 @@ export class Ats {
      */
     async getAtsJob(
         req: operations.GetAtsJobRequest,
-        security: operations.GetAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1196,10 +1234,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1258,7 +1300,6 @@ export class Ats {
      */
     async getAtsScorecard(
         req: operations.GetAtsScorecardRequest,
-        security: operations.GetAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1275,10 +1316,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsScorecardSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1340,7 +1385,6 @@ export class Ats {
      */
     async listAtsActivities(
         req: operations.ListAtsActivitiesRequest,
-        security: operations.ListAtsActivitiesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsActivitiesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1357,10 +1401,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsActivitiesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1425,7 +1473,6 @@ export class Ats {
      */
     async listAtsApplications(
         req: operations.ListAtsApplicationsRequest,
-        security: operations.ListAtsApplicationsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsApplicationsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1442,10 +1489,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsApplicationsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1511,7 +1562,6 @@ export class Ats {
      */
     async listAtsApplicationstatuses(
         req: operations.ListAtsApplicationstatusesRequest,
-        security: operations.ListAtsApplicationstatusesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsApplicationstatusesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1528,10 +1578,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsApplicationstatusesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1597,7 +1651,6 @@ export class Ats {
      */
     async listAtsCandidates(
         req: operations.ListAtsCandidatesRequest,
-        security: operations.ListAtsCandidatesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsCandidatesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1614,10 +1667,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsCandidatesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1682,7 +1739,6 @@ export class Ats {
      */
     async listAtsCompanies(
         req: operations.ListAtsCompaniesRequest,
-        security: operations.ListAtsCompaniesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsCompaniesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1699,10 +1755,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsCompaniesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1767,7 +1827,6 @@ export class Ats {
      */
     async listAtsDocuments(
         req: operations.ListAtsDocumentsRequest,
-        security: operations.ListAtsDocumentsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsDocumentsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1784,10 +1843,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsDocumentsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1852,7 +1915,6 @@ export class Ats {
      */
     async listAtsInterviews(
         req: operations.ListAtsInterviewsRequest,
-        security: operations.ListAtsInterviewsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsInterviewsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1869,10 +1931,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsInterviewsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -1937,7 +2003,6 @@ export class Ats {
      */
     async listAtsJobs(
         req: operations.ListAtsJobsRequest,
-        security: operations.ListAtsJobsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsJobsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -1950,10 +2015,14 @@ export class Ats {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsJobsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -2018,7 +2087,6 @@ export class Ats {
      */
     async listAtsScorecards(
         req: operations.ListAtsScorecardsRequest,
-        security: operations.ListAtsScorecardsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsScorecardsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2035,10 +2103,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsScorecardsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -2103,7 +2175,6 @@ export class Ats {
      */
     async patchAtsActivity(
         req: operations.PatchAtsActivityRequest,
-        security: operations.PatchAtsActivitySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsActivityResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2130,10 +2201,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsActivitySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2199,7 +2274,6 @@ export class Ats {
      */
     async patchAtsApplication(
         req: operations.PatchAtsApplicationRequest,
-        security: operations.PatchAtsApplicationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2226,10 +2300,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsApplicationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2296,7 +2374,6 @@ export class Ats {
      */
     async patchAtsCandidate(
         req: operations.PatchAtsCandidateRequest,
-        security: operations.PatchAtsCandidateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsCandidateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2323,10 +2400,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsCandidateSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2392,7 +2473,6 @@ export class Ats {
      */
     async patchAtsDocument(
         req: operations.PatchAtsDocumentRequest,
-        security: operations.PatchAtsDocumentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsDocumentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2419,10 +2499,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsDocumentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2488,7 +2572,6 @@ export class Ats {
      */
     async patchAtsInterview(
         req: operations.PatchAtsInterviewRequest,
-        security: operations.PatchAtsInterviewSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsInterviewResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2515,10 +2598,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsInterviewSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2584,7 +2671,6 @@ export class Ats {
      */
     async patchAtsJob(
         req: operations.PatchAtsJobRequest,
-        security: operations.PatchAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2611,10 +2697,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2677,7 +2767,6 @@ export class Ats {
      */
     async patchAtsScorecard(
         req: operations.PatchAtsScorecardRequest,
-        security: operations.PatchAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2704,10 +2793,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsScorecardSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -2773,7 +2866,6 @@ export class Ats {
      */
     async removeAtsActivity(
         req: operations.RemoveAtsActivityRequest,
-        security: operations.RemoveAtsActivitySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsActivityResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2790,10 +2882,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsActivitySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -2851,7 +2947,6 @@ export class Ats {
      */
     async removeAtsApplication(
         req: operations.RemoveAtsApplicationRequest,
-        security: operations.RemoveAtsApplicationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2868,10 +2963,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsApplicationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -2930,7 +3029,6 @@ export class Ats {
      */
     async removeAtsCandidate(
         req: operations.RemoveAtsCandidateRequest,
-        security: operations.RemoveAtsCandidateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsCandidateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -2947,10 +3045,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsCandidateSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -3009,7 +3111,6 @@ export class Ats {
      */
     async removeAtsDocument(
         req: operations.RemoveAtsDocumentRequest,
-        security: operations.RemoveAtsDocumentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsDocumentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3026,10 +3127,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsDocumentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -3087,7 +3192,6 @@ export class Ats {
      */
     async removeAtsInterview(
         req: operations.RemoveAtsInterviewRequest,
-        security: operations.RemoveAtsInterviewSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsInterviewResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3104,10 +3208,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsInterviewSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -3166,7 +3274,6 @@ export class Ats {
      */
     async removeAtsJob(
         req: operations.RemoveAtsJobRequest,
-        security: operations.RemoveAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3183,10 +3290,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -3244,7 +3355,6 @@ export class Ats {
      */
     async removeAtsScorecard(
         req: operations.RemoveAtsScorecardRequest,
-        security: operations.RemoveAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3261,10 +3371,14 @@ export class Ats {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsScorecardSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -3323,7 +3437,6 @@ export class Ats {
      */
     async updateAtsActivity(
         req: operations.UpdateAtsActivityRequest,
-        security: operations.UpdateAtsActivitySecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsActivityResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3350,10 +3463,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsActivitySecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3419,7 +3536,6 @@ export class Ats {
      */
     async updateAtsApplication(
         req: operations.UpdateAtsApplicationRequest,
-        security: operations.UpdateAtsApplicationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsApplicationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3446,10 +3562,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsApplicationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3516,7 +3636,6 @@ export class Ats {
      */
     async updateAtsCandidate(
         req: operations.UpdateAtsCandidateRequest,
-        security: operations.UpdateAtsCandidateSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsCandidateResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3543,10 +3662,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsCandidateSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3613,7 +3736,6 @@ export class Ats {
      */
     async updateAtsDocument(
         req: operations.UpdateAtsDocumentRequest,
-        security: operations.UpdateAtsDocumentSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsDocumentResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3640,10 +3762,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsDocumentSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3709,7 +3835,6 @@ export class Ats {
      */
     async updateAtsInterview(
         req: operations.UpdateAtsInterviewRequest,
-        security: operations.UpdateAtsInterviewSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsInterviewResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3736,10 +3861,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsInterviewSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3806,7 +3935,6 @@ export class Ats {
      */
     async updateAtsJob(
         req: operations.UpdateAtsJobRequest,
-        security: operations.UpdateAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3833,10 +3961,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -3899,7 +4031,6 @@ export class Ats {
      */
     async updateAtsScorecard(
         req: operations.UpdateAtsScorecardRequest,
-        security: operations.UpdateAtsScorecardSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsScorecardResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -3926,10 +4057,14 @@ export class Ats {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsScorecardSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

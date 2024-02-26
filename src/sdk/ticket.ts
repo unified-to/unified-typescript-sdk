@@ -21,7 +21,6 @@ export class Ticket {
      */
     async createTicketingTicket(
         req: operations.CreateTicketingTicketRequest,
-        security: operations.CreateTicketingTicketSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateTicketingTicketResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Ticket {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateTicketingTicketSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -118,7 +121,6 @@ export class Ticket {
      */
     async getTicketingTicket(
         req: operations.GetTicketingTicketRequest,
-        security: operations.GetTicketingTicketSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetTicketingTicketResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -135,10 +137,14 @@ export class Ticket {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetTicketingTicketSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -201,7 +207,6 @@ export class Ticket {
      */
     async listTicketingTickets(
         req: operations.ListTicketingTicketsRequest,
-        security: operations.ListTicketingTicketsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListTicketingTicketsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -218,10 +223,14 @@ export class Ticket {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListTicketingTicketsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -287,7 +296,6 @@ export class Ticket {
      */
     async patchTicketingTicket(
         req: operations.PatchTicketingTicketRequest,
-        security: operations.PatchTicketingTicketSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchTicketingTicketResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -314,10 +322,14 @@ export class Ticket {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchTicketingTicketSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -384,7 +396,6 @@ export class Ticket {
      */
     async removeTicketingTicket(
         req: operations.RemoveTicketingTicketRequest,
-        security: operations.RemoveTicketingTicketSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveTicketingTicketResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -401,10 +412,14 @@ export class Ticket {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveTicketingTicketSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -463,7 +478,6 @@ export class Ticket {
      */
     async updateTicketingTicket(
         req: operations.UpdateTicketingTicketRequest,
-        security: operations.UpdateTicketingTicketSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateTicketingTicketResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -490,10 +504,14 @@ export class Ticket {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateTicketingTicketSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

@@ -18,13 +18,13 @@ Create a deal
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateCrmDealSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateCrmDealSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.createCrmDeal({
     crmDeal: {
@@ -36,7 +36,7 @@ const operationSecurity: CreateCrmDealSecurity = {
       ],
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -48,11 +48,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.CreateCrmDealRequest](../../sdk/models/operations/createcrmdealrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.CreateCrmDealSecurity](../../sdk/models/operations/createcrmdealsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.CreateCrmDealRequest](../../sdk/models/operations/createcrmdealrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
@@ -72,13 +71,13 @@ Retrieve a deal
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetCrmDealSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetCrmDealSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.getCrmDeal({
     connectionId: "<value>",
@@ -86,7 +85,7 @@ const operationSecurity: GetCrmDealSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -98,11 +97,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.GetCrmDealRequest](../../sdk/models/operations/getcrmdealrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.GetCrmDealSecurity](../../sdk/models/operations/getcrmdealsecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
-| `config`                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                       | :heavy_minus_sign:                                                                 | Available config options for making requests.                                      |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.GetCrmDealRequest](../../sdk/models/operations/getcrmdealrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
+| `config`                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                     | :heavy_minus_sign:                                                               | Available config options for making requests.                                    |
 
 
 ### Response
@@ -122,20 +120,20 @@ List all deals
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListCrmDealsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListCrmDealsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.listCrmDeals({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -147,11 +145,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.ListCrmDealsRequest](../../sdk/models/operations/listcrmdealsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.ListCrmDealsSecurity](../../sdk/models/operations/listcrmdealssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.ListCrmDealsRequest](../../sdk/models/operations/listcrmdealsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
@@ -171,13 +168,13 @@ Update a deal
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchCrmDealSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchCrmDealSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.patchCrmDeal({
     crmDeal: {
@@ -190,7 +187,7 @@ const operationSecurity: PatchCrmDealSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -202,11 +199,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.PatchCrmDealRequest](../../sdk/models/operations/patchcrmdealrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.PatchCrmDealSecurity](../../sdk/models/operations/patchcrmdealsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
-| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.PatchCrmDealRequest](../../sdk/models/operations/patchcrmdealrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
+| `config`                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                         | :heavy_minus_sign:                                                                   | Available config options for making requests.                                        |
 
 
 ### Response
@@ -226,18 +222,18 @@ Remove a deal
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveCrmDealSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveCrmDealSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.removeCrmDeal({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -249,11 +245,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.RemoveCrmDealRequest](../../sdk/models/operations/removecrmdealrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.RemoveCrmDealSecurity](../../sdk/models/operations/removecrmdealsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.RemoveCrmDealRequest](../../sdk/models/operations/removecrmdealrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response
@@ -273,13 +268,13 @@ Update a deal
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateCrmDealSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateCrmDealSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.deal.updateCrmDeal({
     crmDeal: {
@@ -292,7 +287,7 @@ const operationSecurity: UpdateCrmDealSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -304,11 +299,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.UpdateCrmDealRequest](../../sdk/models/operations/updatecrmdealrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.UpdateCrmDealSecurity](../../sdk/models/operations/updatecrmdealsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
-| `config`                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                             | :heavy_minus_sign:                                                                       | Available config options for making requests.                                            |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.UpdateCrmDealRequest](../../sdk/models/operations/updatecrmdealrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `config`                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                           | :heavy_minus_sign:                                                                     | Available config options for making requests.                                          |
 
 
 ### Response

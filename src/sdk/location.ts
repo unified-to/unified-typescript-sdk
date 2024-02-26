@@ -21,7 +21,6 @@ export class Location {
      */
     async createCommerceLocation(
         req: operations.CreateCommerceLocationRequest,
-        security: operations.CreateCommerceLocationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCommerceLocationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Location {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCommerceLocationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -118,7 +121,6 @@ export class Location {
      */
     async getCommerceLocation(
         req: operations.GetCommerceLocationRequest,
-        security: operations.GetCommerceLocationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCommerceLocationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -135,10 +137,14 @@ export class Location {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCommerceLocationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -201,7 +207,6 @@ export class Location {
      */
     async listCommerceLocations(
         req: operations.ListCommerceLocationsRequest,
-        security: operations.ListCommerceLocationsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCommerceLocationsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -218,10 +223,14 @@ export class Location {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCommerceLocationsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -287,7 +296,6 @@ export class Location {
      */
     async patchCommerceLocation(
         req: operations.PatchCommerceLocationRequest,
-        security: operations.PatchCommerceLocationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCommerceLocationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -314,10 +322,14 @@ export class Location {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCommerceLocationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -384,7 +396,6 @@ export class Location {
      */
     async removeCommerceLocation(
         req: operations.RemoveCommerceLocationRequest,
-        security: operations.RemoveCommerceLocationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCommerceLocationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -401,10 +412,14 @@ export class Location {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCommerceLocationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -463,7 +478,6 @@ export class Location {
      */
     async updateCommerceLocation(
         req: operations.UpdateCommerceLocationRequest,
-        security: operations.UpdateCommerceLocationSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCommerceLocationResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -490,10 +504,14 @@ export class Location {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCommerceLocationSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

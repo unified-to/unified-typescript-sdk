@@ -21,7 +21,6 @@ export class Collection {
      */
     async createCommerceCollection(
         req: operations.CreateCommerceCollectionRequest,
-        security: operations.CreateCommerceCollectionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCommerceCollectionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -52,10 +51,14 @@ export class Collection {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCommerceCollectionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -122,7 +125,6 @@ export class Collection {
      */
     async getCommerceCollection(
         req: operations.GetCommerceCollectionRequest,
-        security: operations.GetCommerceCollectionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCommerceCollectionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -139,10 +141,14 @@ export class Collection {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCommerceCollectionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -205,7 +211,6 @@ export class Collection {
      */
     async listCommerceCollections(
         req: operations.ListCommerceCollectionsRequest,
-        security: operations.ListCommerceCollectionsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCommerceCollectionsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -222,10 +227,14 @@ export class Collection {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCommerceCollectionsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -291,7 +300,6 @@ export class Collection {
      */
     async patchCommerceCollection(
         req: operations.PatchCommerceCollectionRequest,
-        security: operations.PatchCommerceCollectionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCommerceCollectionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -322,10 +330,14 @@ export class Collection {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCommerceCollectionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -392,7 +404,6 @@ export class Collection {
      */
     async removeCommerceCollection(
         req: operations.RemoveCommerceCollectionRequest,
-        security: operations.RemoveCommerceCollectionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCommerceCollectionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -409,10 +420,14 @@ export class Collection {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCommerceCollectionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -471,7 +486,6 @@ export class Collection {
      */
     async updateCommerceCollection(
         req: operations.UpdateCommerceCollectionRequest,
-        security: operations.UpdateCommerceCollectionSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCommerceCollectionResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -502,10 +516,14 @@ export class Collection {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCommerceCollectionSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

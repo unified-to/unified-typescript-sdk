@@ -54,14 +54,14 @@ Create an account
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingAccountSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingAccount({
     accountingAccount: {
@@ -71,7 +71,7 @@ const operationSecurity: CreateAccountingAccountSecurity = {
       },
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -83,11 +83,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingAccountRequest](../../sdk/models/operations/createaccountingaccountrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.CreateAccountingAccountSecurity](../../sdk/models/operations/createaccountingaccountsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingAccountRequest](../../sdk/models/operations/createaccountingaccountrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -107,14 +106,14 @@ Create a contact
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingContactSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingContactSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingContact({
     accountingContact: {
@@ -135,7 +134,7 @@ const operationSecurity: CreateAccountingContactSecurity = {
       ],
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -147,11 +146,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingContactRequest](../../sdk/models/operations/createaccountingcontactrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.CreateAccountingContactSecurity](../../sdk/models/operations/createaccountingcontactsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingContactRequest](../../sdk/models/operations/createaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -171,14 +169,14 @@ Create a invoice
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingInvoiceSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingInvoice({
     accountingInvoice: {
@@ -192,7 +190,7 @@ const operationSecurity: CreateAccountingInvoiceSecurity = {
       },
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -204,11 +202,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingInvoiceRequest](../../sdk/models/operations/createaccountinginvoicerequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.CreateAccountingInvoiceSecurity](../../sdk/models/operations/createaccountinginvoicesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingInvoiceRequest](../../sdk/models/operations/createaccountinginvoicerequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -228,13 +225,13 @@ Create a payment
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingPaymentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingPaymentSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingPayment({
     accountingPayment: {
@@ -243,7 +240,7 @@ const operationSecurity: CreateAccountingPaymentSecurity = {
       },
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -255,11 +252,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingPaymentRequest](../../sdk/models/operations/createaccountingpaymentrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.CreateAccountingPaymentSecurity](../../sdk/models/operations/createaccountingpaymentsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingPaymentRequest](../../sdk/models/operations/createaccountingpaymentrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -279,13 +275,13 @@ Create a taxrate
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingTaxrateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingTaxrateSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingTaxrate({
     accountingTaxrate: {
@@ -296,7 +292,7 @@ const operationSecurity: CreateAccountingTaxrateSecurity = {
       },
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -308,11 +304,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.CreateAccountingTaxrateRequest](../../sdk/models/operations/createaccountingtaxraterequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.CreateAccountingTaxrateSecurity](../../sdk/models/operations/createaccountingtaxratesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.CreateAccountingTaxrateRequest](../../sdk/models/operations/createaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -332,13 +327,13 @@ Create a transaction
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { CreateAccountingTransactionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: CreateAccountingTransactionSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.createAccountingTransaction({
     accountingTransaction: {
@@ -354,7 +349,7 @@ const operationSecurity: CreateAccountingTransactionSecurity = {
       },
     },
     connectionId: "<value>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -366,11 +361,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.CreateAccountingTransactionRequest](../../sdk/models/operations/createaccountingtransactionrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [operations.CreateAccountingTransactionSecurity](../../sdk/models/operations/createaccountingtransactionsecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.CreateAccountingTransactionRequest](../../sdk/models/operations/createaccountingtransactionrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
@@ -390,13 +384,13 @@ Retrieve an account
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingAccountSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingAccount({
     connectionId: "<value>",
@@ -404,7 +398,7 @@ const operationSecurity: GetAccountingAccountSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -416,11 +410,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingAccountRequest](../../sdk/models/operations/getaccountingaccountrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetAccountingAccountSecurity](../../sdk/models/operations/getaccountingaccountsecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingAccountRequest](../../sdk/models/operations/getaccountingaccountrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -440,13 +433,13 @@ Retrieve a contact
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingContactSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingContactSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingContact({
     connectionId: "<value>",
@@ -454,7 +447,7 @@ const operationSecurity: GetAccountingContactSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -466,11 +459,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingContactRequest](../../sdk/models/operations/getaccountingcontactrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetAccountingContactSecurity](../../sdk/models/operations/getaccountingcontactsecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingContactRequest](../../sdk/models/operations/getaccountingcontactrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -490,13 +482,13 @@ Retrieve a invoice
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingInvoiceSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingInvoice({
     connectionId: "<value>",
@@ -504,7 +496,7 @@ const operationSecurity: GetAccountingInvoiceSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -516,11 +508,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingInvoiceRequest](../../sdk/models/operations/getaccountinginvoicerequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetAccountingInvoiceSecurity](../../sdk/models/operations/getaccountinginvoicesecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingInvoiceRequest](../../sdk/models/operations/getaccountinginvoicerequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -540,13 +531,13 @@ Retrieve an organization
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingOrganizationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingOrganizationSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingOrganization({
     connectionId: "<value>",
@@ -554,7 +545,7 @@ const operationSecurity: GetAccountingOrganizationSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -566,11 +557,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.GetAccountingOrganizationRequest](../../sdk/models/operations/getaccountingorganizationrequest.md)   | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `security`                                                                                                       | [operations.GetAccountingOrganizationSecurity](../../sdk/models/operations/getaccountingorganizationsecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
-| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.GetAccountingOrganizationRequest](../../sdk/models/operations/getaccountingorganizationrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
 
 
 ### Response
@@ -590,13 +580,13 @@ Retrieve a payment
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingPaymentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingPaymentSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingPayment({
     connectionId: "<value>",
@@ -604,7 +594,7 @@ const operationSecurity: GetAccountingPaymentSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -616,11 +606,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingPaymentRequest](../../sdk/models/operations/getaccountingpaymentrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetAccountingPaymentSecurity](../../sdk/models/operations/getaccountingpaymentsecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingPaymentRequest](../../sdk/models/operations/getaccountingpaymentrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -640,13 +629,13 @@ Retrieve a payout
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingPayoutSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingPayoutSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingPayout({
     connectionId: "<value>",
@@ -654,7 +643,7 @@ const operationSecurity: GetAccountingPayoutSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -666,11 +655,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetAccountingPayoutRequest](../../sdk/models/operations/getaccountingpayoutrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetAccountingPayoutSecurity](../../sdk/models/operations/getaccountingpayoutsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountingPayoutRequest](../../sdk/models/operations/getaccountingpayoutrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -690,13 +678,13 @@ Retrieve a refund
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingRefundSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingRefundSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingRefund({
     connectionId: "<value>",
@@ -704,7 +692,7 @@ const operationSecurity: GetAccountingRefundSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -716,11 +704,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetAccountingRefundRequest](../../sdk/models/operations/getaccountingrefundrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetAccountingRefundSecurity](../../sdk/models/operations/getaccountingrefundsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
-| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountingRefundRequest](../../sdk/models/operations/getaccountingrefundrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+| `config`                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                       | :heavy_minus_sign:                                                                                 | Available config options for making requests.                                                      |
 
 
 ### Response
@@ -740,13 +727,13 @@ Retrieve a taxrate
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingTaxrateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingTaxrateSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingTaxrate({
     connectionId: "<value>",
@@ -754,7 +741,7 @@ const operationSecurity: GetAccountingTaxrateSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -766,11 +753,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetAccountingTaxrateRequest](../../sdk/models/operations/getaccountingtaxraterequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetAccountingTaxrateSecurity](../../sdk/models/operations/getaccountingtaxratesecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
-| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountingTaxrateRequest](../../sdk/models/operations/getaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `config`                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                         | :heavy_minus_sign:                                                                                   | Available config options for making requests.                                                        |
 
 
 ### Response
@@ -790,13 +776,13 @@ Retrieve a transaction
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { GetAccountingTransactionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: GetAccountingTransactionSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.getAccountingTransaction({
     connectionId: "<value>",
@@ -804,7 +790,7 @@ const operationSecurity: GetAccountingTransactionSecurity = {
       "<value>",
     ],
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -816,11 +802,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.GetAccountingTransactionRequest](../../sdk/models/operations/getaccountingtransactionrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `security`                                                                                                     | [operations.GetAccountingTransactionSecurity](../../sdk/models/operations/getaccountingtransactionsecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
-| `config`                                                                                                       | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                   | :heavy_minus_sign:                                                                                             | Available config options for making requests.                                                                  |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.GetAccountingTransactionRequest](../../sdk/models/operations/getaccountingtransactionrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
 
 
 ### Response
@@ -840,20 +825,20 @@ List all accounts
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingAccountsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingAccountsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingAccounts({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -865,11 +850,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingAccountsRequest](../../sdk/models/operations/listaccountingaccountsrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListAccountingAccountsSecurity](../../sdk/models/operations/listaccountingaccountssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingAccountsRequest](../../sdk/models/operations/listaccountingaccountsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -889,20 +873,20 @@ List all contacts
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingContactsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingContactsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingContacts({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -914,11 +898,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingContactsRequest](../../sdk/models/operations/listaccountingcontactsrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListAccountingContactsSecurity](../../sdk/models/operations/listaccountingcontactssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingContactsRequest](../../sdk/models/operations/listaccountingcontactsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -938,20 +921,20 @@ List all invoices
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingInvoicesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingInvoicesSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingInvoices({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -963,11 +946,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingInvoicesRequest](../../sdk/models/operations/listaccountinginvoicesrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListAccountingInvoicesSecurity](../../sdk/models/operations/listaccountinginvoicessecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingInvoicesRequest](../../sdk/models/operations/listaccountinginvoicesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -987,20 +969,20 @@ List all organizations
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingOrganizationsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingOrganizationsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingOrganizations({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1012,11 +994,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.ListAccountingOrganizationsRequest](../../sdk/models/operations/listaccountingorganizationsrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [operations.ListAccountingOrganizationsSecurity](../../sdk/models/operations/listaccountingorganizationssecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.ListAccountingOrganizationsRequest](../../sdk/models/operations/listaccountingorganizationsrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
@@ -1036,20 +1017,20 @@ List all payments
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingPaymentsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingPaymentsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingPayments({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1061,11 +1042,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingPaymentsRequest](../../sdk/models/operations/listaccountingpaymentsrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListAccountingPaymentsSecurity](../../sdk/models/operations/listaccountingpaymentssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingPaymentsRequest](../../sdk/models/operations/listaccountingpaymentsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1085,20 +1065,20 @@ List all payouts
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingPayoutsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingPayoutsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingPayouts({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1110,11 +1090,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListAccountingPayoutsRequest](../../sdk/models/operations/listaccountingpayoutsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.ListAccountingPayoutsSecurity](../../sdk/models/operations/listaccountingpayoutssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListAccountingPayoutsRequest](../../sdk/models/operations/listaccountingpayoutsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -1134,20 +1113,20 @@ List all refunds
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingRefundsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingRefundsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingRefunds({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1159,11 +1138,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListAccountingRefundsRequest](../../sdk/models/operations/listaccountingrefundsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.ListAccountingRefundsSecurity](../../sdk/models/operations/listaccountingrefundssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
-| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListAccountingRefundsRequest](../../sdk/models/operations/listaccountingrefundsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
+| `config`                                                                                               | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                           | :heavy_minus_sign:                                                                                     | Available config options for making requests.                                                          |
 
 
 ### Response
@@ -1183,20 +1161,20 @@ List all taxrates
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingTaxratesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingTaxratesSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingTaxrates({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1208,11 +1186,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListAccountingTaxratesRequest](../../sdk/models/operations/listaccountingtaxratesrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListAccountingTaxratesSecurity](../../sdk/models/operations/listaccountingtaxratessecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListAccountingTaxratesRequest](../../sdk/models/operations/listaccountingtaxratesrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1232,20 +1209,20 @@ List all transactions
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { ListAccountingTransactionsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: ListAccountingTransactionsSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.listAccountingTransactions({
     connectionId: "<value>",
     fields: [
       "<value>",
     ],
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1257,11 +1234,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.ListAccountingTransactionsRequest](../../sdk/models/operations/listaccountingtransactionsrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.ListAccountingTransactionsSecurity](../../sdk/models/operations/listaccountingtransactionssecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.ListAccountingTransactionsRequest](../../sdk/models/operations/listaccountingtransactionsrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
 
 
 ### Response
@@ -1281,14 +1257,14 @@ Update an account
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingAccountSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingAccount({
     accountingAccount: {
@@ -1299,7 +1275,7 @@ const operationSecurity: PatchAccountingAccountSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1311,11 +1287,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingAccountRequest](../../sdk/models/operations/patchaccountingaccountrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.PatchAccountingAccountSecurity](../../sdk/models/operations/patchaccountingaccountsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingAccountRequest](../../sdk/models/operations/patchaccountingaccountrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1335,14 +1310,14 @@ Update a contact
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingContactSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingContactSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingContact({
     accountingContact: {
@@ -1364,7 +1339,7 @@ const operationSecurity: PatchAccountingContactSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1376,11 +1351,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingContactRequest](../../sdk/models/operations/patchaccountingcontactrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.PatchAccountingContactSecurity](../../sdk/models/operations/patchaccountingcontactsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingContactRequest](../../sdk/models/operations/patchaccountingcontactrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1400,14 +1374,14 @@ Update a invoice
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingInvoiceSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingInvoice({
     accountingInvoice: {
@@ -1422,7 +1396,7 @@ const operationSecurity: PatchAccountingInvoiceSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1434,11 +1408,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingInvoiceRequest](../../sdk/models/operations/patchaccountinginvoicerequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.PatchAccountingInvoiceSecurity](../../sdk/models/operations/patchaccountinginvoicesecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingInvoiceRequest](../../sdk/models/operations/patchaccountinginvoicerequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1458,13 +1431,13 @@ Update a payment
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingPaymentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingPaymentSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingPayment({
     accountingPayment: {
@@ -1474,7 +1447,7 @@ const operationSecurity: PatchAccountingPaymentSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1486,11 +1459,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingPaymentRequest](../../sdk/models/operations/patchaccountingpaymentrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.PatchAccountingPaymentSecurity](../../sdk/models/operations/patchaccountingpaymentsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingPaymentRequest](../../sdk/models/operations/patchaccountingpaymentrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1510,13 +1482,13 @@ Update a taxrate
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingTaxrateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingTaxrateSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingTaxrate({
     accountingTaxrate: {
@@ -1528,7 +1500,7 @@ const operationSecurity: PatchAccountingTaxrateSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1540,11 +1512,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.PatchAccountingTaxrateRequest](../../sdk/models/operations/patchaccountingtaxraterequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.PatchAccountingTaxrateSecurity](../../sdk/models/operations/patchaccountingtaxratesecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
-| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.PatchAccountingTaxrateRequest](../../sdk/models/operations/patchaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
+| `config`                                                                                                 | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                             | :heavy_minus_sign:                                                                                       | Available config options for making requests.                                                            |
 
 
 ### Response
@@ -1564,13 +1535,13 @@ Update a transaction
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { PatchAccountingTransactionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: PatchAccountingTransactionSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.patchAccountingTransaction({
     accountingTransaction: {
@@ -1587,7 +1558,7 @@ const operationSecurity: PatchAccountingTransactionSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1599,11 +1570,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PatchAccountingTransactionRequest](../../sdk/models/operations/patchaccountingtransactionrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.PatchAccountingTransactionSecurity](../../sdk/models/operations/patchaccountingtransactionsecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
-| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.PatchAccountingTransactionRequest](../../sdk/models/operations/patchaccountingtransactionrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+| `config`                                                                                                         | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                     | :heavy_minus_sign:                                                                                               | Available config options for making requests.                                                                    |
 
 
 ### Response
@@ -1623,18 +1593,18 @@ Remove an account
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingAccountSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingAccount({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1646,11 +1616,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingAccountRequest](../../sdk/models/operations/removeaccountingaccountrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.RemoveAccountingAccountSecurity](../../sdk/models/operations/removeaccountingaccountsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingAccountRequest](../../sdk/models/operations/removeaccountingaccountrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1670,18 +1639,18 @@ Remove a contact
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingContactSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingContactSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingContact({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1693,11 +1662,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingContactRequest](../../sdk/models/operations/removeaccountingcontactrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.RemoveAccountingContactSecurity](../../sdk/models/operations/removeaccountingcontactsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingContactRequest](../../sdk/models/operations/removeaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1717,18 +1685,18 @@ Remove a invoice
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingInvoiceSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingInvoice({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1740,11 +1708,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingInvoiceRequest](../../sdk/models/operations/removeaccountinginvoicerequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.RemoveAccountingInvoiceSecurity](../../sdk/models/operations/removeaccountinginvoicesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingInvoiceRequest](../../sdk/models/operations/removeaccountinginvoicerequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1764,18 +1731,18 @@ Remove a payment
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingPaymentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingPaymentSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingPayment({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1787,11 +1754,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingPaymentRequest](../../sdk/models/operations/removeaccountingpaymentrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.RemoveAccountingPaymentSecurity](../../sdk/models/operations/removeaccountingpaymentsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingPaymentRequest](../../sdk/models/operations/removeaccountingpaymentrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1811,18 +1777,18 @@ Remove a taxrate
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingTaxrateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingTaxrateSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingTaxrate({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1834,11 +1800,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.RemoveAccountingTaxrateRequest](../../sdk/models/operations/removeaccountingtaxraterequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.RemoveAccountingTaxrateSecurity](../../sdk/models/operations/removeaccountingtaxratesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.RemoveAccountingTaxrateRequest](../../sdk/models/operations/removeaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1858,18 +1823,18 @@ Remove a transaction
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { RemoveAccountingTransactionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: RemoveAccountingTransactionSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.removeAccountingTransaction({
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1881,11 +1846,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.RemoveAccountingTransactionRequest](../../sdk/models/operations/removeaccountingtransactionrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [operations.RemoveAccountingTransactionSecurity](../../sdk/models/operations/removeaccountingtransactionsecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.RemoveAccountingTransactionRequest](../../sdk/models/operations/removeaccountingtransactionrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response
@@ -1905,14 +1869,14 @@ Update an account
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingAccountSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingAccount({
     accountingAccount: {
@@ -1923,7 +1887,7 @@ const operationSecurity: UpdateAccountingAccountSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -1935,11 +1899,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingAccountRequest](../../sdk/models/operations/updateaccountingaccountrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.UpdateAccountingAccountSecurity](../../sdk/models/operations/updateaccountingaccountsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingAccountRequest](../../sdk/models/operations/updateaccountingaccountrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -1959,14 +1922,14 @@ Update a contact
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingContactSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingEmailType, AccountingTelephoneType, TaxExemption } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingContactSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingContact({
     accountingContact: {
@@ -1988,7 +1951,7 @@ const operationSecurity: UpdateAccountingContactSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -2000,11 +1963,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingContactRequest](../../sdk/models/operations/updateaccountingcontactrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.UpdateAccountingContactSecurity](../../sdk/models/operations/updateaccountingcontactsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingContactRequest](../../sdk/models/operations/updateaccountingcontactrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -2024,14 +1986,14 @@ Update a invoice
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingInvoiceSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingInvoice({
     accountingInvoice: {
@@ -2046,7 +2008,7 @@ const operationSecurity: UpdateAccountingInvoiceSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -2058,11 +2020,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingInvoiceRequest](../../sdk/models/operations/updateaccountinginvoicerequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.UpdateAccountingInvoiceSecurity](../../sdk/models/operations/updateaccountinginvoicesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingInvoiceRequest](../../sdk/models/operations/updateaccountinginvoicerequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -2082,13 +2043,13 @@ Update a payment
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingPaymentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingPaymentSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingPayment({
     accountingPayment: {
@@ -2098,7 +2059,7 @@ const operationSecurity: UpdateAccountingPaymentSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -2110,11 +2071,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingPaymentRequest](../../sdk/models/operations/updateaccountingpaymentrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.UpdateAccountingPaymentSecurity](../../sdk/models/operations/updateaccountingpaymentsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingPaymentRequest](../../sdk/models/operations/updateaccountingpaymentrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -2134,13 +2094,13 @@ Update a taxrate
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingTaxrateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingTaxrateSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingTaxrate({
     accountingTaxrate: {
@@ -2152,7 +2112,7 @@ const operationSecurity: UpdateAccountingTaxrateSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -2164,11 +2124,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.UpdateAccountingTaxrateRequest](../../sdk/models/operations/updateaccountingtaxraterequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.UpdateAccountingTaxrateSecurity](../../sdk/models/operations/updateaccountingtaxratesecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
-| `config`                                                                                                     | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                 | :heavy_minus_sign:                                                                                           | Available config options for making requests.                                                                |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.UpdateAccountingTaxrateRequest](../../sdk/models/operations/updateaccountingtaxraterequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `config`                                                                                                   | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                               | :heavy_minus_sign:                                                                                         | Available config options for making requests.                                                              |
 
 
 ### Response
@@ -2188,13 +2147,13 @@ Update a transaction
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { UpdateAccountingTransactionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
-const operationSecurity: UpdateAccountingTransactionSecurity = {
-  jwt: "<YOUR_API_KEY_HERE>",
-};
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.accounting.updateAccountingTransaction({
     accountingTransaction: {
@@ -2211,7 +2170,7 @@ const operationSecurity: UpdateAccountingTransactionSecurity = {
     },
     connectionId: "<value>",
     id: "<id>",
-  }, operationSecurity);
+  });
 
   if (res.statusCode == 200) {
     // handle response
@@ -2223,11 +2182,10 @@ run();
 
 ### Parameters
 
-| Parameter                                                                                                            | Type                                                                                                                 | Required                                                                                                             | Description                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                            | [operations.UpdateAccountingTransactionRequest](../../sdk/models/operations/updateaccountingtransactionrequest.md)   | :heavy_check_mark:                                                                                                   | The request object to use for the request.                                                                           |
-| `security`                                                                                                           | [operations.UpdateAccountingTransactionSecurity](../../sdk/models/operations/updateaccountingtransactionsecurity.md) | :heavy_check_mark:                                                                                                   | The security requirements to use for the request.                                                                    |
-| `config`                                                                                                             | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                         | :heavy_minus_sign:                                                                                                   | Available config options for making requests.                                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.UpdateAccountingTransactionRequest](../../sdk/models/operations/updateaccountingtransactionrequest.md) | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `config`                                                                                                           | [AxiosRequestConfig](https://axios-http.com/docs/req_config)                                                       | :heavy_minus_sign:                                                                                                 | Available config options for making requests.                                                                      |
 
 
 ### Response

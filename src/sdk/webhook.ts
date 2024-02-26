@@ -24,7 +24,6 @@ export class Webhook {
      */
     async createUnifiedWebhook(
         req: operations.CreateUnifiedWebhookRequest,
-        security: operations.CreateUnifiedWebhookSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateUnifiedWebhookResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -47,10 +46,14 @@ export class Webhook {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateUnifiedWebhookSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -115,7 +118,6 @@ export class Webhook {
      */
     async getUnifiedWebhook(
         req: operations.GetUnifiedWebhookRequest,
-        security: operations.GetUnifiedWebhookSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetUnifiedWebhookResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -128,10 +130,14 @@ export class Webhook {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/unified/webhook/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetUnifiedWebhookSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -189,7 +195,6 @@ export class Webhook {
      */
     async listUnifiedWebhooks(
         req: operations.ListUnifiedWebhooksRequest,
-        security: operations.ListUnifiedWebhooksSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListUnifiedWebhooksResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -202,10 +207,14 @@ export class Webhook {
         );
         const operationUrl: string = baseURL.replace(/\/$/, "") + "/unified/webhook";
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListUnifiedWebhooksSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -271,7 +280,6 @@ export class Webhook {
      */
     async patchUnifiedWebhookTrigger(
         req: operations.PatchUnifiedWebhookTriggerRequest,
-        security: operations.PatchUnifiedWebhookTriggerSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchUnifiedWebhookTriggerResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -288,10 +296,14 @@ export class Webhook {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchUnifiedWebhookTriggerSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -350,7 +362,6 @@ export class Webhook {
      */
     async removeUnifiedWebhook(
         req: operations.RemoveUnifiedWebhookRequest,
-        security: operations.RemoveUnifiedWebhookSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveUnifiedWebhookResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -363,10 +374,14 @@ export class Webhook {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/unified/webhook/{id}", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveUnifiedWebhookSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -425,7 +440,6 @@ export class Webhook {
      */
     async updateUnifiedWebhookTrigger(
         req: operations.UpdateUnifiedWebhookTriggerRequest,
-        security: operations.UpdateUnifiedWebhookTriggerSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateUnifiedWebhookTriggerResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -442,10 +456,14 @@ export class Webhook {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateUnifiedWebhookTriggerSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 

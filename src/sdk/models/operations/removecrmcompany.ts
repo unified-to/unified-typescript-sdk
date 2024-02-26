@@ -5,13 +5,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AxiosResponse } from "axios";
 
-export class RemoveCrmCompanySecurity extends SpeakeasyBase {
-    @SpeakeasyMetadata({
-        data: "security, scheme=true;type=apiKey;subtype=header;name=authorization",
-    })
-    jwt: string;
-}
-
 export class RemoveCrmCompanyRequest extends SpeakeasyBase {
     /**
      * ID of the connection

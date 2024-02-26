@@ -21,7 +21,6 @@ export class Member {
      */
     async createMartechMember(
         req: operations.CreateMartechMemberRequest,
-        security: operations.CreateMartechMemberSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Member {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateMartechMemberSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -118,7 +121,6 @@ export class Member {
      */
     async getMartechMember(
         req: operations.GetMartechMemberRequest,
-        security: operations.GetMartechMemberSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -135,10 +137,14 @@ export class Member {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetMartechMemberSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -200,7 +206,6 @@ export class Member {
      */
     async listMartechMembers(
         req: operations.ListMartechMembersRequest,
-        security: operations.ListMartechMembersSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListMartechMembersResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -217,10 +222,14 @@ export class Member {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListMartechMembersSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -286,7 +295,6 @@ export class Member {
      */
     async patchMartechMember(
         req: operations.PatchMartechMemberRequest,
-        security: operations.PatchMartechMemberSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -313,10 +321,14 @@ export class Member {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchMartechMemberSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -383,7 +395,6 @@ export class Member {
      */
     async removeMartechMember(
         req: operations.RemoveMartechMemberRequest,
-        security: operations.RemoveMartechMemberSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -400,10 +411,14 @@ export class Member {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveMartechMemberSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -462,7 +477,6 @@ export class Member {
      */
     async updateMartechMember(
         req: operations.UpdateMartechMemberRequest,
-        security: operations.UpdateMartechMemberSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateMartechMemberResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -489,10 +503,14 @@ export class Member {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateMartechMemberSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

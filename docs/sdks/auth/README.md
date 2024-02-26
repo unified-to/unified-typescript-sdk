@@ -17,7 +17,11 @@ import { UnifiedTo } from "@unified-api/typescript-sdk";
 import { Scopes } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.auth.getUnifiedIntegrationAuth({
     integrationType: "<value>",
@@ -62,7 +66,11 @@ Returns an authentication URL for the specified integration.  Once a successful 
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 async function run() {
-  const sdk = new UnifiedTo();
+  const sdk = new UnifiedTo({
+    security: {
+      jwt: "<YOUR_API_KEY_HERE>",
+    },
+  });
 
   const res = await sdk.auth.getUnifiedIntegrationLogin({
     integrationType: "<value>",

@@ -21,7 +21,6 @@ export class Pipeline {
      */
     async createCrmPipeline(
         req: operations.CreateCrmPipelineRequest,
-        security: operations.CreateCrmPipelineSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCrmPipelineResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -48,10 +47,14 @@ export class Pipeline {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCrmPipelineSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -117,7 +120,6 @@ export class Pipeline {
      */
     async getCrmPipeline(
         req: operations.GetCrmPipelineRequest,
-        security: operations.GetCrmPipelineSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCrmPipelineResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -134,10 +136,14 @@ export class Pipeline {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCrmPipelineSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -199,7 +205,6 @@ export class Pipeline {
      */
     async listCrmPipelines(
         req: operations.ListCrmPipelinesRequest,
-        security: operations.ListCrmPipelinesSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCrmPipelinesResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -216,10 +221,14 @@ export class Pipeline {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCrmPipelinesSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -284,7 +293,6 @@ export class Pipeline {
      */
     async patchCrmPipeline(
         req: operations.PatchCrmPipelineRequest,
-        security: operations.PatchCrmPipelineSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCrmPipelineResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -311,10 +319,14 @@ export class Pipeline {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCrmPipelineSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -380,7 +392,6 @@ export class Pipeline {
      */
     async removeCrmPipeline(
         req: operations.RemoveCrmPipelineRequest,
-        security: operations.RemoveCrmPipelineSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCrmPipelineResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -397,10 +408,14 @@ export class Pipeline {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCrmPipelineSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -458,7 +473,6 @@ export class Pipeline {
      */
     async updateCrmPipeline(
         req: operations.UpdateCrmPipelineRequest,
-        security: operations.UpdateCrmPipelineSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCrmPipelineResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -485,10 +499,14 @@ export class Pipeline {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCrmPipelineSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

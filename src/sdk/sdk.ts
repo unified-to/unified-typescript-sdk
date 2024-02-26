@@ -3,6 +3,7 @@
  */
 
 import * as utils from "../internal/utils";
+import * as shared from "../sdk/models/shared";
 import { Account } from "./account";
 import { Accounting } from "./accounting";
 import { Activity } from "./activity";
@@ -80,6 +81,11 @@ export const ServerList = [
  */
 export type SDKProps = {
     /**
+     * The security details required to authenticate the SDK
+     */
+    security?: shared.Security | (() => Promise<shared.Security>);
+
+    /**
      * Allows overriding the default axios client used by the SDK
      */
     defaultClient?: AxiosInstance;
@@ -101,13 +107,14 @@ export type SDKProps = {
 
 export class SDKConfiguration {
     defaultClient: AxiosInstance;
+    security?: shared.Security | (() => Promise<shared.Security>);
     serverURL: string;
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "0.0.0";
-    genVersion = "2.272.4";
-    userAgent = "speakeasy-sdk/typescript 0.0.0 2.272.4 1.0 @unified-api/typescript-sdk";
+    sdkVersion = "1.0.0";
+    genVersion = "2.272.7";
+    userAgent = "speakeasy-sdk/typescript 1.0.0 2.272.7 1.0 @unified-api/typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -187,6 +194,7 @@ export class UnifiedTo {
         const defaultClient = props?.defaultClient ?? axios.create();
         this.sdkConfiguration = new SDKConfiguration({
             defaultClient: defaultClient,
+            security: props?.security,
             serverURL: serverURL,
             retryConfig: props?.retryConfig,
         });

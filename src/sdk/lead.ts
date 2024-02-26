@@ -21,7 +21,6 @@ export class Lead {
      */
     async createCrmLead(
         req: operations.CreateCrmLeadRequest,
-        security: operations.CreateCrmLeadSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCrmLeadResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -44,10 +43,14 @@ export class Lead {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCrmLeadSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -110,7 +113,6 @@ export class Lead {
      */
     async getCrmLead(
         req: operations.GetCrmLeadRequest,
-        security: operations.GetCrmLeadSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCrmLeadResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -127,10 +129,14 @@ export class Lead {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCrmLeadSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -189,7 +195,6 @@ export class Lead {
      */
     async listCrmLeads(
         req: operations.ListCrmLeadsRequest,
-        security: operations.ListCrmLeadsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCrmLeadsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -202,10 +207,14 @@ export class Lead {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/lead", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCrmLeadsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -270,7 +279,6 @@ export class Lead {
      */
     async patchCrmLead(
         req: operations.PatchCrmLeadRequest,
-        security: operations.PatchCrmLeadSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCrmLeadResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -297,10 +305,14 @@ export class Lead {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCrmLeadSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -363,7 +375,6 @@ export class Lead {
      */
     async removeCrmLead(
         req: operations.RemoveCrmLeadRequest,
-        security: operations.RemoveCrmLeadSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCrmLeadResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -380,10 +391,14 @@ export class Lead {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCrmLeadSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -441,7 +456,6 @@ export class Lead {
      */
     async updateCrmLead(
         req: operations.UpdateCrmLeadRequest,
-        security: operations.UpdateCrmLeadSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCrmLeadResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -468,10 +482,14 @@ export class Lead {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCrmLeadSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

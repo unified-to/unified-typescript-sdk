@@ -21,7 +21,6 @@ export class Event {
      */
     async createCrmEvent(
         req: operations.CreateCrmEventRequest,
-        security: operations.CreateCrmEventSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateCrmEventResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -44,10 +43,14 @@ export class Event {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateCrmEventSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -110,7 +113,6 @@ export class Event {
      */
     async getCrmEvent(
         req: operations.GetCrmEventRequest,
-        security: operations.GetCrmEventSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetCrmEventResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -127,10 +129,14 @@ export class Event {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetCrmEventSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -189,7 +195,6 @@ export class Event {
      */
     async listCrmEvents(
         req: operations.ListCrmEventsRequest,
-        security: operations.ListCrmEventsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListCrmEventsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -202,10 +207,14 @@ export class Event {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/crm/{connection_id}/event", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListCrmEventsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -270,7 +279,6 @@ export class Event {
      */
     async patchCrmEvent(
         req: operations.PatchCrmEventRequest,
-        security: operations.PatchCrmEventSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchCrmEventResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -297,10 +305,14 @@ export class Event {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchCrmEventSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -363,7 +375,6 @@ export class Event {
      */
     async removeCrmEvent(
         req: operations.RemoveCrmEventRequest,
-        security: operations.RemoveCrmEventSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveCrmEventResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -380,10 +391,14 @@ export class Event {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveCrmEventSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -441,7 +456,6 @@ export class Event {
      */
     async updateCrmEvent(
         req: operations.UpdateCrmEventRequest,
-        security: operations.UpdateCrmEventSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateCrmEventResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -468,10 +482,14 @@ export class Event {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateCrmEventSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,

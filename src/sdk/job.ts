@@ -21,7 +21,6 @@ export class Job {
      */
     async createAtsJob(
         req: operations.CreateAtsJobRequest,
-        security: operations.CreateAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.CreateAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -44,10 +43,14 @@ export class Job {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.CreateAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -110,7 +113,6 @@ export class Job {
      */
     async getAtsJob(
         req: operations.GetAtsJobRequest,
-        security: operations.GetAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.GetAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -127,10 +129,14 @@ export class Job {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.GetAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -189,7 +195,6 @@ export class Job {
      */
     async listAtsJobs(
         req: operations.ListAtsJobsRequest,
-        security: operations.ListAtsJobsSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.ListAtsJobsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -202,10 +207,14 @@ export class Job {
         );
         const operationUrl: string = utils.generateURL(baseURL, "/ats/{connection_id}/job", req);
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.ListAtsJobsSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         const queryParams: string = utils.serializeQueryParams(req);
         headers["Accept"] = "application/json";
@@ -270,7 +279,6 @@ export class Job {
      */
     async patchAtsJob(
         req: operations.PatchAtsJobRequest,
-        security: operations.PatchAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.PatchAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -297,10 +305,14 @@ export class Job {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.PatchAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
@@ -363,7 +375,6 @@ export class Job {
      */
     async removeAtsJob(
         req: operations.RemoveAtsJobRequest,
-        security: operations.RemoveAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.RemoveAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -380,10 +391,14 @@ export class Job {
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.RemoveAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
         headers["Accept"] = "application/json";
 
@@ -441,7 +456,6 @@ export class Job {
      */
     async updateAtsJob(
         req: operations.UpdateAtsJobRequest,
-        security: operations.UpdateAtsJobSecurity,
         config?: AxiosRequestConfig
     ): Promise<operations.UpdateAtsJobResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
@@ -468,10 +482,14 @@ export class Job {
             }
         }
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        if (!(security instanceof utils.SpeakeasyBase)) {
-            security = new operations.UpdateAtsJobSecurity(security);
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
         }
-        const properties = utils.parseSecurityProperties(security);
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
         const headers: RawAxiosRequestHeaders = {
             ...reqBodyHeaders,
             ...config?.headers,
