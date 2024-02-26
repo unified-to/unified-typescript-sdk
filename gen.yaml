@@ -13,7 +13,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 0.15.0
+  version: 1.0.0
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
@@ -28,5 +28,5 @@ typescript:
   inputModelSuffix: input
   maxMethodParams: 0
   outputModelSuffix: output
-  packageName: unified-typescript-sdk
+  packageName: @unified-api/sdk
   templateVersion: v1
