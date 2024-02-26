@@ -17,9 +17,9 @@ Create a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -69,8 +69,8 @@ Retrieve a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -119,8 +119,8 @@ List all documents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsDocumentsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsDocumentsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -168,9 +168,9 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -221,8 +221,8 @@ Remove a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -268,9 +268,9 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

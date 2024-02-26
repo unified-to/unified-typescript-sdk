@@ -17,9 +17,9 @@ Create an item
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateCommerceItemSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CommerceItemMediaType, SizeUnit, WeightUnit } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateCommerceItemSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CommerceItemMediaType, SizeUnit, WeightUnit } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -105,8 +105,8 @@ Retrieve an item
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetCommerceItemSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetCommerceItemSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -155,8 +155,8 @@ List all items
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListCommerceItemsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListCommerceItemsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -204,9 +204,9 @@ Update an item
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchCommerceItemSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CommerceItemMediaType, SizeUnit, WeightUnit } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchCommerceItemSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CommerceItemMediaType, SizeUnit, WeightUnit } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -293,8 +293,8 @@ Remove an item
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveCommerceItemSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveCommerceItemSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -340,9 +340,9 @@ Update an item
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateCommerceItemSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CommerceItemMediaType, SizeUnit, WeightUnit } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateCommerceItemSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CommerceItemMediaType, SizeUnit, WeightUnit } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

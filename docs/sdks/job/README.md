@@ -17,9 +17,9 @@ Create a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -98,8 +98,8 @@ Retrieve a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -148,8 +148,8 @@ List all jobs
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsJobsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsJobsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -197,9 +197,9 @@ Update a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -279,8 +279,8 @@ Remove a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -326,9 +326,9 @@ Update a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

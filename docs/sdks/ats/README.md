@@ -56,9 +56,9 @@ Create an activity
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsActivitySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsActivityType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsActivitySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsActivityType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -112,9 +112,9 @@ Create an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsApplicationSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsApplicationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsApplicationStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -172,9 +172,9 @@ Create a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -244,9 +244,9 @@ Create a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -296,9 +296,9 @@ Create a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsInterviewSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsInterviewSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsInterviewStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -351,9 +351,9 @@ Create a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -432,9 +432,9 @@ Create a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsScorecardSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Recommendation } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsScorecardSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Recommendation } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -489,8 +489,8 @@ Retrieve an activity
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsActivitySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsActivitySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -539,8 +539,8 @@ Retrieve an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsApplicationSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsApplicationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -589,8 +589,8 @@ Retrieve a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -639,8 +639,8 @@ Retrieve a company
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsCompanySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsCompanySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -689,8 +689,8 @@ Retrieve a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -739,8 +739,8 @@ Retrieve a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsInterviewSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsInterviewSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -789,8 +789,8 @@ Retrieve a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -839,8 +839,8 @@ Retrieve a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsScorecardSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsScorecardSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -889,8 +889,8 @@ List all activities
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsActivitiesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsActivitiesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -938,8 +938,8 @@ List all applications
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsApplicationsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsApplicationsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -987,8 +987,8 @@ List all application statuses
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsApplicationstatusesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsApplicationstatusesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1036,8 +1036,8 @@ List all candidates
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsCandidatesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsCandidatesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1085,8 +1085,8 @@ List all companies
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsCompaniesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsCompaniesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1134,8 +1134,8 @@ List all documents
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsDocumentsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsDocumentsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1183,8 +1183,8 @@ List all interviews
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsInterviewsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsInterviewsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1232,8 +1232,8 @@ List all jobs
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsJobsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsJobsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1281,8 +1281,8 @@ List all scorecards
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsScorecardsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsScorecardsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1330,9 +1330,9 @@ Update an activity
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsActivitySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsActivityType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsActivitySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsActivityType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1387,9 +1387,9 @@ Update an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsApplicationSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsApplicationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsApplicationStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1448,9 +1448,9 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1521,9 +1521,9 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1574,9 +1574,9 @@ Update a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsInterviewSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsInterviewSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsInterviewStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1630,9 +1630,9 @@ Update a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1712,9 +1712,9 @@ Update a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsScorecardSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Recommendation } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsScorecardSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Recommendation } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1770,8 +1770,8 @@ Remove an activity
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsActivitySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsActivitySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1817,8 +1817,8 @@ Remove an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsApplicationSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsApplicationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1864,8 +1864,8 @@ Remove a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1911,8 +1911,8 @@ Remove a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -1958,8 +1958,8 @@ Remove a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsInterviewSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsInterviewSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2005,8 +2005,8 @@ Remove a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2052,8 +2052,8 @@ Remove a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsScorecardSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsScorecardSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2099,9 +2099,9 @@ Update an activity
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsActivitySecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsActivityType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsActivitySecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsActivityType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2156,9 +2156,9 @@ Update an application
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsApplicationSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsApplicationStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsApplicationSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsApplicationStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2217,9 +2217,9 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2290,9 +2290,9 @@ Update a document
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsDocumentSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsDocumentType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsDocumentSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsDocumentType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2343,9 +2343,9 @@ Update a interview
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsInterviewSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsInterviewStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsInterviewSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsInterviewStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2399,9 +2399,9 @@ Update a job
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsJobSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsJobSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsCompensationType, AtsJobQuestionType, AtsJobStatus, EmploymentType, Frequency } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -2481,9 +2481,9 @@ Update a scorecard
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsScorecardSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Recommendation } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsScorecardSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Recommendation } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

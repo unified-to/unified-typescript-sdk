@@ -17,9 +17,9 @@ Create a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -89,8 +89,8 @@ Retrieve a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -139,8 +139,8 @@ List all candidates
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAtsCandidatesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAtsCandidatesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -188,9 +188,9 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -261,8 +261,8 @@ Remove a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -308,9 +308,9 @@ Update a candidate
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAtsCandidateSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AtsEmailType, AtsTelephoneType, Origin } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAtsCandidateSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AtsEmailType, AtsTelephoneType, Origin } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

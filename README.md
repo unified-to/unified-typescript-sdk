@@ -12,13 +12,13 @@
 ### NPM
 
 ```bash
-npm add https://github.com/unified-to/unified-typescript-sdk
+npm add @unified-api/typescript-sdk
 ```
 
 ### Yarn
 
 ```bash
-yarn add https://github.com/unified-to/unified-typescript-sdk
+yarn add @unified-api/typescript-sdk
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -28,9 +28,9 @@ yarn add https://github.com/unified-to/unified-typescript-sdk
 ### Example
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo();
@@ -696,9 +696,9 @@ Handling errors in this SDK should largely match your expectations.  All operati
 Example
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo();
@@ -754,9 +754,9 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -793,9 +793,9 @@ run();
 
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -838,7 +838,7 @@ The Typescript SDK makes API calls using the [axios](https://axios-http.com/docs
 For example, you could specify a header for every request that your sdk makes as follows:
 
 ```typescript
-import { unified-typescript-sdk } from "UnifiedTo";
+import { @unified-api/typescript-sdk } from "UnifiedTo";
 import axios from "axios";
 
 const httpClient = axios.create({

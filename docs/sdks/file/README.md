@@ -17,9 +17,9 @@ Create a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateStorageFileSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateStorageFileSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyStoragePermissionRoles, StorageFileType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -76,8 +76,8 @@ Retrieve a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetStorageFileSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetStorageFileSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -126,8 +126,8 @@ List all files
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListStorageFilesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListStorageFilesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -175,9 +175,9 @@ Update a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchStorageFileSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchStorageFileSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyStoragePermissionRoles, StorageFileType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -235,8 +235,8 @@ Remove a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveStorageFileSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveStorageFileSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -282,9 +282,9 @@ Update a file
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateStorageFileSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyStoragePermissionRoles, StorageFileType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateStorageFileSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyStoragePermissionRoles, StorageFileType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

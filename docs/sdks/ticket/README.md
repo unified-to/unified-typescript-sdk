@@ -17,9 +17,9 @@ Create a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateTicketingTicketSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateTicketingTicketSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingTicketStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -72,8 +72,8 @@ Retrieve a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetTicketingTicketSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetTicketingTicketSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -122,8 +122,8 @@ List all tickets
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListTicketingTicketsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListTicketingTicketsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -171,9 +171,9 @@ Update a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchTicketingTicketSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchTicketingTicketSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingTicketStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -227,8 +227,8 @@ Remove a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveTicketingTicketSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveTicketingTicketSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -274,9 +274,9 @@ Update a ticket
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateTicketingTicketSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingTicketStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateTicketingTicketSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingTicketStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

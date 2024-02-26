@@ -17,9 +17,9 @@ Create a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateTicketingCustomerSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingEmailType, TicketingTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -82,8 +82,8 @@ Retrieve a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetTicketingCustomerSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -132,8 +132,8 @@ List all customers
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListTicketingCustomersSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListTicketingCustomersSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -181,9 +181,9 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchTicketingCustomerSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingEmailType, TicketingTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -247,8 +247,8 @@ Remove a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveTicketingCustomerSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -294,9 +294,9 @@ Update a customer
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateTicketingCustomerSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { TicketingEmailType, TicketingTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateTicketingCustomerSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { TicketingEmailType, TicketingTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

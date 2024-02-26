@@ -17,9 +17,9 @@ Create a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateCrmEventSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -96,8 +96,8 @@ Retrieve a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetCrmEventSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -146,8 +146,8 @@ List all events
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListCrmEventsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListCrmEventsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -195,9 +195,9 @@ Update a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchCrmEventSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -275,8 +275,8 @@ Remove a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveCrmEventSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -322,9 +322,9 @@ Update a event
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateCrmEventSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEventType, PropertyCrmEventTaskStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateCrmEventSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEventType, PropertyCrmEventTaskStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

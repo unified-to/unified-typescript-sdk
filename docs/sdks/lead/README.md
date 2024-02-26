@@ -17,9 +17,9 @@ Create a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateCrmLeadSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEmailType, CrmTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -78,8 +78,8 @@ Retrieve a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetCrmLeadSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -128,8 +128,8 @@ List all leads
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListCrmLeadsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListCrmLeadsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -177,9 +177,9 @@ Update a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchCrmLeadSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEmailType, CrmTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -239,8 +239,8 @@ Remove a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveCrmLeadSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -286,9 +286,9 @@ Update a lead
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateCrmLeadSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { CrmEmailType, CrmTelephoneType } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateCrmLeadSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { CrmEmailType, CrmTelephoneType } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

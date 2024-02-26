@@ -17,9 +17,9 @@ Create a invoice
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingInvoiceSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -74,8 +74,8 @@ Retrieve a invoice
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetAccountingInvoiceSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -124,8 +124,8 @@ List all invoices
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { ListAccountingInvoicesSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { ListAccountingInvoicesSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -173,9 +173,9 @@ Update a invoice
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchAccountingInvoiceSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -231,8 +231,8 @@ Remove a invoice
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveAccountingInvoiceSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -278,9 +278,9 @@ Update a invoice
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateAccountingInvoiceSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { AccountingInvoiceStatus } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateAccountingInvoiceSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

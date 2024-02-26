@@ -17,9 +17,9 @@ Create connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateUnifiedConnectionSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateUnifiedConnectionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -86,8 +86,8 @@ Retrieve connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { GetUnifiedConnectionSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { GetUnifiedConnectionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -132,8 +132,8 @@ List all connections
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { Categories, ListUnifiedConnectionsSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { Categories, ListUnifiedConnectionsSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -180,9 +180,9 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { PatchUnifiedConnectionSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { PatchUnifiedConnectionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -252,8 +252,8 @@ Remove connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { RemoveUnifiedConnectionSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { RemoveUnifiedConnectionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
 
 async function run() {
   const sdk = new UnifiedTo();
@@ -298,9 +298,9 @@ Update connection
 ### Example Usage
 
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { UpdateUnifiedConnectionSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { PropertyConnectionCategories, PropertyConnectionPermissions } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { UpdateUnifiedConnectionSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { PropertyConnectionCategories, PropertyConnectionPermissions } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
   const sdk = new UnifiedTo();

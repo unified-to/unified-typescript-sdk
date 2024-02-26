@@ -1,5 +1,5 @@
 {
-  "name": "unified-typescript-sdk",
+  "name": "@unified-api/typescript-sdk",
   "version": "0.0.0",
   "author": "Unified",
   "scripts": {

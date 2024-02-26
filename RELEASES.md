@@ -727,3 +727,13 @@ Based on:
 - Speakeasy CLI 1.193.4 (2.272.4) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [typescript v0.15.0] .
+
+## 2024-02-26 18:50:33
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.193.4 (2.272.4) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v0.0.0] .
+### Releases
+- [NPM v0.0.0] https://www.npmjs.com/package/@unified-api/typescript-sdk/v/0.0.0 - .

@@ -1,8 +1,8 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
-import { UnifiedTo } from "unified-typescript-sdk";
-import { CreateAccountingAccountSecurity } from "unified-typescript-sdk/dist/sdk/models/operations";
-import { Status, TypeT } from "unified-typescript-sdk/dist/sdk/models/shared";
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+import { CreateAccountingAccountSecurity } from "@unified-api/typescript-sdk/dist/sdk/models/operations";
+import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo();
