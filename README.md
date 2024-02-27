@@ -63,7 +63,6 @@ You can override the default server globally by passing a server index to the `s
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -98,7 +97,6 @@ run();
 The default server can also be overridden globally by passing a URL to the `serverURL: str` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -165,7 +163,6 @@ This SDK supports the following security scheme globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
@@ -210,7 +207,6 @@ Example
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
 
 async function run() {
     const sdk = new UnifiedTo({
