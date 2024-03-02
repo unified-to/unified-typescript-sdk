@@ -64,6 +64,10 @@ export class AccountingContact extends SpeakeasyBase {
     name?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "portal_url" })
+    portalUrl?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;
 

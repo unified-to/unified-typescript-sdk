@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 48060151324f197510525fbcfe544edc
+  docChecksum: 0793d7d9d65b0d606620076f43596338
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.272.7
-  releaseVersion: 1.0.2
-  configChecksum: 498e3f1e01cc9350f485ed07b5a2842b
+  generationVersion: 2.277.0
+  releaseVersion: 1.0.3
+  configChecksum: c0f83e0a0bc8c05fb62a6b83214886f5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -425,6 +425,9 @@ generatedFiles:
   - src/sdk/models/shared/integration.ts
   - src/sdk/models/shared/integrationsupport.ts
   - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
   - src/sdk/models/shared/issue.ts
   - src/sdk/models/shared/security.ts
@@ -913,6 +916,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
+  - docs/sdk/models/shared/paymentcollectionmethod.md
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinglineitem.md
@@ -1044,14 +1048,16 @@ generatedFiles:
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/event.md
   - docs/sdk/models/shared/objecttype.md
-  - docs/sdk/models/shared/webhookwebhooktype.md
+  - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/apicalltype.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/integration.md
-  - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/integrationsupport.md
   - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
   - docs/sdk/models/shared/issuestatus.md
   - docs/sdk/models/shared/issuetype.md

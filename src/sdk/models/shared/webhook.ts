@@ -56,9 +56,8 @@ export enum ObjectType {
     StorageFile = "storage_file",
 }
 
-export enum WebhookWebhookType {
+export enum WebhookType {
     Virtual = "virtual",
-    None = "none",
     Native = "native",
 }
 
@@ -138,7 +137,7 @@ export class Webhook extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "webhook_type" })
-    webhookType?: WebhookWebhookType;
+    webhookType?: WebhookType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "workspace_id" })

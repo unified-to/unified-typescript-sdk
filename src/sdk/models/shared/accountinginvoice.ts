@@ -6,6 +6,11 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { AccountingLineitem } from "./accountinglineitem";
 import { Expose, Transform, Type } from "class-transformer";
 
+export enum PaymentCollectionMethod {
+    SendInvoice = "send_invoice",
+    ChargeAutomatically = "charge_automatically",
+}
+
 export enum AccountingInvoiceStatus {
     Draft = "DRAFT",
     Voided = "VOIDED",
@@ -69,6 +74,10 @@ export class AccountingInvoice extends SpeakeasyBase {
     @Expose({ name: "paid_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     paidAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "payment_collection_method" })
+    paymentCollectionMethod?: PaymentCollectionMethod;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

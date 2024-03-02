@@ -4,13 +4,7 @@
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyIntegrationSupportWebhookEvents } from "./propertyintegrationsupportwebhookevents";
-import { Expose } from "class-transformer";
-
-export enum WebhookType {
-    Virtual = "virtual",
-    None = "none",
-    Native = "native",
-}
+import { Expose, Type } from "class-transformer";
 
 export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -135,9 +129,6 @@ export class IntegrationSupport extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "webhook_events" })
-    webhookEvents?: PropertyIntegrationSupportWebhookEvents[];
-
-    @SpeakeasyMetadata()
-    @Expose({ name: "webhook_type" })
-    webhookType?: WebhookType;
+    @Type(() => PropertyIntegrationSupportWebhookEvents)
+    webhookEvents?: PropertyIntegrationSupportWebhookEvents;
 }
