@@ -3,6 +3,7 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { AccountingContactPaymentMethod } from "./accountingcontactpaymentmethod";
 import { AccountingEmail } from "./accountingemail";
 import { AccountingTelephone } from "./accountingtelephone";
 import { PropertyAccountingContactBillingAddress } from "./propertyaccountingcontactbillingaddress";
@@ -62,6 +63,11 @@ export class AccountingContact extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;
+
+    @SpeakeasyMetadata({ elemType: AccountingContactPaymentMethod })
+    @Expose({ name: "payment_methods" })
+    @Type(() => AccountingContactPaymentMethod)
+    paymentMethods?: AccountingContactPaymentMethod[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "portal_url" })

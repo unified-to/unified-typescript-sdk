@@ -4,6 +4,7 @@
 
 export * from "./accountingaccount";
 export * from "./accountingcontact";
+export * from "./accountingcontactpaymentmethod";
 export * from "./accountingemail";
 export * from "./accountinginvoice";
 export * from "./accountinglineitem";

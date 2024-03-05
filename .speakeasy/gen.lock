@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0793d7d9d65b0d606620076f43596338
+  docChecksum: 1982f00b1c8ae9709c4c51c2b473ab66
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.277.0
-  releaseVersion: 1.0.3
-  configChecksum: c0f83e0a0bc8c05fb62a6b83214886f5
+  releaseVersion: 1.0.4
+  configChecksum: 0c1bd2b7ef121e95aff6fac8703df94a
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -331,6 +331,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingtelephone.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
+  - src/sdk/models/shared/accountingcontactpaymentmethod.ts
   - src/sdk/models/shared/accountingemail.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/accountinginvoice.ts
@@ -913,6 +914,8 @@ generatedFiles:
   - docs/sdk/models/shared/accountingtelephonetype.md
   - docs/sdk/models/shared/accountingtelephone.md
   - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
+  - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
+  - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
