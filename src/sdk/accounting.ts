@@ -2173,7 +2173,7 @@ export class Accounting {
                 );
             default:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.res = decodedRes;
+                    res.string = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -2255,7 +2255,7 @@ export class Accounting {
                 );
             default:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.res = decodedRes;
+                    res.string = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -2337,7 +2337,7 @@ export class Accounting {
                 );
             default:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.res = decodedRes;
+                    res.string = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -2419,7 +2419,7 @@ export class Accounting {
                 );
             default:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.res = decodedRes;
+                    res.string = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -2501,7 +2501,7 @@ export class Accounting {
                 );
             default:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.res = decodedRes;
+                    res.string = JSON.parse(decodedRes);
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,

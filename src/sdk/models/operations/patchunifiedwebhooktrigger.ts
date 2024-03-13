@@ -36,5 +36,5 @@ export class PatchUnifiedWebhookTriggerResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

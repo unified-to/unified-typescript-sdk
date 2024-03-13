@@ -42,5 +42,5 @@ export class RemoveMartechMemberResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

@@ -42,5 +42,5 @@ export class RemoveAtsActivityResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

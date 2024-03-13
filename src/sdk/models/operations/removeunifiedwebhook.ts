@@ -36,5 +36,5 @@ export class RemoveUnifiedWebhookResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

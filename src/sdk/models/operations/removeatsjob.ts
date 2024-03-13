@@ -42,5 +42,5 @@ export class RemoveAtsJobResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Unified",
   "scripts": {
     "prepare": "tsc --build",

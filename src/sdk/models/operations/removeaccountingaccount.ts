@@ -42,5 +42,5 @@ export class RemoveAccountingAccountResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

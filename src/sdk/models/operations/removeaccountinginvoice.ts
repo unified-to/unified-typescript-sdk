@@ -42,5 +42,5 @@ export class RemoveAccountingInvoiceResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

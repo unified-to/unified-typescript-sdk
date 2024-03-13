@@ -42,5 +42,5 @@ export class RemoveCrmPipelineResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

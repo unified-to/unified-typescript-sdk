@@ -42,5 +42,5 @@ export class RemoveCommerceItemResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

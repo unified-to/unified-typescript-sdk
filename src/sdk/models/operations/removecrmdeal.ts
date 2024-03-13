@@ -42,5 +42,5 @@ export class RemoveCrmDealResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

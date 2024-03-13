@@ -42,5 +42,5 @@ export class RemoveAccountingContactResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

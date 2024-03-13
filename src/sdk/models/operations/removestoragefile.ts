@@ -42,5 +42,5 @@ export class RemoveStorageFileResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }

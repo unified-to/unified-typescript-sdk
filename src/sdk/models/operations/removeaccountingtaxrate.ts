@@ -42,5 +42,5 @@ export class RemoveAccountingTaxrateResponse extends SpeakeasyBase {
      * Successful
      */
     @SpeakeasyMetadata()
-    res?: string;
+    string?: string;
 }
