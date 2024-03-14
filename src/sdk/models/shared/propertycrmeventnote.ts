@@ -12,4 +12,8 @@ export class PropertyCrmEventNote extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "description" })
     description?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "title" })
+    title?: string;
 }
