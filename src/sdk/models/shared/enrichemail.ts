@@ -17,6 +17,10 @@ export class EnrichEmail extends SpeakeasyBase {
     email: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "is_verified" })
+    isVerified?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "type" })
     type?: EnrichEmailType;
 }
