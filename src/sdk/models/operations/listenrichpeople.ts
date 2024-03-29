@@ -8,6 +8,12 @@ import { AxiosResponse } from "axios";
 
 export class ListEnrichPeopleRequest extends SpeakeasyBase {
     /**
+     * The name of the company the person is associated with.  Not valid by itself.
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=company_name" })
+    companyName?: string;
+
+    /**
      * ID of the connection
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
