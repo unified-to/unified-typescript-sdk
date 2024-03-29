@@ -5,7 +5,7 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Transform } from "class-transformer";
 
-export class PaymenntLinkLineitem extends SpeakeasyBase {
+export class PaymentLinkLineitem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "account_id" })
     accountId?: string;

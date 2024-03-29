@@ -3,13 +3,13 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { PaymenntLinkLineitem } from "./paymenntlinklineitem";
+import { PaymentLinkLineitem } from "./paymentlinklineitem";
 import { Expose, Transform, Type } from "class-transformer";
 
 export class PaymentLink extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
-    amount?: number;
+    amount: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "contact_id" })
@@ -30,12 +30,12 @@ export class PaymentLink extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "is_active" })
-    isActive: boolean;
+    isActive?: boolean;
 
-    @SpeakeasyMetadata({ elemType: PaymenntLinkLineitem })
+    @SpeakeasyMetadata({ elemType: PaymentLinkLineitem })
     @Expose({ name: "lineitems" })
-    @Type(() => PaymenntLinkLineitem)
-    lineitems: PaymenntLinkLineitem[];
+    @Type(() => PaymentLinkLineitem)
+    lineitems: PaymentLinkLineitem[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "payment_id" })
@@ -52,5 +52,5 @@ export class PaymentLink extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "url" })
-    url: string;
+    url?: string;
 }

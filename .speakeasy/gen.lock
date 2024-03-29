@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b5ccecd8b5925543c5229bd68d6cacb3
+  docChecksum: 9969df7d3e03cdc2a49e94cb47ce90ff
   docVersion: "1.0"
-  speakeasyVersion: 1.221.0
-  generationVersion: 2.287.0
-  releaseVersion: 1.0.8
-  configChecksum: f22c8be23305df58543e3df5a15941fc
+  speakeasyVersion: 1.228.1
+  generationVersion: 2.292.0
+  releaseVersion: 1.0.9
+  configChecksum: 80dfae9572fa4b99b52c470c3f62a3c4
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -403,7 +403,7 @@ generatedFiles:
   - src/sdk/models/shared/marketingmember.ts
   - src/sdk/models/shared/marketingemail.ts
   - src/sdk/models/shared/paymentlink.ts
-  - src/sdk/models/shared/paymenntlinklineitem.ts
+  - src/sdk/models/shared/paymentlinklineitem.ts
   - src/sdk/models/shared/paymentpayment.ts
   - src/sdk/models/shared/paymentpayout.ts
   - src/sdk/models/shared/paymentrefund.ts
@@ -1024,7 +1024,7 @@ generatedFiles:
   - docs/sdk/models/shared/marketingemailtype.md
   - docs/sdk/models/shared/marketingemail.md
   - docs/sdk/models/shared/paymentlink.md
-  - docs/sdk/models/shared/paymenntlinklineitem.md
+  - docs/sdk/models/shared/paymentlinklineitem.md
   - docs/sdk/models/shared/paymentpayment.md
   - docs/sdk/models/shared/paymentpayoutstatus.md
   - docs/sdk/models/shared/paymentpayout.md

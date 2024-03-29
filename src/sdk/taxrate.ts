@@ -456,6 +456,8 @@ export class Taxrate {
             });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
+            case httpRes?.status >= 200 && httpRes?.status < 300:
+                break;
             case (httpRes?.status >= 400 && httpRes?.status < 500) ||
                 (httpRes?.status >= 500 && httpRes?.status < 600):
                 throw new errors.SDKError(
