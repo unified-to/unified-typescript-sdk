@@ -48,6 +48,7 @@ import { Organization } from "./organization";
 import { Passthrough } from "./passthrough";
 import { Payment } from "./payment";
 import { Payout } from "./payout";
+import { Payslip } from "./payslip";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
 import { Refund } from "./refund";
@@ -56,6 +57,7 @@ import { Storage } from "./storage";
 import { Taxrate } from "./taxrate";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
+import { Timeoff } from "./timeoff";
 import { Transaction } from "./transaction";
 import { Uc } from "./uc";
 import { Unified } from "./unified";
@@ -113,9 +115,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.0.10";
-    genVersion = "2.292.0";
-    userAgent = "speakeasy-sdk/typescript 1.0.10 2.292.0 1.0 @unified-api/typescript-sdk";
+    sdkVersion = "1.0.11";
+    genVersion = "2.298.2";
+    userAgent = "speakeasy-sdk/typescript 1.0.11 2.298.2 1.0 @unified-api/typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -158,6 +160,8 @@ export class UnifiedTo {
     public hris: Hris;
     public employee: Employee;
     public group: Group;
+    public payslip: Payslip;
+    public timeoff: Timeoff;
     public martech: Martech;
     public list: List;
     public member: Member;
@@ -236,6 +240,8 @@ export class UnifiedTo {
         this.hris = new Hris(this.sdkConfiguration);
         this.employee = new Employee(this.sdkConfiguration);
         this.group = new Group(this.sdkConfiguration);
+        this.payslip = new Payslip(this.sdkConfiguration);
+        this.timeoff = new Timeoff(this.sdkConfiguration);
         this.martech = new Martech(this.sdkConfiguration);
         this.list = new List(this.sdkConfiguration);
         this.member = new Member(this.sdkConfiguration);

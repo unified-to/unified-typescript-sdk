@@ -36,6 +36,8 @@
 | `CrmPipeline`            | crm_pipeline             |
 | `HrisEmployee`           | hris_employee            |
 | `HrisGroup`              | hris_group               |
+| `HrisPayslip`            | hris_payslip             |
+| `HrisTimeoff`            | hris_timeoff             |
 | `MartechList`            | martech_list             |
 | `MartechMember`          | martech_member           |
 | `Passthrough`            | passthrough              |

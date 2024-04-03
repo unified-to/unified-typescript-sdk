@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: c0feefab18e1757955e61afa41102a4c
+  docChecksum: 2d9519a9ae45cc997b9772dfea3b96f5
   docVersion: "1.0"
-  speakeasyVersion: 1.228.1
-  generationVersion: 2.292.0
-  releaseVersion: 1.0.10
-  configChecksum: 10a5fd6ffe27493501f1f732a9604dd3
+  speakeasyVersion: 1.235.2
+  generationVersion: 2.298.2
+  releaseVersion: 1.0.11
+  configChecksum: 1c7547315bf27cc2024f6348c0ba5333
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -49,6 +49,8 @@ generatedFiles:
   - src/sdk/hris.ts
   - src/sdk/employee.ts
   - src/sdk/group.ts
+  - src/sdk/payslip.ts
+  - src/sdk/timeoff.ts
   - src/sdk/martech.ts
   - src/sdk/list.ts
   - src/sdk/member.ts
@@ -242,8 +244,12 @@ generatedFiles:
   - src/sdk/models/operations/createhrisgroup.ts
   - src/sdk/models/operations/gethrisemployee.ts
   - src/sdk/models/operations/gethrisgroup.ts
+  - src/sdk/models/operations/gethrispayslip.ts
+  - src/sdk/models/operations/gethristimeoff.ts
   - src/sdk/models/operations/listhrisemployees.ts
   - src/sdk/models/operations/listhrisgroups.ts
+  - src/sdk/models/operations/listhrispayslips.ts
+  - src/sdk/models/operations/listhristimeoffs.ts
   - src/sdk/models/operations/patchhrisemployee.ts
   - src/sdk/models/operations/patchhrisgroup.ts
   - src/sdk/models/operations/removehrisemployee.ts
@@ -399,6 +405,9 @@ generatedFiles:
   - src/sdk/models/shared/hrisemail.ts
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
   - src/sdk/models/shared/hrisgroup.ts
+  - src/sdk/models/shared/hrispayslip.ts
+  - src/sdk/models/shared/hrispayslipdetail.ts
+  - src/sdk/models/shared/hristimeoff.ts
   - src/sdk/models/shared/marketinglist.ts
   - src/sdk/models/shared/marketingmember.ts
   - src/sdk/models/shared/marketingemail.ts
@@ -733,10 +742,18 @@ generatedFiles:
   - docs/sdk/models/operations/gethrisemployeeresponse.md
   - docs/sdk/models/operations/gethrisgrouprequest.md
   - docs/sdk/models/operations/gethrisgroupresponse.md
+  - docs/sdk/models/operations/gethrispaysliprequest.md
+  - docs/sdk/models/operations/gethrispayslipresponse.md
+  - docs/sdk/models/operations/gethristimeoffrequest.md
+  - docs/sdk/models/operations/gethristimeoffresponse.md
   - docs/sdk/models/operations/listhrisemployeesrequest.md
   - docs/sdk/models/operations/listhrisemployeesresponse.md
   - docs/sdk/models/operations/listhrisgroupsrequest.md
   - docs/sdk/models/operations/listhrisgroupsresponse.md
+  - docs/sdk/models/operations/listhrispayslipsrequest.md
+  - docs/sdk/models/operations/listhrispayslipsresponse.md
+  - docs/sdk/models/operations/listhristimeoffsrequest.md
+  - docs/sdk/models/operations/listhristimeoffsresponse.md
   - docs/sdk/models/operations/patchhrisemployeerequest.md
   - docs/sdk/models/operations/patchhrisemployeeresponse.md
   - docs/sdk/models/operations/patchhrisgrouprequest.md
@@ -1019,6 +1036,13 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/hrisgrouptype.md
   - docs/sdk/models/shared/hrisgroup.md
+  - docs/sdk/models/shared/paymenttype.md
+  - docs/sdk/models/shared/hrispayslip.md
+  - docs/sdk/models/shared/hrispayslipdetailtype.md
+  - docs/sdk/models/shared/hrispayslipdetail.md
+  - docs/sdk/models/shared/hristimeoffstatus.md
+  - docs/sdk/models/shared/hristimeofftype.md
+  - docs/sdk/models/shared/hristimeoff.md
   - docs/sdk/models/shared/marketinglist.md
   - docs/sdk/models/shared/marketingmember.md
   - docs/sdk/models/shared/marketingemailtype.md
