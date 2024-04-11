@@ -37,9 +37,6 @@ export class ListAccountingContactsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
     sort?: string;
 
-    /**
-     * The type of contact to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
     type?: string;
 

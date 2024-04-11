@@ -391,7 +391,7 @@ export class Member {
     }
 
     /**
-     * Remove member
+     * Remove a member
      */
     async removeMartechMember(
         req: operations.RemoveMartechMemberRequest,

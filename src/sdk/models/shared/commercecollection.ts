@@ -6,6 +6,12 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { CommerceItemMedia } from "./commerceitemmedia";
 import { Expose, Transform, Type } from "class-transformer";
 
+export enum CommerceCollectionType {
+    Collection = "COLLECTION",
+    SavedSearch = "SAVED_SEARCH",
+    Category = "CATEGORY",
+}
+
 /**
  * A collection of items/products/services
  */
@@ -35,10 +41,6 @@ export class CommerceCollection extends SpeakeasyBase {
     @Expose({ name: "is_visible" })
     isVisible?: boolean;
 
-    @SpeakeasyMetadata()
-    @Expose({ name: "item_ids" })
-    itemIds?: string[];
-
     @SpeakeasyMetadata({ elemType: CommerceItemMedia })
     @Expose({ name: "media" })
     @Type(() => CommerceItemMedia)
@@ -63,6 +65,10 @@ export class CommerceCollection extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "tags" })
     tags?: string[];
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "type" })
+    type?: CommerceCollectionType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

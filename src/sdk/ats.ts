@@ -415,7 +415,7 @@ export class Ats {
     }
 
     /**
-     * Create a interview
+     * Create an interview
      */
     async createAtsInterview(
         req: operations.CreateAtsInterviewRequest,
@@ -1129,7 +1129,7 @@ export class Ats {
     }
 
     /**
-     * Retrieve a interview
+     * Retrieve an interview
      */
     async getAtsInterview(
         req: operations.GetAtsInterviewRequest,
@@ -1558,7 +1558,7 @@ export class Ats {
     }
 
     /**
-     * List all application statuses
+     * List all applicationstatuses
      */
     async listAtsApplicationstatuses(
         req: operations.ListAtsApplicationstatusesRequest,
@@ -2568,7 +2568,7 @@ export class Ats {
     }
 
     /**
-     * Update a interview
+     * Update an interview
      */
     async patchAtsInterview(
         req: operations.PatchAtsInterviewRequest,
@@ -3196,7 +3196,7 @@ export class Ats {
     }
 
     /**
-     * Remove a interview
+     * Remove an interview
      */
     async removeAtsInterview(
         req: operations.RemoveAtsInterviewRequest,
@@ -3845,7 +3845,7 @@ export class Ats {
     }
 
     /**
-     * Update a interview
+     * Update an interview
      */
     async updateAtsInterview(
         req: operations.UpdateAtsInterviewRequest,

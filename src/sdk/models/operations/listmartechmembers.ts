@@ -22,9 +22,6 @@ export class ListMartechMembersRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 
-    /**
-     * Usually required
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=list_id" })
     listId?: string;
 

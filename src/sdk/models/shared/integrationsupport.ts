@@ -24,6 +24,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listCandidateId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_collection_id" })
+    listCollectionId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_company_id" })
     listCompanyId?: boolean;
 
@@ -48,6 +52,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listInvoiceId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_item_id" })
+    listItemId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_job_id" })
     listJobId?: boolean;
 
@@ -58,6 +66,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_list_id" })
     listListId?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_location_id" })
+    listLocationId?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_offset" })

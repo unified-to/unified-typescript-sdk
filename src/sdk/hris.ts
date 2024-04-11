@@ -718,7 +718,7 @@ export class Hris {
     }
 
     /**
-     * List all payslip
+     * List all payslips
      */
     async listHrisPayslips(
         req: operations.ListHrisPayslipsRequest,

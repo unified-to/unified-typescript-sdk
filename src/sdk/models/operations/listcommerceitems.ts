@@ -7,6 +7,9 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListCommerceItemsRequest extends SpeakeasyBase {
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=collection_id" })
+    collectionId?: string;
+
     /**
      * ID of the connection
      */

@@ -17,7 +17,7 @@ export class Link {
     }
 
     /**
-     * Create a payment link
+     * Create a link
      */
     async createPaymentLink(
         req: operations.CreatePaymentLinkRequest,
@@ -116,7 +116,7 @@ export class Link {
     }
 
     /**
-     * Retrieve a payment link
+     * Retrieve a link
      */
     async getPaymentLink(
         req: operations.GetPaymentLinkRequest,
@@ -201,7 +201,7 @@ export class Link {
     }
 
     /**
-     * List all payment links
+     * List all links
      */
     async listPaymentLinks(
         req: operations.ListPaymentLinksRequest,
@@ -289,7 +289,7 @@ export class Link {
     }
 
     /**
-     * Update a payment link
+     * Update a link
      */
     async patchPaymentLink(
         req: operations.PatchPaymentLinkRequest,
@@ -388,7 +388,7 @@ export class Link {
     }
 
     /**
-     * Remove a payment link
+     * Remove a link
      */
     async removePaymentLink(
         req: operations.RemovePaymentLinkRequest,
@@ -471,7 +471,7 @@ export class Link {
     }
 
     /**
-     * Update a payment link
+     * Update a link
      */
     async updatePaymentLink(
         req: operations.UpdatePaymentLinkRequest,

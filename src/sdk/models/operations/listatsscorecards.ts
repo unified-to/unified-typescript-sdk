@@ -7,15 +7,9 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListAtsScorecardsRequest extends SpeakeasyBase {
-    /**
-     * The application ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=application_id" })
     applicationId?: string;
 
-    /**
-     * The candidate ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=candidate_id" })
     candidateId?: string;
 
@@ -31,15 +25,9 @@ export class ListAtsScorecardsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
-    /**
-     * The interview ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=interview_id" })
     interviewId?: string;
 
-    /**
-     * The job ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })
     jobId?: string;
 

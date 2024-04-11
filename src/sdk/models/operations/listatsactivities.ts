@@ -7,15 +7,9 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListAtsActivitiesRequest extends SpeakeasyBase {
-    /**
-     * The application ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=application_id" })
     applicationId?: string;
 
-    /**
-     * The candidate ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=candidate_id" })
     candidateId?: string;
 
@@ -25,9 +19,6 @@ export class ListAtsActivitiesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The document ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=document_id" })
     documentId?: string;
 
@@ -37,15 +28,9 @@ export class ListAtsActivitiesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
-    /**
-     * The interview ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=interview_id" })
     interviewId?: string;
 
-    /**
-     * The job ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })
     jobId?: string;
 
@@ -73,9 +58,6 @@ export class ListAtsActivitiesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 
-    /**
-     * The user ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
     userId?: string;
 }

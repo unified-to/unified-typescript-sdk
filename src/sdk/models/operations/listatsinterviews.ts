@@ -7,9 +7,6 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListAtsInterviewsRequest extends SpeakeasyBase {
-    /**
-     * The application ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=application_id" })
     applicationId?: string;
 

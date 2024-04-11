@@ -7,9 +7,6 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListCrmLeadsRequest extends SpeakeasyBase {
-    /**
-     * The company ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=company_id" })
     companyId?: string;
 
@@ -19,9 +16,6 @@ export class ListCrmLeadsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The contact ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
     contactId?: string;
 
@@ -55,9 +49,6 @@ export class ListCrmLeadsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 
-    /**
-     * The user/owner ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
     userId?: string;
 }

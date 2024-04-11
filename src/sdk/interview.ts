@@ -17,7 +17,7 @@ export class Interview {
     }
 
     /**
-     * Create a interview
+     * Create an interview
      */
     async createAtsInterview(
         req: operations.CreateAtsInterviewRequest,
@@ -117,7 +117,7 @@ export class Interview {
     }
 
     /**
-     * Retrieve a interview
+     * Retrieve an interview
      */
     async getAtsInterview(
         req: operations.GetAtsInterviewRequest,
@@ -290,7 +290,7 @@ export class Interview {
     }
 
     /**
-     * Update a interview
+     * Update an interview
      */
     async patchAtsInterview(
         req: operations.PatchAtsInterviewRequest,
@@ -389,7 +389,7 @@ export class Interview {
     }
 
     /**
-     * Remove a interview
+     * Remove an interview
      */
     async removeAtsInterview(
         req: operations.RemoveAtsInterviewRequest,
@@ -473,7 +473,7 @@ export class Interview {
     }
 
     /**
-     * Update a interview
+     * Update an interview
      */
     async updateAtsInterview(
         req: operations.UpdateAtsInterviewRequest,

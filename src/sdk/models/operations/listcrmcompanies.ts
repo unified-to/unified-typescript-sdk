@@ -13,15 +13,9 @@ export class ListCrmCompaniesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The contact ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
     contactId?: string;
 
-    /**
-     * The deal ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=deal_id" })
     dealId?: string;
 
@@ -55,9 +49,6 @@ export class ListCrmCompaniesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 
-    /**
-     * The user/owner ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
     userId?: string;
 }

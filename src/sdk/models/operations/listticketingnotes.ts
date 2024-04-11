@@ -37,9 +37,6 @@ export class ListTicketingNotesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
     sort?: string;
 
-    /**
-     * Usually required
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=ticket_id" })
     ticketId?: string;
 

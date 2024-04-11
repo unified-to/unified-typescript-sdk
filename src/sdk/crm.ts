@@ -301,7 +301,7 @@ export class Crm {
     }
 
     /**
-     * Create a event
+     * Create an event
      */
     async createCrmEvent(
         req: operations.CreateCrmEventRequest,
@@ -830,7 +830,7 @@ export class Crm {
     }
 
     /**
-     * Retrieve a event
+     * Retrieve an event
      */
     async getCrmEvent(
         req: operations.GetCrmEventRequest,
@@ -1883,7 +1883,7 @@ export class Crm {
     }
 
     /**
-     * Update a event
+     * Update an event
      */
     async patchCrmEvent(
         req: operations.PatchCrmEventRequest,
@@ -2423,7 +2423,7 @@ export class Crm {
     }
 
     /**
-     * Remove a event
+     * Remove an event
      */
     async removeCrmEvent(
         req: operations.RemoveCrmEventRequest,
@@ -2960,7 +2960,7 @@ export class Crm {
     }
 
     /**
-     * Update a event
+     * Update an event
      */
     async updateCrmEvent(
         req: operations.UpdateCrmEventRequest,

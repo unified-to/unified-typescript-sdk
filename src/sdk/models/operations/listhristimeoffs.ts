@@ -43,9 +43,6 @@ export class ListHrisTimeoffsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 
-    /**
-     * Employee ID
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
     userId?: string;
 }

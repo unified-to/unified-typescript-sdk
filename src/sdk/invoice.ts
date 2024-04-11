@@ -17,7 +17,7 @@ export class Invoice {
     }
 
     /**
-     * Create a invoice
+     * Create an invoice
      */
     async createAccountingInvoice(
         req: operations.CreateAccountingInvoiceRequest,
@@ -121,7 +121,7 @@ export class Invoice {
     }
 
     /**
-     * Retrieve a invoice
+     * Retrieve an invoice
      */
     async getAccountingInvoice(
         req: operations.GetAccountingInvoiceRequest,
@@ -296,7 +296,7 @@ export class Invoice {
     }
 
     /**
-     * Update a invoice
+     * Update an invoice
      */
     async patchAccountingInvoice(
         req: operations.PatchAccountingInvoiceRequest,
@@ -400,7 +400,7 @@ export class Invoice {
     }
 
     /**
-     * Remove a invoice
+     * Remove an invoice
      */
     async removeAccountingInvoice(
         req: operations.RemoveAccountingInvoiceRequest,
@@ -484,7 +484,7 @@ export class Invoice {
     }
 
     /**
-     * Update a invoice
+     * Update an invoice
      */
     async updateAccountingInvoice(
         req: operations.UpdateAccountingInvoiceRequest,

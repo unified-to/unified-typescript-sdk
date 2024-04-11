@@ -28,9 +28,6 @@ export class ListPaymentRefundsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
     order?: string;
 
-    /**
-     * The payment ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=payment_id" })
     paymentId?: string;
 

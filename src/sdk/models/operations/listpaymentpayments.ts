@@ -13,9 +13,6 @@ export class ListPaymentPaymentsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The customer/supplier ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
     contactId?: string;
 
@@ -25,9 +22,6 @@ export class ListPaymentPaymentsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
-    /**
-     * The invoice ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=invoice_id" })
     invoiceId?: string;
 

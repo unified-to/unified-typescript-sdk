@@ -13,9 +13,6 @@ export class ListTicketingTicketsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The customer ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=customer_id" })
     customerId?: string;
 
@@ -49,9 +46,6 @@ export class ListTicketingTicketsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
 
-    /**
-     * The user/agent ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
     userId?: string;
 }

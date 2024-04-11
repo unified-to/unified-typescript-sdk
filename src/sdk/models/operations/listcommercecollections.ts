@@ -37,6 +37,9 @@ export class ListCommerceCollectionsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
     sort?: string;
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
+    type?: string;
+
     /**
      * Return only results whose updated date is equal or greater to this value
      */

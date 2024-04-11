@@ -13,9 +13,6 @@ export class ListPaymentLinksRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
-    /**
-     * The customer/supplier ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=contact_id" })
     contactId?: string;
 
@@ -34,9 +31,6 @@ export class ListPaymentLinksRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
     order?: string;
 
-    /**
-     * The payment ID to filter results
-     */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=payment_id" })
     paymentId?: string;
 
