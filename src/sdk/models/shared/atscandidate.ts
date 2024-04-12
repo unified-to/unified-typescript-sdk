@@ -47,8 +47,8 @@ export class AtsCandidate extends SpeakeasyBase {
     emails?: AtsEmail[];
 
     @SpeakeasyMetadata()
-    @Expose({ name: "external_id" })
-    externalId?: string;
+    @Expose({ name: "external_identifier" })
+    externalIdentifier?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
@@ -98,4 +98,8 @@ export class AtsCandidate extends SpeakeasyBase {
     @Expose({ name: "updated_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     updatedAt?: Date;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "user_id" })
+    userId?: string;
 }
