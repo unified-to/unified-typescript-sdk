@@ -104,6 +104,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listTicketId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_type" })
+    listType?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_updated_gte" })
     listUpdatedGte?: boolean;
 

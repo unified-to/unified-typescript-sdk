@@ -5,9 +5,10 @@
 
 | Name         | Value        |
 | ------------ | ------------ |
-| `OnHold`     | ON_HOLD      |
+| `Completed`  | COMPLETED    |
 | `New`        | NEW          |
+| `Roadmap`    | ROADMAP      |
 | `InProgress` | IN_PROGRESS  |
+| `OnHold`     | ON_HOLD      |
 | `Validating` | VALIDATING   |
-| `Complete`   | COMPLETE     |
 | `Rejected`   | REJECTED     |
