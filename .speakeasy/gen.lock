@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b49207a22215a71078d123979c29d05c
+  docChecksum: befc5e4546349064e32bd6f1b8d5d55b
   docVersion: "1.0"
   speakeasyVersion: 1.252.0
   generationVersion: 2.306.0
-  releaseVersion: 1.0.14
-  configChecksum: f28c64fb1dd5fe92d799aec4a9179a78
+  releaseVersion: 1.0.15
+  configChecksum: 754ad5f39d3b527786165e9a88c94d5b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -325,6 +325,7 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedintegrationworkspaces.ts
   - src/sdk/models/operations/listunifiedintegrations.ts
   - src/sdk/models/operations/listunifiedissues.ts
+  - src/sdk/models/operations/listunifiedsupports.ts
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchunifiedconnection.ts
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
@@ -428,6 +429,7 @@ generatedFiles:
   - src/sdk/models/shared/propertyuccalltelephone.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/propertyconnectionpermissions.ts
+  - src/sdk/models/shared/undefined.ts
   - src/sdk/models/shared/propertyconnectioncategories.ts
   - src/sdk/models/shared/propertyconnectionauth.ts
   - src/sdk/models/shared/webhook.ts
@@ -907,6 +909,7 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedintegrationsresponse.md
   - docs/sdk/models/operations/listunifiedissuesrequest.md
   - docs/sdk/models/operations/listunifiedissuesresponse.md
+  - docs/sdk/models/operations/listunifiedsupportsresponse.md
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/listunifiedwebhooksresponse.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
@@ -1072,6 +1075,7 @@ generatedFiles:
   - docs/sdk/models/shared/propertyuccalltelephone.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/propertyconnectionpermissions.md
+  - docs/sdk/models/shared/undefined.md
   - docs/sdk/models/shared/propertyconnectioncategories.md
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/event.md

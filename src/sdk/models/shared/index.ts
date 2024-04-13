@@ -109,4 +109,5 @@ export * from "./uccall";
 export * from "./uccontact";
 export * from "./ucemail";
 export * from "./uctelephone";
+export * from "./undefined";
 export * from "./webhook";

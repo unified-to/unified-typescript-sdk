@@ -131,6 +131,7 @@ export * from "./listunifiedconnections";
 export * from "./listunifiedintegrations";
 export * from "./listunifiedintegrationworkspaces";
 export * from "./listunifiedissues";
+export * from "./listunifiedsupports";
 export * from "./listunifiedwebhooks";
 export * from "./patchaccountingaccount";
 export * from "./patchaccountingcontact";
