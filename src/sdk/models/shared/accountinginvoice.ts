@@ -15,6 +15,10 @@ export enum AccountingInvoiceStatus {
     Draft = "DRAFT",
     Voided = "VOIDED",
     Authorized = "AUTHORIZED",
+    Paid = "PAID",
+    PartiallyPaid = "PARTIALLY_PAID",
+    PartiallyRefunded = "PARTIALLY_REFUNDED",
+    Refunded = "REFUNDED",
 }
 
 export class AccountingInvoice extends SpeakeasyBase {
