@@ -132,8 +132,8 @@ export class IntegrationSupport extends SpeakeasyBase {
     searchEmail?: boolean;
 
     @SpeakeasyMetadata()
-    @Expose({ name: "search_linkedin_url" })
-    searchLinkedinUrl?: boolean;
+    @Expose({ name: "search_linkedinurl" })
+    searchLinkedinurl?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_name" })
