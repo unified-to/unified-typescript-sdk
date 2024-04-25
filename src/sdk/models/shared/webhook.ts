@@ -94,6 +94,10 @@ export class Webhook extends SpeakeasyBase {
     fields?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "filters" })
+    filters?: Record<string, string>;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "hook_url" })
     hookUrl: string;
 
