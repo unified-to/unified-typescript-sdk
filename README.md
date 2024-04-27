@@ -32,13 +32,13 @@ async function run() {
         },
     });
 
-    const res = await sdk.accounting.listAtsJobs({
+    const res = await sdk.accounting.listAccountingAccounts({
         connectionId: "<value>",
     });
 
     if (res.statusCode == 200) {
         // handle response
-        console.log(res.atsJobs);
+        console.log(res.accountingAccounts);
     }
 }
 
