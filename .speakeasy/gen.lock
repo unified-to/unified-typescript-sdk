@@ -3,17 +3,17 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: fa589021db4663f2ad26cc32352a343e
   docVersion: "1.0"
-  speakeasyVersion: 1.276.0
-  generationVersion: 2.314.0
-  releaseVersion: 1.0.19
-  configChecksum: 24c3b46b7c0d8fa60361254a4571d999
+  speakeasyVersion: 1.277.8
+  generationVersion: 2.319.10
+  releaseVersion: 1.0.20
+  configChecksum: 75a8d50bd803816e8e165f374fd124a8
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 features:
   typescript:
-    core: 3.4.8
+    core: 3.4.9
     globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
 generatedFiles:
