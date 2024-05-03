@@ -18,3 +18,4 @@
 | `Storage`     | storage       |
 | `Commerce`    | commerce      |
 | `Payment`     | payment       |
+| `Genai`       | genai         |

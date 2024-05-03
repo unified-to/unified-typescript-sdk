@@ -6,38 +6,18 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export enum Categories {
-    Passthrough = "passthrough",
-    Hris = "hris",
-    Ats = "ats",
-    Auth = "auth",
-    Crm = "crm",
-    Enrich = "enrich",
-    Martech = "martech",
-    Ticketing = "ticketing",
-    Uc = "uc",
-    Accounting = "accounting",
-    Storage = "storage",
-    Commerce = "commerce",
-    Payment = "payment",
-    Genai = "genai",
-}
-
-export class ListUnifiedConnectionsRequest extends SpeakeasyBase {
+export class ListGenaiModelsRequest extends SpeakeasyBase {
     /**
-     * Filter the results on these categories
+     * ID of the connection
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=categories" })
-    categories?: Categories[];
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=env" })
-    env?: string;
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
+    connectionId: string;
 
     /**
-     * Filter the results to only those integrations for your user referenced by this value
+     * Comma-delimited fields to return
      */
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=external_xref" })
-    externalXref?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
+    fields?: string[];
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
@@ -47,6 +27,12 @@ export class ListUnifiedConnectionsRequest extends SpeakeasyBase {
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
     order?: string;
+
+    /**
+     * Query string to search. eg. email address or name
+     */
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=query" })
+    query?: string;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
     sort?: string;
@@ -58,18 +44,18 @@ export class ListUnifiedConnectionsRequest extends SpeakeasyBase {
     updatedGte?: Date;
 }
 
-export class ListUnifiedConnectionsResponse extends SpeakeasyBase {
-    /**
-     * Successful
-     */
-    @SpeakeasyMetadata({ elemType: shared.Connection })
-    connections?: shared.Connection[];
-
+export class ListGenaiModelsResponse extends SpeakeasyBase {
     /**
      * HTTP response content type for this operation
      */
     @SpeakeasyMetadata()
     contentType: string;
+
+    /**
+     * Successful
+     */
+    @SpeakeasyMetadata({ elemType: shared.GenaiModel })
+    genaiModels?: shared.GenaiModel[];
 
     /**
      * HTTP response status code for this operation

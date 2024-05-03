@@ -79,4 +79,7 @@ export enum PropertyConnectionPermissions {
     StorageFileRead = "storage_file_read",
     StorageFileWrite = "storage_file_write",
     Webhook = "webhook",
+    GenaiModelRead = "genai_model_read",
+    GenaiPromptRead = "genai_prompt_read",
+    GenaiPromptWrite = "genai_prompt_write",
 }

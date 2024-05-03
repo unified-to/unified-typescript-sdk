@@ -16,4 +16,5 @@ export enum PropertyIntegrationCategories {
     Storage = "storage",
     Commerce = "commerce",
     Payment = "payment",
+    Genai = "genai",
 }

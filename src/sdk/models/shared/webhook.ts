@@ -56,6 +56,8 @@ export enum ObjectType {
     EnrichPerson = "enrich_person",
     EnrichCompany = "enrich_company",
     StorageFile = "storage_file",
+    GenaiModel = "genai_model",
+    GenaiPrompt = "genai_prompt",
 }
 
 export enum WebhookType {
