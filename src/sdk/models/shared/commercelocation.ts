@@ -18,6 +18,10 @@ export class CommerceLocation extends SpeakeasyBase {
     createdAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
 

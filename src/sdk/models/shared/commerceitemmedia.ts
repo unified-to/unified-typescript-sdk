@@ -20,6 +20,10 @@ export class CommerceItemMedia extends SpeakeasyBase {
     height?: number;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "position" })
     position?: number;
 

@@ -36,7 +36,7 @@ export class CommerceItem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "public_description" })
