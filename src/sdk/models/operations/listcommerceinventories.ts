@@ -19,8 +19,8 @@ export class ListCommerceInventoriesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=item_id" })
-    itemId?: string;
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=item_variant_id" })
+    itemVariantId?: string;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
