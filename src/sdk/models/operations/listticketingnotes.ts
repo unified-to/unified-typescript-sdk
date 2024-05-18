@@ -13,6 +13,9 @@ export class ListTicketingNotesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=customer_id" })
+    customerId?: string;
+
     /**
      * Comma-delimited fields to return
      */

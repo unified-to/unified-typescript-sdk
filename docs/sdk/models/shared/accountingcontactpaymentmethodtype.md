@@ -12,3 +12,4 @@
 | `Ideal`   | IDEAL     |
 | `Other`   | OTHER     |
 | `Paypal`  | PAYPAL    |
+| `Unknown` |           |

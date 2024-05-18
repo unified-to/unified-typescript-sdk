@@ -35,7 +35,7 @@ export class AccountingOrganization extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

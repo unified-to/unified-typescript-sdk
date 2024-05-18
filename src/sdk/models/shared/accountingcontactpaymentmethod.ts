@@ -13,6 +13,7 @@ export enum AccountingContactPaymentMethodType {
     Ideal = "IDEAL",
     Other = "OTHER",
     Paypal = "PAYPAL",
+    Unknown = "",
 }
 
 export class AccountingContactPaymentMethod extends SpeakeasyBase {
@@ -22,5 +23,5 @@ export class AccountingContactPaymentMethod extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: AccountingContactPaymentMethodType;
+    type?: AccountingContactPaymentMethodType;
 }
