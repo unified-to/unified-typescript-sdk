@@ -16,7 +16,7 @@ export enum AccountingTelephoneType {
 export class AccountingTelephone extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "telephone" })
-    telephone: string;
+    telephone?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

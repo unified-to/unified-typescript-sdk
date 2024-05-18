@@ -21,7 +21,7 @@ export class AccountingTransaction extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
-    id: string;
+    id?: string;
 
     /**
      * new field name

@@ -25,11 +25,11 @@ export class AccountingTaxrate extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "rate" })
-    rate: number;
+    rate?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

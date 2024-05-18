@@ -8,7 +8,7 @@ import { Expose } from "class-transformer";
 export class AccountingTransactionLineitem extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "account_id" })
-    accountId: string;
+    accountId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "contact_id" })
@@ -36,5 +36,5 @@ export class AccountingTransactionLineitem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "total_amount" })
-    totalAmount: number;
+    totalAmount?: number;
 }

@@ -75,7 +75,6 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "<value>",
             raw: {
                 key: "<value>",
             },
@@ -110,7 +109,6 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "<value>",
             raw: {
                 key: "<value>",
             },
@@ -176,7 +174,6 @@ async function run() {
 
     const res = await sdk.accounting.createAccountingAccount({
         accountingAccount: {
-            name: "<value>",
             raw: {
                 key: "<value>",
             },
@@ -223,7 +220,6 @@ async function run() {
     try {
         res = await sdk.accounting.createAccountingAccount({
             accountingAccount: {
-                name: "<value>",
                 raw: {
                     key: "<value>",
                 },

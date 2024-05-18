@@ -55,7 +55,11 @@ export class AccountingAccount extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "parent_account_id" })
+    parentAccountId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

@@ -14,7 +14,7 @@ export enum AccountingEmailType {
 export class AccountingEmail extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "email" })
-    email: string;
+    email?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })

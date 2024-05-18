@@ -62,7 +62,7 @@ export class AccountingLineitem extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "total_amount" })
-    totalAmount: number;
+    totalAmount?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "unit_amount" })
