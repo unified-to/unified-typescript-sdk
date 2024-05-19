@@ -1,5 +1,7 @@
 # AccountingAccount
 
+Chart of accounts
+
 
 ## Fields
 
