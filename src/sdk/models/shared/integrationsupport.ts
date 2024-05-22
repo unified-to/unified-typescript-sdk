@@ -68,6 +68,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listLimit?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_link_id" })
+    listLinkId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_list_id" })
     listListId?: boolean;
 

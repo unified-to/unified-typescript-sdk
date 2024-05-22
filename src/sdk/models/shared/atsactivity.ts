@@ -65,6 +65,9 @@ export class AtsActivity extends SpeakeasyBase {
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     updatedAt?: Date;
 
+    /**
+     * id values of the recruiters associated with the activity.
+     */
     @SpeakeasyMetadata()
     @Expose({ name: "user_ids" })
     userIds?: string[];
