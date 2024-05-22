@@ -58,6 +58,10 @@ export enum ObjectType {
     StorageFile = "storage_file",
     GenaiModel = "genai_model",
     GenaiPrompt = "genai_prompt",
+    MessagingMessage = "messaging_message",
+    MessagingChannel = "messaging_channel",
+    KmsSpace = "kms_space",
+    KmsPage = "kms_page",
 }
 
 export enum WebhookType {

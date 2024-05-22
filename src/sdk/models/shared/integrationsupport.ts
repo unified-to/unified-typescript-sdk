@@ -24,6 +24,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     listCandidateId?: boolean;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "list_channel_id" })
+    listChannelId?: boolean;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "list_collection_id" })
     listCollectionId?: boolean;
 
@@ -98,6 +102,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_sort_by_updated_at" })
     listSortByUpdatedAt?: boolean;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_space_id" })
+    listSpaceId?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_ticket_id" })

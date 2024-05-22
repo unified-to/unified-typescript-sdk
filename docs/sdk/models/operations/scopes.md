@@ -84,3 +84,12 @@
 | `GenaiModelRead`             | genai_model_read             |
 | `GenaiPromptRead`            | genai_prompt_read            |
 | `GenaiPromptWrite`           | genai_prompt_write           |
+| `MessagingMessageRead`       | messaging_message_read       |
+| `MessagingMessageWrite`      | messaging_message_write      |
+| `MessagingChannelRead`       | messaging_channel_read       |
+| `KmsSpaceRead`               | kms_space_read               |
+| `KmsSpaceWrite`              | kms_space_write              |
+| `KmsPageRead`                | kms_page_read                |
+| `KmsPageWrite`               | kms_page_write               |
+| `KmsCommentRead`             | kms_comment_read             |
+| `KmsCommentWrite`            | kms_comment_write            |

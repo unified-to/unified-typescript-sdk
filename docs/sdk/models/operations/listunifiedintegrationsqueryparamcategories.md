@@ -19,3 +19,5 @@
 | `Commerce`    | commerce      |
 | `Payment`     | payment       |
 | `Genai`       | genai         |
+| `Messaging`   | messaging     |
+| `Kms`         | kms           |

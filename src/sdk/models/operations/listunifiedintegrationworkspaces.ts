@@ -21,6 +21,8 @@ export enum QueryParamCategories {
     Commerce = "commerce",
     Payment = "payment",
     Genai = "genai",
+    Messaging = "messaging",
+    Kms = "kms",
 }
 
 export class ListUnifiedIntegrationWorkspacesRequest extends SpeakeasyBase {
