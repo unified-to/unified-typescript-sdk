@@ -31,6 +31,10 @@ export class AccountingContact extends SpeakeasyBase {
     billingAddress?: PropertyAccountingContactBillingAddress;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "company_name" })
+    companyName?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;
@@ -47,6 +51,10 @@ export class AccountingContact extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "id" })
     id?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "identification" })
+    identification?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "is_active" })

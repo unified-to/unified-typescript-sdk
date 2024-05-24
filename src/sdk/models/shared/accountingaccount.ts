@@ -64,6 +64,9 @@ export class AccountingAccount extends SpeakeasyBase {
     @Expose({ name: "parent_account_id" })
     parentAccountId?: string;
 
+    /**
+     * The original data from the integration's API
+     */
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;

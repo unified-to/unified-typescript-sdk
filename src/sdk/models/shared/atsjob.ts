@@ -86,6 +86,9 @@ export class AtsJob extends SpeakeasyBase {
     @Expose({ name: "number_of_openings" })
     numberOfOpenings?: number;
 
+    /**
+     * URLs for pages containing public listings for the job
+     */
     @SpeakeasyMetadata()
     @Expose({ name: "public_job_urls" })
     publicJobUrls?: string[];

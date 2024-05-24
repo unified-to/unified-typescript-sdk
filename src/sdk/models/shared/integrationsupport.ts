@@ -135,6 +135,13 @@ export class IntegrationSupport extends SpeakeasyBase {
     @Expose({ name: "outbound_fields" })
     outboundFields?: Record<string, any>;
 
+    /**
+     * objects that we map from in the integration
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "raw_objects" })
+    rawObjects?: string[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "search_domain" })
     searchDomain?: boolean;
