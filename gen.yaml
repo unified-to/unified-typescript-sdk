@@ -13,7 +13,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 1.0.31
+  version: 1.0.32
   author: Unified
   clientServerStatusCodesAsErrors: true
   flattenGlobalSecurity: false
