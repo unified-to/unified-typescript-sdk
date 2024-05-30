@@ -17,6 +17,10 @@ export enum AccountingContactPaymentMethodType {
 
 export class AccountingContactPaymentMethod extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "id" })
+    id?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;
 
