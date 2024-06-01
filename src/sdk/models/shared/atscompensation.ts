@@ -42,5 +42,5 @@ export class AtsCompensation extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: AtsCompensationType;
+    type?: AtsCompensationType;
 }
