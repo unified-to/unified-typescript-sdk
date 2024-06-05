@@ -6,126 +6,340 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PropertyIntegrationSupportWebhookEvents } from "./propertyintegrationsupportwebhookevents";
 import { Expose, Type } from "class-transformer";
 
+export enum FromWebhook {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListAccountId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListApplicationId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListCandidateId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListChannelId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListCollectionId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListCompanyId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListContactId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListCustomerId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListDealId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListInterviewId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListInvoiceId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListItemId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListJobId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListLimit {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListLinkId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListListId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListLocationId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListOffset {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListOrder {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListParentId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListQuery {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListSortByCreatedAt {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListSortByName {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListSortByUpdatedAt {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListSpaceId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListTicketId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListType {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListUpdatedGte {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum ListUserId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum SearchDomain {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum SearchEmail {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum SearchLinkedinurl {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum SearchName {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
+export enum SearchTwitter {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
 export class IntegrationSupport extends SpeakeasyBase {
+    @SpeakeasyMetadata()
+    @Expose({ name: "from_webhook" })
+    fromWebhook?: FromWebhook;
+
     @SpeakeasyMetadata()
     @Expose({ name: "inbound_fields" })
     inboundFields?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_account_id" })
-    listAccountId?: boolean;
+    listAccountId?: ListAccountId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_application_id" })
-    listApplicationId?: boolean;
+    listApplicationId?: ListApplicationId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_candidate_id" })
-    listCandidateId?: boolean;
+    listCandidateId?: ListCandidateId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_channel_id" })
-    listChannelId?: boolean;
+    listChannelId?: ListChannelId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_collection_id" })
-    listCollectionId?: boolean;
+    listCollectionId?: ListCollectionId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_company_id" })
-    listCompanyId?: boolean;
+    listCompanyId?: ListCompanyId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_contact_id" })
-    listContactId?: boolean;
+    listContactId?: ListContactId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_customer_id" })
-    listCustomerId?: boolean;
+    listCustomerId?: ListCustomerId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_deal_id" })
-    listDealId?: boolean;
+    listDealId?: ListDealId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_interview_id" })
-    listInterviewId?: boolean;
+    listInterviewId?: ListInterviewId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_invoice_id" })
-    listInvoiceId?: boolean;
+    listInvoiceId?: ListInvoiceId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_item_id" })
-    listItemId?: boolean;
+    listItemId?: ListItemId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_job_id" })
-    listJobId?: boolean;
+    listJobId?: ListJobId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_limit" })
-    listLimit?: boolean;
+    listLimit?: ListLimit;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_link_id" })
-    listLinkId?: boolean;
+    listLinkId?: ListLinkId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_list_id" })
-    listListId?: boolean;
+    listListId?: ListListId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_location_id" })
-    listLocationId?: boolean;
+    listLocationId?: ListLocationId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_offset" })
-    listOffset?: boolean;
+    listOffset?: ListOffset;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_order" })
-    listOrder?: boolean;
+    listOrder?: ListOrder;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_parent_id" })
-    listParentId?: boolean;
+    listParentId?: ListParentId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_query" })
-    listQuery?: boolean;
+    listQuery?: ListQuery;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_sort_by_created_at" })
-    listSortByCreatedAt?: boolean;
+    listSortByCreatedAt?: ListSortByCreatedAt;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_sort_by_name" })
-    listSortByName?: boolean;
+    listSortByName?: ListSortByName;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_sort_by_updated_at" })
-    listSortByUpdatedAt?: boolean;
+    listSortByUpdatedAt?: ListSortByUpdatedAt;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_space_id" })
-    listSpaceId?: boolean;
+    listSpaceId?: ListSpaceId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_ticket_id" })
-    listTicketId?: boolean;
+    listTicketId?: ListTicketId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_type" })
-    listType?: boolean;
+    listType?: ListType;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_updated_gte" })
-    listUpdatedGte?: boolean;
+    listUpdatedGte?: ListUpdatedGte;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_user_id" })
-    listUserId?: boolean;
+    listUserId?: ListUserId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "methods" })
@@ -144,23 +358,23 @@ export class IntegrationSupport extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_domain" })
-    searchDomain?: boolean;
+    searchDomain?: SearchDomain;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_email" })
-    searchEmail?: boolean;
+    searchEmail?: SearchEmail;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_linkedinurl" })
-    searchLinkedinurl?: boolean;
+    searchLinkedinurl?: SearchLinkedinurl;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_name" })
-    searchName?: boolean;
+    searchName?: SearchName;
 
     @SpeakeasyMetadata()
     @Expose({ name: "search_twitter" })
-    searchTwitter?: boolean;
+    searchTwitter?: SearchTwitter;
 
     @SpeakeasyMetadata()
     @Expose({ name: "webhook_events" })

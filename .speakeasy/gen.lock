@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 74c64e97761c01481c293203e99f2a2f
+  docChecksum: 9a5990618c970a819b6235d1b48f2259
   docVersion: "1.0"
-  speakeasyVersion: 1.299.4
-  generationVersion: 2.338.7
-  releaseVersion: 1.0.33
-  configChecksum: 32ea542942bf28b8a74a90eaf1948ba7
+  speakeasyVersion: 1.299.7
+  generationVersion: 2.338.12
+  releaseVersion: 1.0.34
+  configChecksum: 0929bea370bdd04eaef7925ee18f91c7
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -1180,6 +1180,41 @@ generatedFiles:
   - docs/sdk/models/shared/apicalltype.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/integration.md
+  - docs/sdk/models/shared/fromwebhook.md
+  - docs/sdk/models/shared/listaccountid.md
+  - docs/sdk/models/shared/listapplicationid.md
+  - docs/sdk/models/shared/listcandidateid.md
+  - docs/sdk/models/shared/listchannelid.md
+  - docs/sdk/models/shared/listcollectionid.md
+  - docs/sdk/models/shared/listcompanyid.md
+  - docs/sdk/models/shared/listcontactid.md
+  - docs/sdk/models/shared/listcustomerid.md
+  - docs/sdk/models/shared/listdealid.md
+  - docs/sdk/models/shared/listinterviewid.md
+  - docs/sdk/models/shared/listinvoiceid.md
+  - docs/sdk/models/shared/listitemid.md
+  - docs/sdk/models/shared/listjobid.md
+  - docs/sdk/models/shared/listlimit.md
+  - docs/sdk/models/shared/listlinkid.md
+  - docs/sdk/models/shared/listlistid.md
+  - docs/sdk/models/shared/listlocationid.md
+  - docs/sdk/models/shared/listoffset.md
+  - docs/sdk/models/shared/listorder.md
+  - docs/sdk/models/shared/listparentid.md
+  - docs/sdk/models/shared/listquery.md
+  - docs/sdk/models/shared/listsortbycreatedat.md
+  - docs/sdk/models/shared/listsortbyname.md
+  - docs/sdk/models/shared/listsortbyupdatedat.md
+  - docs/sdk/models/shared/listspaceid.md
+  - docs/sdk/models/shared/listticketid.md
+  - docs/sdk/models/shared/listtype.md
+  - docs/sdk/models/shared/listupdatedgte.md
+  - docs/sdk/models/shared/listuserid.md
+  - docs/sdk/models/shared/searchdomain.md
+  - docs/sdk/models/shared/searchemail.md
+  - docs/sdk/models/shared/searchlinkedinurl.md
+  - docs/sdk/models/shared/searchname.md
+  - docs/sdk/models/shared/searchtwitter.md
   - docs/sdk/models/shared/integrationsupport.md
   - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
   - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
