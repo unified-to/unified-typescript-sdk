@@ -23,6 +23,7 @@ export enum ListUnifiedIntegrationsQueryParamCategories {
     Genai = "genai",
     Messaging = "messaging",
     Kms = "kms",
+    Task = "task",
 }
 
 export class ListUnifiedIntegrationsRequest extends SpeakeasyBase {

@@ -23,6 +23,7 @@ export enum Categories {
     Genai = "genai",
     Messaging = "messaging",
     Kms = "kms",
+    Task = "task",
 }
 
 export class ListUnifiedConnectionsRequest extends SpeakeasyBase {

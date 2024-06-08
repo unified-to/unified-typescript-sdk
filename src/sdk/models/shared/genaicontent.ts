@@ -6,8 +6,8 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose } from "class-transformer";
 
 export enum Role {
-    System = "system",
-    User = "user",
+    System = "SYSTEM",
+    User = "USER",
 }
 
 export class GenaiContent extends SpeakeasyBase {

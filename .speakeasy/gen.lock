@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 9a5990618c970a819b6235d1b48f2259
+  docChecksum: 34d8e45448aaadab7271416cea77fcaf
   docVersion: "1.0"
-  speakeasyVersion: 1.299.7
-  generationVersion: 2.338.12
-  releaseVersion: 1.0.34
-  configChecksum: 0929bea370bdd04eaef7925ee18f91c7
+  speakeasyVersion: 1.300.1
+  generationVersion: 2.339.1
+  releaseVersion: 1.0.35
+  configChecksum: ca4cc8ae9de8baf80173d4fba997b076
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -70,6 +70,8 @@ generatedFiles:
   - src/sdk/refund.ts
   - src/sdk/storage.ts
   - src/sdk/file.ts
+  - src/sdk/task.ts
+  - src/sdk/project.ts
   - src/sdk/ticketing.ts
   - src/sdk/customer.ts
   - src/sdk/note.ts
@@ -326,6 +328,18 @@ generatedFiles:
   - src/sdk/models/operations/patchstoragefile.ts
   - src/sdk/models/operations/removestoragefile.ts
   - src/sdk/models/operations/updatestoragefile.ts
+  - src/sdk/models/operations/createtaskproject.ts
+  - src/sdk/models/operations/createtasktask.ts
+  - src/sdk/models/operations/gettaskproject.ts
+  - src/sdk/models/operations/gettasktask.ts
+  - src/sdk/models/operations/listtaskprojects.ts
+  - src/sdk/models/operations/listtasktasks.ts
+  - src/sdk/models/operations/patchtaskproject.ts
+  - src/sdk/models/operations/patchtasktask.ts
+  - src/sdk/models/operations/removetaskproject.ts
+  - src/sdk/models/operations/removetasktask.ts
+  - src/sdk/models/operations/updatetaskproject.ts
+  - src/sdk/models/operations/updatetasktask.ts
   - src/sdk/models/operations/createticketingcustomer.ts
   - src/sdk/models/operations/createticketingnote.ts
   - src/sdk/models/operations/createticketingticket.ts
@@ -428,6 +442,7 @@ generatedFiles:
   - src/sdk/models/shared/crmlead.ts
   - src/sdk/models/shared/propertycrmleadaddress.ts
   - src/sdk/models/shared/crmpipeline.ts
+  - src/sdk/models/shared/crmstage.ts
   - src/sdk/models/shared/enrichperson.ts
   - src/sdk/models/shared/enrichpersonworkhistory.ts
   - src/sdk/models/shared/enrichemail.ts
@@ -460,6 +475,8 @@ generatedFiles:
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
   - src/sdk/models/shared/propertystoragepermissionroles.ts
+  - src/sdk/models/shared/taskproject.ts
+  - src/sdk/models/shared/tasktask.ts
   - src/sdk/models/shared/ticketingcustomer.ts
   - src/sdk/models/shared/ticketingtelephone.ts
   - src/sdk/models/shared/ticketingemail.ts
@@ -930,6 +947,30 @@ generatedFiles:
   - docs/sdk/models/operations/removestoragefileresponse.md
   - docs/sdk/models/operations/updatestoragefilerequest.md
   - docs/sdk/models/operations/updatestoragefileresponse.md
+  - docs/sdk/models/operations/createtaskprojectrequest.md
+  - docs/sdk/models/operations/createtaskprojectresponse.md
+  - docs/sdk/models/operations/createtasktaskrequest.md
+  - docs/sdk/models/operations/createtasktaskresponse.md
+  - docs/sdk/models/operations/gettaskprojectrequest.md
+  - docs/sdk/models/operations/gettaskprojectresponse.md
+  - docs/sdk/models/operations/gettasktaskrequest.md
+  - docs/sdk/models/operations/gettasktaskresponse.md
+  - docs/sdk/models/operations/listtaskprojectsrequest.md
+  - docs/sdk/models/operations/listtaskprojectsresponse.md
+  - docs/sdk/models/operations/listtasktasksrequest.md
+  - docs/sdk/models/operations/listtasktasksresponse.md
+  - docs/sdk/models/operations/patchtaskprojectrequest.md
+  - docs/sdk/models/operations/patchtaskprojectresponse.md
+  - docs/sdk/models/operations/patchtasktaskrequest.md
+  - docs/sdk/models/operations/patchtasktaskresponse.md
+  - docs/sdk/models/operations/removetaskprojectrequest.md
+  - docs/sdk/models/operations/removetaskprojectresponse.md
+  - docs/sdk/models/operations/removetasktaskrequest.md
+  - docs/sdk/models/operations/removetasktaskresponse.md
+  - docs/sdk/models/operations/updatetaskprojectrequest.md
+  - docs/sdk/models/operations/updatetaskprojectresponse.md
+  - docs/sdk/models/operations/updatetasktaskrequest.md
+  - docs/sdk/models/operations/updatetasktaskresponse.md
   - docs/sdk/models/operations/createticketingcustomerrequest.md
   - docs/sdk/models/operations/createticketingcustomerresponse.md
   - docs/sdk/models/operations/createticketingnoterequest.md
@@ -1106,6 +1147,7 @@ generatedFiles:
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/propertycrmleadaddress.md
   - docs/sdk/models/shared/crmpipeline.md
+  - docs/sdk/models/shared/crmstage.md
   - docs/sdk/models/shared/gender.md
   - docs/sdk/models/shared/enrichperson.md
   - docs/sdk/models/shared/enrichpersonworkhistory.md
@@ -1157,6 +1199,9 @@ generatedFiles:
   - docs/sdk/models/shared/storagefile.md
   - docs/sdk/models/shared/storagepermission.md
   - docs/sdk/models/shared/propertystoragepermissionroles.md
+  - docs/sdk/models/shared/taskproject.md
+  - docs/sdk/models/shared/tasktaskstatus.md
+  - docs/sdk/models/shared/tasktask.md
   - docs/sdk/models/shared/ticketingcustomer.md
   - docs/sdk/models/shared/ticketingtelephonetype.md
   - docs/sdk/models/shared/ticketingtelephone.md
@@ -1201,6 +1246,7 @@ generatedFiles:
   - docs/sdk/models/shared/listoffset.md
   - docs/sdk/models/shared/listorder.md
   - docs/sdk/models/shared/listparentid.md
+  - docs/sdk/models/shared/listprojectid.md
   - docs/sdk/models/shared/listquery.md
   - docs/sdk/models/shared/listsortbycreatedat.md
   - docs/sdk/models/shared/listsortbyname.md

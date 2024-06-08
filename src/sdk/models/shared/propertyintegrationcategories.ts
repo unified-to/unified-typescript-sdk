@@ -19,4 +19,5 @@ export enum PropertyIntegrationCategories {
     Genai = "genai",
     Messaging = "messaging",
     Kms = "kms",
+    Task = "task",
 }

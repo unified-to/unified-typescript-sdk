@@ -44,6 +44,10 @@ export class CrmDeal extends SpeakeasyBase {
     pipeline?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "pipeline_id" })
+    pipelineId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "probability" })
     probability?: number;
 
@@ -61,6 +65,10 @@ export class CrmDeal extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "stage" })
     stage?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "stage_id" })
+    stageId?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tags" })

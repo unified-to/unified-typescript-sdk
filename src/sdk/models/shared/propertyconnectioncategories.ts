@@ -19,4 +19,5 @@ export enum PropertyConnectionCategories {
     Genai = "genai",
     Messaging = "messaging",
     Kms = "kms",
+    Task = "task",
 }

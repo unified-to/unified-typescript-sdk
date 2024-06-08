@@ -27,6 +27,10 @@ export class GenaiModel extends SpeakeasyBase {
     name?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "raw" })
+    raw?: Record<string, any>;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "web_url" })
     webUrl?: string;
 }

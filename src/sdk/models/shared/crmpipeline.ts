@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose, Transform } from "class-transformer";
+import { CrmStage } from "./crmstage";
+import { Expose, Transform, Type } from "class-transformer";
 
 export class CrmPipeline extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -34,6 +35,11 @@ export class CrmPipeline extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;
+
+    @SpeakeasyMetadata({ elemType: CrmStage })
+    @Expose({ name: "stages" })
+    @Type(() => CrmStage)
+    stages?: CrmStage[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })

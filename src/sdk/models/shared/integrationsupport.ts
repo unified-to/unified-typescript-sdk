@@ -132,6 +132,12 @@ export enum ListParentId {
     NotSupported = "not-supported",
 }
 
+export enum ListProjectId {
+    SupportedRequired = "supported-required",
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
 export enum ListQuery {
     SupportedRequired = "supported-required",
     Supported = "supported",
@@ -304,6 +310,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_parent_id" })
     listParentId?: ListParentId;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_project_id" })
+    listProjectId?: ListProjectId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_query" })

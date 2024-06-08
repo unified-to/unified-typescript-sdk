@@ -58,11 +58,13 @@ import { Payout } from "./payout";
 import { Payslip } from "./payslip";
 import { Person } from "./person";
 import { Pipeline } from "./pipeline";
+import { Project } from "./project";
 import { Prompt } from "./prompt";
 import { Refund } from "./refund";
 import { Scorecard } from "./scorecard";
 import { Space } from "./space";
 import { Storage } from "./storage";
+import { Task } from "./task";
 import { Taxrate } from "./taxrate";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
@@ -124,9 +126,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.0.34";
-    genVersion = "2.338.12";
-    userAgent = "speakeasy-sdk/typescript 1.0.34 2.338.12 1.0 @unified-api/typescript-sdk";
+    sdkVersion = "1.0.35";
+    genVersion = "2.339.1";
+    userAgent = "speakeasy-sdk/typescript 1.0.35 2.339.1 1.0 @unified-api/typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -190,6 +192,8 @@ export class UnifiedTo {
     public refund: Refund;
     public storage: Storage;
     public file: File;
+    public task: Task;
+    public project: Project;
     public ticketing: Ticketing;
     public customer: Customer;
     public note: Note;
@@ -279,6 +283,8 @@ export class UnifiedTo {
         this.refund = new Refund(this.sdkConfiguration);
         this.storage = new Storage(this.sdkConfiguration);
         this.file = new File(this.sdkConfiguration);
+        this.task = new Task(this.sdkConfiguration);
+        this.project = new Project(this.sdkConfiguration);
         this.ticketing = new Ticketing(this.sdkConfiguration);
         this.customer = new Customer(this.sdkConfiguration);
         this.note = new Note(this.sdkConfiguration);
