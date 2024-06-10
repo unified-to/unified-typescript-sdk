@@ -46,6 +46,10 @@ export class HrisEmployee extends SpeakeasyBase {
     address?: PropertyHrisEmployeeAddress;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "company_id" })
+    companyId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;

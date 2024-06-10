@@ -6,10 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class ListHrisGroupsRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=company_id" })
-    companyId?: string;
-
+export class ListHrisCompaniesRequest extends SpeakeasyBase {
     /**
      * ID of the connection
      */
@@ -47,7 +44,7 @@ export class ListHrisGroupsRequest extends SpeakeasyBase {
     updatedGte?: Date;
 }
 
-export class ListHrisGroupsResponse extends SpeakeasyBase {
+export class ListHrisCompaniesResponse extends SpeakeasyBase {
     /**
      * HTTP response content type for this operation
      */
@@ -57,8 +54,8 @@ export class ListHrisGroupsResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.HrisGroup })
-    hrisGroups?: shared.HrisGroup[];
+    @SpeakeasyMetadata({ elemType: shared.HrisCompany })
+    hrisCompanies?: shared.HrisCompany[];
 
     /**
      * HTTP response status code for this operation

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 34d8e45448aaadab7271416cea77fcaf
+  docChecksum: b5e06f8290f506984cde8a37b4ebd06e
   docVersion: "1.0"
   speakeasyVersion: 1.300.1
   generationVersion: 2.339.1
-  releaseVersion: 1.0.35
-  configChecksum: ca4cc8ae9de8baf80173d4fba997b076
+  releaseVersion: 1.0.36
+  configChecksum: c5332023107eaa2f61554a1abe5cc4c9
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -196,12 +196,18 @@ generatedFiles:
   - src/sdk/models/operations/updateatsjob.ts
   - src/sdk/models/operations/updateatsscorecard.ts
   - src/sdk/models/operations/createcrmcompany.ts
+  - src/sdk/models/operations/createhriscompany.ts
   - src/sdk/models/operations/getcrmcompany.ts
+  - src/sdk/models/operations/gethriscompany.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listenrichcompanies.ts
+  - src/sdk/models/operations/listhriscompanies.ts
   - src/sdk/models/operations/patchcrmcompany.ts
+  - src/sdk/models/operations/patchhriscompany.ts
   - src/sdk/models/operations/removecrmcompany.ts
+  - src/sdk/models/operations/removehriscompany.ts
   - src/sdk/models/operations/updatecrmcompany.ts
+  - src/sdk/models/operations/updatehriscompany.ts
   - src/sdk/models/operations/createcommercecollection.ts
   - src/sdk/models/operations/createcommerceinventory.ts
   - src/sdk/models/operations/createcommerceitem.ts
@@ -420,6 +426,8 @@ generatedFiles:
   - src/sdk/models/shared/atsstatus.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/propertycrmcompanyaddress.ts
+  - src/sdk/models/shared/hriscompany.ts
+  - src/sdk/models/shared/propertyhriscompanyaddress.ts
   - src/sdk/models/shared/enrichcompany.ts
   - src/sdk/models/shared/enrichtelephone.ts
   - src/sdk/models/shared/propertyenrichcompanyaddress.ts
@@ -683,18 +691,30 @@ generatedFiles:
   - docs/sdk/models/operations/updateatsscorecardresponse.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcompanyresponse.md
+  - docs/sdk/models/operations/createhriscompanyrequest.md
+  - docs/sdk/models/operations/createhriscompanyresponse.md
   - docs/sdk/models/operations/getcrmcompanyrequest.md
   - docs/sdk/models/operations/getcrmcompanyresponse.md
+  - docs/sdk/models/operations/gethriscompanyrequest.md
+  - docs/sdk/models/operations/gethriscompanyresponse.md
   - docs/sdk/models/operations/listcrmcompaniesrequest.md
   - docs/sdk/models/operations/listcrmcompaniesresponse.md
   - docs/sdk/models/operations/listenrichcompaniesrequest.md
   - docs/sdk/models/operations/listenrichcompaniesresponse.md
+  - docs/sdk/models/operations/listhriscompaniesrequest.md
+  - docs/sdk/models/operations/listhriscompaniesresponse.md
   - docs/sdk/models/operations/patchcrmcompanyrequest.md
   - docs/sdk/models/operations/patchcrmcompanyresponse.md
+  - docs/sdk/models/operations/patchhriscompanyrequest.md
+  - docs/sdk/models/operations/patchhriscompanyresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
   - docs/sdk/models/operations/removecrmcompanyresponse.md
+  - docs/sdk/models/operations/removehriscompanyrequest.md
+  - docs/sdk/models/operations/removehriscompanyresponse.md
   - docs/sdk/models/operations/updatecrmcompanyrequest.md
   - docs/sdk/models/operations/updatecrmcompanyresponse.md
+  - docs/sdk/models/operations/updatehriscompanyrequest.md
+  - docs/sdk/models/operations/updatehriscompanyresponse.md
   - docs/sdk/models/operations/createcommercecollectionrequest.md
   - docs/sdk/models/operations/createcommercecollectionresponse.md
   - docs/sdk/models/operations/createcommerceinventoryrequest.md
@@ -1118,6 +1138,8 @@ generatedFiles:
   - docs/sdk/models/shared/atsstatus.md
   - docs/sdk/models/shared/crmcompany.md
   - docs/sdk/models/shared/propertycrmcompanyaddress.md
+  - docs/sdk/models/shared/hriscompany.md
+  - docs/sdk/models/shared/propertyhriscompanyaddress.md
   - docs/sdk/models/shared/enrichcompany.md
   - docs/sdk/models/shared/enrichtelephonetype.md
   - docs/sdk/models/shared/enrichtelephone.md

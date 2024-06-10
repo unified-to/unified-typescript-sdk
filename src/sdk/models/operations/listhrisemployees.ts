@@ -7,6 +7,9 @@ import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
 export class ListHrisEmployeesRequest extends SpeakeasyBase {
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=company_id" })
+    companyId?: string;
+
     /**
      * ID of the connection
      */

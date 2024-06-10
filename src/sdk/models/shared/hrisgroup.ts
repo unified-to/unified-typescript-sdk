@@ -17,6 +17,10 @@ export enum HrisGroupType {
 
 export class HrisGroup extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "company_id" })
+    companyId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
     createdAt?: Date;

@@ -78,6 +78,8 @@ export enum Scopes {
     HrisPayslipWrite = "hris_payslip_write",
     HrisTimeoffRead = "hris_timeoff_read",
     HrisTimeoffWrite = "hris_timeoff_write",
+    HrisCompanyRead = "hris_company_read",
+    HrisCompanyWrite = "hris_company_write",
     UcCallRead = "uc_call_read",
     StorageFileRead = "storage_file_read",
     StorageFileWrite = "storage_file_write",
