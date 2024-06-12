@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b5e06f8290f506984cde8a37b4ebd06e
+  docChecksum: f0fea8601a16d51b9c2316f7dec21d35
   docVersion: "1.0"
-  speakeasyVersion: 1.300.1
-  generationVersion: 2.339.1
-  releaseVersion: 1.0.36
-  configChecksum: c5332023107eaa2f61554a1abe5cc4c9
+  speakeasyVersion: 1.305.0
+  generationVersion: 2.340.3
+  releaseVersion: 1.0.37
+  configChecksum: 5bc60aa9b31a775ac35af016496bcb12
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -1160,6 +1160,7 @@ generatedFiles:
   - docs/sdk/models/shared/crmdeal.md
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmevent.md
+  - docs/sdk/models/shared/priority.md
   - docs/sdk/models/shared/propertycrmeventtaskstatus.md
   - docs/sdk/models/shared/propertycrmeventtask.md
   - docs/sdk/models/shared/propertycrmeventnote.md

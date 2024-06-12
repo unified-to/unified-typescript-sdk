@@ -5,6 +5,12 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Expose, Transform } from "class-transformer";
 
+export enum Priority {
+    High = "HIGH",
+    Medium = "MEDIUM",
+    Low = "LOW",
+}
+
 export enum PropertyCrmEventTaskStatus {
     Completed = "COMPLETED",
     NotStarted = "NOT_STARTED",
@@ -28,6 +34,10 @@ export class PropertyCrmEventTask extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
     name?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "priority" })
+    priority?: Priority;
 
     @SpeakeasyMetadata()
     @Expose({ name: "status" })
