@@ -1,4 +1,4 @@
-# AccountingTransactionLineitem
+# AccountingJournalLineitem
 
 
 ## Fields

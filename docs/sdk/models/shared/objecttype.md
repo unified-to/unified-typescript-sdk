@@ -7,6 +7,7 @@
 | ------------------------ | ------------------------ |
 | `AccountingAccount`      | accounting_account       |
 | `AccountingTransaction`  | accounting_transaction   |
+| `AccountingJournal`      | accounting_journal       |
 | `AccountingContact`      | accounting_contact       |
 | `AccountingInvoice`      | accounting_invoice       |
 | `AccountingTaxrate`      | accounting_taxrate       |

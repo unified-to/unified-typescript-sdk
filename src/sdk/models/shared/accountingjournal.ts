@@ -3,10 +3,10 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { AccountingTransactionLineitem } from "./accountingtransactionlineitem";
+import { AccountingJournalLineitem } from "./accountingjournallineitem";
 import { Expose, Type } from "class-transformer";
 
-export class AccountingTransaction extends SpeakeasyBase {
+export class AccountingJournal extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
     createdAt?: string;
@@ -26,10 +26,10 @@ export class AccountingTransaction extends SpeakeasyBase {
     /**
      * new field name
      */
-    @SpeakeasyMetadata({ elemType: AccountingTransactionLineitem })
+    @SpeakeasyMetadata({ elemType: AccountingJournalLineitem })
     @Expose({ name: "lineitems" })
-    @Type(() => AccountingTransactionLineitem)
-    lineitems?: AccountingTransactionLineitem[];
+    @Type(() => AccountingJournalLineitem)
+    lineitems?: AccountingJournalLineitem[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "raw" })

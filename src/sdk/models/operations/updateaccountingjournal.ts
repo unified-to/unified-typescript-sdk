@@ -6,9 +6,9 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class UpdateAccountingTransactionRequest extends SpeakeasyBase {
+export class UpdateAccountingJournalRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    accountingTransaction?: shared.AccountingTransaction;
+    accountingJournal?: shared.AccountingJournal;
 
     /**
      * ID of the connection
@@ -17,18 +17,18 @@ export class UpdateAccountingTransactionRequest extends SpeakeasyBase {
     connectionId: string;
 
     /**
-     * ID of the Transaction
+     * ID of the Journal
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
     id: string;
 }
 
-export class UpdateAccountingTransactionResponse extends SpeakeasyBase {
+export class UpdateAccountingJournalResponse extends SpeakeasyBase {
     /**
      * Successful
      */
     @SpeakeasyMetadata()
-    accountingTransaction?: shared.AccountingTransaction;
+    accountingJournal?: shared.AccountingJournal;
 
     /**
      * HTTP response content type for this operation

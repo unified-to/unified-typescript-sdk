@@ -9,7 +9,7 @@ import * as shared from "../sdk/models/shared";
 import { SDKConfiguration } from "./sdk";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
 
-export class Transaction {
+export class Journal {
     private sdkConfiguration: SDKConfiguration;
 
     constructor(sdkConfig: SDKConfiguration) {
@@ -17,14 +17,14 @@ export class Transaction {
     }
 
     /**
-     * Create a transaction
+     * Create a journal
      */
-    async createAccountingTransaction(
-        req: operations.CreateAccountingTransactionRequest,
+    async createAccountingJournal(
+        req: operations.CreateAccountingJournalRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.CreateAccountingTransactionResponse> {
+    ): Promise<operations.CreateAccountingJournalResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateAccountingTransactionRequest(req);
+            req = new operations.CreateAccountingJournalRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -33,7 +33,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction",
+            "/accounting/{connection_id}/journal",
             req
         );
 
@@ -42,7 +42,7 @@ export class Transaction {
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
                 req,
-                "accountingTransaction",
+                "accountingJournal",
                 "json"
             );
         } catch (e: unknown) {
@@ -84,8 +84,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.CreateAccountingTransactionResponse =
-            new operations.CreateAccountingTransactionResponse({
+        const res: operations.CreateAccountingJournalResponse =
+            new operations.CreateAccountingJournalResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -94,9 +94,9 @@ export class Transaction {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
+                    res.accountingJournal = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingTransaction
+                        shared.AccountingJournal
                     );
                 } else {
                     throw new errors.SDKError(
@@ -121,14 +121,14 @@ export class Transaction {
     }
 
     /**
-     * Retrieve a transaction
+     * Retrieve a journal
      */
-    async getAccountingTransaction(
-        req: operations.GetAccountingTransactionRequest,
+    async getAccountingJournal(
+        req: operations.GetAccountingJournalRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.GetAccountingTransactionResponse> {
+    ): Promise<operations.GetAccountingJournalResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAccountingTransactionRequest(req);
+            req = new operations.GetAccountingJournalRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -137,7 +137,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
+            "/accounting/{connection_id}/journal/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -170,8 +170,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.GetAccountingTransactionResponse =
-            new operations.GetAccountingTransactionResponse({
+        const res: operations.GetAccountingJournalResponse =
+            new operations.GetAccountingJournalResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -180,9 +180,9 @@ export class Transaction {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
+                    res.accountingJournal = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingTransaction
+                        shared.AccountingJournal
                     );
                 } else {
                     throw new errors.SDKError(
@@ -207,14 +207,14 @@ export class Transaction {
     }
 
     /**
-     * List all transactions
+     * List all journals
      */
-    async listAccountingTransactions(
-        req: operations.ListAccountingTransactionsRequest,
+    async listAccountingJournals(
+        req: operations.ListAccountingJournalsRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.ListAccountingTransactionsResponse> {
+    ): Promise<operations.ListAccountingJournalsResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAccountingTransactionsRequest(req);
+            req = new operations.ListAccountingJournalsRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -223,7 +223,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction",
+            "/accounting/{connection_id}/journal",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -256,8 +256,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.ListAccountingTransactionsResponse =
-            new operations.ListAccountingTransactionsResponse({
+        const res: operations.ListAccountingJournalsResponse =
+            new operations.ListAccountingJournalsResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -266,11 +266,11 @@ export class Transaction {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransactions = [];
+                    res.accountingJournals = [];
                     const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.accountingTransactions = utils.objectToClass(
+                    res.accountingJournals = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingTransaction,
+                        shared.AccountingJournal,
                         resFieldDepth
                     );
                 } else {
@@ -296,14 +296,14 @@ export class Transaction {
     }
 
     /**
-     * Update a transaction
+     * Update a journal
      */
-    async patchAccountingTransaction(
-        req: operations.PatchAccountingTransactionRequest,
+    async patchAccountingJournal(
+        req: operations.PatchAccountingJournalRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.PatchAccountingTransactionResponse> {
+    ): Promise<operations.PatchAccountingJournalResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAccountingTransactionRequest(req);
+            req = new operations.PatchAccountingJournalRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -312,7 +312,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
+            "/accounting/{connection_id}/journal/{id}",
             req
         );
 
@@ -321,7 +321,7 @@ export class Transaction {
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
                 req,
-                "accountingTransaction",
+                "accountingJournal",
                 "json"
             );
         } catch (e: unknown) {
@@ -363,8 +363,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.PatchAccountingTransactionResponse =
-            new operations.PatchAccountingTransactionResponse({
+        const res: operations.PatchAccountingJournalResponse =
+            new operations.PatchAccountingJournalResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -373,9 +373,9 @@ export class Transaction {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
+                    res.accountingJournal = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingTransaction
+                        shared.AccountingJournal
                     );
                 } else {
                     throw new errors.SDKError(
@@ -400,14 +400,14 @@ export class Transaction {
     }
 
     /**
-     * Remove a transaction
+     * Remove a journal
      */
-    async removeAccountingTransaction(
-        req: operations.RemoveAccountingTransactionRequest,
+    async removeAccountingJournal(
+        req: operations.RemoveAccountingJournalRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.RemoveAccountingTransactionResponse> {
+    ): Promise<operations.RemoveAccountingJournalResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.RemoveAccountingTransactionRequest(req);
+            req = new operations.RemoveAccountingJournalRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -416,7 +416,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
+            "/accounting/{connection_id}/journal/{id}",
             req
         );
         const client: AxiosInstance = this.sdkConfiguration.defaultClient;
@@ -448,8 +448,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.RemoveAccountingTransactionResponse =
-            new operations.RemoveAccountingTransactionResponse({
+        const res: operations.RemoveAccountingJournalResponse =
+            new operations.RemoveAccountingJournalResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -484,14 +484,14 @@ export class Transaction {
     }
 
     /**
-     * Update a transaction
+     * Update a journal
      */
-    async updateAccountingTransaction(
-        req: operations.UpdateAccountingTransactionRequest,
+    async updateAccountingJournal(
+        req: operations.UpdateAccountingJournalRequest,
         config?: AxiosRequestConfig
-    ): Promise<operations.UpdateAccountingTransactionResponse> {
+    ): Promise<operations.UpdateAccountingJournalResponse> {
         if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateAccountingTransactionRequest(req);
+            req = new operations.UpdateAccountingJournalRequest(req);
         }
 
         const baseURL: string = utils.templateUrl(
@@ -500,7 +500,7 @@ export class Transaction {
         );
         const operationUrl: string = utils.generateURL(
             baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
+            "/accounting/{connection_id}/journal/{id}",
             req
         );
 
@@ -509,7 +509,7 @@ export class Transaction {
         try {
             [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
                 req,
-                "accountingTransaction",
+                "accountingJournal",
                 "json"
             );
         } catch (e: unknown) {
@@ -551,8 +551,8 @@ export class Transaction {
             throw new Error(`status code not found in response: ${httpRes}`);
         }
 
-        const res: operations.UpdateAccountingTransactionResponse =
-            new operations.UpdateAccountingTransactionResponse({
+        const res: operations.UpdateAccountingJournalResponse =
+            new operations.UpdateAccountingJournalResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -561,9 +561,9 @@ export class Transaction {
         switch (true) {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
+                    res.accountingJournal = utils.objectToClass(
                         JSON.parse(decodedRes),
-                        shared.AccountingTransaction
+                        shared.AccountingJournal
                     );
                 } else {
                     throw new errors.SDKError(

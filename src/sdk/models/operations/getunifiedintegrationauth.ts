@@ -11,6 +11,8 @@ export enum Scopes {
     AccountingAccountWrite = "accounting_account_write",
     AccountingTransactionRead = "accounting_transaction_read",
     AccountingTransactionWrite = "accounting_transaction_write",
+    AccountingJournalRead = "accounting_journal_read",
+    AccountingJournalWrite = "accounting_journal_write",
     AccountingInvoiceRead = "accounting_invoice_read",
     AccountingInvoiceWrite = "accounting_invoice_write",
     AccountingContactRead = "accounting_contact_read",

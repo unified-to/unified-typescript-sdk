@@ -1,4 +1,4 @@
-# RemoveAccountingTransactionResponse
+# RemoveAccountingJournalResponse
 
 
 ## Fields

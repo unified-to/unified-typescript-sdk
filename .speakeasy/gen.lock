@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: f0fea8601a16d51b9c2316f7dec21d35
+  docChecksum: 5644d053fad87c74eb97f4e8f727fa1d
   docVersion: "1.0"
-  speakeasyVersion: 1.305.0
+  speakeasyVersion: 1.306.0
   generationVersion: 2.340.3
-  releaseVersion: 1.0.37
-  configChecksum: 5bc60aa9b31a775ac35af016496bcb12
+  releaseVersion: 1.0.38
+  configChecksum: a96b3eb4190ff4275c03b7d1e6a296bd
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -21,9 +21,9 @@ generatedFiles:
   - src/sdk/account.ts
   - src/sdk/contact.ts
   - src/sdk/invoice.ts
+  - src/sdk/journal.ts
   - src/sdk/organization.ts
   - src/sdk/taxrate.ts
-  - src/sdk/transaction.ts
   - src/sdk/ats.ts
   - src/sdk/activity.ts
   - src/sdk/application.ts
@@ -109,35 +109,35 @@ generatedFiles:
   - src/sdk/models/operations/createaccountingaccount.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
+  - src/sdk/models/operations/createaccountingjournal.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
-  - src/sdk/models/operations/createaccountingtransaction.ts
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
+  - src/sdk/models/operations/getaccountingjournal.ts
   - src/sdk/models/operations/getaccountingorganization.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
-  - src/sdk/models/operations/getaccountingtransaction.ts
   - src/sdk/models/operations/listaccountingaccounts.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
+  - src/sdk/models/operations/listaccountingjournals.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
-  - src/sdk/models/operations/listaccountingtransactions.ts
   - src/sdk/models/operations/patchaccountingaccount.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
+  - src/sdk/models/operations/patchaccountingjournal.ts
   - src/sdk/models/operations/patchaccountingtaxrate.ts
-  - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/removeaccountingaccount.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
+  - src/sdk/models/operations/removeaccountingjournal.ts
   - src/sdk/models/operations/removeaccountingtaxrate.ts
-  - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
+  - src/sdk/models/operations/updateaccountingjournal.ts
   - src/sdk/models/operations/updateaccountingtaxrate.ts
-  - src/sdk/models/operations/updateaccountingtransaction.ts
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createuccontact.ts
   - src/sdk/models/operations/getcrmcontact.ts
@@ -394,9 +394,9 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/accountinglineitem.ts
+  - src/sdk/models/shared/accountingjournal.ts
+  - src/sdk/models/shared/accountingjournallineitem.ts
   - src/sdk/models/shared/accountingtaxrate.ts
-  - src/sdk/models/shared/accountingtransaction.ts
-  - src/sdk/models/shared/accountingtransactionlineitem.ts
   - src/sdk/models/shared/accountingorganization.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
   - src/sdk/models/shared/crmcontact.ts
@@ -517,64 +517,64 @@ generatedFiles:
   - docs/sdk/models/operations/createaccountingcontactresponse.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountinginvoiceresponse.md
+  - docs/sdk/models/operations/createaccountingjournalrequest.md
+  - docs/sdk/models/operations/createaccountingjournalresponse.md
   - docs/sdk/models/operations/createaccountingtaxraterequest.md
   - docs/sdk/models/operations/createaccountingtaxrateresponse.md
-  - docs/sdk/models/operations/createaccountingtransactionrequest.md
-  - docs/sdk/models/operations/createaccountingtransactionresponse.md
   - docs/sdk/models/operations/getaccountingaccountrequest.md
   - docs/sdk/models/operations/getaccountingaccountresponse.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
   - docs/sdk/models/operations/getaccountingcontactresponse.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
   - docs/sdk/models/operations/getaccountinginvoiceresponse.md
+  - docs/sdk/models/operations/getaccountingjournalrequest.md
+  - docs/sdk/models/operations/getaccountingjournalresponse.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
   - docs/sdk/models/operations/getaccountingorganizationresponse.md
   - docs/sdk/models/operations/getaccountingtaxraterequest.md
   - docs/sdk/models/operations/getaccountingtaxrateresponse.md
-  - docs/sdk/models/operations/getaccountingtransactionrequest.md
-  - docs/sdk/models/operations/getaccountingtransactionresponse.md
   - docs/sdk/models/operations/listaccountingaccountsrequest.md
   - docs/sdk/models/operations/listaccountingaccountsresponse.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountingcontactsresponse.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesresponse.md
+  - docs/sdk/models/operations/listaccountingjournalsrequest.md
+  - docs/sdk/models/operations/listaccountingjournalsresponse.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsresponse.md
   - docs/sdk/models/operations/listaccountingtaxratesrequest.md
   - docs/sdk/models/operations/listaccountingtaxratesresponse.md
-  - docs/sdk/models/operations/listaccountingtransactionsrequest.md
-  - docs/sdk/models/operations/listaccountingtransactionsresponse.md
   - docs/sdk/models/operations/patchaccountingaccountrequest.md
   - docs/sdk/models/operations/patchaccountingaccountresponse.md
   - docs/sdk/models/operations/patchaccountingcontactrequest.md
   - docs/sdk/models/operations/patchaccountingcontactresponse.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountinginvoiceresponse.md
+  - docs/sdk/models/operations/patchaccountingjournalrequest.md
+  - docs/sdk/models/operations/patchaccountingjournalresponse.md
   - docs/sdk/models/operations/patchaccountingtaxraterequest.md
   - docs/sdk/models/operations/patchaccountingtaxrateresponse.md
-  - docs/sdk/models/operations/patchaccountingtransactionrequest.md
-  - docs/sdk/models/operations/patchaccountingtransactionresponse.md
   - docs/sdk/models/operations/removeaccountingaccountrequest.md
   - docs/sdk/models/operations/removeaccountingaccountresponse.md
   - docs/sdk/models/operations/removeaccountingcontactrequest.md
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
+  - docs/sdk/models/operations/removeaccountingjournalrequest.md
+  - docs/sdk/models/operations/removeaccountingjournalresponse.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
   - docs/sdk/models/operations/removeaccountingtaxrateresponse.md
-  - docs/sdk/models/operations/removeaccountingtransactionrequest.md
-  - docs/sdk/models/operations/removeaccountingtransactionresponse.md
   - docs/sdk/models/operations/updateaccountingaccountrequest.md
   - docs/sdk/models/operations/updateaccountingaccountresponse.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
   - docs/sdk/models/operations/updateaccountingcontactresponse.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountinginvoiceresponse.md
+  - docs/sdk/models/operations/updateaccountingjournalrequest.md
+  - docs/sdk/models/operations/updateaccountingjournalresponse.md
   - docs/sdk/models/operations/updateaccountingtaxraterequest.md
   - docs/sdk/models/operations/updateaccountingtaxrateresponse.md
-  - docs/sdk/models/operations/updateaccountingtransactionrequest.md
-  - docs/sdk/models/operations/updateaccountingtransactionresponse.md
   - docs/sdk/models/operations/createcrmcontactrequest.md
   - docs/sdk/models/operations/createcrmcontactresponse.md
   - docs/sdk/models/operations/createuccontactrequest.md
@@ -1088,9 +1088,9 @@ generatedFiles:
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinglineitem.md
+  - docs/sdk/models/shared/accountingjournal.md
+  - docs/sdk/models/shared/accountingjournallineitem.md
   - docs/sdk/models/shared/accountingtaxrate.md
-  - docs/sdk/models/shared/accountingtransaction.md
-  - docs/sdk/models/shared/accountingtransactionlineitem.md
   - docs/sdk/models/shared/accountingorganization.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
   - docs/sdk/models/shared/crmcontact.md

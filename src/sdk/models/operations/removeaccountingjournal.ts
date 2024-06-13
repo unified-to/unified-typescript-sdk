@@ -3,27 +3,23 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class CreateAccountingTransactionRequest extends SpeakeasyBase {
-    @SpeakeasyMetadata({ data: "request, media_type=application/json" })
-    accountingTransaction?: shared.AccountingTransaction;
-
+export class RemoveAccountingJournalRequest extends SpeakeasyBase {
     /**
      * ID of the connection
      */
     @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=connection_id" })
     connectionId: string;
+
+    /**
+     * ID of the Journal
+     */
+    @SpeakeasyMetadata({ data: "pathParam, style=simple;explode=false;name=id" })
+    id: string;
 }
 
-export class CreateAccountingTransactionResponse extends SpeakeasyBase {
-    /**
-     * Successful
-     */
-    @SpeakeasyMetadata()
-    accountingTransaction?: shared.AccountingTransaction;
-
+export class RemoveAccountingJournalResponse extends SpeakeasyBase {
     /**
      * HTTP response content type for this operation
      */
@@ -41,4 +37,10 @@ export class CreateAccountingTransactionResponse extends SpeakeasyBase {
      */
     @SpeakeasyMetadata()
     rawResponse: AxiosResponse;
+
+    /**
+     * Successful
+     */
+    @SpeakeasyMetadata()
+    string?: string;
 }

@@ -329,6 +329,110 @@ export class Accounting {
     }
 
     /**
+     * Create a journal
+     */
+    async createAccountingJournal(
+        req: operations.CreateAccountingJournalRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreateAccountingJournalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.CreateAccountingJournalRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+                req,
+                "accountingJournal",
+                "json"
+            );
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateAccountingJournalResponse =
+            new operations.CreateAccountingJournalResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.accountingJournal = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AccountingJournal
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Create a taxrate
      */
     async createAccountingTaxrate(
@@ -409,110 +513,6 @@ export class Accounting {
                     res.accountingTaxrate = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountingTaxrate
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Create a transaction
-     */
-    async createAccountingTransaction(
-        req: operations.CreateAccountingTransactionRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.CreateAccountingTransactionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.CreateAccountingTransactionRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction",
-            req
-        );
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-                req,
-                "accountingTransaction",
-                "json"
-            );
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl,
-            method: "post",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.CreateAccountingTransactionResponse =
-            new operations.CreateAccountingTransactionResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AccountingTransaction
                     );
                 } else {
                     throw new errors.SDKError(
@@ -795,6 +795,92 @@ export class Accounting {
     }
 
     /**
+     * Retrieve a journal
+     */
+    async getAccountingJournal(
+        req: operations.GetAccountingJournalRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetAccountingJournalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetAccountingJournalRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal/{id}",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetAccountingJournalResponse =
+            new operations.GetAccountingJournalResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.accountingJournal = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AccountingJournal
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Retrieve an organization
      */
     async getAccountingOrganization(
@@ -943,92 +1029,6 @@ export class Accounting {
                     res.accountingTaxrate = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountingTaxrate
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Retrieve a transaction
-     */
-    async getAccountingTransaction(
-        req: operations.GetAccountingTransactionRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.GetAccountingTransactionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.GetAccountingTransactionRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl + queryParams,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.GetAccountingTransactionResponse =
-            new operations.GetAccountingTransactionResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AccountingTransaction
                     );
                 } else {
                     throw new errors.SDKError(
@@ -1320,6 +1320,95 @@ export class Accounting {
     }
 
     /**
+     * List all journals
+     */
+    async listAccountingJournals(
+        req: operations.ListAccountingJournalsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.ListAccountingJournalsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.ListAccountingJournalsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.ListAccountingJournalsResponse =
+            new operations.ListAccountingJournalsResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.accountingJournals = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.accountingJournals = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AccountingJournal,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * List all organizations
      */
     async listAccountingOrganizations(
@@ -1473,95 +1562,6 @@ export class Accounting {
                     res.accountingTaxrates = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountingTaxrate,
-                        resFieldDepth
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * List all transactions
-     */
-    async listAccountingTransactions(
-        req: operations.ListAccountingTransactionsRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.ListAccountingTransactionsResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.ListAccountingTransactionsRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        const queryParams: string = utils.serializeQueryParams(req);
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl + queryParams,
-            method: "get",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.ListAccountingTransactionsResponse =
-            new operations.ListAccountingTransactionsResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransactions = [];
-                    const resFieldDepth: number = utils.getResFieldDepth(res);
-                    res.accountingTransactions = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AccountingTransaction,
                         resFieldDepth
                     );
                 } else {
@@ -1899,6 +1899,110 @@ export class Accounting {
     }
 
     /**
+     * Update a journal
+     */
+    async patchAccountingJournal(
+        req: operations.PatchAccountingJournalRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PatchAccountingJournalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PatchAccountingJournalRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal/{id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+                req,
+                "accountingJournal",
+                "json"
+            );
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "patch",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PatchAccountingJournalResponse =
+            new operations.PatchAccountingJournalResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.accountingJournal = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AccountingJournal
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Update a taxrate
      */
     async patchAccountingTaxrate(
@@ -1979,110 +2083,6 @@ export class Accounting {
                     res.accountingTaxrate = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountingTaxrate
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Update a transaction
-     */
-    async patchAccountingTransaction(
-        req: operations.PatchAccountingTransactionRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.PatchAccountingTransactionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.PatchAccountingTransactionRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
-            req
-        );
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-                req,
-                "accountingTransaction",
-                "json"
-            );
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl,
-            method: "patch",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.PatchAccountingTransactionResponse =
-            new operations.PatchAccountingTransactionResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AccountingTransaction
                     );
                 } else {
                     throw new errors.SDKError(
@@ -2359,6 +2359,90 @@ export class Accounting {
     }
 
     /**
+     * Remove a journal
+     */
+    async removeAccountingJournal(
+        req: operations.RemoveAccountingJournalRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.RemoveAccountingJournalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.RemoveAccountingJournalRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal/{id}",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "delete",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.RemoveAccountingJournalResponse =
+            new operations.RemoveAccountingJournalResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status >= 200 && httpRes?.status < 300:
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.string = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
      * Remove a taxrate
      */
     async removeAccountingTaxrate(
@@ -2409,90 +2493,6 @@ export class Accounting {
 
         const res: operations.RemoveAccountingTaxrateResponse =
             new operations.RemoveAccountingTaxrateResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status >= 200 && httpRes?.status < 300:
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-            default:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.string = JSON.parse(decodedRes);
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-        }
-
-        return res;
-    }
-
-    /**
-     * Remove a transaction
-     */
-    async removeAccountingTransaction(
-        req: operations.RemoveAccountingTransactionRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.RemoveAccountingTransactionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.RemoveAccountingTransactionRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
-            req
-        );
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl,
-            method: "delete",
-            headers: headers,
-            responseType: "arraybuffer",
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.RemoveAccountingTransactionResponse =
-            new operations.RemoveAccountingTransactionResponse({
                 statusCode: httpRes.status,
                 contentType: responseContentType,
                 rawResponse: httpRes,
@@ -2839,6 +2839,110 @@ export class Accounting {
     }
 
     /**
+     * Update a journal
+     */
+    async updateAccountingJournal(
+        req: operations.UpdateAccountingJournalRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.UpdateAccountingJournalResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.UpdateAccountingJournalRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/accounting/{connection_id}/journal/{id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
+                req,
+                "accountingJournal",
+                "json"
+            );
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.UpdateAccountingJournalResponse =
+            new operations.UpdateAccountingJournalResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.accountingJournal = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.AccountingJournal
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Update a taxrate
      */
     async updateAccountingTaxrate(
@@ -2919,110 +3023,6 @@ export class Accounting {
                     res.accountingTaxrate = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.AccountingTaxrate
-                    );
-                } else {
-                    throw new errors.SDKError(
-                        "unknown content-type received: " + responseContentType,
-                        httpRes.status,
-                        decodedRes,
-                        httpRes
-                    );
-                }
-                break;
-            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
-                (httpRes?.status >= 500 && httpRes?.status < 600):
-                throw new errors.SDKError(
-                    "API error occurred",
-                    httpRes.status,
-                    decodedRes,
-                    httpRes
-                );
-        }
-
-        return res;
-    }
-
-    /**
-     * Update a transaction
-     */
-    async updateAccountingTransaction(
-        req: operations.UpdateAccountingTransactionRequest,
-        config?: AxiosRequestConfig
-    ): Promise<operations.UpdateAccountingTransactionResponse> {
-        if (!(req instanceof utils.SpeakeasyBase)) {
-            req = new operations.UpdateAccountingTransactionRequest(req);
-        }
-
-        const baseURL: string = utils.templateUrl(
-            this.sdkConfiguration.serverURL,
-            this.sdkConfiguration.serverDefaults
-        );
-        const operationUrl: string = utils.generateURL(
-            baseURL,
-            "/accounting/{connection_id}/transaction/{id}",
-            req
-        );
-
-        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
-
-        try {
-            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(
-                req,
-                "accountingTransaction",
-                "json"
-            );
-        } catch (e: unknown) {
-            if (e instanceof Error) {
-                throw new Error(`Error serializing request body, cause: ${e.message}`);
-            }
-        }
-        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
-        let globalSecurity = this.sdkConfiguration.security;
-        if (typeof globalSecurity === "function") {
-            globalSecurity = await globalSecurity();
-        }
-        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
-            globalSecurity = new shared.Security(globalSecurity);
-        }
-        const properties = utils.parseSecurityProperties(globalSecurity);
-        const headers: RawAxiosRequestHeaders = {
-            ...reqBodyHeaders,
-            ...config?.headers,
-            ...properties.headers,
-        };
-        headers["Accept"] = "application/json";
-
-        headers["user-agent"] = this.sdkConfiguration.userAgent;
-
-        const httpRes: AxiosResponse = await client.request({
-            validateStatus: () => true,
-            url: operationUrl,
-            method: "put",
-            headers: headers,
-            responseType: "arraybuffer",
-            data: reqBody,
-            ...config,
-        });
-
-        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) {
-            throw new Error(`status code not found in response: ${httpRes}`);
-        }
-
-        const res: operations.UpdateAccountingTransactionResponse =
-            new operations.UpdateAccountingTransactionResponse({
-                statusCode: httpRes.status,
-                contentType: responseContentType,
-                rawResponse: httpRes,
-            });
-        const decodedRes = new TextDecoder().decode(httpRes?.data);
-        switch (true) {
-            case httpRes?.status == 200:
-                if (utils.matchContentType(responseContentType, `application/json`)) {
-                    res.accountingTransaction = utils.objectToClass(
-                        JSON.parse(decodedRes),
-                        shared.AccountingTransaction
                     );
                 } else {
                     throw new errors.SDKError(

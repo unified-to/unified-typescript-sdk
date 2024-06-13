@@ -6,7 +6,7 @@ import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../../../sdk/models/shared";
 import { AxiosResponse } from "axios";
 
-export class ListAccountingTransactionsRequest extends SpeakeasyBase {
+export class ListAccountingJournalsRequest extends SpeakeasyBase {
     /**
      * ID of the connection
      */
@@ -44,12 +44,12 @@ export class ListAccountingTransactionsRequest extends SpeakeasyBase {
     updatedGte?: Date;
 }
 
-export class ListAccountingTransactionsResponse extends SpeakeasyBase {
+export class ListAccountingJournalsResponse extends SpeakeasyBase {
     /**
      * Successful
      */
-    @SpeakeasyMetadata({ elemType: shared.AccountingTransaction })
-    accountingTransactions?: shared.AccountingTransaction[];
+    @SpeakeasyMetadata({ elemType: shared.AccountingJournal })
+    accountingJournals?: shared.AccountingJournal[];
 
     /**
      * HTTP response content type for this operation

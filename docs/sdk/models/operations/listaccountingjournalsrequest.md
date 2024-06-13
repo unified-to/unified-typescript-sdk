@@ -1,4 +1,4 @@
-# ListAccountingTransactionsRequest
+# ListAccountingJournalsRequest
 
 
 ## Fields
