@@ -70,6 +70,7 @@ import { Taxrate } from "./taxrate";
 import { Ticket } from "./ticket";
 import { Ticketing } from "./ticketing";
 import { Timeoff } from "./timeoff";
+import { Transaction } from "./transaction";
 import { Uc } from "./uc";
 import { Unified } from "./unified";
 import { Webhook } from "./webhook";
@@ -126,9 +127,9 @@ export class SDKConfiguration {
     serverDefaults: any;
     language = "typescript";
     openapiDocVersion = "1.0";
-    sdkVersion = "1.0.38";
-    genVersion = "2.340.3";
-    userAgent = "speakeasy-sdk/typescript 1.0.38 2.340.3 1.0 @unified-api/typescript-sdk";
+    sdkVersion = "1.0.39";
+    genVersion = "2.342.2";
+    userAgent = "speakeasy-sdk/typescript 1.0.39 2.342.2 1.0 @unified-api/typescript-sdk";
     retryConfig?: utils.RetryConfig;
     public constructor(init?: Partial<SDKConfiguration>) {
         Object.assign(this, init);
@@ -146,6 +147,7 @@ export class UnifiedTo {
     public journal: Journal;
     public organization: Organization;
     public taxrate: Taxrate;
+    public transaction: Transaction;
     public ats: Ats;
     public activity: Activity;
     public application: Application;
@@ -237,6 +239,7 @@ export class UnifiedTo {
         this.journal = new Journal(this.sdkConfiguration);
         this.organization = new Organization(this.sdkConfiguration);
         this.taxrate = new Taxrate(this.sdkConfiguration);
+        this.transaction = new Transaction(this.sdkConfiguration);
         this.ats = new Ats(this.sdkConfiguration);
         this.activity = new Activity(this.sdkConfiguration);
         this.application = new Application(this.sdkConfiguration);
