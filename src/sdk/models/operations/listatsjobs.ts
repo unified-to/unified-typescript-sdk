@@ -42,6 +42,9 @@ export class ListAtsJobsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=updated_gte" })
     updatedGte?: Date;
+
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=user_id" })
+    userId?: string;
 }
 
 export class ListAtsJobsResponse extends SpeakeasyBase {
