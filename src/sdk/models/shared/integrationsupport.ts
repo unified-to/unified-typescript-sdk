@@ -84,6 +84,11 @@ export enum ListItemId {
     NotSupported = "not-supported",
 }
 
+export enum ListItemVariantId {
+    Supported = "supported",
+    NotSupported = "not-supported",
+}
+
 export enum ListJobId {
     SupportedRequired = "supported-required",
     Supported = "supported",
@@ -278,6 +283,10 @@ export class IntegrationSupport extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "list_item_id" })
     listItemId?: ListItemId;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "list_item_variant_id" })
+    listItemVariantId?: ListItemVariantId;
 
     @SpeakeasyMetadata()
     @Expose({ name: "list_job_id" })
