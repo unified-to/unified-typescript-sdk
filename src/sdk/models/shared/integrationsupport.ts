@@ -85,6 +85,7 @@ export enum ListItemId {
 }
 
 export enum ListItemVariantId {
+    SupportedRequired = "supported-required",
     Supported = "supported",
     NotSupported = "not-supported",
 }

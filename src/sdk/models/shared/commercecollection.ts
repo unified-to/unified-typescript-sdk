@@ -51,6 +51,10 @@ export class CommerceCollection extends SpeakeasyBase {
     name: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "parent_id" })
+    parentId?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "public_description" })
     publicDescription?: string;
 

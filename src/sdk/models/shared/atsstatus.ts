@@ -18,6 +18,7 @@ export enum AtsStatusStatus {
     Accepted = "ACCEPTED",
     Hired = "HIRED",
     Rejected = "REJECTED",
+    Declined = "DECLINED",
     Withdrawn = "WITHDRAWN",
 }
 

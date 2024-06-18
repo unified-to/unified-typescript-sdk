@@ -3,7 +3,8 @@
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Supported`    | supported      |
-| `NotSupported` | not-supported  |
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `SupportedRequired` | supported-required  |
+| `Supported`         | supported           |
+| `NotSupported`      | not-supported       |
