@@ -51,6 +51,10 @@ export class CommerceItem extends SpeakeasyBase {
     raw?: Record<string, any>;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "slug" })
+    slug?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "tags" })
     tags?: string[];
 
