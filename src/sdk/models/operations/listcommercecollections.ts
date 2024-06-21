@@ -28,6 +28,9 @@ export class ListCommerceCollectionsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
     order?: string;
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=parent_id" })
+    parentId?: string;
+
     /**
      * Query string to search. eg. email address or name
      */
