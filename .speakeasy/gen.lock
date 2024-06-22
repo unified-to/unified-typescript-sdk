@@ -1,19 +1,19 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: fc1188a2db372bfe9795cefed41fedb9
+  docChecksum: 8cd5f0b8f9ac7da8e963b9b8716b4f9a
   docVersion: "1.0"
-  speakeasyVersion: 1.313.0
-  generationVersion: 2.347.8
-  releaseVersion: 1.0.44
-  configChecksum: 86155681bb376aa2d9347b166d8fda5d
+  speakeasyVersion: 1.314.2
+  generationVersion: 2.349.6
+  releaseVersion: 1.0.45
+  configChecksum: 9fd65f1c60abf494fcfe44d2e4575ea2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 features:
   typescript:
-    core: 3.4.9
+    core: 3.4.10
     globalSecurity: 2.82.5
     globalServerURLs: 2.82.2
 generatedFiles:
@@ -383,7 +383,6 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedintegrationworkspaces.ts
   - src/sdk/models/operations/listunifiedintegrations.ts
   - src/sdk/models/operations/listunifiedissues.ts
-  - src/sdk/models/operations/listunifiedsupports.ts
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchunifiedconnection.ts
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
@@ -502,7 +501,6 @@ generatedFiles:
   - src/sdk/models/shared/propertyuccalltelephone.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/propertyconnectionpermissions.ts
-  - src/sdk/models/shared/undefined.ts
   - src/sdk/models/shared/propertyconnectioncategories.ts
   - src/sdk/models/shared/propertyconnectionauth.ts
   - src/sdk/models/shared/webhook.ts
@@ -1074,7 +1072,6 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedintegrationsresponse.md
   - docs/sdk/models/operations/listunifiedissuesrequest.md
   - docs/sdk/models/operations/listunifiedissuesresponse.md
-  - docs/sdk/models/operations/listunifiedsupportsresponse.md
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/listunifiedwebhooksresponse.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
@@ -1259,7 +1256,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertyuccalltelephone.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/propertyconnectionpermissions.md
-  - docs/sdk/models/shared/undefined.md
   - docs/sdk/models/shared/propertyconnectioncategories.md
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/event.md
