@@ -15,12 +15,6 @@ export enum IssueStatus {
     Rejected = "REJECTED",
 }
 
-export enum IssueType {
-    Bug = "BUG",
-    FeatureRequest = "FEATURE_REQUEST",
-    Inquiry = "INQUIRY",
-}
-
 export class Issue extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
@@ -39,12 +33,16 @@ export class Issue extends SpeakeasyBase {
     status: IssueStatus;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "ticket_ref" })
+    ticketRef: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "title" })
     title: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
-    type: IssueType;
+    type?: string[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "updated_at" })
