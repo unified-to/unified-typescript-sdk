@@ -11,7 +11,7 @@ export class MessagingMessage extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "author_member" })
     @Type(() => PropertyMessagingMessageAuthorMember)
-    authorMember: PropertyMessagingMessageAuthorMember;
+    authorMember?: PropertyMessagingMessageAuthorMember;
 
     @SpeakeasyMetadata()
     @Expose({ name: "channel_id" })
@@ -43,6 +43,10 @@ export class MessagingMessage extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "message" })
     message: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "message_html" })
+    messageHtml?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "parent_message_id" })
