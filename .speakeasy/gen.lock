@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: bdc716c1ec699c0df9357438a35e33f6
+  docChecksum: 47c3e061b14a46be0740453c7c5f67d6
   docVersion: "1.0"
-  speakeasyVersion: 1.322.1
+  speakeasyVersion: 1.322.3
   generationVersion: 2.354.2
-  releaseVersion: 1.0.47
-  configChecksum: 5e05ad0f561cf351af780c49a2eee87b
+  releaseVersion: 1.0.48
+  configChecksum: 8848af96d71a22e7db625171f6a5e04c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -481,6 +481,7 @@ generatedFiles:
   - src/sdk/models/shared/messagingmessage.ts
   - src/sdk/models/shared/messagingmember.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
+  - src/sdk/models/shared/messagingattachment.ts
   - src/sdk/models/shared/messagingchannel.ts
   - src/sdk/models/shared/paymentlink.ts
   - src/sdk/models/shared/paymentlinklineitem.ts
@@ -1228,6 +1229,7 @@ generatedFiles:
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
+  - docs/sdk/models/shared/messagingattachment.md
   - docs/sdk/models/shared/messagingchannel.md
   - docs/sdk/models/shared/paymentlink.md
   - docs/sdk/models/shared/paymentlinklineitem.md

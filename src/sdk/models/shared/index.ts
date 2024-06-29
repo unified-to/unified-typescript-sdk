@@ -73,6 +73,7 @@ export * from "./kmsspace";
 export * from "./marketingemail";
 export * from "./marketinglist";
 export * from "./marketingmember";
+export * from "./messagingattachment";
 export * from "./messagingchannel";
 export * from "./messagingmember";
 export * from "./messagingmessage";

@@ -3,11 +3,17 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { MessagingAttachment } from "./messagingattachment";
 import { MessagingMember } from "./messagingmember";
 import { PropertyMessagingMessageAuthorMember } from "./propertymessagingmessageauthormember";
 import { Expose, Type } from "class-transformer";
 
 export class MessagingMessage extends SpeakeasyBase {
+    @SpeakeasyMetadata({ elemType: MessagingAttachment })
+    @Expose({ name: "attachments" })
+    @Type(() => MessagingAttachment)
+    attachments?: MessagingAttachment[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "author_member" })
     @Type(() => PropertyMessagingMessageAuthorMember)
@@ -42,7 +48,7 @@ export class MessagingMessage extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "message" })
-    message: string;
+    message?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "message_html" })
