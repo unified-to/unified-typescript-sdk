@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 47c3e061b14a46be0740453c7c5f67d6
+  docChecksum: ae2ed3981ced9c41a08d5e707d7c8c86
   docVersion: "1.0"
   speakeasyVersion: 1.322.3
   generationVersion: 2.354.2
-  releaseVersion: 1.0.48
-  configChecksum: 8848af96d71a22e7db625171f6a5e04c
+  releaseVersion: 1.0.49
+  configChecksum: fde5304c5d72c3be80bddcc183206c8c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -467,7 +467,9 @@ generatedFiles:
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/hrisemployee.ts
   - src/sdk/models/shared/hristelephone.ts
+  - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/hrisemail.ts
+  - src/sdk/models/shared/hriscompensation.ts
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
   - src/sdk/models/shared/hrisgroup.ts
   - src/sdk/models/shared/hrispayslip.ts
@@ -1207,8 +1209,10 @@ generatedFiles:
   - docs/sdk/models/shared/hrisemployee.md
   - docs/sdk/models/shared/hristelephonetype.md
   - docs/sdk/models/shared/hristelephone.md
+  - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/hrisemailtype.md
   - docs/sdk/models/shared/hrisemail.md
+  - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/hrisgrouptype.md
   - docs/sdk/models/shared/hrisgroup.md

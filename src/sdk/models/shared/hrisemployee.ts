@@ -3,9 +3,11 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { HrisCompensation } from "./hriscompensation";
 import { HrisEmail } from "./hrisemail";
 import { HrisTelephone } from "./hristelephone";
 import { PropertyHrisEmployeeAddress } from "./propertyhrisemployeeaddress";
+import { PropertyHrisEmployeeEmployeeRoles } from "./propertyhrisemployeeemployeeroles";
 import { Expose, Transform, Type } from "class-transformer";
 
 export enum EmploymentStatus {
@@ -46,8 +48,17 @@ export class HrisEmployee extends SpeakeasyBase {
     address?: PropertyHrisEmployeeAddress;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "bio" })
+    bio?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "company_id" })
     companyId?: string;
+
+    @SpeakeasyMetadata({ elemType: HrisCompensation })
+    @Expose({ name: "compensation" })
+    @Type(() => HrisCompensation)
+    compensation?: HrisCompensation[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "created_at" })
@@ -79,6 +90,10 @@ export class HrisEmployee extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "employee_number" })
     employeeNumber?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "employee_roles" })
+    employeeRoles?: PropertyHrisEmployeeEmployeeRoles[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "employment_status" })
@@ -126,8 +141,20 @@ export class HrisEmployee extends SpeakeasyBase {
     name?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "pronouns" })
+    pronouns?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "salutation" })
+    salutation?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "ssn_sin" })
+    ssnSin?: string;
 
     @SpeakeasyMetadata({ elemType: HrisTelephone })
     @Expose({ name: "telephones" })
