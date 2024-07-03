@@ -71,6 +71,10 @@ export class TicketingTicket extends SpeakeasyBase {
     updatedAt?: Date;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "url" })
+    url?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "user_id" })
     userId?: string;
 }

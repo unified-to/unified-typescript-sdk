@@ -46,12 +46,6 @@ export class ListUnifiedApicallsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
     offset?: number;
 
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
-
     /**
      * Return only results whose updated date is equal or greater to this value
      */

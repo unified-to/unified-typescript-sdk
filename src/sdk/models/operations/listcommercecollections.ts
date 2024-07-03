@@ -25,9 +25,6 @@ export class ListCommerceCollectionsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
     offset?: number;
 
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=parent_id" })
     parentId?: string;
 
@@ -36,9 +33,6 @@ export class ListCommerceCollectionsRequest extends SpeakeasyBase {
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=query" })
     query?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
 
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=type" })
     type?: string;

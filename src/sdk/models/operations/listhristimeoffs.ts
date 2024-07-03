@@ -25,17 +25,11 @@ export class ListHrisTimeoffsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=offset" })
     offset?: number;
 
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=order" })
-    order?: string;
-
     /**
      * Query string to search. eg. email address or name
      */
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=query" })
     query?: string;
-
-    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=sort" })
-    sort?: string;
 
     /**
      * Return only results whose updated date is equal or greater to this value
