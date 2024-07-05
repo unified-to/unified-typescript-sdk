@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 1c9d25d2726d323697b110e342adfad9
+  docChecksum: 9e3d4190c54f7a4d24ccbf1101f05382
   docVersion: "1.0"
-  speakeasyVersion: 1.326.0
-  generationVersion: 2.359.0
-  releaseVersion: 1.0.50
-  configChecksum: 3732d9134abd6783252d9f9474347e2a
+  speakeasyVersion: 1.326.3
+  generationVersion: 2.359.6
+  releaseVersion: 1.0.51
+  configChecksum: d4786761892614f4a1f27f1206956000
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -1212,6 +1212,8 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/hrisemailtype.md
   - docs/sdk/models/shared/hrisemail.md
+  - docs/sdk/models/shared/hriscompensationfrequency.md
+  - docs/sdk/models/shared/hriscompensationtype.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/hrisgrouptype.md
