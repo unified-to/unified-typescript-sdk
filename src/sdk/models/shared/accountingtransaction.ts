@@ -65,7 +65,7 @@ export class AccountingTransaction extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "total_amount" })
-    totalAmount: number;
+    totalAmount?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "type" })
