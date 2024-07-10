@@ -9,7 +9,7 @@ import { Expose, Transform, Type } from "class-transformer";
 export class PaymentLink extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "amount" })
-    amount: number;
+    amount?: number;
 
     @SpeakeasyMetadata()
     @Expose({ name: "contact_id" })
@@ -35,7 +35,7 @@ export class PaymentLink extends SpeakeasyBase {
     @SpeakeasyMetadata({ elemType: PaymentLinkLineitem })
     @Expose({ name: "lineitems" })
     @Type(() => PaymentLinkLineitem)
-    lineitems: PaymentLinkLineitem[];
+    lineitems?: PaymentLinkLineitem[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "payment_id" })
