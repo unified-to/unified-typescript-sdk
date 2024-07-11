@@ -51,6 +51,13 @@ export class AccountingTransaction extends SpeakeasyBase {
     @Expose({ name: "reference" })
     reference?: string;
 
+    /**
+     * This is a unified object that this transaction references
+     */
+    @SpeakeasyMetadata()
+    @Expose({ name: "reference_object" })
+    referenceObject?: Record<string, any>;
+
     @SpeakeasyMetadata()
     @Expose({ name: "split_account_id" })
     splitAccountId?: string;
