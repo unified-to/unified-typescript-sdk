@@ -10,6 +10,9 @@ export class ListAtsDocumentsRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=application_id" })
     applicationId?: string;
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=candidate_id" })
+    candidateId?: string;
+
     /**
      * ID of the connection
      */
