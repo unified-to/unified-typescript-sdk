@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: baed20d00770c3529ab25ff351c386de
+  docChecksum: 447f3fb120945ec501fc264fcc573697
   docVersion: "1.0"
   speakeasyVersion: 1.335.0
   generationVersion: 2.370.2
-  releaseVersion: 1.0.55
-  configChecksum: 94ccd94f25c0317aebf9d636071df77e
+  releaseVersion: 1.0.56
+  configChecksum: 0a3f138789d10b4f8d35d0232771f4bc
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -404,6 +404,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingjournallineitem.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtransaction.ts
+  - src/sdk/models/shared/accountingtransactionlineitem.ts
   - src/sdk/models/shared/accountingorganization.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
   - src/sdk/models/shared/crmcontact.ts
@@ -1112,6 +1113,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingjournallineitem.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtransaction.md
+  - docs/sdk/models/shared/accountingtransactionlineitem.md
   - docs/sdk/models/shared/accountingorganization.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
   - docs/sdk/models/shared/crmcontact.md

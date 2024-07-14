@@ -3,7 +3,8 @@
  */
 
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
-import { Expose, Transform } from "class-transformer";
+import { AccountingTransactionLineItem } from "./accountingtransactionlineitem";
+import { Expose, Transform, Type } from "class-transformer";
 
 export class AccountingTransaction extends SpeakeasyBase {
     @SpeakeasyMetadata()
@@ -31,6 +32,11 @@ export class AccountingTransaction extends SpeakeasyBase {
     @Expose({ name: "id" })
     id?: string;
 
+    @SpeakeasyMetadata({ elemType: AccountingTransactionLineItem })
+    @Expose({ name: "lineitems" })
+    @Type(() => AccountingTransactionLineItem)
+    lineitems?: AccountingTransactionLineItem[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "memo" })
     memo?: string;
@@ -50,13 +56,6 @@ export class AccountingTransaction extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "reference" })
     reference?: string;
-
-    /**
-     * This is a unified object that this transaction references
-     */
-    @SpeakeasyMetadata()
-    @Expose({ name: "reference_object" })
-    referenceObject?: Record<string, any>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "split_account_id" })

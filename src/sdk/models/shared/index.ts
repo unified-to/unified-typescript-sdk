@@ -14,6 +14,7 @@ export * from "./accountingorganization";
 export * from "./accountingtaxrate";
 export * from "./accountingtelephone";
 export * from "./accountingtransaction";
+export * from "./accountingtransactionlineitem";
 export * from "./apicall";
 export * from "./atsactivity";
 export * from "./atsaddress";

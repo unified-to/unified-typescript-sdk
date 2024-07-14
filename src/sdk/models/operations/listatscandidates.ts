@@ -19,6 +19,9 @@ export class ListAtsCandidatesRequest extends SpeakeasyBase {
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=fields" })
     fields?: string[];
 
+    @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=job_id" })
+    jobId?: string;
+
     @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=limit" })
     limit?: number;
 
