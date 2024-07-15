@@ -45,7 +45,7 @@ export class TaskTask extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
 
     @SpeakeasyMetadata()
     @Expose({ name: "notes" })
