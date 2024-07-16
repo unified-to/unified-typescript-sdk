@@ -12,6 +12,14 @@ import { Expose, Transform } from "class-transformer";
  */
 export class Integration extends SpeakeasyBase {
     @SpeakeasyMetadata()
+    @Expose({ name: "active_healthy_connections" })
+    activeHealthyConnections?: number;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "api" })
+    api?: Record<string, any>;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "api_docs_url" })
     apiDocsUrl?: string;
 
@@ -35,8 +43,16 @@ export class Integration extends SpeakeasyBase {
     createdAt?: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "description" })
+    description?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "fa_icon" })
     faIcon?: string;
+
+    @SpeakeasyMetadata()
+    @Expose({ name: "featured" })
+    featured?: boolean;
 
     @SpeakeasyMetadata()
     @Expose({ name: "in_progress" })
@@ -55,6 +71,10 @@ export class Integration extends SpeakeasyBase {
     name: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "popularity" })
+    popularity?: number;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "rate_limit_description" })
     rateLimitDescription?: string;
 
@@ -70,7 +90,7 @@ export class Integration extends SpeakeasyBase {
         },
         { toClassOnly: true }
     )
-    support: Record<string, IntegrationSupport>;
+    support?: Record<string, IntegrationSupport>;
 
     @SpeakeasyMetadata()
     @Expose({ name: "tested_at" })
