@@ -32,6 +32,10 @@ export class PaymentLink extends SpeakeasyBase {
     @Expose({ name: "is_active" })
     isActive?: boolean;
 
+    @SpeakeasyMetadata()
+    @Expose({ name: "is_chargeable_now" })
+    isChargeableNow?: boolean;
+
     @SpeakeasyMetadata({ elemType: PaymentLinkLineitem })
     @Expose({ name: "lineitems" })
     @Type(() => PaymentLinkLineitem)
