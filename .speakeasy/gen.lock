@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b51483e0ba5da702b0a6782d1c3502c1
+  docChecksum: 398329e502d5c762a74ed9d5f4600441
   docVersion: "1.0"
-  speakeasyVersion: 1.346.0
-  generationVersion: 2.379.3
-  releaseVersion: 1.0.62
-  configChecksum: fb40cce31e8ec483d92e6265f3d9a4d5
+  speakeasyVersion: 1.346.3
+  generationVersion: 2.379.6
+  releaseVersion: 1.0.63
+  configChecksum: 52d225efe327bf882adf7a311c9c8143
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -1076,6 +1076,8 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedintegrationsresponse.md
   - docs/sdk/models/operations/listunifiedissuesrequest.md
   - docs/sdk/models/operations/listunifiedissuesresponse.md
+  - docs/sdk/models/operations/connectionid.md
+  - docs/sdk/models/operations/integrationtype.md
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/listunifiedwebhooksresponse.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
