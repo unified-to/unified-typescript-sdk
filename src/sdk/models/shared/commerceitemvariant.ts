@@ -65,7 +65,7 @@ export class CommerceItemVariant extends SpeakeasyBase {
 
     @SpeakeasyMetadata()
     @Expose({ name: "name" })
-    name: string;
+    name?: string;
 
     @SpeakeasyMetadata({ elemType: CommerceItemOption })
     @Expose({ name: "options" })

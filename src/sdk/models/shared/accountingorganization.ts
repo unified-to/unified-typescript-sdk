@@ -38,6 +38,10 @@ export class AccountingOrganization extends SpeakeasyBase {
     name: string;
 
     @SpeakeasyMetadata()
+    @Expose({ name: "organization_code" })
+    organizationCode?: string;
+
+    @SpeakeasyMetadata()
     @Expose({ name: "raw" })
     raw?: Record<string, any>;
 
