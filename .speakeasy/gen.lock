@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 939256dd6599a9b1968cce234d1549cc
+  docChecksum: e746fd806f5907d68d5ba126113c72ae
   docVersion: "1.0"
-  speakeasyVersion: 1.349.0
-  generationVersion: 2.382.0
-  releaseVersion: 1.0.64
-  configChecksum: 49d1bd8b51fbc3146b0ef7b9bf6670c6
+  speakeasyVersion: 1.349.2
+  generationVersion: 2.382.2
+  releaseVersion: 1.0.65
+  configChecksum: cbd14a699bf567897625392d9652374e
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -239,6 +239,12 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
+  - src/sdk/models/operations/createhrislocation.ts
+  - src/sdk/models/operations/gethrislocation.ts
+  - src/sdk/models/operations/listhrislocations.ts
+  - src/sdk/models/operations/patchhrislocation.ts
+  - src/sdk/models/operations/removehrislocation.ts
+  - src/sdk/models/operations/updatehrislocation.ts
   - src/sdk/models/operations/createcrmdeal.ts
   - src/sdk/models/operations/createcrmevent.ts
   - src/sdk/models/operations/createcrmlead.ts
@@ -448,6 +454,9 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemoption.ts
   - src/sdk/models/shared/commercelocation.ts
   - src/sdk/models/shared/propertycommercelocationaddress.ts
+  - src/sdk/models/shared/hrislocation.ts
+  - src/sdk/models/shared/hristelephone.ts
+  - src/sdk/models/shared/propertyhrislocationaddress.ts
   - src/sdk/models/shared/crmdeal.ts
   - src/sdk/models/shared/crmevent.ts
   - src/sdk/models/shared/propertycrmeventtask.ts
@@ -467,12 +476,11 @@ generatedFiles:
   - src/sdk/models/shared/genaicontent.ts
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/hrisemployee.ts
-  - src/sdk/models/shared/hristelephone.ts
+  - src/sdk/models/shared/hrisgroup.ts
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/hrisemail.ts
   - src/sdk/models/shared/hriscompensation.ts
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
-  - src/sdk/models/shared/hrisgroup.ts
   - src/sdk/models/shared/hrispayslip.ts
   - src/sdk/models/shared/hrispayslipdetail.ts
   - src/sdk/models/shared/hristimeoff.ts
@@ -785,6 +793,18 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceitemresponse.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
   - docs/sdk/models/operations/updatecommercelocationresponse.md
+  - docs/sdk/models/operations/createhrislocationrequest.md
+  - docs/sdk/models/operations/createhrislocationresponse.md
+  - docs/sdk/models/operations/gethrislocationrequest.md
+  - docs/sdk/models/operations/gethrislocationresponse.md
+  - docs/sdk/models/operations/listhrislocationsrequest.md
+  - docs/sdk/models/operations/listhrislocationsresponse.md
+  - docs/sdk/models/operations/patchhrislocationrequest.md
+  - docs/sdk/models/operations/patchhrislocationresponse.md
+  - docs/sdk/models/operations/removehrislocationrequest.md
+  - docs/sdk/models/operations/removehrislocationresponse.md
+  - docs/sdk/models/operations/updatehrislocationrequest.md
+  - docs/sdk/models/operations/updatehrislocationresponse.md
   - docs/sdk/models/operations/createcrmdealrequest.md
   - docs/sdk/models/operations/createcrmdealresponse.md
   - docs/sdk/models/operations/createcrmeventrequest.md
@@ -1182,6 +1202,10 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemoption.md
   - docs/sdk/models/shared/commercelocation.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
+  - docs/sdk/models/shared/hrislocation.md
+  - docs/sdk/models/shared/hristelephonetype.md
+  - docs/sdk/models/shared/hristelephone.md
+  - docs/sdk/models/shared/propertyhrislocationaddress.md
   - docs/sdk/models/shared/crmdeal.md
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmevent.md
@@ -1211,8 +1235,8 @@ generatedFiles:
   - docs/sdk/models/shared/hrisemployeegender.md
   - docs/sdk/models/shared/maritalstatus.md
   - docs/sdk/models/shared/hrisemployee.md
-  - docs/sdk/models/shared/hristelephonetype.md
-  - docs/sdk/models/shared/hristelephone.md
+  - docs/sdk/models/shared/hrisgrouptype.md
+  - docs/sdk/models/shared/hrisgroup.md
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/hrisemailtype.md
   - docs/sdk/models/shared/hrisemail.md
@@ -1220,8 +1244,6 @@ generatedFiles:
   - docs/sdk/models/shared/hriscompensationtype.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
-  - docs/sdk/models/shared/hrisgrouptype.md
-  - docs/sdk/models/shared/hrisgroup.md
   - docs/sdk/models/shared/paymenttype.md
   - docs/sdk/models/shared/hrispayslip.md
   - docs/sdk/models/shared/hrispayslipdetailtype.md

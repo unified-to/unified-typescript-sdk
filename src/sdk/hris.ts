@@ -308,6 +308,106 @@ export class Hris {
     }
 
     /**
+     * Create a location
+     */
+    async createHrisLocation(
+        req: operations.CreateHrisLocationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.CreateHrisLocationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.CreateHrisLocationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "hrisLocation", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "post",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.CreateHrisLocationResponse =
+            new operations.CreateHrisLocationResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.hrisLocation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.HrisLocation
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Retrieve a company
      */
     async getHrisCompany(
@@ -537,6 +637,91 @@ export class Hris {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.hrisGroup = utils.objectToClass(JSON.parse(decodedRes), shared.HrisGroup);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Retrieve a location
+     */
+    async getHrisLocation(
+        req: operations.GetHrisLocationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.GetHrisLocationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.GetHrisLocationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location/{id}",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.GetHrisLocationResponse = new operations.GetHrisLocationResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.hrisLocation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.HrisLocation
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,
@@ -965,6 +1150,94 @@ export class Hris {
                     res.hrisGroups = utils.objectToClass(
                         JSON.parse(decodedRes),
                         shared.HrisGroup,
+                        resFieldDepth
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * List all locations
+     */
+    async listHrisLocations(
+        req: operations.ListHrisLocationsRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.ListHrisLocationsResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.ListHrisLocationsRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        const queryParams: string = utils.serializeQueryParams(req);
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl + queryParams,
+            method: "get",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.ListHrisLocationsResponse = new operations.ListHrisLocationsResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.hrisLocations = [];
+                    const resFieldDepth: number = utils.getResFieldDepth(res);
+                    res.hrisLocations = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.HrisLocation,
                         resFieldDepth
                     );
                 } else {
@@ -1460,6 +1733,105 @@ export class Hris {
     }
 
     /**
+     * Update a location
+     */
+    async patchHrisLocation(
+        req: operations.PatchHrisLocationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.PatchHrisLocationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.PatchHrisLocationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location/{id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "hrisLocation", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "patch",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.PatchHrisLocationResponse = new operations.PatchHrisLocationResponse({
+            statusCode: httpRes.status,
+            contentType: responseContentType,
+            rawResponse: httpRes,
+        });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.hrisLocation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.HrisLocation
+                    );
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
      * Remove a company
      */
     async removeHrisCompany(
@@ -1676,6 +2048,88 @@ export class Hris {
             contentType: responseContentType,
             rawResponse: httpRes,
         });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+            default:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.string = JSON.parse(decodedRes);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+        }
+
+        return res;
+    }
+
+    /**
+     * Remove a location
+     */
+    async removeHrisLocation(
+        req: operations.RemoveHrisLocationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.RemoveHrisLocationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.RemoveHrisLocationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location/{id}",
+            req
+        );
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = { ...config?.headers, ...properties.headers };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "delete",
+            headers: headers,
+            responseType: "arraybuffer",
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.RemoveHrisLocationResponse =
+            new operations.RemoveHrisLocationResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
         const decodedRes = new TextDecoder().decode(httpRes?.data);
         switch (true) {
             case (httpRes?.status >= 400 && httpRes?.status < 500) ||
@@ -1976,6 +2430,106 @@ export class Hris {
             case httpRes?.status == 200:
                 if (utils.matchContentType(responseContentType, `application/json`)) {
                     res.hrisGroup = utils.objectToClass(JSON.parse(decodedRes), shared.HrisGroup);
+                } else {
+                    throw new errors.SDKError(
+                        "unknown content-type received: " + responseContentType,
+                        httpRes.status,
+                        decodedRes,
+                        httpRes
+                    );
+                }
+                break;
+            case (httpRes?.status >= 400 && httpRes?.status < 500) ||
+                (httpRes?.status >= 500 && httpRes?.status < 600):
+                throw new errors.SDKError(
+                    "API error occurred",
+                    httpRes.status,
+                    decodedRes,
+                    httpRes
+                );
+        }
+
+        return res;
+    }
+
+    /**
+     * Update a location
+     */
+    async updateHrisLocation(
+        req: operations.UpdateHrisLocationRequest,
+        config?: AxiosRequestConfig
+    ): Promise<operations.UpdateHrisLocationResponse> {
+        if (!(req instanceof utils.SpeakeasyBase)) {
+            req = new operations.UpdateHrisLocationRequest(req);
+        }
+
+        const baseURL: string = utils.templateUrl(
+            this.sdkConfiguration.serverURL,
+            this.sdkConfiguration.serverDefaults
+        );
+        const operationUrl: string = utils.generateURL(
+            baseURL,
+            "/hris/{connection_id}/location/{id}",
+            req
+        );
+
+        let [reqBodyHeaders, reqBody]: [object, any] = [{}, null];
+
+        try {
+            [reqBodyHeaders, reqBody] = utils.serializeRequestBody(req, "hrisLocation", "json");
+        } catch (e: unknown) {
+            if (e instanceof Error) {
+                throw new Error(`Error serializing request body, cause: ${e.message}`);
+            }
+        }
+        const client: AxiosInstance = this.sdkConfiguration.defaultClient;
+        let globalSecurity = this.sdkConfiguration.security;
+        if (typeof globalSecurity === "function") {
+            globalSecurity = await globalSecurity();
+        }
+        if (!(globalSecurity instanceof utils.SpeakeasyBase)) {
+            globalSecurity = new shared.Security(globalSecurity);
+        }
+        const properties = utils.parseSecurityProperties(globalSecurity);
+        const headers: RawAxiosRequestHeaders = {
+            ...reqBodyHeaders,
+            ...config?.headers,
+            ...properties.headers,
+        };
+        headers["Accept"] = "application/json";
+
+        headers["user-agent"] = this.sdkConfiguration.userAgent;
+
+        const httpRes: AxiosResponse = await client.request({
+            validateStatus: () => true,
+            url: operationUrl,
+            method: "put",
+            headers: headers,
+            responseType: "arraybuffer",
+            data: reqBody,
+            ...config,
+        });
+
+        const responseContentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) {
+            throw new Error(`status code not found in response: ${httpRes}`);
+        }
+
+        const res: operations.UpdateHrisLocationResponse =
+            new operations.UpdateHrisLocationResponse({
+                statusCode: httpRes.status,
+                contentType: responseContentType,
+                rawResponse: httpRes,
+            });
+        const decodedRes = new TextDecoder().decode(httpRes?.data);
+        switch (true) {
+            case httpRes?.status == 200:
+                if (utils.matchContentType(responseContentType, `application/json`)) {
+                    res.hrisLocation = utils.objectToClass(
+                        JSON.parse(decodedRes),
+                        shared.HrisLocation
+                    );
                 } else {
                     throw new errors.SDKError(
                         "unknown content-type received: " + responseContentType,

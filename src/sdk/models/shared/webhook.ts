@@ -47,6 +47,7 @@ export enum ObjectType {
     HrisPayslip = "hris_payslip",
     HrisTimeoff = "hris_timeoff",
     HrisCompany = "hris_company",
+    HrisLocation = "hris_location",
     MartechList = "martech_list",
     MartechMember = "martech_member",
     Passthrough = "passthrough",

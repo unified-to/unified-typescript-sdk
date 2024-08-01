@@ -5,6 +5,8 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { HrisCompensation } from "./hriscompensation";
 import { HrisEmail } from "./hrisemail";
+import { HrisGroup } from "./hrisgroup";
+import { HrisLocation } from "./hrislocation";
 import { HrisTelephone } from "./hristelephone";
 import { PropertyHrisEmployeeAddress } from "./propertyhrisemployeeaddress";
 import { PropertyHrisEmployeeEmployeeRoles } from "./propertyhrisemployeeemployeeroles";
@@ -107,6 +109,14 @@ export class HrisEmployee extends SpeakeasyBase {
     @Expose({ name: "gender" })
     gender?: HrisEmployeeGender;
 
+    /**
+     * Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.
+     */
+    @SpeakeasyMetadata({ elemType: HrisGroup })
+    @Expose({ name: "groups" })
+    @Type(() => HrisGroup)
+    groups?: HrisGroup[];
+
     @SpeakeasyMetadata()
     @Expose({ name: "hired_at" })
     @Transform(({ value }) => new Date(value), { toClassOnly: true })
@@ -127,6 +137,11 @@ export class HrisEmployee extends SpeakeasyBase {
     @SpeakeasyMetadata()
     @Expose({ name: "location" })
     location?: string;
+
+    @SpeakeasyMetadata({ elemType: HrisLocation })
+    @Expose({ name: "locations" })
+    @Type(() => HrisLocation)
+    locations?: HrisLocation[];
 
     @SpeakeasyMetadata()
     @Expose({ name: "manager_id" })

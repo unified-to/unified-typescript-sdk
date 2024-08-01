@@ -79,6 +79,8 @@ export enum PropertyConnectionPermissions {
     HrisTimeoffWrite = "hris_timeoff_write",
     HrisCompanyRead = "hris_company_read",
     HrisCompanyWrite = "hris_company_write",
+    HrisLocationRead = "hris_location_read",
+    HrisLocationWrite = "hris_location_write",
     UcCallRead = "uc_call_read",
     StorageFileRead = "storage_file_read",
     StorageFileWrite = "storage_file_write",
