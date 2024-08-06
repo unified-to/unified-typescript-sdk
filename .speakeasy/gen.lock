@@ -3,10 +3,10 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: e746fd806f5907d68d5ba126113c72ae
   docVersion: "1.0"
-  speakeasyVersion: 1.349.2
-  generationVersion: 2.382.2
-  releaseVersion: 1.0.65
-  configChecksum: cbd14a699bf567897625392d9652374e
+  speakeasyVersion: 1.352.2
+  generationVersion: 2.385.2
+  releaseVersion: 1.0.66
+  configChecksum: d6def6cc5f03dbed06a5d4a127fb8d5c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -14,7 +14,7 @@ management:
 features:
   typescript:
     core: 3.4.14
-    globalSecurity: 2.82.5
+    globalSecurity: 2.82.6
     globalServerURLs: 2.82.2
 generatedFiles:
   - src/sdk/accounting.ts
