@@ -13,9 +13,15 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 1.0.66
+  version: 1.1.0
+  additionalDependencies:
+    dependencies: {}
+    devDependencies: {}
+    peerDependencies: {}
+  additionalPackageJSON: {}
   author: Unified
   clientServerStatusCodesAsErrors: true
+  enumFormat: union
   flattenGlobalSecurity: false
   imports:
     option: openapi
@@ -27,6 +33,10 @@ typescript:
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
   maxMethodParams: 0
+  methodArguments: require-security-and-request
+  moduleFormat: commonjs
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'
+  responseFormat: flat
   templateVersion: v2
+  useIndexModules: true

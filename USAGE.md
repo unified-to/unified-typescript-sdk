@@ -1,27 +1,16 @@
 <!-- Start SDK Example Usage [usage] -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { Status, TypeT } from "@unified-api/typescript-sdk/dist/sdk/models/shared";
+
+const unifiedTo = new UnifiedTo();
 
 async function run() {
-    const sdk = new UnifiedTo({
-        security: {
-            jwt: "<YOUR_API_KEY_HERE>",
-        },
-    });
-
-    const res = await sdk.accounting.createAccountingAccount({
-        accountingAccount: {
-            raw: {
-                key: "<value>",
-            },
-        },
+    const result = await unifiedTo.accounting.createAccountingAccount({
         connectionId: "<value>",
     });
 
-    if (res.statusCode == 200) {
-        // handle response
-    }
+    // Handle the result
+    console.log(result);
 }
 
 run();

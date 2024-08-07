@@ -1,2 +1,17 @@
+/models
+/sdk/models/errors
+/sdk/types
+/node_modules
+/lib
+/sdk
+/funcs
+/hooks
+/index.*
+/cjs
+/esm
+/dist
+/.tsbuildinfo
+/.tshy
+/.tshy-*
 dist/
 node_modules/
