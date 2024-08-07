@@ -60,7 +60,7 @@ export class Document extends ClientSDK {
     async removeAtsDocument(
         request: operations.RemoveAtsDocumentRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(documentRemoveAtsDocument(this, request, options));
     }
 

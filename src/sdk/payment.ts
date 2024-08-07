@@ -150,7 +150,7 @@ export class Payment extends ClientSDK {
     async removePaymentLink(
         request: operations.RemovePaymentLinkRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(paymentRemovePaymentLink(this, request, options));
     }
 
@@ -160,7 +160,7 @@ export class Payment extends ClientSDK {
     async removePaymentPayment(
         request: operations.RemovePaymentPaymentRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(paymentRemovePaymentPayment(this, request, options));
     }
 

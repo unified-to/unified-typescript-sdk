@@ -60,7 +60,7 @@ export class Page extends ClientSDK {
     async removeKmsPage(
         request: operations.RemoveKmsPageRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(pageRemoveKmsPage(this, request, options));
     }
 

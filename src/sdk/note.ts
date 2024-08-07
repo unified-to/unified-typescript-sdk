@@ -60,7 +60,7 @@ export class Note extends ClientSDK {
     async removeTicketingNote(
         request: operations.RemoveTicketingNoteRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(noteRemoveTicketingNote(this, request, options));
     }
 

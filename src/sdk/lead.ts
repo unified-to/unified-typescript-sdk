@@ -60,7 +60,7 @@ export class Lead extends ClientSDK {
     async removeCrmLead(
         request: operations.RemoveCrmLeadRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(leadRemoveCrmLead(this, request, options));
     }
 

@@ -60,7 +60,7 @@ export class Scorecard extends ClientSDK {
     async removeAtsScorecard(
         request: operations.RemoveAtsScorecardRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(scorecardRemoveAtsScorecard(this, request, options));
     }
 

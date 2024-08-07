@@ -60,7 +60,7 @@ export class Ticket extends ClientSDK {
     async removeTicketingTicket(
         request: operations.RemoveTicketingTicketRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(ticketRemoveTicketingTicket(this, request, options));
     }
 

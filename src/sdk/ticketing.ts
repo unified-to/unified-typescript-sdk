@@ -152,7 +152,7 @@ export class Ticketing extends ClientSDK {
     async removeTicketingCustomer(
         request: operations.RemoveTicketingCustomerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(ticketingRemoveTicketingCustomer(this, request, options));
     }
 
@@ -162,7 +162,7 @@ export class Ticketing extends ClientSDK {
     async removeTicketingNote(
         request: operations.RemoveTicketingNoteRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(ticketingRemoveTicketingNote(this, request, options));
     }
 
@@ -172,7 +172,7 @@ export class Ticketing extends ClientSDK {
     async removeTicketingTicket(
         request: operations.RemoveTicketingTicketRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(ticketingRemoveTicketingTicket(this, request, options));
     }
 

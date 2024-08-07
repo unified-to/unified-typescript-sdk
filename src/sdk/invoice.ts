@@ -60,7 +60,7 @@ export class Invoice extends ClientSDK {
     async removeAccountingInvoice(
         request: operations.RemoveAccountingInvoiceRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(invoiceRemoveAccountingInvoice(this, request, options));
     }
 

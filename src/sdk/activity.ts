@@ -60,7 +60,7 @@ export class Activity extends ClientSDK {
     async removeAtsActivity(
         request: operations.RemoveAtsActivityRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(activityRemoveAtsActivity(this, request, options));
     }
 

@@ -60,7 +60,7 @@ export class Interview extends ClientSDK {
     async removeAtsInterview(
         request: operations.RemoveAtsInterviewRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(interviewRemoveAtsInterview(this, request, options));
     }
 

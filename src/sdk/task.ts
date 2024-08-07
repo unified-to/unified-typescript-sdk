@@ -106,7 +106,7 @@ export class Task extends ClientSDK {
     async removeTaskProject(
         request: operations.RemoveTaskProjectRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(taskRemoveTaskProject(this, request, options));
     }
 
@@ -116,7 +116,7 @@ export class Task extends ClientSDK {
     async removeTaskTask(
         request: operations.RemoveTaskTaskRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(taskRemoveTaskTask(this, request, options));
     }
 

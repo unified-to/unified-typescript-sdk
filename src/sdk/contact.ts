@@ -152,7 +152,7 @@ export class Contact extends ClientSDK {
     async removeAccountingContact(
         request: operations.RemoveAccountingContactRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(contactRemoveAccountingContact(this, request, options));
     }
 
@@ -162,7 +162,7 @@ export class Contact extends ClientSDK {
     async removeCrmContact(
         request: operations.RemoveCrmContactRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(contactRemoveCrmContact(this, request, options));
     }
 
@@ -172,7 +172,7 @@ export class Contact extends ClientSDK {
     async removeUcContact(
         request: operations.RemoveUcContactRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(contactRemoveUcContact(this, request, options));
     }
 

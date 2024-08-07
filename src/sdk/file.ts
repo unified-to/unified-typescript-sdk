@@ -60,7 +60,7 @@ export class FileT extends ClientSDK {
     async removeStorageFile(
         request: operations.RemoveStorageFileRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(fileRemoveStorageFile(this, request, options));
     }
 

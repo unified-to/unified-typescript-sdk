@@ -60,7 +60,7 @@ export class Event extends ClientSDK {
     async removeCrmEvent(
         request: operations.RemoveCrmEventRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(eventRemoveCrmEvent(this, request, options));
     }
 

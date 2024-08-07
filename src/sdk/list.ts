@@ -60,7 +60,7 @@ export class List extends ClientSDK {
     async removeMartechList(
         request: operations.RemoveMartechListRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(listRemoveMartechList(this, request, options));
     }
 

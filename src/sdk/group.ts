@@ -60,7 +60,7 @@ export class Group extends ClientSDK {
     async removeHrisGroup(
         request: operations.RemoveHrisGroupRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(groupRemoveHrisGroup(this, request, options));
     }
 

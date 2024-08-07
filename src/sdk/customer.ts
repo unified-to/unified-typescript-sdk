@@ -60,7 +60,7 @@ export class Customer extends ClientSDK {
     async removeTicketingCustomer(
         request: operations.RemoveTicketingCustomerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(customerRemoveTicketingCustomer(this, request, options));
     }
 

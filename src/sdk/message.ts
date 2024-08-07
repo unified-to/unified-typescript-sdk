@@ -60,7 +60,7 @@ export class Message extends ClientSDK {
     async removeMessagingMessage(
         request: operations.RemoveMessagingMessageRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(messageRemoveMessagingMessage(this, request, options));
     }
 

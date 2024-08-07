@@ -369,7 +369,7 @@ export class Ats extends ClientSDK {
     async removeAtsActivity(
         request: operations.RemoveAtsActivityRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsActivity(this, request, options));
     }
 
@@ -379,7 +379,7 @@ export class Ats extends ClientSDK {
     async removeAtsApplication(
         request: operations.RemoveAtsApplicationRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsApplication(this, request, options));
     }
 
@@ -389,7 +389,7 @@ export class Ats extends ClientSDK {
     async removeAtsCandidate(
         request: operations.RemoveAtsCandidateRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsCandidate(this, request, options));
     }
 
@@ -399,7 +399,7 @@ export class Ats extends ClientSDK {
     async removeAtsDocument(
         request: operations.RemoveAtsDocumentRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsDocument(this, request, options));
     }
 
@@ -409,7 +409,7 @@ export class Ats extends ClientSDK {
     async removeAtsInterview(
         request: operations.RemoveAtsInterviewRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsInterview(this, request, options));
     }
 
@@ -419,7 +419,7 @@ export class Ats extends ClientSDK {
     async removeAtsJob(
         request: operations.RemoveAtsJobRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsJob(this, request, options));
     }
 
@@ -429,7 +429,7 @@ export class Ats extends ClientSDK {
     async removeAtsScorecard(
         request: operations.RemoveAtsScorecardRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(atsRemoveAtsScorecard(this, request, options));
     }
 

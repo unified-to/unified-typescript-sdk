@@ -31,7 +31,7 @@ export async function connectionRemoveUnifiedConnection(
     options?: RequestOptions
 ): Promise<
     Result<
-        string,
+        void,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -61,7 +61,7 @@ export async function connectionRemoveUnifiedConnection(
     const path$ = pathToFunc("/unified/connection/{id}")(pathParams$);
 
     const headers$ = new Headers({
-        Accept: "application/json",
+        Accept: "*/*",
     });
 
     const security$ = await extractSecurity(client$.options$.security);
@@ -101,7 +101,7 @@ export async function connectionRemoveUnifiedConnection(
     const response = doResult.value;
 
     const [result$] = await m$.match<
-        string,
+        void,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -111,7 +111,7 @@ export async function connectionRemoveUnifiedConnection(
         | ConnectionError
     >(
         m$.fail(["4XX", "5XX"]),
-        m$.json("default", z.string())
+        m$.nil([200, "default"], z.void())
     )(response);
     if (!result$.ok) {
         return result$;

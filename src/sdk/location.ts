@@ -106,7 +106,7 @@ export class Location extends ClientSDK {
     async removeCommerceLocation(
         request: operations.RemoveCommerceLocationRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(locationRemoveCommerceLocation(this, request, options));
     }
 
@@ -116,7 +116,7 @@ export class Location extends ClientSDK {
     async removeHrisLocation(
         request: operations.RemoveHrisLocationRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(locationRemoveHrisLocation(this, request, options));
     }
 

@@ -60,7 +60,7 @@ export class Project extends ClientSDK {
     async removeTaskProject(
         request: operations.RemoveTaskProjectRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(projectRemoveTaskProject(this, request, options));
     }
 

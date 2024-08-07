@@ -60,7 +60,7 @@ export class Member extends ClientSDK {
     async removeMartechMember(
         request: operations.RemoveMartechMemberRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(memberRemoveMartechMember(this, request, options));
     }
 

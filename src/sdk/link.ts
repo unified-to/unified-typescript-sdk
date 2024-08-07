@@ -60,7 +60,7 @@ export class Link extends ClientSDK {
     async removePaymentLink(
         request: operations.RemovePaymentLinkRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(linkRemovePaymentLink(this, request, options));
     }
 

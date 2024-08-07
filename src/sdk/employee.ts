@@ -60,7 +60,7 @@ export class Employee extends ClientSDK {
     async removeHrisEmployee(
         request: operations.RemoveHrisEmployeeRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(employeeRemoveHrisEmployee(this, request, options));
     }
 

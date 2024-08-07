@@ -312,7 +312,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingAccount(
         request: operations.RemoveAccountingAccountRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingAccount(this, request, options));
     }
 
@@ -322,7 +322,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingContact(
         request: operations.RemoveAccountingContactRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingContact(this, request, options));
     }
 
@@ -332,7 +332,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingInvoice(
         request: operations.RemoveAccountingInvoiceRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingInvoice(this, request, options));
     }
 
@@ -342,7 +342,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingJournal(
         request: operations.RemoveAccountingJournalRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingJournal(this, request, options));
     }
 
@@ -352,7 +352,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingTaxrate(
         request: operations.RemoveAccountingTaxrateRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingTaxrate(this, request, options));
     }
 
@@ -362,7 +362,7 @@ export class Accounting extends ClientSDK {
     async removeAccountingTransaction(
         request: operations.RemoveAccountingTransactionRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(accountingRemoveAccountingTransaction(this, request, options));
     }
 

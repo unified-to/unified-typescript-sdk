@@ -171,7 +171,7 @@ export class Unified extends ClientSDK {
     async patchUnifiedWebhookTrigger(
         request: operations.PatchUnifiedWebhookTriggerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(unifiedPatchUnifiedWebhookTrigger(this, request, options));
     }
 
@@ -181,7 +181,7 @@ export class Unified extends ClientSDK {
     async removeUnifiedConnection(
         request: operations.RemoveUnifiedConnectionRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(unifiedRemoveUnifiedConnection(this, request, options));
     }
 
@@ -191,7 +191,7 @@ export class Unified extends ClientSDK {
     async removeUnifiedWebhook(
         request: operations.RemoveUnifiedWebhookRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(unifiedRemoveUnifiedWebhook(this, request, options));
     }
 
@@ -211,7 +211,7 @@ export class Unified extends ClientSDK {
     async updateUnifiedWebhookTrigger(
         request: operations.UpdateUnifiedWebhookTriggerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(unifiedUpdateUnifiedWebhookTrigger(this, request, options));
     }
 }

@@ -198,7 +198,7 @@ export class Commerce extends ClientSDK {
     async removeCommerceCollection(
         request: operations.RemoveCommerceCollectionRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(commerceRemoveCommerceCollection(this, request, options));
     }
 
@@ -208,7 +208,7 @@ export class Commerce extends ClientSDK {
     async removeCommerceInventory(
         request: operations.RemoveCommerceInventoryRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(commerceRemoveCommerceInventory(this, request, options));
     }
 
@@ -218,7 +218,7 @@ export class Commerce extends ClientSDK {
     async removeCommerceItem(
         request: operations.RemoveCommerceItemRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(commerceRemoveCommerceItem(this, request, options));
     }
 
@@ -228,7 +228,7 @@ export class Commerce extends ClientSDK {
     async removeCommerceLocation(
         request: operations.RemoveCommerceLocationRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(commerceRemoveCommerceLocation(this, request, options));
     }
 

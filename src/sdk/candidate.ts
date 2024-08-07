@@ -60,7 +60,7 @@ export class Candidate extends ClientSDK {
     async removeAtsCandidate(
         request: operations.RemoveAtsCandidateRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(candidateRemoveAtsCandidate(this, request, options));
     }
 

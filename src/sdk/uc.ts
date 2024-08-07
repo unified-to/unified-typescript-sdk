@@ -71,7 +71,7 @@ export class Uc extends ClientSDK {
     async removeUcContact(
         request: operations.RemoveUcContactRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(ucRemoveUcContact(this, request, options));
     }
 

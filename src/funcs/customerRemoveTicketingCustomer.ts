@@ -31,7 +31,7 @@ export async function customerRemoveTicketingCustomer(
     options?: RequestOptions
 ): Promise<
     Result<
-        string,
+        void,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -65,7 +65,7 @@ export async function customerRemoveTicketingCustomer(
     const path$ = pathToFunc("/ticketing/{connection_id}/customer/{id}")(pathParams$);
 
     const headers$ = new Headers({
-        Accept: "application/json",
+        Accept: "*/*",
     });
 
     const security$ = await extractSecurity(client$.options$.security);
@@ -105,7 +105,7 @@ export async function customerRemoveTicketingCustomer(
     const response = doResult.value;
 
     const [result$] = await m$.match<
-        string,
+        void,
         | SDKError
         | SDKValidationError
         | UnexpectedClientError
@@ -115,7 +115,7 @@ export async function customerRemoveTicketingCustomer(
         | ConnectionError
     >(
         m$.fail(["4XX", "5XX"]),
-        m$.json("default", z.string())
+        m$.nil([200, "default"], z.void())
     )(response);
     if (!result$.ok) {
         return result$;

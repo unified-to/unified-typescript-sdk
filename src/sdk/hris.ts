@@ -242,7 +242,7 @@ export class Hris extends ClientSDK {
     async removeHrisCompany(
         request: operations.RemoveHrisCompanyRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(hrisRemoveHrisCompany(this, request, options));
     }
 
@@ -252,7 +252,7 @@ export class Hris extends ClientSDK {
     async removeHrisEmployee(
         request: operations.RemoveHrisEmployeeRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(hrisRemoveHrisEmployee(this, request, options));
     }
 
@@ -262,7 +262,7 @@ export class Hris extends ClientSDK {
     async removeHrisGroup(
         request: operations.RemoveHrisGroupRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(hrisRemoveHrisGroup(this, request, options));
     }
 
@@ -272,7 +272,7 @@ export class Hris extends ClientSDK {
     async removeHrisLocation(
         request: operations.RemoveHrisLocationRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(hrisRemoveHrisLocation(this, request, options));
     }
 

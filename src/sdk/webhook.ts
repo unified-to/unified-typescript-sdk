@@ -53,7 +53,7 @@ export class Webhook extends ClientSDK {
     async patchUnifiedWebhookTrigger(
         request: operations.PatchUnifiedWebhookTriggerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(webhookPatchUnifiedWebhookTrigger(this, request, options));
     }
 
@@ -63,7 +63,7 @@ export class Webhook extends ClientSDK {
     async removeUnifiedWebhook(
         request: operations.RemoveUnifiedWebhookRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(webhookRemoveUnifiedWebhook(this, request, options));
     }
 
@@ -73,7 +73,7 @@ export class Webhook extends ClientSDK {
     async updateUnifiedWebhookTrigger(
         request: operations.UpdateUnifiedWebhookTriggerRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(webhookUpdateUnifiedWebhookTrigger(this, request, options));
     }
 }

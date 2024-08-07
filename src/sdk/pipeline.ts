@@ -60,7 +60,7 @@ export class Pipeline extends ClientSDK {
     async removeCrmPipeline(
         request: operations.RemoveCrmPipelineRequest,
         options?: RequestOptions
-    ): Promise<string> {
+    ): Promise<void> {
         return unwrapAsync(pipelineRemoveCrmPipeline(this, request, options));
     }
 
