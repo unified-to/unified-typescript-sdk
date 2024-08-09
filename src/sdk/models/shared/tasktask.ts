@@ -20,6 +20,7 @@ export type TaskTask = {
     creatorUserId?: string | undefined;
     dueAt?: Date | undefined;
     followerUserIds?: Array<string> | undefined;
+    groupIds?: Array<string> | undefined;
     id?: string | undefined;
     name?: string | undefined;
     notes?: string | undefined;
@@ -73,6 +74,7 @@ export const TaskTask$inboundSchema: z.ZodType<TaskTask, z.ZodTypeDef, unknown> 
             .transform((v) => new Date(v))
             .optional(),
         follower_user_ids: z.array(z.string()).optional(),
+        group_ids: z.array(z.string()).optional(),
         id: z.string().optional(),
         name: z.string().optional(),
         notes: z.string().optional(),
@@ -97,6 +99,7 @@ export const TaskTask$inboundSchema: z.ZodType<TaskTask, z.ZodTypeDef, unknown> 
             creator_user_id: "creatorUserId",
             due_at: "dueAt",
             follower_user_ids: "followerUserIds",
+            group_ids: "groupIds",
             parent_id: "parentId",
             project_id: "projectId",
             updated_at: "updatedAt",
@@ -111,6 +114,7 @@ export type TaskTask$Outbound = {
     creator_user_id?: string | undefined;
     due_at?: string | undefined;
     follower_user_ids?: Array<string> | undefined;
+    group_ids?: Array<string> | undefined;
     id?: string | undefined;
     name?: string | undefined;
     notes?: string | undefined;
@@ -142,6 +146,7 @@ export const TaskTask$outboundSchema: z.ZodType<TaskTask$Outbound, z.ZodTypeDef,
             .transform((v) => v.toISOString())
             .optional(),
         followerUserIds: z.array(z.string()).optional(),
+        groupIds: z.array(z.string()).optional(),
         id: z.string().optional(),
         name: z.string().optional(),
         notes: z.string().optional(),
@@ -165,6 +170,7 @@ export const TaskTask$outboundSchema: z.ZodType<TaskTask$Outbound, z.ZodTypeDef,
             creatorUserId: "creator_user_id",
             dueAt: "due_at",
             followerUserIds: "follower_user_ids",
+            groupIds: "group_ids",
             parentId: "parent_id",
             projectId: "project_id",
             updatedAt: "updated_at",
