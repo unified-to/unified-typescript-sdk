@@ -14,13 +14,16 @@ export const IssueStatus = {
     OnHold: "ON_HOLD",
     Validating: "VALIDATING",
     Rejected: "REJECTED",
+    UpNext: "UP_NEXT",
 } as const;
 export type IssueStatus = ClosedEnum<typeof IssueStatus>;
 
 export type Issue = {
     createdAt?: string | undefined;
     id?: string | undefined;
+    importance?: number | undefined;
     resolutionTime?: number | undefined;
+    size?: number | undefined;
     status: IssueStatus;
     ticketRef: string;
     title: string;
@@ -54,7 +57,9 @@ export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> = z
     .object({
         created_at: z.string().optional(),
         id: z.string().optional(),
+        importance: z.number().optional(),
         resolution_time: z.number().optional(),
+        size: z.number().optional(),
         status: IssueStatus$inboundSchema,
         ticket_ref: z.string(),
         title: z.string(),
@@ -77,7 +82,9 @@ export const Issue$inboundSchema: z.ZodType<Issue, z.ZodTypeDef, unknown> = z
 export type Issue$Outbound = {
     created_at?: string | undefined;
     id?: string | undefined;
+    importance?: number | undefined;
     resolution_time?: number | undefined;
+    size?: number | undefined;
     status: string;
     ticket_ref: string;
     title: string;
@@ -92,7 +99,9 @@ export const Issue$outboundSchema: z.ZodType<Issue$Outbound, z.ZodTypeDef, Issue
     .object({
         createdAt: z.string().optional(),
         id: z.string().optional(),
+        importance: z.number().optional(),
         resolutionTime: z.number().optional(),
+        size: z.number().optional(),
         status: IssueStatus$outboundSchema,
         ticketRef: z.string(),
         title: z.string(),
