@@ -3,10 +3,10 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: 97bee75349492db718a1db2995576f85
   docVersion: "1.0"
-  speakeasyVersion: 1.360.0
-  generationVersion: 2.392.0
-  releaseVersion: 2.1.0
-  configChecksum: 03593ef5aae03135f45da972489bc15c
+  speakeasyVersion: 1.361.1
+  generationVersion: 2.393.4
+  releaseVersion: 2.1.1
+  configChecksum: 5ae041a18aa2ac6b666808fc0a179b63
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -14,8 +14,8 @@ management:
 features:
   typescript:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.6
-    core: 3.13.0
+    constsAndDefaults: 0.1.7
+    core: 3.13.1
     defaultEnabledRetries: 0.1.0
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
@@ -686,6 +686,7 @@ generatedFiles:
   - src/sdk/models/errors/sdkerror.ts
   - src/sdk/models/errors/sdkvalidationerror.ts
   - src/sdk/types/blobs.ts
+  - src/sdk/types/constdatetime.ts
   - src/sdk/types/enums.ts
   - src/sdk/types/fp.ts
   - src/sdk/types/index.ts
