@@ -73,7 +73,9 @@ export async function inventoryListCommerceInventories(
         limit: payload$.limit,
         location_id: payload$.location_id,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

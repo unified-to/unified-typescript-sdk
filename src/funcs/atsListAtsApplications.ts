@@ -73,7 +73,9 @@ export async function atsListAtsApplications(
         job_id: payload$.job_id,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

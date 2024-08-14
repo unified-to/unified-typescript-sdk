@@ -60,6 +60,8 @@ export async function unifiedListUnifiedIssues(
     const query$ = encodeFormQuery$({
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

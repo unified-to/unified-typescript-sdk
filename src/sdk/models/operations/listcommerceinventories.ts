@@ -18,10 +18,12 @@ export type ListCommerceInventoriesRequest = {
     limit?: number | undefined;
     locationId?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -41,7 +43,9 @@ export const ListCommerceInventoriesRequest$inboundSchema: z.ZodType<
         limit: z.number().optional(),
         location_id: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -65,7 +69,9 @@ export type ListCommerceInventoriesRequest$Outbound = {
     limit?: number | undefined;
     location_id?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -82,7 +88,9 @@ export const ListCommerceInventoriesRequest$outboundSchema: z.ZodType<
         limit: z.number().optional(),
         locationId: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

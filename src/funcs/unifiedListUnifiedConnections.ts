@@ -63,6 +63,8 @@ export async function unifiedListUnifiedConnections(
         external_xref: payload$.external_xref,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

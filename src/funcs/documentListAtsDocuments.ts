@@ -73,7 +73,9 @@ export async function documentListAtsDocuments(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

@@ -35,6 +35,8 @@ export type ListUnifiedWebhooksRequest = {
      */
     object?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -114,6 +116,8 @@ export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
         limit: z.number().optional(),
         object: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -138,6 +142,8 @@ export type ListUnifiedWebhooksRequest$Outbound = {
     limit?: number | undefined;
     object?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -158,6 +164,8 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
         limit: z.number().optional(),
         object: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

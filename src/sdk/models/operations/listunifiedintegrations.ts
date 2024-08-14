@@ -41,8 +41,6 @@ export type ListUnifiedIntegrationsRequest = {
     env?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
-    order?: string | undefined;
-    sort?: string | undefined;
     summary?: boolean | undefined;
     /**
      * Filter the results for only this integration type
@@ -84,8 +82,6 @@ export const ListUnifiedIntegrationsRequest$inboundSchema: z.ZodType<
         env: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
-        order: z.string().optional(),
-        sort: z.string().optional(),
         summary: z.boolean().optional(),
         type: z.string().optional(),
         updated_gte: z.string().optional(),
@@ -103,8 +99,6 @@ export type ListUnifiedIntegrationsRequest$Outbound = {
     env?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
-    order?: string | undefined;
-    sort?: string | undefined;
     summary?: boolean | undefined;
     type?: string | undefined;
     updated_gte?: string | undefined;
@@ -122,8 +116,6 @@ export const ListUnifiedIntegrationsRequest$outboundSchema: z.ZodType<
         env: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
-        order: z.string().optional(),
-        sort: z.string().optional(),
         summary: z.boolean().optional(),
         type: z.string().optional(),
         updatedGte: z.string().optional(),

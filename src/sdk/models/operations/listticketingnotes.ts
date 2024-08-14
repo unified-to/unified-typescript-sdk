@@ -17,10 +17,12 @@ export type ListTicketingNotesRequest = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     ticketId?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
@@ -40,7 +42,9 @@ export const ListTicketingNotesRequest$inboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         ticket_id: z.string().optional(),
         updated_gte: z
             .string()
@@ -64,7 +68,9 @@ export type ListTicketingNotesRequest$Outbound = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     ticket_id?: string | undefined;
     updated_gte?: string | undefined;
 };
@@ -81,7 +87,9 @@ export const ListTicketingNotesRequest$outboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         ticketId: z.string().optional(),
         updatedGte: z
             .date()

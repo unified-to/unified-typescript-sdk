@@ -71,9 +71,11 @@ export async function taskListTaskTasks(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         parent_id: payload$.parent_id,
         project_id: payload$.project_id,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

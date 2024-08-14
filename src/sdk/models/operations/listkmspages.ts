@@ -16,11 +16,13 @@ export type ListKmsPagesRequest = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     parentId?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     spaceId?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
@@ -39,8 +41,10 @@ export const ListKmsPagesRequest$inboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         parent_id: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         space_id: z.string().optional(),
         updated_gte: z
             .string()
@@ -63,8 +67,10 @@ export type ListKmsPagesRequest$Outbound = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     parent_id?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     space_id?: string | undefined;
     updated_gte?: string | undefined;
 };
@@ -80,8 +86,10 @@ export const ListKmsPagesRequest$outboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         parentId: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         spaceId: z.string().optional(),
         updatedGte: z
             .date()

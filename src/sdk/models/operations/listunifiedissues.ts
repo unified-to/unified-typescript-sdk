@@ -8,6 +8,8 @@ import * as z from "zod";
 export type ListUnifiedIssuesRequest = {
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -23,6 +25,8 @@ export const ListUnifiedIssuesRequest$inboundSchema: z.ZodType<
     .object({
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -39,6 +43,8 @@ export const ListUnifiedIssuesRequest$inboundSchema: z.ZodType<
 export type ListUnifiedIssuesRequest$Outbound = {
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -51,6 +57,8 @@ export const ListUnifiedIssuesRequest$outboundSchema: z.ZodType<
     .object({
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

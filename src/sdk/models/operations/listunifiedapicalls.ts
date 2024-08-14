@@ -25,6 +25,8 @@ export type ListUnifiedApicallsRequest = {
     integrationType?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -45,6 +47,8 @@ export const ListUnifiedApicallsRequest$inboundSchema: z.ZodType<
         integration_type: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -69,6 +73,8 @@ export type ListUnifiedApicallsRequest$Outbound = {
     integration_type?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -86,6 +92,8 @@ export const ListUnifiedApicallsRequest$outboundSchema: z.ZodType<
         integrationType: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

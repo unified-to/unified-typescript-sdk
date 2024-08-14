@@ -16,10 +16,12 @@ export type ListTicketingCustomersRequest = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -37,7 +39,9 @@ export const ListTicketingCustomersRequest$inboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -57,7 +61,9 @@ export type ListTicketingCustomersRequest$Outbound = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -72,7 +78,9 @@ export const ListTicketingCustomersRequest$outboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

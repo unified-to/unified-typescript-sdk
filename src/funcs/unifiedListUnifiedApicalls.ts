@@ -65,6 +65,8 @@ export async function unifiedListUnifiedApicalls(
         integration_type: payload$.integration_type,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

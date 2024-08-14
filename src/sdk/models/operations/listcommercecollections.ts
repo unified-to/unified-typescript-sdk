@@ -16,11 +16,13 @@ export type ListCommerceCollectionsRequest = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     parentId?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     type?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
@@ -39,8 +41,10 @@ export const ListCommerceCollectionsRequest$inboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         parent_id: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         type: z.string().optional(),
         updated_gte: z
             .string()
@@ -62,8 +66,10 @@ export type ListCommerceCollectionsRequest$Outbound = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     parent_id?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     type?: string | undefined;
     updated_gte?: string | undefined;
 };
@@ -79,8 +85,10 @@ export const ListCommerceCollectionsRequest$outboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         parentId: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         type: z.string().optional(),
         updatedGte: z
             .date()

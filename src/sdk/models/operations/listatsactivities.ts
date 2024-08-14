@@ -21,10 +21,12 @@ export type ListAtsActivitiesRequest = {
     jobId?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -48,7 +50,9 @@ export const ListAtsActivitiesRequest$inboundSchema: z.ZodType<
         job_id: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -80,7 +84,9 @@ export type ListAtsActivitiesRequest$Outbound = {
     job_id?: string | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
     user_id?: string | undefined;
 };
@@ -101,7 +107,9 @@ export const ListAtsActivitiesRequest$outboundSchema: z.ZodType<
         jobId: z.string().optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())

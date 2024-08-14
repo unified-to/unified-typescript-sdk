@@ -71,8 +71,10 @@ export async function kmsListKmsPages(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         parent_id: payload$.parent_id,
         query: payload$.query,
+        sort: payload$.sort,
         space_id: payload$.space_id,
         updated_gte: payload$.updated_gte,
     });

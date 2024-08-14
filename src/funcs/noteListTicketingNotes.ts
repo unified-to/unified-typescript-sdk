@@ -72,7 +72,9 @@ export async function noteListTicketingNotes(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         ticket_id: payload$.ticket_id,
         updated_gte: payload$.updated_gte,
     });

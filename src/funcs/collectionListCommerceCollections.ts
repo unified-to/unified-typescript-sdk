@@ -71,8 +71,10 @@ export async function collectionListCommerceCollections(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         parent_id: payload$.parent_id,
         query: payload$.query,
+        sort: payload$.sort,
         type: payload$.type,
         updated_gte: payload$.updated_gte,
     });

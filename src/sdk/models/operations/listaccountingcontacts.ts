@@ -16,10 +16,12 @@ export type ListAccountingContactsRequest = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     type?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
@@ -38,7 +40,9 @@ export const ListAccountingContactsRequest$inboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         type: z.string().optional(),
         updated_gte: z
             .string()
@@ -59,7 +63,9 @@ export type ListAccountingContactsRequest$Outbound = {
     fields?: Array<string> | undefined;
     limit?: number | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     type?: string | undefined;
     updated_gte?: string | undefined;
 };
@@ -75,7 +81,9 @@ export const ListAccountingContactsRequest$outboundSchema: z.ZodType<
         fields: z.array(z.string()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         type: z.string().optional(),
         updatedGte: z
             .date()

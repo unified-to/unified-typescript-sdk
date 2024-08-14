@@ -65,6 +65,8 @@ export async function unifiedListUnifiedWebhooks(
         limit: payload$.limit,
         object: payload$.object,
         offset: payload$.offset,
+        order: payload$.order,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

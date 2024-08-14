@@ -72,7 +72,9 @@ export async function memberListMartechMembers(
         limit: payload$.limit,
         list_id: payload$.list_id,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

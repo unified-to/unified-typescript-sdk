@@ -71,7 +71,9 @@ export async function payslipListHrisPayslips(
         fields: payload$.fields,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
         user_id: payload$.user_id,
     });

@@ -63,8 +63,6 @@ export async function integrationListUnifiedIntegrations(
         env: payload$.env,
         limit: payload$.limit,
         offset: payload$.offset,
-        order: payload$.order,
-        sort: payload$.sort,
         summary: payload$.summary,
         type: payload$.type,
         updated_gte: payload$.updated_gte,

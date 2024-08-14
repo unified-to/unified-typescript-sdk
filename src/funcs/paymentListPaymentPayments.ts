@@ -73,7 +73,9 @@ export async function paymentListPaymentPayments(
         invoice_id: payload$.invoice_id,
         limit: payload$.limit,
         offset: payload$.offset,
+        order: payload$.order,
         query: payload$.query,
+        sort: payload$.sort,
         updated_gte: payload$.updated_gte,
     });
 

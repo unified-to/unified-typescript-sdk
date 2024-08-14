@@ -17,10 +17,12 @@ export type ListMartechMembersRequest = {
     limit?: number | undefined;
     listId?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     /**
      * Query string to search. eg. email address or name
      */
     query?: string | undefined;
+    sort?: string | undefined;
     /**
      * Return only results whose updated date is equal or greater to this value
      */
@@ -39,7 +41,9 @@ export const ListMartechMembersRequest$inboundSchema: z.ZodType<
         limit: z.number().optional(),
         list_id: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updated_gte: z
             .string()
             .datetime({ offset: true })
@@ -61,7 +65,9 @@ export type ListMartechMembersRequest$Outbound = {
     limit?: number | undefined;
     list_id?: string | undefined;
     offset?: number | undefined;
+    order?: string | undefined;
     query?: string | undefined;
+    sort?: string | undefined;
     updated_gte?: string | undefined;
 };
 
@@ -77,7 +83,9 @@ export const ListMartechMembersRequest$outboundSchema: z.ZodType<
         limit: z.number().optional(),
         listId: z.string().optional(),
         offset: z.number().optional(),
+        order: z.string().optional(),
         query: z.string().optional(),
+        sort: z.string().optional(),
         updatedGte: z
             .date()
             .transform((v) => v.toISOString())
