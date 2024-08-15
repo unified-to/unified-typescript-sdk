@@ -2,6 +2,17 @@
 
 A connection represents a specific authentication of an integration.
 
+## Example Usage
+
+```typescript
+import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Connection = {
+    categories: ["storage"],
+    integrationType: "<value>",
+    permissions: ["payment_payment_write"],
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # UpdateAccountingInvoiceRequest
 
+## Example Usage
+
+```typescript
+import { UpdateAccountingInvoiceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateAccountingInvoiceRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

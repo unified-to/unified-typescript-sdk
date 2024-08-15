@@ -1,11 +1,15 @@
 # PropertyCrmEventTaskStatus
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventTaskStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventTaskStatus = "DEFERRED";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `Completed`      | COMPLETED        |
-| `NotStarted`     | NOT_STARTED      |
-| `WorkInProgress` | WORK_IN_PROGRESS |
-| `Deferred`       | DEFERRED         |
+```typescript
+"COMPLETED" | "NOT_STARTED" | "WORK_IN_PROGRESS" | "DEFERRED"
+```

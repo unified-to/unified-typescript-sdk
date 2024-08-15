@@ -1,5 +1,12 @@
 # PropertyIntegrationSupportWebhookEvents
 
+## Example Usage
+
+```typescript
+import { PropertyIntegrationSupportWebhookEvents } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyIntegrationSupportWebhookEvents = {};
+```
 
 ## Fields
 

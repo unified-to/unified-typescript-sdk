@@ -1,9 +1,15 @@
 # Role
 
+## Example Usage
+
+```typescript
+import { Role } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Role = "USER";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `System` | SYSTEM   |
-| `User`   | USER     |
+```typescript
+"SYSTEM" | "USER"
+```

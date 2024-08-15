@@ -1,5 +1,14 @@
 # ListCommerceInventoriesRequest
 
+## Example Usage
+
+```typescript
+import { ListCommerceInventoriesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListCommerceInventoriesRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

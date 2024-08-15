@@ -1,5 +1,12 @@
 # PaymentPayment
 
+## Example Usage
+
+```typescript
+import { PaymentPayment } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PaymentPayment = {};
+```
 
 ## Fields
 

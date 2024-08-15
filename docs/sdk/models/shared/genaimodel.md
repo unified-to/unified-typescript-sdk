@@ -1,5 +1,12 @@
 # GenaiModel
 
+## Example Usage
+
+```typescript
+import { GenaiModel } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: GenaiModel = {};
+```
 
 ## Fields
 

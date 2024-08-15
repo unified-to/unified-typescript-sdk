@@ -1,5 +1,15 @@
 # PatchTicketingTicketRequest
 
+## Example Usage
+
+```typescript
+import { PatchTicketingTicketRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchTicketingTicketRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

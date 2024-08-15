@@ -1,5 +1,15 @@
 # UpdateTicketingNoteRequest
 
+## Example Usage
+
+```typescript
+import { UpdateTicketingNoteRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateTicketingNoteRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

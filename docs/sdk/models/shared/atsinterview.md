@@ -1,5 +1,12 @@
 # AtsInterview
 
+## Example Usage
+
+```typescript
+import { AtsInterview } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsInterview = {};
+```
 
 ## Fields
 

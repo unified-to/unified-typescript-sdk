@@ -1,5 +1,14 @@
 # GenaiContent
 
+## Example Usage
+
+```typescript
+import { GenaiContent } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: GenaiContent = {
+    content: "<value>",
+};
+```
 
 ## Fields
 

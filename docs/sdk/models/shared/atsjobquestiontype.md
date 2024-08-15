@@ -1,19 +1,15 @@
 # AtsJobQuestionType
 
+## Example Usage
+
+```typescript
+import { AtsJobQuestionType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsJobQuestionType = "YES_NO";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `Text`           | TEXT             |
-| `Number`         | NUMBER           |
-| `Date`           | DATE             |
-| `Boolean`        | BOOLEAN          |
-| `MultipleChoice` | MULTIPLE_CHOICE  |
-| `File`           | FILE             |
-| `Textarea`       | TEXTAREA         |
-| `MultipleSelect` | MULTIPLE_SELECT  |
-| `University`     | UNIVERSITY       |
-| `YesNo`          | YES_NO           |
-| `Currency`       | CURRENCY         |
-| `Url`            | URL              |
+```typescript
+"TEXT" | "NUMBER" | "DATE" | "BOOLEAN" | "MULTIPLE_CHOICE" | "FILE" | "TEXTAREA" | "MULTIPLE_SELECT" | "UNIVERSITY" | "YES_NO" | "CURRENCY" | "URL"
+```

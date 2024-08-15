@@ -1,9 +1,15 @@
 # SizeUnit
 
+## Example Usage
+
+```typescript
+import { SizeUnit } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: SizeUnit = "cm";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Cm`   | cm     |
-| `Inch` | inch   |
+```typescript
+"cm" | "inch"
+```

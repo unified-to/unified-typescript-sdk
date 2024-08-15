@@ -1,5 +1,14 @@
 # ListCrmPipelinesRequest
 
+## Example Usage
+
+```typescript
+import { ListCrmPipelinesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListCrmPipelinesRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

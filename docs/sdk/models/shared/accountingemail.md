@@ -1,5 +1,12 @@
 # AccountingEmail
 
+## Example Usage
+
+```typescript
+import { AccountingEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingEmail = {};
+```
 
 ## Fields
 

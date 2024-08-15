@@ -1,5 +1,15 @@
 # GetPaymentPaymentRequest
 
+## Example Usage
+
+```typescript
+import { GetPaymentPaymentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetPaymentPaymentRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

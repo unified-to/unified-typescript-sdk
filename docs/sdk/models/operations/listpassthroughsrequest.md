@@ -1,5 +1,15 @@
 # ListPassthroughsRequest
 
+## Example Usage
+
+```typescript
+import { ListPassthroughsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListPassthroughsRequest = {
+    connectionId: "<value>",
+    path: "/usr/X11R6",
+};
+```
 
 ## Fields
 

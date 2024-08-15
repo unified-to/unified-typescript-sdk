@@ -1,5 +1,14 @@
 # ListTaskTasksRequest
 
+## Example Usage
+
+```typescript
+import { ListTaskTasksRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListTaskTasksRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

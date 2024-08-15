@@ -2,6 +2,16 @@
 
 A collection of items/products/services
 
+## Example Usage
+
+```typescript
+import { CommerceCollection } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceCollection = {
+    id: "<id>",
+    name: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # PatchAtsJobRequest
 
+## Example Usage
+
+```typescript
+import { PatchAtsJobRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAtsJobRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

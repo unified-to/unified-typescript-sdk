@@ -1,24 +1,15 @@
 # PropertyIntegrationCategories
 
+## Example Usage
+
+```typescript
+import { PropertyIntegrationCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyIntegrationCategories = "ticketing";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Passthrough` | passthrough   |
-| `Hris`        | hris          |
-| `Ats`         | ats           |
-| `Auth`        | auth          |
-| `Crm`         | crm           |
-| `Enrich`      | enrich        |
-| `Martech`     | martech       |
-| `Ticketing`   | ticketing     |
-| `Uc`          | uc            |
-| `Accounting`  | accounting    |
-| `Storage`     | storage       |
-| `Commerce`    | commerce      |
-| `Payment`     | payment       |
-| `Genai`       | genai         |
-| `Messaging`   | messaging     |
-| `Kms`         | kms           |
-| `Task`        | task          |
+```typescript
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task"
+```

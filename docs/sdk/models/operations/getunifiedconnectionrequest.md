@@ -1,5 +1,14 @@
 # GetUnifiedConnectionRequest
 
+## Example Usage
+
+```typescript
+import { GetUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetUnifiedConnectionRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

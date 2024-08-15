@@ -2,6 +2,13 @@
 
 A contact represents a person that optionally is associated with a call
 
+## Example Usage
+
+```typescript
+import { UcContact } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: UcContact = {};
+```
 
 ## Fields
 

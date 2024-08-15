@@ -1,5 +1,12 @@
 # CrmStage
 
+## Example Usage
+
+```typescript
+import { CrmStage } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmStage = {};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # UpdateAtsActivityRequest
 
+## Example Usage
+
+```typescript
+import { UpdateAtsActivityRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateAtsActivityRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

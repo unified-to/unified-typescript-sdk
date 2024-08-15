@@ -1,5 +1,15 @@
 # UpdateAtsCandidateRequest
 
+## Example Usage
+
+```typescript
+import { UpdateAtsCandidateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateAtsCandidateRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

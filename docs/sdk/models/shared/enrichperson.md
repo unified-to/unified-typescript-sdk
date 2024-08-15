@@ -2,6 +2,13 @@
 
 A person object from an enrichment integration
 
+## Example Usage
+
+```typescript
+import { EnrichPerson } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EnrichPerson = {};
+```
 
 ## Fields
 

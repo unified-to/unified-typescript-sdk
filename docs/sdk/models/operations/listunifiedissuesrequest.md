@@ -1,5 +1,12 @@
 # ListUnifiedIssuesRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedIssuesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedIssuesRequest = {};
+```
 
 ## Fields
 

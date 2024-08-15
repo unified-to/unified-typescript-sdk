@@ -1,5 +1,15 @@
 # GetAtsInterviewRequest
 
+## Example Usage
+
+```typescript
+import { GetAtsInterviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetAtsInterviewRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

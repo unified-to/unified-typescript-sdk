@@ -1,5 +1,14 @@
 # CreateCrmContactRequest
 
+## Example Usage
+
+```typescript
+import { CreateCrmContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateCrmContactRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

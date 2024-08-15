@@ -2,6 +2,13 @@
 
 The note object, when type = note
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventNote } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventNote = {};
+```
 
 ## Fields
 

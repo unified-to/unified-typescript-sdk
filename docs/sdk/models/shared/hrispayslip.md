@@ -1,5 +1,17 @@
 # HrisPayslip
 
+## Example Usage
+
+```typescript
+import { HrisPayslip } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisPayslip = {
+    raw: {
+        key: "<value>",
+    },
+    userId: "<value>",
+};
+```
 
 ## Fields
 

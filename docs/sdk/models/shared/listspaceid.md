@@ -1,10 +1,15 @@
 # ListSpaceId
 
+## Example Usage
+
+```typescript
+import { ListSpaceId } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ListSpaceId = "supported-required";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `SupportedRequired` | supported-required  |
-| `Supported`         | supported           |
-| `NotSupported`      | not-supported       |
+```typescript
+"supported-required" | "supported" | "not-supported"
+```

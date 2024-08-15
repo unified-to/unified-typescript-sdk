@@ -1,5 +1,12 @@
 # ListUnifiedIntegrationsRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedIntegrationsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedIntegrationsRequest = {};
+```
 
 ## Fields
 

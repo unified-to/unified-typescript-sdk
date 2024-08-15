@@ -1,5 +1,15 @@
 # UpdateCrmDealRequest
 
+## Example Usage
+
+```typescript
+import { UpdateCrmDealRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateCrmDealRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

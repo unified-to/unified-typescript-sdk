@@ -1,5 +1,12 @@
 # PropertyHrisEmployeeAddress
 
+## Example Usage
+
+```typescript
+import { PropertyHrisEmployeeAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyHrisEmployeeAddress = {};
+```
 
 ## Fields
 

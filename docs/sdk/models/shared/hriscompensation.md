@@ -1,5 +1,12 @@
 # HrisCompensation
 
+## Example Usage
+
+```typescript
+import { HrisCompensation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisCompensation = {};
+```
 
 ## Fields
 

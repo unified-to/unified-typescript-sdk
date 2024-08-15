@@ -1,5 +1,15 @@
 # UpdateMartechMemberRequest
 
+## Example Usage
+
+```typescript
+import { UpdateMartechMemberRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateMartechMemberRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

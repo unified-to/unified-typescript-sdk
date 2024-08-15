@@ -1,5 +1,14 @@
 # CommerceItemMedia
 
+## Example Usage
+
+```typescript
+import { CommerceItemMedia } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItemMedia = {
+    url: "https://jumbo-lobotomy.net",
+};
+```
 
 ## Fields
 

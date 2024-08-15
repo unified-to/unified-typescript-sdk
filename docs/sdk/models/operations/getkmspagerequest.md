@@ -1,5 +1,15 @@
 # GetKmsPageRequest
 
+## Example Usage
+
+```typescript
+import { GetKmsPageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetKmsPageRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

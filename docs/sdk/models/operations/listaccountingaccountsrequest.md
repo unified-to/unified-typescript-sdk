@@ -1,5 +1,14 @@
 # ListAccountingAccountsRequest
 
+## Example Usage
+
+```typescript
+import { ListAccountingAccountsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListAccountingAccountsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

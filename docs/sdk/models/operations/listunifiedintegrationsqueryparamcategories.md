@@ -1,24 +1,15 @@
 # ListUnifiedIntegrationsQueryParamCategories
 
+## Example Usage
+
+```typescript
+import { ListUnifiedIntegrationsQueryParamCategories } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedIntegrationsQueryParamCategories = "kms";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Passthrough` | passthrough   |
-| `Hris`        | hris          |
-| `Ats`         | ats           |
-| `Auth`        | auth          |
-| `Crm`         | crm           |
-| `Enrich`      | enrich        |
-| `Martech`     | martech       |
-| `Ticketing`   | ticketing     |
-| `Uc`          | uc            |
-| `Accounting`  | accounting    |
-| `Storage`     | storage       |
-| `Commerce`    | commerce      |
-| `Payment`     | payment       |
-| `Genai`       | genai         |
-| `Messaging`   | messaging     |
-| `Kms`         | kms           |
-| `Task`        | task          |
+```typescript
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task"
+```

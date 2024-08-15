@@ -1,5 +1,15 @@
 # RemoveAtsCandidateRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAtsCandidateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAtsCandidateRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

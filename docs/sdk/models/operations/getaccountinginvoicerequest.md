@@ -1,5 +1,15 @@
 # GetAccountingInvoiceRequest
 
+## Example Usage
+
+```typescript
+import { GetAccountingInvoiceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetAccountingInvoiceRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

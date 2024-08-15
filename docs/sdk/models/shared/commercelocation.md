@@ -1,5 +1,14 @@
 # CommerceLocation
 
+## Example Usage
+
+```typescript
+import { CommerceLocation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceLocation = {
+    name: "<value>",
+};
+```
 
 ## Fields
 

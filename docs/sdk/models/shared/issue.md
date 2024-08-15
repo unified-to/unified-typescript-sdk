@@ -1,5 +1,17 @@
 # Issue
 
+## Example Usage
+
+```typescript
+import { Issue } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Issue = {
+    status: "COMPLETED",
+    ticketRef: "<value>",
+    title: "<value>",
+    workspaceId: "<value>",
+};
+```
 
 ## Fields
 

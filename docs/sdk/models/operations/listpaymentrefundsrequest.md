@@ -1,5 +1,14 @@
 # ListPaymentRefundsRequest
 
+## Example Usage
+
+```typescript
+import { ListPaymentRefundsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListPaymentRefundsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # AtsApplication
 
+## Example Usage
+
+```typescript
+import { AtsApplication } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsApplication = {};
+```
 
 ## Fields
 

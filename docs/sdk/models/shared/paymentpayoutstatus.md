@@ -1,11 +1,15 @@
 # PaymentPayoutStatus
 
+## Example Usage
+
+```typescript
+import { PaymentPayoutStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PaymentPayoutStatus = "SUCCEEDED";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Succeeded` | SUCCEEDED   |
-| `Pending`   | PENDING     |
-| `Failed`    | FAILED      |
-| `Canceled`  | CANCELED    |
+```typescript
+"SUCCEEDED" | "PENDING" | "FAILED" | "CANCELED"
+```

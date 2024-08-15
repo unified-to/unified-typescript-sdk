@@ -1,5 +1,14 @@
 # AtsScorecardQuestion
 
+## Example Usage
+
+```typescript
+import { AtsScorecardQuestion } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsScorecardQuestion = {
+    text: "<value>",
+};
+```
 
 ## Fields
 

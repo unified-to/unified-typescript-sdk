@@ -1,12 +1,15 @@
 # AtsJobStatus
 
+## Example Usage
+
+```typescript
+import { AtsJobStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsJobStatus = "PENDING";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Archived` | ARCHIVED   |
-| `Pending`  | PENDING    |
-| `Draft`    | DRAFT      |
-| `Open`     | OPEN       |
-| `Closed`   | CLOSED     |
+```typescript
+"ARCHIVED" | "PENDING" | "DRAFT" | "OPEN" | "CLOSED"
+```

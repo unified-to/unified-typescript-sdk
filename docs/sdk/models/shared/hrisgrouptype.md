@@ -1,14 +1,15 @@
 # HrisGroupType
 
+## Example Usage
+
+```typescript
+import { HrisGroupType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisGroupType = "TEAM";
+```
 
 ## Values
 
-| Name            | Value           |
-| --------------- | --------------- |
-| `Team`          | TEAM            |
-| `Group`         | GROUP           |
-| `Department`    | DEPARTMENT      |
-| `Division`      | DIVISION        |
-| `BusinessUnit`  | BUSINESS_UNIT   |
-| `Branch`        | BRANCH          |
-| `SubDepartment` | SUB_DEPARTMENT  |
+```typescript
+"TEAM" | "GROUP" | "DEPARTMENT" | "DIVISION" | "BUSINESS_UNIT" | "BRANCH" | "SUB_DEPARTMENT"
+```

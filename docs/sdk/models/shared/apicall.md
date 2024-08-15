@@ -1,5 +1,20 @@
 # ApiCall
 
+## Example Usage
+
+```typescript
+import { ApiCall } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ApiCall = {
+    integrationType: "<value>",
+    method: "<value>",
+    name: "<value>",
+    path: "/System",
+    status: "<value>",
+    type: "login",
+    workspaceId: "<value>",
+};
+```
 
 ## Fields
 

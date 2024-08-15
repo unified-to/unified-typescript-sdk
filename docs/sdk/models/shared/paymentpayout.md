@@ -1,5 +1,14 @@
 # PaymentPayout
 
+## Example Usage
+
+```typescript
+import { PaymentPayout } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PaymentPayout = {
+    totalAmount: 2103.82,
+};
+```
 
 ## Fields
 

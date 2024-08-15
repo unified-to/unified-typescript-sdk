@@ -1,5 +1,14 @@
 # HrisPayslipDetail
 
+## Example Usage
+
+```typescript
+import { HrisPayslipDetail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisPayslipDetail = {
+    amount: 4499.5,
+};
+```
 
 ## Fields
 

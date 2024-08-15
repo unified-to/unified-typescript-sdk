@@ -1,5 +1,14 @@
 # ListCrmEventsRequest
 
+## Example Usage
+
+```typescript
+import { ListCrmEventsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListCrmEventsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,13 +1,15 @@
 # Origin
 
+## Example Usage
+
+```typescript
+import { Origin } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Origin = "SOURCED";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `Agency`     | AGENCY       |
-| `Applied`    | APPLIED      |
-| `Internal`   | INTERNAL     |
-| `Referred`   | REFERRED     |
-| `Sourced`    | SOURCED      |
-| `University` | UNIVERSITY   |
+```typescript
+"AGENCY" | "APPLIED" | "INTERNAL" | "REFERRED" | "SOURCED" | "UNIVERSITY"
+```

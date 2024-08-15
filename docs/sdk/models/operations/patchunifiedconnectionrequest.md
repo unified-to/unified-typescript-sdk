@@ -1,5 +1,14 @@
 # PatchUnifiedConnectionRequest
 
+## Example Usage
+
+```typescript
+import { PatchUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchUnifiedConnectionRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

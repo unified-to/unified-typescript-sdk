@@ -1,5 +1,14 @@
 # ListCrmDealsRequest
 
+## Example Usage
+
+```typescript
+import { ListCrmDealsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListCrmDealsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

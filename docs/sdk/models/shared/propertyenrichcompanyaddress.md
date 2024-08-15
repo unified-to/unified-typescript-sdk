@@ -2,6 +2,13 @@
 
 The address of the company
 
+## Example Usage
+
+```typescript
+import { PropertyEnrichCompanyAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyEnrichCompanyAddress = {};
+```
 
 ## Fields
 

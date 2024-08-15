@@ -1,14 +1,15 @@
 # AccountingInvoiceStatus
 
+## Example Usage
+
+```typescript
+import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingInvoiceStatus = "AUTHORIZED";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `Draft`             | DRAFT               |
-| `Voided`            | VOIDED              |
-| `Authorized`        | AUTHORIZED          |
-| `Paid`              | PAID                |
-| `PartiallyPaid`     | PARTIALLY_PAID      |
-| `PartiallyRefunded` | PARTIALLY_REFUNDED  |
-| `Refunded`          | REFUNDED            |
+```typescript
+"DRAFT" | "VOIDED" | "AUTHORIZED" | "PAID" | "PARTIALLY_PAID" | "PARTIALLY_REFUNDED" | "REFUNDED"
+```

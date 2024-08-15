@@ -1,5 +1,14 @@
 # MarketingEmail
 
+## Example Usage
+
+```typescript
+import { MarketingEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MarketingEmail = {
+    email: "Waino_Orn@gmail.com",
+};
+```
 
 ## Fields
 

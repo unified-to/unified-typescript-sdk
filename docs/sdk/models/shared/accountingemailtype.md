@@ -1,10 +1,15 @@
 # AccountingEmailType
 
+## Example Usage
+
+```typescript
+import { AccountingEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingEmailType = "HOME";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Work`  | WORK    |
-| `Home`  | HOME    |
-| `Other` | OTHER   |
+```typescript
+"WORK" | "HOME" | "OTHER"
+```

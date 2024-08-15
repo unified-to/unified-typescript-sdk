@@ -1,11 +1,15 @@
 # WeightUnit
 
+## Example Usage
+
+```typescript
+import { WeightUnit } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: WeightUnit = "oz";
+```
 
 ## Values
 
-| Name  | Value |
-| ----- | ----- |
-| `G`   | g     |
-| `Kg`  | kg    |
-| `Oz`  | oz    |
-| `Lb`  | lb    |
+```typescript
+"g" | "kg" | "oz" | "lb"
+```

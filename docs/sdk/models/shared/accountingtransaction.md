@@ -1,5 +1,12 @@
 # AccountingTransaction
 
+## Example Usage
+
+```typescript
+import { AccountingTransaction } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingTransaction = {};
+```
 
 ## Fields
 

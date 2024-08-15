@@ -2,6 +2,13 @@
 
 The address of the person
 
+## Example Usage
+
+```typescript
+import { PropertyEnrichPersonAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyEnrichPersonAddress = {};
+```
 
 ## Fields
 

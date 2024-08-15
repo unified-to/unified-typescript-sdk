@@ -1,5 +1,15 @@
 # RemoveAccountingJournalRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAccountingJournalRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAccountingJournalRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # ListEnrichPeopleRequest
 
+## Example Usage
+
+```typescript
+import { ListEnrichPeopleRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListEnrichPeopleRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

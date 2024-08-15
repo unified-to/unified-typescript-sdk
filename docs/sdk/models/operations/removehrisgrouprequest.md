@@ -1,5 +1,15 @@
 # RemoveHrisGroupRequest
 
+## Example Usage
+
+```typescript
+import { RemoveHrisGroupRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveHrisGroupRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

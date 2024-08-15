@@ -1,5 +1,14 @@
 # ListAtsInterviewsRequest
 
+## Example Usage
+
+```typescript
+import { ListAtsInterviewsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListAtsInterviewsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

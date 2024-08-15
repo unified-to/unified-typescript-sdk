@@ -1,5 +1,14 @@
 # HrisTelephone
 
+## Example Usage
+
+```typescript
+import { HrisTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisTelephone = {
+    telephone: "<value>",
+};
+```
 
 ## Fields
 

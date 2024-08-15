@@ -1,5 +1,15 @@
 # PaymentRefund
 
+## Example Usage
+
+```typescript
+import { PaymentRefund } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PaymentRefund = {
+    paymentId: "<value>",
+    totalAmount: 1289.26,
+};
+```
 
 ## Fields
 

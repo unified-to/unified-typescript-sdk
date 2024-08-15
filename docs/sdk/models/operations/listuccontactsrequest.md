@@ -1,5 +1,14 @@
 # ListUcContactsRequest
 
+## Example Usage
+
+```typescript
+import { ListUcContactsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUcContactsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

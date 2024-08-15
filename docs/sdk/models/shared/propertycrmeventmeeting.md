@@ -2,6 +2,13 @@
 
 The meeting object, when type = meeting
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventMeeting } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventMeeting = {};
+```
 
 ## Fields
 

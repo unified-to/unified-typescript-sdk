@@ -1,5 +1,14 @@
 # ListGenaiModelsRequest
 
+## Example Usage
+
+```typescript
+import { ListGenaiModelsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListGenaiModelsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

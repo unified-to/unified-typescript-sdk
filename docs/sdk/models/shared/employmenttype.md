@@ -1,17 +1,15 @@
 # EmploymentType
 
+## Example Usage
+
+```typescript
+import { EmploymentType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EmploymentType = "FULL_TIME";
+```
 
 ## Values
 
-| Name         | Value        |
-| ------------ | ------------ |
-| `FullTime`   | FULL_TIME    |
-| `PartTime`   | PART_TIME    |
-| `Contractor` | CONTRACTOR   |
-| `Intern`     | INTERN       |
-| `Consultant` | CONSULTANT   |
-| `Volunteer`  | VOLUNTEER    |
-| `Casual`     | CASUAL       |
-| `Seasonal`   | SEASONAL     |
-| `Freelance`  | FREELANCE    |
-| `Other`      | OTHER        |
+```typescript
+"FULL_TIME" | "PART_TIME" | "CONTRACTOR" | "INTERN" | "CONSULTANT" | "VOLUNTEER" | "CASUAL" | "SEASONAL" | "FREELANCE" | "OTHER"
+```

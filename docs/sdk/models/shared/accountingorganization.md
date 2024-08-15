@@ -1,5 +1,14 @@
 # AccountingOrganization
 
+## Example Usage
+
+```typescript
+import { AccountingOrganization } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingOrganization = {
+    name: "<value>",
+};
+```
 
 ## Fields
 

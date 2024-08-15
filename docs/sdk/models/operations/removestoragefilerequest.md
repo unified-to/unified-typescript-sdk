@@ -1,5 +1,15 @@
 # RemoveStorageFileRequest
 
+## Example Usage
+
+```typescript
+import { RemoveStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveStorageFileRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

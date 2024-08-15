@@ -1,5 +1,14 @@
 # CreateHrisCompanyRequest
 
+## Example Usage
+
+```typescript
+import { CreateHrisCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateHrisCompanyRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

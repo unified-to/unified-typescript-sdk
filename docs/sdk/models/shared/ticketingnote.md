@@ -1,5 +1,12 @@
 # TicketingNote
 
+## Example Usage
+
+```typescript
+import { TicketingNote } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: TicketingNote = {};
+```
 
 ## Fields
 

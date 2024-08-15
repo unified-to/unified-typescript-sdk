@@ -1,5 +1,14 @@
 # ListUnifiedIntegrationWorkspacesRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedIntegrationWorkspacesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedIntegrationWorkspacesRequest = {
+    workspaceId: "<value>",
+};
+```
 
 ## Fields
 

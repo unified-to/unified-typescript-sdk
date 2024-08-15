@@ -1,5 +1,15 @@
 # PatchUcContactRequest
 
+## Example Usage
+
+```typescript
+import { PatchUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchUcContactRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

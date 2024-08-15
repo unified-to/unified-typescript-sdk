@@ -1,5 +1,14 @@
 # ListEnrichCompaniesRequest
 
+## Example Usage
+
+```typescript
+import { ListEnrichCompaniesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListEnrichCompaniesRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # EnrichTelephone
 
+## Example Usage
+
+```typescript
+import { EnrichTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EnrichTelephone = {
+    telephone: "<value>",
+};
+```
 
 ## Fields
 

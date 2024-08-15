@@ -1,5 +1,12 @@
 # GenaiPrompt
 
+## Example Usage
+
+```typescript
+import { GenaiPrompt } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: GenaiPrompt = {};
+```
 
 ## Fields
 

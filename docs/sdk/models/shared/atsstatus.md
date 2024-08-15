@@ -1,5 +1,12 @@
 # AtsStatus
 
+## Example Usage
+
+```typescript
+import { AtsStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsStatus = {};
+```
 
 ## Fields
 

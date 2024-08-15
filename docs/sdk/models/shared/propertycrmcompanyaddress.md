@@ -1,5 +1,12 @@
 # PropertyCrmCompanyAddress
 
+## Example Usage
+
+```typescript
+import { PropertyCrmCompanyAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmCompanyAddress = {};
+```
 
 ## Fields
 

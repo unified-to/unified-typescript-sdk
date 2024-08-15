@@ -1,5 +1,12 @@
 # StorageFile
 
+## Example Usage
+
+```typescript
+import { StorageFile } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: StorageFile = {};
+```
 
 ## Fields
 

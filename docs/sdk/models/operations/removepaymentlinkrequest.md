@@ -1,5 +1,15 @@
 # RemovePaymentLinkRequest
 
+## Example Usage
+
+```typescript
+import { RemovePaymentLinkRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemovePaymentLinkRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,12 +1,15 @@
 # PropertyHrisEmployeeEmployeeRoles
 
+## Example Usage
+
+```typescript
+import { PropertyHrisEmployeeEmployeeRoles } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyHrisEmployeeEmployeeRoles = "ADMIN";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Admin`       | ADMIN         |
-| `Manager`     | MANAGER       |
-| `Recruiter`   | RECRUITER     |
-| `Salesrep`    | SALESREP      |
-| `Interviewer` | INTERVIEWER   |
+```typescript
+"ADMIN" | "MANAGER" | "RECRUITER" | "SALESREP" | "INTERVIEWER"
+```

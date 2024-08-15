@@ -2,6 +2,13 @@
 
 A company represents an organization that optionally is associated with a deal and/or contacts
 
+## Example Usage
+
+```typescript
+import { CrmCompany } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmCompany = {};
+```
 
 ## Fields
 

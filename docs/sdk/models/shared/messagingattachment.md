@@ -1,5 +1,12 @@
 # MessagingAttachment
 
+## Example Usage
+
+```typescript
+import { MessagingAttachment } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MessagingAttachment = {};
+```
 
 ## Fields
 

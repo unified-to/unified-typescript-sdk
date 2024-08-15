@@ -1,9 +1,15 @@
 # AtsActivityType
 
+## Example Usage
+
+```typescript
+import { AtsActivityType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsActivityType = "NOTE";
+```
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Note` | NOTE   |
-| `Task` | TASK   |
+```typescript
+"NOTE" | "TASK"
+```

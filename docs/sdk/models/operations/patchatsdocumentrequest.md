@@ -1,5 +1,15 @@
 # PatchAtsDocumentRequest
 
+## Example Usage
+
+```typescript
+import { PatchAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAtsDocumentRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

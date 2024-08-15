@@ -2,6 +2,13 @@
 
 Chart of accounts
 
+## Example Usage
+
+```typescript
+import { AccountingAccount } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingAccount = {};
+```
 
 ## Fields
 

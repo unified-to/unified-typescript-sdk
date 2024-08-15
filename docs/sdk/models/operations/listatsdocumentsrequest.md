@@ -1,5 +1,14 @@
 # ListAtsDocumentsRequest
 
+## Example Usage
+
+```typescript
+import { ListAtsDocumentsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListAtsDocumentsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

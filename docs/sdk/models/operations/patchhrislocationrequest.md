@@ -1,5 +1,15 @@
 # PatchHrisLocationRequest
 
+## Example Usage
+
+```typescript
+import { PatchHrisLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchHrisLocationRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

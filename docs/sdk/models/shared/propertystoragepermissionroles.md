@@ -1,10 +1,15 @@
 # PropertyStoragePermissionRoles
 
+## Example Usage
+
+```typescript
+import { PropertyStoragePermissionRoles } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyStoragePermissionRoles = "READ";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Owner` | OWNER   |
-| `Read`  | READ    |
-| `Write` | WRITE   |
+```typescript
+"OWNER" | "READ" | "WRITE"
+```

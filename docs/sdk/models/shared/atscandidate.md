@@ -1,5 +1,12 @@
 # AtsCandidate
 
+## Example Usage
+
+```typescript
+import { AtsCandidate } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsCandidate = {};
+```
 
 ## Fields
 

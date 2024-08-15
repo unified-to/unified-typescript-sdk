@@ -1,5 +1,15 @@
 # RemoveAtsActivityRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAtsActivityRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAtsActivityRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

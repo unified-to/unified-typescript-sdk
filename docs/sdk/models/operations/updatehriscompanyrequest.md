@@ -1,5 +1,15 @@
 # UpdateHrisCompanyRequest
 
+## Example Usage
+
+```typescript
+import { UpdateHrisCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateHrisCompanyRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

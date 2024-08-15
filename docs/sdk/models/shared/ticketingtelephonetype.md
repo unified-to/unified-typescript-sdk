@@ -1,12 +1,15 @@
 # TicketingTelephoneType
 
+## Example Usage
+
+```typescript
+import { TicketingTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: TicketingTelephoneType = "HOME";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Work`   | WORK     |
-| `Home`   | HOME     |
-| `Other`  | OTHER    |
-| `Fax`    | FAX      |
-| `Mobile` | MOBILE   |
+```typescript
+"WORK" | "HOME" | "OTHER" | "FAX" | "MOBILE"
+```

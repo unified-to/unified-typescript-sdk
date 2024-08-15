@@ -1,21 +1,15 @@
 # AtsStatusStatus
 
+## Example Usage
+
+```typescript
+import { AtsStatusStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsStatusStatus = "DECLINED";
+```
 
 ## Values
 
-| Name              | Value             |
-| ----------------- | ----------------- |
-| `New`             | NEW               |
-| `Reviewing`       | REVIEWING         |
-| `Screening`       | SCREENING         |
-| `Submitted`       | SUBMITTED         |
-| `FirstInterview`  | FIRST_INTERVIEW   |
-| `SecondInterview` | SECOND_INTERVIEW  |
-| `ThirdInterview`  | THIRD_INTERVIEW   |
-| `BackgroundCheck` | BACKGROUND_CHECK  |
-| `Offered`         | OFFERED           |
-| `Accepted`        | ACCEPTED          |
-| `Hired`           | HIRED             |
-| `Rejected`        | REJECTED          |
-| `Declined`        | DECLINED          |
-| `Withdrawn`       | WITHDRAWN         |
+```typescript
+"NEW" | "REVIEWING" | "SCREENING" | "SUBMITTED" | "FIRST_INTERVIEW" | "SECOND_INTERVIEW" | "THIRD_INTERVIEW" | "BACKGROUND_CHECK" | "OFFERED" | "ACCEPTED" | "HIRED" | "REJECTED" | "DECLINED" | "WITHDRAWN"
+```

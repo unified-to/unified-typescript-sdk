@@ -1,5 +1,12 @@
 # PropertyAccountingContactBillingAddress
 
+## Example Usage
+
+```typescript
+import { PropertyAccountingContactBillingAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAccountingContactBillingAddress = {};
+```
 
 ## Fields
 

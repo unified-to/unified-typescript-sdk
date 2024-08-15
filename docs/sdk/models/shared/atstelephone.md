@@ -1,5 +1,14 @@
 # AtsTelephone
 
+## Example Usage
+
+```typescript
+import { AtsTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsTelephone = {
+    telephone: "<value>",
+};
+```
 
 ## Fields
 

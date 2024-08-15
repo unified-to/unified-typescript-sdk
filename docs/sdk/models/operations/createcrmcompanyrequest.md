@@ -1,5 +1,14 @@
 # CreateCrmCompanyRequest
 
+## Example Usage
+
+```typescript
+import { CreateCrmCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateCrmCompanyRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

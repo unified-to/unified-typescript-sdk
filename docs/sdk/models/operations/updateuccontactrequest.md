@@ -1,5 +1,15 @@
 # UpdateUcContactRequest
 
+## Example Usage
+
+```typescript
+import { UpdateUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateUcContactRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # RemoveUnifiedWebhookRequest
 
+## Example Usage
+
+```typescript
+import { RemoveUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveUnifiedWebhookRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

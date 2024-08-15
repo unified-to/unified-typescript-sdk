@@ -1,5 +1,15 @@
 # RemoveAccountingInvoiceRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAccountingInvoiceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAccountingInvoiceRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

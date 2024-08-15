@@ -1,5 +1,14 @@
 # CommerceItemPrice
 
+## Example Usage
+
+```typescript
+import { CommerceItemPrice } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItemPrice = {
+    price: 6399.21,
+};
+```
 
 ## Fields
 

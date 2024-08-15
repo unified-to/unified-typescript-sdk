@@ -1,11 +1,15 @@
 # Recommendation
 
+## Example Usage
+
+```typescript
+import { Recommendation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Recommendation = "STRONG_YES";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `DefinitelyNo` | DEFINITELY_NO  |
-| `No`           | NO             |
-| `Yes`          | YES            |
-| `StrongYes`    | STRONG_YES     |
+```typescript
+"DEFINITELY_NO" | "NO" | "YES" | "STRONG_YES"
+```

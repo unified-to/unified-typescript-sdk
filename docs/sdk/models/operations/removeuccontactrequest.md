@@ -1,5 +1,15 @@
 # RemoveUcContactRequest
 
+## Example Usage
+
+```typescript
+import { RemoveUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveUcContactRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

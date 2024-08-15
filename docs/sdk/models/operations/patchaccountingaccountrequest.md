@@ -1,5 +1,15 @@
 # PatchAccountingAccountRequest
 
+## Example Usage
+
+```typescript
+import { PatchAccountingAccountRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAccountingAccountRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

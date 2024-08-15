@@ -1,5 +1,12 @@
 # AccountingInvoice
 
+## Example Usage
+
+```typescript
+import { AccountingInvoice } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingInvoice = {};
+```
 
 ## Fields
 

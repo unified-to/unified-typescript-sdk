@@ -1,13 +1,15 @@
 # AtsDocumentType
 
+## Example Usage
+
+```typescript
+import { AtsDocumentType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsDocumentType = "RESUME";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Resume`       | RESUME         |
-| `CoverLetter`  | COVER_LETTER   |
-| `OfferPacket`  | OFFER_PACKET   |
-| `OfferLetter`  | OFFER_LETTER   |
-| `TakeHomeTest` | TAKE_HOME_TEST |
-| `Other`        | OTHER          |
+```typescript
+"RESUME" | "COVER_LETTER" | "OFFER_PACKET" | "OFFER_LETTER" | "TAKE_HOME_TEST" | "OTHER"
+```

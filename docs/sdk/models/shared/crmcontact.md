@@ -2,6 +2,13 @@
 
 A contact represents a person that optionally is associated with a deal and/or a company
 
+## Example Usage
+
+```typescript
+import { CrmContact } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmContact = {};
+```
 
 ## Fields
 

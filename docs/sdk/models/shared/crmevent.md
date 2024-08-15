@@ -2,6 +2,13 @@
 
 An event represents an event, activity, or engagement and is always associated with a deal, contact, or company
 
+## Example Usage
+
+```typescript
+import { CrmEvent } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmEvent = {};
+```
 
 ## Fields
 

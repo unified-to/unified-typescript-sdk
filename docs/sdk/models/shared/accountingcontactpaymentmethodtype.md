@@ -1,14 +1,15 @@
 # AccountingContactPaymentMethodType
 
+## Example Usage
+
+```typescript
+import { AccountingContactPaymentMethodType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingContactPaymentMethodType = "IDEAL";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Ach`     | ACH       |
-| `Alipay`  | ALIPAY    |
-| `Card`    | CARD      |
-| `Giropay` | GIROPAY   |
-| `Ideal`   | IDEAL     |
-| `Other`   | OTHER     |
-| `Paypal`  | PAYPAL    |
+```typescript
+"ACH" | "ALIPAY" | "CARD" | "GIROPAY" | "IDEAL" | "OTHER" | "PAYPAL"
+```

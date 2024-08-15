@@ -1,5 +1,15 @@
 # GetAtsCompanyRequest
 
+## Example Usage
+
+```typescript
+import { GetAtsCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetAtsCompanyRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

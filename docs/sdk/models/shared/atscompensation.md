@@ -1,5 +1,12 @@
 # AtsCompensation
 
+## Example Usage
+
+```typescript
+import { AtsCompensation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsCompensation = {};
+```
 
 ## Fields
 

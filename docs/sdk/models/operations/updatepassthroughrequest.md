@@ -1,5 +1,15 @@
 # UpdatePassthroughRequest
 
+## Example Usage
+
+```typescript
+import { UpdatePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdatePassthroughRequest = {
+    connectionId: "<value>",
+    path: "/usr/sbin",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # GetPaymentRefundRequest
 
+## Example Usage
+
+```typescript
+import { GetPaymentRefundRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetPaymentRefundRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

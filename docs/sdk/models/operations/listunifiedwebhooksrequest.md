@@ -1,5 +1,12 @@
 # ListUnifiedWebhooksRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedWebhooksRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedWebhooksRequest = {};
+```
 
 ## Fields
 

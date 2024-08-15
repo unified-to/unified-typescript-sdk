@@ -1,5 +1,14 @@
 # AtsEmail
 
+## Example Usage
+
+```typescript
+import { AtsEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsEmail = {
+    email: "Glen.Walsh33@yahoo.com",
+};
+```
 
 ## Fields
 

@@ -1,10 +1,15 @@
 # CrmEmailType
 
+## Example Usage
+
+```typescript
+import { CrmEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmEmailType = "HOME";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Work`  | WORK    |
-| `Home`  | HOME    |
-| `Other` | OTHER   |
+```typescript
+"WORK" | "HOME" | "OTHER"
+```

@@ -1,5 +1,15 @@
 # UpdateTaskTaskRequest
 
+## Example Usage
+
+```typescript
+import { UpdateTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateTaskTaskRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

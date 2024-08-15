@@ -1,5 +1,12 @@
 # AtsJob
 
+## Example Usage
+
+```typescript
+import { AtsJob } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsJob = {};
+```
 
 ## Fields
 

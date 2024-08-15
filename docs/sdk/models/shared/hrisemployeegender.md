@@ -1,12 +1,15 @@
 # HrisEmployeeGender
 
+## Example Usage
+
+```typescript
+import { HrisEmployeeGender } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisEmployeeGender = "FEMALE";
+```
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Male`      | MALE        |
-| `Female`    | FEMALE      |
-| `Intersex`  | INTERSEX    |
-| `Trans`     | TRANS       |
-| `NonBinary` | NON_BINARY  |
+```typescript
+"MALE" | "FEMALE" | "INTERSEX" | "TRANS" | "NON_BINARY"
+```

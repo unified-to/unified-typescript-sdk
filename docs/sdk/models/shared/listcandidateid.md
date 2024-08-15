@@ -1,10 +1,15 @@
 # ListCandidateId
 
+## Example Usage
+
+```typescript
+import { ListCandidateId } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ListCandidateId = "supported-required";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `SupportedRequired` | supported-required  |
-| `Supported`         | supported           |
-| `NotSupported`      | not-supported       |
+```typescript
+"supported-required" | "supported" | "not-supported"
+```

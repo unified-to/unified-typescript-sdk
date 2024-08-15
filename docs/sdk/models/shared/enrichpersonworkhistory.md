@@ -1,5 +1,14 @@
 # EnrichPersonWorkHistory
 
+## Example Usage
+
+```typescript
+import { EnrichPersonWorkHistory } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EnrichPersonWorkHistory = {
+    title: "<value>",
+};
+```
 
 ## Fields
 

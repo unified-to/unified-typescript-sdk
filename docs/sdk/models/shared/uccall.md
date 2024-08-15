@@ -1,5 +1,12 @@
 # UcCall
 
+## Example Usage
+
+```typescript
+import { UcCall } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: UcCall = {};
+```
 
 ## Fields
 

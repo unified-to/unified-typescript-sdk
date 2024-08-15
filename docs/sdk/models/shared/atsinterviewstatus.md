@@ -1,12 +1,15 @@
 # AtsInterviewStatus
 
+## Example Usage
+
+```typescript
+import { AtsInterviewStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsInterviewStatus = "CANCELED";
+```
 
 ## Values
 
-| Name               | Value              |
-| ------------------ | ------------------ |
-| `Scheduled`        | SCHEDULED          |
-| `AwaitingFeedback` | AWAITING_FEEDBACK  |
-| `Complete`         | COMPLETE           |
-| `Canceled`         | CANCELED           |
-| `NeedsScheduling`  | NEEDS_SCHEDULING   |
+```typescript
+"SCHEDULED" | "AWAITING_FEEDBACK" | "COMPLETE" | "CANCELED" | "NEEDS_SCHEDULING"
+```

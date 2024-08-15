@@ -1,5 +1,15 @@
 # RemoveCommerceLocationRequest
 
+## Example Usage
+
+```typescript
+import { RemoveCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveCommerceLocationRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

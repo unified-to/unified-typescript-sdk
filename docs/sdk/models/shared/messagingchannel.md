@@ -1,5 +1,14 @@
 # MessagingChannel
 
+## Example Usage
+
+```typescript
+import { MessagingChannel } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MessagingChannel = {
+    name: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # RemoveAtsJobRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAtsJobRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAtsJobRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

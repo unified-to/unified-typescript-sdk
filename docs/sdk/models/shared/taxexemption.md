@@ -1,18 +1,15 @@
 # TaxExemption
 
+## Example Usage
+
+```typescript
+import { TaxExemption } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: TaxExemption = "MEDICAL_ORG";
+```
 
 ## Values
 
-| Name             | Value            |
-| ---------------- | ---------------- |
-| `FederalGov`     | FEDERAL_GOV      |
-| `RegionGov`      | REGION_GOV       |
-| `LocalGov`       | LOCAL_GOV        |
-| `TribalGov`      | TRIBAL_GOV       |
-| `CharitableOrg`  | CHARITABLE_ORG   |
-| `ReligiousOrg`   | RELIGIOUS_ORG    |
-| `EducationalOrg` | EDUCATIONAL_ORG  |
-| `MedicalOrg`     | MEDICAL_ORG      |
-| `Resale`         | RESALE           |
-| `Foreign`        | FOREIGN          |
-| `Other`          | OTHER            |
+```typescript
+"FEDERAL_GOV" | "REGION_GOV" | "LOCAL_GOV" | "TRIBAL_GOV" | "CHARITABLE_ORG" | "RELIGIOUS_ORG" | "EDUCATIONAL_ORG" | "MEDICAL_ORG" | "RESALE" | "FOREIGN" | "OTHER"
+```

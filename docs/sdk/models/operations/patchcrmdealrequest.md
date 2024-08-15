@@ -1,5 +1,15 @@
 # PatchCrmDealRequest
 
+## Example Usage
+
+```typescript
+import { PatchCrmDealRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchCrmDealRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

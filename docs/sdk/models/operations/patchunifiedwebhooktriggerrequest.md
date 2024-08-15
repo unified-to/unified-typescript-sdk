@@ -1,5 +1,14 @@
 # PatchUnifiedWebhookTriggerRequest
 
+## Example Usage
+
+```typescript
+import { PatchUnifiedWebhookTriggerRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchUnifiedWebhookTriggerRequest = {
+    id: "<id>",
+};
+```
 
 ## Fields
 

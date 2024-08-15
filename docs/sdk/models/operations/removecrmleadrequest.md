@@ -1,5 +1,15 @@
 # RemoveCrmLeadRequest
 
+## Example Usage
+
+```typescript
+import { RemoveCrmLeadRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveCrmLeadRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # ListUnifiedConnectionsRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedConnectionsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedConnectionsRequest = {};
+```
 
 ## Fields
 

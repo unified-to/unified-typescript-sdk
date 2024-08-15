@@ -1,5 +1,15 @@
 # RemoveTaskTaskRequest
 
+## Example Usage
+
+```typescript
+import { RemoveTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveTaskTaskRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

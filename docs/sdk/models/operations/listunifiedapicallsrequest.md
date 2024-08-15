@@ -1,5 +1,12 @@
 # ListUnifiedApicallsRequest
 
+## Example Usage
+
+```typescript
+import { ListUnifiedApicallsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListUnifiedApicallsRequest = {};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # PaymentLinkLineitem
 
+## Example Usage
+
+```typescript
+import { PaymentLinkLineitem } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PaymentLinkLineitem = {};
+```
 
 ## Fields
 

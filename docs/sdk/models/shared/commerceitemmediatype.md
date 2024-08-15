@@ -1,9 +1,15 @@
 # CommerceItemMediaType
 
+## Example Usage
+
+```typescript
+import { CommerceItemMediaType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItemMediaType = "video";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Image` | image   |
-| `Video` | video   |
+```typescript
+"image" | "video"
+```

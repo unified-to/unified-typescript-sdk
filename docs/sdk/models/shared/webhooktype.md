@@ -1,9 +1,15 @@
 # WebhookType
 
+## Example Usage
+
+```typescript
+import { WebhookType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: WebhookType = "virtual";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Virtual` | virtual   |
-| `Native`  | native    |
+```typescript
+"virtual" | "native"
+```

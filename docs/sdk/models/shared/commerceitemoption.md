@@ -1,5 +1,16 @@
 # CommerceItemOption
 
+## Example Usage
+
+```typescript
+import { CommerceItemOption } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItemOption = {
+    id: "<id>",
+    name: "<value>",
+    values: ["<value>"],
+};
+```
 
 ## Fields
 

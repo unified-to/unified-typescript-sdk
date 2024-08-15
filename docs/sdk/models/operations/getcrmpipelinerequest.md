@@ -1,5 +1,15 @@
 # GetCrmPipelineRequest
 
+## Example Usage
+
+```typescript
+import { GetCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetCrmPipelineRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

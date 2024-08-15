@@ -1,5 +1,15 @@
 # PatchTaskProjectRequest
 
+## Example Usage
+
+```typescript
+import { PatchTaskProjectRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchTaskProjectRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

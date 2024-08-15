@@ -1,5 +1,12 @@
 # TaskTask
 
+## Example Usage
+
+```typescript
+import { TaskTask } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: TaskTask = {};
+```
 
 ## Fields
 

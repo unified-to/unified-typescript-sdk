@@ -1,5 +1,14 @@
 # CreateKmsSpaceRequest
 
+## Example Usage
+
+```typescript
+import { CreateKmsSpaceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateKmsSpaceRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

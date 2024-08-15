@@ -1,10 +1,15 @@
 # HrisEmailType
 
+## Example Usage
+
+```typescript
+import { HrisEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisEmailType = "WORK";
+```
 
 ## Values
 
-| Name    | Value   |
-| ------- | ------- |
-| `Work`  | WORK    |
-| `Home`  | HOME    |
-| `Other` | OTHER   |
+```typescript
+"WORK" | "HOME" | "OTHER"
+```

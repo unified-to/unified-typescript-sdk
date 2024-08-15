@@ -1,5 +1,15 @@
 # RemoveAccountingAccountRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAccountingAccountRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAccountingAccountRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

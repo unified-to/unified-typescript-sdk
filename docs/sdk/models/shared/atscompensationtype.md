@@ -1,12 +1,15 @@
 # AtsCompensationType
 
+## Example Usage
+
+```typescript
+import { AtsCompensationType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsCompensationType = "SALARY";
+```
 
 ## Values
 
-| Name           | Value          |
-| -------------- | -------------- |
-| `Salary`       | SALARY         |
-| `Bonus`        | BONUS          |
-| `StockOptions` | STOCK_OPTIONS  |
-| `Equity`       | EQUITY         |
-| `Other`        | OTHER          |
+```typescript
+"SALARY" | "BONUS" | "STOCK_OPTIONS" | "EQUITY" | "OTHER"
+```

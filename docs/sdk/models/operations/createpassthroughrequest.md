@@ -1,5 +1,15 @@
 # CreatePassthroughRequest
 
+## Example Usage
+
+```typescript
+import { CreatePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreatePassthroughRequest = {
+    connectionId: "<value>",
+    path: "/home/user/dir",
+};
+```
 
 ## Fields
 

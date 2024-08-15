@@ -2,6 +2,13 @@
 
 A company object from an enrichment integration
 
+## Example Usage
+
+```typescript
+import { EnrichCompany } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EnrichCompany = {};
+```
 
 ## Fields
 

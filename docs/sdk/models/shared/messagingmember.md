@@ -1,5 +1,12 @@
 # MessagingMember
 
+## Example Usage
+
+```typescript
+import { MessagingMember } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MessagingMember = {};
+```
 
 ## Fields
 

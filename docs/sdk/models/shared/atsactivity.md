@@ -1,5 +1,14 @@
 # AtsActivity
 
+## Example Usage
+
+```typescript
+import { AtsActivity } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsActivity = {
+    title: "<value>",
+};
+```
 
 ## Fields
 

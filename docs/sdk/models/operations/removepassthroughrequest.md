@@ -1,5 +1,15 @@
 # RemovePassthroughRequest
 
+## Example Usage
+
+```typescript
+import { RemovePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemovePassthroughRequest = {
+    connectionId: "<value>",
+    path: "/sbin",
+};
+```
 
 ## Fields
 

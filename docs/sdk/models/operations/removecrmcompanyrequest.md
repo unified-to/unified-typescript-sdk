@@ -1,5 +1,15 @@
 # RemoveCrmCompanyRequest
 
+## Example Usage
+
+```typescript
+import { RemoveCrmCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveCrmCompanyRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

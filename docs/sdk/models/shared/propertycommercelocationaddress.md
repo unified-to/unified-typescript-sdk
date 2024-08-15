@@ -1,5 +1,12 @@
 # PropertyCommerceLocationAddress
 
+## Example Usage
+
+```typescript
+import { PropertyCommerceLocationAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCommerceLocationAddress = {};
+```
 
 ## Fields
 

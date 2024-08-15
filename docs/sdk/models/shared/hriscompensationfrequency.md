@@ -1,14 +1,15 @@
 # HrisCompensationFrequency
 
+## Example Usage
+
+```typescript
+import { HrisCompensationFrequency } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisCompensationFrequency = "QUARTER";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `OneTime` | ONE_TIME  |
-| `Day`     | DAY       |
-| `Quarter` | QUARTER   |
-| `Year`    | YEAR      |
-| `Hour`    | HOUR      |
-| `Month`   | MONTH     |
-| `Week`    | WEEK      |
+```typescript
+"ONE_TIME" | "DAY" | "QUARTER" | "YEAR" | "HOUR" | "MONTH" | "WEEK"
+```

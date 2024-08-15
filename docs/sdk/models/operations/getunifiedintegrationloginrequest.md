@@ -1,5 +1,15 @@
 # GetUnifiedIntegrationLoginRequest
 
+## Example Usage
+
+```typescript
+import { GetUnifiedIntegrationLoginRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetUnifiedIntegrationLoginRequest = {
+    integrationType: "<value>",
+    workspaceId: "<value>",
+};
+```
 
 ## Fields
 

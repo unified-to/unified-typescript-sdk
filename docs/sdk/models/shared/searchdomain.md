@@ -1,10 +1,15 @@
 # SearchDomain
 
+## Example Usage
+
+```typescript
+import { SearchDomain } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: SearchDomain = "supported-required";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `SupportedRequired` | supported-required  |
-| `Supported`         | supported           |
-| `NotSupported`      | not-supported       |
+```typescript
+"supported-required" | "supported" | "not-supported"
+```

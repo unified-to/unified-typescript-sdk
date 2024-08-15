@@ -1,5 +1,15 @@
 # GetMartechMemberRequest
 
+## Example Usage
+
+```typescript
+import { GetMartechMemberRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetMartechMemberRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

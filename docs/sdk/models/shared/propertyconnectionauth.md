@@ -2,6 +2,13 @@
 
 An authentication object that represents a specific authorized user's connection to an integration.
 
+## Example Usage
+
+```typescript
+import { PropertyConnectionAuth } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyConnectionAuth = {};
+```
 
 ## Fields
 

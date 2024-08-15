@@ -1,5 +1,14 @@
 # ListTicketingTicketsRequest
 
+## Example Usage
+
+```typescript
+import { ListTicketingTicketsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListTicketingTicketsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

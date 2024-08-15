@@ -1,5 +1,14 @@
 # ListMessagingChannelsRequest
 
+## Example Usage
+
+```typescript
+import { ListMessagingChannelsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListMessagingChannelsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

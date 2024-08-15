@@ -1,10 +1,15 @@
 # ApiCallType
 
+## Example Usage
+
+```typescript
+import { ApiCallType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ApiCallType = "login";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Login`   | login     |
-| `Webhook` | webhook   |
-| `Inbound` | inbound   |
+```typescript
+"login" | "webhook" | "inbound"
+```

@@ -1,5 +1,12 @@
 # Security
 
+## Example Usage
+
+```typescript
+import { Security } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Security = {};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # MessagingMessage
 
+## Example Usage
+
+```typescript
+import { MessagingMessage } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MessagingMessage = {};
+```
 
 ## Fields
 

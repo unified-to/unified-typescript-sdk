@@ -1,5 +1,14 @@
 # CreateStorageFileRequest
 
+## Example Usage
+
+```typescript
+import { CreateStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateStorageFileRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # CrmTelephone
 
+## Example Usage
+
+```typescript
+import { CrmTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmTelephone = {
+    telephone: "<value>",
+};
+```
 
 ## Fields
 

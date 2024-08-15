@@ -1,5 +1,14 @@
 # EnrichEmail
 
+## Example Usage
+
+```typescript
+import { EnrichEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: EnrichEmail = {
+    email: "Haskell18@gmail.com",
+};
+```
 
 ## Fields
 

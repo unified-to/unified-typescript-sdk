@@ -2,6 +2,18 @@
 
 A webhook is used to POST new/updated information to your server.
 
+## Example Usage
+
+```typescript
+import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Webhook = {
+    connectionId: "<value>",
+    event: "created",
+    hookUrl: "<value>",
+    objectType: "crm_deal",
+};
+```
 
 ## Fields
 

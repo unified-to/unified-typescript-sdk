@@ -1,12 +1,15 @@
 # AccountingTelephoneType
 
+## Example Usage
+
+```typescript
+import { AccountingTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingTelephoneType = "MOBILE";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Work`   | WORK     |
-| `Home`   | HOME     |
-| `Other`  | OTHER    |
-| `Fax`    | FAX      |
-| `Mobile` | MOBILE   |
+```typescript
+"WORK" | "HOME" | "OTHER" | "FAX" | "MOBILE"
+```

@@ -1,10 +1,15 @@
 # Priority
 
+## Example Usage
+
+```typescript
+import { Priority } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Priority = "MEDIUM";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `High`   | HIGH     |
-| `Medium` | MEDIUM   |
-| `Low`    | LOW      |
+```typescript
+"HIGH" | "MEDIUM" | "LOW"
+```

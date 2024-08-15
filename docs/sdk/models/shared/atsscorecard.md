@@ -1,5 +1,12 @@
 # AtsScorecard
 
+## Example Usage
+
+```typescript
+import { AtsScorecard } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsScorecard = {};
+```
 
 ## Fields
 

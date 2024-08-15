@@ -2,6 +2,18 @@
 
 Informational object for supported integrations.
 
+## Example Usage
+
+```typescript
+import { Integration } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Integration = {
+    categories: ["enrich"],
+    inProgress: false,
+    name: "<value>",
+    type: "<value>",
+};
+```
 
 ## Fields
 

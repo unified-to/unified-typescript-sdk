@@ -1,5 +1,12 @@
 # HrisLocation
 
+## Example Usage
+
+```typescript
+import { HrisLocation } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisLocation = {};
+```
 
 ## Fields
 

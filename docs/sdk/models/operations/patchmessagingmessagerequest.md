@@ -1,5 +1,15 @@
 # PatchMessagingMessageRequest
 
+## Example Usage
+
+```typescript
+import { PatchMessagingMessageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchMessagingMessageRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

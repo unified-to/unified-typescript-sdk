@@ -1,5 +1,15 @@
 # GetMessagingChannelRequest
 
+## Example Usage
+
+```typescript
+import { GetMessagingChannelRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetMessagingChannelRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # GetAtsDocumentRequest
 
+## Example Usage
+
+```typescript
+import { GetAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetAtsDocumentRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

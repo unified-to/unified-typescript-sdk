@@ -1,62 +1,15 @@
 # ObjectType
 
+## Example Usage
+
+```typescript
+import { ObjectType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: ObjectType = "commerce_inventory";
+```
 
 ## Values
 
-| Name                     | Value                    |
-| ------------------------ | ------------------------ |
-| `AccountingAccount`      | accounting_account       |
-| `AccountingTransaction`  | accounting_transaction   |
-| `AccountingJournal`      | accounting_journal       |
-| `AccountingContact`      | accounting_contact       |
-| `AccountingInvoice`      | accounting_invoice       |
-| `AccountingTaxrate`      | accounting_taxrate       |
-| `AccountingOrganization` | accounting_organization  |
-| `PaymentPayment`         | payment_payment          |
-| `PaymentLink`            | payment_link             |
-| `PaymentPayout`          | payment_payout           |
-| `PaymentRefund`          | payment_refund           |
-| `CommerceItem`           | commerce_item            |
-| `CommerceCollection`     | commerce_collection      |
-| `CommerceInventory`      | commerce_inventory       |
-| `CommerceLocation`       | commerce_location        |
-| `AtsActivity`            | ats_activity             |
-| `AtsApplication`         | ats_application          |
-| `AtsApplicationstatus`   | ats_applicationstatus    |
-| `AtsCandidate`           | ats_candidate            |
-| `AtsDocument`            | ats_document             |
-| `AtsInterview`           | ats_interview            |
-| `AtsJob`                 | ats_job                  |
-| `AtsScorecard`           | ats_scorecard            |
-| `AtsCompany`             | ats_company              |
-| `CrmCompany`             | crm_company              |
-| `CrmContact`             | crm_contact              |
-| `CrmDeal`                | crm_deal                 |
-| `CrmEvent`               | crm_event                |
-| `CrmLead`                | crm_lead                 |
-| `CrmPipeline`            | crm_pipeline             |
-| `HrisEmployee`           | hris_employee            |
-| `HrisGroup`              | hris_group               |
-| `HrisPayslip`            | hris_payslip             |
-| `HrisTimeoff`            | hris_timeoff             |
-| `HrisCompany`            | hris_company             |
-| `HrisLocation`           | hris_location            |
-| `MartechList`            | martech_list             |
-| `MartechMember`          | martech_member           |
-| `Passthrough`            | passthrough              |
-| `TicketingNote`          | ticketing_note           |
-| `TicketingTicket`        | ticketing_ticket         |
-| `TicketingCustomer`      | ticketing_customer       |
-| `UcContact`              | uc_contact               |
-| `UcCall`                 | uc_call                  |
-| `EnrichPerson`           | enrich_person            |
-| `EnrichCompany`          | enrich_company           |
-| `StorageFile`            | storage_file             |
-| `GenaiModel`             | genai_model              |
-| `GenaiPrompt`            | genai_prompt             |
-| `MessagingMessage`       | messaging_message        |
-| `MessagingChannel`       | messaging_channel        |
-| `KmsSpace`               | kms_space                |
-| `KmsPage`                | kms_page                 |
-| `TaskProject`            | task_project             |
-| `TaskTask`               | task_task                |
+```typescript
+"accounting_account" | "accounting_transaction" | "accounting_journal" | "accounting_contact" | "accounting_invoice" | "accounting_taxrate" | "accounting_organization" | "payment_payment" | "payment_link" | "payment_payout" | "payment_refund" | "commerce_item" | "commerce_collection" | "commerce_inventory" | "commerce_location" | "ats_activity" | "ats_application" | "ats_applicationstatus" | "ats_candidate" | "ats_document" | "ats_interview" | "ats_job" | "ats_scorecard" | "ats_company" | "crm_company" | "crm_contact" | "crm_deal" | "crm_event" | "crm_lead" | "crm_pipeline" | "hris_employee" | "hris_group" | "hris_payslip" | "hris_timeoff" | "hris_company" | "hris_location" | "martech_list" | "martech_member" | "passthrough" | "ticketing_note" | "ticketing_ticket" | "ticketing_customer" | "uc_contact" | "uc_call" | "enrich_person" | "enrich_company" | "storage_file" | "genai_model" | "genai_prompt" | "messaging_message" | "messaging_channel" | "kms_space" | "kms_page" | "task_project" | "task_task"
+```

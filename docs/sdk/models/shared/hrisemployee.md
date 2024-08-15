@@ -1,5 +1,12 @@
 # HrisEmployee
 
+## Example Usage
+
+```typescript
+import { HrisEmployee } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisEmployee = {};
+```
 
 ## Fields
 

@@ -1,5 +1,12 @@
 # AtsAddress
 
+## Example Usage
+
+```typescript
+import { AtsAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsAddress = {};
+```
 
 ## Fields
 

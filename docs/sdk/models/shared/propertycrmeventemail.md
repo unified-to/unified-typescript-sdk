@@ -2,6 +2,13 @@
 
 The email object, when type = email
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventEmail = {};
+```
 
 ## Fields
 

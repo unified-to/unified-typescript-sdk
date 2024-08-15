@@ -1,10 +1,15 @@
 # HrisTimeoffStatus
 
+## Example Usage
+
+```typescript
+import { HrisTimeoffStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisTimeoffStatus = "PENDING";
+```
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Approved` | APPROVED   |
-| `Pending`  | PENDING    |
-| `Denied`   | DENIED     |
+```typescript
+"APPROVED" | "PENDING" | "DENIED"
+```

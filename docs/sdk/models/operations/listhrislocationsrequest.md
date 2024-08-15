@@ -1,5 +1,14 @@
 # ListHrisLocationsRequest
 
+## Example Usage
+
+```typescript
+import { ListHrisLocationsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListHrisLocationsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # CreateAccountingTransactionRequest
 
+## Example Usage
+
+```typescript
+import { CreateAccountingTransactionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateAccountingTransactionRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

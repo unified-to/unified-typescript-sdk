@@ -1,5 +1,14 @@
 # CreateCommerceCollectionRequest
 
+## Example Usage
+
+```typescript
+import { CreateCommerceCollectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateCommerceCollectionRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

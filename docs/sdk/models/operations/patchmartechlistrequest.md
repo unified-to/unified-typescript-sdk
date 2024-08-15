@@ -1,5 +1,15 @@
 # PatchMartechListRequest
 
+## Example Usage
+
+```typescript
+import { PatchMartechListRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchMartechListRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

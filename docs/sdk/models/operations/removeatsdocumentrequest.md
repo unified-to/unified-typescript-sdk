@@ -1,5 +1,15 @@
 # RemoveAtsDocumentRequest
 
+## Example Usage
+
+```typescript
+import { RemoveAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveAtsDocumentRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

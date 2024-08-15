@@ -2,6 +2,13 @@
 
 Mailing List
 
+## Example Usage
+
+```typescript
+import { MarketingList } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MarketingList = {};
+```
 
 ## Fields
 

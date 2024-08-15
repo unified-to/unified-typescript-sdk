@@ -1,5 +1,15 @@
 # PatchAccountingTaxrateRequest
 
+## Example Usage
+
+```typescript
+import { PatchAccountingTaxrateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAccountingTaxrateRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

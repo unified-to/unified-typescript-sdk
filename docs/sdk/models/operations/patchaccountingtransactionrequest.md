@@ -1,5 +1,15 @@
 # PatchAccountingTransactionRequest
 
+## Example Usage
+
+```typescript
+import { PatchAccountingTransactionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchAccountingTransactionRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

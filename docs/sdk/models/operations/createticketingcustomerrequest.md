@@ -1,5 +1,14 @@
 # CreateTicketingCustomerRequest
 
+## Example Usage
+
+```typescript
+import { CreateTicketingCustomerRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateTicketingCustomerRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

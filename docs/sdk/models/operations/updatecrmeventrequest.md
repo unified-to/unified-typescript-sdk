@@ -1,5 +1,15 @@
 # UpdateCrmEventRequest
 
+## Example Usage
+
+```typescript
+import { UpdateCrmEventRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateCrmEventRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

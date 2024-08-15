@@ -1,5 +1,12 @@
 # CrmEmail
 
+## Example Usage
+
+```typescript
+import { CrmEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmEmail = {};
+```
 
 ## Fields
 

@@ -2,6 +2,13 @@
 
 The task object, when type = task
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventTask } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventTask = {};
+```
 
 ## Fields
 

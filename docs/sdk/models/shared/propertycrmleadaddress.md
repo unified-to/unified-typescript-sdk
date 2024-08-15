@@ -1,5 +1,12 @@
 # PropertyCrmLeadAddress
 
+## Example Usage
+
+```typescript
+import { PropertyCrmLeadAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmLeadAddress = {};
+```
 
 ## Fields
 

@@ -1,12 +1,15 @@
 # CrmTelephoneType
 
+## Example Usage
+
+```typescript
+import { CrmTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmTelephoneType = "FAX";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Work`   | WORK     |
-| `Home`   | HOME     |
-| `Other`  | OTHER    |
-| `Fax`    | FAX      |
-| `Mobile` | MOBILE   |
+```typescript
+"WORK" | "HOME" | "OTHER" | "FAX" | "MOBILE"
+```

@@ -1,5 +1,12 @@
 # PropertyAccountingOrganizationAddress
 
+## Example Usage
+
+```typescript
+import { PropertyAccountingOrganizationAddress } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyAccountingOrganizationAddress = {};
+```
 
 ## Fields
 

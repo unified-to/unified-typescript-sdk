@@ -1,5 +1,15 @@
 # RemoveHrisLocationRequest
 
+## Example Usage
+
+```typescript
+import { RemoveHrisLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveHrisLocationRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

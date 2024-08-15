@@ -1,5 +1,15 @@
 # PatchCommerceCollectionRequest
 
+## Example Usage
+
+```typescript
+import { PatchCommerceCollectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchCommerceCollectionRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

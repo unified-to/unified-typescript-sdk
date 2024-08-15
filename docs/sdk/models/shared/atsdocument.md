@@ -1,5 +1,12 @@
 # AtsDocument
 
+## Example Usage
+
+```typescript
+import { AtsDocument } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AtsDocument = {};
+```
 
 ## Fields
 

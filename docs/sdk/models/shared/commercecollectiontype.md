@@ -1,10 +1,15 @@
 # CommerceCollectionType
 
+## Example Usage
+
+```typescript
+import { CommerceCollectionType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceCollectionType = "SAVED_SEARCH";
+```
 
 ## Values
 
-| Name          | Value         |
-| ------------- | ------------- |
-| `Collection`  | COLLECTION    |
-| `SavedSearch` | SAVED_SEARCH  |
-| `Category`    | CATEGORY      |
+```typescript
+"COLLECTION" | "SAVED_SEARCH" | "CATEGORY"
+```

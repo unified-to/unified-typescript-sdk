@@ -1,5 +1,12 @@
 # AccountingTaxrate
 
+## Example Usage
+
+```typescript
+import { AccountingTaxrate } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingTaxrate = {};
+```
 
 ## Fields
 

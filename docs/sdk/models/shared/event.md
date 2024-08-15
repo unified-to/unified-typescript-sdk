@@ -1,10 +1,15 @@
 # Event
 
+## Example Usage
+
+```typescript
+import { Event } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: Event = "created";
+```
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `Updated` | updated   |
-| `Created` | created   |
-| `Deleted` | deleted   |
+```typescript
+"updated" | "created" | "deleted"
+```

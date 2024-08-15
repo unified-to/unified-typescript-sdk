@@ -1,5 +1,15 @@
 # GetHrisPayslipRequest
 
+## Example Usage
+
+```typescript
+import { GetHrisPayslipRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: GetHrisPayslipRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

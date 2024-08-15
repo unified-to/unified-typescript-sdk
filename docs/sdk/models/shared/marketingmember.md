@@ -2,6 +2,13 @@
 
 A member represents a person
 
+## Example Usage
+
+```typescript
+import { MarketingMember } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MarketingMember = {};
+```
 
 ## Fields
 

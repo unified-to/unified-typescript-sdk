@@ -1,5 +1,14 @@
 # CreateMartechMemberRequest
 
+## Example Usage
+
+```typescript
+import { CreateMartechMemberRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateMartechMemberRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

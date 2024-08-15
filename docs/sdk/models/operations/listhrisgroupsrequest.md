@@ -1,5 +1,14 @@
 # ListHrisGroupsRequest
 
+## Example Usage
+
+```typescript
+import { ListHrisGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListHrisGroupsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # ListAccountingJournalsRequest
 
+## Example Usage
+
+```typescript
+import { ListAccountingJournalsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListAccountingJournalsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

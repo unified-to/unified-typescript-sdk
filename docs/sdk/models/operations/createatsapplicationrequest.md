@@ -1,5 +1,14 @@
 # CreateAtsApplicationRequest
 
+## Example Usage
+
+```typescript
+import { CreateAtsApplicationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateAtsApplicationRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

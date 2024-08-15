@@ -1,5 +1,12 @@
 # IntegrationSupport
 
+## Example Usage
+
+```typescript
+import { IntegrationSupport } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: IntegrationSupport = {};
+```
 
 ## Fields
 

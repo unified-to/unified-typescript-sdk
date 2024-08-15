@@ -1,5 +1,12 @@
 # CommerceItemVariant
 
+## Example Usage
+
+```typescript
+import { CommerceItemVariant } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItemVariant = {};
+```
 
 ## Fields
 

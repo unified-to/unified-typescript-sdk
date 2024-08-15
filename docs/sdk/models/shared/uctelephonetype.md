@@ -1,12 +1,15 @@
 # UcTelephoneType
 
+## Example Usage
+
+```typescript
+import { UcTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: UcTelephoneType = "HOME";
+```
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Work`   | WORK     |
-| `Home`   | HOME     |
-| `Other`  | OTHER    |
-| `Fax`    | FAX      |
-| `Mobile` | MOBILE   |
+```typescript
+"WORK" | "HOME" | "OTHER" | "FAX" | "MOBILE"
+```

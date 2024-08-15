@@ -1,5 +1,15 @@
 # PatchPaymentLinkRequest
 
+## Example Usage
+
+```typescript
+import { PatchPaymentLinkRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchPaymentLinkRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

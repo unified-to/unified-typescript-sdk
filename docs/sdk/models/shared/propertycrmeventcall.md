@@ -2,6 +2,13 @@
 
 The call object, when type = call
 
+## Example Usage
+
+```typescript
+import { PropertyCrmEventCall } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyCrmEventCall = {};
+```
 
 ## Fields
 

@@ -1,5 +1,14 @@
 # CreateAtsInterviewRequest
 
+## Example Usage
+
+```typescript
+import { CreateAtsInterviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateAtsInterviewRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

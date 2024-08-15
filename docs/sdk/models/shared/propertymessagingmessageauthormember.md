@@ -1,5 +1,12 @@
 # PropertyMessagingMessageAuthorMember
 
+## Example Usage
+
+```typescript
+import { PropertyMessagingMessageAuthorMember } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyMessagingMessageAuthorMember = {};
+```
 
 ## Fields
 

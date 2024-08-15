@@ -1,5 +1,12 @@
 # CrmLead
 
+## Example Usage
+
+```typescript
+import { CrmLead } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmLead = {};
+```
 
 ## Fields
 

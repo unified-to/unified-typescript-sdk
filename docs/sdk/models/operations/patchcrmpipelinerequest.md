@@ -1,5 +1,15 @@
 # PatchCrmPipelineRequest
 
+## Example Usage
+
+```typescript
+import { PatchCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: PatchCrmPipelineRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

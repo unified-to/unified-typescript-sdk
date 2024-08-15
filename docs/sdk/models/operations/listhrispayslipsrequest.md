@@ -1,5 +1,14 @@
 # ListHrisPayslipsRequest
 
+## Example Usage
+
+```typescript
+import { ListHrisPayslipsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: ListHrisPayslipsRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

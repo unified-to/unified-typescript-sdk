@@ -1,5 +1,14 @@
 # CreateHrisEmployeeRequest
 
+## Example Usage
+
+```typescript
+import { CreateHrisEmployeeRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: CreateHrisEmployeeRequest = {
+    connectionId: "<value>",
+};
+```
 
 ## Fields
 

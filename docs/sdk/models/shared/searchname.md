@@ -1,10 +1,15 @@
 # SearchName
 
+## Example Usage
+
+```typescript
+import { SearchName } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: SearchName = "supported";
+```
 
 ## Values
 
-| Name                | Value               |
-| ------------------- | ------------------- |
-| `SupportedRequired` | supported-required  |
-| `Supported`         | supported           |
-| `NotSupported`      | not-supported       |
+```typescript
+"supported-required" | "supported" | "not-supported"
+```

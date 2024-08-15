@@ -1,5 +1,12 @@
 # AccountingTransactionLineItem
 
+## Example Usage
+
+```typescript
+import { AccountingTransactionLineItem } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: AccountingTransactionLineItem = {};
+```
 
 ## Fields
 

@@ -1,5 +1,15 @@
 # UpdateHrisLocationRequest
 
+## Example Usage
+
+```typescript
+import { UpdateHrisLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateHrisLocationRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

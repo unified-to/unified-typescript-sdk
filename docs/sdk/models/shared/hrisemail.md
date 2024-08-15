@@ -1,5 +1,14 @@
 # HrisEmail
 
+## Example Usage
+
+```typescript
+import { HrisEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: HrisEmail = {
+    email: "Camden61@yahoo.com",
+};
+```
 
 ## Fields
 

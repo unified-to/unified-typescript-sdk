@@ -1,5 +1,14 @@
 # CommerceInventory
 
+## Example Usage
+
+```typescript
+import { CommerceInventory } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceInventory = {
+    available: 6788.8,
+};
+```
 
 ## Fields
 

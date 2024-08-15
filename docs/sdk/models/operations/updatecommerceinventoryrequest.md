@@ -1,5 +1,15 @@
 # UpdateCommerceInventoryRequest
 
+## Example Usage
+
+```typescript
+import { UpdateCommerceInventoryRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: UpdateCommerceInventoryRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 

@@ -2,6 +2,15 @@
 
 The telephone number called
 
+## Example Usage
+
+```typescript
+import { PropertyUcCallTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: PropertyUcCallTelephone = {
+    telephone: "<value>",
+};
+```
 
 ## Fields
 

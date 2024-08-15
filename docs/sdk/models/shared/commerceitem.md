@@ -1,5 +1,12 @@
 # CommerceItem
 
+## Example Usage
+
+```typescript
+import { CommerceItem } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CommerceItem = {};
+```
 
 ## Fields
 

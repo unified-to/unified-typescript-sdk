@@ -1,5 +1,12 @@
 # TicketingTicket
 
+## Example Usage
+
+```typescript
+import { TicketingTicket } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: TicketingTicket = {};
+```
 
 ## Fields
 

@@ -2,6 +2,13 @@
 
 A deal represents an opportunity with companies and/or contacts
 
+## Example Usage
+
+```typescript
+import { CrmDeal } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CrmDeal = {};
+```
 
 ## Fields
 

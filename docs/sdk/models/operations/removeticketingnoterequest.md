@@ -1,5 +1,15 @@
 # RemoveTicketingNoteRequest
 
+## Example Usage
+
+```typescript
+import { RemoveTicketingNoteRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+
+let value: RemoveTicketingNoteRequest = {
+    connectionId: "<value>",
+    id: "<id>",
+};
+```
 
 ## Fields
 
