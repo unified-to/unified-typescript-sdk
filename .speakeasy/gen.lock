@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: afff9b10658068a6dd8be329a73e9f3e
+  docChecksum: 3b148f39dc467e6e4a130bd90db813be
   docVersion: "1.0"
-  speakeasyVersion: 1.368.0
-  generationVersion: 2.399.0
-  releaseVersion: 2.1.3
-  configChecksum: 5d4a1f099a68d5656f5b382e781cc67c
+  speakeasyVersion: 1.374.2
+  generationVersion: 2.401.2
+  releaseVersion: 2.1.4
+  configChecksum: 09eed181292e0d4b24a7dde3d6d6748a
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -14,7 +14,7 @@ management:
 features:
   typescript:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.8
+    constsAndDefaults: 0.1.10
     core: 3.13.2
     defaultEnabledRetries: 0.1.0
     envVarSecurityUsage: 0.1.1
@@ -563,10 +563,12 @@ generatedFiles:
   - src/funcs/unifiedListUnifiedIssues.ts
   - src/funcs/unifiedListUnifiedWebhooks.ts
   - src/funcs/unifiedPatchUnifiedConnection.ts
+  - src/funcs/unifiedPatchUnifiedWebhook.ts
   - src/funcs/unifiedPatchUnifiedWebhookTrigger.ts
   - src/funcs/unifiedRemoveUnifiedConnection.ts
   - src/funcs/unifiedRemoveUnifiedWebhook.ts
   - src/funcs/unifiedUpdateUnifiedConnection.ts
+  - src/funcs/unifiedUpdateUnifiedWebhook.ts
   - src/funcs/unifiedUpdateUnifiedWebhookTrigger.ts
   - src/funcs/apicallGetUnifiedApicall.ts
   - src/funcs/apicallListUnifiedApicalls.ts
@@ -586,8 +588,10 @@ generatedFiles:
   - src/funcs/webhookCreateUnifiedWebhook.ts
   - src/funcs/webhookGetUnifiedWebhook.ts
   - src/funcs/webhookListUnifiedWebhooks.ts
+  - src/funcs/webhookPatchUnifiedWebhook.ts
   - src/funcs/webhookPatchUnifiedWebhookTrigger.ts
   - src/funcs/webhookRemoveUnifiedWebhook.ts
+  - src/funcs/webhookUpdateUnifiedWebhook.ts
   - src/funcs/webhookUpdateUnifiedWebhookTrigger.ts
   - src/sdk/accounting.ts
   - src/sdk/account.ts
@@ -1106,10 +1110,12 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedissues.ts
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchunifiedconnection.ts
+  - src/sdk/models/operations/patchunifiedwebhook.ts
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
   - src/sdk/models/operations/removeunifiedconnection.ts
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedconnection.ts
+  - src/sdk/models/operations/updateunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
   - src/sdk/models/operations/getunifiedintegrationlogin.ts
   - src/sdk/models/errors/index.ts
@@ -1635,10 +1641,12 @@ generatedFiles:
   - docs/sdk/models/operations/integrationtype.md
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
+  - docs/sdk/models/operations/patchunifiedwebhookrequest.md
   - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
   - docs/sdk/models/operations/removeunifiedconnectionrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
   - docs/sdk/models/operations/updateunifiedconnectionrequest.md
+  - docs/sdk/models/operations/updateunifiedwebhookrequest.md
   - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
   - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
   - USAGE.md

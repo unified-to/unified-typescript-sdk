@@ -5,8 +5,10 @@
 import { webhookCreateUnifiedWebhook } from "../funcs/webhookCreateUnifiedWebhook.js";
 import { webhookGetUnifiedWebhook } from "../funcs/webhookGetUnifiedWebhook.js";
 import { webhookListUnifiedWebhooks } from "../funcs/webhookListUnifiedWebhooks.js";
+import { webhookPatchUnifiedWebhook } from "../funcs/webhookPatchUnifiedWebhook.js";
 import { webhookPatchUnifiedWebhookTrigger } from "../funcs/webhookPatchUnifiedWebhookTrigger.js";
 import { webhookRemoveUnifiedWebhook } from "../funcs/webhookRemoveUnifiedWebhook.js";
+import { webhookUpdateUnifiedWebhook } from "../funcs/webhookUpdateUnifiedWebhook.js";
 import { webhookUpdateUnifiedWebhookTrigger } from "../funcs/webhookUpdateUnifiedWebhookTrigger.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -48,6 +50,16 @@ export class Webhook extends ClientSDK {
     }
 
     /**
+     * Update webhook subscription
+     */
+    async patchUnifiedWebhook(
+        request: operations.PatchUnifiedWebhookRequest,
+        options?: RequestOptions
+    ): Promise<shared.Webhook> {
+        return unwrapAsync(webhookPatchUnifiedWebhook(this, request, options));
+    }
+
+    /**
      * Trigger webhook
      */
     async patchUnifiedWebhookTrigger(
@@ -65,6 +77,16 @@ export class Webhook extends ClientSDK {
         options?: RequestOptions
     ): Promise<void> {
         return unwrapAsync(webhookRemoveUnifiedWebhook(this, request, options));
+    }
+
+    /**
+     * Update webhook subscription
+     */
+    async updateUnifiedWebhook(
+        request: operations.UpdateUnifiedWebhookRequest,
+        options?: RequestOptions
+    ): Promise<shared.Webhook> {
+        return unwrapAsync(webhookUpdateUnifiedWebhook(this, request, options));
     }
 
     /**

@@ -903,16 +903,20 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [unifiedListUnifiedWebhooks](docs/sdks/unified/README.md#listunifiedwebhooks)
 - [unifiedPatchUnifiedConnection](docs/sdks/unified/README.md#patchunifiedconnection)
 - [unifiedPatchUnifiedWebhookTrigger](docs/sdks/unified/README.md#patchunifiedwebhooktrigger)
+- [unifiedPatchUnifiedWebhook](docs/sdks/unified/README.md#patchunifiedwebhook)
 - [unifiedRemoveUnifiedConnection](docs/sdks/unified/README.md#removeunifiedconnection)
 - [unifiedRemoveUnifiedWebhook](docs/sdks/unified/README.md#removeunifiedwebhook)
 - [unifiedUpdateUnifiedConnection](docs/sdks/unified/README.md#updateunifiedconnection)
 - [unifiedUpdateUnifiedWebhookTrigger](docs/sdks/unified/README.md#updateunifiedwebhooktrigger)
+- [unifiedUpdateUnifiedWebhook](docs/sdks/unified/README.md#updateunifiedwebhook)
 - [webhookCreateUnifiedWebhook](docs/sdks/webhook/README.md#createunifiedwebhook)
 - [webhookGetUnifiedWebhook](docs/sdks/webhook/README.md#getunifiedwebhook)
 - [webhookListUnifiedWebhooks](docs/sdks/webhook/README.md#listunifiedwebhooks)
 - [webhookPatchUnifiedWebhookTrigger](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger)
+- [webhookPatchUnifiedWebhook](docs/sdks/webhook/README.md#patchunifiedwebhook)
 - [webhookRemoveUnifiedWebhook](docs/sdks/webhook/README.md#removeunifiedwebhook)
 - [webhookUpdateUnifiedWebhookTrigger](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger)
+- [webhookUpdateUnifiedWebhook](docs/sdks/webhook/README.md#updateunifiedwebhook)
 
 
 </details>

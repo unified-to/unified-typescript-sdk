@@ -15,10 +15,12 @@ import { unifiedListUnifiedIntegrations } from "../funcs/unifiedListUnifiedInteg
 import { unifiedListUnifiedIssues } from "../funcs/unifiedListUnifiedIssues.js";
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
+import { unifiedPatchUnifiedWebhook } from "../funcs/unifiedPatchUnifiedWebhook.js";
 import { unifiedPatchUnifiedWebhookTrigger } from "../funcs/unifiedPatchUnifiedWebhookTrigger.js";
 import { unifiedRemoveUnifiedConnection } from "../funcs/unifiedRemoveUnifiedConnection.js";
 import { unifiedRemoveUnifiedWebhook } from "../funcs/unifiedRemoveUnifiedWebhook.js";
 import { unifiedUpdateUnifiedConnection } from "../funcs/unifiedUpdateUnifiedConnection.js";
+import { unifiedUpdateUnifiedWebhook } from "../funcs/unifiedUpdateUnifiedWebhook.js";
 import { unifiedUpdateUnifiedWebhookTrigger } from "../funcs/unifiedUpdateUnifiedWebhookTrigger.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -166,6 +168,16 @@ export class Unified extends ClientSDK {
     }
 
     /**
+     * Update webhook subscription
+     */
+    async patchUnifiedWebhook(
+        request: operations.PatchUnifiedWebhookRequest,
+        options?: RequestOptions
+    ): Promise<shared.Webhook> {
+        return unwrapAsync(unifiedPatchUnifiedWebhook(this, request, options));
+    }
+
+    /**
      * Trigger webhook
      */
     async patchUnifiedWebhookTrigger(
@@ -203,6 +215,16 @@ export class Unified extends ClientSDK {
         options?: RequestOptions
     ): Promise<shared.Connection> {
         return unwrapAsync(unifiedUpdateUnifiedConnection(this, request, options));
+    }
+
+    /**
+     * Update webhook subscription
+     */
+    async updateUnifiedWebhook(
+        request: operations.UpdateUnifiedWebhookRequest,
+        options?: RequestOptions
+    ): Promise<shared.Webhook> {
+        return unwrapAsync(unifiedUpdateUnifiedWebhook(this, request, options));
     }
 
     /**
