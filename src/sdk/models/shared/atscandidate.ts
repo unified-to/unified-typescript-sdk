@@ -57,6 +57,7 @@ export type AtsCandidate = {
     title?: string | undefined;
     updatedAt?: Date | undefined;
     userId?: string | undefined;
+    webUrl?: string | undefined;
 };
 
 /** @internal */
@@ -110,6 +111,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<AtsCandidate, z.ZodTypeDef, u
             .transform((v) => new Date(v))
             .optional(),
         user_id: z.string().optional(),
+        web_url: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -122,6 +124,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<AtsCandidate, z.ZodTypeDef, u
             link_urls: "linkUrls",
             updated_at: "updatedAt",
             user_id: "userId",
+            web_url: "webUrl",
         });
     });
 
@@ -146,6 +149,7 @@ export type AtsCandidate$Outbound = {
     title?: string | undefined;
     updated_at?: string | undefined;
     user_id?: string | undefined;
+    web_url?: string | undefined;
 };
 
 /** @internal */
@@ -183,6 +187,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
             .transform((v) => v.toISOString())
             .optional(),
         userId: z.string().optional(),
+        webUrl: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -195,6 +200,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
             linkUrls: "link_urls",
             updatedAt: "updated_at",
             userId: "user_id",
+            webUrl: "web_url",
         });
     });
 
