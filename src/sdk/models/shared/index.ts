@@ -88,6 +88,7 @@ export * from "./paymentrefund.js";
 export * from "./propertyaccountingcontactbillingaddress.js";
 export * from "./propertyaccountingcontactshippingaddress.js";
 export * from "./propertyaccountingorganizationaddress.js";
+export * from "./propertyatsactivityfrom.js";
 export * from "./propertyatscandidateaddress.js";
 export * from "./propertyatscompanyaddress.js";
 export * from "./propertycommercelocationaddress.js";

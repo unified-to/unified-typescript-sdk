@@ -6,7 +6,7 @@
 import { Issue } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Issue = {
-    status: "COMPLETED",
+    status: "ON_HOLD",
     ticketRef: "<value>",
     title: "<value>",
     workspaceId: "<value>",

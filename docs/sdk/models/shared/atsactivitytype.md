@@ -5,11 +5,11 @@
 ```typescript
 import { AtsActivityType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsActivityType = "NOTE";
+let value: AtsActivityType = "TASK";
 ```
 
 ## Values
 
 ```typescript
-"NOTE" | "TASK"
+"NOTE" | "TASK" | "EMAIL"
 ```

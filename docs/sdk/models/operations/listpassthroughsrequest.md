@@ -7,7 +7,7 @@ import { ListPassthroughsRequest } from "@unified-api/typescript-sdk/sdk/models/
 
 let value: ListPassthroughsRequest = {
     connectionId: "<value>",
-    path: "/usr/X11R6",
+    path: "/var/log",
 };
 ```
 

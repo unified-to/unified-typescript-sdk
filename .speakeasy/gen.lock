@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 9e259bd9564bc71739f81088a051aa42
+  docChecksum: c44c1ebe1392a35323492a0b69344f39
   docVersion: "1.0"
-  speakeasyVersion: 1.376.0
-  generationVersion: 2.402.5
-  releaseVersion: 2.2.0
-  configChecksum: e206e10f65338542c0c235b9fd9ea52f
+  speakeasyVersion: 1.377.1
+  generationVersion: 2.404.1
+  releaseVersion: 2.2.1
+  configChecksum: c68e2214688eef4b479d1372b939d457
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -722,11 +722,12 @@ generatedFiles:
   - src/sdk/models/shared/uctelephone.ts
   - src/sdk/models/shared/ucemail.ts
   - src/sdk/models/shared/atsactivity.ts
+  - src/sdk/models/shared/atsemail.ts
+  - src/sdk/models/shared/propertyatsactivityfrom.ts
   - src/sdk/models/shared/atsapplication.ts
   - src/sdk/models/shared/atsapplicationanswer.ts
   - src/sdk/models/shared/atscandidate.ts
   - src/sdk/models/shared/atstelephone.ts
-  - src/sdk/models/shared/atsemail.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
   - src/sdk/models/shared/atsdocument.ts
   - src/sdk/models/shared/atsinterview.ts
@@ -1158,6 +1159,10 @@ generatedFiles:
   - docs/sdk/models/shared/ucemail.md
   - docs/sdk/models/shared/atsactivitytype.md
   - docs/sdk/models/shared/atsactivity.md
+  - docs/sdk/models/shared/atsemailtype.md
+  - docs/sdk/models/shared/atsemail.md
+  - docs/sdk/models/shared/propertyatsactivityfromtype.md
+  - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/atsapplicationstatus.md
   - docs/sdk/models/shared/atsapplication.md
   - docs/sdk/models/shared/atsapplicationanswer.md
@@ -1165,8 +1170,6 @@ generatedFiles:
   - docs/sdk/models/shared/atscandidate.md
   - docs/sdk/models/shared/atstelephonetype.md
   - docs/sdk/models/shared/atstelephone.md
-  - docs/sdk/models/shared/atsemailtype.md
-  - docs/sdk/models/shared/atsemail.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
   - docs/sdk/models/shared/atsdocumenttype.md
   - docs/sdk/models/shared/atsdocument.md

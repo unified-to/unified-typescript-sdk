@@ -9,9 +9,9 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
     connectionId: "<value>",
-    event: "created",
+    event: "deleted",
     hookUrl: "<value>",
-    objectType: "crm_deal",
+    objectType: "martech_list",
 };
 ```
 

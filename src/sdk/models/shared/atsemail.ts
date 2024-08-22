@@ -14,6 +14,7 @@ export type AtsEmailType = ClosedEnum<typeof AtsEmailType>;
 
 export type AtsEmail = {
     email: string;
+    name?: string | undefined;
     type?: AtsEmailType | undefined;
 };
 
@@ -39,12 +40,14 @@ export namespace AtsEmailType$ {
 /** @internal */
 export const AtsEmail$inboundSchema: z.ZodType<AtsEmail, z.ZodTypeDef, unknown> = z.object({
     email: z.string(),
+    name: z.string().optional(),
     type: AtsEmailType$inboundSchema.optional(),
 });
 
 /** @internal */
 export type AtsEmail$Outbound = {
     email: string;
+    name?: string | undefined;
     type?: string | undefined;
 };
 
@@ -52,6 +55,7 @@ export type AtsEmail$Outbound = {
 export const AtsEmail$outboundSchema: z.ZodType<AtsEmail$Outbound, z.ZodTypeDef, AtsEmail> =
     z.object({
         email: z.string(),
+        name: z.string().optional(),
         type: AtsEmailType$outboundSchema.optional(),
     });
 

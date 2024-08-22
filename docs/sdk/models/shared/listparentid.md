@@ -5,7 +5,7 @@
 ```typescript
 import { ListParentId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListParentId = "supported";
+let value: ListParentId = "supported-required";
 ```
 
 ## Values

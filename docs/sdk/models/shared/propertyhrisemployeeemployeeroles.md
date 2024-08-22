@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyHrisEmployeeEmployeeRoles } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyHrisEmployeeEmployeeRoles = "ADMIN";
+let value: PropertyHrisEmployeeEmployeeRoles = "MANAGER";
 ```
 
 ## Values

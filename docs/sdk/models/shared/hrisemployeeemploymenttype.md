@@ -5,7 +5,7 @@
 ```typescript
 import { HrisEmployeeEmploymentType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisEmployeeEmploymentType = "CONSULTANT";
+let value: HrisEmployeeEmploymentType = "INTERN";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyConnectionCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionCategories = "commerce";
+let value: PropertyConnectionCategories = "storage";
 ```
 
 ## Values

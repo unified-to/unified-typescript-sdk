@@ -4,26 +4,43 @@
 
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { ClosedEnum } from "../../types/enums.js";
+import {
+    AtsEmail,
+    AtsEmail$inboundSchema,
+    AtsEmail$Outbound,
+    AtsEmail$outboundSchema,
+} from "./atsemail.js";
+import {
+    PropertyAtsActivityFrom,
+    PropertyAtsActivityFrom$inboundSchema,
+    PropertyAtsActivityFrom$Outbound,
+    PropertyAtsActivityFrom$outboundSchema,
+} from "./propertyatsactivityfrom.js";
 import * as z from "zod";
 
 export const AtsActivityType = {
     Note: "NOTE",
     Task: "TASK",
+    Email: "EMAIL",
 } as const;
 export type AtsActivityType = ClosedEnum<typeof AtsActivityType>;
 
 export type AtsActivity = {
     applicationId?: string | undefined;
+    bcc?: Array<AtsEmail> | undefined;
     candidateId?: string | undefined;
+    cc?: Array<AtsEmail> | undefined;
     createdAt?: Date | undefined;
     description?: string | undefined;
     documentId?: string | undefined;
+    from?: PropertyAtsActivityFrom | undefined;
     id?: string | undefined;
     interviewId?: string | undefined;
     isPrivate?: boolean | undefined;
     jobId?: string | undefined;
     raw?: { [k: string]: any } | undefined;
     title: string;
+    to?: Array<AtsEmail> | undefined;
     type?: AtsActivityType | undefined;
     updatedAt?: Date | undefined;
     /**
@@ -55,7 +72,9 @@ export namespace AtsActivityType$ {
 export const AtsActivity$inboundSchema: z.ZodType<AtsActivity, z.ZodTypeDef, unknown> = z
     .object({
         application_id: z.string().optional(),
+        bcc: z.array(AtsEmail$inboundSchema).optional(),
         candidate_id: z.string().optional(),
+        cc: z.array(AtsEmail$inboundSchema).optional(),
         created_at: z
             .string()
             .datetime({ offset: true })
@@ -63,12 +82,14 @@ export const AtsActivity$inboundSchema: z.ZodType<AtsActivity, z.ZodTypeDef, unk
             .optional(),
         description: z.string().optional(),
         document_id: z.string().optional(),
+        from: PropertyAtsActivityFrom$inboundSchema.optional(),
         id: z.string().optional(),
         interview_id: z.string().optional(),
         is_private: z.boolean().optional(),
         job_id: z.string().optional(),
         raw: z.record(z.any()).optional(),
         title: z.string(),
+        to: z.array(AtsEmail$inboundSchema).optional(),
         type: AtsActivityType$inboundSchema.optional(),
         updated_at: z
             .string()
@@ -94,16 +115,20 @@ export const AtsActivity$inboundSchema: z.ZodType<AtsActivity, z.ZodTypeDef, unk
 /** @internal */
 export type AtsActivity$Outbound = {
     application_id?: string | undefined;
+    bcc?: Array<AtsEmail$Outbound> | undefined;
     candidate_id?: string | undefined;
+    cc?: Array<AtsEmail$Outbound> | undefined;
     created_at?: string | undefined;
     description?: string | undefined;
     document_id?: string | undefined;
+    from?: PropertyAtsActivityFrom$Outbound | undefined;
     id?: string | undefined;
     interview_id?: string | undefined;
     is_private?: boolean | undefined;
     job_id?: string | undefined;
     raw?: { [k: string]: any } | undefined;
     title: string;
+    to?: Array<AtsEmail$Outbound> | undefined;
     type?: string | undefined;
     updated_at?: string | undefined;
     user_ids?: Array<string> | undefined;
@@ -117,19 +142,23 @@ export const AtsActivity$outboundSchema: z.ZodType<
 > = z
     .object({
         applicationId: z.string().optional(),
+        bcc: z.array(AtsEmail$outboundSchema).optional(),
         candidateId: z.string().optional(),
+        cc: z.array(AtsEmail$outboundSchema).optional(),
         createdAt: z
             .date()
             .transform((v) => v.toISOString())
             .optional(),
         description: z.string().optional(),
         documentId: z.string().optional(),
+        from: PropertyAtsActivityFrom$outboundSchema.optional(),
         id: z.string().optional(),
         interviewId: z.string().optional(),
         isPrivate: z.boolean().optional(),
         jobId: z.string().optional(),
         raw: z.record(z.any()).optional(),
         title: z.string(),
+        to: z.array(AtsEmail$outboundSchema).optional(),
         type: AtsActivityType$outboundSchema.optional(),
         updatedAt: z
             .date()

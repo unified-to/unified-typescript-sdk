@@ -8,7 +8,7 @@ Informational object for supported integrations.
 import { Integration } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Integration = {
-    categories: ["enrich"],
+    categories: ["auth"],
     inProgress: false,
     name: "<value>",
     type: "<value>",

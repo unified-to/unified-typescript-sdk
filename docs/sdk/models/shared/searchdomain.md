@@ -5,7 +5,7 @@
 ```typescript
 import { SearchDomain } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SearchDomain = "supported-required";
+let value: SearchDomain = "not-supported";
 ```
 
 ## Values

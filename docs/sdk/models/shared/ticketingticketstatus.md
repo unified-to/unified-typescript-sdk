@@ -5,7 +5,7 @@
 ```typescript
 import { TicketingTicketStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: TicketingTicketStatus = "CLOSED";
+let value: TicketingTicketStatus = "ACTIVE";
 ```
 
 ## Values

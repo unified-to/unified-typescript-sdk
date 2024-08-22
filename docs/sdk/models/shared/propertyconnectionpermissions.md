@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyConnectionPermissions } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionPermissions = "task_task_write";
+let value: PropertyConnectionPermissions = "commerce_collection_write";
 ```
 
 ## Values

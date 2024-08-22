@@ -9,9 +9,9 @@ let value: ApiCall = {
     integrationType: "<value>",
     method: "<value>",
     name: "<value>",
-    path: "/System",
+    path: "/etc/namedb",
     status: "<value>",
-    type: "login",
+    type: "inbound",
     workspaceId: "<value>",
 };
 ```
