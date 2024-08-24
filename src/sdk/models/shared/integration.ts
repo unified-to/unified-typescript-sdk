@@ -33,7 +33,7 @@ export type Integration = {
     description?: string | undefined;
     faIcon?: string | undefined;
     featured?: boolean | undefined;
-    inProgress: boolean;
+    inProgress?: boolean | undefined;
     isActive?: boolean | undefined;
     logoUrl?: string | undefined;
     name: string;
@@ -68,7 +68,7 @@ export const Integration$inboundSchema: z.ZodType<Integration, z.ZodTypeDef, unk
         description: z.string().optional(),
         fa_icon: z.string().optional(),
         featured: z.boolean().optional(),
-        in_progress: z.boolean(),
+        in_progress: z.boolean().optional(),
         is_active: z.boolean().optional(),
         logo_url: z.string().optional(),
         name: z.string(),
@@ -118,7 +118,7 @@ export type Integration$Outbound = {
     description?: string | undefined;
     fa_icon?: string | undefined;
     featured?: boolean | undefined;
-    in_progress: boolean;
+    in_progress?: boolean | undefined;
     is_active?: boolean | undefined;
     logo_url?: string | undefined;
     name: string;
@@ -151,7 +151,7 @@ export const Integration$outboundSchema: z.ZodType<
         description: z.string().optional(),
         faIcon: z.string().optional(),
         featured: z.boolean().optional(),
-        inProgress: z.boolean(),
+        inProgress: z.boolean().optional(),
         isActive: z.boolean().optional(),
         logoUrl: z.string().optional(),
         name: z.string(),
