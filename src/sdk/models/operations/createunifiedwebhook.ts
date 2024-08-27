@@ -7,6 +7,9 @@ import * as shared from "../shared/index.js";
 import * as z from "zod";
 
 export type CreateUnifiedWebhookRequest = {
+    /**
+     * A webhook is used to POST new/updated information to your server.
+     */
     webhook?: shared.Webhook | undefined;
     /**
      * When set, all of the existing data will sent back to your server.
