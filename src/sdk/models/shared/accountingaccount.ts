@@ -35,6 +35,7 @@ export type AccountingAccount = {
     currency?: string | undefined;
     customerDefinedCode?: string | undefined;
     description?: string | undefined;
+    group?: string | undefined;
     id?: string | undefined;
     isPayable?: boolean | undefined;
     name?: string | undefined;
@@ -43,7 +44,10 @@ export type AccountingAccount = {
      * The original data from the integration's API
      */
     raw?: { [k: string]: any } | undefined;
+    section?: string | undefined;
     status?: Status | undefined;
+    subgroup?: string | undefined;
+    subsection?: string | undefined;
     type?: Type | undefined;
     updatedAt?: Date | undefined;
 };
@@ -95,12 +99,16 @@ export const AccountingAccount$inboundSchema: z.ZodType<AccountingAccount, z.Zod
             currency: z.string().optional(),
             customer_defined_code: z.string().optional(),
             description: z.string().optional(),
+            group: z.string().optional(),
             id: z.string().optional(),
             is_payable: z.boolean().optional(),
             name: z.string().optional(),
             parent_account_id: z.string().optional(),
             raw: z.record(z.any()).optional(),
+            section: z.string().optional(),
             status: Status$inboundSchema.optional(),
+            subgroup: z.string().optional(),
+            subsection: z.string().optional(),
             type: Type$inboundSchema.optional(),
             updated_at: z
                 .string()
@@ -125,12 +133,16 @@ export type AccountingAccount$Outbound = {
     currency?: string | undefined;
     customer_defined_code?: string | undefined;
     description?: string | undefined;
+    group?: string | undefined;
     id?: string | undefined;
     is_payable?: boolean | undefined;
     name?: string | undefined;
     parent_account_id?: string | undefined;
     raw?: { [k: string]: any } | undefined;
+    section?: string | undefined;
     status?: string | undefined;
+    subgroup?: string | undefined;
+    subsection?: string | undefined;
     type?: string | undefined;
     updated_at?: string | undefined;
 };
@@ -150,12 +162,16 @@ export const AccountingAccount$outboundSchema: z.ZodType<
         currency: z.string().optional(),
         customerDefinedCode: z.string().optional(),
         description: z.string().optional(),
+        group: z.string().optional(),
         id: z.string().optional(),
         isPayable: z.boolean().optional(),
         name: z.string().optional(),
         parentAccountId: z.string().optional(),
         raw: z.record(z.any()).optional(),
+        section: z.string().optional(),
         status: Status$outboundSchema.optional(),
+        subgroup: z.string().optional(),
+        subsection: z.string().optional(),
         type: Type$outboundSchema.optional(),
         updatedAt: z
             .date()
