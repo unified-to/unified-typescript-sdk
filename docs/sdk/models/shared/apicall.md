@@ -12,7 +12,6 @@ let value: ApiCall = {
     path: "/etc/namedb",
     status: "<value>",
     type: "inbound",
-    workspaceId: "<value>",
 };
 ```
 
@@ -34,4 +33,4 @@ let value: ApiCall = {
 | `size`                                                                                        | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `status`                                                                                      | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `type`                                                                                        | [shared.ApiCallType](../../../sdk/models/shared/apicalltype.md)                               | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `workspaceId`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `workspaceId`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

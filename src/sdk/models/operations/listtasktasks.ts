@@ -28,6 +28,7 @@ export type ListTaskTasksRequest = {
      * Return only results whose updated date is equal or greater to this value
      */
     updatedGte?: Date | undefined;
+    userId?: string | undefined;
 };
 
 /** @internal */
@@ -51,6 +52,7 @@ export const ListTaskTasksRequest$inboundSchema: z.ZodType<
             .datetime({ offset: true })
             .transform((v) => new Date(v))
             .optional(),
+        user_id: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -58,6 +60,7 @@ export const ListTaskTasksRequest$inboundSchema: z.ZodType<
             parent_id: "parentId",
             project_id: "projectId",
             updated_gte: "updatedGte",
+            user_id: "userId",
         });
     });
 
@@ -73,6 +76,7 @@ export type ListTaskTasksRequest$Outbound = {
     query?: string | undefined;
     sort?: string | undefined;
     updated_gte?: string | undefined;
+    user_id?: string | undefined;
 };
 
 /** @internal */
@@ -95,6 +99,7 @@ export const ListTaskTasksRequest$outboundSchema: z.ZodType<
             .date()
             .transform((v) => v.toISOString())
             .optional(),
+        userId: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -102,6 +107,7 @@ export const ListTaskTasksRequest$outboundSchema: z.ZodType<
             parentId: "parent_id",
             projectId: "project_id",
             updatedGte: "updated_gte",
+            userId: "user_id",
         });
     });
 

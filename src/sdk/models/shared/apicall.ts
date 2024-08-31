@@ -28,7 +28,7 @@ export type ApiCall = {
     size?: number | undefined;
     status: string;
     type: ApiCallType;
-    workspaceId: string;
+    workspaceId?: string | undefined;
 };
 
 /** @internal */
@@ -71,7 +71,7 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> = 
         size: z.number().optional(),
         status: z.string(),
         type: ApiCallType$inboundSchema,
-        workspace_id: z.string(),
+        workspace_id: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
@@ -100,7 +100,7 @@ export type ApiCall$Outbound = {
     size?: number | undefined;
     status: string;
     type: string;
-    workspace_id: string;
+    workspace_id?: string | undefined;
 };
 
 /** @internal */
@@ -123,7 +123,7 @@ export const ApiCall$outboundSchema: z.ZodType<ApiCall$Outbound, z.ZodTypeDef, A
         size: z.number().optional(),
         status: z.string(),
         type: ApiCallType$outboundSchema,
-        workspaceId: z.string(),
+        workspaceId: z.string().optional(),
     })
     .transform((v) => {
         return remap$(v, {
