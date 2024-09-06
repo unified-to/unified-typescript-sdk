@@ -16,6 +16,9 @@ import { unwrapAsync } from "./types/fp.js";
 export class Connection extends ClientSDK {
     /**
      * Create connection
+     *
+     * @remarks
+     * Used only to import existing customer credentials; use "Create connection indirectly" instead
      */
     async createUnifiedConnection(
         request?: shared.Connection | undefined,

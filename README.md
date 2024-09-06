@@ -242,6 +242,9 @@ async function run() {
         result = await unifiedTo.accounting.createAccountingAccount({
             connectionId: "<value>",
         });
+
+        // Handle the result
+        console.log(result);
     } catch (err) {
         switch (true) {
             case err instanceof SDKValidationError: {
@@ -256,9 +259,6 @@ async function run() {
             }
         }
     }
-
-    // Handle the result
-    console.log(result);
 }
 
 run();
