@@ -3,10 +3,10 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: d76c4e4fafacbab4333385b19ff0e709
   docVersion: "1.0"
-  speakeasyVersion: 1.390.7
-  generationVersion: 2.409.8
-  releaseVersion: 2.3.1
-  configChecksum: 04164aa5570b0b5e067a468d1207ea8d
+  speakeasyVersion: 1.392.1
+  generationVersion: 2.411.9
+  releaseVersion: 2.3.2
+  configChecksum: 896ff7480cd93acce901498e725b46b0
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -15,7 +15,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.16.1
+    core: 3.16.4
     defaultEnabledRetries: 0.1.0
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
@@ -25,6 +25,552 @@ features:
     retries: 2.83.0
     sdkHooks: 0.1.0
 generatedFiles:
+  - .eslintrc.cjs
+  - .gitattributes
+  - .npmignore
+  - CONTRIBUTING.md
+  - FUNCTIONS.md
+  - RUNTIMES.md
+  - USAGE.md
+  - docs/sdk/models/operations/categories.md
+  - docs/sdk/models/operations/connectionid.md
+  - docs/sdk/models/operations/createaccountingaccountrequest.md
+  - docs/sdk/models/operations/createaccountingcontactrequest.md
+  - docs/sdk/models/operations/createaccountinginvoicerequest.md
+  - docs/sdk/models/operations/createaccountingjournalrequest.md
+  - docs/sdk/models/operations/createaccountingtaxraterequest.md
+  - docs/sdk/models/operations/createaccountingtransactionrequest.md
+  - docs/sdk/models/operations/createatsactivityrequest.md
+  - docs/sdk/models/operations/createatsapplicationrequest.md
+  - docs/sdk/models/operations/createatscandidaterequest.md
+  - docs/sdk/models/operations/createatsdocumentrequest.md
+  - docs/sdk/models/operations/createatsinterviewrequest.md
+  - docs/sdk/models/operations/createatsjobrequest.md
+  - docs/sdk/models/operations/createatsscorecardrequest.md
+  - docs/sdk/models/operations/createcommercecollectionrequest.md
+  - docs/sdk/models/operations/createcommerceinventoryrequest.md
+  - docs/sdk/models/operations/createcommerceitemrequest.md
+  - docs/sdk/models/operations/createcommercelocationrequest.md
+  - docs/sdk/models/operations/createcrmcompanyrequest.md
+  - docs/sdk/models/operations/createcrmcontactrequest.md
+  - docs/sdk/models/operations/createcrmdealrequest.md
+  - docs/sdk/models/operations/createcrmeventrequest.md
+  - docs/sdk/models/operations/createcrmleadrequest.md
+  - docs/sdk/models/operations/createcrmpipelinerequest.md
+  - docs/sdk/models/operations/creategenaipromptrequest.md
+  - docs/sdk/models/operations/createhriscompanyrequest.md
+  - docs/sdk/models/operations/createhrisemployeerequest.md
+  - docs/sdk/models/operations/createhrisgrouprequest.md
+  - docs/sdk/models/operations/createhrislocationrequest.md
+  - docs/sdk/models/operations/createkmspagerequest.md
+  - docs/sdk/models/operations/createkmsspacerequest.md
+  - docs/sdk/models/operations/createmartechlistrequest.md
+  - docs/sdk/models/operations/createmartechmemberrequest.md
+  - docs/sdk/models/operations/createmessagingmessagerequest.md
+  - docs/sdk/models/operations/createpassthroughrequest.md
+  - docs/sdk/models/operations/createpaymentlinkrequest.md
+  - docs/sdk/models/operations/createpaymentpaymentrequest.md
+  - docs/sdk/models/operations/createstoragefilerequest.md
+  - docs/sdk/models/operations/createtaskprojectrequest.md
+  - docs/sdk/models/operations/createtasktaskrequest.md
+  - docs/sdk/models/operations/createticketingcustomerrequest.md
+  - docs/sdk/models/operations/createticketingnoterequest.md
+  - docs/sdk/models/operations/createticketingticketrequest.md
+  - docs/sdk/models/operations/createuccontactrequest.md
+  - docs/sdk/models/operations/createunifiedwebhookrequest.md
+  - docs/sdk/models/operations/getaccountingaccountrequest.md
+  - docs/sdk/models/operations/getaccountingcontactrequest.md
+  - docs/sdk/models/operations/getaccountinginvoicerequest.md
+  - docs/sdk/models/operations/getaccountingjournalrequest.md
+  - docs/sdk/models/operations/getaccountingorganizationrequest.md
+  - docs/sdk/models/operations/getaccountingtaxraterequest.md
+  - docs/sdk/models/operations/getaccountingtransactionrequest.md
+  - docs/sdk/models/operations/getatsactivityrequest.md
+  - docs/sdk/models/operations/getatsapplicationrequest.md
+  - docs/sdk/models/operations/getatscandidaterequest.md
+  - docs/sdk/models/operations/getatscompanyrequest.md
+  - docs/sdk/models/operations/getatsdocumentrequest.md
+  - docs/sdk/models/operations/getatsinterviewrequest.md
+  - docs/sdk/models/operations/getatsjobrequest.md
+  - docs/sdk/models/operations/getatsscorecardrequest.md
+  - docs/sdk/models/operations/getcommercecollectionrequest.md
+  - docs/sdk/models/operations/getcommerceinventoryrequest.md
+  - docs/sdk/models/operations/getcommerceitemrequest.md
+  - docs/sdk/models/operations/getcommercelocationrequest.md
+  - docs/sdk/models/operations/getcrmcompanyrequest.md
+  - docs/sdk/models/operations/getcrmcontactrequest.md
+  - docs/sdk/models/operations/getcrmdealrequest.md
+  - docs/sdk/models/operations/getcrmeventrequest.md
+  - docs/sdk/models/operations/getcrmleadrequest.md
+  - docs/sdk/models/operations/getcrmpipelinerequest.md
+  - docs/sdk/models/operations/gethriscompanyrequest.md
+  - docs/sdk/models/operations/gethrisemployeerequest.md
+  - docs/sdk/models/operations/gethrisgrouprequest.md
+  - docs/sdk/models/operations/gethrislocationrequest.md
+  - docs/sdk/models/operations/gethrispaysliprequest.md
+  - docs/sdk/models/operations/gethristimeoffrequest.md
+  - docs/sdk/models/operations/getkmspagerequest.md
+  - docs/sdk/models/operations/getkmsspacerequest.md
+  - docs/sdk/models/operations/getmartechlistrequest.md
+  - docs/sdk/models/operations/getmartechmemberrequest.md
+  - docs/sdk/models/operations/getmessagingchannelrequest.md
+  - docs/sdk/models/operations/getmessagingmessagerequest.md
+  - docs/sdk/models/operations/getpaymentlinkrequest.md
+  - docs/sdk/models/operations/getpaymentpaymentrequest.md
+  - docs/sdk/models/operations/getpaymentpayoutrequest.md
+  - docs/sdk/models/operations/getpaymentrefundrequest.md
+  - docs/sdk/models/operations/getstoragefilerequest.md
+  - docs/sdk/models/operations/gettaskprojectrequest.md
+  - docs/sdk/models/operations/gettasktaskrequest.md
+  - docs/sdk/models/operations/getticketingcustomerrequest.md
+  - docs/sdk/models/operations/getticketingnoterequest.md
+  - docs/sdk/models/operations/getticketingticketrequest.md
+  - docs/sdk/models/operations/getuccontactrequest.md
+  - docs/sdk/models/operations/getunifiedapicallrequest.md
+  - docs/sdk/models/operations/getunifiedconnectionrequest.md
+  - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
+  - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
+  - docs/sdk/models/operations/getunifiedwebhookrequest.md
+  - docs/sdk/models/operations/integrationtype.md
+  - docs/sdk/models/operations/listaccountingaccountsrequest.md
+  - docs/sdk/models/operations/listaccountingcontactsrequest.md
+  - docs/sdk/models/operations/listaccountinginvoicesrequest.md
+  - docs/sdk/models/operations/listaccountingjournalsrequest.md
+  - docs/sdk/models/operations/listaccountingorganizationsrequest.md
+  - docs/sdk/models/operations/listaccountingtaxratesrequest.md
+  - docs/sdk/models/operations/listaccountingtransactionsrequest.md
+  - docs/sdk/models/operations/listatsactivitiesrequest.md
+  - docs/sdk/models/operations/listatsapplicationsrequest.md
+  - docs/sdk/models/operations/listatsapplicationstatusesrequest.md
+  - docs/sdk/models/operations/listatscandidatesrequest.md
+  - docs/sdk/models/operations/listatscompaniesrequest.md
+  - docs/sdk/models/operations/listatsdocumentsrequest.md
+  - docs/sdk/models/operations/listatsinterviewsrequest.md
+  - docs/sdk/models/operations/listatsjobsrequest.md
+  - docs/sdk/models/operations/listatsscorecardsrequest.md
+  - docs/sdk/models/operations/listcommercecollectionsrequest.md
+  - docs/sdk/models/operations/listcommerceinventoriesrequest.md
+  - docs/sdk/models/operations/listcommerceitemsrequest.md
+  - docs/sdk/models/operations/listcommercelocationsrequest.md
+  - docs/sdk/models/operations/listcrmcompaniesrequest.md
+  - docs/sdk/models/operations/listcrmcontactsrequest.md
+  - docs/sdk/models/operations/listcrmdealsrequest.md
+  - docs/sdk/models/operations/listcrmeventsrequest.md
+  - docs/sdk/models/operations/listcrmleadsrequest.md
+  - docs/sdk/models/operations/listcrmpipelinesrequest.md
+  - docs/sdk/models/operations/listenrichcompaniesrequest.md
+  - docs/sdk/models/operations/listenrichpeoplerequest.md
+  - docs/sdk/models/operations/listgenaimodelsrequest.md
+  - docs/sdk/models/operations/listhriscompaniesrequest.md
+  - docs/sdk/models/operations/listhrisemployeesrequest.md
+  - docs/sdk/models/operations/listhrisgroupsrequest.md
+  - docs/sdk/models/operations/listhrislocationsrequest.md
+  - docs/sdk/models/operations/listhrispayslipsrequest.md
+  - docs/sdk/models/operations/listhristimeoffsrequest.md
+  - docs/sdk/models/operations/listkmspagesrequest.md
+  - docs/sdk/models/operations/listkmsspacesrequest.md
+  - docs/sdk/models/operations/listmartechlistsrequest.md
+  - docs/sdk/models/operations/listmartechmembersrequest.md
+  - docs/sdk/models/operations/listmessagingchannelsrequest.md
+  - docs/sdk/models/operations/listmessagingmessagesrequest.md
+  - docs/sdk/models/operations/listpassthroughsrequest.md
+  - docs/sdk/models/operations/listpaymentlinksrequest.md
+  - docs/sdk/models/operations/listpaymentpaymentsrequest.md
+  - docs/sdk/models/operations/listpaymentpayoutsrequest.md
+  - docs/sdk/models/operations/listpaymentrefundsrequest.md
+  - docs/sdk/models/operations/liststoragefilesrequest.md
+  - docs/sdk/models/operations/listtaskprojectsrequest.md
+  - docs/sdk/models/operations/listtasktasksrequest.md
+  - docs/sdk/models/operations/listticketingcustomersrequest.md
+  - docs/sdk/models/operations/listticketingnotesrequest.md
+  - docs/sdk/models/operations/listticketingticketsrequest.md
+  - docs/sdk/models/operations/listuccallsrequest.md
+  - docs/sdk/models/operations/listuccontactsrequest.md
+  - docs/sdk/models/operations/listunifiedapicallsrequest.md
+  - docs/sdk/models/operations/listunifiedconnectionsrequest.md
+  - docs/sdk/models/operations/listunifiedintegrationsqueryparamcategories.md
+  - docs/sdk/models/operations/listunifiedintegrationsrequest.md
+  - docs/sdk/models/operations/listunifiedintegrationworkspacesrequest.md
+  - docs/sdk/models/operations/listunifiedissuesrequest.md
+  - docs/sdk/models/operations/listunifiedwebhooksrequest.md
+  - docs/sdk/models/operations/patchaccountingaccountrequest.md
+  - docs/sdk/models/operations/patchaccountingcontactrequest.md
+  - docs/sdk/models/operations/patchaccountinginvoicerequest.md
+  - docs/sdk/models/operations/patchaccountingjournalrequest.md
+  - docs/sdk/models/operations/patchaccountingtaxraterequest.md
+  - docs/sdk/models/operations/patchaccountingtransactionrequest.md
+  - docs/sdk/models/operations/patchatsactivityrequest.md
+  - docs/sdk/models/operations/patchatsapplicationrequest.md
+  - docs/sdk/models/operations/patchatscandidaterequest.md
+  - docs/sdk/models/operations/patchatsdocumentrequest.md
+  - docs/sdk/models/operations/patchatsinterviewrequest.md
+  - docs/sdk/models/operations/patchatsjobrequest.md
+  - docs/sdk/models/operations/patchatsscorecardrequest.md
+  - docs/sdk/models/operations/patchcommercecollectionrequest.md
+  - docs/sdk/models/operations/patchcommerceinventoryrequest.md
+  - docs/sdk/models/operations/patchcommerceitemrequest.md
+  - docs/sdk/models/operations/patchcommercelocationrequest.md
+  - docs/sdk/models/operations/patchcrmcompanyrequest.md
+  - docs/sdk/models/operations/patchcrmcontactrequest.md
+  - docs/sdk/models/operations/patchcrmdealrequest.md
+  - docs/sdk/models/operations/patchcrmeventrequest.md
+  - docs/sdk/models/operations/patchcrmleadrequest.md
+  - docs/sdk/models/operations/patchcrmpipelinerequest.md
+  - docs/sdk/models/operations/patchhriscompanyrequest.md
+  - docs/sdk/models/operations/patchhrisemployeerequest.md
+  - docs/sdk/models/operations/patchhrisgrouprequest.md
+  - docs/sdk/models/operations/patchhrislocationrequest.md
+  - docs/sdk/models/operations/patchkmspagerequest.md
+  - docs/sdk/models/operations/patchkmsspacerequest.md
+  - docs/sdk/models/operations/patchmartechlistrequest.md
+  - docs/sdk/models/operations/patchmartechmemberrequest.md
+  - docs/sdk/models/operations/patchmessagingmessagerequest.md
+  - docs/sdk/models/operations/patchpassthroughrequest.md
+  - docs/sdk/models/operations/patchpaymentlinkrequest.md
+  - docs/sdk/models/operations/patchpaymentpaymentrequest.md
+  - docs/sdk/models/operations/patchstoragefilerequest.md
+  - docs/sdk/models/operations/patchtaskprojectrequest.md
+  - docs/sdk/models/operations/patchtasktaskrequest.md
+  - docs/sdk/models/operations/patchticketingcustomerrequest.md
+  - docs/sdk/models/operations/patchticketingnoterequest.md
+  - docs/sdk/models/operations/patchticketingticketrequest.md
+  - docs/sdk/models/operations/patchuccontactrequest.md
+  - docs/sdk/models/operations/patchunifiedconnectionrequest.md
+  - docs/sdk/models/operations/patchunifiedwebhookrequest.md
+  - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/operations/queryparamcategories.md
+  - docs/sdk/models/operations/removeaccountingaccountrequest.md
+  - docs/sdk/models/operations/removeaccountingcontactrequest.md
+  - docs/sdk/models/operations/removeaccountinginvoicerequest.md
+  - docs/sdk/models/operations/removeaccountingjournalrequest.md
+  - docs/sdk/models/operations/removeaccountingtaxraterequest.md
+  - docs/sdk/models/operations/removeaccountingtransactionrequest.md
+  - docs/sdk/models/operations/removeatsactivityrequest.md
+  - docs/sdk/models/operations/removeatsapplicationrequest.md
+  - docs/sdk/models/operations/removeatscandidaterequest.md
+  - docs/sdk/models/operations/removeatsdocumentrequest.md
+  - docs/sdk/models/operations/removeatsinterviewrequest.md
+  - docs/sdk/models/operations/removeatsjobrequest.md
+  - docs/sdk/models/operations/removeatsscorecardrequest.md
+  - docs/sdk/models/operations/removecommercecollectionrequest.md
+  - docs/sdk/models/operations/removecommerceinventoryrequest.md
+  - docs/sdk/models/operations/removecommerceitemrequest.md
+  - docs/sdk/models/operations/removecommercelocationrequest.md
+  - docs/sdk/models/operations/removecrmcompanyrequest.md
+  - docs/sdk/models/operations/removecrmcontactrequest.md
+  - docs/sdk/models/operations/removecrmdealrequest.md
+  - docs/sdk/models/operations/removecrmeventrequest.md
+  - docs/sdk/models/operations/removecrmleadrequest.md
+  - docs/sdk/models/operations/removecrmpipelinerequest.md
+  - docs/sdk/models/operations/removehriscompanyrequest.md
+  - docs/sdk/models/operations/removehrisemployeerequest.md
+  - docs/sdk/models/operations/removehrisgrouprequest.md
+  - docs/sdk/models/operations/removehrislocationrequest.md
+  - docs/sdk/models/operations/removekmspagerequest.md
+  - docs/sdk/models/operations/removekmsspacerequest.md
+  - docs/sdk/models/operations/removemartechlistrequest.md
+  - docs/sdk/models/operations/removemartechmemberrequest.md
+  - docs/sdk/models/operations/removemessagingmessagerequest.md
+  - docs/sdk/models/operations/removepassthroughrequest.md
+  - docs/sdk/models/operations/removepaymentlinkrequest.md
+  - docs/sdk/models/operations/removepaymentpaymentrequest.md
+  - docs/sdk/models/operations/removestoragefilerequest.md
+  - docs/sdk/models/operations/removetaskprojectrequest.md
+  - docs/sdk/models/operations/removetasktaskrequest.md
+  - docs/sdk/models/operations/removeticketingcustomerrequest.md
+  - docs/sdk/models/operations/removeticketingnoterequest.md
+  - docs/sdk/models/operations/removeticketingticketrequest.md
+  - docs/sdk/models/operations/removeuccontactrequest.md
+  - docs/sdk/models/operations/removeunifiedconnectionrequest.md
+  - docs/sdk/models/operations/removeunifiedwebhookrequest.md
+  - docs/sdk/models/operations/scopes.md
+  - docs/sdk/models/operations/updateaccountingaccountrequest.md
+  - docs/sdk/models/operations/updateaccountingcontactrequest.md
+  - docs/sdk/models/operations/updateaccountinginvoicerequest.md
+  - docs/sdk/models/operations/updateaccountingjournalrequest.md
+  - docs/sdk/models/operations/updateaccountingtaxraterequest.md
+  - docs/sdk/models/operations/updateaccountingtransactionrequest.md
+  - docs/sdk/models/operations/updateatsactivityrequest.md
+  - docs/sdk/models/operations/updateatsapplicationrequest.md
+  - docs/sdk/models/operations/updateatscandidaterequest.md
+  - docs/sdk/models/operations/updateatsdocumentrequest.md
+  - docs/sdk/models/operations/updateatsinterviewrequest.md
+  - docs/sdk/models/operations/updateatsjobrequest.md
+  - docs/sdk/models/operations/updateatsscorecardrequest.md
+  - docs/sdk/models/operations/updatecommercecollectionrequest.md
+  - docs/sdk/models/operations/updatecommerceinventoryrequest.md
+  - docs/sdk/models/operations/updatecommerceitemrequest.md
+  - docs/sdk/models/operations/updatecommercelocationrequest.md
+  - docs/sdk/models/operations/updatecrmcompanyrequest.md
+  - docs/sdk/models/operations/updatecrmcontactrequest.md
+  - docs/sdk/models/operations/updatecrmdealrequest.md
+  - docs/sdk/models/operations/updatecrmeventrequest.md
+  - docs/sdk/models/operations/updatecrmleadrequest.md
+  - docs/sdk/models/operations/updatecrmpipelinerequest.md
+  - docs/sdk/models/operations/updatehriscompanyrequest.md
+  - docs/sdk/models/operations/updatehrisemployeerequest.md
+  - docs/sdk/models/operations/updatehrisgrouprequest.md
+  - docs/sdk/models/operations/updatehrislocationrequest.md
+  - docs/sdk/models/operations/updatekmspagerequest.md
+  - docs/sdk/models/operations/updatekmsspacerequest.md
+  - docs/sdk/models/operations/updatemartechlistrequest.md
+  - docs/sdk/models/operations/updatemartechmemberrequest.md
+  - docs/sdk/models/operations/updatemessagingmessagerequest.md
+  - docs/sdk/models/operations/updatepassthroughrequest.md
+  - docs/sdk/models/operations/updatepaymentlinkrequest.md
+  - docs/sdk/models/operations/updatepaymentpaymentrequest.md
+  - docs/sdk/models/operations/updatestoragefilerequest.md
+  - docs/sdk/models/operations/updatetaskprojectrequest.md
+  - docs/sdk/models/operations/updatetasktaskrequest.md
+  - docs/sdk/models/operations/updateticketingcustomerrequest.md
+  - docs/sdk/models/operations/updateticketingnoterequest.md
+  - docs/sdk/models/operations/updateticketingticketrequest.md
+  - docs/sdk/models/operations/updateuccontactrequest.md
+  - docs/sdk/models/operations/updateunifiedconnectionrequest.md
+  - docs/sdk/models/operations/updateunifiedwebhookrequest.md
+  - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/shared/accountingaccount.md
+  - docs/sdk/models/shared/accountingcontact.md
+  - docs/sdk/models/shared/accountingcontactpaymentmethod.md
+  - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
+  - docs/sdk/models/shared/accountingemail.md
+  - docs/sdk/models/shared/accountingemailtype.md
+  - docs/sdk/models/shared/accountinginvoice.md
+  - docs/sdk/models/shared/accountinginvoicestatus.md
+  - docs/sdk/models/shared/accountingjournal.md
+  - docs/sdk/models/shared/accountingjournallineitem.md
+  - docs/sdk/models/shared/accountinglineitem.md
+  - docs/sdk/models/shared/accountingorganization.md
+  - docs/sdk/models/shared/accountingtaxrate.md
+  - docs/sdk/models/shared/accountingtelephone.md
+  - docs/sdk/models/shared/accountingtelephonetype.md
+  - docs/sdk/models/shared/accountingtransaction.md
+  - docs/sdk/models/shared/accountingtransactionlineitem.md
+  - docs/sdk/models/shared/apicall.md
+  - docs/sdk/models/shared/apicalltype.md
+  - docs/sdk/models/shared/atsactivity.md
+  - docs/sdk/models/shared/atsactivitytype.md
+  - docs/sdk/models/shared/atsaddress.md
+  - docs/sdk/models/shared/atsapplication.md
+  - docs/sdk/models/shared/atsapplicationanswer.md
+  - docs/sdk/models/shared/atsapplicationstatus.md
+  - docs/sdk/models/shared/atscandidate.md
+  - docs/sdk/models/shared/atscompany.md
+  - docs/sdk/models/shared/atscompensation.md
+  - docs/sdk/models/shared/atscompensationtype.md
+  - docs/sdk/models/shared/atsdocument.md
+  - docs/sdk/models/shared/atsdocumenttype.md
+  - docs/sdk/models/shared/atsemail.md
+  - docs/sdk/models/shared/atsemailtype.md
+  - docs/sdk/models/shared/atsinterview.md
+  - docs/sdk/models/shared/atsinterviewstatus.md
+  - docs/sdk/models/shared/atsjob.md
+  - docs/sdk/models/shared/atsjobquestion.md
+  - docs/sdk/models/shared/atsjobquestiontype.md
+  - docs/sdk/models/shared/atsjobstatus.md
+  - docs/sdk/models/shared/atsscorecard.md
+  - docs/sdk/models/shared/atsscorecardquestion.md
+  - docs/sdk/models/shared/atsstatus.md
+  - docs/sdk/models/shared/atsstatusstatus.md
+  - docs/sdk/models/shared/atstelephone.md
+  - docs/sdk/models/shared/atstelephonetype.md
+  - docs/sdk/models/shared/commercecollection.md
+  - docs/sdk/models/shared/commercecollectiontype.md
+  - docs/sdk/models/shared/commerceinventory.md
+  - docs/sdk/models/shared/commerceitem.md
+  - docs/sdk/models/shared/commerceitemmedia.md
+  - docs/sdk/models/shared/commerceitemmediatype.md
+  - docs/sdk/models/shared/commerceitemoption.md
+  - docs/sdk/models/shared/commerceitemprice.md
+  - docs/sdk/models/shared/commerceitemvariant.md
+  - docs/sdk/models/shared/commercelocation.md
+  - docs/sdk/models/shared/connection.md
+  - docs/sdk/models/shared/crmcompany.md
+  - docs/sdk/models/shared/crmcontact.md
+  - docs/sdk/models/shared/crmdeal.md
+  - docs/sdk/models/shared/crmemail.md
+  - docs/sdk/models/shared/crmemailtype.md
+  - docs/sdk/models/shared/crmevent.md
+  - docs/sdk/models/shared/crmeventtype.md
+  - docs/sdk/models/shared/crmlead.md
+  - docs/sdk/models/shared/crmpipeline.md
+  - docs/sdk/models/shared/crmstage.md
+  - docs/sdk/models/shared/crmtelephone.md
+  - docs/sdk/models/shared/crmtelephonetype.md
+  - docs/sdk/models/shared/employmentstatus.md
+  - docs/sdk/models/shared/employmenttype.md
+  - docs/sdk/models/shared/enrichcompany.md
+  - docs/sdk/models/shared/enrichemail.md
+  - docs/sdk/models/shared/enrichemailtype.md
+  - docs/sdk/models/shared/enrichperson.md
+  - docs/sdk/models/shared/enrichpersonworkhistory.md
+  - docs/sdk/models/shared/enrichtelephone.md
+  - docs/sdk/models/shared/enrichtelephonetype.md
+  - docs/sdk/models/shared/event.md
+  - docs/sdk/models/shared/frequency.md
+  - docs/sdk/models/shared/fromwebhook.md
+  - docs/sdk/models/shared/genaicontent.md
+  - docs/sdk/models/shared/genaimodel.md
+  - docs/sdk/models/shared/genaiprompt.md
+  - docs/sdk/models/shared/gender.md
+  - docs/sdk/models/shared/hriscompany.md
+  - docs/sdk/models/shared/hriscompensation.md
+  - docs/sdk/models/shared/hriscompensationfrequency.md
+  - docs/sdk/models/shared/hriscompensationtype.md
+  - docs/sdk/models/shared/hrisemail.md
+  - docs/sdk/models/shared/hrisemailtype.md
+  - docs/sdk/models/shared/hrisemployee.md
+  - docs/sdk/models/shared/hrisemployeeemploymenttype.md
+  - docs/sdk/models/shared/hrisemployeegender.md
+  - docs/sdk/models/shared/hrisgroup.md
+  - docs/sdk/models/shared/hrisgrouptype.md
+  - docs/sdk/models/shared/hrislocation.md
+  - docs/sdk/models/shared/hrispayslip.md
+  - docs/sdk/models/shared/hrispayslipdetail.md
+  - docs/sdk/models/shared/hrispayslipdetailtype.md
+  - docs/sdk/models/shared/hristelephone.md
+  - docs/sdk/models/shared/hristelephonetype.md
+  - docs/sdk/models/shared/hristimeoff.md
+  - docs/sdk/models/shared/hristimeoffstatus.md
+  - docs/sdk/models/shared/hristimeofftype.md
+  - docs/sdk/models/shared/integration.md
+  - docs/sdk/models/shared/integrationsupport.md
+  - docs/sdk/models/shared/issue.md
+  - docs/sdk/models/shared/issuestatus.md
+  - docs/sdk/models/shared/kmspage.md
+  - docs/sdk/models/shared/kmspagetype.md
+  - docs/sdk/models/shared/kmsspace.md
+  - docs/sdk/models/shared/listaccountid.md
+  - docs/sdk/models/shared/listapplicationid.md
+  - docs/sdk/models/shared/listcandidateid.md
+  - docs/sdk/models/shared/listchannelid.md
+  - docs/sdk/models/shared/listcollectionid.md
+  - docs/sdk/models/shared/listcompanyid.md
+  - docs/sdk/models/shared/listcontactid.md
+  - docs/sdk/models/shared/listcustomerid.md
+  - docs/sdk/models/shared/listdealid.md
+  - docs/sdk/models/shared/listinterviewid.md
+  - docs/sdk/models/shared/listinvoiceid.md
+  - docs/sdk/models/shared/listitemid.md
+  - docs/sdk/models/shared/listitemvariantid.md
+  - docs/sdk/models/shared/listjobid.md
+  - docs/sdk/models/shared/listlimit.md
+  - docs/sdk/models/shared/listlinkid.md
+  - docs/sdk/models/shared/listlistid.md
+  - docs/sdk/models/shared/listlocationid.md
+  - docs/sdk/models/shared/listoffset.md
+  - docs/sdk/models/shared/listorder.md
+  - docs/sdk/models/shared/listparentid.md
+  - docs/sdk/models/shared/listprojectid.md
+  - docs/sdk/models/shared/listquery.md
+  - docs/sdk/models/shared/listsortbycreatedat.md
+  - docs/sdk/models/shared/listsortbyname.md
+  - docs/sdk/models/shared/listsortbyupdatedat.md
+  - docs/sdk/models/shared/listspaceid.md
+  - docs/sdk/models/shared/listticketid.md
+  - docs/sdk/models/shared/listtype.md
+  - docs/sdk/models/shared/listupdatedgte.md
+  - docs/sdk/models/shared/listuserid.md
+  - docs/sdk/models/shared/maritalstatus.md
+  - docs/sdk/models/shared/marketingemail.md
+  - docs/sdk/models/shared/marketingemailtype.md
+  - docs/sdk/models/shared/marketinglist.md
+  - docs/sdk/models/shared/marketingmember.md
+  - docs/sdk/models/shared/messagingattachment.md
+  - docs/sdk/models/shared/messagingchannel.md
+  - docs/sdk/models/shared/messagingmember.md
+  - docs/sdk/models/shared/messagingmessage.md
+  - docs/sdk/models/shared/objecttype.md
+  - docs/sdk/models/shared/origin.md
+  - docs/sdk/models/shared/paymentcollectionmethod.md
+  - docs/sdk/models/shared/paymentlink.md
+  - docs/sdk/models/shared/paymentlinklineitem.md
+  - docs/sdk/models/shared/paymentpayment.md
+  - docs/sdk/models/shared/paymentpayout.md
+  - docs/sdk/models/shared/paymentpayoutstatus.md
+  - docs/sdk/models/shared/paymentrefund.md
+  - docs/sdk/models/shared/paymentrefundstatus.md
+  - docs/sdk/models/shared/paymenttype.md
+  - docs/sdk/models/shared/priority.md
+  - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
+  - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
+  - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
+  - docs/sdk/models/shared/propertyatsactivityfrom.md
+  - docs/sdk/models/shared/propertyatsactivityfromtype.md
+  - docs/sdk/models/shared/propertyatscandidateaddress.md
+  - docs/sdk/models/shared/propertyatscompanyaddress.md
+  - docs/sdk/models/shared/propertycommercelocationaddress.md
+  - docs/sdk/models/shared/propertyconnectionauth.md
+  - docs/sdk/models/shared/propertyconnectioncategories.md
+  - docs/sdk/models/shared/propertyconnectionpermissions.md
+  - docs/sdk/models/shared/propertycrmcompanyaddress.md
+  - docs/sdk/models/shared/propertycrmcontactaddress.md
+  - docs/sdk/models/shared/propertycrmeventcall.md
+  - docs/sdk/models/shared/propertycrmeventemail.md
+  - docs/sdk/models/shared/propertycrmeventmeeting.md
+  - docs/sdk/models/shared/propertycrmeventnote.md
+  - docs/sdk/models/shared/propertycrmeventtask.md
+  - docs/sdk/models/shared/propertycrmeventtaskstatus.md
+  - docs/sdk/models/shared/propertycrmleadaddress.md
+  - docs/sdk/models/shared/propertyenrichcompanyaddress.md
+  - docs/sdk/models/shared/propertyenrichpersonaddress.md
+  - docs/sdk/models/shared/propertyhriscompanyaddress.md
+  - docs/sdk/models/shared/propertyhrisemployeeaddress.md
+  - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
+  - docs/sdk/models/shared/propertyhrislocationaddress.md
+  - docs/sdk/models/shared/propertyintegrationcategories.md
+  - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
+  - docs/sdk/models/shared/propertymessagingmessageauthormember.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.md
+  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
+  - docs/sdk/models/shared/propertystoragepermissionroles.md
+  - docs/sdk/models/shared/propertyuccalltelephone.md
+  - docs/sdk/models/shared/propertyuccalltelephonetype.md
+  - docs/sdk/models/shared/recommendation.md
+  - docs/sdk/models/shared/role.md
+  - docs/sdk/models/shared/searchdomain.md
+  - docs/sdk/models/shared/searchemail.md
+  - docs/sdk/models/shared/searchlinkedinurl.md
+  - docs/sdk/models/shared/searchname.md
+  - docs/sdk/models/shared/searchtwitter.md
+  - docs/sdk/models/shared/security.md
+  - docs/sdk/models/shared/sizeunit.md
+  - docs/sdk/models/shared/status.md
+  - docs/sdk/models/shared/storagefile.md
+  - docs/sdk/models/shared/storagefiletype.md
+  - docs/sdk/models/shared/storagepermission.md
+  - docs/sdk/models/shared/taskproject.md
+  - docs/sdk/models/shared/tasktask.md
+  - docs/sdk/models/shared/tasktaskstatus.md
+  - docs/sdk/models/shared/taxexemption.md
+  - docs/sdk/models/shared/ticketingcustomer.md
+  - docs/sdk/models/shared/ticketingemail.md
+  - docs/sdk/models/shared/ticketingemailtype.md
+  - docs/sdk/models/shared/ticketingnote.md
+  - docs/sdk/models/shared/ticketingtelephone.md
+  - docs/sdk/models/shared/ticketingtelephonetype.md
+  - docs/sdk/models/shared/ticketingticket.md
+  - docs/sdk/models/shared/ticketingticketstatus.md
+  - docs/sdk/models/shared/type.md
+  - docs/sdk/models/shared/uccall.md
+  - docs/sdk/models/shared/uccontact.md
+  - docs/sdk/models/shared/ucemail.md
+  - docs/sdk/models/shared/ucemailtype.md
+  - docs/sdk/models/shared/uctelephone.md
+  - docs/sdk/models/shared/uctelephonetype.md
+  - docs/sdk/models/shared/webhook.md
+  - docs/sdk/models/shared/webhooktype.md
+  - docs/sdk/models/shared/weightunit.md
+  - jsr.json
+  - package.json
+  - src/core.ts
+  - src/funcs/accountCreateAccountingAccount.ts
+  - src/funcs/accountGetAccountingAccount.ts
+  - src/funcs/accountListAccountingAccounts.ts
+  - src/funcs/accountPatchAccountingAccount.ts
+  - src/funcs/accountRemoveAccountingAccount.ts
+  - src/funcs/accountUpdateAccountingAccount.ts
   - src/funcs/accountingCreateAccountingAccount.ts
   - src/funcs/accountingCreateAccountingContact.ts
   - src/funcs/accountingCreateAccountingInvoice.ts
@@ -63,56 +609,21 @@ generatedFiles:
   - src/funcs/accountingUpdateAccountingJournal.ts
   - src/funcs/accountingUpdateAccountingTaxrate.ts
   - src/funcs/accountingUpdateAccountingTransaction.ts
-  - src/funcs/accountCreateAccountingAccount.ts
-  - src/funcs/accountGetAccountingAccount.ts
-  - src/funcs/accountListAccountingAccounts.ts
-  - src/funcs/accountPatchAccountingAccount.ts
-  - src/funcs/accountRemoveAccountingAccount.ts
-  - src/funcs/accountUpdateAccountingAccount.ts
-  - src/funcs/contactCreateAccountingContact.ts
-  - src/funcs/contactCreateCrmContact.ts
-  - src/funcs/contactCreateUcContact.ts
-  - src/funcs/contactGetAccountingContact.ts
-  - src/funcs/contactGetCrmContact.ts
-  - src/funcs/contactGetUcContact.ts
-  - src/funcs/contactListAccountingContacts.ts
-  - src/funcs/contactListCrmContacts.ts
-  - src/funcs/contactListUcContacts.ts
-  - src/funcs/contactPatchAccountingContact.ts
-  - src/funcs/contactPatchCrmContact.ts
-  - src/funcs/contactPatchUcContact.ts
-  - src/funcs/contactRemoveAccountingContact.ts
-  - src/funcs/contactRemoveCrmContact.ts
-  - src/funcs/contactRemoveUcContact.ts
-  - src/funcs/contactUpdateAccountingContact.ts
-  - src/funcs/contactUpdateCrmContact.ts
-  - src/funcs/contactUpdateUcContact.ts
-  - src/funcs/invoiceCreateAccountingInvoice.ts
-  - src/funcs/invoiceGetAccountingInvoice.ts
-  - src/funcs/invoiceListAccountingInvoices.ts
-  - src/funcs/invoicePatchAccountingInvoice.ts
-  - src/funcs/invoiceRemoveAccountingInvoice.ts
-  - src/funcs/invoiceUpdateAccountingInvoice.ts
-  - src/funcs/journalCreateAccountingJournal.ts
-  - src/funcs/journalGetAccountingJournal.ts
-  - src/funcs/journalListAccountingJournals.ts
-  - src/funcs/journalPatchAccountingJournal.ts
-  - src/funcs/journalRemoveAccountingJournal.ts
-  - src/funcs/journalUpdateAccountingJournal.ts
-  - src/funcs/organizationGetAccountingOrganization.ts
-  - src/funcs/organizationListAccountingOrganizations.ts
-  - src/funcs/taxrateCreateAccountingTaxrate.ts
-  - src/funcs/taxrateGetAccountingTaxrate.ts
-  - src/funcs/taxrateListAccountingTaxrates.ts
-  - src/funcs/taxratePatchAccountingTaxrate.ts
-  - src/funcs/taxrateRemoveAccountingTaxrate.ts
-  - src/funcs/taxrateUpdateAccountingTaxrate.ts
-  - src/funcs/transactionCreateAccountingTransaction.ts
-  - src/funcs/transactionGetAccountingTransaction.ts
-  - src/funcs/transactionListAccountingTransactions.ts
-  - src/funcs/transactionPatchAccountingTransaction.ts
-  - src/funcs/transactionRemoveAccountingTransaction.ts
-  - src/funcs/transactionUpdateAccountingTransaction.ts
+  - src/funcs/activityCreateAtsActivity.ts
+  - src/funcs/activityGetAtsActivity.ts
+  - src/funcs/activityListAtsActivities.ts
+  - src/funcs/activityPatchAtsActivity.ts
+  - src/funcs/activityRemoveAtsActivity.ts
+  - src/funcs/activityUpdateAtsActivity.ts
+  - src/funcs/apicallGetUnifiedApicall.ts
+  - src/funcs/apicallListUnifiedApicalls.ts
+  - src/funcs/applicationCreateAtsApplication.ts
+  - src/funcs/applicationGetAtsApplication.ts
+  - src/funcs/applicationListAtsApplications.ts
+  - src/funcs/applicationPatchAtsApplication.ts
+  - src/funcs/applicationRemoveAtsApplication.ts
+  - src/funcs/applicationUpdateAtsApplication.ts
+  - src/funcs/applicationstatusListAtsApplicationstatuses.ts
   - src/funcs/atsCreateAtsActivity.ts
   - src/funcs/atsCreateAtsApplication.ts
   - src/funcs/atsCreateAtsCandidate.ts
@@ -158,64 +669,23 @@ generatedFiles:
   - src/funcs/atsUpdateAtsInterview.ts
   - src/funcs/atsUpdateAtsJob.ts
   - src/funcs/atsUpdateAtsScorecard.ts
-  - src/funcs/activityCreateAtsActivity.ts
-  - src/funcs/activityGetAtsActivity.ts
-  - src/funcs/activityListAtsActivities.ts
-  - src/funcs/activityPatchAtsActivity.ts
-  - src/funcs/activityRemoveAtsActivity.ts
-  - src/funcs/activityUpdateAtsActivity.ts
-  - src/funcs/applicationCreateAtsApplication.ts
-  - src/funcs/applicationGetAtsApplication.ts
-  - src/funcs/applicationListAtsApplications.ts
-  - src/funcs/applicationPatchAtsApplication.ts
-  - src/funcs/applicationRemoveAtsApplication.ts
-  - src/funcs/applicationUpdateAtsApplication.ts
-  - src/funcs/applicationstatusListAtsApplicationstatuses.ts
+  - src/funcs/authGetUnifiedIntegrationAuth.ts
+  - src/funcs/authGetUnifiedIntegrationLogin.ts
+  - src/funcs/callListUcCalls.ts
   - src/funcs/candidateCreateAtsCandidate.ts
   - src/funcs/candidateGetAtsCandidate.ts
   - src/funcs/candidateListAtsCandidates.ts
   - src/funcs/candidatePatchAtsCandidate.ts
   - src/funcs/candidateRemoveAtsCandidate.ts
   - src/funcs/candidateUpdateAtsCandidate.ts
-  - src/funcs/companyCreateCrmCompany.ts
-  - src/funcs/companyCreateHrisCompany.ts
-  - src/funcs/companyGetAtsCompany.ts
-  - src/funcs/companyGetCrmCompany.ts
-  - src/funcs/companyGetHrisCompany.ts
-  - src/funcs/companyListAtsCompanies.ts
-  - src/funcs/companyListCrmCompanies.ts
-  - src/funcs/companyListEnrichCompanies.ts
-  - src/funcs/companyListHrisCompanies.ts
-  - src/funcs/companyPatchCrmCompany.ts
-  - src/funcs/companyPatchHrisCompany.ts
-  - src/funcs/companyRemoveCrmCompany.ts
-  - src/funcs/companyRemoveHrisCompany.ts
-  - src/funcs/companyUpdateCrmCompany.ts
-  - src/funcs/companyUpdateHrisCompany.ts
-  - src/funcs/documentCreateAtsDocument.ts
-  - src/funcs/documentGetAtsDocument.ts
-  - src/funcs/documentListAtsDocuments.ts
-  - src/funcs/documentPatchAtsDocument.ts
-  - src/funcs/documentRemoveAtsDocument.ts
-  - src/funcs/documentUpdateAtsDocument.ts
-  - src/funcs/interviewCreateAtsInterview.ts
-  - src/funcs/interviewGetAtsInterview.ts
-  - src/funcs/interviewListAtsInterviews.ts
-  - src/funcs/interviewPatchAtsInterview.ts
-  - src/funcs/interviewRemoveAtsInterview.ts
-  - src/funcs/interviewUpdateAtsInterview.ts
-  - src/funcs/jobCreateAtsJob.ts
-  - src/funcs/jobGetAtsJob.ts
-  - src/funcs/jobListAtsJobs.ts
-  - src/funcs/jobPatchAtsJob.ts
-  - src/funcs/jobRemoveAtsJob.ts
-  - src/funcs/jobUpdateAtsJob.ts
-  - src/funcs/scorecardCreateAtsScorecard.ts
-  - src/funcs/scorecardGetAtsScorecard.ts
-  - src/funcs/scorecardListAtsScorecards.ts
-  - src/funcs/scorecardPatchAtsScorecard.ts
-  - src/funcs/scorecardRemoveAtsScorecard.ts
-  - src/funcs/scorecardUpdateAtsScorecard.ts
+  - src/funcs/channelGetMessagingChannel.ts
+  - src/funcs/channelListMessagingChannels.ts
+  - src/funcs/collectionCreateCommerceCollection.ts
+  - src/funcs/collectionGetCommerceCollection.ts
+  - src/funcs/collectionListCommerceCollections.ts
+  - src/funcs/collectionPatchCommerceCollection.ts
+  - src/funcs/collectionRemoveCommerceCollection.ts
+  - src/funcs/collectionUpdateCommerceCollection.ts
   - src/funcs/commerceCreateCommerceCollection.ts
   - src/funcs/commerceCreateCommerceInventory.ts
   - src/funcs/commerceCreateCommerceItem.ts
@@ -240,36 +710,45 @@ generatedFiles:
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
-  - src/funcs/collectionCreateCommerceCollection.ts
-  - src/funcs/collectionGetCommerceCollection.ts
-  - src/funcs/collectionListCommerceCollections.ts
-  - src/funcs/collectionPatchCommerceCollection.ts
-  - src/funcs/collectionRemoveCommerceCollection.ts
-  - src/funcs/collectionUpdateCommerceCollection.ts
-  - src/funcs/inventoryCreateCommerceInventory.ts
-  - src/funcs/inventoryGetCommerceInventory.ts
-  - src/funcs/inventoryListCommerceInventories.ts
-  - src/funcs/inventoryPatchCommerceInventory.ts
-  - src/funcs/inventoryRemoveCommerceInventory.ts
-  - src/funcs/inventoryUpdateCommerceInventory.ts
-  - src/funcs/itemCreateCommerceItem.ts
-  - src/funcs/itemGetCommerceItem.ts
-  - src/funcs/itemListCommerceItems.ts
-  - src/funcs/itemPatchCommerceItem.ts
-  - src/funcs/itemRemoveCommerceItem.ts
-  - src/funcs/itemUpdateCommerceItem.ts
-  - src/funcs/locationCreateCommerceLocation.ts
-  - src/funcs/locationCreateHrisLocation.ts
-  - src/funcs/locationGetCommerceLocation.ts
-  - src/funcs/locationGetHrisLocation.ts
-  - src/funcs/locationListCommerceLocations.ts
-  - src/funcs/locationListHrisLocations.ts
-  - src/funcs/locationPatchCommerceLocation.ts
-  - src/funcs/locationPatchHrisLocation.ts
-  - src/funcs/locationRemoveCommerceLocation.ts
-  - src/funcs/locationRemoveHrisLocation.ts
-  - src/funcs/locationUpdateCommerceLocation.ts
-  - src/funcs/locationUpdateHrisLocation.ts
+  - src/funcs/companyCreateCrmCompany.ts
+  - src/funcs/companyCreateHrisCompany.ts
+  - src/funcs/companyGetAtsCompany.ts
+  - src/funcs/companyGetCrmCompany.ts
+  - src/funcs/companyGetHrisCompany.ts
+  - src/funcs/companyListAtsCompanies.ts
+  - src/funcs/companyListCrmCompanies.ts
+  - src/funcs/companyListEnrichCompanies.ts
+  - src/funcs/companyListHrisCompanies.ts
+  - src/funcs/companyPatchCrmCompany.ts
+  - src/funcs/companyPatchHrisCompany.ts
+  - src/funcs/companyRemoveCrmCompany.ts
+  - src/funcs/companyRemoveHrisCompany.ts
+  - src/funcs/companyUpdateCrmCompany.ts
+  - src/funcs/companyUpdateHrisCompany.ts
+  - src/funcs/connectionCreateUnifiedConnection.ts
+  - src/funcs/connectionGetUnifiedConnection.ts
+  - src/funcs/connectionListUnifiedConnections.ts
+  - src/funcs/connectionPatchUnifiedConnection.ts
+  - src/funcs/connectionRemoveUnifiedConnection.ts
+  - src/funcs/connectionUpdateUnifiedConnection.ts
+  - src/funcs/contactCreateAccountingContact.ts
+  - src/funcs/contactCreateCrmContact.ts
+  - src/funcs/contactCreateUcContact.ts
+  - src/funcs/contactGetAccountingContact.ts
+  - src/funcs/contactGetCrmContact.ts
+  - src/funcs/contactGetUcContact.ts
+  - src/funcs/contactListAccountingContacts.ts
+  - src/funcs/contactListCrmContacts.ts
+  - src/funcs/contactListUcContacts.ts
+  - src/funcs/contactPatchAccountingContact.ts
+  - src/funcs/contactPatchCrmContact.ts
+  - src/funcs/contactPatchUcContact.ts
+  - src/funcs/contactRemoveAccountingContact.ts
+  - src/funcs/contactRemoveCrmContact.ts
+  - src/funcs/contactRemoveUcContact.ts
+  - src/funcs/contactUpdateAccountingContact.ts
+  - src/funcs/contactUpdateCrmContact.ts
+  - src/funcs/contactUpdateUcContact.ts
   - src/funcs/crmCreateCrmCompany.ts
   - src/funcs/crmCreateCrmContact.ts
   - src/funcs/crmCreateCrmDeal.ts
@@ -306,37 +785,52 @@ generatedFiles:
   - src/funcs/crmUpdateCrmEvent.ts
   - src/funcs/crmUpdateCrmLead.ts
   - src/funcs/crmUpdateCrmPipeline.ts
+  - src/funcs/customerCreateTicketingCustomer.ts
+  - src/funcs/customerGetTicketingCustomer.ts
+  - src/funcs/customerListTicketingCustomers.ts
+  - src/funcs/customerPatchTicketingCustomer.ts
+  - src/funcs/customerRemoveTicketingCustomer.ts
+  - src/funcs/customerUpdateTicketingCustomer.ts
   - src/funcs/dealCreateCrmDeal.ts
   - src/funcs/dealGetCrmDeal.ts
   - src/funcs/dealListCrmDeals.ts
   - src/funcs/dealPatchCrmDeal.ts
   - src/funcs/dealRemoveCrmDeal.ts
   - src/funcs/dealUpdateCrmDeal.ts
+  - src/funcs/documentCreateAtsDocument.ts
+  - src/funcs/documentGetAtsDocument.ts
+  - src/funcs/documentListAtsDocuments.ts
+  - src/funcs/documentPatchAtsDocument.ts
+  - src/funcs/documentRemoveAtsDocument.ts
+  - src/funcs/documentUpdateAtsDocument.ts
+  - src/funcs/employeeCreateHrisEmployee.ts
+  - src/funcs/employeeGetHrisEmployee.ts
+  - src/funcs/employeeListHrisEmployees.ts
+  - src/funcs/employeePatchHrisEmployee.ts
+  - src/funcs/employeeRemoveHrisEmployee.ts
+  - src/funcs/employeeUpdateHrisEmployee.ts
+  - src/funcs/enrichListEnrichCompanies.ts
+  - src/funcs/enrichListEnrichPeople.ts
   - src/funcs/eventCreateCrmEvent.ts
   - src/funcs/eventGetCrmEvent.ts
   - src/funcs/eventListCrmEvents.ts
   - src/funcs/eventPatchCrmEvent.ts
   - src/funcs/eventRemoveCrmEvent.ts
   - src/funcs/eventUpdateCrmEvent.ts
-  - src/funcs/leadCreateCrmLead.ts
-  - src/funcs/leadGetCrmLead.ts
-  - src/funcs/leadListCrmLeads.ts
-  - src/funcs/leadPatchCrmLead.ts
-  - src/funcs/leadRemoveCrmLead.ts
-  - src/funcs/leadUpdateCrmLead.ts
-  - src/funcs/pipelineCreateCrmPipeline.ts
-  - src/funcs/pipelineGetCrmPipeline.ts
-  - src/funcs/pipelineListCrmPipelines.ts
-  - src/funcs/pipelinePatchCrmPipeline.ts
-  - src/funcs/pipelineRemoveCrmPipeline.ts
-  - src/funcs/pipelineUpdateCrmPipeline.ts
-  - src/funcs/enrichListEnrichCompanies.ts
-  - src/funcs/enrichListEnrichPeople.ts
-  - src/funcs/personListEnrichPeople.ts
+  - src/funcs/fileCreateStorageFile.ts
+  - src/funcs/fileGetStorageFile.ts
+  - src/funcs/fileListStorageFiles.ts
+  - src/funcs/filePatchStorageFile.ts
+  - src/funcs/fileRemoveStorageFile.ts
+  - src/funcs/fileUpdateStorageFile.ts
   - src/funcs/genaiCreateGenaiPrompt.ts
   - src/funcs/genaiListGenaiModels.ts
-  - src/funcs/modelListGenaiModels.ts
-  - src/funcs/promptCreateGenaiPrompt.ts
+  - src/funcs/groupCreateHrisGroup.ts
+  - src/funcs/groupGetHrisGroup.ts
+  - src/funcs/groupListHrisGroups.ts
+  - src/funcs/groupPatchHrisGroup.ts
+  - src/funcs/groupRemoveHrisGroup.ts
+  - src/funcs/groupUpdateHrisGroup.ts
   - src/funcs/hrisCreateHrisCompany.ts
   - src/funcs/hrisCreateHrisEmployee.ts
   - src/funcs/hrisCreateHrisGroup.ts
@@ -365,22 +859,46 @@ generatedFiles:
   - src/funcs/hrisUpdateHrisEmployee.ts
   - src/funcs/hrisUpdateHrisGroup.ts
   - src/funcs/hrisUpdateHrisLocation.ts
-  - src/funcs/employeeCreateHrisEmployee.ts
-  - src/funcs/employeeGetHrisEmployee.ts
-  - src/funcs/employeeListHrisEmployees.ts
-  - src/funcs/employeePatchHrisEmployee.ts
-  - src/funcs/employeeRemoveHrisEmployee.ts
-  - src/funcs/employeeUpdateHrisEmployee.ts
-  - src/funcs/groupCreateHrisGroup.ts
-  - src/funcs/groupGetHrisGroup.ts
-  - src/funcs/groupListHrisGroups.ts
-  - src/funcs/groupPatchHrisGroup.ts
-  - src/funcs/groupRemoveHrisGroup.ts
-  - src/funcs/groupUpdateHrisGroup.ts
-  - src/funcs/payslipGetHrisPayslip.ts
-  - src/funcs/payslipListHrisPayslips.ts
-  - src/funcs/timeoffGetHrisTimeoff.ts
-  - src/funcs/timeoffListHrisTimeoffs.ts
+  - src/funcs/integrationGetUnifiedIntegrationAuth.ts
+  - src/funcs/integrationListUnifiedIntegrationWorkspaces.ts
+  - src/funcs/integrationListUnifiedIntegrations.ts
+  - src/funcs/interviewCreateAtsInterview.ts
+  - src/funcs/interviewGetAtsInterview.ts
+  - src/funcs/interviewListAtsInterviews.ts
+  - src/funcs/interviewPatchAtsInterview.ts
+  - src/funcs/interviewRemoveAtsInterview.ts
+  - src/funcs/interviewUpdateAtsInterview.ts
+  - src/funcs/inventoryCreateCommerceInventory.ts
+  - src/funcs/inventoryGetCommerceInventory.ts
+  - src/funcs/inventoryListCommerceInventories.ts
+  - src/funcs/inventoryPatchCommerceInventory.ts
+  - src/funcs/inventoryRemoveCommerceInventory.ts
+  - src/funcs/inventoryUpdateCommerceInventory.ts
+  - src/funcs/invoiceCreateAccountingInvoice.ts
+  - src/funcs/invoiceGetAccountingInvoice.ts
+  - src/funcs/invoiceListAccountingInvoices.ts
+  - src/funcs/invoicePatchAccountingInvoice.ts
+  - src/funcs/invoiceRemoveAccountingInvoice.ts
+  - src/funcs/invoiceUpdateAccountingInvoice.ts
+  - src/funcs/issueListUnifiedIssues.ts
+  - src/funcs/itemCreateCommerceItem.ts
+  - src/funcs/itemGetCommerceItem.ts
+  - src/funcs/itemListCommerceItems.ts
+  - src/funcs/itemPatchCommerceItem.ts
+  - src/funcs/itemRemoveCommerceItem.ts
+  - src/funcs/itemUpdateCommerceItem.ts
+  - src/funcs/jobCreateAtsJob.ts
+  - src/funcs/jobGetAtsJob.ts
+  - src/funcs/jobListAtsJobs.ts
+  - src/funcs/jobPatchAtsJob.ts
+  - src/funcs/jobRemoveAtsJob.ts
+  - src/funcs/jobUpdateAtsJob.ts
+  - src/funcs/journalCreateAccountingJournal.ts
+  - src/funcs/journalGetAccountingJournal.ts
+  - src/funcs/journalListAccountingJournals.ts
+  - src/funcs/journalPatchAccountingJournal.ts
+  - src/funcs/journalRemoveAccountingJournal.ts
+  - src/funcs/journalUpdateAccountingJournal.ts
   - src/funcs/kmsCreateKmsPage.ts
   - src/funcs/kmsCreateKmsSpace.ts
   - src/funcs/kmsGetKmsPage.ts
@@ -393,18 +911,37 @@ generatedFiles:
   - src/funcs/kmsRemoveKmsSpace.ts
   - src/funcs/kmsUpdateKmsPage.ts
   - src/funcs/kmsUpdateKmsSpace.ts
-  - src/funcs/pageCreateKmsPage.ts
-  - src/funcs/pageGetKmsPage.ts
-  - src/funcs/pageListKmsPages.ts
-  - src/funcs/pagePatchKmsPage.ts
-  - src/funcs/pageRemoveKmsPage.ts
-  - src/funcs/pageUpdateKmsPage.ts
-  - src/funcs/spaceCreateKmsSpace.ts
-  - src/funcs/spaceGetKmsSpace.ts
-  - src/funcs/spaceListKmsSpaces.ts
-  - src/funcs/spacePatchKmsSpace.ts
-  - src/funcs/spaceRemoveKmsSpace.ts
-  - src/funcs/spaceUpdateKmsSpace.ts
+  - src/funcs/leadCreateCrmLead.ts
+  - src/funcs/leadGetCrmLead.ts
+  - src/funcs/leadListCrmLeads.ts
+  - src/funcs/leadPatchCrmLead.ts
+  - src/funcs/leadRemoveCrmLead.ts
+  - src/funcs/leadUpdateCrmLead.ts
+  - src/funcs/linkCreatePaymentLink.ts
+  - src/funcs/linkGetPaymentLink.ts
+  - src/funcs/linkListPaymentLinks.ts
+  - src/funcs/linkPatchPaymentLink.ts
+  - src/funcs/linkRemovePaymentLink.ts
+  - src/funcs/linkUpdatePaymentLink.ts
+  - src/funcs/listCreateMartechList.ts
+  - src/funcs/listGetMartechList.ts
+  - src/funcs/listListMartechLists.ts
+  - src/funcs/listPatchMartechList.ts
+  - src/funcs/listRemoveMartechList.ts
+  - src/funcs/listUpdateMartechList.ts
+  - src/funcs/locationCreateCommerceLocation.ts
+  - src/funcs/locationCreateHrisLocation.ts
+  - src/funcs/locationGetCommerceLocation.ts
+  - src/funcs/locationGetHrisLocation.ts
+  - src/funcs/locationListCommerceLocations.ts
+  - src/funcs/locationListHrisLocations.ts
+  - src/funcs/locationPatchCommerceLocation.ts
+  - src/funcs/locationPatchHrisLocation.ts
+  - src/funcs/locationRemoveCommerceLocation.ts
+  - src/funcs/locationRemoveHrisLocation.ts
+  - src/funcs/locationUpdateCommerceLocation.ts
+  - src/funcs/locationUpdateHrisLocation.ts
+  - src/funcs/loginGetUnifiedIntegrationLogin.ts
   - src/funcs/martechCreateMartechList.ts
   - src/funcs/martechCreateMartechMember.ts
   - src/funcs/martechGetMartechList.ts
@@ -417,18 +954,18 @@ generatedFiles:
   - src/funcs/martechRemoveMartechMember.ts
   - src/funcs/martechUpdateMartechList.ts
   - src/funcs/martechUpdateMartechMember.ts
-  - src/funcs/listCreateMartechList.ts
-  - src/funcs/listGetMartechList.ts
-  - src/funcs/listListMartechLists.ts
-  - src/funcs/listPatchMartechList.ts
-  - src/funcs/listRemoveMartechList.ts
-  - src/funcs/listUpdateMartechList.ts
   - src/funcs/memberCreateMartechMember.ts
   - src/funcs/memberGetMartechMember.ts
   - src/funcs/memberListMartechMembers.ts
   - src/funcs/memberPatchMartechMember.ts
   - src/funcs/memberRemoveMartechMember.ts
   - src/funcs/memberUpdateMartechMember.ts
+  - src/funcs/messageCreateMessagingMessage.ts
+  - src/funcs/messageGetMessagingMessage.ts
+  - src/funcs/messageListMessagingMessages.ts
+  - src/funcs/messagePatchMessagingMessage.ts
+  - src/funcs/messageRemoveMessagingMessage.ts
+  - src/funcs/messageUpdateMessagingMessage.ts
   - src/funcs/messagingCreateMessagingMessage.ts
   - src/funcs/messagingGetMessagingChannel.ts
   - src/funcs/messagingGetMessagingMessage.ts
@@ -437,14 +974,21 @@ generatedFiles:
   - src/funcs/messagingPatchMessagingMessage.ts
   - src/funcs/messagingRemoveMessagingMessage.ts
   - src/funcs/messagingUpdateMessagingMessage.ts
-  - src/funcs/channelGetMessagingChannel.ts
-  - src/funcs/channelListMessagingChannels.ts
-  - src/funcs/messageCreateMessagingMessage.ts
-  - src/funcs/messageGetMessagingMessage.ts
-  - src/funcs/messageListMessagingMessages.ts
-  - src/funcs/messagePatchMessagingMessage.ts
-  - src/funcs/messageRemoveMessagingMessage.ts
-  - src/funcs/messageUpdateMessagingMessage.ts
+  - src/funcs/modelListGenaiModels.ts
+  - src/funcs/noteCreateTicketingNote.ts
+  - src/funcs/noteGetTicketingNote.ts
+  - src/funcs/noteListTicketingNotes.ts
+  - src/funcs/notePatchTicketingNote.ts
+  - src/funcs/noteRemoveTicketingNote.ts
+  - src/funcs/noteUpdateTicketingNote.ts
+  - src/funcs/organizationGetAccountingOrganization.ts
+  - src/funcs/organizationListAccountingOrganizations.ts
+  - src/funcs/pageCreateKmsPage.ts
+  - src/funcs/pageGetKmsPage.ts
+  - src/funcs/pageListKmsPages.ts
+  - src/funcs/pagePatchKmsPage.ts
+  - src/funcs/pageRemoveKmsPage.ts
+  - src/funcs/pageUpdateKmsPage.ts
   - src/funcs/passthroughCreatePassthrough.ts
   - src/funcs/passthroughListPassthroughs.ts
   - src/funcs/passthroughPatchPassthrough.ts
@@ -466,28 +1010,44 @@ generatedFiles:
   - src/funcs/paymentRemovePaymentPayment.ts
   - src/funcs/paymentUpdatePaymentLink.ts
   - src/funcs/paymentUpdatePaymentPayment.ts
-  - src/funcs/linkCreatePaymentLink.ts
-  - src/funcs/linkGetPaymentLink.ts
-  - src/funcs/linkListPaymentLinks.ts
-  - src/funcs/linkPatchPaymentLink.ts
-  - src/funcs/linkRemovePaymentLink.ts
-  - src/funcs/linkUpdatePaymentLink.ts
   - src/funcs/payoutGetPaymentPayout.ts
   - src/funcs/payoutListPaymentPayouts.ts
+  - src/funcs/payslipGetHrisPayslip.ts
+  - src/funcs/payslipListHrisPayslips.ts
+  - src/funcs/personListEnrichPeople.ts
+  - src/funcs/pipelineCreateCrmPipeline.ts
+  - src/funcs/pipelineGetCrmPipeline.ts
+  - src/funcs/pipelineListCrmPipelines.ts
+  - src/funcs/pipelinePatchCrmPipeline.ts
+  - src/funcs/pipelineRemoveCrmPipeline.ts
+  - src/funcs/pipelineUpdateCrmPipeline.ts
+  - src/funcs/projectCreateTaskProject.ts
+  - src/funcs/projectGetTaskProject.ts
+  - src/funcs/projectListTaskProjects.ts
+  - src/funcs/projectPatchTaskProject.ts
+  - src/funcs/projectRemoveTaskProject.ts
+  - src/funcs/projectUpdateTaskProject.ts
+  - src/funcs/promptCreateGenaiPrompt.ts
   - src/funcs/refundGetPaymentRefund.ts
   - src/funcs/refundListPaymentRefunds.ts
+  - src/funcs/scorecardCreateAtsScorecard.ts
+  - src/funcs/scorecardGetAtsScorecard.ts
+  - src/funcs/scorecardListAtsScorecards.ts
+  - src/funcs/scorecardPatchAtsScorecard.ts
+  - src/funcs/scorecardRemoveAtsScorecard.ts
+  - src/funcs/scorecardUpdateAtsScorecard.ts
+  - src/funcs/spaceCreateKmsSpace.ts
+  - src/funcs/spaceGetKmsSpace.ts
+  - src/funcs/spaceListKmsSpaces.ts
+  - src/funcs/spacePatchKmsSpace.ts
+  - src/funcs/spaceRemoveKmsSpace.ts
+  - src/funcs/spaceUpdateKmsSpace.ts
   - src/funcs/storageCreateStorageFile.ts
   - src/funcs/storageGetStorageFile.ts
   - src/funcs/storageListStorageFiles.ts
   - src/funcs/storagePatchStorageFile.ts
   - src/funcs/storageRemoveStorageFile.ts
   - src/funcs/storageUpdateStorageFile.ts
-  - src/funcs/fileCreateStorageFile.ts
-  - src/funcs/fileGetStorageFile.ts
-  - src/funcs/fileListStorageFiles.ts
-  - src/funcs/filePatchStorageFile.ts
-  - src/funcs/fileRemoveStorageFile.ts
-  - src/funcs/fileUpdateStorageFile.ts
   - src/funcs/taskCreateTaskProject.ts
   - src/funcs/taskCreateTaskTask.ts
   - src/funcs/taskGetTaskProject.ts
@@ -500,12 +1060,18 @@ generatedFiles:
   - src/funcs/taskRemoveTaskTask.ts
   - src/funcs/taskUpdateTaskProject.ts
   - src/funcs/taskUpdateTaskTask.ts
-  - src/funcs/projectCreateTaskProject.ts
-  - src/funcs/projectGetTaskProject.ts
-  - src/funcs/projectListTaskProjects.ts
-  - src/funcs/projectPatchTaskProject.ts
-  - src/funcs/projectRemoveTaskProject.ts
-  - src/funcs/projectUpdateTaskProject.ts
+  - src/funcs/taxrateCreateAccountingTaxrate.ts
+  - src/funcs/taxrateGetAccountingTaxrate.ts
+  - src/funcs/taxrateListAccountingTaxrates.ts
+  - src/funcs/taxratePatchAccountingTaxrate.ts
+  - src/funcs/taxrateRemoveAccountingTaxrate.ts
+  - src/funcs/taxrateUpdateAccountingTaxrate.ts
+  - src/funcs/ticketCreateTicketingTicket.ts
+  - src/funcs/ticketGetTicketingTicket.ts
+  - src/funcs/ticketListTicketingTickets.ts
+  - src/funcs/ticketPatchTicketingTicket.ts
+  - src/funcs/ticketRemoveTicketingTicket.ts
+  - src/funcs/ticketUpdateTicketingTicket.ts
   - src/funcs/ticketingCreateTicketingCustomer.ts
   - src/funcs/ticketingCreateTicketingNote.ts
   - src/funcs/ticketingCreateTicketingTicket.ts
@@ -524,24 +1090,14 @@ generatedFiles:
   - src/funcs/ticketingUpdateTicketingCustomer.ts
   - src/funcs/ticketingUpdateTicketingNote.ts
   - src/funcs/ticketingUpdateTicketingTicket.ts
-  - src/funcs/customerCreateTicketingCustomer.ts
-  - src/funcs/customerGetTicketingCustomer.ts
-  - src/funcs/customerListTicketingCustomers.ts
-  - src/funcs/customerPatchTicketingCustomer.ts
-  - src/funcs/customerRemoveTicketingCustomer.ts
-  - src/funcs/customerUpdateTicketingCustomer.ts
-  - src/funcs/noteCreateTicketingNote.ts
-  - src/funcs/noteGetTicketingNote.ts
-  - src/funcs/noteListTicketingNotes.ts
-  - src/funcs/notePatchTicketingNote.ts
-  - src/funcs/noteRemoveTicketingNote.ts
-  - src/funcs/noteUpdateTicketingNote.ts
-  - src/funcs/ticketCreateTicketingTicket.ts
-  - src/funcs/ticketGetTicketingTicket.ts
-  - src/funcs/ticketListTicketingTickets.ts
-  - src/funcs/ticketPatchTicketingTicket.ts
-  - src/funcs/ticketRemoveTicketingTicket.ts
-  - src/funcs/ticketUpdateTicketingTicket.ts
+  - src/funcs/timeoffGetHrisTimeoff.ts
+  - src/funcs/timeoffListHrisTimeoffs.ts
+  - src/funcs/transactionCreateAccountingTransaction.ts
+  - src/funcs/transactionGetAccountingTransaction.ts
+  - src/funcs/transactionListAccountingTransactions.ts
+  - src/funcs/transactionPatchAccountingTransaction.ts
+  - src/funcs/transactionRemoveAccountingTransaction.ts
+  - src/funcs/transactionUpdateAccountingTransaction.ts
   - src/funcs/ucCreateUcContact.ts
   - src/funcs/ucGetUcContact.ts
   - src/funcs/ucListUcCalls.ts
@@ -549,7 +1105,6 @@ generatedFiles:
   - src/funcs/ucPatchUcContact.ts
   - src/funcs/ucRemoveUcContact.ts
   - src/funcs/ucUpdateUcContact.ts
-  - src/funcs/callListUcCalls.ts
   - src/funcs/unifiedCreateUnifiedConnection.ts
   - src/funcs/unifiedCreateUnifiedWebhook.ts
   - src/funcs/unifiedGetUnifiedApicall.ts
@@ -570,21 +1125,6 @@ generatedFiles:
   - src/funcs/unifiedUpdateUnifiedConnection.ts
   - src/funcs/unifiedUpdateUnifiedWebhook.ts
   - src/funcs/unifiedUpdateUnifiedWebhookTrigger.ts
-  - src/funcs/apicallGetUnifiedApicall.ts
-  - src/funcs/apicallListUnifiedApicalls.ts
-  - src/funcs/connectionCreateUnifiedConnection.ts
-  - src/funcs/connectionGetUnifiedConnection.ts
-  - src/funcs/connectionListUnifiedConnections.ts
-  - src/funcs/connectionPatchUnifiedConnection.ts
-  - src/funcs/connectionRemoveUnifiedConnection.ts
-  - src/funcs/connectionUpdateUnifiedConnection.ts
-  - src/funcs/integrationGetUnifiedIntegrationAuth.ts
-  - src/funcs/integrationListUnifiedIntegrationWorkspaces.ts
-  - src/funcs/integrationListUnifiedIntegrations.ts
-  - src/funcs/authGetUnifiedIntegrationAuth.ts
-  - src/funcs/authGetUnifiedIntegrationLogin.ts
-  - src/funcs/loginGetUnifiedIntegrationLogin.ts
-  - src/funcs/issueListUnifiedIssues.ts
   - src/funcs/webhookCreateUnifiedWebhook.ts
   - src/funcs/webhookGetUnifiedWebhook.ts
   - src/funcs/webhookListUnifiedWebhooks.ts
@@ -593,84 +1133,9 @@ generatedFiles:
   - src/funcs/webhookRemoveUnifiedWebhook.ts
   - src/funcs/webhookUpdateUnifiedWebhook.ts
   - src/funcs/webhookUpdateUnifiedWebhookTrigger.ts
-  - src/sdk/accounting.ts
-  - src/sdk/account.ts
-  - src/sdk/contact.ts
-  - src/sdk/invoice.ts
-  - src/sdk/journal.ts
-  - src/sdk/organization.ts
-  - src/sdk/taxrate.ts
-  - src/sdk/transaction.ts
-  - src/sdk/ats.ts
-  - src/sdk/activity.ts
-  - src/sdk/application.ts
-  - src/sdk/applicationstatus.ts
-  - src/sdk/candidate.ts
-  - src/sdk/company.ts
-  - src/sdk/document.ts
-  - src/sdk/interview.ts
-  - src/sdk/job.ts
-  - src/sdk/scorecard.ts
-  - src/sdk/commerce.ts
-  - src/sdk/collection.ts
-  - src/sdk/inventory.ts
-  - src/sdk/item.ts
-  - src/sdk/location.ts
-  - src/sdk/crm.ts
-  - src/sdk/deal.ts
-  - src/sdk/event.ts
-  - src/sdk/lead.ts
-  - src/sdk/pipeline.ts
-  - src/sdk/enrich.ts
-  - src/sdk/person.ts
-  - src/sdk/genai.ts
-  - src/sdk/model.ts
-  - src/sdk/prompt.ts
-  - src/sdk/hris.ts
-  - src/sdk/employee.ts
-  - src/sdk/group.ts
-  - src/sdk/payslip.ts
-  - src/sdk/timeoff.ts
-  - src/sdk/kms.ts
-  - src/sdk/page.ts
-  - src/sdk/space.ts
-  - src/sdk/martech.ts
-  - src/sdk/list.ts
-  - src/sdk/member.ts
-  - src/sdk/messaging.ts
-  - src/sdk/channel.ts
-  - src/sdk/message.ts
-  - src/sdk/passthrough.ts
-  - src/sdk/payment.ts
-  - src/sdk/link.ts
-  - src/sdk/payout.ts
-  - src/sdk/refund.ts
-  - src/sdk/storage.ts
-  - src/sdk/file.ts
-  - src/sdk/task.ts
-  - src/sdk/project.ts
-  - src/sdk/ticketing.ts
-  - src/sdk/customer.ts
-  - src/sdk/note.ts
-  - src/sdk/ticket.ts
-  - src/sdk/uc.ts
-  - src/sdk/call.ts
-  - src/sdk/unified.ts
-  - src/sdk/apicall.ts
-  - src/sdk/connection.ts
-  - src/sdk/integration.ts
-  - src/sdk/auth.ts
-  - src/sdk/login.ts
-  - src/sdk/issue.ts
-  - src/sdk/webhook.ts
-  - src/sdk/sdk.ts
-  - .eslintrc.cjs
-  - .npmignore
-  - FUNCTIONS.md
-  - RUNTIMES.md
-  - jsr.json
-  - package.json
-  - src/core.ts
+  - src/hooks/hooks.ts
+  - src/hooks/index.ts
+  - src/hooks/types.ts
   - src/index.ts
   - src/lib/base64.ts
   - src/lib/config.ts
@@ -687,199 +1152,63 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
+  - src/sdk/account.ts
+  - src/sdk/accounting.ts
+  - src/sdk/activity.ts
+  - src/sdk/apicall.ts
+  - src/sdk/application.ts
+  - src/sdk/applicationstatus.ts
+  - src/sdk/ats.ts
+  - src/sdk/auth.ts
+  - src/sdk/call.ts
+  - src/sdk/candidate.ts
+  - src/sdk/channel.ts
+  - src/sdk/collection.ts
+  - src/sdk/commerce.ts
+  - src/sdk/company.ts
+  - src/sdk/connection.ts
+  - src/sdk/contact.ts
+  - src/sdk/crm.ts
+  - src/sdk/customer.ts
+  - src/sdk/deal.ts
+  - src/sdk/document.ts
+  - src/sdk/employee.ts
+  - src/sdk/enrich.ts
+  - src/sdk/event.ts
+  - src/sdk/file.ts
+  - src/sdk/genai.ts
+  - src/sdk/group.ts
+  - src/sdk/hris.ts
   - src/sdk/index.ts
+  - src/sdk/integration.ts
+  - src/sdk/interview.ts
+  - src/sdk/inventory.ts
+  - src/sdk/invoice.ts
+  - src/sdk/issue.ts
+  - src/sdk/item.ts
+  - src/sdk/job.ts
+  - src/sdk/journal.ts
+  - src/sdk/kms.ts
+  - src/sdk/lead.ts
+  - src/sdk/link.ts
+  - src/sdk/list.ts
+  - src/sdk/location.ts
+  - src/sdk/login.ts
+  - src/sdk/martech.ts
+  - src/sdk/member.ts
+  - src/sdk/message.ts
+  - src/sdk/messaging.ts
+  - src/sdk/model.ts
   - src/sdk/models/errors/httpclienterrors.ts
+  - src/sdk/models/errors/index.ts
   - src/sdk/models/errors/sdkerror.ts
   - src/sdk/models/errors/sdkvalidationerror.ts
-  - src/sdk/types/blobs.ts
-  - src/sdk/types/constdatetime.ts
-  - src/sdk/types/enums.ts
-  - src/sdk/types/fp.ts
-  - src/sdk/types/index.ts
-  - src/sdk/types/operations.ts
-  - src/sdk/types/rfcdate.ts
-  - src/sdk/types/streams.ts
-  - tsconfig.json
-  - src/sdk/models/shared/accountingaccount.ts
-  - src/sdk/models/shared/accountingcontact.ts
-  - src/sdk/models/shared/accountingtelephone.ts
-  - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
-  - src/sdk/models/shared/accountingcontactpaymentmethod.ts
-  - src/sdk/models/shared/accountingemail.ts
-  - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
-  - src/sdk/models/shared/accountinginvoice.ts
-  - src/sdk/models/shared/accountinglineitem.ts
-  - src/sdk/models/shared/accountingjournal.ts
-  - src/sdk/models/shared/accountingjournallineitem.ts
-  - src/sdk/models/shared/accountingtaxrate.ts
-  - src/sdk/models/shared/accountingtransaction.ts
-  - src/sdk/models/shared/accountingtransactionlineitem.ts
-  - src/sdk/models/shared/accountingorganization.ts
-  - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
-  - src/sdk/models/shared/crmcontact.ts
-  - src/sdk/models/shared/crmtelephone.ts
-  - src/sdk/models/shared/crmemail.ts
-  - src/sdk/models/shared/propertycrmcontactaddress.ts
-  - src/sdk/models/shared/uccontact.ts
-  - src/sdk/models/shared/uctelephone.ts
-  - src/sdk/models/shared/ucemail.ts
-  - src/sdk/models/shared/atsactivity.ts
-  - src/sdk/models/shared/atsemail.ts
-  - src/sdk/models/shared/propertyatsactivityfrom.ts
-  - src/sdk/models/shared/atsapplication.ts
-  - src/sdk/models/shared/atsapplicationanswer.ts
-  - src/sdk/models/shared/atscandidate.ts
-  - src/sdk/models/shared/atstelephone.ts
-  - src/sdk/models/shared/propertyatscandidateaddress.ts
-  - src/sdk/models/shared/atsdocument.ts
-  - src/sdk/models/shared/atsinterview.ts
-  - src/sdk/models/shared/atsjob.ts
-  - src/sdk/models/shared/atsjobquestion.ts
-  - src/sdk/models/shared/atscompensation.ts
-  - src/sdk/models/shared/atsaddress.ts
-  - src/sdk/models/shared/atsscorecard.ts
-  - src/sdk/models/shared/atsscorecardquestion.ts
-  - src/sdk/models/shared/atscompany.ts
-  - src/sdk/models/shared/propertyatscompanyaddress.ts
-  - src/sdk/models/shared/atsstatus.ts
-  - src/sdk/models/shared/crmcompany.ts
-  - src/sdk/models/shared/propertycrmcompanyaddress.ts
-  - src/sdk/models/shared/hriscompany.ts
-  - src/sdk/models/shared/propertyhriscompanyaddress.ts
-  - src/sdk/models/shared/enrichcompany.ts
-  - src/sdk/models/shared/enrichtelephone.ts
-  - src/sdk/models/shared/propertyenrichcompanyaddress.ts
-  - src/sdk/models/shared/commercecollection.ts
-  - src/sdk/models/shared/commerceitemmedia.ts
-  - src/sdk/models/shared/commerceinventory.ts
-  - src/sdk/models/shared/commerceitem.ts
-  - src/sdk/models/shared/commerceitemvariant.ts
-  - src/sdk/models/shared/commerceitemprice.ts
-  - src/sdk/models/shared/commerceitemoption.ts
-  - src/sdk/models/shared/commercelocation.ts
-  - src/sdk/models/shared/propertycommercelocationaddress.ts
-  - src/sdk/models/shared/hrislocation.ts
-  - src/sdk/models/shared/hristelephone.ts
-  - src/sdk/models/shared/propertyhrislocationaddress.ts
-  - src/sdk/models/shared/crmdeal.ts
-  - src/sdk/models/shared/crmevent.ts
-  - src/sdk/models/shared/propertycrmeventtask.ts
-  - src/sdk/models/shared/propertycrmeventnote.ts
-  - src/sdk/models/shared/propertycrmeventmeeting.ts
-  - src/sdk/models/shared/propertycrmeventemail.ts
-  - src/sdk/models/shared/propertycrmeventcall.ts
-  - src/sdk/models/shared/crmlead.ts
-  - src/sdk/models/shared/propertycrmleadaddress.ts
-  - src/sdk/models/shared/crmpipeline.ts
-  - src/sdk/models/shared/crmstage.ts
-  - src/sdk/models/shared/enrichperson.ts
-  - src/sdk/models/shared/enrichpersonworkhistory.ts
-  - src/sdk/models/shared/enrichemail.ts
-  - src/sdk/models/shared/propertyenrichpersonaddress.ts
-  - src/sdk/models/shared/genaiprompt.ts
-  - src/sdk/models/shared/genaicontent.ts
-  - src/sdk/models/shared/genaimodel.ts
-  - src/sdk/models/shared/hrisemployee.ts
-  - src/sdk/models/shared/hrisgroup.ts
-  - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
-  - src/sdk/models/shared/hrisemail.ts
-  - src/sdk/models/shared/hriscompensation.ts
-  - src/sdk/models/shared/propertyhrisemployeeaddress.ts
-  - src/sdk/models/shared/hrispayslip.ts
-  - src/sdk/models/shared/hrispayslipdetail.ts
-  - src/sdk/models/shared/hristimeoff.ts
-  - src/sdk/models/shared/kmspage.ts
-  - src/sdk/models/shared/kmsspace.ts
-  - src/sdk/models/shared/marketinglist.ts
-  - src/sdk/models/shared/marketingmember.ts
-  - src/sdk/models/shared/marketingemail.ts
-  - src/sdk/models/shared/messagingmessage.ts
-  - src/sdk/models/shared/messagingmember.ts
-  - src/sdk/models/shared/propertymessagingmessageauthormember.ts
-  - src/sdk/models/shared/messagingattachment.ts
-  - src/sdk/models/shared/messagingchannel.ts
-  - src/sdk/models/shared/paymentlink.ts
-  - src/sdk/models/shared/paymentlinklineitem.ts
-  - src/sdk/models/shared/paymentpayment.ts
-  - src/sdk/models/shared/paymentpayout.ts
-  - src/sdk/models/shared/paymentrefund.ts
-  - src/sdk/models/shared/storagefile.ts
-  - src/sdk/models/shared/storagepermission.ts
-  - src/sdk/models/shared/propertystoragepermissionroles.ts
-  - src/sdk/models/shared/taskproject.ts
-  - src/sdk/models/shared/tasktask.ts
-  - src/sdk/models/shared/ticketingcustomer.ts
-  - src/sdk/models/shared/ticketingtelephone.ts
-  - src/sdk/models/shared/ticketingemail.ts
-  - src/sdk/models/shared/ticketingnote.ts
-  - src/sdk/models/shared/ticketingticket.ts
-  - src/sdk/models/shared/uccall.ts
-  - src/sdk/models/shared/propertyuccalltelephone.ts
-  - src/sdk/models/shared/connection.ts
-  - src/sdk/models/shared/propertyconnectionpermissions.ts
-  - src/sdk/models/shared/propertyconnectioncategories.ts
-  - src/sdk/models/shared/propertyconnectionauth.ts
-  - src/sdk/models/shared/webhook.ts
-  - src/sdk/models/shared/apicall.ts
-  - src/sdk/models/shared/integration.ts
-  - src/sdk/models/shared/integrationsupport.ts
-  - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.ts
-  - src/sdk/models/shared/propertyintegrationcategories.ts
-  - src/sdk/models/shared/issue.ts
-  - src/sdk/models/shared/security.ts
   - src/sdk/models/operations/createaccountingaccount.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
   - src/sdk/models/operations/createaccountingjournal.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
   - src/sdk/models/operations/createaccountingtransaction.ts
-  - src/sdk/models/operations/getaccountingaccount.ts
-  - src/sdk/models/operations/getaccountingcontact.ts
-  - src/sdk/models/operations/getaccountinginvoice.ts
-  - src/sdk/models/operations/getaccountingjournal.ts
-  - src/sdk/models/operations/getaccountingorganization.ts
-  - src/sdk/models/operations/getaccountingtaxrate.ts
-  - src/sdk/models/operations/getaccountingtransaction.ts
-  - src/sdk/models/operations/listaccountingaccounts.ts
-  - src/sdk/models/operations/listaccountingcontacts.ts
-  - src/sdk/models/operations/listaccountinginvoices.ts
-  - src/sdk/models/operations/listaccountingjournals.ts
-  - src/sdk/models/operations/listaccountingorganizations.ts
-  - src/sdk/models/operations/listaccountingtaxrates.ts
-  - src/sdk/models/operations/listaccountingtransactions.ts
-  - src/sdk/models/operations/patchaccountingaccount.ts
-  - src/sdk/models/operations/patchaccountingcontact.ts
-  - src/sdk/models/operations/patchaccountinginvoice.ts
-  - src/sdk/models/operations/patchaccountingjournal.ts
-  - src/sdk/models/operations/patchaccountingtaxrate.ts
-  - src/sdk/models/operations/patchaccountingtransaction.ts
-  - src/sdk/models/operations/removeaccountingaccount.ts
-  - src/sdk/models/operations/removeaccountingcontact.ts
-  - src/sdk/models/operations/removeaccountinginvoice.ts
-  - src/sdk/models/operations/removeaccountingjournal.ts
-  - src/sdk/models/operations/removeaccountingtaxrate.ts
-  - src/sdk/models/operations/removeaccountingtransaction.ts
-  - src/sdk/models/operations/updateaccountingaccount.ts
-  - src/sdk/models/operations/updateaccountingcontact.ts
-  - src/sdk/models/operations/updateaccountinginvoice.ts
-  - src/sdk/models/operations/updateaccountingjournal.ts
-  - src/sdk/models/operations/updateaccountingtaxrate.ts
-  - src/sdk/models/operations/updateaccountingtransaction.ts
-  - src/sdk/models/operations/createcrmcontact.ts
-  - src/sdk/models/operations/createuccontact.ts
-  - src/sdk/models/operations/getcrmcontact.ts
-  - src/sdk/models/operations/getuccontact.ts
-  - src/sdk/models/operations/listcrmcontacts.ts
-  - src/sdk/models/operations/listuccontacts.ts
-  - src/sdk/models/operations/patchcrmcontact.ts
-  - src/sdk/models/operations/patchuccontact.ts
-  - src/sdk/models/operations/removecrmcontact.ts
-  - src/sdk/models/operations/removeuccontact.ts
-  - src/sdk/models/operations/updatecrmcontact.ts
-  - src/sdk/models/operations/updateuccontact.ts
   - src/sdk/models/operations/createatsactivity.ts
   - src/sdk/models/operations/createatsapplication.ts
   - src/sdk/models/operations/createatscandidate.ts
@@ -887,6 +1216,44 @@ generatedFiles:
   - src/sdk/models/operations/createatsinterview.ts
   - src/sdk/models/operations/createatsjob.ts
   - src/sdk/models/operations/createatsscorecard.ts
+  - src/sdk/models/operations/createcommercecollection.ts
+  - src/sdk/models/operations/createcommerceinventory.ts
+  - src/sdk/models/operations/createcommerceitem.ts
+  - src/sdk/models/operations/createcommercelocation.ts
+  - src/sdk/models/operations/createcrmcompany.ts
+  - src/sdk/models/operations/createcrmcontact.ts
+  - src/sdk/models/operations/createcrmdeal.ts
+  - src/sdk/models/operations/createcrmevent.ts
+  - src/sdk/models/operations/createcrmlead.ts
+  - src/sdk/models/operations/createcrmpipeline.ts
+  - src/sdk/models/operations/creategenaiprompt.ts
+  - src/sdk/models/operations/createhriscompany.ts
+  - src/sdk/models/operations/createhrisemployee.ts
+  - src/sdk/models/operations/createhrisgroup.ts
+  - src/sdk/models/operations/createhrislocation.ts
+  - src/sdk/models/operations/createkmspage.ts
+  - src/sdk/models/operations/createkmsspace.ts
+  - src/sdk/models/operations/createmartechlist.ts
+  - src/sdk/models/operations/createmartechmember.ts
+  - src/sdk/models/operations/createmessagingmessage.ts
+  - src/sdk/models/operations/createpassthrough.ts
+  - src/sdk/models/operations/createpaymentlink.ts
+  - src/sdk/models/operations/createpaymentpayment.ts
+  - src/sdk/models/operations/createstoragefile.ts
+  - src/sdk/models/operations/createtaskproject.ts
+  - src/sdk/models/operations/createtasktask.ts
+  - src/sdk/models/operations/createticketingcustomer.ts
+  - src/sdk/models/operations/createticketingnote.ts
+  - src/sdk/models/operations/createticketingticket.ts
+  - src/sdk/models/operations/createuccontact.ts
+  - src/sdk/models/operations/createunifiedwebhook.ts
+  - src/sdk/models/operations/getaccountingaccount.ts
+  - src/sdk/models/operations/getaccountingcontact.ts
+  - src/sdk/models/operations/getaccountinginvoice.ts
+  - src/sdk/models/operations/getaccountingjournal.ts
+  - src/sdk/models/operations/getaccountingorganization.ts
+  - src/sdk/models/operations/getaccountingtaxrate.ts
+  - src/sdk/models/operations/getaccountingtransaction.ts
   - src/sdk/models/operations/getatsactivity.ts
   - src/sdk/models/operations/getatsapplication.ts
   - src/sdk/models/operations/getatscandidate.ts
@@ -895,6 +1262,52 @@ generatedFiles:
   - src/sdk/models/operations/getatsinterview.ts
   - src/sdk/models/operations/getatsjob.ts
   - src/sdk/models/operations/getatsscorecard.ts
+  - src/sdk/models/operations/getcommercecollection.ts
+  - src/sdk/models/operations/getcommerceinventory.ts
+  - src/sdk/models/operations/getcommerceitem.ts
+  - src/sdk/models/operations/getcommercelocation.ts
+  - src/sdk/models/operations/getcrmcompany.ts
+  - src/sdk/models/operations/getcrmcontact.ts
+  - src/sdk/models/operations/getcrmdeal.ts
+  - src/sdk/models/operations/getcrmevent.ts
+  - src/sdk/models/operations/getcrmlead.ts
+  - src/sdk/models/operations/getcrmpipeline.ts
+  - src/sdk/models/operations/gethriscompany.ts
+  - src/sdk/models/operations/gethrisemployee.ts
+  - src/sdk/models/operations/gethrisgroup.ts
+  - src/sdk/models/operations/gethrislocation.ts
+  - src/sdk/models/operations/gethrispayslip.ts
+  - src/sdk/models/operations/gethristimeoff.ts
+  - src/sdk/models/operations/getkmspage.ts
+  - src/sdk/models/operations/getkmsspace.ts
+  - src/sdk/models/operations/getmartechlist.ts
+  - src/sdk/models/operations/getmartechmember.ts
+  - src/sdk/models/operations/getmessagingchannel.ts
+  - src/sdk/models/operations/getmessagingmessage.ts
+  - src/sdk/models/operations/getpaymentlink.ts
+  - src/sdk/models/operations/getpaymentpayment.ts
+  - src/sdk/models/operations/getpaymentpayout.ts
+  - src/sdk/models/operations/getpaymentrefund.ts
+  - src/sdk/models/operations/getstoragefile.ts
+  - src/sdk/models/operations/gettaskproject.ts
+  - src/sdk/models/operations/gettasktask.ts
+  - src/sdk/models/operations/getticketingcustomer.ts
+  - src/sdk/models/operations/getticketingnote.ts
+  - src/sdk/models/operations/getticketingticket.ts
+  - src/sdk/models/operations/getuccontact.ts
+  - src/sdk/models/operations/getunifiedapicall.ts
+  - src/sdk/models/operations/getunifiedconnection.ts
+  - src/sdk/models/operations/getunifiedintegrationauth.ts
+  - src/sdk/models/operations/getunifiedintegrationlogin.ts
+  - src/sdk/models/operations/getunifiedwebhook.ts
+  - src/sdk/models/operations/index.ts
+  - src/sdk/models/operations/listaccountingaccounts.ts
+  - src/sdk/models/operations/listaccountingcontacts.ts
+  - src/sdk/models/operations/listaccountinginvoices.ts
+  - src/sdk/models/operations/listaccountingjournals.ts
+  - src/sdk/models/operations/listaccountingorganizations.ts
+  - src/sdk/models/operations/listaccountingtaxrates.ts
+  - src/sdk/models/operations/listaccountingtransactions.ts
   - src/sdk/models/operations/listatsactivities.ts
   - src/sdk/models/operations/listatsapplications.ts
   - src/sdk/models/operations/listatsapplicationstatuses.ts
@@ -904,6 +1317,56 @@ generatedFiles:
   - src/sdk/models/operations/listatsinterviews.ts
   - src/sdk/models/operations/listatsjobs.ts
   - src/sdk/models/operations/listatsscorecards.ts
+  - src/sdk/models/operations/listcommercecollections.ts
+  - src/sdk/models/operations/listcommerceinventories.ts
+  - src/sdk/models/operations/listcommerceitems.ts
+  - src/sdk/models/operations/listcommercelocations.ts
+  - src/sdk/models/operations/listcrmcompanies.ts
+  - src/sdk/models/operations/listcrmcontacts.ts
+  - src/sdk/models/operations/listcrmdeals.ts
+  - src/sdk/models/operations/listcrmevents.ts
+  - src/sdk/models/operations/listcrmleads.ts
+  - src/sdk/models/operations/listcrmpipelines.ts
+  - src/sdk/models/operations/listenrichcompanies.ts
+  - src/sdk/models/operations/listenrichpeople.ts
+  - src/sdk/models/operations/listgenaimodels.ts
+  - src/sdk/models/operations/listhriscompanies.ts
+  - src/sdk/models/operations/listhrisemployees.ts
+  - src/sdk/models/operations/listhrisgroups.ts
+  - src/sdk/models/operations/listhrislocations.ts
+  - src/sdk/models/operations/listhrispayslips.ts
+  - src/sdk/models/operations/listhristimeoffs.ts
+  - src/sdk/models/operations/listkmspages.ts
+  - src/sdk/models/operations/listkmsspaces.ts
+  - src/sdk/models/operations/listmartechlists.ts
+  - src/sdk/models/operations/listmartechmembers.ts
+  - src/sdk/models/operations/listmessagingchannels.ts
+  - src/sdk/models/operations/listmessagingmessages.ts
+  - src/sdk/models/operations/listpassthroughs.ts
+  - src/sdk/models/operations/listpaymentlinks.ts
+  - src/sdk/models/operations/listpaymentpayments.ts
+  - src/sdk/models/operations/listpaymentpayouts.ts
+  - src/sdk/models/operations/listpaymentrefunds.ts
+  - src/sdk/models/operations/liststoragefiles.ts
+  - src/sdk/models/operations/listtaskprojects.ts
+  - src/sdk/models/operations/listtasktasks.ts
+  - src/sdk/models/operations/listticketingcustomers.ts
+  - src/sdk/models/operations/listticketingnotes.ts
+  - src/sdk/models/operations/listticketingtickets.ts
+  - src/sdk/models/operations/listuccalls.ts
+  - src/sdk/models/operations/listuccontacts.ts
+  - src/sdk/models/operations/listunifiedapicalls.ts
+  - src/sdk/models/operations/listunifiedconnections.ts
+  - src/sdk/models/operations/listunifiedintegrations.ts
+  - src/sdk/models/operations/listunifiedintegrationworkspaces.ts
+  - src/sdk/models/operations/listunifiedissues.ts
+  - src/sdk/models/operations/listunifiedwebhooks.ts
+  - src/sdk/models/operations/patchaccountingaccount.ts
+  - src/sdk/models/operations/patchaccountingcontact.ts
+  - src/sdk/models/operations/patchaccountinginvoice.ts
+  - src/sdk/models/operations/patchaccountingjournal.ts
+  - src/sdk/models/operations/patchaccountingtaxrate.ts
+  - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/patchatsactivity.ts
   - src/sdk/models/operations/patchatsapplication.ts
   - src/sdk/models/operations/patchatscandidate.ts
@@ -911,6 +1374,44 @@ generatedFiles:
   - src/sdk/models/operations/patchatsinterview.ts
   - src/sdk/models/operations/patchatsjob.ts
   - src/sdk/models/operations/patchatsscorecard.ts
+  - src/sdk/models/operations/patchcommercecollection.ts
+  - src/sdk/models/operations/patchcommerceinventory.ts
+  - src/sdk/models/operations/patchcommerceitem.ts
+  - src/sdk/models/operations/patchcommercelocation.ts
+  - src/sdk/models/operations/patchcrmcompany.ts
+  - src/sdk/models/operations/patchcrmcontact.ts
+  - src/sdk/models/operations/patchcrmdeal.ts
+  - src/sdk/models/operations/patchcrmevent.ts
+  - src/sdk/models/operations/patchcrmlead.ts
+  - src/sdk/models/operations/patchcrmpipeline.ts
+  - src/sdk/models/operations/patchhriscompany.ts
+  - src/sdk/models/operations/patchhrisemployee.ts
+  - src/sdk/models/operations/patchhrisgroup.ts
+  - src/sdk/models/operations/patchhrislocation.ts
+  - src/sdk/models/operations/patchkmspage.ts
+  - src/sdk/models/operations/patchkmsspace.ts
+  - src/sdk/models/operations/patchmartechlist.ts
+  - src/sdk/models/operations/patchmartechmember.ts
+  - src/sdk/models/operations/patchmessagingmessage.ts
+  - src/sdk/models/operations/patchpassthrough.ts
+  - src/sdk/models/operations/patchpaymentlink.ts
+  - src/sdk/models/operations/patchpaymentpayment.ts
+  - src/sdk/models/operations/patchstoragefile.ts
+  - src/sdk/models/operations/patchtaskproject.ts
+  - src/sdk/models/operations/patchtasktask.ts
+  - src/sdk/models/operations/patchticketingcustomer.ts
+  - src/sdk/models/operations/patchticketingnote.ts
+  - src/sdk/models/operations/patchticketingticket.ts
+  - src/sdk/models/operations/patchuccontact.ts
+  - src/sdk/models/operations/patchunifiedconnection.ts
+  - src/sdk/models/operations/patchunifiedwebhook.ts
+  - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
+  - src/sdk/models/operations/removeaccountingaccount.ts
+  - src/sdk/models/operations/removeaccountingcontact.ts
+  - src/sdk/models/operations/removeaccountinginvoice.ts
+  - src/sdk/models/operations/removeaccountingjournal.ts
+  - src/sdk/models/operations/removeaccountingtaxrate.ts
+  - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/removeatsactivity.ts
   - src/sdk/models/operations/removeatsapplication.ts
   - src/sdk/models/operations/removeatscandidate.ts
@@ -918,6 +1419,43 @@ generatedFiles:
   - src/sdk/models/operations/removeatsinterview.ts
   - src/sdk/models/operations/removeatsjob.ts
   - src/sdk/models/operations/removeatsscorecard.ts
+  - src/sdk/models/operations/removecommercecollection.ts
+  - src/sdk/models/operations/removecommerceinventory.ts
+  - src/sdk/models/operations/removecommerceitem.ts
+  - src/sdk/models/operations/removecommercelocation.ts
+  - src/sdk/models/operations/removecrmcompany.ts
+  - src/sdk/models/operations/removecrmcontact.ts
+  - src/sdk/models/operations/removecrmdeal.ts
+  - src/sdk/models/operations/removecrmevent.ts
+  - src/sdk/models/operations/removecrmlead.ts
+  - src/sdk/models/operations/removecrmpipeline.ts
+  - src/sdk/models/operations/removehriscompany.ts
+  - src/sdk/models/operations/removehrisemployee.ts
+  - src/sdk/models/operations/removehrisgroup.ts
+  - src/sdk/models/operations/removehrislocation.ts
+  - src/sdk/models/operations/removekmspage.ts
+  - src/sdk/models/operations/removekmsspace.ts
+  - src/sdk/models/operations/removemartechlist.ts
+  - src/sdk/models/operations/removemartechmember.ts
+  - src/sdk/models/operations/removemessagingmessage.ts
+  - src/sdk/models/operations/removepassthrough.ts
+  - src/sdk/models/operations/removepaymentlink.ts
+  - src/sdk/models/operations/removepaymentpayment.ts
+  - src/sdk/models/operations/removestoragefile.ts
+  - src/sdk/models/operations/removetaskproject.ts
+  - src/sdk/models/operations/removetasktask.ts
+  - src/sdk/models/operations/removeticketingcustomer.ts
+  - src/sdk/models/operations/removeticketingnote.ts
+  - src/sdk/models/operations/removeticketingticket.ts
+  - src/sdk/models/operations/removeuccontact.ts
+  - src/sdk/models/operations/removeunifiedconnection.ts
+  - src/sdk/models/operations/removeunifiedwebhook.ts
+  - src/sdk/models/operations/updateaccountingaccount.ts
+  - src/sdk/models/operations/updateaccountingcontact.ts
+  - src/sdk/models/operations/updateaccountinginvoice.ts
+  - src/sdk/models/operations/updateaccountingjournal.ts
+  - src/sdk/models/operations/updateaccountingtaxrate.ts
+  - src/sdk/models/operations/updateaccountingtransaction.ts
   - src/sdk/models/operations/updateatsactivity.ts
   - src/sdk/models/operations/updateatsapplication.ts
   - src/sdk/models/operations/updateatscandidate.ts
@@ -925,738 +1463,1922 @@ generatedFiles:
   - src/sdk/models/operations/updateatsinterview.ts
   - src/sdk/models/operations/updateatsjob.ts
   - src/sdk/models/operations/updateatsscorecard.ts
-  - src/sdk/models/operations/createcrmcompany.ts
-  - src/sdk/models/operations/createhriscompany.ts
-  - src/sdk/models/operations/getcrmcompany.ts
-  - src/sdk/models/operations/gethriscompany.ts
-  - src/sdk/models/operations/listcrmcompanies.ts
-  - src/sdk/models/operations/listenrichcompanies.ts
-  - src/sdk/models/operations/listhriscompanies.ts
-  - src/sdk/models/operations/patchcrmcompany.ts
-  - src/sdk/models/operations/patchhriscompany.ts
-  - src/sdk/models/operations/removecrmcompany.ts
-  - src/sdk/models/operations/removehriscompany.ts
-  - src/sdk/models/operations/updatecrmcompany.ts
-  - src/sdk/models/operations/updatehriscompany.ts
-  - src/sdk/models/operations/createcommercecollection.ts
-  - src/sdk/models/operations/createcommerceinventory.ts
-  - src/sdk/models/operations/createcommerceitem.ts
-  - src/sdk/models/operations/createcommercelocation.ts
-  - src/sdk/models/operations/getcommercecollection.ts
-  - src/sdk/models/operations/getcommerceinventory.ts
-  - src/sdk/models/operations/getcommerceitem.ts
-  - src/sdk/models/operations/getcommercelocation.ts
-  - src/sdk/models/operations/listcommercecollections.ts
-  - src/sdk/models/operations/listcommerceinventories.ts
-  - src/sdk/models/operations/listcommerceitems.ts
-  - src/sdk/models/operations/listcommercelocations.ts
-  - src/sdk/models/operations/patchcommercecollection.ts
-  - src/sdk/models/operations/patchcommerceinventory.ts
-  - src/sdk/models/operations/patchcommerceitem.ts
-  - src/sdk/models/operations/patchcommercelocation.ts
-  - src/sdk/models/operations/removecommercecollection.ts
-  - src/sdk/models/operations/removecommerceinventory.ts
-  - src/sdk/models/operations/removecommerceitem.ts
-  - src/sdk/models/operations/removecommercelocation.ts
   - src/sdk/models/operations/updatecommercecollection.ts
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
-  - src/sdk/models/operations/createhrislocation.ts
-  - src/sdk/models/operations/gethrislocation.ts
-  - src/sdk/models/operations/listhrislocations.ts
-  - src/sdk/models/operations/patchhrislocation.ts
-  - src/sdk/models/operations/removehrislocation.ts
-  - src/sdk/models/operations/updatehrislocation.ts
-  - src/sdk/models/operations/createcrmdeal.ts
-  - src/sdk/models/operations/createcrmevent.ts
-  - src/sdk/models/operations/createcrmlead.ts
-  - src/sdk/models/operations/createcrmpipeline.ts
-  - src/sdk/models/operations/getcrmdeal.ts
-  - src/sdk/models/operations/getcrmevent.ts
-  - src/sdk/models/operations/getcrmlead.ts
-  - src/sdk/models/operations/getcrmpipeline.ts
-  - src/sdk/models/operations/listcrmdeals.ts
-  - src/sdk/models/operations/listcrmevents.ts
-  - src/sdk/models/operations/listcrmleads.ts
-  - src/sdk/models/operations/listcrmpipelines.ts
-  - src/sdk/models/operations/patchcrmdeal.ts
-  - src/sdk/models/operations/patchcrmevent.ts
-  - src/sdk/models/operations/patchcrmlead.ts
-  - src/sdk/models/operations/patchcrmpipeline.ts
-  - src/sdk/models/operations/removecrmdeal.ts
-  - src/sdk/models/operations/removecrmevent.ts
-  - src/sdk/models/operations/removecrmlead.ts
-  - src/sdk/models/operations/removecrmpipeline.ts
+  - src/sdk/models/operations/updatecrmcompany.ts
+  - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
   - src/sdk/models/operations/updatecrmevent.ts
   - src/sdk/models/operations/updatecrmlead.ts
   - src/sdk/models/operations/updatecrmpipeline.ts
-  - src/sdk/models/operations/listenrichpeople.ts
-  - src/sdk/models/operations/creategenaiprompt.ts
-  - src/sdk/models/operations/listgenaimodels.ts
-  - src/sdk/models/operations/createhrisemployee.ts
-  - src/sdk/models/operations/createhrisgroup.ts
-  - src/sdk/models/operations/gethrisemployee.ts
-  - src/sdk/models/operations/gethrisgroup.ts
-  - src/sdk/models/operations/gethrispayslip.ts
-  - src/sdk/models/operations/gethristimeoff.ts
-  - src/sdk/models/operations/listhrisemployees.ts
-  - src/sdk/models/operations/listhrisgroups.ts
-  - src/sdk/models/operations/listhrispayslips.ts
-  - src/sdk/models/operations/listhristimeoffs.ts
-  - src/sdk/models/operations/patchhrisemployee.ts
-  - src/sdk/models/operations/patchhrisgroup.ts
-  - src/sdk/models/operations/removehrisemployee.ts
-  - src/sdk/models/operations/removehrisgroup.ts
+  - src/sdk/models/operations/updatehriscompany.ts
   - src/sdk/models/operations/updatehrisemployee.ts
   - src/sdk/models/operations/updatehrisgroup.ts
-  - src/sdk/models/operations/createkmspage.ts
-  - src/sdk/models/operations/createkmsspace.ts
-  - src/sdk/models/operations/getkmspage.ts
-  - src/sdk/models/operations/getkmsspace.ts
-  - src/sdk/models/operations/listkmspages.ts
-  - src/sdk/models/operations/listkmsspaces.ts
-  - src/sdk/models/operations/patchkmspage.ts
-  - src/sdk/models/operations/patchkmsspace.ts
-  - src/sdk/models/operations/removekmspage.ts
-  - src/sdk/models/operations/removekmsspace.ts
+  - src/sdk/models/operations/updatehrislocation.ts
   - src/sdk/models/operations/updatekmspage.ts
   - src/sdk/models/operations/updatekmsspace.ts
-  - src/sdk/models/operations/createmartechlist.ts
-  - src/sdk/models/operations/createmartechmember.ts
-  - src/sdk/models/operations/getmartechlist.ts
-  - src/sdk/models/operations/getmartechmember.ts
-  - src/sdk/models/operations/listmartechlists.ts
-  - src/sdk/models/operations/listmartechmembers.ts
-  - src/sdk/models/operations/patchmartechlist.ts
-  - src/sdk/models/operations/patchmartechmember.ts
-  - src/sdk/models/operations/removemartechlist.ts
-  - src/sdk/models/operations/removemartechmember.ts
   - src/sdk/models/operations/updatemartechlist.ts
   - src/sdk/models/operations/updatemartechmember.ts
-  - src/sdk/models/operations/createmessagingmessage.ts
-  - src/sdk/models/operations/getmessagingchannel.ts
-  - src/sdk/models/operations/getmessagingmessage.ts
-  - src/sdk/models/operations/listmessagingchannels.ts
-  - src/sdk/models/operations/listmessagingmessages.ts
-  - src/sdk/models/operations/patchmessagingmessage.ts
-  - src/sdk/models/operations/removemessagingmessage.ts
   - src/sdk/models/operations/updatemessagingmessage.ts
-  - src/sdk/models/operations/createpassthrough.ts
-  - src/sdk/models/operations/listpassthroughs.ts
-  - src/sdk/models/operations/patchpassthrough.ts
-  - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/updatepassthrough.ts
-  - src/sdk/models/operations/createpaymentlink.ts
-  - src/sdk/models/operations/createpaymentpayment.ts
-  - src/sdk/models/operations/getpaymentlink.ts
-  - src/sdk/models/operations/getpaymentpayment.ts
-  - src/sdk/models/operations/getpaymentpayout.ts
-  - src/sdk/models/operations/getpaymentrefund.ts
-  - src/sdk/models/operations/listpaymentlinks.ts
-  - src/sdk/models/operations/listpaymentpayments.ts
-  - src/sdk/models/operations/listpaymentpayouts.ts
-  - src/sdk/models/operations/listpaymentrefunds.ts
-  - src/sdk/models/operations/patchpaymentlink.ts
-  - src/sdk/models/operations/patchpaymentpayment.ts
-  - src/sdk/models/operations/removepaymentlink.ts
-  - src/sdk/models/operations/removepaymentpayment.ts
   - src/sdk/models/operations/updatepaymentlink.ts
   - src/sdk/models/operations/updatepaymentpayment.ts
-  - src/sdk/models/operations/createstoragefile.ts
-  - src/sdk/models/operations/getstoragefile.ts
-  - src/sdk/models/operations/liststoragefiles.ts
-  - src/sdk/models/operations/patchstoragefile.ts
-  - src/sdk/models/operations/removestoragefile.ts
   - src/sdk/models/operations/updatestoragefile.ts
-  - src/sdk/models/operations/createtaskproject.ts
-  - src/sdk/models/operations/createtasktask.ts
-  - src/sdk/models/operations/gettaskproject.ts
-  - src/sdk/models/operations/gettasktask.ts
-  - src/sdk/models/operations/listtaskprojects.ts
-  - src/sdk/models/operations/listtasktasks.ts
-  - src/sdk/models/operations/patchtaskproject.ts
-  - src/sdk/models/operations/patchtasktask.ts
-  - src/sdk/models/operations/removetaskproject.ts
-  - src/sdk/models/operations/removetasktask.ts
   - src/sdk/models/operations/updatetaskproject.ts
   - src/sdk/models/operations/updatetasktask.ts
-  - src/sdk/models/operations/createticketingcustomer.ts
-  - src/sdk/models/operations/createticketingnote.ts
-  - src/sdk/models/operations/createticketingticket.ts
-  - src/sdk/models/operations/getticketingcustomer.ts
-  - src/sdk/models/operations/getticketingnote.ts
-  - src/sdk/models/operations/getticketingticket.ts
-  - src/sdk/models/operations/listticketingcustomers.ts
-  - src/sdk/models/operations/listticketingnotes.ts
-  - src/sdk/models/operations/listticketingtickets.ts
-  - src/sdk/models/operations/patchticketingcustomer.ts
-  - src/sdk/models/operations/patchticketingnote.ts
-  - src/sdk/models/operations/patchticketingticket.ts
-  - src/sdk/models/operations/removeticketingcustomer.ts
-  - src/sdk/models/operations/removeticketingnote.ts
-  - src/sdk/models/operations/removeticketingticket.ts
   - src/sdk/models/operations/updateticketingcustomer.ts
   - src/sdk/models/operations/updateticketingnote.ts
   - src/sdk/models/operations/updateticketingticket.ts
-  - src/sdk/models/operations/listuccalls.ts
-  - src/sdk/models/operations/createunifiedwebhook.ts
-  - src/sdk/models/operations/getunifiedapicall.ts
-  - src/sdk/models/operations/getunifiedconnection.ts
-  - src/sdk/models/operations/getunifiedintegrationauth.ts
-  - src/sdk/models/operations/getunifiedwebhook.ts
-  - src/sdk/models/operations/listunifiedapicalls.ts
-  - src/sdk/models/operations/listunifiedconnections.ts
-  - src/sdk/models/operations/listunifiedintegrationworkspaces.ts
-  - src/sdk/models/operations/listunifiedintegrations.ts
-  - src/sdk/models/operations/listunifiedissues.ts
-  - src/sdk/models/operations/listunifiedwebhooks.ts
-  - src/sdk/models/operations/patchunifiedconnection.ts
-  - src/sdk/models/operations/patchunifiedwebhook.ts
-  - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
-  - src/sdk/models/operations/removeunifiedconnection.ts
-  - src/sdk/models/operations/removeunifiedwebhook.ts
+  - src/sdk/models/operations/updateuccontact.ts
   - src/sdk/models/operations/updateunifiedconnection.ts
   - src/sdk/models/operations/updateunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
-  - src/sdk/models/operations/getunifiedintegrationlogin.ts
-  - src/sdk/models/errors/index.ts
+  - src/sdk/models/shared/accountingaccount.ts
+  - src/sdk/models/shared/accountingcontact.ts
+  - src/sdk/models/shared/accountingcontactpaymentmethod.ts
+  - src/sdk/models/shared/accountingemail.ts
+  - src/sdk/models/shared/accountinginvoice.ts
+  - src/sdk/models/shared/accountingjournal.ts
+  - src/sdk/models/shared/accountingjournallineitem.ts
+  - src/sdk/models/shared/accountinglineitem.ts
+  - src/sdk/models/shared/accountingorganization.ts
+  - src/sdk/models/shared/accountingtaxrate.ts
+  - src/sdk/models/shared/accountingtelephone.ts
+  - src/sdk/models/shared/accountingtransaction.ts
+  - src/sdk/models/shared/accountingtransactionlineitem.ts
+  - src/sdk/models/shared/apicall.ts
+  - src/sdk/models/shared/atsactivity.ts
+  - src/sdk/models/shared/atsaddress.ts
+  - src/sdk/models/shared/atsapplication.ts
+  - src/sdk/models/shared/atsapplicationanswer.ts
+  - src/sdk/models/shared/atscandidate.ts
+  - src/sdk/models/shared/atscompany.ts
+  - src/sdk/models/shared/atscompensation.ts
+  - src/sdk/models/shared/atsdocument.ts
+  - src/sdk/models/shared/atsemail.ts
+  - src/sdk/models/shared/atsinterview.ts
+  - src/sdk/models/shared/atsjob.ts
+  - src/sdk/models/shared/atsjobquestion.ts
+  - src/sdk/models/shared/atsscorecard.ts
+  - src/sdk/models/shared/atsscorecardquestion.ts
+  - src/sdk/models/shared/atsstatus.ts
+  - src/sdk/models/shared/atstelephone.ts
+  - src/sdk/models/shared/commercecollection.ts
+  - src/sdk/models/shared/commerceinventory.ts
+  - src/sdk/models/shared/commerceitem.ts
+  - src/sdk/models/shared/commerceitemmedia.ts
+  - src/sdk/models/shared/commerceitemoption.ts
+  - src/sdk/models/shared/commerceitemprice.ts
+  - src/sdk/models/shared/commerceitemvariant.ts
+  - src/sdk/models/shared/commercelocation.ts
+  - src/sdk/models/shared/connection.ts
+  - src/sdk/models/shared/crmcompany.ts
+  - src/sdk/models/shared/crmcontact.ts
+  - src/sdk/models/shared/crmdeal.ts
+  - src/sdk/models/shared/crmemail.ts
+  - src/sdk/models/shared/crmevent.ts
+  - src/sdk/models/shared/crmlead.ts
+  - src/sdk/models/shared/crmpipeline.ts
+  - src/sdk/models/shared/crmstage.ts
+  - src/sdk/models/shared/crmtelephone.ts
+  - src/sdk/models/shared/enrichcompany.ts
+  - src/sdk/models/shared/enrichemail.ts
+  - src/sdk/models/shared/enrichperson.ts
+  - src/sdk/models/shared/enrichpersonworkhistory.ts
+  - src/sdk/models/shared/enrichtelephone.ts
+  - src/sdk/models/shared/genaicontent.ts
+  - src/sdk/models/shared/genaimodel.ts
+  - src/sdk/models/shared/genaiprompt.ts
+  - src/sdk/models/shared/hriscompany.ts
+  - src/sdk/models/shared/hriscompensation.ts
+  - src/sdk/models/shared/hrisemail.ts
+  - src/sdk/models/shared/hrisemployee.ts
+  - src/sdk/models/shared/hrisgroup.ts
+  - src/sdk/models/shared/hrislocation.ts
+  - src/sdk/models/shared/hrispayslip.ts
+  - src/sdk/models/shared/hrispayslipdetail.ts
+  - src/sdk/models/shared/hristelephone.ts
+  - src/sdk/models/shared/hristimeoff.ts
   - src/sdk/models/shared/index.ts
-  - src/sdk/models/operations/index.ts
-  - docs/sdk/models/shared/status.md
-  - docs/sdk/models/shared/type.md
-  - docs/sdk/models/shared/accountingaccount.md
-  - docs/sdk/models/shared/taxexemption.md
-  - docs/sdk/models/shared/accountingcontact.md
-  - docs/sdk/models/shared/accountingtelephonetype.md
-  - docs/sdk/models/shared/accountingtelephone.md
-  - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
-  - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
-  - docs/sdk/models/shared/accountingcontactpaymentmethod.md
-  - docs/sdk/models/shared/accountingemailtype.md
-  - docs/sdk/models/shared/accountingemail.md
-  - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
-  - docs/sdk/models/shared/paymentcollectionmethod.md
-  - docs/sdk/models/shared/accountinginvoicestatus.md
-  - docs/sdk/models/shared/accountinginvoice.md
-  - docs/sdk/models/shared/accountinglineitem.md
-  - docs/sdk/models/shared/accountingjournal.md
-  - docs/sdk/models/shared/accountingjournallineitem.md
-  - docs/sdk/models/shared/accountingtaxrate.md
-  - docs/sdk/models/shared/accountingtransaction.md
-  - docs/sdk/models/shared/accountingtransactionlineitem.md
-  - docs/sdk/models/shared/accountingorganization.md
-  - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
-  - docs/sdk/models/shared/crmcontact.md
-  - docs/sdk/models/shared/crmtelephonetype.md
-  - docs/sdk/models/shared/crmtelephone.md
-  - docs/sdk/models/shared/crmemailtype.md
-  - docs/sdk/models/shared/crmemail.md
-  - docs/sdk/models/shared/propertycrmcontactaddress.md
-  - docs/sdk/models/shared/uccontact.md
-  - docs/sdk/models/shared/uctelephonetype.md
-  - docs/sdk/models/shared/uctelephone.md
-  - docs/sdk/models/shared/ucemailtype.md
-  - docs/sdk/models/shared/ucemail.md
-  - docs/sdk/models/shared/atsactivitytype.md
-  - docs/sdk/models/shared/atsactivity.md
-  - docs/sdk/models/shared/atsemailtype.md
-  - docs/sdk/models/shared/atsemail.md
-  - docs/sdk/models/shared/propertyatsactivityfromtype.md
-  - docs/sdk/models/shared/propertyatsactivityfrom.md
-  - docs/sdk/models/shared/atsapplicationstatus.md
-  - docs/sdk/models/shared/atsapplication.md
-  - docs/sdk/models/shared/atsapplicationanswer.md
-  - docs/sdk/models/shared/origin.md
-  - docs/sdk/models/shared/atscandidate.md
-  - docs/sdk/models/shared/atstelephonetype.md
-  - docs/sdk/models/shared/atstelephone.md
-  - docs/sdk/models/shared/propertyatscandidateaddress.md
-  - docs/sdk/models/shared/atsdocumenttype.md
-  - docs/sdk/models/shared/atsdocument.md
-  - docs/sdk/models/shared/atsinterviewstatus.md
-  - docs/sdk/models/shared/atsinterview.md
-  - docs/sdk/models/shared/employmenttype.md
-  - docs/sdk/models/shared/atsjobstatus.md
-  - docs/sdk/models/shared/atsjob.md
-  - docs/sdk/models/shared/atsjobquestiontype.md
-  - docs/sdk/models/shared/atsjobquestion.md
-  - docs/sdk/models/shared/frequency.md
-  - docs/sdk/models/shared/atscompensationtype.md
-  - docs/sdk/models/shared/atscompensation.md
-  - docs/sdk/models/shared/atsaddress.md
-  - docs/sdk/models/shared/recommendation.md
-  - docs/sdk/models/shared/atsscorecard.md
-  - docs/sdk/models/shared/atsscorecardquestion.md
-  - docs/sdk/models/shared/atscompany.md
-  - docs/sdk/models/shared/propertyatscompanyaddress.md
-  - docs/sdk/models/shared/atsstatusstatus.md
-  - docs/sdk/models/shared/atsstatus.md
-  - docs/sdk/models/shared/crmcompany.md
-  - docs/sdk/models/shared/propertycrmcompanyaddress.md
-  - docs/sdk/models/shared/hriscompany.md
-  - docs/sdk/models/shared/propertyhriscompanyaddress.md
-  - docs/sdk/models/shared/enrichcompany.md
-  - docs/sdk/models/shared/enrichtelephonetype.md
-  - docs/sdk/models/shared/enrichtelephone.md
-  - docs/sdk/models/shared/propertyenrichcompanyaddress.md
-  - docs/sdk/models/shared/commercecollectiontype.md
-  - docs/sdk/models/shared/commercecollection.md
-  - docs/sdk/models/shared/commerceitemmediatype.md
-  - docs/sdk/models/shared/commerceitemmedia.md
-  - docs/sdk/models/shared/commerceinventory.md
-  - docs/sdk/models/shared/commerceitem.md
-  - docs/sdk/models/shared/sizeunit.md
-  - docs/sdk/models/shared/weightunit.md
-  - docs/sdk/models/shared/commerceitemvariant.md
-  - docs/sdk/models/shared/commerceitemprice.md
-  - docs/sdk/models/shared/commerceitemoption.md
-  - docs/sdk/models/shared/commercelocation.md
-  - docs/sdk/models/shared/propertycommercelocationaddress.md
-  - docs/sdk/models/shared/hrislocation.md
-  - docs/sdk/models/shared/hristelephonetype.md
-  - docs/sdk/models/shared/hristelephone.md
-  - docs/sdk/models/shared/propertyhrislocationaddress.md
-  - docs/sdk/models/shared/crmdeal.md
-  - docs/sdk/models/shared/crmeventtype.md
-  - docs/sdk/models/shared/crmevent.md
-  - docs/sdk/models/shared/priority.md
-  - docs/sdk/models/shared/propertycrmeventtaskstatus.md
-  - docs/sdk/models/shared/propertycrmeventtask.md
-  - docs/sdk/models/shared/propertycrmeventnote.md
-  - docs/sdk/models/shared/propertycrmeventmeeting.md
-  - docs/sdk/models/shared/propertycrmeventemail.md
-  - docs/sdk/models/shared/propertycrmeventcall.md
-  - docs/sdk/models/shared/crmlead.md
-  - docs/sdk/models/shared/propertycrmleadaddress.md
-  - docs/sdk/models/shared/crmpipeline.md
-  - docs/sdk/models/shared/crmstage.md
-  - docs/sdk/models/shared/gender.md
-  - docs/sdk/models/shared/enrichperson.md
-  - docs/sdk/models/shared/enrichpersonworkhistory.md
-  - docs/sdk/models/shared/enrichemailtype.md
-  - docs/sdk/models/shared/enrichemail.md
-  - docs/sdk/models/shared/propertyenrichpersonaddress.md
-  - docs/sdk/models/shared/genaiprompt.md
-  - docs/sdk/models/shared/role.md
-  - docs/sdk/models/shared/genaicontent.md
-  - docs/sdk/models/shared/genaimodel.md
-  - docs/sdk/models/shared/employmentstatus.md
-  - docs/sdk/models/shared/hrisemployeeemploymenttype.md
-  - docs/sdk/models/shared/hrisemployeegender.md
-  - docs/sdk/models/shared/maritalstatus.md
-  - docs/sdk/models/shared/hrisemployee.md
-  - docs/sdk/models/shared/hrisgrouptype.md
-  - docs/sdk/models/shared/hrisgroup.md
-  - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
-  - docs/sdk/models/shared/hrisemailtype.md
-  - docs/sdk/models/shared/hrisemail.md
-  - docs/sdk/models/shared/hriscompensationfrequency.md
-  - docs/sdk/models/shared/hriscompensationtype.md
-  - docs/sdk/models/shared/hriscompensation.md
-  - docs/sdk/models/shared/propertyhrisemployeeaddress.md
-  - docs/sdk/models/shared/paymenttype.md
-  - docs/sdk/models/shared/hrispayslip.md
-  - docs/sdk/models/shared/hrispayslipdetailtype.md
-  - docs/sdk/models/shared/hrispayslipdetail.md
-  - docs/sdk/models/shared/hristimeoffstatus.md
-  - docs/sdk/models/shared/hristimeofftype.md
-  - docs/sdk/models/shared/hristimeoff.md
-  - docs/sdk/models/shared/kmspagetype.md
-  - docs/sdk/models/shared/kmspage.md
-  - docs/sdk/models/shared/kmsspace.md
-  - docs/sdk/models/shared/marketinglist.md
-  - docs/sdk/models/shared/marketingmember.md
-  - docs/sdk/models/shared/marketingemailtype.md
-  - docs/sdk/models/shared/marketingemail.md
-  - docs/sdk/models/shared/messagingmessage.md
-  - docs/sdk/models/shared/messagingmember.md
-  - docs/sdk/models/shared/propertymessagingmessageauthormember.md
-  - docs/sdk/models/shared/messagingattachment.md
-  - docs/sdk/models/shared/messagingchannel.md
-  - docs/sdk/models/shared/paymentlink.md
-  - docs/sdk/models/shared/paymentlinklineitem.md
-  - docs/sdk/models/shared/paymentpayment.md
-  - docs/sdk/models/shared/paymentpayoutstatus.md
-  - docs/sdk/models/shared/paymentpayout.md
-  - docs/sdk/models/shared/paymentrefundstatus.md
-  - docs/sdk/models/shared/paymentrefund.md
-  - docs/sdk/models/shared/storagefiletype.md
-  - docs/sdk/models/shared/storagefile.md
-  - docs/sdk/models/shared/storagepermission.md
-  - docs/sdk/models/shared/propertystoragepermissionroles.md
-  - docs/sdk/models/shared/taskproject.md
-  - docs/sdk/models/shared/tasktaskstatus.md
-  - docs/sdk/models/shared/tasktask.md
-  - docs/sdk/models/shared/ticketingcustomer.md
-  - docs/sdk/models/shared/ticketingtelephonetype.md
-  - docs/sdk/models/shared/ticketingtelephone.md
-  - docs/sdk/models/shared/ticketingemailtype.md
-  - docs/sdk/models/shared/ticketingemail.md
-  - docs/sdk/models/shared/ticketingnote.md
-  - docs/sdk/models/shared/ticketingticketstatus.md
-  - docs/sdk/models/shared/ticketingticket.md
-  - docs/sdk/models/shared/uccall.md
-  - docs/sdk/models/shared/propertyuccalltelephonetype.md
-  - docs/sdk/models/shared/propertyuccalltelephone.md
-  - docs/sdk/models/shared/connection.md
-  - docs/sdk/models/shared/propertyconnectionpermissions.md
-  - docs/sdk/models/shared/propertyconnectioncategories.md
-  - docs/sdk/models/shared/propertyconnectionauth.md
-  - docs/sdk/models/shared/event.md
-  - docs/sdk/models/shared/objecttype.md
-  - docs/sdk/models/shared/webhooktype.md
-  - docs/sdk/models/shared/webhook.md
-  - docs/sdk/models/shared/apicalltype.md
-  - docs/sdk/models/shared/apicall.md
-  - docs/sdk/models/shared/integration.md
-  - docs/sdk/models/shared/fromwebhook.md
-  - docs/sdk/models/shared/listaccountid.md
-  - docs/sdk/models/shared/listapplicationid.md
-  - docs/sdk/models/shared/listcandidateid.md
-  - docs/sdk/models/shared/listchannelid.md
-  - docs/sdk/models/shared/listcollectionid.md
-  - docs/sdk/models/shared/listcompanyid.md
-  - docs/sdk/models/shared/listcontactid.md
-  - docs/sdk/models/shared/listcustomerid.md
-  - docs/sdk/models/shared/listdealid.md
-  - docs/sdk/models/shared/listinterviewid.md
-  - docs/sdk/models/shared/listinvoiceid.md
-  - docs/sdk/models/shared/listitemid.md
-  - docs/sdk/models/shared/listitemvariantid.md
-  - docs/sdk/models/shared/listjobid.md
-  - docs/sdk/models/shared/listlimit.md
-  - docs/sdk/models/shared/listlinkid.md
-  - docs/sdk/models/shared/listlistid.md
-  - docs/sdk/models/shared/listlocationid.md
-  - docs/sdk/models/shared/listoffset.md
-  - docs/sdk/models/shared/listorder.md
-  - docs/sdk/models/shared/listparentid.md
-  - docs/sdk/models/shared/listprojectid.md
-  - docs/sdk/models/shared/listquery.md
-  - docs/sdk/models/shared/listsortbycreatedat.md
-  - docs/sdk/models/shared/listsortbyname.md
-  - docs/sdk/models/shared/listsortbyupdatedat.md
-  - docs/sdk/models/shared/listspaceid.md
-  - docs/sdk/models/shared/listticketid.md
-  - docs/sdk/models/shared/listtype.md
-  - docs/sdk/models/shared/listupdatedgte.md
-  - docs/sdk/models/shared/listuserid.md
-  - docs/sdk/models/shared/searchdomain.md
-  - docs/sdk/models/shared/searchemail.md
-  - docs/sdk/models/shared/searchlinkedinurl.md
-  - docs/sdk/models/shared/searchname.md
-  - docs/sdk/models/shared/searchtwitter.md
-  - docs/sdk/models/shared/integrationsupport.md
-  - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.md
-  - docs/sdk/models/shared/propertyintegrationcategories.md
-  - docs/sdk/models/shared/issuestatus.md
-  - docs/sdk/models/shared/issue.md
-  - docs/sdk/models/shared/security.md
-  - docs/sdk/models/operations/createaccountingaccountrequest.md
-  - docs/sdk/models/operations/createaccountingcontactrequest.md
-  - docs/sdk/models/operations/createaccountinginvoicerequest.md
-  - docs/sdk/models/operations/createaccountingjournalrequest.md
-  - docs/sdk/models/operations/createaccountingtaxraterequest.md
-  - docs/sdk/models/operations/createaccountingtransactionrequest.md
-  - docs/sdk/models/operations/getaccountingaccountrequest.md
-  - docs/sdk/models/operations/getaccountingcontactrequest.md
-  - docs/sdk/models/operations/getaccountinginvoicerequest.md
-  - docs/sdk/models/operations/getaccountingjournalrequest.md
-  - docs/sdk/models/operations/getaccountingorganizationrequest.md
-  - docs/sdk/models/operations/getaccountingtaxraterequest.md
-  - docs/sdk/models/operations/getaccountingtransactionrequest.md
-  - docs/sdk/models/operations/listaccountingaccountsrequest.md
-  - docs/sdk/models/operations/listaccountingcontactsrequest.md
-  - docs/sdk/models/operations/listaccountinginvoicesrequest.md
-  - docs/sdk/models/operations/listaccountingjournalsrequest.md
-  - docs/sdk/models/operations/listaccountingorganizationsrequest.md
-  - docs/sdk/models/operations/listaccountingtaxratesrequest.md
-  - docs/sdk/models/operations/listaccountingtransactionsrequest.md
-  - docs/sdk/models/operations/patchaccountingaccountrequest.md
-  - docs/sdk/models/operations/patchaccountingcontactrequest.md
-  - docs/sdk/models/operations/patchaccountinginvoicerequest.md
-  - docs/sdk/models/operations/patchaccountingjournalrequest.md
-  - docs/sdk/models/operations/patchaccountingtaxraterequest.md
-  - docs/sdk/models/operations/patchaccountingtransactionrequest.md
-  - docs/sdk/models/operations/removeaccountingaccountrequest.md
-  - docs/sdk/models/operations/removeaccountingcontactrequest.md
-  - docs/sdk/models/operations/removeaccountinginvoicerequest.md
-  - docs/sdk/models/operations/removeaccountingjournalrequest.md
-  - docs/sdk/models/operations/removeaccountingtaxraterequest.md
-  - docs/sdk/models/operations/removeaccountingtransactionrequest.md
-  - docs/sdk/models/operations/updateaccountingaccountrequest.md
-  - docs/sdk/models/operations/updateaccountingcontactrequest.md
-  - docs/sdk/models/operations/updateaccountinginvoicerequest.md
-  - docs/sdk/models/operations/updateaccountingjournalrequest.md
-  - docs/sdk/models/operations/updateaccountingtaxraterequest.md
-  - docs/sdk/models/operations/updateaccountingtransactionrequest.md
-  - docs/sdk/models/operations/createcrmcontactrequest.md
-  - docs/sdk/models/operations/createuccontactrequest.md
-  - docs/sdk/models/operations/getcrmcontactrequest.md
-  - docs/sdk/models/operations/getuccontactrequest.md
-  - docs/sdk/models/operations/listcrmcontactsrequest.md
-  - docs/sdk/models/operations/listuccontactsrequest.md
-  - docs/sdk/models/operations/patchcrmcontactrequest.md
-  - docs/sdk/models/operations/patchuccontactrequest.md
-  - docs/sdk/models/operations/removecrmcontactrequest.md
-  - docs/sdk/models/operations/removeuccontactrequest.md
-  - docs/sdk/models/operations/updatecrmcontactrequest.md
-  - docs/sdk/models/operations/updateuccontactrequest.md
-  - docs/sdk/models/operations/createatsactivityrequest.md
-  - docs/sdk/models/operations/createatsapplicationrequest.md
-  - docs/sdk/models/operations/createatscandidaterequest.md
-  - docs/sdk/models/operations/createatsdocumentrequest.md
-  - docs/sdk/models/operations/createatsinterviewrequest.md
-  - docs/sdk/models/operations/createatsjobrequest.md
-  - docs/sdk/models/operations/createatsscorecardrequest.md
-  - docs/sdk/models/operations/getatsactivityrequest.md
-  - docs/sdk/models/operations/getatsapplicationrequest.md
-  - docs/sdk/models/operations/getatscandidaterequest.md
-  - docs/sdk/models/operations/getatscompanyrequest.md
-  - docs/sdk/models/operations/getatsdocumentrequest.md
-  - docs/sdk/models/operations/getatsinterviewrequest.md
-  - docs/sdk/models/operations/getatsjobrequest.md
-  - docs/sdk/models/operations/getatsscorecardrequest.md
-  - docs/sdk/models/operations/listatsactivitiesrequest.md
-  - docs/sdk/models/operations/listatsapplicationsrequest.md
-  - docs/sdk/models/operations/listatsapplicationstatusesrequest.md
-  - docs/sdk/models/operations/listatscandidatesrequest.md
-  - docs/sdk/models/operations/listatscompaniesrequest.md
-  - docs/sdk/models/operations/listatsdocumentsrequest.md
-  - docs/sdk/models/operations/listatsinterviewsrequest.md
-  - docs/sdk/models/operations/listatsjobsrequest.md
-  - docs/sdk/models/operations/listatsscorecardsrequest.md
-  - docs/sdk/models/operations/patchatsactivityrequest.md
-  - docs/sdk/models/operations/patchatsapplicationrequest.md
-  - docs/sdk/models/operations/patchatscandidaterequest.md
-  - docs/sdk/models/operations/patchatsdocumentrequest.md
-  - docs/sdk/models/operations/patchatsinterviewrequest.md
-  - docs/sdk/models/operations/patchatsjobrequest.md
-  - docs/sdk/models/operations/patchatsscorecardrequest.md
-  - docs/sdk/models/operations/removeatsactivityrequest.md
-  - docs/sdk/models/operations/removeatsapplicationrequest.md
-  - docs/sdk/models/operations/removeatscandidaterequest.md
-  - docs/sdk/models/operations/removeatsdocumentrequest.md
-  - docs/sdk/models/operations/removeatsinterviewrequest.md
-  - docs/sdk/models/operations/removeatsjobrequest.md
-  - docs/sdk/models/operations/removeatsscorecardrequest.md
-  - docs/sdk/models/operations/updateatsactivityrequest.md
-  - docs/sdk/models/operations/updateatsapplicationrequest.md
-  - docs/sdk/models/operations/updateatscandidaterequest.md
-  - docs/sdk/models/operations/updateatsdocumentrequest.md
-  - docs/sdk/models/operations/updateatsinterviewrequest.md
-  - docs/sdk/models/operations/updateatsjobrequest.md
-  - docs/sdk/models/operations/updateatsscorecardrequest.md
-  - docs/sdk/models/operations/createcrmcompanyrequest.md
-  - docs/sdk/models/operations/createhriscompanyrequest.md
-  - docs/sdk/models/operations/getcrmcompanyrequest.md
-  - docs/sdk/models/operations/gethriscompanyrequest.md
-  - docs/sdk/models/operations/listcrmcompaniesrequest.md
-  - docs/sdk/models/operations/listenrichcompaniesrequest.md
-  - docs/sdk/models/operations/listhriscompaniesrequest.md
-  - docs/sdk/models/operations/patchcrmcompanyrequest.md
-  - docs/sdk/models/operations/patchhriscompanyrequest.md
-  - docs/sdk/models/operations/removecrmcompanyrequest.md
-  - docs/sdk/models/operations/removehriscompanyrequest.md
-  - docs/sdk/models/operations/updatecrmcompanyrequest.md
-  - docs/sdk/models/operations/updatehriscompanyrequest.md
-  - docs/sdk/models/operations/createcommercecollectionrequest.md
-  - docs/sdk/models/operations/createcommerceinventoryrequest.md
-  - docs/sdk/models/operations/createcommerceitemrequest.md
-  - docs/sdk/models/operations/createcommercelocationrequest.md
-  - docs/sdk/models/operations/getcommercecollectionrequest.md
-  - docs/sdk/models/operations/getcommerceinventoryrequest.md
-  - docs/sdk/models/operations/getcommerceitemrequest.md
-  - docs/sdk/models/operations/getcommercelocationrequest.md
-  - docs/sdk/models/operations/listcommercecollectionsrequest.md
-  - docs/sdk/models/operations/listcommerceinventoriesrequest.md
-  - docs/sdk/models/operations/listcommerceitemsrequest.md
-  - docs/sdk/models/operations/listcommercelocationsrequest.md
-  - docs/sdk/models/operations/patchcommercecollectionrequest.md
-  - docs/sdk/models/operations/patchcommerceinventoryrequest.md
-  - docs/sdk/models/operations/patchcommerceitemrequest.md
-  - docs/sdk/models/operations/patchcommercelocationrequest.md
-  - docs/sdk/models/operations/removecommercecollectionrequest.md
-  - docs/sdk/models/operations/removecommerceinventoryrequest.md
-  - docs/sdk/models/operations/removecommerceitemrequest.md
-  - docs/sdk/models/operations/removecommercelocationrequest.md
-  - docs/sdk/models/operations/updatecommercecollectionrequest.md
-  - docs/sdk/models/operations/updatecommerceinventoryrequest.md
-  - docs/sdk/models/operations/updatecommerceitemrequest.md
-  - docs/sdk/models/operations/updatecommercelocationrequest.md
-  - docs/sdk/models/operations/createhrislocationrequest.md
-  - docs/sdk/models/operations/gethrislocationrequest.md
-  - docs/sdk/models/operations/listhrislocationsrequest.md
-  - docs/sdk/models/operations/patchhrislocationrequest.md
-  - docs/sdk/models/operations/removehrislocationrequest.md
-  - docs/sdk/models/operations/updatehrislocationrequest.md
-  - docs/sdk/models/operations/createcrmdealrequest.md
-  - docs/sdk/models/operations/createcrmeventrequest.md
-  - docs/sdk/models/operations/createcrmleadrequest.md
-  - docs/sdk/models/operations/createcrmpipelinerequest.md
-  - docs/sdk/models/operations/getcrmdealrequest.md
-  - docs/sdk/models/operations/getcrmeventrequest.md
-  - docs/sdk/models/operations/getcrmleadrequest.md
-  - docs/sdk/models/operations/getcrmpipelinerequest.md
-  - docs/sdk/models/operations/listcrmdealsrequest.md
-  - docs/sdk/models/operations/listcrmeventsrequest.md
-  - docs/sdk/models/operations/listcrmleadsrequest.md
-  - docs/sdk/models/operations/listcrmpipelinesrequest.md
-  - docs/sdk/models/operations/patchcrmdealrequest.md
-  - docs/sdk/models/operations/patchcrmeventrequest.md
-  - docs/sdk/models/operations/patchcrmleadrequest.md
-  - docs/sdk/models/operations/patchcrmpipelinerequest.md
-  - docs/sdk/models/operations/removecrmdealrequest.md
-  - docs/sdk/models/operations/removecrmeventrequest.md
-  - docs/sdk/models/operations/removecrmleadrequest.md
-  - docs/sdk/models/operations/removecrmpipelinerequest.md
-  - docs/sdk/models/operations/updatecrmdealrequest.md
-  - docs/sdk/models/operations/updatecrmeventrequest.md
-  - docs/sdk/models/operations/updatecrmleadrequest.md
-  - docs/sdk/models/operations/updatecrmpipelinerequest.md
-  - docs/sdk/models/operations/listenrichpeoplerequest.md
-  - docs/sdk/models/operations/creategenaipromptrequest.md
-  - docs/sdk/models/operations/listgenaimodelsrequest.md
-  - docs/sdk/models/operations/createhrisemployeerequest.md
-  - docs/sdk/models/operations/createhrisgrouprequest.md
-  - docs/sdk/models/operations/gethrisemployeerequest.md
-  - docs/sdk/models/operations/gethrisgrouprequest.md
-  - docs/sdk/models/operations/gethrispaysliprequest.md
-  - docs/sdk/models/operations/gethristimeoffrequest.md
-  - docs/sdk/models/operations/listhrisemployeesrequest.md
-  - docs/sdk/models/operations/listhrisgroupsrequest.md
-  - docs/sdk/models/operations/listhrispayslipsrequest.md
-  - docs/sdk/models/operations/listhristimeoffsrequest.md
-  - docs/sdk/models/operations/patchhrisemployeerequest.md
-  - docs/sdk/models/operations/patchhrisgrouprequest.md
-  - docs/sdk/models/operations/removehrisemployeerequest.md
-  - docs/sdk/models/operations/removehrisgrouprequest.md
-  - docs/sdk/models/operations/updatehrisemployeerequest.md
-  - docs/sdk/models/operations/updatehrisgrouprequest.md
-  - docs/sdk/models/operations/createkmspagerequest.md
-  - docs/sdk/models/operations/createkmsspacerequest.md
-  - docs/sdk/models/operations/getkmspagerequest.md
-  - docs/sdk/models/operations/getkmsspacerequest.md
-  - docs/sdk/models/operations/listkmspagesrequest.md
-  - docs/sdk/models/operations/listkmsspacesrequest.md
-  - docs/sdk/models/operations/patchkmspagerequest.md
-  - docs/sdk/models/operations/patchkmsspacerequest.md
-  - docs/sdk/models/operations/removekmspagerequest.md
-  - docs/sdk/models/operations/removekmsspacerequest.md
-  - docs/sdk/models/operations/updatekmspagerequest.md
-  - docs/sdk/models/operations/updatekmsspacerequest.md
-  - docs/sdk/models/operations/createmartechlistrequest.md
-  - docs/sdk/models/operations/createmartechmemberrequest.md
-  - docs/sdk/models/operations/getmartechlistrequest.md
-  - docs/sdk/models/operations/getmartechmemberrequest.md
-  - docs/sdk/models/operations/listmartechlistsrequest.md
-  - docs/sdk/models/operations/listmartechmembersrequest.md
-  - docs/sdk/models/operations/patchmartechlistrequest.md
-  - docs/sdk/models/operations/patchmartechmemberrequest.md
-  - docs/sdk/models/operations/removemartechlistrequest.md
-  - docs/sdk/models/operations/removemartechmemberrequest.md
-  - docs/sdk/models/operations/updatemartechlistrequest.md
-  - docs/sdk/models/operations/updatemartechmemberrequest.md
-  - docs/sdk/models/operations/createmessagingmessagerequest.md
-  - docs/sdk/models/operations/getmessagingchannelrequest.md
-  - docs/sdk/models/operations/getmessagingmessagerequest.md
-  - docs/sdk/models/operations/listmessagingchannelsrequest.md
-  - docs/sdk/models/operations/listmessagingmessagesrequest.md
-  - docs/sdk/models/operations/patchmessagingmessagerequest.md
-  - docs/sdk/models/operations/removemessagingmessagerequest.md
-  - docs/sdk/models/operations/updatemessagingmessagerequest.md
-  - docs/sdk/models/operations/createpassthroughrequest.md
-  - docs/sdk/models/operations/listpassthroughsrequest.md
-  - docs/sdk/models/operations/patchpassthroughrequest.md
-  - docs/sdk/models/operations/removepassthroughrequest.md
-  - docs/sdk/models/operations/updatepassthroughrequest.md
-  - docs/sdk/models/operations/createpaymentlinkrequest.md
-  - docs/sdk/models/operations/createpaymentpaymentrequest.md
-  - docs/sdk/models/operations/getpaymentlinkrequest.md
-  - docs/sdk/models/operations/getpaymentpaymentrequest.md
-  - docs/sdk/models/operations/getpaymentpayoutrequest.md
-  - docs/sdk/models/operations/getpaymentrefundrequest.md
-  - docs/sdk/models/operations/listpaymentlinksrequest.md
-  - docs/sdk/models/operations/listpaymentpaymentsrequest.md
-  - docs/sdk/models/operations/listpaymentpayoutsrequest.md
-  - docs/sdk/models/operations/listpaymentrefundsrequest.md
-  - docs/sdk/models/operations/patchpaymentlinkrequest.md
-  - docs/sdk/models/operations/patchpaymentpaymentrequest.md
-  - docs/sdk/models/operations/removepaymentlinkrequest.md
-  - docs/sdk/models/operations/removepaymentpaymentrequest.md
-  - docs/sdk/models/operations/updatepaymentlinkrequest.md
-  - docs/sdk/models/operations/updatepaymentpaymentrequest.md
-  - docs/sdk/models/operations/createstoragefilerequest.md
-  - docs/sdk/models/operations/getstoragefilerequest.md
-  - docs/sdk/models/operations/liststoragefilesrequest.md
-  - docs/sdk/models/operations/patchstoragefilerequest.md
-  - docs/sdk/models/operations/removestoragefilerequest.md
-  - docs/sdk/models/operations/updatestoragefilerequest.md
-  - docs/sdk/models/operations/createtaskprojectrequest.md
-  - docs/sdk/models/operations/createtasktaskrequest.md
-  - docs/sdk/models/operations/gettaskprojectrequest.md
-  - docs/sdk/models/operations/gettasktaskrequest.md
-  - docs/sdk/models/operations/listtaskprojectsrequest.md
-  - docs/sdk/models/operations/listtasktasksrequest.md
-  - docs/sdk/models/operations/patchtaskprojectrequest.md
-  - docs/sdk/models/operations/patchtasktaskrequest.md
-  - docs/sdk/models/operations/removetaskprojectrequest.md
-  - docs/sdk/models/operations/removetasktaskrequest.md
-  - docs/sdk/models/operations/updatetaskprojectrequest.md
-  - docs/sdk/models/operations/updatetasktaskrequest.md
-  - docs/sdk/models/operations/createticketingcustomerrequest.md
-  - docs/sdk/models/operations/createticketingnoterequest.md
-  - docs/sdk/models/operations/createticketingticketrequest.md
-  - docs/sdk/models/operations/getticketingcustomerrequest.md
-  - docs/sdk/models/operations/getticketingnoterequest.md
-  - docs/sdk/models/operations/getticketingticketrequest.md
-  - docs/sdk/models/operations/listticketingcustomersrequest.md
-  - docs/sdk/models/operations/listticketingnotesrequest.md
-  - docs/sdk/models/operations/listticketingticketsrequest.md
-  - docs/sdk/models/operations/patchticketingcustomerrequest.md
-  - docs/sdk/models/operations/patchticketingnoterequest.md
-  - docs/sdk/models/operations/patchticketingticketrequest.md
-  - docs/sdk/models/operations/removeticketingcustomerrequest.md
-  - docs/sdk/models/operations/removeticketingnoterequest.md
-  - docs/sdk/models/operations/removeticketingticketrequest.md
-  - docs/sdk/models/operations/updateticketingcustomerrequest.md
-  - docs/sdk/models/operations/updateticketingnoterequest.md
-  - docs/sdk/models/operations/updateticketingticketrequest.md
-  - docs/sdk/models/operations/listuccallsrequest.md
-  - docs/sdk/models/operations/createunifiedwebhookrequest.md
-  - docs/sdk/models/operations/getunifiedapicallrequest.md
-  - docs/sdk/models/operations/getunifiedconnectionrequest.md
-  - docs/sdk/models/operations/scopes.md
-  - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
-  - docs/sdk/models/operations/getunifiedwebhookrequest.md
-  - docs/sdk/models/operations/listunifiedapicallsrequest.md
-  - docs/sdk/models/operations/categories.md
-  - docs/sdk/models/operations/listunifiedconnectionsrequest.md
-  - docs/sdk/models/operations/queryparamcategories.md
-  - docs/sdk/models/operations/listunifiedintegrationworkspacesrequest.md
-  - docs/sdk/models/operations/listunifiedintegrationsqueryparamcategories.md
-  - docs/sdk/models/operations/listunifiedintegrationsrequest.md
-  - docs/sdk/models/operations/listunifiedissuesrequest.md
-  - docs/sdk/models/operations/connectionid.md
-  - docs/sdk/models/operations/integrationtype.md
-  - docs/sdk/models/operations/listunifiedwebhooksrequest.md
-  - docs/sdk/models/operations/patchunifiedconnectionrequest.md
-  - docs/sdk/models/operations/patchunifiedwebhookrequest.md
-  - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
-  - docs/sdk/models/operations/removeunifiedconnectionrequest.md
-  - docs/sdk/models/operations/removeunifiedwebhookrequest.md
-  - docs/sdk/models/operations/updateunifiedconnectionrequest.md
-  - docs/sdk/models/operations/updateunifiedwebhookrequest.md
-  - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
-  - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
-  - USAGE.md
-  - .gitattributes
-  - src/hooks/hooks.ts
-  - src/hooks/types.ts
-  - src/hooks/index.ts
-  - CONTRIBUTING.md
+  - src/sdk/models/shared/integration.ts
+  - src/sdk/models/shared/integrationsupport.ts
+  - src/sdk/models/shared/issue.ts
+  - src/sdk/models/shared/kmspage.ts
+  - src/sdk/models/shared/kmsspace.ts
+  - src/sdk/models/shared/marketingemail.ts
+  - src/sdk/models/shared/marketinglist.ts
+  - src/sdk/models/shared/marketingmember.ts
+  - src/sdk/models/shared/messagingattachment.ts
+  - src/sdk/models/shared/messagingchannel.ts
+  - src/sdk/models/shared/messagingmember.ts
+  - src/sdk/models/shared/messagingmessage.ts
+  - src/sdk/models/shared/paymentlink.ts
+  - src/sdk/models/shared/paymentlinklineitem.ts
+  - src/sdk/models/shared/paymentpayment.ts
+  - src/sdk/models/shared/paymentpayout.ts
+  - src/sdk/models/shared/paymentrefund.ts
+  - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
+  - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
+  - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
+  - src/sdk/models/shared/propertyatsactivityfrom.ts
+  - src/sdk/models/shared/propertyatscandidateaddress.ts
+  - src/sdk/models/shared/propertyatscompanyaddress.ts
+  - src/sdk/models/shared/propertycommercelocationaddress.ts
+  - src/sdk/models/shared/propertyconnectionauth.ts
+  - src/sdk/models/shared/propertyconnectioncategories.ts
+  - src/sdk/models/shared/propertyconnectionpermissions.ts
+  - src/sdk/models/shared/propertycrmcompanyaddress.ts
+  - src/sdk/models/shared/propertycrmcontactaddress.ts
+  - src/sdk/models/shared/propertycrmeventcall.ts
+  - src/sdk/models/shared/propertycrmeventemail.ts
+  - src/sdk/models/shared/propertycrmeventmeeting.ts
+  - src/sdk/models/shared/propertycrmeventnote.ts
+  - src/sdk/models/shared/propertycrmeventtask.ts
+  - src/sdk/models/shared/propertycrmleadaddress.ts
+  - src/sdk/models/shared/propertyenrichcompanyaddress.ts
+  - src/sdk/models/shared/propertyenrichpersonaddress.ts
+  - src/sdk/models/shared/propertyhriscompanyaddress.ts
+  - src/sdk/models/shared/propertyhrisemployeeaddress.ts
+  - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
+  - src/sdk/models/shared/propertyhrislocationaddress.ts
+  - src/sdk/models/shared/propertyintegrationcategories.ts
+  - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
+  - src/sdk/models/shared/propertymessagingmessageauthormember.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.ts
+  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.ts
+  - src/sdk/models/shared/propertystoragepermissionroles.ts
+  - src/sdk/models/shared/propertyuccalltelephone.ts
+  - src/sdk/models/shared/security.ts
+  - src/sdk/models/shared/storagefile.ts
+  - src/sdk/models/shared/storagepermission.ts
+  - src/sdk/models/shared/taskproject.ts
+  - src/sdk/models/shared/tasktask.ts
+  - src/sdk/models/shared/ticketingcustomer.ts
+  - src/sdk/models/shared/ticketingemail.ts
+  - src/sdk/models/shared/ticketingnote.ts
+  - src/sdk/models/shared/ticketingtelephone.ts
+  - src/sdk/models/shared/ticketingticket.ts
+  - src/sdk/models/shared/uccall.ts
+  - src/sdk/models/shared/uccontact.ts
+  - src/sdk/models/shared/ucemail.ts
+  - src/sdk/models/shared/uctelephone.ts
+  - src/sdk/models/shared/webhook.ts
+  - src/sdk/note.ts
+  - src/sdk/organization.ts
+  - src/sdk/page.ts
+  - src/sdk/passthrough.ts
+  - src/sdk/payment.ts
+  - src/sdk/payout.ts
+  - src/sdk/payslip.ts
+  - src/sdk/person.ts
+  - src/sdk/pipeline.ts
+  - src/sdk/project.ts
+  - src/sdk/prompt.ts
+  - src/sdk/refund.ts
+  - src/sdk/scorecard.ts
+  - src/sdk/sdk.ts
+  - src/sdk/space.ts
+  - src/sdk/storage.ts
+  - src/sdk/task.ts
+  - src/sdk/taxrate.ts
+  - src/sdk/ticket.ts
+  - src/sdk/ticketing.ts
+  - src/sdk/timeoff.ts
+  - src/sdk/transaction.ts
+  - src/sdk/types/blobs.ts
+  - src/sdk/types/constdatetime.ts
+  - src/sdk/types/enums.ts
+  - src/sdk/types/fp.ts
+  - src/sdk/types/index.ts
+  - src/sdk/types/operations.ts
+  - src/sdk/types/rfcdate.ts
+  - src/sdk/types/streams.ts
+  - src/sdk/uc.ts
+  - src/sdk/unified.ts
+  - src/sdk/webhook.ts
+  - tsconfig.json
+examples:
+  createAccountingAccount:
+    speakeasy-default-create-accounting-account:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAccountingContact:
+    speakeasy-default-create-accounting-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAccountingInvoice:
+    speakeasy-default-create-accounting-invoice:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAccountingJournal:
+    speakeasy-default-create-accounting-journal:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAccountingTaxrate:
+    speakeasy-default-create-accounting-taxrate:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAccountingTransaction:
+    speakeasy-default-create-accounting-transaction:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getAccountingAccount:
+    speakeasy-default-get-accounting-account:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingContact:
+    speakeasy-default-get-accounting-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingInvoice:
+    speakeasy-default-get-accounting-invoice:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingJournal:
+    speakeasy-default-get-accounting-journal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingOrganization:
+    speakeasy-default-get-accounting-organization:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingTaxrate:
+    speakeasy-default-get-accounting-taxrate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAccountingTransaction:
+    speakeasy-default-get-accounting-transaction:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listAccountingAccounts:
+    speakeasy-default-list-accounting-accounts:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingContacts:
+    speakeasy-default-list-accounting-contacts:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingInvoices:
+    speakeasy-default-list-accounting-invoices:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingJournals:
+    speakeasy-default-list-accounting-journals:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingOrganizations:
+    speakeasy-default-list-accounting-organizations:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingTaxrates:
+    speakeasy-default-list-accounting-taxrates:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAccountingTransactions:
+    speakeasy-default-list-accounting-transactions:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchAccountingAccount:
+    speakeasy-default-patch-accounting-account:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAccountingContact:
+    speakeasy-default-patch-accounting-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAccountingInvoice:
+    speakeasy-default-patch-accounting-invoice:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAccountingJournal:
+    speakeasy-default-patch-accounting-journal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAccountingTaxrate:
+    speakeasy-default-patch-accounting-taxrate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAccountingTransaction:
+    speakeasy-default-patch-accounting-transaction:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingAccount:
+    speakeasy-default-remove-accounting-account:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingContact:
+    speakeasy-default-remove-accounting-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingInvoice:
+    speakeasy-default-remove-accounting-invoice:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingJournal:
+    speakeasy-default-remove-accounting-journal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingTaxrate:
+    speakeasy-default-remove-accounting-taxrate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAccountingTransaction:
+    speakeasy-default-remove-accounting-transaction:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingAccount:
+    speakeasy-default-update-accounting-account:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingContact:
+    speakeasy-default-update-accounting-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingInvoice:
+    speakeasy-default-update-accounting-invoice:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingJournal:
+    speakeasy-default-update-accounting-journal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingTaxrate:
+    speakeasy-default-update-accounting-taxrate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAccountingTransaction:
+    speakeasy-default-update-accounting-transaction:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createCrmContact:
+    speakeasy-default-create-crm-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createUcContact:
+    speakeasy-default-create-uc-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getCrmContact:
+    speakeasy-default-get-crm-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getUcContact:
+    speakeasy-default-get-uc-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listCrmContacts:
+    speakeasy-default-list-crm-contacts:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listUcContacts:
+    speakeasy-default-list-uc-contacts:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchCrmContact:
+    speakeasy-default-patch-crm-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchUcContact:
+    speakeasy-default-patch-uc-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmContact:
+    speakeasy-default-remove-crm-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeUcContact:
+    speakeasy-default-remove-uc-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmContact:
+    speakeasy-default-update-crm-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateUcContact:
+    speakeasy-default-update-uc-contact:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createAtsActivity:
+    speakeasy-default-create-ats-activity:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsApplication:
+    speakeasy-default-create-ats-application:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsCandidate:
+    speakeasy-default-create-ats-candidate:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsDocument:
+    speakeasy-default-create-ats-document:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsInterview:
+    speakeasy-default-create-ats-interview:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsJob:
+    speakeasy-default-create-ats-job:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createAtsScorecard:
+    speakeasy-default-create-ats-scorecard:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getAtsActivity:
+    speakeasy-default-get-ats-activity:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsApplication:
+    speakeasy-default-get-ats-application:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsCandidate:
+    speakeasy-default-get-ats-candidate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsCompany:
+    speakeasy-default-get-ats-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsDocument:
+    speakeasy-default-get-ats-document:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsInterview:
+    speakeasy-default-get-ats-interview:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsJob:
+    speakeasy-default-get-ats-job:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getAtsScorecard:
+    speakeasy-default-get-ats-scorecard:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listAtsActivities:
+    speakeasy-default-list-ats-activities:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsApplications:
+    speakeasy-default-list-ats-applications:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsApplicationstatuses:
+    speakeasy-default-list-ats-applicationstatuses:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsCandidates:
+    speakeasy-default-list-ats-candidates:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsCompanies:
+    speakeasy-default-list-ats-companies:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsDocuments:
+    speakeasy-default-list-ats-documents:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsInterviews:
+    speakeasy-default-list-ats-interviews:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsJobs:
+    speakeasy-default-list-ats-jobs:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listAtsScorecards:
+    speakeasy-default-list-ats-scorecards:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchAtsActivity:
+    speakeasy-default-patch-ats-activity:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsApplication:
+    speakeasy-default-patch-ats-application:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsCandidate:
+    speakeasy-default-patch-ats-candidate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsDocument:
+    speakeasy-default-patch-ats-document:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsInterview:
+    speakeasy-default-patch-ats-interview:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsJob:
+    speakeasy-default-patch-ats-job:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchAtsScorecard:
+    speakeasy-default-patch-ats-scorecard:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsActivity:
+    speakeasy-default-remove-ats-activity:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsApplication:
+    speakeasy-default-remove-ats-application:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsCandidate:
+    speakeasy-default-remove-ats-candidate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsDocument:
+    speakeasy-default-remove-ats-document:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsInterview:
+    speakeasy-default-remove-ats-interview:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsJob:
+    speakeasy-default-remove-ats-job:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeAtsScorecard:
+    speakeasy-default-remove-ats-scorecard:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsActivity:
+    speakeasy-default-update-ats-activity:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsApplication:
+    speakeasy-default-update-ats-application:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsCandidate:
+    speakeasy-default-update-ats-candidate:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsDocument:
+    speakeasy-default-update-ats-document:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsInterview:
+    speakeasy-default-update-ats-interview:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsJob:
+    speakeasy-default-update-ats-job:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateAtsScorecard:
+    speakeasy-default-update-ats-scorecard:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createCrmCompany:
+    speakeasy-default-create-crm-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createHrisCompany:
+    speakeasy-default-create-hris-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getCrmCompany:
+    speakeasy-default-get-crm-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getHrisCompany:
+    speakeasy-default-get-hris-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listCrmCompanies:
+    speakeasy-default-list-crm-companies:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listEnrichCompanies:
+    speakeasy-default-list-enrich-companies:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listHrisCompanies:
+    speakeasy-default-list-hris-companies:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchCrmCompany:
+    speakeasy-default-patch-crm-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchHrisCompany:
+    speakeasy-default-patch-hris-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmCompany:
+    speakeasy-default-remove-crm-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeHrisCompany:
+    speakeasy-default-remove-hris-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmCompany:
+    speakeasy-default-update-crm-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateHrisCompany:
+    speakeasy-default-update-hris-company:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createCommerceCollection:
+    speakeasy-default-create-commerce-collection:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCommerceInventory:
+    speakeasy-default-create-commerce-inventory:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCommerceItem:
+    speakeasy-default-create-commerce-item:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCommerceLocation:
+    speakeasy-default-create-commerce-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getCommerceCollection:
+    speakeasy-default-get-commerce-collection:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCommerceInventory:
+    speakeasy-default-get-commerce-inventory:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCommerceItem:
+    speakeasy-default-get-commerce-item:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCommerceLocation:
+    speakeasy-default-get-commerce-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listCommerceCollections:
+    speakeasy-default-list-commerce-collections:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCommerceInventories:
+    speakeasy-default-list-commerce-inventories:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCommerceItems:
+    speakeasy-default-list-commerce-items:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCommerceLocations:
+    speakeasy-default-list-commerce-locations:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchCommerceCollection:
+    speakeasy-default-patch-commerce-collection:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCommerceInventory:
+    speakeasy-default-patch-commerce-inventory:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCommerceItem:
+    speakeasy-default-patch-commerce-item:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCommerceLocation:
+    speakeasy-default-patch-commerce-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCommerceCollection:
+    speakeasy-default-remove-commerce-collection:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCommerceInventory:
+    speakeasy-default-remove-commerce-inventory:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCommerceItem:
+    speakeasy-default-remove-commerce-item:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCommerceLocation:
+    speakeasy-default-remove-commerce-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCommerceCollection:
+    speakeasy-default-update-commerce-collection:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCommerceInventory:
+    speakeasy-default-update-commerce-inventory:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCommerceItem:
+    speakeasy-default-update-commerce-item:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCommerceLocation:
+    speakeasy-default-update-commerce-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createHrisLocation:
+    speakeasy-default-create-hris-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getHrisLocation:
+    speakeasy-default-get-hris-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listHrisLocations:
+    speakeasy-default-list-hris-locations:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchHrisLocation:
+    speakeasy-default-patch-hris-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeHrisLocation:
+    speakeasy-default-remove-hris-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateHrisLocation:
+    speakeasy-default-update-hris-location:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createCrmDeal:
+    speakeasy-default-create-crm-deal:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCrmEvent:
+    speakeasy-default-create-crm-event:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCrmLead:
+    speakeasy-default-create-crm-lead:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createCrmPipeline:
+    speakeasy-default-create-crm-pipeline:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getCrmDeal:
+    speakeasy-default-get-crm-deal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCrmEvent:
+    speakeasy-default-get-crm-event:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCrmLead:
+    speakeasy-default-get-crm-lead:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getCrmPipeline:
+    speakeasy-default-get-crm-pipeline:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listCrmDeals:
+    speakeasy-default-list-crm-deals:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCrmEvents:
+    speakeasy-default-list-crm-events:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCrmLeads:
+    speakeasy-default-list-crm-leads:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listCrmPipelines:
+    speakeasy-default-list-crm-pipelines:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchCrmDeal:
+    speakeasy-default-patch-crm-deal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCrmEvent:
+    speakeasy-default-patch-crm-event:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCrmLead:
+    speakeasy-default-patch-crm-lead:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchCrmPipeline:
+    speakeasy-default-patch-crm-pipeline:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmDeal:
+    speakeasy-default-remove-crm-deal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmEvent:
+    speakeasy-default-remove-crm-event:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmLead:
+    speakeasy-default-remove-crm-lead:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeCrmPipeline:
+    speakeasy-default-remove-crm-pipeline:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmDeal:
+    speakeasy-default-update-crm-deal:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmEvent:
+    speakeasy-default-update-crm-event:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmLead:
+    speakeasy-default-update-crm-lead:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateCrmPipeline:
+    speakeasy-default-update-crm-pipeline:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  listEnrichPeople:
+    speakeasy-default-list-enrich-people:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  createGenaiPrompt:
+    speakeasy-default-create-genai-prompt:
+      parameters:
+        path:
+          connection_id: "<value>"
+  listGenaiModels:
+    speakeasy-default-list-genai-models:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  createHrisEmployee:
+    speakeasy-default-create-hris-employee:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createHrisGroup:
+    speakeasy-default-create-hris-group:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getHrisEmployee:
+    speakeasy-default-get-hris-employee:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getHrisGroup:
+    speakeasy-default-get-hris-group:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getHrisPayslip:
+    speakeasy-default-get-hris-payslip:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getHrisTimeoff:
+    speakeasy-default-get-hris-timeoff:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listHrisEmployees:
+    speakeasy-default-list-hris-employees:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listHrisGroups:
+    speakeasy-default-list-hris-groups:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listHrisPayslips:
+    speakeasy-default-list-hris-payslips:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listHrisTimeoffs:
+    speakeasy-default-list-hris-timeoffs:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchHrisEmployee:
+    speakeasy-default-patch-hris-employee:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchHrisGroup:
+    speakeasy-default-patch-hris-group:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeHrisEmployee:
+    speakeasy-default-remove-hris-employee:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeHrisGroup:
+    speakeasy-default-remove-hris-group:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateHrisEmployee:
+    speakeasy-default-update-hris-employee:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateHrisGroup:
+    speakeasy-default-update-hris-group:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createKmsPage:
+    speakeasy-default-create-kms-page:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createKmsSpace:
+    speakeasy-default-create-kms-space:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getKmsPage:
+    speakeasy-default-get-kms-page:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getKmsSpace:
+    speakeasy-default-get-kms-space:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listKmsPages:
+    speakeasy-default-list-kms-pages:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listKmsSpaces:
+    speakeasy-default-list-kms-spaces:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchKmsPage:
+    speakeasy-default-patch-kms-page:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchKmsSpace:
+    speakeasy-default-patch-kms-space:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeKmsPage:
+    speakeasy-default-remove-kms-page:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeKmsSpace:
+    speakeasy-default-remove-kms-space:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateKmsPage:
+    speakeasy-default-update-kms-page:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateKmsSpace:
+    speakeasy-default-update-kms-space:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createMartechList:
+    speakeasy-default-create-martech-list:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createMartechMember:
+    speakeasy-default-create-martech-member:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getMartechList:
+    speakeasy-default-get-martech-list:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getMartechMember:
+    speakeasy-default-get-martech-member:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listMartechLists:
+    speakeasy-default-list-martech-lists:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listMartechMembers:
+    speakeasy-default-list-martech-members:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchMartechList:
+    speakeasy-default-patch-martech-list:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchMartechMember:
+    speakeasy-default-patch-martech-member:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeMartechList:
+    speakeasy-default-remove-martech-list:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeMartechMember:
+    speakeasy-default-remove-martech-member:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateMartechList:
+    speakeasy-default-update-martech-list:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateMartechMember:
+    speakeasy-default-update-martech-member:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createMessagingMessage:
+    speakeasy-default-create-messaging-message:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getMessagingChannel:
+    speakeasy-default-get-messaging-channel:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getMessagingMessage:
+    speakeasy-default-get-messaging-message:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listMessagingChannels:
+    speakeasy-default-list-messaging-channels:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listMessagingMessages:
+    speakeasy-default-list-messaging-messages:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchMessagingMessage:
+    speakeasy-default-patch-messaging-message:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeMessagingMessage:
+    speakeasy-default-remove-messaging-message:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateMessagingMessage:
+    speakeasy-default-update-messaging-message:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createPassthrough:
+    speakeasy-default-create-passthrough:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/periodic"
+  listPassthroughs:
+    speakeasy-default-list-passthroughs:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/selinux"
+  patchPassthrough:
+    speakeasy-default-patch-passthrough:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/mnt"
+  removePassthrough:
+    speakeasy-default-remove-passthrough:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/Applications"
+  updatePassthrough:
+    speakeasy-default-update-passthrough:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/dev"
+  createPaymentLink:
+    speakeasy-default-create-payment-link:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createPaymentPayment:
+    speakeasy-default-create-payment-payment:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getPaymentLink:
+    speakeasy-default-get-payment-link:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getPaymentPayment:
+    speakeasy-default-get-payment-payment:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getPaymentPayout:
+    speakeasy-default-get-payment-payout:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getPaymentRefund:
+    speakeasy-default-get-payment-refund:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listPaymentLinks:
+    speakeasy-default-list-payment-links:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listPaymentPayments:
+    speakeasy-default-list-payment-payments:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listPaymentPayouts:
+    speakeasy-default-list-payment-payouts:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listPaymentRefunds:
+    speakeasy-default-list-payment-refunds:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchPaymentLink:
+    speakeasy-default-patch-payment-link:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchPaymentPayment:
+    speakeasy-default-patch-payment-payment:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removePaymentLink:
+    speakeasy-default-remove-payment-link:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removePaymentPayment:
+    speakeasy-default-remove-payment-payment:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updatePaymentLink:
+    speakeasy-default-update-payment-link:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updatePaymentPayment:
+    speakeasy-default-update-payment-payment:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createStorageFile:
+    speakeasy-default-create-storage-file:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getStorageFile:
+    speakeasy-default-get-storage-file:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listStorageFiles:
+    speakeasy-default-list-storage-files:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchStorageFile:
+    speakeasy-default-patch-storage-file:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeStorageFile:
+    speakeasy-default-remove-storage-file:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateStorageFile:
+    speakeasy-default-update-storage-file:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createTaskProject:
+    speakeasy-default-create-task-project:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createTaskTask:
+    speakeasy-default-create-task-task:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getTaskProject:
+    speakeasy-default-get-task-project:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getTaskTask:
+    speakeasy-default-get-task-task:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listTaskProjects:
+    speakeasy-default-list-task-projects:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listTaskTasks:
+    speakeasy-default-list-task-tasks:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchTaskProject:
+    speakeasy-default-patch-task-project:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchTaskTask:
+    speakeasy-default-patch-task-task:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeTaskProject:
+    speakeasy-default-remove-task-project:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeTaskTask:
+    speakeasy-default-remove-task-task:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateTaskProject:
+    speakeasy-default-update-task-project:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateTaskTask:
+    speakeasy-default-update-task-task:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  createTicketingCustomer:
+    speakeasy-default-create-ticketing-customer:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createTicketingNote:
+    speakeasy-default-create-ticketing-note:
+      parameters:
+        path:
+          connection_id: "<value>"
+  createTicketingTicket:
+    speakeasy-default-create-ticketing-ticket:
+      parameters:
+        path:
+          connection_id: "<value>"
+  getTicketingCustomer:
+    speakeasy-default-get-ticketing-customer:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getTicketingNote:
+    speakeasy-default-get-ticketing-note:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  getTicketingTicket:
+    speakeasy-default-get-ticketing-ticket:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+        query: {}
+  listTicketingCustomers:
+    speakeasy-default-list-ticketing-customers:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listTicketingNotes:
+    speakeasy-default-list-ticketing-notes:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  listTicketingTickets:
+    speakeasy-default-list-ticketing-tickets:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  patchTicketingCustomer:
+    speakeasy-default-patch-ticketing-customer:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchTicketingNote:
+    speakeasy-default-patch-ticketing-note:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  patchTicketingTicket:
+    speakeasy-default-patch-ticketing-ticket:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeTicketingCustomer:
+    speakeasy-default-remove-ticketing-customer:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeTicketingNote:
+    speakeasy-default-remove-ticketing-note:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  removeTicketingTicket:
+    speakeasy-default-remove-ticketing-ticket:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateTicketingCustomer:
+    speakeasy-default-update-ticketing-customer:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateTicketingNote:
+    speakeasy-default-update-ticketing-note:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  updateTicketingTicket:
+    speakeasy-default-update-ticketing-ticket:
+      parameters:
+        path:
+          connection_id: "<value>"
+          id: "<id>"
+  listUcCalls:
+    speakeasy-default-list-uc-calls:
+      parameters:
+        path:
+          connection_id: "<value>"
+        query: {}
+  createUnifiedConnection:
+    speakeasy-default-create-unified-connection: {}
+  createUnifiedWebhook:
+    speakeasy-default-create-unified-webhook: {}
+  getUnifiedApicall:
+    speakeasy-default-get-unified-apicall:
+      parameters:
+        path:
+          id: "<id>"
+  getUnifiedConnection:
+    speakeasy-default-get-unified-connection:
+      parameters:
+        path:
+          id: "<id>"
+  getUnifiedIntegrationAuth:
+    speakeasy-default-get-unified-integration-auth:
+      parameters:
+        path:
+          workspace_id: "<value>"
+          integration_type: "<value>"
+        query: {}
+  getUnifiedWebhook:
+    speakeasy-default-get-unified-webhook:
+      parameters:
+        path:
+          id: "<id>"
+  listUnifiedApicalls:
+    speakeasy-default-list-unified-apicalls: {}
+  listUnifiedConnections:
+    speakeasy-default-list-unified-connections: {}
+  listUnifiedIntegrationWorkspaces:
+    speakeasy-default-list-unified-integration-workspaces:
+      parameters:
+        path:
+          workspace_id: "<value>"
+        query: {}
+  listUnifiedIntegrations:
+    speakeasy-default-list-unified-integrations: {}
+  listUnifiedIssues:
+    speakeasy-default-list-unified-issues: {}
+  listUnifiedWebhooks:
+    speakeasy-default-list-unified-webhooks: {}
+  patchUnifiedConnection:
+    speakeasy-default-patch-unified-connection:
+      parameters:
+        path:
+          id: "<id>"
+  patchUnifiedWebhook:
+    speakeasy-default-patch-unified-webhook:
+      parameters:
+        path:
+          id: "<id>"
+  patchUnifiedWebhookTrigger:
+    speakeasy-default-patch-unified-webhook-trigger:
+      parameters:
+        path:
+          id: "<id>"
+  removeUnifiedConnection:
+    speakeasy-default-remove-unified-connection:
+      parameters:
+        path:
+          id: "<id>"
+  removeUnifiedWebhook:
+    speakeasy-default-remove-unified-webhook:
+      parameters:
+        path:
+          id: "<id>"
+  updateUnifiedConnection:
+    speakeasy-default-update-unified-connection:
+      parameters:
+        path:
+          id: "<id>"
+  updateUnifiedWebhook:
+    speakeasy-default-update-unified-webhook:
+      parameters:
+        path:
+          id: "<id>"
+  updateUnifiedWebhookTrigger:
+    speakeasy-default-update-unified-webhook-trigger:
+      parameters:
+        path:
+          id: "<id>"
+  getUnifiedIntegrationLogin:
+    speakeasy-default-get-unified-integration-login:
+      parameters:
+        path:
+          workspace_id: "<value>"
+          integration_type: "<value>"
+        query: {}
