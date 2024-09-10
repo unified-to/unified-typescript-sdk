@@ -12,6 +12,10 @@ export type CreateTaskProjectRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateTaskProjectRequest$inboundSchema: z.ZodType<
 > = z.object({
   TaskProject: shared.TaskProject$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "TaskProject": "taskProject",
@@ -33,6 +38,7 @@ export const CreateTaskProjectRequest$inboundSchema: z.ZodType<
 export type CreateTaskProjectRequest$Outbound = {
   TaskProject?: shared.TaskProject$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateTaskProjectRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskProject: shared.TaskProject$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     taskProject: "TaskProject",

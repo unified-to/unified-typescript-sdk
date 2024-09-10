@@ -12,6 +12,10 @@ export type CreateHrisLocationRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateHrisLocationRequest$inboundSchema: z.ZodType<
 > = z.object({
   HrisLocation: shared.HrisLocation$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "HrisLocation": "hrisLocation",
@@ -33,6 +38,7 @@ export const CreateHrisLocationRequest$inboundSchema: z.ZodType<
 export type CreateHrisLocationRequest$Outbound = {
   HrisLocation?: shared.HrisLocation$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateHrisLocationRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisLocation: shared.HrisLocation$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     hrisLocation: "HrisLocation",

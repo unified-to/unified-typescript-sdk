@@ -12,6 +12,10 @@ export type CreateStorageFileRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateStorageFileRequest$inboundSchema: z.ZodType<
 > = z.object({
   StorageFile: shared.StorageFile$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "StorageFile": "storageFile",
@@ -33,6 +38,7 @@ export const CreateStorageFileRequest$inboundSchema: z.ZodType<
 export type CreateStorageFileRequest$Outbound = {
   StorageFile?: shared.StorageFile$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateStorageFileRequest$outboundSchema: z.ZodType<
 > = z.object({
   storageFile: shared.StorageFile$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     storageFile: "StorageFile",

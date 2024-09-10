@@ -13,6 +13,10 @@ export type PatchTicketingTicketRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Ticket
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchTicketingTicketRequest$inboundSchema: z.ZodType<
 > = z.object({
   TicketingTicket: shared.TicketingTicket$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchTicketingTicketRequest$inboundSchema: z.ZodType<
 export type PatchTicketingTicketRequest$Outbound = {
   TicketingTicket?: shared.TicketingTicket$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchTicketingTicketRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingTicket: shared.TicketingTicket$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

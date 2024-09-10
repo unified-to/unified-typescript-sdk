@@ -12,6 +12,10 @@ export type CreateAccountingJournalRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateAccountingJournalRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingJournal: shared.AccountingJournal$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "AccountingJournal": "accountingJournal",
@@ -33,6 +38,7 @@ export const CreateAccountingJournalRequest$inboundSchema: z.ZodType<
 export type CreateAccountingJournalRequest$Outbound = {
   AccountingJournal?: shared.AccountingJournal$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateAccountingJournalRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingJournal: shared.AccountingJournal$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     accountingJournal: "AccountingJournal",

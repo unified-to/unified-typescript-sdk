@@ -13,6 +13,10 @@ export type PatchMessagingMessageRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Message
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchMessagingMessageRequest$inboundSchema: z.ZodType<
 > = z.object({
   MessagingMessage: shared.MessagingMessage$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchMessagingMessageRequest$inboundSchema: z.ZodType<
 export type PatchMessagingMessageRequest$Outbound = {
   MessagingMessage?: shared.MessagingMessage$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchMessagingMessageRequest$outboundSchema: z.ZodType<
 > = z.object({
   messagingMessage: shared.MessagingMessage$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

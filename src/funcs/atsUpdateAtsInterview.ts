@@ -4,6 +4,7 @@
 
 import { UnifiedToCore } from "../core.js";
 import {
+  encodeFormQuery as encodeFormQuery$,
   encodeJSON as encodeJSON$,
   encodeSimple as encodeSimple$,
 } from "../lib/encodings.js";
@@ -71,6 +72,10 @@ export async function atsUpdateAtsInterview(
 
   const path$ = pathToFunc("/ats/{connection_id}/interview/{id}")(pathParams$);
 
+  const query$ = encodeFormQuery$({
+    "fields": payload$.fields,
+  });
+
   const headers$ = new Headers({
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -89,6 +94,7 @@ export async function atsUpdateAtsInterview(
     method: "PUT",
     path: path$,
     headers: headers$,
+    query: query$,
     body: body$,
     timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
   }, options);

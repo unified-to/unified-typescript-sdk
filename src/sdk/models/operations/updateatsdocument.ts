@@ -13,6 +13,10 @@ export type UpdateAtsDocumentRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Document
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateAtsDocumentRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsDocument: shared.AtsDocument$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateAtsDocumentRequest$inboundSchema: z.ZodType<
 export type UpdateAtsDocumentRequest$Outbound = {
   AtsDocument?: shared.AtsDocument$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateAtsDocumentRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsDocument: shared.AtsDocument$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

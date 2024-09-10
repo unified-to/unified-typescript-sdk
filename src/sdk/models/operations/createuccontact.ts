@@ -15,6 +15,10 @@ export type CreateUcContactRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -25,6 +29,7 @@ export const CreateUcContactRequest$inboundSchema: z.ZodType<
 > = z.object({
   UcContact: shared.UcContact$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "UcContact": "ucContact",
@@ -36,6 +41,7 @@ export const CreateUcContactRequest$inboundSchema: z.ZodType<
 export type CreateUcContactRequest$Outbound = {
   UcContact?: shared.UcContact$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -46,6 +52,7 @@ export const CreateUcContactRequest$outboundSchema: z.ZodType<
 > = z.object({
   ucContact: shared.UcContact$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     ucContact: "UcContact",

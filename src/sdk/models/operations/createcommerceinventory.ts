@@ -12,6 +12,10 @@ export type CreateCommerceInventoryRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateCommerceInventoryRequest$inboundSchema: z.ZodType<
 > = z.object({
   CommerceInventory: shared.CommerceInventory$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "CommerceInventory": "commerceInventory",
@@ -33,6 +38,7 @@ export const CreateCommerceInventoryRequest$inboundSchema: z.ZodType<
 export type CreateCommerceInventoryRequest$Outbound = {
   CommerceInventory?: shared.CommerceInventory$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateCommerceInventoryRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceInventory: shared.CommerceInventory$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     commerceInventory: "CommerceInventory",

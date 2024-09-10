@@ -13,6 +13,10 @@ export type PatchCommerceItemRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Item
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchCommerceItemRequest$inboundSchema: z.ZodType<
 > = z.object({
   CommerceItem: shared.CommerceItem$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchCommerceItemRequest$inboundSchema: z.ZodType<
 export type PatchCommerceItemRequest$Outbound = {
   CommerceItem?: shared.CommerceItem$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchCommerceItemRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceItem: shared.CommerceItem$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

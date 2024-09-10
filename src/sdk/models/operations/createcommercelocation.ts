@@ -12,6 +12,10 @@ export type CreateCommerceLocationRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateCommerceLocationRequest$inboundSchema: z.ZodType<
 > = z.object({
   CommerceLocation: shared.CommerceLocation$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "CommerceLocation": "commerceLocation",
@@ -33,6 +38,7 @@ export const CreateCommerceLocationRequest$inboundSchema: z.ZodType<
 export type CreateCommerceLocationRequest$Outbound = {
   CommerceLocation?: shared.CommerceLocation$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateCommerceLocationRequest$outboundSchema: z.ZodType<
 > = z.object({
   commerceLocation: shared.CommerceLocation$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     commerceLocation: "CommerceLocation",

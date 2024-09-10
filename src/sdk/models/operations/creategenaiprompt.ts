@@ -12,6 +12,10 @@ export type CreateGenaiPromptRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateGenaiPromptRequest$inboundSchema: z.ZodType<
 > = z.object({
   GenaiPrompt: shared.GenaiPrompt$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "GenaiPrompt": "genaiPrompt",
@@ -33,6 +38,7 @@ export const CreateGenaiPromptRequest$inboundSchema: z.ZodType<
 export type CreateGenaiPromptRequest$Outbound = {
   GenaiPrompt?: shared.GenaiPrompt$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateGenaiPromptRequest$outboundSchema: z.ZodType<
 > = z.object({
   genaiPrompt: shared.GenaiPrompt$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     genaiPrompt: "GenaiPrompt",

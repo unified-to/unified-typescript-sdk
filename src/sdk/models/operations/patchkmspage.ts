@@ -13,6 +13,10 @@ export type PatchKmsPageRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Page
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchKmsPageRequest$inboundSchema: z.ZodType<
 > = z.object({
   KmsPage: shared.KmsPage$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchKmsPageRequest$inboundSchema: z.ZodType<
 export type PatchKmsPageRequest$Outbound = {
   KmsPage?: shared.KmsPage$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchKmsPageRequest$outboundSchema: z.ZodType<
 > = z.object({
   kmsPage: shared.KmsPage$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

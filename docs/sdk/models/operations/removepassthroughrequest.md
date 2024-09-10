@@ -7,7 +7,7 @@ import { RemovePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models
 
 let value: RemovePassthroughRequest = {
   connectionId: "<value>",
-  path: "/var/log",
+  path: "/selinux",
 };
 ```
 

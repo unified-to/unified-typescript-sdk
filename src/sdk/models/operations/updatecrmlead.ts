@@ -13,6 +13,10 @@ export type UpdateCrmLeadRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Lead
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateCrmLeadRequest$inboundSchema: z.ZodType<
 > = z.object({
   CrmLead: shared.CrmLead$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateCrmLeadRequest$inboundSchema: z.ZodType<
 export type UpdateCrmLeadRequest$Outbound = {
   CrmLead?: shared.CrmLead$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateCrmLeadRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmLead: shared.CrmLead$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

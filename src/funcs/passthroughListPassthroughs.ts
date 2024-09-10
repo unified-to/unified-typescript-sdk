@@ -114,7 +114,7 @@ export async function passthroughListPassthroughs(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.json(200, z.record(z.any())),
+    m$.json("2XX", z.record(z.any())),
     m$.fail(["4XX", "5XX"]),
   )(response);
   if (!result$.ok) {

@@ -13,6 +13,10 @@ export type PatchAccountingTaxrateRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Taxrate
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchAccountingTaxrateRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingTaxrate: shared.AccountingTaxrate$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchAccountingTaxrateRequest$inboundSchema: z.ZodType<
 export type PatchAccountingTaxrateRequest$Outbound = {
   AccountingTaxrate?: shared.AccountingTaxrate$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchAccountingTaxrateRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingTaxrate: shared.AccountingTaxrate$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

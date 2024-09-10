@@ -16,6 +16,10 @@ export type UpdateAccountingAccountRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Account
    */
   id: string;
@@ -29,6 +33,7 @@ export const UpdateAccountingAccountRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingAccount: shared.AccountingAccount$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -41,6 +46,7 @@ export const UpdateAccountingAccountRequest$inboundSchema: z.ZodType<
 export type UpdateAccountingAccountRequest$Outbound = {
   AccountingAccount?: shared.AccountingAccount$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -52,6 +58,7 @@ export const UpdateAccountingAccountRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingAccount: shared.AccountingAccount$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

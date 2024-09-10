@@ -15,6 +15,10 @@ export type CreateCrmContactRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -25,6 +29,7 @@ export const CreateCrmContactRequest$inboundSchema: z.ZodType<
 > = z.object({
   CrmContact: shared.CrmContact$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmContact": "crmContact",
@@ -36,6 +41,7 @@ export const CreateCrmContactRequest$inboundSchema: z.ZodType<
 export type CreateCrmContactRequest$Outbound = {
   CrmContact?: shared.CrmContact$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -46,6 +52,7 @@ export const CreateCrmContactRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmContact: shared.CrmContact$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     crmContact: "CrmContact",

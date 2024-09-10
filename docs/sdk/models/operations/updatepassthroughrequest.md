@@ -7,7 +7,7 @@ import { UpdatePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models
 
 let value: UpdatePassthroughRequest = {
   connectionId: "<value>",
-  path: "/selinux",
+  path: "/dev",
 };
 ```
 

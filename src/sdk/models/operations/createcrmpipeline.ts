@@ -12,6 +12,10 @@ export type CreateCrmPipelineRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateCrmPipelineRequest$inboundSchema: z.ZodType<
 > = z.object({
   CrmPipeline: shared.CrmPipeline$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmPipeline": "crmPipeline",
@@ -33,6 +38,7 @@ export const CreateCrmPipelineRequest$inboundSchema: z.ZodType<
 export type CreateCrmPipelineRequest$Outbound = {
   CrmPipeline?: shared.CrmPipeline$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateCrmPipelineRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmPipeline: shared.CrmPipeline$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     crmPipeline: "CrmPipeline",

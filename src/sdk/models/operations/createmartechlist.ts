@@ -15,6 +15,10 @@ export type CreateMartechListRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -25,6 +29,7 @@ export const CreateMartechListRequest$inboundSchema: z.ZodType<
 > = z.object({
   MarketingList: shared.MarketingList$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "MarketingList": "marketingList",
@@ -36,6 +41,7 @@ export const CreateMartechListRequest$inboundSchema: z.ZodType<
 export type CreateMartechListRequest$Outbound = {
   MarketingList?: shared.MarketingList$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -46,6 +52,7 @@ export const CreateMartechListRequest$outboundSchema: z.ZodType<
 > = z.object({
   marketingList: shared.MarketingList$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     marketingList: "MarketingList",

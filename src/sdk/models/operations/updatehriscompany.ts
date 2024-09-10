@@ -13,6 +13,10 @@ export type UpdateHrisCompanyRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Company
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateHrisCompanyRequest$inboundSchema: z.ZodType<
 > = z.object({
   HrisCompany: shared.HrisCompany$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateHrisCompanyRequest$inboundSchema: z.ZodType<
 export type UpdateHrisCompanyRequest$Outbound = {
   HrisCompany?: shared.HrisCompany$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateHrisCompanyRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisCompany: shared.HrisCompany$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

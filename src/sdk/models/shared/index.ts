@@ -28,6 +28,7 @@ export * from "./atsemail.js";
 export * from "./atsinterview.js";
 export * from "./atsjob.js";
 export * from "./atsjobquestion.js";
+export * from "./atsoffer.js";
 export * from "./atsscorecard.js";
 export * from "./atsscorecardquestion.js";
 export * from "./atsstatus.js";

@@ -12,6 +12,10 @@ export type CreateTicketingNoteRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateTicketingNoteRequest$inboundSchema: z.ZodType<
 > = z.object({
   TicketingNote: shared.TicketingNote$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "TicketingNote": "ticketingNote",
@@ -33,6 +38,7 @@ export const CreateTicketingNoteRequest$inboundSchema: z.ZodType<
 export type CreateTicketingNoteRequest$Outbound = {
   TicketingNote?: shared.TicketingNote$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateTicketingNoteRequest$outboundSchema: z.ZodType<
 > = z.object({
   ticketingNote: shared.TicketingNote$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     ticketingNote: "TicketingNote",

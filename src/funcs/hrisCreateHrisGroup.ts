@@ -4,6 +4,7 @@
 
 import { UnifiedToCore } from "../core.js";
 import {
+  encodeFormQuery as encodeFormQuery$,
   encodeJSON as encodeJSON$,
   encodeSimple as encodeSimple$,
 } from "../lib/encodings.js";
@@ -66,6 +67,10 @@ export async function hrisCreateHrisGroup(
 
   const path$ = pathToFunc("/hris/{connection_id}/group")(pathParams$);
 
+  const query$ = encodeFormQuery$({
+    "fields": payload$.fields,
+  });
+
   const headers$ = new Headers({
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -84,6 +89,7 @@ export async function hrisCreateHrisGroup(
     method: "POST",
     path: path$,
     headers: headers$,
+    query: query$,
     body: body$,
     timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
   }, options);

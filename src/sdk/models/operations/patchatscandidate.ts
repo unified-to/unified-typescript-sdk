@@ -13,6 +13,10 @@ export type PatchAtsCandidateRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Candidate
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchAtsCandidateRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsCandidate: shared.AtsCandidate$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchAtsCandidateRequest$inboundSchema: z.ZodType<
 export type PatchAtsCandidateRequest$Outbound = {
   AtsCandidate?: shared.AtsCandidate$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchAtsCandidateRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsCandidate: shared.AtsCandidate$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

@@ -7,7 +7,7 @@ import { PatchPassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/
 
 let value: PatchPassthroughRequest = {
   connectionId: "<value>",
-  path: "/etc",
+  path: "/var/log",
 };
 ```
 

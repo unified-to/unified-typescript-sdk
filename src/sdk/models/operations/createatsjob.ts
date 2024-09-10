@@ -12,6 +12,10 @@ export type CreateAtsJobRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateAtsJobRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsJob: shared.AtsJob$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "AtsJob": "atsJob",
@@ -33,6 +38,7 @@ export const CreateAtsJobRequest$inboundSchema: z.ZodType<
 export type CreateAtsJobRequest$Outbound = {
   AtsJob?: shared.AtsJob$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateAtsJobRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsJob: shared.AtsJob$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     atsJob: "AtsJob",

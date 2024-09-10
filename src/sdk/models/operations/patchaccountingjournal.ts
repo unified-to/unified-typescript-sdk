@@ -13,6 +13,10 @@ export type PatchAccountingJournalRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Journal
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchAccountingJournalRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingJournal: shared.AccountingJournal$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchAccountingJournalRequest$inboundSchema: z.ZodType<
 export type PatchAccountingJournalRequest$Outbound = {
   AccountingJournal?: shared.AccountingJournal$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchAccountingJournalRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingJournal: shared.AccountingJournal$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

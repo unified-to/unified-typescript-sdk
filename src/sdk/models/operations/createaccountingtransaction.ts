@@ -12,6 +12,10 @@ export type CreateAccountingTransactionRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateAccountingTransactionRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingTransaction: shared.AccountingTransaction$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "AccountingTransaction": "accountingTransaction",
@@ -33,6 +38,7 @@ export const CreateAccountingTransactionRequest$inboundSchema: z.ZodType<
 export type CreateAccountingTransactionRequest$Outbound = {
   AccountingTransaction?: shared.AccountingTransaction$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateAccountingTransactionRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingTransaction: shared.AccountingTransaction$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     accountingTransaction: "AccountingTransaction",

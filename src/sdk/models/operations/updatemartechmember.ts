@@ -16,6 +16,10 @@ export type UpdateMartechMemberRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Member
    */
   id: string;
@@ -29,6 +33,7 @@ export const UpdateMartechMemberRequest$inboundSchema: z.ZodType<
 > = z.object({
   MarketingMember: shared.MarketingMember$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -41,6 +46,7 @@ export const UpdateMartechMemberRequest$inboundSchema: z.ZodType<
 export type UpdateMartechMemberRequest$Outbound = {
   MarketingMember?: shared.MarketingMember$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -52,6 +58,7 @@ export const UpdateMartechMemberRequest$outboundSchema: z.ZodType<
 > = z.object({
   marketingMember: shared.MarketingMember$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

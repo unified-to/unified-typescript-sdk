@@ -13,6 +13,10 @@ export type UpdateKmsSpaceRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Space
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateKmsSpaceRequest$inboundSchema: z.ZodType<
 > = z.object({
   KmsSpace: shared.KmsSpace$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateKmsSpaceRequest$inboundSchema: z.ZodType<
 export type UpdateKmsSpaceRequest$Outbound = {
   KmsSpace?: shared.KmsSpace$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateKmsSpaceRequest$outboundSchema: z.ZodType<
 > = z.object({
   kmsSpace: shared.KmsSpace$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

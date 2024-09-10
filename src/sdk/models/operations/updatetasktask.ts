@@ -13,6 +13,10 @@ export type UpdateTaskTaskRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Task
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateTaskTaskRequest$inboundSchema: z.ZodType<
 > = z.object({
   TaskTask: shared.TaskTask$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateTaskTaskRequest$inboundSchema: z.ZodType<
 export type UpdateTaskTaskRequest$Outbound = {
   TaskTask?: shared.TaskTask$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateTaskTaskRequest$outboundSchema: z.ZodType<
 > = z.object({
   taskTask: shared.TaskTask$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

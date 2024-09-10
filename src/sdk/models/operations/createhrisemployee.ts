@@ -12,6 +12,10 @@ export type CreateHrisEmployeeRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateHrisEmployeeRequest$inboundSchema: z.ZodType<
 > = z.object({
   HrisEmployee: shared.HrisEmployee$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "HrisEmployee": "hrisEmployee",
@@ -33,6 +38,7 @@ export const CreateHrisEmployeeRequest$inboundSchema: z.ZodType<
 export type CreateHrisEmployeeRequest$Outbound = {
   HrisEmployee?: shared.HrisEmployee$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateHrisEmployeeRequest$outboundSchema: z.ZodType<
 > = z.object({
   hrisEmployee: shared.HrisEmployee$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     hrisEmployee: "HrisEmployee",

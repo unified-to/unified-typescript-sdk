@@ -13,6 +13,10 @@ export type UpdateAtsApplicationRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Application
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateAtsApplicationRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsApplication: shared.AtsApplication$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateAtsApplicationRequest$inboundSchema: z.ZodType<
 export type UpdateAtsApplicationRequest$Outbound = {
   AtsApplication?: shared.AtsApplication$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateAtsApplicationRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsApplication: shared.AtsApplication$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

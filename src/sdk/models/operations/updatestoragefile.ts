@@ -13,6 +13,10 @@ export type UpdateStorageFileRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the File
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateStorageFileRequest$inboundSchema: z.ZodType<
 > = z.object({
   StorageFile: shared.StorageFile$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateStorageFileRequest$inboundSchema: z.ZodType<
 export type UpdateStorageFileRequest$Outbound = {
   StorageFile?: shared.StorageFile$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateStorageFileRequest$outboundSchema: z.ZodType<
 > = z.object({
   storageFile: shared.StorageFile$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

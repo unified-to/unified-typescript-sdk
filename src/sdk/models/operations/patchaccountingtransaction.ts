@@ -13,6 +13,10 @@ export type PatchAccountingTransactionRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Transaction
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchAccountingTransactionRequest$inboundSchema: z.ZodType<
 > = z.object({
   AccountingTransaction: shared.AccountingTransaction$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchAccountingTransactionRequest$inboundSchema: z.ZodType<
 export type PatchAccountingTransactionRequest$Outbound = {
   AccountingTransaction?: shared.AccountingTransaction$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchAccountingTransactionRequest$outboundSchema: z.ZodType<
 > = z.object({
   accountingTransaction: shared.AccountingTransaction$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

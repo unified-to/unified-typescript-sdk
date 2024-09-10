@@ -11,6 +11,12 @@ import {
   AtsApplicationAnswer$Outbound,
   AtsApplicationAnswer$outboundSchema,
 } from "./atsapplicationanswer.js";
+import {
+  AtsOffer,
+  AtsOffer$inboundSchema,
+  AtsOffer$Outbound,
+  AtsOffer$outboundSchema,
+} from "./atsoffer.js";
 
 export const AtsApplicationStatus = {
   New: "NEW",
@@ -38,6 +44,7 @@ export type AtsApplication = {
   hiredAt?: Date | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
+  offers?: Array<AtsOffer> | undefined;
   originalStatus?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   rejectedAt?: Date | undefined;
@@ -84,6 +91,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
+  offers: z.array(AtsOffer$inboundSchema).optional(),
   original_status: z.string().optional(),
   raw: z.record(z.any()).optional(),
   rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -116,6 +124,7 @@ export type AtsApplication$Outbound = {
   hired_at?: string | undefined;
   id?: string | undefined;
   job_id?: string | undefined;
+  offers?: Array<AtsOffer$Outbound> | undefined;
   original_status?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   rejected_at?: string | undefined;
@@ -138,6 +147,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   hiredAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   jobId: z.string().optional(),
+  offers: z.array(AtsOffer$outboundSchema).optional(),
   originalStatus: z.string().optional(),
   raw: z.record(z.any()).optional(),
   rejectedAt: z.date().transform(v => v.toISOString()).optional(),

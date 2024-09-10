@@ -12,6 +12,10 @@ export type CreateAtsInterviewRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateAtsInterviewRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsInterview: shared.AtsInterview$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "AtsInterview": "atsInterview",
@@ -33,6 +38,7 @@ export const CreateAtsInterviewRequest$inboundSchema: z.ZodType<
 export type CreateAtsInterviewRequest$Outbound = {
   AtsInterview?: shared.AtsInterview$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateAtsInterviewRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsInterview: shared.AtsInterview$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     atsInterview: "AtsInterview",

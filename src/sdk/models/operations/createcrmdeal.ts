@@ -15,6 +15,10 @@ export type CreateCrmDealRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -25,6 +29,7 @@ export const CreateCrmDealRequest$inboundSchema: z.ZodType<
 > = z.object({
   CrmDeal: shared.CrmDeal$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmDeal": "crmDeal",
@@ -36,6 +41,7 @@ export const CreateCrmDealRequest$inboundSchema: z.ZodType<
 export type CreateCrmDealRequest$Outbound = {
   CrmDeal?: shared.CrmDeal$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -46,6 +52,7 @@ export const CreateCrmDealRequest$outboundSchema: z.ZodType<
 > = z.object({
   crmDeal: shared.CrmDeal$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     crmDeal: "CrmDeal",

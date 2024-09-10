@@ -13,6 +13,10 @@ export type PatchPaymentPaymentRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Payment
    */
   id: string;
@@ -26,6 +30,7 @@ export const PatchPaymentPaymentRequest$inboundSchema: z.ZodType<
 > = z.object({
   PaymentPayment: shared.PaymentPayment$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const PatchPaymentPaymentRequest$inboundSchema: z.ZodType<
 export type PatchPaymentPaymentRequest$Outbound = {
   PaymentPayment?: shared.PaymentPayment$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const PatchPaymentPaymentRequest$outboundSchema: z.ZodType<
 > = z.object({
   paymentPayment: shared.PaymentPayment$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

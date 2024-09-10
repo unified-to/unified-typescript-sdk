@@ -13,6 +13,10 @@ export type UpdateAtsScorecardRequest = {
    */
   connectionId: string;
   /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
+  /**
    * ID of the Scorecard
    */
   id: string;
@@ -26,6 +30,7 @@ export const UpdateAtsScorecardRequest$inboundSchema: z.ZodType<
 > = z.object({
   AtsScorecard: shared.AtsScorecard$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -38,6 +43,7 @@ export const UpdateAtsScorecardRequest$inboundSchema: z.ZodType<
 export type UpdateAtsScorecardRequest$Outbound = {
   AtsScorecard?: shared.AtsScorecard$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
   id: string;
 };
 
@@ -49,6 +55,7 @@ export const UpdateAtsScorecardRequest$outboundSchema: z.ZodType<
 > = z.object({
   atsScorecard: shared.AtsScorecard$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

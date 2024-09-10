@@ -12,6 +12,10 @@ export type CreateMessagingMessageRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * Comma-delimited fields to return
+   */
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -22,6 +26,7 @@ export const CreateMessagingMessageRequest$inboundSchema: z.ZodType<
 > = z.object({
   MessagingMessage: shared.MessagingMessage$inboundSchema.optional(),
   connection_id: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "MessagingMessage": "messagingMessage",
@@ -33,6 +38,7 @@ export const CreateMessagingMessageRequest$inboundSchema: z.ZodType<
 export type CreateMessagingMessageRequest$Outbound = {
   MessagingMessage?: shared.MessagingMessage$Outbound | undefined;
   connection_id: string;
+  fields?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -43,6 +49,7 @@ export const CreateMessagingMessageRequest$outboundSchema: z.ZodType<
 > = z.object({
   messagingMessage: shared.MessagingMessage$outboundSchema.optional(),
   connectionId: z.string(),
+  fields: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     messagingMessage: "MessagingMessage",
