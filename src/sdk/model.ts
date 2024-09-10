@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Model extends ClientSDK {
-    /**
-     * List all models
-     */
-    async listGenaiModels(
-        request: operations.ListGenaiModelsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.GenaiModel>> {
-        return unwrapAsync(modelListGenaiModels(this, request, options));
-    }
+  /**
+   * List all models
+   */
+  async listGenaiModels(
+    request: operations.ListGenaiModelsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.GenaiModel>> {
+    return unwrapAsync(modelListGenaiModels(
+      this,
+      request,
+      options,
+    ));
+  }
 }

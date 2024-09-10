@@ -6,7 +6,7 @@
 import { GetUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetUnifiedWebhookRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

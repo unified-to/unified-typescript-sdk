@@ -23,153 +23,213 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Company extends ClientSDK {
-    /**
-     * Create a company
-     */
-    async createCrmCompany(
-        request: operations.CreateCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(companyCreateCrmCompany(this, request, options));
-    }
+  /**
+   * Create a company
+   */
+  async createCrmCompany(
+    request: operations.CreateCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(companyCreateCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a company
-     */
-    async createHrisCompany(
-        request: operations.CreateHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(companyCreateHrisCompany(this, request, options));
-    }
+  /**
+   * Create a company
+   */
+  async createHrisCompany(
+    request: operations.CreateHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(companyCreateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a company
-     */
-    async getAtsCompany(
-        request: operations.GetAtsCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsCompany> {
-        return unwrapAsync(companyGetAtsCompany(this, request, options));
-    }
+  /**
+   * Retrieve a company
+   */
+  async getAtsCompany(
+    request: operations.GetAtsCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCompany> {
+    return unwrapAsync(companyGetAtsCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a company
-     */
-    async getCrmCompany(
-        request: operations.GetCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(companyGetCrmCompany(this, request, options));
-    }
+  /**
+   * Retrieve a company
+   */
+  async getCrmCompany(
+    request: operations.GetCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(companyGetCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a company
-     */
-    async getHrisCompany(
-        request: operations.GetHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(companyGetHrisCompany(this, request, options));
-    }
+  /**
+   * Retrieve a company
+   */
+  async getHrisCompany(
+    request: operations.GetHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(companyGetHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all companies
-     */
-    async listAtsCompanies(
-        request: operations.ListAtsCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsCompany>> {
-        return unwrapAsync(companyListAtsCompanies(this, request, options));
-    }
+  /**
+   * List all companies
+   */
+  async listAtsCompanies(
+    request: operations.ListAtsCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsCompany>> {
+    return unwrapAsync(companyListAtsCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all companies
-     */
-    async listCrmCompanies(
-        request: operations.ListCrmCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmCompany>> {
-        return unwrapAsync(companyListCrmCompanies(this, request, options));
-    }
+  /**
+   * List all companies
+   */
+  async listCrmCompanies(
+    request: operations.ListCrmCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmCompany>> {
+    return unwrapAsync(companyListCrmCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve enrichment information for a company
-     */
-    async listEnrichCompanies(
-        request: operations.ListEnrichCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<shared.EnrichCompany> {
-        return unwrapAsync(companyListEnrichCompanies(this, request, options));
-    }
+  /**
+   * Retrieve enrichment information for a company
+   */
+  async listEnrichCompanies(
+    request: operations.ListEnrichCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<shared.EnrichCompany> {
+    return unwrapAsync(companyListEnrichCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all companies
-     */
-    async listHrisCompanies(
-        request: operations.ListHrisCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisCompany>> {
-        return unwrapAsync(companyListHrisCompanies(this, request, options));
-    }
+  /**
+   * List all companies
+   */
+  async listHrisCompanies(
+    request: operations.ListHrisCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisCompany>> {
+    return unwrapAsync(companyListHrisCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async patchCrmCompany(
-        request: operations.PatchCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(companyPatchCrmCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async patchCrmCompany(
+    request: operations.PatchCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(companyPatchCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async patchHrisCompany(
-        request: operations.PatchHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(companyPatchHrisCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async patchHrisCompany(
+    request: operations.PatchHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(companyPatchHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a company
-     */
-    async removeCrmCompany(
-        request: operations.RemoveCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(companyRemoveCrmCompany(this, request, options));
-    }
+  /**
+   * Remove a company
+   */
+  async removeCrmCompany(
+    request: operations.RemoveCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(companyRemoveCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a company
-     */
-    async removeHrisCompany(
-        request: operations.RemoveHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(companyRemoveHrisCompany(this, request, options));
-    }
+  /**
+   * Remove a company
+   */
+  async removeHrisCompany(
+    request: operations.RemoveHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(companyRemoveHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async updateCrmCompany(
-        request: operations.UpdateCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(companyUpdateCrmCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async updateCrmCompany(
+    request: operations.UpdateCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(companyUpdateCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async updateHrisCompany(
-        request: operations.UpdateHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(companyUpdateHrisCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async updateHrisCompany(
+    request: operations.UpdateHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(companyUpdateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 }

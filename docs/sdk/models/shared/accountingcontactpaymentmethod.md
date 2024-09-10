@@ -6,7 +6,7 @@
 import { AccountingContactPaymentMethod } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AccountingContactPaymentMethod = {
-    type: "PAYPAL",
+  type: "PAYPAL",
 };
 ```
 

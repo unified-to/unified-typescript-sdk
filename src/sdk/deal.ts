@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Deal extends ClientSDK {
-    /**
-     * Create a deal
-     */
-    async createCrmDeal(
-        request: operations.CreateCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(dealCreateCrmDeal(this, request, options));
-    }
+  /**
+   * Create a deal
+   */
+  async createCrmDeal(
+    request: operations.CreateCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(dealCreateCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a deal
-     */
-    async getCrmDeal(
-        request: operations.GetCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(dealGetCrmDeal(this, request, options));
-    }
+  /**
+   * Retrieve a deal
+   */
+  async getCrmDeal(
+    request: operations.GetCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(dealGetCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all deals
-     */
-    async listCrmDeals(
-        request: operations.ListCrmDealsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmDeal>> {
-        return unwrapAsync(dealListCrmDeals(this, request, options));
-    }
+  /**
+   * List all deals
+   */
+  async listCrmDeals(
+    request: operations.ListCrmDealsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmDeal>> {
+    return unwrapAsync(dealListCrmDeals(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a deal
-     */
-    async patchCrmDeal(
-        request: operations.PatchCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(dealPatchCrmDeal(this, request, options));
-    }
+  /**
+   * Update a deal
+   */
+  async patchCrmDeal(
+    request: operations.PatchCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(dealPatchCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a deal
-     */
-    async removeCrmDeal(
-        request: operations.RemoveCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(dealRemoveCrmDeal(this, request, options));
-    }
+  /**
+   * Remove a deal
+   */
+  async removeCrmDeal(
+    request: operations.RemoveCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(dealRemoveCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a deal
-     */
-    async updateCrmDeal(
-        request: operations.UpdateCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(dealUpdateCrmDeal(this, request, options));
-    }
+  /**
+   * Update a deal
+   */
+  async updateCrmDeal(
+    request: operations.UpdateCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(dealUpdateCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -6,8 +6,8 @@
 import { PatchMartechMemberRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchMartechMemberRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

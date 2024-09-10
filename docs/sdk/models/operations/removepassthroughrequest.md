@@ -6,8 +6,8 @@
 import { RemovePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemovePassthroughRequest = {
-    connectionId: "<value>",
-    path: "/var/log",
+  connectionId: "<value>",
+  path: "/var/log",
 };
 ```
 

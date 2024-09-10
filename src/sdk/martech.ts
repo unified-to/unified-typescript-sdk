@@ -20,123 +20,171 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Martech extends ClientSDK {
-    /**
-     * Create a list
-     */
-    async createMartechList(
-        request: operations.CreateMartechListRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingList> {
-        return unwrapAsync(martechCreateMartechList(this, request, options));
-    }
+  /**
+   * Create a list
+   */
+  async createMartechList(
+    request: operations.CreateMartechListRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingList> {
+    return unwrapAsync(martechCreateMartechList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a member
-     */
-    async createMartechMember(
-        request: operations.CreateMartechMemberRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingMember> {
-        return unwrapAsync(martechCreateMartechMember(this, request, options));
-    }
+  /**
+   * Create a member
+   */
+  async createMartechMember(
+    request: operations.CreateMartechMemberRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingMember> {
+    return unwrapAsync(martechCreateMartechMember(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a list
-     */
-    async getMartechList(
-        request: operations.GetMartechListRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingList> {
-        return unwrapAsync(martechGetMartechList(this, request, options));
-    }
+  /**
+   * Retrieve a list
+   */
+  async getMartechList(
+    request: operations.GetMartechListRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingList> {
+    return unwrapAsync(martechGetMartechList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a member
-     */
-    async getMartechMember(
-        request: operations.GetMartechMemberRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingMember> {
-        return unwrapAsync(martechGetMartechMember(this, request, options));
-    }
+  /**
+   * Retrieve a member
+   */
+  async getMartechMember(
+    request: operations.GetMartechMemberRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingMember> {
+    return unwrapAsync(martechGetMartechMember(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all lists
-     */
-    async listMartechLists(
-        request: operations.ListMartechListsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.MarketingList>> {
-        return unwrapAsync(martechListMartechLists(this, request, options));
-    }
+  /**
+   * List all lists
+   */
+  async listMartechLists(
+    request: operations.ListMartechListsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.MarketingList>> {
+    return unwrapAsync(martechListMartechLists(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all members
-     */
-    async listMartechMembers(
-        request: operations.ListMartechMembersRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.MarketingMember>> {
-        return unwrapAsync(martechListMartechMembers(this, request, options));
-    }
+  /**
+   * List all members
+   */
+  async listMartechMembers(
+    request: operations.ListMartechMembersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.MarketingMember>> {
+    return unwrapAsync(martechListMartechMembers(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a list
-     */
-    async patchMartechList(
-        request: operations.PatchMartechListRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingList> {
-        return unwrapAsync(martechPatchMartechList(this, request, options));
-    }
+  /**
+   * Update a list
+   */
+  async patchMartechList(
+    request: operations.PatchMartechListRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingList> {
+    return unwrapAsync(martechPatchMartechList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a member
-     */
-    async patchMartechMember(
-        request: operations.PatchMartechMemberRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingMember> {
-        return unwrapAsync(martechPatchMartechMember(this, request, options));
-    }
+  /**
+   * Update a member
+   */
+  async patchMartechMember(
+    request: operations.PatchMartechMemberRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingMember> {
+    return unwrapAsync(martechPatchMartechMember(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a list
-     */
-    async removeMartechList(
-        request: operations.RemoveMartechListRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(martechRemoveMartechList(this, request, options));
-    }
+  /**
+   * Remove a list
+   */
+  async removeMartechList(
+    request: operations.RemoveMartechListRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(martechRemoveMartechList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a member
-     */
-    async removeMartechMember(
-        request: operations.RemoveMartechMemberRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(martechRemoveMartechMember(this, request, options));
-    }
+  /**
+   * Remove a member
+   */
+  async removeMartechMember(
+    request: operations.RemoveMartechMemberRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(martechRemoveMartechMember(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a list
-     */
-    async updateMartechList(
-        request: operations.UpdateMartechListRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingList> {
-        return unwrapAsync(martechUpdateMartechList(this, request, options));
-    }
+  /**
+   * Update a list
+   */
+  async updateMartechList(
+    request: operations.UpdateMartechListRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingList> {
+    return unwrapAsync(martechUpdateMartechList(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a member
-     */
-    async updateMartechMember(
-        request: operations.UpdateMartechMemberRequest,
-        options?: RequestOptions
-    ): Promise<shared.MarketingMember> {
-        return unwrapAsync(martechUpdateMartechMember(this, request, options));
-    }
+  /**
+   * Update a member
+   */
+  async updateMartechMember(
+    request: operations.UpdateMartechMemberRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MarketingMember> {
+    return unwrapAsync(martechUpdateMartechMember(
+      this,
+      request,
+      options,
+    ));
+  }
 }

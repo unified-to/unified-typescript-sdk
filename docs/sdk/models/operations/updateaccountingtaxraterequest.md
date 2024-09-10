@@ -6,8 +6,8 @@
 import { UpdateAccountingTaxrateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAccountingTaxrateRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

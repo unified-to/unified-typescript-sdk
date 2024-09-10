@@ -6,7 +6,7 @@
 import { RemoveUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveUnifiedConnectionRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

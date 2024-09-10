@@ -6,7 +6,7 @@
 import { ListCrmContactsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListCrmContactsRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

@@ -36,283 +36,395 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Hris extends ClientSDK {
-    /**
-     * Create a company
-     */
-    async createHrisCompany(
-        request: operations.CreateHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(hrisCreateHrisCompany(this, request, options));
-    }
+  /**
+   * Create a company
+   */
+  async createHrisCompany(
+    request: operations.CreateHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(hrisCreateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create an employee
-     */
-    async createHrisEmployee(
-        request: operations.CreateHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(hrisCreateHrisEmployee(this, request, options));
-    }
+  /**
+   * Create an employee
+   */
+  async createHrisEmployee(
+    request: operations.CreateHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(hrisCreateHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a group
-     */
-    async createHrisGroup(
-        request: operations.CreateHrisGroupRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisGroup> {
-        return unwrapAsync(hrisCreateHrisGroup(this, request, options));
-    }
+  /**
+   * Create a group
+   */
+  async createHrisGroup(
+    request: operations.CreateHrisGroupRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisGroup> {
+    return unwrapAsync(hrisCreateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a location
-     */
-    async createHrisLocation(
-        request: operations.CreateHrisLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisLocation> {
-        return unwrapAsync(hrisCreateHrisLocation(this, request, options));
-    }
+  /**
+   * Create a location
+   */
+  async createHrisLocation(
+    request: operations.CreateHrisLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisLocation> {
+    return unwrapAsync(hrisCreateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a company
-     */
-    async getHrisCompany(
-        request: operations.GetHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(hrisGetHrisCompany(this, request, options));
-    }
+  /**
+   * Retrieve a company
+   */
+  async getHrisCompany(
+    request: operations.GetHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(hrisGetHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an employee
-     */
-    async getHrisEmployee(
-        request: operations.GetHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(hrisGetHrisEmployee(this, request, options));
-    }
+  /**
+   * Retrieve an employee
+   */
+  async getHrisEmployee(
+    request: operations.GetHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(hrisGetHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a group
-     */
-    async getHrisGroup(
-        request: operations.GetHrisGroupRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisGroup> {
-        return unwrapAsync(hrisGetHrisGroup(this, request, options));
-    }
+  /**
+   * Retrieve a group
+   */
+  async getHrisGroup(
+    request: operations.GetHrisGroupRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisGroup> {
+    return unwrapAsync(hrisGetHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a location
-     */
-    async getHrisLocation(
-        request: operations.GetHrisLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisLocation> {
-        return unwrapAsync(hrisGetHrisLocation(this, request, options));
-    }
+  /**
+   * Retrieve a location
+   */
+  async getHrisLocation(
+    request: operations.GetHrisLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisLocation> {
+    return unwrapAsync(hrisGetHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a payslip
-     */
-    async getHrisPayslip(
-        request: operations.GetHrisPayslipRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisPayslip> {
-        return unwrapAsync(hrisGetHrisPayslip(this, request, options));
-    }
+  /**
+   * Retrieve a payslip
+   */
+  async getHrisPayslip(
+    request: operations.GetHrisPayslipRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisPayslip> {
+    return unwrapAsync(hrisGetHrisPayslip(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a timeoff
-     */
-    async getHrisTimeoff(
-        request: operations.GetHrisTimeoffRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisTimeoff> {
-        return unwrapAsync(hrisGetHrisTimeoff(this, request, options));
-    }
+  /**
+   * Retrieve a timeoff
+   */
+  async getHrisTimeoff(
+    request: operations.GetHrisTimeoffRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeoff> {
+    return unwrapAsync(hrisGetHrisTimeoff(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all companies
-     */
-    async listHrisCompanies(
-        request: operations.ListHrisCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisCompany>> {
-        return unwrapAsync(hrisListHrisCompanies(this, request, options));
-    }
+  /**
+   * List all companies
+   */
+  async listHrisCompanies(
+    request: operations.ListHrisCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisCompany>> {
+    return unwrapAsync(hrisListHrisCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all employees
-     */
-    async listHrisEmployees(
-        request: operations.ListHrisEmployeesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisEmployee>> {
-        return unwrapAsync(hrisListHrisEmployees(this, request, options));
-    }
+  /**
+   * List all employees
+   */
+  async listHrisEmployees(
+    request: operations.ListHrisEmployeesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisEmployee>> {
+    return unwrapAsync(hrisListHrisEmployees(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all groups
-     */
-    async listHrisGroups(
-        request: operations.ListHrisGroupsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisGroup>> {
-        return unwrapAsync(hrisListHrisGroups(this, request, options));
-    }
+  /**
+   * List all groups
+   */
+  async listHrisGroups(
+    request: operations.ListHrisGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisGroup>> {
+    return unwrapAsync(hrisListHrisGroups(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all locations
-     */
-    async listHrisLocations(
-        request: operations.ListHrisLocationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisLocation>> {
-        return unwrapAsync(hrisListHrisLocations(this, request, options));
-    }
+  /**
+   * List all locations
+   */
+  async listHrisLocations(
+    request: operations.ListHrisLocationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisLocation>> {
+    return unwrapAsync(hrisListHrisLocations(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all payslips
-     */
-    async listHrisPayslips(
-        request: operations.ListHrisPayslipsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisPayslip>> {
-        return unwrapAsync(hrisListHrisPayslips(this, request, options));
-    }
+  /**
+   * List all payslips
+   */
+  async listHrisPayslips(
+    request: operations.ListHrisPayslipsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisPayslip>> {
+    return unwrapAsync(hrisListHrisPayslips(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all timeoffs
-     */
-    async listHrisTimeoffs(
-        request: operations.ListHrisTimeoffsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisTimeoff>> {
-        return unwrapAsync(hrisListHrisTimeoffs(this, request, options));
-    }
+  /**
+   * List all timeoffs
+   */
+  async listHrisTimeoffs(
+    request: operations.ListHrisTimeoffsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisTimeoff>> {
+    return unwrapAsync(hrisListHrisTimeoffs(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async patchHrisCompany(
-        request: operations.PatchHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(hrisPatchHrisCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async patchHrisCompany(
+    request: operations.PatchHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(hrisPatchHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an employee
-     */
-    async patchHrisEmployee(
-        request: operations.PatchHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(hrisPatchHrisEmployee(this, request, options));
-    }
+  /**
+   * Update an employee
+   */
+  async patchHrisEmployee(
+    request: operations.PatchHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(hrisPatchHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a group
-     */
-    async patchHrisGroup(
-        request: operations.PatchHrisGroupRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisGroup> {
-        return unwrapAsync(hrisPatchHrisGroup(this, request, options));
-    }
+  /**
+   * Update a group
+   */
+  async patchHrisGroup(
+    request: operations.PatchHrisGroupRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisGroup> {
+    return unwrapAsync(hrisPatchHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a location
-     */
-    async patchHrisLocation(
-        request: operations.PatchHrisLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisLocation> {
-        return unwrapAsync(hrisPatchHrisLocation(this, request, options));
-    }
+  /**
+   * Update a location
+   */
+  async patchHrisLocation(
+    request: operations.PatchHrisLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisLocation> {
+    return unwrapAsync(hrisPatchHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a company
-     */
-    async removeHrisCompany(
-        request: operations.RemoveHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(hrisRemoveHrisCompany(this, request, options));
-    }
+  /**
+   * Remove a company
+   */
+  async removeHrisCompany(
+    request: operations.RemoveHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(hrisRemoveHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an employee
-     */
-    async removeHrisEmployee(
-        request: operations.RemoveHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(hrisRemoveHrisEmployee(this, request, options));
-    }
+  /**
+   * Remove an employee
+   */
+  async removeHrisEmployee(
+    request: operations.RemoveHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(hrisRemoveHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a group
-     */
-    async removeHrisGroup(
-        request: operations.RemoveHrisGroupRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(hrisRemoveHrisGroup(this, request, options));
-    }
+  /**
+   * Remove a group
+   */
+  async removeHrisGroup(
+    request: operations.RemoveHrisGroupRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(hrisRemoveHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a location
-     */
-    async removeHrisLocation(
-        request: operations.RemoveHrisLocationRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(hrisRemoveHrisLocation(this, request, options));
-    }
+  /**
+   * Remove a location
+   */
+  async removeHrisLocation(
+    request: operations.RemoveHrisLocationRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(hrisRemoveHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async updateHrisCompany(
-        request: operations.UpdateHrisCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisCompany> {
-        return unwrapAsync(hrisUpdateHrisCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async updateHrisCompany(
+    request: operations.UpdateHrisCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisCompany> {
+    return unwrapAsync(hrisUpdateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an employee
-     */
-    async updateHrisEmployee(
-        request: operations.UpdateHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(hrisUpdateHrisEmployee(this, request, options));
-    }
+  /**
+   * Update an employee
+   */
+  async updateHrisEmployee(
+    request: operations.UpdateHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(hrisUpdateHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a group
-     */
-    async updateHrisGroup(
-        request: operations.UpdateHrisGroupRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisGroup> {
-        return unwrapAsync(hrisUpdateHrisGroup(this, request, options));
-    }
+  /**
+   * Update a group
+   */
+  async updateHrisGroup(
+    request: operations.UpdateHrisGroupRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisGroup> {
+    return unwrapAsync(hrisUpdateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a location
-     */
-    async updateHrisLocation(
-        request: operations.UpdateHrisLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisLocation> {
-        return unwrapAsync(hrisUpdateHrisLocation(this, request, options));
-    }
+  /**
+   * Update a location
+   */
+  async updateHrisLocation(
+    request: operations.UpdateHrisLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisLocation> {
+    return unwrapAsync(hrisUpdateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 }

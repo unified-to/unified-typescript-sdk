@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Page extends ClientSDK {
-    /**
-     * Create a page
-     */
-    async createKmsPage(
-        request: operations.CreateKmsPageRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsPage> {
-        return unwrapAsync(pageCreateKmsPage(this, request, options));
-    }
+  /**
+   * Create a page
+   */
+  async createKmsPage(
+    request: operations.CreateKmsPageRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsPage> {
+    return unwrapAsync(pageCreateKmsPage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a page
-     */
-    async getKmsPage(
-        request: operations.GetKmsPageRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsPage> {
-        return unwrapAsync(pageGetKmsPage(this, request, options));
-    }
+  /**
+   * Retrieve a page
+   */
+  async getKmsPage(
+    request: operations.GetKmsPageRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsPage> {
+    return unwrapAsync(pageGetKmsPage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all pages
-     */
-    async listKmsPages(
-        request: operations.ListKmsPagesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.KmsPage>> {
-        return unwrapAsync(pageListKmsPages(this, request, options));
-    }
+  /**
+   * List all pages
+   */
+  async listKmsPages(
+    request: operations.ListKmsPagesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.KmsPage>> {
+    return unwrapAsync(pageListKmsPages(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a page
-     */
-    async patchKmsPage(
-        request: operations.PatchKmsPageRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsPage> {
-        return unwrapAsync(pagePatchKmsPage(this, request, options));
-    }
+  /**
+   * Update a page
+   */
+  async patchKmsPage(
+    request: operations.PatchKmsPageRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsPage> {
+    return unwrapAsync(pagePatchKmsPage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a page
-     */
-    async removeKmsPage(
-        request: operations.RemoveKmsPageRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(pageRemoveKmsPage(this, request, options));
-    }
+  /**
+   * Remove a page
+   */
+  async removeKmsPage(
+    request: operations.RemoveKmsPageRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(pageRemoveKmsPage(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a page
-     */
-    async updateKmsPage(
-        request: operations.UpdateKmsPageRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsPage> {
-        return unwrapAsync(pageUpdateKmsPage(this, request, options));
-    }
+  /**
+   * Update a page
+   */
+  async updateKmsPage(
+    request: operations.UpdateKmsPageRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsPage> {
+    return unwrapAsync(pageUpdateKmsPage(
+      this,
+      request,
+      options,
+    ));
+  }
 }

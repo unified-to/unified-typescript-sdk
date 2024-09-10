@@ -46,383 +46,535 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Accounting extends ClientSDK {
-    /**
-     * Create an account
-     */
-    async createAccountingAccount(
-        request: operations.CreateAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountingCreateAccountingAccount(this, request, options));
-    }
+  /**
+   * Create an account
+   */
+  async createAccountingAccount(
+    request: operations.CreateAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountingCreateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a contact
-     */
-    async createAccountingContact(
-        request: operations.CreateAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(accountingCreateAccountingContact(this, request, options));
-    }
+  /**
+   * Create a contact
+   */
+  async createAccountingContact(
+    request: operations.CreateAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(accountingCreateAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create an invoice
-     */
-    async createAccountingInvoice(
-        request: operations.CreateAccountingInvoiceRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingInvoice> {
-        return unwrapAsync(accountingCreateAccountingInvoice(this, request, options));
-    }
+  /**
+   * Create an invoice
+   */
+  async createAccountingInvoice(
+    request: operations.CreateAccountingInvoiceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingInvoice> {
+    return unwrapAsync(accountingCreateAccountingInvoice(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a journal
-     */
-    async createAccountingJournal(
-        request: operations.CreateAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(accountingCreateAccountingJournal(this, request, options));
-    }
+  /**
+   * Create a journal
+   */
+  async createAccountingJournal(
+    request: operations.CreateAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(accountingCreateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a taxrate
-     */
-    async createAccountingTaxrate(
-        request: operations.CreateAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(accountingCreateAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Create a taxrate
+   */
+  async createAccountingTaxrate(
+    request: operations.CreateAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(accountingCreateAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a transaction
-     */
-    async createAccountingTransaction(
-        request: operations.CreateAccountingTransactionRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTransaction> {
-        return unwrapAsync(accountingCreateAccountingTransaction(this, request, options));
-    }
+  /**
+   * Create a transaction
+   */
+  async createAccountingTransaction(
+    request: operations.CreateAccountingTransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTransaction> {
+    return unwrapAsync(accountingCreateAccountingTransaction(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an account
-     */
-    async getAccountingAccount(
-        request: operations.GetAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountingGetAccountingAccount(this, request, options));
-    }
+  /**
+   * Retrieve an account
+   */
+  async getAccountingAccount(
+    request: operations.GetAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountingGetAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a contact
-     */
-    async getAccountingContact(
-        request: operations.GetAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(accountingGetAccountingContact(this, request, options));
-    }
+  /**
+   * Retrieve a contact
+   */
+  async getAccountingContact(
+    request: operations.GetAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(accountingGetAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an invoice
-     */
-    async getAccountingInvoice(
-        request: operations.GetAccountingInvoiceRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingInvoice> {
-        return unwrapAsync(accountingGetAccountingInvoice(this, request, options));
-    }
+  /**
+   * Retrieve an invoice
+   */
+  async getAccountingInvoice(
+    request: operations.GetAccountingInvoiceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingInvoice> {
+    return unwrapAsync(accountingGetAccountingInvoice(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a journal
-     */
-    async getAccountingJournal(
-        request: operations.GetAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(accountingGetAccountingJournal(this, request, options));
-    }
+  /**
+   * Retrieve a journal
+   */
+  async getAccountingJournal(
+    request: operations.GetAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(accountingGetAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an organization
-     */
-    async getAccountingOrganization(
-        request: operations.GetAccountingOrganizationRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingOrganization> {
-        return unwrapAsync(accountingGetAccountingOrganization(this, request, options));
-    }
+  /**
+   * Retrieve an organization
+   */
+  async getAccountingOrganization(
+    request: operations.GetAccountingOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrganization> {
+    return unwrapAsync(accountingGetAccountingOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a taxrate
-     */
-    async getAccountingTaxrate(
-        request: operations.GetAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(accountingGetAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Retrieve a taxrate
+   */
+  async getAccountingTaxrate(
+    request: operations.GetAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(accountingGetAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a transaction
-     */
-    async getAccountingTransaction(
-        request: operations.GetAccountingTransactionRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTransaction> {
-        return unwrapAsync(accountingGetAccountingTransaction(this, request, options));
-    }
+  /**
+   * Retrieve a transaction
+   */
+  async getAccountingTransaction(
+    request: operations.GetAccountingTransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTransaction> {
+    return unwrapAsync(accountingGetAccountingTransaction(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all accounts
-     */
-    async listAccountingAccounts(
-        request: operations.ListAccountingAccountsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingAccount>> {
-        return unwrapAsync(accountingListAccountingAccounts(this, request, options));
-    }
+  /**
+   * List all accounts
+   */
+  async listAccountingAccounts(
+    request: operations.ListAccountingAccountsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingAccount>> {
+    return unwrapAsync(accountingListAccountingAccounts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all contacts
-     */
-    async listAccountingContacts(
-        request: operations.ListAccountingContactsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingContact>> {
-        return unwrapAsync(accountingListAccountingContacts(this, request, options));
-    }
+  /**
+   * List all contacts
+   */
+  async listAccountingContacts(
+    request: operations.ListAccountingContactsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingContact>> {
+    return unwrapAsync(accountingListAccountingContacts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all invoices
-     */
-    async listAccountingInvoices(
-        request: operations.ListAccountingInvoicesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingInvoice>> {
-        return unwrapAsync(accountingListAccountingInvoices(this, request, options));
-    }
+  /**
+   * List all invoices
+   */
+  async listAccountingInvoices(
+    request: operations.ListAccountingInvoicesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingInvoice>> {
+    return unwrapAsync(accountingListAccountingInvoices(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all journals
-     */
-    async listAccountingJournals(
-        request: operations.ListAccountingJournalsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingJournal>> {
-        return unwrapAsync(accountingListAccountingJournals(this, request, options));
-    }
+  /**
+   * List all journals
+   */
+  async listAccountingJournals(
+    request: operations.ListAccountingJournalsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingJournal>> {
+    return unwrapAsync(accountingListAccountingJournals(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all organizations
-     */
-    async listAccountingOrganizations(
-        request: operations.ListAccountingOrganizationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingOrganization>> {
-        return unwrapAsync(accountingListAccountingOrganizations(this, request, options));
-    }
+  /**
+   * List all organizations
+   */
+  async listAccountingOrganizations(
+    request: operations.ListAccountingOrganizationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingOrganization>> {
+    return unwrapAsync(accountingListAccountingOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all taxrates
-     */
-    async listAccountingTaxrates(
-        request: operations.ListAccountingTaxratesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingTaxrate>> {
-        return unwrapAsync(accountingListAccountingTaxrates(this, request, options));
-    }
+  /**
+   * List all taxrates
+   */
+  async listAccountingTaxrates(
+    request: operations.ListAccountingTaxratesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingTaxrate>> {
+    return unwrapAsync(accountingListAccountingTaxrates(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all transactions
-     */
-    async listAccountingTransactions(
-        request: operations.ListAccountingTransactionsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingTransaction>> {
-        return unwrapAsync(accountingListAccountingTransactions(this, request, options));
-    }
+  /**
+   * List all transactions
+   */
+  async listAccountingTransactions(
+    request: operations.ListAccountingTransactionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingTransaction>> {
+    return unwrapAsync(accountingListAccountingTransactions(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an account
-     */
-    async patchAccountingAccount(
-        request: operations.PatchAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountingPatchAccountingAccount(this, request, options));
-    }
+  /**
+   * Update an account
+   */
+  async patchAccountingAccount(
+    request: operations.PatchAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountingPatchAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async patchAccountingContact(
-        request: operations.PatchAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(accountingPatchAccountingContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async patchAccountingContact(
+    request: operations.PatchAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(accountingPatchAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an invoice
-     */
-    async patchAccountingInvoice(
-        request: operations.PatchAccountingInvoiceRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingInvoice> {
-        return unwrapAsync(accountingPatchAccountingInvoice(this, request, options));
-    }
+  /**
+   * Update an invoice
+   */
+  async patchAccountingInvoice(
+    request: operations.PatchAccountingInvoiceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingInvoice> {
+    return unwrapAsync(accountingPatchAccountingInvoice(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a journal
-     */
-    async patchAccountingJournal(
-        request: operations.PatchAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(accountingPatchAccountingJournal(this, request, options));
-    }
+  /**
+   * Update a journal
+   */
+  async patchAccountingJournal(
+    request: operations.PatchAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(accountingPatchAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a taxrate
-     */
-    async patchAccountingTaxrate(
-        request: operations.PatchAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(accountingPatchAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Update a taxrate
+   */
+  async patchAccountingTaxrate(
+    request: operations.PatchAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(accountingPatchAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a transaction
-     */
-    async patchAccountingTransaction(
-        request: operations.PatchAccountingTransactionRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTransaction> {
-        return unwrapAsync(accountingPatchAccountingTransaction(this, request, options));
-    }
+  /**
+   * Update a transaction
+   */
+  async patchAccountingTransaction(
+    request: operations.PatchAccountingTransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTransaction> {
+    return unwrapAsync(accountingPatchAccountingTransaction(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an account
-     */
-    async removeAccountingAccount(
-        request: operations.RemoveAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingAccount(this, request, options));
-    }
+  /**
+   * Remove an account
+   */
+  async removeAccountingAccount(
+    request: operations.RemoveAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a contact
-     */
-    async removeAccountingContact(
-        request: operations.RemoveAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingContact(this, request, options));
-    }
+  /**
+   * Remove a contact
+   */
+  async removeAccountingContact(
+    request: operations.RemoveAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an invoice
-     */
-    async removeAccountingInvoice(
-        request: operations.RemoveAccountingInvoiceRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingInvoice(this, request, options));
-    }
+  /**
+   * Remove an invoice
+   */
+  async removeAccountingInvoice(
+    request: operations.RemoveAccountingInvoiceRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingInvoice(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a journal
-     */
-    async removeAccountingJournal(
-        request: operations.RemoveAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingJournal(this, request, options));
-    }
+  /**
+   * Remove a journal
+   */
+  async removeAccountingJournal(
+    request: operations.RemoveAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a taxrate
-     */
-    async removeAccountingTaxrate(
-        request: operations.RemoveAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Remove a taxrate
+   */
+  async removeAccountingTaxrate(
+    request: operations.RemoveAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a transaction
-     */
-    async removeAccountingTransaction(
-        request: operations.RemoveAccountingTransactionRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountingRemoveAccountingTransaction(this, request, options));
-    }
+  /**
+   * Remove a transaction
+   */
+  async removeAccountingTransaction(
+    request: operations.RemoveAccountingTransactionRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingTransaction(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an account
-     */
-    async updateAccountingAccount(
-        request: operations.UpdateAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountingUpdateAccountingAccount(this, request, options));
-    }
+  /**
+   * Update an account
+   */
+  async updateAccountingAccount(
+    request: operations.UpdateAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountingUpdateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async updateAccountingContact(
-        request: operations.UpdateAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(accountingUpdateAccountingContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async updateAccountingContact(
+    request: operations.UpdateAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(accountingUpdateAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an invoice
-     */
-    async updateAccountingInvoice(
-        request: operations.UpdateAccountingInvoiceRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingInvoice> {
-        return unwrapAsync(accountingUpdateAccountingInvoice(this, request, options));
-    }
+  /**
+   * Update an invoice
+   */
+  async updateAccountingInvoice(
+    request: operations.UpdateAccountingInvoiceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingInvoice> {
+    return unwrapAsync(accountingUpdateAccountingInvoice(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a journal
-     */
-    async updateAccountingJournal(
-        request: operations.UpdateAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(accountingUpdateAccountingJournal(this, request, options));
-    }
+  /**
+   * Update a journal
+   */
+  async updateAccountingJournal(
+    request: operations.UpdateAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(accountingUpdateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a taxrate
-     */
-    async updateAccountingTaxrate(
-        request: operations.UpdateAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(accountingUpdateAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Update a taxrate
+   */
+  async updateAccountingTaxrate(
+    request: operations.UpdateAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(accountingUpdateAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a transaction
-     */
-    async updateAccountingTransaction(
-        request: operations.UpdateAccountingTransactionRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTransaction> {
-        return unwrapAsync(accountingUpdateAccountingTransaction(this, request, options));
-    }
+  /**
+   * Update a transaction
+   */
+  async updateAccountingTransaction(
+    request: operations.UpdateAccountingTransactionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTransaction> {
+    return unwrapAsync(accountingUpdateAccountingTransaction(
+      this,
+      request,
+      options,
+    ));
+  }
 }

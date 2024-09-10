@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Channel extends ClientSDK {
-    /**
-     * Retrieve a channel
-     */
-    async getMessagingChannel(
-        request: operations.GetMessagingChannelRequest,
-        options?: RequestOptions
-    ): Promise<shared.MessagingChannel> {
-        return unwrapAsync(channelGetMessagingChannel(this, request, options));
-    }
+  /**
+   * Retrieve a channel
+   */
+  async getMessagingChannel(
+    request: operations.GetMessagingChannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingChannel> {
+    return unwrapAsync(channelGetMessagingChannel(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all channels
-     */
-    async listMessagingChannels(
-        request: operations.ListMessagingChannelsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.MessagingChannel>> {
-        return unwrapAsync(channelListMessagingChannels(this, request, options));
-    }
+  /**
+   * List all channels
+   */
+  async listMessagingChannels(
+    request: operations.ListMessagingChannelsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.MessagingChannel>> {
+    return unwrapAsync(channelListMessagingChannels(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type RemoveUnifiedWebhookRequest = {
-    /**
-     * ID of the Webhook
-     */
-    id: string;
+  /**
+   * ID of the Webhook
+   */
+  id: string;
 };
 
 /** @internal */
 export const RemoveUnifiedWebhookRequest$inboundSchema: z.ZodType<
-    RemoveUnifiedWebhookRequest,
-    z.ZodTypeDef,
-    unknown
+  RemoveUnifiedWebhookRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type RemoveUnifiedWebhookRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const RemoveUnifiedWebhookRequest$outboundSchema: z.ZodType<
-    RemoveUnifiedWebhookRequest$Outbound,
-    z.ZodTypeDef,
-    RemoveUnifiedWebhookRequest
+  RemoveUnifiedWebhookRequest$Outbound,
+  z.ZodTypeDef,
+  RemoveUnifiedWebhookRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const RemoveUnifiedWebhookRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveUnifiedWebhookRequest$ {
-    /** @deprecated use `RemoveUnifiedWebhookRequest$inboundSchema` instead. */
-    export const inboundSchema = RemoveUnifiedWebhookRequest$inboundSchema;
-    /** @deprecated use `RemoveUnifiedWebhookRequest$outboundSchema` instead. */
-    export const outboundSchema = RemoveUnifiedWebhookRequest$outboundSchema;
-    /** @deprecated use `RemoveUnifiedWebhookRequest$Outbound` instead. */
-    export type Outbound = RemoveUnifiedWebhookRequest$Outbound;
+  /** @deprecated use `RemoveUnifiedWebhookRequest$inboundSchema` instead. */
+  export const inboundSchema = RemoveUnifiedWebhookRequest$inboundSchema;
+  /** @deprecated use `RemoveUnifiedWebhookRequest$outboundSchema` instead. */
+  export const outboundSchema = RemoveUnifiedWebhookRequest$outboundSchema;
+  /** @deprecated use `RemoveUnifiedWebhookRequest$Outbound` instead. */
+  export type Outbound = RemoveUnifiedWebhookRequest$Outbound;
 }

@@ -32,243 +32,339 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Commerce extends ClientSDK {
-    /**
-     * Create a collection
-     */
-    async createCommerceCollection(
-        request: operations.CreateCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(commerceCreateCommerceCollection(this, request, options));
-    }
+  /**
+   * Create a collection
+   */
+  async createCommerceCollection(
+    request: operations.CreateCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(commerceCreateCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create an inventory
-     */
-    async createCommerceInventory(
-        request: operations.CreateCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(commerceCreateCommerceInventory(this, request, options));
-    }
+  /**
+   * Create an inventory
+   */
+  async createCommerceInventory(
+    request: operations.CreateCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(commerceCreateCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create an item
-     */
-    async createCommerceItem(
-        request: operations.CreateCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(commerceCreateCommerceItem(this, request, options));
-    }
+  /**
+   * Create an item
+   */
+  async createCommerceItem(
+    request: operations.CreateCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(commerceCreateCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a location
-     */
-    async createCommerceLocation(
-        request: operations.CreateCommerceLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceLocation> {
-        return unwrapAsync(commerceCreateCommerceLocation(this, request, options));
-    }
+  /**
+   * Create a location
+   */
+  async createCommerceLocation(
+    request: operations.CreateCommerceLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceLocation> {
+    return unwrapAsync(commerceCreateCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a collection
-     */
-    async getCommerceCollection(
-        request: operations.GetCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(commerceGetCommerceCollection(this, request, options));
-    }
+  /**
+   * Retrieve a collection
+   */
+  async getCommerceCollection(
+    request: operations.GetCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(commerceGetCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an inventory
-     */
-    async getCommerceInventory(
-        request: operations.GetCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(commerceGetCommerceInventory(this, request, options));
-    }
+  /**
+   * Retrieve an inventory
+   */
+  async getCommerceInventory(
+    request: operations.GetCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(commerceGetCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an item
-     */
-    async getCommerceItem(
-        request: operations.GetCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(commerceGetCommerceItem(this, request, options));
-    }
+  /**
+   * Retrieve an item
+   */
+  async getCommerceItem(
+    request: operations.GetCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(commerceGetCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a location
-     */
-    async getCommerceLocation(
-        request: operations.GetCommerceLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceLocation> {
-        return unwrapAsync(commerceGetCommerceLocation(this, request, options));
-    }
+  /**
+   * Retrieve a location
+   */
+  async getCommerceLocation(
+    request: operations.GetCommerceLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceLocation> {
+    return unwrapAsync(commerceGetCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all collections
-     */
-    async listCommerceCollections(
-        request: operations.ListCommerceCollectionsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceCollection>> {
-        return unwrapAsync(commerceListCommerceCollections(this, request, options));
-    }
+  /**
+   * List all collections
+   */
+  async listCommerceCollections(
+    request: operations.ListCommerceCollectionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceCollection>> {
+    return unwrapAsync(commerceListCommerceCollections(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all inventories
-     */
-    async listCommerceInventories(
-        request: operations.ListCommerceInventoriesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceInventory>> {
-        return unwrapAsync(commerceListCommerceInventories(this, request, options));
-    }
+  /**
+   * List all inventories
+   */
+  async listCommerceInventories(
+    request: operations.ListCommerceInventoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceInventory>> {
+    return unwrapAsync(commerceListCommerceInventories(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all items
-     */
-    async listCommerceItems(
-        request: operations.ListCommerceItemsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceItem>> {
-        return unwrapAsync(commerceListCommerceItems(this, request, options));
-    }
+  /**
+   * List all items
+   */
+  async listCommerceItems(
+    request: operations.ListCommerceItemsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceItem>> {
+    return unwrapAsync(commerceListCommerceItems(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all locations
-     */
-    async listCommerceLocations(
-        request: operations.ListCommerceLocationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceLocation>> {
-        return unwrapAsync(commerceListCommerceLocations(this, request, options));
-    }
+  /**
+   * List all locations
+   */
+  async listCommerceLocations(
+    request: operations.ListCommerceLocationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceLocation>> {
+    return unwrapAsync(commerceListCommerceLocations(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a collection
-     */
-    async patchCommerceCollection(
-        request: operations.PatchCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(commercePatchCommerceCollection(this, request, options));
-    }
+  /**
+   * Update a collection
+   */
+  async patchCommerceCollection(
+    request: operations.PatchCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(commercePatchCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an inventory
-     */
-    async patchCommerceInventory(
-        request: operations.PatchCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(commercePatchCommerceInventory(this, request, options));
-    }
+  /**
+   * Update an inventory
+   */
+  async patchCommerceInventory(
+    request: operations.PatchCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(commercePatchCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an item
-     */
-    async patchCommerceItem(
-        request: operations.PatchCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(commercePatchCommerceItem(this, request, options));
-    }
+  /**
+   * Update an item
+   */
+  async patchCommerceItem(
+    request: operations.PatchCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(commercePatchCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a location
-     */
-    async patchCommerceLocation(
-        request: operations.PatchCommerceLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceLocation> {
-        return unwrapAsync(commercePatchCommerceLocation(this, request, options));
-    }
+  /**
+   * Update a location
+   */
+  async patchCommerceLocation(
+    request: operations.PatchCommerceLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceLocation> {
+    return unwrapAsync(commercePatchCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a collection
-     */
-    async removeCommerceCollection(
-        request: operations.RemoveCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(commerceRemoveCommerceCollection(this, request, options));
-    }
+  /**
+   * Remove a collection
+   */
+  async removeCommerceCollection(
+    request: operations.RemoveCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(commerceRemoveCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an inventory
-     */
-    async removeCommerceInventory(
-        request: operations.RemoveCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(commerceRemoveCommerceInventory(this, request, options));
-    }
+  /**
+   * Remove an inventory
+   */
+  async removeCommerceInventory(
+    request: operations.RemoveCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(commerceRemoveCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an item
-     */
-    async removeCommerceItem(
-        request: operations.RemoveCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(commerceRemoveCommerceItem(this, request, options));
-    }
+  /**
+   * Remove an item
+   */
+  async removeCommerceItem(
+    request: operations.RemoveCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(commerceRemoveCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a location
-     */
-    async removeCommerceLocation(
-        request: operations.RemoveCommerceLocationRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(commerceRemoveCommerceLocation(this, request, options));
-    }
+  /**
+   * Remove a location
+   */
+  async removeCommerceLocation(
+    request: operations.RemoveCommerceLocationRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(commerceRemoveCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a collection
-     */
-    async updateCommerceCollection(
-        request: operations.UpdateCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(commerceUpdateCommerceCollection(this, request, options));
-    }
+  /**
+   * Update a collection
+   */
+  async updateCommerceCollection(
+    request: operations.UpdateCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(commerceUpdateCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an inventory
-     */
-    async updateCommerceInventory(
-        request: operations.UpdateCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(commerceUpdateCommerceInventory(this, request, options));
-    }
+  /**
+   * Update an inventory
+   */
+  async updateCommerceInventory(
+    request: operations.UpdateCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(commerceUpdateCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an item
-     */
-    async updateCommerceItem(
-        request: operations.UpdateCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(commerceUpdateCommerceItem(this, request, options));
-    }
+  /**
+   * Update an item
+   */
+  async updateCommerceItem(
+    request: operations.UpdateCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(commerceUpdateCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a location
-     */
-    async updateCommerceLocation(
-        request: operations.UpdateCommerceLocationRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceLocation> {
-        return unwrapAsync(commerceUpdateCommerceLocation(this, request, options));
-    }
+  /**
+   * Update a location
+   */
+  async updateCommerceLocation(
+    request: operations.UpdateCommerceLocationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceLocation> {
+    return unwrapAsync(commerceUpdateCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
 }

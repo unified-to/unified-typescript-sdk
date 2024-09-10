@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type UpdateUnifiedWebhookTriggerRequest = {
-    /**
-     * ID of the Webhook
-     */
-    id: string;
+  /**
+   * ID of the Webhook
+   */
+  id: string;
 };
 
 /** @internal */
 export const UpdateUnifiedWebhookTriggerRequest$inboundSchema: z.ZodType<
-    UpdateUnifiedWebhookTriggerRequest,
-    z.ZodTypeDef,
-    unknown
+  UpdateUnifiedWebhookTriggerRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type UpdateUnifiedWebhookTriggerRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const UpdateUnifiedWebhookTriggerRequest$outboundSchema: z.ZodType<
-    UpdateUnifiedWebhookTriggerRequest$Outbound,
-    z.ZodTypeDef,
-    UpdateUnifiedWebhookTriggerRequest
+  UpdateUnifiedWebhookTriggerRequest$Outbound,
+  z.ZodTypeDef,
+  UpdateUnifiedWebhookTriggerRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,11 @@ export const UpdateUnifiedWebhookTriggerRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace UpdateUnifiedWebhookTriggerRequest$ {
-    /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$inboundSchema` instead. */
-    export const inboundSchema = UpdateUnifiedWebhookTriggerRequest$inboundSchema;
-    /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$outboundSchema` instead. */
-    export const outboundSchema = UpdateUnifiedWebhookTriggerRequest$outboundSchema;
-    /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$Outbound` instead. */
-    export type Outbound = UpdateUnifiedWebhookTriggerRequest$Outbound;
+  /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$inboundSchema` instead. */
+  export const inboundSchema = UpdateUnifiedWebhookTriggerRequest$inboundSchema;
+  /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$outboundSchema` instead. */
+  export const outboundSchema =
+    UpdateUnifiedWebhookTriggerRequest$outboundSchema;
+  /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$Outbound` instead. */
+  export type Outbound = UpdateUnifiedWebhookTriggerRequest$Outbound;
 }

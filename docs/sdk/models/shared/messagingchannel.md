@@ -6,7 +6,7 @@
 import { MessagingChannel } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: MessagingChannel = {
-    name: "<value>",
+  name: "<value>",
 };
 ```
 

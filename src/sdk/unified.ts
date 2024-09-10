@@ -10,8 +10,8 @@ import { unifiedGetUnifiedIntegrationAuth } from "../funcs/unifiedGetUnifiedInte
 import { unifiedGetUnifiedWebhook } from "../funcs/unifiedGetUnifiedWebhook.js";
 import { unifiedListUnifiedApicalls } from "../funcs/unifiedListUnifiedApicalls.js";
 import { unifiedListUnifiedConnections } from "../funcs/unifiedListUnifiedConnections.js";
-import { unifiedListUnifiedIntegrationWorkspaces } from "../funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 import { unifiedListUnifiedIntegrations } from "../funcs/unifiedListUnifiedIntegrations.js";
+import { unifiedListUnifiedIntegrationWorkspaces } from "../funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 import { unifiedListUnifiedIssues } from "../funcs/unifiedListUnifiedIssues.js";
 import { unifiedListUnifiedWebhooks } from "../funcs/unifiedListUnifiedWebhooks.js";
 import { unifiedPatchUnifiedConnection } from "../funcs/unifiedPatchUnifiedConnection.js";
@@ -28,215 +28,295 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Unified extends ClientSDK {
-    /**
-     * Create connection
-     *
-     * @remarks
-     * Used only to import existing customer credentials; use "Create connection indirectly" instead
-     */
-    async createUnifiedConnection(
-        request?: shared.Connection | undefined,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(unifiedCreateUnifiedConnection(this, request, options));
-    }
+  /**
+   * Create connection
+   *
+   * @remarks
+   * Used only to import existing customer credentials; use "Create connection indirectly" instead
+   */
+  async createUnifiedConnection(
+    request?: shared.Connection | undefined,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(unifiedCreateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create webhook subscription
-     *
-     * @remarks
-     * The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
-     */
-    async createUnifiedWebhook(
-        request: operations.CreateUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(unifiedCreateUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Create webhook subscription
+   *
+   * @remarks
+   * The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
+   */
+  async createUnifiedWebhook(
+    request: operations.CreateUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedCreateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve specific API Call by its ID
-     */
-    async getUnifiedApicall(
-        request: operations.GetUnifiedApicallRequest,
-        options?: RequestOptions
-    ): Promise<shared.ApiCall> {
-        return unwrapAsync(unifiedGetUnifiedApicall(this, request, options));
-    }
+  /**
+   * Retrieve specific API Call by its ID
+   */
+  async getUnifiedApicall(
+    request: operations.GetUnifiedApicallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ApiCall> {
+    return unwrapAsync(unifiedGetUnifiedApicall(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve connection
-     */
-    async getUnifiedConnection(
-        request: operations.GetUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(unifiedGetUnifiedConnection(this, request, options));
-    }
+  /**
+   * Retrieve connection
+   */
+  async getUnifiedConnection(
+    request: operations.GetUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(unifiedGetUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create connection indirectly
-     *
-     * @remarks
-     * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
-     */
-    async getUnifiedIntegrationAuth(
-        request: operations.GetUnifiedIntegrationAuthRequest,
-        options?: RequestOptions
-    ): Promise<string> {
-        return unwrapAsync(unifiedGetUnifiedIntegrationAuth(this, request, options));
-    }
+  /**
+   * Create connection indirectly
+   *
+   * @remarks
+   * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+   */
+  async getUnifiedIntegrationAuth(
+    request: operations.GetUnifiedIntegrationAuthRequest,
+    options?: RequestOptions,
+  ): Promise<string> {
+    return unwrapAsync(unifiedGetUnifiedIntegrationAuth(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve webhook by its ID
-     */
-    async getUnifiedWebhook(
-        request: operations.GetUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(unifiedGetUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Retrieve webhook by its ID
+   */
+  async getUnifiedWebhook(
+    request: operations.GetUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedGetUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns API Calls
-     */
-    async listUnifiedApicalls(
-        request: operations.ListUnifiedApicallsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.ApiCall>> {
-        return unwrapAsync(unifiedListUnifiedApicalls(this, request, options));
-    }
+  /**
+   * Returns API Calls
+   */
+  async listUnifiedApicalls(
+    request: operations.ListUnifiedApicallsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ApiCall>> {
+    return unwrapAsync(unifiedListUnifiedApicalls(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all connections
-     */
-    async listUnifiedConnections(
-        request: operations.ListUnifiedConnectionsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Connection>> {
-        return unwrapAsync(unifiedListUnifiedConnections(this, request, options));
-    }
+  /**
+   * List all connections
+   */
+  async listUnifiedConnections(
+    request: operations.ListUnifiedConnectionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Connection>> {
+    return unwrapAsync(unifiedListUnifiedConnections(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all activated integrations in a workspace
-     *
-     * @remarks
-     * No authentication required as this is to be used by front-end interface
-     */
-    async listUnifiedIntegrationWorkspaces(
-        request: operations.ListUnifiedIntegrationWorkspacesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Integration>> {
-        return unwrapAsync(unifiedListUnifiedIntegrationWorkspaces(this, request, options));
-    }
+  /**
+   * Returns all activated integrations in a workspace
+   *
+   * @remarks
+   * No authentication required as this is to be used by front-end interface
+   */
+  async listUnifiedIntegrationWorkspaces(
+    request: operations.ListUnifiedIntegrationWorkspacesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Integration>> {
+    return unwrapAsync(unifiedListUnifiedIntegrationWorkspaces(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all integrations
-     */
-    async listUnifiedIntegrations(
-        request: operations.ListUnifiedIntegrationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Integration>> {
-        return unwrapAsync(unifiedListUnifiedIntegrations(this, request, options));
-    }
+  /**
+   * Returns all integrations
+   */
+  async listUnifiedIntegrations(
+    request: operations.ListUnifiedIntegrationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Integration>> {
+    return unwrapAsync(unifiedListUnifiedIntegrations(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List support issues
-     */
-    async listUnifiedIssues(
-        request: operations.ListUnifiedIssuesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Issue>> {
-        return unwrapAsync(unifiedListUnifiedIssues(this, request, options));
-    }
+  /**
+   * List support issues
+   */
+  async listUnifiedIssues(
+    request: operations.ListUnifiedIssuesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Issue>> {
+    return unwrapAsync(unifiedListUnifiedIssues(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all registered webhooks
-     */
-    async listUnifiedWebhooks(
-        request: operations.ListUnifiedWebhooksRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Webhook>> {
-        return unwrapAsync(unifiedListUnifiedWebhooks(this, request, options));
-    }
+  /**
+   * Returns all registered webhooks
+   */
+  async listUnifiedWebhooks(
+    request: operations.ListUnifiedWebhooksRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Webhook>> {
+    return unwrapAsync(unifiedListUnifiedWebhooks(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update connection
-     */
-    async patchUnifiedConnection(
-        request: operations.PatchUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(unifiedPatchUnifiedConnection(this, request, options));
-    }
+  /**
+   * Update connection
+   */
+  async patchUnifiedConnection(
+    request: operations.PatchUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(unifiedPatchUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update webhook subscription
-     */
-    async patchUnifiedWebhook(
-        request: operations.PatchUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(unifiedPatchUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Update webhook subscription
+   */
+  async patchUnifiedWebhook(
+    request: operations.PatchUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedPatchUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Trigger webhook
-     */
-    async patchUnifiedWebhookTrigger(
-        request: operations.PatchUnifiedWebhookTriggerRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(unifiedPatchUnifiedWebhookTrigger(this, request, options));
-    }
+  /**
+   * Trigger webhook
+   */
+  async patchUnifiedWebhookTrigger(
+    request: operations.PatchUnifiedWebhookTriggerRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(unifiedPatchUnifiedWebhookTrigger(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove connection
-     */
-    async removeUnifiedConnection(
-        request: operations.RemoveUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(unifiedRemoveUnifiedConnection(this, request, options));
-    }
+  /**
+   * Remove connection
+   */
+  async removeUnifiedConnection(
+    request: operations.RemoveUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(unifiedRemoveUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove webhook subscription
-     */
-    async removeUnifiedWebhook(
-        request: operations.RemoveUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(unifiedRemoveUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Remove webhook subscription
+   */
+  async removeUnifiedWebhook(
+    request: operations.RemoveUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(unifiedRemoveUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update connection
-     */
-    async updateUnifiedConnection(
-        request: operations.UpdateUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(unifiedUpdateUnifiedConnection(this, request, options));
-    }
+  /**
+   * Update connection
+   */
+  async updateUnifiedConnection(
+    request: operations.UpdateUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(unifiedUpdateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update webhook subscription
-     */
-    async updateUnifiedWebhook(
-        request: operations.UpdateUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(unifiedUpdateUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Update webhook subscription
+   */
+  async updateUnifiedWebhook(
+    request: operations.UpdateUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(unifiedUpdateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Trigger webhook
-     */
-    async updateUnifiedWebhookTrigger(
-        request: operations.UpdateUnifiedWebhookTriggerRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(unifiedUpdateUnifiedWebhookTrigger(this, request, options));
-    }
+  /**
+   * Trigger webhook
+   */
+  async updateUnifiedWebhookTrigger(
+    request: operations.UpdateUnifiedWebhookTriggerRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(unifiedUpdateUnifiedWebhookTrigger(
+      this,
+      request,
+      options,
+    ));
+  }
 }

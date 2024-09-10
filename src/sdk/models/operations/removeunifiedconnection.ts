@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type RemoveUnifiedConnectionRequest = {
-    /**
-     * ID of the Connection
-     */
-    id: string;
+  /**
+   * ID of the Connection
+   */
+  id: string;
 };
 
 /** @internal */
 export const RemoveUnifiedConnectionRequest$inboundSchema: z.ZodType<
-    RemoveUnifiedConnectionRequest,
-    z.ZodTypeDef,
-    unknown
+  RemoveUnifiedConnectionRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type RemoveUnifiedConnectionRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const RemoveUnifiedConnectionRequest$outboundSchema: z.ZodType<
-    RemoveUnifiedConnectionRequest$Outbound,
-    z.ZodTypeDef,
-    RemoveUnifiedConnectionRequest
+  RemoveUnifiedConnectionRequest$Outbound,
+  z.ZodTypeDef,
+  RemoveUnifiedConnectionRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const RemoveUnifiedConnectionRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace RemoveUnifiedConnectionRequest$ {
-    /** @deprecated use `RemoveUnifiedConnectionRequest$inboundSchema` instead. */
-    export const inboundSchema = RemoveUnifiedConnectionRequest$inboundSchema;
-    /** @deprecated use `RemoveUnifiedConnectionRequest$outboundSchema` instead. */
-    export const outboundSchema = RemoveUnifiedConnectionRequest$outboundSchema;
-    /** @deprecated use `RemoveUnifiedConnectionRequest$Outbound` instead. */
-    export type Outbound = RemoveUnifiedConnectionRequest$Outbound;
+  /** @deprecated use `RemoveUnifiedConnectionRequest$inboundSchema` instead. */
+  export const inboundSchema = RemoveUnifiedConnectionRequest$inboundSchema;
+  /** @deprecated use `RemoveUnifiedConnectionRequest$outboundSchema` instead. */
+  export const outboundSchema = RemoveUnifiedConnectionRequest$outboundSchema;
+  /** @deprecated use `RemoveUnifiedConnectionRequest$Outbound` instead. */
+  export type Outbound = RemoveUnifiedConnectionRequest$Outbound;
 }

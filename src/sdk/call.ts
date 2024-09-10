@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Call extends ClientSDK {
-    /**
-     * List all calls
-     */
-    async listUcCalls(
-        request: operations.ListUcCallsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.UcCall>> {
-        return unwrapAsync(callListUcCalls(this, request, options));
-    }
+  /**
+   * List all calls
+   */
+  async listUcCalls(
+    request: operations.ListUcCallsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcCall>> {
+    return unwrapAsync(callListUcCalls(
+      this,
+      request,
+      options,
+    ));
+  }
 }

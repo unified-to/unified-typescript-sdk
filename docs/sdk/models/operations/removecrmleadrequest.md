@@ -6,8 +6,8 @@
 import { RemoveCrmLeadRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveCrmLeadRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Document extends ClientSDK {
-    /**
-     * Create a document
-     */
-    async createAtsDocument(
-        request: operations.CreateAtsDocumentRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsDocument> {
-        return unwrapAsync(documentCreateAtsDocument(this, request, options));
-    }
+  /**
+   * Create a document
+   */
+  async createAtsDocument(
+    request: operations.CreateAtsDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsDocument> {
+    return unwrapAsync(documentCreateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a document
-     */
-    async getAtsDocument(
-        request: operations.GetAtsDocumentRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsDocument> {
-        return unwrapAsync(documentGetAtsDocument(this, request, options));
-    }
+  /**
+   * Retrieve a document
+   */
+  async getAtsDocument(
+    request: operations.GetAtsDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsDocument> {
+    return unwrapAsync(documentGetAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all documents
-     */
-    async listAtsDocuments(
-        request: operations.ListAtsDocumentsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsDocument>> {
-        return unwrapAsync(documentListAtsDocuments(this, request, options));
-    }
+  /**
+   * List all documents
+   */
+  async listAtsDocuments(
+    request: operations.ListAtsDocumentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsDocument>> {
+    return unwrapAsync(documentListAtsDocuments(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a document
-     */
-    async patchAtsDocument(
-        request: operations.PatchAtsDocumentRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsDocument> {
-        return unwrapAsync(documentPatchAtsDocument(this, request, options));
-    }
+  /**
+   * Update a document
+   */
+  async patchAtsDocument(
+    request: operations.PatchAtsDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsDocument> {
+    return unwrapAsync(documentPatchAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a document
-     */
-    async removeAtsDocument(
-        request: operations.RemoveAtsDocumentRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(documentRemoveAtsDocument(this, request, options));
-    }
+  /**
+   * Remove a document
+   */
+  async removeAtsDocument(
+    request: operations.RemoveAtsDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(documentRemoveAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a document
-     */
-    async updateAtsDocument(
-        request: operations.UpdateAtsDocumentRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsDocument> {
-        return unwrapAsync(documentUpdateAtsDocument(this, request, options));
-    }
+  /**
+   * Update a document
+   */
+  async updateAtsDocument(
+    request: operations.UpdateAtsDocumentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsDocument> {
+    return unwrapAsync(documentUpdateAtsDocument(
+      this,
+      request,
+      options,
+    ));
+  }
 }

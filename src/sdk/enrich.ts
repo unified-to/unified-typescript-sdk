@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Enrich extends ClientSDK {
-    /**
-     * Retrieve enrichment information for a company
-     */
-    async listEnrichCompanies(
-        request: operations.ListEnrichCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<shared.EnrichCompany> {
-        return unwrapAsync(enrichListEnrichCompanies(this, request, options));
-    }
+  /**
+   * Retrieve enrichment information for a company
+   */
+  async listEnrichCompanies(
+    request: operations.ListEnrichCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<shared.EnrichCompany> {
+    return unwrapAsync(enrichListEnrichCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve enrichment information for a person
-     */
-    async listEnrichPeople(
-        request: operations.ListEnrichPeopleRequest,
-        options?: RequestOptions
-    ): Promise<shared.EnrichPerson> {
-        return unwrapAsync(enrichListEnrichPeople(this, request, options));
-    }
+  /**
+   * Retrieve enrichment information for a person
+   */
+  async listEnrichPeople(
+    request: operations.ListEnrichPeopleRequest,
+    options?: RequestOptions,
+  ): Promise<shared.EnrichPerson> {
+    return unwrapAsync(enrichListEnrichPeople(
+      this,
+      request,
+      options,
+    ));
+  }
 }

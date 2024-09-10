@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Scorecard extends ClientSDK {
-    /**
-     * Create a scorecard
-     */
-    async createAtsScorecard(
-        request: operations.CreateAtsScorecardRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsScorecard> {
-        return unwrapAsync(scorecardCreateAtsScorecard(this, request, options));
-    }
+  /**
+   * Create a scorecard
+   */
+  async createAtsScorecard(
+    request: operations.CreateAtsScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsScorecard> {
+    return unwrapAsync(scorecardCreateAtsScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a scorecard
-     */
-    async getAtsScorecard(
-        request: operations.GetAtsScorecardRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsScorecard> {
-        return unwrapAsync(scorecardGetAtsScorecard(this, request, options));
-    }
+  /**
+   * Retrieve a scorecard
+   */
+  async getAtsScorecard(
+    request: operations.GetAtsScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsScorecard> {
+    return unwrapAsync(scorecardGetAtsScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all scorecards
-     */
-    async listAtsScorecards(
-        request: operations.ListAtsScorecardsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsScorecard>> {
-        return unwrapAsync(scorecardListAtsScorecards(this, request, options));
-    }
+  /**
+   * List all scorecards
+   */
+  async listAtsScorecards(
+    request: operations.ListAtsScorecardsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsScorecard>> {
+    return unwrapAsync(scorecardListAtsScorecards(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a scorecard
-     */
-    async patchAtsScorecard(
-        request: operations.PatchAtsScorecardRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsScorecard> {
-        return unwrapAsync(scorecardPatchAtsScorecard(this, request, options));
-    }
+  /**
+   * Update a scorecard
+   */
+  async patchAtsScorecard(
+    request: operations.PatchAtsScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsScorecard> {
+    return unwrapAsync(scorecardPatchAtsScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a scorecard
-     */
-    async removeAtsScorecard(
-        request: operations.RemoveAtsScorecardRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(scorecardRemoveAtsScorecard(this, request, options));
-    }
+  /**
+   * Remove a scorecard
+   */
+  async removeAtsScorecard(
+    request: operations.RemoveAtsScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(scorecardRemoveAtsScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a scorecard
-     */
-    async updateAtsScorecard(
-        request: operations.UpdateAtsScorecardRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsScorecard> {
-        return unwrapAsync(scorecardUpdateAtsScorecard(this, request, options));
-    }
+  /**
+   * Update a scorecard
+   */
+  async updateAtsScorecard(
+    request: operations.UpdateAtsScorecardRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsScorecard> {
+    return unwrapAsync(scorecardUpdateAtsScorecard(
+      this,
+      request,
+      options,
+    ));
+  }
 }

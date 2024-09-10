@@ -8,16 +8,20 @@ import * as operations from "./models/operations/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Login extends ClientSDK {
-    /**
-     * Sign in a user
-     *
-     * @remarks
-     * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
-     */
-    async getUnifiedIntegrationLogin(
-        request: operations.GetUnifiedIntegrationLoginRequest,
-        options?: RequestOptions
-    ): Promise<string> {
-        return unwrapAsync(loginGetUnifiedIntegrationLogin(this, request, options));
-    }
+  /**
+   * Sign in a user
+   *
+   * @remarks
+   * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+   */
+  async getUnifiedIntegrationLogin(
+    request: operations.GetUnifiedIntegrationLoginRequest,
+    options?: RequestOptions,
+  ): Promise<string> {
+    return unwrapAsync(loginGetUnifiedIntegrationLogin(
+      this,
+      request,
+      options,
+    ));
+  }
 }

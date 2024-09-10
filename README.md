@@ -85,16 +85,16 @@ You can override the default server globally by passing a server index to the `s
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-    serverIdx: 1,
+  serverIdx: 1,
 });
 
 async function run() {
-    const result = await unifiedTo.accounting.createAccountingAccount({
-        connectionId: "<value>",
-    });
+  const result = await unifiedTo.accounting.createAccountingAccount({
+    connectionId: "<value>",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -110,16 +110,16 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-    serverURL: "https://api.unified.to",
+  serverURL: "https://api.unified.to",
 });
 
 async function run() {
-    const result = await unifiedTo.accounting.createAccountingAccount({
-        connectionId: "<value>",
-    });
+  const result = await unifiedTo.accounting.createAccountingAccount({
+    connectionId: "<value>",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -196,18 +196,18 @@ You can set the security parameters through the `security` optional parameter wh
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-    security: {
-        jwt: "<YOUR_API_KEY_HERE>",
-    },
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
 });
 
 async function run() {
-    const result = await unifiedTo.accounting.createAccountingAccount({
-        connectionId: "<value>",
-    });
+  const result = await unifiedTo.accounting.createAccountingAccount({
+    connectionId: "<value>",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -237,28 +237,28 @@ import { SDKValidationError } from "@unified-api/typescript-sdk/sdk/models/error
 const unifiedTo = new UnifiedTo();
 
 async function run() {
-    let result;
-    try {
-        result = await unifiedTo.accounting.createAccountingAccount({
-            connectionId: "<value>",
-        });
+  let result;
+  try {
+    result = await unifiedTo.accounting.createAccountingAccount({
+      connectionId: "<value>",
+    });
 
-        // Handle the result
-        console.log(result);
-    } catch (err) {
-        switch (true) {
-            case err instanceof SDKValidationError: {
-                // Validation errors can be pretty-printed
-                console.error(err.pretty());
-                // Raw value may also be inspected
-                console.error(err.rawValue);
-                return;
-            }
-            default: {
-                throw err;
-            }
-        }
+    // Handle the result
+    console.log(result);
+  } catch (err) {
+    switch (true) {
+      case (err instanceof SDKValidationError): {
+        // Validation errors can be pretty-printed
+        console.error(err.pretty());
+        // Raw value may also be inspected
+        console.error(err.rawValue);
+        return;
+      }
+      default: {
+        throw err;
+      }
     }
+  }
 }
 
 run();
@@ -284,26 +284,23 @@ import { UnifiedTo } from "@unified-api/typescript-sdk";
 const unifiedTo = new UnifiedTo();
 
 async function run() {
-    const result = await unifiedTo.accounting.createAccountingAccount(
-        {
-            connectionId: "<value>",
-        },
-        {
-            retries: {
-                strategy: "backoff",
-                backoff: {
-                    initialInterval: 1,
-                    maxInterval: 50,
-                    exponent: 1.1,
-                    maxElapsedTime: 100,
-                },
-                retryConnectionErrors: false,
-            },
-        }
-    );
+  const result = await unifiedTo.accounting.createAccountingAccount({
+    connectionId: "<value>",
+  }, {
+    retries: {
+      strategy: "backoff",
+      backoff: {
+        initialInterval: 1,
+        maxInterval: 50,
+        exponent: 1.1,
+        maxElapsedTime: 100,
+      },
+      retryConnectionErrors: false,
+    },
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();
@@ -315,25 +312,25 @@ If you'd like to override the default retry strategy for all operations that sup
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-    retryConfig: {
-        strategy: "backoff",
-        backoff: {
-            initialInterval: 1,
-            maxInterval: 50,
-            exponent: 1.1,
-            maxElapsedTime: 100,
-        },
-        retryConnectionErrors: false,
+  retryConfig: {
+    strategy: "backoff",
+    backoff: {
+      initialInterval: 1,
+      maxInterval: 50,
+      exponent: 1.1,
+      maxElapsedTime: 100,
     },
+    retryConnectionErrors: false,
+  },
 });
 
 async function run() {
-    const result = await unifiedTo.accounting.createAccountingAccount({
-        connectionId: "<value>",
-    });
+  const result = await unifiedTo.accounting.createAccountingAccount({
+    connectionId: "<value>",
+  });
 
-    // Handle the result
-    console.log(result);
+  // Handle the result
+  console.log(result);
 }
 
 run();

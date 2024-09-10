@@ -3,10 +3,10 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: d76c4e4fafacbab4333385b19ff0e709
   docVersion: "1.0"
-  speakeasyVersion: 1.392.1
-  generationVersion: 2.411.9
-  releaseVersion: 2.3.2
-  configChecksum: 896ff7480cd93acce901498e725b46b0
+  speakeasyVersion: 1.394.0
+  generationVersion: 2.413.0
+  releaseVersion: 2.4.0
+  configChecksum: e1d41697d1616f3d2ca9bebdc6f2d055
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -15,7 +15,7 @@ features:
   typescript:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.16.4
+    core: 3.17.0
     defaultEnabledRetries: 0.1.0
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
@@ -1726,6 +1726,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getAccountingTaxrate:
     speakeasy-default-get-accounting-taxrate:
       parameters:
@@ -1746,42 +1749,63 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingContacts:
     speakeasy-default-list-accounting-contacts:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingInvoices:
     speakeasy-default-list-accounting-invoices:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingJournals:
     speakeasy-default-list-accounting-journals:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingOrganizations:
     speakeasy-default-list-accounting-organizations:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingTaxrates:
     speakeasy-default-list-accounting-taxrates:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAccountingTransactions:
     speakeasy-default-list-accounting-transactions:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchAccountingAccount:
     speakeasy-default-patch-accounting-account:
       parameters:
@@ -1920,12 +1944,18 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listUcContacts:
     speakeasy-default-list-uc-contacts:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchCrmContact:
     speakeasy-default-patch-crm-contact:
       parameters:
@@ -1967,6 +1997,9 @@ examples:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"title": "<value>"}
   createAtsApplication:
     speakeasy-default-create-ats-application:
       parameters:
@@ -2004,6 +2037,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"title": "<value>"}
   getAtsApplication:
     speakeasy-default-get-ats-application:
       parameters:
@@ -2025,6 +2061,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getAtsDocument:
     speakeasy-default-get-ats-document:
       parameters:
@@ -2059,60 +2098,90 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsApplications:
     speakeasy-default-list-ats-applications:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsApplicationstatuses:
     speakeasy-default-list-ats-applicationstatuses:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsCandidates:
     speakeasy-default-list-ats-candidates:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsCompanies:
     speakeasy-default-list-ats-companies:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsDocuments:
     speakeasy-default-list-ats-documents:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsInterviews:
     speakeasy-default-list-ats-interviews:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsJobs:
     speakeasy-default-list-ats-jobs:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listAtsScorecards:
     speakeasy-default-list-ats-scorecards:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchAtsActivity:
     speakeasy-default-patch-ats-activity:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"title": "<value>"}
   patchAtsApplication:
     speakeasy-default-patch-ats-application:
       parameters:
@@ -2197,6 +2266,9 @@ examples:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"title": "<value>"}
   updateAtsApplication:
     speakeasy-default-update-ats-application:
       parameters:
@@ -2263,6 +2335,9 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listEnrichCompanies:
     speakeasy-default-list-enrich-companies:
       parameters:
@@ -2275,6 +2350,9 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchCrmCompany:
     speakeasy-default-patch-crm-company:
       parameters:
@@ -2316,11 +2394,17 @@ examples:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   createCommerceInventory:
     speakeasy-default-create-commerce-inventory:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"available": "5165.08"}
   createCommerceItem:
     speakeasy-default-create-commerce-item:
       parameters:
@@ -2331,6 +2415,9 @@ examples:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getCommerceCollection:
     speakeasy-default-get-commerce-collection:
       parameters:
@@ -2338,6 +2425,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   getCommerceInventory:
     speakeasy-default-get-commerce-inventory:
       parameters:
@@ -2345,6 +2435,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"available": "7586.43"}
   getCommerceItem:
     speakeasy-default-get-commerce-item:
       parameters:
@@ -2359,42 +2452,63 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   listCommerceCollections:
     speakeasy-default-list-commerce-collections:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCommerceInventories:
     speakeasy-default-list-commerce-inventories:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCommerceItems:
     speakeasy-default-list-commerce-items:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCommerceLocations:
     speakeasy-default-list-commerce-locations:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchCommerceCollection:
     speakeasy-default-patch-commerce-collection:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   patchCommerceInventory:
     speakeasy-default-patch-commerce-inventory:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"available": "615.23"}
   patchCommerceItem:
     speakeasy-default-patch-commerce-item:
       parameters:
@@ -2407,6 +2521,9 @@ examples:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   removeCommerceCollection:
     speakeasy-default-remove-commerce-collection:
       parameters:
@@ -2437,12 +2554,18 @@ examples:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   updateCommerceInventory:
     speakeasy-default-update-commerce-inventory:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"available": "9360.02"}
   updateCommerceItem:
     speakeasy-default-update-commerce-item:
       parameters:
@@ -2455,6 +2578,9 @@ examples:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createHrisLocation:
     speakeasy-default-create-hris-location:
       parameters:
@@ -2473,6 +2599,9 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchHrisLocation:
     speakeasy-default-patch-hris-location:
       parameters:
@@ -2545,24 +2674,36 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCrmEvents:
     speakeasy-default-list-crm-events:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCrmLeads:
     speakeasy-default-list-crm-leads:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listCrmPipelines:
     speakeasy-default-list-crm-pipelines:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchCrmDeal:
     speakeasy-default-patch-crm-deal:
       parameters:
@@ -2652,6 +2793,9 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   createHrisEmployee:
     speakeasy-default-create-hris-employee:
       parameters:
@@ -2683,6 +2827,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"raw": {}, "user_id": "<value>"}
   getHrisTimeoff:
     speakeasy-default-get-hris-timeoff:
       parameters:
@@ -2690,30 +2837,45 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"start_at": "2023-07-20T21:47:06.052Z", "user_id": "<value>"}
   listHrisEmployees:
     speakeasy-default-list-hris-employees:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listHrisGroups:
     speakeasy-default-list-hris-groups:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listHrisPayslips:
     speakeasy-default-list-hris-payslips:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listHrisTimeoffs:
     speakeasy-default-list-hris-timeoffs:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchHrisEmployee:
     speakeasy-default-patch-hris-employee:
       parameters:
@@ -2755,11 +2917,17 @@ examples:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"download_url": "<value>", "id": "<id>", "space_id": "<value>", "title": "<value>", "type": "HTML"}
   createKmsSpace:
     speakeasy-default-create-kms-space:
       parameters:
         path:
           connection_id: "<value>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   getKmsPage:
     speakeasy-default-get-kms-page:
       parameters:
@@ -2767,6 +2935,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"download_url": "<value>", "id": "<id>", "space_id": "<value>", "title": "<value>", "type": "TEXT"}
   getKmsSpace:
     speakeasy-default-get-kms-space:
       parameters:
@@ -2774,30 +2945,45 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   listKmsPages:
     speakeasy-default-list-kms-pages:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listKmsSpaces:
     speakeasy-default-list-kms-spaces:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchKmsPage:
     speakeasy-default-patch-kms-page:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"download_url": "<value>", "id": "<id>", "space_id": "<value>", "title": "<value>", "type": "TEXT"}
   patchKmsSpace:
     speakeasy-default-patch-kms-space:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   removeKmsPage:
     speakeasy-default-remove-kms-page:
       parameters:
@@ -2816,12 +3002,18 @@ examples:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"download_url": "<value>", "id": "<id>", "space_id": "<value>", "title": "<value>", "type": "TEXT"}
   updateKmsSpace:
     speakeasy-default-update-kms-space:
       parameters:
         path:
           connection_id: "<value>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>"}
   createMartechList:
     speakeasy-default-create-martech-list:
       parameters:
@@ -2852,12 +3044,18 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listMartechMembers:
     speakeasy-default-list-martech-members:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchMartechList:
     speakeasy-default-patch-martech-list:
       parameters:
@@ -2906,6 +3104,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getMessagingMessage:
     speakeasy-default-get-messaging-message:
       parameters:
@@ -2919,12 +3120,18 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listMessagingMessages:
     speakeasy-default-list-messaging-messages:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchMessagingMessage:
     speakeasy-default-patch-messaging-message:
       parameters:
@@ -2949,30 +3156,45 @@ examples:
         path:
           connection_id: "<value>"
           path: "/etc/periodic"
+      responses:
+        "200":
+          application/json: {}
   listPassthroughs:
     speakeasy-default-list-passthroughs:
       parameters:
         path:
           connection_id: "<value>"
           path: "/selinux"
+      responses:
+        "200":
+          application/json: {"key": "<value>", "key1": "<value>"}
   patchPassthrough:
     speakeasy-default-patch-passthrough:
       parameters:
         path:
           connection_id: "<value>"
           path: "/mnt"
+      responses:
+        "200":
+          application/json: {"key": "<value>"}
   removePassthrough:
     speakeasy-default-remove-passthrough:
       parameters:
         path:
           connection_id: "<value>"
           path: "/Applications"
+      responses:
+        "200":
+          application/json: {}
   updatePassthrough:
     speakeasy-default-update-passthrough:
       parameters:
         path:
           connection_id: "<value>"
           path: "/dev"
+      responses:
+        "200":
+          application/json: {}
   createPaymentLink:
     speakeasy-default-create-payment-link:
       parameters:
@@ -3004,6 +3226,9 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"total_amount": "2987.89"}
   getPaymentRefund:
     speakeasy-default-get-payment-refund:
       parameters:
@@ -3011,30 +3236,45 @@ examples:
           connection_id: "<value>"
           id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: {"payment_id": "<value>", "total_amount": "1846.32"}
   listPaymentLinks:
     speakeasy-default-list-payment-links:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listPaymentPayments:
     speakeasy-default-list-payment-payments:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listPaymentPayouts:
     speakeasy-default-list-payment-payouts:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listPaymentRefunds:
     speakeasy-default-list-payment-refunds:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchPaymentLink:
     speakeasy-default-patch-payment-link:
       parameters:
@@ -3089,6 +3329,9 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchStorageFile:
     speakeasy-default-patch-storage-file:
       parameters:
@@ -3137,12 +3380,18 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listTaskTasks:
     speakeasy-default-list-task-tasks:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchTaskProject:
     speakeasy-default-patch-task-project:
       parameters:
@@ -3221,18 +3470,27 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listTicketingNotes:
     speakeasy-default-list-ticketing-notes:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listTicketingTickets:
     speakeasy-default-list-ticketing-tickets:
       parameters:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   patchTicketingCustomer:
     speakeasy-default-patch-ticketing-customer:
       parameters:
@@ -3293,20 +3551,35 @@ examples:
         path:
           connection_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   createUnifiedConnection:
-    speakeasy-default-create-unified-connection: {}
+    speakeasy-default-create-unified-connection:
+      responses:
+        "200":
+          application/json: {"categories": [], "integration_type": "<value>", "permissions": []}
   createUnifiedWebhook:
-    speakeasy-default-create-unified-webhook: {}
+    speakeasy-default-create-unified-webhook:
+      responses:
+        "200":
+          application/json: {"connection_id": "<value>", "event": "created", "hook_url": "<value>", "object_type": "accounting_transaction"}
   getUnifiedApicall:
     speakeasy-default-get-unified-apicall:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"integration_type": "<value>", "method": "<value>", "name": "<value>", "path": "/usr/libdata", "status": "<value>", "type": "webhook"}
   getUnifiedConnection:
     speakeasy-default-get-unified-connection:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"categories": [], "integration_type": "<value>", "permissions": []}
   getUnifiedIntegrationAuth:
     speakeasy-default-get-unified-integration-auth:
       parameters:
@@ -3314,37 +3587,67 @@ examples:
           workspace_id: "<value>"
           integration_type: "<value>"
         query: {}
+      responses:
+        "200":
+          text/plain: "<value>"
   getUnifiedWebhook:
     speakeasy-default-get-unified-webhook:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"connection_id": "<value>", "event": "deleted", "hook_url": "<value>", "object_type": "martech_list"}
   listUnifiedApicalls:
-    speakeasy-default-list-unified-apicalls: {}
+    speakeasy-default-list-unified-apicalls:
+      responses:
+        "200":
+          application/json: []
   listUnifiedConnections:
-    speakeasy-default-list-unified-connections: {}
+    speakeasy-default-list-unified-connections:
+      responses:
+        "200":
+          application/json: []
   listUnifiedIntegrationWorkspaces:
     speakeasy-default-list-unified-integration-workspaces:
       parameters:
         path:
           workspace_id: "<value>"
         query: {}
+      responses:
+        "200":
+          application/json: []
   listUnifiedIntegrations:
-    speakeasy-default-list-unified-integrations: {}
+    speakeasy-default-list-unified-integrations:
+      responses:
+        "200":
+          application/json: []
   listUnifiedIssues:
-    speakeasy-default-list-unified-issues: {}
+    speakeasy-default-list-unified-issues:
+      responses:
+        "200":
+          application/json: []
   listUnifiedWebhooks:
-    speakeasy-default-list-unified-webhooks: {}
+    speakeasy-default-list-unified-webhooks:
+      responses:
+        "200":
+          application/json: []
   patchUnifiedConnection:
     speakeasy-default-patch-unified-connection:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"categories": [], "integration_type": "<value>", "permissions": []}
   patchUnifiedWebhook:
     speakeasy-default-patch-unified-webhook:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"connection_id": "<value>", "event": "deleted", "hook_url": "<value>", "object_type": "passthrough"}
   patchUnifiedWebhookTrigger:
     speakeasy-default-patch-unified-webhook-trigger:
       parameters:
@@ -3365,11 +3668,17 @@ examples:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"categories": [], "integration_type": "<value>", "permissions": []}
   updateUnifiedWebhook:
     speakeasy-default-update-unified-webhook:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"connection_id": "<value>", "event": "created", "hook_url": "<value>", "object_type": "hris_group"}
   updateUnifiedWebhookTrigger:
     speakeasy-default-update-unified-webhook-trigger:
       parameters:
@@ -3382,3 +3691,6 @@ examples:
           workspace_id: "<value>"
           integration_type: "<value>"
         query: {}
+      responses:
+        "200":
+          text/plain: "<value>"

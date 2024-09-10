@@ -6,8 +6,8 @@
 import { UpdateCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCrmPipelineRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

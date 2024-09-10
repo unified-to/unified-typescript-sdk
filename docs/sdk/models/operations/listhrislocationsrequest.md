@@ -6,7 +6,7 @@
 import { ListHrisLocationsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListHrisLocationsRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

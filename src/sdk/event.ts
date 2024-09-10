@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Event extends ClientSDK {
-    /**
-     * Create an event
-     */
-    async createCrmEvent(
-        request: operations.CreateCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(eventCreateCrmEvent(this, request, options));
-    }
+  /**
+   * Create an event
+   */
+  async createCrmEvent(
+    request: operations.CreateCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(eventCreateCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an event
-     */
-    async getCrmEvent(
-        request: operations.GetCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(eventGetCrmEvent(this, request, options));
-    }
+  /**
+   * Retrieve an event
+   */
+  async getCrmEvent(
+    request: operations.GetCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(eventGetCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all events
-     */
-    async listCrmEvents(
-        request: operations.ListCrmEventsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmEvent>> {
-        return unwrapAsync(eventListCrmEvents(this, request, options));
-    }
+  /**
+   * List all events
+   */
+  async listCrmEvents(
+    request: operations.ListCrmEventsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmEvent>> {
+    return unwrapAsync(eventListCrmEvents(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an event
-     */
-    async patchCrmEvent(
-        request: operations.PatchCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(eventPatchCrmEvent(this, request, options));
-    }
+  /**
+   * Update an event
+   */
+  async patchCrmEvent(
+    request: operations.PatchCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(eventPatchCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an event
-     */
-    async removeCrmEvent(
-        request: operations.RemoveCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(eventRemoveCrmEvent(this, request, options));
-    }
+  /**
+   * Remove an event
+   */
+  async removeCrmEvent(
+    request: operations.RemoveCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(eventRemoveCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an event
-     */
-    async updateCrmEvent(
-        request: operations.UpdateCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(eventUpdateCrmEvent(this, request, options));
-    }
+  /**
+   * Update an event
+   */
+  async updateCrmEvent(
+    request: operations.UpdateCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(eventUpdateCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 }

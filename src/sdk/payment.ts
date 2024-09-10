@@ -24,163 +24,227 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Payment extends ClientSDK {
-    /**
-     * Create a link
-     */
-    async createPaymentLink(
-        request: operations.CreatePaymentLinkRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentLink> {
-        return unwrapAsync(paymentCreatePaymentLink(this, request, options));
-    }
+  /**
+   * Create a link
+   */
+  async createPaymentLink(
+    request: operations.CreatePaymentLinkRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentLink> {
+    return unwrapAsync(paymentCreatePaymentLink(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a payment
-     */
-    async createPaymentPayment(
-        request: operations.CreatePaymentPaymentRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayment> {
-        return unwrapAsync(paymentCreatePaymentPayment(this, request, options));
-    }
+  /**
+   * Create a payment
+   */
+  async createPaymentPayment(
+    request: operations.CreatePaymentPaymentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayment> {
+    return unwrapAsync(paymentCreatePaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a link
-     */
-    async getPaymentLink(
-        request: operations.GetPaymentLinkRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentLink> {
-        return unwrapAsync(paymentGetPaymentLink(this, request, options));
-    }
+  /**
+   * Retrieve a link
+   */
+  async getPaymentLink(
+    request: operations.GetPaymentLinkRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentLink> {
+    return unwrapAsync(paymentGetPaymentLink(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a payment
-     */
-    async getPaymentPayment(
-        request: operations.GetPaymentPaymentRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayment> {
-        return unwrapAsync(paymentGetPaymentPayment(this, request, options));
-    }
+  /**
+   * Retrieve a payment
+   */
+  async getPaymentPayment(
+    request: operations.GetPaymentPaymentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayment> {
+    return unwrapAsync(paymentGetPaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a payout
-     */
-    async getPaymentPayout(
-        request: operations.GetPaymentPayoutRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayout> {
-        return unwrapAsync(paymentGetPaymentPayout(this, request, options));
-    }
+  /**
+   * Retrieve a payout
+   */
+  async getPaymentPayout(
+    request: operations.GetPaymentPayoutRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayout> {
+    return unwrapAsync(paymentGetPaymentPayout(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a refund
-     */
-    async getPaymentRefund(
-        request: operations.GetPaymentRefundRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentRefund> {
-        return unwrapAsync(paymentGetPaymentRefund(this, request, options));
-    }
+  /**
+   * Retrieve a refund
+   */
+  async getPaymentRefund(
+    request: operations.GetPaymentRefundRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentRefund> {
+    return unwrapAsync(paymentGetPaymentRefund(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all links
-     */
-    async listPaymentLinks(
-        request: operations.ListPaymentLinksRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentLink>> {
-        return unwrapAsync(paymentListPaymentLinks(this, request, options));
-    }
+  /**
+   * List all links
+   */
+  async listPaymentLinks(
+    request: operations.ListPaymentLinksRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentLink>> {
+    return unwrapAsync(paymentListPaymentLinks(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all payments
-     */
-    async listPaymentPayments(
-        request: operations.ListPaymentPaymentsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentPayment>> {
-        return unwrapAsync(paymentListPaymentPayments(this, request, options));
-    }
+  /**
+   * List all payments
+   */
+  async listPaymentPayments(
+    request: operations.ListPaymentPaymentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentPayment>> {
+    return unwrapAsync(paymentListPaymentPayments(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all payouts
-     */
-    async listPaymentPayouts(
-        request: operations.ListPaymentPayoutsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentPayout>> {
-        return unwrapAsync(paymentListPaymentPayouts(this, request, options));
-    }
+  /**
+   * List all payouts
+   */
+  async listPaymentPayouts(
+    request: operations.ListPaymentPayoutsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentPayout>> {
+    return unwrapAsync(paymentListPaymentPayouts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all refunds
-     */
-    async listPaymentRefunds(
-        request: operations.ListPaymentRefundsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentRefund>> {
-        return unwrapAsync(paymentListPaymentRefunds(this, request, options));
-    }
+  /**
+   * List all refunds
+   */
+  async listPaymentRefunds(
+    request: operations.ListPaymentRefundsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentRefund>> {
+    return unwrapAsync(paymentListPaymentRefunds(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a link
-     */
-    async patchPaymentLink(
-        request: operations.PatchPaymentLinkRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentLink> {
-        return unwrapAsync(paymentPatchPaymentLink(this, request, options));
-    }
+  /**
+   * Update a link
+   */
+  async patchPaymentLink(
+    request: operations.PatchPaymentLinkRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentLink> {
+    return unwrapAsync(paymentPatchPaymentLink(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a payment
-     */
-    async patchPaymentPayment(
-        request: operations.PatchPaymentPaymentRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayment> {
-        return unwrapAsync(paymentPatchPaymentPayment(this, request, options));
-    }
+  /**
+   * Update a payment
+   */
+  async patchPaymentPayment(
+    request: operations.PatchPaymentPaymentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayment> {
+    return unwrapAsync(paymentPatchPaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a link
-     */
-    async removePaymentLink(
-        request: operations.RemovePaymentLinkRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(paymentRemovePaymentLink(this, request, options));
-    }
+  /**
+   * Remove a link
+   */
+  async removePaymentLink(
+    request: operations.RemovePaymentLinkRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(paymentRemovePaymentLink(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a payment
-     */
-    async removePaymentPayment(
-        request: operations.RemovePaymentPaymentRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(paymentRemovePaymentPayment(this, request, options));
-    }
+  /**
+   * Remove a payment
+   */
+  async removePaymentPayment(
+    request: operations.RemovePaymentPaymentRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(paymentRemovePaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a link
-     */
-    async updatePaymentLink(
-        request: operations.UpdatePaymentLinkRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentLink> {
-        return unwrapAsync(paymentUpdatePaymentLink(this, request, options));
-    }
+  /**
+   * Update a link
+   */
+  async updatePaymentLink(
+    request: operations.UpdatePaymentLinkRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentLink> {
+    return unwrapAsync(paymentUpdatePaymentLink(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a payment
-     */
-    async updatePaymentPayment(
-        request: operations.UpdatePaymentPaymentRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayment> {
-        return unwrapAsync(paymentUpdatePaymentPayment(this, request, options));
-    }
+  /**
+   * Update a payment
+   */
+  async updatePaymentPayment(
+    request: operations.UpdatePaymentPaymentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayment> {
+    return unwrapAsync(paymentUpdatePaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
 }

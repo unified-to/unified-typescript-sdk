@@ -6,7 +6,7 @@
 import { GetUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetUnifiedConnectionRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

@@ -6,7 +6,7 @@
 import { CommerceLocation } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CommerceLocation = {
-    name: "<value>",
+  name: "<value>",
 };
 ```
 

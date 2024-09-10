@@ -6,8 +6,8 @@
 import { GetPaymentRefundRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetPaymentRefundRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

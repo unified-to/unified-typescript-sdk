@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Inventory extends ClientSDK {
-    /**
-     * Create an inventory
-     */
-    async createCommerceInventory(
-        request: operations.CreateCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(inventoryCreateCommerceInventory(this, request, options));
-    }
+  /**
+   * Create an inventory
+   */
+  async createCommerceInventory(
+    request: operations.CreateCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(inventoryCreateCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an inventory
-     */
-    async getCommerceInventory(
-        request: operations.GetCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(inventoryGetCommerceInventory(this, request, options));
-    }
+  /**
+   * Retrieve an inventory
+   */
+  async getCommerceInventory(
+    request: operations.GetCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(inventoryGetCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all inventories
-     */
-    async listCommerceInventories(
-        request: operations.ListCommerceInventoriesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceInventory>> {
-        return unwrapAsync(inventoryListCommerceInventories(this, request, options));
-    }
+  /**
+   * List all inventories
+   */
+  async listCommerceInventories(
+    request: operations.ListCommerceInventoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceInventory>> {
+    return unwrapAsync(inventoryListCommerceInventories(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an inventory
-     */
-    async patchCommerceInventory(
-        request: operations.PatchCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(inventoryPatchCommerceInventory(this, request, options));
-    }
+  /**
+   * Update an inventory
+   */
+  async patchCommerceInventory(
+    request: operations.PatchCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(inventoryPatchCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an inventory
-     */
-    async removeCommerceInventory(
-        request: operations.RemoveCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(inventoryRemoveCommerceInventory(this, request, options));
-    }
+  /**
+   * Remove an inventory
+   */
+  async removeCommerceInventory(
+    request: operations.RemoveCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(inventoryRemoveCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an inventory
-     */
-    async updateCommerceInventory(
-        request: operations.UpdateCommerceInventoryRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceInventory> {
-        return unwrapAsync(inventoryUpdateCommerceInventory(this, request, options));
-    }
+  /**
+   * Update an inventory
+   */
+  async updateCommerceInventory(
+    request: operations.UpdateCommerceInventoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceInventory> {
+    return unwrapAsync(inventoryUpdateCommerceInventory(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type GetUnifiedConnectionRequest = {
-    /**
-     * ID of the Connection
-     */
-    id: string;
+  /**
+   * ID of the Connection
+   */
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedConnectionRequest$inboundSchema: z.ZodType<
-    GetUnifiedConnectionRequest,
-    z.ZodTypeDef,
-    unknown
+  GetUnifiedConnectionRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type GetUnifiedConnectionRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedConnectionRequest$outboundSchema: z.ZodType<
-    GetUnifiedConnectionRequest$Outbound,
-    z.ZodTypeDef,
-    GetUnifiedConnectionRequest
+  GetUnifiedConnectionRequest$Outbound,
+  z.ZodTypeDef,
+  GetUnifiedConnectionRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const GetUnifiedConnectionRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace GetUnifiedConnectionRequest$ {
-    /** @deprecated use `GetUnifiedConnectionRequest$inboundSchema` instead. */
-    export const inboundSchema = GetUnifiedConnectionRequest$inboundSchema;
-    /** @deprecated use `GetUnifiedConnectionRequest$outboundSchema` instead. */
-    export const outboundSchema = GetUnifiedConnectionRequest$outboundSchema;
-    /** @deprecated use `GetUnifiedConnectionRequest$Outbound` instead. */
-    export type Outbound = GetUnifiedConnectionRequest$Outbound;
+  /** @deprecated use `GetUnifiedConnectionRequest$inboundSchema` instead. */
+  export const inboundSchema = GetUnifiedConnectionRequest$inboundSchema;
+  /** @deprecated use `GetUnifiedConnectionRequest$outboundSchema` instead. */
+  export const outboundSchema = GetUnifiedConnectionRequest$outboundSchema;
+  /** @deprecated use `GetUnifiedConnectionRequest$Outbound` instead. */
+  export type Outbound = GetUnifiedConnectionRequest$Outbound;
 }

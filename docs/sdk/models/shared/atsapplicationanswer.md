@@ -6,8 +6,10 @@
 import { AtsApplicationAnswer } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AtsApplicationAnswer = {
-    answers: ["<value>"],
-    questionId: "<value>",
+  answers: [
+    "<value>",
+  ],
+  questionId: "<value>",
 };
 ```
 

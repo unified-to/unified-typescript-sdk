@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Lead extends ClientSDK {
-    /**
-     * Create a lead
-     */
-    async createCrmLead(
-        request: operations.CreateCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(leadCreateCrmLead(this, request, options));
-    }
+  /**
+   * Create a lead
+   */
+  async createCrmLead(
+    request: operations.CreateCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(leadCreateCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a lead
-     */
-    async getCrmLead(
-        request: operations.GetCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(leadGetCrmLead(this, request, options));
-    }
+  /**
+   * Retrieve a lead
+   */
+  async getCrmLead(
+    request: operations.GetCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(leadGetCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all leads
-     */
-    async listCrmLeads(
-        request: operations.ListCrmLeadsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmLead>> {
-        return unwrapAsync(leadListCrmLeads(this, request, options));
-    }
+  /**
+   * List all leads
+   */
+  async listCrmLeads(
+    request: operations.ListCrmLeadsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmLead>> {
+    return unwrapAsync(leadListCrmLeads(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a lead
-     */
-    async patchCrmLead(
-        request: operations.PatchCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(leadPatchCrmLead(this, request, options));
-    }
+  /**
+   * Update a lead
+   */
+  async patchCrmLead(
+    request: operations.PatchCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(leadPatchCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a lead
-     */
-    async removeCrmLead(
-        request: operations.RemoveCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(leadRemoveCrmLead(this, request, options));
-    }
+  /**
+   * Remove a lead
+   */
+  async removeCrmLead(
+    request: operations.RemoveCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(leadRemoveCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a lead
-     */
-    async updateCrmLead(
-        request: operations.UpdateCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(leadUpdateCrmLead(this, request, options));
-    }
+  /**
+   * Update a lead
+   */
+  async updateCrmLead(
+    request: operations.UpdateCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(leadUpdateCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -6,7 +6,7 @@
 import { AtsCompany } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AtsCompany = {
-    name: "<value>",
+  name: "<value>",
 };
 ```
 

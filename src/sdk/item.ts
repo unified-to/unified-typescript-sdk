@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Item extends ClientSDK {
-    /**
-     * Create an item
-     */
-    async createCommerceItem(
-        request: operations.CreateCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(itemCreateCommerceItem(this, request, options));
-    }
+  /**
+   * Create an item
+   */
+  async createCommerceItem(
+    request: operations.CreateCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(itemCreateCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an item
-     */
-    async getCommerceItem(
-        request: operations.GetCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(itemGetCommerceItem(this, request, options));
-    }
+  /**
+   * Retrieve an item
+   */
+  async getCommerceItem(
+    request: operations.GetCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(itemGetCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all items
-     */
-    async listCommerceItems(
-        request: operations.ListCommerceItemsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceItem>> {
-        return unwrapAsync(itemListCommerceItems(this, request, options));
-    }
+  /**
+   * List all items
+   */
+  async listCommerceItems(
+    request: operations.ListCommerceItemsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceItem>> {
+    return unwrapAsync(itemListCommerceItems(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an item
-     */
-    async patchCommerceItem(
-        request: operations.PatchCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(itemPatchCommerceItem(this, request, options));
-    }
+  /**
+   * Update an item
+   */
+  async patchCommerceItem(
+    request: operations.PatchCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(itemPatchCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an item
-     */
-    async removeCommerceItem(
-        request: operations.RemoveCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(itemRemoveCommerceItem(this, request, options));
-    }
+  /**
+   * Remove an item
+   */
+  async removeCommerceItem(
+    request: operations.RemoveCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(itemRemoveCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an item
-     */
-    async updateCommerceItem(
-        request: operations.UpdateCommerceItemRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceItem> {
-        return unwrapAsync(itemUpdateCommerceItem(this, request, options));
-    }
+  /**
+   * Update an item
+   */
+  async updateCommerceItem(
+    request: operations.UpdateCommerceItemRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceItem> {
+    return unwrapAsync(itemUpdateCommerceItem(
+      this,
+      request,
+      options,
+    ));
+  }
 }

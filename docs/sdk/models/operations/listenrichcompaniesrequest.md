@@ -6,7 +6,7 @@
 import { ListEnrichCompaniesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListEnrichCompaniesRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

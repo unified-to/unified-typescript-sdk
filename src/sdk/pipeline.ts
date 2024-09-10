@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Pipeline extends ClientSDK {
-    /**
-     * Create a pipeline
-     */
-    async createCrmPipeline(
-        request: operations.CreateCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(pipelineCreateCrmPipeline(this, request, options));
-    }
+  /**
+   * Create a pipeline
+   */
+  async createCrmPipeline(
+    request: operations.CreateCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(pipelineCreateCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a pipeline
-     */
-    async getCrmPipeline(
-        request: operations.GetCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(pipelineGetCrmPipeline(this, request, options));
-    }
+  /**
+   * Retrieve a pipeline
+   */
+  async getCrmPipeline(
+    request: operations.GetCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(pipelineGetCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all pipelines
-     */
-    async listCrmPipelines(
-        request: operations.ListCrmPipelinesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmPipeline>> {
-        return unwrapAsync(pipelineListCrmPipelines(this, request, options));
-    }
+  /**
+   * List all pipelines
+   */
+  async listCrmPipelines(
+    request: operations.ListCrmPipelinesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmPipeline>> {
+    return unwrapAsync(pipelineListCrmPipelines(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a pipeline
-     */
-    async patchCrmPipeline(
-        request: operations.PatchCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(pipelinePatchCrmPipeline(this, request, options));
-    }
+  /**
+   * Update a pipeline
+   */
+  async patchCrmPipeline(
+    request: operations.PatchCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(pipelinePatchCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a pipeline
-     */
-    async removeCrmPipeline(
-        request: operations.RemoveCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(pipelineRemoveCrmPipeline(this, request, options));
-    }
+  /**
+   * Remove a pipeline
+   */
+  async removeCrmPipeline(
+    request: operations.RemoveCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(pipelineRemoveCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a pipeline
-     */
-    async updateCrmPipeline(
-        request: operations.UpdateCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(pipelineUpdateCrmPipeline(this, request, options));
-    }
+  /**
+   * Update a pipeline
+   */
+  async updateCrmPipeline(
+    request: operations.UpdateCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(pipelineUpdateCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 }

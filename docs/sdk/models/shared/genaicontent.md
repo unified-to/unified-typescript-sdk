@@ -6,7 +6,7 @@
 import { GenaiContent } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: GenaiContent = {
-    content: "<value>",
+  content: "<value>",
 };
 ```
 

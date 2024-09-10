@@ -6,11 +6,11 @@
 import { KmsPage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsPage = {
-    downloadUrl: "<value>",
-    id: "<id>",
-    spaceId: "<value>",
-    title: "<value>",
-    type: "TEXT",
+  downloadUrl: "<value>",
+  id: "<id>",
+  spaceId: "<value>",
+  title: "<value>",
+  type: "TEXT",
 };
 ```
 

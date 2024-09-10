@@ -8,7 +8,7 @@ The telephone number called
 import { PropertyUcCallTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: PropertyUcCallTelephone = {
-    telephone: "<value>",
+  telephone: "<value>",
 };
 ```
 

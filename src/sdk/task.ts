@@ -20,123 +20,171 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Task extends ClientSDK {
-    /**
-     * Create a project
-     */
-    async createTaskProject(
-        request: operations.CreateTaskProjectRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskProject> {
-        return unwrapAsync(taskCreateTaskProject(this, request, options));
-    }
+  /**
+   * Create a project
+   */
+  async createTaskProject(
+    request: operations.CreateTaskProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskProject> {
+    return unwrapAsync(taskCreateTaskProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a task
-     */
-    async createTaskTask(
-        request: operations.CreateTaskTaskRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskTask> {
-        return unwrapAsync(taskCreateTaskTask(this, request, options));
-    }
+  /**
+   * Create a task
+   */
+  async createTaskTask(
+    request: operations.CreateTaskTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskTask> {
+    return unwrapAsync(taskCreateTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a project
-     */
-    async getTaskProject(
-        request: operations.GetTaskProjectRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskProject> {
-        return unwrapAsync(taskGetTaskProject(this, request, options));
-    }
+  /**
+   * Retrieve a project
+   */
+  async getTaskProject(
+    request: operations.GetTaskProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskProject> {
+    return unwrapAsync(taskGetTaskProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a task
-     */
-    async getTaskTask(
-        request: operations.GetTaskTaskRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskTask> {
-        return unwrapAsync(taskGetTaskTask(this, request, options));
-    }
+  /**
+   * Retrieve a task
+   */
+  async getTaskTask(
+    request: operations.GetTaskTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskTask> {
+    return unwrapAsync(taskGetTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all projects
-     */
-    async listTaskProjects(
-        request: operations.ListTaskProjectsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.TaskProject>> {
-        return unwrapAsync(taskListTaskProjects(this, request, options));
-    }
+  /**
+   * List all projects
+   */
+  async listTaskProjects(
+    request: operations.ListTaskProjectsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.TaskProject>> {
+    return unwrapAsync(taskListTaskProjects(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all tasks
-     */
-    async listTaskTasks(
-        request: operations.ListTaskTasksRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.TaskTask>> {
-        return unwrapAsync(taskListTaskTasks(this, request, options));
-    }
+  /**
+   * List all tasks
+   */
+  async listTaskTasks(
+    request: operations.ListTaskTasksRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.TaskTask>> {
+    return unwrapAsync(taskListTaskTasks(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a project
-     */
-    async patchTaskProject(
-        request: operations.PatchTaskProjectRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskProject> {
-        return unwrapAsync(taskPatchTaskProject(this, request, options));
-    }
+  /**
+   * Update a project
+   */
+  async patchTaskProject(
+    request: operations.PatchTaskProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskProject> {
+    return unwrapAsync(taskPatchTaskProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a task
-     */
-    async patchTaskTask(
-        request: operations.PatchTaskTaskRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskTask> {
-        return unwrapAsync(taskPatchTaskTask(this, request, options));
-    }
+  /**
+   * Update a task
+   */
+  async patchTaskTask(
+    request: operations.PatchTaskTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskTask> {
+    return unwrapAsync(taskPatchTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a project
-     */
-    async removeTaskProject(
-        request: operations.RemoveTaskProjectRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(taskRemoveTaskProject(this, request, options));
-    }
+  /**
+   * Remove a project
+   */
+  async removeTaskProject(
+    request: operations.RemoveTaskProjectRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(taskRemoveTaskProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a task
-     */
-    async removeTaskTask(
-        request: operations.RemoveTaskTaskRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(taskRemoveTaskTask(this, request, options));
-    }
+  /**
+   * Remove a task
+   */
+  async removeTaskTask(
+    request: operations.RemoveTaskTaskRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(taskRemoveTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a project
-     */
-    async updateTaskProject(
-        request: operations.UpdateTaskProjectRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskProject> {
-        return unwrapAsync(taskUpdateTaskProject(this, request, options));
-    }
+  /**
+   * Update a project
+   */
+  async updateTaskProject(
+    request: operations.UpdateTaskProjectRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskProject> {
+    return unwrapAsync(taskUpdateTaskProject(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a task
-     */
-    async updateTaskTask(
-        request: operations.UpdateTaskTaskRequest,
-        options?: RequestOptions
-    ): Promise<shared.TaskTask> {
-        return unwrapAsync(taskUpdateTaskTask(this, request, options));
-    }
+  /**
+   * Update a task
+   */
+  async updateTaskTask(
+    request: operations.UpdateTaskTaskRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskTask> {
+    return unwrapAsync(taskUpdateTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
 }

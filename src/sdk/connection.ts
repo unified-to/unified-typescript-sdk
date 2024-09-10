@@ -14,66 +14,90 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Connection extends ClientSDK {
-    /**
-     * Create connection
-     *
-     * @remarks
-     * Used only to import existing customer credentials; use "Create connection indirectly" instead
-     */
-    async createUnifiedConnection(
-        request?: shared.Connection | undefined,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(connectionCreateUnifiedConnection(this, request, options));
-    }
+  /**
+   * Create connection
+   *
+   * @remarks
+   * Used only to import existing customer credentials; use "Create connection indirectly" instead
+   */
+  async createUnifiedConnection(
+    request?: shared.Connection | undefined,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(connectionCreateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve connection
-     */
-    async getUnifiedConnection(
-        request: operations.GetUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(connectionGetUnifiedConnection(this, request, options));
-    }
+  /**
+   * Retrieve connection
+   */
+  async getUnifiedConnection(
+    request: operations.GetUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(connectionGetUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all connections
-     */
-    async listUnifiedConnections(
-        request: operations.ListUnifiedConnectionsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Connection>> {
-        return unwrapAsync(connectionListUnifiedConnections(this, request, options));
-    }
+  /**
+   * List all connections
+   */
+  async listUnifiedConnections(
+    request: operations.ListUnifiedConnectionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Connection>> {
+    return unwrapAsync(connectionListUnifiedConnections(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update connection
-     */
-    async patchUnifiedConnection(
-        request: operations.PatchUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(connectionPatchUnifiedConnection(this, request, options));
-    }
+  /**
+   * Update connection
+   */
+  async patchUnifiedConnection(
+    request: operations.PatchUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(connectionPatchUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove connection
-     */
-    async removeUnifiedConnection(
-        request: operations.RemoveUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(connectionRemoveUnifiedConnection(this, request, options));
-    }
+  /**
+   * Remove connection
+   */
+  async removeUnifiedConnection(
+    request: operations.RemoveUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(connectionRemoveUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update connection
-     */
-    async updateUnifiedConnection(
-        request: operations.UpdateUnifiedConnectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.Connection> {
-        return unwrapAsync(connectionUpdateUnifiedConnection(this, request, options));
-    }
+  /**
+   * Update connection
+   */
+  async updateUnifiedConnection(
+    request: operations.UpdateUnifiedConnectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Connection> {
+    return unwrapAsync(connectionUpdateUnifiedConnection(
+      this,
+      request,
+      options,
+    ));
+  }
 }

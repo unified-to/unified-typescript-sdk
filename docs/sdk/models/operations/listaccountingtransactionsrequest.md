@@ -6,7 +6,7 @@
 import { ListAccountingTransactionsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAccountingTransactionsRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

@@ -6,8 +6,8 @@
 import { RemoveTicketingNoteRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveTicketingNoteRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

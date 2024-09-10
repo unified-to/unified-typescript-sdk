@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type GetUnifiedWebhookRequest = {
-    /**
-     * ID of the Webhook
-     */
-    id: string;
+  /**
+   * ID of the Webhook
+   */
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedWebhookRequest$inboundSchema: z.ZodType<
-    GetUnifiedWebhookRequest,
-    z.ZodTypeDef,
-    unknown
+  GetUnifiedWebhookRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type GetUnifiedWebhookRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedWebhookRequest$outboundSchema: z.ZodType<
-    GetUnifiedWebhookRequest$Outbound,
-    z.ZodTypeDef,
-    GetUnifiedWebhookRequest
+  GetUnifiedWebhookRequest$Outbound,
+  z.ZodTypeDef,
+  GetUnifiedWebhookRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const GetUnifiedWebhookRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace GetUnifiedWebhookRequest$ {
-    /** @deprecated use `GetUnifiedWebhookRequest$inboundSchema` instead. */
-    export const inboundSchema = GetUnifiedWebhookRequest$inboundSchema;
-    /** @deprecated use `GetUnifiedWebhookRequest$outboundSchema` instead. */
-    export const outboundSchema = GetUnifiedWebhookRequest$outboundSchema;
-    /** @deprecated use `GetUnifiedWebhookRequest$Outbound` instead. */
-    export type Outbound = GetUnifiedWebhookRequest$Outbound;
+  /** @deprecated use `GetUnifiedWebhookRequest$inboundSchema` instead. */
+  export const inboundSchema = GetUnifiedWebhookRequest$inboundSchema;
+  /** @deprecated use `GetUnifiedWebhookRequest$outboundSchema` instead. */
+  export const outboundSchema = GetUnifiedWebhookRequest$outboundSchema;
+  /** @deprecated use `GetUnifiedWebhookRequest$Outbound` instead. */
+  export type Outbound = GetUnifiedWebhookRequest$Outbound;
 }

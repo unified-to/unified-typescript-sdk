@@ -12,53 +12,73 @@ import * as operations from "./models/operations/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Passthrough extends ClientSDK {
-    /**
-     * Passthrough POST
-     */
-    async createPassthrough(
-        request: operations.CreatePassthroughRequest,
-        options?: RequestOptions
-    ): Promise<{ [k: string]: any }> {
-        return unwrapAsync(passthroughCreatePassthrough(this, request, options));
-    }
+  /**
+   * Passthrough POST
+   */
+  async createPassthrough(
+    request: operations.CreatePassthroughRequest,
+    options?: RequestOptions,
+  ): Promise<{ [k: string]: any }> {
+    return unwrapAsync(passthroughCreatePassthrough(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Passthrough GET
-     */
-    async listPassthroughs(
-        request: operations.ListPassthroughsRequest,
-        options?: RequestOptions
-    ): Promise<{ [k: string]: any }> {
-        return unwrapAsync(passthroughListPassthroughs(this, request, options));
-    }
+  /**
+   * Passthrough GET
+   */
+  async listPassthroughs(
+    request: operations.ListPassthroughsRequest,
+    options?: RequestOptions,
+  ): Promise<{ [k: string]: any }> {
+    return unwrapAsync(passthroughListPassthroughs(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Passthrough PUT
-     */
-    async patchPassthrough(
-        request: operations.PatchPassthroughRequest,
-        options?: RequestOptions
-    ): Promise<{ [k: string]: any }> {
-        return unwrapAsync(passthroughPatchPassthrough(this, request, options));
-    }
+  /**
+   * Passthrough PUT
+   */
+  async patchPassthrough(
+    request: operations.PatchPassthroughRequest,
+    options?: RequestOptions,
+  ): Promise<{ [k: string]: any }> {
+    return unwrapAsync(passthroughPatchPassthrough(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Passthrough DELETE
-     */
-    async removePassthrough(
-        request: operations.RemovePassthroughRequest,
-        options?: RequestOptions
-    ): Promise<{ [k: string]: any }> {
-        return unwrapAsync(passthroughRemovePassthrough(this, request, options));
-    }
+  /**
+   * Passthrough DELETE
+   */
+  async removePassthrough(
+    request: operations.RemovePassthroughRequest,
+    options?: RequestOptions,
+  ): Promise<{ [k: string]: any }> {
+    return unwrapAsync(passthroughRemovePassthrough(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Passthrough PUT
-     */
-    async updatePassthrough(
-        request: operations.UpdatePassthroughRequest,
-        options?: RequestOptions
-    ): Promise<{ [k: string]: any }> {
-        return unwrapAsync(passthroughUpdatePassthrough(this, request, options));
-    }
+  /**
+   * Passthrough PUT
+   */
+  async updatePassthrough(
+    request: operations.UpdatePassthroughRequest,
+    options?: RequestOptions,
+  ): Promise<{ [k: string]: any }> {
+    return unwrapAsync(passthroughUpdatePassthrough(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -6,7 +6,7 @@
 import { TicketingTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: TicketingTelephone = {
-    telephone: "<value>",
+  telephone: "<value>",
 };
 ```
 

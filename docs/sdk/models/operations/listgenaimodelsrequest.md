@@ -6,7 +6,7 @@
 import { ListGenaiModelsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListGenaiModelsRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

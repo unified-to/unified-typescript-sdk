@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Payslip extends ClientSDK {
-    /**
-     * Retrieve a payslip
-     */
-    async getHrisPayslip(
-        request: operations.GetHrisPayslipRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisPayslip> {
-        return unwrapAsync(payslipGetHrisPayslip(this, request, options));
-    }
+  /**
+   * Retrieve a payslip
+   */
+  async getHrisPayslip(
+    request: operations.GetHrisPayslipRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisPayslip> {
+    return unwrapAsync(payslipGetHrisPayslip(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all payslips
-     */
-    async listHrisPayslips(
-        request: operations.ListHrisPayslipsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisPayslip>> {
-        return unwrapAsync(payslipListHrisPayslips(this, request, options));
-    }
+  /**
+   * List all payslips
+   */
+  async listHrisPayslips(
+    request: operations.ListHrisPayslipsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisPayslip>> {
+    return unwrapAsync(payslipListHrisPayslips(
+      this,
+      request,
+      options,
+    ));
+  }
 }

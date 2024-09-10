@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Employee extends ClientSDK {
-    /**
-     * Create an employee
-     */
-    async createHrisEmployee(
-        request: operations.CreateHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(employeeCreateHrisEmployee(this, request, options));
-    }
+  /**
+   * Create an employee
+   */
+  async createHrisEmployee(
+    request: operations.CreateHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(employeeCreateHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an employee
-     */
-    async getHrisEmployee(
-        request: operations.GetHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(employeeGetHrisEmployee(this, request, options));
-    }
+  /**
+   * Retrieve an employee
+   */
+  async getHrisEmployee(
+    request: operations.GetHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(employeeGetHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all employees
-     */
-    async listHrisEmployees(
-        request: operations.ListHrisEmployeesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.HrisEmployee>> {
-        return unwrapAsync(employeeListHrisEmployees(this, request, options));
-    }
+  /**
+   * List all employees
+   */
+  async listHrisEmployees(
+    request: operations.ListHrisEmployeesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisEmployee>> {
+    return unwrapAsync(employeeListHrisEmployees(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an employee
-     */
-    async patchHrisEmployee(
-        request: operations.PatchHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(employeePatchHrisEmployee(this, request, options));
-    }
+  /**
+   * Update an employee
+   */
+  async patchHrisEmployee(
+    request: operations.PatchHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(employeePatchHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an employee
-     */
-    async removeHrisEmployee(
-        request: operations.RemoveHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(employeeRemoveHrisEmployee(this, request, options));
-    }
+  /**
+   * Remove an employee
+   */
+  async removeHrisEmployee(
+    request: operations.RemoveHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(employeeRemoveHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an employee
-     */
-    async updateHrisEmployee(
-        request: operations.UpdateHrisEmployeeRequest,
-        options?: RequestOptions
-    ): Promise<shared.HrisEmployee> {
-        return unwrapAsync(employeeUpdateHrisEmployee(this, request, options));
-    }
+  /**
+   * Update an employee
+   */
+  async updateHrisEmployee(
+    request: operations.UpdateHrisEmployeeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisEmployee> {
+    return unwrapAsync(employeeUpdateHrisEmployee(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Taxrate extends ClientSDK {
-    /**
-     * Create a taxrate
-     */
-    async createAccountingTaxrate(
-        request: operations.CreateAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(taxrateCreateAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Create a taxrate
+   */
+  async createAccountingTaxrate(
+    request: operations.CreateAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(taxrateCreateAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a taxrate
-     */
-    async getAccountingTaxrate(
-        request: operations.GetAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(taxrateGetAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Retrieve a taxrate
+   */
+  async getAccountingTaxrate(
+    request: operations.GetAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(taxrateGetAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all taxrates
-     */
-    async listAccountingTaxrates(
-        request: operations.ListAccountingTaxratesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingTaxrate>> {
-        return unwrapAsync(taxrateListAccountingTaxrates(this, request, options));
-    }
+  /**
+   * List all taxrates
+   */
+  async listAccountingTaxrates(
+    request: operations.ListAccountingTaxratesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingTaxrate>> {
+    return unwrapAsync(taxrateListAccountingTaxrates(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a taxrate
-     */
-    async patchAccountingTaxrate(
-        request: operations.PatchAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(taxratePatchAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Update a taxrate
+   */
+  async patchAccountingTaxrate(
+    request: operations.PatchAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(taxratePatchAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a taxrate
-     */
-    async removeAccountingTaxrate(
-        request: operations.RemoveAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(taxrateRemoveAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Remove a taxrate
+   */
+  async removeAccountingTaxrate(
+    request: operations.RemoveAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(taxrateRemoveAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a taxrate
-     */
-    async updateAccountingTaxrate(
-        request: operations.UpdateAccountingTaxrateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingTaxrate> {
-        return unwrapAsync(taxrateUpdateAccountingTaxrate(this, request, options));
-    }
+  /**
+   * Update a taxrate
+   */
+  async updateAccountingTaxrate(
+    request: operations.UpdateAccountingTaxrateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingTaxrate> {
+    return unwrapAsync(taxrateUpdateAccountingTaxrate(
+      this,
+      request,
+      options,
+    ));
+  }
 }

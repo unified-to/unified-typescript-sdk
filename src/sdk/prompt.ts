@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Prompt extends ClientSDK {
-    /**
-     * Create a prompt
-     */
-    async createGenaiPrompt(
-        request: operations.CreateGenaiPromptRequest,
-        options?: RequestOptions
-    ): Promise<shared.GenaiPrompt> {
-        return unwrapAsync(promptCreateGenaiPrompt(this, request, options));
-    }
+  /**
+   * Create a prompt
+   */
+  async createGenaiPrompt(
+    request: operations.CreateGenaiPromptRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiPrompt> {
+    return unwrapAsync(promptCreateGenaiPrompt(
+      this,
+      request,
+      options,
+    ));
+  }
 }

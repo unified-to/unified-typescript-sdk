@@ -6,8 +6,8 @@
 import { RemoveMartechListRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveMartechListRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

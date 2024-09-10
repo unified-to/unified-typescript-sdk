@@ -16,86 +16,118 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Webhook extends ClientSDK {
-    /**
-     * Create webhook subscription
-     *
-     * @remarks
-     * The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
-     */
-    async createUnifiedWebhook(
-        request: operations.CreateUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(webhookCreateUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Create webhook subscription
+   *
+   * @remarks
+   * The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
+   */
+  async createUnifiedWebhook(
+    request: operations.CreateUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(webhookCreateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve webhook by its ID
-     */
-    async getUnifiedWebhook(
-        request: operations.GetUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(webhookGetUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Retrieve webhook by its ID
+   */
+  async getUnifiedWebhook(
+    request: operations.GetUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(webhookGetUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all registered webhooks
-     */
-    async listUnifiedWebhooks(
-        request: operations.ListUnifiedWebhooksRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Webhook>> {
-        return unwrapAsync(webhookListUnifiedWebhooks(this, request, options));
-    }
+  /**
+   * Returns all registered webhooks
+   */
+  async listUnifiedWebhooks(
+    request: operations.ListUnifiedWebhooksRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Webhook>> {
+    return unwrapAsync(webhookListUnifiedWebhooks(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update webhook subscription
-     */
-    async patchUnifiedWebhook(
-        request: operations.PatchUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(webhookPatchUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Update webhook subscription
+   */
+  async patchUnifiedWebhook(
+    request: operations.PatchUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(webhookPatchUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Trigger webhook
-     */
-    async patchUnifiedWebhookTrigger(
-        request: operations.PatchUnifiedWebhookTriggerRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(webhookPatchUnifiedWebhookTrigger(this, request, options));
-    }
+  /**
+   * Trigger webhook
+   */
+  async patchUnifiedWebhookTrigger(
+    request: operations.PatchUnifiedWebhookTriggerRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(webhookPatchUnifiedWebhookTrigger(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove webhook subscription
-     */
-    async removeUnifiedWebhook(
-        request: operations.RemoveUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(webhookRemoveUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Remove webhook subscription
+   */
+  async removeUnifiedWebhook(
+    request: operations.RemoveUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(webhookRemoveUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update webhook subscription
-     */
-    async updateUnifiedWebhook(
-        request: operations.UpdateUnifiedWebhookRequest,
-        options?: RequestOptions
-    ): Promise<shared.Webhook> {
-        return unwrapAsync(webhookUpdateUnifiedWebhook(this, request, options));
-    }
+  /**
+   * Update webhook subscription
+   */
+  async updateUnifiedWebhook(
+    request: operations.UpdateUnifiedWebhookRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Webhook> {
+    return unwrapAsync(webhookUpdateUnifiedWebhook(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Trigger webhook
-     */
-    async updateUnifiedWebhookTrigger(
-        request: operations.UpdateUnifiedWebhookTriggerRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(webhookUpdateUnifiedWebhookTrigger(this, request, options));
-    }
+  /**
+   * Trigger webhook
+   */
+  async updateUnifiedWebhookTrigger(
+    request: operations.UpdateUnifiedWebhookTriggerRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(webhookUpdateUnifiedWebhookTrigger(
+      this,
+      request,
+      options,
+    ));
+  }
 }

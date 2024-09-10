@@ -6,8 +6,8 @@
 import { RemoveHrisCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveHrisCompanyRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

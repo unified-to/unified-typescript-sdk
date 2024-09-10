@@ -6,7 +6,7 @@
 import { CreateAtsScorecardRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAtsScorecardRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

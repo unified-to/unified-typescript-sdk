@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Issue extends ClientSDK {
-    /**
-     * List support issues
-     */
-    async listUnifiedIssues(
-        request: operations.ListUnifiedIssuesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Issue>> {
-        return unwrapAsync(issueListUnifiedIssues(this, request, options));
-    }
+  /**
+   * List support issues
+   */
+  async listUnifiedIssues(
+    request: operations.ListUnifiedIssuesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Issue>> {
+    return unwrapAsync(issueListUnifiedIssues(
+      this,
+      request,
+      options,
+    ));
+  }
 }

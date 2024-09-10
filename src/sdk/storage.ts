@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Storage extends ClientSDK {
-    /**
-     * Create a file
-     */
-    async createStorageFile(
-        request: operations.CreateStorageFileRequest,
-        options?: RequestOptions
-    ): Promise<shared.StorageFile> {
-        return unwrapAsync(storageCreateStorageFile(this, request, options));
-    }
+  /**
+   * Create a file
+   */
+  async createStorageFile(
+    request: operations.CreateStorageFileRequest,
+    options?: RequestOptions,
+  ): Promise<shared.StorageFile> {
+    return unwrapAsync(storageCreateStorageFile(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a file
-     */
-    async getStorageFile(
-        request: operations.GetStorageFileRequest,
-        options?: RequestOptions
-    ): Promise<shared.StorageFile> {
-        return unwrapAsync(storageGetStorageFile(this, request, options));
-    }
+  /**
+   * Retrieve a file
+   */
+  async getStorageFile(
+    request: operations.GetStorageFileRequest,
+    options?: RequestOptions,
+  ): Promise<shared.StorageFile> {
+    return unwrapAsync(storageGetStorageFile(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all files
-     */
-    async listStorageFiles(
-        request: operations.ListStorageFilesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.StorageFile>> {
-        return unwrapAsync(storageListStorageFiles(this, request, options));
-    }
+  /**
+   * List all files
+   */
+  async listStorageFiles(
+    request: operations.ListStorageFilesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.StorageFile>> {
+    return unwrapAsync(storageListStorageFiles(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a file
-     */
-    async patchStorageFile(
-        request: operations.PatchStorageFileRequest,
-        options?: RequestOptions
-    ): Promise<shared.StorageFile> {
-        return unwrapAsync(storagePatchStorageFile(this, request, options));
-    }
+  /**
+   * Update a file
+   */
+  async patchStorageFile(
+    request: operations.PatchStorageFileRequest,
+    options?: RequestOptions,
+  ): Promise<shared.StorageFile> {
+    return unwrapAsync(storagePatchStorageFile(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a file
-     */
-    async removeStorageFile(
-        request: operations.RemoveStorageFileRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(storageRemoveStorageFile(this, request, options));
-    }
+  /**
+   * Remove a file
+   */
+  async removeStorageFile(
+    request: operations.RemoveStorageFileRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(storageRemoveStorageFile(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a file
-     */
-    async updateStorageFile(
-        request: operations.UpdateStorageFileRequest,
-        options?: RequestOptions
-    ): Promise<shared.StorageFile> {
-        return unwrapAsync(storageUpdateStorageFile(this, request, options));
-    }
+  /**
+   * Update a file
+   */
+  async updateStorageFile(
+    request: operations.UpdateStorageFileRequest,
+    options?: RequestOptions,
+  ): Promise<shared.StorageFile> {
+    return unwrapAsync(storageUpdateStorageFile(
+      this,
+      request,
+      options,
+    ));
+  }
 }

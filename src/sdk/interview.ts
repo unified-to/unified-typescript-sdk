@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Interview extends ClientSDK {
-    /**
-     * Create an interview
-     */
-    async createAtsInterview(
-        request: operations.CreateAtsInterviewRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsInterview> {
-        return unwrapAsync(interviewCreateAtsInterview(this, request, options));
-    }
+  /**
+   * Create an interview
+   */
+  async createAtsInterview(
+    request: operations.CreateAtsInterviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsInterview> {
+    return unwrapAsync(interviewCreateAtsInterview(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an interview
-     */
-    async getAtsInterview(
-        request: operations.GetAtsInterviewRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsInterview> {
-        return unwrapAsync(interviewGetAtsInterview(this, request, options));
-    }
+  /**
+   * Retrieve an interview
+   */
+  async getAtsInterview(
+    request: operations.GetAtsInterviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsInterview> {
+    return unwrapAsync(interviewGetAtsInterview(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all interviews
-     */
-    async listAtsInterviews(
-        request: operations.ListAtsInterviewsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsInterview>> {
-        return unwrapAsync(interviewListAtsInterviews(this, request, options));
-    }
+  /**
+   * List all interviews
+   */
+  async listAtsInterviews(
+    request: operations.ListAtsInterviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsInterview>> {
+    return unwrapAsync(interviewListAtsInterviews(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an interview
-     */
-    async patchAtsInterview(
-        request: operations.PatchAtsInterviewRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsInterview> {
-        return unwrapAsync(interviewPatchAtsInterview(this, request, options));
-    }
+  /**
+   * Update an interview
+   */
+  async patchAtsInterview(
+    request: operations.PatchAtsInterviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsInterview> {
+    return unwrapAsync(interviewPatchAtsInterview(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an interview
-     */
-    async removeAtsInterview(
-        request: operations.RemoveAtsInterviewRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(interviewRemoveAtsInterview(this, request, options));
-    }
+  /**
+   * Remove an interview
+   */
+  async removeAtsInterview(
+    request: operations.RemoveAtsInterviewRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(interviewRemoveAtsInterview(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an interview
-     */
-    async updateAtsInterview(
-        request: operations.UpdateAtsInterviewRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsInterview> {
-        return unwrapAsync(interviewUpdateAtsInterview(this, request, options));
-    }
+  /**
+   * Update an interview
+   */
+  async updateAtsInterview(
+    request: operations.UpdateAtsInterviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsInterview> {
+    return unwrapAsync(interviewUpdateAtsInterview(
+      this,
+      request,
+      options,
+    ));
+  }
 }

@@ -6,7 +6,7 @@
 import { CreateCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCommerceLocationRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

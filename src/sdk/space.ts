@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Space extends ClientSDK {
-    /**
-     * Create a space
-     */
-    async createKmsSpace(
-        request: operations.CreateKmsSpaceRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsSpace> {
-        return unwrapAsync(spaceCreateKmsSpace(this, request, options));
-    }
+  /**
+   * Create a space
+   */
+  async createKmsSpace(
+    request: operations.CreateKmsSpaceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsSpace> {
+    return unwrapAsync(spaceCreateKmsSpace(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a space
-     */
-    async getKmsSpace(
-        request: operations.GetKmsSpaceRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsSpace> {
-        return unwrapAsync(spaceGetKmsSpace(this, request, options));
-    }
+  /**
+   * Retrieve a space
+   */
+  async getKmsSpace(
+    request: operations.GetKmsSpaceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsSpace> {
+    return unwrapAsync(spaceGetKmsSpace(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all spaces
-     */
-    async listKmsSpaces(
-        request: operations.ListKmsSpacesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.KmsSpace>> {
-        return unwrapAsync(spaceListKmsSpaces(this, request, options));
-    }
+  /**
+   * List all spaces
+   */
+  async listKmsSpaces(
+    request: operations.ListKmsSpacesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.KmsSpace>> {
+    return unwrapAsync(spaceListKmsSpaces(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a space
-     */
-    async patchKmsSpace(
-        request: operations.PatchKmsSpaceRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsSpace> {
-        return unwrapAsync(spacePatchKmsSpace(this, request, options));
-    }
+  /**
+   * Update a space
+   */
+  async patchKmsSpace(
+    request: operations.PatchKmsSpaceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsSpace> {
+    return unwrapAsync(spacePatchKmsSpace(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a space
-     */
-    async removeKmsSpace(
-        request: operations.RemoveKmsSpaceRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(spaceRemoveKmsSpace(this, request, options));
-    }
+  /**
+   * Remove a space
+   */
+  async removeKmsSpace(
+    request: operations.RemoveKmsSpaceRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(spaceRemoveKmsSpace(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a space
-     */
-    async updateKmsSpace(
-        request: operations.UpdateKmsSpaceRequest,
-        options?: RequestOptions
-    ): Promise<shared.KmsSpace> {
-        return unwrapAsync(spaceUpdateKmsSpace(this, request, options));
-    }
+  /**
+   * Update a space
+   */
+  async updateKmsSpace(
+    request: operations.UpdateKmsSpaceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.KmsSpace> {
+    return unwrapAsync(spaceUpdateKmsSpace(
+      this,
+      request,
+      options,
+    ));
+  }
 }

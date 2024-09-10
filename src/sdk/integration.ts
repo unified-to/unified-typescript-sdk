@@ -3,47 +3,59 @@
  */
 
 import { integrationGetUnifiedIntegrationAuth } from "../funcs/integrationGetUnifiedIntegrationAuth.js";
-import { integrationListUnifiedIntegrationWorkspaces } from "../funcs/integrationListUnifiedIntegrationWorkspaces.js";
 import { integrationListUnifiedIntegrations } from "../funcs/integrationListUnifiedIntegrations.js";
+import { integrationListUnifiedIntegrationWorkspaces } from "../funcs/integrationListUnifiedIntegrationWorkspaces.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Integration extends ClientSDK {
-    /**
-     * Create connection indirectly
-     *
-     * @remarks
-     * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
-     */
-    async getUnifiedIntegrationAuth(
-        request: operations.GetUnifiedIntegrationAuthRequest,
-        options?: RequestOptions
-    ): Promise<string> {
-        return unwrapAsync(integrationGetUnifiedIntegrationAuth(this, request, options));
-    }
+  /**
+   * Create connection indirectly
+   *
+   * @remarks
+   * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+   */
+  async getUnifiedIntegrationAuth(
+    request: operations.GetUnifiedIntegrationAuthRequest,
+    options?: RequestOptions,
+  ): Promise<string> {
+    return unwrapAsync(integrationGetUnifiedIntegrationAuth(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all activated integrations in a workspace
-     *
-     * @remarks
-     * No authentication required as this is to be used by front-end interface
-     */
-    async listUnifiedIntegrationWorkspaces(
-        request: operations.ListUnifiedIntegrationWorkspacesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Integration>> {
-        return unwrapAsync(integrationListUnifiedIntegrationWorkspaces(this, request, options));
-    }
+  /**
+   * Returns all activated integrations in a workspace
+   *
+   * @remarks
+   * No authentication required as this is to be used by front-end interface
+   */
+  async listUnifiedIntegrationWorkspaces(
+    request: operations.ListUnifiedIntegrationWorkspacesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Integration>> {
+    return unwrapAsync(integrationListUnifiedIntegrationWorkspaces(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns all integrations
-     */
-    async listUnifiedIntegrations(
-        request: operations.ListUnifiedIntegrationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.Integration>> {
-        return unwrapAsync(integrationListUnifiedIntegrations(this, request, options));
-    }
+  /**
+   * Returns all integrations
+   */
+  async listUnifiedIntegrations(
+    request: operations.ListUnifiedIntegrationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Integration>> {
+    return unwrapAsync(integrationListUnifiedIntegrations(
+      this,
+      request,
+      options,
+    ));
+  }
 }

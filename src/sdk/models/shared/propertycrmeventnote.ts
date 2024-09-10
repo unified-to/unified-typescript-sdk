@@ -8,34 +8,34 @@ import * as z from "zod";
  * The note object, when type = note
  */
 export type PropertyCrmEventNote = {
-    description?: string | undefined;
-    title?: string | undefined;
+  description?: string | undefined;
+  title?: string | undefined;
 };
 
 /** @internal */
 export const PropertyCrmEventNote$inboundSchema: z.ZodType<
-    PropertyCrmEventNote,
-    z.ZodTypeDef,
-    unknown
+  PropertyCrmEventNote,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    description: z.string().optional(),
-    title: z.string().optional(),
+  description: z.string().optional(),
+  title: z.string().optional(),
 });
 
 /** @internal */
 export type PropertyCrmEventNote$Outbound = {
-    description?: string | undefined;
-    title?: string | undefined;
+  description?: string | undefined;
+  title?: string | undefined;
 };
 
 /** @internal */
 export const PropertyCrmEventNote$outboundSchema: z.ZodType<
-    PropertyCrmEventNote$Outbound,
-    z.ZodTypeDef,
-    PropertyCrmEventNote
+  PropertyCrmEventNote$Outbound,
+  z.ZodTypeDef,
+  PropertyCrmEventNote
 > = z.object({
-    description: z.string().optional(),
-    title: z.string().optional(),
+  description: z.string().optional(),
+  title: z.string().optional(),
 });
 
 /**
@@ -43,10 +43,10 @@ export const PropertyCrmEventNote$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace PropertyCrmEventNote$ {
-    /** @deprecated use `PropertyCrmEventNote$inboundSchema` instead. */
-    export const inboundSchema = PropertyCrmEventNote$inboundSchema;
-    /** @deprecated use `PropertyCrmEventNote$outboundSchema` instead. */
-    export const outboundSchema = PropertyCrmEventNote$outboundSchema;
-    /** @deprecated use `PropertyCrmEventNote$Outbound` instead. */
-    export type Outbound = PropertyCrmEventNote$Outbound;
+  /** @deprecated use `PropertyCrmEventNote$inboundSchema` instead. */
+  export const inboundSchema = PropertyCrmEventNote$inboundSchema;
+  /** @deprecated use `PropertyCrmEventNote$outboundSchema` instead. */
+  export const outboundSchema = PropertyCrmEventNote$outboundSchema;
+  /** @deprecated use `PropertyCrmEventNote$Outbound` instead. */
+  export type Outbound = PropertyCrmEventNote$Outbound;
 }

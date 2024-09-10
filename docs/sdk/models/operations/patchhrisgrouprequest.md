@@ -6,8 +6,8 @@
 import { PatchHrisGroupRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchHrisGroupRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

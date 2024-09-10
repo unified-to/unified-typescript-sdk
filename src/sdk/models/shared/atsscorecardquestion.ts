@@ -5,38 +5,38 @@
 import * as z from "zod";
 
 export type AtsScorecardQuestion = {
-    answer?: string | undefined;
-    description?: string | undefined;
-    text: string;
+  answer?: string | undefined;
+  description?: string | undefined;
+  text: string;
 };
 
 /** @internal */
 export const AtsScorecardQuestion$inboundSchema: z.ZodType<
-    AtsScorecardQuestion,
-    z.ZodTypeDef,
-    unknown
+  AtsScorecardQuestion,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    answer: z.string().optional(),
-    description: z.string().optional(),
-    text: z.string(),
+  answer: z.string().optional(),
+  description: z.string().optional(),
+  text: z.string(),
 });
 
 /** @internal */
 export type AtsScorecardQuestion$Outbound = {
-    answer?: string | undefined;
-    description?: string | undefined;
-    text: string;
+  answer?: string | undefined;
+  description?: string | undefined;
+  text: string;
 };
 
 /** @internal */
 export const AtsScorecardQuestion$outboundSchema: z.ZodType<
-    AtsScorecardQuestion$Outbound,
-    z.ZodTypeDef,
-    AtsScorecardQuestion
+  AtsScorecardQuestion$Outbound,
+  z.ZodTypeDef,
+  AtsScorecardQuestion
 > = z.object({
-    answer: z.string().optional(),
-    description: z.string().optional(),
-    text: z.string(),
+  answer: z.string().optional(),
+  description: z.string().optional(),
+  text: z.string(),
 });
 
 /**
@@ -44,10 +44,10 @@ export const AtsScorecardQuestion$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace AtsScorecardQuestion$ {
-    /** @deprecated use `AtsScorecardQuestion$inboundSchema` instead. */
-    export const inboundSchema = AtsScorecardQuestion$inboundSchema;
-    /** @deprecated use `AtsScorecardQuestion$outboundSchema` instead. */
-    export const outboundSchema = AtsScorecardQuestion$outboundSchema;
-    /** @deprecated use `AtsScorecardQuestion$Outbound` instead. */
-    export type Outbound = AtsScorecardQuestion$Outbound;
+  /** @deprecated use `AtsScorecardQuestion$inboundSchema` instead. */
+  export const inboundSchema = AtsScorecardQuestion$inboundSchema;
+  /** @deprecated use `AtsScorecardQuestion$outboundSchema` instead. */
+  export const outboundSchema = AtsScorecardQuestion$outboundSchema;
+  /** @deprecated use `AtsScorecardQuestion$Outbound` instead. */
+  export type Outbound = AtsScorecardQuestion$Outbound;
 }

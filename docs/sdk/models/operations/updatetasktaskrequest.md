@@ -6,8 +6,8 @@
 import { UpdateTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateTaskTaskRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

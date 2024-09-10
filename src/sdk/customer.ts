@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Customer extends ClientSDK {
-    /**
-     * Create a customer
-     */
-    async createTicketingCustomer(
-        request: operations.CreateTicketingCustomerRequest,
-        options?: RequestOptions
-    ): Promise<shared.TicketingCustomer> {
-        return unwrapAsync(customerCreateTicketingCustomer(this, request, options));
-    }
+  /**
+   * Create a customer
+   */
+  async createTicketingCustomer(
+    request: operations.CreateTicketingCustomerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCustomer> {
+    return unwrapAsync(customerCreateTicketingCustomer(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a customer
-     */
-    async getTicketingCustomer(
-        request: operations.GetTicketingCustomerRequest,
-        options?: RequestOptions
-    ): Promise<shared.TicketingCustomer> {
-        return unwrapAsync(customerGetTicketingCustomer(this, request, options));
-    }
+  /**
+   * Retrieve a customer
+   */
+  async getTicketingCustomer(
+    request: operations.GetTicketingCustomerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCustomer> {
+    return unwrapAsync(customerGetTicketingCustomer(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all customers
-     */
-    async listTicketingCustomers(
-        request: operations.ListTicketingCustomersRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.TicketingCustomer>> {
-        return unwrapAsync(customerListTicketingCustomers(this, request, options));
-    }
+  /**
+   * List all customers
+   */
+  async listTicketingCustomers(
+    request: operations.ListTicketingCustomersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.TicketingCustomer>> {
+    return unwrapAsync(customerListTicketingCustomers(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a customer
-     */
-    async patchTicketingCustomer(
-        request: operations.PatchTicketingCustomerRequest,
-        options?: RequestOptions
-    ): Promise<shared.TicketingCustomer> {
-        return unwrapAsync(customerPatchTicketingCustomer(this, request, options));
-    }
+  /**
+   * Update a customer
+   */
+  async patchTicketingCustomer(
+    request: operations.PatchTicketingCustomerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCustomer> {
+    return unwrapAsync(customerPatchTicketingCustomer(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a customer
-     */
-    async removeTicketingCustomer(
-        request: operations.RemoveTicketingCustomerRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(customerRemoveTicketingCustomer(this, request, options));
-    }
+  /**
+   * Remove a customer
+   */
+  async removeTicketingCustomer(
+    request: operations.RemoveTicketingCustomerRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(customerRemoveTicketingCustomer(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a customer
-     */
-    async updateTicketingCustomer(
-        request: operations.UpdateTicketingCustomerRequest,
-        options?: RequestOptions
-    ): Promise<shared.TicketingCustomer> {
-        return unwrapAsync(customerUpdateTicketingCustomer(this, request, options));
-    }
+  /**
+   * Update a customer
+   */
+  async updateTicketingCustomer(
+    request: operations.UpdateTicketingCustomerRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCustomer> {
+    return unwrapAsync(customerUpdateTicketingCustomer(
+      this,
+      request,
+      options,
+    ));
+  }
 }

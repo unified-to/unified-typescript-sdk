@@ -8,8 +8,8 @@ A collection of items/products/services
 import { CommerceCollection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CommerceCollection = {
-    id: "<id>",
-    name: "<value>",
+  id: "<id>",
+  name: "<value>",
 };
 ```
 

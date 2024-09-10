@@ -6,7 +6,7 @@
 import { EnrichPersonWorkHistory } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: EnrichPersonWorkHistory = {
-    title: "<value>",
+  title: "<value>",
 };
 ```
 

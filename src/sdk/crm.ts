@@ -44,363 +44,507 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Crm extends ClientSDK {
-    /**
-     * Create a company
-     */
-    async createCrmCompany(
-        request: operations.CreateCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(crmCreateCrmCompany(this, request, options));
-    }
+  /**
+   * Create a company
+   */
+  async createCrmCompany(
+    request: operations.CreateCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(crmCreateCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a contact
-     */
-    async createCrmContact(
-        request: operations.CreateCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(crmCreateCrmContact(this, request, options));
-    }
+  /**
+   * Create a contact
+   */
+  async createCrmContact(
+    request: operations.CreateCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(crmCreateCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a deal
-     */
-    async createCrmDeal(
-        request: operations.CreateCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(crmCreateCrmDeal(this, request, options));
-    }
+  /**
+   * Create a deal
+   */
+  async createCrmDeal(
+    request: operations.CreateCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(crmCreateCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create an event
-     */
-    async createCrmEvent(
-        request: operations.CreateCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(crmCreateCrmEvent(this, request, options));
-    }
+  /**
+   * Create an event
+   */
+  async createCrmEvent(
+    request: operations.CreateCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(crmCreateCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a lead
-     */
-    async createCrmLead(
-        request: operations.CreateCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(crmCreateCrmLead(this, request, options));
-    }
+  /**
+   * Create a lead
+   */
+  async createCrmLead(
+    request: operations.CreateCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(crmCreateCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a pipeline
-     */
-    async createCrmPipeline(
-        request: operations.CreateCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(crmCreateCrmPipeline(this, request, options));
-    }
+  /**
+   * Create a pipeline
+   */
+  async createCrmPipeline(
+    request: operations.CreateCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(crmCreateCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a company
-     */
-    async getCrmCompany(
-        request: operations.GetCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(crmGetCrmCompany(this, request, options));
-    }
+  /**
+   * Retrieve a company
+   */
+  async getCrmCompany(
+    request: operations.GetCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(crmGetCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a contact
-     */
-    async getCrmContact(
-        request: operations.GetCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(crmGetCrmContact(this, request, options));
-    }
+  /**
+   * Retrieve a contact
+   */
+  async getCrmContact(
+    request: operations.GetCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(crmGetCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a deal
-     */
-    async getCrmDeal(
-        request: operations.GetCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(crmGetCrmDeal(this, request, options));
-    }
+  /**
+   * Retrieve a deal
+   */
+  async getCrmDeal(
+    request: operations.GetCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(crmGetCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an event
-     */
-    async getCrmEvent(
-        request: operations.GetCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(crmGetCrmEvent(this, request, options));
-    }
+  /**
+   * Retrieve an event
+   */
+  async getCrmEvent(
+    request: operations.GetCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(crmGetCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a lead
-     */
-    async getCrmLead(
-        request: operations.GetCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(crmGetCrmLead(this, request, options));
-    }
+  /**
+   * Retrieve a lead
+   */
+  async getCrmLead(
+    request: operations.GetCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(crmGetCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a pipeline
-     */
-    async getCrmPipeline(
-        request: operations.GetCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(crmGetCrmPipeline(this, request, options));
-    }
+  /**
+   * Retrieve a pipeline
+   */
+  async getCrmPipeline(
+    request: operations.GetCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(crmGetCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all companies
-     */
-    async listCrmCompanies(
-        request: operations.ListCrmCompaniesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmCompany>> {
-        return unwrapAsync(crmListCrmCompanies(this, request, options));
-    }
+  /**
+   * List all companies
+   */
+  async listCrmCompanies(
+    request: operations.ListCrmCompaniesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmCompany>> {
+    return unwrapAsync(crmListCrmCompanies(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all contacts
-     */
-    async listCrmContacts(
-        request: operations.ListCrmContactsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmContact>> {
-        return unwrapAsync(crmListCrmContacts(this, request, options));
-    }
+  /**
+   * List all contacts
+   */
+  async listCrmContacts(
+    request: operations.ListCrmContactsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmContact>> {
+    return unwrapAsync(crmListCrmContacts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all deals
-     */
-    async listCrmDeals(
-        request: operations.ListCrmDealsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmDeal>> {
-        return unwrapAsync(crmListCrmDeals(this, request, options));
-    }
+  /**
+   * List all deals
+   */
+  async listCrmDeals(
+    request: operations.ListCrmDealsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmDeal>> {
+    return unwrapAsync(crmListCrmDeals(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all events
-     */
-    async listCrmEvents(
-        request: operations.ListCrmEventsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmEvent>> {
-        return unwrapAsync(crmListCrmEvents(this, request, options));
-    }
+  /**
+   * List all events
+   */
+  async listCrmEvents(
+    request: operations.ListCrmEventsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmEvent>> {
+    return unwrapAsync(crmListCrmEvents(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all leads
-     */
-    async listCrmLeads(
-        request: operations.ListCrmLeadsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmLead>> {
-        return unwrapAsync(crmListCrmLeads(this, request, options));
-    }
+  /**
+   * List all leads
+   */
+  async listCrmLeads(
+    request: operations.ListCrmLeadsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmLead>> {
+    return unwrapAsync(crmListCrmLeads(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all pipelines
-     */
-    async listCrmPipelines(
-        request: operations.ListCrmPipelinesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmPipeline>> {
-        return unwrapAsync(crmListCrmPipelines(this, request, options));
-    }
+  /**
+   * List all pipelines
+   */
+  async listCrmPipelines(
+    request: operations.ListCrmPipelinesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmPipeline>> {
+    return unwrapAsync(crmListCrmPipelines(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async patchCrmCompany(
-        request: operations.PatchCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(crmPatchCrmCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async patchCrmCompany(
+    request: operations.PatchCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(crmPatchCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async patchCrmContact(
-        request: operations.PatchCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(crmPatchCrmContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async patchCrmContact(
+    request: operations.PatchCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(crmPatchCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a deal
-     */
-    async patchCrmDeal(
-        request: operations.PatchCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(crmPatchCrmDeal(this, request, options));
-    }
+  /**
+   * Update a deal
+   */
+  async patchCrmDeal(
+    request: operations.PatchCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(crmPatchCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an event
-     */
-    async patchCrmEvent(
-        request: operations.PatchCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(crmPatchCrmEvent(this, request, options));
-    }
+  /**
+   * Update an event
+   */
+  async patchCrmEvent(
+    request: operations.PatchCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(crmPatchCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a lead
-     */
-    async patchCrmLead(
-        request: operations.PatchCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(crmPatchCrmLead(this, request, options));
-    }
+  /**
+   * Update a lead
+   */
+  async patchCrmLead(
+    request: operations.PatchCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(crmPatchCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a pipeline
-     */
-    async patchCrmPipeline(
-        request: operations.PatchCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(crmPatchCrmPipeline(this, request, options));
-    }
+  /**
+   * Update a pipeline
+   */
+  async patchCrmPipeline(
+    request: operations.PatchCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(crmPatchCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a company
-     */
-    async removeCrmCompany(
-        request: operations.RemoveCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmCompany(this, request, options));
-    }
+  /**
+   * Remove a company
+   */
+  async removeCrmCompany(
+    request: operations.RemoveCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a contact
-     */
-    async removeCrmContact(
-        request: operations.RemoveCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmContact(this, request, options));
-    }
+  /**
+   * Remove a contact
+   */
+  async removeCrmContact(
+    request: operations.RemoveCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a deal
-     */
-    async removeCrmDeal(
-        request: operations.RemoveCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmDeal(this, request, options));
-    }
+  /**
+   * Remove a deal
+   */
+  async removeCrmDeal(
+    request: operations.RemoveCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an event
-     */
-    async removeCrmEvent(
-        request: operations.RemoveCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmEvent(this, request, options));
-    }
+  /**
+   * Remove an event
+   */
+  async removeCrmEvent(
+    request: operations.RemoveCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a lead
-     */
-    async removeCrmLead(
-        request: operations.RemoveCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmLead(this, request, options));
-    }
+  /**
+   * Remove a lead
+   */
+  async removeCrmLead(
+    request: operations.RemoveCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a pipeline
-     */
-    async removeCrmPipeline(
-        request: operations.RemoveCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(crmRemoveCrmPipeline(this, request, options));
-    }
+  /**
+   * Remove a pipeline
+   */
+  async removeCrmPipeline(
+    request: operations.RemoveCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(crmRemoveCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a company
-     */
-    async updateCrmCompany(
-        request: operations.UpdateCrmCompanyRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmCompany> {
-        return unwrapAsync(crmUpdateCrmCompany(this, request, options));
-    }
+  /**
+   * Update a company
+   */
+  async updateCrmCompany(
+    request: operations.UpdateCrmCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmCompany> {
+    return unwrapAsync(crmUpdateCrmCompany(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async updateCrmContact(
-        request: operations.UpdateCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(crmUpdateCrmContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async updateCrmContact(
+    request: operations.UpdateCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(crmUpdateCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a deal
-     */
-    async updateCrmDeal(
-        request: operations.UpdateCrmDealRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmDeal> {
-        return unwrapAsync(crmUpdateCrmDeal(this, request, options));
-    }
+  /**
+   * Update a deal
+   */
+  async updateCrmDeal(
+    request: operations.UpdateCrmDealRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmDeal> {
+    return unwrapAsync(crmUpdateCrmDeal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an event
-     */
-    async updateCrmEvent(
-        request: operations.UpdateCrmEventRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmEvent> {
-        return unwrapAsync(crmUpdateCrmEvent(this, request, options));
-    }
+  /**
+   * Update an event
+   */
+  async updateCrmEvent(
+    request: operations.UpdateCrmEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmEvent> {
+    return unwrapAsync(crmUpdateCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a lead
-     */
-    async updateCrmLead(
-        request: operations.UpdateCrmLeadRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmLead> {
-        return unwrapAsync(crmUpdateCrmLead(this, request, options));
-    }
+  /**
+   * Update a lead
+   */
+  async updateCrmLead(
+    request: operations.UpdateCrmLeadRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmLead> {
+    return unwrapAsync(crmUpdateCrmLead(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a pipeline
-     */
-    async updateCrmPipeline(
-        request: operations.UpdateCrmPipelineRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmPipeline> {
-        return unwrapAsync(crmUpdateCrmPipeline(this, request, options));
-    }
+  /**
+   * Update a pipeline
+   */
+  async updateCrmPipeline(
+    request: operations.UpdateCrmPipelineRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmPipeline> {
+    return unwrapAsync(crmUpdateCrmPipeline(
+      this,
+      request,
+      options,
+    ));
+  }
 }

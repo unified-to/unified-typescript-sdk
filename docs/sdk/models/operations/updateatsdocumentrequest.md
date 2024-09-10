@@ -6,8 +6,8 @@
 import { UpdateAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAtsDocumentRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

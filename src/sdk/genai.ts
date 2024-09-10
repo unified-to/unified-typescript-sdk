@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Genai extends ClientSDK {
-    /**
-     * Create a prompt
-     */
-    async createGenaiPrompt(
-        request: operations.CreateGenaiPromptRequest,
-        options?: RequestOptions
-    ): Promise<shared.GenaiPrompt> {
-        return unwrapAsync(genaiCreateGenaiPrompt(this, request, options));
-    }
+  /**
+   * Create a prompt
+   */
+  async createGenaiPrompt(
+    request: operations.CreateGenaiPromptRequest,
+    options?: RequestOptions,
+  ): Promise<shared.GenaiPrompt> {
+    return unwrapAsync(genaiCreateGenaiPrompt(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all models
-     */
-    async listGenaiModels(
-        request: operations.ListGenaiModelsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.GenaiModel>> {
-        return unwrapAsync(genaiListGenaiModels(this, request, options));
-    }
+  /**
+   * List all models
+   */
+  async listGenaiModels(
+    request: operations.ListGenaiModelsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.GenaiModel>> {
+    return unwrapAsync(genaiListGenaiModels(
+      this,
+      request,
+      options,
+    ));
+  }
 }

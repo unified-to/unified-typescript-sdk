@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Job extends ClientSDK {
-    /**
-     * Create a job
-     */
-    async createAtsJob(
-        request: operations.CreateAtsJobRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsJob> {
-        return unwrapAsync(jobCreateAtsJob(this, request, options));
-    }
+  /**
+   * Create a job
+   */
+  async createAtsJob(
+    request: operations.CreateAtsJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsJob> {
+    return unwrapAsync(jobCreateAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a job
-     */
-    async getAtsJob(
-        request: operations.GetAtsJobRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsJob> {
-        return unwrapAsync(jobGetAtsJob(this, request, options));
-    }
+  /**
+   * Retrieve a job
+   */
+  async getAtsJob(
+    request: operations.GetAtsJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsJob> {
+    return unwrapAsync(jobGetAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all jobs
-     */
-    async listAtsJobs(
-        request: operations.ListAtsJobsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsJob>> {
-        return unwrapAsync(jobListAtsJobs(this, request, options));
-    }
+  /**
+   * List all jobs
+   */
+  async listAtsJobs(
+    request: operations.ListAtsJobsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsJob>> {
+    return unwrapAsync(jobListAtsJobs(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a job
-     */
-    async patchAtsJob(
-        request: operations.PatchAtsJobRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsJob> {
-        return unwrapAsync(jobPatchAtsJob(this, request, options));
-    }
+  /**
+   * Update a job
+   */
+  async patchAtsJob(
+    request: operations.PatchAtsJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsJob> {
+    return unwrapAsync(jobPatchAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a job
-     */
-    async removeAtsJob(
-        request: operations.RemoveAtsJobRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(jobRemoveAtsJob(this, request, options));
-    }
+  /**
+   * Remove a job
+   */
+  async removeAtsJob(
+    request: operations.RemoveAtsJobRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(jobRemoveAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a job
-     */
-    async updateAtsJob(
-        request: operations.UpdateAtsJobRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsJob> {
-        return unwrapAsync(jobUpdateAtsJob(this, request, options));
-    }
+  /**
+   * Update a job
+   */
+  async updateAtsJob(
+    request: operations.UpdateAtsJobRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsJob> {
+    return unwrapAsync(jobUpdateAtsJob(
+      this,
+      request,
+      options,
+    ));
+  }
 }

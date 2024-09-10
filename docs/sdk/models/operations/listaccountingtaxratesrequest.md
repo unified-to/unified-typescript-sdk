@@ -6,7 +6,7 @@
 import { ListAccountingTaxratesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAccountingTaxratesRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

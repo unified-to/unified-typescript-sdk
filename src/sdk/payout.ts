@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Payout extends ClientSDK {
-    /**
-     * Retrieve a payout
-     */
-    async getPaymentPayout(
-        request: operations.GetPaymentPayoutRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentPayout> {
-        return unwrapAsync(payoutGetPaymentPayout(this, request, options));
-    }
+  /**
+   * Retrieve a payout
+   */
+  async getPaymentPayout(
+    request: operations.GetPaymentPayoutRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentPayout> {
+    return unwrapAsync(payoutGetPaymentPayout(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all payouts
-     */
-    async listPaymentPayouts(
-        request: operations.ListPaymentPayoutsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentPayout>> {
-        return unwrapAsync(payoutListPaymentPayouts(this, request, options));
-    }
+  /**
+   * List all payouts
+   */
+  async listPaymentPayouts(
+    request: operations.ListPaymentPayoutsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentPayout>> {
+    return unwrapAsync(payoutListPaymentPayouts(
+      this,
+      request,
+      options,
+    ));
+  }
 }

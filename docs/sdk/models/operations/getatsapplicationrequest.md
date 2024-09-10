@@ -6,8 +6,8 @@
 import { GetAtsApplicationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetAtsApplicationRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

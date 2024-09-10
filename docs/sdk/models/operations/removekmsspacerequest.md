@@ -6,8 +6,8 @@
 import { RemoveKmsSpaceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveKmsSpaceRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

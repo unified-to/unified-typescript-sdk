@@ -6,7 +6,7 @@
 import { UcTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: UcTelephone = {
-    telephone: "<value>",
+  telephone: "<value>",
 };
 ```
 

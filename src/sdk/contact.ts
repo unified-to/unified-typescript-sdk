@@ -26,183 +26,255 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Contact extends ClientSDK {
-    /**
-     * Create a contact
-     */
-    async createAccountingContact(
-        request: operations.CreateAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(contactCreateAccountingContact(this, request, options));
-    }
+  /**
+   * Create a contact
+   */
+  async createAccountingContact(
+    request: operations.CreateAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(contactCreateAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a contact
-     */
-    async createCrmContact(
-        request: operations.CreateCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(contactCreateCrmContact(this, request, options));
-    }
+  /**
+   * Create a contact
+   */
+  async createCrmContact(
+    request: operations.CreateCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(contactCreateCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Create a contact
-     */
-    async createUcContact(
-        request: operations.CreateUcContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.UcContact> {
-        return unwrapAsync(contactCreateUcContact(this, request, options));
-    }
+  /**
+   * Create a contact
+   */
+  async createUcContact(
+    request: operations.CreateUcContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcContact> {
+    return unwrapAsync(contactCreateUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a contact
-     */
-    async getAccountingContact(
-        request: operations.GetAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(contactGetAccountingContact(this, request, options));
-    }
+  /**
+   * Retrieve a contact
+   */
+  async getAccountingContact(
+    request: operations.GetAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(contactGetAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a contact
-     */
-    async getCrmContact(
-        request: operations.GetCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(contactGetCrmContact(this, request, options));
-    }
+  /**
+   * Retrieve a contact
+   */
+  async getCrmContact(
+    request: operations.GetCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(contactGetCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a contact
-     */
-    async getUcContact(
-        request: operations.GetUcContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.UcContact> {
-        return unwrapAsync(contactGetUcContact(this, request, options));
-    }
+  /**
+   * Retrieve a contact
+   */
+  async getUcContact(
+    request: operations.GetUcContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcContact> {
+    return unwrapAsync(contactGetUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all contacts
-     */
-    async listAccountingContacts(
-        request: operations.ListAccountingContactsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingContact>> {
-        return unwrapAsync(contactListAccountingContacts(this, request, options));
-    }
+  /**
+   * List all contacts
+   */
+  async listAccountingContacts(
+    request: operations.ListAccountingContactsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingContact>> {
+    return unwrapAsync(contactListAccountingContacts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all contacts
-     */
-    async listCrmContacts(
-        request: operations.ListCrmContactsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CrmContact>> {
-        return unwrapAsync(contactListCrmContacts(this, request, options));
-    }
+  /**
+   * List all contacts
+   */
+  async listCrmContacts(
+    request: operations.ListCrmContactsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CrmContact>> {
+    return unwrapAsync(contactListCrmContacts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all contacts
-     */
-    async listUcContacts(
-        request: operations.ListUcContactsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.UcContact>> {
-        return unwrapAsync(contactListUcContacts(this, request, options));
-    }
+  /**
+   * List all contacts
+   */
+  async listUcContacts(
+    request: operations.ListUcContactsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcContact>> {
+    return unwrapAsync(contactListUcContacts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async patchAccountingContact(
-        request: operations.PatchAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(contactPatchAccountingContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async patchAccountingContact(
+    request: operations.PatchAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(contactPatchAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async patchCrmContact(
-        request: operations.PatchCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(contactPatchCrmContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async patchCrmContact(
+    request: operations.PatchCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(contactPatchCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async patchUcContact(
-        request: operations.PatchUcContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.UcContact> {
-        return unwrapAsync(contactPatchUcContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async patchUcContact(
+    request: operations.PatchUcContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcContact> {
+    return unwrapAsync(contactPatchUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a contact
-     */
-    async removeAccountingContact(
-        request: operations.RemoveAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(contactRemoveAccountingContact(this, request, options));
-    }
+  /**
+   * Remove a contact
+   */
+  async removeAccountingContact(
+    request: operations.RemoveAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(contactRemoveAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a contact
-     */
-    async removeCrmContact(
-        request: operations.RemoveCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(contactRemoveCrmContact(this, request, options));
-    }
+  /**
+   * Remove a contact
+   */
+  async removeCrmContact(
+    request: operations.RemoveCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(contactRemoveCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a contact
-     */
-    async removeUcContact(
-        request: operations.RemoveUcContactRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(contactRemoveUcContact(this, request, options));
-    }
+  /**
+   * Remove a contact
+   */
+  async removeUcContact(
+    request: operations.RemoveUcContactRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(contactRemoveUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async updateAccountingContact(
-        request: operations.UpdateAccountingContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingContact> {
-        return unwrapAsync(contactUpdateAccountingContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async updateAccountingContact(
+    request: operations.UpdateAccountingContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingContact> {
+    return unwrapAsync(contactUpdateAccountingContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async updateCrmContact(
-        request: operations.UpdateCrmContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.CrmContact> {
-        return unwrapAsync(contactUpdateCrmContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async updateCrmContact(
+    request: operations.UpdateCrmContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CrmContact> {
+    return unwrapAsync(contactUpdateCrmContact(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a contact
-     */
-    async updateUcContact(
-        request: operations.UpdateUcContactRequest,
-        options?: RequestOptions
-    ): Promise<shared.UcContact> {
-        return unwrapAsync(contactUpdateUcContact(this, request, options));
-    }
+  /**
+   * Update a contact
+   */
+  async updateUcContact(
+    request: operations.UpdateUcContactRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcContact> {
+    return unwrapAsync(contactUpdateUcContact(
+      this,
+      request,
+      options,
+    ));
+  }
 }

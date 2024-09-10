@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Apicall extends ClientSDK {
-    /**
-     * Retrieve specific API Call by its ID
-     */
-    async getUnifiedApicall(
-        request: operations.GetUnifiedApicallRequest,
-        options?: RequestOptions
-    ): Promise<shared.ApiCall> {
-        return unwrapAsync(apicallGetUnifiedApicall(this, request, options));
-    }
+  /**
+   * Retrieve specific API Call by its ID
+   */
+  async getUnifiedApicall(
+    request: operations.GetUnifiedApicallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ApiCall> {
+    return unwrapAsync(apicallGetUnifiedApicall(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Returns API Calls
-     */
-    async listUnifiedApicalls(
-        request: operations.ListUnifiedApicallsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.ApiCall>> {
-        return unwrapAsync(apicallListUnifiedApicalls(this, request, options));
-    }
+  /**
+   * Returns API Calls
+   */
+  async listUnifiedApicalls(
+    request: operations.ListUnifiedApicallsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.ApiCall>> {
+    return unwrapAsync(apicallListUnifiedApicalls(
+      this,
+      request,
+      options,
+    ));
+  }
 }

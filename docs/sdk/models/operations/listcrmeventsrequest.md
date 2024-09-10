@@ -6,7 +6,7 @@
 import { ListCrmEventsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListCrmEventsRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

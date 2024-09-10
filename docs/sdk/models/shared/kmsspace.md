@@ -6,8 +6,8 @@
 import { KmsSpace } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsSpace = {
-    id: "<id>",
-    name: "<value>",
+  id: "<id>",
+  name: "<value>",
 };
 ```
 

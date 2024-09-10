@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Organization extends ClientSDK {
-    /**
-     * Retrieve an organization
-     */
-    async getAccountingOrganization(
-        request: operations.GetAccountingOrganizationRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingOrganization> {
-        return unwrapAsync(organizationGetAccountingOrganization(this, request, options));
-    }
+  /**
+   * Retrieve an organization
+   */
+  async getAccountingOrganization(
+    request: operations.GetAccountingOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrganization> {
+    return unwrapAsync(organizationGetAccountingOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all organizations
-     */
-    async listAccountingOrganizations(
-        request: operations.ListAccountingOrganizationsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingOrganization>> {
-        return unwrapAsync(organizationListAccountingOrganizations(this, request, options));
-    }
+  /**
+   * List all organizations
+   */
+  async listAccountingOrganizations(
+    request: operations.ListAccountingOrganizationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingOrganization>> {
+    return unwrapAsync(organizationListAccountingOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
 }

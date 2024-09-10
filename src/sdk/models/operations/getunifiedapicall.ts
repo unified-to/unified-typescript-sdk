@@ -5,33 +5,33 @@
 import * as z from "zod";
 
 export type GetUnifiedApicallRequest = {
-    /**
-     * ID of the Apicall
-     */
-    id: string;
+  /**
+   * ID of the Apicall
+   */
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedApicallRequest$inboundSchema: z.ZodType<
-    GetUnifiedApicallRequest,
-    z.ZodTypeDef,
-    unknown
+  GetUnifiedApicallRequest,
+  z.ZodTypeDef,
+  unknown
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /** @internal */
 export type GetUnifiedApicallRequest$Outbound = {
-    id: string;
+  id: string;
 };
 
 /** @internal */
 export const GetUnifiedApicallRequest$outboundSchema: z.ZodType<
-    GetUnifiedApicallRequest$Outbound,
-    z.ZodTypeDef,
-    GetUnifiedApicallRequest
+  GetUnifiedApicallRequest$Outbound,
+  z.ZodTypeDef,
+  GetUnifiedApicallRequest
 > = z.object({
-    id: z.string(),
+  id: z.string(),
 });
 
 /**
@@ -39,10 +39,10 @@ export const GetUnifiedApicallRequest$outboundSchema: z.ZodType<
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
 export namespace GetUnifiedApicallRequest$ {
-    /** @deprecated use `GetUnifiedApicallRequest$inboundSchema` instead. */
-    export const inboundSchema = GetUnifiedApicallRequest$inboundSchema;
-    /** @deprecated use `GetUnifiedApicallRequest$outboundSchema` instead. */
-    export const outboundSchema = GetUnifiedApicallRequest$outboundSchema;
-    /** @deprecated use `GetUnifiedApicallRequest$Outbound` instead. */
-    export type Outbound = GetUnifiedApicallRequest$Outbound;
+  /** @deprecated use `GetUnifiedApicallRequest$inboundSchema` instead. */
+  export const inboundSchema = GetUnifiedApicallRequest$inboundSchema;
+  /** @deprecated use `GetUnifiedApicallRequest$outboundSchema` instead. */
+  export const outboundSchema = GetUnifiedApicallRequest$outboundSchema;
+  /** @deprecated use `GetUnifiedApicallRequest$Outbound` instead. */
+  export type Outbound = GetUnifiedApicallRequest$Outbound;
 }

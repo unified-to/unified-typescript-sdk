@@ -6,8 +6,8 @@
 import { RemoveCommerceItemRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveCommerceItemRequest = {
-    connectionId: "<value>",
-    id: "<id>",
+  connectionId: "<value>",
+  id: "<id>",
 };
 ```
 

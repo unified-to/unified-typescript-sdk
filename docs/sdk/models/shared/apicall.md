@@ -6,12 +6,12 @@
 import { ApiCall } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: ApiCall = {
-    integrationType: "<value>",
-    method: "<value>",
-    name: "<value>",
-    path: "/etc/namedb",
-    status: "<value>",
-    type: "inbound",
+  integrationType: "<value>",
+  method: "<value>",
+  name: "<value>",
+  path: "/etc/namedb",
+  status: "<value>",
+  type: "inbound",
 };
 ```
 

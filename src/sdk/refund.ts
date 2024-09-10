@@ -10,23 +10,31 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Refund extends ClientSDK {
-    /**
-     * Retrieve a refund
-     */
-    async getPaymentRefund(
-        request: operations.GetPaymentRefundRequest,
-        options?: RequestOptions
-    ): Promise<shared.PaymentRefund> {
-        return unwrapAsync(refundGetPaymentRefund(this, request, options));
-    }
+  /**
+   * Retrieve a refund
+   */
+  async getPaymentRefund(
+    request: operations.GetPaymentRefundRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentRefund> {
+    return unwrapAsync(refundGetPaymentRefund(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all refunds
-     */
-    async listPaymentRefunds(
-        request: operations.ListPaymentRefundsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.PaymentRefund>> {
-        return unwrapAsync(refundListPaymentRefunds(this, request, options));
-    }
+  /**
+   * List all refunds
+   */
+  async listPaymentRefunds(
+    request: operations.ListPaymentRefundsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentRefund>> {
+    return unwrapAsync(refundListPaymentRefunds(
+      this,
+      request,
+      options,
+    ));
+  }
 }

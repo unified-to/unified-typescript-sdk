@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Journal extends ClientSDK {
-    /**
-     * Create a journal
-     */
-    async createAccountingJournal(
-        request: operations.CreateAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(journalCreateAccountingJournal(this, request, options));
-    }
+  /**
+   * Create a journal
+   */
+  async createAccountingJournal(
+    request: operations.CreateAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(journalCreateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a journal
-     */
-    async getAccountingJournal(
-        request: operations.GetAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(journalGetAccountingJournal(this, request, options));
-    }
+  /**
+   * Retrieve a journal
+   */
+  async getAccountingJournal(
+    request: operations.GetAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(journalGetAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all journals
-     */
-    async listAccountingJournals(
-        request: operations.ListAccountingJournalsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingJournal>> {
-        return unwrapAsync(journalListAccountingJournals(this, request, options));
-    }
+  /**
+   * List all journals
+   */
+  async listAccountingJournals(
+    request: operations.ListAccountingJournalsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingJournal>> {
+    return unwrapAsync(journalListAccountingJournals(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a journal
-     */
-    async patchAccountingJournal(
-        request: operations.PatchAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(journalPatchAccountingJournal(this, request, options));
-    }
+  /**
+   * Update a journal
+   */
+  async patchAccountingJournal(
+    request: operations.PatchAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(journalPatchAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a journal
-     */
-    async removeAccountingJournal(
-        request: operations.RemoveAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(journalRemoveAccountingJournal(this, request, options));
-    }
+  /**
+   * Remove a journal
+   */
+  async removeAccountingJournal(
+    request: operations.RemoveAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(journalRemoveAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a journal
-     */
-    async updateAccountingJournal(
-        request: operations.UpdateAccountingJournalRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingJournal> {
-        return unwrapAsync(journalUpdateAccountingJournal(this, request, options));
-    }
+  /**
+   * Update a journal
+   */
+  async updateAccountingJournal(
+    request: operations.UpdateAccountingJournalRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingJournal> {
+    return unwrapAsync(journalUpdateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
 }

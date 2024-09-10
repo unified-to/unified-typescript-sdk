@@ -6,7 +6,7 @@
 import { CreateHrisCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateHrisCompanyRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

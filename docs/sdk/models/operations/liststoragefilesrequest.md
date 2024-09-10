@@ -6,7 +6,7 @@
 import { ListStorageFilesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListStorageFilesRequest = {
-    connectionId: "<value>",
+  connectionId: "<value>",
 };
 ```
 

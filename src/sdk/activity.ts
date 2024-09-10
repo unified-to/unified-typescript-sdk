@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Activity extends ClientSDK {
-    /**
-     * Create an activity
-     */
-    async createAtsActivity(
-        request: operations.CreateAtsActivityRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsActivity> {
-        return unwrapAsync(activityCreateAtsActivity(this, request, options));
-    }
+  /**
+   * Create an activity
+   */
+  async createAtsActivity(
+    request: operations.CreateAtsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsActivity> {
+    return unwrapAsync(activityCreateAtsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an activity
-     */
-    async getAtsActivity(
-        request: operations.GetAtsActivityRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsActivity> {
-        return unwrapAsync(activityGetAtsActivity(this, request, options));
-    }
+  /**
+   * Retrieve an activity
+   */
+  async getAtsActivity(
+    request: operations.GetAtsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsActivity> {
+    return unwrapAsync(activityGetAtsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all activities
-     */
-    async listAtsActivities(
-        request: operations.ListAtsActivitiesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsActivity>> {
-        return unwrapAsync(activityListAtsActivities(this, request, options));
-    }
+  /**
+   * List all activities
+   */
+  async listAtsActivities(
+    request: operations.ListAtsActivitiesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsActivity>> {
+    return unwrapAsync(activityListAtsActivities(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an activity
-     */
-    async patchAtsActivity(
-        request: operations.PatchAtsActivityRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsActivity> {
-        return unwrapAsync(activityPatchAtsActivity(this, request, options));
-    }
+  /**
+   * Update an activity
+   */
+  async patchAtsActivity(
+    request: operations.PatchAtsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsActivity> {
+    return unwrapAsync(activityPatchAtsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an activity
-     */
-    async removeAtsActivity(
-        request: operations.RemoveAtsActivityRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(activityRemoveAtsActivity(this, request, options));
-    }
+  /**
+   * Remove an activity
+   */
+  async removeAtsActivity(
+    request: operations.RemoveAtsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(activityRemoveAtsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an activity
-     */
-    async updateAtsActivity(
-        request: operations.UpdateAtsActivityRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsActivity> {
-        return unwrapAsync(activityUpdateAtsActivity(this, request, options));
-    }
+  /**
+   * Update an activity
+   */
+  async updateAtsActivity(
+    request: operations.UpdateAtsActivityRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsActivity> {
+    return unwrapAsync(activityUpdateAtsActivity(
+      this,
+      request,
+      options,
+    ));
+  }
 }

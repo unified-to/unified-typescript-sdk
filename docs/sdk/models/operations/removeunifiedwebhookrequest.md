@@ -6,7 +6,7 @@
 import { RemoveUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveUnifiedWebhookRequest = {
-    id: "<id>",
+  id: "<id>",
 };
 ```
 

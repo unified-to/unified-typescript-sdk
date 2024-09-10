@@ -6,7 +6,7 @@
 import { HrisTelephone } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisTelephone = {
-    telephone: "<value>",
+  telephone: "<value>",
 };
 ```
 

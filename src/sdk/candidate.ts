@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Candidate extends ClientSDK {
-    /**
-     * Create a candidate
-     */
-    async createAtsCandidate(
-        request: operations.CreateAtsCandidateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsCandidate> {
-        return unwrapAsync(candidateCreateAtsCandidate(this, request, options));
-    }
+  /**
+   * Create a candidate
+   */
+  async createAtsCandidate(
+    request: operations.CreateAtsCandidateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCandidate> {
+    return unwrapAsync(candidateCreateAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a candidate
-     */
-    async getAtsCandidate(
-        request: operations.GetAtsCandidateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsCandidate> {
-        return unwrapAsync(candidateGetAtsCandidate(this, request, options));
-    }
+  /**
+   * Retrieve a candidate
+   */
+  async getAtsCandidate(
+    request: operations.GetAtsCandidateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCandidate> {
+    return unwrapAsync(candidateGetAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all candidates
-     */
-    async listAtsCandidates(
-        request: operations.ListAtsCandidatesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsCandidate>> {
-        return unwrapAsync(candidateListAtsCandidates(this, request, options));
-    }
+  /**
+   * List all candidates
+   */
+  async listAtsCandidates(
+    request: operations.ListAtsCandidatesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsCandidate>> {
+    return unwrapAsync(candidateListAtsCandidates(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a candidate
-     */
-    async patchAtsCandidate(
-        request: operations.PatchAtsCandidateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsCandidate> {
-        return unwrapAsync(candidatePatchAtsCandidate(this, request, options));
-    }
+  /**
+   * Update a candidate
+   */
+  async patchAtsCandidate(
+    request: operations.PatchAtsCandidateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCandidate> {
+    return unwrapAsync(candidatePatchAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a candidate
-     */
-    async removeAtsCandidate(
-        request: operations.RemoveAtsCandidateRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(candidateRemoveAtsCandidate(this, request, options));
-    }
+  /**
+   * Remove a candidate
+   */
+  async removeAtsCandidate(
+    request: operations.RemoveAtsCandidateRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(candidateRemoveAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a candidate
-     */
-    async updateAtsCandidate(
-        request: operations.UpdateAtsCandidateRequest,
-        options?: RequestOptions
-    ): Promise<shared.AtsCandidate> {
-        return unwrapAsync(candidateUpdateAtsCandidate(this, request, options));
-    }
+  /**
+   * Update a candidate
+   */
+  async updateAtsCandidate(
+    request: operations.UpdateAtsCandidateRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCandidate> {
+    return unwrapAsync(candidateUpdateAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
 }

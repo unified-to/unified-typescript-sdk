@@ -6,7 +6,7 @@
 import { PropertyAtsActivityFrom } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: PropertyAtsActivityFrom = {
-    email: "Antonetta64@hotmail.com",
+  email: "Antonetta64@hotmail.com",
 };
 ```
 

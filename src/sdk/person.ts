@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Person extends ClientSDK {
-    /**
-     * Retrieve enrichment information for a person
-     */
-    async listEnrichPeople(
-        request: operations.ListEnrichPeopleRequest,
-        options?: RequestOptions
-    ): Promise<shared.EnrichPerson> {
-        return unwrapAsync(personListEnrichPeople(this, request, options));
-    }
+  /**
+   * Retrieve enrichment information for a person
+   */
+  async listEnrichPeople(
+    request: operations.ListEnrichPeopleRequest,
+    options?: RequestOptions,
+  ): Promise<shared.EnrichPerson> {
+    return unwrapAsync(personListEnrichPeople(
+      this,
+      request,
+      options,
+    ));
+  }
 }

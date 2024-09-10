@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Collection extends ClientSDK {
-    /**
-     * Create a collection
-     */
-    async createCommerceCollection(
-        request: operations.CreateCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(collectionCreateCommerceCollection(this, request, options));
-    }
+  /**
+   * Create a collection
+   */
+  async createCommerceCollection(
+    request: operations.CreateCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(collectionCreateCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve a collection
-     */
-    async getCommerceCollection(
-        request: operations.GetCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(collectionGetCommerceCollection(this, request, options));
-    }
+  /**
+   * Retrieve a collection
+   */
+  async getCommerceCollection(
+    request: operations.GetCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(collectionGetCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all collections
-     */
-    async listCommerceCollections(
-        request: operations.ListCommerceCollectionsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.CommerceCollection>> {
-        return unwrapAsync(collectionListCommerceCollections(this, request, options));
-    }
+  /**
+   * List all collections
+   */
+  async listCommerceCollections(
+    request: operations.ListCommerceCollectionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceCollection>> {
+    return unwrapAsync(collectionListCommerceCollections(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a collection
-     */
-    async patchCommerceCollection(
-        request: operations.PatchCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(collectionPatchCommerceCollection(this, request, options));
-    }
+  /**
+   * Update a collection
+   */
+  async patchCommerceCollection(
+    request: operations.PatchCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(collectionPatchCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove a collection
-     */
-    async removeCommerceCollection(
-        request: operations.RemoveCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(collectionRemoveCommerceCollection(this, request, options));
-    }
+  /**
+   * Remove a collection
+   */
+  async removeCommerceCollection(
+    request: operations.RemoveCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(collectionRemoveCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update a collection
-     */
-    async updateCommerceCollection(
-        request: operations.UpdateCommerceCollectionRequest,
-        options?: RequestOptions
-    ): Promise<shared.CommerceCollection> {
-        return unwrapAsync(collectionUpdateCommerceCollection(this, request, options));
-    }
+  /**
+   * Update a collection
+   */
+  async updateCommerceCollection(
+    request: operations.UpdateCommerceCollectionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceCollection> {
+    return unwrapAsync(collectionUpdateCommerceCollection(
+      this,
+      request,
+      options,
+    ));
+  }
 }

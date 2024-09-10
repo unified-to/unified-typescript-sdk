@@ -9,13 +9,17 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Applicationstatus extends ClientSDK {
-    /**
-     * List all applicationstatuses
-     */
-    async listAtsApplicationstatuses(
-        request: operations.ListAtsApplicationstatusesRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AtsStatus>> {
-        return unwrapAsync(applicationstatusListAtsApplicationstatuses(this, request, options));
-    }
+  /**
+   * List all applicationstatuses
+   */
+  async listAtsApplicationstatuses(
+    request: operations.ListAtsApplicationstatusesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AtsStatus>> {
+    return unwrapAsync(applicationstatusListAtsApplicationstatuses(
+      this,
+      request,
+      options,
+    ));
+  }
 }

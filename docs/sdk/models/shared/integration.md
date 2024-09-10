@@ -8,9 +8,11 @@ Informational object for supported integrations.
 import { Integration } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Integration = {
-    categories: ["auth"],
-    name: "<value>",
-    type: "<value>",
+  categories: [
+    "auth",
+  ],
+  name: "<value>",
+  type: "<value>",
 };
 ```
 

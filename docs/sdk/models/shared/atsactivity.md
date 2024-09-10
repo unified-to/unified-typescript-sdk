@@ -6,7 +6,7 @@
 import { AtsActivity } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AtsActivity = {
-    title: "<value>",
+  title: "<value>",
 };
 ```
 

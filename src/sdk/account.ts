@@ -14,63 +14,87 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Account extends ClientSDK {
-    /**
-     * Create an account
-     */
-    async createAccountingAccount(
-        request: operations.CreateAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountCreateAccountingAccount(this, request, options));
-    }
+  /**
+   * Create an account
+   */
+  async createAccountingAccount(
+    request: operations.CreateAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountCreateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Retrieve an account
-     */
-    async getAccountingAccount(
-        request: operations.GetAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountGetAccountingAccount(this, request, options));
-    }
+  /**
+   * Retrieve an account
+   */
+  async getAccountingAccount(
+    request: operations.GetAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountGetAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * List all accounts
-     */
-    async listAccountingAccounts(
-        request: operations.ListAccountingAccountsRequest,
-        options?: RequestOptions
-    ): Promise<Array<shared.AccountingAccount>> {
-        return unwrapAsync(accountListAccountingAccounts(this, request, options));
-    }
+  /**
+   * List all accounts
+   */
+  async listAccountingAccounts(
+    request: operations.ListAccountingAccountsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingAccount>> {
+    return unwrapAsync(accountListAccountingAccounts(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an account
-     */
-    async patchAccountingAccount(
-        request: operations.PatchAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountPatchAccountingAccount(this, request, options));
-    }
+  /**
+   * Update an account
+   */
+  async patchAccountingAccount(
+    request: operations.PatchAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountPatchAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Remove an account
-     */
-    async removeAccountingAccount(
-        request: operations.RemoveAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<void> {
-        return unwrapAsync(accountRemoveAccountingAccount(this, request, options));
-    }
+  /**
+   * Remove an account
+   */
+  async removeAccountingAccount(
+    request: operations.RemoveAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountRemoveAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 
-    /**
-     * Update an account
-     */
-    async updateAccountingAccount(
-        request: operations.UpdateAccountingAccountRequest,
-        options?: RequestOptions
-    ): Promise<shared.AccountingAccount> {
-        return unwrapAsync(accountUpdateAccountingAccount(this, request, options));
-    }
+  /**
+   * Update an account
+   */
+  async updateAccountingAccount(
+    request: operations.UpdateAccountingAccountRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingAccount> {
+    return unwrapAsync(accountUpdateAccountingAccount(
+      this,
+      request,
+      options,
+    ));
+  }
 }
