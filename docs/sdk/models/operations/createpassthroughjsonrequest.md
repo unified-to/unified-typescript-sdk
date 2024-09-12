@@ -1,11 +1,11 @@
-# CreatePassthroughRequest
+# CreatePassthroughJsonRequest
 
 ## Example Usage
 
 ```typescript
-import { CreatePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { CreatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreatePassthroughRequest = {
+let value: CreatePassthroughJsonRequest = {
   connectionId: "<value>",
   path: "/var/log",
 };
@@ -15,6 +15,6 @@ let value: CreatePassthroughRequest = {
 
 | Field                        | Type                         | Required                     | Description                  |
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `requestBody`                | Record<string, *any*>        | :heavy_minus_sign:           | integration-specific payload |
+| `requestBody`                | *any*                        | :heavy_minus_sign:           | integration-specific payload |
 | `connectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `path`                       | *string*                     | :heavy_check_mark:           | N/A                          |

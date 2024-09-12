@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import * as b64$ from "../../../lib/base64.js";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type RemovePassthroughRequest = {
@@ -11,6 +12,17 @@ export type RemovePassthroughRequest = {
    */
   connectionId: string;
   path: string;
+};
+
+export type RemovePassthroughResponseResult =
+  | any
+  | string
+  | Uint8Array
+  | string;
+
+export type RemovePassthroughResponse = {
+  headers: { [k: string]: Array<string> };
+  result?: any | string | Uint8Array | string | undefined;
 };
 
 /** @internal */
@@ -58,4 +70,86 @@ export namespace RemovePassthroughRequest$ {
   export const outboundSchema = RemovePassthroughRequest$outboundSchema;
   /** @deprecated use `RemovePassthroughRequest$Outbound` instead. */
   export type Outbound = RemovePassthroughRequest$Outbound;
+}
+
+/** @internal */
+export const RemovePassthroughResponseResult$inboundSchema: z.ZodType<
+  RemovePassthroughResponseResult,
+  z.ZodTypeDef,
+  unknown
+> = z.union([z.any(), z.string(), b64$.zodInbound]);
+
+/** @internal */
+export type RemovePassthroughResponseResult$Outbound =
+  | any
+  | string
+  | Uint8Array;
+
+/** @internal */
+export const RemovePassthroughResponseResult$outboundSchema: z.ZodType<
+  RemovePassthroughResponseResult$Outbound,
+  z.ZodTypeDef,
+  RemovePassthroughResponseResult
+> = z.union([z.any(), z.string(), b64$.zodOutbound]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemovePassthroughResponseResult$ {
+  /** @deprecated use `RemovePassthroughResponseResult$inboundSchema` instead. */
+  export const inboundSchema = RemovePassthroughResponseResult$inboundSchema;
+  /** @deprecated use `RemovePassthroughResponseResult$outboundSchema` instead. */
+  export const outboundSchema = RemovePassthroughResponseResult$outboundSchema;
+  /** @deprecated use `RemovePassthroughResponseResult$Outbound` instead. */
+  export type Outbound = RemovePassthroughResponseResult$Outbound;
+}
+
+/** @internal */
+export const RemovePassthroughResponse$inboundSchema: z.ZodType<
+  RemovePassthroughResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+  Result: z.union([z.any(), z.string(), b64$.zodInbound]).optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+    "Result": "result",
+  });
+});
+
+/** @internal */
+export type RemovePassthroughResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+  Result?: any | string | Uint8Array | undefined;
+};
+
+/** @internal */
+export const RemovePassthroughResponse$outboundSchema: z.ZodType<
+  RemovePassthroughResponse$Outbound,
+  z.ZodTypeDef,
+  RemovePassthroughResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+  result: z.union([z.any(), z.string(), b64$.zodOutbound]).optional(),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+    result: "Result",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemovePassthroughResponse$ {
+  /** @deprecated use `RemovePassthroughResponse$inboundSchema` instead. */
+  export const inboundSchema = RemovePassthroughResponse$inboundSchema;
+  /** @deprecated use `RemovePassthroughResponse$outboundSchema` instead. */
+  export const outboundSchema = RemovePassthroughResponse$outboundSchema;
+  /** @deprecated use `RemovePassthroughResponse$Outbound` instead. */
+  export type Outbound = RemovePassthroughResponse$Outbound;
 }

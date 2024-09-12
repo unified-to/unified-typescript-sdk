@@ -1,22 +1,24 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: cf72c39f8e74a269aab0cb250423c99a
+  docChecksum: 0d6e24164cc3d7a1033d4f9883eb8f98
   docVersion: "1.0"
-  speakeasyVersion: 1.395.0
-  generationVersion: 2.415.0
-  releaseVersion: 2.4.1
-  configChecksum: 2377bcb02903a9b5a5fb0c94c073f6b7
+  speakeasyVersion: 1.396.4
+  generationVersion: 2.415.6
+  releaseVersion: 2.5.0
+  configChecksum: e3457ea1ee6923e3e4345719a2d7291c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 features:
   typescript:
+    acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.17.0
+    core: 3.17.2
     defaultEnabledRetries: 0.1.0
+    enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.1
     globalSecurity: 2.82.11
     globalSecurityCallbacks: 0.1.0
@@ -67,7 +69,12 @@ generatedFiles:
   - docs/sdk/models/operations/createmartechlistrequest.md
   - docs/sdk/models/operations/createmartechmemberrequest.md
   - docs/sdk/models/operations/createmessagingmessagerequest.md
-  - docs/sdk/models/operations/createpassthroughrequest.md
+  - docs/sdk/models/operations/createpassthroughjsonrequest.md
+  - docs/sdk/models/operations/createpassthroughjsonresponse.md
+  - docs/sdk/models/operations/createpassthroughjsonresponseresult.md
+  - docs/sdk/models/operations/createpassthroughrawrequest.md
+  - docs/sdk/models/operations/createpassthroughrawresponse.md
+  - docs/sdk/models/operations/createpassthroughrawresponseresult.md
   - docs/sdk/models/operations/createpaymentlinkrequest.md
   - docs/sdk/models/operations/createpaymentpaymentrequest.md
   - docs/sdk/models/operations/createstoragefilerequest.md
@@ -174,6 +181,8 @@ generatedFiles:
   - docs/sdk/models/operations/listmessagingchannelsrequest.md
   - docs/sdk/models/operations/listmessagingmessagesrequest.md
   - docs/sdk/models/operations/listpassthroughsrequest.md
+  - docs/sdk/models/operations/listpassthroughsresponse.md
+  - docs/sdk/models/operations/listpassthroughsresponseresult.md
   - docs/sdk/models/operations/listpaymentlinksrequest.md
   - docs/sdk/models/operations/listpaymentpaymentsrequest.md
   - docs/sdk/models/operations/listpaymentpayoutsrequest.md
@@ -225,7 +234,12 @@ generatedFiles:
   - docs/sdk/models/operations/patchmartechlistrequest.md
   - docs/sdk/models/operations/patchmartechmemberrequest.md
   - docs/sdk/models/operations/patchmessagingmessagerequest.md
-  - docs/sdk/models/operations/patchpassthroughrequest.md
+  - docs/sdk/models/operations/patchpassthroughjsonrequest.md
+  - docs/sdk/models/operations/patchpassthroughjsonresponse.md
+  - docs/sdk/models/operations/patchpassthroughjsonresponseresult.md
+  - docs/sdk/models/operations/patchpassthroughrawrequest.md
+  - docs/sdk/models/operations/patchpassthroughrawresponse.md
+  - docs/sdk/models/operations/patchpassthroughrawresponseresult.md
   - docs/sdk/models/operations/patchpaymentlinkrequest.md
   - docs/sdk/models/operations/patchpaymentpaymentrequest.md
   - docs/sdk/models/operations/patchstoragefilerequest.md
@@ -272,6 +286,8 @@ generatedFiles:
   - docs/sdk/models/operations/removemartechmemberrequest.md
   - docs/sdk/models/operations/removemessagingmessagerequest.md
   - docs/sdk/models/operations/removepassthroughrequest.md
+  - docs/sdk/models/operations/removepassthroughresponse.md
+  - docs/sdk/models/operations/removepassthroughresponseresult.md
   - docs/sdk/models/operations/removepaymentlinkrequest.md
   - docs/sdk/models/operations/removepaymentpaymentrequest.md
   - docs/sdk/models/operations/removestoragefilerequest.md
@@ -316,7 +332,12 @@ generatedFiles:
   - docs/sdk/models/operations/updatemartechlistrequest.md
   - docs/sdk/models/operations/updatemartechmemberrequest.md
   - docs/sdk/models/operations/updatemessagingmessagerequest.md
-  - docs/sdk/models/operations/updatepassthroughrequest.md
+  - docs/sdk/models/operations/updatepassthroughjsonrequest.md
+  - docs/sdk/models/operations/updatepassthroughjsonresponse.md
+  - docs/sdk/models/operations/updatepassthroughjsonresponseresult.md
+  - docs/sdk/models/operations/updatepassthroughrawrequest.md
+  - docs/sdk/models/operations/updatepassthroughrawresponse.md
+  - docs/sdk/models/operations/updatepassthroughrawresponseresult.md
   - docs/sdk/models/operations/updatepaymentlinkrequest.md
   - docs/sdk/models/operations/updatepaymentpaymentrequest.md
   - docs/sdk/models/operations/updatestoragefilerequest.md
@@ -991,11 +1012,14 @@ generatedFiles:
   - src/funcs/pagePatchKmsPage.ts
   - src/funcs/pageRemoveKmsPage.ts
   - src/funcs/pageUpdateKmsPage.ts
-  - src/funcs/passthroughCreatePassthrough.ts
+  - src/funcs/passthroughCreatePassthroughJson.ts
+  - src/funcs/passthroughCreatePassthroughRaw.ts
   - src/funcs/passthroughListPassthroughs.ts
-  - src/funcs/passthroughPatchPassthrough.ts
+  - src/funcs/passthroughPatchPassthroughJson.ts
+  - src/funcs/passthroughPatchPassthroughRaw.ts
   - src/funcs/passthroughRemovePassthrough.ts
-  - src/funcs/passthroughUpdatePassthrough.ts
+  - src/funcs/passthroughUpdatePassthroughJson.ts
+  - src/funcs/passthroughUpdatePassthroughRaw.ts
   - src/funcs/paymentCreatePaymentLink.ts
   - src/funcs/paymentCreatePaymentPayment.ts
   - src/funcs/paymentGetPaymentLink.ts
@@ -1238,7 +1262,8 @@ generatedFiles:
   - src/sdk/models/operations/createmartechlist.ts
   - src/sdk/models/operations/createmartechmember.ts
   - src/sdk/models/operations/createmessagingmessage.ts
-  - src/sdk/models/operations/createpassthrough.ts
+  - src/sdk/models/operations/createpassthroughjson.ts
+  - src/sdk/models/operations/createpassthroughraw.ts
   - src/sdk/models/operations/createpaymentlink.ts
   - src/sdk/models/operations/createpaymentpayment.ts
   - src/sdk/models/operations/createstoragefile.ts
@@ -1395,7 +1420,8 @@ generatedFiles:
   - src/sdk/models/operations/patchmartechlist.ts
   - src/sdk/models/operations/patchmartechmember.ts
   - src/sdk/models/operations/patchmessagingmessage.ts
-  - src/sdk/models/operations/patchpassthrough.ts
+  - src/sdk/models/operations/patchpassthroughjson.ts
+  - src/sdk/models/operations/patchpassthroughraw.ts
   - src/sdk/models/operations/patchpaymentlink.ts
   - src/sdk/models/operations/patchpaymentpayment.ts
   - src/sdk/models/operations/patchstoragefile.ts
@@ -1484,7 +1510,8 @@ generatedFiles:
   - src/sdk/models/operations/updatemartechlist.ts
   - src/sdk/models/operations/updatemartechmember.ts
   - src/sdk/models/operations/updatemessagingmessage.ts
-  - src/sdk/models/operations/updatepassthrough.ts
+  - src/sdk/models/operations/updatepassthroughjson.ts
+  - src/sdk/models/operations/updatepassthroughraw.ts
   - src/sdk/models/operations/updatepaymentlink.ts
   - src/sdk/models/operations/updatepaymentpayment.ts
   - src/sdk/models/operations/updatestoragefile.ts
@@ -3264,6 +3291,26 @@ examples:
           application/json: {}
         2XX:
           application/json: {}
+    speakeasy-default-create-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/opt/lib"
+      responses:
+        2XX:
+          '*/*': "0x3CbcA7c7be"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-create-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/namedb"
+      responses:
+        2XX:
+          '*/*': "0x34ABa9b31D"
+          application/json: "<value>"
+          text/plain: "<value>"
   listPassthroughs:
     speakeasy-default-list-passthroughs:
       parameters:
@@ -3275,6 +3322,8 @@ examples:
           application/json: {"key": "<value>", "key1": "<value>"}
         2XX:
           application/json: {"key": "<value>", "key1": "<value>"}
+          '*/*': "0xc838beeAd7"
+          text/plain: "<value>"
   patchPassthrough:
     speakeasy-default-patch-passthrough:
       parameters:
@@ -3286,6 +3335,26 @@ examples:
           application/json: {"key": "<value>"}
         2XX:
           application/json: {"key": "<value>"}
+    speakeasy-default-patch-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/home/user"
+      responses:
+        2XX:
+          '*/*': "0x4fb8209099"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-patch-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/mail"
+      responses:
+        2XX:
+          '*/*': "0x7CEb8f75C6"
+          application/json: "<value>"
+          text/plain: "<value>"
   removePassthrough:
     speakeasy-default-remove-passthrough:
       parameters:
@@ -3297,6 +3366,8 @@ examples:
           application/json: {}
         2XX:
           application/json: {}
+          '*/*': "0x0280cc8bc1"
+          text/plain: "<value>"
   updatePassthrough:
     speakeasy-default-update-passthrough:
       parameters:
@@ -3308,6 +3379,26 @@ examples:
           application/json: {}
         2XX:
           application/json: {}
+    speakeasy-default-update-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/namedb"
+      responses:
+        2XX:
+          '*/*': "0xDa7dcaB8ab"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-update-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/System"
+      responses:
+        2XX:
+          '*/*': "0x5587B3b9f8"
+          application/json: "<value>"
+          text/plain: "<value>"
   createPaymentLink:
     speakeasy-default-create-payment-link:
       parameters:

@@ -1,13 +1,13 @@
-# UpdatePassthroughRequest
+# UpdatePassthroughJsonRequest
 
 ## Example Usage
 
 ```typescript
-import { UpdatePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { UpdatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: UpdatePassthroughRequest = {
+let value: UpdatePassthroughJsonRequest = {
   connectionId: "<value>",
-  path: "/dev",
+  path: "/System",
 };
 ```
 
@@ -15,6 +15,6 @@ let value: UpdatePassthroughRequest = {
 
 | Field                        | Type                         | Required                     | Description                  |
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `requestBody`                | Record<string, *any*>        | :heavy_minus_sign:           | integration-specific payload |
+| `requestBody`                | *any*                        | :heavy_minus_sign:           | integration-specific payload |
 | `connectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `path`                       | *string*                     | :heavy_check_mark:           | N/A                          |

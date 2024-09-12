@@ -15,6 +15,7 @@ Unified.to API: One API to Rule Them All
 * [SDK Example Usage](#sdk-example-usage)
 * [Available Resources and Operations](#available-resources-and-operations)
 * [Standalone functions](#standalone-functions)
+* [File uploads](#file-uploads)
 * [Retries](#retries)
 * [Error Handling](#error-handling)
 * [Server Selection](#server-selection)
@@ -271,6 +272,40 @@ run();
 
 For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 <!-- End Requirements [requirements] -->
+
+<!-- Start File uploads [file-upload] -->
+## File uploads
+
+Certain SDK methods accept files as part of a multi-part request. It is possible and typically recommended to upload files as a stream rather than reading the entire contents into memory. This avoids excessive memory consumption and potentially crashing with out-of-memory errors when working with very large files. The following example demonstrates how to attach a file stream to a request.
+
+> [!TIP]
+>
+> Depending on your JavaScript runtime, there are convenient utilities that return a handle to a file without reading the entire contents into memory:
+>
+> - **Node.js v20+:** Since v20, Node.js comes with a native `openAsBlob` function in [`node:fs`](https://nodejs.org/docs/latest-v20.x/api/fs.html#fsopenasblobpath-options).
+> - **Bun:** The native [`Bun.file`](https://bun.sh/docs/api/file-io#reading-files-bun-file) function produces a file handle that can be used for streaming file uploads.
+> - **Browsers:** All supported browsers return an instance to a [`File`](https://developer.mozilla.org/en-US/docs/Web/API/File) when reading the value from an `<input type="file">` element.
+> - **Node.js v18:** A file stream can be created using the `fileFrom` helper from [`fetch-blob/from.js`](https://www.npmjs.com/package/fetch-blob).
+
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo();
+
+async function run() {
+  const result = await unifiedTo.passthrough.createPassthroughRaw({
+    connectionId: "<value>",
+    path: "/etc/namedb",
+  });
+
+  // Handle the result
+  console.log(result);
+}
+
+run();
+
+```
+<!-- End File uploads [file-upload] -->
 
 <!-- Start Retries [retries] -->
 ## Retries
@@ -794,11 +829,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [pagePatchKmsPage](docs/sdks/page/README.md#patchkmspage)
 - [pageRemoveKmsPage](docs/sdks/page/README.md#removekmspage)
 - [pageUpdateKmsPage](docs/sdks/page/README.md#updatekmspage)
-- [passthroughCreatePassthrough](docs/sdks/passthrough/README.md#createpassthrough)
+- [passthroughCreatePassthroughJson](docs/sdks/passthrough/README.md#createpassthroughjson)
+- [passthroughCreatePassthroughRaw](docs/sdks/passthrough/README.md#createpassthroughraw)
 - [passthroughListPassthroughs](docs/sdks/passthrough/README.md#listpassthroughs)
-- [passthroughPatchPassthrough](docs/sdks/passthrough/README.md#patchpassthrough)
+- [passthroughPatchPassthroughJson](docs/sdks/passthrough/README.md#patchpassthroughjson)
+- [passthroughPatchPassthroughRaw](docs/sdks/passthrough/README.md#patchpassthroughraw)
 - [passthroughRemovePassthrough](docs/sdks/passthrough/README.md#removepassthrough)
-- [passthroughUpdatePassthrough](docs/sdks/passthrough/README.md#updatepassthrough)
+- [passthroughUpdatePassthroughJson](docs/sdks/passthrough/README.md#updatepassthroughjson)
+- [passthroughUpdatePassthroughRaw](docs/sdks/passthrough/README.md#updatepassthroughraw)
 - [paymentCreatePaymentLink](docs/sdks/payment/README.md#createpaymentlink)
 - [paymentCreatePaymentPayment](docs/sdks/payment/README.md#createpaymentpayment)
 - [paymentGetPaymentLink](docs/sdks/payment/README.md#getpaymentlink)
