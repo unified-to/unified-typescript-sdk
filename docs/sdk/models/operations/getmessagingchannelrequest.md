@@ -6,7 +6,7 @@
 import { GetMessagingChannelRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetMessagingChannelRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

@@ -6,7 +6,7 @@
 import { RemoveAccountingTaxrateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveAccountingTaxrateRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

@@ -6,7 +6,7 @@
 import { UpdateHrisEmployeeRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateHrisEmployeeRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

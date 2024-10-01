@@ -6,7 +6,7 @@
 import { ListAtsScorecardsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAtsScorecardsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

@@ -11,7 +11,7 @@ let value: CreatePassthroughJsonResponse = {
       "<value>",
     ],
   },
-  result: new TextEncoder().encode("0xc1E670eC2e"),
+  result: "<value>",
 };
 ```
 

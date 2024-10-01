@@ -6,7 +6,7 @@
 import { RemoveKmsPageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveKmsPageRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

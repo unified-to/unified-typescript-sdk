@@ -6,7 +6,7 @@
 import { RemoveAtsActivityRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveAtsActivityRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

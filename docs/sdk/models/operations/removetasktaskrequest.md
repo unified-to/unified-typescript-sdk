@@ -6,7 +6,7 @@
 import { RemoveTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveTaskTaskRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

@@ -6,7 +6,7 @@
 import { GetAtsInterviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetAtsInterviewRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

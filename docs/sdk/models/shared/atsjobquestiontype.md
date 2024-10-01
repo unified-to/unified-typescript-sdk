@@ -5,7 +5,7 @@
 ```typescript
 import { AtsJobQuestionType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsJobQuestionType = "CURRENCY";
+let value: AtsJobQuestionType = "UNIVERSITY";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { RemoveAtsJobRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveAtsJobRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

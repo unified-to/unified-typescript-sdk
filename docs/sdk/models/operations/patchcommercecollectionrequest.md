@@ -6,7 +6,7 @@
 import { PatchCommerceCollectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCommerceCollectionRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

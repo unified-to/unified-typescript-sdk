@@ -6,7 +6,7 @@
 import { ListAtsApplicationstatusesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAtsApplicationstatusesRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

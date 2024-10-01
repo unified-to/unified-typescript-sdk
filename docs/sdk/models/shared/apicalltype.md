@@ -5,7 +5,7 @@
 ```typescript
 import { ApiCallType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ApiCallType = "login";
+let value: ApiCallType = "inbound";
 ```
 
 ## Values

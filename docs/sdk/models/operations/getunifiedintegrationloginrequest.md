@@ -7,7 +7,7 @@ import { GetUnifiedIntegrationLoginRequest } from "@unified-api/typescript-sdk/s
 
 let value: GetUnifiedIntegrationLoginRequest = {
   integrationType: "<value>",
-  workspaceId: "<value>",
+  workspaceId: "<id>",
 };
 ```
 

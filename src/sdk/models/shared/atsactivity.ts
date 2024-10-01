@@ -39,7 +39,7 @@ export type AtsActivity = {
   isPrivate?: boolean | undefined;
   jobId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  title: string;
+  title?: string | undefined;
   to?: Array<AtsEmail> | undefined;
   type?: AtsActivityType | undefined;
   updatedAt?: Date | undefined;
@@ -90,7 +90,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   job_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  title: z.string(),
+  title: z.string().optional(),
   to: z.array(AtsEmail$inboundSchema).optional(),
   type: AtsActivityType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -125,7 +125,7 @@ export type AtsActivity$Outbound = {
   is_private?: boolean | undefined;
   job_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  title: string;
+  title?: string | undefined;
   to?: Array<AtsEmail$Outbound> | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -151,7 +151,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   jobId: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  title: z.string(),
+  title: z.string().optional(),
   to: z.array(AtsEmail$outboundSchema).optional(),
   type: AtsActivityType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

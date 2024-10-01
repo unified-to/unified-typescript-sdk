@@ -6,7 +6,7 @@
 import { ListMartechListsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListMartechListsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

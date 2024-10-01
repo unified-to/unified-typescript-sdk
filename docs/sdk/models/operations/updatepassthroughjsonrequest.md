@@ -6,8 +6,8 @@
 import { UpdatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdatePassthroughJsonRequest = {
-  connectionId: "<value>",
-  path: "/System",
+  connectionId: "<id>",
+  path: "/usr/ports",
 };
 ```
 

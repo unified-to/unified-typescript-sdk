@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingTelephoneType = "MOBILE";
+let value: AccountingTelephoneType = "OTHER";
 ```
 
 ## Values

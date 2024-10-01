@@ -6,7 +6,7 @@
 import { PatchTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchTaskTaskRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

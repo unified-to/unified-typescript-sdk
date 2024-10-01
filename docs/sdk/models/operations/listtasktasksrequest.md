@@ -6,7 +6,7 @@
 import { ListTaskTasksRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListTaskTasksRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

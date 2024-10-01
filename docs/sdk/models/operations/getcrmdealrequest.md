@@ -6,7 +6,7 @@
 import { GetCrmDealRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetCrmDealRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

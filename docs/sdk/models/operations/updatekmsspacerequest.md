@@ -6,7 +6,7 @@
 import { UpdateKmsSpaceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateKmsSpaceRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

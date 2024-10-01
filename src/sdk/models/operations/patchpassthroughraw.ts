@@ -14,7 +14,7 @@ export type PatchPassthroughRawRequest = {
     | ReadableStream<Uint8Array>
     | Blob
     | ArrayBuffer
-    | Buffer
+    | Uint8Array
     | undefined;
   /**
    * ID of the connection
@@ -44,7 +44,7 @@ export const PatchPassthroughRawRequest$inboundSchema: z.ZodType<
     z.instanceof(ReadableStream<Uint8Array>),
     z.instanceof(Blob),
     z.instanceof(ArrayBuffer),
-    z.instanceof(Buffer),
+    z.instanceof(Uint8Array),
   ]).optional(),
   connection_id: z.string(),
   path: z.string(),
@@ -61,7 +61,7 @@ export type PatchPassthroughRawRequest$Outbound = {
     | ReadableStream<Uint8Array>
     | Blob
     | ArrayBuffer
-    | Buffer
+    | Uint8Array
     | undefined;
   connection_id: string;
   path: string;
@@ -77,7 +77,7 @@ export const PatchPassthroughRawRequest$outboundSchema: z.ZodType<
     z.instanceof(ReadableStream<Uint8Array>),
     z.instanceof(Blob),
     z.instanceof(ArrayBuffer),
-    z.instanceof(Buffer),
+    z.instanceof(Uint8Array),
   ]).optional(),
   connectionId: z.string(),
   path: z.string(),

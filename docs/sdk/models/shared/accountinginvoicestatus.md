@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingInvoiceStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingInvoiceStatus = "AUTHORIZED";
+let value: AccountingInvoiceStatus = "REFUNDED";
 ```
 
 ## Values

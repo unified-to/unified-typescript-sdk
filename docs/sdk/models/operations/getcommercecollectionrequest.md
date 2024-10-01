@@ -6,7 +6,7 @@
 import { GetCommerceCollectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetCommerceCollectionRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

@@ -6,8 +6,8 @@
 import { CreatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreatePassthroughJsonRequest = {
-  connectionId: "<value>",
-  path: "/var/log",
+  connectionId: "<id>",
+  path: "/home/user",
 };
 ```
 

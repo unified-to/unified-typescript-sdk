@@ -9,7 +9,7 @@ let value: HrisPayslip = {
   raw: {
     "key": "<value>",
   },
-  userId: "<value>",
+  userId: "<id>",
 };
 ```
 

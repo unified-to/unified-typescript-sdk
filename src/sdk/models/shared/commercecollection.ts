@@ -11,6 +11,12 @@ import {
   CommerceItemMedia$Outbound,
   CommerceItemMedia$outboundSchema,
 } from "./commerceitemmedia.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export const CommerceCollectionType = {
   Collection: "COLLECTION",
@@ -30,6 +36,7 @@ export type CommerceCollection = {
   isFeatured?: boolean | undefined;
   isVisible?: boolean | undefined;
   media?: Array<CommerceItemMedia> | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   name: string;
   parentId?: string | undefined;
   publicDescription?: string | undefined;
@@ -75,6 +82,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   is_featured: z.boolean().optional(),
   is_visible: z.boolean().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string(),
   parent_id: z.string().optional(),
   public_description: z.string().optional(),
@@ -106,6 +114,7 @@ export type CommerceCollection$Outbound = {
   is_featured?: boolean | undefined;
   is_visible?: boolean | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name: string;
   parent_id?: string | undefined;
   public_description?: string | undefined;
@@ -129,6 +138,7 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   isFeatured: z.boolean().optional(),
   isVisible: z.boolean().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string(),
   parentId: z.string().optional(),
   publicDescription: z.string().optional(),

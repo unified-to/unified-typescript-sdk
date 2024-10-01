@@ -6,7 +6,7 @@
 import { GetPaymentPayoutRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetPaymentPayoutRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

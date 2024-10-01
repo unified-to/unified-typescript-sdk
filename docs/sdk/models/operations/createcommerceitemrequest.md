@@ -6,7 +6,7 @@
 import { CreateCommerceItemRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCommerceItemRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

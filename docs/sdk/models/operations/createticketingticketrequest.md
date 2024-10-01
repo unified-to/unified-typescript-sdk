@@ -6,7 +6,7 @@
 import { CreateTicketingTicketRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateTicketingTicketRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

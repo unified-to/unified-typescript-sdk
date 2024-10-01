@@ -6,7 +6,7 @@
 import { PatchPaymentPaymentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchPaymentPaymentRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

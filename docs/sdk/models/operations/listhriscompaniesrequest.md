@@ -6,7 +6,7 @@
 import { ListHrisCompaniesRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListHrisCompaniesRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

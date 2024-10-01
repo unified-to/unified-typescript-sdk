@@ -6,7 +6,7 @@
 import { ListAccountingOrganizationsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAccountingOrganizationsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

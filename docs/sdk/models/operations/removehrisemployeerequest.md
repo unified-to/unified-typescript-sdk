@@ -6,7 +6,7 @@
 import { RemoveHrisEmployeeRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveHrisEmployeeRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

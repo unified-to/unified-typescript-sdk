@@ -6,7 +6,7 @@
 import { RemoveUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveUcContactRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

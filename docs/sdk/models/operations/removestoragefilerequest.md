@@ -6,7 +6,7 @@
 import { RemoveStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveStorageFileRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

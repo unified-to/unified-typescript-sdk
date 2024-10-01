@@ -6,7 +6,7 @@
 import { GetCommerceInventoryRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetCommerceInventoryRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

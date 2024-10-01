@@ -6,7 +6,7 @@
 import { UpdateAtsActivityRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAtsActivityRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

@@ -6,7 +6,7 @@
 import { UpdateTicketingCustomerRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateTicketingCustomerRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

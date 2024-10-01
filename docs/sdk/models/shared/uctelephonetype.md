@@ -5,7 +5,7 @@
 ```typescript
 import { UcTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: UcTelephoneType = "HOME";
+let value: UcTelephoneType = "OTHER";
 ```
 
 ## Values

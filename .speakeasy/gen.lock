@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0d6e24164cc3d7a1033d4f9883eb8f98
+  docChecksum: 3c4e8a5e234e6444307aef536fd547bd
   docVersion: "1.0"
-  speakeasyVersion: 1.396.4
-  generationVersion: 2.415.6
-  releaseVersion: 2.5.0
-  configChecksum: e3457ea1ee6923e3e4345719a2d7291c
+  speakeasyVersion: 1.405.6
+  generationVersion: 2.428.1
+  releaseVersion: 2.6.0
+  configChecksum: cd88e737262d04ccca3371a8e6aa3a8f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.17.2
+    core: 3.18.1
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.1
@@ -406,6 +406,7 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemprice.md
   - docs/sdk/models/shared/commerceitemvariant.md
   - docs/sdk/models/shared/commercelocation.md
+  - docs/sdk/models/shared/commercemetadata.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/crmcompany.md
   - docs/sdk/models/shared/crmcontact.md
@@ -1563,6 +1564,7 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemprice.ts
   - src/sdk/models/shared/commerceitemvariant.ts
   - src/sdk/models/shared/commercelocation.ts
+  - src/sdk/models/shared/commercemetadata.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/crmcontact.ts

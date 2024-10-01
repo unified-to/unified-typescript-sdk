@@ -6,7 +6,7 @@
 import { RemoveCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveCrmPipelineRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

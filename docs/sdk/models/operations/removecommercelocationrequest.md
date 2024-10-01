@@ -6,7 +6,7 @@
 import { RemoveCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveCommerceLocationRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

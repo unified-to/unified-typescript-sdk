@@ -6,8 +6,8 @@
 import { PatchPassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchPassthroughJsonRequest = {
-  connectionId: "<value>",
-  path: "/opt/include",
+  connectionId: "<id>",
+  path: "/opt/bin",
 };
 ```
 

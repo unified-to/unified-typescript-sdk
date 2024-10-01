@@ -5,7 +5,7 @@
 ```typescript
 import { TaxExemption } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: TaxExemption = "MEDICAL_ORG";
+let value: TaxExemption = "EDUCATIONAL_ORG";
 ```
 
 ## Values

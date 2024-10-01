@@ -6,7 +6,7 @@
 import { PatchTicketingNoteRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchTicketingNoteRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

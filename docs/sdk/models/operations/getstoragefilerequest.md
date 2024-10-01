@@ -6,7 +6,7 @@
 import { GetStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetStorageFileRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

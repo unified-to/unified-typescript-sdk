@@ -6,7 +6,7 @@
 import { RemoveAccountingJournalRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveAccountingJournalRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

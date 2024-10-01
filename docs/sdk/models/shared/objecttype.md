@@ -5,7 +5,7 @@
 ```typescript
 import { ObjectType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ObjectType = "ats_candidate";
+let value: ObjectType = "hris_payslip";
 ```
 
 ## Values

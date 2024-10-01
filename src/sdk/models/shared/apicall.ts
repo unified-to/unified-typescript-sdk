@@ -22,12 +22,14 @@ export type ApiCall = {
   id?: string | undefined;
   integrationType: string;
   ipAddress?: string | undefined;
+  isBillable?: boolean | undefined;
   method: string;
   name: string;
   path: string;
   size?: number | undefined;
   status: string;
   type: ApiCallType;
+  webhookId?: string | undefined;
   workspaceId?: string | undefined;
 };
 
@@ -63,12 +65,14 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
     id: z.string().optional(),
     integration_type: z.string(),
     ip_address: z.string().optional(),
+    is_billable: z.boolean().optional(),
     method: z.string(),
     name: z.string(),
     path: z.string(),
     size: z.number().optional(),
     status: z.string(),
     type: ApiCallType$inboundSchema,
+    webhook_id: z.string().optional(),
     workspace_id: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
@@ -77,6 +81,8 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
       "external_xref": "externalXref",
       "integration_type": "integrationType",
       "ip_address": "ipAddress",
+      "is_billable": "isBillable",
+      "webhook_id": "webhookId",
       "workspace_id": "workspaceId",
     });
   });
@@ -91,12 +97,14 @@ export type ApiCall$Outbound = {
   id?: string | undefined;
   integration_type: string;
   ip_address?: string | undefined;
+  is_billable?: boolean | undefined;
   method: string;
   name: string;
   path: string;
   size?: number | undefined;
   status: string;
   type: string;
+  webhook_id?: string | undefined;
   workspace_id?: string | undefined;
 };
 
@@ -114,12 +122,14 @@ export const ApiCall$outboundSchema: z.ZodType<
   id: z.string().optional(),
   integrationType: z.string(),
   ipAddress: z.string().optional(),
+  isBillable: z.boolean().optional(),
   method: z.string(),
   name: z.string(),
   path: z.string(),
   size: z.number().optional(),
   status: z.string(),
   type: ApiCallType$outboundSchema,
+  webhookId: z.string().optional(),
   workspaceId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -128,6 +138,8 @@ export const ApiCall$outboundSchema: z.ZodType<
     externalXref: "external_xref",
     integrationType: "integration_type",
     ipAddress: "ip_address",
+    isBillable: "is_billable",
+    webhookId: "webhook_id",
     workspaceId: "workspace_id",
   });
 });

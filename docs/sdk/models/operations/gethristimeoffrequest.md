@@ -6,7 +6,7 @@
 import { GetHrisTimeoffRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetHrisTimeoffRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

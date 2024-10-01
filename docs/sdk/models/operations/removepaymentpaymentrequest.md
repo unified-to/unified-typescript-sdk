@@ -6,7 +6,7 @@
 import { RemovePaymentPaymentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemovePaymentPaymentRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

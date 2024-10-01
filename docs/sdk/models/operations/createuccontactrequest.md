@@ -6,7 +6,7 @@
 import { CreateUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateUcContactRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

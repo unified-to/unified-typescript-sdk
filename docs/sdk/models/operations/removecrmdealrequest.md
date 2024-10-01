@@ -6,7 +6,7 @@
 import { RemoveCrmDealRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveCrmDealRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

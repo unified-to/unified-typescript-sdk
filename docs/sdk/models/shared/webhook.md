@@ -8,10 +8,10 @@ A webhook is used to POST new/updated information to your server.
 import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
-  connectionId: "<value>",
-  event: "deleted",
-  hookUrl: "<value>",
-  objectType: "martech_list",
+  connectionId: "<id>",
+  event: "created",
+  hookUrl: "https://intrepid-technician.info",
+  objectType: "ats_company",
 };
 ```
 

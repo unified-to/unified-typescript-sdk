@@ -4,6 +4,12 @@
 
 import * as z from "zod";
 import { ClosedEnum } from "../../types/enums.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export const CommerceItemMediaType = {
   Image: "image",
@@ -15,6 +21,7 @@ export type CommerceItemMedia = {
   alt?: string | undefined;
   height?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   position?: number | undefined;
   type?: CommerceItemMediaType | undefined;
   url: string;
@@ -51,6 +58,7 @@ export const CommerceItemMedia$inboundSchema: z.ZodType<
   alt: z.string().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   position: z.number().optional(),
   type: CommerceItemMediaType$inboundSchema.optional(),
   url: z.string(),
@@ -62,6 +70,7 @@ export type CommerceItemMedia$Outbound = {
   alt?: string | undefined;
   height?: number | undefined;
   id?: string | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   position?: number | undefined;
   type?: string | undefined;
   url: string;
@@ -77,6 +86,7 @@ export const CommerceItemMedia$outboundSchema: z.ZodType<
   alt: z.string().optional(),
   height: z.number().optional(),
   id: z.string().optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   position: z.number().optional(),
   type: CommerceItemMediaType$outboundSchema.optional(),
   url: z.string(),

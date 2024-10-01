@@ -6,7 +6,7 @@
 import { ListAtsJobsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListAtsJobsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

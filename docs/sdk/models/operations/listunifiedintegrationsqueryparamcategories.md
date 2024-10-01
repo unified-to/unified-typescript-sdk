@@ -5,7 +5,7 @@
 ```typescript
 import { ListUnifiedIntegrationsQueryParamCategories } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListUnifiedIntegrationsQueryParamCategories = "crm";
+let value: ListUnifiedIntegrationsQueryParamCategories = "accounting";
 ```
 
 ## Values

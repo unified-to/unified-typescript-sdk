@@ -6,7 +6,7 @@
 import { GetHrisPayslipRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: GetHrisPayslipRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

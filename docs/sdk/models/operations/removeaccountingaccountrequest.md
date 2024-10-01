@@ -6,7 +6,7 @@
 import { RemoveAccountingAccountRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: RemoveAccountingAccountRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

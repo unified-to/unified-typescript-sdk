@@ -9,7 +9,7 @@ let value: AtsApplicationAnswer = {
   answers: [
     "<value>",
   ],
-  questionId: "<value>",
+  questionId: "<id>",
 };
 ```
 

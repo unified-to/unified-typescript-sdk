@@ -6,7 +6,7 @@
 import { PatchStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchStorageFileRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

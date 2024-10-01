@@ -4,12 +4,9 @@
 
 import * as z from "zod";
 import { UnifiedToCore } from "../core.js";
-import {
-  encodeFormQuery as encodeFormQuery$,
-  encodeSimple as encodeSimple$,
-} from "../lib/encodings.js";
-import * as m$ from "../lib/matchers.js";
-import * as schemas$ from "../lib/schemas.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import * as M from "../lib/matchers.js";
+import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
@@ -30,7 +27,7 @@ import { Result } from "../sdk/types/fp.js";
  * List all items
  */
 export async function commerceListCommerceItems(
-  client$: UnifiedToCore,
+  client: UnifiedToCore,
   request: operations.ListCommerceItemsRequest,
   options?: RequestOptions,
 ): Promise<
@@ -45,71 +42,70 @@ export async function commerceListCommerceItems(
     | ConnectionError
   >
 > {
-  const input$ = request;
+  const input = request;
 
-  const parsed$ = schemas$.safeParse(
-    input$,
-    (value$) =>
-      operations.ListCommerceItemsRequest$outboundSchema.parse(value$),
+  const parsed = safeParse(
+    input,
+    (value) => operations.ListCommerceItemsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
-  if (!parsed$.ok) {
-    return parsed$;
+  if (!parsed.ok) {
+    return parsed;
   }
-  const payload$ = parsed$.value;
-  const body$ = null;
+  const payload = parsed.value;
+  const body = null;
 
-  const pathParams$ = {
-    connection_id: encodeSimple$("connection_id", payload$.connection_id, {
+  const pathParams = {
+    connection_id: encodeSimple("connection_id", payload.connection_id, {
       explode: false,
       charEncoding: "percent",
     }),
   };
 
-  const path$ = pathToFunc("/commerce/{connection_id}/item")(pathParams$);
+  const path = pathToFunc("/commerce/{connection_id}/item")(pathParams);
 
-  const query$ = encodeFormQuery$({
-    "collection_id": payload$.collection_id,
-    "fields": payload$.fields,
-    "limit": payload$.limit,
-    "offset": payload$.offset,
-    "order": payload$.order,
-    "query": payload$.query,
-    "sort": payload$.sort,
-    "updated_gte": payload$.updated_gte,
+  const query = encodeFormQuery({
+    "collection_id": payload.collection_id,
+    "fields": payload.fields,
+    "limit": payload.limit,
+    "offset": payload.offset,
+    "order": payload.order,
+    "query": payload.query,
+    "sort": payload.sort,
+    "updated_gte": payload.updated_gte,
   });
 
-  const headers$ = new Headers({
+  const headers = new Headers({
     Accept: "application/json",
   });
 
-  const security$ = await extractSecurity(client$.options$.security);
+  const securityInput = await extractSecurity(client._options.security);
   const context = {
     operationID: "listCommerceItems",
     oAuth2Scopes: [],
-    securitySource: client$.options$.security,
+    securitySource: client._options.security,
   };
-  const securitySettings$ = resolveGlobalSecurity(security$);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
-  const requestRes = client$.createRequest$(context, {
-    security: securitySettings$,
+  const requestRes = client._createRequest(context, {
+    security: requestSecurity,
     method: "GET",
-    path: path$,
-    headers: headers$,
-    query: query$,
-    body: body$,
-    timeoutMs: options?.timeoutMs || client$.options$.timeoutMs || -1,
+    path: path,
+    headers: headers,
+    query: query,
+    body: body,
+    timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
     return requestRes;
   }
-  const request$ = requestRes.value;
+  const req = requestRes.value;
 
-  const doResult = await client$.do$(request$, {
+  const doResult = await client._do(req, {
     context,
     errorCodes: ["4XX", "5XX"],
     retryConfig: options?.retries
-      || client$.options$.retryConfig,
+      || client._options.retryConfig,
     retryCodes: options?.retryCodes || ["429", "500", "502", "503", "504"],
   });
   if (!doResult.ok) {
@@ -117,7 +113,7 @@ export async function commerceListCommerceItems(
   }
   const response = doResult.value;
 
-  const [result$] = await m$.match<
+  const [result] = await M.match<
     Array<shared.CommerceItem>,
     | SDKError
     | SDKValidationError
@@ -127,12 +123,12 @@ export async function commerceListCommerceItems(
     | RequestTimeoutError
     | ConnectionError
   >(
-    m$.json(200, z.array(shared.CommerceItem$inboundSchema)),
-    m$.fail(["4XX", "5XX"]),
+    M.json(200, z.array(shared.CommerceItem$inboundSchema)),
+    M.fail(["4XX", "5XX"]),
   )(response);
-  if (!result$.ok) {
-    return result$;
+  if (!result.ok) {
+    return result;
   }
 
-  return result$;
+  return result;
 }

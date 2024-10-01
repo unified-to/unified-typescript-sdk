@@ -6,7 +6,7 @@
 import { ListPaymentRefundsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListPaymentRefundsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

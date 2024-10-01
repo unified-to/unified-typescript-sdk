@@ -6,9 +6,9 @@
 import { KmsPage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsPage = {
-  downloadUrl: "<value>",
+  downloadUrl: "https://accomplished-planula.biz",
   id: "<id>",
-  spaceId: "<value>",
+  spaceId: "<id>",
   title: "<value>",
   type: "TEXT",
 };

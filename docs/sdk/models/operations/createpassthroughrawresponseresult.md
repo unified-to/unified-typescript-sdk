@@ -1,32 +1,23 @@
 # CreatePassthroughRawResponseResult
 
-## Example Usage
-
-```typescript
-import { CreatePassthroughRawResponseResult } from "@unified-api/typescript-sdk/sdk/models/operations";
-
-let value: CreatePassthroughRawResponseResult = new TextEncoder().encode(
-  "0xC6548cc03C",
-);
-```
 
 ## Supported Types
 
 ### `any`
 
 ```typescript
-const value: any = /* values here */
+const value: any = "<value>";
 ```
 
 ### `string`
 
 ```typescript
-const value: string = /* values here */
+const value: string = "<value>";
 ```
 
 ### `Uint8Array`
 
 ```typescript
-const value: Uint8Array = /* values here */
+const value: Uint8Array = new TextEncoder().encode("0x301e9bDF4e");
 ```
 

@@ -6,7 +6,7 @@
 import { UpdateCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCommerceLocationRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```

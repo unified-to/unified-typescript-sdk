@@ -6,7 +6,7 @@
 import { ListHrisTimeoffsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: ListHrisTimeoffsRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
 };
 ```
 

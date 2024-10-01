@@ -5,9 +5,7 @@
 ```typescript
 import { AtsActivity } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsActivity = {
-  title: "<value>",
-};
+let value: AtsActivity = {};
 ```
 
 ## Fields
@@ -27,7 +25,7 @@ let value: AtsActivity = {
 | `isPrivate`                                                                                   | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `jobId`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `title`                                                                                       | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `title`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `to`                                                                                          | [shared.AtsEmail](../../../sdk/models/shared/atsemail.md)[]                                   | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `type`                                                                                        | [shared.AtsActivityType](../../../sdk/models/shared/atsactivitytype.md)                       | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

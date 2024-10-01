@@ -6,7 +6,7 @@
 import { UpdateCrmLeadRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCrmLeadRequest = {
-  connectionId: "<value>",
+  connectionId: "<id>",
   id: "<id>",
 };
 ```
