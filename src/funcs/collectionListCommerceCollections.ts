@@ -42,10 +42,8 @@ export async function collectionListCommerceCollections(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListCommerceCollectionsRequest$outboundSchema.parse(value),
     "Input validation failed",

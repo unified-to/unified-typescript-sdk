@@ -41,10 +41,8 @@ export async function timeoffGetHrisTimeoff(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetHrisTimeoffRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

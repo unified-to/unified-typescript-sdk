@@ -42,10 +42,8 @@ export async function hrisListHrisLocations(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListHrisLocationsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

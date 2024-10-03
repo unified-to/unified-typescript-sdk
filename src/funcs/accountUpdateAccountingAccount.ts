@@ -41,10 +41,8 @@ export async function accountUpdateAccountingAccount(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.UpdateAccountingAccountRequest$outboundSchema.parse(value),
     "Input validation failed",

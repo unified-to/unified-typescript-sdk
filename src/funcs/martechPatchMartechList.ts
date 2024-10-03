@@ -41,10 +41,8 @@ export async function martechPatchMartechList(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchMartechListRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

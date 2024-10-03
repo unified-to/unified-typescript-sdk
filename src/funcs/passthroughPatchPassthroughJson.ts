@@ -48,10 +48,8 @@ export async function passthroughPatchPassthroughJson(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchPassthroughJsonRequest$outboundSchema.parse(value),
     "Input validation failed",

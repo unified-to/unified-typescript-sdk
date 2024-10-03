@@ -41,10 +41,8 @@ export async function webhookRemoveUnifiedWebhook(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.RemoveUnifiedWebhookRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function accountingRemoveAccountingTransaction(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.RemoveAccountingTransactionRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function documentGetAtsDocument(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetAtsDocumentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -41,10 +41,8 @@ export async function atsRemoveAtsScorecard(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveAtsScorecardRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -42,10 +42,8 @@ export async function noteListTicketingNotes(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListTicketingNotesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

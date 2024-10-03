@@ -41,10 +41,8 @@ export async function martechCreateMartechMember(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.CreateMartechMemberRequest$outboundSchema.parse(value),
     "Input validation failed",

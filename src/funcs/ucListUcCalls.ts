@@ -42,10 +42,8 @@ export async function ucListUcCalls(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListUcCallsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

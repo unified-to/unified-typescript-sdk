@@ -41,10 +41,8 @@ export async function accountingCreateAccountingInvoice(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.CreateAccountingInvoiceRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function promptCreateGenaiPrompt(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreateGenaiPromptRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

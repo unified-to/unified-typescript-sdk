@@ -41,10 +41,8 @@ export async function crmRemoveCrmEvent(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveCrmEventRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

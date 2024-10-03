@@ -41,10 +41,8 @@ export async function locationGetCommerceLocation(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.GetCommerceLocationRequest$outboundSchema.parse(value),
     "Input validation failed",

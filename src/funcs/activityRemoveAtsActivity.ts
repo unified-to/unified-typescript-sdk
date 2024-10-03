@@ -41,10 +41,8 @@ export async function activityRemoveAtsActivity(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveAtsActivityRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

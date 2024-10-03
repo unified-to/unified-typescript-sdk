@@ -42,10 +42,8 @@ export async function dealListCrmDeals(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListCrmDealsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

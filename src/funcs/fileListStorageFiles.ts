@@ -42,10 +42,8 @@ export async function fileListStorageFiles(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListStorageFilesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

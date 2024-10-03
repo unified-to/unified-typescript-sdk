@@ -41,10 +41,8 @@ export async function contactPatchAccountingContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchAccountingContactRequest$outboundSchema.parse(value),
     "Input validation failed",

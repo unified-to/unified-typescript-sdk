@@ -41,10 +41,8 @@ export async function ucPatchUcContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchUcContactRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

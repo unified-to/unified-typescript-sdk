@@ -41,10 +41,8 @@ export async function documentPatchAtsDocument(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchAtsDocumentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

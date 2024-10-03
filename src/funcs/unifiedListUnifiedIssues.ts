@@ -42,10 +42,8 @@ export async function unifiedListUnifiedIssues(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListUnifiedIssuesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

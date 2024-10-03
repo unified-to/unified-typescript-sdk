@@ -41,10 +41,8 @@ export async function atsCreateAtsScorecard(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreateAtsScorecardRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

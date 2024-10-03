@@ -42,10 +42,8 @@ export async function hrisListHrisPayslips(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListHrisPayslipsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -43,10 +43,8 @@ export async function unifiedCreateUnifiedConnection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => shared.Connection$outboundSchema.optional().parse(value),
     "Input validation failed",
   );

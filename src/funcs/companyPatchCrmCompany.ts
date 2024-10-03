@@ -41,10 +41,8 @@ export async function companyPatchCrmCompany(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchCrmCompanyRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

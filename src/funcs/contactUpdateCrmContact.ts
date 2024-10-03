@@ -41,10 +41,8 @@ export async function contactUpdateCrmContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.UpdateCrmContactRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

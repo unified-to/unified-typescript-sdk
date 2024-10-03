@@ -41,10 +41,8 @@ export async function locationPatchHrisLocation(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchHrisLocationRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

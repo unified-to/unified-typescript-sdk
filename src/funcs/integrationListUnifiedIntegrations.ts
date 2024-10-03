@@ -42,10 +42,8 @@ export async function integrationListUnifiedIntegrations(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListUnifiedIntegrationsRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function hrisCreateHrisCompany(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreateHrisCompanyRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

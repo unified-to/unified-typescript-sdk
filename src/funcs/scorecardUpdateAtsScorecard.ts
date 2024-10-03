@@ -41,10 +41,8 @@ export async function scorecardUpdateAtsScorecard(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.UpdateAtsScorecardRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

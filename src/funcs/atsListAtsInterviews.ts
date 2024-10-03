@@ -42,10 +42,8 @@ export async function atsListAtsInterviews(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListAtsInterviewsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -41,10 +41,8 @@ export async function taskUpdateTaskTask(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.UpdateTaskTaskRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

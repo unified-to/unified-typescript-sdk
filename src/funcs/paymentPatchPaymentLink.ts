@@ -41,10 +41,8 @@ export async function paymentPatchPaymentLink(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchPaymentLinkRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

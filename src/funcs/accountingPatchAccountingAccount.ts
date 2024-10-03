@@ -41,10 +41,8 @@ export async function accountingPatchAccountingAccount(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchAccountingAccountRequest$outboundSchema.parse(value),
     "Input validation failed",

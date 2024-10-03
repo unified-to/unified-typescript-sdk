@@ -41,10 +41,8 @@ export async function groupPatchHrisGroup(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchHrisGroupRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

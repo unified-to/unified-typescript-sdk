@@ -41,10 +41,8 @@ export async function storageGetStorageFile(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetStorageFileRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

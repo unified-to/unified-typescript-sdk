@@ -41,10 +41,8 @@ export async function spacePatchKmsSpace(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchKmsSpaceRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -42,10 +42,8 @@ export async function documentListAtsDocuments(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListAtsDocumentsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -42,10 +42,8 @@ export async function unifiedListUnifiedWebhooks(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListUnifiedWebhooksRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function contactRemoveUcContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveUcContactRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

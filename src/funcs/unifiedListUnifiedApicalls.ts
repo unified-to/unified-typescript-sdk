@@ -42,10 +42,8 @@ export async function unifiedListUnifiedApicalls(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListUnifiedApicallsRequest$outboundSchema.parse(value),
     "Input validation failed",

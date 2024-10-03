@@ -48,10 +48,8 @@ export async function passthroughRemovePassthrough(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemovePassthroughRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -41,10 +41,8 @@ export async function fileRemoveStorageFile(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveStorageFileRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

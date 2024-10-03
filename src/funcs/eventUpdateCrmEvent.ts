@@ -41,10 +41,8 @@ export async function eventUpdateCrmEvent(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.UpdateCrmEventRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

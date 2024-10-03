@@ -42,10 +42,8 @@ export async function activityListAtsActivities(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListAtsActivitiesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

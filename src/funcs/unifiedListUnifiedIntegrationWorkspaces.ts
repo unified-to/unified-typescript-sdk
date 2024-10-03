@@ -45,10 +45,8 @@ export async function unifiedListUnifiedIntegrationWorkspaces(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListUnifiedIntegrationWorkspacesRequest$outboundSchema.parse(
         value,

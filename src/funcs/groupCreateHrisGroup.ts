@@ -41,10 +41,8 @@ export async function groupCreateHrisGroup(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreateHrisGroupRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

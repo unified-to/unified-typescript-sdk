@@ -42,10 +42,8 @@ export async function messagingListMessagingChannels(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.ListMessagingChannelsRequest$outboundSchema.parse(value),
     "Input validation failed",

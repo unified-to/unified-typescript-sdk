@@ -41,10 +41,8 @@ export async function contactPatchCrmContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchCrmContactRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

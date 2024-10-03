@@ -44,10 +44,8 @@ export async function authGetUnifiedIntegrationLogin(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.GetUnifiedIntegrationLoginRequest$outboundSchema.parse(value),
     "Input validation failed",

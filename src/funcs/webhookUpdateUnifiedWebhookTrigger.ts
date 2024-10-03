@@ -41,10 +41,8 @@ export async function webhookUpdateUnifiedWebhookTrigger(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.UpdateUnifiedWebhookTriggerRequest$outboundSchema.parse(value),
     "Input validation failed",

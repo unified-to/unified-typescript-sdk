@@ -41,10 +41,8 @@ export async function messageCreateMessagingMessage(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.CreateMessagingMessageRequest$outboundSchema.parse(value),
     "Input validation failed",

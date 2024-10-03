@@ -41,10 +41,8 @@ export async function noteRemoveTicketingNote(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.RemoveTicketingNoteRequest$outboundSchema.parse(value),
     "Input validation failed",

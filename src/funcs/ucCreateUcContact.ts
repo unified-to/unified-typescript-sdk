@@ -41,10 +41,8 @@ export async function ucCreateUcContact(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreateUcContactRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

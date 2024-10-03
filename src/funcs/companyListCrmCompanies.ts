@@ -42,10 +42,8 @@ export async function companyListCrmCompanies(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListCrmCompaniesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

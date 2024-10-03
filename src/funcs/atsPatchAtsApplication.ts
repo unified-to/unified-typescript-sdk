@@ -41,10 +41,8 @@ export async function atsPatchAtsApplication(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchAtsApplicationRequest$outboundSchema.parse(value),
     "Input validation failed",

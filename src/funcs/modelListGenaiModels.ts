@@ -42,10 +42,8 @@ export async function modelListGenaiModels(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListGenaiModelsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

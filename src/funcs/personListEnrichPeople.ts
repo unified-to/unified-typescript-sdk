@@ -41,10 +41,8 @@ export async function personListEnrichPeople(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListEnrichPeopleRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

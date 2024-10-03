@@ -41,10 +41,8 @@ export async function unifiedRemoveUnifiedConnection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.RemoveUnifiedConnectionRequest$outboundSchema.parse(value),
     "Input validation failed",

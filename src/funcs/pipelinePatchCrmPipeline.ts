@@ -41,10 +41,8 @@ export async function pipelinePatchCrmPipeline(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchCrmPipelineRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

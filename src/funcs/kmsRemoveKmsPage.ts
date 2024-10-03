@@ -41,10 +41,8 @@ export async function kmsRemoveKmsPage(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveKmsPageRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

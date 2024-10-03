@@ -41,10 +41,8 @@ export async function ticketingPatchTicketingTicket(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchTicketingTicketRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function dealPatchCrmDeal(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchCrmDealRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

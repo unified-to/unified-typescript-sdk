@@ -42,10 +42,8 @@ export async function paymentListPaymentRefunds(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListPaymentRefundsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

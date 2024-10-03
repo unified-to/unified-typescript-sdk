@@ -41,10 +41,8 @@ export async function taxrateGetAccountingTaxrate(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.GetAccountingTaxrateRequest$outboundSchema.parse(value),
     "Input validation failed",

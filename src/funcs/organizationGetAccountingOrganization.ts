@@ -41,10 +41,8 @@ export async function organizationGetAccountingOrganization(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.GetAccountingOrganizationRequest$outboundSchema.parse(value),
     "Input validation failed",

@@ -41,10 +41,8 @@ export async function hrisRemoveHrisLocation(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveHrisLocationRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

@@ -41,10 +41,8 @@ export async function commerceRemoveCommerceInventory(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.RemoveCommerceInventoryRequest$outboundSchema.parse(value),
     "Input validation failed",

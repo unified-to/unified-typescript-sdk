@@ -41,10 +41,8 @@ export async function leadRemoveCrmLead(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveCrmLeadRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

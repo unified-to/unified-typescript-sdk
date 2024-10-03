@@ -41,10 +41,8 @@ export async function linkCreatePaymentLink(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.CreatePaymentLinkRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

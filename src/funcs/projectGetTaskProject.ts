@@ -41,10 +41,8 @@ export async function projectGetTaskProject(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetTaskProjectRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

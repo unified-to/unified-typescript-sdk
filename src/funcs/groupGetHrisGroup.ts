@@ -41,10 +41,8 @@ export async function groupGetHrisGroup(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.GetHrisGroupRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

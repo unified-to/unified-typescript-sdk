@@ -41,10 +41,8 @@ export async function atsUpdateAtsDocument(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.UpdateAtsDocumentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

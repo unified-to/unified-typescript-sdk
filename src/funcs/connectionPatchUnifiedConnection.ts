@@ -41,10 +41,8 @@ export async function connectionPatchUnifiedConnection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchUnifiedConnectionRequest$outboundSchema.parse(value),
     "Input validation failed",

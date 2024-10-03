@@ -41,10 +41,8 @@ export async function projectRemoveTaskProject(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.RemoveTaskProjectRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

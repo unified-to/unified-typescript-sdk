@@ -41,10 +41,8 @@ export async function commercePatchCommerceLocation(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchCommerceLocationRequest$outboundSchema.parse(value),
     "Input validation failed",

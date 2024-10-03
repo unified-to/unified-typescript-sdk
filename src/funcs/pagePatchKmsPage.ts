@@ -41,10 +41,8 @@ export async function pagePatchKmsPage(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.PatchKmsPageRequest$outboundSchema.parse(value),
     "Input validation failed",
   );

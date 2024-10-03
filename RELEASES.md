@@ -1617,3 +1617,13 @@ Based on:
 - [typescript v2.6.0] .
 ### Releases
 - [NPM v2.6.0] https://www.npmjs.com/package/@unified-api/typescript-sdk/v/2.6.0 - .
+
+## 2024-10-03 00:10:29
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.406.0 (2.429.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [typescript v2.6.1] .
+### Releases
+- [NPM v2.6.1] https://www.npmjs.com/package/@unified-api/typescript-sdk/v/2.6.1 - .

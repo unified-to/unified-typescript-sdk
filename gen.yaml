@@ -13,7 +13,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.6.0
+  version: 2.6.1
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -23,6 +23,7 @@ typescript:
   clientServerStatusCodesAsErrors: true
   enumFormat: union
   flattenGlobalSecurity: false
+  flatteningOrder: body-first
   imports:
     option: openapi
     paths:

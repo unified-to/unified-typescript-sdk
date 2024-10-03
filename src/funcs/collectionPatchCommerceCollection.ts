@@ -41,10 +41,8 @@ export async function collectionPatchCommerceCollection(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) =>
       operations.PatchCommerceCollectionRequest$outboundSchema.parse(value),
     "Input validation failed",

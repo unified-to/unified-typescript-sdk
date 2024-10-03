@@ -42,10 +42,8 @@ export async function kmsListKmsPages(
     | ConnectionError
   >
 > {
-  const input = request;
-
   const parsed = safeParse(
-    input,
+    request,
     (value) => operations.ListKmsPagesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
