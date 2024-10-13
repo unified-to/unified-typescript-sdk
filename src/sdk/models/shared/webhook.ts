@@ -69,6 +69,8 @@ export const ObjectType = {
   KmsPage: "kms_page",
   TaskProject: "task_project",
   TaskTask: "task_task",
+  ScimUsers: "scim_users",
+  ScimGroups: "scim_groups",
 } as const;
 export type ObjectType = ClosedEnum<typeof ObjectType>;
 

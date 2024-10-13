@@ -5,6 +5,12 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import {
+  AccountingTransactionContact,
+  AccountingTransactionContact$inboundSchema,
+  AccountingTransactionContact$Outbound,
+  AccountingTransactionContact$outboundSchema,
+} from "./accountingtransactioncontact.js";
+import {
   AccountingTransactionLineItem,
   AccountingTransactionLineItem$inboundSchema,
   AccountingTransactionLineItem$Outbound,
@@ -14,6 +20,7 @@ import {
 export type AccountingTransaction = {
   accountId?: string | undefined;
   contactId?: string | undefined;
+  contacts?: Array<AccountingTransactionContact> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   customerMessage?: string | undefined;
@@ -40,6 +47,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
 > = z.object({
   account_id: z.string().optional(),
   contact_id: z.string().optional(),
+  contacts: z.array(AccountingTransactionContact$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
@@ -78,6 +86,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
 export type AccountingTransaction$Outbound = {
   account_id?: string | undefined;
   contact_id?: string | undefined;
+  contacts?: Array<AccountingTransactionContact$Outbound> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   customer_message?: string | undefined;
@@ -104,6 +113,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
 > = z.object({
   accountId: z.string().optional(),
   contactId: z.string().optional(),
+  contacts: z.array(AccountingTransactionContact$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   customerMessage: z.string().optional(),

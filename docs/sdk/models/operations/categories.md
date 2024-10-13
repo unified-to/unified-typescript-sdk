@@ -5,11 +5,11 @@
 ```typescript
 import { Categories } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: Categories = "crm";
+let value: Categories = "enrich";
 ```
 
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task"
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim"
 ```

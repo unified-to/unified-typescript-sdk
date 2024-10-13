@@ -416,578 +416,599 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 
 <summary>Available standalone functions</summary>
 
-- [accountCreateAccountingAccount](docs/sdks/account/README.md#createaccountingaccount)
-- [accountGetAccountingAccount](docs/sdks/account/README.md#getaccountingaccount)
-- [accountListAccountingAccounts](docs/sdks/account/README.md#listaccountingaccounts)
-- [accountPatchAccountingAccount](docs/sdks/account/README.md#patchaccountingaccount)
-- [accountRemoveAccountingAccount](docs/sdks/account/README.md#removeaccountingaccount)
-- [accountUpdateAccountingAccount](docs/sdks/account/README.md#updateaccountingaccount)
-- [accountingCreateAccountingAccount](docs/sdks/accounting/README.md#createaccountingaccount)
-- [accountingCreateAccountingContact](docs/sdks/accounting/README.md#createaccountingcontact)
-- [accountingCreateAccountingInvoice](docs/sdks/accounting/README.md#createaccountinginvoice)
-- [accountingCreateAccountingJournal](docs/sdks/accounting/README.md#createaccountingjournal)
-- [accountingCreateAccountingTaxrate](docs/sdks/accounting/README.md#createaccountingtaxrate)
-- [accountingCreateAccountingTransaction](docs/sdks/accounting/README.md#createaccountingtransaction)
-- [accountingGetAccountingAccount](docs/sdks/accounting/README.md#getaccountingaccount)
-- [accountingGetAccountingContact](docs/sdks/accounting/README.md#getaccountingcontact)
-- [accountingGetAccountingInvoice](docs/sdks/accounting/README.md#getaccountinginvoice)
-- [accountingGetAccountingJournal](docs/sdks/accounting/README.md#getaccountingjournal)
-- [accountingGetAccountingOrganization](docs/sdks/accounting/README.md#getaccountingorganization)
-- [accountingGetAccountingTaxrate](docs/sdks/accounting/README.md#getaccountingtaxrate)
-- [accountingGetAccountingTransaction](docs/sdks/accounting/README.md#getaccountingtransaction)
-- [accountingListAccountingAccounts](docs/sdks/accounting/README.md#listaccountingaccounts)
-- [accountingListAccountingContacts](docs/sdks/accounting/README.md#listaccountingcontacts)
-- [accountingListAccountingInvoices](docs/sdks/accounting/README.md#listaccountinginvoices)
-- [accountingListAccountingJournals](docs/sdks/accounting/README.md#listaccountingjournals)
-- [accountingListAccountingOrganizations](docs/sdks/accounting/README.md#listaccountingorganizations)
-- [accountingListAccountingTaxrates](docs/sdks/accounting/README.md#listaccountingtaxrates)
-- [accountingListAccountingTransactions](docs/sdks/accounting/README.md#listaccountingtransactions)
-- [accountingPatchAccountingAccount](docs/sdks/accounting/README.md#patchaccountingaccount)
-- [accountingPatchAccountingContact](docs/sdks/accounting/README.md#patchaccountingcontact)
-- [accountingPatchAccountingInvoice](docs/sdks/accounting/README.md#patchaccountinginvoice)
-- [accountingPatchAccountingJournal](docs/sdks/accounting/README.md#patchaccountingjournal)
-- [accountingPatchAccountingTaxrate](docs/sdks/accounting/README.md#patchaccountingtaxrate)
-- [accountingPatchAccountingTransaction](docs/sdks/accounting/README.md#patchaccountingtransaction)
-- [accountingRemoveAccountingAccount](docs/sdks/accounting/README.md#removeaccountingaccount)
-- [accountingRemoveAccountingContact](docs/sdks/accounting/README.md#removeaccountingcontact)
-- [accountingRemoveAccountingInvoice](docs/sdks/accounting/README.md#removeaccountinginvoice)
-- [accountingRemoveAccountingJournal](docs/sdks/accounting/README.md#removeaccountingjournal)
-- [accountingRemoveAccountingTaxrate](docs/sdks/accounting/README.md#removeaccountingtaxrate)
-- [accountingRemoveAccountingTransaction](docs/sdks/accounting/README.md#removeaccountingtransaction)
-- [accountingUpdateAccountingAccount](docs/sdks/accounting/README.md#updateaccountingaccount)
-- [accountingUpdateAccountingContact](docs/sdks/accounting/README.md#updateaccountingcontact)
-- [accountingUpdateAccountingInvoice](docs/sdks/accounting/README.md#updateaccountinginvoice)
-- [accountingUpdateAccountingJournal](docs/sdks/accounting/README.md#updateaccountingjournal)
-- [accountingUpdateAccountingTaxrate](docs/sdks/accounting/README.md#updateaccountingtaxrate)
-- [accountingUpdateAccountingTransaction](docs/sdks/accounting/README.md#updateaccountingtransaction)
-- [activityCreateAtsActivity](docs/sdks/activity/README.md#createatsactivity)
-- [activityGetAtsActivity](docs/sdks/activity/README.md#getatsactivity)
-- [activityListAtsActivities](docs/sdks/activity/README.md#listatsactivities)
-- [activityPatchAtsActivity](docs/sdks/activity/README.md#patchatsactivity)
-- [activityRemoveAtsActivity](docs/sdks/activity/README.md#removeatsactivity)
-- [activityUpdateAtsActivity](docs/sdks/activity/README.md#updateatsactivity)
-- [apicallGetUnifiedApicall](docs/sdks/apicall/README.md#getunifiedapicall)
-- [apicallListUnifiedApicalls](docs/sdks/apicall/README.md#listunifiedapicalls)
-- [applicationCreateAtsApplication](docs/sdks/application/README.md#createatsapplication)
-- [applicationGetAtsApplication](docs/sdks/application/README.md#getatsapplication)
-- [applicationListAtsApplications](docs/sdks/application/README.md#listatsapplications)
-- [applicationPatchAtsApplication](docs/sdks/application/README.md#patchatsapplication)
-- [applicationRemoveAtsApplication](docs/sdks/application/README.md#removeatsapplication)
-- [applicationUpdateAtsApplication](docs/sdks/application/README.md#updateatsapplication)
-- [applicationstatusListAtsApplicationstatuses](docs/sdks/applicationstatus/README.md#listatsapplicationstatuses)
-- [atsCreateAtsActivity](docs/sdks/ats/README.md#createatsactivity)
-- [atsCreateAtsApplication](docs/sdks/ats/README.md#createatsapplication)
-- [atsCreateAtsCandidate](docs/sdks/ats/README.md#createatscandidate)
-- [atsCreateAtsDocument](docs/sdks/ats/README.md#createatsdocument)
-- [atsCreateAtsInterview](docs/sdks/ats/README.md#createatsinterview)
-- [atsCreateAtsJob](docs/sdks/ats/README.md#createatsjob)
-- [atsCreateAtsScorecard](docs/sdks/ats/README.md#createatsscorecard)
-- [atsGetAtsActivity](docs/sdks/ats/README.md#getatsactivity)
-- [atsGetAtsApplication](docs/sdks/ats/README.md#getatsapplication)
-- [atsGetAtsCandidate](docs/sdks/ats/README.md#getatscandidate)
-- [atsGetAtsCompany](docs/sdks/ats/README.md#getatscompany)
-- [atsGetAtsDocument](docs/sdks/ats/README.md#getatsdocument)
-- [atsGetAtsInterview](docs/sdks/ats/README.md#getatsinterview)
-- [atsGetAtsJob](docs/sdks/ats/README.md#getatsjob)
-- [atsGetAtsScorecard](docs/sdks/ats/README.md#getatsscorecard)
-- [atsListAtsActivities](docs/sdks/ats/README.md#listatsactivities)
-- [atsListAtsApplications](docs/sdks/ats/README.md#listatsapplications)
-- [atsListAtsApplicationstatuses](docs/sdks/ats/README.md#listatsapplicationstatuses)
-- [atsListAtsCandidates](docs/sdks/ats/README.md#listatscandidates)
-- [atsListAtsCompanies](docs/sdks/ats/README.md#listatscompanies)
-- [atsListAtsDocuments](docs/sdks/ats/README.md#listatsdocuments)
-- [atsListAtsInterviews](docs/sdks/ats/README.md#listatsinterviews)
-- [atsListAtsJobs](docs/sdks/ats/README.md#listatsjobs)
-- [atsListAtsScorecards](docs/sdks/ats/README.md#listatsscorecards)
-- [atsPatchAtsActivity](docs/sdks/ats/README.md#patchatsactivity)
-- [atsPatchAtsApplication](docs/sdks/ats/README.md#patchatsapplication)
-- [atsPatchAtsCandidate](docs/sdks/ats/README.md#patchatscandidate)
-- [atsPatchAtsDocument](docs/sdks/ats/README.md#patchatsdocument)
-- [atsPatchAtsInterview](docs/sdks/ats/README.md#patchatsinterview)
-- [atsPatchAtsJob](docs/sdks/ats/README.md#patchatsjob)
-- [atsPatchAtsScorecard](docs/sdks/ats/README.md#patchatsscorecard)
-- [atsRemoveAtsActivity](docs/sdks/ats/README.md#removeatsactivity)
-- [atsRemoveAtsApplication](docs/sdks/ats/README.md#removeatsapplication)
-- [atsRemoveAtsCandidate](docs/sdks/ats/README.md#removeatscandidate)
-- [atsRemoveAtsDocument](docs/sdks/ats/README.md#removeatsdocument)
-- [atsRemoveAtsInterview](docs/sdks/ats/README.md#removeatsinterview)
-- [atsRemoveAtsJob](docs/sdks/ats/README.md#removeatsjob)
-- [atsRemoveAtsScorecard](docs/sdks/ats/README.md#removeatsscorecard)
-- [atsUpdateAtsActivity](docs/sdks/ats/README.md#updateatsactivity)
-- [atsUpdateAtsApplication](docs/sdks/ats/README.md#updateatsapplication)
-- [atsUpdateAtsCandidate](docs/sdks/ats/README.md#updateatscandidate)
-- [atsUpdateAtsDocument](docs/sdks/ats/README.md#updateatsdocument)
-- [atsUpdateAtsInterview](docs/sdks/ats/README.md#updateatsinterview)
-- [atsUpdateAtsJob](docs/sdks/ats/README.md#updateatsjob)
-- [atsUpdateAtsScorecard](docs/sdks/ats/README.md#updateatsscorecard)
-- [authGetUnifiedIntegrationAuth](docs/sdks/auth/README.md#getunifiedintegrationauth)
-- [authGetUnifiedIntegrationLogin](docs/sdks/auth/README.md#getunifiedintegrationlogin)
-- [callListUcCalls](docs/sdks/call/README.md#listuccalls)
-- [candidateCreateAtsCandidate](docs/sdks/candidate/README.md#createatscandidate)
-- [candidateGetAtsCandidate](docs/sdks/candidate/README.md#getatscandidate)
-- [candidateListAtsCandidates](docs/sdks/candidate/README.md#listatscandidates)
-- [candidatePatchAtsCandidate](docs/sdks/candidate/README.md#patchatscandidate)
-- [candidateRemoveAtsCandidate](docs/sdks/candidate/README.md#removeatscandidate)
-- [candidateUpdateAtsCandidate](docs/sdks/candidate/README.md#updateatscandidate)
-- [channelGetMessagingChannel](docs/sdks/channel/README.md#getmessagingchannel)
-- [channelListMessagingChannels](docs/sdks/channel/README.md#listmessagingchannels)
-- [collectionCreateCommerceCollection](docs/sdks/collection/README.md#createcommercecollection)
-- [collectionGetCommerceCollection](docs/sdks/collection/README.md#getcommercecollection)
-- [collectionListCommerceCollections](docs/sdks/collection/README.md#listcommercecollections)
-- [collectionPatchCommerceCollection](docs/sdks/collection/README.md#patchcommercecollection)
-- [collectionRemoveCommerceCollection](docs/sdks/collection/README.md#removecommercecollection)
-- [collectionUpdateCommerceCollection](docs/sdks/collection/README.md#updatecommercecollection)
-- [commerceCreateCommerceCollection](docs/sdks/commerce/README.md#createcommercecollection)
-- [commerceCreateCommerceInventory](docs/sdks/commerce/README.md#createcommerceinventory)
-- [commerceCreateCommerceItem](docs/sdks/commerce/README.md#createcommerceitem)
-- [commerceCreateCommerceLocation](docs/sdks/commerce/README.md#createcommercelocation)
-- [commerceGetCommerceCollection](docs/sdks/commerce/README.md#getcommercecollection)
-- [commerceGetCommerceInventory](docs/sdks/commerce/README.md#getcommerceinventory)
-- [commerceGetCommerceItem](docs/sdks/commerce/README.md#getcommerceitem)
-- [commerceGetCommerceLocation](docs/sdks/commerce/README.md#getcommercelocation)
-- [commerceListCommerceCollections](docs/sdks/commerce/README.md#listcommercecollections)
-- [commerceListCommerceInventories](docs/sdks/commerce/README.md#listcommerceinventories)
-- [commerceListCommerceItems](docs/sdks/commerce/README.md#listcommerceitems)
-- [commerceListCommerceLocations](docs/sdks/commerce/README.md#listcommercelocations)
-- [commercePatchCommerceCollection](docs/sdks/commerce/README.md#patchcommercecollection)
-- [commercePatchCommerceInventory](docs/sdks/commerce/README.md#patchcommerceinventory)
-- [commercePatchCommerceItem](docs/sdks/commerce/README.md#patchcommerceitem)
-- [commercePatchCommerceLocation](docs/sdks/commerce/README.md#patchcommercelocation)
-- [commerceRemoveCommerceCollection](docs/sdks/commerce/README.md#removecommercecollection)
-- [commerceRemoveCommerceInventory](docs/sdks/commerce/README.md#removecommerceinventory)
-- [commerceRemoveCommerceItem](docs/sdks/commerce/README.md#removecommerceitem)
-- [commerceRemoveCommerceLocation](docs/sdks/commerce/README.md#removecommercelocation)
-- [commerceUpdateCommerceCollection](docs/sdks/commerce/README.md#updatecommercecollection)
-- [commerceUpdateCommerceInventory](docs/sdks/commerce/README.md#updatecommerceinventory)
-- [commerceUpdateCommerceItem](docs/sdks/commerce/README.md#updatecommerceitem)
-- [commerceUpdateCommerceLocation](docs/sdks/commerce/README.md#updatecommercelocation)
-- [companyCreateCrmCompany](docs/sdks/company/README.md#createcrmcompany)
-- [companyCreateHrisCompany](docs/sdks/company/README.md#createhriscompany)
-- [companyGetAtsCompany](docs/sdks/company/README.md#getatscompany)
-- [companyGetCrmCompany](docs/sdks/company/README.md#getcrmcompany)
-- [companyGetHrisCompany](docs/sdks/company/README.md#gethriscompany)
-- [companyListAtsCompanies](docs/sdks/company/README.md#listatscompanies)
-- [companyListCrmCompanies](docs/sdks/company/README.md#listcrmcompanies)
-- [companyListEnrichCompanies](docs/sdks/company/README.md#listenrichcompanies)
-- [companyListHrisCompanies](docs/sdks/company/README.md#listhriscompanies)
-- [companyPatchCrmCompany](docs/sdks/company/README.md#patchcrmcompany)
-- [companyPatchHrisCompany](docs/sdks/company/README.md#patchhriscompany)
-- [companyRemoveCrmCompany](docs/sdks/company/README.md#removecrmcompany)
-- [companyRemoveHrisCompany](docs/sdks/company/README.md#removehriscompany)
-- [companyUpdateCrmCompany](docs/sdks/company/README.md#updatecrmcompany)
-- [companyUpdateHrisCompany](docs/sdks/company/README.md#updatehriscompany)
-- [connectionCreateUnifiedConnection](docs/sdks/connection/README.md#createunifiedconnection)
-- [connectionGetUnifiedConnection](docs/sdks/connection/README.md#getunifiedconnection)
-- [connectionListUnifiedConnections](docs/sdks/connection/README.md#listunifiedconnections)
-- [connectionPatchUnifiedConnection](docs/sdks/connection/README.md#patchunifiedconnection)
-- [connectionRemoveUnifiedConnection](docs/sdks/connection/README.md#removeunifiedconnection)
-- [connectionUpdateUnifiedConnection](docs/sdks/connection/README.md#updateunifiedconnection)
-- [contactCreateAccountingContact](docs/sdks/contact/README.md#createaccountingcontact)
-- [contactCreateCrmContact](docs/sdks/contact/README.md#createcrmcontact)
-- [contactCreateUcContact](docs/sdks/contact/README.md#createuccontact)
-- [contactGetAccountingContact](docs/sdks/contact/README.md#getaccountingcontact)
-- [contactGetCrmContact](docs/sdks/contact/README.md#getcrmcontact)
-- [contactGetUcContact](docs/sdks/contact/README.md#getuccontact)
-- [contactListAccountingContacts](docs/sdks/contact/README.md#listaccountingcontacts)
-- [contactListCrmContacts](docs/sdks/contact/README.md#listcrmcontacts)
-- [contactListUcContacts](docs/sdks/contact/README.md#listuccontacts)
-- [contactPatchAccountingContact](docs/sdks/contact/README.md#patchaccountingcontact)
-- [contactPatchCrmContact](docs/sdks/contact/README.md#patchcrmcontact)
-- [contactPatchUcContact](docs/sdks/contact/README.md#patchuccontact)
-- [contactRemoveAccountingContact](docs/sdks/contact/README.md#removeaccountingcontact)
-- [contactRemoveCrmContact](docs/sdks/contact/README.md#removecrmcontact)
-- [contactRemoveUcContact](docs/sdks/contact/README.md#removeuccontact)
-- [contactUpdateAccountingContact](docs/sdks/contact/README.md#updateaccountingcontact)
-- [contactUpdateCrmContact](docs/sdks/contact/README.md#updatecrmcontact)
-- [contactUpdateUcContact](docs/sdks/contact/README.md#updateuccontact)
-- [crmCreateCrmCompany](docs/sdks/crm/README.md#createcrmcompany)
-- [crmCreateCrmContact](docs/sdks/crm/README.md#createcrmcontact)
-- [crmCreateCrmDeal](docs/sdks/crm/README.md#createcrmdeal)
-- [crmCreateCrmEvent](docs/sdks/crm/README.md#createcrmevent)
-- [crmCreateCrmLead](docs/sdks/crm/README.md#createcrmlead)
-- [crmCreateCrmPipeline](docs/sdks/crm/README.md#createcrmpipeline)
-- [crmGetCrmCompany](docs/sdks/crm/README.md#getcrmcompany)
-- [crmGetCrmContact](docs/sdks/crm/README.md#getcrmcontact)
-- [crmGetCrmDeal](docs/sdks/crm/README.md#getcrmdeal)
-- [crmGetCrmEvent](docs/sdks/crm/README.md#getcrmevent)
-- [crmGetCrmLead](docs/sdks/crm/README.md#getcrmlead)
-- [crmGetCrmPipeline](docs/sdks/crm/README.md#getcrmpipeline)
-- [crmListCrmCompanies](docs/sdks/crm/README.md#listcrmcompanies)
-- [crmListCrmContacts](docs/sdks/crm/README.md#listcrmcontacts)
-- [crmListCrmDeals](docs/sdks/crm/README.md#listcrmdeals)
-- [crmListCrmEvents](docs/sdks/crm/README.md#listcrmevents)
-- [crmListCrmLeads](docs/sdks/crm/README.md#listcrmleads)
-- [crmListCrmPipelines](docs/sdks/crm/README.md#listcrmpipelines)
-- [crmPatchCrmCompany](docs/sdks/crm/README.md#patchcrmcompany)
-- [crmPatchCrmContact](docs/sdks/crm/README.md#patchcrmcontact)
-- [crmPatchCrmDeal](docs/sdks/crm/README.md#patchcrmdeal)
-- [crmPatchCrmEvent](docs/sdks/crm/README.md#patchcrmevent)
-- [crmPatchCrmLead](docs/sdks/crm/README.md#patchcrmlead)
-- [crmPatchCrmPipeline](docs/sdks/crm/README.md#patchcrmpipeline)
-- [crmRemoveCrmCompany](docs/sdks/crm/README.md#removecrmcompany)
-- [crmRemoveCrmContact](docs/sdks/crm/README.md#removecrmcontact)
-- [crmRemoveCrmDeal](docs/sdks/crm/README.md#removecrmdeal)
-- [crmRemoveCrmEvent](docs/sdks/crm/README.md#removecrmevent)
-- [crmRemoveCrmLead](docs/sdks/crm/README.md#removecrmlead)
-- [crmRemoveCrmPipeline](docs/sdks/crm/README.md#removecrmpipeline)
-- [crmUpdateCrmCompany](docs/sdks/crm/README.md#updatecrmcompany)
-- [crmUpdateCrmContact](docs/sdks/crm/README.md#updatecrmcontact)
-- [crmUpdateCrmDeal](docs/sdks/crm/README.md#updatecrmdeal)
-- [crmUpdateCrmEvent](docs/sdks/crm/README.md#updatecrmevent)
-- [crmUpdateCrmLead](docs/sdks/crm/README.md#updatecrmlead)
-- [crmUpdateCrmPipeline](docs/sdks/crm/README.md#updatecrmpipeline)
-- [customerCreateTicketingCustomer](docs/sdks/customer/README.md#createticketingcustomer)
-- [customerGetTicketingCustomer](docs/sdks/customer/README.md#getticketingcustomer)
-- [customerListTicketingCustomers](docs/sdks/customer/README.md#listticketingcustomers)
-- [customerPatchTicketingCustomer](docs/sdks/customer/README.md#patchticketingcustomer)
-- [customerRemoveTicketingCustomer](docs/sdks/customer/README.md#removeticketingcustomer)
-- [customerUpdateTicketingCustomer](docs/sdks/customer/README.md#updateticketingcustomer)
-- [dealCreateCrmDeal](docs/sdks/deal/README.md#createcrmdeal)
-- [dealGetCrmDeal](docs/sdks/deal/README.md#getcrmdeal)
-- [dealListCrmDeals](docs/sdks/deal/README.md#listcrmdeals)
-- [dealPatchCrmDeal](docs/sdks/deal/README.md#patchcrmdeal)
-- [dealRemoveCrmDeal](docs/sdks/deal/README.md#removecrmdeal)
-- [dealUpdateCrmDeal](docs/sdks/deal/README.md#updatecrmdeal)
-- [documentCreateAtsDocument](docs/sdks/document/README.md#createatsdocument)
-- [documentGetAtsDocument](docs/sdks/document/README.md#getatsdocument)
-- [documentListAtsDocuments](docs/sdks/document/README.md#listatsdocuments)
-- [documentPatchAtsDocument](docs/sdks/document/README.md#patchatsdocument)
-- [documentRemoveAtsDocument](docs/sdks/document/README.md#removeatsdocument)
-- [documentUpdateAtsDocument](docs/sdks/document/README.md#updateatsdocument)
-- [employeeCreateHrisEmployee](docs/sdks/employee/README.md#createhrisemployee)
-- [employeeGetHrisEmployee](docs/sdks/employee/README.md#gethrisemployee)
-- [employeeListHrisEmployees](docs/sdks/employee/README.md#listhrisemployees)
-- [employeePatchHrisEmployee](docs/sdks/employee/README.md#patchhrisemployee)
-- [employeeRemoveHrisEmployee](docs/sdks/employee/README.md#removehrisemployee)
-- [employeeUpdateHrisEmployee](docs/sdks/employee/README.md#updatehrisemployee)
-- [enrichListEnrichCompanies](docs/sdks/enrich/README.md#listenrichcompanies)
-- [enrichListEnrichPeople](docs/sdks/enrich/README.md#listenrichpeople)
-- [eventCreateCrmEvent](docs/sdks/event/README.md#createcrmevent)
-- [eventGetCrmEvent](docs/sdks/event/README.md#getcrmevent)
-- [eventListCrmEvents](docs/sdks/event/README.md#listcrmevents)
-- [eventPatchCrmEvent](docs/sdks/event/README.md#patchcrmevent)
-- [eventRemoveCrmEvent](docs/sdks/event/README.md#removecrmevent)
-- [eventUpdateCrmEvent](docs/sdks/event/README.md#updatecrmevent)
-- [fileCreateStorageFile](docs/sdks/file/README.md#createstoragefile)
-- [fileGetStorageFile](docs/sdks/file/README.md#getstoragefile)
-- [fileListStorageFiles](docs/sdks/file/README.md#liststoragefiles)
-- [filePatchStorageFile](docs/sdks/file/README.md#patchstoragefile)
-- [fileRemoveStorageFile](docs/sdks/file/README.md#removestoragefile)
-- [fileUpdateStorageFile](docs/sdks/file/README.md#updatestoragefile)
-- [genaiCreateGenaiPrompt](docs/sdks/genai/README.md#creategenaiprompt)
-- [genaiListGenaiModels](docs/sdks/genai/README.md#listgenaimodels)
-- [groupCreateHrisGroup](docs/sdks/group/README.md#createhrisgroup)
-- [groupGetHrisGroup](docs/sdks/group/README.md#gethrisgroup)
-- [groupListHrisGroups](docs/sdks/group/README.md#listhrisgroups)
-- [groupPatchHrisGroup](docs/sdks/group/README.md#patchhrisgroup)
-- [groupRemoveHrisGroup](docs/sdks/group/README.md#removehrisgroup)
-- [groupUpdateHrisGroup](docs/sdks/group/README.md#updatehrisgroup)
-- [hrisCreateHrisCompany](docs/sdks/hris/README.md#createhriscompany)
-- [hrisCreateHrisEmployee](docs/sdks/hris/README.md#createhrisemployee)
-- [hrisCreateHrisGroup](docs/sdks/hris/README.md#createhrisgroup)
-- [hrisCreateHrisLocation](docs/sdks/hris/README.md#createhrislocation)
-- [hrisGetHrisCompany](docs/sdks/hris/README.md#gethriscompany)
-- [hrisGetHrisEmployee](docs/sdks/hris/README.md#gethrisemployee)
-- [hrisGetHrisGroup](docs/sdks/hris/README.md#gethrisgroup)
-- [hrisGetHrisLocation](docs/sdks/hris/README.md#gethrislocation)
-- [hrisGetHrisPayslip](docs/sdks/hris/README.md#gethrispayslip)
-- [hrisGetHrisTimeoff](docs/sdks/hris/README.md#gethristimeoff)
-- [hrisListHrisCompanies](docs/sdks/hris/README.md#listhriscompanies)
-- [hrisListHrisEmployees](docs/sdks/hris/README.md#listhrisemployees)
-- [hrisListHrisGroups](docs/sdks/hris/README.md#listhrisgroups)
-- [hrisListHrisLocations](docs/sdks/hris/README.md#listhrislocations)
-- [hrisListHrisPayslips](docs/sdks/hris/README.md#listhrispayslips)
-- [hrisListHrisTimeoffs](docs/sdks/hris/README.md#listhristimeoffs)
-- [hrisPatchHrisCompany](docs/sdks/hris/README.md#patchhriscompany)
-- [hrisPatchHrisEmployee](docs/sdks/hris/README.md#patchhrisemployee)
-- [hrisPatchHrisGroup](docs/sdks/hris/README.md#patchhrisgroup)
-- [hrisPatchHrisLocation](docs/sdks/hris/README.md#patchhrislocation)
-- [hrisRemoveHrisCompany](docs/sdks/hris/README.md#removehriscompany)
-- [hrisRemoveHrisEmployee](docs/sdks/hris/README.md#removehrisemployee)
-- [hrisRemoveHrisGroup](docs/sdks/hris/README.md#removehrisgroup)
-- [hrisRemoveHrisLocation](docs/sdks/hris/README.md#removehrislocation)
-- [hrisUpdateHrisCompany](docs/sdks/hris/README.md#updatehriscompany)
-- [hrisUpdateHrisEmployee](docs/sdks/hris/README.md#updatehrisemployee)
-- [hrisUpdateHrisGroup](docs/sdks/hris/README.md#updatehrisgroup)
-- [hrisUpdateHrisLocation](docs/sdks/hris/README.md#updatehrislocation)
-- [integrationGetUnifiedIntegrationAuth](docs/sdks/integration/README.md#getunifiedintegrationauth)
-- [integrationListUnifiedIntegrationWorkspaces](docs/sdks/integration/README.md#listunifiedintegrationworkspaces)
-- [integrationListUnifiedIntegrations](docs/sdks/integration/README.md#listunifiedintegrations)
-- [interviewCreateAtsInterview](docs/sdks/interview/README.md#createatsinterview)
-- [interviewGetAtsInterview](docs/sdks/interview/README.md#getatsinterview)
-- [interviewListAtsInterviews](docs/sdks/interview/README.md#listatsinterviews)
-- [interviewPatchAtsInterview](docs/sdks/interview/README.md#patchatsinterview)
-- [interviewRemoveAtsInterview](docs/sdks/interview/README.md#removeatsinterview)
-- [interviewUpdateAtsInterview](docs/sdks/interview/README.md#updateatsinterview)
-- [inventoryCreateCommerceInventory](docs/sdks/inventory/README.md#createcommerceinventory)
-- [inventoryGetCommerceInventory](docs/sdks/inventory/README.md#getcommerceinventory)
-- [inventoryListCommerceInventories](docs/sdks/inventory/README.md#listcommerceinventories)
-- [inventoryPatchCommerceInventory](docs/sdks/inventory/README.md#patchcommerceinventory)
-- [inventoryRemoveCommerceInventory](docs/sdks/inventory/README.md#removecommerceinventory)
-- [inventoryUpdateCommerceInventory](docs/sdks/inventory/README.md#updatecommerceinventory)
-- [invoiceCreateAccountingInvoice](docs/sdks/invoice/README.md#createaccountinginvoice)
-- [invoiceGetAccountingInvoice](docs/sdks/invoice/README.md#getaccountinginvoice)
-- [invoiceListAccountingInvoices](docs/sdks/invoice/README.md#listaccountinginvoices)
-- [invoicePatchAccountingInvoice](docs/sdks/invoice/README.md#patchaccountinginvoice)
-- [invoiceRemoveAccountingInvoice](docs/sdks/invoice/README.md#removeaccountinginvoice)
-- [invoiceUpdateAccountingInvoice](docs/sdks/invoice/README.md#updateaccountinginvoice)
-- [issueListUnifiedIssues](docs/sdks/issue/README.md#listunifiedissues)
-- [itemCreateCommerceItem](docs/sdks/item/README.md#createcommerceitem)
-- [itemGetCommerceItem](docs/sdks/item/README.md#getcommerceitem)
-- [itemListCommerceItems](docs/sdks/item/README.md#listcommerceitems)
-- [itemPatchCommerceItem](docs/sdks/item/README.md#patchcommerceitem)
-- [itemRemoveCommerceItem](docs/sdks/item/README.md#removecommerceitem)
-- [itemUpdateCommerceItem](docs/sdks/item/README.md#updatecommerceitem)
-- [jobCreateAtsJob](docs/sdks/job/README.md#createatsjob)
-- [jobGetAtsJob](docs/sdks/job/README.md#getatsjob)
-- [jobListAtsJobs](docs/sdks/job/README.md#listatsjobs)
-- [jobPatchAtsJob](docs/sdks/job/README.md#patchatsjob)
-- [jobRemoveAtsJob](docs/sdks/job/README.md#removeatsjob)
-- [jobUpdateAtsJob](docs/sdks/job/README.md#updateatsjob)
-- [journalCreateAccountingJournal](docs/sdks/journal/README.md#createaccountingjournal)
-- [journalGetAccountingJournal](docs/sdks/journal/README.md#getaccountingjournal)
-- [journalListAccountingJournals](docs/sdks/journal/README.md#listaccountingjournals)
-- [journalPatchAccountingJournal](docs/sdks/journal/README.md#patchaccountingjournal)
-- [journalRemoveAccountingJournal](docs/sdks/journal/README.md#removeaccountingjournal)
-- [journalUpdateAccountingJournal](docs/sdks/journal/README.md#updateaccountingjournal)
-- [kmsCreateKmsPage](docs/sdks/kms/README.md#createkmspage)
-- [kmsCreateKmsSpace](docs/sdks/kms/README.md#createkmsspace)
-- [kmsGetKmsPage](docs/sdks/kms/README.md#getkmspage)
-- [kmsGetKmsSpace](docs/sdks/kms/README.md#getkmsspace)
-- [kmsListKmsPages](docs/sdks/kms/README.md#listkmspages)
-- [kmsListKmsSpaces](docs/sdks/kms/README.md#listkmsspaces)
-- [kmsPatchKmsPage](docs/sdks/kms/README.md#patchkmspage)
-- [kmsPatchKmsSpace](docs/sdks/kms/README.md#patchkmsspace)
-- [kmsRemoveKmsPage](docs/sdks/kms/README.md#removekmspage)
-- [kmsRemoveKmsSpace](docs/sdks/kms/README.md#removekmsspace)
-- [kmsUpdateKmsPage](docs/sdks/kms/README.md#updatekmspage)
-- [kmsUpdateKmsSpace](docs/sdks/kms/README.md#updatekmsspace)
-- [leadCreateCrmLead](docs/sdks/lead/README.md#createcrmlead)
-- [leadGetCrmLead](docs/sdks/lead/README.md#getcrmlead)
-- [leadListCrmLeads](docs/sdks/lead/README.md#listcrmleads)
-- [leadPatchCrmLead](docs/sdks/lead/README.md#patchcrmlead)
-- [leadRemoveCrmLead](docs/sdks/lead/README.md#removecrmlead)
-- [leadUpdateCrmLead](docs/sdks/lead/README.md#updatecrmlead)
-- [linkCreatePaymentLink](docs/sdks/link/README.md#createpaymentlink)
-- [linkGetPaymentLink](docs/sdks/link/README.md#getpaymentlink)
-- [linkListPaymentLinks](docs/sdks/link/README.md#listpaymentlinks)
-- [linkPatchPaymentLink](docs/sdks/link/README.md#patchpaymentlink)
-- [linkRemovePaymentLink](docs/sdks/link/README.md#removepaymentlink)
-- [linkUpdatePaymentLink](docs/sdks/link/README.md#updatepaymentlink)
-- [listCreateMartechList](docs/sdks/list/README.md#createmartechlist)
-- [listGetMartechList](docs/sdks/list/README.md#getmartechlist)
-- [listListMartechLists](docs/sdks/list/README.md#listmartechlists)
-- [listPatchMartechList](docs/sdks/list/README.md#patchmartechlist)
-- [listRemoveMartechList](docs/sdks/list/README.md#removemartechlist)
-- [listUpdateMartechList](docs/sdks/list/README.md#updatemartechlist)
-- [locationCreateCommerceLocation](docs/sdks/location/README.md#createcommercelocation)
-- [locationCreateHrisLocation](docs/sdks/location/README.md#createhrislocation)
-- [locationGetCommerceLocation](docs/sdks/location/README.md#getcommercelocation)
-- [locationGetHrisLocation](docs/sdks/location/README.md#gethrislocation)
-- [locationListCommerceLocations](docs/sdks/location/README.md#listcommercelocations)
-- [locationListHrisLocations](docs/sdks/location/README.md#listhrislocations)
-- [locationPatchCommerceLocation](docs/sdks/location/README.md#patchcommercelocation)
-- [locationPatchHrisLocation](docs/sdks/location/README.md#patchhrislocation)
-- [locationRemoveCommerceLocation](docs/sdks/location/README.md#removecommercelocation)
-- [locationRemoveHrisLocation](docs/sdks/location/README.md#removehrislocation)
-- [locationUpdateCommerceLocation](docs/sdks/location/README.md#updatecommercelocation)
-- [locationUpdateHrisLocation](docs/sdks/location/README.md#updatehrislocation)
-- [loginGetUnifiedIntegrationLogin](docs/sdks/login/README.md#getunifiedintegrationlogin)
-- [martechCreateMartechList](docs/sdks/martech/README.md#createmartechlist)
-- [martechCreateMartechMember](docs/sdks/martech/README.md#createmartechmember)
-- [martechGetMartechList](docs/sdks/martech/README.md#getmartechlist)
-- [martechGetMartechMember](docs/sdks/martech/README.md#getmartechmember)
-- [martechListMartechLists](docs/sdks/martech/README.md#listmartechlists)
-- [martechListMartechMembers](docs/sdks/martech/README.md#listmartechmembers)
-- [martechPatchMartechList](docs/sdks/martech/README.md#patchmartechlist)
-- [martechPatchMartechMember](docs/sdks/martech/README.md#patchmartechmember)
-- [martechRemoveMartechList](docs/sdks/martech/README.md#removemartechlist)
-- [martechRemoveMartechMember](docs/sdks/martech/README.md#removemartechmember)
-- [martechUpdateMartechList](docs/sdks/martech/README.md#updatemartechlist)
-- [martechUpdateMartechMember](docs/sdks/martech/README.md#updatemartechmember)
-- [memberCreateMartechMember](docs/sdks/member/README.md#createmartechmember)
-- [memberGetMartechMember](docs/sdks/member/README.md#getmartechmember)
-- [memberListMartechMembers](docs/sdks/member/README.md#listmartechmembers)
-- [memberPatchMartechMember](docs/sdks/member/README.md#patchmartechmember)
-- [memberRemoveMartechMember](docs/sdks/member/README.md#removemartechmember)
-- [memberUpdateMartechMember](docs/sdks/member/README.md#updatemartechmember)
-- [messageCreateMessagingMessage](docs/sdks/message/README.md#createmessagingmessage)
-- [messageGetMessagingMessage](docs/sdks/message/README.md#getmessagingmessage)
-- [messageListMessagingMessages](docs/sdks/message/README.md#listmessagingmessages)
-- [messagePatchMessagingMessage](docs/sdks/message/README.md#patchmessagingmessage)
-- [messageRemoveMessagingMessage](docs/sdks/message/README.md#removemessagingmessage)
-- [messageUpdateMessagingMessage](docs/sdks/message/README.md#updatemessagingmessage)
-- [messagingCreateMessagingMessage](docs/sdks/messaging/README.md#createmessagingmessage)
-- [messagingGetMessagingChannel](docs/sdks/messaging/README.md#getmessagingchannel)
-- [messagingGetMessagingMessage](docs/sdks/messaging/README.md#getmessagingmessage)
-- [messagingListMessagingChannels](docs/sdks/messaging/README.md#listmessagingchannels)
-- [messagingListMessagingMessages](docs/sdks/messaging/README.md#listmessagingmessages)
-- [messagingPatchMessagingMessage](docs/sdks/messaging/README.md#patchmessagingmessage)
-- [messagingRemoveMessagingMessage](docs/sdks/messaging/README.md#removemessagingmessage)
-- [messagingUpdateMessagingMessage](docs/sdks/messaging/README.md#updatemessagingmessage)
-- [modelListGenaiModels](docs/sdks/model/README.md#listgenaimodels)
-- [noteCreateTicketingNote](docs/sdks/note/README.md#createticketingnote)
-- [noteGetTicketingNote](docs/sdks/note/README.md#getticketingnote)
-- [noteListTicketingNotes](docs/sdks/note/README.md#listticketingnotes)
-- [notePatchTicketingNote](docs/sdks/note/README.md#patchticketingnote)
-- [noteRemoveTicketingNote](docs/sdks/note/README.md#removeticketingnote)
-- [noteUpdateTicketingNote](docs/sdks/note/README.md#updateticketingnote)
-- [organizationGetAccountingOrganization](docs/sdks/organization/README.md#getaccountingorganization)
-- [organizationListAccountingOrganizations](docs/sdks/organization/README.md#listaccountingorganizations)
-- [pageCreateKmsPage](docs/sdks/page/README.md#createkmspage)
-- [pageGetKmsPage](docs/sdks/page/README.md#getkmspage)
-- [pageListKmsPages](docs/sdks/page/README.md#listkmspages)
-- [pagePatchKmsPage](docs/sdks/page/README.md#patchkmspage)
-- [pageRemoveKmsPage](docs/sdks/page/README.md#removekmspage)
-- [pageUpdateKmsPage](docs/sdks/page/README.md#updatekmspage)
-- [passthroughCreatePassthroughJson](docs/sdks/passthrough/README.md#createpassthroughjson)
-- [passthroughCreatePassthroughRaw](docs/sdks/passthrough/README.md#createpassthroughraw)
-- [passthroughListPassthroughs](docs/sdks/passthrough/README.md#listpassthroughs)
-- [passthroughPatchPassthroughJson](docs/sdks/passthrough/README.md#patchpassthroughjson)
-- [passthroughPatchPassthroughRaw](docs/sdks/passthrough/README.md#patchpassthroughraw)
-- [passthroughRemovePassthrough](docs/sdks/passthrough/README.md#removepassthrough)
-- [passthroughUpdatePassthroughJson](docs/sdks/passthrough/README.md#updatepassthroughjson)
-- [passthroughUpdatePassthroughRaw](docs/sdks/passthrough/README.md#updatepassthroughraw)
-- [paymentCreatePaymentLink](docs/sdks/payment/README.md#createpaymentlink)
-- [paymentCreatePaymentPayment](docs/sdks/payment/README.md#createpaymentpayment)
-- [paymentGetPaymentLink](docs/sdks/payment/README.md#getpaymentlink)
-- [paymentGetPaymentPayment](docs/sdks/payment/README.md#getpaymentpayment)
-- [paymentGetPaymentPayout](docs/sdks/payment/README.md#getpaymentpayout)
-- [paymentGetPaymentRefund](docs/sdks/payment/README.md#getpaymentrefund)
-- [paymentListPaymentLinks](docs/sdks/payment/README.md#listpaymentlinks)
-- [paymentListPaymentPayments](docs/sdks/payment/README.md#listpaymentpayments)
-- [paymentListPaymentPayouts](docs/sdks/payment/README.md#listpaymentpayouts)
-- [paymentListPaymentRefunds](docs/sdks/payment/README.md#listpaymentrefunds)
-- [paymentPatchPaymentLink](docs/sdks/payment/README.md#patchpaymentlink)
-- [paymentPatchPaymentPayment](docs/sdks/payment/README.md#patchpaymentpayment)
-- [paymentRemovePaymentLink](docs/sdks/payment/README.md#removepaymentlink)
-- [paymentRemovePaymentPayment](docs/sdks/payment/README.md#removepaymentpayment)
-- [paymentUpdatePaymentLink](docs/sdks/payment/README.md#updatepaymentlink)
-- [paymentUpdatePaymentPayment](docs/sdks/payment/README.md#updatepaymentpayment)
-- [payoutGetPaymentPayout](docs/sdks/payout/README.md#getpaymentpayout)
-- [payoutListPaymentPayouts](docs/sdks/payout/README.md#listpaymentpayouts)
-- [payslipGetHrisPayslip](docs/sdks/payslip/README.md#gethrispayslip)
-- [payslipListHrisPayslips](docs/sdks/payslip/README.md#listhrispayslips)
-- [personListEnrichPeople](docs/sdks/person/README.md#listenrichpeople)
-- [pipelineCreateCrmPipeline](docs/sdks/pipeline/README.md#createcrmpipeline)
-- [pipelineGetCrmPipeline](docs/sdks/pipeline/README.md#getcrmpipeline)
-- [pipelineListCrmPipelines](docs/sdks/pipeline/README.md#listcrmpipelines)
-- [pipelinePatchCrmPipeline](docs/sdks/pipeline/README.md#patchcrmpipeline)
-- [pipelineRemoveCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline)
-- [pipelineUpdateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline)
-- [projectCreateTaskProject](docs/sdks/project/README.md#createtaskproject)
-- [projectGetTaskProject](docs/sdks/project/README.md#gettaskproject)
-- [projectListTaskProjects](docs/sdks/project/README.md#listtaskprojects)
-- [projectPatchTaskProject](docs/sdks/project/README.md#patchtaskproject)
-- [projectRemoveTaskProject](docs/sdks/project/README.md#removetaskproject)
-- [projectUpdateTaskProject](docs/sdks/project/README.md#updatetaskproject)
-- [promptCreateGenaiPrompt](docs/sdks/prompt/README.md#creategenaiprompt)
-- [refundGetPaymentRefund](docs/sdks/refund/README.md#getpaymentrefund)
-- [refundListPaymentRefunds](docs/sdks/refund/README.md#listpaymentrefunds)
-- [scorecardCreateAtsScorecard](docs/sdks/scorecard/README.md#createatsscorecard)
-- [scorecardGetAtsScorecard](docs/sdks/scorecard/README.md#getatsscorecard)
-- [scorecardListAtsScorecards](docs/sdks/scorecard/README.md#listatsscorecards)
-- [scorecardPatchAtsScorecard](docs/sdks/scorecard/README.md#patchatsscorecard)
-- [scorecardRemoveAtsScorecard](docs/sdks/scorecard/README.md#removeatsscorecard)
-- [scorecardUpdateAtsScorecard](docs/sdks/scorecard/README.md#updateatsscorecard)
-- [spaceCreateKmsSpace](docs/sdks/space/README.md#createkmsspace)
-- [spaceGetKmsSpace](docs/sdks/space/README.md#getkmsspace)
-- [spaceListKmsSpaces](docs/sdks/space/README.md#listkmsspaces)
-- [spacePatchKmsSpace](docs/sdks/space/README.md#patchkmsspace)
-- [spaceRemoveKmsSpace](docs/sdks/space/README.md#removekmsspace)
-- [spaceUpdateKmsSpace](docs/sdks/space/README.md#updatekmsspace)
-- [storageCreateStorageFile](docs/sdks/storage/README.md#createstoragefile)
-- [storageGetStorageFile](docs/sdks/storage/README.md#getstoragefile)
-- [storageListStorageFiles](docs/sdks/storage/README.md#liststoragefiles)
-- [storagePatchStorageFile](docs/sdks/storage/README.md#patchstoragefile)
-- [storageRemoveStorageFile](docs/sdks/storage/README.md#removestoragefile)
-- [storageUpdateStorageFile](docs/sdks/storage/README.md#updatestoragefile)
-- [taskCreateTaskProject](docs/sdks/task/README.md#createtaskproject)
-- [taskCreateTaskTask](docs/sdks/task/README.md#createtasktask)
-- [taskGetTaskProject](docs/sdks/task/README.md#gettaskproject)
-- [taskGetTaskTask](docs/sdks/task/README.md#gettasktask)
-- [taskListTaskProjects](docs/sdks/task/README.md#listtaskprojects)
-- [taskListTaskTasks](docs/sdks/task/README.md#listtasktasks)
-- [taskPatchTaskProject](docs/sdks/task/README.md#patchtaskproject)
-- [taskPatchTaskTask](docs/sdks/task/README.md#patchtasktask)
-- [taskRemoveTaskProject](docs/sdks/task/README.md#removetaskproject)
-- [taskRemoveTaskTask](docs/sdks/task/README.md#removetasktask)
-- [taskUpdateTaskProject](docs/sdks/task/README.md#updatetaskproject)
-- [taskUpdateTaskTask](docs/sdks/task/README.md#updatetasktask)
-- [taxrateCreateAccountingTaxrate](docs/sdks/taxrate/README.md#createaccountingtaxrate)
-- [taxrateGetAccountingTaxrate](docs/sdks/taxrate/README.md#getaccountingtaxrate)
-- [taxrateListAccountingTaxrates](docs/sdks/taxrate/README.md#listaccountingtaxrates)
-- [taxratePatchAccountingTaxrate](docs/sdks/taxrate/README.md#patchaccountingtaxrate)
-- [taxrateRemoveAccountingTaxrate](docs/sdks/taxrate/README.md#removeaccountingtaxrate)
-- [taxrateUpdateAccountingTaxrate](docs/sdks/taxrate/README.md#updateaccountingtaxrate)
-- [ticketCreateTicketingTicket](docs/sdks/ticket/README.md#createticketingticket)
-- [ticketGetTicketingTicket](docs/sdks/ticket/README.md#getticketingticket)
-- [ticketListTicketingTickets](docs/sdks/ticket/README.md#listticketingtickets)
-- [ticketPatchTicketingTicket](docs/sdks/ticket/README.md#patchticketingticket)
-- [ticketRemoveTicketingTicket](docs/sdks/ticket/README.md#removeticketingticket)
-- [ticketUpdateTicketingTicket](docs/sdks/ticket/README.md#updateticketingticket)
-- [ticketingCreateTicketingCustomer](docs/sdks/ticketing/README.md#createticketingcustomer)
-- [ticketingCreateTicketingNote](docs/sdks/ticketing/README.md#createticketingnote)
-- [ticketingCreateTicketingTicket](docs/sdks/ticketing/README.md#createticketingticket)
-- [ticketingGetTicketingCustomer](docs/sdks/ticketing/README.md#getticketingcustomer)
-- [ticketingGetTicketingNote](docs/sdks/ticketing/README.md#getticketingnote)
-- [ticketingGetTicketingTicket](docs/sdks/ticketing/README.md#getticketingticket)
-- [ticketingListTicketingCustomers](docs/sdks/ticketing/README.md#listticketingcustomers)
-- [ticketingListTicketingNotes](docs/sdks/ticketing/README.md#listticketingnotes)
-- [ticketingListTicketingTickets](docs/sdks/ticketing/README.md#listticketingtickets)
-- [ticketingPatchTicketingCustomer](docs/sdks/ticketing/README.md#patchticketingcustomer)
-- [ticketingPatchTicketingNote](docs/sdks/ticketing/README.md#patchticketingnote)
-- [ticketingPatchTicketingTicket](docs/sdks/ticketing/README.md#patchticketingticket)
-- [ticketingRemoveTicketingCustomer](docs/sdks/ticketing/README.md#removeticketingcustomer)
-- [ticketingRemoveTicketingNote](docs/sdks/ticketing/README.md#removeticketingnote)
-- [ticketingRemoveTicketingTicket](docs/sdks/ticketing/README.md#removeticketingticket)
-- [ticketingUpdateTicketingCustomer](docs/sdks/ticketing/README.md#updateticketingcustomer)
-- [ticketingUpdateTicketingNote](docs/sdks/ticketing/README.md#updateticketingnote)
-- [ticketingUpdateTicketingTicket](docs/sdks/ticketing/README.md#updateticketingticket)
-- [timeoffGetHrisTimeoff](docs/sdks/timeoff/README.md#gethristimeoff)
-- [timeoffListHrisTimeoffs](docs/sdks/timeoff/README.md#listhristimeoffs)
-- [transactionCreateAccountingTransaction](docs/sdks/transaction/README.md#createaccountingtransaction)
-- [transactionGetAccountingTransaction](docs/sdks/transaction/README.md#getaccountingtransaction)
-- [transactionListAccountingTransactions](docs/sdks/transaction/README.md#listaccountingtransactions)
-- [transactionPatchAccountingTransaction](docs/sdks/transaction/README.md#patchaccountingtransaction)
-- [transactionRemoveAccountingTransaction](docs/sdks/transaction/README.md#removeaccountingtransaction)
-- [transactionUpdateAccountingTransaction](docs/sdks/transaction/README.md#updateaccountingtransaction)
-- [ucCreateUcContact](docs/sdks/uc/README.md#createuccontact)
-- [ucGetUcContact](docs/sdks/uc/README.md#getuccontact)
-- [ucListUcCalls](docs/sdks/uc/README.md#listuccalls)
-- [ucListUcContacts](docs/sdks/uc/README.md#listuccontacts)
-- [ucPatchUcContact](docs/sdks/uc/README.md#patchuccontact)
-- [ucRemoveUcContact](docs/sdks/uc/README.md#removeuccontact)
-- [ucUpdateUcContact](docs/sdks/uc/README.md#updateuccontact)
-- [unifiedCreateUnifiedConnection](docs/sdks/unified/README.md#createunifiedconnection)
-- [unifiedCreateUnifiedWebhook](docs/sdks/unified/README.md#createunifiedwebhook)
-- [unifiedGetUnifiedApicall](docs/sdks/unified/README.md#getunifiedapicall)
-- [unifiedGetUnifiedConnection](docs/sdks/unified/README.md#getunifiedconnection)
-- [unifiedGetUnifiedIntegrationAuth](docs/sdks/unified/README.md#getunifiedintegrationauth)
-- [unifiedGetUnifiedWebhook](docs/sdks/unified/README.md#getunifiedwebhook)
-- [unifiedListUnifiedApicalls](docs/sdks/unified/README.md#listunifiedapicalls)
-- [unifiedListUnifiedConnections](docs/sdks/unified/README.md#listunifiedconnections)
-- [unifiedListUnifiedIntegrationWorkspaces](docs/sdks/unified/README.md#listunifiedintegrationworkspaces)
-- [unifiedListUnifiedIntegrations](docs/sdks/unified/README.md#listunifiedintegrations)
-- [unifiedListUnifiedIssues](docs/sdks/unified/README.md#listunifiedissues)
-- [unifiedListUnifiedWebhooks](docs/sdks/unified/README.md#listunifiedwebhooks)
-- [unifiedPatchUnifiedConnection](docs/sdks/unified/README.md#patchunifiedconnection)
-- [unifiedPatchUnifiedWebhookTrigger](docs/sdks/unified/README.md#patchunifiedwebhooktrigger)
-- [unifiedPatchUnifiedWebhook](docs/sdks/unified/README.md#patchunifiedwebhook)
-- [unifiedRemoveUnifiedConnection](docs/sdks/unified/README.md#removeunifiedconnection)
-- [unifiedRemoveUnifiedWebhook](docs/sdks/unified/README.md#removeunifiedwebhook)
-- [unifiedUpdateUnifiedConnection](docs/sdks/unified/README.md#updateunifiedconnection)
-- [unifiedUpdateUnifiedWebhookTrigger](docs/sdks/unified/README.md#updateunifiedwebhooktrigger)
-- [unifiedUpdateUnifiedWebhook](docs/sdks/unified/README.md#updateunifiedwebhook)
-- [webhookCreateUnifiedWebhook](docs/sdks/webhook/README.md#createunifiedwebhook)
-- [webhookGetUnifiedWebhook](docs/sdks/webhook/README.md#getunifiedwebhook)
-- [webhookListUnifiedWebhooks](docs/sdks/webhook/README.md#listunifiedwebhooks)
-- [webhookPatchUnifiedWebhookTrigger](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger)
-- [webhookPatchUnifiedWebhook](docs/sdks/webhook/README.md#patchunifiedwebhook)
-- [webhookRemoveUnifiedWebhook](docs/sdks/webhook/README.md#removeunifiedwebhook)
-- [webhookUpdateUnifiedWebhookTrigger](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger)
-- [webhookUpdateUnifiedWebhook](docs/sdks/webhook/README.md#updateunifiedwebhook)
-
+- [`accountCreateAccountingAccount`](docs/sdks/account/README.md#createaccountingaccount) - Create an account
+- [`accountGetAccountingAccount`](docs/sdks/account/README.md#getaccountingaccount) - Retrieve an account
+- [`accountingCreateAccountingAccount`](docs/sdks/accounting/README.md#createaccountingaccount) - Create an account
+- [`accountingCreateAccountingContact`](docs/sdks/accounting/README.md#createaccountingcontact) - Create a contact
+- [`accountingCreateAccountingInvoice`](docs/sdks/accounting/README.md#createaccountinginvoice) - Create an invoice
+- [`accountingCreateAccountingJournal`](docs/sdks/accounting/README.md#createaccountingjournal) - Create a journal
+- [`accountingCreateAccountingTaxrate`](docs/sdks/accounting/README.md#createaccountingtaxrate) - Create a taxrate
+- [`accountingCreateAccountingTransaction`](docs/sdks/accounting/README.md#createaccountingtransaction) - Create a transaction
+- [`accountingGetAccountingAccount`](docs/sdks/accounting/README.md#getaccountingaccount) - Retrieve an account
+- [`accountingGetAccountingContact`](docs/sdks/accounting/README.md#getaccountingcontact) - Retrieve a contact
+- [`accountingGetAccountingInvoice`](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve an invoice
+- [`accountingGetAccountingJournal`](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
+- [`accountingGetAccountingOrganization`](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
+- [`accountingGetAccountingTaxrate`](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
+- [`accountingGetAccountingTransaction`](docs/sdks/accounting/README.md#getaccountingtransaction) - Retrieve a transaction
+- [`accountingListAccountingAccounts`](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
+- [`accountingListAccountingContacts`](docs/sdks/accounting/README.md#listaccountingcontacts) - List all contacts
+- [`accountingListAccountingInvoices`](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
+- [`accountingListAccountingJournals`](docs/sdks/accounting/README.md#listaccountingjournals) - List all journals
+- [`accountingListAccountingOrganizations`](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
+- [`accountingListAccountingTaxrates`](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
+- [`accountingListAccountingTransactions`](docs/sdks/accounting/README.md#listaccountingtransactions) - List all transactions
+- [`accountingPatchAccountingAccount`](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
+- [`accountingPatchAccountingContact`](docs/sdks/accounting/README.md#patchaccountingcontact) - Update a contact
+- [`accountingPatchAccountingInvoice`](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update an invoice
+- [`accountingPatchAccountingJournal`](docs/sdks/accounting/README.md#patchaccountingjournal) - Update a journal
+- [`accountingPatchAccountingTaxrate`](docs/sdks/accounting/README.md#patchaccountingtaxrate) - Update a taxrate
+- [`accountingPatchAccountingTransaction`](docs/sdks/accounting/README.md#patchaccountingtransaction) - Update a transaction
+- [`accountingRemoveAccountingAccount`](docs/sdks/accounting/README.md#removeaccountingaccount) - Remove an account
+- [`accountingRemoveAccountingContact`](docs/sdks/accounting/README.md#removeaccountingcontact) - Remove a contact
+- [`accountingRemoveAccountingInvoice`](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove an invoice
+- [`accountingRemoveAccountingJournal`](docs/sdks/accounting/README.md#removeaccountingjournal) - Remove a journal
+- [`accountingRemoveAccountingTaxrate`](docs/sdks/accounting/README.md#removeaccountingtaxrate) - Remove a taxrate
+- [`accountingRemoveAccountingTransaction`](docs/sdks/accounting/README.md#removeaccountingtransaction) - Remove a transaction
+- [`accountingUpdateAccountingAccount`](docs/sdks/accounting/README.md#updateaccountingaccount) - Update an account
+- [`accountingUpdateAccountingContact`](docs/sdks/accounting/README.md#updateaccountingcontact) - Update a contact
+- [`accountingUpdateAccountingInvoice`](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update an invoice
+- [`accountingUpdateAccountingJournal`](docs/sdks/accounting/README.md#updateaccountingjournal) - Update a journal
+- [`accountingUpdateAccountingTaxrate`](docs/sdks/accounting/README.md#updateaccountingtaxrate) - Update a taxrate
+- [`accountingUpdateAccountingTransaction`](docs/sdks/accounting/README.md#updateaccountingtransaction) - Update a transaction
+- [`accountListAccountingAccounts`](docs/sdks/account/README.md#listaccountingaccounts) - List all accounts
+- [`accountPatchAccountingAccount`](docs/sdks/account/README.md#patchaccountingaccount) - Update an account
+- [`accountRemoveAccountingAccount`](docs/sdks/account/README.md#removeaccountingaccount) - Remove an account
+- [`accountUpdateAccountingAccount`](docs/sdks/account/README.md#updateaccountingaccount) - Update an account
+- [`activityCreateAtsActivity`](docs/sdks/activity/README.md#createatsactivity) - Create an activity
+- [`activityGetAtsActivity`](docs/sdks/activity/README.md#getatsactivity) - Retrieve an activity
+- [`activityListAtsActivities`](docs/sdks/activity/README.md#listatsactivities) - List all activities
+- [`activityPatchAtsActivity`](docs/sdks/activity/README.md#patchatsactivity) - Update an activity
+- [`activityRemoveAtsActivity`](docs/sdks/activity/README.md#removeatsactivity) - Remove an activity
+- [`activityUpdateAtsActivity`](docs/sdks/activity/README.md#updateatsactivity) - Update an activity
+- [`apicallGetUnifiedApicall`](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
+- [`apicallListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
+- [`applicationCreateAtsApplication`](docs/sdks/application/README.md#createatsapplication) - Create an application
+- [`applicationGetAtsApplication`](docs/sdks/application/README.md#getatsapplication) - Retrieve an application
+- [`applicationListAtsApplications`](docs/sdks/application/README.md#listatsapplications) - List all applications
+- [`applicationPatchAtsApplication`](docs/sdks/application/README.md#patchatsapplication) - Update an application
+- [`applicationRemoveAtsApplication`](docs/sdks/application/README.md#removeatsapplication) - Remove an application
+- [`applicationstatusListAtsApplicationstatuses`](docs/sdks/applicationstatus/README.md#listatsapplicationstatuses) - List all applicationstatuses
+- [`applicationUpdateAtsApplication`](docs/sdks/application/README.md#updateatsapplication) - Update an application
+- [`atsCreateAtsActivity`](docs/sdks/ats/README.md#createatsactivity) - Create an activity
+- [`atsCreateAtsApplication`](docs/sdks/ats/README.md#createatsapplication) - Create an application
+- [`atsCreateAtsCandidate`](docs/sdks/ats/README.md#createatscandidate) - Create a candidate
+- [`atsCreateAtsDocument`](docs/sdks/ats/README.md#createatsdocument) - Create a document
+- [`atsCreateAtsInterview`](docs/sdks/ats/README.md#createatsinterview) - Create an interview
+- [`atsCreateAtsJob`](docs/sdks/ats/README.md#createatsjob) - Create a job
+- [`atsCreateAtsScorecard`](docs/sdks/ats/README.md#createatsscorecard) - Create a scorecard
+- [`atsGetAtsActivity`](docs/sdks/ats/README.md#getatsactivity) - Retrieve an activity
+- [`atsGetAtsApplication`](docs/sdks/ats/README.md#getatsapplication) - Retrieve an application
+- [`atsGetAtsCandidate`](docs/sdks/ats/README.md#getatscandidate) - Retrieve a candidate
+- [`atsGetAtsCompany`](docs/sdks/ats/README.md#getatscompany) - Retrieve a company
+- [`atsGetAtsDocument`](docs/sdks/ats/README.md#getatsdocument) - Retrieve a document
+- [`atsGetAtsInterview`](docs/sdks/ats/README.md#getatsinterview) - Retrieve an interview
+- [`atsGetAtsJob`](docs/sdks/ats/README.md#getatsjob) - Retrieve a job
+- [`atsGetAtsScorecard`](docs/sdks/ats/README.md#getatsscorecard) - Retrieve a scorecard
+- [`atsListAtsActivities`](docs/sdks/ats/README.md#listatsactivities) - List all activities
+- [`atsListAtsApplications`](docs/sdks/ats/README.md#listatsapplications) - List all applications
+- [`atsListAtsApplicationstatuses`](docs/sdks/ats/README.md#listatsapplicationstatuses) - List all applicationstatuses
+- [`atsListAtsCandidates`](docs/sdks/ats/README.md#listatscandidates) - List all candidates
+- [`atsListAtsCompanies`](docs/sdks/ats/README.md#listatscompanies) - List all companies
+- [`atsListAtsDocuments`](docs/sdks/ats/README.md#listatsdocuments) - List all documents
+- [`atsListAtsInterviews`](docs/sdks/ats/README.md#listatsinterviews) - List all interviews
+- [`atsListAtsJobs`](docs/sdks/ats/README.md#listatsjobs) - List all jobs
+- [`atsListAtsScorecards`](docs/sdks/ats/README.md#listatsscorecards) - List all scorecards
+- [`atsPatchAtsActivity`](docs/sdks/ats/README.md#patchatsactivity) - Update an activity
+- [`atsPatchAtsApplication`](docs/sdks/ats/README.md#patchatsapplication) - Update an application
+- [`atsPatchAtsCandidate`](docs/sdks/ats/README.md#patchatscandidate) - Update a candidate
+- [`atsPatchAtsDocument`](docs/sdks/ats/README.md#patchatsdocument) - Update a document
+- [`atsPatchAtsInterview`](docs/sdks/ats/README.md#patchatsinterview) - Update an interview
+- [`atsPatchAtsJob`](docs/sdks/ats/README.md#patchatsjob) - Update a job
+- [`atsPatchAtsScorecard`](docs/sdks/ats/README.md#patchatsscorecard) - Update a scorecard
+- [`atsRemoveAtsActivity`](docs/sdks/ats/README.md#removeatsactivity) - Remove an activity
+- [`atsRemoveAtsApplication`](docs/sdks/ats/README.md#removeatsapplication) - Remove an application
+- [`atsRemoveAtsCandidate`](docs/sdks/ats/README.md#removeatscandidate) - Remove a candidate
+- [`atsRemoveAtsDocument`](docs/sdks/ats/README.md#removeatsdocument) - Remove a document
+- [`atsRemoveAtsInterview`](docs/sdks/ats/README.md#removeatsinterview) - Remove an interview
+- [`atsRemoveAtsJob`](docs/sdks/ats/README.md#removeatsjob) - Remove a job
+- [`atsRemoveAtsScorecard`](docs/sdks/ats/README.md#removeatsscorecard) - Remove a scorecard
+- [`atsUpdateAtsActivity`](docs/sdks/ats/README.md#updateatsactivity) - Update an activity
+- [`atsUpdateAtsApplication`](docs/sdks/ats/README.md#updateatsapplication) - Update an application
+- [`atsUpdateAtsCandidate`](docs/sdks/ats/README.md#updateatscandidate) - Update a candidate
+- [`atsUpdateAtsDocument`](docs/sdks/ats/README.md#updateatsdocument) - Update a document
+- [`atsUpdateAtsInterview`](docs/sdks/ats/README.md#updateatsinterview) - Update an interview
+- [`atsUpdateAtsJob`](docs/sdks/ats/README.md#updateatsjob) - Update a job
+- [`atsUpdateAtsScorecard`](docs/sdks/ats/README.md#updateatsscorecard) - Update a scorecard
+- [`authGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
+- [`authGetUnifiedIntegrationLogin`](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
+- [`callListUcCalls`](docs/sdks/call/README.md#listuccalls) - List all calls
+- [`candidateCreateAtsCandidate`](docs/sdks/candidate/README.md#createatscandidate) - Create a candidate
+- [`candidateGetAtsCandidate`](docs/sdks/candidate/README.md#getatscandidate) - Retrieve a candidate
+- [`candidateListAtsCandidates`](docs/sdks/candidate/README.md#listatscandidates) - List all candidates
+- [`candidatePatchAtsCandidate`](docs/sdks/candidate/README.md#patchatscandidate) - Update a candidate
+- [`candidateRemoveAtsCandidate`](docs/sdks/candidate/README.md#removeatscandidate) - Remove a candidate
+- [`candidateUpdateAtsCandidate`](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
+- [`channelGetMessagingChannel`](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel
+- [`channelListMessagingChannels`](docs/sdks/channel/README.md#listmessagingchannels) - List all channels
+- [`collectionCreateCommerceCollection`](docs/sdks/collection/README.md#createcommercecollection) - Create a collection
+- [`collectionGetCommerceCollection`](docs/sdks/collection/README.md#getcommercecollection) - Retrieve a collection
+- [`collectionListCommerceCollections`](docs/sdks/collection/README.md#listcommercecollections) - List all collections
+- [`collectionPatchCommerceCollection`](docs/sdks/collection/README.md#patchcommercecollection) - Update a collection
+- [`collectionRemoveCommerceCollection`](docs/sdks/collection/README.md#removecommercecollection) - Remove a collection
+- [`collectionUpdateCommerceCollection`](docs/sdks/collection/README.md#updatecommercecollection) - Update a collection
+- [`commerceCreateCommerceCollection`](docs/sdks/commerce/README.md#createcommercecollection) - Create a collection
+- [`commerceCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
+- [`commerceCreateCommerceItem`](docs/sdks/commerce/README.md#createcommerceitem) - Create an item
+- [`commerceCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
+- [`commerceGetCommerceCollection`](docs/sdks/commerce/README.md#getcommercecollection) - Retrieve a collection
+- [`commerceGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
+- [`commerceGetCommerceItem`](docs/sdks/commerce/README.md#getcommerceitem) - Retrieve an item
+- [`commerceGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
+- [`commerceListCommerceCollections`](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
+- [`commerceListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
+- [`commerceListCommerceItems`](docs/sdks/commerce/README.md#listcommerceitems) - List all items
+- [`commerceListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
+- [`commercePatchCommerceCollection`](docs/sdks/commerce/README.md#patchcommercecollection) - Update a collection
+- [`commercePatchCommerceInventory`](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
+- [`commercePatchCommerceItem`](docs/sdks/commerce/README.md#patchcommerceitem) - Update an item
+- [`commercePatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
+- [`commerceRemoveCommerceCollection`](docs/sdks/commerce/README.md#removecommercecollection) - Remove a collection
+- [`commerceRemoveCommerceInventory`](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
+- [`commerceRemoveCommerceItem`](docs/sdks/commerce/README.md#removecommerceitem) - Remove an item
+- [`commerceRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
+- [`commerceUpdateCommerceCollection`](docs/sdks/commerce/README.md#updatecommercecollection) - Update a collection
+- [`commerceUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
+- [`commerceUpdateCommerceItem`](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
+- [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+- [`companyCreateCrmCompany`](docs/sdks/company/README.md#createcrmcompany) - Create a company
+- [`companyCreateHrisCompany`](docs/sdks/company/README.md#createhriscompany) - Create a company
+- [`companyGetAtsCompany`](docs/sdks/company/README.md#getatscompany) - Retrieve a company
+- [`companyGetCrmCompany`](docs/sdks/company/README.md#getcrmcompany) - Retrieve a company
+- [`companyGetHrisCompany`](docs/sdks/company/README.md#gethriscompany) - Retrieve a company
+- [`companyListAtsCompanies`](docs/sdks/company/README.md#listatscompanies) - List all companies
+- [`companyListCrmCompanies`](docs/sdks/company/README.md#listcrmcompanies) - List all companies
+- [`companyListEnrichCompanies`](docs/sdks/company/README.md#listenrichcompanies) - Retrieve enrichment information for a company
+- [`companyListHrisCompanies`](docs/sdks/company/README.md#listhriscompanies) - List all companies
+- [`companyPatchCrmCompany`](docs/sdks/company/README.md#patchcrmcompany) - Update a company
+- [`companyPatchHrisCompany`](docs/sdks/company/README.md#patchhriscompany) - Update a company
+- [`companyRemoveCrmCompany`](docs/sdks/company/README.md#removecrmcompany) - Remove a company
+- [`companyRemoveHrisCompany`](docs/sdks/company/README.md#removehriscompany) - Remove a company
+- [`companyUpdateCrmCompany`](docs/sdks/company/README.md#updatecrmcompany) - Update a company
+- [`companyUpdateHrisCompany`](docs/sdks/company/README.md#updatehriscompany) - Update a company
+- [`connectionCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
+- [`connectionGetUnifiedConnection`](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
+- [`connectionListUnifiedConnections`](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
+- [`connectionPatchUnifiedConnection`](docs/sdks/connection/README.md#patchunifiedconnection) - Update connection
+- [`connectionRemoveUnifiedConnection`](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
+- [`connectionUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection
+- [`contactCreateAccountingContact`](docs/sdks/contact/README.md#createaccountingcontact) - Create a contact
+- [`contactCreateCrmContact`](docs/sdks/contact/README.md#createcrmcontact) - Create a contact
+- [`contactCreateUcContact`](docs/sdks/contact/README.md#createuccontact) - Create a contact
+- [`contactGetAccountingContact`](docs/sdks/contact/README.md#getaccountingcontact) - Retrieve a contact
+- [`contactGetCrmContact`](docs/sdks/contact/README.md#getcrmcontact) - Retrieve a contact
+- [`contactGetUcContact`](docs/sdks/contact/README.md#getuccontact) - Retrieve a contact
+- [`contactListAccountingContacts`](docs/sdks/contact/README.md#listaccountingcontacts) - List all contacts
+- [`contactListCrmContacts`](docs/sdks/contact/README.md#listcrmcontacts) - List all contacts
+- [`contactListUcContacts`](docs/sdks/contact/README.md#listuccontacts) - List all contacts
+- [`contactPatchAccountingContact`](docs/sdks/contact/README.md#patchaccountingcontact) - Update a contact
+- [`contactPatchCrmContact`](docs/sdks/contact/README.md#patchcrmcontact) - Update a contact
+- [`contactPatchUcContact`](docs/sdks/contact/README.md#patchuccontact) - Update a contact
+- [`contactRemoveAccountingContact`](docs/sdks/contact/README.md#removeaccountingcontact) - Remove a contact
+- [`contactRemoveCrmContact`](docs/sdks/contact/README.md#removecrmcontact) - Remove a contact
+- [`contactRemoveUcContact`](docs/sdks/contact/README.md#removeuccontact) - Remove a contact
+- [`contactUpdateAccountingContact`](docs/sdks/contact/README.md#updateaccountingcontact) - Update a contact
+- [`contactUpdateCrmContact`](docs/sdks/contact/README.md#updatecrmcontact) - Update a contact
+- [`contactUpdateUcContact`](docs/sdks/contact/README.md#updateuccontact) - Update a contact
+- [`crmCreateCrmCompany`](docs/sdks/crm/README.md#createcrmcompany) - Create a company
+- [`crmCreateCrmContact`](docs/sdks/crm/README.md#createcrmcontact) - Create a contact
+- [`crmCreateCrmDeal`](docs/sdks/crm/README.md#createcrmdeal) - Create a deal
+- [`crmCreateCrmEvent`](docs/sdks/crm/README.md#createcrmevent) - Create an event
+- [`crmCreateCrmLead`](docs/sdks/crm/README.md#createcrmlead) - Create a lead
+- [`crmCreateCrmPipeline`](docs/sdks/crm/README.md#createcrmpipeline) - Create a pipeline
+- [`crmGetCrmCompany`](docs/sdks/crm/README.md#getcrmcompany) - Retrieve a company
+- [`crmGetCrmContact`](docs/sdks/crm/README.md#getcrmcontact) - Retrieve a contact
+- [`crmGetCrmDeal`](docs/sdks/crm/README.md#getcrmdeal) - Retrieve a deal
+- [`crmGetCrmEvent`](docs/sdks/crm/README.md#getcrmevent) - Retrieve an event
+- [`crmGetCrmLead`](docs/sdks/crm/README.md#getcrmlead) - Retrieve a lead
+- [`crmGetCrmPipeline`](docs/sdks/crm/README.md#getcrmpipeline) - Retrieve a pipeline
+- [`crmListCrmCompanies`](docs/sdks/crm/README.md#listcrmcompanies) - List all companies
+- [`crmListCrmContacts`](docs/sdks/crm/README.md#listcrmcontacts) - List all contacts
+- [`crmListCrmDeals`](docs/sdks/crm/README.md#listcrmdeals) - List all deals
+- [`crmListCrmEvents`](docs/sdks/crm/README.md#listcrmevents) - List all events
+- [`crmListCrmLeads`](docs/sdks/crm/README.md#listcrmleads) - List all leads
+- [`crmListCrmPipelines`](docs/sdks/crm/README.md#listcrmpipelines) - List all pipelines
+- [`crmPatchCrmCompany`](docs/sdks/crm/README.md#patchcrmcompany) - Update a company
+- [`crmPatchCrmContact`](docs/sdks/crm/README.md#patchcrmcontact) - Update a contact
+- [`crmPatchCrmDeal`](docs/sdks/crm/README.md#patchcrmdeal) - Update a deal
+- [`crmPatchCrmEvent`](docs/sdks/crm/README.md#patchcrmevent) - Update an event
+- [`crmPatchCrmLead`](docs/sdks/crm/README.md#patchcrmlead) - Update a lead
+- [`crmPatchCrmPipeline`](docs/sdks/crm/README.md#patchcrmpipeline) - Update a pipeline
+- [`crmRemoveCrmCompany`](docs/sdks/crm/README.md#removecrmcompany) - Remove a company
+- [`crmRemoveCrmContact`](docs/sdks/crm/README.md#removecrmcontact) - Remove a contact
+- [`crmRemoveCrmDeal`](docs/sdks/crm/README.md#removecrmdeal) - Remove a deal
+- [`crmRemoveCrmEvent`](docs/sdks/crm/README.md#removecrmevent) - Remove an event
+- [`crmRemoveCrmLead`](docs/sdks/crm/README.md#removecrmlead) - Remove a lead
+- [`crmRemoveCrmPipeline`](docs/sdks/crm/README.md#removecrmpipeline) - Remove a pipeline
+- [`crmUpdateCrmCompany`](docs/sdks/crm/README.md#updatecrmcompany) - Update a company
+- [`crmUpdateCrmContact`](docs/sdks/crm/README.md#updatecrmcontact) - Update a contact
+- [`crmUpdateCrmDeal`](docs/sdks/crm/README.md#updatecrmdeal) - Update a deal
+- [`crmUpdateCrmEvent`](docs/sdks/crm/README.md#updatecrmevent) - Update an event
+- [`crmUpdateCrmLead`](docs/sdks/crm/README.md#updatecrmlead) - Update a lead
+- [`crmUpdateCrmPipeline`](docs/sdks/crm/README.md#updatecrmpipeline) - Update a pipeline
+- [`customerCreateTicketingCustomer`](docs/sdks/customer/README.md#createticketingcustomer) - Create a customer
+- [`customerGetTicketingCustomer`](docs/sdks/customer/README.md#getticketingcustomer) - Retrieve a customer
+- [`customerListTicketingCustomers`](docs/sdks/customer/README.md#listticketingcustomers) - List all customers
+- [`customerPatchTicketingCustomer`](docs/sdks/customer/README.md#patchticketingcustomer) - Update a customer
+- [`customerRemoveTicketingCustomer`](docs/sdks/customer/README.md#removeticketingcustomer) - Remove a customer
+- [`customerUpdateTicketingCustomer`](docs/sdks/customer/README.md#updateticketingcustomer) - Update a customer
+- [`dealCreateCrmDeal`](docs/sdks/deal/README.md#createcrmdeal) - Create a deal
+- [`dealGetCrmDeal`](docs/sdks/deal/README.md#getcrmdeal) - Retrieve a deal
+- [`dealListCrmDeals`](docs/sdks/deal/README.md#listcrmdeals) - List all deals
+- [`dealPatchCrmDeal`](docs/sdks/deal/README.md#patchcrmdeal) - Update a deal
+- [`dealRemoveCrmDeal`](docs/sdks/deal/README.md#removecrmdeal) - Remove a deal
+- [`dealUpdateCrmDeal`](docs/sdks/deal/README.md#updatecrmdeal) - Update a deal
+- [`documentCreateAtsDocument`](docs/sdks/document/README.md#createatsdocument) - Create a document
+- [`documentGetAtsDocument`](docs/sdks/document/README.md#getatsdocument) - Retrieve a document
+- [`documentListAtsDocuments`](docs/sdks/document/README.md#listatsdocuments) - List all documents
+- [`documentPatchAtsDocument`](docs/sdks/document/README.md#patchatsdocument) - Update a document
+- [`documentRemoveAtsDocument`](docs/sdks/document/README.md#removeatsdocument) - Remove a document
+- [`documentUpdateAtsDocument`](docs/sdks/document/README.md#updateatsdocument) - Update a document
+- [`employeeCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
+- [`employeeGetHrisEmployee`](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
+- [`employeeListHrisEmployees`](docs/sdks/employee/README.md#listhrisemployees) - List all employees
+- [`employeePatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
+- [`employeeRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
+- [`employeeUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
+- [`enrichListEnrichCompanies`](docs/sdks/enrich/README.md#listenrichcompanies) - Retrieve enrichment information for a company
+- [`enrichListEnrichPeople`](docs/sdks/enrich/README.md#listenrichpeople) - Retrieve enrichment information for a person
+- [`eventCreateCrmEvent`](docs/sdks/event/README.md#createcrmevent) - Create an event
+- [`eventGetCrmEvent`](docs/sdks/event/README.md#getcrmevent) - Retrieve an event
+- [`eventListCrmEvents`](docs/sdks/event/README.md#listcrmevents) - List all events
+- [`eventPatchCrmEvent`](docs/sdks/event/README.md#patchcrmevent) - Update an event
+- [`eventRemoveCrmEvent`](docs/sdks/event/README.md#removecrmevent) - Remove an event
+- [`eventUpdateCrmEvent`](docs/sdks/event/README.md#updatecrmevent) - Update an event
+- [`fileCreateStorageFile`](docs/sdks/file/README.md#createstoragefile) - Create a file
+- [`fileGetStorageFile`](docs/sdks/file/README.md#getstoragefile) - Retrieve a file
+- [`fileListStorageFiles`](docs/sdks/file/README.md#liststoragefiles) - List all files
+- [`filePatchStorageFile`](docs/sdks/file/README.md#patchstoragefile) - Update a file
+- [`fileRemoveStorageFile`](docs/sdks/file/README.md#removestoragefile) - Remove a file
+- [`fileUpdateStorageFile`](docs/sdks/file/README.md#updatestoragefile) - Update a file
+- [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
+- [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
+- [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
+- [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
+- [`groupGetHrisGroup`](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
+- [`groupListHrisGroups`](docs/sdks/group/README.md#listhrisgroups) - List all groups
+- [`groupListScimGroups`](docs/sdks/group/README.md#listscimgroups) - List groups
+- [`groupPatchHrisGroup`](docs/sdks/group/README.md#patchhrisgroup) - Update a group
+- [`groupPatchScimGroups`](docs/sdks/group/README.md#patchscimgroups) - Update group
+- [`groupRemoveHrisGroup`](docs/sdks/group/README.md#removehrisgroup) - Remove a group
+- [`groupRemoveScimGroups`](docs/sdks/group/README.md#removescimgroups) - Delete group
+- [`groupUpdateHrisGroup`](docs/sdks/group/README.md#updatehrisgroup) - Update a group
+- [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
+- [`hrisCreateHrisCompany`](docs/sdks/hris/README.md#createhriscompany) - Create a company
+- [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
+- [`hrisCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
+- [`hrisCreateHrisLocation`](docs/sdks/hris/README.md#createhrislocation) - Create a location
+- [`hrisGetHrisCompany`](docs/sdks/hris/README.md#gethriscompany) - Retrieve a company
+- [`hrisGetHrisEmployee`](docs/sdks/hris/README.md#gethrisemployee) - Retrieve an employee
+- [`hrisGetHrisGroup`](docs/sdks/hris/README.md#gethrisgroup) - Retrieve a group
+- [`hrisGetHrisLocation`](docs/sdks/hris/README.md#gethrislocation) - Retrieve a location
+- [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
+- [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
+- [`hrisListHrisCompanies`](docs/sdks/hris/README.md#listhriscompanies) - List all companies
+- [`hrisListHrisEmployees`](docs/sdks/hris/README.md#listhrisemployees) - List all employees
+- [`hrisListHrisGroups`](docs/sdks/hris/README.md#listhrisgroups) - List all groups
+- [`hrisListHrisLocations`](docs/sdks/hris/README.md#listhrislocations) - List all locations
+- [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
+- [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
+- [`hrisPatchHrisCompany`](docs/sdks/hris/README.md#patchhriscompany) - Update a company
+- [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
+- [`hrisPatchHrisGroup`](docs/sdks/hris/README.md#patchhrisgroup) - Update a group
+- [`hrisPatchHrisLocation`](docs/sdks/hris/README.md#patchhrislocation) - Update a location
+- [`hrisRemoveHrisCompany`](docs/sdks/hris/README.md#removehriscompany) - Remove a company
+- [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
+- [`hrisRemoveHrisGroup`](docs/sdks/hris/README.md#removehrisgroup) - Remove a group
+- [`hrisRemoveHrisLocation`](docs/sdks/hris/README.md#removehrislocation) - Remove a location
+- [`hrisUpdateHrisCompany`](docs/sdks/hris/README.md#updatehriscompany) - Update a company
+- [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
+- [`hrisUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
+- [`hrisUpdateHrisLocation`](docs/sdks/hris/README.md#updatehrislocation) - Update a location
+- [`integrationGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Create connection indirectly
+- [`integrationListUnifiedIntegrations`](docs/sdks/integration/README.md#listunifiedintegrations) - Returns all integrations
+- [`integrationListUnifiedIntegrationWorkspaces`](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
+- [`interviewCreateAtsInterview`](docs/sdks/interview/README.md#createatsinterview) - Create an interview
+- [`interviewGetAtsInterview`](docs/sdks/interview/README.md#getatsinterview) - Retrieve an interview
+- [`interviewListAtsInterviews`](docs/sdks/interview/README.md#listatsinterviews) - List all interviews
+- [`interviewPatchAtsInterview`](docs/sdks/interview/README.md#patchatsinterview) - Update an interview
+- [`interviewRemoveAtsInterview`](docs/sdks/interview/README.md#removeatsinterview) - Remove an interview
+- [`interviewUpdateAtsInterview`](docs/sdks/interview/README.md#updateatsinterview) - Update an interview
+- [`inventoryCreateCommerceInventory`](docs/sdks/inventory/README.md#createcommerceinventory) - Create an inventory
+- [`inventoryGetCommerceInventory`](docs/sdks/inventory/README.md#getcommerceinventory) - Retrieve an inventory
+- [`inventoryListCommerceInventories`](docs/sdks/inventory/README.md#listcommerceinventories) - List all inventories
+- [`inventoryPatchCommerceInventory`](docs/sdks/inventory/README.md#patchcommerceinventory) - Update an inventory
+- [`inventoryRemoveCommerceInventory`](docs/sdks/inventory/README.md#removecommerceinventory) - Remove an inventory
+- [`inventoryUpdateCommerceInventory`](docs/sdks/inventory/README.md#updatecommerceinventory) - Update an inventory
+- [`invoiceCreateAccountingInvoice`](docs/sdks/invoice/README.md#createaccountinginvoice) - Create an invoice
+- [`invoiceGetAccountingInvoice`](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve an invoice
+- [`invoiceListAccountingInvoices`](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
+- [`invoicePatchAccountingInvoice`](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update an invoice
+- [`invoiceRemoveAccountingInvoice`](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove an invoice
+- [`invoiceUpdateAccountingInvoice`](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update an invoice
+- [`issueListUnifiedIssues`](docs/sdks/issue/README.md#listunifiedissues) - List support issues
+- [`itemCreateCommerceItem`](docs/sdks/item/README.md#createcommerceitem) - Create an item
+- [`itemGetCommerceItem`](docs/sdks/item/README.md#getcommerceitem) - Retrieve an item
+- [`itemListCommerceItems`](docs/sdks/item/README.md#listcommerceitems) - List all items
+- [`itemPatchCommerceItem`](docs/sdks/item/README.md#patchcommerceitem) - Update an item
+- [`itemRemoveCommerceItem`](docs/sdks/item/README.md#removecommerceitem) - Remove an item
+- [`itemUpdateCommerceItem`](docs/sdks/item/README.md#updatecommerceitem) - Update an item
+- [`jobCreateAtsJob`](docs/sdks/job/README.md#createatsjob) - Create a job
+- [`jobGetAtsJob`](docs/sdks/job/README.md#getatsjob) - Retrieve a job
+- [`jobListAtsJobs`](docs/sdks/job/README.md#listatsjobs) - List all jobs
+- [`jobPatchAtsJob`](docs/sdks/job/README.md#patchatsjob) - Update a job
+- [`jobRemoveAtsJob`](docs/sdks/job/README.md#removeatsjob) - Remove a job
+- [`jobUpdateAtsJob`](docs/sdks/job/README.md#updateatsjob) - Update a job
+- [`journalCreateAccountingJournal`](docs/sdks/journal/README.md#createaccountingjournal) - Create a journal
+- [`journalGetAccountingJournal`](docs/sdks/journal/README.md#getaccountingjournal) - Retrieve a journal
+- [`journalListAccountingJournals`](docs/sdks/journal/README.md#listaccountingjournals) - List all journals
+- [`journalPatchAccountingJournal`](docs/sdks/journal/README.md#patchaccountingjournal) - Update a journal
+- [`journalRemoveAccountingJournal`](docs/sdks/journal/README.md#removeaccountingjournal) - Remove a journal
+- [`journalUpdateAccountingJournal`](docs/sdks/journal/README.md#updateaccountingjournal) - Update a journal
+- [`kmsCreateKmsPage`](docs/sdks/kms/README.md#createkmspage) - Create a page
+- [`kmsCreateKmsSpace`](docs/sdks/kms/README.md#createkmsspace) - Create a space
+- [`kmsGetKmsPage`](docs/sdks/kms/README.md#getkmspage) - Retrieve a page
+- [`kmsGetKmsSpace`](docs/sdks/kms/README.md#getkmsspace) - Retrieve a space
+- [`kmsListKmsPages`](docs/sdks/kms/README.md#listkmspages) - List all pages
+- [`kmsListKmsSpaces`](docs/sdks/kms/README.md#listkmsspaces) - List all spaces
+- [`kmsPatchKmsPage`](docs/sdks/kms/README.md#patchkmspage) - Update a page
+- [`kmsPatchKmsSpace`](docs/sdks/kms/README.md#patchkmsspace) - Update a space
+- [`kmsRemoveKmsPage`](docs/sdks/kms/README.md#removekmspage) - Remove a page
+- [`kmsRemoveKmsSpace`](docs/sdks/kms/README.md#removekmsspace) - Remove a space
+- [`kmsUpdateKmsPage`](docs/sdks/kms/README.md#updatekmspage) - Update a page
+- [`kmsUpdateKmsSpace`](docs/sdks/kms/README.md#updatekmsspace) - Update a space
+- [`leadCreateCrmLead`](docs/sdks/lead/README.md#createcrmlead) - Create a lead
+- [`leadGetCrmLead`](docs/sdks/lead/README.md#getcrmlead) - Retrieve a lead
+- [`leadListCrmLeads`](docs/sdks/lead/README.md#listcrmleads) - List all leads
+- [`leadPatchCrmLead`](docs/sdks/lead/README.md#patchcrmlead) - Update a lead
+- [`leadRemoveCrmLead`](docs/sdks/lead/README.md#removecrmlead) - Remove a lead
+- [`leadUpdateCrmLead`](docs/sdks/lead/README.md#updatecrmlead) - Update a lead
+- [`linkCreatePaymentLink`](docs/sdks/link/README.md#createpaymentlink) - Create a link
+- [`linkGetPaymentLink`](docs/sdks/link/README.md#getpaymentlink) - Retrieve a link
+- [`linkListPaymentLinks`](docs/sdks/link/README.md#listpaymentlinks) - List all links
+- [`linkPatchPaymentLink`](docs/sdks/link/README.md#patchpaymentlink) - Update a link
+- [`linkRemovePaymentLink`](docs/sdks/link/README.md#removepaymentlink) - Remove a link
+- [`linkUpdatePaymentLink`](docs/sdks/link/README.md#updatepaymentlink) - Update a link
+- [`listCreateMartechList`](docs/sdks/list/README.md#createmartechlist) - Create a list
+- [`listGetMartechList`](docs/sdks/list/README.md#getmartechlist) - Retrieve a list
+- [`listListMartechLists`](docs/sdks/list/README.md#listmartechlists) - List all lists
+- [`listPatchMartechList`](docs/sdks/list/README.md#patchmartechlist) - Update a list
+- [`listRemoveMartechList`](docs/sdks/list/README.md#removemartechlist) - Remove a list
+- [`listUpdateMartechList`](docs/sdks/list/README.md#updatemartechlist) - Update a list
+- [`locationCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
+- [`locationCreateHrisLocation`](docs/sdks/location/README.md#createhrislocation) - Create a location
+- [`locationGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
+- [`locationGetHrisLocation`](docs/sdks/location/README.md#gethrislocation) - Retrieve a location
+- [`locationListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
+- [`locationListHrisLocations`](docs/sdks/location/README.md#listhrislocations) - List all locations
+- [`locationPatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
+- [`locationPatchHrisLocation`](docs/sdks/location/README.md#patchhrislocation) - Update a location
+- [`locationRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
+- [`locationRemoveHrisLocation`](docs/sdks/location/README.md#removehrislocation) - Remove a location
+- [`locationUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
+- [`locationUpdateHrisLocation`](docs/sdks/location/README.md#updatehrislocation) - Update a location
+- [`loginGetUnifiedIntegrationLogin`](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
+- [`martechCreateMartechList`](docs/sdks/martech/README.md#createmartechlist) - Create a list
+- [`martechCreateMartechMember`](docs/sdks/martech/README.md#createmartechmember) - Create a member
+- [`martechGetMartechList`](docs/sdks/martech/README.md#getmartechlist) - Retrieve a list
+- [`martechGetMartechMember`](docs/sdks/martech/README.md#getmartechmember) - Retrieve a member
+- [`martechListMartechLists`](docs/sdks/martech/README.md#listmartechlists) - List all lists
+- [`martechListMartechMembers`](docs/sdks/martech/README.md#listmartechmembers) - List all members
+- [`martechPatchMartechList`](docs/sdks/martech/README.md#patchmartechlist) - Update a list
+- [`martechPatchMartechMember`](docs/sdks/martech/README.md#patchmartechmember) - Update a member
+- [`martechRemoveMartechList`](docs/sdks/martech/README.md#removemartechlist) - Remove a list
+- [`martechRemoveMartechMember`](docs/sdks/martech/README.md#removemartechmember) - Remove a member
+- [`martechUpdateMartechList`](docs/sdks/martech/README.md#updatemartechlist) - Update a list
+- [`martechUpdateMartechMember`](docs/sdks/martech/README.md#updatemartechmember) - Update a member
+- [`memberCreateMartechMember`](docs/sdks/member/README.md#createmartechmember) - Create a member
+- [`memberGetMartechMember`](docs/sdks/member/README.md#getmartechmember) - Retrieve a member
+- [`memberListMartechMembers`](docs/sdks/member/README.md#listmartechmembers) - List all members
+- [`memberPatchMartechMember`](docs/sdks/member/README.md#patchmartechmember) - Update a member
+- [`memberRemoveMartechMember`](docs/sdks/member/README.md#removemartechmember) - Remove a member
+- [`memberUpdateMartechMember`](docs/sdks/member/README.md#updatemartechmember) - Update a member
+- [`messageCreateMessagingMessage`](docs/sdks/message/README.md#createmessagingmessage) - Create a message
+- [`messageGetMessagingMessage`](docs/sdks/message/README.md#getmessagingmessage) - Retrieve a message
+- [`messageListMessagingMessages`](docs/sdks/message/README.md#listmessagingmessages) - List all messages
+- [`messagePatchMessagingMessage`](docs/sdks/message/README.md#patchmessagingmessage) - Update a message
+- [`messageRemoveMessagingMessage`](docs/sdks/message/README.md#removemessagingmessage) - Remove a message
+- [`messageUpdateMessagingMessage`](docs/sdks/message/README.md#updatemessagingmessage) - Update a message
+- [`messagingCreateMessagingMessage`](docs/sdks/messaging/README.md#createmessagingmessage) - Create a message
+- [`messagingGetMessagingChannel`](docs/sdks/messaging/README.md#getmessagingchannel) - Retrieve a channel
+- [`messagingGetMessagingMessage`](docs/sdks/messaging/README.md#getmessagingmessage) - Retrieve a message
+- [`messagingListMessagingChannels`](docs/sdks/messaging/README.md#listmessagingchannels) - List all channels
+- [`messagingListMessagingMessages`](docs/sdks/messaging/README.md#listmessagingmessages) - List all messages
+- [`messagingPatchMessagingMessage`](docs/sdks/messaging/README.md#patchmessagingmessage) - Update a message
+- [`messagingRemoveMessagingMessage`](docs/sdks/messaging/README.md#removemessagingmessage) - Remove a message
+- [`messagingUpdateMessagingMessage`](docs/sdks/messaging/README.md#updatemessagingmessage) - Update a message
+- [`modelListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
+- [`noteCreateTicketingNote`](docs/sdks/note/README.md#createticketingnote) - Create a note
+- [`noteGetTicketingNote`](docs/sdks/note/README.md#getticketingnote) - Retrieve a note
+- [`noteListTicketingNotes`](docs/sdks/note/README.md#listticketingnotes) - List all notes
+- [`notePatchTicketingNote`](docs/sdks/note/README.md#patchticketingnote) - Update a note
+- [`noteRemoveTicketingNote`](docs/sdks/note/README.md#removeticketingnote) - Remove a note
+- [`noteUpdateTicketingNote`](docs/sdks/note/README.md#updateticketingnote) - Update a note
+- [`organizationGetAccountingOrganization`](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
+- [`organizationListAccountingOrganizations`](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
+- [`pageCreateKmsPage`](docs/sdks/page/README.md#createkmspage) - Create a page
+- [`pageGetKmsPage`](docs/sdks/page/README.md#getkmspage) - Retrieve a page
+- [`pageListKmsPages`](docs/sdks/page/README.md#listkmspages) - List all pages
+- [`pagePatchKmsPage`](docs/sdks/page/README.md#patchkmspage) - Update a page
+- [`pageRemoveKmsPage`](docs/sdks/page/README.md#removekmspage) - Remove a page
+- [`pageUpdateKmsPage`](docs/sdks/page/README.md#updatekmspage) - Update a page
+- [`passthroughCreatePassthroughJson`](docs/sdks/passthrough/README.md#createpassthroughjson) - Passthrough POST
+- [`passthroughCreatePassthroughRaw`](docs/sdks/passthrough/README.md#createpassthroughraw) - Passthrough POST
+- [`passthroughListPassthroughs`](docs/sdks/passthrough/README.md#listpassthroughs) - Passthrough GET
+- [`passthroughPatchPassthroughJson`](docs/sdks/passthrough/README.md#patchpassthroughjson) - Passthrough PUT
+- [`passthroughPatchPassthroughRaw`](docs/sdks/passthrough/README.md#patchpassthroughraw) - Passthrough PUT
+- [`passthroughRemovePassthrough`](docs/sdks/passthrough/README.md#removepassthrough) - Passthrough DELETE
+- [`passthroughUpdatePassthroughJson`](docs/sdks/passthrough/README.md#updatepassthroughjson) - Passthrough PUT
+- [`passthroughUpdatePassthroughRaw`](docs/sdks/passthrough/README.md#updatepassthroughraw) - Passthrough PUT
+- [`paymentCreatePaymentLink`](docs/sdks/payment/README.md#createpaymentlink) - Create a link
+- [`paymentCreatePaymentPayment`](docs/sdks/payment/README.md#createpaymentpayment) - Create a payment
+- [`paymentGetPaymentLink`](docs/sdks/payment/README.md#getpaymentlink) - Retrieve a link
+- [`paymentGetPaymentPayment`](docs/sdks/payment/README.md#getpaymentpayment) - Retrieve a payment
+- [`paymentGetPaymentPayout`](docs/sdks/payment/README.md#getpaymentpayout) - Retrieve a payout
+- [`paymentGetPaymentRefund`](docs/sdks/payment/README.md#getpaymentrefund) - Retrieve a refund
+- [`paymentListPaymentLinks`](docs/sdks/payment/README.md#listpaymentlinks) - List all links
+- [`paymentListPaymentPayments`](docs/sdks/payment/README.md#listpaymentpayments) - List all payments
+- [`paymentListPaymentPayouts`](docs/sdks/payment/README.md#listpaymentpayouts) - List all payouts
+- [`paymentListPaymentRefunds`](docs/sdks/payment/README.md#listpaymentrefunds) - List all refunds
+- [`paymentPatchPaymentLink`](docs/sdks/payment/README.md#patchpaymentlink) - Update a link
+- [`paymentPatchPaymentPayment`](docs/sdks/payment/README.md#patchpaymentpayment) - Update a payment
+- [`paymentRemovePaymentLink`](docs/sdks/payment/README.md#removepaymentlink) - Remove a link
+- [`paymentRemovePaymentPayment`](docs/sdks/payment/README.md#removepaymentpayment) - Remove a payment
+- [`paymentUpdatePaymentLink`](docs/sdks/payment/README.md#updatepaymentlink) - Update a link
+- [`paymentUpdatePaymentPayment`](docs/sdks/payment/README.md#updatepaymentpayment) - Update a payment
+- [`payoutGetPaymentPayout`](docs/sdks/payout/README.md#getpaymentpayout) - Retrieve a payout
+- [`payoutListPaymentPayouts`](docs/sdks/payout/README.md#listpaymentpayouts) - List all payouts
+- [`payslipGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
+- [`payslipListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
+- [`personListEnrichPeople`](docs/sdks/person/README.md#listenrichpeople) - Retrieve enrichment information for a person
+- [`pipelineCreateCrmPipeline`](docs/sdks/pipeline/README.md#createcrmpipeline) - Create a pipeline
+- [`pipelineGetCrmPipeline`](docs/sdks/pipeline/README.md#getcrmpipeline) - Retrieve a pipeline
+- [`pipelineListCrmPipelines`](docs/sdks/pipeline/README.md#listcrmpipelines) - List all pipelines
+- [`pipelinePatchCrmPipeline`](docs/sdks/pipeline/README.md#patchcrmpipeline) - Update a pipeline
+- [`pipelineRemoveCrmPipeline`](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
+- [`pipelineUpdateCrmPipeline`](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
+- [`projectCreateTaskProject`](docs/sdks/project/README.md#createtaskproject) - Create a project
+- [`projectGetTaskProject`](docs/sdks/project/README.md#gettaskproject) - Retrieve a project
+- [`projectListTaskProjects`](docs/sdks/project/README.md#listtaskprojects) - List all projects
+- [`projectPatchTaskProject`](docs/sdks/project/README.md#patchtaskproject) - Update a project
+- [`projectRemoveTaskProject`](docs/sdks/project/README.md#removetaskproject) - Remove a project
+- [`projectUpdateTaskProject`](docs/sdks/project/README.md#updatetaskproject) - Update a project
+- [`promptCreateGenaiPrompt`](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
+- [`refundGetPaymentRefund`](docs/sdks/refund/README.md#getpaymentrefund) - Retrieve a refund
+- [`refundListPaymentRefunds`](docs/sdks/refund/README.md#listpaymentrefunds) - List all refunds
+- [`scimCreateScimGroups`](docs/sdks/scim/README.md#createscimgroups) - Create group
+- [`scimCreateScimUsers`](docs/sdks/scim/README.md#createscimusers) - Create user
+- [`scimGetScimUsers`](docs/sdks/scim/README.md#getscimusers) - Get user
+- [`scimListScimGroups`](docs/sdks/scim/README.md#listscimgroups) - List groups
+- [`scimListScimUsers`](docs/sdks/scim/README.md#listscimusers) - List users
+- [`scimPatchScimGroups`](docs/sdks/scim/README.md#patchscimgroups) - Update group
+- [`scimPatchScimUsers`](docs/sdks/scim/README.md#patchscimusers) - Update user
+- [`scimRemoveScimGroups`](docs/sdks/scim/README.md#removescimgroups) - Delete group
+- [`scimRemoveScimUsers`](docs/sdks/scim/README.md#removescimusers) - Delete user
+- [`scimUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
+- [`scimUpdateScimUsers`](docs/sdks/scim/README.md#updatescimusers) - Update user
+- [`scorecardCreateAtsScorecard`](docs/sdks/scorecard/README.md#createatsscorecard) - Create a scorecard
+- [`scorecardGetAtsScorecard`](docs/sdks/scorecard/README.md#getatsscorecard) - Retrieve a scorecard
+- [`scorecardListAtsScorecards`](docs/sdks/scorecard/README.md#listatsscorecards) - List all scorecards
+- [`scorecardPatchAtsScorecard`](docs/sdks/scorecard/README.md#patchatsscorecard) - Update a scorecard
+- [`scorecardRemoveAtsScorecard`](docs/sdks/scorecard/README.md#removeatsscorecard) - Remove a scorecard
+- [`scorecardUpdateAtsScorecard`](docs/sdks/scorecard/README.md#updateatsscorecard) - Update a scorecard
+- [`spaceCreateKmsSpace`](docs/sdks/space/README.md#createkmsspace) - Create a space
+- [`spaceGetKmsSpace`](docs/sdks/space/README.md#getkmsspace) - Retrieve a space
+- [`spaceListKmsSpaces`](docs/sdks/space/README.md#listkmsspaces) - List all spaces
+- [`spacePatchKmsSpace`](docs/sdks/space/README.md#patchkmsspace) - Update a space
+- [`spaceRemoveKmsSpace`](docs/sdks/space/README.md#removekmsspace) - Remove a space
+- [`spaceUpdateKmsSpace`](docs/sdks/space/README.md#updatekmsspace) - Update a space
+- [`storageCreateStorageFile`](docs/sdks/storage/README.md#createstoragefile) - Create a file
+- [`storageGetStorageFile`](docs/sdks/storage/README.md#getstoragefile) - Retrieve a file
+- [`storageListStorageFiles`](docs/sdks/storage/README.md#liststoragefiles) - List all files
+- [`storagePatchStorageFile`](docs/sdks/storage/README.md#patchstoragefile) - Update a file
+- [`storageRemoveStorageFile`](docs/sdks/storage/README.md#removestoragefile) - Remove a file
+- [`storageUpdateStorageFile`](docs/sdks/storage/README.md#updatestoragefile) - Update a file
+- [`taskCreateTaskProject`](docs/sdks/task/README.md#createtaskproject) - Create a project
+- [`taskCreateTaskTask`](docs/sdks/task/README.md#createtasktask) - Create a task
+- [`taskGetTaskProject`](docs/sdks/task/README.md#gettaskproject) - Retrieve a project
+- [`taskGetTaskTask`](docs/sdks/task/README.md#gettasktask) - Retrieve a task
+- [`taskListTaskProjects`](docs/sdks/task/README.md#listtaskprojects) - List all projects
+- [`taskListTaskTasks`](docs/sdks/task/README.md#listtasktasks) - List all tasks
+- [`taskPatchTaskProject`](docs/sdks/task/README.md#patchtaskproject) - Update a project
+- [`taskPatchTaskTask`](docs/sdks/task/README.md#patchtasktask) - Update a task
+- [`taskRemoveTaskProject`](docs/sdks/task/README.md#removetaskproject) - Remove a project
+- [`taskRemoveTaskTask`](docs/sdks/task/README.md#removetasktask) - Remove a task
+- [`taskUpdateTaskProject`](docs/sdks/task/README.md#updatetaskproject) - Update a project
+- [`taskUpdateTaskTask`](docs/sdks/task/README.md#updatetasktask) - Update a task
+- [`taxrateCreateAccountingTaxrate`](docs/sdks/taxrate/README.md#createaccountingtaxrate) - Create a taxrate
+- [`taxrateGetAccountingTaxrate`](docs/sdks/taxrate/README.md#getaccountingtaxrate) - Retrieve a taxrate
+- [`taxrateListAccountingTaxrates`](docs/sdks/taxrate/README.md#listaccountingtaxrates) - List all taxrates
+- [`taxratePatchAccountingTaxrate`](docs/sdks/taxrate/README.md#patchaccountingtaxrate) - Update a taxrate
+- [`taxrateRemoveAccountingTaxrate`](docs/sdks/taxrate/README.md#removeaccountingtaxrate) - Remove a taxrate
+- [`taxrateUpdateAccountingTaxrate`](docs/sdks/taxrate/README.md#updateaccountingtaxrate) - Update a taxrate
+- [`ticketCreateTicketingTicket`](docs/sdks/ticket/README.md#createticketingticket) - Create a ticket
+- [`ticketGetTicketingTicket`](docs/sdks/ticket/README.md#getticketingticket) - Retrieve a ticket
+- [`ticketingCreateTicketingCustomer`](docs/sdks/ticketing/README.md#createticketingcustomer) - Create a customer
+- [`ticketingCreateTicketingNote`](docs/sdks/ticketing/README.md#createticketingnote) - Create a note
+- [`ticketingCreateTicketingTicket`](docs/sdks/ticketing/README.md#createticketingticket) - Create a ticket
+- [`ticketingGetTicketingCustomer`](docs/sdks/ticketing/README.md#getticketingcustomer) - Retrieve a customer
+- [`ticketingGetTicketingNote`](docs/sdks/ticketing/README.md#getticketingnote) - Retrieve a note
+- [`ticketingGetTicketingTicket`](docs/sdks/ticketing/README.md#getticketingticket) - Retrieve a ticket
+- [`ticketingListTicketingCustomers`](docs/sdks/ticketing/README.md#listticketingcustomers) - List all customers
+- [`ticketingListTicketingNotes`](docs/sdks/ticketing/README.md#listticketingnotes) - List all notes
+- [`ticketingListTicketingTickets`](docs/sdks/ticketing/README.md#listticketingtickets) - List all tickets
+- [`ticketingPatchTicketingCustomer`](docs/sdks/ticketing/README.md#patchticketingcustomer) - Update a customer
+- [`ticketingPatchTicketingNote`](docs/sdks/ticketing/README.md#patchticketingnote) - Update a note
+- [`ticketingPatchTicketingTicket`](docs/sdks/ticketing/README.md#patchticketingticket) - Update a ticket
+- [`ticketingRemoveTicketingCustomer`](docs/sdks/ticketing/README.md#removeticketingcustomer) - Remove a customer
+- [`ticketingRemoveTicketingNote`](docs/sdks/ticketing/README.md#removeticketingnote) - Remove a note
+- [`ticketingRemoveTicketingTicket`](docs/sdks/ticketing/README.md#removeticketingticket) - Remove a ticket
+- [`ticketingUpdateTicketingCustomer`](docs/sdks/ticketing/README.md#updateticketingcustomer) - Update a customer
+- [`ticketingUpdateTicketingNote`](docs/sdks/ticketing/README.md#updateticketingnote) - Update a note
+- [`ticketingUpdateTicketingTicket`](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
+- [`ticketListTicketingTickets`](docs/sdks/ticket/README.md#listticketingtickets) - List all tickets
+- [`ticketPatchTicketingTicket`](docs/sdks/ticket/README.md#patchticketingticket) - Update a ticket
+- [`ticketRemoveTicketingTicket`](docs/sdks/ticket/README.md#removeticketingticket) - Remove a ticket
+- [`ticketUpdateTicketingTicket`](docs/sdks/ticket/README.md#updateticketingticket) - Update a ticket
+- [`timeoffGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
+- [`timeoffListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
+- [`transactionCreateAccountingTransaction`](docs/sdks/transaction/README.md#createaccountingtransaction) - Create a transaction
+- [`transactionGetAccountingTransaction`](docs/sdks/transaction/README.md#getaccountingtransaction) - Retrieve a transaction
+- [`transactionListAccountingTransactions`](docs/sdks/transaction/README.md#listaccountingtransactions) - List all transactions
+- [`transactionPatchAccountingTransaction`](docs/sdks/transaction/README.md#patchaccountingtransaction) - Update a transaction
+- [`transactionRemoveAccountingTransaction`](docs/sdks/transaction/README.md#removeaccountingtransaction) - Remove a transaction
+- [`transactionUpdateAccountingTransaction`](docs/sdks/transaction/README.md#updateaccountingtransaction) - Update a transaction
+- [`ucCreateUcContact`](docs/sdks/uc/README.md#createuccontact) - Create a contact
+- [`ucGetUcContact`](docs/sdks/uc/README.md#getuccontact) - Retrieve a contact
+- [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
+- [`ucListUcContacts`](docs/sdks/uc/README.md#listuccontacts) - List all contacts
+- [`ucPatchUcContact`](docs/sdks/uc/README.md#patchuccontact) - Update a contact
+- [`ucRemoveUcContact`](docs/sdks/uc/README.md#removeuccontact) - Remove a contact
+- [`ucUpdateUcContact`](docs/sdks/uc/README.md#updateuccontact) - Update a contact
+- [`unifiedCreateUnifiedConnection`](docs/sdks/unified/README.md#createunifiedconnection) - Create connection
+- [`unifiedCreateUnifiedWebhook`](docs/sdks/unified/README.md#createunifiedwebhook) - Create webhook subscription
+- [`unifiedGetUnifiedApicall`](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
+- [`unifiedGetUnifiedConnection`](docs/sdks/unified/README.md#getunifiedconnection) - Retrieve connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Create connection indirectly
+- [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
+- [`unifiedListUnifiedApicalls`](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
+- [`unifiedListUnifiedConnections`](docs/sdks/unified/README.md#listunifiedconnections) - List all connections
+- [`unifiedListUnifiedIntegrations`](docs/sdks/unified/README.md#listunifiedintegrations) - Returns all integrations
+- [`unifiedListUnifiedIntegrationWorkspaces`](docs/sdks/unified/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
+- [`unifiedListUnifiedIssues`](docs/sdks/unified/README.md#listunifiedissues) - List support issues
+- [`unifiedListUnifiedWebhooks`](docs/sdks/unified/README.md#listunifiedwebhooks) - Returns all registered webhooks
+- [`unifiedPatchUnifiedConnection`](docs/sdks/unified/README.md#patchunifiedconnection) - Update connection
+- [`unifiedPatchUnifiedWebhook`](docs/sdks/unified/README.md#patchunifiedwebhook) - Update webhook subscription
+- [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/unified/README.md#patchunifiedwebhooktrigger) - Trigger webhook
+- [`unifiedRemoveUnifiedConnection`](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
+- [`unifiedRemoveUnifiedWebhook`](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
+- [`unifiedUpdateUnifiedConnection`](docs/sdks/unified/README.md#updateunifiedconnection) - Update connection
+- [`unifiedUpdateUnifiedWebhook`](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
+- [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
+- [`userCreateScimUsers`](docs/sdks/user/README.md#createscimusers) - Create user
+- [`userGetScimUsers`](docs/sdks/user/README.md#getscimusers) - Get user
+- [`userListScimUsers`](docs/sdks/user/README.md#listscimusers) - List users
+- [`userPatchScimUsers`](docs/sdks/user/README.md#patchscimusers) - Update user
+- [`userRemoveScimUsers`](docs/sdks/user/README.md#removescimusers) - Delete user
+- [`userUpdateScimUsers`](docs/sdks/user/README.md#updatescimusers) - Update user
+- [`webhookCreateUnifiedWebhook`](docs/sdks/webhook/README.md#createunifiedwebhook) - Create webhook subscription
+- [`webhookGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
+- [`webhookListUnifiedWebhooks`](docs/sdks/webhook/README.md#listunifiedwebhooks) - Returns all registered webhooks
+- [`webhookPatchUnifiedWebhook`](docs/sdks/webhook/README.md#patchunifiedwebhook) - Update webhook subscription
+- [`webhookPatchUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger) - Trigger webhook
+- [`webhookRemoveUnifiedWebhook`](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
+- [`webhookUpdateUnifiedWebhook`](docs/sdks/webhook/README.md#updateunifiedwebhook) - Update webhook subscription
+- [`webhookUpdateUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

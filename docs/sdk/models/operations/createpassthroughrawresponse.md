@@ -11,7 +11,7 @@ let value: CreatePassthroughRawResponse = {
       "<value>",
     ],
   },
-  result: "<value>",
+  result: new TextEncoder().encode("0xf4EA54b049"),
 };
 ```
 

@@ -31,7 +31,7 @@ export type CommerceCollectionType = ClosedEnum<typeof CommerceCollectionType>;
 export type CommerceCollection = {
   createdAt?: Date | undefined;
   description?: string | undefined;
-  id: string;
+  id?: string | undefined;
   isActive?: boolean | undefined;
   isFeatured?: boolean | undefined;
   isVisible?: boolean | undefined;
@@ -77,7 +77,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   is_active: z.boolean().optional(),
   is_featured: z.boolean().optional(),
   is_visible: z.boolean().optional(),
@@ -109,7 +109,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
 export type CommerceCollection$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
-  id: string;
+  id?: string | undefined;
   is_active?: boolean | undefined;
   is_featured?: boolean | undefined;
   is_visible?: boolean | undefined;
@@ -133,7 +133,7 @@ export const CommerceCollection$outboundSchema: z.ZodType<
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   isActive: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
   isVisible: z.boolean().optional(),

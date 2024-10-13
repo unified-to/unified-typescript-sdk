@@ -23,6 +23,7 @@ export const PropertyConnectionCategories = {
   Messaging: "messaging",
   Kms: "kms",
   Task: "task",
+  Scim: "scim",
 } as const;
 export type PropertyConnectionCategories = ClosedEnum<
   typeof PropertyConnectionCategories

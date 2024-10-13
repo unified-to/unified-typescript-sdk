@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3c4e8a5e234e6444307aef536fd547bd
+  docChecksum: 2f8b1ad907e9f06fa5885ee0f6d0b4ad
   docVersion: "1.0"
-  speakeasyVersion: 1.406.0
-  generationVersion: 2.429.0
-  releaseVersion: 2.6.1
-  configChecksum: 8290d2575d2c773c810b98f6c6c485c5
+  speakeasyVersion: 1.418.1
+  generationVersion: 2.438.3
+  releaseVersion: 2.6.2
+  configChecksum: b2c69d775d20576561ffc7e7f226d553
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -77,6 +77,8 @@ generatedFiles:
   - docs/sdk/models/operations/createpassthroughrawresponseresult.md
   - docs/sdk/models/operations/createpaymentlinkrequest.md
   - docs/sdk/models/operations/createpaymentpaymentrequest.md
+  - docs/sdk/models/operations/createscimgroupsrequest.md
+  - docs/sdk/models/operations/createscimusersrequest.md
   - docs/sdk/models/operations/createstoragefilerequest.md
   - docs/sdk/models/operations/createtaskprojectrequest.md
   - docs/sdk/models/operations/createtasktaskrequest.md
@@ -126,6 +128,7 @@ generatedFiles:
   - docs/sdk/models/operations/getpaymentpaymentrequest.md
   - docs/sdk/models/operations/getpaymentpayoutrequest.md
   - docs/sdk/models/operations/getpaymentrefundrequest.md
+  - docs/sdk/models/operations/getscimusersrequest.md
   - docs/sdk/models/operations/getstoragefilerequest.md
   - docs/sdk/models/operations/gettaskprojectrequest.md
   - docs/sdk/models/operations/gettasktaskrequest.md
@@ -187,6 +190,8 @@ generatedFiles:
   - docs/sdk/models/operations/listpaymentpaymentsrequest.md
   - docs/sdk/models/operations/listpaymentpayoutsrequest.md
   - docs/sdk/models/operations/listpaymentrefundsrequest.md
+  - docs/sdk/models/operations/listscimgroupsrequest.md
+  - docs/sdk/models/operations/listscimusersrequest.md
   - docs/sdk/models/operations/liststoragefilesrequest.md
   - docs/sdk/models/operations/listtaskprojectsrequest.md
   - docs/sdk/models/operations/listtasktasksrequest.md
@@ -242,6 +247,8 @@ generatedFiles:
   - docs/sdk/models/operations/patchpassthroughrawresponseresult.md
   - docs/sdk/models/operations/patchpaymentlinkrequest.md
   - docs/sdk/models/operations/patchpaymentpaymentrequest.md
+  - docs/sdk/models/operations/patchscimgroupsrequest.md
+  - docs/sdk/models/operations/patchscimusersrequest.md
   - docs/sdk/models/operations/patchstoragefilerequest.md
   - docs/sdk/models/operations/patchtaskprojectrequest.md
   - docs/sdk/models/operations/patchtasktaskrequest.md
@@ -290,6 +297,8 @@ generatedFiles:
   - docs/sdk/models/operations/removepassthroughresponseresult.md
   - docs/sdk/models/operations/removepaymentlinkrequest.md
   - docs/sdk/models/operations/removepaymentpaymentrequest.md
+  - docs/sdk/models/operations/removescimgroupsrequest.md
+  - docs/sdk/models/operations/removescimusersrequest.md
   - docs/sdk/models/operations/removestoragefilerequest.md
   - docs/sdk/models/operations/removetaskprojectrequest.md
   - docs/sdk/models/operations/removetasktaskrequest.md
@@ -340,6 +349,8 @@ generatedFiles:
   - docs/sdk/models/operations/updatepassthroughrawresponseresult.md
   - docs/sdk/models/operations/updatepaymentlinkrequest.md
   - docs/sdk/models/operations/updatepaymentpaymentrequest.md
+  - docs/sdk/models/operations/updatescimgroupsrequest.md
+  - docs/sdk/models/operations/updatescimusersrequest.md
   - docs/sdk/models/operations/updatestoragefilerequest.md
   - docs/sdk/models/operations/updatetaskprojectrequest.md
   - docs/sdk/models/operations/updatetasktaskrequest.md
@@ -366,6 +377,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingtelephone.md
   - docs/sdk/models/shared/accountingtelephonetype.md
   - docs/sdk/models/shared/accountingtransaction.md
+  - docs/sdk/models/shared/accountingtransactioncontact.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/apicalltype.md
@@ -429,6 +441,7 @@ generatedFiles:
   - docs/sdk/models/shared/enrichpersonworkhistory.md
   - docs/sdk/models/shared/enrichtelephone.md
   - docs/sdk/models/shared/enrichtelephonetype.md
+  - docs/sdk/models/shared/ethnicity.md
   - docs/sdk/models/shared/event.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/fromwebhook.md
@@ -436,6 +449,7 @@ generatedFiles:
   - docs/sdk/models/shared/genaimodel.md
   - docs/sdk/models/shared/genaiprompt.md
   - docs/sdk/models/shared/gender.md
+  - docs/sdk/models/shared/group.md
   - docs/sdk/models/shared/hriscompany.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/hriscompensationfrequency.md
@@ -463,6 +477,7 @@ generatedFiles:
   - docs/sdk/models/shared/kmspage.md
   - docs/sdk/models/shared/kmspagetype.md
   - docs/sdk/models/shared/kmsspace.md
+  - docs/sdk/models/shared/level.md
   - docs/sdk/models/shared/listaccountid.md
   - docs/sdk/models/shared/listapplicationid.md
   - docs/sdk/models/shared/listcandidateid.md
@@ -505,6 +520,7 @@ generatedFiles:
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/objecttype.md
+  - docs/sdk/models/shared/operation.md
   - docs/sdk/models/shared/origin.md
   - docs/sdk/models/shared/paymentcollectionmethod.md
   - docs/sdk/models/shared/paymentlink.md
@@ -538,6 +554,8 @@ generatedFiles:
   - docs/sdk/models/shared/propertycrmleadaddress.md
   - docs/sdk/models/shared/propertyenrichcompanyaddress.md
   - docs/sdk/models/shared/propertyenrichpersonaddress.md
+  - docs/sdk/models/shared/propertygroupmeta.md
+  - docs/sdk/models/shared/propertygroupschemas.md
   - docs/sdk/models/shared/propertyhriscompanyaddress.md
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
@@ -548,10 +566,23 @@ generatedFiles:
   - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.md
   - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.md
   - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
+  - docs/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanager.md
+  - docs/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanagertype.md
   - docs/sdk/models/shared/propertystoragepermissionroles.md
   - docs/sdk/models/shared/propertyuccalltelephone.md
   - docs/sdk/models/shared/propertyuccalltelephonetype.md
+  - docs/sdk/models/shared/propertyusermeta.md
+  - docs/sdk/models/shared/propertyusermetaresourcetype.md
+  - docs/sdk/models/shared/propertyusername.md
+  - docs/sdk/models/shared/propertyuserschemas.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20user.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20usergender.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10user.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10usergender.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20user.md
+  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20usergender.md
   - docs/sdk/models/shared/recommendation.md
+  - docs/sdk/models/shared/resourcetype.md
   - docs/sdk/models/shared/role.md
   - docs/sdk/models/shared/searchdomain.md
   - docs/sdk/models/shared/searchemail.md
@@ -559,6 +590,7 @@ generatedFiles:
   - docs/sdk/models/shared/searchname.md
   - docs/sdk/models/shared/searchtwitter.md
   - docs/sdk/models/shared/security.md
+  - docs/sdk/models/shared/sexualorientation.md
   - docs/sdk/models/shared/sizeunit.md
   - docs/sdk/models/shared/status.md
   - docs/sdk/models/shared/storagefile.md
@@ -583,6 +615,9 @@ generatedFiles:
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
+  - docs/sdk/models/shared/undefined.md
+  - docs/sdk/models/shared/undefinedtype.md
+  - docs/sdk/models/shared/user.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weightunit.md
@@ -850,11 +885,16 @@ generatedFiles:
   - src/funcs/genaiCreateGenaiPrompt.ts
   - src/funcs/genaiListGenaiModels.ts
   - src/funcs/groupCreateHrisGroup.ts
+  - src/funcs/groupCreateScimGroups.ts
   - src/funcs/groupGetHrisGroup.ts
   - src/funcs/groupListHrisGroups.ts
+  - src/funcs/groupListScimGroups.ts
   - src/funcs/groupPatchHrisGroup.ts
+  - src/funcs/groupPatchScimGroups.ts
   - src/funcs/groupRemoveHrisGroup.ts
+  - src/funcs/groupRemoveScimGroups.ts
   - src/funcs/groupUpdateHrisGroup.ts
+  - src/funcs/groupUpdateScimGroups.ts
   - src/funcs/hrisCreateHrisCompany.ts
   - src/funcs/hrisCreateHrisEmployee.ts
   - src/funcs/hrisCreateHrisGroup.ts
@@ -1057,6 +1097,17 @@ generatedFiles:
   - src/funcs/promptCreateGenaiPrompt.ts
   - src/funcs/refundGetPaymentRefund.ts
   - src/funcs/refundListPaymentRefunds.ts
+  - src/funcs/scimCreateScimGroups.ts
+  - src/funcs/scimCreateScimUsers.ts
+  - src/funcs/scimGetScimUsers.ts
+  - src/funcs/scimListScimGroups.ts
+  - src/funcs/scimListScimUsers.ts
+  - src/funcs/scimPatchScimGroups.ts
+  - src/funcs/scimPatchScimUsers.ts
+  - src/funcs/scimRemoveScimGroups.ts
+  - src/funcs/scimRemoveScimUsers.ts
+  - src/funcs/scimUpdateScimGroups.ts
+  - src/funcs/scimUpdateScimUsers.ts
   - src/funcs/scorecardCreateAtsScorecard.ts
   - src/funcs/scorecardGetAtsScorecard.ts
   - src/funcs/scorecardListAtsScorecards.ts
@@ -1152,6 +1203,12 @@ generatedFiles:
   - src/funcs/unifiedUpdateUnifiedConnection.ts
   - src/funcs/unifiedUpdateUnifiedWebhook.ts
   - src/funcs/unifiedUpdateUnifiedWebhookTrigger.ts
+  - src/funcs/userCreateScimUsers.ts
+  - src/funcs/userGetScimUsers.ts
+  - src/funcs/userListScimUsers.ts
+  - src/funcs/userPatchScimUsers.ts
+  - src/funcs/userRemoveScimUsers.ts
+  - src/funcs/userUpdateScimUsers.ts
   - src/funcs/webhookCreateUnifiedWebhook.ts
   - src/funcs/webhookGetUnifiedWebhook.ts
   - src/funcs/webhookListUnifiedWebhooks.ts
@@ -1267,6 +1324,8 @@ generatedFiles:
   - src/sdk/models/operations/createpassthroughraw.ts
   - src/sdk/models/operations/createpaymentlink.ts
   - src/sdk/models/operations/createpaymentpayment.ts
+  - src/sdk/models/operations/createscimgroups.ts
+  - src/sdk/models/operations/createscimusers.ts
   - src/sdk/models/operations/createstoragefile.ts
   - src/sdk/models/operations/createtaskproject.ts
   - src/sdk/models/operations/createtasktask.ts
@@ -1316,6 +1375,7 @@ generatedFiles:
   - src/sdk/models/operations/getpaymentpayment.ts
   - src/sdk/models/operations/getpaymentpayout.ts
   - src/sdk/models/operations/getpaymentrefund.ts
+  - src/sdk/models/operations/getscimusers.ts
   - src/sdk/models/operations/getstoragefile.ts
   - src/sdk/models/operations/gettaskproject.ts
   - src/sdk/models/operations/gettasktask.ts
@@ -1375,6 +1435,8 @@ generatedFiles:
   - src/sdk/models/operations/listpaymentpayments.ts
   - src/sdk/models/operations/listpaymentpayouts.ts
   - src/sdk/models/operations/listpaymentrefunds.ts
+  - src/sdk/models/operations/listscimgroups.ts
+  - src/sdk/models/operations/listscimusers.ts
   - src/sdk/models/operations/liststoragefiles.ts
   - src/sdk/models/operations/listtaskprojects.ts
   - src/sdk/models/operations/listtasktasks.ts
@@ -1425,6 +1487,8 @@ generatedFiles:
   - src/sdk/models/operations/patchpassthroughraw.ts
   - src/sdk/models/operations/patchpaymentlink.ts
   - src/sdk/models/operations/patchpaymentpayment.ts
+  - src/sdk/models/operations/patchscimgroups.ts
+  - src/sdk/models/operations/patchscimusers.ts
   - src/sdk/models/operations/patchstoragefile.ts
   - src/sdk/models/operations/patchtaskproject.ts
   - src/sdk/models/operations/patchtasktask.ts
@@ -1470,6 +1534,8 @@ generatedFiles:
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/removepaymentlink.ts
   - src/sdk/models/operations/removepaymentpayment.ts
+  - src/sdk/models/operations/removescimgroups.ts
+  - src/sdk/models/operations/removescimusers.ts
   - src/sdk/models/operations/removestoragefile.ts
   - src/sdk/models/operations/removetaskproject.ts
   - src/sdk/models/operations/removetasktask.ts
@@ -1515,6 +1581,8 @@ generatedFiles:
   - src/sdk/models/operations/updatepassthroughraw.ts
   - src/sdk/models/operations/updatepaymentlink.ts
   - src/sdk/models/operations/updatepaymentpayment.ts
+  - src/sdk/models/operations/updatescimgroups.ts
+  - src/sdk/models/operations/updatescimusers.ts
   - src/sdk/models/operations/updatestoragefile.ts
   - src/sdk/models/operations/updatetaskproject.ts
   - src/sdk/models/operations/updatetasktask.ts
@@ -1537,6 +1605,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtelephone.ts
   - src/sdk/models/shared/accountingtransaction.ts
+  - src/sdk/models/shared/accountingtransactioncontact.ts
   - src/sdk/models/shared/accountingtransactionlineitem.ts
   - src/sdk/models/shared/apicall.ts
   - src/sdk/models/shared/atsactivity.ts
@@ -1583,6 +1652,7 @@ generatedFiles:
   - src/sdk/models/shared/genaicontent.ts
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/genaiprompt.ts
+  - src/sdk/models/shared/group.ts
   - src/sdk/models/shared/hriscompany.ts
   - src/sdk/models/shared/hriscompensation.ts
   - src/sdk/models/shared/hrisemail.ts
@@ -1631,6 +1701,8 @@ generatedFiles:
   - src/sdk/models/shared/propertycrmleadaddress.ts
   - src/sdk/models/shared/propertyenrichcompanyaddress.ts
   - src/sdk/models/shared/propertyenrichpersonaddress.ts
+  - src/sdk/models/shared/propertygroupmeta.ts
+  - src/sdk/models/shared/propertygroupschemas.ts
   - src/sdk/models/shared/propertyhriscompanyaddress.ts
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
@@ -1641,8 +1713,15 @@ generatedFiles:
   - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.ts
   - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.ts
   - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.ts
+  - src/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanager.ts
   - src/sdk/models/shared/propertystoragepermissionroles.ts
   - src/sdk/models/shared/propertyuccalltelephone.ts
+  - src/sdk/models/shared/propertyusermeta.ts
+  - src/sdk/models/shared/propertyusername.ts
+  - src/sdk/models/shared/propertyuserschemas.ts
+  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20user.ts
+  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10user.ts
+  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20user.ts
   - src/sdk/models/shared/security.ts
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
@@ -1657,6 +1736,8 @@ generatedFiles:
   - src/sdk/models/shared/uccontact.ts
   - src/sdk/models/shared/ucemail.ts
   - src/sdk/models/shared/uctelephone.ts
+  - src/sdk/models/shared/undefined.ts
+  - src/sdk/models/shared/user.ts
   - src/sdk/models/shared/webhook.ts
   - src/sdk/note.ts
   - src/sdk/organization.ts
@@ -1670,6 +1751,7 @@ generatedFiles:
   - src/sdk/project.ts
   - src/sdk/prompt.ts
   - src/sdk/refund.ts
+  - src/sdk/scim.ts
   - src/sdk/scorecard.ts
   - src/sdk/sdk.ts
   - src/sdk/space.ts
@@ -1690,6 +1772,7 @@ generatedFiles:
   - src/sdk/types/streams.ts
   - src/sdk/uc.ts
   - src/sdk/unified.ts
+  - src/sdk/user.ts
   - src/sdk/webhook.ts
   - tsconfig.json
 examples:
@@ -3924,3 +4007,68 @@ examples:
       responses:
         "200":
           text/plain: "<value>"
+  createScimGroups:
+    speakeasy-default-create-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+  listScimGroups:
+    speakeasy-default-list-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchScimGroups:
+    speakeasy-default-patch-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeScimGroups:
+    speakeasy-default-remove-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateScimGroups:
+    speakeasy-default-update-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  createScimUsers:
+    speakeasy-default-create-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getScimUsers:
+    speakeasy-default-get-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  listScimUsers:
+    speakeasy-default-list-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchScimUsers:
+    speakeasy-default-patch-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeScimUsers:
+    speakeasy-default-remove-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateScimUsers:
+    speakeasy-default-update-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"

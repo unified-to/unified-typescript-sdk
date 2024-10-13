@@ -5,11 +5,11 @@
 ```typescript
 import { PropertyConnectionCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionCategories = "enrich";
+let value: PropertyConnectionCategories = "payment";
 ```
 
 ## Values
 
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task"
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim"
 ```

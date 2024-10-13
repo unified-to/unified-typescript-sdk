@@ -3,11 +3,16 @@
  */
 
 import { groupCreateHrisGroup } from "../funcs/groupCreateHrisGroup.js";
+import { groupCreateScimGroups } from "../funcs/groupCreateScimGroups.js";
 import { groupGetHrisGroup } from "../funcs/groupGetHrisGroup.js";
 import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
+import { groupListScimGroups } from "../funcs/groupListScimGroups.js";
 import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
+import { groupPatchScimGroups } from "../funcs/groupPatchScimGroups.js";
 import { groupRemoveHrisGroup } from "../funcs/groupRemoveHrisGroup.js";
+import { groupRemoveScimGroups } from "../funcs/groupRemoveScimGroups.js";
 import { groupUpdateHrisGroup } from "../funcs/groupUpdateHrisGroup.js";
+import { groupUpdateScimGroups } from "../funcs/groupUpdateScimGroups.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -22,6 +27,20 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupCreateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create group
+   */
+  async createScimGroups(
+    request: operations.CreateScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Group> {
+    return unwrapAsync(groupCreateScimGroups(
       this,
       request,
       options,
@@ -57,6 +76,20 @@ export class Group extends ClientSDK {
   }
 
   /**
+   * List groups
+   */
+  async listScimGroups(
+    request: operations.ListScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.Group>> {
+    return unwrapAsync(groupListScimGroups(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a group
    */
   async patchHrisGroup(
@@ -64,6 +97,20 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupPatchHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update group
+   */
+  async patchScimGroups(
+    request: operations.PatchScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Group> {
+    return unwrapAsync(groupPatchScimGroups(
       this,
       request,
       options,
@@ -85,6 +132,20 @@ export class Group extends ClientSDK {
   }
 
   /**
+   * Delete group
+   */
+  async removeScimGroups(
+    request: operations.RemoveScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(groupRemoveScimGroups(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a group
    */
   async updateHrisGroup(
@@ -92,6 +153,20 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupUpdateHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update group
+   */
+  async updateScimGroups(
+    request: operations.UpdateScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Group> {
+    return unwrapAsync(groupUpdateScimGroups(
       this,
       request,
       options,

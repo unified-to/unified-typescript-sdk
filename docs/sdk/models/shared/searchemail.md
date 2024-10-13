@@ -5,7 +5,7 @@
 ```typescript
 import { SearchEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SearchEmail = "supported";
+let value: SearchEmail = "not-supported";
 ```
 
 ## Values

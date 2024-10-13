@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyPropertyIntegrationSupportWebhookEventsUpdated } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyPropertyIntegrationSupportWebhookEventsUpdated = "native";
+let value: PropertyPropertyIntegrationSupportWebhookEventsUpdated = "virtual";
 ```
 
 ## Values

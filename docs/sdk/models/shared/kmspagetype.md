@@ -5,7 +5,7 @@
 ```typescript
 import { KmsPageType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: KmsPageType = "HTML";
+let value: KmsPageType = "TEXT";
 ```
 
 ## Values

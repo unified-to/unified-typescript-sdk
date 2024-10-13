@@ -5,7 +5,7 @@
 import * as z from "zod";
 
 export type CommerceItemOption = {
-  id: string;
+  id?: string | undefined;
   name: string;
   position?: number | undefined;
   values: Array<string>;
@@ -17,7 +17,7 @@ export const CommerceItemOption$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  id: z.string(),
+  id: z.string().optional(),
   name: z.string(),
   position: z.number().optional(),
   values: z.array(z.string()),
@@ -25,7 +25,7 @@ export const CommerceItemOption$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CommerceItemOption$Outbound = {
-  id: string;
+  id?: string | undefined;
   name: string;
   position?: number | undefined;
   values: Array<string>;
@@ -37,7 +37,7 @@ export const CommerceItemOption$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceItemOption
 > = z.object({
-  id: z.string(),
+  id: z.string().optional(),
   name: z.string(),
   position: z.number().optional(),
   values: z.array(z.string()),

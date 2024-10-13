@@ -9,11 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "storage",
+    "ticketing",
   ],
   integrationType: "<value>",
   permissions: [
-    "ats_scorecard_read",
+    "kms_page_read",
   ],
 };
 ```
@@ -26,7 +26,7 @@ let value: Connection = {
 | `authAwsArn`                                                                                          | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `categories`                                                                                          | [shared.PropertyConnectionCategories](../../../sdk/models/shared/propertyconnectioncategories.md)[]   | :heavy_check_mark:                                                                                    | The Integration categories that this connection supports                                              |
 | `createdAt`                                                                                           | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)         | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
-| `cursorsCache`                                                                                        | Record<string, *any*>[]                                                                               | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
+| `cursorsCache`                                                                                        | [shared.Undefined](../../../sdk/models/shared/undefined.md)[]                                         | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `environment`                                                                                         | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `externalXref`                                                                                        | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `id`                                                                                                  | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

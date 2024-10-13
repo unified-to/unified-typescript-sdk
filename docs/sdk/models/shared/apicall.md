@@ -11,7 +11,7 @@ let value: ApiCall = {
   name: "<value>",
   path: "/usr/local/src",
   status: "<value>",
-  type: "inbound",
+  type: "webhook",
 };
 ```
 

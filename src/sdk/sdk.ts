@@ -61,6 +61,7 @@ import { Pipeline } from "./pipeline.js";
 import { Project } from "./project.js";
 import { Prompt } from "./prompt.js";
 import { Refund } from "./refund.js";
+import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
@@ -72,6 +73,7 @@ import { Timeoff } from "./timeoff.js";
 import { Transaction } from "./transaction.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
+import { User } from "./user.js";
 import { Webhook } from "./webhook.js";
 
 export class UnifiedTo extends ClientSDK {
@@ -333,6 +335,16 @@ export class UnifiedTo extends ClientSDK {
   private _refund?: Refund;
   get refund(): Refund {
     return (this._refund ??= new Refund(this._options));
+  }
+
+  private _scim?: Scim;
+  get scim(): Scim {
+    return (this._scim ??= new Scim(this._options));
+  }
+
+  private _user?: User;
+  get user(): User {
+    return (this._user ??= new User(this._options));
   }
 
   private _storage?: Storage;

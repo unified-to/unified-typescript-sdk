@@ -11,7 +11,7 @@ let value: ListPassthroughsResponse = {
       "<value>",
     ],
   },
-  result: new TextEncoder().encode("0xf4EA54b049"),
+  result: "<value>",
 };
 ```
 

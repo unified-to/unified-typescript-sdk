@@ -6,11 +6,10 @@
 import { KmsPage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsPage = {
-  downloadUrl: "https://accomplished-planula.biz",
-  id: "<id>",
+  downloadUrl: "https://shocked-vestment.biz/",
   spaceId: "<id>",
   title: "<value>",
-  type: "TEXT",
+  type: "MARKDOWN",
 };
 ```
 
@@ -20,7 +19,7 @@ let value: KmsPage = {
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `downloadUrl`                                                                                 | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `id`                                                                                          | *string*                                                                                      | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `isActive`                                                                                    | *boolean*                                                                                     | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `parentPageId`                                                                                | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |

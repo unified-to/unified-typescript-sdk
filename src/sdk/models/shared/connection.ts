@@ -20,6 +20,12 @@ import {
   PropertyConnectionPermissions$inboundSchema,
   PropertyConnectionPermissions$outboundSchema,
 } from "./propertyconnectionpermissions.js";
+import {
+  Undefined,
+  Undefined$inboundSchema,
+  Undefined$Outbound,
+  Undefined$outboundSchema,
+} from "./undefined.js";
 
 /**
  * A connection represents a specific authentication of an integration.
@@ -35,7 +41,7 @@ export type Connection = {
    */
   categories: Array<PropertyConnectionCategories>;
   createdAt?: Date | undefined;
-  cursorsCache?: Array<{ [k: string]: any }> | undefined;
+  cursorsCache?: Array<Undefined> | undefined;
   environment?: string | undefined;
   externalXref?: string | undefined;
   id?: string | undefined;
@@ -59,7 +65,7 @@ export const Connection$inboundSchema: z.ZodType<
   categories: z.array(PropertyConnectionCategories$inboundSchema),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  cursors_cache: z.array(z.record(z.any())).optional(),
+  cursors_cache: z.array(Undefined$inboundSchema).optional(),
   environment: z.string().default("Production"),
   external_xref: z.string().optional(),
   id: z.string().optional(),
@@ -96,7 +102,7 @@ export type Connection$Outbound = {
   auth_aws_arn?: string | undefined;
   categories: Array<string>;
   created_at?: string | undefined;
-  cursors_cache?: Array<{ [k: string]: any }> | undefined;
+  cursors_cache?: Array<Undefined$Outbound> | undefined;
   environment: string;
   external_xref?: string | undefined;
   id?: string | undefined;
@@ -119,7 +125,7 @@ export const Connection$outboundSchema: z.ZodType<
   authAwsArn: z.string().optional(),
   categories: z.array(PropertyConnectionCategories$outboundSchema),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  cursorsCache: z.array(z.record(z.any())).optional(),
+  cursorsCache: z.array(Undefined$outboundSchema).optional(),
   environment: z.string().default("Production"),
   externalXref: z.string().optional(),
   id: z.string().optional(),

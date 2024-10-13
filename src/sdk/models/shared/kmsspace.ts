@@ -8,7 +8,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 export type KmsSpace = {
   createdAt?: Date | undefined;
   description?: string | undefined;
-  id: string;
+  id?: string | undefined;
   isActive?: boolean | undefined;
   name: string;
   parentSpaceId?: string | undefined;
@@ -26,7 +26,7 @@ export const KmsSpace$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string(),
   parent_space_id: z.string().default("sp"),
@@ -48,7 +48,7 @@ export const KmsSpace$inboundSchema: z.ZodType<
 export type KmsSpace$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
-  id: string;
+  id?: string | undefined;
   is_active?: boolean | undefined;
   name: string;
   parent_space_id: string;
@@ -65,7 +65,7 @@ export const KmsSpace$outboundSchema: z.ZodType<
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string(),
   parentSpaceId: z.string().default("sp"),
