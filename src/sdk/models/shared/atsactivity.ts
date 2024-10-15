@@ -39,6 +39,7 @@ export type AtsActivity = {
   isPrivate?: boolean | undefined;
   jobId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  subType?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail> | undefined;
   type?: AtsActivityType | undefined;
@@ -90,6 +91,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   is_private: z.boolean().optional(),
   job_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  sub_type: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$inboundSchema).optional(),
   type: AtsActivityType$inboundSchema.optional(),
@@ -105,6 +107,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
     "interview_id": "interviewId",
     "is_private": "isPrivate",
     "job_id": "jobId",
+    "sub_type": "subType",
     "updated_at": "updatedAt",
     "user_ids": "userIds",
   });
@@ -125,6 +128,7 @@ export type AtsActivity$Outbound = {
   is_private?: boolean | undefined;
   job_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  sub_type?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail$Outbound> | undefined;
   type?: string | undefined;
@@ -151,6 +155,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   isPrivate: z.boolean().optional(),
   jobId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  subType: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$outboundSchema).optional(),
   type: AtsActivityType$outboundSchema.optional(),
@@ -165,6 +170,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
     interviewId: "interview_id",
     isPrivate: "is_private",
     jobId: "job_id",
+    subType: "sub_type",
     updatedAt: "updated_at",
     userIds: "user_ids",
   });
