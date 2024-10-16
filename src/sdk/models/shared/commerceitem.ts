@@ -24,6 +24,7 @@ import {
 } from "./commercemetadata.js";
 
 export type CommerceItem = {
+  accountId?: string | undefined;
   collectionIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
@@ -53,6 +54,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  account_id: z.string().optional(),
   collection_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -75,6 +77,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   vendor_name: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "account_id": "accountId",
     "collection_ids": "collectionIds",
     "created_at": "createdAt",
     "is_active": "isActive",
@@ -88,6 +91,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CommerceItem$Outbound = {
+  account_id?: string | undefined;
   collection_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
@@ -114,6 +118,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceItem
 > = z.object({
+  accountId: z.string().optional(),
   collectionIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
@@ -134,6 +139,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   vendorName: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    accountId: "account_id",
     collectionIds: "collection_ids",
     createdAt: "created_at",
     isActive: "is_active",

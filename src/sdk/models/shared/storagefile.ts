@@ -20,6 +20,7 @@ export type StorageFileType = ClosedEnum<typeof StorageFileType>;
 
 export type StorageFile = {
   createdAt?: Date | undefined;
+  data?: string | undefined;
   description?: string | undefined;
   downloadUrl?: string | undefined;
   hash?: string | undefined;
@@ -64,6 +65,7 @@ export const StorageFile$inboundSchema: z.ZodType<
 > = z.object({
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  data: z.string().optional(),
   description: z.string().optional(),
   download_url: z.string().optional(),
   hash: z.string().optional(),
@@ -92,6 +94,7 @@ export const StorageFile$inboundSchema: z.ZodType<
 /** @internal */
 export type StorageFile$Outbound = {
   created_at?: string | undefined;
+  data?: string | undefined;
   description?: string | undefined;
   download_url?: string | undefined;
   hash?: string | undefined;
@@ -114,6 +117,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   StorageFile
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  data: z.string().optional(),
   description: z.string().optional(),
   downloadUrl: z.string().optional(),
   hash: z.string().optional(),
