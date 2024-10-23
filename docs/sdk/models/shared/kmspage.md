@@ -6,10 +6,10 @@
 import { KmsPage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsPage = {
-  downloadUrl: "https://shocked-vestment.biz/",
+  downloadUrl: "https://pale-milestone.biz",
   spaceId: "<id>",
   title: "<value>",
-  type: "MARKDOWN",
+  type: "TEXT",
 };
 ```
 

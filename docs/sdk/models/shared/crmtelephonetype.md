@@ -5,7 +5,7 @@
 ```typescript
 import { CrmTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CrmTelephoneType = "HOME";
+let value: CrmTelephoneType = "OTHER";
 ```
 
 ## Values

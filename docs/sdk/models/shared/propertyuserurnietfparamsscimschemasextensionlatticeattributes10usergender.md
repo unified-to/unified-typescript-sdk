@@ -7,7 +7,7 @@ import { PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGen
 
 let value:
   PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender =
-    "male";
+    "female";
 ```
 
 ## Values

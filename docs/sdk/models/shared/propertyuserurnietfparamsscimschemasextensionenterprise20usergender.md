@@ -6,7 +6,7 @@
 import { PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender =
-  "male";
+  "female";
 ```
 
 ## Values

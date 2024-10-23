@@ -5,7 +5,7 @@
 ```typescript
 import { AtsCompensationType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsCompensationType = "SALARY";
+let value: AtsCompensationType = "STOCK_OPTIONS";
 ```
 
 ## Values

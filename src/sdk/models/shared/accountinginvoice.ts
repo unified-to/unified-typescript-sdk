@@ -33,6 +33,12 @@ export type AccountingInvoiceStatus = ClosedEnum<
   typeof AccountingInvoiceStatus
 >;
 
+export const AccountingInvoiceType = {
+  Bill: "BILL",
+  Invoice: "INVOICE",
+} as const;
+export type AccountingInvoiceType = ClosedEnum<typeof AccountingInvoiceType>;
+
 export type AccountingInvoice = {
   balanceAmount?: number | undefined;
   cancelledAt?: Date | undefined;
@@ -42,6 +48,7 @@ export type AccountingInvoice = {
   discountAmount?: number | undefined;
   dueAt?: Date | undefined;
   id?: string | undefined;
+  invoiceAt?: Date | undefined;
   invoiceNumber?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
   notes?: string | undefined;
@@ -55,6 +62,7 @@ export type AccountingInvoice = {
   status?: AccountingInvoiceStatus | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
+  type?: AccountingInvoiceType | undefined;
   updatedAt?: Date | undefined;
   url?: string | undefined;
 };
@@ -102,6 +110,27 @@ export namespace AccountingInvoiceStatus$ {
 }
 
 /** @internal */
+export const AccountingInvoiceType$inboundSchema: z.ZodNativeEnum<
+  typeof AccountingInvoiceType
+> = z.nativeEnum(AccountingInvoiceType);
+
+/** @internal */
+export const AccountingInvoiceType$outboundSchema: z.ZodNativeEnum<
+  typeof AccountingInvoiceType
+> = AccountingInvoiceType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingInvoiceType$ {
+  /** @deprecated use `AccountingInvoiceType$inboundSchema` instead. */
+  export const inboundSchema = AccountingInvoiceType$inboundSchema;
+  /** @deprecated use `AccountingInvoiceType$outboundSchema` instead. */
+  export const outboundSchema = AccountingInvoiceType$outboundSchema;
+}
+
+/** @internal */
 export const AccountingInvoice$inboundSchema: z.ZodType<
   AccountingInvoice,
   z.ZodTypeDef,
@@ -119,6 +148,8 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   due_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  invoice_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   invoice_number: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
   notes: z.string().optional(),
@@ -134,6 +165,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   status: AccountingInvoiceStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
   total_amount: z.number().optional(),
+  type: AccountingInvoiceType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   url: z.string().optional(),
@@ -145,6 +177,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "due_at": "dueAt",
+    "invoice_at": "invoiceAt",
     "invoice_number": "invoiceNumber",
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
@@ -168,6 +201,7 @@ export type AccountingInvoice$Outbound = {
   discount_amount?: number | undefined;
   due_at?: string | undefined;
   id?: string | undefined;
+  invoice_at?: string | undefined;
   invoice_number?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   notes?: string | undefined;
@@ -181,6 +215,7 @@ export type AccountingInvoice$Outbound = {
   status?: string | undefined;
   tax_amount?: number | undefined;
   total_amount?: number | undefined;
+  type?: string | undefined;
   updated_at?: string | undefined;
   url?: string | undefined;
 };
@@ -199,6 +234,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   discountAmount: z.number().optional(),
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  invoiceAt: z.date().transform(v => v.toISOString()).optional(),
   invoiceNumber: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   notes: z.string().optional(),
@@ -212,6 +248,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   status: AccountingInvoiceStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
   totalAmount: z.number().optional(),
+  type: AccountingInvoiceType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   url: z.string().optional(),
 }).transform((v) => {
@@ -222,6 +259,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     createdAt: "created_at",
     discountAmount: "discount_amount",
     dueAt: "due_at",
+    invoiceAt: "invoice_at",
     invoiceNumber: "invoice_number",
     paidAmount: "paid_amount",
     paidAt: "paid_at",

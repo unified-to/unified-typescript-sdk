@@ -21,6 +21,7 @@ export const ObjectType = {
   AccountingInvoice: "accounting_invoice",
   AccountingTaxrate: "accounting_taxrate",
   AccountingOrganization: "accounting_organization",
+  AccountingOrder: "accounting_order",
   PaymentPayment: "payment_payment",
   PaymentLink: "payment_link",
   PaymentPayout: "payment_payout",

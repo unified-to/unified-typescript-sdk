@@ -50,6 +50,7 @@ import { Message } from "./message.js";
 import { Messaging } from "./messaging.js";
 import { Model } from "./model.js";
 import { Note } from "./note.js";
+import { Order } from "./order.js";
 import { Organization } from "./organization.js";
 import { Page } from "./page.js";
 import { Passthrough } from "./passthrough.js";
@@ -100,6 +101,11 @@ export class UnifiedTo extends ClientSDK {
   private _journal?: Journal;
   get journal(): Journal {
     return (this._journal ??= new Journal(this._options));
+  }
+
+  private _order?: Order;
+  get order(): Order {
+    return (this._order ??= new Order(this._options));
   }
 
   private _organization?: Organization;

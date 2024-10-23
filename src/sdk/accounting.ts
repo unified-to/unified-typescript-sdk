@@ -6,12 +6,14 @@ import { accountingCreateAccountingAccount } from "../funcs/accountingCreateAcco
 import { accountingCreateAccountingContact } from "../funcs/accountingCreateAccountingContact.js";
 import { accountingCreateAccountingInvoice } from "../funcs/accountingCreateAccountingInvoice.js";
 import { accountingCreateAccountingJournal } from "../funcs/accountingCreateAccountingJournal.js";
+import { accountingCreateAccountingOrder } from "../funcs/accountingCreateAccountingOrder.js";
 import { accountingCreateAccountingTaxrate } from "../funcs/accountingCreateAccountingTaxrate.js";
 import { accountingCreateAccountingTransaction } from "../funcs/accountingCreateAccountingTransaction.js";
 import { accountingGetAccountingAccount } from "../funcs/accountingGetAccountingAccount.js";
 import { accountingGetAccountingContact } from "../funcs/accountingGetAccountingContact.js";
 import { accountingGetAccountingInvoice } from "../funcs/accountingGetAccountingInvoice.js";
 import { accountingGetAccountingJournal } from "../funcs/accountingGetAccountingJournal.js";
+import { accountingGetAccountingOrder } from "../funcs/accountingGetAccountingOrder.js";
 import { accountingGetAccountingOrganization } from "../funcs/accountingGetAccountingOrganization.js";
 import { accountingGetAccountingTaxrate } from "../funcs/accountingGetAccountingTaxrate.js";
 import { accountingGetAccountingTransaction } from "../funcs/accountingGetAccountingTransaction.js";
@@ -19,6 +21,7 @@ import { accountingListAccountingAccounts } from "../funcs/accountingListAccount
 import { accountingListAccountingContacts } from "../funcs/accountingListAccountingContacts.js";
 import { accountingListAccountingInvoices } from "../funcs/accountingListAccountingInvoices.js";
 import { accountingListAccountingJournals } from "../funcs/accountingListAccountingJournals.js";
+import { accountingListAccountingOrders } from "../funcs/accountingListAccountingOrders.js";
 import { accountingListAccountingOrganizations } from "../funcs/accountingListAccountingOrganizations.js";
 import { accountingListAccountingTaxrates } from "../funcs/accountingListAccountingTaxrates.js";
 import { accountingListAccountingTransactions } from "../funcs/accountingListAccountingTransactions.js";
@@ -26,18 +29,21 @@ import { accountingPatchAccountingAccount } from "../funcs/accountingPatchAccoun
 import { accountingPatchAccountingContact } from "../funcs/accountingPatchAccountingContact.js";
 import { accountingPatchAccountingInvoice } from "../funcs/accountingPatchAccountingInvoice.js";
 import { accountingPatchAccountingJournal } from "../funcs/accountingPatchAccountingJournal.js";
+import { accountingPatchAccountingOrder } from "../funcs/accountingPatchAccountingOrder.js";
 import { accountingPatchAccountingTaxrate } from "../funcs/accountingPatchAccountingTaxrate.js";
 import { accountingPatchAccountingTransaction } from "../funcs/accountingPatchAccountingTransaction.js";
 import { accountingRemoveAccountingAccount } from "../funcs/accountingRemoveAccountingAccount.js";
 import { accountingRemoveAccountingContact } from "../funcs/accountingRemoveAccountingContact.js";
 import { accountingRemoveAccountingInvoice } from "../funcs/accountingRemoveAccountingInvoice.js";
 import { accountingRemoveAccountingJournal } from "../funcs/accountingRemoveAccountingJournal.js";
+import { accountingRemoveAccountingOrder } from "../funcs/accountingRemoveAccountingOrder.js";
 import { accountingRemoveAccountingTaxrate } from "../funcs/accountingRemoveAccountingTaxrate.js";
 import { accountingRemoveAccountingTransaction } from "../funcs/accountingRemoveAccountingTransaction.js";
 import { accountingUpdateAccountingAccount } from "../funcs/accountingUpdateAccountingAccount.js";
 import { accountingUpdateAccountingContact } from "../funcs/accountingUpdateAccountingContact.js";
 import { accountingUpdateAccountingInvoice } from "../funcs/accountingUpdateAccountingInvoice.js";
 import { accountingUpdateAccountingJournal } from "../funcs/accountingUpdateAccountingJournal.js";
+import { accountingUpdateAccountingOrder } from "../funcs/accountingUpdateAccountingOrder.js";
 import { accountingUpdateAccountingTaxrate } from "../funcs/accountingUpdateAccountingTaxrate.js";
 import { accountingUpdateAccountingTransaction } from "../funcs/accountingUpdateAccountingTransaction.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
@@ -96,6 +102,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingJournal> {
     return unwrapAsync(accountingCreateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an order
+   */
+  async createAccountingOrder(
+    request: operations.CreateAccountingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrder> {
+    return unwrapAsync(accountingCreateAccountingOrder(
       this,
       request,
       options,
@@ -180,6 +200,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingJournal> {
     return unwrapAsync(accountingGetAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an order
+   */
+  async getAccountingOrder(
+    request: operations.GetAccountingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrder> {
+    return unwrapAsync(accountingGetAccountingOrder(
       this,
       request,
       options,
@@ -285,6 +319,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * List all orders
+   */
+  async listAccountingOrders(
+    request: operations.ListAccountingOrdersRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingOrder>> {
+    return unwrapAsync(accountingListAccountingOrders(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all organizations
    */
   async listAccountingOrganizations(
@@ -383,6 +431,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Update an order
+   */
+  async patchAccountingOrder(
+    request: operations.PatchAccountingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrder> {
+    return unwrapAsync(accountingPatchAccountingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a taxrate
    */
   async patchAccountingTaxrate(
@@ -467,6 +529,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Remove an order
+   */
+  async removeAccountingOrder(
+    request: operations.RemoveAccountingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<void> {
+    return unwrapAsync(accountingRemoveAccountingOrder(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a taxrate
    */
   async removeAccountingTaxrate(
@@ -544,6 +620,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingJournal> {
     return unwrapAsync(accountingUpdateAccountingJournal(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an order
+   */
+  async updateAccountingOrder(
+    request: operations.UpdateAccountingOrderRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingOrder> {
+    return unwrapAsync(accountingUpdateAccountingOrder(
       this,
       request,
       options,

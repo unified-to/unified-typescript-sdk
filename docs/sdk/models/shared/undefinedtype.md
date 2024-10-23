@@ -5,7 +5,7 @@
 ```typescript
 import { UndefinedType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: UndefinedType = "User";
+let value: UndefinedType = "Group";
 ```
 
 ## Values

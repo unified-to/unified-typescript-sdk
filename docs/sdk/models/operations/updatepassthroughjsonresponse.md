@@ -11,7 +11,7 @@ let value: UpdatePassthroughJsonResponse = {
       "<value>",
     ],
   },
-  result: new TextEncoder().encode("0x59cCf52165"),
+  result: "<value>",
 };
 ```
 

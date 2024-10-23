@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 93cdcc39dcda25b2b2e4aa38187b5d21
+  docChecksum: ec37ac8840007140d82aa965e5a1b881
   docVersion: "1.0"
-  speakeasyVersion: 1.418.4
-  generationVersion: 2.438.3
-  releaseVersion: 2.6.4
-  configChecksum: 199224ccd6c0dfb29069468ed20390b9
+  speakeasyVersion: 1.420.0
+  generationVersion: 2.438.15
+  releaseVersion: 2.7.0
+  configChecksum: 3cbcf8ff5e4ca69396a450a87567e243
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -26,6 +26,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.1.0
+    uploadStreams: 0.1.0
 generatedFiles:
   - .eslintrc.cjs
   - .gitattributes
@@ -40,6 +41,7 @@ generatedFiles:
   - docs/sdk/models/operations/createaccountingcontactrequest.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountingjournalrequest.md
+  - docs/sdk/models/operations/createaccountingorderrequest.md
   - docs/sdk/models/operations/createaccountingtaxraterequest.md
   - docs/sdk/models/operations/createaccountingtransactionrequest.md
   - docs/sdk/models/operations/createatsactivityrequest.md
@@ -91,6 +93,7 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingcontactrequest.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
   - docs/sdk/models/operations/getaccountingjournalrequest.md
+  - docs/sdk/models/operations/getaccountingorderrequest.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
   - docs/sdk/models/operations/getaccountingtaxraterequest.md
   - docs/sdk/models/operations/getaccountingtransactionrequest.md
@@ -146,6 +149,7 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
   - docs/sdk/models/operations/listaccountingjournalsrequest.md
+  - docs/sdk/models/operations/listaccountingordersrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
   - docs/sdk/models/operations/listaccountingtaxratesrequest.md
   - docs/sdk/models/operations/listaccountingtransactionsrequest.md
@@ -211,6 +215,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchaccountingcontactrequest.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountingjournalrequest.md
+  - docs/sdk/models/operations/patchaccountingorderrequest.md
   - docs/sdk/models/operations/patchaccountingtaxraterequest.md
   - docs/sdk/models/operations/patchaccountingtransactionrequest.md
   - docs/sdk/models/operations/patchatsactivityrequest.md
@@ -264,6 +269,7 @@ generatedFiles:
   - docs/sdk/models/operations/removeaccountingcontactrequest.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountingjournalrequest.md
+  - docs/sdk/models/operations/removeaccountingorderrequest.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
   - docs/sdk/models/operations/removeaccountingtransactionrequest.md
   - docs/sdk/models/operations/removeatsactivityrequest.md
@@ -313,6 +319,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountingjournalrequest.md
+  - docs/sdk/models/operations/updateaccountingorderrequest.md
   - docs/sdk/models/operations/updateaccountingtaxraterequest.md
   - docs/sdk/models/operations/updateaccountingtransactionrequest.md
   - docs/sdk/models/operations/updateatsactivityrequest.md
@@ -369,9 +376,13 @@ generatedFiles:
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinginvoicestatus.md
+  - docs/sdk/models/shared/accountinginvoicetype.md
   - docs/sdk/models/shared/accountingjournal.md
   - docs/sdk/models/shared/accountingjournallineitem.md
   - docs/sdk/models/shared/accountinglineitem.md
+  - docs/sdk/models/shared/accountingorder.md
+  - docs/sdk/models/shared/accountingorderstatus.md
+  - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtelephone.md
@@ -534,6 +545,8 @@ generatedFiles:
   - docs/sdk/models/shared/priority.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
+  - docs/sdk/models/shared/propertyaccountingorderbillingaddress.md
+  - docs/sdk/models/shared/propertyaccountingordershippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
   - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
@@ -634,12 +647,14 @@ generatedFiles:
   - src/funcs/accountingCreateAccountingContact.ts
   - src/funcs/accountingCreateAccountingInvoice.ts
   - src/funcs/accountingCreateAccountingJournal.ts
+  - src/funcs/accountingCreateAccountingOrder.ts
   - src/funcs/accountingCreateAccountingTaxrate.ts
   - src/funcs/accountingCreateAccountingTransaction.ts
   - src/funcs/accountingGetAccountingAccount.ts
   - src/funcs/accountingGetAccountingContact.ts
   - src/funcs/accountingGetAccountingInvoice.ts
   - src/funcs/accountingGetAccountingJournal.ts
+  - src/funcs/accountingGetAccountingOrder.ts
   - src/funcs/accountingGetAccountingOrganization.ts
   - src/funcs/accountingGetAccountingTaxrate.ts
   - src/funcs/accountingGetAccountingTransaction.ts
@@ -647,6 +662,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingContacts.ts
   - src/funcs/accountingListAccountingInvoices.ts
   - src/funcs/accountingListAccountingJournals.ts
+  - src/funcs/accountingListAccountingOrders.ts
   - src/funcs/accountingListAccountingOrganizations.ts
   - src/funcs/accountingListAccountingTaxrates.ts
   - src/funcs/accountingListAccountingTransactions.ts
@@ -654,18 +670,21 @@ generatedFiles:
   - src/funcs/accountingPatchAccountingContact.ts
   - src/funcs/accountingPatchAccountingInvoice.ts
   - src/funcs/accountingPatchAccountingJournal.ts
+  - src/funcs/accountingPatchAccountingOrder.ts
   - src/funcs/accountingPatchAccountingTaxrate.ts
   - src/funcs/accountingPatchAccountingTransaction.ts
   - src/funcs/accountingRemoveAccountingAccount.ts
   - src/funcs/accountingRemoveAccountingContact.ts
   - src/funcs/accountingRemoveAccountingInvoice.ts
   - src/funcs/accountingRemoveAccountingJournal.ts
+  - src/funcs/accountingRemoveAccountingOrder.ts
   - src/funcs/accountingRemoveAccountingTaxrate.ts
   - src/funcs/accountingRemoveAccountingTransaction.ts
   - src/funcs/accountingUpdateAccountingAccount.ts
   - src/funcs/accountingUpdateAccountingContact.ts
   - src/funcs/accountingUpdateAccountingInvoice.ts
   - src/funcs/accountingUpdateAccountingJournal.ts
+  - src/funcs/accountingUpdateAccountingOrder.ts
   - src/funcs/accountingUpdateAccountingTaxrate.ts
   - src/funcs/accountingUpdateAccountingTransaction.ts
   - src/funcs/activityCreateAtsActivity.ts
@@ -1045,6 +1064,12 @@ generatedFiles:
   - src/funcs/notePatchTicketingNote.ts
   - src/funcs/noteRemoveTicketingNote.ts
   - src/funcs/noteUpdateTicketingNote.ts
+  - src/funcs/orderCreateAccountingOrder.ts
+  - src/funcs/orderGetAccountingOrder.ts
+  - src/funcs/orderListAccountingOrders.ts
+  - src/funcs/orderPatchAccountingOrder.ts
+  - src/funcs/orderRemoveAccountingOrder.ts
+  - src/funcs/orderUpdateAccountingOrder.ts
   - src/funcs/organizationGetAccountingOrganization.ts
   - src/funcs/organizationListAccountingOrganizations.ts
   - src/funcs/pageCreateKmsPage.ts
@@ -1291,6 +1316,7 @@ generatedFiles:
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
   - src/sdk/models/operations/createaccountingjournal.ts
+  - src/sdk/models/operations/createaccountingorder.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
   - src/sdk/models/operations/createaccountingtransaction.ts
   - src/sdk/models/operations/createatsactivity.ts
@@ -1338,6 +1364,7 @@ generatedFiles:
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
   - src/sdk/models/operations/getaccountingjournal.ts
+  - src/sdk/models/operations/getaccountingorder.ts
   - src/sdk/models/operations/getaccountingorganization.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
   - src/sdk/models/operations/getaccountingtransaction.ts
@@ -1393,6 +1420,7 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
   - src/sdk/models/operations/listaccountingjournals.ts
+  - src/sdk/models/operations/listaccountingorders.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
   - src/sdk/models/operations/listaccountingtransactions.ts
@@ -1455,6 +1483,7 @@ generatedFiles:
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
   - src/sdk/models/operations/patchaccountingjournal.ts
+  - src/sdk/models/operations/patchaccountingorder.ts
   - src/sdk/models/operations/patchaccountingtaxrate.ts
   - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/patchatsactivity.ts
@@ -1503,6 +1532,7 @@ generatedFiles:
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
   - src/sdk/models/operations/removeaccountingjournal.ts
+  - src/sdk/models/operations/removeaccountingorder.ts
   - src/sdk/models/operations/removeaccountingtaxrate.ts
   - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/removeatsactivity.ts
@@ -1549,6 +1579,7 @@ generatedFiles:
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
   - src/sdk/models/operations/updateaccountingjournal.ts
+  - src/sdk/models/operations/updateaccountingorder.ts
   - src/sdk/models/operations/updateaccountingtaxrate.ts
   - src/sdk/models/operations/updateaccountingtransaction.ts
   - src/sdk/models/operations/updateatsactivity.ts
@@ -1601,6 +1632,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingjournal.ts
   - src/sdk/models/shared/accountingjournallineitem.ts
   - src/sdk/models/shared/accountinglineitem.ts
+  - src/sdk/models/shared/accountingorder.ts
   - src/sdk/models/shared/accountingorganization.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtelephone.ts
@@ -1683,6 +1715,8 @@ generatedFiles:
   - src/sdk/models/shared/paymentrefund.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
+  - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
+  - src/sdk/models/shared/propertyaccountingordershippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
   - src/sdk/models/shared/propertyatsactivityfrom.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
@@ -1740,6 +1774,7 @@ generatedFiles:
   - src/sdk/models/shared/user.ts
   - src/sdk/models/shared/webhook.ts
   - src/sdk/note.ts
+  - src/sdk/order.ts
   - src/sdk/organization.ts
   - src/sdk/page.ts
   - src/sdk/passthrough.ts
@@ -4072,3 +4107,42 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
+  createAccountingOrder:
+    speakeasy-default-create-accounting-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getAccountingOrder:
+    speakeasy-default-get-accounting-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listAccountingOrders:
+    speakeasy-default-list-accounting-orders:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchAccountingOrder:
+    speakeasy-default-patch-accounting-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  removeAccountingOrder:
+    speakeasy-default-remove-accounting-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingOrder:
+    speakeasy-default-update-accounting-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}

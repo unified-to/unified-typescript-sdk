@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyUcCallTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyUcCallTelephoneType = "HOME";
+let value: PropertyUcCallTelephoneType = "MOBILE";
 ```
 
 ## Values
