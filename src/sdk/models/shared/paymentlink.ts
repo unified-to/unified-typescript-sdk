@@ -22,6 +22,7 @@ export type PaymentLink = {
   lineitems?: Array<PaymentLinkLineitem> | undefined;
   paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  successUrl?: string | undefined;
   updatedAt?: Date | undefined;
   url?: string | undefined;
 };
@@ -43,6 +44,7 @@ export const PaymentLink$inboundSchema: z.ZodType<
   lineitems: z.array(PaymentLinkLineitem$inboundSchema).optional(),
   payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  success_url: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   url: z.string().optional(),
@@ -53,6 +55,7 @@ export const PaymentLink$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_chargeable_now": "isChargeableNow",
     "payment_id": "paymentId",
+    "success_url": "successUrl",
     "updated_at": "updatedAt",
   });
 });
@@ -69,6 +72,7 @@ export type PaymentLink$Outbound = {
   lineitems?: Array<PaymentLinkLineitem$Outbound> | undefined;
   payment_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  success_url?: string | undefined;
   updated_at?: string | undefined;
   url?: string | undefined;
 };
@@ -89,6 +93,7 @@ export const PaymentLink$outboundSchema: z.ZodType<
   lineitems: z.array(PaymentLinkLineitem$outboundSchema).optional(),
   paymentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  successUrl: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   url: z.string().optional(),
 }).transform((v) => {
@@ -98,6 +103,7 @@ export const PaymentLink$outboundSchema: z.ZodType<
     isActive: "is_active",
     isChargeableNow: "is_chargeable_now",
     paymentId: "payment_id",
+    successUrl: "success_url",
     updatedAt: "updated_at",
   });
 });
