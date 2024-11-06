@@ -10,10 +10,11 @@ generation:
     requestResponseComponentNamesFeb2024: false
   auth:
     oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.7.1
+  version: 2.8.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
