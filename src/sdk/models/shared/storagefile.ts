@@ -34,6 +34,7 @@ export type StorageFile = {
   type?: StorageFileType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  version?: string | undefined;
 };
 
 /** @internal */
@@ -80,6 +81,7 @@ export const StorageFile$inboundSchema: z.ZodType<
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
+  version: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
@@ -108,6 +110,7 @@ export type StorageFile$Outbound = {
   type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  version?: string | undefined;
 };
 
 /** @internal */
@@ -131,6 +134,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   type: StorageFileType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
+  version: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
