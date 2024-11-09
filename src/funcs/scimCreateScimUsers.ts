@@ -31,7 +31,7 @@ export async function scimCreateScimUsers(
   options?: RequestOptions,
 ): Promise<
   Result<
-    shared.User,
+    shared.ScimUser,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -50,7 +50,7 @@ export async function scimCreateScimUsers(
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.User, { explode: true });
+  const body = encodeJSON("body", payload.ScimUser, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -113,7 +113,7 @@ export async function scimCreateScimUsers(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.User,
+    shared.ScimUser,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -122,7 +122,7 @@ export async function scimCreateScimUsers(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, shared.User$inboundSchema),
+    M.json(200, shared.ScimUser$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

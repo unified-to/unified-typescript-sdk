@@ -32,7 +32,7 @@ export async function scimListScimGroups(
   options?: RequestOptions,
 ): Promise<
   Result<
-    Array<shared.Group>,
+    Array<shared.ScimGroup>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,7 +113,7 @@ export async function scimListScimGroups(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.Group>,
+    Array<shared.ScimGroup>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -122,7 +122,7 @@ export async function scimListScimGroups(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, z.array(shared.Group$inboundSchema)),
+    M.json(200, z.array(shared.ScimGroup$inboundSchema)),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

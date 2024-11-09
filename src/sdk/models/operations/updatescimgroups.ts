@@ -7,7 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateScimGroupsRequest = {
-  group?: shared.Group | undefined;
+  scimGroup?: shared.ScimGroup | undefined;
   /**
    * ID of the connection
    */
@@ -24,19 +24,19 @@ export const UpdateScimGroupsRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Group: shared.Group$inboundSchema.optional(),
+  ScimGroup: shared.ScimGroup$inboundSchema.optional(),
   connection_id: z.string(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
-    "Group": "group",
+    "ScimGroup": "scimGroup",
     "connection_id": "connectionId",
   });
 });
 
 /** @internal */
 export type UpdateScimGroupsRequest$Outbound = {
-  Group?: shared.Group$Outbound | undefined;
+  ScimGroup?: shared.ScimGroup$Outbound | undefined;
   connection_id: string;
   id: string;
 };
@@ -47,12 +47,12 @@ export const UpdateScimGroupsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateScimGroupsRequest
 > = z.object({
-  group: shared.Group$outboundSchema.optional(),
+  scimGroup: shared.ScimGroup$outboundSchema.optional(),
   connectionId: z.string(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
-    group: "Group",
+    scimGroup: "ScimGroup",
     connectionId: "connection_id",
   });
 });

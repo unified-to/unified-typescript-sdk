@@ -7,7 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimUsersRequest = {
-  user?: shared.User | undefined;
+  scimUser?: shared.ScimUser | undefined;
   /**
    * ID of the connection
    */
@@ -25,7 +25,7 @@ export const CreateScimUsersRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  User: shared.User$inboundSchema.optional(),
+  ScimUser: shared.ScimUser$inboundSchema.optional(),
   connection_id: z.string(),
   count: z.number().optional(),
   filter: z.string().optional(),
@@ -34,14 +34,14 @@ export const CreateScimUsersRequest$inboundSchema: z.ZodType<
   startIndex: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "User": "user",
+    "ScimUser": "scimUser",
     "connection_id": "connectionId",
   });
 });
 
 /** @internal */
 export type CreateScimUsersRequest$Outbound = {
-  User?: shared.User$Outbound | undefined;
+  ScimUser?: shared.ScimUser$Outbound | undefined;
   connection_id: string;
   count?: number | undefined;
   filter?: string | undefined;
@@ -56,7 +56,7 @@ export const CreateScimUsersRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateScimUsersRequest
 > = z.object({
-  user: shared.User$outboundSchema.optional(),
+  scimUser: shared.ScimUser$outboundSchema.optional(),
   connectionId: z.string(),
   count: z.number().optional(),
   filter: z.string().optional(),
@@ -65,7 +65,7 @@ export const CreateScimUsersRequest$outboundSchema: z.ZodType<
   startIndex: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
-    user: "User",
+    scimUser: "ScimUser",
     connectionId: "connection_id",
   });
 });

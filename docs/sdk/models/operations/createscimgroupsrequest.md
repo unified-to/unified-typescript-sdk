@@ -12,7 +12,7 @@ let value: CreateScimGroupsRequest = {
 
 ## Fields
 
-| Field                                               | Type                                                | Required                                            | Description                                         |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `group`                                             | [shared.Group](../../../sdk/models/shared/group.md) | :heavy_minus_sign:                                  | N/A                                                 |
-| `connectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `scimGroup`                                                 | [shared.ScimGroup](../../../sdk/models/shared/scimgroup.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `connectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |

@@ -31,7 +31,7 @@ export async function scimGetScimUsers(
   options?: RequestOptions,
 ): Promise<
   Result<
-    shared.User,
+    shared.ScimUser,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -107,7 +107,7 @@ export async function scimGetScimUsers(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.User,
+    shared.ScimUser,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -116,7 +116,7 @@ export async function scimGetScimUsers(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, shared.User$inboundSchema),
+    M.json(200, shared.ScimUser$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

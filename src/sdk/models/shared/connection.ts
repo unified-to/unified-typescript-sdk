@@ -20,12 +20,6 @@ import {
   PropertyConnectionPermissions$inboundSchema,
   PropertyConnectionPermissions$outboundSchema,
 } from "./propertyconnectionpermissions.js";
-import {
-  Undefined,
-  Undefined$inboundSchema,
-  Undefined$Outbound,
-  Undefined$outboundSchema,
-} from "./undefined.js";
 
 /**
  * A connection represents a specific authentication of an integration.
@@ -41,7 +35,6 @@ export type Connection = {
    */
   categories: Array<PropertyConnectionCategories>;
   createdAt?: Date | undefined;
-  cursorsCache?: Array<Undefined> | undefined;
   environment?: string | undefined;
   externalXref?: string | undefined;
   id?: string | undefined;
@@ -65,7 +58,6 @@ export const Connection$inboundSchema: z.ZodType<
   categories: z.array(PropertyConnectionCategories$inboundSchema),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  cursors_cache: z.array(Undefined$inboundSchema).optional(),
   environment: z.string().default("Production"),
   external_xref: z.string().optional(),
   id: z.string().optional(),
@@ -85,7 +77,6 @@ export const Connection$inboundSchema: z.ZodType<
   return remap$(v, {
     "auth_aws_arn": "authAwsArn",
     "created_at": "createdAt",
-    "cursors_cache": "cursorsCache",
     "external_xref": "externalXref",
     "integration_type": "integrationType",
     "is_paused": "isPaused",
@@ -102,7 +93,6 @@ export type Connection$Outbound = {
   auth_aws_arn?: string | undefined;
   categories: Array<string>;
   created_at?: string | undefined;
-  cursors_cache?: Array<Undefined$Outbound> | undefined;
   environment: string;
   external_xref?: string | undefined;
   id?: string | undefined;
@@ -125,7 +115,6 @@ export const Connection$outboundSchema: z.ZodType<
   authAwsArn: z.string().optional(),
   categories: z.array(PropertyConnectionCategories$outboundSchema),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  cursorsCache: z.array(Undefined$outboundSchema).optional(),
   environment: z.string().default("Production"),
   externalXref: z.string().optional(),
   id: z.string().optional(),
@@ -140,7 +129,6 @@ export const Connection$outboundSchema: z.ZodType<
   return remap$(v, {
     authAwsArn: "auth_aws_arn",
     createdAt: "created_at",
-    cursorsCache: "cursors_cache",
     externalXref: "external_xref",
     integrationType: "integration_type",
     isPaused: "is_paused",

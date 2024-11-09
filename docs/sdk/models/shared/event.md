@@ -5,7 +5,7 @@
 ```typescript
 import { Event } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Event = "deleted";
+let value: Event = "created";
 ```
 
 ## Values

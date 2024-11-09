@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 959e2ac257abb80b8937dce372ee1c82
+  docChecksum: b5c113c07df6378c9b107904984f614c
   docVersion: "1.0"
-  speakeasyVersion: 1.434.0
-  generationVersion: 2.452.0
-  releaseVersion: 2.8.1
-  configChecksum: 7412f352333b73303edc1aaff9b6d205
+  speakeasyVersion: 1.436.0
+  generationVersion: 2.455.2
+  releaseVersion: 2.8.2
+  configChecksum: 2fc70ff53240418dd0657bb0b679c303
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -68,6 +68,10 @@ generatedFiles:
   - docs/sdk/models/operations/createhrislocationrequest.md
   - docs/sdk/models/operations/createkmspagerequest.md
   - docs/sdk/models/operations/createkmsspacerequest.md
+  - docs/sdk/models/operations/createlmsclassrequest.md
+  - docs/sdk/models/operations/createlmscourserequest.md
+  - docs/sdk/models/operations/createlmsinstructorrequest.md
+  - docs/sdk/models/operations/createlmsstudentrequest.md
   - docs/sdk/models/operations/createmartechlistrequest.md
   - docs/sdk/models/operations/createmartechmemberrequest.md
   - docs/sdk/models/operations/createmessagingmessagerequest.md
@@ -79,6 +83,11 @@ generatedFiles:
   - docs/sdk/models/operations/createpassthroughrawresponseresult.md
   - docs/sdk/models/operations/createpaymentlinkrequest.md
   - docs/sdk/models/operations/createpaymentpaymentrequest.md
+  - docs/sdk/models/operations/createrepobranchrequest.md
+  - docs/sdk/models/operations/createrepocommitrequest.md
+  - docs/sdk/models/operations/createrepoorganizationrequest.md
+  - docs/sdk/models/operations/createrepopullrequestrequest.md
+  - docs/sdk/models/operations/createreporepositoryrequest.md
   - docs/sdk/models/operations/createscimgroupsrequest.md
   - docs/sdk/models/operations/createscimusersrequest.md
   - docs/sdk/models/operations/createstoragefilerequest.md
@@ -123,6 +132,10 @@ generatedFiles:
   - docs/sdk/models/operations/gethristimeoffrequest.md
   - docs/sdk/models/operations/getkmspagerequest.md
   - docs/sdk/models/operations/getkmsspacerequest.md
+  - docs/sdk/models/operations/getlmsclassrequest.md
+  - docs/sdk/models/operations/getlmscourserequest.md
+  - docs/sdk/models/operations/getlmsinstructorrequest.md
+  - docs/sdk/models/operations/getlmsstudentrequest.md
   - docs/sdk/models/operations/getmartechlistrequest.md
   - docs/sdk/models/operations/getmartechmemberrequest.md
   - docs/sdk/models/operations/getmessagingchannelrequest.md
@@ -131,6 +144,12 @@ generatedFiles:
   - docs/sdk/models/operations/getpaymentpaymentrequest.md
   - docs/sdk/models/operations/getpaymentpayoutrequest.md
   - docs/sdk/models/operations/getpaymentrefundrequest.md
+  - docs/sdk/models/operations/getrepobranchrequest.md
+  - docs/sdk/models/operations/getrepocommitrequest.md
+  - docs/sdk/models/operations/getrepoorganizationrequest.md
+  - docs/sdk/models/operations/getrepopullrequestrequest.md
+  - docs/sdk/models/operations/getreporepositoryrequest.md
+  - docs/sdk/models/operations/getscimgroupsrequest.md
   - docs/sdk/models/operations/getscimusersrequest.md
   - docs/sdk/models/operations/getstoragefilerequest.md
   - docs/sdk/models/operations/gettaskprojectrequest.md
@@ -183,6 +202,10 @@ generatedFiles:
   - docs/sdk/models/operations/listhristimeoffsrequest.md
   - docs/sdk/models/operations/listkmspagesrequest.md
   - docs/sdk/models/operations/listkmsspacesrequest.md
+  - docs/sdk/models/operations/listlmsclassesrequest.md
+  - docs/sdk/models/operations/listlmscoursesrequest.md
+  - docs/sdk/models/operations/listlmsinstructorsrequest.md
+  - docs/sdk/models/operations/listlmsstudentsrequest.md
   - docs/sdk/models/operations/listmartechlistsrequest.md
   - docs/sdk/models/operations/listmartechmembersrequest.md
   - docs/sdk/models/operations/listmessagingchannelsrequest.md
@@ -194,6 +217,11 @@ generatedFiles:
   - docs/sdk/models/operations/listpaymentpaymentsrequest.md
   - docs/sdk/models/operations/listpaymentpayoutsrequest.md
   - docs/sdk/models/operations/listpaymentrefundsrequest.md
+  - docs/sdk/models/operations/listrepobranchesrequest.md
+  - docs/sdk/models/operations/listrepocommitsrequest.md
+  - docs/sdk/models/operations/listrepoorganizationsrequest.md
+  - docs/sdk/models/operations/listrepopullrequestsrequest.md
+  - docs/sdk/models/operations/listreporepositoriesrequest.md
   - docs/sdk/models/operations/listscimgroupsrequest.md
   - docs/sdk/models/operations/listscimusersrequest.md
   - docs/sdk/models/operations/liststoragefilesrequest.md
@@ -241,6 +269,10 @@ generatedFiles:
   - docs/sdk/models/operations/patchhrislocationrequest.md
   - docs/sdk/models/operations/patchkmspagerequest.md
   - docs/sdk/models/operations/patchkmsspacerequest.md
+  - docs/sdk/models/operations/patchlmsclassrequest.md
+  - docs/sdk/models/operations/patchlmscourserequest.md
+  - docs/sdk/models/operations/patchlmsinstructorrequest.md
+  - docs/sdk/models/operations/patchlmsstudentrequest.md
   - docs/sdk/models/operations/patchmartechlistrequest.md
   - docs/sdk/models/operations/patchmartechmemberrequest.md
   - docs/sdk/models/operations/patchmessagingmessagerequest.md
@@ -252,6 +284,11 @@ generatedFiles:
   - docs/sdk/models/operations/patchpassthroughrawresponseresult.md
   - docs/sdk/models/operations/patchpaymentlinkrequest.md
   - docs/sdk/models/operations/patchpaymentpaymentrequest.md
+  - docs/sdk/models/operations/patchrepobranchrequest.md
+  - docs/sdk/models/operations/patchrepocommitrequest.md
+  - docs/sdk/models/operations/patchrepoorganizationrequest.md
+  - docs/sdk/models/operations/patchrepopullrequestrequest.md
+  - docs/sdk/models/operations/patchreporepositoryrequest.md
   - docs/sdk/models/operations/patchscimgroupsrequest.md
   - docs/sdk/models/operations/patchscimusersrequest.md
   - docs/sdk/models/operations/patchstoragefilerequest.md
@@ -295,6 +332,10 @@ generatedFiles:
   - docs/sdk/models/operations/removehrislocationrequest.md
   - docs/sdk/models/operations/removekmspagerequest.md
   - docs/sdk/models/operations/removekmsspacerequest.md
+  - docs/sdk/models/operations/removelmsclassrequest.md
+  - docs/sdk/models/operations/removelmscourserequest.md
+  - docs/sdk/models/operations/removelmsinstructorrequest.md
+  - docs/sdk/models/operations/removelmsstudentrequest.md
   - docs/sdk/models/operations/removemartechlistrequest.md
   - docs/sdk/models/operations/removemartechmemberrequest.md
   - docs/sdk/models/operations/removemessagingmessagerequest.md
@@ -303,6 +344,11 @@ generatedFiles:
   - docs/sdk/models/operations/removepassthroughresponseresult.md
   - docs/sdk/models/operations/removepaymentlinkrequest.md
   - docs/sdk/models/operations/removepaymentpaymentrequest.md
+  - docs/sdk/models/operations/removerepobranchrequest.md
+  - docs/sdk/models/operations/removerepocommitrequest.md
+  - docs/sdk/models/operations/removerepoorganizationrequest.md
+  - docs/sdk/models/operations/removerepopullrequestrequest.md
+  - docs/sdk/models/operations/removereporepositoryrequest.md
   - docs/sdk/models/operations/removescimgroupsrequest.md
   - docs/sdk/models/operations/removescimusersrequest.md
   - docs/sdk/models/operations/removestoragefilerequest.md
@@ -345,6 +391,10 @@ generatedFiles:
   - docs/sdk/models/operations/updatehrislocationrequest.md
   - docs/sdk/models/operations/updatekmspagerequest.md
   - docs/sdk/models/operations/updatekmsspacerequest.md
+  - docs/sdk/models/operations/updatelmsclassrequest.md
+  - docs/sdk/models/operations/updatelmscourserequest.md
+  - docs/sdk/models/operations/updatelmsinstructorrequest.md
+  - docs/sdk/models/operations/updatelmsstudentrequest.md
   - docs/sdk/models/operations/updatemartechlistrequest.md
   - docs/sdk/models/operations/updatemartechmemberrequest.md
   - docs/sdk/models/operations/updatemessagingmessagerequest.md
@@ -356,6 +406,11 @@ generatedFiles:
   - docs/sdk/models/operations/updatepassthroughrawresponseresult.md
   - docs/sdk/models/operations/updatepaymentlinkrequest.md
   - docs/sdk/models/operations/updatepaymentpaymentrequest.md
+  - docs/sdk/models/operations/updaterepobranchrequest.md
+  - docs/sdk/models/operations/updaterepocommitrequest.md
+  - docs/sdk/models/operations/updaterepoorganizationrequest.md
+  - docs/sdk/models/operations/updaterepopullrequestrequest.md
+  - docs/sdk/models/operations/updatereporepositoryrequest.md
   - docs/sdk/models/operations/updatescimgroupsrequest.md
   - docs/sdk/models/operations/updatescimusersrequest.md
   - docs/sdk/models/operations/updatestoragefilerequest.md
@@ -460,7 +515,6 @@ generatedFiles:
   - docs/sdk/models/shared/genaimodel.md
   - docs/sdk/models/shared/genaiprompt.md
   - docs/sdk/models/shared/gender.md
-  - docs/sdk/models/shared/group.md
   - docs/sdk/models/shared/hriscompany.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/hriscompensationfrequency.md
@@ -488,16 +542,18 @@ generatedFiles:
   - docs/sdk/models/shared/kmspage.md
   - docs/sdk/models/shared/kmspagetype.md
   - docs/sdk/models/shared/kmsspace.md
-  - docs/sdk/models/shared/level.md
   - docs/sdk/models/shared/listaccountid.md
   - docs/sdk/models/shared/listapplicationid.md
   - docs/sdk/models/shared/listcandidateid.md
   - docs/sdk/models/shared/listchannelid.md
+  - docs/sdk/models/shared/listclassid.md
   - docs/sdk/models/shared/listcollectionid.md
   - docs/sdk/models/shared/listcompanyid.md
   - docs/sdk/models/shared/listcontactid.md
+  - docs/sdk/models/shared/listcourseid.md
   - docs/sdk/models/shared/listcustomerid.md
   - docs/sdk/models/shared/listdealid.md
+  - docs/sdk/models/shared/listinstructorid.md
   - docs/sdk/models/shared/listinterviewid.md
   - docs/sdk/models/shared/listinvoiceid.md
   - docs/sdk/models/shared/listitemid.md
@@ -517,10 +573,20 @@ generatedFiles:
   - docs/sdk/models/shared/listsortbyname.md
   - docs/sdk/models/shared/listsortbyupdatedat.md
   - docs/sdk/models/shared/listspaceid.md
+  - docs/sdk/models/shared/liststudentid.md
   - docs/sdk/models/shared/listticketid.md
   - docs/sdk/models/shared/listtype.md
   - docs/sdk/models/shared/listupdatedgte.md
   - docs/sdk/models/shared/listuserid.md
+  - docs/sdk/models/shared/lmsclass.md
+  - docs/sdk/models/shared/lmscourse.md
+  - docs/sdk/models/shared/lmsemail.md
+  - docs/sdk/models/shared/lmsinstructor.md
+  - docs/sdk/models/shared/lmsmedia.md
+  - docs/sdk/models/shared/lmsmediatype.md
+  - docs/sdk/models/shared/lmsstudent.md
+  - docs/sdk/models/shared/lmstelephone.md
+  - docs/sdk/models/shared/lmstelephonetype.md
   - docs/sdk/models/shared/maritalstatus.md
   - docs/sdk/models/shared/marketingemail.md
   - docs/sdk/models/shared/marketingemailtype.md
@@ -567,36 +633,63 @@ generatedFiles:
   - docs/sdk/models/shared/propertycrmleadaddress.md
   - docs/sdk/models/shared/propertyenrichcompanyaddress.md
   - docs/sdk/models/shared/propertyenrichpersonaddress.md
-  - docs/sdk/models/shared/propertygroupmeta.md
-  - docs/sdk/models/shared/propertygroupschemas.md
   - docs/sdk/models/shared/propertyhriscompanyaddress.md
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/propertyhrislocationaddress.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
   - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
+  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.md
+  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventsdeleted.md
+  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventsupdated.md
+  - docs/sdk/models/shared/propertylmsstudentaddress.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.md
-  - docs/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.md
-  - docs/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanager.md
-  - docs/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanagertype.md
+  - docs/sdk/models/shared/propertyscimgroupmeta.md
+  - docs/sdk/models/shared/propertyscimgroupschemas.md
+  - docs/sdk/models/shared/propertyscimusermeta.md
+  - docs/sdk/models/shared/propertyscimusermetaresourcetype.md
+  - docs/sdk/models/shared/propertyscimusername.md
+  - docs/sdk/models/shared/propertyscimuserschemas.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20user.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20usergender.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20usermanager.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20usermanagertype.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionlatticeattributes10user.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionlatticeattributes10usergender.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionpeakon20user.md
+  - docs/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionpeakon20usergender.md
   - docs/sdk/models/shared/propertystoragepermissionroles.md
   - docs/sdk/models/shared/propertyuccalltelephone.md
   - docs/sdk/models/shared/propertyuccalltelephonetype.md
-  - docs/sdk/models/shared/propertyusermeta.md
-  - docs/sdk/models/shared/propertyusermetaresourcetype.md
-  - docs/sdk/models/shared/propertyusername.md
-  - docs/sdk/models/shared/propertyuserschemas.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20user.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20usergender.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10user.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10usergender.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20user.md
-  - docs/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20usergender.md
   - docs/sdk/models/shared/recommendation.md
+  - docs/sdk/models/shared/repobranch.md
+  - docs/sdk/models/shared/repocommit.md
+  - docs/sdk/models/shared/repoorganization.md
+  - docs/sdk/models/shared/repopullrequest.md
+  - docs/sdk/models/shared/repopullrequeststatus.md
+  - docs/sdk/models/shared/reporepository.md
   - docs/sdk/models/shared/resourcetype.md
   - docs/sdk/models/shared/role.md
+  - docs/sdk/models/shared/scimaddress.md
+  - docs/sdk/models/shared/scimaddresstype.md
+  - docs/sdk/models/shared/scimemail.md
+  - docs/sdk/models/shared/scimemailtype.md
+  - docs/sdk/models/shared/scimentitlement.md
+  - docs/sdk/models/shared/scimgroup.md
+  - docs/sdk/models/shared/scimgroupmember.md
+  - docs/sdk/models/shared/scimgroupmembertype.md
+  - docs/sdk/models/shared/scimims.md
+  - docs/sdk/models/shared/scimimstype.md
+  - docs/sdk/models/shared/scimmanager.md
+  - docs/sdk/models/shared/scimmanagertype.md
+  - docs/sdk/models/shared/scimphonenumber.md
+  - docs/sdk/models/shared/scimphonenumbertype.md
+  - docs/sdk/models/shared/scimphoto.md
+  - docs/sdk/models/shared/scimphototype.md
+  - docs/sdk/models/shared/scimrole.md
+  - docs/sdk/models/shared/scimuser.md
+  - docs/sdk/models/shared/scimusergroups.md
+  - docs/sdk/models/shared/scimusergroupstype.md
   - docs/sdk/models/shared/searchdomain.md
   - docs/sdk/models/shared/searchemail.md
   - docs/sdk/models/shared/searchlinkedinurl.md
@@ -628,9 +721,6 @@ generatedFiles:
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
-  - docs/sdk/models/shared/undefined.md
-  - docs/sdk/models/shared/undefinedtype.md
-  - docs/sdk/models/shared/user.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weightunit.md
@@ -749,6 +839,12 @@ generatedFiles:
   - src/funcs/atsUpdateAtsScorecard.ts
   - src/funcs/authGetUnifiedIntegrationAuth.ts
   - src/funcs/authGetUnifiedIntegrationLogin.ts
+  - src/funcs/branchCreateRepoBranch.ts
+  - src/funcs/branchGetRepoBranch.ts
+  - src/funcs/branchListRepoBranches.ts
+  - src/funcs/branchPatchRepoBranch.ts
+  - src/funcs/branchRemoveRepoBranch.ts
+  - src/funcs/branchUpdateRepoBranch.ts
   - src/funcs/callListUcCalls.ts
   - src/funcs/candidateCreateAtsCandidate.ts
   - src/funcs/candidateGetAtsCandidate.ts
@@ -758,6 +854,12 @@ generatedFiles:
   - src/funcs/candidateUpdateAtsCandidate.ts
   - src/funcs/channelGetMessagingChannel.ts
   - src/funcs/channelListMessagingChannels.ts
+  - src/funcs/classCreateLmsClass.ts
+  - src/funcs/classGetLmsClass.ts
+  - src/funcs/classListLmsClasses.ts
+  - src/funcs/classPatchLmsClass.ts
+  - src/funcs/classRemoveLmsClass.ts
+  - src/funcs/classUpdateLmsClass.ts
   - src/funcs/collectionCreateCommerceCollection.ts
   - src/funcs/collectionGetCommerceCollection.ts
   - src/funcs/collectionListCommerceCollections.ts
@@ -788,6 +890,12 @@ generatedFiles:
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
+  - src/funcs/commitCreateRepoCommit.ts
+  - src/funcs/commitGetRepoCommit.ts
+  - src/funcs/commitListRepoCommits.ts
+  - src/funcs/commitPatchRepoCommit.ts
+  - src/funcs/commitRemoveRepoCommit.ts
+  - src/funcs/commitUpdateRepoCommit.ts
   - src/funcs/companyCreateCrmCompany.ts
   - src/funcs/companyCreateHrisCompany.ts
   - src/funcs/companyGetAtsCompany.ts
@@ -827,6 +935,12 @@ generatedFiles:
   - src/funcs/contactUpdateAccountingContact.ts
   - src/funcs/contactUpdateCrmContact.ts
   - src/funcs/contactUpdateUcContact.ts
+  - src/funcs/courseCreateLmsCourse.ts
+  - src/funcs/courseGetLmsCourse.ts
+  - src/funcs/courseListLmsCourses.ts
+  - src/funcs/coursePatchLmsCourse.ts
+  - src/funcs/courseRemoveLmsCourse.ts
+  - src/funcs/courseUpdateLmsCourse.ts
   - src/funcs/crmCreateCrmCompany.ts
   - src/funcs/crmCreateCrmContact.ts
   - src/funcs/crmCreateCrmDeal.ts
@@ -906,6 +1020,7 @@ generatedFiles:
   - src/funcs/groupCreateHrisGroup.ts
   - src/funcs/groupCreateScimGroups.ts
   - src/funcs/groupGetHrisGroup.ts
+  - src/funcs/groupGetScimGroups.ts
   - src/funcs/groupListHrisGroups.ts
   - src/funcs/groupListScimGroups.ts
   - src/funcs/groupPatchHrisGroup.ts
@@ -942,6 +1057,12 @@ generatedFiles:
   - src/funcs/hrisUpdateHrisEmployee.ts
   - src/funcs/hrisUpdateHrisGroup.ts
   - src/funcs/hrisUpdateHrisLocation.ts
+  - src/funcs/instructorCreateLmsInstructor.ts
+  - src/funcs/instructorGetLmsInstructor.ts
+  - src/funcs/instructorListLmsInstructors.ts
+  - src/funcs/instructorPatchLmsInstructor.ts
+  - src/funcs/instructorRemoveLmsInstructor.ts
+  - src/funcs/instructorUpdateLmsInstructor.ts
   - src/funcs/integrationGetUnifiedIntegrationAuth.ts
   - src/funcs/integrationListUnifiedIntegrationWorkspaces.ts
   - src/funcs/integrationListUnifiedIntegrations.ts
@@ -1012,6 +1133,30 @@ generatedFiles:
   - src/funcs/listPatchMartechList.ts
   - src/funcs/listRemoveMartechList.ts
   - src/funcs/listUpdateMartechList.ts
+  - src/funcs/lmsCreateLmsClass.ts
+  - src/funcs/lmsCreateLmsCourse.ts
+  - src/funcs/lmsCreateLmsInstructor.ts
+  - src/funcs/lmsCreateLmsStudent.ts
+  - src/funcs/lmsGetLmsClass.ts
+  - src/funcs/lmsGetLmsCourse.ts
+  - src/funcs/lmsGetLmsInstructor.ts
+  - src/funcs/lmsGetLmsStudent.ts
+  - src/funcs/lmsListLmsClasses.ts
+  - src/funcs/lmsListLmsCourses.ts
+  - src/funcs/lmsListLmsInstructors.ts
+  - src/funcs/lmsListLmsStudents.ts
+  - src/funcs/lmsPatchLmsClass.ts
+  - src/funcs/lmsPatchLmsCourse.ts
+  - src/funcs/lmsPatchLmsInstructor.ts
+  - src/funcs/lmsPatchLmsStudent.ts
+  - src/funcs/lmsRemoveLmsClass.ts
+  - src/funcs/lmsRemoveLmsCourse.ts
+  - src/funcs/lmsRemoveLmsInstructor.ts
+  - src/funcs/lmsRemoveLmsStudent.ts
+  - src/funcs/lmsUpdateLmsClass.ts
+  - src/funcs/lmsUpdateLmsCourse.ts
+  - src/funcs/lmsUpdateLmsInstructor.ts
+  - src/funcs/lmsUpdateLmsStudent.ts
   - src/funcs/locationCreateCommerceLocation.ts
   - src/funcs/locationCreateHrisLocation.ts
   - src/funcs/locationGetCommerceLocation.ts
@@ -1070,8 +1215,14 @@ generatedFiles:
   - src/funcs/orderPatchAccountingOrder.ts
   - src/funcs/orderRemoveAccountingOrder.ts
   - src/funcs/orderUpdateAccountingOrder.ts
+  - src/funcs/organizationCreateRepoOrganization.ts
   - src/funcs/organizationGetAccountingOrganization.ts
+  - src/funcs/organizationGetRepoOrganization.ts
   - src/funcs/organizationListAccountingOrganizations.ts
+  - src/funcs/organizationListRepoOrganizations.ts
+  - src/funcs/organizationPatchRepoOrganization.ts
+  - src/funcs/organizationRemoveRepoOrganization.ts
+  - src/funcs/organizationUpdateRepoOrganization.ts
   - src/funcs/pageCreateKmsPage.ts
   - src/funcs/pageGetKmsPage.ts
   - src/funcs/pageListKmsPages.ts
@@ -1120,10 +1271,53 @@ generatedFiles:
   - src/funcs/projectRemoveTaskProject.ts
   - src/funcs/projectUpdateTaskProject.ts
   - src/funcs/promptCreateGenaiPrompt.ts
+  - src/funcs/pullrequestCreateRepoPullrequest.ts
+  - src/funcs/pullrequestGetRepoPullrequest.ts
+  - src/funcs/pullrequestListRepoPullrequests.ts
+  - src/funcs/pullrequestPatchRepoPullrequest.ts
+  - src/funcs/pullrequestRemoveRepoPullrequest.ts
+  - src/funcs/pullrequestUpdateRepoPullrequest.ts
   - src/funcs/refundGetPaymentRefund.ts
   - src/funcs/refundListPaymentRefunds.ts
+  - src/funcs/repoCreateRepoBranch.ts
+  - src/funcs/repoCreateRepoCommit.ts
+  - src/funcs/repoCreateRepoOrganization.ts
+  - src/funcs/repoCreateRepoPullrequest.ts
+  - src/funcs/repoCreateRepoRepository.ts
+  - src/funcs/repoGetRepoBranch.ts
+  - src/funcs/repoGetRepoCommit.ts
+  - src/funcs/repoGetRepoOrganization.ts
+  - src/funcs/repoGetRepoPullrequest.ts
+  - src/funcs/repoGetRepoRepository.ts
+  - src/funcs/repoListRepoBranches.ts
+  - src/funcs/repoListRepoCommits.ts
+  - src/funcs/repoListRepoOrganizations.ts
+  - src/funcs/repoListRepoPullrequests.ts
+  - src/funcs/repoListRepoRepositories.ts
+  - src/funcs/repoPatchRepoBranch.ts
+  - src/funcs/repoPatchRepoCommit.ts
+  - src/funcs/repoPatchRepoOrganization.ts
+  - src/funcs/repoPatchRepoPullrequest.ts
+  - src/funcs/repoPatchRepoRepository.ts
+  - src/funcs/repoRemoveRepoBranch.ts
+  - src/funcs/repoRemoveRepoCommit.ts
+  - src/funcs/repoRemoveRepoOrganization.ts
+  - src/funcs/repoRemoveRepoPullrequest.ts
+  - src/funcs/repoRemoveRepoRepository.ts
+  - src/funcs/repoUpdateRepoBranch.ts
+  - src/funcs/repoUpdateRepoCommit.ts
+  - src/funcs/repoUpdateRepoOrganization.ts
+  - src/funcs/repoUpdateRepoPullrequest.ts
+  - src/funcs/repoUpdateRepoRepository.ts
+  - src/funcs/repositoryCreateRepoRepository.ts
+  - src/funcs/repositoryGetRepoRepository.ts
+  - src/funcs/repositoryListRepoRepositories.ts
+  - src/funcs/repositoryPatchRepoRepository.ts
+  - src/funcs/repositoryRemoveRepoRepository.ts
+  - src/funcs/repositoryUpdateRepoRepository.ts
   - src/funcs/scimCreateScimGroups.ts
   - src/funcs/scimCreateScimUsers.ts
+  - src/funcs/scimGetScimGroups.ts
   - src/funcs/scimGetScimUsers.ts
   - src/funcs/scimListScimGroups.ts
   - src/funcs/scimListScimUsers.ts
@@ -1151,6 +1345,12 @@ generatedFiles:
   - src/funcs/storagePatchStorageFile.ts
   - src/funcs/storageRemoveStorageFile.ts
   - src/funcs/storageUpdateStorageFile.ts
+  - src/funcs/studentCreateLmsStudent.ts
+  - src/funcs/studentGetLmsStudent.ts
+  - src/funcs/studentListLmsStudents.ts
+  - src/funcs/studentPatchLmsStudent.ts
+  - src/funcs/studentRemoveLmsStudent.ts
+  - src/funcs/studentUpdateLmsStudent.ts
   - src/funcs/taskCreateTaskProject.ts
   - src/funcs/taskCreateTaskTask.ts
   - src/funcs/taskGetTaskProject.ts
@@ -1269,14 +1469,18 @@ generatedFiles:
   - src/sdk/applicationstatus.ts
   - src/sdk/ats.ts
   - src/sdk/auth.ts
+  - src/sdk/branch.ts
   - src/sdk/call.ts
   - src/sdk/candidate.ts
   - src/sdk/channel.ts
+  - src/sdk/class.ts
   - src/sdk/collection.ts
   - src/sdk/commerce.ts
+  - src/sdk/commit.ts
   - src/sdk/company.ts
   - src/sdk/connection.ts
   - src/sdk/contact.ts
+  - src/sdk/course.ts
   - src/sdk/crm.ts
   - src/sdk/customer.ts
   - src/sdk/deal.ts
@@ -1289,6 +1493,7 @@ generatedFiles:
   - src/sdk/group.ts
   - src/sdk/hris.ts
   - src/sdk/index.ts
+  - src/sdk/instructor.ts
   - src/sdk/integration.ts
   - src/sdk/interview.ts
   - src/sdk/inventory.ts
@@ -1301,6 +1506,7 @@ generatedFiles:
   - src/sdk/lead.ts
   - src/sdk/link.ts
   - src/sdk/list.ts
+  - src/sdk/lms.ts
   - src/sdk/location.ts
   - src/sdk/login.ts
   - src/sdk/martech.ts
@@ -1343,6 +1549,10 @@ generatedFiles:
   - src/sdk/models/operations/createhrislocation.ts
   - src/sdk/models/operations/createkmspage.ts
   - src/sdk/models/operations/createkmsspace.ts
+  - src/sdk/models/operations/createlmsclass.ts
+  - src/sdk/models/operations/createlmscourse.ts
+  - src/sdk/models/operations/createlmsinstructor.ts
+  - src/sdk/models/operations/createlmsstudent.ts
   - src/sdk/models/operations/createmartechlist.ts
   - src/sdk/models/operations/createmartechmember.ts
   - src/sdk/models/operations/createmessagingmessage.ts
@@ -1350,6 +1560,11 @@ generatedFiles:
   - src/sdk/models/operations/createpassthroughraw.ts
   - src/sdk/models/operations/createpaymentlink.ts
   - src/sdk/models/operations/createpaymentpayment.ts
+  - src/sdk/models/operations/createrepobranch.ts
+  - src/sdk/models/operations/createrepocommit.ts
+  - src/sdk/models/operations/createrepoorganization.ts
+  - src/sdk/models/operations/createrepopullrequest.ts
+  - src/sdk/models/operations/createreporepository.ts
   - src/sdk/models/operations/createscimgroups.ts
   - src/sdk/models/operations/createscimusers.ts
   - src/sdk/models/operations/createstoragefile.ts
@@ -1394,6 +1609,10 @@ generatedFiles:
   - src/sdk/models/operations/gethristimeoff.ts
   - src/sdk/models/operations/getkmspage.ts
   - src/sdk/models/operations/getkmsspace.ts
+  - src/sdk/models/operations/getlmsclass.ts
+  - src/sdk/models/operations/getlmscourse.ts
+  - src/sdk/models/operations/getlmsinstructor.ts
+  - src/sdk/models/operations/getlmsstudent.ts
   - src/sdk/models/operations/getmartechlist.ts
   - src/sdk/models/operations/getmartechmember.ts
   - src/sdk/models/operations/getmessagingchannel.ts
@@ -1402,6 +1621,12 @@ generatedFiles:
   - src/sdk/models/operations/getpaymentpayment.ts
   - src/sdk/models/operations/getpaymentpayout.ts
   - src/sdk/models/operations/getpaymentrefund.ts
+  - src/sdk/models/operations/getrepobranch.ts
+  - src/sdk/models/operations/getrepocommit.ts
+  - src/sdk/models/operations/getrepoorganization.ts
+  - src/sdk/models/operations/getrepopullrequest.ts
+  - src/sdk/models/operations/getreporepository.ts
+  - src/sdk/models/operations/getscimgroups.ts
   - src/sdk/models/operations/getscimusers.ts
   - src/sdk/models/operations/getstoragefile.ts
   - src/sdk/models/operations/gettaskproject.ts
@@ -1454,6 +1679,10 @@ generatedFiles:
   - src/sdk/models/operations/listhristimeoffs.ts
   - src/sdk/models/operations/listkmspages.ts
   - src/sdk/models/operations/listkmsspaces.ts
+  - src/sdk/models/operations/listlmsclasses.ts
+  - src/sdk/models/operations/listlmscourses.ts
+  - src/sdk/models/operations/listlmsinstructors.ts
+  - src/sdk/models/operations/listlmsstudents.ts
   - src/sdk/models/operations/listmartechlists.ts
   - src/sdk/models/operations/listmartechmembers.ts
   - src/sdk/models/operations/listmessagingchannels.ts
@@ -1463,6 +1692,11 @@ generatedFiles:
   - src/sdk/models/operations/listpaymentpayments.ts
   - src/sdk/models/operations/listpaymentpayouts.ts
   - src/sdk/models/operations/listpaymentrefunds.ts
+  - src/sdk/models/operations/listrepobranches.ts
+  - src/sdk/models/operations/listrepocommits.ts
+  - src/sdk/models/operations/listrepoorganizations.ts
+  - src/sdk/models/operations/listrepopullrequests.ts
+  - src/sdk/models/operations/listreporepositories.ts
   - src/sdk/models/operations/listscimgroups.ts
   - src/sdk/models/operations/listscimusers.ts
   - src/sdk/models/operations/liststoragefiles.ts
@@ -1509,6 +1743,10 @@ generatedFiles:
   - src/sdk/models/operations/patchhrislocation.ts
   - src/sdk/models/operations/patchkmspage.ts
   - src/sdk/models/operations/patchkmsspace.ts
+  - src/sdk/models/operations/patchlmsclass.ts
+  - src/sdk/models/operations/patchlmscourse.ts
+  - src/sdk/models/operations/patchlmsinstructor.ts
+  - src/sdk/models/operations/patchlmsstudent.ts
   - src/sdk/models/operations/patchmartechlist.ts
   - src/sdk/models/operations/patchmartechmember.ts
   - src/sdk/models/operations/patchmessagingmessage.ts
@@ -1516,6 +1754,11 @@ generatedFiles:
   - src/sdk/models/operations/patchpassthroughraw.ts
   - src/sdk/models/operations/patchpaymentlink.ts
   - src/sdk/models/operations/patchpaymentpayment.ts
+  - src/sdk/models/operations/patchrepobranch.ts
+  - src/sdk/models/operations/patchrepocommit.ts
+  - src/sdk/models/operations/patchrepoorganization.ts
+  - src/sdk/models/operations/patchrepopullrequest.ts
+  - src/sdk/models/operations/patchreporepository.ts
   - src/sdk/models/operations/patchscimgroups.ts
   - src/sdk/models/operations/patchscimusers.ts
   - src/sdk/models/operations/patchstoragefile.ts
@@ -1558,12 +1801,21 @@ generatedFiles:
   - src/sdk/models/operations/removehrislocation.ts
   - src/sdk/models/operations/removekmspage.ts
   - src/sdk/models/operations/removekmsspace.ts
+  - src/sdk/models/operations/removelmsclass.ts
+  - src/sdk/models/operations/removelmscourse.ts
+  - src/sdk/models/operations/removelmsinstructor.ts
+  - src/sdk/models/operations/removelmsstudent.ts
   - src/sdk/models/operations/removemartechlist.ts
   - src/sdk/models/operations/removemartechmember.ts
   - src/sdk/models/operations/removemessagingmessage.ts
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/removepaymentlink.ts
   - src/sdk/models/operations/removepaymentpayment.ts
+  - src/sdk/models/operations/removerepobranch.ts
+  - src/sdk/models/operations/removerepocommit.ts
+  - src/sdk/models/operations/removerepoorganization.ts
+  - src/sdk/models/operations/removerepopullrequest.ts
+  - src/sdk/models/operations/removereporepository.ts
   - src/sdk/models/operations/removescimgroups.ts
   - src/sdk/models/operations/removescimusers.ts
   - src/sdk/models/operations/removestoragefile.ts
@@ -1605,6 +1857,10 @@ generatedFiles:
   - src/sdk/models/operations/updatehrislocation.ts
   - src/sdk/models/operations/updatekmspage.ts
   - src/sdk/models/operations/updatekmsspace.ts
+  - src/sdk/models/operations/updatelmsclass.ts
+  - src/sdk/models/operations/updatelmscourse.ts
+  - src/sdk/models/operations/updatelmsinstructor.ts
+  - src/sdk/models/operations/updatelmsstudent.ts
   - src/sdk/models/operations/updatemartechlist.ts
   - src/sdk/models/operations/updatemartechmember.ts
   - src/sdk/models/operations/updatemessagingmessage.ts
@@ -1612,6 +1868,11 @@ generatedFiles:
   - src/sdk/models/operations/updatepassthroughraw.ts
   - src/sdk/models/operations/updatepaymentlink.ts
   - src/sdk/models/operations/updatepaymentpayment.ts
+  - src/sdk/models/operations/updaterepobranch.ts
+  - src/sdk/models/operations/updaterepocommit.ts
+  - src/sdk/models/operations/updaterepoorganization.ts
+  - src/sdk/models/operations/updaterepopullrequest.ts
+  - src/sdk/models/operations/updatereporepository.ts
   - src/sdk/models/operations/updatescimgroups.ts
   - src/sdk/models/operations/updatescimusers.ts
   - src/sdk/models/operations/updatestoragefile.ts
@@ -1684,7 +1945,6 @@ generatedFiles:
   - src/sdk/models/shared/genaicontent.ts
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/genaiprompt.ts
-  - src/sdk/models/shared/group.ts
   - src/sdk/models/shared/hriscompany.ts
   - src/sdk/models/shared/hriscompensation.ts
   - src/sdk/models/shared/hrisemail.ts
@@ -1701,6 +1961,13 @@ generatedFiles:
   - src/sdk/models/shared/issue.ts
   - src/sdk/models/shared/kmspage.ts
   - src/sdk/models/shared/kmsspace.ts
+  - src/sdk/models/shared/lmsclass.ts
+  - src/sdk/models/shared/lmscourse.ts
+  - src/sdk/models/shared/lmsemail.ts
+  - src/sdk/models/shared/lmsinstructor.ts
+  - src/sdk/models/shared/lmsmedia.ts
+  - src/sdk/models/shared/lmsstudent.ts
+  - src/sdk/models/shared/lmstelephone.ts
   - src/sdk/models/shared/marketingemail.ts
   - src/sdk/models/shared/marketinglist.ts
   - src/sdk/models/shared/marketingmember.ts
@@ -1735,27 +2002,45 @@ generatedFiles:
   - src/sdk/models/shared/propertycrmleadaddress.ts
   - src/sdk/models/shared/propertyenrichcompanyaddress.ts
   - src/sdk/models/shared/propertyenrichpersonaddress.ts
-  - src/sdk/models/shared/propertygroupmeta.ts
-  - src/sdk/models/shared/propertygroupschemas.ts
   - src/sdk/models/shared/propertyhriscompanyaddress.ts
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/propertyhrislocationaddress.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
   - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
+  - src/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.ts
+  - src/sdk/models/shared/propertyintegrationsupportwebhookeventsdeleted.ts
+  - src/sdk/models/shared/propertyintegrationsupportwebhookeventsupdated.ts
+  - src/sdk/models/shared/propertylmsstudentaddress.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventscreated.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsdeleted.ts
-  - src/sdk/models/shared/propertypropertyintegrationsupportwebhookeventsupdated.ts
-  - src/sdk/models/shared/propertypropertyuserurnietfparamsscimschemasextensionenterprise20usermanager.ts
+  - src/sdk/models/shared/propertyscimgroupmeta.ts
+  - src/sdk/models/shared/propertyscimgroupschemas.ts
+  - src/sdk/models/shared/propertyscimusermeta.ts
+  - src/sdk/models/shared/propertyscimusername.ts
+  - src/sdk/models/shared/propertyscimuserschemas.ts
+  - src/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20user.ts
+  - src/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionenterprise20usermanager.ts
+  - src/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionlatticeattributes10user.ts
+  - src/sdk/models/shared/propertyscimuserurnietfparamsscimschemasextensionpeakon20user.ts
   - src/sdk/models/shared/propertystoragepermissionroles.ts
   - src/sdk/models/shared/propertyuccalltelephone.ts
-  - src/sdk/models/shared/propertyusermeta.ts
-  - src/sdk/models/shared/propertyusername.ts
-  - src/sdk/models/shared/propertyuserschemas.ts
-  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionenterprise20user.ts
-  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionlatticeattributes10user.ts
-  - src/sdk/models/shared/propertyuserurnietfparamsscimschemasextensionpeakon20user.ts
+  - src/sdk/models/shared/repobranch.ts
+  - src/sdk/models/shared/repocommit.ts
+  - src/sdk/models/shared/repoorganization.ts
+  - src/sdk/models/shared/repopullrequest.ts
+  - src/sdk/models/shared/reporepository.ts
+  - src/sdk/models/shared/scimaddress.ts
+  - src/sdk/models/shared/scimemail.ts
+  - src/sdk/models/shared/scimentitlement.ts
+  - src/sdk/models/shared/scimgroup.ts
+  - src/sdk/models/shared/scimgroupmember.ts
+  - src/sdk/models/shared/scimims.ts
+  - src/sdk/models/shared/scimmanager.ts
+  - src/sdk/models/shared/scimphonenumber.ts
+  - src/sdk/models/shared/scimphoto.ts
+  - src/sdk/models/shared/scimrole.ts
+  - src/sdk/models/shared/scimuser.ts
+  - src/sdk/models/shared/scimusergroups.ts
   - src/sdk/models/shared/security.ts
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
@@ -1770,8 +2055,6 @@ generatedFiles:
   - src/sdk/models/shared/uccontact.ts
   - src/sdk/models/shared/ucemail.ts
   - src/sdk/models/shared/uctelephone.ts
-  - src/sdk/models/shared/undefined.ts
-  - src/sdk/models/shared/user.ts
   - src/sdk/models/shared/webhook.ts
   - src/sdk/note.ts
   - src/sdk/order.ts
@@ -1785,12 +2068,16 @@ generatedFiles:
   - src/sdk/pipeline.ts
   - src/sdk/project.ts
   - src/sdk/prompt.ts
+  - src/sdk/pullrequest.ts
   - src/sdk/refund.ts
+  - src/sdk/repo.ts
+  - src/sdk/repository.ts
   - src/sdk/scim.ts
   - src/sdk/scorecard.ts
   - src/sdk/sdk.ts
   - src/sdk/space.ts
   - src/sdk/storage.ts
+  - src/sdk/student.ts
   - src/sdk/task.ts
   - src/sdk/taxrate.ts
   - src/sdk/ticket.ts
@@ -4047,18 +4334,27 @@ examples:
       parameters:
         path:
           connection_id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Bert89", "id": "<id>"}
   listScimGroups:
     speakeasy-default-list-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: [{"displayName": "Anya_Mante96", "id": "<id>"}]
   patchScimGroups:
     speakeasy-default-patch-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Damon_Rutherford93", "id": "<id>"}
   removeScimGroups:
     speakeasy-default-remove-scim-groups:
       parameters:
@@ -4071,6 +4367,9 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Frederic.Reichel", "id": "<id>"}
   createScimUsers:
     speakeasy-default-create-scim-users:
       parameters:
@@ -4146,3 +4445,453 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  createRepoOrganization:
+    speakeasy-default-create-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getRepoOrganization:
+    speakeasy-default-get-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  listRepoOrganizations:
+    speakeasy-default-list-repo-organizations:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  patchRepoOrganization:
+    speakeasy-default-patch-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeRepoOrganization:
+    speakeasy-default-remove-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateRepoOrganization:
+    speakeasy-default-update-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getScimGroups:
+    speakeasy-default-get-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Tressa10", "id": "<id>"}
+  createLmsClass:
+    speakeasy-default-create-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  createLmsCourse:
+    speakeasy-default-create-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  createLmsInstructor:
+    speakeasy-default-create-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  createLmsStudent:
+    speakeasy-default-create-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getLmsClass:
+    speakeasy-default-get-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  getLmsCourse:
+    speakeasy-default-get-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getLmsInstructor:
+    speakeasy-default-get-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  getLmsStudent:
+    speakeasy-default-get-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listLmsClasses:
+    speakeasy-default-list-lms-classes:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"course_id": "<id>", "name": "<value>"}, {"course_id": "<id>", "name": "<value>"}, {"course_id": "<id>", "name": "<value>"}]
+  listLmsCourses:
+    speakeasy-default-list-lms-courses:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  listLmsInstructors:
+    speakeasy-default-list-lms-instructors:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listLmsStudents:
+    speakeasy-default-list-lms-students:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchLmsClass:
+    speakeasy-default-patch-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  patchLmsCourse:
+    speakeasy-default-patch-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  patchLmsInstructor:
+    speakeasy-default-patch-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  patchLmsStudent:
+    speakeasy-default-patch-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  removeLmsClass:
+    speakeasy-default-remove-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsCourse:
+    speakeasy-default-remove-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsInstructor:
+    speakeasy-default-remove-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsStudent:
+    speakeasy-default-remove-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateLmsClass:
+    speakeasy-default-update-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  updateLmsCourse:
+    speakeasy-default-update-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  updateLmsInstructor:
+    speakeasy-default-update-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  updateLmsStudent:
+    speakeasy-default-update-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  createRepoBranch:
+    speakeasy-default-create-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  createRepoCommit:
+    speakeasy-default-create-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  createRepoPullrequest:
+    speakeasy-default-create-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  createRepoRepository:
+    speakeasy-default-create-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getRepoBranch:
+    speakeasy-default-get-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  getRepoCommit:
+    speakeasy-default-get-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  getRepoPullrequest:
+    speakeasy-default-get-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  getRepoRepository:
+    speakeasy-default-get-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  listRepoBranches:
+    speakeasy-default-list-repo-branches:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>", "repo_id": "<id>"}, {"name": "<value>", "repo_id": "<id>"}]
+  listRepoCommits:
+    speakeasy-default-list-repo-commits:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"repo_id": "<id>", "user_id": "<id>"}, {"repo_id": "<id>", "user_id": "<id>"}]
+  listRepoPullrequests:
+    speakeasy-default-list-repo-pullrequests:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listRepoRepositories:
+    speakeasy-default-list-repo-repositories:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  patchRepoBranch:
+    speakeasy-default-patch-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  patchRepoCommit:
+    speakeasy-default-patch-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  patchRepoPullrequest:
+    speakeasy-default-patch-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  patchRepoRepository:
+    speakeasy-default-patch-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeRepoBranch:
+    speakeasy-default-remove-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoCommit:
+    speakeasy-default-remove-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoPullrequest:
+    speakeasy-default-remove-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoRepository:
+    speakeasy-default-remove-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateRepoBranch:
+    speakeasy-default-update-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  updateRepoCommit:
+    speakeasy-default-update-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  updateRepoPullrequest:
+    speakeasy-default-update-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  updateRepoRepository:
+    speakeasy-default-update-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}

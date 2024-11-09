@@ -31,7 +31,7 @@ export async function scimPatchScimGroups(
   options?: RequestOptions,
 ): Promise<
   Result<
-    shared.Group,
+    shared.ScimGroup,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -50,7 +50,7 @@ export async function scimPatchScimGroups(
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.Group, { explode: true });
+  const body = encodeJSON("body", payload.ScimGroup, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -108,7 +108,7 @@ export async function scimPatchScimGroups(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.Group,
+    shared.ScimGroup,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -117,7 +117,7 @@ export async function scimPatchScimGroups(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, shared.Group$inboundSchema),
+    M.json(200, shared.ScimGroup$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

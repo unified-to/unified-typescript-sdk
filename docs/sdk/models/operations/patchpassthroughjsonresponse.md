@@ -11,7 +11,7 @@ let value: PatchPassthroughJsonResponse = {
       "<value>",
     ],
   },
-  result: "<value>",
+  result: new TextEncoder().encode("0xFFDB718521"),
 };
 ```
 

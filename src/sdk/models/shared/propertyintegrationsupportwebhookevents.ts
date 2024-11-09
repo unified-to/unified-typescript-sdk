@@ -4,31 +4,25 @@
 
 import * as z from "zod";
 import {
-  PropertyPropertyIntegrationSupportWebhookEventsCreated,
-  PropertyPropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
-  PropertyPropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
-} from "./propertypropertyintegrationsupportwebhookeventscreated.js";
+  PropertyIntegrationSupportWebhookEventsCreated,
+  PropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
+  PropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
+} from "./propertyintegrationsupportwebhookeventscreated.js";
 import {
-  PropertyPropertyIntegrationSupportWebhookEventsDeleted,
-  PropertyPropertyIntegrationSupportWebhookEventsDeleted$inboundSchema,
-  PropertyPropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
-} from "./propertypropertyintegrationsupportwebhookeventsdeleted.js";
+  PropertyIntegrationSupportWebhookEventsDeleted,
+  PropertyIntegrationSupportWebhookEventsDeleted$inboundSchema,
+  PropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
+} from "./propertyintegrationsupportwebhookeventsdeleted.js";
 import {
-  PropertyPropertyIntegrationSupportWebhookEventsUpdated,
-  PropertyPropertyIntegrationSupportWebhookEventsUpdated$inboundSchema,
-  PropertyPropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
-} from "./propertypropertyintegrationsupportwebhookeventsupdated.js";
+  PropertyIntegrationSupportWebhookEventsUpdated,
+  PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema,
+  PropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
+} from "./propertyintegrationsupportwebhookeventsupdated.js";
 
 export type PropertyIntegrationSupportWebhookEvents = {
-  created?:
-    | Array<PropertyPropertyIntegrationSupportWebhookEventsCreated>
-    | undefined;
-  deleted?:
-    | Array<PropertyPropertyIntegrationSupportWebhookEventsDeleted>
-    | undefined;
-  updated?:
-    | Array<PropertyPropertyIntegrationSupportWebhookEventsUpdated>
-    | undefined;
+  created?: Array<PropertyIntegrationSupportWebhookEventsCreated> | undefined;
+  deleted?: Array<PropertyIntegrationSupportWebhookEventsDeleted> | undefined;
+  updated?: Array<PropertyIntegrationSupportWebhookEventsUpdated> | undefined;
 };
 
 /** @internal */
@@ -37,15 +31,12 @@ export const PropertyIntegrationSupportWebhookEvents$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  created: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
-  ).optional(),
-  deleted: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsDeleted$inboundSchema,
-  ).optional(),
-  updated: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsUpdated$inboundSchema,
-  ).optional(),
+  created: z.array(PropertyIntegrationSupportWebhookEventsCreated$inboundSchema)
+    .optional(),
+  deleted: z.array(PropertyIntegrationSupportWebhookEventsDeleted$inboundSchema)
+    .optional(),
+  updated: z.array(PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema)
+    .optional(),
 });
 
 /** @internal */
@@ -62,13 +53,13 @@ export const PropertyIntegrationSupportWebhookEvents$outboundSchema: z.ZodType<
   PropertyIntegrationSupportWebhookEvents
 > = z.object({
   created: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
+    PropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
   ).optional(),
   deleted: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
+    PropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
   ).optional(),
   updated: z.array(
-    PropertyPropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
+    PropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
   ).optional(),
 });
 

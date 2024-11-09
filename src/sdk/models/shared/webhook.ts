@@ -72,6 +72,15 @@ export const ObjectType = {
   TaskTask: "task_task",
   ScimUsers: "scim_users",
   ScimGroups: "scim_groups",
+  LmsCourse: "lms_course",
+  LmsClass: "lms_class",
+  LmsStudent: "lms_student",
+  LmsInstructor: "lms_instructor",
+  RepoOrganization: "repo_organization",
+  RepoRepository: "repo_repository",
+  RepoBranch: "repo_branch",
+  RepoCommit: "repo_commit",
+  RepoPullrequest: "repo_pullrequest",
 } as const;
 export type ObjectType = ClosedEnum<typeof ObjectType>;
 

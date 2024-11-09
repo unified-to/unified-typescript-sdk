@@ -25,6 +25,8 @@ export const Categories = {
   Kms: "kms",
   Task: "task",
   Scim: "scim",
+  Lms: "lms",
+  Repo: "repo",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

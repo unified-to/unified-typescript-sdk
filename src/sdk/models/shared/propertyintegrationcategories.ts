@@ -24,6 +24,8 @@ export const PropertyIntegrationCategories = {
   Kms: "kms",
   Task: "task",
   Scim: "scim",
+  Lms: "lms",
+  Repo: "repo",
 } as const;
 export type PropertyIntegrationCategories = ClosedEnum<
   typeof PropertyIntegrationCategories

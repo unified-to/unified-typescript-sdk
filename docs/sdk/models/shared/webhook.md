@@ -10,8 +10,8 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 let value: Webhook = {
   connectionId: "<id>",
   event: "updated",
-  hookUrl: "https://cluttered-steak.net",
-  objectType: "hris_payslip",
+  hookUrl: "https://elliptical-fog.org",
+  objectType: "storage_file",
 };
 ```
 

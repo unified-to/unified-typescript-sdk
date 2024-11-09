@@ -4,6 +4,7 @@
 
 import { scimCreateScimGroups } from "../funcs/scimCreateScimGroups.js";
 import { scimCreateScimUsers } from "../funcs/scimCreateScimUsers.js";
+import { scimGetScimGroups } from "../funcs/scimGetScimGroups.js";
 import { scimGetScimUsers } from "../funcs/scimGetScimUsers.js";
 import { scimListScimGroups } from "../funcs/scimListScimGroups.js";
 import { scimListScimUsers } from "../funcs/scimListScimUsers.js";
@@ -25,7 +26,7 @@ export class Scim extends ClientSDK {
   async createScimGroups(
     request: operations.CreateScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(scimCreateScimGroups(
       this,
       request,
@@ -39,8 +40,22 @@ export class Scim extends ClientSDK {
   async createScimUsers(
     request: operations.CreateScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(scimCreateScimUsers(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get group
+   */
+  async getScimGroups(
+    request: operations.GetScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ScimGroup> {
+    return unwrapAsync(scimGetScimGroups(
       this,
       request,
       options,
@@ -53,7 +68,7 @@ export class Scim extends ClientSDK {
   async getScimUsers(
     request: operations.GetScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(scimGetScimUsers(
       this,
       request,
@@ -67,7 +82,7 @@ export class Scim extends ClientSDK {
   async listScimGroups(
     request: operations.ListScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.Group>> {
+  ): Promise<Array<shared.ScimGroup>> {
     return unwrapAsync(scimListScimGroups(
       this,
       request,
@@ -81,7 +96,7 @@ export class Scim extends ClientSDK {
   async listScimUsers(
     request: operations.ListScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.User>> {
+  ): Promise<Array<shared.ScimUser>> {
     return unwrapAsync(scimListScimUsers(
       this,
       request,
@@ -95,7 +110,7 @@ export class Scim extends ClientSDK {
   async patchScimGroups(
     request: operations.PatchScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(scimPatchScimGroups(
       this,
       request,
@@ -109,7 +124,7 @@ export class Scim extends ClientSDK {
   async patchScimUsers(
     request: operations.PatchScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(scimPatchScimUsers(
       this,
       request,
@@ -151,7 +166,7 @@ export class Scim extends ClientSDK {
   async updateScimGroups(
     request: operations.UpdateScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(scimUpdateScimGroups(
       this,
       request,
@@ -165,7 +180,7 @@ export class Scim extends ClientSDK {
   async updateScimUsers(
     request: operations.UpdateScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(scimUpdateScimUsers(
       this,
       request,

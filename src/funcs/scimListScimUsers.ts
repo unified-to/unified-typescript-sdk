@@ -32,7 +32,7 @@ export async function scimListScimUsers(
   options?: RequestOptions,
 ): Promise<
   Result<
-    Array<shared.User>,
+    Array<shared.ScimUser>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -113,7 +113,7 @@ export async function scimListScimUsers(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.User>,
+    Array<shared.ScimUser>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -122,7 +122,7 @@ export async function scimListScimUsers(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, z.array(shared.User$inboundSchema)),
+    M.json(200, z.array(shared.ScimUser$inboundSchema)),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

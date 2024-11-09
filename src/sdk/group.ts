@@ -5,6 +5,7 @@
 import { groupCreateHrisGroup } from "../funcs/groupCreateHrisGroup.js";
 import { groupCreateScimGroups } from "../funcs/groupCreateScimGroups.js";
 import { groupGetHrisGroup } from "../funcs/groupGetHrisGroup.js";
+import { groupGetScimGroups } from "../funcs/groupGetScimGroups.js";
 import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
 import { groupListScimGroups } from "../funcs/groupListScimGroups.js";
 import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
@@ -39,7 +40,7 @@ export class Group extends ClientSDK {
   async createScimGroups(
     request: operations.CreateScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(groupCreateScimGroups(
       this,
       request,
@@ -55,6 +56,20 @@ export class Group extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
     return unwrapAsync(groupGetHrisGroup(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Get group
+   */
+  async getScimGroups(
+    request: operations.GetScimGroupsRequest,
+    options?: RequestOptions,
+  ): Promise<shared.ScimGroup> {
+    return unwrapAsync(groupGetScimGroups(
       this,
       request,
       options,
@@ -81,7 +96,7 @@ export class Group extends ClientSDK {
   async listScimGroups(
     request: operations.ListScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.Group>> {
+  ): Promise<Array<shared.ScimGroup>> {
     return unwrapAsync(groupListScimGroups(
       this,
       request,
@@ -109,7 +124,7 @@ export class Group extends ClientSDK {
   async patchScimGroups(
     request: operations.PatchScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(groupPatchScimGroups(
       this,
       request,
@@ -165,7 +180,7 @@ export class Group extends ClientSDK {
   async updateScimGroups(
     request: operations.UpdateScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<shared.Group> {
+  ): Promise<shared.ScimGroup> {
     return unwrapAsync(groupUpdateScimGroups(
       this,
       request,

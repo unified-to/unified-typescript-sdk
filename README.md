@@ -75,12 +75,14 @@ run();
 
 ### Select Server by Index
 
-You can override the default server globally by passing a server index to the `serverIdx` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.unified.to` | None |
-| 1 | `https://api-eu.unified.to` | None |
+| #   | Server                      |
+| --- | --------------------------- |
+| 0   | `https://api.unified.to`    |
+| 1   | `https://api-eu.unified.to` |
+
+#### Example
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
@@ -102,11 +104,9 @@ run();
 
 ```
 
-
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `serverURL` optional parameter when initializing the SDK client instance. For example:
-
+The default server can also be overridden globally by passing a URL to the `serverURL: string` optional parameter when initializing the SDK client instance. For example:
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -188,9 +188,9 @@ const sdk = new UnifiedTo({ httpClient });
 
 This SDK supports the following security scheme globally:
 
-| Name    | Type    | Scheme  |
-| ------- | ------- | ------- |
-| `jwt`   | apiKey  | API key |
+| Name  | Type   | Scheme  |
+| ----- | ------ | ------- |
+| `jwt` | apiKey | API key |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```typescript
@@ -236,9 +236,9 @@ If a HTTP request fails, an operation my also throw an error from the `sdk/model
 
 In addition, when custom error responses are specified for an operation, the SDK may throw their associated Error type. You can refer to respective *Errors* tables in SDK docs for more details on possible error types for each operation. For example, the `createAccountingAccount` method may throw the following errors:
 
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
+| Error Type      | Status Code | Content Type |
+| --------------- | ----------- | ------------ |
+| errors.SDKError | 4XX, 5XX    | \*/\*        |
 
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
@@ -528,6 +528,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsUpdateAtsScorecard`](docs/sdks/ats/README.md#updateatsscorecard) - Update a scorecard
 - [`authGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
 - [`authGetUnifiedIntegrationLogin`](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
+- [`branchCreateRepoBranch`](docs/sdks/branch/README.md#createrepobranch) - Create a branch
+- [`branchGetRepoBranch`](docs/sdks/branch/README.md#getrepobranch) - Retrieve a branch
+- [`branchListRepoBranches`](docs/sdks/branch/README.md#listrepobranches) - List all branches
+- [`branchPatchRepoBranch`](docs/sdks/branch/README.md#patchrepobranch) - Update a branch
+- [`branchRemoveRepoBranch`](docs/sdks/branch/README.md#removerepobranch) - Remove a branch
+- [`branchUpdateRepoBranch`](docs/sdks/branch/README.md#updaterepobranch) - Update a branch
 - [`callListUcCalls`](docs/sdks/call/README.md#listuccalls) - List all calls
 - [`candidateCreateAtsCandidate`](docs/sdks/candidate/README.md#createatscandidate) - Create a candidate
 - [`candidateGetAtsCandidate`](docs/sdks/candidate/README.md#getatscandidate) - Retrieve a candidate
@@ -537,6 +543,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`candidateUpdateAtsCandidate`](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
 - [`channelGetMessagingChannel`](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel
 - [`channelListMessagingChannels`](docs/sdks/channel/README.md#listmessagingchannels) - List all channels
+- [`classCreateLmsClass`](docs/sdks/class/README.md#createlmsclass) - Create a class
+- [`classGetLmsClass`](docs/sdks/class/README.md#getlmsclass) - Retrieve a class
+- [`classListLmsClasses`](docs/sdks/class/README.md#listlmsclasses) - List all classes
+- [`classPatchLmsClass`](docs/sdks/class/README.md#patchlmsclass) - Update a class
+- [`classRemoveLmsClass`](docs/sdks/class/README.md#removelmsclass) - Remove a class
+- [`classUpdateLmsClass`](docs/sdks/class/README.md#updatelmsclass) - Update a class
 - [`collectionCreateCommerceCollection`](docs/sdks/collection/README.md#createcommercecollection) - Create a collection
 - [`collectionGetCommerceCollection`](docs/sdks/collection/README.md#getcommercecollection) - Retrieve a collection
 - [`collectionListCommerceCollections`](docs/sdks/collection/README.md#listcommercecollections) - List all collections
@@ -567,6 +579,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
 - [`commerceUpdateCommerceItem`](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+- [`commitCreateRepoCommit`](docs/sdks/commit/README.md#createrepocommit) - Create a commit
+- [`commitGetRepoCommit`](docs/sdks/commit/README.md#getrepocommit) - Retrieve a commit
+- [`commitListRepoCommits`](docs/sdks/commit/README.md#listrepocommits) - List all commits
+- [`commitPatchRepoCommit`](docs/sdks/commit/README.md#patchrepocommit) - Update a commit
+- [`commitRemoveRepoCommit`](docs/sdks/commit/README.md#removerepocommit) - Remove a commit
+- [`commitUpdateRepoCommit`](docs/sdks/commit/README.md#updaterepocommit) - Update a commit
 - [`companyCreateCrmCompany`](docs/sdks/company/README.md#createcrmcompany) - Create a company
 - [`companyCreateHrisCompany`](docs/sdks/company/README.md#createhriscompany) - Create a company
 - [`companyGetAtsCompany`](docs/sdks/company/README.md#getatscompany) - Retrieve a company
@@ -606,6 +624,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`contactUpdateAccountingContact`](docs/sdks/contact/README.md#updateaccountingcontact) - Update a contact
 - [`contactUpdateCrmContact`](docs/sdks/contact/README.md#updatecrmcontact) - Update a contact
 - [`contactUpdateUcContact`](docs/sdks/contact/README.md#updateuccontact) - Update a contact
+- [`courseCreateLmsCourse`](docs/sdks/course/README.md#createlmscourse) - Create a course
+- [`courseGetLmsCourse`](docs/sdks/course/README.md#getlmscourse) - Retrieve a course
+- [`courseListLmsCourses`](docs/sdks/course/README.md#listlmscourses) - List all courses
+- [`coursePatchLmsCourse`](docs/sdks/course/README.md#patchlmscourse) - Update a course
+- [`courseRemoveLmsCourse`](docs/sdks/course/README.md#removelmscourse) - Remove a course
+- [`courseUpdateLmsCourse`](docs/sdks/course/README.md#updatelmscourse) - Update a course
 - [`crmCreateCrmCompany`](docs/sdks/crm/README.md#createcrmcompany) - Create a company
 - [`crmCreateCrmContact`](docs/sdks/crm/README.md#createcrmcontact) - Create a contact
 - [`crmCreateCrmDeal`](docs/sdks/crm/README.md#createcrmdeal) - Create a deal
@@ -685,6 +709,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
 - [`groupGetHrisGroup`](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
+- [`groupGetScimGroups`](docs/sdks/group/README.md#getscimgroups) - Get group
 - [`groupListHrisGroups`](docs/sdks/group/README.md#listhrisgroups) - List all groups
 - [`groupListScimGroups`](docs/sdks/group/README.md#listscimgroups) - List groups
 - [`groupPatchHrisGroup`](docs/sdks/group/README.md#patchhrisgroup) - Update a group
@@ -721,6 +746,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`hrisUpdateHrisLocation`](docs/sdks/hris/README.md#updatehrislocation) - Update a location
+- [`instructorCreateLmsInstructor`](docs/sdks/instructor/README.md#createlmsinstructor) - Create an instructor
+- [`instructorGetLmsInstructor`](docs/sdks/instructor/README.md#getlmsinstructor) - Retrieve an instructor
+- [`instructorListLmsInstructors`](docs/sdks/instructor/README.md#listlmsinstructors) - List all instructors
+- [`instructorPatchLmsInstructor`](docs/sdks/instructor/README.md#patchlmsinstructor) - Update an instructor
+- [`instructorRemoveLmsInstructor`](docs/sdks/instructor/README.md#removelmsinstructor) - Remove an instructor
+- [`instructorUpdateLmsInstructor`](docs/sdks/instructor/README.md#updatelmsinstructor) - Update an instructor
 - [`integrationGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Create connection indirectly
 - [`integrationListUnifiedIntegrations`](docs/sdks/integration/README.md#listunifiedintegrations) - Returns all integrations
 - [`integrationListUnifiedIntegrationWorkspaces`](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
@@ -791,6 +822,30 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`listPatchMartechList`](docs/sdks/list/README.md#patchmartechlist) - Update a list
 - [`listRemoveMartechList`](docs/sdks/list/README.md#removemartechlist) - Remove a list
 - [`listUpdateMartechList`](docs/sdks/list/README.md#updatemartechlist) - Update a list
+- [`lmsCreateLmsClass`](docs/sdks/lms/README.md#createlmsclass) - Create a class
+- [`lmsCreateLmsCourse`](docs/sdks/lms/README.md#createlmscourse) - Create a course
+- [`lmsCreateLmsInstructor`](docs/sdks/lms/README.md#createlmsinstructor) - Create an instructor
+- [`lmsCreateLmsStudent`](docs/sdks/lms/README.md#createlmsstudent) - Create a student
+- [`lmsGetLmsClass`](docs/sdks/lms/README.md#getlmsclass) - Retrieve a class
+- [`lmsGetLmsCourse`](docs/sdks/lms/README.md#getlmscourse) - Retrieve a course
+- [`lmsGetLmsInstructor`](docs/sdks/lms/README.md#getlmsinstructor) - Retrieve an instructor
+- [`lmsGetLmsStudent`](docs/sdks/lms/README.md#getlmsstudent) - Retrieve a student
+- [`lmsListLmsClasses`](docs/sdks/lms/README.md#listlmsclasses) - List all classes
+- [`lmsListLmsCourses`](docs/sdks/lms/README.md#listlmscourses) - List all courses
+- [`lmsListLmsInstructors`](docs/sdks/lms/README.md#listlmsinstructors) - List all instructors
+- [`lmsListLmsStudents`](docs/sdks/lms/README.md#listlmsstudents) - List all students
+- [`lmsPatchLmsClass`](docs/sdks/lms/README.md#patchlmsclass) - Update a class
+- [`lmsPatchLmsCourse`](docs/sdks/lms/README.md#patchlmscourse) - Update a course
+- [`lmsPatchLmsInstructor`](docs/sdks/lms/README.md#patchlmsinstructor) - Update an instructor
+- [`lmsPatchLmsStudent`](docs/sdks/lms/README.md#patchlmsstudent) - Update a student
+- [`lmsRemoveLmsClass`](docs/sdks/lms/README.md#removelmsclass) - Remove a class
+- [`lmsRemoveLmsCourse`](docs/sdks/lms/README.md#removelmscourse) - Remove a course
+- [`lmsRemoveLmsInstructor`](docs/sdks/lms/README.md#removelmsinstructor) - Remove an instructor
+- [`lmsRemoveLmsStudent`](docs/sdks/lms/README.md#removelmsstudent) - Remove a student
+- [`lmsUpdateLmsClass`](docs/sdks/lms/README.md#updatelmsclass) - Update a class
+- [`lmsUpdateLmsCourse`](docs/sdks/lms/README.md#updatelmscourse) - Update a course
+- [`lmsUpdateLmsInstructor`](docs/sdks/lms/README.md#updatelmsinstructor) - Update an instructor
+- [`lmsUpdateLmsStudent`](docs/sdks/lms/README.md#updatelmsstudent) - Update a student
 - [`locationCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`locationCreateHrisLocation`](docs/sdks/location/README.md#createhrislocation) - Create a location
 - [`locationGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
@@ -849,8 +904,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`orderPatchAccountingOrder`](docs/sdks/order/README.md#patchaccountingorder) - Update an order
 - [`orderRemoveAccountingOrder`](docs/sdks/order/README.md#removeaccountingorder) - Remove an order
 - [`orderUpdateAccountingOrder`](docs/sdks/order/README.md#updateaccountingorder) - Update an order
+- [`organizationCreateRepoOrganization`](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
 - [`organizationGetAccountingOrganization`](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
+- [`organizationGetRepoOrganization`](docs/sdks/organization/README.md#getrepoorganization) - Retrieve an organization
 - [`organizationListAccountingOrganizations`](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
+- [`organizationListRepoOrganizations`](docs/sdks/organization/README.md#listrepoorganizations) - List all organizations
+- [`organizationPatchRepoOrganization`](docs/sdks/organization/README.md#patchrepoorganization) - Update an organization
+- [`organizationRemoveRepoOrganization`](docs/sdks/organization/README.md#removerepoorganization) - Remove an organization
+- [`organizationUpdateRepoOrganization`](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 - [`pageCreateKmsPage`](docs/sdks/page/README.md#createkmspage) - Create a page
 - [`pageGetKmsPage`](docs/sdks/page/README.md#getkmspage) - Retrieve a page
 - [`pageListKmsPages`](docs/sdks/page/README.md#listkmspages) - List all pages
@@ -899,10 +960,53 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`projectRemoveTaskProject`](docs/sdks/project/README.md#removetaskproject) - Remove a project
 - [`projectUpdateTaskProject`](docs/sdks/project/README.md#updatetaskproject) - Update a project
 - [`promptCreateGenaiPrompt`](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
+- [`pullrequestCreateRepoPullrequest`](docs/sdks/pullrequest/README.md#createrepopullrequest) - Create a pullrequest
+- [`pullrequestGetRepoPullrequest`](docs/sdks/pullrequest/README.md#getrepopullrequest) - Retrieve a pullrequest
+- [`pullrequestListRepoPullrequests`](docs/sdks/pullrequest/README.md#listrepopullrequests) - List all pullrequests
+- [`pullrequestPatchRepoPullrequest`](docs/sdks/pullrequest/README.md#patchrepopullrequest) - Update a pullrequest
+- [`pullrequestRemoveRepoPullrequest`](docs/sdks/pullrequest/README.md#removerepopullrequest) - Remove a pullrequest
+- [`pullrequestUpdateRepoPullrequest`](docs/sdks/pullrequest/README.md#updaterepopullrequest) - Update a pullrequest
 - [`refundGetPaymentRefund`](docs/sdks/refund/README.md#getpaymentrefund) - Retrieve a refund
 - [`refundListPaymentRefunds`](docs/sdks/refund/README.md#listpaymentrefunds) - List all refunds
+- [`repoCreateRepoBranch`](docs/sdks/repo/README.md#createrepobranch) - Create a branch
+- [`repoCreateRepoCommit`](docs/sdks/repo/README.md#createrepocommit) - Create a commit
+- [`repoCreateRepoOrganization`](docs/sdks/repo/README.md#createrepoorganization) - Create an organization
+- [`repoCreateRepoPullrequest`](docs/sdks/repo/README.md#createrepopullrequest) - Create a pullrequest
+- [`repoCreateRepoRepository`](docs/sdks/repo/README.md#createreporepository) - Create a repository
+- [`repoGetRepoBranch`](docs/sdks/repo/README.md#getrepobranch) - Retrieve a branch
+- [`repoGetRepoCommit`](docs/sdks/repo/README.md#getrepocommit) - Retrieve a commit
+- [`repoGetRepoOrganization`](docs/sdks/repo/README.md#getrepoorganization) - Retrieve an organization
+- [`repoGetRepoPullrequest`](docs/sdks/repo/README.md#getrepopullrequest) - Retrieve a pullrequest
+- [`repoGetRepoRepository`](docs/sdks/repo/README.md#getreporepository) - Retrieve a repository
+- [`repoListRepoBranches`](docs/sdks/repo/README.md#listrepobranches) - List all branches
+- [`repoListRepoCommits`](docs/sdks/repo/README.md#listrepocommits) - List all commits
+- [`repoListRepoOrganizations`](docs/sdks/repo/README.md#listrepoorganizations) - List all organizations
+- [`repoListRepoPullrequests`](docs/sdks/repo/README.md#listrepopullrequests) - List all pullrequests
+- [`repoListRepoRepositories`](docs/sdks/repo/README.md#listreporepositories) - List all repositories
+- [`repoPatchRepoBranch`](docs/sdks/repo/README.md#patchrepobranch) - Update a branch
+- [`repoPatchRepoCommit`](docs/sdks/repo/README.md#patchrepocommit) - Update a commit
+- [`repoPatchRepoOrganization`](docs/sdks/repo/README.md#patchrepoorganization) - Update an organization
+- [`repoPatchRepoPullrequest`](docs/sdks/repo/README.md#patchrepopullrequest) - Update a pullrequest
+- [`repoPatchRepoRepository`](docs/sdks/repo/README.md#patchreporepository) - Update a repository
+- [`repoRemoveRepoBranch`](docs/sdks/repo/README.md#removerepobranch) - Remove a branch
+- [`repoRemoveRepoCommit`](docs/sdks/repo/README.md#removerepocommit) - Remove a commit
+- [`repoRemoveRepoOrganization`](docs/sdks/repo/README.md#removerepoorganization) - Remove an organization
+- [`repoRemoveRepoPullrequest`](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
+- [`repoRemoveRepoRepository`](docs/sdks/repo/README.md#removereporepository) - Remove a repository
+- [`repositoryCreateRepoRepository`](docs/sdks/repository/README.md#createreporepository) - Create a repository
+- [`repositoryGetRepoRepository`](docs/sdks/repository/README.md#getreporepository) - Retrieve a repository
+- [`repositoryListRepoRepositories`](docs/sdks/repository/README.md#listreporepositories) - List all repositories
+- [`repositoryPatchRepoRepository`](docs/sdks/repository/README.md#patchreporepository) - Update a repository
+- [`repositoryRemoveRepoRepository`](docs/sdks/repository/README.md#removereporepository) - Remove a repository
+- [`repositoryUpdateRepoRepository`](docs/sdks/repository/README.md#updatereporepository) - Update a repository
+- [`repoUpdateRepoBranch`](docs/sdks/repo/README.md#updaterepobranch) - Update a branch
+- [`repoUpdateRepoCommit`](docs/sdks/repo/README.md#updaterepocommit) - Update a commit
+- [`repoUpdateRepoOrganization`](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
+- [`repoUpdateRepoPullrequest`](docs/sdks/repo/README.md#updaterepopullrequest) - Update a pullrequest
+- [`repoUpdateRepoRepository`](docs/sdks/repo/README.md#updatereporepository) - Update a repository
 - [`scimCreateScimGroups`](docs/sdks/scim/README.md#createscimgroups) - Create group
 - [`scimCreateScimUsers`](docs/sdks/scim/README.md#createscimusers) - Create user
+- [`scimGetScimGroups`](docs/sdks/scim/README.md#getscimgroups) - Get group
 - [`scimGetScimUsers`](docs/sdks/scim/README.md#getscimusers) - Get user
 - [`scimListScimGroups`](docs/sdks/scim/README.md#listscimgroups) - List groups
 - [`scimListScimUsers`](docs/sdks/scim/README.md#listscimusers) - List users
@@ -930,6 +1034,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`storagePatchStorageFile`](docs/sdks/storage/README.md#patchstoragefile) - Update a file
 - [`storageRemoveStorageFile`](docs/sdks/storage/README.md#removestoragefile) - Remove a file
 - [`storageUpdateStorageFile`](docs/sdks/storage/README.md#updatestoragefile) - Update a file
+- [`studentCreateLmsStudent`](docs/sdks/student/README.md#createlmsstudent) - Create a student
+- [`studentGetLmsStudent`](docs/sdks/student/README.md#getlmsstudent) - Retrieve a student
+- [`studentListLmsStudents`](docs/sdks/student/README.md#listlmsstudents) - List all students
+- [`studentPatchLmsStudent`](docs/sdks/student/README.md#patchlmsstudent) - Update a student
+- [`studentRemoveLmsStudent`](docs/sdks/student/README.md#removelmsstudent) - Remove a student
+- [`studentUpdateLmsStudent`](docs/sdks/student/README.md#updatelmsstudent) - Update a student
 - [`taskCreateTaskProject`](docs/sdks/task/README.md#createtaskproject) - Create a project
 - [`taskCreateTaskTask`](docs/sdks/task/README.md#createtasktask) - Create a task
 - [`taskGetTaskProject`](docs/sdks/task/README.md#gettaskproject) - Retrieve a project

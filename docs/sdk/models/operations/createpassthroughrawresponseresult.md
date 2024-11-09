@@ -18,6 +18,6 @@ const value: string = "<value>";
 ### `Uint8Array`
 
 ```typescript
-const value: Uint8Array = new TextEncoder().encode("0xcCdD6B4Ef4");
+const value: Uint8Array = new TextEncoder().encode("0x2f8c43a7EA");
 ```
 

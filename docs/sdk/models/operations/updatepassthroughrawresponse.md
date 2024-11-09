@@ -11,7 +11,7 @@ let value: UpdatePassthroughRawResponse = {
       "<value>",
     ],
   },
-  result: new TextEncoder().encode("0xf52165aff6"),
+  result: "<value>",
 };
 ```
 

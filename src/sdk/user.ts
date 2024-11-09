@@ -20,7 +20,7 @@ export class User extends ClientSDK {
   async createScimUsers(
     request: operations.CreateScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(userCreateScimUsers(
       this,
       request,
@@ -34,7 +34,7 @@ export class User extends ClientSDK {
   async getScimUsers(
     request: operations.GetScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(userGetScimUsers(
       this,
       request,
@@ -48,7 +48,7 @@ export class User extends ClientSDK {
   async listScimUsers(
     request: operations.ListScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<Array<shared.User>> {
+  ): Promise<Array<shared.ScimUser>> {
     return unwrapAsync(userListScimUsers(
       this,
       request,
@@ -62,7 +62,7 @@ export class User extends ClientSDK {
   async patchScimUsers(
     request: operations.PatchScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(userPatchScimUsers(
       this,
       request,
@@ -90,7 +90,7 @@ export class User extends ClientSDK {
   async updateScimUsers(
     request: operations.UpdateScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<shared.User> {
+  ): Promise<shared.ScimUser> {
     return unwrapAsync(userUpdateScimUsers(
       this,
       request,

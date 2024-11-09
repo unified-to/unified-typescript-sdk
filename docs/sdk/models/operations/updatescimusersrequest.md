@@ -13,8 +13,8 @@ let value: UpdateScimUsersRequest = {
 
 ## Fields
 
-| Field                                             | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `user`                                            | [shared.User](../../../sdk/models/shared/user.md) | :heavy_minus_sign:                                | N/A                                               |
-| `connectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the User                                    |
+| Field                                                     | Type                                                      | Required                                                  | Description                                               |
+| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `scimUser`                                                | [shared.ScimUser](../../../sdk/models/shared/scimuser.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `connectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
+| `id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the User                                            |

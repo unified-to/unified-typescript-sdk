@@ -7,7 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateScimUsersRequest = {
-  user?: shared.User | undefined;
+  scimUser?: shared.ScimUser | undefined;
   /**
    * ID of the connection
    */
@@ -24,19 +24,19 @@ export const UpdateScimUsersRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  User: shared.User$inboundSchema.optional(),
+  ScimUser: shared.ScimUser$inboundSchema.optional(),
   connection_id: z.string(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
-    "User": "user",
+    "ScimUser": "scimUser",
     "connection_id": "connectionId",
   });
 });
 
 /** @internal */
 export type UpdateScimUsersRequest$Outbound = {
-  User?: shared.User$Outbound | undefined;
+  ScimUser?: shared.ScimUser$Outbound | undefined;
   connection_id: string;
   id: string;
 };
@@ -47,12 +47,12 @@ export const UpdateScimUsersRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateScimUsersRequest
 > = z.object({
-  user: shared.User$outboundSchema.optional(),
+  scimUser: shared.ScimUser$outboundSchema.optional(),
   connectionId: z.string(),
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
-    user: "User",
+    scimUser: "ScimUser",
     connectionId: "connection_id",
   });
 });

@@ -11,7 +11,7 @@ let value: PatchPassthroughRawResponse = {
       "<value>",
     ],
   },
-  result: new TextEncoder().encode("0x5EEBdD6Cd0"),
+  result: new TextEncoder().encode("0xf52165aff6"),
 };
 ```
 

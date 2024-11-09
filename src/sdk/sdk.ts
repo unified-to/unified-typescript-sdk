@@ -11,14 +11,18 @@ import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
+import { Branch } from "./branch.js";
 import { Call } from "./call.js";
 import { Candidate } from "./candidate.js";
 import { Channel } from "./channel.js";
+import { Class } from "./class.js";
 import { Collection } from "./collection.js";
 import { Commerce } from "./commerce.js";
+import { Commit } from "./commit.js";
 import { Company } from "./company.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
+import { Course } from "./course.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
 import { Deal } from "./deal.js";
@@ -30,6 +34,7 @@ import { FileT } from "./file.js";
 import { Genai } from "./genai.js";
 import { Group } from "./group.js";
 import { Hris } from "./hris.js";
+import { Instructor } from "./instructor.js";
 import { Integration } from "./integration.js";
 import { Interview } from "./interview.js";
 import { Inventory } from "./inventory.js";
@@ -42,6 +47,7 @@ import { Kms } from "./kms.js";
 import { Lead } from "./lead.js";
 import { Link } from "./link.js";
 import { List } from "./list.js";
+import { Lms } from "./lms.js";
 import { Location } from "./location.js";
 import { Login } from "./login.js";
 import { Martech } from "./martech.js";
@@ -61,11 +67,15 @@ import { Person } from "./person.js";
 import { Pipeline } from "./pipeline.js";
 import { Project } from "./project.js";
 import { Prompt } from "./prompt.js";
+import { Pullrequest } from "./pullrequest.js";
 import { Refund } from "./refund.js";
+import { Repo } from "./repo.js";
+import { Repository } from "./repository.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
+import { Student } from "./student.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
 import { Ticket } from "./ticket.js";
@@ -288,6 +298,31 @@ export class UnifiedTo extends ClientSDK {
     return (this._space ??= new Space(this._options));
   }
 
+  private _lms?: Lms;
+  get lms(): Lms {
+    return (this._lms ??= new Lms(this._options));
+  }
+
+  private _class?: Class;
+  get class(): Class {
+    return (this._class ??= new Class(this._options));
+  }
+
+  private _course?: Course;
+  get course(): Course {
+    return (this._course ??= new Course(this._options));
+  }
+
+  private _instructor?: Instructor;
+  get instructor(): Instructor {
+    return (this._instructor ??= new Instructor(this._options));
+  }
+
+  private _student?: Student;
+  get student(): Student {
+    return (this._student ??= new Student(this._options));
+  }
+
   private _martech?: Martech;
   get martech(): Martech {
     return (this._martech ??= new Martech(this._options));
@@ -341,6 +376,31 @@ export class UnifiedTo extends ClientSDK {
   private _refund?: Refund;
   get refund(): Refund {
     return (this._refund ??= new Refund(this._options));
+  }
+
+  private _repo?: Repo;
+  get repo(): Repo {
+    return (this._repo ??= new Repo(this._options));
+  }
+
+  private _branch?: Branch;
+  get branch(): Branch {
+    return (this._branch ??= new Branch(this._options));
+  }
+
+  private _commit?: Commit;
+  get commit(): Commit {
+    return (this._commit ??= new Commit(this._options));
+  }
+
+  private _pullrequest?: Pullrequest;
+  get pullrequest(): Pullrequest {
+    return (this._pullrequest ??= new Pullrequest(this._options));
+  }
+
+  private _repository?: Repository;
+  get repository(): Repository {
+    return (this._repository ??= new Repository(this._options));
   }
 
   private _scim?: Scim;

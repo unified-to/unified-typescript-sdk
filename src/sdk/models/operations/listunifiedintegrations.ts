@@ -25,6 +25,8 @@ export const ListUnifiedIntegrationsQueryParamCategories = {
   Kms: "kms",
   Task: "task",
   Scim: "scim",
+  Lms: "lms",
+  Repo: "repo",
 } as const;
 export type ListUnifiedIntegrationsQueryParamCategories = ClosedEnum<
   typeof ListUnifiedIntegrationsQueryParamCategories

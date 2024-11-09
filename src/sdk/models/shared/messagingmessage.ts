@@ -36,6 +36,7 @@ export type MessagingMessage = {
   messageHtml?: string | undefined;
   parentMessageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reference?: string | undefined;
   subject?: string | undefined;
   updatedAt?: string | undefined;
   webUrl?: string | undefined;
@@ -59,6 +60,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   message_html: z.string().optional(),
   parent_message_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  reference: z.string().optional(),
   subject: z.string().optional(),
   updated_at: z.string().optional(),
   web_url: z.string().optional(),
@@ -91,6 +93,7 @@ export type MessagingMessage$Outbound = {
   message_html?: string | undefined;
   parent_message_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reference?: string | undefined;
   subject?: string | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -114,6 +117,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   messageHtml: z.string().optional(),
   parentMessageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  reference: z.string().optional(),
   subject: z.string().optional(),
   updatedAt: z.string().optional(),
   webUrl: z.string().optional(),
