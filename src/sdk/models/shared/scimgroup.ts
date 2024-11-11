@@ -25,7 +25,7 @@ export type ScimGroup = {
   displayName: string;
   externalId?: string | undefined;
   groupType?: string | undefined;
-  id: string;
+  id?: string | undefined;
   /**
    * An array of members
    */
@@ -46,7 +46,7 @@ export const ScimGroup$inboundSchema: z.ZodType<
   displayName: z.string(),
   externalId: z.string().optional(),
   groupType: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   members: z.array(ScimGroupMember$inboundSchema).optional(),
   meta: PropertyScimGroupMeta$inboundSchema.optional(),
   schemas: z.array(PropertyScimGroupSchemas$inboundSchema).optional(),
@@ -57,7 +57,7 @@ export type ScimGroup$Outbound = {
   displayName: string;
   externalId?: string | undefined;
   groupType?: string | undefined;
-  id: string;
+  id?: string | undefined;
   members?: Array<ScimGroupMember$Outbound> | undefined;
   meta?: PropertyScimGroupMeta$Outbound | undefined;
   schemas?: Array<string> | undefined;
@@ -72,7 +72,7 @@ export const ScimGroup$outboundSchema: z.ZodType<
   displayName: z.string(),
   externalId: z.string().optional(),
   groupType: z.string().optional(),
-  id: z.string(),
+  id: z.string().optional(),
   members: z.array(ScimGroupMember$outboundSchema).optional(),
   meta: PropertyScimGroupMeta$outboundSchema.optional(),
   schemas: z.array(PropertyScimGroupSchemas$outboundSchema).optional(),
