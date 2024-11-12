@@ -79,6 +79,9 @@ export async function atsGetAtsCandidate(
   const context = {
     operationID: "getAtsCandidate",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

@@ -79,6 +79,9 @@ export async function repositoryGetRepoRepository(
   const context = {
     operationID: "getRepoRepository",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

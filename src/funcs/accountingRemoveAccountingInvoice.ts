@@ -78,6 +78,9 @@ export async function accountingRemoveAccountingInvoice(
   const context = {
     operationID: "removeAccountingInvoice",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

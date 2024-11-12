@@ -82,6 +82,9 @@ export async function journalGetAccountingJournal(
   const context = {
     operationID: "getAccountingJournal",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

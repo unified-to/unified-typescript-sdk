@@ -77,6 +77,9 @@ export async function accountingCreateAccountingOrder(
   const context = {
     operationID: "createAccountingOrder",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

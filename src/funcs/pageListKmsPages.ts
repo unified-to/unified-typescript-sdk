@@ -84,6 +84,9 @@ export async function pageListKmsPages(
   const context = {
     operationID: "listKmsPages",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

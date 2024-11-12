@@ -80,6 +80,9 @@ export async function atsPatchAtsCandidate(
   const context = {
     operationID: "patchAtsCandidate",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

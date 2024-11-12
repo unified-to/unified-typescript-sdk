@@ -79,6 +79,9 @@ export async function ticketingGetTicketingNote(
   const context = {
     operationID: "getTicketingNote",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

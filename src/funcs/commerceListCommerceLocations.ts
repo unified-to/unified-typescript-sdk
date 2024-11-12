@@ -83,6 +83,9 @@ export async function commerceListCommerceLocations(
   const context = {
     operationID: "listCommerceLocations",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

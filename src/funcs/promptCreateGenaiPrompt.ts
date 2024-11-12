@@ -76,6 +76,9 @@ export async function promptCreateGenaiPrompt(
   const context = {
     operationID: "createGenaiPrompt",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

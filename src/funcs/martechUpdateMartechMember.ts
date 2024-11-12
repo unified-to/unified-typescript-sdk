@@ -81,6 +81,9 @@ export async function martechUpdateMartechMember(
   const context = {
     operationID: "updateMartechMember",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

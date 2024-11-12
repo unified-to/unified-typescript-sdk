@@ -80,6 +80,9 @@ export async function interviewPatchAtsInterview(
   const context = {
     operationID: "patchAtsInterview",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

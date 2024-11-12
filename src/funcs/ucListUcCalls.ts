@@ -84,6 +84,9 @@ export async function ucListUcCalls(
   const context = {
     operationID: "listUcCalls",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

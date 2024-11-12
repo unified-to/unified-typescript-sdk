@@ -85,6 +85,9 @@ export async function collectionPatchCommerceCollection(
   const context = {
     operationID: "patchCommerceCollection",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

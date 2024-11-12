@@ -82,6 +82,9 @@ export async function invoiceGetAccountingInvoice(
   const context = {
     operationID: "getAccountingInvoice",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

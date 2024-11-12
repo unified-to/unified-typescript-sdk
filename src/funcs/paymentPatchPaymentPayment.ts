@@ -81,6 +81,9 @@ export async function paymentPatchPaymentPayment(
   const context = {
     operationID: "patchPaymentPayment",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

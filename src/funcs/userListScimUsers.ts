@@ -80,6 +80,9 @@ export async function userListScimUsers(
   const context = {
     operationID: "listScimUsers",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

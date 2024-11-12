@@ -83,6 +83,9 @@ export async function taxrateUpdateAccountingTaxrate(
   const context = {
     operationID: "updateAccountingTaxrate",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

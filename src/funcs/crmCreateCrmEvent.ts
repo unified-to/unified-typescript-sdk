@@ -76,6 +76,9 @@ export async function crmCreateCrmEvent(
   const context = {
     operationID: "createCrmEvent",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

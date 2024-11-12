@@ -79,6 +79,9 @@ export async function paymentGetPaymentLink(
   const context = {
     operationID: "getPaymentLink",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

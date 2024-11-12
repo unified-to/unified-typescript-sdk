@@ -80,6 +80,9 @@ export async function lmsPatchLmsClass(
   const context = {
     operationID: "patchLmsClass",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

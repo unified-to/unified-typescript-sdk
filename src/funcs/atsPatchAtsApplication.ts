@@ -81,6 +81,9 @@ export async function atsPatchAtsApplication(
   const context = {
     operationID: "patchAtsApplication",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

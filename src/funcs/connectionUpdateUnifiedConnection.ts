@@ -73,6 +73,9 @@ export async function connectionUpdateUnifiedConnection(
   const context = {
     operationID: "updateUnifiedConnection",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

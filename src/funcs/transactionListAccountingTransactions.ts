@@ -86,6 +86,9 @@ export async function transactionListAccountingTransactions(
   const context = {
     operationID: "listAccountingTransactions",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

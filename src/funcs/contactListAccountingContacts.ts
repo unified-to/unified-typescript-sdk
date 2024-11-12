@@ -84,6 +84,9 @@ export async function contactListAccountingContacts(
   const context = {
     operationID: "listAccountingContacts",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

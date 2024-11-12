@@ -82,6 +82,9 @@ export async function channelGetMessagingChannel(
   const context = {
     operationID: "getMessagingChannel",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

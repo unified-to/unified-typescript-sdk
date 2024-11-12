@@ -76,6 +76,9 @@ export async function contactCreateUcContact(
   const context = {
     operationID: "createUcContact",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

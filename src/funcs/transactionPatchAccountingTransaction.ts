@@ -85,6 +85,9 @@ export async function transactionPatchAccountingTransaction(
   const context = {
     operationID: "patchAccountingTransaction",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

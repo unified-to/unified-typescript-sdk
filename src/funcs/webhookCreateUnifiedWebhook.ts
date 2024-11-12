@@ -73,6 +73,9 @@ export async function webhookCreateUnifiedWebhook(
   const context = {
     operationID: "createUnifiedWebhook",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

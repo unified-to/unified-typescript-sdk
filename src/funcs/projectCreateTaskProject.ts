@@ -76,6 +76,9 @@ export async function projectCreateTaskProject(
   const context = {
     operationID: "createTaskProject",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

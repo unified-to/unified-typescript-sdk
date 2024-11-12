@@ -75,6 +75,9 @@ export async function dealRemoveCrmDeal(
   const context = {
     operationID: "removeCrmDeal",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

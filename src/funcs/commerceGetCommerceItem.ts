@@ -79,6 +79,9 @@ export async function commerceGetCommerceItem(
   const context = {
     operationID: "getCommerceItem",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

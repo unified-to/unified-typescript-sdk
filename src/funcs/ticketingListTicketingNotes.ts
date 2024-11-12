@@ -84,6 +84,9 @@ export async function ticketingListTicketingNotes(
   const context = {
     operationID: "listTicketingNotes",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

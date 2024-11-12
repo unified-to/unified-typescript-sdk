@@ -79,6 +79,9 @@ export async function repoGetRepoBranch(
   const context = {
     operationID: "getRepoBranch",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

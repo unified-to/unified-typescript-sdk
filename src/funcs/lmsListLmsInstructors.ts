@@ -87,6 +87,9 @@ export async function lmsListLmsInstructors(
   const context = {
     operationID: "listLmsInstructors",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

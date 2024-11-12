@@ -72,6 +72,9 @@ export async function unifiedUpdateUnifiedWebhookTrigger(
   const context = {
     operationID: "updateUnifiedWebhookTrigger",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

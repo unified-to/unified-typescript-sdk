@@ -80,6 +80,9 @@ export async function courseUpdateLmsCourse(
   const context = {
     operationID: "updateLmsCourse",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

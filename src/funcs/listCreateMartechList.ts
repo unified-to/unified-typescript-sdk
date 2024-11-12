@@ -76,6 +76,9 @@ export async function listCreateMartechList(
   const context = {
     operationID: "createMartechList",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

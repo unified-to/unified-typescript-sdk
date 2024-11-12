@@ -82,6 +82,9 @@ export async function repoGetRepoOrganization(
   const context = {
     operationID: "getRepoOrganization",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

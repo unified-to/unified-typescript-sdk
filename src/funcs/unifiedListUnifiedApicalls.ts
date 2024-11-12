@@ -79,6 +79,9 @@ export async function unifiedListUnifiedApicalls(
   const context = {
     operationID: "listUnifiedApicalls",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig

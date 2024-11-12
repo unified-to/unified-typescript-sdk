@@ -83,6 +83,9 @@ export async function accountingUpdateAccountingJournal(
   const context = {
     operationID: "updateAccountingJournal",
     oAuth2Scopes: [],
+
+    resolvedSecurity: requestSecurity,
+
     securitySource: client._options.security,
     retryConfig: options?.retries
       || client._options.retryConfig
