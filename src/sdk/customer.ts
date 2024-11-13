@@ -76,7 +76,7 @@ export class Customer extends ClientSDK {
   async removeTicketingCustomer(
     request: operations.RemoveTicketingCustomerRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveTicketingCustomerResponse | undefined> {
     return unwrapAsync(customerRemoveTicketingCustomer(
       this,
       request,

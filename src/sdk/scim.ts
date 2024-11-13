@@ -138,7 +138,7 @@ export class Scim extends ClientSDK {
   async removeScimGroups(
     request: operations.RemoveScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveScimGroupsResponse | undefined> {
     return unwrapAsync(scimRemoveScimGroups(
       this,
       request,
@@ -152,7 +152,7 @@ export class Scim extends ClientSDK {
   async removeScimUsers(
     request: operations.RemoveScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveScimUsersResponse | undefined> {
     return unwrapAsync(scimRemoveScimUsers(
       this,
       request,

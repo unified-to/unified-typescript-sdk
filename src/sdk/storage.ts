@@ -76,7 +76,7 @@ export class Storage extends ClientSDK {
   async removeStorageFile(
     request: operations.RemoveStorageFileRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveStorageFileResponse | undefined> {
     return unwrapAsync(storageRemoveStorageFile(
       this,
       request,

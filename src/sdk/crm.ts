@@ -386,7 +386,7 @@ export class Crm extends ClientSDK {
   async removeCrmCompany(
     request: operations.RemoveCrmCompanyRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmCompanyResponse | undefined> {
     return unwrapAsync(crmRemoveCrmCompany(
       this,
       request,
@@ -400,7 +400,7 @@ export class Crm extends ClientSDK {
   async removeCrmContact(
     request: operations.RemoveCrmContactRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmContactResponse | undefined> {
     return unwrapAsync(crmRemoveCrmContact(
       this,
       request,
@@ -414,7 +414,7 @@ export class Crm extends ClientSDK {
   async removeCrmDeal(
     request: operations.RemoveCrmDealRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmDealResponse | undefined> {
     return unwrapAsync(crmRemoveCrmDeal(
       this,
       request,
@@ -428,7 +428,7 @@ export class Crm extends ClientSDK {
   async removeCrmEvent(
     request: operations.RemoveCrmEventRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmEventResponse | undefined> {
     return unwrapAsync(crmRemoveCrmEvent(
       this,
       request,
@@ -442,7 +442,7 @@ export class Crm extends ClientSDK {
   async removeCrmLead(
     request: operations.RemoveCrmLeadRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmLeadResponse | undefined> {
     return unwrapAsync(crmRemoveCrmLead(
       this,
       request,
@@ -456,7 +456,7 @@ export class Crm extends ClientSDK {
   async removeCrmPipeline(
     request: operations.RemoveCrmPipelineRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmPipelineResponse | undefined> {
     return unwrapAsync(crmRemoveCrmPipeline(
       this,
       request,

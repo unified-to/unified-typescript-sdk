@@ -76,7 +76,7 @@ export class Instructor extends ClientSDK {
   async removeLmsInstructor(
     request: operations.RemoveLmsInstructorRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveLmsInstructorResponse | undefined> {
     return unwrapAsync(instructorRemoveLmsInstructor(
       this,
       request,

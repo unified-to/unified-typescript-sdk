@@ -23,7 +23,9 @@ import { Result } from "../sdk/types/fp.js";
 
 export enum RemovePassthroughAcceptEnum {
   applicationJson = "application/json",
+  textCsv = "text/csv",
   textPlain = "text/plain",
+  applicationXml = "application/xml",
   wildcardWildcard = "*/*",
 }
 
@@ -74,7 +76,7 @@ export async function passthroughRemovePassthrough(
 
   const headers = new Headers({
     Accept: options?.acceptHeaderOverride
-      || "application/json;q=1, text/plain;q=0.7, */*;q=0",
+      || "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0",
   });
 
   const securityInput = await extractSecurity(client._options.security);
@@ -136,22 +138,32 @@ export async function passthroughRemovePassthrough(
       operations.RemovePassthroughResponse$inboundSchema.optional(),
       { hdrs: true },
     ),
-    M.bytes(
-      "2XX",
+    M.fail(["4XX", "5XX"]),
+    M.stream(
+      "default",
       operations.RemovePassthroughResponse$inboundSchema.optional(),
-      { ctype: "*/*", key: "Result" },
+      { ctype: "*/*", hdrs: true, key: "Result" },
     ),
     M.json(
-      "2XX",
+      "default",
       operations.RemovePassthroughResponse$inboundSchema.optional(),
-      { key: "Result" },
+      { hdrs: true, key: "Result" },
     ),
     M.text(
-      "2XX",
+      "default",
       operations.RemovePassthroughResponse$inboundSchema.optional(),
-      { key: "Result" },
+      { ctype: "application/xml", hdrs: true, key: "Result" },
     ),
-    M.fail(["4XX", "5XX"]),
+    M.text(
+      "default",
+      operations.RemovePassthroughResponse$inboundSchema.optional(),
+      { ctype: "text/csv", hdrs: true, key: "Result" },
+    ),
+    M.text(
+      "default",
+      operations.RemovePassthroughResponse$inboundSchema.optional(),
+      { hdrs: true, key: "Result" },
+    ),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
     return result;

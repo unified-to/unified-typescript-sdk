@@ -76,7 +76,7 @@ export class Repository extends ClientSDK {
   async removeRepoRepository(
     request: operations.RemoveRepoRepositoryRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoRepositoryResponse | undefined> {
     return unwrapAsync(repositoryRemoveRepoRepository(
       this,
       request,

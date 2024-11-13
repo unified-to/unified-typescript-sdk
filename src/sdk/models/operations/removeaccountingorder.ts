@@ -16,6 +16,10 @@ export type RemoveAccountingOrderRequest = {
   id: string;
 };
 
+export type RemoveAccountingOrderResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveAccountingOrderRequest$inboundSchema: z.ZodType<
   RemoveAccountingOrderRequest,
@@ -61,4 +65,48 @@ export namespace RemoveAccountingOrderRequest$ {
   export const outboundSchema = RemoveAccountingOrderRequest$outboundSchema;
   /** @deprecated use `RemoveAccountingOrderRequest$Outbound` instead. */
   export type Outbound = RemoveAccountingOrderRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveAccountingOrderResponse$inboundSchema: z.ZodType<
+  RemoveAccountingOrderResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveAccountingOrderResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveAccountingOrderResponse$outboundSchema: z.ZodType<
+  RemoveAccountingOrderResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveAccountingOrderResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveAccountingOrderResponse$ {
+  /** @deprecated use `RemoveAccountingOrderResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveAccountingOrderResponse$inboundSchema;
+  /** @deprecated use `RemoveAccountingOrderResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveAccountingOrderResponse$outboundSchema;
+  /** @deprecated use `RemoveAccountingOrderResponse$Outbound` instead. */
+  export type Outbound = RemoveAccountingOrderResponse$Outbound;
 }

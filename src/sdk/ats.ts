@@ -493,7 +493,7 @@ export class Ats extends ClientSDK {
   async removeAtsActivity(
     request: operations.RemoveAtsActivityRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsActivityResponse | undefined> {
     return unwrapAsync(atsRemoveAtsActivity(
       this,
       request,
@@ -507,7 +507,7 @@ export class Ats extends ClientSDK {
   async removeAtsApplication(
     request: operations.RemoveAtsApplicationRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsApplicationResponse | undefined> {
     return unwrapAsync(atsRemoveAtsApplication(
       this,
       request,
@@ -521,7 +521,7 @@ export class Ats extends ClientSDK {
   async removeAtsCandidate(
     request: operations.RemoveAtsCandidateRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsCandidateResponse | undefined> {
     return unwrapAsync(atsRemoveAtsCandidate(
       this,
       request,
@@ -535,7 +535,7 @@ export class Ats extends ClientSDK {
   async removeAtsDocument(
     request: operations.RemoveAtsDocumentRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsDocumentResponse | undefined> {
     return unwrapAsync(atsRemoveAtsDocument(
       this,
       request,
@@ -549,7 +549,7 @@ export class Ats extends ClientSDK {
   async removeAtsInterview(
     request: operations.RemoveAtsInterviewRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsInterviewResponse | undefined> {
     return unwrapAsync(atsRemoveAtsInterview(
       this,
       request,
@@ -563,7 +563,7 @@ export class Ats extends ClientSDK {
   async removeAtsJob(
     request: operations.RemoveAtsJobRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsJobResponse | undefined> {
     return unwrapAsync(atsRemoveAtsJob(
       this,
       request,
@@ -577,7 +577,7 @@ export class Ats extends ClientSDK {
   async removeAtsScorecard(
     request: operations.RemoveAtsScorecardRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsScorecardResponse | undefined> {
     return unwrapAsync(atsRemoveAtsScorecard(
       this,
       request,

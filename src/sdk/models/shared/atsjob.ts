@@ -53,6 +53,9 @@ export type AtsJob = {
   companyId?: string | undefined;
   compensation?: Array<AtsCompensation> | undefined;
   createdAt?: Date | undefined;
+  /**
+   * The names of the departments/divisions that this job belongs to
+   */
   departments?: Array<string> | undefined;
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;

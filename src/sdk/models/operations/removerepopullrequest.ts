@@ -16,6 +16,10 @@ export type RemoveRepoPullrequestRequest = {
   id: string;
 };
 
+export type RemoveRepoPullrequestResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveRepoPullrequestRequest$inboundSchema: z.ZodType<
   RemoveRepoPullrequestRequest,
@@ -61,4 +65,48 @@ export namespace RemoveRepoPullrequestRequest$ {
   export const outboundSchema = RemoveRepoPullrequestRequest$outboundSchema;
   /** @deprecated use `RemoveRepoPullrequestRequest$Outbound` instead. */
   export type Outbound = RemoveRepoPullrequestRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveRepoPullrequestResponse$inboundSchema: z.ZodType<
+  RemoveRepoPullrequestResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveRepoPullrequestResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveRepoPullrequestResponse$outboundSchema: z.ZodType<
+  RemoveRepoPullrequestResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveRepoPullrequestResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveRepoPullrequestResponse$ {
+  /** @deprecated use `RemoveRepoPullrequestResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveRepoPullrequestResponse$inboundSchema;
+  /** @deprecated use `RemoveRepoPullrequestResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveRepoPullrequestResponse$outboundSchema;
+  /** @deprecated use `RemoveRepoPullrequestResponse$Outbound` instead. */
+  export type Outbound = RemoveRepoPullrequestResponse$Outbound;
 }

@@ -16,6 +16,10 @@ export type RemoveCrmLeadRequest = {
   id: string;
 };
 
+export type RemoveCrmLeadResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveCrmLeadRequest$inboundSchema: z.ZodType<
   RemoveCrmLeadRequest,
@@ -61,4 +65,48 @@ export namespace RemoveCrmLeadRequest$ {
   export const outboundSchema = RemoveCrmLeadRequest$outboundSchema;
   /** @deprecated use `RemoveCrmLeadRequest$Outbound` instead. */
   export type Outbound = RemoveCrmLeadRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveCrmLeadResponse$inboundSchema: z.ZodType<
+  RemoveCrmLeadResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveCrmLeadResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveCrmLeadResponse$outboundSchema: z.ZodType<
+  RemoveCrmLeadResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveCrmLeadResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveCrmLeadResponse$ {
+  /** @deprecated use `RemoveCrmLeadResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveCrmLeadResponse$inboundSchema;
+  /** @deprecated use `RemoveCrmLeadResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveCrmLeadResponse$outboundSchema;
+  /** @deprecated use `RemoveCrmLeadResponse$Outbound` instead. */
+  export type Outbound = RemoveCrmLeadResponse$Outbound;
 }

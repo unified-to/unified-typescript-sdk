@@ -16,6 +16,10 @@ export type RemoveCrmPipelineRequest = {
   id: string;
 };
 
+export type RemoveCrmPipelineResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveCrmPipelineRequest$inboundSchema: z.ZodType<
   RemoveCrmPipelineRequest,
@@ -61,4 +65,48 @@ export namespace RemoveCrmPipelineRequest$ {
   export const outboundSchema = RemoveCrmPipelineRequest$outboundSchema;
   /** @deprecated use `RemoveCrmPipelineRequest$Outbound` instead. */
   export type Outbound = RemoveCrmPipelineRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveCrmPipelineResponse$inboundSchema: z.ZodType<
+  RemoveCrmPipelineResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveCrmPipelineResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveCrmPipelineResponse$outboundSchema: z.ZodType<
+  RemoveCrmPipelineResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveCrmPipelineResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveCrmPipelineResponse$ {
+  /** @deprecated use `RemoveCrmPipelineResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveCrmPipelineResponse$inboundSchema;
+  /** @deprecated use `RemoveCrmPipelineResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveCrmPipelineResponse$outboundSchema;
+  /** @deprecated use `RemoveCrmPipelineResponse$Outbound` instead. */
+  export type Outbound = RemoveCrmPipelineResponse$Outbound;
 }

@@ -16,6 +16,10 @@ export type RemoveKmsPageRequest = {
   id: string;
 };
 
+export type RemoveKmsPageResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveKmsPageRequest$inboundSchema: z.ZodType<
   RemoveKmsPageRequest,
@@ -61,4 +65,48 @@ export namespace RemoveKmsPageRequest$ {
   export const outboundSchema = RemoveKmsPageRequest$outboundSchema;
   /** @deprecated use `RemoveKmsPageRequest$Outbound` instead. */
   export type Outbound = RemoveKmsPageRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveKmsPageResponse$inboundSchema: z.ZodType<
+  RemoveKmsPageResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveKmsPageResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveKmsPageResponse$outboundSchema: z.ZodType<
+  RemoveKmsPageResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveKmsPageResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveKmsPageResponse$ {
+  /** @deprecated use `RemoveKmsPageResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveKmsPageResponse$inboundSchema;
+  /** @deprecated use `RemoveKmsPageResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveKmsPageResponse$outboundSchema;
+  /** @deprecated use `RemoveKmsPageResponse$Outbound` instead. */
+  export type Outbound = RemoveKmsPageResponse$Outbound;
 }

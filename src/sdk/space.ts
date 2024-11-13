@@ -76,7 +76,7 @@ export class Space extends ClientSDK {
   async removeKmsSpace(
     request: operations.RemoveKmsSpaceRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveKmsSpaceResponse | undefined> {
     return unwrapAsync(spaceRemoveKmsSpace(
       this,
       request,

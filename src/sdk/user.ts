@@ -76,7 +76,7 @@ export class User extends ClientSDK {
   async removeScimUsers(
     request: operations.RemoveScimUsersRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveScimUsersResponse | undefined> {
     return unwrapAsync(userRemoveScimUsers(
       this,
       request,

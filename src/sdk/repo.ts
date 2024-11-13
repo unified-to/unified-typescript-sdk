@@ -324,7 +324,7 @@ export class Repo extends ClientSDK {
   async removeRepoBranch(
     request: operations.RemoveRepoBranchRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoBranchResponse | undefined> {
     return unwrapAsync(repoRemoveRepoBranch(
       this,
       request,
@@ -338,7 +338,7 @@ export class Repo extends ClientSDK {
   async removeRepoCommit(
     request: operations.RemoveRepoCommitRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoCommitResponse | undefined> {
     return unwrapAsync(repoRemoveRepoCommit(
       this,
       request,
@@ -352,7 +352,7 @@ export class Repo extends ClientSDK {
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoOrganizationResponse | undefined> {
     return unwrapAsync(repoRemoveRepoOrganization(
       this,
       request,
@@ -366,7 +366,7 @@ export class Repo extends ClientSDK {
   async removeRepoPullrequest(
     request: operations.RemoveRepoPullrequestRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoPullrequestResponse | undefined> {
     return unwrapAsync(repoRemoveRepoPullrequest(
       this,
       request,
@@ -380,7 +380,7 @@ export class Repo extends ClientSDK {
   async removeRepoRepository(
     request: operations.RemoveRepoRepositoryRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoRepositoryResponse | undefined> {
     return unwrapAsync(repoRemoveRepoRepository(
       this,
       request,

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 4fc2a67a150948bf04b688d76763ebd2
+  docChecksum: c742bd133ee67d6de3e53fb5420440fe
   docVersion: "1.0"
   speakeasyVersion: 1.438.1
   generationVersion: 2.457.2
-  releaseVersion: 2.8.4
-  configChecksum: 1bd5cc4e969caef493f5ac2df6d9f3ee
+  releaseVersion: 2.9.0
+  configChecksum: 812a9abe9b2e3029eeb20204ed5b9a2e
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -18,6 +18,7 @@ features:
     constsAndDefaults: 0.1.11
     core: 3.18.3
     defaultEnabledRetries: 0.1.0
+    downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
     globalSecurity: 2.82.11
@@ -301,65 +302,121 @@ generatedFiles:
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
   - docs/sdk/models/operations/patchunifiedwebhookrequest.md
   - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/operations/patchunifiedwebhooktriggerresponse.md
   - docs/sdk/models/operations/queryparamcategories.md
   - docs/sdk/models/operations/removeaccountingaccountrequest.md
+  - docs/sdk/models/operations/removeaccountingaccountresponse.md
   - docs/sdk/models/operations/removeaccountingcontactrequest.md
+  - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
+  - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
   - docs/sdk/models/operations/removeaccountingjournalrequest.md
+  - docs/sdk/models/operations/removeaccountingjournalresponse.md
   - docs/sdk/models/operations/removeaccountingorderrequest.md
+  - docs/sdk/models/operations/removeaccountingorderresponse.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
+  - docs/sdk/models/operations/removeaccountingtaxrateresponse.md
   - docs/sdk/models/operations/removeaccountingtransactionrequest.md
+  - docs/sdk/models/operations/removeaccountingtransactionresponse.md
   - docs/sdk/models/operations/removeatsactivityrequest.md
+  - docs/sdk/models/operations/removeatsactivityresponse.md
   - docs/sdk/models/operations/removeatsapplicationrequest.md
+  - docs/sdk/models/operations/removeatsapplicationresponse.md
   - docs/sdk/models/operations/removeatscandidaterequest.md
+  - docs/sdk/models/operations/removeatscandidateresponse.md
   - docs/sdk/models/operations/removeatsdocumentrequest.md
+  - docs/sdk/models/operations/removeatsdocumentresponse.md
   - docs/sdk/models/operations/removeatsinterviewrequest.md
+  - docs/sdk/models/operations/removeatsinterviewresponse.md
   - docs/sdk/models/operations/removeatsjobrequest.md
+  - docs/sdk/models/operations/removeatsjobresponse.md
   - docs/sdk/models/operations/removeatsscorecardrequest.md
+  - docs/sdk/models/operations/removeatsscorecardresponse.md
   - docs/sdk/models/operations/removecommercecollectionrequest.md
+  - docs/sdk/models/operations/removecommercecollectionresponse.md
   - docs/sdk/models/operations/removecommerceinventoryrequest.md
+  - docs/sdk/models/operations/removecommerceinventoryresponse.md
   - docs/sdk/models/operations/removecommerceitemrequest.md
+  - docs/sdk/models/operations/removecommerceitemresponse.md
   - docs/sdk/models/operations/removecommercelocationrequest.md
+  - docs/sdk/models/operations/removecommercelocationresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
+  - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmcontactrequest.md
+  - docs/sdk/models/operations/removecrmcontactresponse.md
   - docs/sdk/models/operations/removecrmdealrequest.md
+  - docs/sdk/models/operations/removecrmdealresponse.md
   - docs/sdk/models/operations/removecrmeventrequest.md
+  - docs/sdk/models/operations/removecrmeventresponse.md
   - docs/sdk/models/operations/removecrmleadrequest.md
+  - docs/sdk/models/operations/removecrmleadresponse.md
   - docs/sdk/models/operations/removecrmpipelinerequest.md
+  - docs/sdk/models/operations/removecrmpipelineresponse.md
   - docs/sdk/models/operations/removehriscompanyrequest.md
+  - docs/sdk/models/operations/removehriscompanyresponse.md
   - docs/sdk/models/operations/removehrisemployeerequest.md
+  - docs/sdk/models/operations/removehrisemployeeresponse.md
   - docs/sdk/models/operations/removehrisgrouprequest.md
+  - docs/sdk/models/operations/removehrisgroupresponse.md
   - docs/sdk/models/operations/removehrislocationrequest.md
+  - docs/sdk/models/operations/removehrislocationresponse.md
   - docs/sdk/models/operations/removekmspagerequest.md
+  - docs/sdk/models/operations/removekmspageresponse.md
   - docs/sdk/models/operations/removekmsspacerequest.md
+  - docs/sdk/models/operations/removekmsspaceresponse.md
   - docs/sdk/models/operations/removelmsclassrequest.md
+  - docs/sdk/models/operations/removelmsclassresponse.md
   - docs/sdk/models/operations/removelmscourserequest.md
+  - docs/sdk/models/operations/removelmscourseresponse.md
   - docs/sdk/models/operations/removelmsinstructorrequest.md
+  - docs/sdk/models/operations/removelmsinstructorresponse.md
   - docs/sdk/models/operations/removelmsstudentrequest.md
+  - docs/sdk/models/operations/removelmsstudentresponse.md
   - docs/sdk/models/operations/removemartechlistrequest.md
+  - docs/sdk/models/operations/removemartechlistresponse.md
   - docs/sdk/models/operations/removemartechmemberrequest.md
+  - docs/sdk/models/operations/removemartechmemberresponse.md
   - docs/sdk/models/operations/removemessagingmessagerequest.md
+  - docs/sdk/models/operations/removemessagingmessageresponse.md
   - docs/sdk/models/operations/removepassthroughrequest.md
   - docs/sdk/models/operations/removepassthroughresponse.md
   - docs/sdk/models/operations/removepassthroughresponseresult.md
   - docs/sdk/models/operations/removepaymentlinkrequest.md
+  - docs/sdk/models/operations/removepaymentlinkresponse.md
   - docs/sdk/models/operations/removepaymentpaymentrequest.md
+  - docs/sdk/models/operations/removepaymentpaymentresponse.md
   - docs/sdk/models/operations/removerepobranchrequest.md
+  - docs/sdk/models/operations/removerepobranchresponse.md
   - docs/sdk/models/operations/removerepocommitrequest.md
+  - docs/sdk/models/operations/removerepocommitresponse.md
   - docs/sdk/models/operations/removerepoorganizationrequest.md
+  - docs/sdk/models/operations/removerepoorganizationresponse.md
   - docs/sdk/models/operations/removerepopullrequestrequest.md
+  - docs/sdk/models/operations/removerepopullrequestresponse.md
   - docs/sdk/models/operations/removereporepositoryrequest.md
+  - docs/sdk/models/operations/removereporepositoryresponse.md
   - docs/sdk/models/operations/removescimgroupsrequest.md
+  - docs/sdk/models/operations/removescimgroupsresponse.md
   - docs/sdk/models/operations/removescimusersrequest.md
+  - docs/sdk/models/operations/removescimusersresponse.md
   - docs/sdk/models/operations/removestoragefilerequest.md
+  - docs/sdk/models/operations/removestoragefileresponse.md
   - docs/sdk/models/operations/removetaskprojectrequest.md
+  - docs/sdk/models/operations/removetaskprojectresponse.md
   - docs/sdk/models/operations/removetasktaskrequest.md
+  - docs/sdk/models/operations/removetasktaskresponse.md
   - docs/sdk/models/operations/removeticketingcustomerrequest.md
+  - docs/sdk/models/operations/removeticketingcustomerresponse.md
   - docs/sdk/models/operations/removeticketingnoterequest.md
+  - docs/sdk/models/operations/removeticketingnoteresponse.md
   - docs/sdk/models/operations/removeticketingticketrequest.md
+  - docs/sdk/models/operations/removeticketingticketresponse.md
   - docs/sdk/models/operations/removeuccontactrequest.md
+  - docs/sdk/models/operations/removeuccontactresponse.md
   - docs/sdk/models/operations/removeunifiedconnectionrequest.md
+  - docs/sdk/models/operations/removeunifiedconnectionresponse.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
+  - docs/sdk/models/operations/removeunifiedwebhookresponse.md
   - docs/sdk/models/operations/scopes.md
   - docs/sdk/models/operations/updateaccountingaccountrequest.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
@@ -423,6 +480,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateunifiedconnectionrequest.md
   - docs/sdk/models/operations/updateunifiedwebhookrequest.md
   - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
+  - docs/sdk/models/operations/updateunifiedwebhooktriggerresponse.md
   - docs/sdk/models/shared/accountingaccount.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
@@ -3708,6 +3766,11 @@ examples:
           '*/*': "0x3CbcA7c7be"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-create-passthrough-raw:
       parameters:
         path:
@@ -3717,6 +3780,11 @@ examples:
         2XX:
           '*/*': "0x34ABa9b31D"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   listPassthroughs:
     speakeasy-default-list-passthroughs:
@@ -3730,6 +3798,11 @@ examples:
         2XX:
           application/json: {"key": "<value>", "key1": "<value>"}
           '*/*': "0xc838beeAd7"
+          text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   patchPassthrough:
     speakeasy-default-patch-passthrough:
@@ -3752,6 +3825,11 @@ examples:
           '*/*': "0x4fb8209099"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-patch-passthrough-raw:
       parameters:
         path:
@@ -3761,6 +3839,11 @@ examples:
         2XX:
           '*/*': "0x7CEb8f75C6"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   removePassthrough:
     speakeasy-default-remove-passthrough:
@@ -3774,6 +3857,11 @@ examples:
         2XX:
           application/json: {}
           '*/*': "0x0280cc8bc1"
+          text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   updatePassthrough:
     speakeasy-default-update-passthrough:
@@ -3796,6 +3884,11 @@ examples:
           '*/*': "0xDa7dcaB8ab"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-update-passthrough-raw:
       parameters:
         path:
@@ -3805,6 +3898,11 @@ examples:
         2XX:
           '*/*': "0x5587B3b9f8"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   createPaymentLink:
     speakeasy-default-create-payment-link:

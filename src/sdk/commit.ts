@@ -76,7 +76,7 @@ export class Commit extends ClientSDK {
   async removeRepoCommit(
     request: operations.RemoveRepoCommitRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoCommitResponse | undefined> {
     return unwrapAsync(commitRemoveRepoCommit(
       this,
       request,

@@ -16,6 +16,10 @@ export type RemoveTicketingCustomerRequest = {
   id: string;
 };
 
+export type RemoveTicketingCustomerResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveTicketingCustomerRequest$inboundSchema: z.ZodType<
   RemoveTicketingCustomerRequest,
@@ -61,4 +65,48 @@ export namespace RemoveTicketingCustomerRequest$ {
   export const outboundSchema = RemoveTicketingCustomerRequest$outboundSchema;
   /** @deprecated use `RemoveTicketingCustomerRequest$Outbound` instead. */
   export type Outbound = RemoveTicketingCustomerRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveTicketingCustomerResponse$inboundSchema: z.ZodType<
+  RemoveTicketingCustomerResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveTicketingCustomerResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveTicketingCustomerResponse$outboundSchema: z.ZodType<
+  RemoveTicketingCustomerResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveTicketingCustomerResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveTicketingCustomerResponse$ {
+  /** @deprecated use `RemoveTicketingCustomerResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveTicketingCustomerResponse$inboundSchema;
+  /** @deprecated use `RemoveTicketingCustomerResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveTicketingCustomerResponse$outboundSchema;
+  /** @deprecated use `RemoveTicketingCustomerResponse$Outbound` instead. */
+  export type Outbound = RemoveTicketingCustomerResponse$Outbound;
 }

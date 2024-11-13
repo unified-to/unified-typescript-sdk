@@ -16,6 +16,10 @@ export type RemovePaymentPaymentRequest = {
   id: string;
 };
 
+export type RemovePaymentPaymentResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemovePaymentPaymentRequest$inboundSchema: z.ZodType<
   RemovePaymentPaymentRequest,
@@ -61,4 +65,48 @@ export namespace RemovePaymentPaymentRequest$ {
   export const outboundSchema = RemovePaymentPaymentRequest$outboundSchema;
   /** @deprecated use `RemovePaymentPaymentRequest$Outbound` instead. */
   export type Outbound = RemovePaymentPaymentRequest$Outbound;
+}
+
+/** @internal */
+export const RemovePaymentPaymentResponse$inboundSchema: z.ZodType<
+  RemovePaymentPaymentResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemovePaymentPaymentResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemovePaymentPaymentResponse$outboundSchema: z.ZodType<
+  RemovePaymentPaymentResponse$Outbound,
+  z.ZodTypeDef,
+  RemovePaymentPaymentResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemovePaymentPaymentResponse$ {
+  /** @deprecated use `RemovePaymentPaymentResponse$inboundSchema` instead. */
+  export const inboundSchema = RemovePaymentPaymentResponse$inboundSchema;
+  /** @deprecated use `RemovePaymentPaymentResponse$outboundSchema` instead. */
+  export const outboundSchema = RemovePaymentPaymentResponse$outboundSchema;
+  /** @deprecated use `RemovePaymentPaymentResponse$Outbound` instead. */
+  export type Outbound = RemovePaymentPaymentResponse$Outbound;
 }

@@ -478,7 +478,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingAccount(
     request: operations.RemoveAccountingAccountRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingAccountResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingAccount(
       this,
       request,
@@ -492,7 +492,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingContact(
     request: operations.RemoveAccountingContactRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingContactResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingContact(
       this,
       request,
@@ -506,7 +506,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingInvoice(
     request: operations.RemoveAccountingInvoiceRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingInvoiceResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingInvoice(
       this,
       request,
@@ -520,7 +520,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingJournal(
     request: operations.RemoveAccountingJournalRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingJournalResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingJournal(
       this,
       request,
@@ -534,7 +534,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingOrder(
     request: operations.RemoveAccountingOrderRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingOrderResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingOrder(
       this,
       request,
@@ -548,7 +548,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingTaxrate(
     request: operations.RemoveAccountingTaxrateRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingTaxrateResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingTaxrate(
       this,
       request,
@@ -562,7 +562,7 @@ export class Accounting extends ClientSDK {
   async removeAccountingTransaction(
     request: operations.RemoveAccountingTransactionRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingTransactionResponse | undefined> {
     return unwrapAsync(accountingRemoveAccountingTransaction(
       this,
       request,

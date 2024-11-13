@@ -76,7 +76,7 @@ export class Employee extends ClientSDK {
   async removeHrisEmployee(
     request: operations.RemoveHrisEmployeeRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisEmployeeResponse | undefined> {
     return unwrapAsync(employeeRemoveHrisEmployee(
       this,
       request,

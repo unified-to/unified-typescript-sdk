@@ -16,6 +16,10 @@ export type RemoveTicketingNoteRequest = {
   id: string;
 };
 
+export type RemoveTicketingNoteResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveTicketingNoteRequest$inboundSchema: z.ZodType<
   RemoveTicketingNoteRequest,
@@ -61,4 +65,48 @@ export namespace RemoveTicketingNoteRequest$ {
   export const outboundSchema = RemoveTicketingNoteRequest$outboundSchema;
   /** @deprecated use `RemoveTicketingNoteRequest$Outbound` instead. */
   export type Outbound = RemoveTicketingNoteRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveTicketingNoteResponse$inboundSchema: z.ZodType<
+  RemoveTicketingNoteResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveTicketingNoteResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveTicketingNoteResponse$outboundSchema: z.ZodType<
+  RemoveTicketingNoteResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveTicketingNoteResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveTicketingNoteResponse$ {
+  /** @deprecated use `RemoveTicketingNoteResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveTicketingNoteResponse$inboundSchema;
+  /** @deprecated use `RemoveTicketingNoteResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveTicketingNoteResponse$outboundSchema;
+  /** @deprecated use `RemoveTicketingNoteResponse$Outbound` instead. */
+  export type Outbound = RemoveTicketingNoteResponse$Outbound;
 }

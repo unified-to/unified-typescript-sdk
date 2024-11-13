@@ -3,12 +3,17 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type RemoveUnifiedConnectionRequest = {
   /**
    * ID of the Connection
    */
   id: string;
+};
+
+export type RemoveUnifiedConnectionResponse = {
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -45,4 +50,48 @@ export namespace RemoveUnifiedConnectionRequest$ {
   export const outboundSchema = RemoveUnifiedConnectionRequest$outboundSchema;
   /** @deprecated use `RemoveUnifiedConnectionRequest$Outbound` instead. */
   export type Outbound = RemoveUnifiedConnectionRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveUnifiedConnectionResponse$inboundSchema: z.ZodType<
+  RemoveUnifiedConnectionResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveUnifiedConnectionResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveUnifiedConnectionResponse$outboundSchema: z.ZodType<
+  RemoveUnifiedConnectionResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveUnifiedConnectionResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveUnifiedConnectionResponse$ {
+  /** @deprecated use `RemoveUnifiedConnectionResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveUnifiedConnectionResponse$inboundSchema;
+  /** @deprecated use `RemoveUnifiedConnectionResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveUnifiedConnectionResponse$outboundSchema;
+  /** @deprecated use `RemoveUnifiedConnectionResponse$Outbound` instead. */
+  export type Outbound = RemoveUnifiedConnectionResponse$Outbound;
 }

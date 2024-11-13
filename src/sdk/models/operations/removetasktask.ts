@@ -16,6 +16,10 @@ export type RemoveTaskTaskRequest = {
   id: string;
 };
 
+export type RemoveTaskTaskResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveTaskTaskRequest$inboundSchema: z.ZodType<
   RemoveTaskTaskRequest,
@@ -61,4 +65,48 @@ export namespace RemoveTaskTaskRequest$ {
   export const outboundSchema = RemoveTaskTaskRequest$outboundSchema;
   /** @deprecated use `RemoveTaskTaskRequest$Outbound` instead. */
   export type Outbound = RemoveTaskTaskRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveTaskTaskResponse$inboundSchema: z.ZodType<
+  RemoveTaskTaskResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveTaskTaskResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveTaskTaskResponse$outboundSchema: z.ZodType<
+  RemoveTaskTaskResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveTaskTaskResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveTaskTaskResponse$ {
+  /** @deprecated use `RemoveTaskTaskResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveTaskTaskResponse$inboundSchema;
+  /** @deprecated use `RemoveTaskTaskResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveTaskTaskResponse$outboundSchema;
+  /** @deprecated use `RemoveTaskTaskResponse$Outbound` instead. */
+  export type Outbound = RemoveTaskTaskResponse$Outbound;
 }

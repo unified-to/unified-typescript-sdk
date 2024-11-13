@@ -76,7 +76,7 @@ export class Invoice extends ClientSDK {
   async removeAccountingInvoice(
     request: operations.RemoveAccountingInvoiceRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingInvoiceResponse | undefined> {
     return unwrapAsync(invoiceRemoveAccountingInvoice(
       this,
       request,

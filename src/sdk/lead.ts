@@ -76,7 +76,7 @@ export class Lead extends ClientSDK {
   async removeCrmLead(
     request: operations.RemoveCrmLeadRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmLeadResponse | undefined> {
     return unwrapAsync(leadRemoveCrmLead(
       this,
       request,

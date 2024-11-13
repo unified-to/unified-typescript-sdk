@@ -76,7 +76,7 @@ export class Taxrate extends ClientSDK {
   async removeAccountingTaxrate(
     request: operations.RemoveAccountingTaxrateRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingTaxrateResponse | undefined> {
     return unwrapAsync(taxrateRemoveAccountingTaxrate(
       this,
       request,

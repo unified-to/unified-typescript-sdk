@@ -106,7 +106,7 @@ export class Organization extends ClientSDK {
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoOrganizationResponse | undefined> {
     return unwrapAsync(organizationRemoveRepoOrganization(
       this,
       request,

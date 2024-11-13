@@ -16,6 +16,10 @@ export type RemoveAccountingAccountRequest = {
   id: string;
 };
 
+export type RemoveAccountingAccountResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveAccountingAccountRequest$inboundSchema: z.ZodType<
   RemoveAccountingAccountRequest,
@@ -61,4 +65,48 @@ export namespace RemoveAccountingAccountRequest$ {
   export const outboundSchema = RemoveAccountingAccountRequest$outboundSchema;
   /** @deprecated use `RemoveAccountingAccountRequest$Outbound` instead. */
   export type Outbound = RemoveAccountingAccountRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveAccountingAccountResponse$inboundSchema: z.ZodType<
+  RemoveAccountingAccountResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveAccountingAccountResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveAccountingAccountResponse$outboundSchema: z.ZodType<
+  RemoveAccountingAccountResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveAccountingAccountResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveAccountingAccountResponse$ {
+  /** @deprecated use `RemoveAccountingAccountResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveAccountingAccountResponse$inboundSchema;
+  /** @deprecated use `RemoveAccountingAccountResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveAccountingAccountResponse$outboundSchema;
+  /** @deprecated use `RemoveAccountingAccountResponse$Outbound` instead. */
+  export type Outbound = RemoveAccountingAccountResponse$Outbound;
 }

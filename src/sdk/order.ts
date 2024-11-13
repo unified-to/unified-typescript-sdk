@@ -76,7 +76,7 @@ export class Order extends ClientSDK {
   async removeAccountingOrder(
     request: operations.RemoveAccountingOrderRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingOrderResponse | undefined> {
     return unwrapAsync(orderRemoveAccountingOrder(
       this,
       request,

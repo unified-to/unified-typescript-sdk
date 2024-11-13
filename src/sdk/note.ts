@@ -76,7 +76,7 @@ export class Note extends ClientSDK {
   async removeTicketingNote(
     request: operations.RemoveTicketingNoteRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveTicketingNoteResponse | undefined> {
     return unwrapAsync(noteRemoveTicketingNote(
       this,
       request,

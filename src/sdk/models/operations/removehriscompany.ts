@@ -16,6 +16,10 @@ export type RemoveHrisCompanyRequest = {
   id: string;
 };
 
+export type RemoveHrisCompanyResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveHrisCompanyRequest$inboundSchema: z.ZodType<
   RemoveHrisCompanyRequest,
@@ -61,4 +65,48 @@ export namespace RemoveHrisCompanyRequest$ {
   export const outboundSchema = RemoveHrisCompanyRequest$outboundSchema;
   /** @deprecated use `RemoveHrisCompanyRequest$Outbound` instead. */
   export type Outbound = RemoveHrisCompanyRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveHrisCompanyResponse$inboundSchema: z.ZodType<
+  RemoveHrisCompanyResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveHrisCompanyResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveHrisCompanyResponse$outboundSchema: z.ZodType<
+  RemoveHrisCompanyResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveHrisCompanyResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveHrisCompanyResponse$ {
+  /** @deprecated use `RemoveHrisCompanyResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveHrisCompanyResponse$inboundSchema;
+  /** @deprecated use `RemoveHrisCompanyResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveHrisCompanyResponse$outboundSchema;
+  /** @deprecated use `RemoveHrisCompanyResponse$Outbound` instead. */
+  export type Outbound = RemoveHrisCompanyResponse$Outbound;
 }

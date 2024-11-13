@@ -16,6 +16,10 @@ export type RemoveScimGroupsRequest = {
   id: string;
 };
 
+export type RemoveScimGroupsResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveScimGroupsRequest$inboundSchema: z.ZodType<
   RemoveScimGroupsRequest,
@@ -61,4 +65,48 @@ export namespace RemoveScimGroupsRequest$ {
   export const outboundSchema = RemoveScimGroupsRequest$outboundSchema;
   /** @deprecated use `RemoveScimGroupsRequest$Outbound` instead. */
   export type Outbound = RemoveScimGroupsRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveScimGroupsResponse$inboundSchema: z.ZodType<
+  RemoveScimGroupsResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveScimGroupsResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveScimGroupsResponse$outboundSchema: z.ZodType<
+  RemoveScimGroupsResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveScimGroupsResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveScimGroupsResponse$ {
+  /** @deprecated use `RemoveScimGroupsResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveScimGroupsResponse$inboundSchema;
+  /** @deprecated use `RemoveScimGroupsResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveScimGroupsResponse$outboundSchema;
+  /** @deprecated use `RemoveScimGroupsResponse$Outbound` instead. */
+  export type Outbound = RemoveScimGroupsResponse$Outbound;
 }

@@ -16,6 +16,10 @@ export type RemoveMartechListRequest = {
   id: string;
 };
 
+export type RemoveMartechListResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveMartechListRequest$inboundSchema: z.ZodType<
   RemoveMartechListRequest,
@@ -61,4 +65,48 @@ export namespace RemoveMartechListRequest$ {
   export const outboundSchema = RemoveMartechListRequest$outboundSchema;
   /** @deprecated use `RemoveMartechListRequest$Outbound` instead. */
   export type Outbound = RemoveMartechListRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveMartechListResponse$inboundSchema: z.ZodType<
+  RemoveMartechListResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveMartechListResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveMartechListResponse$outboundSchema: z.ZodType<
+  RemoveMartechListResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveMartechListResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveMartechListResponse$ {
+  /** @deprecated use `RemoveMartechListResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveMartechListResponse$inboundSchema;
+  /** @deprecated use `RemoveMartechListResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveMartechListResponse$outboundSchema;
+  /** @deprecated use `RemoveMartechListResponse$Outbound` instead. */
+  export type Outbound = RemoveMartechListResponse$Outbound;
 }

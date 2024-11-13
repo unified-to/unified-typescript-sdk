@@ -16,6 +16,10 @@ export type RemoveAccountingTransactionRequest = {
   id: string;
 };
 
+export type RemoveAccountingTransactionResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveAccountingTransactionRequest$inboundSchema: z.ZodType<
   RemoveAccountingTransactionRequest,
@@ -62,4 +66,50 @@ export namespace RemoveAccountingTransactionRequest$ {
     RemoveAccountingTransactionRequest$outboundSchema;
   /** @deprecated use `RemoveAccountingTransactionRequest$Outbound` instead. */
   export type Outbound = RemoveAccountingTransactionRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveAccountingTransactionResponse$inboundSchema: z.ZodType<
+  RemoveAccountingTransactionResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveAccountingTransactionResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveAccountingTransactionResponse$outboundSchema: z.ZodType<
+  RemoveAccountingTransactionResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveAccountingTransactionResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveAccountingTransactionResponse$ {
+  /** @deprecated use `RemoveAccountingTransactionResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    RemoveAccountingTransactionResponse$inboundSchema;
+  /** @deprecated use `RemoveAccountingTransactionResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    RemoveAccountingTransactionResponse$outboundSchema;
+  /** @deprecated use `RemoveAccountingTransactionResponse$Outbound` instead. */
+  export type Outbound = RemoveAccountingTransactionResponse$Outbound;
 }

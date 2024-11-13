@@ -322,7 +322,7 @@ export class Hris extends ClientSDK {
   async removeHrisCompany(
     request: operations.RemoveHrisCompanyRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisCompanyResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisCompany(
       this,
       request,
@@ -336,7 +336,7 @@ export class Hris extends ClientSDK {
   async removeHrisEmployee(
     request: operations.RemoveHrisEmployeeRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisEmployeeResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisEmployee(
       this,
       request,
@@ -350,7 +350,7 @@ export class Hris extends ClientSDK {
   async removeHrisGroup(
     request: operations.RemoveHrisGroupRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisGroupResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisGroup(
       this,
       request,
@@ -364,7 +364,7 @@ export class Hris extends ClientSDK {
   async removeHrisLocation(
     request: operations.RemoveHrisLocationRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisLocationResponse | undefined> {
     return unwrapAsync(hrisRemoveHrisLocation(
       this,
       request,

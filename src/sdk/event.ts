@@ -76,7 +76,7 @@ export class Event extends ClientSDK {
   async removeCrmEvent(
     request: operations.RemoveCrmEventRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmEventResponse | undefined> {
     return unwrapAsync(eventRemoveCrmEvent(
       this,
       request,

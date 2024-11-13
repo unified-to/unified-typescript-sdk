@@ -5,14 +5,7 @@
 ```typescript
 import { PatchPassthroughJsonResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchPassthroughJsonResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: new TextEncoder().encode("0xFFDB718521"),
-};
+// No examples available for this model
 ```
 
 ## Fields

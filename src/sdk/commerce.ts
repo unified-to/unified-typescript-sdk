@@ -262,7 +262,7 @@ export class Commerce extends ClientSDK {
   async removeCommerceCollection(
     request: operations.RemoveCommerceCollectionRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceCollectionResponse | undefined> {
     return unwrapAsync(commerceRemoveCommerceCollection(
       this,
       request,
@@ -276,7 +276,7 @@ export class Commerce extends ClientSDK {
   async removeCommerceInventory(
     request: operations.RemoveCommerceInventoryRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceInventoryResponse | undefined> {
     return unwrapAsync(commerceRemoveCommerceInventory(
       this,
       request,
@@ -290,7 +290,7 @@ export class Commerce extends ClientSDK {
   async removeCommerceItem(
     request: operations.RemoveCommerceItemRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceItemResponse | undefined> {
     return unwrapAsync(commerceRemoveCommerceItem(
       this,
       request,
@@ -304,7 +304,7 @@ export class Commerce extends ClientSDK {
   async removeCommerceLocation(
     request: operations.RemoveCommerceLocationRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceLocationResponse | undefined> {
     return unwrapAsync(commerceRemoveCommerceLocation(
       this,
       request,

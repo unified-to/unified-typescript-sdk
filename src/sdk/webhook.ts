@@ -81,7 +81,7 @@ export class Webhook extends ClientSDK {
   async patchUnifiedWebhookTrigger(
     request: operations.PatchUnifiedWebhookTriggerRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.PatchUnifiedWebhookTriggerResponse | undefined> {
     return unwrapAsync(webhookPatchUnifiedWebhookTrigger(
       this,
       request,
@@ -95,7 +95,7 @@ export class Webhook extends ClientSDK {
   async removeUnifiedWebhook(
     request: operations.RemoveUnifiedWebhookRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveUnifiedWebhookResponse | undefined> {
     return unwrapAsync(webhookRemoveUnifiedWebhook(
       this,
       request,
@@ -123,7 +123,7 @@ export class Webhook extends ClientSDK {
   async updateUnifiedWebhookTrigger(
     request: operations.UpdateUnifiedWebhookTriggerRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.UpdateUnifiedWebhookTriggerResponse | undefined> {
     return unwrapAsync(webhookUpdateUnifiedWebhookTrigger(
       this,
       request,

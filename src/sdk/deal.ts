@@ -76,7 +76,7 @@ export class Deal extends ClientSDK {
   async removeCrmDeal(
     request: operations.RemoveCrmDealRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmDealResponse | undefined> {
     return unwrapAsync(dealRemoveCrmDeal(
       this,
       request,

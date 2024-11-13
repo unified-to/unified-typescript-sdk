@@ -76,7 +76,7 @@ export class Branch extends ClientSDK {
   async removeRepoBranch(
     request: operations.RemoveRepoBranchRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoBranchResponse | undefined> {
     return unwrapAsync(branchRemoveRepoBranch(
       this,
       request,

@@ -16,6 +16,10 @@ export type RemoveCrmContactRequest = {
   id: string;
 };
 
+export type RemoveCrmContactResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveCrmContactRequest$inboundSchema: z.ZodType<
   RemoveCrmContactRequest,
@@ -61,4 +65,48 @@ export namespace RemoveCrmContactRequest$ {
   export const outboundSchema = RemoveCrmContactRequest$outboundSchema;
   /** @deprecated use `RemoveCrmContactRequest$Outbound` instead. */
   export type Outbound = RemoveCrmContactRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveCrmContactResponse$inboundSchema: z.ZodType<
+  RemoveCrmContactResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveCrmContactResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveCrmContactResponse$outboundSchema: z.ZodType<
+  RemoveCrmContactResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveCrmContactResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveCrmContactResponse$ {
+  /** @deprecated use `RemoveCrmContactResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveCrmContactResponse$inboundSchema;
+  /** @deprecated use `RemoveCrmContactResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveCrmContactResponse$outboundSchema;
+  /** @deprecated use `RemoveCrmContactResponse$Outbound` instead. */
+  export type Outbound = RemoveCrmContactResponse$Outbound;
 }

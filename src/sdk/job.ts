@@ -76,7 +76,7 @@ export class Job extends ClientSDK {
   async removeAtsJob(
     request: operations.RemoveAtsJobRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsJobResponse | undefined> {
     return unwrapAsync(jobRemoveAtsJob(
       this,
       request,

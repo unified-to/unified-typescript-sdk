@@ -76,7 +76,7 @@ export class Inventory extends ClientSDK {
   async removeCommerceInventory(
     request: operations.RemoveCommerceInventoryRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceInventoryResponse | undefined> {
     return unwrapAsync(inventoryRemoveCommerceInventory(
       this,
       request,

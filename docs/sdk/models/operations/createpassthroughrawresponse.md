@@ -5,14 +5,7 @@
 ```typescript
 import { CreatePassthroughRawResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreatePassthroughRawResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: new TextEncoder().encode("0xD1ccF6520E"),
-};
+// No examples available for this model
 ```
 
 ## Fields

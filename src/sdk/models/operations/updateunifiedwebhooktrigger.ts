@@ -3,12 +3,17 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type UpdateUnifiedWebhookTriggerRequest = {
   /**
    * ID of the Webhook
    */
   id: string;
+};
+
+export type UpdateUnifiedWebhookTriggerResponse = {
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -46,4 +51,50 @@ export namespace UpdateUnifiedWebhookTriggerRequest$ {
     UpdateUnifiedWebhookTriggerRequest$outboundSchema;
   /** @deprecated use `UpdateUnifiedWebhookTriggerRequest$Outbound` instead. */
   export type Outbound = UpdateUnifiedWebhookTriggerRequest$Outbound;
+}
+
+/** @internal */
+export const UpdateUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
+  UpdateUnifiedWebhookTriggerResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type UpdateUnifiedWebhookTriggerResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const UpdateUnifiedWebhookTriggerResponse$outboundSchema: z.ZodType<
+  UpdateUnifiedWebhookTriggerResponse$Outbound,
+  z.ZodTypeDef,
+  UpdateUnifiedWebhookTriggerResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace UpdateUnifiedWebhookTriggerResponse$ {
+  /** @deprecated use `UpdateUnifiedWebhookTriggerResponse$inboundSchema` instead. */
+  export const inboundSchema =
+    UpdateUnifiedWebhookTriggerResponse$inboundSchema;
+  /** @deprecated use `UpdateUnifiedWebhookTriggerResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    UpdateUnifiedWebhookTriggerResponse$outboundSchema;
+  /** @deprecated use `UpdateUnifiedWebhookTriggerResponse$Outbound` instead. */
+  export type Outbound = UpdateUnifiedWebhookTriggerResponse$Outbound;
 }

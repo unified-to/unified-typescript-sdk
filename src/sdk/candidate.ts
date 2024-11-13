@@ -76,7 +76,7 @@ export class Candidate extends ClientSDK {
   async removeAtsCandidate(
     request: operations.RemoveAtsCandidateRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsCandidateResponse | undefined> {
     return unwrapAsync(candidateRemoveAtsCandidate(
       this,
       request,

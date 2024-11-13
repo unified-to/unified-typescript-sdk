@@ -76,7 +76,7 @@ export class Collection extends ClientSDK {
   async removeCommerceCollection(
     request: operations.RemoveCommerceCollectionRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceCollectionResponse | undefined> {
     return unwrapAsync(collectionRemoveCommerceCollection(
       this,
       request,

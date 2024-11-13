@@ -76,7 +76,7 @@ export class Journal extends ClientSDK {
   async removeAccountingJournal(
     request: operations.RemoveAccountingJournalRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingJournalResponse | undefined> {
     return unwrapAsync(journalRemoveAccountingJournal(
       this,
       request,

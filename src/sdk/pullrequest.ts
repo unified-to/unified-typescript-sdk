@@ -76,7 +76,7 @@ export class Pullrequest extends ClientSDK {
   async removeRepoPullrequest(
     request: operations.RemoveRepoPullrequestRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveRepoPullrequestResponse | undefined> {
     return unwrapAsync(pullrequestRemoveRepoPullrequest(
       this,
       request,

@@ -5,14 +5,7 @@
 ```typescript
 import { CreatePassthroughJsonResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreatePassthroughJsonResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: "<value>",
-};
+// No examples available for this model
 ```
 
 ## Fields

@@ -16,6 +16,10 @@ export type RemoveKmsSpaceRequest = {
   id: string;
 };
 
+export type RemoveKmsSpaceResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveKmsSpaceRequest$inboundSchema: z.ZodType<
   RemoveKmsSpaceRequest,
@@ -61,4 +65,48 @@ export namespace RemoveKmsSpaceRequest$ {
   export const outboundSchema = RemoveKmsSpaceRequest$outboundSchema;
   /** @deprecated use `RemoveKmsSpaceRequest$Outbound` instead. */
   export type Outbound = RemoveKmsSpaceRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveKmsSpaceResponse$inboundSchema: z.ZodType<
+  RemoveKmsSpaceResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveKmsSpaceResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveKmsSpaceResponse$outboundSchema: z.ZodType<
+  RemoveKmsSpaceResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveKmsSpaceResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveKmsSpaceResponse$ {
+  /** @deprecated use `RemoveKmsSpaceResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveKmsSpaceResponse$inboundSchema;
+  /** @deprecated use `RemoveKmsSpaceResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveKmsSpaceResponse$outboundSchema;
+  /** @deprecated use `RemoveKmsSpaceResponse$Outbound` instead. */
+  export type Outbound = RemoveKmsSpaceResponse$Outbound;
 }

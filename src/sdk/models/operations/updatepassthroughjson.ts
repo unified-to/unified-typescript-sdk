@@ -3,7 +3,6 @@
  */
 
 import * as z from "zod";
-import * as b64$ from "../../../lib/base64.js";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type UpdatePassthroughJsonRequest = {
@@ -19,14 +18,21 @@ export type UpdatePassthroughJsonRequest = {
 };
 
 export type UpdatePassthroughJsonResponseResult =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array
+  | string
   | string;
 
 export type UpdatePassthroughJsonResponse = {
   headers: { [k: string]: Array<string> };
-  result?: any | string | Uint8Array | string | undefined;
+  result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -86,20 +92,34 @@ export const UpdatePassthroughJsonResponseResult$inboundSchema: z.ZodType<
   UpdatePassthroughJsonResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([z.any(), z.string(), b64$.zodInbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /** @internal */
 export type UpdatePassthroughJsonResponseResult$Outbound =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array;
+  | string
+  | string;
 
 /** @internal */
 export const UpdatePassthroughJsonResponseResult$outboundSchema: z.ZodType<
   UpdatePassthroughJsonResponseResult$Outbound,
   z.ZodTypeDef,
   UpdatePassthroughJsonResponseResult
-> = z.union([z.any(), z.string(), b64$.zodOutbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /**
  * @internal
@@ -123,7 +143,13 @@ export const UpdatePassthroughJsonResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([z.any(), z.string(), b64$.zodInbound]).optional(),
+  Result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -134,7 +160,13 @@ export const UpdatePassthroughJsonResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type UpdatePassthroughJsonResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result?: any | string | Uint8Array | undefined;
+  Result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -144,7 +176,13 @@ export const UpdatePassthroughJsonResponse$outboundSchema: z.ZodType<
   UpdatePassthroughJsonResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([z.any(), z.string(), b64$.zodOutbound]).optional(),
+  result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

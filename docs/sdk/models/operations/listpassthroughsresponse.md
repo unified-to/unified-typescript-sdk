@@ -5,14 +5,7 @@
 ```typescript
 import { ListPassthroughsResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListPassthroughsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: new TextEncoder().encode("0xEBdD6Cd073"),
-};
+// No examples available for this model
 ```
 
 ## Fields

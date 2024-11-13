@@ -3,6 +3,12 @@
 
 ## Supported Types
 
+### `ReadableStream<Uint8Array>`
+
+```typescript
+const value: ReadableStream<Uint8Array> = await openAsBlob("example.file");
+```
+
 ### `any`
 
 ```typescript
@@ -15,9 +21,15 @@ const value: any = "<value>";
 const value: string = "<value>";
 ```
 
-### `Uint8Array`
+### `string`
 
 ```typescript
-const value: Uint8Array = new TextEncoder().encode("0xa0B1b6cFe0");
+const value: string = "<value>";
+```
+
+### `string`
+
+```typescript
+const value: string = "<value>";
 ```
 

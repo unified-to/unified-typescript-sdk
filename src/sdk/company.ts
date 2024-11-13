@@ -183,7 +183,7 @@ export class Company extends ClientSDK {
   async removeCrmCompany(
     request: operations.RemoveCrmCompanyRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCrmCompanyResponse | undefined> {
     return unwrapAsync(companyRemoveCrmCompany(
       this,
       request,
@@ -197,7 +197,7 @@ export class Company extends ClientSDK {
   async removeHrisCompany(
     request: operations.RemoveHrisCompanyRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisCompanyResponse | undefined> {
     return unwrapAsync(companyRemoveHrisCompany(
       this,
       request,

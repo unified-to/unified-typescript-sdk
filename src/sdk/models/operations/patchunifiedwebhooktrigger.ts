@@ -3,12 +3,17 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type PatchUnifiedWebhookTriggerRequest = {
   /**
    * ID of the Webhook
    */
   id: string;
+};
+
+export type PatchUnifiedWebhookTriggerResponse = {
+  headers: { [k: string]: Array<string> };
 };
 
 /** @internal */
@@ -46,4 +51,49 @@ export namespace PatchUnifiedWebhookTriggerRequest$ {
     PatchUnifiedWebhookTriggerRequest$outboundSchema;
   /** @deprecated use `PatchUnifiedWebhookTriggerRequest$Outbound` instead. */
   export type Outbound = PatchUnifiedWebhookTriggerRequest$Outbound;
+}
+
+/** @internal */
+export const PatchUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
+  PatchUnifiedWebhookTriggerResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type PatchUnifiedWebhookTriggerResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const PatchUnifiedWebhookTriggerResponse$outboundSchema: z.ZodType<
+  PatchUnifiedWebhookTriggerResponse$Outbound,
+  z.ZodTypeDef,
+  PatchUnifiedWebhookTriggerResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace PatchUnifiedWebhookTriggerResponse$ {
+  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$inboundSchema` instead. */
+  export const inboundSchema = PatchUnifiedWebhookTriggerResponse$inboundSchema;
+  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$outboundSchema` instead. */
+  export const outboundSchema =
+    PatchUnifiedWebhookTriggerResponse$outboundSchema;
+  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$Outbound` instead. */
+  export type Outbound = PatchUnifiedWebhookTriggerResponse$Outbound;
 }

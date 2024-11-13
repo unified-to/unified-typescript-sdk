@@ -138,7 +138,7 @@ export class Martech extends ClientSDK {
   async removeMartechList(
     request: operations.RemoveMartechListRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveMartechListResponse | undefined> {
     return unwrapAsync(martechRemoveMartechList(
       this,
       request,
@@ -152,7 +152,7 @@ export class Martech extends ClientSDK {
   async removeMartechMember(
     request: operations.RemoveMartechMemberRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveMartechMemberResponse | undefined> {
     return unwrapAsync(martechRemoveMartechMember(
       this,
       request,

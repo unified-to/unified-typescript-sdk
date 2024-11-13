@@ -138,7 +138,7 @@ export class Group extends ClientSDK {
   async removeHrisGroup(
     request: operations.RemoveHrisGroupRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveHrisGroupResponse | undefined> {
     return unwrapAsync(groupRemoveHrisGroup(
       this,
       request,
@@ -152,7 +152,7 @@ export class Group extends ClientSDK {
   async removeScimGroups(
     request: operations.RemoveScimGroupsRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveScimGroupsResponse | undefined> {
     return unwrapAsync(groupRemoveScimGroups(
       this,
       request,

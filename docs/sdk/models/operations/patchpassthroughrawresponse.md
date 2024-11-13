@@ -5,14 +5,7 @@
 ```typescript
 import { PatchPassthroughRawResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: PatchPassthroughRawResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-  result: new TextEncoder().encode("0xf52165aff6"),
-};
+// No examples available for this model
 ```
 
 ## Fields

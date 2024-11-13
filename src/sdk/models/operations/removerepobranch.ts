@@ -16,6 +16,10 @@ export type RemoveRepoBranchRequest = {
   id: string;
 };
 
+export type RemoveRepoBranchResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveRepoBranchRequest$inboundSchema: z.ZodType<
   RemoveRepoBranchRequest,
@@ -61,4 +65,48 @@ export namespace RemoveRepoBranchRequest$ {
   export const outboundSchema = RemoveRepoBranchRequest$outboundSchema;
   /** @deprecated use `RemoveRepoBranchRequest$Outbound` instead. */
   export type Outbound = RemoveRepoBranchRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveRepoBranchResponse$inboundSchema: z.ZodType<
+  RemoveRepoBranchResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveRepoBranchResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveRepoBranchResponse$outboundSchema: z.ZodType<
+  RemoveRepoBranchResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveRepoBranchResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveRepoBranchResponse$ {
+  /** @deprecated use `RemoveRepoBranchResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveRepoBranchResponse$inboundSchema;
+  /** @deprecated use `RemoveRepoBranchResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveRepoBranchResponse$outboundSchema;
+  /** @deprecated use `RemoveRepoBranchResponse$Outbound` instead. */
+  export type Outbound = RemoveRepoBranchResponse$Outbound;
 }

@@ -76,7 +76,7 @@ export class Link extends ClientSDK {
   async removePaymentLink(
     request: operations.RemovePaymentLinkRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemovePaymentLinkResponse | undefined> {
     return unwrapAsync(linkRemovePaymentLink(
       this,
       request,

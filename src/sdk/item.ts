@@ -76,7 +76,7 @@ export class Item extends ClientSDK {
   async removeCommerceItem(
     request: operations.RemoveCommerceItemRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveCommerceItemResponse | undefined> {
     return unwrapAsync(itemRemoveCommerceItem(
       this,
       request,

@@ -3,7 +3,6 @@
  */
 
 import * as z from "zod";
-import * as b64$ from "../../../lib/base64.js";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type RemovePassthroughRequest = {
@@ -15,14 +14,21 @@ export type RemovePassthroughRequest = {
 };
 
 export type RemovePassthroughResponseResult =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array
+  | string
   | string;
 
 export type RemovePassthroughResponse = {
   headers: { [k: string]: Array<string> };
-  result?: any | string | Uint8Array | string | undefined;
+  result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -77,20 +83,34 @@ export const RemovePassthroughResponseResult$inboundSchema: z.ZodType<
   RemovePassthroughResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([z.any(), z.string(), b64$.zodInbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /** @internal */
 export type RemovePassthroughResponseResult$Outbound =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array;
+  | string
+  | string;
 
 /** @internal */
 export const RemovePassthroughResponseResult$outboundSchema: z.ZodType<
   RemovePassthroughResponseResult$Outbound,
   z.ZodTypeDef,
   RemovePassthroughResponseResult
-> = z.union([z.any(), z.string(), b64$.zodOutbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /**
  * @internal
@@ -112,7 +132,13 @@ export const RemovePassthroughResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([z.any(), z.string(), b64$.zodInbound]).optional(),
+  Result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -123,7 +149,13 @@ export const RemovePassthroughResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type RemovePassthroughResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result?: any | string | Uint8Array | undefined;
+  Result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -133,7 +165,13 @@ export const RemovePassthroughResponse$outboundSchema: z.ZodType<
   RemovePassthroughResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([z.any(), z.string(), b64$.zodOutbound]).optional(),
+  result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

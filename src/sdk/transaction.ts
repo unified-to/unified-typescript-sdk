@@ -76,7 +76,7 @@ export class Transaction extends ClientSDK {
   async removeAccountingTransaction(
     request: operations.RemoveAccountingTransactionRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingTransactionResponse | undefined> {
     return unwrapAsync(transactionRemoveAccountingTransaction(
       this,
       request,

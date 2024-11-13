@@ -16,6 +16,10 @@ export type RemoveLmsStudentRequest = {
   id: string;
 };
 
+export type RemoveLmsStudentResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveLmsStudentRequest$inboundSchema: z.ZodType<
   RemoveLmsStudentRequest,
@@ -61,4 +65,48 @@ export namespace RemoveLmsStudentRequest$ {
   export const outboundSchema = RemoveLmsStudentRequest$outboundSchema;
   /** @deprecated use `RemoveLmsStudentRequest$Outbound` instead. */
   export type Outbound = RemoveLmsStudentRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveLmsStudentResponse$inboundSchema: z.ZodType<
+  RemoveLmsStudentResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveLmsStudentResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveLmsStudentResponse$outboundSchema: z.ZodType<
+  RemoveLmsStudentResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveLmsStudentResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveLmsStudentResponse$ {
+  /** @deprecated use `RemoveLmsStudentResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveLmsStudentResponse$inboundSchema;
+  /** @deprecated use `RemoveLmsStudentResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveLmsStudentResponse$outboundSchema;
+  /** @deprecated use `RemoveLmsStudentResponse$Outbound` instead. */
+  export type Outbound = RemoveLmsStudentResponse$Outbound;
 }

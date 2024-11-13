@@ -3,7 +3,6 @@
  */
 
 import * as z from "zod";
-import * as b64$ from "../../../lib/base64.js";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type UpdatePassthroughRawRequest = {
@@ -24,14 +23,21 @@ export type UpdatePassthroughRawRequest = {
 };
 
 export type UpdatePassthroughRawResponseResult =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array
+  | string
   | string;
 
 export type UpdatePassthroughRawResponse = {
   headers: { [k: string]: Array<string> };
-  result?: any | string | Uint8Array | string | undefined;
+  result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -106,20 +112,34 @@ export const UpdatePassthroughRawResponseResult$inboundSchema: z.ZodType<
   UpdatePassthroughRawResponseResult,
   z.ZodTypeDef,
   unknown
-> = z.union([z.any(), z.string(), b64$.zodInbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /** @internal */
 export type UpdatePassthroughRawResponseResult$Outbound =
+  | ReadableStream<Uint8Array>
   | any
   | string
-  | Uint8Array;
+  | string
+  | string;
 
 /** @internal */
 export const UpdatePassthroughRawResponseResult$outboundSchema: z.ZodType<
   UpdatePassthroughRawResponseResult$Outbound,
   z.ZodTypeDef,
   UpdatePassthroughRawResponseResult
-> = z.union([z.any(), z.string(), b64$.zodOutbound]);
+> = z.union([
+  z.instanceof(ReadableStream<Uint8Array>),
+  z.any(),
+  z.string(),
+  z.string(),
+  z.string(),
+]);
 
 /**
  * @internal
@@ -142,7 +162,13 @@ export const UpdatePassthroughRawResponse$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   Headers: z.record(z.array(z.string())),
-  Result: z.union([z.any(), z.string(), b64$.zodInbound]).optional(),
+  Result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",
@@ -153,7 +179,13 @@ export const UpdatePassthroughRawResponse$inboundSchema: z.ZodType<
 /** @internal */
 export type UpdatePassthroughRawResponse$Outbound = {
   Headers: { [k: string]: Array<string> };
-  Result?: any | string | Uint8Array | undefined;
+  Result?:
+    | ReadableStream<Uint8Array>
+    | any
+    | string
+    | string
+    | string
+    | undefined;
 };
 
 /** @internal */
@@ -163,7 +195,13 @@ export const UpdatePassthroughRawResponse$outboundSchema: z.ZodType<
   UpdatePassthroughRawResponse
 > = z.object({
   headers: z.record(z.array(z.string())),
-  result: z.union([z.any(), z.string(), b64$.zodOutbound]).optional(),
+  result: z.union([
+    z.instanceof(ReadableStream<Uint8Array>),
+    z.any(),
+    z.string(),
+    z.string(),
+    z.string(),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     headers: "Headers",

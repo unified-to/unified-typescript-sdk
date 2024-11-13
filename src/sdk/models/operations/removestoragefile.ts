@@ -16,6 +16,10 @@ export type RemoveStorageFileRequest = {
   id: string;
 };
 
+export type RemoveStorageFileResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveStorageFileRequest$inboundSchema: z.ZodType<
   RemoveStorageFileRequest,
@@ -61,4 +65,48 @@ export namespace RemoveStorageFileRequest$ {
   export const outboundSchema = RemoveStorageFileRequest$outboundSchema;
   /** @deprecated use `RemoveStorageFileRequest$Outbound` instead. */
   export type Outbound = RemoveStorageFileRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveStorageFileResponse$inboundSchema: z.ZodType<
+  RemoveStorageFileResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveStorageFileResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveStorageFileResponse$outboundSchema: z.ZodType<
+  RemoveStorageFileResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveStorageFileResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveStorageFileResponse$ {
+  /** @deprecated use `RemoveStorageFileResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveStorageFileResponse$inboundSchema;
+  /** @deprecated use `RemoveStorageFileResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveStorageFileResponse$outboundSchema;
+  /** @deprecated use `RemoveStorageFileResponse$Outbound` instead. */
+  export type Outbound = RemoveStorageFileResponse$Outbound;
 }

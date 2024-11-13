@@ -76,7 +76,7 @@ export class Account extends ClientSDK {
   async removeAccountingAccount(
     request: operations.RemoveAccountingAccountRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAccountingAccountResponse | undefined> {
     return unwrapAsync(accountRemoveAccountingAccount(
       this,
       request,

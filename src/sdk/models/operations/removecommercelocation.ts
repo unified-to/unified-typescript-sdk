@@ -16,6 +16,10 @@ export type RemoveCommerceLocationRequest = {
   id: string;
 };
 
+export type RemoveCommerceLocationResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveCommerceLocationRequest$inboundSchema: z.ZodType<
   RemoveCommerceLocationRequest,
@@ -61,4 +65,48 @@ export namespace RemoveCommerceLocationRequest$ {
   export const outboundSchema = RemoveCommerceLocationRequest$outboundSchema;
   /** @deprecated use `RemoveCommerceLocationRequest$Outbound` instead. */
   export type Outbound = RemoveCommerceLocationRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveCommerceLocationResponse$inboundSchema: z.ZodType<
+  RemoveCommerceLocationResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveCommerceLocationResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveCommerceLocationResponse$outboundSchema: z.ZodType<
+  RemoveCommerceLocationResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveCommerceLocationResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveCommerceLocationResponse$ {
+  /** @deprecated use `RemoveCommerceLocationResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveCommerceLocationResponse$inboundSchema;
+  /** @deprecated use `RemoveCommerceLocationResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveCommerceLocationResponse$outboundSchema;
+  /** @deprecated use `RemoveCommerceLocationResponse$Outbound` instead. */
+  export type Outbound = RemoveCommerceLocationResponse$Outbound;
 }

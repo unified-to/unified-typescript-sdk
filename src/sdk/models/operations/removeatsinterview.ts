@@ -16,6 +16,10 @@ export type RemoveAtsInterviewRequest = {
   id: string;
 };
 
+export type RemoveAtsInterviewResponse = {
+  headers: { [k: string]: Array<string> };
+};
+
 /** @internal */
 export const RemoveAtsInterviewRequest$inboundSchema: z.ZodType<
   RemoveAtsInterviewRequest,
@@ -61,4 +65,48 @@ export namespace RemoveAtsInterviewRequest$ {
   export const outboundSchema = RemoveAtsInterviewRequest$outboundSchema;
   /** @deprecated use `RemoveAtsInterviewRequest$Outbound` instead. */
   export type Outbound = RemoveAtsInterviewRequest$Outbound;
+}
+
+/** @internal */
+export const RemoveAtsInterviewResponse$inboundSchema: z.ZodType<
+  RemoveAtsInterviewResponse,
+  z.ZodTypeDef,
+  unknown
+> = z.object({
+  Headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    "Headers": "headers",
+  });
+});
+
+/** @internal */
+export type RemoveAtsInterviewResponse$Outbound = {
+  Headers: { [k: string]: Array<string> };
+};
+
+/** @internal */
+export const RemoveAtsInterviewResponse$outboundSchema: z.ZodType<
+  RemoveAtsInterviewResponse$Outbound,
+  z.ZodTypeDef,
+  RemoveAtsInterviewResponse
+> = z.object({
+  headers: z.record(z.array(z.string())),
+}).transform((v) => {
+  return remap$(v, {
+    headers: "Headers",
+  });
+});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace RemoveAtsInterviewResponse$ {
+  /** @deprecated use `RemoveAtsInterviewResponse$inboundSchema` instead. */
+  export const inboundSchema = RemoveAtsInterviewResponse$inboundSchema;
+  /** @deprecated use `RemoveAtsInterviewResponse$outboundSchema` instead. */
+  export const outboundSchema = RemoveAtsInterviewResponse$outboundSchema;
+  /** @deprecated use `RemoveAtsInterviewResponse$Outbound` instead. */
+  export type Outbound = RemoveAtsInterviewResponse$Outbound;
 }

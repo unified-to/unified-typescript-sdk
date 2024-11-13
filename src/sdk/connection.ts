@@ -79,7 +79,7 @@ export class Connection extends ClientSDK {
   async removeUnifiedConnection(
     request: operations.RemoveUnifiedConnectionRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveUnifiedConnectionResponse | undefined> {
     return unwrapAsync(connectionRemoveUnifiedConnection(
       this,
       request,

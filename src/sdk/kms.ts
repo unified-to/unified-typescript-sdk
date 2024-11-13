@@ -138,7 +138,7 @@ export class Kms extends ClientSDK {
   async removeKmsPage(
     request: operations.RemoveKmsPageRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveKmsPageResponse | undefined> {
     return unwrapAsync(kmsRemoveKmsPage(
       this,
       request,
@@ -152,7 +152,7 @@ export class Kms extends ClientSDK {
   async removeKmsSpace(
     request: operations.RemoveKmsSpaceRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveKmsSpaceResponse | undefined> {
     return unwrapAsync(kmsRemoveKmsSpace(
       this,
       request,

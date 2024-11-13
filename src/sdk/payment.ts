@@ -198,7 +198,7 @@ export class Payment extends ClientSDK {
   async removePaymentLink(
     request: operations.RemovePaymentLinkRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemovePaymentLinkResponse | undefined> {
     return unwrapAsync(paymentRemovePaymentLink(
       this,
       request,
@@ -212,7 +212,7 @@ export class Payment extends ClientSDK {
   async removePaymentPayment(
     request: operations.RemovePaymentPaymentRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemovePaymentPaymentResponse | undefined> {
     return unwrapAsync(paymentRemovePaymentPayment(
       this,
       request,

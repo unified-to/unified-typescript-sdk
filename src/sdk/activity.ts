@@ -76,7 +76,7 @@ export class Activity extends ClientSDK {
   async removeAtsActivity(
     request: operations.RemoveAtsActivityRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveAtsActivityResponse | undefined> {
     return unwrapAsync(activityRemoveAtsActivity(
       this,
       request,

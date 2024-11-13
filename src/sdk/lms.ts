@@ -262,7 +262,7 @@ export class Lms extends ClientSDK {
   async removeLmsClass(
     request: operations.RemoveLmsClassRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveLmsClassResponse | undefined> {
     return unwrapAsync(lmsRemoveLmsClass(
       this,
       request,
@@ -276,7 +276,7 @@ export class Lms extends ClientSDK {
   async removeLmsCourse(
     request: operations.RemoveLmsCourseRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveLmsCourseResponse | undefined> {
     return unwrapAsync(lmsRemoveLmsCourse(
       this,
       request,
@@ -290,7 +290,7 @@ export class Lms extends ClientSDK {
   async removeLmsInstructor(
     request: operations.RemoveLmsInstructorRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveLmsInstructorResponse | undefined> {
     return unwrapAsync(lmsRemoveLmsInstructor(
       this,
       request,
@@ -304,7 +304,7 @@ export class Lms extends ClientSDK {
   async removeLmsStudent(
     request: operations.RemoveLmsStudentRequest,
     options?: RequestOptions,
-  ): Promise<void> {
+  ): Promise<operations.RemoveLmsStudentResponse | undefined> {
     return unwrapAsync(lmsRemoveLmsStudent(
       this,
       request,
