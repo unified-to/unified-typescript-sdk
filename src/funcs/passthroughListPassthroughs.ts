@@ -139,11 +139,6 @@ export async function passthroughListPassthroughs(
       { hdrs: true },
     ),
     M.fail(["4XX", "5XX"]),
-    M.stream(
-      "default",
-      operations.ListPassthroughsResponse$inboundSchema.optional(),
-      { ctype: "*/*", hdrs: true, key: "Result" },
-    ),
     M.json(
       "default",
       operations.ListPassthroughsResponse$inboundSchema.optional(),
@@ -163,6 +158,11 @@ export async function passthroughListPassthroughs(
       "default",
       operations.ListPassthroughsResponse$inboundSchema.optional(),
       { hdrs: true, key: "Result" },
+    ),
+    M.stream(
+      "default",
+      operations.ListPassthroughsResponse$inboundSchema.optional(),
+      { ctype: "*/*", hdrs: true, key: "Result" },
     ),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
