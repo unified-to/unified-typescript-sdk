@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsInterviewRequest = {
@@ -68,4 +71,22 @@ export namespace CreateAtsInterviewRequest$ {
   export const outboundSchema = CreateAtsInterviewRequest$outboundSchema;
   /** @deprecated use `CreateAtsInterviewRequest$Outbound` instead. */
   export type Outbound = CreateAtsInterviewRequest$Outbound;
+}
+
+export function createAtsInterviewRequestToJSON(
+  createAtsInterviewRequest: CreateAtsInterviewRequest,
+): string {
+  return JSON.stringify(
+    CreateAtsInterviewRequest$outboundSchema.parse(createAtsInterviewRequest),
+  );
+}
+
+export function createAtsInterviewRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAtsInterviewRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAtsInterviewRequest' from JSON`,
+  );
 }

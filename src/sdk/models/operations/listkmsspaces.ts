@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListKmsSpacesRequest = {
   /**
@@ -100,4 +103,22 @@ export namespace ListKmsSpacesRequest$ {
   export const outboundSchema = ListKmsSpacesRequest$outboundSchema;
   /** @deprecated use `ListKmsSpacesRequest$Outbound` instead. */
   export type Outbound = ListKmsSpacesRequest$Outbound;
+}
+
+export function listKmsSpacesRequestToJSON(
+  listKmsSpacesRequest: ListKmsSpacesRequest,
+): string {
+  return JSON.stringify(
+    ListKmsSpacesRequest$outboundSchema.parse(listKmsSpacesRequest),
+  );
+}
+
+export function listKmsSpacesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListKmsSpacesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListKmsSpacesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListKmsSpacesRequest' from JSON`,
+  );
 }

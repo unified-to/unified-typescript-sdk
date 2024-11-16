@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveUnifiedWebhookRequest = {
   /**
@@ -52,6 +55,26 @@ export namespace RemoveUnifiedWebhookRequest$ {
   export type Outbound = RemoveUnifiedWebhookRequest$Outbound;
 }
 
+export function removeUnifiedWebhookRequestToJSON(
+  removeUnifiedWebhookRequest: RemoveUnifiedWebhookRequest,
+): string {
+  return JSON.stringify(
+    RemoveUnifiedWebhookRequest$outboundSchema.parse(
+      removeUnifiedWebhookRequest,
+    ),
+  );
+}
+
+export function removeUnifiedWebhookRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveUnifiedWebhookRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveUnifiedWebhookRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveUnifiedWebhookResponse$inboundSchema: z.ZodType<
   RemoveUnifiedWebhookResponse,
@@ -94,4 +117,24 @@ export namespace RemoveUnifiedWebhookResponse$ {
   export const outboundSchema = RemoveUnifiedWebhookResponse$outboundSchema;
   /** @deprecated use `RemoveUnifiedWebhookResponse$Outbound` instead. */
   export type Outbound = RemoveUnifiedWebhookResponse$Outbound;
+}
+
+export function removeUnifiedWebhookResponseToJSON(
+  removeUnifiedWebhookResponse: RemoveUnifiedWebhookResponse,
+): string {
+  return JSON.stringify(
+    RemoveUnifiedWebhookResponse$outboundSchema.parse(
+      removeUnifiedWebhookResponse,
+    ),
+  );
+}
+
+export function removeUnifiedWebhookResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveUnifiedWebhookResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveUnifiedWebhookResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveUnifiedWebhookResponse' from JSON`,
+  );
 }

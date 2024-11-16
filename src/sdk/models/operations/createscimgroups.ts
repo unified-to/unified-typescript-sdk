@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimGroupsRequest = {
@@ -61,4 +64,22 @@ export namespace CreateScimGroupsRequest$ {
   export const outboundSchema = CreateScimGroupsRequest$outboundSchema;
   /** @deprecated use `CreateScimGroupsRequest$Outbound` instead. */
   export type Outbound = CreateScimGroupsRequest$Outbound;
+}
+
+export function createScimGroupsRequestToJSON(
+  createScimGroupsRequest: CreateScimGroupsRequest,
+): string {
+  return JSON.stringify(
+    CreateScimGroupsRequest$outboundSchema.parse(createScimGroupsRequest),
+  );
+}
+
+export function createScimGroupsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateScimGroupsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateScimGroupsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateScimGroupsRequest' from JSON`,
+  );
 }

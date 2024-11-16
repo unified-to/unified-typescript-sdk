@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ApiCallType = {
   Login: "login",
@@ -155,4 +158,18 @@ export namespace ApiCall$ {
   export const outboundSchema = ApiCall$outboundSchema;
   /** @deprecated use `ApiCall$Outbound` instead. */
   export type Outbound = ApiCall$Outbound;
+}
+
+export function apiCallToJSON(apiCall: ApiCall): string {
+  return JSON.stringify(ApiCall$outboundSchema.parse(apiCall));
+}
+
+export function apiCallFromJSON(
+  jsonString: string,
+): SafeParseResult<ApiCall, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ApiCall$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ApiCall' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const EnrichEmailType = {
   Work: "WORK",
@@ -88,4 +91,18 @@ export namespace EnrichEmail$ {
   export const outboundSchema = EnrichEmail$outboundSchema;
   /** @deprecated use `EnrichEmail$Outbound` instead. */
   export type Outbound = EnrichEmail$Outbound;
+}
+
+export function enrichEmailToJSON(enrichEmail: EnrichEmail): string {
+  return JSON.stringify(EnrichEmail$outboundSchema.parse(enrichEmail));
+}
+
+export function enrichEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<EnrichEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EnrichEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EnrichEmail' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmEventRequest = {
@@ -78,4 +81,22 @@ export namespace PatchCrmEventRequest$ {
   export const outboundSchema = PatchCrmEventRequest$outboundSchema;
   /** @deprecated use `PatchCrmEventRequest$Outbound` instead. */
   export type Outbound = PatchCrmEventRequest$Outbound;
+}
+
+export function patchCrmEventRequestToJSON(
+  patchCrmEventRequest: PatchCrmEventRequest,
+): string {
+  return JSON.stringify(
+    PatchCrmEventRequest$outboundSchema.parse(patchCrmEventRequest),
+  );
+}
+
+export function patchCrmEventRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchCrmEventRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchCrmEventRequest' from JSON`,
+  );
 }

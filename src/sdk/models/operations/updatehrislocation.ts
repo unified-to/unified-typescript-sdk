@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateHrisLocationRequest = {
@@ -75,4 +78,22 @@ export namespace UpdateHrisLocationRequest$ {
   export const outboundSchema = UpdateHrisLocationRequest$outboundSchema;
   /** @deprecated use `UpdateHrisLocationRequest$Outbound` instead. */
   export type Outbound = UpdateHrisLocationRequest$Outbound;
+}
+
+export function updateHrisLocationRequestToJSON(
+  updateHrisLocationRequest: UpdateHrisLocationRequest,
+): string {
+  return JSON.stringify(
+    UpdateHrisLocationRequest$outboundSchema.parse(updateHrisLocationRequest),
+  );
+}
+
+export function updateHrisLocationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateHrisLocationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateHrisLocationRequest' from JSON`,
+  );
 }

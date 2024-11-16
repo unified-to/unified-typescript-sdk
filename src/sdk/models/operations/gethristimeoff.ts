@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisTimeoffRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetHrisTimeoffRequest$ {
   export const outboundSchema = GetHrisTimeoffRequest$outboundSchema;
   /** @deprecated use `GetHrisTimeoffRequest$Outbound` instead. */
   export type Outbound = GetHrisTimeoffRequest$Outbound;
+}
+
+export function getHrisTimeoffRequestToJSON(
+  getHrisTimeoffRequest: GetHrisTimeoffRequest,
+): string {
+  return JSON.stringify(
+    GetHrisTimeoffRequest$outboundSchema.parse(getHrisTimeoffRequest),
+  );
+}
+
+export function getHrisTimeoffRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetHrisTimeoffRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetHrisTimeoffRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetHrisTimeoffRequest' from JSON`,
+  );
 }

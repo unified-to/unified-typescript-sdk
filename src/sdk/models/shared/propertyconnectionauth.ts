@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * An authentication object that represents a specific authorized user's connection to an integration.
@@ -178,4 +181,22 @@ export namespace PropertyConnectionAuth$ {
   export const outboundSchema = PropertyConnectionAuth$outboundSchema;
   /** @deprecated use `PropertyConnectionAuth$Outbound` instead. */
   export type Outbound = PropertyConnectionAuth$Outbound;
+}
+
+export function propertyConnectionAuthToJSON(
+  propertyConnectionAuth: PropertyConnectionAuth,
+): string {
+  return JSON.stringify(
+    PropertyConnectionAuth$outboundSchema.parse(propertyConnectionAuth),
+  );
+}
+
+export function propertyConnectionAuthFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyConnectionAuth, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyConnectionAuth$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyConnectionAuth' from JSON`,
+  );
 }

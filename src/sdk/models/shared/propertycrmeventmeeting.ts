@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The meeting object, when type = meeting
@@ -70,4 +73,22 @@ export namespace PropertyCrmEventMeeting$ {
   export const outboundSchema = PropertyCrmEventMeeting$outboundSchema;
   /** @deprecated use `PropertyCrmEventMeeting$Outbound` instead. */
   export type Outbound = PropertyCrmEventMeeting$Outbound;
+}
+
+export function propertyCrmEventMeetingToJSON(
+  propertyCrmEventMeeting: PropertyCrmEventMeeting,
+): string {
+  return JSON.stringify(
+    PropertyCrmEventMeeting$outboundSchema.parse(propertyCrmEventMeeting),
+  );
+}
+
+export function propertyCrmEventMeetingFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyCrmEventMeeting, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyCrmEventMeeting$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyCrmEventMeeting' from JSON`,
+  );
 }

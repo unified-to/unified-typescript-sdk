@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CommerceItemMedia,
   CommerceItemMedia$inboundSchema,
@@ -171,4 +174,22 @@ export namespace CommerceCollection$ {
   export const outboundSchema = CommerceCollection$outboundSchema;
   /** @deprecated use `CommerceCollection$Outbound` instead. */
   export type Outbound = CommerceCollection$Outbound;
+}
+
+export function commerceCollectionToJSON(
+  commerceCollection: CommerceCollection,
+): string {
+  return JSON.stringify(
+    CommerceCollection$outboundSchema.parse(commerceCollection),
+  );
+}
+
+export function commerceCollectionFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceCollection, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceCollection$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceCollection' from JSON`,
+  );
 }

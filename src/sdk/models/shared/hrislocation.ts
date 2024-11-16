@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   HrisTelephone,
   HrisTelephone$inboundSchema,
@@ -133,4 +136,18 @@ export namespace HrisLocation$ {
   export const outboundSchema = HrisLocation$outboundSchema;
   /** @deprecated use `HrisLocation$Outbound` instead. */
   export type Outbound = HrisLocation$Outbound;
+}
+
+export function hrisLocationToJSON(hrisLocation: HrisLocation): string {
+  return JSON.stringify(HrisLocation$outboundSchema.parse(hrisLocation));
+}
+
+export function hrisLocationFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisLocation, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisLocation$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisLocation' from JSON`,
+  );
 }

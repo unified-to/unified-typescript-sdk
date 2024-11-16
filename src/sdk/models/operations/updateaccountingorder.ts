@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingOrderRequest = {
@@ -75,4 +78,24 @@ export namespace UpdateAccountingOrderRequest$ {
   export const outboundSchema = UpdateAccountingOrderRequest$outboundSchema;
   /** @deprecated use `UpdateAccountingOrderRequest$Outbound` instead. */
   export type Outbound = UpdateAccountingOrderRequest$Outbound;
+}
+
+export function updateAccountingOrderRequestToJSON(
+  updateAccountingOrderRequest: UpdateAccountingOrderRequest,
+): string {
+  return JSON.stringify(
+    UpdateAccountingOrderRequest$outboundSchema.parse(
+      updateAccountingOrderRequest,
+    ),
+  );
+}
+
+export function updateAccountingOrderRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateAccountingOrderRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateAccountingOrderRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateAccountingOrderRequest' from JSON`,
+  );
 }

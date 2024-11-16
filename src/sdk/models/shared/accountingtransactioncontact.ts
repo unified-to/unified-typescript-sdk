@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTransactionContact = {};
 
@@ -34,4 +37,24 @@ export namespace AccountingTransactionContact$ {
   export const outboundSchema = AccountingTransactionContact$outboundSchema;
   /** @deprecated use `AccountingTransactionContact$Outbound` instead. */
   export type Outbound = AccountingTransactionContact$Outbound;
+}
+
+export function accountingTransactionContactToJSON(
+  accountingTransactionContact: AccountingTransactionContact,
+): string {
+  return JSON.stringify(
+    AccountingTransactionContact$outboundSchema.parse(
+      accountingTransactionContact,
+    ),
+  );
+}
+
+export function accountingTransactionContactFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingTransactionContact, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingTransactionContact$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingTransactionContact' from JSON`,
+  );
 }

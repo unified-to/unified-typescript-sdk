@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedConnectionRequest = {
@@ -62,4 +65,24 @@ export namespace UpdateUnifiedConnectionRequest$ {
   export const outboundSchema = UpdateUnifiedConnectionRequest$outboundSchema;
   /** @deprecated use `UpdateUnifiedConnectionRequest$Outbound` instead. */
   export type Outbound = UpdateUnifiedConnectionRequest$Outbound;
+}
+
+export function updateUnifiedConnectionRequestToJSON(
+  updateUnifiedConnectionRequest: UpdateUnifiedConnectionRequest,
+): string {
+  return JSON.stringify(
+    UpdateUnifiedConnectionRequest$outboundSchema.parse(
+      updateUnifiedConnectionRequest,
+    ),
+  );
+}
+
+export function updateUnifiedConnectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateUnifiedConnectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateUnifiedConnectionRequest' from JSON`,
+  );
 }

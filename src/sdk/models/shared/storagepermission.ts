@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyStoragePermissionRoles,
   PropertyStoragePermissionRoles$inboundSchema,
@@ -66,4 +69,22 @@ export namespace StoragePermission$ {
   export const outboundSchema = StoragePermission$outboundSchema;
   /** @deprecated use `StoragePermission$Outbound` instead. */
   export type Outbound = StoragePermission$Outbound;
+}
+
+export function storagePermissionToJSON(
+  storagePermission: StoragePermission,
+): string {
+  return JSON.stringify(
+    StoragePermission$outboundSchema.parse(storagePermission),
+  );
+}
+
+export function storagePermissionFromJSON(
+  jsonString: string,
+): SafeParseResult<StoragePermission, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => StoragePermission$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'StoragePermission' from JSON`,
+  );
 }

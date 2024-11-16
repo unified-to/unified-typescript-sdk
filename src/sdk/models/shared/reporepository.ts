@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoRepository = {
   createdAt?: Date | undefined;
@@ -97,4 +100,18 @@ export namespace RepoRepository$ {
   export const outboundSchema = RepoRepository$outboundSchema;
   /** @deprecated use `RepoRepository$Outbound` instead. */
   export type Outbound = RepoRepository$Outbound;
+}
+
+export function repoRepositoryToJSON(repoRepository: RepoRepository): string {
+  return JSON.stringify(RepoRepository$outboundSchema.parse(repoRepository));
+}
+
+export function repoRepositoryFromJSON(
+  jsonString: string,
+): SafeParseResult<RepoRepository, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RepoRepository$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RepoRepository' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyUcCallTelephone,
   PropertyUcCallTelephone$inboundSchema,
@@ -108,4 +111,18 @@ export namespace UcCall$ {
   export const outboundSchema = UcCall$outboundSchema;
   /** @deprecated use `UcCall$Outbound` instead. */
   export type Outbound = UcCall$Outbound;
+}
+
+export function ucCallToJSON(ucCall: UcCall): string {
+  return JSON.stringify(UcCall$outboundSchema.parse(ucCall));
+}
+
+export function ucCallFromJSON(
+  jsonString: string,
+): SafeParseResult<UcCall, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UcCall$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UcCall' from JSON`,
+  );
 }

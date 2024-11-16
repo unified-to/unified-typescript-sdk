@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateMartechMemberRequest = {
@@ -71,4 +74,22 @@ export namespace CreateMartechMemberRequest$ {
   export const outboundSchema = CreateMartechMemberRequest$outboundSchema;
   /** @deprecated use `CreateMartechMemberRequest$Outbound` instead. */
   export type Outbound = CreateMartechMemberRequest$Outbound;
+}
+
+export function createMartechMemberRequestToJSON(
+  createMartechMemberRequest: CreateMartechMemberRequest,
+): string {
+  return JSON.stringify(
+    CreateMartechMemberRequest$outboundSchema.parse(createMartechMemberRequest),
+  );
+}
+
+export function createMartechMemberRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateMartechMemberRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateMartechMemberRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateMartechMemberRequest' from JSON`,
+  );
 }

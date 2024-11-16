@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsCandidateRequest = {
@@ -68,4 +71,22 @@ export namespace CreateAtsCandidateRequest$ {
   export const outboundSchema = CreateAtsCandidateRequest$outboundSchema;
   /** @deprecated use `CreateAtsCandidateRequest$Outbound` instead. */
   export type Outbound = CreateAtsCandidateRequest$Outbound;
+}
+
+export function createAtsCandidateRequestToJSON(
+  createAtsCandidateRequest: CreateAtsCandidateRequest,
+): string {
+  return JSON.stringify(
+    CreateAtsCandidateRequest$outboundSchema.parse(createAtsCandidateRequest),
+  );
+}
+
+export function createAtsCandidateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAtsCandidateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAtsCandidateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAtsCandidateRequest' from JSON`,
+  );
 }

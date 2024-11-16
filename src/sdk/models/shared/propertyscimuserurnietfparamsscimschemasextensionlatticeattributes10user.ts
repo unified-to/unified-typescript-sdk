@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Ethnicity = {
   Caucasian: "Caucasian",
@@ -210,4 +213,31 @@ export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttribu
   /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound` instead. */
   export type Outbound =
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound;
+}
+
+export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserToJSON(
+  propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User:
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
+): string {
+  return JSON.stringify(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$outboundSchema
+      .parse(
+        propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
+      ),
+  );
+}
+
+export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User' from JSON`,
+  );
 }

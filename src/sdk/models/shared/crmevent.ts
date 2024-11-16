@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyCrmEventCall,
   PropertyCrmEventCall$inboundSchema,
@@ -210,4 +213,18 @@ export namespace CrmEvent$ {
   export const outboundSchema = CrmEvent$outboundSchema;
   /** @deprecated use `CrmEvent$Outbound` instead. */
   export type Outbound = CrmEvent$Outbound;
+}
+
+export function crmEventToJSON(crmEvent: CrmEvent): string {
+  return JSON.stringify(CrmEvent$outboundSchema.parse(crmEvent));
+}
+
+export function crmEventFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmEvent, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmEvent$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmEvent' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingJournalRequest = {
@@ -68,4 +71,24 @@ export namespace CreateAccountingJournalRequest$ {
   export const outboundSchema = CreateAccountingJournalRequest$outboundSchema;
   /** @deprecated use `CreateAccountingJournalRequest$Outbound` instead. */
   export type Outbound = CreateAccountingJournalRequest$Outbound;
+}
+
+export function createAccountingJournalRequestToJSON(
+  createAccountingJournalRequest: CreateAccountingJournalRequest,
+): string {
+  return JSON.stringify(
+    CreateAccountingJournalRequest$outboundSchema.parse(
+      createAccountingJournalRequest,
+    ),
+  );
+}
+
+export function createAccountingJournalRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAccountingJournalRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAccountingJournalRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAccountingJournalRequest' from JSON`,
+  );
 }

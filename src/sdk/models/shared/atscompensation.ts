@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Frequency = {
   OneTime: "ONE_TIME",
@@ -119,4 +122,20 @@ export namespace AtsCompensation$ {
   export const outboundSchema = AtsCompensation$outboundSchema;
   /** @deprecated use `AtsCompensation$Outbound` instead. */
   export type Outbound = AtsCompensation$Outbound;
+}
+
+export function atsCompensationToJSON(
+  atsCompensation: AtsCompensation,
+): string {
+  return JSON.stringify(AtsCompensation$outboundSchema.parse(atsCompensation));
+}
+
+export function atsCompensationFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsCompensation, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsCompensation$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsCompensation' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PropertyMessagingMessageAuthorMember = {
   email?: string | undefined;
@@ -61,4 +64,25 @@ export namespace PropertyMessagingMessageAuthorMember$ {
     PropertyMessagingMessageAuthorMember$outboundSchema;
   /** @deprecated use `PropertyMessagingMessageAuthorMember$Outbound` instead. */
   export type Outbound = PropertyMessagingMessageAuthorMember$Outbound;
+}
+
+export function propertyMessagingMessageAuthorMemberToJSON(
+  propertyMessagingMessageAuthorMember: PropertyMessagingMessageAuthorMember,
+): string {
+  return JSON.stringify(
+    PropertyMessagingMessageAuthorMember$outboundSchema.parse(
+      propertyMessagingMessageAuthorMember,
+    ),
+  );
+}
+
+export function propertyMessagingMessageAuthorMemberFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyMessagingMessageAuthorMember, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PropertyMessagingMessageAuthorMember$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyMessagingMessageAuthorMember' from JSON`,
+  );
 }

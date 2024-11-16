@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveTicketingTicketRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveTicketingTicketRequest$ {
   export type Outbound = RemoveTicketingTicketRequest$Outbound;
 }
 
+export function removeTicketingTicketRequestToJSON(
+  removeTicketingTicketRequest: RemoveTicketingTicketRequest,
+): string {
+  return JSON.stringify(
+    RemoveTicketingTicketRequest$outboundSchema.parse(
+      removeTicketingTicketRequest,
+    ),
+  );
+}
+
+export function removeTicketingTicketRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTicketingTicketRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTicketingTicketRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTicketingTicketRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveTicketingTicketResponse$inboundSchema: z.ZodType<
   RemoveTicketingTicketResponse,
@@ -109,4 +132,24 @@ export namespace RemoveTicketingTicketResponse$ {
   export const outboundSchema = RemoveTicketingTicketResponse$outboundSchema;
   /** @deprecated use `RemoveTicketingTicketResponse$Outbound` instead. */
   export type Outbound = RemoveTicketingTicketResponse$Outbound;
+}
+
+export function removeTicketingTicketResponseToJSON(
+  removeTicketingTicketResponse: RemoveTicketingTicketResponse,
+): string {
+  return JSON.stringify(
+    RemoveTicketingTicketResponse$outboundSchema.parse(
+      removeTicketingTicketResponse,
+    ),
+  );
+}
+
+export function removeTicketingTicketResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTicketingTicketResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTicketingTicketResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTicketingTicketResponse' from JSON`,
+  );
 }

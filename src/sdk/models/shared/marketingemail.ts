@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const MarketingEmailType = {
   Work: "WORK",
@@ -75,4 +78,18 @@ export namespace MarketingEmail$ {
   export const outboundSchema = MarketingEmail$outboundSchema;
   /** @deprecated use `MarketingEmail$Outbound` instead. */
   export type Outbound = MarketingEmail$Outbound;
+}
+
+export function marketingEmailToJSON(marketingEmail: MarketingEmail): string {
+  return JSON.stringify(MarketingEmail$outboundSchema.parse(marketingEmail));
+}
+
+export function marketingEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<MarketingEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MarketingEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MarketingEmail' from JSON`,
+  );
 }

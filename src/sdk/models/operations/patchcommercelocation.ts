@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCommerceLocationRequest = {
@@ -75,4 +78,24 @@ export namespace PatchCommerceLocationRequest$ {
   export const outboundSchema = PatchCommerceLocationRequest$outboundSchema;
   /** @deprecated use `PatchCommerceLocationRequest$Outbound` instead. */
   export type Outbound = PatchCommerceLocationRequest$Outbound;
+}
+
+export function patchCommerceLocationRequestToJSON(
+  patchCommerceLocationRequest: PatchCommerceLocationRequest,
+): string {
+  return JSON.stringify(
+    PatchCommerceLocationRequest$outboundSchema.parse(
+      patchCommerceLocationRequest,
+    ),
+  );
+}
+
+export function patchCommerceLocationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchCommerceLocationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchCommerceLocationRequest' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * A connection represents a specific authentication of an integration.
@@ -73,6 +76,20 @@ export namespace ConnectionId$ {
   export type Outbound = ConnectionId$Outbound;
 }
 
+export function connectionIdToJSON(connectionId: ConnectionId): string {
+  return JSON.stringify(ConnectionId$outboundSchema.parse(connectionId));
+}
+
+export function connectionIdFromJSON(
+  jsonString: string,
+): SafeParseResult<ConnectionId, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ConnectionId$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ConnectionId' from JSON`,
+  );
+}
+
 /** @internal */
 export const IntegrationType$inboundSchema: z.ZodType<
   IntegrationType,
@@ -101,6 +118,22 @@ export namespace IntegrationType$ {
   export const outboundSchema = IntegrationType$outboundSchema;
   /** @deprecated use `IntegrationType$Outbound` instead. */
   export type Outbound = IntegrationType$Outbound;
+}
+
+export function integrationTypeToJSON(
+  integrationType: IntegrationType,
+): string {
+  return JSON.stringify(IntegrationType$outboundSchema.parse(integrationType));
+}
+
+export function integrationTypeFromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationType, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationType$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationType' from JSON`,
+  );
 }
 
 /** @internal */
@@ -180,4 +213,22 @@ export namespace ListUnifiedWebhooksRequest$ {
   export const outboundSchema = ListUnifiedWebhooksRequest$outboundSchema;
   /** @deprecated use `ListUnifiedWebhooksRequest$Outbound` instead. */
   export type Outbound = ListUnifiedWebhooksRequest$Outbound;
+}
+
+export function listUnifiedWebhooksRequestToJSON(
+  listUnifiedWebhooksRequest: ListUnifiedWebhooksRequest,
+): string {
+  return JSON.stringify(
+    ListUnifiedWebhooksRequest$outboundSchema.parse(listUnifiedWebhooksRequest),
+  );
+}
+
+export function listUnifiedWebhooksRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUnifiedWebhooksRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUnifiedWebhooksRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUnifiedWebhooksRequest' from JSON`,
+  );
 }

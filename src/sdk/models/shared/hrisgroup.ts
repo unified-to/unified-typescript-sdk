@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const HrisGroupType = {
   Team: "TEAM",
@@ -142,4 +145,18 @@ export namespace HrisGroup$ {
   export const outboundSchema = HrisGroup$outboundSchema;
   /** @deprecated use `HrisGroup$Outbound` instead. */
   export type Outbound = HrisGroup$Outbound;
+}
+
+export function hrisGroupToJSON(hrisGroup: HrisGroup): string {
+  return JSON.stringify(HrisGroup$outboundSchema.parse(hrisGroup));
+}
+
+export function hrisGroupFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisGroup, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisGroup$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisGroup' from JSON`,
+  );
 }

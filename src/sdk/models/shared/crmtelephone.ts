@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const CrmTelephoneType = {
   Work: "WORK",
@@ -77,4 +80,18 @@ export namespace CrmTelephone$ {
   export const outboundSchema = CrmTelephone$outboundSchema;
   /** @deprecated use `CrmTelephone$Outbound` instead. */
   export type Outbound = CrmTelephone$Outbound;
+}
+
+export function crmTelephoneToJSON(crmTelephone: CrmTelephone): string {
+  return JSON.stringify(CrmTelephone$outboundSchema.parse(crmTelephone));
+}
+
+export function crmTelephoneFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmTelephone, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmTelephone$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmTelephone' from JSON`,
+  );
 }

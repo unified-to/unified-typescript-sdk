@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceItemOption = {
   id?: string | undefined;
@@ -54,4 +57,22 @@ export namespace CommerceItemOption$ {
   export const outboundSchema = CommerceItemOption$outboundSchema;
   /** @deprecated use `CommerceItemOption$Outbound` instead. */
   export type Outbound = CommerceItemOption$Outbound;
+}
+
+export function commerceItemOptionToJSON(
+  commerceItemOption: CommerceItemOption,
+): string {
+  return JSON.stringify(
+    CommerceItemOption$outboundSchema.parse(commerceItemOption),
+  );
+}
+
+export function commerceItemOptionFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceItemOption, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceItemOption$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemOption' from JSON`,
+  );
 }

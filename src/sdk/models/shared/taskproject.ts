@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type TaskProject = {
   createdAt?: Date | undefined;
@@ -99,4 +102,18 @@ export namespace TaskProject$ {
   export const outboundSchema = TaskProject$outboundSchema;
   /** @deprecated use `TaskProject$Outbound` instead. */
   export type Outbound = TaskProject$Outbound;
+}
+
+export function taskProjectToJSON(taskProject: TaskProject): string {
+  return JSON.stringify(TaskProject$outboundSchema.parse(taskProject));
+}
+
+export function taskProjectFromJSON(
+  jsonString: string,
+): SafeParseResult<TaskProject, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => TaskProject$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'TaskProject' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchKmsPageRequest = {
@@ -75,4 +78,22 @@ export namespace PatchKmsPageRequest$ {
   export const outboundSchema = PatchKmsPageRequest$outboundSchema;
   /** @deprecated use `PatchKmsPageRequest$Outbound` instead. */
   export type Outbound = PatchKmsPageRequest$Outbound;
+}
+
+export function patchKmsPageRequestToJSON(
+  patchKmsPageRequest: PatchKmsPageRequest,
+): string {
+  return JSON.stringify(
+    PatchKmsPageRequest$outboundSchema.parse(patchKmsPageRequest),
+  );
+}
+
+export function patchKmsPageRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchKmsPageRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchKmsPageRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchKmsPageRequest' from JSON`,
+  );
 }

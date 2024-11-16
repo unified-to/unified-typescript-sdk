@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchRepoOrganizationRequest = {
@@ -75,4 +78,24 @@ export namespace PatchRepoOrganizationRequest$ {
   export const outboundSchema = PatchRepoOrganizationRequest$outboundSchema;
   /** @deprecated use `PatchRepoOrganizationRequest$Outbound` instead. */
   export type Outbound = PatchRepoOrganizationRequest$Outbound;
+}
+
+export function patchRepoOrganizationRequestToJSON(
+  patchRepoOrganizationRequest: PatchRepoOrganizationRequest,
+): string {
+  return JSON.stringify(
+    PatchRepoOrganizationRequest$outboundSchema.parse(
+      patchRepoOrganizationRequest,
+    ),
+  );
+}
+
+export function patchRepoOrganizationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchRepoOrganizationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchRepoOrganizationRequest' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CommerceItemMedia,
   CommerceItemMedia$inboundSchema,
@@ -242,4 +245,22 @@ export namespace CommerceItemVariant$ {
   export const outboundSchema = CommerceItemVariant$outboundSchema;
   /** @deprecated use `CommerceItemVariant$Outbound` instead. */
   export type Outbound = CommerceItemVariant$Outbound;
+}
+
+export function commerceItemVariantToJSON(
+  commerceItemVariant: CommerceItemVariant,
+): string {
+  return JSON.stringify(
+    CommerceItemVariant$outboundSchema.parse(commerceItemVariant),
+  );
+}
+
+export function commerceItemVariantFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceItemVariant, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceItemVariant$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemVariant' from JSON`,
+  );
 }

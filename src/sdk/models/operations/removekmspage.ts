@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveKmsPageRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveKmsPageRequest$ {
   export type Outbound = RemoveKmsPageRequest$Outbound;
 }
 
+export function removeKmsPageRequestToJSON(
+  removeKmsPageRequest: RemoveKmsPageRequest,
+): string {
+  return JSON.stringify(
+    RemoveKmsPageRequest$outboundSchema.parse(removeKmsPageRequest),
+  );
+}
+
+export function removeKmsPageRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveKmsPageRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveKmsPageRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveKmsPageRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveKmsPageResponse$inboundSchema: z.ZodType<
   RemoveKmsPageResponse,
@@ -109,4 +130,22 @@ export namespace RemoveKmsPageResponse$ {
   export const outboundSchema = RemoveKmsPageResponse$outboundSchema;
   /** @deprecated use `RemoveKmsPageResponse$Outbound` instead. */
   export type Outbound = RemoveKmsPageResponse$Outbound;
+}
+
+export function removeKmsPageResponseToJSON(
+  removeKmsPageResponse: RemoveKmsPageResponse,
+): string {
+  return JSON.stringify(
+    RemoveKmsPageResponse$outboundSchema.parse(removeKmsPageResponse),
+  );
+}
+
+export function removeKmsPageResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveKmsPageResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveKmsPageResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveKmsPageResponse' from JSON`,
+  );
 }

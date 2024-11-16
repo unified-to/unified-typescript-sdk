@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoOrganizationRequest = {
@@ -75,4 +78,24 @@ export namespace UpdateRepoOrganizationRequest$ {
   export const outboundSchema = UpdateRepoOrganizationRequest$outboundSchema;
   /** @deprecated use `UpdateRepoOrganizationRequest$Outbound` instead. */
   export type Outbound = UpdateRepoOrganizationRequest$Outbound;
+}
+
+export function updateRepoOrganizationRequestToJSON(
+  updateRepoOrganizationRequest: UpdateRepoOrganizationRequest,
+): string {
+  return JSON.stringify(
+    UpdateRepoOrganizationRequest$outboundSchema.parse(
+      updateRepoOrganizationRequest,
+    ),
+  );
+}
+
+export function updateRepoOrganizationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateRepoOrganizationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateRepoOrganizationRequest' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PatchPassthroughRawRequest = {
   /**
@@ -107,6 +110,24 @@ export namespace PatchPassthroughRawRequest$ {
   export type Outbound = PatchPassthroughRawRequest$Outbound;
 }
 
+export function patchPassthroughRawRequestToJSON(
+  patchPassthroughRawRequest: PatchPassthroughRawRequest,
+): string {
+  return JSON.stringify(
+    PatchPassthroughRawRequest$outboundSchema.parse(patchPassthroughRawRequest),
+  );
+}
+
+export function patchPassthroughRawRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughRawRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPassthroughRawRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughRawRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const PatchPassthroughRawResponseResult$inboundSchema: z.ZodType<
   PatchPassthroughRawResponseResult,
@@ -153,6 +174,26 @@ export namespace PatchPassthroughRawResponseResult$ {
     PatchPassthroughRawResponseResult$outboundSchema;
   /** @deprecated use `PatchPassthroughRawResponseResult$Outbound` instead. */
   export type Outbound = PatchPassthroughRawResponseResult$Outbound;
+}
+
+export function patchPassthroughRawResponseResultToJSON(
+  patchPassthroughRawResponseResult: PatchPassthroughRawResponseResult,
+): string {
+  return JSON.stringify(
+    PatchPassthroughRawResponseResult$outboundSchema.parse(
+      patchPassthroughRawResponseResult,
+    ),
+  );
+}
+
+export function patchPassthroughRawResponseResultFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughRawResponseResult, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPassthroughRawResponseResult$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughRawResponseResult' from JSON`,
+  );
 }
 
 /** @internal */
@@ -220,4 +261,24 @@ export namespace PatchPassthroughRawResponse$ {
   export const outboundSchema = PatchPassthroughRawResponse$outboundSchema;
   /** @deprecated use `PatchPassthroughRawResponse$Outbound` instead. */
   export type Outbound = PatchPassthroughRawResponse$Outbound;
+}
+
+export function patchPassthroughRawResponseToJSON(
+  patchPassthroughRawResponse: PatchPassthroughRawResponse,
+): string {
+  return JSON.stringify(
+    PatchPassthroughRawResponse$outboundSchema.parse(
+      patchPassthroughRawResponse,
+    ),
+  );
+}
+
+export function patchPassthroughRawResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughRawResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPassthroughRawResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughRawResponse' from JSON`,
+  );
 }

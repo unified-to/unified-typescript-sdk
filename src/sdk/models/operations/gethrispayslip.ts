@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisPayslipRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetHrisPayslipRequest$ {
   export const outboundSchema = GetHrisPayslipRequest$outboundSchema;
   /** @deprecated use `GetHrisPayslipRequest$Outbound` instead. */
   export type Outbound = GetHrisPayslipRequest$Outbound;
+}
+
+export function getHrisPayslipRequestToJSON(
+  getHrisPayslipRequest: GetHrisPayslipRequest,
+): string {
+  return JSON.stringify(
+    GetHrisPayslipRequest$outboundSchema.parse(getHrisPayslipRequest),
+  );
+}
+
+export function getHrisPayslipRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetHrisPayslipRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetHrisPayslipRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetHrisPayslipRequest' from JSON`,
+  );
 }

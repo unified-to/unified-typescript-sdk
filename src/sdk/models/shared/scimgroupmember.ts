@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Operation = {
   Add: "add",
@@ -120,4 +123,20 @@ export namespace ScimGroupMember$ {
   export const outboundSchema = ScimGroupMember$outboundSchema;
   /** @deprecated use `ScimGroupMember$Outbound` instead. */
   export type Outbound = ScimGroupMember$Outbound;
+}
+
+export function scimGroupMemberToJSON(
+  scimGroupMember: ScimGroupMember,
+): string {
+  return JSON.stringify(ScimGroupMember$outboundSchema.parse(scimGroupMember));
+}
+
+export function scimGroupMemberFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimGroupMember, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimGroupMember$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimGroupMember' from JSON`,
+  );
 }

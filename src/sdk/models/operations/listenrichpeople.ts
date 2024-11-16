@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListEnrichPeopleRequest = {
   /**
@@ -93,4 +96,22 @@ export namespace ListEnrichPeopleRequest$ {
   export const outboundSchema = ListEnrichPeopleRequest$outboundSchema;
   /** @deprecated use `ListEnrichPeopleRequest$Outbound` instead. */
   export type Outbound = ListEnrichPeopleRequest$Outbound;
+}
+
+export function listEnrichPeopleRequestToJSON(
+  listEnrichPeopleRequest: ListEnrichPeopleRequest,
+): string {
+  return JSON.stringify(
+    ListEnrichPeopleRequest$outboundSchema.parse(listEnrichPeopleRequest),
+  );
+}
+
+export function listEnrichPeopleRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListEnrichPeopleRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListEnrichPeopleRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListEnrichPeopleRequest' from JSON`,
+  );
 }

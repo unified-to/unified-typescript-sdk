@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUnifiedWebhookRequest = {
@@ -62,4 +65,22 @@ export namespace PatchUnifiedWebhookRequest$ {
   export const outboundSchema = PatchUnifiedWebhookRequest$outboundSchema;
   /** @deprecated use `PatchUnifiedWebhookRequest$Outbound` instead. */
   export type Outbound = PatchUnifiedWebhookRequest$Outbound;
+}
+
+export function patchUnifiedWebhookRequestToJSON(
+  patchUnifiedWebhookRequest: PatchUnifiedWebhookRequest,
+): string {
+  return JSON.stringify(
+    PatchUnifiedWebhookRequest$outboundSchema.parse(patchUnifiedWebhookRequest),
+  );
+}
+
+export function patchUnifiedWebhookRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchUnifiedWebhookRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchUnifiedWebhookRequest' from JSON`,
+  );
 }

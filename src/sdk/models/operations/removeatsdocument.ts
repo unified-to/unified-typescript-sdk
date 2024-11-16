@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAtsDocumentRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveAtsDocumentRequest$ {
   export type Outbound = RemoveAtsDocumentRequest$Outbound;
 }
 
+export function removeAtsDocumentRequestToJSON(
+  removeAtsDocumentRequest: RemoveAtsDocumentRequest,
+): string {
+  return JSON.stringify(
+    RemoveAtsDocumentRequest$outboundSchema.parse(removeAtsDocumentRequest),
+  );
+}
+
+export function removeAtsDocumentRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsDocumentRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsDocumentRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsDocumentRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAtsDocumentResponse$inboundSchema: z.ZodType<
   RemoveAtsDocumentResponse,
@@ -109,4 +130,22 @@ export namespace RemoveAtsDocumentResponse$ {
   export const outboundSchema = RemoveAtsDocumentResponse$outboundSchema;
   /** @deprecated use `RemoveAtsDocumentResponse$Outbound` instead. */
   export type Outbound = RemoveAtsDocumentResponse$Outbound;
+}
+
+export function removeAtsDocumentResponseToJSON(
+  removeAtsDocumentResponse: RemoveAtsDocumentResponse,
+): string {
+  return JSON.stringify(
+    RemoveAtsDocumentResponse$outboundSchema.parse(removeAtsDocumentResponse),
+  );
+}
+
+export function removeAtsDocumentResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsDocumentResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsDocumentResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsDocumentResponse' from JSON`,
+  );
 }

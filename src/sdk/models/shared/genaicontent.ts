@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Role = {
   System: "SYSTEM",
@@ -73,4 +76,18 @@ export namespace GenaiContent$ {
   export const outboundSchema = GenaiContent$outboundSchema;
   /** @deprecated use `GenaiContent$Outbound` instead. */
   export type Outbound = GenaiContent$Outbound;
+}
+
+export function genaiContentToJSON(genaiContent: GenaiContent): string {
+  return JSON.stringify(GenaiContent$outboundSchema.parse(genaiContent));
+}
+
+export function genaiContentFromJSON(
+  jsonString: string,
+): SafeParseResult<GenaiContent, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GenaiContent$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GenaiContent' from JSON`,
+  );
 }

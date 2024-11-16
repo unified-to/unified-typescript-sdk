@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListMessagingChannelsRequest = {
   /**
@@ -100,4 +103,24 @@ export namespace ListMessagingChannelsRequest$ {
   export const outboundSchema = ListMessagingChannelsRequest$outboundSchema;
   /** @deprecated use `ListMessagingChannelsRequest$Outbound` instead. */
   export type Outbound = ListMessagingChannelsRequest$Outbound;
+}
+
+export function listMessagingChannelsRequestToJSON(
+  listMessagingChannelsRequest: ListMessagingChannelsRequest,
+): string {
+  return JSON.stringify(
+    ListMessagingChannelsRequest$outboundSchema.parse(
+      listMessagingChannelsRequest,
+    ),
+  );
+}
+
+export function listMessagingChannelsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListMessagingChannelsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListMessagingChannelsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListMessagingChannelsRequest' from JSON`,
+  );
 }

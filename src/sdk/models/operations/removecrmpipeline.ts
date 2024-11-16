@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCrmPipelineRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveCrmPipelineRequest$ {
   export type Outbound = RemoveCrmPipelineRequest$Outbound;
 }
 
+export function removeCrmPipelineRequestToJSON(
+  removeCrmPipelineRequest: RemoveCrmPipelineRequest,
+): string {
+  return JSON.stringify(
+    RemoveCrmPipelineRequest$outboundSchema.parse(removeCrmPipelineRequest),
+  );
+}
+
+export function removeCrmPipelineRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmPipelineRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmPipelineRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmPipelineRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCrmPipelineResponse$inboundSchema: z.ZodType<
   RemoveCrmPipelineResponse,
@@ -109,4 +130,22 @@ export namespace RemoveCrmPipelineResponse$ {
   export const outboundSchema = RemoveCrmPipelineResponse$outboundSchema;
   /** @deprecated use `RemoveCrmPipelineResponse$Outbound` instead. */
   export type Outbound = RemoveCrmPipelineResponse$Outbound;
+}
+
+export function removeCrmPipelineResponseToJSON(
+  removeCrmPipelineResponse: RemoveCrmPipelineResponse,
+): string {
+  return JSON.stringify(
+    RemoveCrmPipelineResponse$outboundSchema.parse(removeCrmPipelineResponse),
+  );
+}
+
+export function removeCrmPipelineResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmPipelineResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmPipelineResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmPipelineResponse' from JSON`,
+  );
 }

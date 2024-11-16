@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemovePassthroughRequest = {
   /**
@@ -78,6 +81,24 @@ export namespace RemovePassthroughRequest$ {
   export type Outbound = RemovePassthroughRequest$Outbound;
 }
 
+export function removePassthroughRequestToJSON(
+  removePassthroughRequest: RemovePassthroughRequest,
+): string {
+  return JSON.stringify(
+    RemovePassthroughRequest$outboundSchema.parse(removePassthroughRequest),
+  );
+}
+
+export function removePassthroughRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePassthroughRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePassthroughRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePassthroughRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemovePassthroughResponseResult$inboundSchema: z.ZodType<
   RemovePassthroughResponseResult,
@@ -123,6 +144,26 @@ export namespace RemovePassthroughResponseResult$ {
   export const outboundSchema = RemovePassthroughResponseResult$outboundSchema;
   /** @deprecated use `RemovePassthroughResponseResult$Outbound` instead. */
   export type Outbound = RemovePassthroughResponseResult$Outbound;
+}
+
+export function removePassthroughResponseResultToJSON(
+  removePassthroughResponseResult: RemovePassthroughResponseResult,
+): string {
+  return JSON.stringify(
+    RemovePassthroughResponseResult$outboundSchema.parse(
+      removePassthroughResponseResult,
+    ),
+  );
+}
+
+export function removePassthroughResponseResultFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePassthroughResponseResult, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePassthroughResponseResult$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePassthroughResponseResult' from JSON`,
+  );
 }
 
 /** @internal */
@@ -190,4 +231,22 @@ export namespace RemovePassthroughResponse$ {
   export const outboundSchema = RemovePassthroughResponse$outboundSchema;
   /** @deprecated use `RemovePassthroughResponse$Outbound` instead. */
   export type Outbound = RemovePassthroughResponse$Outbound;
+}
+
+export function removePassthroughResponseToJSON(
+  removePassthroughResponse: RemovePassthroughResponse,
+): string {
+  return JSON.stringify(
+    RemovePassthroughResponse$outboundSchema.parse(removePassthroughResponse),
+  );
+}
+
+export function removePassthroughResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePassthroughResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePassthroughResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePassthroughResponse' from JSON`,
+  );
 }

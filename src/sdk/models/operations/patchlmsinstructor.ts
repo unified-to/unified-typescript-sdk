@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchLmsInstructorRequest = {
@@ -75,4 +78,22 @@ export namespace PatchLmsInstructorRequest$ {
   export const outboundSchema = PatchLmsInstructorRequest$outboundSchema;
   /** @deprecated use `PatchLmsInstructorRequest$Outbound` instead. */
   export type Outbound = PatchLmsInstructorRequest$Outbound;
+}
+
+export function patchLmsInstructorRequestToJSON(
+  patchLmsInstructorRequest: PatchLmsInstructorRequest,
+): string {
+  return JSON.stringify(
+    PatchLmsInstructorRequest$outboundSchema.parse(patchLmsInstructorRequest),
+  );
+}
+
+export function patchLmsInstructorRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchLmsInstructorRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchLmsInstructorRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchLmsInstructorRequest' from JSON`,
+  );
 }

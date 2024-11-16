@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsDocumentsRequest = {
   applicationId?: string | undefined;
@@ -106,4 +109,22 @@ export namespace ListAtsDocumentsRequest$ {
   export const outboundSchema = ListAtsDocumentsRequest$outboundSchema;
   /** @deprecated use `ListAtsDocumentsRequest$Outbound` instead. */
   export type Outbound = ListAtsDocumentsRequest$Outbound;
+}
+
+export function listAtsDocumentsRequestToJSON(
+  listAtsDocumentsRequest: ListAtsDocumentsRequest,
+): string {
+  return JSON.stringify(
+    ListAtsDocumentsRequest$outboundSchema.parse(listAtsDocumentsRequest),
+  );
+}
+
+export function listAtsDocumentsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListAtsDocumentsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListAtsDocumentsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListAtsDocumentsRequest' from JSON`,
+  );
 }

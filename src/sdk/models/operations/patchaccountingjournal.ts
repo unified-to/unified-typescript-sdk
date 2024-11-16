@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAccountingJournalRequest = {
@@ -75,4 +78,24 @@ export namespace PatchAccountingJournalRequest$ {
   export const outboundSchema = PatchAccountingJournalRequest$outboundSchema;
   /** @deprecated use `PatchAccountingJournalRequest$Outbound` instead. */
   export type Outbound = PatchAccountingJournalRequest$Outbound;
+}
+
+export function patchAccountingJournalRequestToJSON(
+  patchAccountingJournalRequest: PatchAccountingJournalRequest,
+): string {
+  return JSON.stringify(
+    PatchAccountingJournalRequest$outboundSchema.parse(
+      patchAccountingJournalRequest,
+    ),
+  );
+}
+
+export function patchAccountingJournalRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchAccountingJournalRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchAccountingJournalRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchAccountingJournalRequest' from JSON`,
+  );
 }

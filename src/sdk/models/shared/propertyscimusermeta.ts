@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const PropertyScimUserMetaResourceType = {
   User: "User",
@@ -88,4 +91,22 @@ export namespace PropertyScimUserMeta$ {
   export const outboundSchema = PropertyScimUserMeta$outboundSchema;
   /** @deprecated use `PropertyScimUserMeta$Outbound` instead. */
   export type Outbound = PropertyScimUserMeta$Outbound;
+}
+
+export function propertyScimUserMetaToJSON(
+  propertyScimUserMeta: PropertyScimUserMeta,
+): string {
+  return JSON.stringify(
+    PropertyScimUserMeta$outboundSchema.parse(propertyScimUserMeta),
+  );
+}
+
+export function propertyScimUserMetaFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyScimUserMeta, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyScimUserMeta$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyScimUserMeta' from JSON`,
+  );
 }

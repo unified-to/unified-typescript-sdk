@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsApplicationAnswer = {
   answers: Array<string>;
@@ -55,4 +58,22 @@ export namespace AtsApplicationAnswer$ {
   export const outboundSchema = AtsApplicationAnswer$outboundSchema;
   /** @deprecated use `AtsApplicationAnswer$Outbound` instead. */
   export type Outbound = AtsApplicationAnswer$Outbound;
+}
+
+export function atsApplicationAnswerToJSON(
+  atsApplicationAnswer: AtsApplicationAnswer,
+): string {
+  return JSON.stringify(
+    AtsApplicationAnswer$outboundSchema.parse(atsApplicationAnswer),
+  );
+}
+
+export function atsApplicationAnswerFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsApplicationAnswer, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsApplicationAnswer$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsApplicationAnswer' from JSON`,
+  );
 }

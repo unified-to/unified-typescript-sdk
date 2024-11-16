@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AccountingContactPaymentMethodType = {
   Ach: "ACH",
@@ -90,4 +93,24 @@ export namespace AccountingContactPaymentMethod$ {
   export const outboundSchema = AccountingContactPaymentMethod$outboundSchema;
   /** @deprecated use `AccountingContactPaymentMethod$Outbound` instead. */
   export type Outbound = AccountingContactPaymentMethod$Outbound;
+}
+
+export function accountingContactPaymentMethodToJSON(
+  accountingContactPaymentMethod: AccountingContactPaymentMethod,
+): string {
+  return JSON.stringify(
+    AccountingContactPaymentMethod$outboundSchema.parse(
+      accountingContactPaymentMethod,
+    ),
+  );
+}
+
+export function accountingContactPaymentMethodFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingContactPaymentMethod, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingContactPaymentMethod$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingContactPaymentMethod' from JSON`,
+  );
 }

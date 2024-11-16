@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoBranch = {
   createdAt?: Date | undefined;
@@ -77,4 +80,18 @@ export namespace RepoBranch$ {
   export const outboundSchema = RepoBranch$outboundSchema;
   /** @deprecated use `RepoBranch$Outbound` instead. */
   export type Outbound = RepoBranch$Outbound;
+}
+
+export function repoBranchToJSON(repoBranch: RepoBranch): string {
+  return JSON.stringify(RepoBranch$outboundSchema.parse(repoBranch));
+}
+
+export function repoBranchFromJSON(
+  jsonString: string,
+): SafeParseResult<RepoBranch, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RepoBranch$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RepoBranch' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListHrisCompaniesRequest = {
   /**
@@ -94,4 +97,22 @@ export namespace ListHrisCompaniesRequest$ {
   export const outboundSchema = ListHrisCompaniesRequest$outboundSchema;
   /** @deprecated use `ListHrisCompaniesRequest$Outbound` instead. */
   export type Outbound = ListHrisCompaniesRequest$Outbound;
+}
+
+export function listHrisCompaniesRequestToJSON(
+  listHrisCompaniesRequest: ListHrisCompaniesRequest,
+): string {
+  return JSON.stringify(
+    ListHrisCompaniesRequest$outboundSchema.parse(listHrisCompaniesRequest),
+  );
+}
+
+export function listHrisCompaniesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListHrisCompaniesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListHrisCompaniesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListHrisCompaniesRequest' from JSON`,
+  );
 }

@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyScimGroupMeta,
   PropertyScimGroupMeta$inboundSchema,
@@ -89,4 +92,18 @@ export namespace ScimGroup$ {
   export const outboundSchema = ScimGroup$outboundSchema;
   /** @deprecated use `ScimGroup$Outbound` instead. */
   export type Outbound = ScimGroup$Outbound;
+}
+
+export function scimGroupToJSON(scimGroup: ScimGroup): string {
+  return JSON.stringify(ScimGroup$outboundSchema.parse(scimGroup));
+}
+
+export function scimGroupFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimGroup, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimGroup$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimGroup' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveLmsStudentRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveLmsStudentRequest$ {
   export type Outbound = RemoveLmsStudentRequest$Outbound;
 }
 
+export function removeLmsStudentRequestToJSON(
+  removeLmsStudentRequest: RemoveLmsStudentRequest,
+): string {
+  return JSON.stringify(
+    RemoveLmsStudentRequest$outboundSchema.parse(removeLmsStudentRequest),
+  );
+}
+
+export function removeLmsStudentRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveLmsStudentRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveLmsStudentRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveLmsStudentRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveLmsStudentResponse$inboundSchema: z.ZodType<
   RemoveLmsStudentResponse,
@@ -109,4 +130,22 @@ export namespace RemoveLmsStudentResponse$ {
   export const outboundSchema = RemoveLmsStudentResponse$outboundSchema;
   /** @deprecated use `RemoveLmsStudentResponse$Outbound` instead. */
   export type Outbound = RemoveLmsStudentResponse$Outbound;
+}
+
+export function removeLmsStudentResponseToJSON(
+  removeLmsStudentResponse: RemoveLmsStudentResponse,
+): string {
+  return JSON.stringify(
+    RemoveLmsStudentResponse$outboundSchema.parse(removeLmsStudentResponse),
+  );
+}
+
+export function removeLmsStudentResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveLmsStudentResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveLmsStudentResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveLmsStudentResponse' from JSON`,
+  );
 }

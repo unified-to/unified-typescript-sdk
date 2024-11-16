@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AtsDocumentType = {
   Resume: "RESUME",
@@ -143,4 +146,18 @@ export namespace AtsDocument$ {
   export const outboundSchema = AtsDocument$outboundSchema;
   /** @deprecated use `AtsDocument$Outbound` instead. */
   export type Outbound = AtsDocument$Outbound;
+}
+
+export function atsDocumentToJSON(atsDocument: AtsDocument): string {
+  return JSON.stringify(AtsDocument$outboundSchema.parse(atsDocument));
+}
+
+export function atsDocumentFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsDocument, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsDocument$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsDocument' from JSON`,
+  );
 }

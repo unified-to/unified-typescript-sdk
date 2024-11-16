@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AtsEmail,
   AtsEmail$inboundSchema,
@@ -200,4 +203,18 @@ export namespace AtsCandidate$ {
   export const outboundSchema = AtsCandidate$outboundSchema;
   /** @deprecated use `AtsCandidate$Outbound` instead. */
   export type Outbound = AtsCandidate$Outbound;
+}
+
+export function atsCandidateToJSON(atsCandidate: AtsCandidate): string {
+  return JSON.stringify(AtsCandidate$outboundSchema.parse(atsCandidate));
+}
+
+export function atsCandidateFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsCandidate, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsCandidate$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsCandidate' from JSON`,
+  );
 }

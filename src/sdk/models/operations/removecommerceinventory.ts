@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCommerceInventoryRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveCommerceInventoryRequest$ {
   export type Outbound = RemoveCommerceInventoryRequest$Outbound;
 }
 
+export function removeCommerceInventoryRequestToJSON(
+  removeCommerceInventoryRequest: RemoveCommerceInventoryRequest,
+): string {
+  return JSON.stringify(
+    RemoveCommerceInventoryRequest$outboundSchema.parse(
+      removeCommerceInventoryRequest,
+    ),
+  );
+}
+
+export function removeCommerceInventoryRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceInventoryRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceInventoryRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceInventoryRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCommerceInventoryResponse$inboundSchema: z.ZodType<
   RemoveCommerceInventoryResponse,
@@ -109,4 +132,24 @@ export namespace RemoveCommerceInventoryResponse$ {
   export const outboundSchema = RemoveCommerceInventoryResponse$outboundSchema;
   /** @deprecated use `RemoveCommerceInventoryResponse$Outbound` instead. */
   export type Outbound = RemoveCommerceInventoryResponse$Outbound;
+}
+
+export function removeCommerceInventoryResponseToJSON(
+  removeCommerceInventoryResponse: RemoveCommerceInventoryResponse,
+): string {
+  return JSON.stringify(
+    RemoveCommerceInventoryResponse$outboundSchema.parse(
+      removeCommerceInventoryResponse,
+    ),
+  );
+}
+
+export function removeCommerceInventoryResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceInventoryResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceInventoryResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceInventoryResponse' from JSON`,
+  );
 }

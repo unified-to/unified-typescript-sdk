@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CrmEmail,
   CrmEmail$inboundSchema,
@@ -145,4 +148,18 @@ export namespace CrmContact$ {
   export const outboundSchema = CrmContact$outboundSchema;
   /** @deprecated use `CrmContact$Outbound` instead. */
   export type Outbound = CrmContact$Outbound;
+}
+
+export function crmContactToJSON(crmContact: CrmContact): string {
+  return JSON.stringify(CrmContact$outboundSchema.parse(crmContact));
+}
+
+export function crmContactFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmContact, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmContact$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmContact' from JSON`,
+  );
 }

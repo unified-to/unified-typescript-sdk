@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveLmsInstructorRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveLmsInstructorRequest$ {
   export type Outbound = RemoveLmsInstructorRequest$Outbound;
 }
 
+export function removeLmsInstructorRequestToJSON(
+  removeLmsInstructorRequest: RemoveLmsInstructorRequest,
+): string {
+  return JSON.stringify(
+    RemoveLmsInstructorRequest$outboundSchema.parse(removeLmsInstructorRequest),
+  );
+}
+
+export function removeLmsInstructorRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveLmsInstructorRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveLmsInstructorRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveLmsInstructorRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveLmsInstructorResponse$inboundSchema: z.ZodType<
   RemoveLmsInstructorResponse,
@@ -109,4 +130,24 @@ export namespace RemoveLmsInstructorResponse$ {
   export const outboundSchema = RemoveLmsInstructorResponse$outboundSchema;
   /** @deprecated use `RemoveLmsInstructorResponse$Outbound` instead. */
   export type Outbound = RemoveLmsInstructorResponse$Outbound;
+}
+
+export function removeLmsInstructorResponseToJSON(
+  removeLmsInstructorResponse: RemoveLmsInstructorResponse,
+): string {
+  return JSON.stringify(
+    RemoveLmsInstructorResponse$outboundSchema.parse(
+      removeLmsInstructorResponse,
+    ),
+  );
+}
+
+export function removeLmsInstructorResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveLmsInstructorResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveLmsInstructorResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveLmsInstructorResponse' from JSON`,
+  );
 }

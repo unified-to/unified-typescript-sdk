@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PatchPassthroughJsonRequest = {
   /**
@@ -87,6 +90,26 @@ export namespace PatchPassthroughJsonRequest$ {
   export type Outbound = PatchPassthroughJsonRequest$Outbound;
 }
 
+export function patchPassthroughJsonRequestToJSON(
+  patchPassthroughJsonRequest: PatchPassthroughJsonRequest,
+): string {
+  return JSON.stringify(
+    PatchPassthroughJsonRequest$outboundSchema.parse(
+      patchPassthroughJsonRequest,
+    ),
+  );
+}
+
+export function patchPassthroughJsonRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughJsonRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPassthroughJsonRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughJsonRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const PatchPassthroughJsonResponseResult$inboundSchema: z.ZodType<
   PatchPassthroughJsonResponseResult,
@@ -133,6 +156,27 @@ export namespace PatchPassthroughJsonResponseResult$ {
     PatchPassthroughJsonResponseResult$outboundSchema;
   /** @deprecated use `PatchPassthroughJsonResponseResult$Outbound` instead. */
   export type Outbound = PatchPassthroughJsonResponseResult$Outbound;
+}
+
+export function patchPassthroughJsonResponseResultToJSON(
+  patchPassthroughJsonResponseResult: PatchPassthroughJsonResponseResult,
+): string {
+  return JSON.stringify(
+    PatchPassthroughJsonResponseResult$outboundSchema.parse(
+      patchPassthroughJsonResponseResult,
+    ),
+  );
+}
+
+export function patchPassthroughJsonResponseResultFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughJsonResponseResult, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PatchPassthroughJsonResponseResult$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughJsonResponseResult' from JSON`,
+  );
 }
 
 /** @internal */
@@ -200,4 +244,24 @@ export namespace PatchPassthroughJsonResponse$ {
   export const outboundSchema = PatchPassthroughJsonResponse$outboundSchema;
   /** @deprecated use `PatchPassthroughJsonResponse$Outbound` instead. */
   export type Outbound = PatchPassthroughJsonResponse$Outbound;
+}
+
+export function patchPassthroughJsonResponseToJSON(
+  patchPassthroughJsonResponse: PatchPassthroughJsonResponse,
+): string {
+  return JSON.stringify(
+    PatchPassthroughJsonResponse$outboundSchema.parse(
+      patchPassthroughJsonResponse,
+    ),
+  );
+}
+
+export function patchPassthroughJsonResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPassthroughJsonResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPassthroughJsonResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPassthroughJsonResponse' from JSON`,
+  );
 }

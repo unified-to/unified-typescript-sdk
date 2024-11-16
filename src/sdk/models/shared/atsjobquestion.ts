@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AtsJobQuestionType = {
   Text: "TEXT",
@@ -104,4 +107,18 @@ export namespace AtsJobQuestion$ {
   export const outboundSchema = AtsJobQuestion$outboundSchema;
   /** @deprecated use `AtsJobQuestion$Outbound` instead. */
   export type Outbound = AtsJobQuestion$Outbound;
+}
+
+export function atsJobQuestionToJSON(atsJobQuestion: AtsJobQuestion): string {
+  return JSON.stringify(AtsJobQuestion$outboundSchema.parse(atsJobQuestion));
+}
+
+export function atsJobQuestionFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsJobQuestion, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsJobQuestion$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsJobQuestion' from JSON`,
+  );
 }

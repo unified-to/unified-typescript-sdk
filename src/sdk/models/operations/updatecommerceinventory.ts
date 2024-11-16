@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCommerceInventoryRequest = {
@@ -75,4 +78,24 @@ export namespace UpdateCommerceInventoryRequest$ {
   export const outboundSchema = UpdateCommerceInventoryRequest$outboundSchema;
   /** @deprecated use `UpdateCommerceInventoryRequest$Outbound` instead. */
   export type Outbound = UpdateCommerceInventoryRequest$Outbound;
+}
+
+export function updateCommerceInventoryRequestToJSON(
+  updateCommerceInventoryRequest: UpdateCommerceInventoryRequest,
+): string {
+  return JSON.stringify(
+    UpdateCommerceInventoryRequest$outboundSchema.parse(
+      updateCommerceInventoryRequest,
+    ),
+  );
+}
+
+export function updateCommerceInventoryRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateCommerceInventoryRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateCommerceInventoryRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateCommerceInventoryRequest' from JSON`,
+  );
 }

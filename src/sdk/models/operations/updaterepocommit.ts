@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoCommitRequest = {
@@ -75,4 +78,22 @@ export namespace UpdateRepoCommitRequest$ {
   export const outboundSchema = UpdateRepoCommitRequest$outboundSchema;
   /** @deprecated use `UpdateRepoCommitRequest$Outbound` instead. */
   export type Outbound = UpdateRepoCommitRequest$Outbound;
+}
+
+export function updateRepoCommitRequestToJSON(
+  updateRepoCommitRequest: UpdateRepoCommitRequest,
+): string {
+  return JSON.stringify(
+    UpdateRepoCommitRequest$outboundSchema.parse(updateRepoCommitRequest),
+  );
+}
+
+export function updateRepoCommitRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateRepoCommitRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateRepoCommitRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateRepoCommitRequest' from JSON`,
+  );
 }

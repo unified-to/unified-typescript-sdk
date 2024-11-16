@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
@@ -197,4 +200,20 @@ export namespace AccountingOrder$ {
   export const outboundSchema = AccountingOrder$outboundSchema;
   /** @deprecated use `AccountingOrder$Outbound` instead. */
   export type Outbound = AccountingOrder$Outbound;
+}
+
+export function accountingOrderToJSON(
+  accountingOrder: AccountingOrder,
+): string {
+  return JSON.stringify(AccountingOrder$outboundSchema.parse(accountingOrder));
+}
+
+export function accountingOrderFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingOrder, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingOrder$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingOrder' from JSON`,
+  );
 }

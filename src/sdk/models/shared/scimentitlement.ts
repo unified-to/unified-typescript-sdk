@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ScimEntitlement = {
   display?: string | undefined;
@@ -54,4 +57,20 @@ export namespace ScimEntitlement$ {
   export const outboundSchema = ScimEntitlement$outboundSchema;
   /** @deprecated use `ScimEntitlement$Outbound` instead. */
   export type Outbound = ScimEntitlement$Outbound;
+}
+
+export function scimEntitlementToJSON(
+  scimEntitlement: ScimEntitlement,
+): string {
+  return JSON.stringify(ScimEntitlement$outboundSchema.parse(scimEntitlement));
+}
+
+export function scimEntitlementFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimEntitlement, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimEntitlement$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimEntitlement' from JSON`,
+  );
 }

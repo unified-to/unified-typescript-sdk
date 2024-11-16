@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyIntegrationSupportWebhookEvents,
   PropertyIntegrationSupportWebhookEvents$inboundSchema,
@@ -1473,4 +1476,22 @@ export namespace IntegrationSupport$ {
   export const outboundSchema = IntegrationSupport$outboundSchema;
   /** @deprecated use `IntegrationSupport$Outbound` instead. */
   export type Outbound = IntegrationSupport$Outbound;
+}
+
+export function integrationSupportToJSON(
+  integrationSupport: IntegrationSupport,
+): string {
+  return JSON.stringify(
+    IntegrationSupport$outboundSchema.parse(integrationSupport),
+  );
+}
+
+export function integrationSupportFromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationSupport, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationSupport$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationSupport' from JSON`,
+  );
 }

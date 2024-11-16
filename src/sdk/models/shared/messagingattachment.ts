@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MessagingAttachment = {
   contentType?: string | undefined;
@@ -71,4 +74,22 @@ export namespace MessagingAttachment$ {
   export const outboundSchema = MessagingAttachment$outboundSchema;
   /** @deprecated use `MessagingAttachment$Outbound` instead. */
   export type Outbound = MessagingAttachment$Outbound;
+}
+
+export function messagingAttachmentToJSON(
+  messagingAttachment: MessagingAttachment,
+): string {
+  return JSON.stringify(
+    MessagingAttachment$outboundSchema.parse(messagingAttachment),
+  );
+}
+
+export function messagingAttachmentFromJSON(
+  jsonString: string,
+): SafeParseResult<MessagingAttachment, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MessagingAttachment$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MessagingAttachment' from JSON`,
+  );
 }

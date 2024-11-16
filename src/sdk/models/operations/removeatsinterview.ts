@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAtsInterviewRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveAtsInterviewRequest$ {
   export type Outbound = RemoveAtsInterviewRequest$Outbound;
 }
 
+export function removeAtsInterviewRequestToJSON(
+  removeAtsInterviewRequest: RemoveAtsInterviewRequest,
+): string {
+  return JSON.stringify(
+    RemoveAtsInterviewRequest$outboundSchema.parse(removeAtsInterviewRequest),
+  );
+}
+
+export function removeAtsInterviewRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsInterviewRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsInterviewRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAtsInterviewResponse$inboundSchema: z.ZodType<
   RemoveAtsInterviewResponse,
@@ -109,4 +130,22 @@ export namespace RemoveAtsInterviewResponse$ {
   export const outboundSchema = RemoveAtsInterviewResponse$outboundSchema;
   /** @deprecated use `RemoveAtsInterviewResponse$Outbound` instead. */
   export type Outbound = RemoveAtsInterviewResponse$Outbound;
+}
+
+export function removeAtsInterviewResponseToJSON(
+  removeAtsInterviewResponse: RemoveAtsInterviewResponse,
+): string {
+  return JSON.stringify(
+    RemoveAtsInterviewResponse$outboundSchema.parse(removeAtsInterviewResponse),
+  );
+}
+
+export function removeAtsInterviewResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsInterviewResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsInterviewResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsInterviewResponse' from JSON`,
+  );
 }

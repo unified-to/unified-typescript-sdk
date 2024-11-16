@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListStorageFilesRequest = {
   /**
@@ -100,4 +103,22 @@ export namespace ListStorageFilesRequest$ {
   export const outboundSchema = ListStorageFilesRequest$outboundSchema;
   /** @deprecated use `ListStorageFilesRequest$Outbound` instead. */
   export type Outbound = ListStorageFilesRequest$Outbound;
+}
+
+export function listStorageFilesRequestToJSON(
+  listStorageFilesRequest: ListStorageFilesRequest,
+): string {
+  return JSON.stringify(
+    ListStorageFilesRequest$outboundSchema.parse(listStorageFilesRequest),
+  );
+}
+
+export function listStorageFilesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListStorageFilesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListStorageFilesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListStorageFilesRequest' from JSON`,
+  );
 }

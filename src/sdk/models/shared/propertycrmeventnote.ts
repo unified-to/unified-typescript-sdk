@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The note object, when type = note
@@ -49,4 +52,22 @@ export namespace PropertyCrmEventNote$ {
   export const outboundSchema = PropertyCrmEventNote$outboundSchema;
   /** @deprecated use `PropertyCrmEventNote$Outbound` instead. */
   export type Outbound = PropertyCrmEventNote$Outbound;
+}
+
+export function propertyCrmEventNoteToJSON(
+  propertyCrmEventNote: PropertyCrmEventNote,
+): string {
+  return JSON.stringify(
+    PropertyCrmEventNote$outboundSchema.parse(propertyCrmEventNote),
+  );
+}
+
+export function propertyCrmEventNoteFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyCrmEventNote, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyCrmEventNote$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyCrmEventNote' from JSON`,
+  );
 }

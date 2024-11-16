@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCommerceCollectionRequest = {
@@ -71,4 +74,24 @@ export namespace CreateCommerceCollectionRequest$ {
   export const outboundSchema = CreateCommerceCollectionRequest$outboundSchema;
   /** @deprecated use `CreateCommerceCollectionRequest$Outbound` instead. */
   export type Outbound = CreateCommerceCollectionRequest$Outbound;
+}
+
+export function createCommerceCollectionRequestToJSON(
+  createCommerceCollectionRequest: CreateCommerceCollectionRequest,
+): string {
+  return JSON.stringify(
+    CreateCommerceCollectionRequest$outboundSchema.parse(
+      createCommerceCollectionRequest,
+    ),
+  );
+}
+
+export function createCommerceCollectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateCommerceCollectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateCommerceCollectionRequest' from JSON`,
+  );
 }

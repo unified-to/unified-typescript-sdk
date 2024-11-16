@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type KmsSpace = {
   createdAt?: Date | undefined;
@@ -93,4 +96,18 @@ export namespace KmsSpace$ {
   export const outboundSchema = KmsSpace$outboundSchema;
   /** @deprecated use `KmsSpace$Outbound` instead. */
   export type Outbound = KmsSpace$Outbound;
+}
+
+export function kmsSpaceToJSON(kmsSpace: KmsSpace): string {
+  return JSON.stringify(KmsSpace$outboundSchema.parse(kmsSpace));
+}
+
+export function kmsSpaceFromJSON(
+  jsonString: string,
+): SafeParseResult<KmsSpace, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => KmsSpace$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'KmsSpace' from JSON`,
+  );
 }

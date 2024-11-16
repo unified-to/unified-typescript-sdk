@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const LmsMediaType = {
   Image: "IMAGE",
@@ -97,4 +100,18 @@ export namespace LmsMedia$ {
   export const outboundSchema = LmsMedia$outboundSchema;
   /** @deprecated use `LmsMedia$Outbound` instead. */
   export type Outbound = LmsMedia$Outbound;
+}
+
+export function lmsMediaToJSON(lmsMedia: LmsMedia): string {
+  return JSON.stringify(LmsMedia$outboundSchema.parse(lmsMedia));
+}
+
+export function lmsMediaFromJSON(
+  jsonString: string,
+): SafeParseResult<LmsMedia, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LmsMedia$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LmsMedia' from JSON`,
+  );
 }

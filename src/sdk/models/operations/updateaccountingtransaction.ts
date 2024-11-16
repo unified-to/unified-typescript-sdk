@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingTransactionRequest = {
@@ -76,4 +79,25 @@ export namespace UpdateAccountingTransactionRequest$ {
     UpdateAccountingTransactionRequest$outboundSchema;
   /** @deprecated use `UpdateAccountingTransactionRequest$Outbound` instead. */
   export type Outbound = UpdateAccountingTransactionRequest$Outbound;
+}
+
+export function updateAccountingTransactionRequestToJSON(
+  updateAccountingTransactionRequest: UpdateAccountingTransactionRequest,
+): string {
+  return JSON.stringify(
+    UpdateAccountingTransactionRequest$outboundSchema.parse(
+      updateAccountingTransactionRequest,
+    ),
+  );
+}
+
+export function updateAccountingTransactionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateAccountingTransactionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      UpdateAccountingTransactionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateAccountingTransactionRequest' from JSON`,
+  );
 }

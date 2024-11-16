@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AtsInterviewStatus = {
   Scheduled: "SCHEDULED",
@@ -150,4 +153,18 @@ export namespace AtsInterview$ {
   export const outboundSchema = AtsInterview$outboundSchema;
   /** @deprecated use `AtsInterview$Outbound` instead. */
   export type Outbound = AtsInterview$Outbound;
+}
+
+export function atsInterviewToJSON(atsInterview: AtsInterview): string {
+  return JSON.stringify(AtsInterview$outboundSchema.parse(atsInterview));
+}
+
+export function atsInterviewFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsInterview, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsInterview$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsInterview' from JSON`,
+  );
 }

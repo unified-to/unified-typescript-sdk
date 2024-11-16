@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const KmsPageType = {
   Html: "HTML",
@@ -131,4 +134,18 @@ export namespace KmsPage$ {
   export const outboundSchema = KmsPage$outboundSchema;
   /** @deprecated use `KmsPage$Outbound` instead. */
   export type Outbound = KmsPage$Outbound;
+}
+
+export function kmsPageToJSON(kmsPage: KmsPage): string {
+  return JSON.stringify(KmsPage$outboundSchema.parse(kmsPage));
+}
+
+export function kmsPageFromJSON(
+  jsonString: string,
+): SafeParseResult<KmsPage, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => KmsPage$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'KmsPage' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUcCallsRequest = {
   /**
@@ -106,4 +109,22 @@ export namespace ListUcCallsRequest$ {
   export const outboundSchema = ListUcCallsRequest$outboundSchema;
   /** @deprecated use `ListUcCallsRequest$Outbound` instead. */
   export type Outbound = ListUcCallsRequest$Outbound;
+}
+
+export function listUcCallsRequestToJSON(
+  listUcCallsRequest: ListUcCallsRequest,
+): string {
+  return JSON.stringify(
+    ListUcCallsRequest$outboundSchema.parse(listUcCallsRequest),
+  );
+}
+
+export function listUcCallsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUcCallsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUcCallsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUcCallsRequest' from JSON`,
+  );
 }

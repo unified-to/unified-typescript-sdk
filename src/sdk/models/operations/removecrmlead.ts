@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCrmLeadRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveCrmLeadRequest$ {
   export type Outbound = RemoveCrmLeadRequest$Outbound;
 }
 
+export function removeCrmLeadRequestToJSON(
+  removeCrmLeadRequest: RemoveCrmLeadRequest,
+): string {
+  return JSON.stringify(
+    RemoveCrmLeadRequest$outboundSchema.parse(removeCrmLeadRequest),
+  );
+}
+
+export function removeCrmLeadRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmLeadRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmLeadRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmLeadRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCrmLeadResponse$inboundSchema: z.ZodType<
   RemoveCrmLeadResponse,
@@ -109,4 +130,22 @@ export namespace RemoveCrmLeadResponse$ {
   export const outboundSchema = RemoveCrmLeadResponse$outboundSchema;
   /** @deprecated use `RemoveCrmLeadResponse$Outbound` instead. */
   export type Outbound = RemoveCrmLeadResponse$Outbound;
+}
+
+export function removeCrmLeadResponseToJSON(
+  removeCrmLeadResponse: RemoveCrmLeadResponse,
+): string {
+  return JSON.stringify(
+    RemoveCrmLeadResponse$outboundSchema.parse(removeCrmLeadResponse),
+  );
+}
+
+export function removeCrmLeadResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmLeadResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmLeadResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmLeadResponse' from JSON`,
+  );
 }

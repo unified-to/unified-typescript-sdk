@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PropertyHrisLocationAddress = {
   address1?: string | undefined;
@@ -83,4 +86,24 @@ export namespace PropertyHrisLocationAddress$ {
   export const outboundSchema = PropertyHrisLocationAddress$outboundSchema;
   /** @deprecated use `PropertyHrisLocationAddress$Outbound` instead. */
   export type Outbound = PropertyHrisLocationAddress$Outbound;
+}
+
+export function propertyHrisLocationAddressToJSON(
+  propertyHrisLocationAddress: PropertyHrisLocationAddress,
+): string {
+  return JSON.stringify(
+    PropertyHrisLocationAddress$outboundSchema.parse(
+      propertyHrisLocationAddress,
+    ),
+  );
+}
+
+export function propertyHrisLocationAddressFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyHrisLocationAddress, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyHrisLocationAddress$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyHrisLocationAddress' from JSON`,
+  );
 }

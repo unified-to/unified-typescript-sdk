@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedApicallRequest = {
   /**
@@ -45,4 +48,22 @@ export namespace GetUnifiedApicallRequest$ {
   export const outboundSchema = GetUnifiedApicallRequest$outboundSchema;
   /** @deprecated use `GetUnifiedApicallRequest$Outbound` instead. */
   export type Outbound = GetUnifiedApicallRequest$Outbound;
+}
+
+export function getUnifiedApicallRequestToJSON(
+  getUnifiedApicallRequest: GetUnifiedApicallRequest,
+): string {
+  return JSON.stringify(
+    GetUnifiedApicallRequest$outboundSchema.parse(getUnifiedApicallRequest),
+  );
+}
+
+export function getUnifiedApicallRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetUnifiedApicallRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetUnifiedApicallRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetUnifiedApicallRequest' from JSON`,
+  );
 }

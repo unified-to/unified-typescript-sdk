@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveHrisGroupRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveHrisGroupRequest$ {
   export type Outbound = RemoveHrisGroupRequest$Outbound;
 }
 
+export function removeHrisGroupRequestToJSON(
+  removeHrisGroupRequest: RemoveHrisGroupRequest,
+): string {
+  return JSON.stringify(
+    RemoveHrisGroupRequest$outboundSchema.parse(removeHrisGroupRequest),
+  );
+}
+
+export function removeHrisGroupRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveHrisGroupRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveHrisGroupRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveHrisGroupResponse$inboundSchema: z.ZodType<
   RemoveHrisGroupResponse,
@@ -109,4 +130,22 @@ export namespace RemoveHrisGroupResponse$ {
   export const outboundSchema = RemoveHrisGroupResponse$outboundSchema;
   /** @deprecated use `RemoveHrisGroupResponse$Outbound` instead. */
   export type Outbound = RemoveHrisGroupResponse$Outbound;
+}
+
+export function removeHrisGroupResponseToJSON(
+  removeHrisGroupResponse: RemoveHrisGroupResponse,
+): string {
+  return JSON.stringify(
+    RemoveHrisGroupResponse$outboundSchema.parse(removeHrisGroupResponse),
+  );
+}
+
+export function removeHrisGroupResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveHrisGroupResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveHrisGroupResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveHrisGroupResponse' from JSON`,
+  );
 }

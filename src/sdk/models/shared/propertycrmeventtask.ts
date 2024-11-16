@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Priority = {
   High: "HIGH",
@@ -129,4 +132,22 @@ export namespace PropertyCrmEventTask$ {
   export const outboundSchema = PropertyCrmEventTask$outboundSchema;
   /** @deprecated use `PropertyCrmEventTask$Outbound` instead. */
   export type Outbound = PropertyCrmEventTask$Outbound;
+}
+
+export function propertyCrmEventTaskToJSON(
+  propertyCrmEventTask: PropertyCrmEventTask,
+): string {
+  return JSON.stringify(
+    PropertyCrmEventTask$outboundSchema.parse(propertyCrmEventTask),
+  );
+}
+
+export function propertyCrmEventTaskFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyCrmEventTask, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyCrmEventTask$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyCrmEventTask' from JSON`,
+  );
 }

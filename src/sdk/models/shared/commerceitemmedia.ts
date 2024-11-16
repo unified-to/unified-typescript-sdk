@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CommerceMetadata,
   CommerceMetadata$inboundSchema,
@@ -104,4 +107,22 @@ export namespace CommerceItemMedia$ {
   export const outboundSchema = CommerceItemMedia$outboundSchema;
   /** @deprecated use `CommerceItemMedia$Outbound` instead. */
   export type Outbound = CommerceItemMedia$Outbound;
+}
+
+export function commerceItemMediaToJSON(
+  commerceItemMedia: CommerceItemMedia,
+): string {
+  return JSON.stringify(
+    CommerceItemMedia$outboundSchema.parse(commerceItemMedia),
+  );
+}
+
+export function commerceItemMediaFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceItemMedia, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceItemMedia$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemMedia' from JSON`,
+  );
 }

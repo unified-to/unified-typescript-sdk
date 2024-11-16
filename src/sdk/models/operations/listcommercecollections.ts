@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCommerceCollectionsRequest = {
   /**
@@ -104,4 +107,24 @@ export namespace ListCommerceCollectionsRequest$ {
   export const outboundSchema = ListCommerceCollectionsRequest$outboundSchema;
   /** @deprecated use `ListCommerceCollectionsRequest$Outbound` instead. */
   export type Outbound = ListCommerceCollectionsRequest$Outbound;
+}
+
+export function listCommerceCollectionsRequestToJSON(
+  listCommerceCollectionsRequest: ListCommerceCollectionsRequest,
+): string {
+  return JSON.stringify(
+    ListCommerceCollectionsRequest$outboundSchema.parse(
+      listCommerceCollectionsRequest,
+    ),
+  );
+}
+
+export function listCommerceCollectionsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListCommerceCollectionsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListCommerceCollectionsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListCommerceCollectionsRequest' from JSON`,
+  );
 }

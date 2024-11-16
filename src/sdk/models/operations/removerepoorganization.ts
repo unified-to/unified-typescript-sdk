@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveRepoOrganizationRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveRepoOrganizationRequest$ {
   export type Outbound = RemoveRepoOrganizationRequest$Outbound;
 }
 
+export function removeRepoOrganizationRequestToJSON(
+  removeRepoOrganizationRequest: RemoveRepoOrganizationRequest,
+): string {
+  return JSON.stringify(
+    RemoveRepoOrganizationRequest$outboundSchema.parse(
+      removeRepoOrganizationRequest,
+    ),
+  );
+}
+
+export function removeRepoOrganizationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoOrganizationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoOrganizationRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveRepoOrganizationResponse$inboundSchema: z.ZodType<
   RemoveRepoOrganizationResponse,
@@ -109,4 +132,24 @@ export namespace RemoveRepoOrganizationResponse$ {
   export const outboundSchema = RemoveRepoOrganizationResponse$outboundSchema;
   /** @deprecated use `RemoveRepoOrganizationResponse$Outbound` instead. */
   export type Outbound = RemoveRepoOrganizationResponse$Outbound;
+}
+
+export function removeRepoOrganizationResponseToJSON(
+  removeRepoOrganizationResponse: RemoveRepoOrganizationResponse,
+): string {
+  return JSON.stringify(
+    RemoveRepoOrganizationResponse$outboundSchema.parse(
+      removeRepoOrganizationResponse,
+    ),
+  );
+}
+
+export function removeRepoOrganizationResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoOrganizationResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoOrganizationResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoOrganizationResponse' from JSON`,
+  );
 }

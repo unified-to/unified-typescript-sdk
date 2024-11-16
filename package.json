@@ -1,6 +1,6 @@
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "author": "Unified",
   "main": "./index.js",
   "sideEffects": false,

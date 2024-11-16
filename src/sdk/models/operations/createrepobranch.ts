@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoBranchRequest = {
@@ -68,4 +71,22 @@ export namespace CreateRepoBranchRequest$ {
   export const outboundSchema = CreateRepoBranchRequest$outboundSchema;
   /** @deprecated use `CreateRepoBranchRequest$Outbound` instead. */
   export type Outbound = CreateRepoBranchRequest$Outbound;
+}
+
+export function createRepoBranchRequestToJSON(
+  createRepoBranchRequest: CreateRepoBranchRequest,
+): string {
+  return JSON.stringify(
+    CreateRepoBranchRequest$outboundSchema.parse(createRepoBranchRequest),
+  );
+}
+
+export function createRepoBranchRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateRepoBranchRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateRepoBranchRequest' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GenaiModel = {
   description?: string | undefined;
@@ -79,4 +82,18 @@ export namespace GenaiModel$ {
   export const outboundSchema = GenaiModel$outboundSchema;
   /** @deprecated use `GenaiModel$Outbound` instead. */
   export type Outbound = GenaiModel$Outbound;
+}
+
+export function genaiModelToJSON(genaiModel: GenaiModel): string {
+  return JSON.stringify(GenaiModel$outboundSchema.parse(genaiModel));
+}
+
+export function genaiModelFromJSON(
+  jsonString: string,
+): SafeParseResult<GenaiModel, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GenaiModel$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GenaiModel' from JSON`,
+  );
 }

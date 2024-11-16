@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsApplicationRequest = {
@@ -75,4 +78,24 @@ export namespace UpdateAtsApplicationRequest$ {
   export const outboundSchema = UpdateAtsApplicationRequest$outboundSchema;
   /** @deprecated use `UpdateAtsApplicationRequest$Outbound` instead. */
   export type Outbound = UpdateAtsApplicationRequest$Outbound;
+}
+
+export function updateAtsApplicationRequestToJSON(
+  updateAtsApplicationRequest: UpdateAtsApplicationRequest,
+): string {
+  return JSON.stringify(
+    UpdateAtsApplicationRequest$outboundSchema.parse(
+      updateAtsApplicationRequest,
+    ),
+  );
+}
+
+export function updateAtsApplicationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateAtsApplicationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateAtsApplicationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateAtsApplicationRequest' from JSON`,
+  );
 }

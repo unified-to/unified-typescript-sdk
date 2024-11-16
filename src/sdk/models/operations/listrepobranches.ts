@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListRepoBranchesRequest = {
   /**
@@ -100,4 +103,22 @@ export namespace ListRepoBranchesRequest$ {
   export const outboundSchema = ListRepoBranchesRequest$outboundSchema;
   /** @deprecated use `ListRepoBranchesRequest$Outbound` instead. */
   export type Outbound = ListRepoBranchesRequest$Outbound;
+}
+
+export function listRepoBranchesRequestToJSON(
+  listRepoBranchesRequest: ListRepoBranchesRequest,
+): string {
+  return JSON.stringify(
+    ListRepoBranchesRequest$outboundSchema.parse(listRepoBranchesRequest),
+  );
+}
+
+export function listRepoBranchesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListRepoBranchesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListRepoBranchesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListRepoBranchesRequest' from JSON`,
+  );
 }

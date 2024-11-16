@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Event = {
   Updated: "updated",
@@ -295,4 +298,18 @@ export namespace Webhook$ {
   export const outboundSchema = Webhook$outboundSchema;
   /** @deprecated use `Webhook$Outbound` instead. */
   export type Outbound = Webhook$Outbound;
+}
+
+export function webhookToJSON(webhook: Webhook): string {
+  return JSON.stringify(Webhook$outboundSchema.parse(webhook));
+}
+
+export function webhookFromJSON(
+  jsonString: string,
+): SafeParseResult<Webhook, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Webhook$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Webhook' from JSON`,
+  );
 }

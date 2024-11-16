@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCommerceLocationRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetCommerceLocationRequest$ {
   export const outboundSchema = GetCommerceLocationRequest$outboundSchema;
   /** @deprecated use `GetCommerceLocationRequest$Outbound` instead. */
   export type Outbound = GetCommerceLocationRequest$Outbound;
+}
+
+export function getCommerceLocationRequestToJSON(
+  getCommerceLocationRequest: GetCommerceLocationRequest,
+): string {
+  return JSON.stringify(
+    GetCommerceLocationRequest$outboundSchema.parse(getCommerceLocationRequest),
+  );
+}
+
+export function getCommerceLocationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetCommerceLocationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetCommerceLocationRequest' from JSON`,
+  );
 }

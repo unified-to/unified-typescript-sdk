@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimPhotoType = {
   Photo: "photo",
@@ -82,4 +85,18 @@ export namespace ScimPhoto$ {
   export const outboundSchema = ScimPhoto$outboundSchema;
   /** @deprecated use `ScimPhoto$Outbound` instead. */
   export type Outbound = ScimPhoto$Outbound;
+}
+
+export function scimPhotoToJSON(scimPhoto: ScimPhoto): string {
+  return JSON.stringify(ScimPhoto$outboundSchema.parse(scimPhoto));
+}
+
+export function scimPhotoFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimPhoto, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimPhoto$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimPhoto' from JSON`,
+  );
 }

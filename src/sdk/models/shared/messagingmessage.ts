@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   MessagingAttachment,
   MessagingAttachment$inboundSchema,
@@ -27,7 +30,7 @@ export type MessagingMessage = {
   attachments?: Array<MessagingAttachment> | undefined;
   authorMember?: PropertyMessagingMessageAuthorMember | undefined;
   channelId?: string | undefined;
-  createdAt?: string | undefined;
+  createdAt?: Date | undefined;
   destinationMembers?: Array<MessagingMember> | undefined;
   hiddenMembers?: Array<MessagingMember> | undefined;
   id?: string | undefined;
@@ -38,7 +41,7 @@ export type MessagingMessage = {
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   subject?: string | undefined;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };
 
@@ -51,7 +54,8 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$inboundSchema).optional(),
   author_member: PropertyMessagingMessageAuthorMember$inboundSchema.optional(),
   channel_id: z.string().optional(),
-  created_at: z.string().optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   destination_members: z.array(MessagingMember$inboundSchema).optional(),
   hidden_members: z.array(MessagingMember$inboundSchema).optional(),
   id: z.string().optional(),
@@ -62,7 +66,8 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   subject: z.string().optional(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -108,7 +113,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$outboundSchema).optional(),
   authorMember: PropertyMessagingMessageAuthorMember$outboundSchema.optional(),
   channelId: z.string().optional(),
-  createdAt: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
   destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
   hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
   id: z.string().optional(),
@@ -119,7 +124,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   subject: z.string().optional(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -147,4 +152,22 @@ export namespace MessagingMessage$ {
   export const outboundSchema = MessagingMessage$outboundSchema;
   /** @deprecated use `MessagingMessage$Outbound` instead. */
   export type Outbound = MessagingMessage$Outbound;
+}
+
+export function messagingMessageToJSON(
+  messagingMessage: MessagingMessage,
+): string {
+  return JSON.stringify(
+    MessagingMessage$outboundSchema.parse(messagingMessage),
+  );
+}
+
+export function messagingMessageFromJSON(
+  jsonString: string,
+): SafeParseResult<MessagingMessage, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MessagingMessage$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MessagingMessage' from JSON`,
+  );
 }

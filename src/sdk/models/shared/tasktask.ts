@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const TaskTaskStatus = {
   Opened: "OPENED",
@@ -171,4 +174,18 @@ export namespace TaskTask$ {
   export const outboundSchema = TaskTask$outboundSchema;
   /** @deprecated use `TaskTask$Outbound` instead. */
   export type Outbound = TaskTask$Outbound;
+}
+
+export function taskTaskToJSON(taskTask: TaskTask): string {
+  return JSON.stringify(TaskTask$outboundSchema.parse(taskTask));
+}
+
+export function taskTaskFromJSON(
+  jsonString: string,
+): SafeParseResult<TaskTask, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => TaskTask$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'TaskTask' from JSON`,
+  );
 }

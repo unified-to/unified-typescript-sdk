@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceMetadata = {
   extraData?: { [k: string]: any } | undefined;
@@ -71,4 +74,22 @@ export namespace CommerceMetadata$ {
   export const outboundSchema = CommerceMetadata$outboundSchema;
   /** @deprecated use `CommerceMetadata$Outbound` instead. */
   export type Outbound = CommerceMetadata$Outbound;
+}
+
+export function commerceMetadataToJSON(
+  commerceMetadata: CommerceMetadata,
+): string {
+  return JSON.stringify(
+    CommerceMetadata$outboundSchema.parse(commerceMetadata),
+  );
+}
+
+export function commerceMetadataFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata' from JSON`,
+  );
 }

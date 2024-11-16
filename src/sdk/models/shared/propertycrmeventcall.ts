@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The call object, when type = call
@@ -63,4 +66,22 @@ export namespace PropertyCrmEventCall$ {
   export const outboundSchema = PropertyCrmEventCall$outboundSchema;
   /** @deprecated use `PropertyCrmEventCall$Outbound` instead. */
   export type Outbound = PropertyCrmEventCall$Outbound;
+}
+
+export function propertyCrmEventCallToJSON(
+  propertyCrmEventCall: PropertyCrmEventCall,
+): string {
+  return JSON.stringify(
+    PropertyCrmEventCall$outboundSchema.parse(propertyCrmEventCall),
+  );
+}
+
+export function propertyCrmEventCallFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyCrmEventCall, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyCrmEventCall$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyCrmEventCall' from JSON`,
+  );
 }

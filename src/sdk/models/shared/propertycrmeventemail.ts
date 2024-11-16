@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The email object, when type = email
@@ -80,4 +83,22 @@ export namespace PropertyCrmEventEmail$ {
   export const outboundSchema = PropertyCrmEventEmail$outboundSchema;
   /** @deprecated use `PropertyCrmEventEmail$Outbound` instead. */
   export type Outbound = PropertyCrmEventEmail$Outbound;
+}
+
+export function propertyCrmEventEmailToJSON(
+  propertyCrmEventEmail: PropertyCrmEventEmail,
+): string {
+  return JSON.stringify(
+    PropertyCrmEventEmail$outboundSchema.parse(propertyCrmEventEmail),
+  );
+}
+
+export function propertyCrmEventEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyCrmEventEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyCrmEventEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyCrmEventEmail' from JSON`,
+  );
 }

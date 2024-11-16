@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * Mailing List
@@ -76,4 +79,18 @@ export namespace MarketingList$ {
   export const outboundSchema = MarketingList$outboundSchema;
   /** @deprecated use `MarketingList$Outbound` instead. */
   export type Outbound = MarketingList$Outbound;
+}
+
+export function marketingListToJSON(marketingList: MarketingList): string {
+  return JSON.stringify(MarketingList$outboundSchema.parse(marketingList));
+}
+
+export function marketingListFromJSON(
+  jsonString: string,
+): SafeParseResult<MarketingList, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MarketingList$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MarketingList' from JSON`,
+  );
 }

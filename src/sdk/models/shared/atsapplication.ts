@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AtsApplicationAnswer,
   AtsApplicationAnswer$inboundSchema,
@@ -180,4 +183,18 @@ export namespace AtsApplication$ {
   export const outboundSchema = AtsApplication$outboundSchema;
   /** @deprecated use `AtsApplication$Outbound` instead. */
   export type Outbound = AtsApplication$Outbound;
+}
+
+export function atsApplicationToJSON(atsApplication: AtsApplication): string {
+  return JSON.stringify(AtsApplication$outboundSchema.parse(atsApplication));
+}
+
+export function atsApplicationFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsApplication, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsApplication$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsApplication' from JSON`,
+  );
 }

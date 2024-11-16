@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const AccountingTelephoneType = {
   Work: "WORK",
@@ -79,4 +82,22 @@ export namespace AccountingTelephone$ {
   export const outboundSchema = AccountingTelephone$outboundSchema;
   /** @deprecated use `AccountingTelephone$Outbound` instead. */
   export type Outbound = AccountingTelephone$Outbound;
+}
+
+export function accountingTelephoneToJSON(
+  accountingTelephone: AccountingTelephone,
+): string {
+  return JSON.stringify(
+    AccountingTelephone$outboundSchema.parse(accountingTelephone),
+  );
+}
+
+export function accountingTelephoneFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingTelephone, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingTelephone$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingTelephone' from JSON`,
+  );
 }

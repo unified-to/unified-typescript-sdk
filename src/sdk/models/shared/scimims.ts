@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimImsType = {
   Aim: "aim",
@@ -83,4 +86,18 @@ export namespace ScimIms$ {
   export const outboundSchema = ScimIms$outboundSchema;
   /** @deprecated use `ScimIms$Outbound` instead. */
   export type Outbound = ScimIms$Outbound;
+}
+
+export function scimImsToJSON(scimIms: ScimIms): string {
+  return JSON.stringify(ScimIms$outboundSchema.parse(scimIms));
+}
+
+export function scimImsFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimIms, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimIms$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimIms' from JSON`,
+  );
 }

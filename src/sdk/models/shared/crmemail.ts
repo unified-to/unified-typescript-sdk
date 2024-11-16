@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const CrmEmailType = {
   Work: "WORK",
@@ -73,4 +76,18 @@ export namespace CrmEmail$ {
   export const outboundSchema = CrmEmail$outboundSchema;
   /** @deprecated use `CrmEmail$Outbound` instead. */
   export type Outbound = CrmEmail$Outbound;
+}
+
+export function crmEmailToJSON(crmEmail: CrmEmail): string {
+  return JSON.stringify(CrmEmail$outboundSchema.parse(crmEmail));
+}
+
+export function crmEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmEmail' from JSON`,
+  );
 }

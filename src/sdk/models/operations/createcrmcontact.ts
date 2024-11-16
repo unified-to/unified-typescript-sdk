@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmContactRequest = {
@@ -71,4 +74,22 @@ export namespace CreateCrmContactRequest$ {
   export const outboundSchema = CreateCrmContactRequest$outboundSchema;
   /** @deprecated use `CreateCrmContactRequest$Outbound` instead. */
   export type Outbound = CreateCrmContactRequest$Outbound;
+}
+
+export function createCrmContactRequestToJSON(
+  createCrmContactRequest: CreateCrmContactRequest,
+): string {
+  return JSON.stringify(
+    CreateCrmContactRequest$outboundSchema.parse(createCrmContactRequest),
+  );
+}
+
+export function createCrmContactRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateCrmContactRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateCrmContactRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateCrmContactRequest' from JSON`,
+  );
 }

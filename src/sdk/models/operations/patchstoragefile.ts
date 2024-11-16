@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchStorageFileRequest = {
@@ -75,4 +78,22 @@ export namespace PatchStorageFileRequest$ {
   export const outboundSchema = PatchStorageFileRequest$outboundSchema;
   /** @deprecated use `PatchStorageFileRequest$Outbound` instead. */
   export type Outbound = PatchStorageFileRequest$Outbound;
+}
+
+export function patchStorageFileRequestToJSON(
+  patchStorageFileRequest: PatchStorageFileRequest,
+): string {
+  return JSON.stringify(
+    PatchStorageFileRequest$outboundSchema.parse(patchStorageFileRequest),
+  );
+}
+
+export function patchStorageFileRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchStorageFileRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchStorageFileRequest' from JSON`,
+  );
 }

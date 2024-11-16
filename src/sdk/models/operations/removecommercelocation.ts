@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCommerceLocationRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveCommerceLocationRequest$ {
   export type Outbound = RemoveCommerceLocationRequest$Outbound;
 }
 
+export function removeCommerceLocationRequestToJSON(
+  removeCommerceLocationRequest: RemoveCommerceLocationRequest,
+): string {
+  return JSON.stringify(
+    RemoveCommerceLocationRequest$outboundSchema.parse(
+      removeCommerceLocationRequest,
+    ),
+  );
+}
+
+export function removeCommerceLocationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceLocationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceLocationRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCommerceLocationResponse$inboundSchema: z.ZodType<
   RemoveCommerceLocationResponse,
@@ -109,4 +132,24 @@ export namespace RemoveCommerceLocationResponse$ {
   export const outboundSchema = RemoveCommerceLocationResponse$outboundSchema;
   /** @deprecated use `RemoveCommerceLocationResponse$Outbound` instead. */
   export type Outbound = RemoveCommerceLocationResponse$Outbound;
+}
+
+export function removeCommerceLocationResponseToJSON(
+  removeCommerceLocationResponse: RemoveCommerceLocationResponse,
+): string {
+  return JSON.stringify(
+    RemoveCommerceLocationResponse$outboundSchema.parse(
+      removeCommerceLocationResponse,
+    ),
+  );
+}
+
+export function removeCommerceLocationResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceLocationResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceLocationResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceLocationResponse' from JSON`,
+  );
 }

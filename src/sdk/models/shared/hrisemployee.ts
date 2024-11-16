@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   HrisCompensation,
   HrisCompensation$inboundSchema,
@@ -386,4 +389,18 @@ export namespace HrisEmployee$ {
   export const outboundSchema = HrisEmployee$outboundSchema;
   /** @deprecated use `HrisEmployee$Outbound` instead. */
   export type Outbound = HrisEmployee$Outbound;
+}
+
+export function hrisEmployeeToJSON(hrisEmployee: HrisEmployee): string {
+  return JSON.stringify(HrisEmployee$outboundSchema.parse(hrisEmployee));
+}
+
+export function hrisEmployeeFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisEmployee, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisEmployee$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisEmployee' from JSON`,
+  );
 }

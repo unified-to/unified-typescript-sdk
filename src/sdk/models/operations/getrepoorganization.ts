@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoOrganizationRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetRepoOrganizationRequest$ {
   export const outboundSchema = GetRepoOrganizationRequest$outboundSchema;
   /** @deprecated use `GetRepoOrganizationRequest$Outbound` instead. */
   export type Outbound = GetRepoOrganizationRequest$Outbound;
+}
+
+export function getRepoOrganizationRequestToJSON(
+  getRepoOrganizationRequest: GetRepoOrganizationRequest,
+): string {
+  return JSON.stringify(
+    GetRepoOrganizationRequest$outboundSchema.parse(getRepoOrganizationRequest),
+  );
+}
+
+export function getRepoOrganizationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetRepoOrganizationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetRepoOrganizationRequest' from JSON`,
+  );
 }

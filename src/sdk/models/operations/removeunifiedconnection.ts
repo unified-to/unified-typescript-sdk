@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveUnifiedConnectionRequest = {
   /**
@@ -52,6 +55,26 @@ export namespace RemoveUnifiedConnectionRequest$ {
   export type Outbound = RemoveUnifiedConnectionRequest$Outbound;
 }
 
+export function removeUnifiedConnectionRequestToJSON(
+  removeUnifiedConnectionRequest: RemoveUnifiedConnectionRequest,
+): string {
+  return JSON.stringify(
+    RemoveUnifiedConnectionRequest$outboundSchema.parse(
+      removeUnifiedConnectionRequest,
+    ),
+  );
+}
+
+export function removeUnifiedConnectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveUnifiedConnectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveUnifiedConnectionRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveUnifiedConnectionResponse$inboundSchema: z.ZodType<
   RemoveUnifiedConnectionResponse,
@@ -94,4 +117,24 @@ export namespace RemoveUnifiedConnectionResponse$ {
   export const outboundSchema = RemoveUnifiedConnectionResponse$outboundSchema;
   /** @deprecated use `RemoveUnifiedConnectionResponse$Outbound` instead. */
   export type Outbound = RemoveUnifiedConnectionResponse$Outbound;
+}
+
+export function removeUnifiedConnectionResponseToJSON(
+  removeUnifiedConnectionResponse: RemoveUnifiedConnectionResponse,
+): string {
+  return JSON.stringify(
+    RemoveUnifiedConnectionResponse$outboundSchema.parse(
+      removeUnifiedConnectionResponse,
+    ),
+  );
+}
+
+export function removeUnifiedConnectionResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveUnifiedConnectionResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveUnifiedConnectionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveUnifiedConnectionResponse' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   UcEmail,
   UcEmail$inboundSchema,
@@ -111,4 +114,18 @@ export namespace UcContact$ {
   export const outboundSchema = UcContact$outboundSchema;
   /** @deprecated use `UcContact$Outbound` instead. */
   export type Outbound = UcContact$Outbound;
+}
+
+export function ucContactToJSON(ucContact: UcContact): string {
+  return JSON.stringify(UcContact$outboundSchema.parse(ucContact));
+}
+
+export function ucContactFromJSON(
+  jsonString: string,
+): SafeParseResult<UcContact, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UcContact$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UcContact' from JSON`,
+  );
 }

@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const HrisCompensationFrequency = {
   OneTime: "ONE_TIME",
@@ -119,4 +122,22 @@ export namespace HrisCompensation$ {
   export const outboundSchema = HrisCompensation$outboundSchema;
   /** @deprecated use `HrisCompensation$Outbound` instead. */
   export type Outbound = HrisCompensation$Outbound;
+}
+
+export function hrisCompensationToJSON(
+  hrisCompensation: HrisCompensation,
+): string {
+  return JSON.stringify(
+    HrisCompensation$outboundSchema.parse(hrisCompensation),
+  );
+}
+
+export function hrisCompensationFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisCompensation, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisCompensation$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisCompensation' from JSON`,
+  );
 }

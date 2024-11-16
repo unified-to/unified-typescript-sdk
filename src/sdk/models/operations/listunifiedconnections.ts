@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Categories = {
   Passthrough: "passthrough",
@@ -135,4 +138,24 @@ export namespace ListUnifiedConnectionsRequest$ {
   export const outboundSchema = ListUnifiedConnectionsRequest$outboundSchema;
   /** @deprecated use `ListUnifiedConnectionsRequest$Outbound` instead. */
   export type Outbound = ListUnifiedConnectionsRequest$Outbound;
+}
+
+export function listUnifiedConnectionsRequestToJSON(
+  listUnifiedConnectionsRequest: ListUnifiedConnectionsRequest,
+): string {
+  return JSON.stringify(
+    ListUnifiedConnectionsRequest$outboundSchema.parse(
+      listUnifiedConnectionsRequest,
+    ),
+  );
+}
+
+export function listUnifiedConnectionsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUnifiedConnectionsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUnifiedConnectionsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUnifiedConnectionsRequest' from JSON`,
+  );
 }

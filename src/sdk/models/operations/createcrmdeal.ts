@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmDealRequest = {
@@ -71,4 +74,22 @@ export namespace CreateCrmDealRequest$ {
   export const outboundSchema = CreateCrmDealRequest$outboundSchema;
   /** @deprecated use `CreateCrmDealRequest$Outbound` instead. */
   export type Outbound = CreateCrmDealRequest$Outbound;
+}
+
+export function createCrmDealRequestToJSON(
+  createCrmDealRequest: CreateCrmDealRequest,
+): string {
+  return JSON.stringify(
+    CreateCrmDealRequest$outboundSchema.parse(createCrmDealRequest),
+  );
+}
+
+export function createCrmDealRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateCrmDealRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateCrmDealRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateCrmDealRequest' from JSON`,
+  );
 }

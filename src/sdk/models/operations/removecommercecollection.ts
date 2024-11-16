@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCommerceCollectionRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveCommerceCollectionRequest$ {
   export type Outbound = RemoveCommerceCollectionRequest$Outbound;
 }
 
+export function removeCommerceCollectionRequestToJSON(
+  removeCommerceCollectionRequest: RemoveCommerceCollectionRequest,
+): string {
+  return JSON.stringify(
+    RemoveCommerceCollectionRequest$outboundSchema.parse(
+      removeCommerceCollectionRequest,
+    ),
+  );
+}
+
+export function removeCommerceCollectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceCollectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceCollectionRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCommerceCollectionResponse$inboundSchema: z.ZodType<
   RemoveCommerceCollectionResponse,
@@ -109,4 +132,24 @@ export namespace RemoveCommerceCollectionResponse$ {
   export const outboundSchema = RemoveCommerceCollectionResponse$outboundSchema;
   /** @deprecated use `RemoveCommerceCollectionResponse$Outbound` instead. */
   export type Outbound = RemoveCommerceCollectionResponse$Outbound;
+}
+
+export function removeCommerceCollectionResponseToJSON(
+  removeCommerceCollectionResponse: RemoveCommerceCollectionResponse,
+): string {
+  return JSON.stringify(
+    RemoveCommerceCollectionResponse$outboundSchema.parse(
+      removeCommerceCollectionResponse,
+    ),
+  );
+}
+
+export function removeCommerceCollectionResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceCollectionResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceCollectionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceCollectionResponse' from JSON`,
+  );
 }

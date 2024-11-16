@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmEventRequest = {
@@ -71,4 +74,22 @@ export namespace CreateCrmEventRequest$ {
   export const outboundSchema = CreateCrmEventRequest$outboundSchema;
   /** @deprecated use `CreateCrmEventRequest$Outbound` instead. */
   export type Outbound = CreateCrmEventRequest$Outbound;
+}
+
+export function createCrmEventRequestToJSON(
+  createCrmEventRequest: CreateCrmEventRequest,
+): string {
+  return JSON.stringify(
+    CreateCrmEventRequest$outboundSchema.parse(createCrmEventRequest),
+  );
+}
+
+export function createCrmEventRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateCrmEventRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateCrmEventRequest' from JSON`,
+  );
 }

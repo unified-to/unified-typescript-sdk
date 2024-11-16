@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedWebhookRequest = {
@@ -62,4 +65,24 @@ export namespace UpdateUnifiedWebhookRequest$ {
   export const outboundSchema = UpdateUnifiedWebhookRequest$outboundSchema;
   /** @deprecated use `UpdateUnifiedWebhookRequest$Outbound` instead. */
   export type Outbound = UpdateUnifiedWebhookRequest$Outbound;
+}
+
+export function updateUnifiedWebhookRequestToJSON(
+  updateUnifiedWebhookRequest: UpdateUnifiedWebhookRequest,
+): string {
+  return JSON.stringify(
+    UpdateUnifiedWebhookRequest$outboundSchema.parse(
+      updateUnifiedWebhookRequest,
+    ),
+  );
+}
+
+export function updateUnifiedWebhookRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateUnifiedWebhookRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateUnifiedWebhookRequest' from JSON`,
+  );
 }

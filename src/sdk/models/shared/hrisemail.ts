@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const HrisEmailType = {
   Work: "WORK",
@@ -75,4 +78,18 @@ export namespace HrisEmail$ {
   export const outboundSchema = HrisEmail$outboundSchema;
   /** @deprecated use `HrisEmail$Outbound` instead. */
   export type Outbound = HrisEmail$Outbound;
+}
+
+export function hrisEmailToJSON(hrisEmail: HrisEmail): string {
+  return JSON.stringify(HrisEmail$outboundSchema.parse(hrisEmail));
+}
+
+export function hrisEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisEmail' from JSON`,
+  );
 }

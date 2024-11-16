@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveMessagingMessageRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveMessagingMessageRequest$ {
   export type Outbound = RemoveMessagingMessageRequest$Outbound;
 }
 
+export function removeMessagingMessageRequestToJSON(
+  removeMessagingMessageRequest: RemoveMessagingMessageRequest,
+): string {
+  return JSON.stringify(
+    RemoveMessagingMessageRequest$outboundSchema.parse(
+      removeMessagingMessageRequest,
+    ),
+  );
+}
+
+export function removeMessagingMessageRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveMessagingMessageRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveMessagingMessageRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveMessagingMessageRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveMessagingMessageResponse$inboundSchema: z.ZodType<
   RemoveMessagingMessageResponse,
@@ -109,4 +132,24 @@ export namespace RemoveMessagingMessageResponse$ {
   export const outboundSchema = RemoveMessagingMessageResponse$outboundSchema;
   /** @deprecated use `RemoveMessagingMessageResponse$Outbound` instead. */
   export type Outbound = RemoveMessagingMessageResponse$Outbound;
+}
+
+export function removeMessagingMessageResponseToJSON(
+  removeMessagingMessageResponse: RemoveMessagingMessageResponse,
+): string {
+  return JSON.stringify(
+    RemoveMessagingMessageResponse$outboundSchema.parse(
+      removeMessagingMessageResponse,
+    ),
+  );
+}
+
+export function removeMessagingMessageResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveMessagingMessageResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveMessagingMessageResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveMessagingMessageResponse' from JSON`,
+  );
 }

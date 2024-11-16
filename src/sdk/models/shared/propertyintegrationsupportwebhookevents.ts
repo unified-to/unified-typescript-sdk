@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyIntegrationSupportWebhookEventsCreated,
   PropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
@@ -76,4 +79,31 @@ export namespace PropertyIntegrationSupportWebhookEvents$ {
     PropertyIntegrationSupportWebhookEvents$outboundSchema;
   /** @deprecated use `PropertyIntegrationSupportWebhookEvents$Outbound` instead. */
   export type Outbound = PropertyIntegrationSupportWebhookEvents$Outbound;
+}
+
+export function propertyIntegrationSupportWebhookEventsToJSON(
+  propertyIntegrationSupportWebhookEvents:
+    PropertyIntegrationSupportWebhookEvents,
+): string {
+  return JSON.stringify(
+    PropertyIntegrationSupportWebhookEvents$outboundSchema.parse(
+      propertyIntegrationSupportWebhookEvents,
+    ),
+  );
+}
+
+export function propertyIntegrationSupportWebhookEventsFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  PropertyIntegrationSupportWebhookEvents,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PropertyIntegrationSupportWebhookEvents$inboundSchema.parse(
+        JSON.parse(x),
+      ),
+    `Failed to parse 'PropertyIntegrationSupportWebhookEvents' from JSON`,
+  );
 }

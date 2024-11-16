@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimAddressType = {
   Work: "work",
@@ -95,4 +98,18 @@ export namespace ScimAddress$ {
   export const outboundSchema = ScimAddress$outboundSchema;
   /** @deprecated use `ScimAddress$Outbound` instead. */
   export type Outbound = ScimAddress$Outbound;
+}
+
+export function scimAddressToJSON(scimAddress: ScimAddress): string {
+  return JSON.stringify(ScimAddress$outboundSchema.parse(scimAddress));
+}
+
+export function scimAddressFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimAddress, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimAddress$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimAddress' from JSON`,
+  );
 }

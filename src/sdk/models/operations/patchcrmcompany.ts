@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmCompanyRequest = {
@@ -78,4 +81,22 @@ export namespace PatchCrmCompanyRequest$ {
   export const outboundSchema = PatchCrmCompanyRequest$outboundSchema;
   /** @deprecated use `PatchCrmCompanyRequest$Outbound` instead. */
   export type Outbound = PatchCrmCompanyRequest$Outbound;
+}
+
+export function patchCrmCompanyRequestToJSON(
+  patchCrmCompanyRequest: PatchCrmCompanyRequest,
+): string {
+  return JSON.stringify(
+    PatchCrmCompanyRequest$outboundSchema.parse(patchCrmCompanyRequest),
+  );
+}
+
+export function patchCrmCompanyRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchCrmCompanyRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchCrmCompanyRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchCrmCompanyRequest' from JSON`,
+  );
 }

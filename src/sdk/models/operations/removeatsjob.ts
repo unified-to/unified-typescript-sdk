@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAtsJobRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveAtsJobRequest$ {
   export type Outbound = RemoveAtsJobRequest$Outbound;
 }
 
+export function removeAtsJobRequestToJSON(
+  removeAtsJobRequest: RemoveAtsJobRequest,
+): string {
+  return JSON.stringify(
+    RemoveAtsJobRequest$outboundSchema.parse(removeAtsJobRequest),
+  );
+}
+
+export function removeAtsJobRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsJobRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsJobRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsJobRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAtsJobResponse$inboundSchema: z.ZodType<
   RemoveAtsJobResponse,
@@ -109,4 +130,22 @@ export namespace RemoveAtsJobResponse$ {
   export const outboundSchema = RemoveAtsJobResponse$outboundSchema;
   /** @deprecated use `RemoveAtsJobResponse$Outbound` instead. */
   export type Outbound = RemoveAtsJobResponse$Outbound;
+}
+
+export function removeAtsJobResponseToJSON(
+  removeAtsJobResponse: RemoveAtsJobResponse,
+): string {
+  return JSON.stringify(
+    RemoveAtsJobResponse$outboundSchema.parse(removeAtsJobResponse),
+  );
+}
+
+export function removeAtsJobResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsJobResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsJobResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsJobResponse' from JSON`,
+  );
 }

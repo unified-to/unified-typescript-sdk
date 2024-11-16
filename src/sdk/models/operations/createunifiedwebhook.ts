@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateUnifiedWebhookRequest = {
@@ -64,4 +67,24 @@ export namespace CreateUnifiedWebhookRequest$ {
   export const outboundSchema = CreateUnifiedWebhookRequest$outboundSchema;
   /** @deprecated use `CreateUnifiedWebhookRequest$Outbound` instead. */
   export type Outbound = CreateUnifiedWebhookRequest$Outbound;
+}
+
+export function createUnifiedWebhookRequestToJSON(
+  createUnifiedWebhookRequest: CreateUnifiedWebhookRequest,
+): string {
+  return JSON.stringify(
+    CreateUnifiedWebhookRequest$outboundSchema.parse(
+      createUnifiedWebhookRequest,
+    ),
+  );
+}
+
+export function createUnifiedWebhookRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateUnifiedWebhookRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateUnifiedWebhookRequest' from JSON`,
+  );
 }

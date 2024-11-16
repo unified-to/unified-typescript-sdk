@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCommerceInventoryRequest = {
   /**
@@ -68,4 +71,24 @@ export namespace GetCommerceInventoryRequest$ {
   export const outboundSchema = GetCommerceInventoryRequest$outboundSchema;
   /** @deprecated use `GetCommerceInventoryRequest$Outbound` instead. */
   export type Outbound = GetCommerceInventoryRequest$Outbound;
+}
+
+export function getCommerceInventoryRequestToJSON(
+  getCommerceInventoryRequest: GetCommerceInventoryRequest,
+): string {
+  return JSON.stringify(
+    GetCommerceInventoryRequest$outboundSchema.parse(
+      getCommerceInventoryRequest,
+    ),
+  );
+}
+
+export function getCommerceInventoryRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetCommerceInventoryRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetCommerceInventoryRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetCommerceInventoryRequest' from JSON`,
+  );
 }

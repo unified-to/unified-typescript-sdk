@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   StoragePermission,
   StoragePermission$inboundSchema,
@@ -157,4 +160,18 @@ export namespace StorageFile$ {
   export const outboundSchema = StorageFile$outboundSchema;
   /** @deprecated use `StorageFile$Outbound` instead. */
   export type Outbound = StorageFile$Outbound;
+}
+
+export function storageFileToJSON(storageFile: StorageFile): string {
+  return JSON.stringify(StorageFile$outboundSchema.parse(storageFile));
+}
+
+export function storageFileFromJSON(
+  jsonString: string,
+): SafeParseResult<StorageFile, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => StorageFile$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'StorageFile' from JSON`,
+  );
 }

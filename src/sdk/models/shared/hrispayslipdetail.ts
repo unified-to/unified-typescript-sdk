@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const HrisPayslipDetailType = {
   EarningSalary: "EARNING_SALARY",
@@ -116,4 +119,22 @@ export namespace HrisPayslipDetail$ {
   export const outboundSchema = HrisPayslipDetail$outboundSchema;
   /** @deprecated use `HrisPayslipDetail$Outbound` instead. */
   export type Outbound = HrisPayslipDetail$Outbound;
+}
+
+export function hrisPayslipDetailToJSON(
+  hrisPayslipDetail: HrisPayslipDetail,
+): string {
+  return JSON.stringify(
+    HrisPayslipDetail$outboundSchema.parse(hrisPayslipDetail),
+  );
+}
+
+export function hrisPayslipDetailFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisPayslipDetail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisPayslipDetail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisPayslipDetail' from JSON`,
+  );
 }

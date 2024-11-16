@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PaymentLinkLineitem,
   PaymentLinkLineitem$inboundSchema,
@@ -119,4 +122,18 @@ export namespace PaymentLink$ {
   export const outboundSchema = PaymentLink$outboundSchema;
   /** @deprecated use `PaymentLink$Outbound` instead. */
   export type Outbound = PaymentLink$Outbound;
+}
+
+export function paymentLinkToJSON(paymentLink: PaymentLink): string {
+  return JSON.stringify(PaymentLink$outboundSchema.parse(paymentLink));
+}
+
+export function paymentLinkFromJSON(
+  jsonString: string,
+): SafeParseResult<PaymentLink, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PaymentLink$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PaymentLink' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedApicallsRequest = {
   /**
@@ -109,4 +112,22 @@ export namespace ListUnifiedApicallsRequest$ {
   export const outboundSchema = ListUnifiedApicallsRequest$outboundSchema;
   /** @deprecated use `ListUnifiedApicallsRequest$Outbound` instead. */
   export type Outbound = ListUnifiedApicallsRequest$Outbound;
+}
+
+export function listUnifiedApicallsRequestToJSON(
+  listUnifiedApicallsRequest: ListUnifiedApicallsRequest,
+): string {
+  return JSON.stringify(
+    ListUnifiedApicallsRequest$outboundSchema.parse(listUnifiedApicallsRequest),
+  );
+}
+
+export function listUnifiedApicallsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUnifiedApicallsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUnifiedApicallsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUnifiedApicallsRequest' from JSON`,
+  );
 }

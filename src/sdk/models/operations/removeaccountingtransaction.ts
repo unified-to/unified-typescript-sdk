@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAccountingTransactionRequest = {
   /**
@@ -68,6 +71,27 @@ export namespace RemoveAccountingTransactionRequest$ {
   export type Outbound = RemoveAccountingTransactionRequest$Outbound;
 }
 
+export function removeAccountingTransactionRequestToJSON(
+  removeAccountingTransactionRequest: RemoveAccountingTransactionRequest,
+): string {
+  return JSON.stringify(
+    RemoveAccountingTransactionRequest$outboundSchema.parse(
+      removeAccountingTransactionRequest,
+    ),
+  );
+}
+
+export function removeAccountingTransactionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingTransactionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      RemoveAccountingTransactionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingTransactionRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAccountingTransactionResponse$inboundSchema: z.ZodType<
   RemoveAccountingTransactionResponse,
@@ -112,4 +136,25 @@ export namespace RemoveAccountingTransactionResponse$ {
     RemoveAccountingTransactionResponse$outboundSchema;
   /** @deprecated use `RemoveAccountingTransactionResponse$Outbound` instead. */
   export type Outbound = RemoveAccountingTransactionResponse$Outbound;
+}
+
+export function removeAccountingTransactionResponseToJSON(
+  removeAccountingTransactionResponse: RemoveAccountingTransactionResponse,
+): string {
+  return JSON.stringify(
+    RemoveAccountingTransactionResponse$outboundSchema.parse(
+      removeAccountingTransactionResponse,
+    ),
+  );
+}
+
+export function removeAccountingTransactionResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingTransactionResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      RemoveAccountingTransactionResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingTransactionResponse' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemovePaymentPaymentRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemovePaymentPaymentRequest$ {
   export type Outbound = RemovePaymentPaymentRequest$Outbound;
 }
 
+export function removePaymentPaymentRequestToJSON(
+  removePaymentPaymentRequest: RemovePaymentPaymentRequest,
+): string {
+  return JSON.stringify(
+    RemovePaymentPaymentRequest$outboundSchema.parse(
+      removePaymentPaymentRequest,
+    ),
+  );
+}
+
+export function removePaymentPaymentRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePaymentPaymentRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePaymentPaymentRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePaymentPaymentRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemovePaymentPaymentResponse$inboundSchema: z.ZodType<
   RemovePaymentPaymentResponse,
@@ -109,4 +132,24 @@ export namespace RemovePaymentPaymentResponse$ {
   export const outboundSchema = RemovePaymentPaymentResponse$outboundSchema;
   /** @deprecated use `RemovePaymentPaymentResponse$Outbound` instead. */
   export type Outbound = RemovePaymentPaymentResponse$Outbound;
+}
+
+export function removePaymentPaymentResponseToJSON(
+  removePaymentPaymentResponse: RemovePaymentPaymentResponse,
+): string {
+  return JSON.stringify(
+    RemovePaymentPaymentResponse$outboundSchema.parse(
+      removePaymentPaymentResponse,
+    ),
+  );
+}
+
+export function removePaymentPaymentResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePaymentPaymentResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePaymentPaymentResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePaymentPaymentResponse' from JSON`,
+  );
 }

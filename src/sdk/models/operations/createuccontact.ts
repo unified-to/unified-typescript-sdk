@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateUcContactRequest = {
@@ -71,4 +74,22 @@ export namespace CreateUcContactRequest$ {
   export const outboundSchema = CreateUcContactRequest$outboundSchema;
   /** @deprecated use `CreateUcContactRequest$Outbound` instead. */
   export type Outbound = CreateUcContactRequest$Outbound;
+}
+
+export function createUcContactRequestToJSON(
+  createUcContactRequest: CreateUcContactRequest,
+): string {
+  return JSON.stringify(
+    CreateUcContactRequest$outboundSchema.parse(createUcContactRequest),
+  );
+}
+
+export function createUcContactRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateUcContactRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateUcContactRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateUcContactRequest' from JSON`,
+  );
 }

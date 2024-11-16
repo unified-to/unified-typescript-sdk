@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoCommitRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetRepoCommitRequest$ {
   export const outboundSchema = GetRepoCommitRequest$outboundSchema;
   /** @deprecated use `GetRepoCommitRequest$Outbound` instead. */
   export type Outbound = GetRepoCommitRequest$Outbound;
+}
+
+export function getRepoCommitRequestToJSON(
+  getRepoCommitRequest: GetRepoCommitRequest,
+): string {
+  return JSON.stringify(
+    GetRepoCommitRequest$outboundSchema.parse(getRepoCommitRequest),
+  );
+}
+
+export function getRepoCommitRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetRepoCommitRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetRepoCommitRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetRepoCommitRequest' from JSON`,
+  );
 }

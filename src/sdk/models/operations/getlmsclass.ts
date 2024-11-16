@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetLmsClassRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetLmsClassRequest$ {
   export const outboundSchema = GetLmsClassRequest$outboundSchema;
   /** @deprecated use `GetLmsClassRequest$Outbound` instead. */
   export type Outbound = GetLmsClassRequest$Outbound;
+}
+
+export function getLmsClassRequestToJSON(
+  getLmsClassRequest: GetLmsClassRequest,
+): string {
+  return JSON.stringify(
+    GetLmsClassRequest$outboundSchema.parse(getLmsClassRequest),
+  );
+}
+
+export function getLmsClassRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetLmsClassRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetLmsClassRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetLmsClassRequest' from JSON`,
+  );
 }

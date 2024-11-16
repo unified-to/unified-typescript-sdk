@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AtsScorecardQuestion,
   AtsScorecardQuestion$inboundSchema,
@@ -145,4 +148,18 @@ export namespace AtsScorecard$ {
   export const outboundSchema = AtsScorecard$outboundSchema;
   /** @deprecated use `AtsScorecard$Outbound` instead. */
   export type Outbound = AtsScorecard$Outbound;
+}
+
+export function atsScorecardToJSON(atsScorecard: AtsScorecard): string {
+  return JSON.stringify(AtsScorecard$outboundSchema.parse(atsScorecard));
+}
+
+export function atsScorecardFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsScorecard, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsScorecard$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsScorecard' from JSON`,
+  );
 }

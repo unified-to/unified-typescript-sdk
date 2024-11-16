@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveMartechListRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveMartechListRequest$ {
   export type Outbound = RemoveMartechListRequest$Outbound;
 }
 
+export function removeMartechListRequestToJSON(
+  removeMartechListRequest: RemoveMartechListRequest,
+): string {
+  return JSON.stringify(
+    RemoveMartechListRequest$outboundSchema.parse(removeMartechListRequest),
+  );
+}
+
+export function removeMartechListRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveMartechListRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveMartechListRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveMartechListRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveMartechListResponse$inboundSchema: z.ZodType<
   RemoveMartechListResponse,
@@ -109,4 +130,22 @@ export namespace RemoveMartechListResponse$ {
   export const outboundSchema = RemoveMartechListResponse$outboundSchema;
   /** @deprecated use `RemoveMartechListResponse$Outbound` instead. */
   export type Outbound = RemoveMartechListResponse$Outbound;
+}
+
+export function removeMartechListResponseToJSON(
+  removeMartechListResponse: RemoveMartechListResponse,
+): string {
+  return JSON.stringify(
+    RemoveMartechListResponse$outboundSchema.parse(removeMartechListResponse),
+  );
+}
+
+export function removeMartechListResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveMartechListResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveMartechListResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveMartechListResponse' from JSON`,
+  );
 }

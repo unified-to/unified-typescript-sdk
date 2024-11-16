@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   MessagingMember,
   MessagingMember$inboundSchema,
@@ -22,7 +25,7 @@ export type MessagingChannel = {
   name: string;
   parentChannelId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };
 
@@ -43,7 +46,8 @@ export const MessagingChannel$inboundSchema: z.ZodType<
   name: z.string(),
   parent_channel_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -89,7 +93,7 @@ export const MessagingChannel$outboundSchema: z.ZodType<
   name: z.string(),
   parentChannelId: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -114,4 +118,22 @@ export namespace MessagingChannel$ {
   export const outboundSchema = MessagingChannel$outboundSchema;
   /** @deprecated use `MessagingChannel$Outbound` instead. */
   export type Outbound = MessagingChannel$Outbound;
+}
+
+export function messagingChannelToJSON(
+  messagingChannel: MessagingChannel,
+): string {
+  return JSON.stringify(
+    MessagingChannel$outboundSchema.parse(messagingChannel),
+  );
+}
+
+export function messagingChannelFromJSON(
+  jsonString: string,
+): SafeParseResult<MessagingChannel, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MessagingChannel$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MessagingChannel' from JSON`,
+  );
 }

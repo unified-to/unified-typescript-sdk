@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTaskProjectRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetTaskProjectRequest$ {
   export const outboundSchema = GetTaskProjectRequest$outboundSchema;
   /** @deprecated use `GetTaskProjectRequest$Outbound` instead. */
   export type Outbound = GetTaskProjectRequest$Outbound;
+}
+
+export function getTaskProjectRequestToJSON(
+  getTaskProjectRequest: GetTaskProjectRequest,
+): string {
+  return JSON.stringify(
+    GetTaskProjectRequest$outboundSchema.parse(getTaskProjectRequest),
+  );
+}
+
+export function getTaskProjectRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetTaskProjectRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetTaskProjectRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetTaskProjectRequest' from JSON`,
+  );
 }

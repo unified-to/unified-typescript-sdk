@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimManagerType = {
   Direct: "direct",
@@ -98,4 +101,18 @@ export namespace ScimManager$ {
   export const outboundSchema = ScimManager$outboundSchema;
   /** @deprecated use `ScimManager$Outbound` instead. */
   export type Outbound = ScimManager$Outbound;
+}
+
+export function scimManagerToJSON(scimManager: ScimManager): string {
+  return JSON.stringify(ScimManager$outboundSchema.parse(scimManager));
+}
+
+export function scimManagerFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimManager, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimManager$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimManager' from JSON`,
+  );
 }

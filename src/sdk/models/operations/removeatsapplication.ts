@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAtsApplicationRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveAtsApplicationRequest$ {
   export type Outbound = RemoveAtsApplicationRequest$Outbound;
 }
 
+export function removeAtsApplicationRequestToJSON(
+  removeAtsApplicationRequest: RemoveAtsApplicationRequest,
+): string {
+  return JSON.stringify(
+    RemoveAtsApplicationRequest$outboundSchema.parse(
+      removeAtsApplicationRequest,
+    ),
+  );
+}
+
+export function removeAtsApplicationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsApplicationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsApplicationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsApplicationRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAtsApplicationResponse$inboundSchema: z.ZodType<
   RemoveAtsApplicationResponse,
@@ -109,4 +132,24 @@ export namespace RemoveAtsApplicationResponse$ {
   export const outboundSchema = RemoveAtsApplicationResponse$outboundSchema;
   /** @deprecated use `RemoveAtsApplicationResponse$Outbound` instead. */
   export type Outbound = RemoveAtsApplicationResponse$Outbound;
+}
+
+export function removeAtsApplicationResponseToJSON(
+  removeAtsApplicationResponse: RemoveAtsApplicationResponse,
+): string {
+  return JSON.stringify(
+    RemoveAtsApplicationResponse$outboundSchema.parse(
+      removeAtsApplicationResponse,
+    ),
+  );
+}
+
+export function removeAtsApplicationResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsApplicationResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsApplicationResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsApplicationResponse' from JSON`,
+  );
 }

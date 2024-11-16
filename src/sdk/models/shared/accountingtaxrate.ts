@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingTaxrate = {
   createdAt?: Date | undefined;
@@ -85,4 +88,22 @@ export namespace AccountingTaxrate$ {
   export const outboundSchema = AccountingTaxrate$outboundSchema;
   /** @deprecated use `AccountingTaxrate$Outbound` instead. */
   export type Outbound = AccountingTaxrate$Outbound;
+}
+
+export function accountingTaxrateToJSON(
+  accountingTaxrate: AccountingTaxrate,
+): string {
+  return JSON.stringify(
+    AccountingTaxrate$outboundSchema.parse(accountingTaxrate),
+  );
+}
+
+export function accountingTaxrateFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingTaxrate, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingTaxrate$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingTaxrate' from JSON`,
+  );
 }

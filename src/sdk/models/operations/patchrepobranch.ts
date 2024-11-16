@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchRepoBranchRequest = {
@@ -75,4 +78,22 @@ export namespace PatchRepoBranchRequest$ {
   export const outboundSchema = PatchRepoBranchRequest$outboundSchema;
   /** @deprecated use `PatchRepoBranchRequest$Outbound` instead. */
   export type Outbound = PatchRepoBranchRequest$Outbound;
+}
+
+export function patchRepoBranchRequestToJSON(
+  patchRepoBranchRequest: PatchRepoBranchRequest,
+): string {
+  return JSON.stringify(
+    PatchRepoBranchRequest$outboundSchema.parse(patchRepoBranchRequest),
+  );
+}
+
+export function patchRepoBranchRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchRepoBranchRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchRepoBranchRequest' from JSON`,
+  );
 }

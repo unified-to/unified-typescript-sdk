@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListScimGroupsRequest = {
   /**
@@ -74,4 +77,22 @@ export namespace ListScimGroupsRequest$ {
   export const outboundSchema = ListScimGroupsRequest$outboundSchema;
   /** @deprecated use `ListScimGroupsRequest$Outbound` instead. */
   export type Outbound = ListScimGroupsRequest$Outbound;
+}
+
+export function listScimGroupsRequestToJSON(
+  listScimGroupsRequest: ListScimGroupsRequest,
+): string {
+  return JSON.stringify(
+    ListScimGroupsRequest$outboundSchema.parse(listScimGroupsRequest),
+  );
+}
+
+export function listScimGroupsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListScimGroupsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListScimGroupsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListScimGroupsRequest' from JSON`,
+  );
 }

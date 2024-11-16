@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchTicketingCustomerRequest = {
@@ -75,4 +78,24 @@ export namespace PatchTicketingCustomerRequest$ {
   export const outboundSchema = PatchTicketingCustomerRequest$outboundSchema;
   /** @deprecated use `PatchTicketingCustomerRequest$Outbound` instead. */
   export type Outbound = PatchTicketingCustomerRequest$Outbound;
+}
+
+export function patchTicketingCustomerRequestToJSON(
+  patchTicketingCustomerRequest: PatchTicketingCustomerRequest,
+): string {
+  return JSON.stringify(
+    PatchTicketingCustomerRequest$outboundSchema.parse(
+      patchTicketingCustomerRequest,
+    ),
+  );
+}
+
+export function patchTicketingCustomerRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchTicketingCustomerRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchTicketingCustomerRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchTicketingCustomerRequest' from JSON`,
+  );
 }

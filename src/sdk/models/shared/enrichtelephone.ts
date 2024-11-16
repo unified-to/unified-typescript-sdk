@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const EnrichTelephoneType = {
   Work: "WORK",
@@ -77,4 +80,20 @@ export namespace EnrichTelephone$ {
   export const outboundSchema = EnrichTelephone$outboundSchema;
   /** @deprecated use `EnrichTelephone$Outbound` instead. */
   export type Outbound = EnrichTelephone$Outbound;
+}
+
+export function enrichTelephoneToJSON(
+  enrichTelephone: EnrichTelephone,
+): string {
+  return JSON.stringify(EnrichTelephone$outboundSchema.parse(enrichTelephone));
+}
+
+export function enrichTelephoneFromJSON(
+  jsonString: string,
+): SafeParseResult<EnrichTelephone, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EnrichTelephone$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EnrichTelephone' from JSON`,
+  );
 }

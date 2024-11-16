@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingLineitem = {
   accountId?: string | undefined;
@@ -146,4 +149,22 @@ export namespace AccountingLineitem$ {
   export const outboundSchema = AccountingLineitem$outboundSchema;
   /** @deprecated use `AccountingLineitem$Outbound` instead. */
   export type Outbound = AccountingLineitem$Outbound;
+}
+
+export function accountingLineitemToJSON(
+  accountingLineitem: AccountingLineitem,
+): string {
+  return JSON.stringify(
+    AccountingLineitem$outboundSchema.parse(accountingLineitem),
+  );
+}
+
+export function accountingLineitemFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingLineitem, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingLineitem$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingLineitem' from JSON`,
+  );
 }

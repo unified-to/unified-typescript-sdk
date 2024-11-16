@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType =
   {
@@ -122,4 +125,31 @@ export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20Us
   /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound` instead. */
   export type Outbound =
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound;
+}
+
+export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerToJSON(
+  propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager:
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager,
+): string {
+  return JSON.stringify(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$outboundSchema
+      .parse(
+        propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager,
+      ),
+  );
+}
+
+export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerFromJSON(
+  jsonString: string,
+): SafeParseResult<
+  PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager,
+  SDKValidationError
+> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema
+        .parse(JSON.parse(x)),
+    `Failed to parse 'PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager' from JSON`,
+  );
 }

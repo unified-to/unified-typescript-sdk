@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type EnrichPersonWorkHistory = {
   companyDomain?: string | undefined;
@@ -85,4 +88,22 @@ export namespace EnrichPersonWorkHistory$ {
   export const outboundSchema = EnrichPersonWorkHistory$outboundSchema;
   /** @deprecated use `EnrichPersonWorkHistory$Outbound` instead. */
   export type Outbound = EnrichPersonWorkHistory$Outbound;
+}
+
+export function enrichPersonWorkHistoryToJSON(
+  enrichPersonWorkHistory: EnrichPersonWorkHistory,
+): string {
+  return JSON.stringify(
+    EnrichPersonWorkHistory$outboundSchema.parse(enrichPersonWorkHistory),
+  );
+}
+
+export function enrichPersonWorkHistoryFromJSON(
+  jsonString: string,
+): SafeParseResult<EnrichPersonWorkHistory, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => EnrichPersonWorkHistory$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'EnrichPersonWorkHistory' from JSON`,
+  );
 }

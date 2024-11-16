@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PatchUnifiedWebhookTriggerRequest = {
   /**
@@ -53,6 +56,26 @@ export namespace PatchUnifiedWebhookTriggerRequest$ {
   export type Outbound = PatchUnifiedWebhookTriggerRequest$Outbound;
 }
 
+export function patchUnifiedWebhookTriggerRequestToJSON(
+  patchUnifiedWebhookTriggerRequest: PatchUnifiedWebhookTriggerRequest,
+): string {
+  return JSON.stringify(
+    PatchUnifiedWebhookTriggerRequest$outboundSchema.parse(
+      patchUnifiedWebhookTriggerRequest,
+    ),
+  );
+}
+
+export function patchUnifiedWebhookTriggerRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchUnifiedWebhookTriggerRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchUnifiedWebhookTriggerRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchUnifiedWebhookTriggerRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const PatchUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
   PatchUnifiedWebhookTriggerResponse,
@@ -96,4 +119,25 @@ export namespace PatchUnifiedWebhookTriggerResponse$ {
     PatchUnifiedWebhookTriggerResponse$outboundSchema;
   /** @deprecated use `PatchUnifiedWebhookTriggerResponse$Outbound` instead. */
   export type Outbound = PatchUnifiedWebhookTriggerResponse$Outbound;
+}
+
+export function patchUnifiedWebhookTriggerResponseToJSON(
+  patchUnifiedWebhookTriggerResponse: PatchUnifiedWebhookTriggerResponse,
+): string {
+  return JSON.stringify(
+    PatchUnifiedWebhookTriggerResponse$outboundSchema.parse(
+      patchUnifiedWebhookTriggerResponse,
+    ),
+  );
+}
+
+export function patchUnifiedWebhookTriggerResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchUnifiedWebhookTriggerResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PatchUnifiedWebhookTriggerResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchUnifiedWebhookTriggerResponse' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoBranchRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetRepoBranchRequest$ {
   export const outboundSchema = GetRepoBranchRequest$outboundSchema;
   /** @deprecated use `GetRepoBranchRequest$Outbound` instead. */
   export type Outbound = GetRepoBranchRequest$Outbound;
+}
+
+export function getRepoBranchRequestToJSON(
+  getRepoBranchRequest: GetRepoBranchRequest,
+): string {
+  return JSON.stringify(
+    GetRepoBranchRequest$outboundSchema.parse(getRepoBranchRequest),
+  );
+}
+
+export function getRepoBranchRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetRepoBranchRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetRepoBranchRequest' from JSON`,
+  );
 }

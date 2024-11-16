@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchPaymentPaymentRequest = {
@@ -75,4 +78,22 @@ export namespace PatchPaymentPaymentRequest$ {
   export const outboundSchema = PatchPaymentPaymentRequest$outboundSchema;
   /** @deprecated use `PatchPaymentPaymentRequest$Outbound` instead. */
   export type Outbound = PatchPaymentPaymentRequest$Outbound;
+}
+
+export function patchPaymentPaymentRequestToJSON(
+  patchPaymentPaymentRequest: PatchPaymentPaymentRequest,
+): string {
+  return JSON.stringify(
+    PatchPaymentPaymentRequest$outboundSchema.parse(patchPaymentPaymentRequest),
+  );
+}
+
+export function patchPaymentPaymentRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchPaymentPaymentRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchPaymentPaymentRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchPaymentPaymentRequest' from JSON`,
+  );
 }

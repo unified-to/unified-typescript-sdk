@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAtsActivityRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveAtsActivityRequest$ {
   export type Outbound = RemoveAtsActivityRequest$Outbound;
 }
 
+export function removeAtsActivityRequestToJSON(
+  removeAtsActivityRequest: RemoveAtsActivityRequest,
+): string {
+  return JSON.stringify(
+    RemoveAtsActivityRequest$outboundSchema.parse(removeAtsActivityRequest),
+  );
+}
+
+export function removeAtsActivityRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsActivityRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsActivityRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsActivityRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAtsActivityResponse$inboundSchema: z.ZodType<
   RemoveAtsActivityResponse,
@@ -109,4 +130,22 @@ export namespace RemoveAtsActivityResponse$ {
   export const outboundSchema = RemoveAtsActivityResponse$outboundSchema;
   /** @deprecated use `RemoveAtsActivityResponse$Outbound` instead. */
   export type Outbound = RemoveAtsActivityResponse$Outbound;
+}
+
+export function removeAtsActivityResponseToJSON(
+  removeAtsActivityResponse: RemoveAtsActivityResponse,
+): string {
+  return JSON.stringify(
+    RemoveAtsActivityResponse$outboundSchema.parse(removeAtsActivityResponse),
+  );
+}
+
+export function removeAtsActivityResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAtsActivityResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAtsActivityResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAtsActivityResponse' from JSON`,
+  );
 }

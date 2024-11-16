@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedIntegrationLoginRequest = {
   env?: string | undefined;
@@ -97,4 +100,24 @@ export namespace GetUnifiedIntegrationLoginRequest$ {
     GetUnifiedIntegrationLoginRequest$outboundSchema;
   /** @deprecated use `GetUnifiedIntegrationLoginRequest$Outbound` instead. */
   export type Outbound = GetUnifiedIntegrationLoginRequest$Outbound;
+}
+
+export function getUnifiedIntegrationLoginRequestToJSON(
+  getUnifiedIntegrationLoginRequest: GetUnifiedIntegrationLoginRequest,
+): string {
+  return JSON.stringify(
+    GetUnifiedIntegrationLoginRequest$outboundSchema.parse(
+      getUnifiedIntegrationLoginRequest,
+    ),
+  );
+}
+
+export function getUnifiedIntegrationLoginRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetUnifiedIntegrationLoginRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetUnifiedIntegrationLoginRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetUnifiedIntegrationLoginRequest' from JSON`,
+  );
 }

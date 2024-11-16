@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Status = {
   Active: "ACTIVE",
@@ -191,4 +194,22 @@ export namespace AccountingAccount$ {
   export const outboundSchema = AccountingAccount$outboundSchema;
   /** @deprecated use `AccountingAccount$Outbound` instead. */
   export type Outbound = AccountingAccount$Outbound;
+}
+
+export function accountingAccountToJSON(
+  accountingAccount: AccountingAccount,
+): string {
+  return JSON.stringify(
+    AccountingAccount$outboundSchema.parse(accountingAccount),
+  );
+}
+
+export function accountingAccountFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingAccount, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingAccount$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingAccount' from JSON`,
+  );
 }

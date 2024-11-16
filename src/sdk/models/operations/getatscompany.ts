@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAtsCompanyRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetAtsCompanyRequest$ {
   export const outboundSchema = GetAtsCompanyRequest$outboundSchema;
   /** @deprecated use `GetAtsCompanyRequest$Outbound` instead. */
   export type Outbound = GetAtsCompanyRequest$Outbound;
+}
+
+export function getAtsCompanyRequestToJSON(
+  getAtsCompanyRequest: GetAtsCompanyRequest,
+): string {
+  return JSON.stringify(
+    GetAtsCompanyRequest$outboundSchema.parse(getAtsCompanyRequest),
+  );
+}
+
+export function getAtsCompanyRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetAtsCompanyRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetAtsCompanyRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetAtsCompanyRequest' from JSON`,
+  );
 }

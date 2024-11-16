@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedConnectionRequest = {
   /**
@@ -45,4 +48,24 @@ export namespace GetUnifiedConnectionRequest$ {
   export const outboundSchema = GetUnifiedConnectionRequest$outboundSchema;
   /** @deprecated use `GetUnifiedConnectionRequest$Outbound` instead. */
   export type Outbound = GetUnifiedConnectionRequest$Outbound;
+}
+
+export function getUnifiedConnectionRequestToJSON(
+  getUnifiedConnectionRequest: GetUnifiedConnectionRequest,
+): string {
+  return JSON.stringify(
+    GetUnifiedConnectionRequest$outboundSchema.parse(
+      getUnifiedConnectionRequest,
+    ),
+  );
+}
+
+export function getUnifiedConnectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetUnifiedConnectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetUnifiedConnectionRequest' from JSON`,
+  );
 }

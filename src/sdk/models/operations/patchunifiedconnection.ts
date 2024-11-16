@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUnifiedConnectionRequest = {
@@ -62,4 +65,24 @@ export namespace PatchUnifiedConnectionRequest$ {
   export const outboundSchema = PatchUnifiedConnectionRequest$outboundSchema;
   /** @deprecated use `PatchUnifiedConnectionRequest$Outbound` instead. */
   export type Outbound = PatchUnifiedConnectionRequest$Outbound;
+}
+
+export function patchUnifiedConnectionRequestToJSON(
+  patchUnifiedConnectionRequest: PatchUnifiedConnectionRequest,
+): string {
+  return JSON.stringify(
+    PatchUnifiedConnectionRequest$outboundSchema.parse(
+      patchUnifiedConnectionRequest,
+    ),
+  );
+}
+
+export function patchUnifiedConnectionRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchUnifiedConnectionRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchUnifiedConnectionRequest' from JSON`,
+  );
 }

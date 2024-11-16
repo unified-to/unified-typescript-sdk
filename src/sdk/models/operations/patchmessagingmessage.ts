@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchMessagingMessageRequest = {
@@ -75,4 +78,24 @@ export namespace PatchMessagingMessageRequest$ {
   export const outboundSchema = PatchMessagingMessageRequest$outboundSchema;
   /** @deprecated use `PatchMessagingMessageRequest$Outbound` instead. */
   export type Outbound = PatchMessagingMessageRequest$Outbound;
+}
+
+export function patchMessagingMessageRequestToJSON(
+  patchMessagingMessageRequest: PatchMessagingMessageRequest,
+): string {
+  return JSON.stringify(
+    PatchMessagingMessageRequest$outboundSchema.parse(
+      patchMessagingMessageRequest,
+    ),
+  );
+}
+
+export function patchMessagingMessageRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchMessagingMessageRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchMessagingMessageRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchMessagingMessageRequest' from JSON`,
+  );
 }

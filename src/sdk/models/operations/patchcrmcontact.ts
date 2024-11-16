@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmContactRequest = {
@@ -78,4 +81,22 @@ export namespace PatchCrmContactRequest$ {
   export const outboundSchema = PatchCrmContactRequest$outboundSchema;
   /** @deprecated use `PatchCrmContactRequest$Outbound` instead. */
   export type Outbound = PatchCrmContactRequest$Outbound;
+}
+
+export function patchCrmContactRequestToJSON(
+  patchCrmContactRequest: PatchCrmContactRequest,
+): string {
+  return JSON.stringify(
+    PatchCrmContactRequest$outboundSchema.parse(patchCrmContactRequest),
+  );
+}
+
+export function patchCrmContactRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<PatchCrmContactRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PatchCrmContactRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PatchCrmContactRequest' from JSON`,
+  );
 }

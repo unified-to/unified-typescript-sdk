@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoPullrequestRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetRepoPullrequestRequest$ {
   export const outboundSchema = GetRepoPullrequestRequest$outboundSchema;
   /** @deprecated use `GetRepoPullrequestRequest$Outbound` instead. */
   export type Outbound = GetRepoPullrequestRequest$Outbound;
+}
+
+export function getRepoPullrequestRequestToJSON(
+  getRepoPullrequestRequest: GetRepoPullrequestRequest,
+): string {
+  return JSON.stringify(
+    GetRepoPullrequestRequest$outboundSchema.parse(getRepoPullrequestRequest),
+  );
+}
+
+export function getRepoPullrequestRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetRepoPullrequestRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetRepoPullrequestRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetRepoPullrequestRequest' from JSON`,
+  );
 }

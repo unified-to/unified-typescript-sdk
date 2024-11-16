@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveRepoCommitRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveRepoCommitRequest$ {
   export type Outbound = RemoveRepoCommitRequest$Outbound;
 }
 
+export function removeRepoCommitRequestToJSON(
+  removeRepoCommitRequest: RemoveRepoCommitRequest,
+): string {
+  return JSON.stringify(
+    RemoveRepoCommitRequest$outboundSchema.parse(removeRepoCommitRequest),
+  );
+}
+
+export function removeRepoCommitRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoCommitRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoCommitRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoCommitRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveRepoCommitResponse$inboundSchema: z.ZodType<
   RemoveRepoCommitResponse,
@@ -109,4 +130,22 @@ export namespace RemoveRepoCommitResponse$ {
   export const outboundSchema = RemoveRepoCommitResponse$outboundSchema;
   /** @deprecated use `RemoveRepoCommitResponse$Outbound` instead. */
   export type Outbound = RemoveRepoCommitResponse$Outbound;
+}
+
+export function removeRepoCommitResponseToJSON(
+  removeRepoCommitResponse: RemoveRepoCommitResponse,
+): string {
+  return JSON.stringify(
+    RemoveRepoCommitResponse$outboundSchema.parse(removeRepoCommitResponse),
+  );
+}
+
+export function removeRepoCommitResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoCommitResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoCommitResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoCommitResponse' from JSON`,
+  );
 }

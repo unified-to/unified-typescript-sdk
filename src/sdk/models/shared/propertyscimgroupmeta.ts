@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ResourceType = {
   User: "User",
@@ -84,4 +87,22 @@ export namespace PropertyScimGroupMeta$ {
   export const outboundSchema = PropertyScimGroupMeta$outboundSchema;
   /** @deprecated use `PropertyScimGroupMeta$Outbound` instead. */
   export type Outbound = PropertyScimGroupMeta$Outbound;
+}
+
+export function propertyScimGroupMetaToJSON(
+  propertyScimGroupMeta: PropertyScimGroupMeta,
+): string {
+  return JSON.stringify(
+    PropertyScimGroupMeta$outboundSchema.parse(propertyScimGroupMeta),
+  );
+}
+
+export function propertyScimGroupMetaFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyScimGroupMeta, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyScimGroupMeta$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyScimGroupMeta' from JSON`,
+  );
 }

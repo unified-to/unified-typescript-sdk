@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAccountingOrderRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveAccountingOrderRequest$ {
   export type Outbound = RemoveAccountingOrderRequest$Outbound;
 }
 
+export function removeAccountingOrderRequestToJSON(
+  removeAccountingOrderRequest: RemoveAccountingOrderRequest,
+): string {
+  return JSON.stringify(
+    RemoveAccountingOrderRequest$outboundSchema.parse(
+      removeAccountingOrderRequest,
+    ),
+  );
+}
+
+export function removeAccountingOrderRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingOrderRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingOrderRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingOrderRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAccountingOrderResponse$inboundSchema: z.ZodType<
   RemoveAccountingOrderResponse,
@@ -109,4 +132,24 @@ export namespace RemoveAccountingOrderResponse$ {
   export const outboundSchema = RemoveAccountingOrderResponse$outboundSchema;
   /** @deprecated use `RemoveAccountingOrderResponse$Outbound` instead. */
   export type Outbound = RemoveAccountingOrderResponse$Outbound;
+}
+
+export function removeAccountingOrderResponseToJSON(
+  removeAccountingOrderResponse: RemoveAccountingOrderResponse,
+): string {
+  return JSON.stringify(
+    RemoveAccountingOrderResponse$outboundSchema.parse(
+      removeAccountingOrderResponse,
+    ),
+  );
+}
+
+export function removeAccountingOrderResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingOrderResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingOrderResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingOrderResponse' from JSON`,
+  );
 }

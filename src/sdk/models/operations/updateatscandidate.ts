@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsCandidateRequest = {
@@ -75,4 +78,22 @@ export namespace UpdateAtsCandidateRequest$ {
   export const outboundSchema = UpdateAtsCandidateRequest$outboundSchema;
   /** @deprecated use `UpdateAtsCandidateRequest$Outbound` instead. */
   export type Outbound = UpdateAtsCandidateRequest$Outbound;
+}
+
+export function updateAtsCandidateRequestToJSON(
+  updateAtsCandidateRequest: UpdateAtsCandidateRequest,
+): string {
+  return JSON.stringify(
+    UpdateAtsCandidateRequest$outboundSchema.parse(updateAtsCandidateRequest),
+  );
+}
+
+export function updateAtsCandidateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateAtsCandidateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateAtsCandidateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateAtsCandidateRequest' from JSON`,
+  );
 }

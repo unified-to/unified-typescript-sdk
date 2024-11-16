@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateTicketingCustomerRequest = {
@@ -68,4 +71,24 @@ export namespace CreateTicketingCustomerRequest$ {
   export const outboundSchema = CreateTicketingCustomerRequest$outboundSchema;
   /** @deprecated use `CreateTicketingCustomerRequest$Outbound` instead. */
   export type Outbound = CreateTicketingCustomerRequest$Outbound;
+}
+
+export function createTicketingCustomerRequestToJSON(
+  createTicketingCustomerRequest: CreateTicketingCustomerRequest,
+): string {
+  return JSON.stringify(
+    CreateTicketingCustomerRequest$outboundSchema.parse(
+      createTicketingCustomerRequest,
+    ),
+  );
+}
+
+export function createTicketingCustomerRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateTicketingCustomerRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateTicketingCustomerRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateTicketingCustomerRequest' from JSON`,
+  );
 }

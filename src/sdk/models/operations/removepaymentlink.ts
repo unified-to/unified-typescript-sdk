@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemovePaymentLinkRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemovePaymentLinkRequest$ {
   export type Outbound = RemovePaymentLinkRequest$Outbound;
 }
 
+export function removePaymentLinkRequestToJSON(
+  removePaymentLinkRequest: RemovePaymentLinkRequest,
+): string {
+  return JSON.stringify(
+    RemovePaymentLinkRequest$outboundSchema.parse(removePaymentLinkRequest),
+  );
+}
+
+export function removePaymentLinkRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePaymentLinkRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePaymentLinkRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePaymentLinkRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemovePaymentLinkResponse$inboundSchema: z.ZodType<
   RemovePaymentLinkResponse,
@@ -109,4 +130,22 @@ export namespace RemovePaymentLinkResponse$ {
   export const outboundSchema = RemovePaymentLinkResponse$outboundSchema;
   /** @deprecated use `RemovePaymentLinkResponse$Outbound` instead. */
   export type Outbound = RemovePaymentLinkResponse$Outbound;
+}
+
+export function removePaymentLinkResponseToJSON(
+  removePaymentLinkResponse: RemovePaymentLinkResponse,
+): string {
+  return JSON.stringify(
+    RemovePaymentLinkResponse$outboundSchema.parse(removePaymentLinkResponse),
+  );
+}
+
+export function removePaymentLinkResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemovePaymentLinkResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemovePaymentLinkResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemovePaymentLinkResponse' from JSON`,
+  );
 }

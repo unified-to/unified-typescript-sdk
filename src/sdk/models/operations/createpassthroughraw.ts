@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CreatePassthroughRawRequest = {
   /**
@@ -107,6 +110,26 @@ export namespace CreatePassthroughRawRequest$ {
   export type Outbound = CreatePassthroughRawRequest$Outbound;
 }
 
+export function createPassthroughRawRequestToJSON(
+  createPassthroughRawRequest: CreatePassthroughRawRequest,
+): string {
+  return JSON.stringify(
+    CreatePassthroughRawRequest$outboundSchema.parse(
+      createPassthroughRawRequest,
+    ),
+  );
+}
+
+export function createPassthroughRawRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreatePassthroughRawRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreatePassthroughRawRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreatePassthroughRawRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const CreatePassthroughRawResponseResult$inboundSchema: z.ZodType<
   CreatePassthroughRawResponseResult,
@@ -153,6 +176,27 @@ export namespace CreatePassthroughRawResponseResult$ {
     CreatePassthroughRawResponseResult$outboundSchema;
   /** @deprecated use `CreatePassthroughRawResponseResult$Outbound` instead. */
   export type Outbound = CreatePassthroughRawResponseResult$Outbound;
+}
+
+export function createPassthroughRawResponseResultToJSON(
+  createPassthroughRawResponseResult: CreatePassthroughRawResponseResult,
+): string {
+  return JSON.stringify(
+    CreatePassthroughRawResponseResult$outboundSchema.parse(
+      createPassthroughRawResponseResult,
+    ),
+  );
+}
+
+export function createPassthroughRawResponseResultFromJSON(
+  jsonString: string,
+): SafeParseResult<CreatePassthroughRawResponseResult, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      CreatePassthroughRawResponseResult$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreatePassthroughRawResponseResult' from JSON`,
+  );
 }
 
 /** @internal */
@@ -220,4 +264,24 @@ export namespace CreatePassthroughRawResponse$ {
   export const outboundSchema = CreatePassthroughRawResponse$outboundSchema;
   /** @deprecated use `CreatePassthroughRawResponse$Outbound` instead. */
   export type Outbound = CreatePassthroughRawResponse$Outbound;
+}
+
+export function createPassthroughRawResponseToJSON(
+  createPassthroughRawResponse: CreatePassthroughRawResponse,
+): string {
+  return JSON.stringify(
+    CreatePassthroughRawResponse$outboundSchema.parse(
+      createPassthroughRawResponse,
+    ),
+  );
+}
+
+export function createPassthroughRawResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<CreatePassthroughRawResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreatePassthroughRawResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreatePassthroughRawResponse' from JSON`,
+  );
 }

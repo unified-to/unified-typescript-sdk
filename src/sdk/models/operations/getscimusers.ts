@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetScimUsersRequest = {
   /**
@@ -61,4 +64,22 @@ export namespace GetScimUsersRequest$ {
   export const outboundSchema = GetScimUsersRequest$outboundSchema;
   /** @deprecated use `GetScimUsersRequest$Outbound` instead. */
   export type Outbound = GetScimUsersRequest$Outbound;
+}
+
+export function getScimUsersRequestToJSON(
+  getScimUsersRequest: GetScimUsersRequest,
+): string {
+  return JSON.stringify(
+    GetScimUsersRequest$outboundSchema.parse(getScimUsersRequest),
+  );
+}
+
+export function getScimUsersRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetScimUsersRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetScimUsersRequest' from JSON`,
+  );
 }

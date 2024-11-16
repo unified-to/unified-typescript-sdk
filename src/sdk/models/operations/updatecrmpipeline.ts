@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCrmPipelineRequest = {
@@ -75,4 +78,22 @@ export namespace UpdateCrmPipelineRequest$ {
   export const outboundSchema = UpdateCrmPipelineRequest$outboundSchema;
   /** @deprecated use `UpdateCrmPipelineRequest$Outbound` instead. */
   export type Outbound = UpdateCrmPipelineRequest$Outbound;
+}
+
+export function updateCrmPipelineRequestToJSON(
+  updateCrmPipelineRequest: UpdateCrmPipelineRequest,
+): string {
+  return JSON.stringify(
+    UpdateCrmPipelineRequest$outboundSchema.parse(updateCrmPipelineRequest),
+  );
+}
+
+export function updateCrmPipelineRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateCrmPipelineRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdateCrmPipelineRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateCrmPipelineRequest' from JSON`,
+  );
 }

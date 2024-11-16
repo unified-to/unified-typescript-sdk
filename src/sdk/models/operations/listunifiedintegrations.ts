@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ListUnifiedIntegrationsQueryParamCategories = {
   Passthrough: "passthrough",
@@ -141,4 +144,24 @@ export namespace ListUnifiedIntegrationsRequest$ {
   export const outboundSchema = ListUnifiedIntegrationsRequest$outboundSchema;
   /** @deprecated use `ListUnifiedIntegrationsRequest$Outbound` instead. */
   export type Outbound = ListUnifiedIntegrationsRequest$Outbound;
+}
+
+export function listUnifiedIntegrationsRequestToJSON(
+  listUnifiedIntegrationsRequest: ListUnifiedIntegrationsRequest,
+): string {
+  return JSON.stringify(
+    ListUnifiedIntegrationsRequest$outboundSchema.parse(
+      listUnifiedIntegrationsRequest,
+    ),
+  );
+}
+
+export function listUnifiedIntegrationsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUnifiedIntegrationsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUnifiedIntegrationsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUnifiedIntegrationsRequest' from JSON`,
+  );
 }

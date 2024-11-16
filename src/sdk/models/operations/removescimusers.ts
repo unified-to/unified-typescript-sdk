@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveScimUsersRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveScimUsersRequest$ {
   export type Outbound = RemoveScimUsersRequest$Outbound;
 }
 
+export function removeScimUsersRequestToJSON(
+  removeScimUsersRequest: RemoveScimUsersRequest,
+): string {
+  return JSON.stringify(
+    RemoveScimUsersRequest$outboundSchema.parse(removeScimUsersRequest),
+  );
+}
+
+export function removeScimUsersRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveScimUsersRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveScimUsersRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveScimUsersResponse$inboundSchema: z.ZodType<
   RemoveScimUsersResponse,
@@ -109,4 +130,22 @@ export namespace RemoveScimUsersResponse$ {
   export const outboundSchema = RemoveScimUsersResponse$outboundSchema;
   /** @deprecated use `RemoveScimUsersResponse$Outbound` instead. */
   export type Outbound = RemoveScimUsersResponse$Outbound;
+}
+
+export function removeScimUsersResponseToJSON(
+  removeScimUsersResponse: RemoveScimUsersResponse,
+): string {
+  return JSON.stringify(
+    RemoveScimUsersResponse$outboundSchema.parse(removeScimUsersResponse),
+  );
+}
+
+export function removeScimUsersResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveScimUsersResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveScimUsersResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveScimUsersResponse' from JSON`,
+  );
 }

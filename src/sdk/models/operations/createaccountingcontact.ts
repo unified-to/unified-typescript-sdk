@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingContactRequest = {
@@ -68,4 +71,24 @@ export namespace CreateAccountingContactRequest$ {
   export const outboundSchema = CreateAccountingContactRequest$outboundSchema;
   /** @deprecated use `CreateAccountingContactRequest$Outbound` instead. */
   export type Outbound = CreateAccountingContactRequest$Outbound;
+}
+
+export function createAccountingContactRequestToJSON(
+  createAccountingContactRequest: CreateAccountingContactRequest,
+): string {
+  return JSON.stringify(
+    CreateAccountingContactRequest$outboundSchema.parse(
+      createAccountingContactRequest,
+    ),
+  );
+}
+
+export function createAccountingContactRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateAccountingContactRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateAccountingContactRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateAccountingContactRequest' from JSON`,
+  );
 }

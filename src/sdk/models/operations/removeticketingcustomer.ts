@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveTicketingCustomerRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveTicketingCustomerRequest$ {
   export type Outbound = RemoveTicketingCustomerRequest$Outbound;
 }
 
+export function removeTicketingCustomerRequestToJSON(
+  removeTicketingCustomerRequest: RemoveTicketingCustomerRequest,
+): string {
+  return JSON.stringify(
+    RemoveTicketingCustomerRequest$outboundSchema.parse(
+      removeTicketingCustomerRequest,
+    ),
+  );
+}
+
+export function removeTicketingCustomerRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTicketingCustomerRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTicketingCustomerRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTicketingCustomerRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveTicketingCustomerResponse$inboundSchema: z.ZodType<
   RemoveTicketingCustomerResponse,
@@ -109,4 +132,24 @@ export namespace RemoveTicketingCustomerResponse$ {
   export const outboundSchema = RemoveTicketingCustomerResponse$outboundSchema;
   /** @deprecated use `RemoveTicketingCustomerResponse$Outbound` instead. */
   export type Outbound = RemoveTicketingCustomerResponse$Outbound;
+}
+
+export function removeTicketingCustomerResponseToJSON(
+  removeTicketingCustomerResponse: RemoveTicketingCustomerResponse,
+): string {
+  return JSON.stringify(
+    RemoveTicketingCustomerResponse$outboundSchema.parse(
+      removeTicketingCustomerResponse,
+    ),
+  );
+}
+
+export function removeTicketingCustomerResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTicketingCustomerResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTicketingCustomerResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTicketingCustomerResponse' from JSON`,
+  );
 }

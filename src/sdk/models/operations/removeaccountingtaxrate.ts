@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAccountingTaxrateRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveAccountingTaxrateRequest$ {
   export type Outbound = RemoveAccountingTaxrateRequest$Outbound;
 }
 
+export function removeAccountingTaxrateRequestToJSON(
+  removeAccountingTaxrateRequest: RemoveAccountingTaxrateRequest,
+): string {
+  return JSON.stringify(
+    RemoveAccountingTaxrateRequest$outboundSchema.parse(
+      removeAccountingTaxrateRequest,
+    ),
+  );
+}
+
+export function removeAccountingTaxrateRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingTaxrateRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingTaxrateRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingTaxrateRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAccountingTaxrateResponse$inboundSchema: z.ZodType<
   RemoveAccountingTaxrateResponse,
@@ -109,4 +132,24 @@ export namespace RemoveAccountingTaxrateResponse$ {
   export const outboundSchema = RemoveAccountingTaxrateResponse$outboundSchema;
   /** @deprecated use `RemoveAccountingTaxrateResponse$Outbound` instead. */
   export type Outbound = RemoveAccountingTaxrateResponse$Outbound;
+}
+
+export function removeAccountingTaxrateResponseToJSON(
+  removeAccountingTaxrateResponse: RemoveAccountingTaxrateResponse,
+): string {
+  return JSON.stringify(
+    RemoveAccountingTaxrateResponse$outboundSchema.parse(
+      removeAccountingTaxrateResponse,
+    ),
+  );
+}
+
+export function removeAccountingTaxrateResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingTaxrateResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingTaxrateResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingTaxrateResponse' from JSON`,
+  );
 }

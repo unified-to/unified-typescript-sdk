@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCrmEventRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveCrmEventRequest$ {
   export type Outbound = RemoveCrmEventRequest$Outbound;
 }
 
+export function removeCrmEventRequestToJSON(
+  removeCrmEventRequest: RemoveCrmEventRequest,
+): string {
+  return JSON.stringify(
+    RemoveCrmEventRequest$outboundSchema.parse(removeCrmEventRequest),
+  );
+}
+
+export function removeCrmEventRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmEventRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmEventRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCrmEventResponse$inboundSchema: z.ZodType<
   RemoveCrmEventResponse,
@@ -109,4 +130,22 @@ export namespace RemoveCrmEventResponse$ {
   export const outboundSchema = RemoveCrmEventResponse$outboundSchema;
   /** @deprecated use `RemoveCrmEventResponse$Outbound` instead. */
   export type Outbound = RemoveCrmEventResponse$Outbound;
+}
+
+export function removeCrmEventResponseToJSON(
+  removeCrmEventResponse: RemoveCrmEventResponse,
+): string {
+  return JSON.stringify(
+    RemoveCrmEventResponse$outboundSchema.parse(removeCrmEventResponse),
+  );
+}
+
+export function removeCrmEventResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCrmEventResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCrmEventResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCrmEventResponse' from JSON`,
+  );
 }

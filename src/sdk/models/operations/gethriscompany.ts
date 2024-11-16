@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisCompanyRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetHrisCompanyRequest$ {
   export const outboundSchema = GetHrisCompanyRequest$outboundSchema;
   /** @deprecated use `GetHrisCompanyRequest$Outbound` instead. */
   export type Outbound = GetHrisCompanyRequest$Outbound;
+}
+
+export function getHrisCompanyRequestToJSON(
+  getHrisCompanyRequest: GetHrisCompanyRequest,
+): string {
+  return JSON.stringify(
+    GetHrisCompanyRequest$outboundSchema.parse(getHrisCompanyRequest),
+  );
+}
+
+export function getHrisCompanyRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetHrisCompanyRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetHrisCompanyRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetHrisCompanyRequest' from JSON`,
+  );
 }

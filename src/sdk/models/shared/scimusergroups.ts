@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimUserGroupsType = {
   Direct: "direct",
@@ -91,4 +94,18 @@ export namespace ScimUserGroups$ {
   export const outboundSchema = ScimUserGroups$outboundSchema;
   /** @deprecated use `ScimUserGroups$Outbound` instead. */
   export type Outbound = ScimUserGroups$Outbound;
+}
+
+export function scimUserGroupsToJSON(scimUserGroups: ScimUserGroups): string {
+  return JSON.stringify(ScimUserGroups$outboundSchema.parse(scimUserGroups));
+}
+
+export function scimUserGroupsFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimUserGroups, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimUserGroups$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimUserGroups' from JSON`,
+  );
 }

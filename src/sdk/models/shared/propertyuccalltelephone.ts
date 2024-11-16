@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const PropertyUcCallTelephoneType = {
   Work: "WORK",
@@ -82,4 +85,22 @@ export namespace PropertyUcCallTelephone$ {
   export const outboundSchema = PropertyUcCallTelephone$outboundSchema;
   /** @deprecated use `PropertyUcCallTelephone$Outbound` instead. */
   export type Outbound = PropertyUcCallTelephone$Outbound;
+}
+
+export function propertyUcCallTelephoneToJSON(
+  propertyUcCallTelephone: PropertyUcCallTelephone,
+): string {
+  return JSON.stringify(
+    PropertyUcCallTelephone$outboundSchema.parse(propertyUcCallTelephone),
+  );
+}
+
+export function propertyUcCallTelephoneFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyUcCallTelephone, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyUcCallTelephone$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyUcCallTelephone' from JSON`,
+  );
 }

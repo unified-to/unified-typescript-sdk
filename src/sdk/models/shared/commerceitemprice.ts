@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceItemPrice = {
   compareAtPrice?: number | undefined;
@@ -59,4 +62,22 @@ export namespace CommerceItemPrice$ {
   export const outboundSchema = CommerceItemPrice$outboundSchema;
   /** @deprecated use `CommerceItemPrice$Outbound` instead. */
   export type Outbound = CommerceItemPrice$Outbound;
+}
+
+export function commerceItemPriceToJSON(
+  commerceItemPrice: CommerceItemPrice,
+): string {
+  return JSON.stringify(
+    CommerceItemPrice$outboundSchema.parse(commerceItemPrice),
+  );
+}
+
+export function commerceItemPriceFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceItemPrice, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceItemPrice$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemPrice' from JSON`,
+  );
 }

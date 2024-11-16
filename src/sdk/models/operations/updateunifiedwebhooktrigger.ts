@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type UpdateUnifiedWebhookTriggerRequest = {
   /**
@@ -53,6 +56,27 @@ export namespace UpdateUnifiedWebhookTriggerRequest$ {
   export type Outbound = UpdateUnifiedWebhookTriggerRequest$Outbound;
 }
 
+export function updateUnifiedWebhookTriggerRequestToJSON(
+  updateUnifiedWebhookTriggerRequest: UpdateUnifiedWebhookTriggerRequest,
+): string {
+  return JSON.stringify(
+    UpdateUnifiedWebhookTriggerRequest$outboundSchema.parse(
+      updateUnifiedWebhookTriggerRequest,
+    ),
+  );
+}
+
+export function updateUnifiedWebhookTriggerRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateUnifiedWebhookTriggerRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      UpdateUnifiedWebhookTriggerRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateUnifiedWebhookTriggerRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const UpdateUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
   UpdateUnifiedWebhookTriggerResponse,
@@ -97,4 +121,25 @@ export namespace UpdateUnifiedWebhookTriggerResponse$ {
     UpdateUnifiedWebhookTriggerResponse$outboundSchema;
   /** @deprecated use `UpdateUnifiedWebhookTriggerResponse$Outbound` instead. */
   export type Outbound = UpdateUnifiedWebhookTriggerResponse$Outbound;
+}
+
+export function updateUnifiedWebhookTriggerResponseToJSON(
+  updateUnifiedWebhookTriggerResponse: UpdateUnifiedWebhookTriggerResponse,
+): string {
+  return JSON.stringify(
+    UpdateUnifiedWebhookTriggerResponse$outboundSchema.parse(
+      updateUnifiedWebhookTriggerResponse,
+    ),
+  );
+}
+
+export function updateUnifiedWebhookTriggerResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdateUnifiedWebhookTriggerResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      UpdateUnifiedWebhookTriggerResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdateUnifiedWebhookTriggerResponse' from JSON`,
+  );
 }

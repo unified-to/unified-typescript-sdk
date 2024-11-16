@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type CommerceInventory = {
   available: number;
@@ -88,4 +91,22 @@ export namespace CommerceInventory$ {
   export const outboundSchema = CommerceInventory$outboundSchema;
   /** @deprecated use `CommerceInventory$Outbound` instead. */
   export type Outbound = CommerceInventory$Outbound;
+}
+
+export function commerceInventoryToJSON(
+  commerceInventory: CommerceInventory,
+): string {
+  return JSON.stringify(
+    CommerceInventory$outboundSchema.parse(commerceInventory),
+  );
+}
+
+export function commerceInventoryFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceInventory, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceInventory$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceInventory' from JSON`,
+  );
 }

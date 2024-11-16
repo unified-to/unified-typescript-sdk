@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsScorecardQuestion = {
   answer?: string | undefined;
@@ -50,4 +53,22 @@ export namespace AtsScorecardQuestion$ {
   export const outboundSchema = AtsScorecardQuestion$outboundSchema;
   /** @deprecated use `AtsScorecardQuestion$Outbound` instead. */
   export type Outbound = AtsScorecardQuestion$Outbound;
+}
+
+export function atsScorecardQuestionToJSON(
+  atsScorecardQuestion: AtsScorecardQuestion,
+): string {
+  return JSON.stringify(
+    AtsScorecardQuestion$outboundSchema.parse(atsScorecardQuestion),
+  );
+}
+
+export function atsScorecardQuestionFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsScorecardQuestion, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsScorecardQuestion$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsScorecardQuestion' from JSON`,
+  );
 }

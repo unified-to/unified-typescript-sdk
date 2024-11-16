@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const TicketingTicketStatus = {
   Active: "ACTIVE",
@@ -152,4 +155,20 @@ export namespace TicketingTicket$ {
   export const outboundSchema = TicketingTicket$outboundSchema;
   /** @deprecated use `TicketingTicket$Outbound` instead. */
   export type Outbound = TicketingTicket$Outbound;
+}
+
+export function ticketingTicketToJSON(
+  ticketingTicket: TicketingTicket,
+): string {
+  return JSON.stringify(TicketingTicket$outboundSchema.parse(ticketingTicket));
+}
+
+export function ticketingTicketFromJSON(
+  jsonString: string,
+): SafeParseResult<TicketingTicket, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => TicketingTicket$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'TicketingTicket' from JSON`,
+  );
 }

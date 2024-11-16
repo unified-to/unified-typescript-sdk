@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type LmsEmail = {};
 
@@ -34,4 +37,18 @@ export namespace LmsEmail$ {
   export const outboundSchema = LmsEmail$outboundSchema;
   /** @deprecated use `LmsEmail$Outbound` instead. */
   export type Outbound = LmsEmail$Outbound;
+}
+
+export function lmsEmailToJSON(lmsEmail: LmsEmail): string {
+  return JSON.stringify(LmsEmail$outboundSchema.parse(lmsEmail));
+}
+
+export function lmsEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<LmsEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => LmsEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'LmsEmail' from JSON`,
+  );
 }

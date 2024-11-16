@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PropertyAccountingOrganizationAddress = {
   address1?: string | undefined;
@@ -85,4 +88,25 @@ export namespace PropertyAccountingOrganizationAddress$ {
     PropertyAccountingOrganizationAddress$outboundSchema;
   /** @deprecated use `PropertyAccountingOrganizationAddress$Outbound` instead. */
   export type Outbound = PropertyAccountingOrganizationAddress$Outbound;
+}
+
+export function propertyAccountingOrganizationAddressToJSON(
+  propertyAccountingOrganizationAddress: PropertyAccountingOrganizationAddress,
+): string {
+  return JSON.stringify(
+    PropertyAccountingOrganizationAddress$outboundSchema.parse(
+      propertyAccountingOrganizationAddress,
+    ),
+  );
+}
+
+export function propertyAccountingOrganizationAddressFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyAccountingOrganizationAddress, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      PropertyAccountingOrganizationAddress$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyAccountingOrganizationAddress' from JSON`,
+  );
 }

@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type PropertyScimUserName = {
   familyName?: string | undefined;
@@ -62,4 +65,22 @@ export namespace PropertyScimUserName$ {
   export const outboundSchema = PropertyScimUserName$outboundSchema;
   /** @deprecated use `PropertyScimUserName$Outbound` instead. */
   export type Outbound = PropertyScimUserName$Outbound;
+}
+
+export function propertyScimUserNameToJSON(
+  propertyScimUserName: PropertyScimUserName,
+): string {
+  return JSON.stringify(
+    PropertyScimUserName$outboundSchema.parse(propertyScimUserName),
+  );
+}
+
+export function propertyScimUserNameFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyScimUserName, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyScimUserName$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyScimUserName' from JSON`,
+  );
 }

@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AtsOffer = {};
 
@@ -34,4 +37,18 @@ export namespace AtsOffer$ {
   export const outboundSchema = AtsOffer$outboundSchema;
   /** @deprecated use `AtsOffer$Outbound` instead. */
   export type Outbound = AtsOffer$Outbound;
+}
+
+export function atsOfferToJSON(atsOffer: AtsOffer): string {
+  return JSON.stringify(AtsOffer$outboundSchema.parse(atsOffer));
+}
+
+export function atsOfferFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsOffer, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsOffer$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsOffer' from JSON`,
+  );
 }

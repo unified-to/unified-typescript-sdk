@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   GenaiContent,
   GenaiContent$inboundSchema,
@@ -79,4 +82,18 @@ export namespace GenaiPrompt$ {
   export const outboundSchema = GenaiPrompt$outboundSchema;
   /** @deprecated use `GenaiPrompt$Outbound` instead. */
   export type Outbound = GenaiPrompt$Outbound;
+}
+
+export function genaiPromptToJSON(genaiPrompt: GenaiPrompt): string {
+  return JSON.stringify(GenaiPrompt$outboundSchema.parse(genaiPrompt));
+}
+
+export function genaiPromptFromJSON(
+  jsonString: string,
+): SafeParseResult<GenaiPrompt, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GenaiPrompt$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GenaiPrompt' from JSON`,
+  );
 }

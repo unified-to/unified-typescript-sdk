@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * The address of the company
@@ -86,4 +89,24 @@ export namespace PropertyEnrichCompanyAddress$ {
   export const outboundSchema = PropertyEnrichCompanyAddress$outboundSchema;
   /** @deprecated use `PropertyEnrichCompanyAddress$Outbound` instead. */
   export type Outbound = PropertyEnrichCompanyAddress$Outbound;
+}
+
+export function propertyEnrichCompanyAddressToJSON(
+  propertyEnrichCompanyAddress: PropertyEnrichCompanyAddress,
+): string {
+  return JSON.stringify(
+    PropertyEnrichCompanyAddress$outboundSchema.parse(
+      propertyEnrichCompanyAddress,
+    ),
+  );
+}
+
+export function propertyEnrichCompanyAddressFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyEnrichCompanyAddress, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyEnrichCompanyAddress$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyEnrichCompanyAddress' from JSON`,
+  );
 }

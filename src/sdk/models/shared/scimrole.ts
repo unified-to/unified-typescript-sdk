@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ScimRole = {
   display?: string | undefined;
@@ -54,4 +57,18 @@ export namespace ScimRole$ {
   export const outboundSchema = ScimRole$outboundSchema;
   /** @deprecated use `ScimRole$Outbound` instead. */
   export type Outbound = ScimRole$Outbound;
+}
+
+export function scimRoleToJSON(scimRole: ScimRole): string {
+  return JSON.stringify(ScimRole$outboundSchema.parse(scimRole));
+}
+
+export function scimRoleFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimRole, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimRole$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimRole' from JSON`,
+  );
 }

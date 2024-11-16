@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisLocationRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetHrisLocationRequest$ {
   export const outboundSchema = GetHrisLocationRequest$outboundSchema;
   /** @deprecated use `GetHrisLocationRequest$Outbound` instead. */
   export type Outbound = GetHrisLocationRequest$Outbound;
+}
+
+export function getHrisLocationRequestToJSON(
+  getHrisLocationRequest: GetHrisLocationRequest,
+): string {
+  return JSON.stringify(
+    GetHrisLocationRequest$outboundSchema.parse(getHrisLocationRequest),
+  );
+}
+
+export function getHrisLocationRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetHrisLocationRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetHrisLocationRequest' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveAccountingContactRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveAccountingContactRequest$ {
   export type Outbound = RemoveAccountingContactRequest$Outbound;
 }
 
+export function removeAccountingContactRequestToJSON(
+  removeAccountingContactRequest: RemoveAccountingContactRequest,
+): string {
+  return JSON.stringify(
+    RemoveAccountingContactRequest$outboundSchema.parse(
+      removeAccountingContactRequest,
+    ),
+  );
+}
+
+export function removeAccountingContactRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingContactRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingContactRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingContactRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveAccountingContactResponse$inboundSchema: z.ZodType<
   RemoveAccountingContactResponse,
@@ -109,4 +132,24 @@ export namespace RemoveAccountingContactResponse$ {
   export const outboundSchema = RemoveAccountingContactResponse$outboundSchema;
   /** @deprecated use `RemoveAccountingContactResponse$Outbound` instead. */
   export type Outbound = RemoveAccountingContactResponse$Outbound;
+}
+
+export function removeAccountingContactResponseToJSON(
+  removeAccountingContactResponse: RemoveAccountingContactResponse,
+): string {
+  return JSON.stringify(
+    RemoveAccountingContactResponse$outboundSchema.parse(
+      removeAccountingContactResponse,
+    ),
+  );
+}
+
+export function removeAccountingContactResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveAccountingContactResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveAccountingContactResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveAccountingContactResponse' from JSON`,
+  );
 }

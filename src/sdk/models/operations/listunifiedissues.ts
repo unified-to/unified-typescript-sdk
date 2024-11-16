@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedIssuesRequest = {
   limit?: number | undefined;
@@ -71,4 +74,22 @@ export namespace ListUnifiedIssuesRequest$ {
   export const outboundSchema = ListUnifiedIssuesRequest$outboundSchema;
   /** @deprecated use `ListUnifiedIssuesRequest$Outbound` instead. */
   export type Outbound = ListUnifiedIssuesRequest$Outbound;
+}
+
+export function listUnifiedIssuesRequestToJSON(
+  listUnifiedIssuesRequest: ListUnifiedIssuesRequest,
+): string {
+  return JSON.stringify(
+    ListUnifiedIssuesRequest$outboundSchema.parse(listUnifiedIssuesRequest),
+  );
+}
+
+export function listUnifiedIssuesRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListUnifiedIssuesRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListUnifiedIssuesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListUnifiedIssuesRequest' from JSON`,
+  );
 }

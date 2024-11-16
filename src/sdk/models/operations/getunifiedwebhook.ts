@@ -3,6 +3,9 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedWebhookRequest = {
   /**
@@ -45,4 +48,22 @@ export namespace GetUnifiedWebhookRequest$ {
   export const outboundSchema = GetUnifiedWebhookRequest$outboundSchema;
   /** @deprecated use `GetUnifiedWebhookRequest$Outbound` instead. */
   export type Outbound = GetUnifiedWebhookRequest$Outbound;
+}
+
+export function getUnifiedWebhookRequestToJSON(
+  getUnifiedWebhookRequest: GetUnifiedWebhookRequest,
+): string {
+  return JSON.stringify(
+    GetUnifiedWebhookRequest$outboundSchema.parse(getUnifiedWebhookRequest),
+  );
+}
+
+export function getUnifiedWebhookRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetUnifiedWebhookRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetUnifiedWebhookRequest' from JSON`,
+  );
 }

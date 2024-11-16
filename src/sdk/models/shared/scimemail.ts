@@ -3,7 +3,10 @@
  */
 
 import * as z from "zod";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ScimEmailType = {
   Work: "work",
@@ -83,4 +86,18 @@ export namespace ScimEmail$ {
   export const outboundSchema = ScimEmail$outboundSchema;
   /** @deprecated use `ScimEmail$Outbound` instead. */
   export type Outbound = ScimEmail$Outbound;
+}
+
+export function scimEmailToJSON(scimEmail: ScimEmail): string {
+  return JSON.stringify(ScimEmail$outboundSchema.parse(scimEmail));
+}
+
+export function scimEmailFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimEmail, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimEmail$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimEmail' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const RepoPullrequestStatus = {
   Pending: "PENDING",
@@ -129,4 +132,20 @@ export namespace RepoPullrequest$ {
   export const outboundSchema = RepoPullrequest$outboundSchema;
   /** @deprecated use `RepoPullrequest$Outbound` instead. */
   export type Outbound = RepoPullrequest$Outbound;
+}
+
+export function repoPullrequestToJSON(
+  repoPullrequest: RepoPullrequest,
+): string {
+  return JSON.stringify(RepoPullrequest$outboundSchema.parse(repoPullrequest));
+}
+
+export function repoPullrequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RepoPullrequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RepoPullrequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RepoPullrequest' from JSON`,
+  );
 }

@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const HrisTimeoffStatus = {
   Approved: "APPROVED",
@@ -167,4 +170,18 @@ export namespace HrisTimeoff$ {
   export const outboundSchema = HrisTimeoff$outboundSchema;
   /** @deprecated use `HrisTimeoff$Outbound` instead. */
   export type Outbound = HrisTimeoff$Outbound;
+}
+
+export function hrisTimeoffToJSON(hrisTimeoff: HrisTimeoff): string {
+  return JSON.stringify(HrisTimeoff$outboundSchema.parse(hrisTimeoff));
+}
+
+export function hrisTimeoffFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisTimeoff, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisTimeoff$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisTimeoff' from JSON`,
+  );
 }

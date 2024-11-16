@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisGroupRequest = {
@@ -68,4 +71,22 @@ export namespace CreateHrisGroupRequest$ {
   export const outboundSchema = CreateHrisGroupRequest$outboundSchema;
   /** @deprecated use `CreateHrisGroupRequest$Outbound` instead. */
   export type Outbound = CreateHrisGroupRequest$Outbound;
+}
+
+export function createHrisGroupRequestToJSON(
+  createHrisGroupRequest: CreateHrisGroupRequest,
+): string {
+  return JSON.stringify(
+    CreateHrisGroupRequest$outboundSchema.parse(createHrisGroupRequest),
+  );
+}
+
+export function createHrisGroupRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateHrisGroupRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateHrisGroupRequest' from JSON`,
+  );
 }

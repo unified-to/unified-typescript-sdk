@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 /**
  * A deal represents an opportunity with companies and/or contacts
@@ -141,4 +144,18 @@ export namespace CrmDeal$ {
   export const outboundSchema = CrmDeal$outboundSchema;
   /** @deprecated use `CrmDeal$Outbound` instead. */
   export type Outbound = CrmDeal$Outbound;
+}
+
+export function crmDealToJSON(crmDeal: CrmDeal): string {
+  return JSON.stringify(CrmDeal$outboundSchema.parse(crmDeal));
+}
+
+export function crmDealFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmDeal, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmDeal$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmDeal' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveRepoBranchRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveRepoBranchRequest$ {
   export type Outbound = RemoveRepoBranchRequest$Outbound;
 }
 
+export function removeRepoBranchRequestToJSON(
+  removeRepoBranchRequest: RemoveRepoBranchRequest,
+): string {
+  return JSON.stringify(
+    RemoveRepoBranchRequest$outboundSchema.parse(removeRepoBranchRequest),
+  );
+}
+
+export function removeRepoBranchRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoBranchRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoBranchRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveRepoBranchResponse$inboundSchema: z.ZodType<
   RemoveRepoBranchResponse,
@@ -109,4 +130,22 @@ export namespace RemoveRepoBranchResponse$ {
   export const outboundSchema = RemoveRepoBranchResponse$outboundSchema;
   /** @deprecated use `RemoveRepoBranchResponse$Outbound` instead. */
   export type Outbound = RemoveRepoBranchResponse$Outbound;
+}
+
+export function removeRepoBranchResponseToJSON(
+  removeRepoBranchResponse: RemoveRepoBranchResponse,
+): string {
+  return JSON.stringify(
+    RemoveRepoBranchResponse$outboundSchema.parse(removeRepoBranchResponse),
+  );
+}
+
+export function removeRepoBranchResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoBranchResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoBranchResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoBranchResponse' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyScimUserMeta,
   PropertyScimUserMeta$inboundSchema,
@@ -282,4 +285,18 @@ export namespace ScimUser$ {
   export const outboundSchema = ScimUser$outboundSchema;
   /** @deprecated use `ScimUser$Outbound` instead. */
   export type Outbound = ScimUser$Outbound;
+}
+
+export function scimUserToJSON(scimUser: ScimUser): string {
+  return JSON.stringify(ScimUser$outboundSchema.parse(scimUser));
+}
+
+export function scimUserFromJSON(
+  jsonString: string,
+): SafeParseResult<ScimUser, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ScimUser$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ScimUser' from JSON`,
+  );
 }

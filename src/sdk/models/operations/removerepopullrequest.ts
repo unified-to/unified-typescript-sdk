@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveRepoPullrequestRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveRepoPullrequestRequest$ {
   export type Outbound = RemoveRepoPullrequestRequest$Outbound;
 }
 
+export function removeRepoPullrequestRequestToJSON(
+  removeRepoPullrequestRequest: RemoveRepoPullrequestRequest,
+): string {
+  return JSON.stringify(
+    RemoveRepoPullrequestRequest$outboundSchema.parse(
+      removeRepoPullrequestRequest,
+    ),
+  );
+}
+
+export function removeRepoPullrequestRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoPullrequestRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoPullrequestRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoPullrequestRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveRepoPullrequestResponse$inboundSchema: z.ZodType<
   RemoveRepoPullrequestResponse,
@@ -109,4 +132,24 @@ export namespace RemoveRepoPullrequestResponse$ {
   export const outboundSchema = RemoveRepoPullrequestResponse$outboundSchema;
   /** @deprecated use `RemoveRepoPullrequestResponse$Outbound` instead. */
   export type Outbound = RemoveRepoPullrequestResponse$Outbound;
+}
+
+export function removeRepoPullrequestResponseToJSON(
+  removeRepoPullrequestResponse: RemoveRepoPullrequestResponse,
+): string {
+  return JSON.stringify(
+    RemoveRepoPullrequestResponse$outboundSchema.parse(
+      removeRepoPullrequestResponse,
+    ),
+  );
+}
+
+export function removeRepoPullrequestResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoPullrequestResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoPullrequestResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoPullrequestResponse' from JSON`,
+  );
 }

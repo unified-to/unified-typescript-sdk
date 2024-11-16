@@ -4,7 +4,10 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const PaymentPayoutStatus = {
   Succeeded: "SUCCEEDED",
@@ -113,4 +116,18 @@ export namespace PaymentPayout$ {
   export const outboundSchema = PaymentPayout$outboundSchema;
   /** @deprecated use `PaymentPayout$Outbound` instead. */
   export type Outbound = PaymentPayout$Outbound;
+}
+
+export function paymentPayoutToJSON(paymentPayout: PaymentPayout): string {
+  return JSON.stringify(PaymentPayout$outboundSchema.parse(paymentPayout));
+}
+
+export function paymentPayoutFromJSON(
+  jsonString: string,
+): SafeParseResult<PaymentPayout, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PaymentPayout$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PaymentPayout' from JSON`,
+  );
 }

@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListPassthroughsRequest = {
   /**
@@ -78,6 +81,24 @@ export namespace ListPassthroughsRequest$ {
   export type Outbound = ListPassthroughsRequest$Outbound;
 }
 
+export function listPassthroughsRequestToJSON(
+  listPassthroughsRequest: ListPassthroughsRequest,
+): string {
+  return JSON.stringify(
+    ListPassthroughsRequest$outboundSchema.parse(listPassthroughsRequest),
+  );
+}
+
+export function listPassthroughsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListPassthroughsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListPassthroughsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListPassthroughsRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const ListPassthroughsResponseResult$inboundSchema: z.ZodType<
   ListPassthroughsResponseResult,
@@ -123,6 +144,26 @@ export namespace ListPassthroughsResponseResult$ {
   export const outboundSchema = ListPassthroughsResponseResult$outboundSchema;
   /** @deprecated use `ListPassthroughsResponseResult$Outbound` instead. */
   export type Outbound = ListPassthroughsResponseResult$Outbound;
+}
+
+export function listPassthroughsResponseResultToJSON(
+  listPassthroughsResponseResult: ListPassthroughsResponseResult,
+): string {
+  return JSON.stringify(
+    ListPassthroughsResponseResult$outboundSchema.parse(
+      listPassthroughsResponseResult,
+    ),
+  );
+}
+
+export function listPassthroughsResponseResultFromJSON(
+  jsonString: string,
+): SafeParseResult<ListPassthroughsResponseResult, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListPassthroughsResponseResult$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListPassthroughsResponseResult' from JSON`,
+  );
 }
 
 /** @internal */
@@ -190,4 +231,22 @@ export namespace ListPassthroughsResponse$ {
   export const outboundSchema = ListPassthroughsResponse$outboundSchema;
   /** @deprecated use `ListPassthroughsResponse$Outbound` instead. */
   export type Outbound = ListPassthroughsResponse$Outbound;
+}
+
+export function listPassthroughsResponseToJSON(
+  listPassthroughsResponse: ListPassthroughsResponse,
+): string {
+  return JSON.stringify(
+    ListPassthroughsResponse$outboundSchema.parse(listPassthroughsResponse),
+  );
+}
+
+export function listPassthroughsResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<ListPassthroughsResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListPassthroughsResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListPassthroughsResponse' from JSON`,
+  );
 }

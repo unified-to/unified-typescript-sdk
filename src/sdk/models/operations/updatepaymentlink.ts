@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdatePaymentLinkRequest = {
@@ -75,4 +78,22 @@ export namespace UpdatePaymentLinkRequest$ {
   export const outboundSchema = UpdatePaymentLinkRequest$outboundSchema;
   /** @deprecated use `UpdatePaymentLinkRequest$Outbound` instead. */
   export type Outbound = UpdatePaymentLinkRequest$Outbound;
+}
+
+export function updatePaymentLinkRequestToJSON(
+  updatePaymentLinkRequest: UpdatePaymentLinkRequest,
+): string {
+  return JSON.stringify(
+    UpdatePaymentLinkRequest$outboundSchema.parse(updatePaymentLinkRequest),
+  );
+}
+
+export function updatePaymentLinkRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<UpdatePaymentLinkRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => UpdatePaymentLinkRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'UpdatePaymentLinkRequest' from JSON`,
+  );
 }

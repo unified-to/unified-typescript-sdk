@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveRepoRepositoryRequest = {
   /**
@@ -67,6 +70,26 @@ export namespace RemoveRepoRepositoryRequest$ {
   export type Outbound = RemoveRepoRepositoryRequest$Outbound;
 }
 
+export function removeRepoRepositoryRequestToJSON(
+  removeRepoRepositoryRequest: RemoveRepoRepositoryRequest,
+): string {
+  return JSON.stringify(
+    RemoveRepoRepositoryRequest$outboundSchema.parse(
+      removeRepoRepositoryRequest,
+    ),
+  );
+}
+
+export function removeRepoRepositoryRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoRepositoryRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoRepositoryRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoRepositoryRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveRepoRepositoryResponse$inboundSchema: z.ZodType<
   RemoveRepoRepositoryResponse,
@@ -109,4 +132,24 @@ export namespace RemoveRepoRepositoryResponse$ {
   export const outboundSchema = RemoveRepoRepositoryResponse$outboundSchema;
   /** @deprecated use `RemoveRepoRepositoryResponse$Outbound` instead. */
   export type Outbound = RemoveRepoRepositoryResponse$Outbound;
+}
+
+export function removeRepoRepositoryResponseToJSON(
+  removeRepoRepositoryResponse: RemoveRepoRepositoryResponse,
+): string {
+  return JSON.stringify(
+    RemoveRepoRepositoryResponse$outboundSchema.parse(
+      removeRepoRepositoryResponse,
+    ),
+  );
+}
+
+export function removeRepoRepositoryResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveRepoRepositoryResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveRepoRepositoryResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveRepoRepositoryResponse' from JSON`,
+  );
 }

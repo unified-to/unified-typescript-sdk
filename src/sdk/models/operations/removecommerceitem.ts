@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveCommerceItemRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveCommerceItemRequest$ {
   export type Outbound = RemoveCommerceItemRequest$Outbound;
 }
 
+export function removeCommerceItemRequestToJSON(
+  removeCommerceItemRequest: RemoveCommerceItemRequest,
+): string {
+  return JSON.stringify(
+    RemoveCommerceItemRequest$outboundSchema.parse(removeCommerceItemRequest),
+  );
+}
+
+export function removeCommerceItemRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceItemRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceItemRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceItemRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveCommerceItemResponse$inboundSchema: z.ZodType<
   RemoveCommerceItemResponse,
@@ -109,4 +130,22 @@ export namespace RemoveCommerceItemResponse$ {
   export const outboundSchema = RemoveCommerceItemResponse$outboundSchema;
   /** @deprecated use `RemoveCommerceItemResponse$Outbound` instead. */
   export type Outbound = RemoveCommerceItemResponse$Outbound;
+}
+
+export function removeCommerceItemResponseToJSON(
+  removeCommerceItemResponse: RemoveCommerceItemResponse,
+): string {
+  return JSON.stringify(
+    RemoveCommerceItemResponse$outboundSchema.parse(removeCommerceItemResponse),
+  );
+}
+
+export function removeCommerceItemResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveCommerceItemResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveCommerceItemResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveCommerceItemResponse' from JSON`,
+  );
 }

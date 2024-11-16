@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetMartechListRequest = {
   /**
@@ -68,4 +71,22 @@ export namespace GetMartechListRequest$ {
   export const outboundSchema = GetMartechListRequest$outboundSchema;
   /** @deprecated use `GetMartechListRequest$Outbound` instead. */
   export type Outbound = GetMartechListRequest$Outbound;
+}
+
+export function getMartechListRequestToJSON(
+  getMartechListRequest: GetMartechListRequest,
+): string {
+  return JSON.stringify(
+    GetMartechListRequest$outboundSchema.parse(getMartechListRequest),
+  );
+}
+
+export function getMartechListRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<GetMartechListRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => GetMartechListRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetMartechListRequest' from JSON`,
+  );
 }

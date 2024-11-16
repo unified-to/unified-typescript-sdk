@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCrmEventsRequest = {
   companyId?: string | undefined;
@@ -122,4 +125,22 @@ export namespace ListCrmEventsRequest$ {
   export const outboundSchema = ListCrmEventsRequest$outboundSchema;
   /** @deprecated use `ListCrmEventsRequest$Outbound` instead. */
   export type Outbound = ListCrmEventsRequest$Outbound;
+}
+
+export function listCrmEventsRequestToJSON(
+  listCrmEventsRequest: ListCrmEventsRequest,
+): string {
+  return JSON.stringify(
+    ListCrmEventsRequest$outboundSchema.parse(listCrmEventsRequest),
+  );
+}
+
+export function listCrmEventsRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<ListCrmEventsRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => ListCrmEventsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListCrmEventsRequest' from JSON`,
+  );
 }

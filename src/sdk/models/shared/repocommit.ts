@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoCommit = {
   branchId?: string | undefined;
@@ -89,4 +92,18 @@ export namespace RepoCommit$ {
   export const outboundSchema = RepoCommit$outboundSchema;
   /** @deprecated use `RepoCommit$Outbound` instead. */
   export type Outbound = RepoCommit$Outbound;
+}
+
+export function repoCommitToJSON(repoCommit: RepoCommit): string {
+  return JSON.stringify(RepoCommit$outboundSchema.parse(repoCommit));
+}
+
+export function repoCommitFromJSON(
+  jsonString: string,
+): SafeParseResult<RepoCommit, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RepoCommit$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RepoCommit' from JSON`,
+  );
 }

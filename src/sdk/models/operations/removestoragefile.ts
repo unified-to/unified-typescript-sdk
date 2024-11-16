@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveStorageFileRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveStorageFileRequest$ {
   export type Outbound = RemoveStorageFileRequest$Outbound;
 }
 
+export function removeStorageFileRequestToJSON(
+  removeStorageFileRequest: RemoveStorageFileRequest,
+): string {
+  return JSON.stringify(
+    RemoveStorageFileRequest$outboundSchema.parse(removeStorageFileRequest),
+  );
+}
+
+export function removeStorageFileRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveStorageFileRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveStorageFileRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveStorageFileResponse$inboundSchema: z.ZodType<
   RemoveStorageFileResponse,
@@ -109,4 +130,22 @@ export namespace RemoveStorageFileResponse$ {
   export const outboundSchema = RemoveStorageFileResponse$outboundSchema;
   /** @deprecated use `RemoveStorageFileResponse$Outbound` instead. */
   export type Outbound = RemoveStorageFileResponse$Outbound;
+}
+
+export function removeStorageFileResponseToJSON(
+  removeStorageFileResponse: RemoveStorageFileResponse,
+): string {
+  return JSON.stringify(
+    RemoveStorageFileResponse$outboundSchema.parse(removeStorageFileResponse),
+  );
+}
+
+export function removeStorageFileResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveStorageFileResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveStorageFileResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveStorageFileResponse' from JSON`,
+  );
 }

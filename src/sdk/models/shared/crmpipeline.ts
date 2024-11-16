@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CrmStage,
   CrmStage$inboundSchema,
@@ -99,4 +102,18 @@ export namespace CrmPipeline$ {
   export const outboundSchema = CrmPipeline$outboundSchema;
   /** @deprecated use `CrmPipeline$Outbound` instead. */
   export type Outbound = CrmPipeline$Outbound;
+}
+
+export function crmPipelineToJSON(crmPipeline: CrmPipeline): string {
+  return JSON.stringify(CrmPipeline$outboundSchema.parse(crmPipeline));
+}
+
+export function crmPipelineFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmPipeline, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmPipeline$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmPipeline' from JSON`,
+  );
 }

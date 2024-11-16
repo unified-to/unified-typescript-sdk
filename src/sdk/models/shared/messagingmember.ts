@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MessagingMember = {
   email?: string | undefined;
@@ -59,4 +62,20 @@ export namespace MessagingMember$ {
   export const outboundSchema = MessagingMember$outboundSchema;
   /** @deprecated use `MessagingMember$Outbound` instead. */
   export type Outbound = MessagingMember$Outbound;
+}
+
+export function messagingMemberToJSON(
+  messagingMember: MessagingMember,
+): string {
+  return JSON.stringify(MessagingMember$outboundSchema.parse(messagingMember));
+}
+
+export function messagingMemberFromJSON(
+  jsonString: string,
+): SafeParseResult<MessagingMember, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MessagingMember$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MessagingMember' from JSON`,
+  );
 }

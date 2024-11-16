@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RemoveTaskTaskRequest = {
   /**
@@ -67,6 +70,24 @@ export namespace RemoveTaskTaskRequest$ {
   export type Outbound = RemoveTaskTaskRequest$Outbound;
 }
 
+export function removeTaskTaskRequestToJSON(
+  removeTaskTaskRequest: RemoveTaskTaskRequest,
+): string {
+  return JSON.stringify(
+    RemoveTaskTaskRequest$outboundSchema.parse(removeTaskTaskRequest),
+  );
+}
+
+export function removeTaskTaskRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTaskTaskRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTaskTaskRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTaskTaskRequest' from JSON`,
+  );
+}
+
 /** @internal */
 export const RemoveTaskTaskResponse$inboundSchema: z.ZodType<
   RemoveTaskTaskResponse,
@@ -109,4 +130,22 @@ export namespace RemoveTaskTaskResponse$ {
   export const outboundSchema = RemoveTaskTaskResponse$outboundSchema;
   /** @deprecated use `RemoveTaskTaskResponse$Outbound` instead. */
   export type Outbound = RemoveTaskTaskResponse$Outbound;
+}
+
+export function removeTaskTaskResponseToJSON(
+  removeTaskTaskResponse: RemoveTaskTaskResponse,
+): string {
+  return JSON.stringify(
+    RemoveTaskTaskResponse$outboundSchema.parse(removeTaskTaskResponse),
+  );
+}
+
+export function removeTaskTaskResponseFromJSON(
+  jsonString: string,
+): SafeParseResult<RemoveTaskTaskResponse, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => RemoveTaskTaskResponse$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'RemoveTaskTaskResponse' from JSON`,
+  );
 }

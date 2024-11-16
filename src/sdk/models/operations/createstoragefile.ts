@@ -4,6 +4,9 @@
 
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
+import { safeParse } from "../../../lib/schemas.js";
+import { Result as SafeParseResult } from "../../types/fp.js";
+import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateStorageFileRequest = {
@@ -68,4 +71,22 @@ export namespace CreateStorageFileRequest$ {
   export const outboundSchema = CreateStorageFileRequest$outboundSchema;
   /** @deprecated use `CreateStorageFileRequest$Outbound` instead. */
   export type Outbound = CreateStorageFileRequest$Outbound;
+}
+
+export function createStorageFileRequestToJSON(
+  createStorageFileRequest: CreateStorageFileRequest,
+): string {
+  return JSON.stringify(
+    CreateStorageFileRequest$outboundSchema.parse(createStorageFileRequest),
+  );
+}
+
+export function createStorageFileRequestFromJSON(
+  jsonString: string,
+): SafeParseResult<CreateStorageFileRequest, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CreateStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CreateStorageFileRequest' from JSON`,
+  );
 }
