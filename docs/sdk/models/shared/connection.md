@@ -13,7 +13,7 @@ let value: Connection = {
   ],
   integrationType: "<value>",
   permissions: [
-    "ats_document_write",
+    "ats_document_read",
   ],
 };
 ```

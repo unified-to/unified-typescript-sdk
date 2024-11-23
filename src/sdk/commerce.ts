@@ -6,26 +6,32 @@ import { commerceCreateCommerceCollection } from "../funcs/commerceCreateCommerc
 import { commerceCreateCommerceInventory } from "../funcs/commerceCreateCommerceInventory.js";
 import { commerceCreateCommerceItem } from "../funcs/commerceCreateCommerceItem.js";
 import { commerceCreateCommerceLocation } from "../funcs/commerceCreateCommerceLocation.js";
+import { commerceCreateCommerceMetadata } from "../funcs/commerceCreateCommerceMetadata.js";
 import { commerceGetCommerceCollection } from "../funcs/commerceGetCommerceCollection.js";
 import { commerceGetCommerceInventory } from "../funcs/commerceGetCommerceInventory.js";
 import { commerceGetCommerceItem } from "../funcs/commerceGetCommerceItem.js";
 import { commerceGetCommerceLocation } from "../funcs/commerceGetCommerceLocation.js";
+import { commerceGetCommerceMetadata } from "../funcs/commerceGetCommerceMetadata.js";
 import { commerceListCommerceCollections } from "../funcs/commerceListCommerceCollections.js";
 import { commerceListCommerceInventories } from "../funcs/commerceListCommerceInventories.js";
 import { commerceListCommerceItems } from "../funcs/commerceListCommerceItems.js";
 import { commerceListCommerceLocations } from "../funcs/commerceListCommerceLocations.js";
+import { commerceListCommerceMetadatas } from "../funcs/commerceListCommerceMetadatas.js";
 import { commercePatchCommerceCollection } from "../funcs/commercePatchCommerceCollection.js";
 import { commercePatchCommerceInventory } from "../funcs/commercePatchCommerceInventory.js";
 import { commercePatchCommerceItem } from "../funcs/commercePatchCommerceItem.js";
 import { commercePatchCommerceLocation } from "../funcs/commercePatchCommerceLocation.js";
+import { commercePatchCommerceMetadata } from "../funcs/commercePatchCommerceMetadata.js";
 import { commerceRemoveCommerceCollection } from "../funcs/commerceRemoveCommerceCollection.js";
 import { commerceRemoveCommerceInventory } from "../funcs/commerceRemoveCommerceInventory.js";
 import { commerceRemoveCommerceItem } from "../funcs/commerceRemoveCommerceItem.js";
 import { commerceRemoveCommerceLocation } from "../funcs/commerceRemoveCommerceLocation.js";
+import { commerceRemoveCommerceMetadata } from "../funcs/commerceRemoveCommerceMetadata.js";
 import { commerceUpdateCommerceCollection } from "../funcs/commerceUpdateCommerceCollection.js";
 import { commerceUpdateCommerceInventory } from "../funcs/commerceUpdateCommerceInventory.js";
 import { commerceUpdateCommerceItem } from "../funcs/commerceUpdateCommerceItem.js";
 import { commerceUpdateCommerceLocation } from "../funcs/commerceUpdateCommerceLocation.js";
+import { commerceUpdateCommerceMetadata } from "../funcs/commerceUpdateCommerceMetadata.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -89,6 +95,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Create a metadata
+   */
+  async createCommerceMetadata(
+    request: operations.CreateCommerceMetadataRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceMetadata> {
+    return unwrapAsync(commerceCreateCommerceMetadata(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a collection
    */
   async getCommerceCollection(
@@ -138,6 +158,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commerceGetCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a metadata
+   */
+  async getCommerceMetadata(
+    request: operations.GetCommerceMetadataRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceMetadata> {
+    return unwrapAsync(commerceGetCommerceMetadata(
       this,
       request,
       options,
@@ -201,6 +235,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * List all metadatas
+   */
+  async listCommerceMetadatas(
+    request: operations.ListCommerceMetadatasRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceMetadata>> {
+    return unwrapAsync(commerceListCommerceMetadatas(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async patchCommerceCollection(
@@ -250,6 +298,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commercePatchCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a metadata
+   */
+  async patchCommerceMetadata(
+    request: operations.PatchCommerceMetadataRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceMetadata> {
+    return unwrapAsync(commercePatchCommerceMetadata(
       this,
       request,
       options,
@@ -313,6 +375,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Remove a metadata
+   */
+  async removeCommerceMetadata(
+    request: operations.RemoveCommerceMetadataRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveCommerceMetadataResponse | undefined> {
+    return unwrapAsync(commerceRemoveCommerceMetadata(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async updateCommerceCollection(
@@ -362,6 +438,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commerceUpdateCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a metadata
+   */
+  async updateCommerceMetadata(
+    request: operations.UpdateCommerceMetadataRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceMetadata> {
+    return unwrapAsync(commerceUpdateCommerceMetadata(
       this,
       request,
       options,

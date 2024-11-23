@@ -3,65 +3,28 @@
  */
 
 import * as z from "zod";
-import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CommerceMetadata = {
-  extraData?: { [k: string]: any } | undefined;
-  id?: string | undefined;
-  key: string;
-  namespace?: string | undefined;
-  type?: string | undefined;
-  value?: { [k: string]: any } | undefined;
-};
+export type CommerceMetadata = {};
 
 /** @internal */
 export const CommerceMetadata$inboundSchema: z.ZodType<
   CommerceMetadata,
   z.ZodTypeDef,
   unknown
-> = z.object({
-  extra_data: z.record(z.any()).optional(),
-  id: z.string().optional(),
-  key: z.string(),
-  namespace: z.string().optional(),
-  type: z.string().optional(),
-  value: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "extra_data": "extraData",
-  });
-});
+> = z.object({});
 
 /** @internal */
-export type CommerceMetadata$Outbound = {
-  extra_data?: { [k: string]: any } | undefined;
-  id?: string | undefined;
-  key: string;
-  namespace?: string | undefined;
-  type?: string | undefined;
-  value?: { [k: string]: any } | undefined;
-};
+export type CommerceMetadata$Outbound = {};
 
 /** @internal */
 export const CommerceMetadata$outboundSchema: z.ZodType<
   CommerceMetadata$Outbound,
   z.ZodTypeDef,
   CommerceMetadata
-> = z.object({
-  extraData: z.record(z.any()).optional(),
-  id: z.string().optional(),
-  key: z.string(),
-  namespace: z.string().optional(),
-  type: z.string().optional(),
-  value: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    extraData: "extra_data",
-  });
-});
+> = z.object({});
 
 /**
  * @internal

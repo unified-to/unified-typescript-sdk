@@ -274,6 +274,20 @@ export const ListUserId = {
 } as const;
 export type ListUserId = ClosedEnum<typeof ListUserId>;
 
+export const NativeWebhookParentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookParentId = ClosedEnum<typeof NativeWebhookParentId>;
+
+export const NativeWebhookProjectId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type NativeWebhookProjectId = ClosedEnum<typeof NativeWebhookProjectId>;
+
 export const SearchDomain = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -308,6 +322,84 @@ export const SearchTwitter = {
   NotSupported: "not-supported",
 } as const;
 export type SearchTwitter = ClosedEnum<typeof SearchTwitter>;
+
+export const VirtualWebhookChannelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookChannelId = ClosedEnum<
+  typeof VirtualWebhookChannelId
+>;
+
+export const VirtualWebhookCompanyId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCompanyId = ClosedEnum<
+  typeof VirtualWebhookCompanyId
+>;
+
+export const VirtualWebhookContactId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookContactId = ClosedEnum<
+  typeof VirtualWebhookContactId
+>;
+
+export const VirtualWebhookDealId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookDealId = ClosedEnum<typeof VirtualWebhookDealId>;
+
+export const VirtualWebhookLimit = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookLimit = ClosedEnum<typeof VirtualWebhookLimit>;
+
+export const VirtualWebhookParentId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookParentId = ClosedEnum<typeof VirtualWebhookParentId>;
+
+export const VirtualWebhookTicketId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookTicketId = ClosedEnum<typeof VirtualWebhookTicketId>;
+
+export const VirtualWebhookType = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookType = ClosedEnum<typeof VirtualWebhookType>;
+
+export const VirtualWebhookUpdatedGte = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookUpdatedGte = ClosedEnum<
+  typeof VirtualWebhookUpdatedGte
+>;
+
+export const VirtualWebhookUserId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookUserId = ClosedEnum<typeof VirtualWebhookUserId>;
 
 export type IntegrationSupport = {
   fromWebhook?: FromWebhook | undefined;
@@ -349,6 +441,8 @@ export type IntegrationSupport = {
   listUpdatedGte?: ListUpdatedGte | undefined;
   listUserId?: ListUserId | undefined;
   methods?: { [k: string]: boolean } | undefined;
+  nativeWebhookParentId?: NativeWebhookParentId | undefined;
+  nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
   outboundFields?: { [k: string]: any } | undefined;
   /**
    * objects that we map from in the integration
@@ -359,6 +453,16 @@ export type IntegrationSupport = {
   searchLinkedinurl?: SearchLinkedinurl | undefined;
   searchName?: SearchName | undefined;
   searchTwitter?: SearchTwitter | undefined;
+  virtualWebhookChannelId?: VirtualWebhookChannelId | undefined;
+  virtualWebhookCompanyId?: VirtualWebhookCompanyId | undefined;
+  virtualWebhookContactId?: VirtualWebhookContactId | undefined;
+  virtualWebhookDealId?: VirtualWebhookDealId | undefined;
+  virtualWebhookLimit?: VirtualWebhookLimit | undefined;
+  virtualWebhookParentId?: VirtualWebhookParentId | undefined;
+  virtualWebhookTicketId?: VirtualWebhookTicketId | undefined;
+  virtualWebhookType?: VirtualWebhookType | undefined;
+  virtualWebhookUpdatedGte?: VirtualWebhookUpdatedGte | undefined;
+  virtualWebhookUserId?: VirtualWebhookUserId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
 
@@ -1106,6 +1210,48 @@ export namespace ListUserId$ {
 }
 
 /** @internal */
+export const NativeWebhookParentId$inboundSchema: z.ZodNativeEnum<
+  typeof NativeWebhookParentId
+> = z.nativeEnum(NativeWebhookParentId);
+
+/** @internal */
+export const NativeWebhookParentId$outboundSchema: z.ZodNativeEnum<
+  typeof NativeWebhookParentId
+> = NativeWebhookParentId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace NativeWebhookParentId$ {
+  /** @deprecated use `NativeWebhookParentId$inboundSchema` instead. */
+  export const inboundSchema = NativeWebhookParentId$inboundSchema;
+  /** @deprecated use `NativeWebhookParentId$outboundSchema` instead. */
+  export const outboundSchema = NativeWebhookParentId$outboundSchema;
+}
+
+/** @internal */
+export const NativeWebhookProjectId$inboundSchema: z.ZodNativeEnum<
+  typeof NativeWebhookProjectId
+> = z.nativeEnum(NativeWebhookProjectId);
+
+/** @internal */
+export const NativeWebhookProjectId$outboundSchema: z.ZodNativeEnum<
+  typeof NativeWebhookProjectId
+> = NativeWebhookProjectId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace NativeWebhookProjectId$ {
+  /** @deprecated use `NativeWebhookProjectId$inboundSchema` instead. */
+  export const inboundSchema = NativeWebhookProjectId$inboundSchema;
+  /** @deprecated use `NativeWebhookProjectId$outboundSchema` instead. */
+  export const outboundSchema = NativeWebhookProjectId$outboundSchema;
+}
+
+/** @internal */
 export const SearchDomain$inboundSchema: z.ZodNativeEnum<typeof SearchDomain> =
   z.nativeEnum(SearchDomain);
 
@@ -1205,6 +1351,216 @@ export namespace SearchTwitter$ {
 }
 
 /** @internal */
+export const VirtualWebhookChannelId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookChannelId
+> = z.nativeEnum(VirtualWebhookChannelId);
+
+/** @internal */
+export const VirtualWebhookChannelId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookChannelId
+> = VirtualWebhookChannelId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookChannelId$ {
+  /** @deprecated use `VirtualWebhookChannelId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookChannelId$inboundSchema;
+  /** @deprecated use `VirtualWebhookChannelId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookChannelId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookCompanyId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookCompanyId
+> = z.nativeEnum(VirtualWebhookCompanyId);
+
+/** @internal */
+export const VirtualWebhookCompanyId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookCompanyId
+> = VirtualWebhookCompanyId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookCompanyId$ {
+  /** @deprecated use `VirtualWebhookCompanyId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookCompanyId$inboundSchema;
+  /** @deprecated use `VirtualWebhookCompanyId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookCompanyId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookContactId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookContactId
+> = z.nativeEnum(VirtualWebhookContactId);
+
+/** @internal */
+export const VirtualWebhookContactId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookContactId
+> = VirtualWebhookContactId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookContactId$ {
+  /** @deprecated use `VirtualWebhookContactId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookContactId$inboundSchema;
+  /** @deprecated use `VirtualWebhookContactId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookContactId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookDealId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookDealId
+> = z.nativeEnum(VirtualWebhookDealId);
+
+/** @internal */
+export const VirtualWebhookDealId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookDealId
+> = VirtualWebhookDealId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookDealId$ {
+  /** @deprecated use `VirtualWebhookDealId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookDealId$inboundSchema;
+  /** @deprecated use `VirtualWebhookDealId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookDealId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookLimit$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookLimit
+> = z.nativeEnum(VirtualWebhookLimit);
+
+/** @internal */
+export const VirtualWebhookLimit$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookLimit
+> = VirtualWebhookLimit$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookLimit$ {
+  /** @deprecated use `VirtualWebhookLimit$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookLimit$inboundSchema;
+  /** @deprecated use `VirtualWebhookLimit$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookLimit$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookParentId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookParentId
+> = z.nativeEnum(VirtualWebhookParentId);
+
+/** @internal */
+export const VirtualWebhookParentId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookParentId
+> = VirtualWebhookParentId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookParentId$ {
+  /** @deprecated use `VirtualWebhookParentId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookParentId$inboundSchema;
+  /** @deprecated use `VirtualWebhookParentId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookParentId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookTicketId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookTicketId
+> = z.nativeEnum(VirtualWebhookTicketId);
+
+/** @internal */
+export const VirtualWebhookTicketId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookTicketId
+> = VirtualWebhookTicketId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookTicketId$ {
+  /** @deprecated use `VirtualWebhookTicketId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookTicketId$inboundSchema;
+  /** @deprecated use `VirtualWebhookTicketId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookTicketId$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookType$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookType
+> = z.nativeEnum(VirtualWebhookType);
+
+/** @internal */
+export const VirtualWebhookType$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookType
+> = VirtualWebhookType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookType$ {
+  /** @deprecated use `VirtualWebhookType$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookType$inboundSchema;
+  /** @deprecated use `VirtualWebhookType$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookType$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookUpdatedGte$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookUpdatedGte
+> = z.nativeEnum(VirtualWebhookUpdatedGte);
+
+/** @internal */
+export const VirtualWebhookUpdatedGte$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookUpdatedGte
+> = VirtualWebhookUpdatedGte$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookUpdatedGte$ {
+  /** @deprecated use `VirtualWebhookUpdatedGte$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookUpdatedGte$inboundSchema;
+  /** @deprecated use `VirtualWebhookUpdatedGte$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookUpdatedGte$outboundSchema;
+}
+
+/** @internal */
+export const VirtualWebhookUserId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookUserId
+> = z.nativeEnum(VirtualWebhookUserId);
+
+/** @internal */
+export const VirtualWebhookUserId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookUserId
+> = VirtualWebhookUserId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookUserId$ {
+  /** @deprecated use `VirtualWebhookUserId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookUserId$inboundSchema;
+  /** @deprecated use `VirtualWebhookUserId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookUserId$outboundSchema;
+}
+
+/** @internal */
 export const IntegrationSupport$inboundSchema: z.ZodType<
   IntegrationSupport,
   z.ZodTypeDef,
@@ -1249,6 +1605,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
   list_user_id: ListUserId$inboundSchema.optional(),
   methods: z.record(z.boolean()).optional(),
+  native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
+  native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
   outbound_fields: z.record(z.any()).optional(),
   raw_objects: z.array(z.string()).optional(),
   search_domain: SearchDomain$inboundSchema.optional(),
@@ -1256,6 +1614,17 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   search_linkedinurl: SearchLinkedinurl$inboundSchema.optional(),
   search_name: SearchName$inboundSchema.optional(),
   search_twitter: SearchTwitter$inboundSchema.optional(),
+  virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema.optional(),
+  virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema.optional(),
+  virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema.optional(),
+  virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
+  virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
+  virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
+  virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
+  virtual_webhook_type: VirtualWebhookType$inboundSchema.optional(),
+  virtual_webhook_updated_gte: VirtualWebhookUpdatedGte$inboundSchema
+    .optional(),
+  virtual_webhook_user_id: VirtualWebhookUserId$inboundSchema.optional(),
   webhook_events: PropertyIntegrationSupportWebhookEvents$inboundSchema
     .optional(),
 }).transform((v) => {
@@ -1298,6 +1667,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_type": "listType",
     "list_updated_gte": "listUpdatedGte",
     "list_user_id": "listUserId",
+    "native_webhook_parent_id": "nativeWebhookParentId",
+    "native_webhook_project_id": "nativeWebhookProjectId",
     "outbound_fields": "outboundFields",
     "raw_objects": "rawObjects",
     "search_domain": "searchDomain",
@@ -1305,6 +1676,16 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "search_linkedinurl": "searchLinkedinurl",
     "search_name": "searchName",
     "search_twitter": "searchTwitter",
+    "virtual_webhook_channel_id": "virtualWebhookChannelId",
+    "virtual_webhook_company_id": "virtualWebhookCompanyId",
+    "virtual_webhook_contact_id": "virtualWebhookContactId",
+    "virtual_webhook_deal_id": "virtualWebhookDealId",
+    "virtual_webhook_limit": "virtualWebhookLimit",
+    "virtual_webhook_parent_id": "virtualWebhookParentId",
+    "virtual_webhook_ticket_id": "virtualWebhookTicketId",
+    "virtual_webhook_type": "virtualWebhookType",
+    "virtual_webhook_updated_gte": "virtualWebhookUpdatedGte",
+    "virtual_webhook_user_id": "virtualWebhookUserId",
     "webhook_events": "webhookEvents",
   });
 });
@@ -1350,6 +1731,8 @@ export type IntegrationSupport$Outbound = {
   list_updated_gte?: string | undefined;
   list_user_id?: string | undefined;
   methods?: { [k: string]: boolean } | undefined;
+  native_webhook_parent_id?: string | undefined;
+  native_webhook_project_id?: string | undefined;
   outbound_fields?: { [k: string]: any } | undefined;
   raw_objects?: Array<string> | undefined;
   search_domain?: string | undefined;
@@ -1357,6 +1740,16 @@ export type IntegrationSupport$Outbound = {
   search_linkedinurl?: string | undefined;
   search_name?: string | undefined;
   search_twitter?: string | undefined;
+  virtual_webhook_channel_id?: string | undefined;
+  virtual_webhook_company_id?: string | undefined;
+  virtual_webhook_contact_id?: string | undefined;
+  virtual_webhook_deal_id?: string | undefined;
+  virtual_webhook_limit?: string | undefined;
+  virtual_webhook_parent_id?: string | undefined;
+  virtual_webhook_ticket_id?: string | undefined;
+  virtual_webhook_type?: string | undefined;
+  virtual_webhook_updated_gte?: string | undefined;
+  virtual_webhook_user_id?: string | undefined;
   webhook_events?: PropertyIntegrationSupportWebhookEvents$Outbound | undefined;
 };
 
@@ -1405,6 +1798,8 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listUpdatedGte: ListUpdatedGte$outboundSchema.optional(),
   listUserId: ListUserId$outboundSchema.optional(),
   methods: z.record(z.boolean()).optional(),
+  nativeWebhookParentId: NativeWebhookParentId$outboundSchema.optional(),
+  nativeWebhookProjectId: NativeWebhookProjectId$outboundSchema.optional(),
   outboundFields: z.record(z.any()).optional(),
   rawObjects: z.array(z.string()).optional(),
   searchDomain: SearchDomain$outboundSchema.optional(),
@@ -1412,6 +1807,16 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   searchLinkedinurl: SearchLinkedinurl$outboundSchema.optional(),
   searchName: SearchName$outboundSchema.optional(),
   searchTwitter: SearchTwitter$outboundSchema.optional(),
+  virtualWebhookChannelId: VirtualWebhookChannelId$outboundSchema.optional(),
+  virtualWebhookCompanyId: VirtualWebhookCompanyId$outboundSchema.optional(),
+  virtualWebhookContactId: VirtualWebhookContactId$outboundSchema.optional(),
+  virtualWebhookDealId: VirtualWebhookDealId$outboundSchema.optional(),
+  virtualWebhookLimit: VirtualWebhookLimit$outboundSchema.optional(),
+  virtualWebhookParentId: VirtualWebhookParentId$outboundSchema.optional(),
+  virtualWebhookTicketId: VirtualWebhookTicketId$outboundSchema.optional(),
+  virtualWebhookType: VirtualWebhookType$outboundSchema.optional(),
+  virtualWebhookUpdatedGte: VirtualWebhookUpdatedGte$outboundSchema.optional(),
+  virtualWebhookUserId: VirtualWebhookUserId$outboundSchema.optional(),
   webhookEvents: PropertyIntegrationSupportWebhookEvents$outboundSchema
     .optional(),
 }).transform((v) => {
@@ -1454,6 +1859,8 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listType: "list_type",
     listUpdatedGte: "list_updated_gte",
     listUserId: "list_user_id",
+    nativeWebhookParentId: "native_webhook_parent_id",
+    nativeWebhookProjectId: "native_webhook_project_id",
     outboundFields: "outbound_fields",
     rawObjects: "raw_objects",
     searchDomain: "search_domain",
@@ -1461,6 +1868,16 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     searchLinkedinurl: "search_linkedinurl",
     searchName: "search_name",
     searchTwitter: "search_twitter",
+    virtualWebhookChannelId: "virtual_webhook_channel_id",
+    virtualWebhookCompanyId: "virtual_webhook_company_id",
+    virtualWebhookContactId: "virtual_webhook_contact_id",
+    virtualWebhookDealId: "virtual_webhook_deal_id",
+    virtualWebhookLimit: "virtual_webhook_limit",
+    virtualWebhookParentId: "virtual_webhook_parent_id",
+    virtualWebhookTicketId: "virtual_webhook_ticket_id",
+    virtualWebhookType: "virtual_webhook_type",
+    virtualWebhookUpdatedGte: "virtual_webhook_updated_gte",
+    virtualWebhookUserId: "virtual_webhook_user_id",
     webhookEvents: "webhook_events",
   });
 });

@@ -54,6 +54,7 @@ import { Martech } from "./martech.js";
 import { Member } from "./member.js";
 import { Message } from "./message.js";
 import { Messaging } from "./messaging.js";
+import { Metadata } from "./metadata.js";
 import { Model } from "./model.js";
 import { Note } from "./note.js";
 import { Order } from "./order.js";
@@ -206,6 +207,11 @@ export class UnifiedTo extends ClientSDK {
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _metadata?: Metadata;
+  get metadata(): Metadata {
+    return (this._metadata ??= new Metadata(this._options));
   }
 
   private _crm?: Crm;

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: dbb26a77c5273b6a4bfbeec2d8a7c22d
+  docChecksum: a69d016e113a8d9eb83404e95207c9eb
   docVersion: "1.0"
-  speakeasyVersion: 1.440.1
-  generationVersion: 2.460.1
-  releaseVersion: 2.9.2
-  configChecksum: 1c4890692589867dca19a65e86349ae7
+  speakeasyVersion: 1.444.1
+  generationVersion: 2.461.4
+  releaseVersion: 2.9.3
+  configChecksum: 8a687e93dd6e00c61a4b1632a4955092
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.5
+    core: 3.18.6
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -56,6 +56,7 @@ generatedFiles:
   - docs/sdk/models/operations/createcommerceinventoryrequest.md
   - docs/sdk/models/operations/createcommerceitemrequest.md
   - docs/sdk/models/operations/createcommercelocationrequest.md
+  - docs/sdk/models/operations/createcommercemetadatarequest.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcontactrequest.md
   - docs/sdk/models/operations/createcrmdealrequest.md
@@ -119,6 +120,7 @@ generatedFiles:
   - docs/sdk/models/operations/getcommerceinventoryrequest.md
   - docs/sdk/models/operations/getcommerceitemrequest.md
   - docs/sdk/models/operations/getcommercelocationrequest.md
+  - docs/sdk/models/operations/getcommercemetadatarequest.md
   - docs/sdk/models/operations/getcrmcompanyrequest.md
   - docs/sdk/models/operations/getcrmcontactrequest.md
   - docs/sdk/models/operations/getcrmdealrequest.md
@@ -186,6 +188,7 @@ generatedFiles:
   - docs/sdk/models/operations/listcommerceinventoriesrequest.md
   - docs/sdk/models/operations/listcommerceitemsrequest.md
   - docs/sdk/models/operations/listcommercelocationsrequest.md
+  - docs/sdk/models/operations/listcommercemetadatasrequest.md
   - docs/sdk/models/operations/listcrmcompaniesrequest.md
   - docs/sdk/models/operations/listcrmcontactsrequest.md
   - docs/sdk/models/operations/listcrmdealsrequest.md
@@ -258,6 +261,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchcommerceinventoryrequest.md
   - docs/sdk/models/operations/patchcommerceitemrequest.md
   - docs/sdk/models/operations/patchcommercelocationrequest.md
+  - docs/sdk/models/operations/patchcommercemetadatarequest.md
   - docs/sdk/models/operations/patchcrmcompanyrequest.md
   - docs/sdk/models/operations/patchcrmcontactrequest.md
   - docs/sdk/models/operations/patchcrmdealrequest.md
@@ -340,6 +344,8 @@ generatedFiles:
   - docs/sdk/models/operations/removecommerceitemresponse.md
   - docs/sdk/models/operations/removecommercelocationrequest.md
   - docs/sdk/models/operations/removecommercelocationresponse.md
+  - docs/sdk/models/operations/removecommercemetadatarequest.md
+  - docs/sdk/models/operations/removecommercemetadataresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
   - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmcontactrequest.md
@@ -436,6 +442,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceinventoryrequest.md
   - docs/sdk/models/operations/updatecommerceitemrequest.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
+  - docs/sdk/models/operations/updatecommercemetadatarequest.md
   - docs/sdk/models/operations/updatecrmcompanyrequest.md
   - docs/sdk/models/operations/updatecrmcontactrequest.md
   - docs/sdk/models/operations/updatecrmdealrequest.md
@@ -538,6 +545,7 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitem.md
   - docs/sdk/models/shared/commerceitemmedia.md
   - docs/sdk/models/shared/commerceitemmediatype.md
+  - docs/sdk/models/shared/commerceitemmetadata.md
   - docs/sdk/models/shared/commerceitemoption.md
   - docs/sdk/models/shared/commerceitemprice.md
   - docs/sdk/models/shared/commerceitemvariant.md
@@ -654,6 +662,8 @@ generatedFiles:
   - docs/sdk/models/shared/messagingchannel.md
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
+  - docs/sdk/models/shared/nativewebhookparentid.md
+  - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md
   - docs/sdk/models/shared/operation.md
   - docs/sdk/models/shared/origin.md
@@ -779,6 +789,16 @@ generatedFiles:
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
+  - docs/sdk/models/shared/virtualwebhookchannelid.md
+  - docs/sdk/models/shared/virtualwebhookcompanyid.md
+  - docs/sdk/models/shared/virtualwebhookcontactid.md
+  - docs/sdk/models/shared/virtualwebhookdealid.md
+  - docs/sdk/models/shared/virtualwebhooklimit.md
+  - docs/sdk/models/shared/virtualwebhookparentid.md
+  - docs/sdk/models/shared/virtualwebhookticketid.md
+  - docs/sdk/models/shared/virtualwebhooktype.md
+  - docs/sdk/models/shared/virtualwebhookupdatedgte.md
+  - docs/sdk/models/shared/virtualwebhookuserid.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weightunit.md
@@ -928,26 +948,32 @@ generatedFiles:
   - src/funcs/commerceCreateCommerceInventory.ts
   - src/funcs/commerceCreateCommerceItem.ts
   - src/funcs/commerceCreateCommerceLocation.ts
+  - src/funcs/commerceCreateCommerceMetadata.ts
   - src/funcs/commerceGetCommerceCollection.ts
   - src/funcs/commerceGetCommerceInventory.ts
   - src/funcs/commerceGetCommerceItem.ts
   - src/funcs/commerceGetCommerceLocation.ts
+  - src/funcs/commerceGetCommerceMetadata.ts
   - src/funcs/commerceListCommerceCollections.ts
   - src/funcs/commerceListCommerceInventories.ts
   - src/funcs/commerceListCommerceItems.ts
   - src/funcs/commerceListCommerceLocations.ts
+  - src/funcs/commerceListCommerceMetadatas.ts
   - src/funcs/commercePatchCommerceCollection.ts
   - src/funcs/commercePatchCommerceInventory.ts
   - src/funcs/commercePatchCommerceItem.ts
   - src/funcs/commercePatchCommerceLocation.ts
+  - src/funcs/commercePatchCommerceMetadata.ts
   - src/funcs/commerceRemoveCommerceCollection.ts
   - src/funcs/commerceRemoveCommerceInventory.ts
   - src/funcs/commerceRemoveCommerceItem.ts
   - src/funcs/commerceRemoveCommerceLocation.ts
+  - src/funcs/commerceRemoveCommerceMetadata.ts
   - src/funcs/commerceUpdateCommerceCollection.ts
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
+  - src/funcs/commerceUpdateCommerceMetadata.ts
   - src/funcs/commitCreateRepoCommit.ts
   - src/funcs/commitGetRepoCommit.ts
   - src/funcs/commitListRepoCommits.ts
@@ -1260,6 +1286,12 @@ generatedFiles:
   - src/funcs/messagingPatchMessagingMessage.ts
   - src/funcs/messagingRemoveMessagingMessage.ts
   - src/funcs/messagingUpdateMessagingMessage.ts
+  - src/funcs/metadataCreateCommerceMetadata.ts
+  - src/funcs/metadataGetCommerceMetadata.ts
+  - src/funcs/metadataListCommerceMetadatas.ts
+  - src/funcs/metadataPatchCommerceMetadata.ts
+  - src/funcs/metadataRemoveCommerceMetadata.ts
+  - src/funcs/metadataUpdateCommerceMetadata.ts
   - src/funcs/modelListGenaiModels.ts
   - src/funcs/noteCreateTicketingNote.ts
   - src/funcs/noteGetTicketingNote.ts
@@ -1571,6 +1603,7 @@ generatedFiles:
   - src/sdk/member.ts
   - src/sdk/message.ts
   - src/sdk/messaging.ts
+  - src/sdk/metadata.ts
   - src/sdk/model.ts
   - src/sdk/models/errors/httpclienterrors.ts
   - src/sdk/models/errors/index.ts
@@ -1594,6 +1627,7 @@ generatedFiles:
   - src/sdk/models/operations/createcommerceinventory.ts
   - src/sdk/models/operations/createcommerceitem.ts
   - src/sdk/models/operations/createcommercelocation.ts
+  - src/sdk/models/operations/createcommercemetadata.ts
   - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createcrmdeal.ts
@@ -1653,6 +1687,7 @@ generatedFiles:
   - src/sdk/models/operations/getcommerceinventory.ts
   - src/sdk/models/operations/getcommerceitem.ts
   - src/sdk/models/operations/getcommercelocation.ts
+  - src/sdk/models/operations/getcommercemetadata.ts
   - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmcontact.ts
   - src/sdk/models/operations/getcrmdeal.ts
@@ -1720,6 +1755,7 @@ generatedFiles:
   - src/sdk/models/operations/listcommerceinventories.ts
   - src/sdk/models/operations/listcommerceitems.ts
   - src/sdk/models/operations/listcommercelocations.ts
+  - src/sdk/models/operations/listcommercemetadatas.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmcontacts.ts
   - src/sdk/models/operations/listcrmdeals.ts
@@ -1789,6 +1825,7 @@ generatedFiles:
   - src/sdk/models/operations/patchcommerceinventory.ts
   - src/sdk/models/operations/patchcommerceitem.ts
   - src/sdk/models/operations/patchcommercelocation.ts
+  - src/sdk/models/operations/patchcommercemetadata.ts
   - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmcontact.ts
   - src/sdk/models/operations/patchcrmdeal.ts
@@ -1847,6 +1884,7 @@ generatedFiles:
   - src/sdk/models/operations/removecommerceinventory.ts
   - src/sdk/models/operations/removecommerceitem.ts
   - src/sdk/models/operations/removecommercelocation.ts
+  - src/sdk/models/operations/removecommercemetadata.ts
   - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmcontact.ts
   - src/sdk/models/operations/removecrmdeal.ts
@@ -1903,6 +1941,7 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
+  - src/sdk/models/operations/updatecommercemetadata.ts
   - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
@@ -1980,6 +2019,7 @@ generatedFiles:
   - src/sdk/models/shared/commerceinventory.ts
   - src/sdk/models/shared/commerceitem.ts
   - src/sdk/models/shared/commerceitemmedia.ts
+  - src/sdk/models/shared/commerceitemmetadata.ts
   - src/sdk/models/shared/commerceitemoption.ts
   - src/sdk/models/shared/commerceitemprice.ts
   - src/sdk/models/shared/commerceitemvariant.ts
@@ -4993,3 +5033,45 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>"}
+  createCommerceMetadata:
+    speakeasy-default-create-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getCommerceMetadata:
+    speakeasy-default-get-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listCommerceMetadatas:
+    speakeasy-default-list-commerce-metadatas:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: []
+  patchCommerceMetadata:
+    speakeasy-default-patch-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  removeCommerceMetadata:
+    speakeasy-default-remove-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceMetadata:
+    speakeasy-default-update-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}

@@ -39,6 +39,7 @@ export * from "./commercecollection.js";
 export * from "./commerceinventory.js";
 export * from "./commerceitem.js";
 export * from "./commerceitemmedia.js";
+export * from "./commerceitemmetadata.js";
 export * from "./commerceitemoption.js";
 export * from "./commerceitemprice.js";
 export * from "./commerceitemvariant.js";
