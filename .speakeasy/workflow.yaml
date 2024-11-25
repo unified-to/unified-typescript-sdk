@@ -1,0 +1,13 @@
+workflowVersion: 1.0.0
+sources:
+    my-source:
+        inputs:
+            - location: https://api.unified.to/openapi.json
+              authSecret: $openapi_doc_auth_token
+targets:
+    typescript-target:
+        target: typescript
+        source: my-source
+        publish:
+            npm:
+                token: $NPM_TOKEN
