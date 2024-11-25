@@ -3,10 +3,10 @@ id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
   docChecksum: a69d016e113a8d9eb83404e95207c9eb
   docVersion: "1.0"
-  speakeasyVersion: 1.444.1
+  speakeasyVersion: 1.445.2
   generationVersion: 2.461.4
-  releaseVersion: 2.9.3
-  configChecksum: 8a687e93dd6e00c61a4b1632a4955092
+  releaseVersion: 2.9.4
+  configChecksum: 7c88bdd8cf79220c83657efafae94ad4
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk

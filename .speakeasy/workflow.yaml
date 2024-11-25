@@ -1,9 +1,12 @@
 workflowVersion: 1.0.0
+speakeasyVersion: latest
 sources:
     my-source:
         inputs:
             - location: https://api.unified.to/openapi.json
               authSecret: $openapi_doc_auth_token
+        registry:
+            location: registry.speakeasyapi.dev/unified/unified/my-source
 targets:
     typescript-target:
         target: typescript

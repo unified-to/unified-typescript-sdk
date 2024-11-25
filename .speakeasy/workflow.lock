@@ -1,0 +1,33 @@
+speakeasyVersion: 1.445.2
+sources:
+    my-source:
+        sourceNamespace: my-source
+        sourceRevisionDigest: sha256:567d9f9235830f889617e03766405d03a9f91825271811e4ff0f6fe9d1e00c1f
+        sourceBlobDigest: sha256:67c147e8682542de89705a35a12d9c69f682f4604d302953b820e9ff08abeffd
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1732571813
+            - "1.0"
+targets:
+    typescript-target:
+        source: my-source
+        sourceNamespace: my-source
+        sourceRevisionDigest: sha256:567d9f9235830f889617e03766405d03a9f91825271811e4ff0f6fe9d1e00c1f
+        sourceBlobDigest: sha256:67c147e8682542de89705a35a12d9c69f682f4604d302953b820e9ff08abeffd
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        my-source:
+            inputs:
+                - location: https://api.unified.to/openapi.json
+                  authSecret: $openapi_doc_auth_token
+            registry:
+                location: registry.speakeasyapi.dev/unified/unified/my-source
+    targets:
+        typescript-target:
+            target: typescript
+            source: my-source
+            publish:
+                npm:
+                    token: $NPM_TOKEN
