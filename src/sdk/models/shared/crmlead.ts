@@ -36,6 +36,7 @@ export type CrmLead = {
   emails?: Array<CrmEmail> | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  linkUrls?: Array<string> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
@@ -59,6 +60,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
     emails: z.array(CrmEmail$inboundSchema).optional(),
     id: z.string().optional(),
     is_active: z.boolean().optional(),
+    link_urls: z.array(z.string()).optional(),
     name: z.string().optional(),
     raw: z.record(z.any()).optional(),
     source: z.string().optional(),
@@ -76,6 +78,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
       "created_at": "createdAt",
       "creator_user_id": "creatorUserId",
       "is_active": "isActive",
+      "link_urls": "linkUrls",
       "updated_at": "updatedAt",
       "user_id": "userId",
     });
@@ -92,6 +95,7 @@ export type CrmLead$Outbound = {
   emails?: Array<CrmEmail$Outbound> | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  link_urls?: Array<string> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
@@ -116,6 +120,7 @@ export const CrmLead$outboundSchema: z.ZodType<
   emails: z.array(CrmEmail$outboundSchema).optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  linkUrls: z.array(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   source: z.string().optional(),
@@ -131,6 +136,7 @@ export const CrmLead$outboundSchema: z.ZodType<
     createdAt: "created_at",
     creatorUserId: "creator_user_id",
     isActive: "is_active",
+    linkUrls: "link_urls",
     updatedAt: "updated_at",
     userId: "user_id",
   });

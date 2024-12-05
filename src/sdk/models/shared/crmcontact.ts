@@ -46,6 +46,7 @@ export type CrmContact = {
    */
   emails?: Array<CrmEmail> | undefined;
   id?: string | undefined;
+  linkUrls?: Array<string> | undefined;
   name?: string | undefined;
   /**
    * The raw data returned by the integration for this contact
@@ -74,6 +75,7 @@ export const CrmContact$inboundSchema: z.ZodType<
   deal_ids: z.array(z.string()).optional(),
   emails: z.array(CrmEmail$inboundSchema).optional(),
   id: z.string().optional(),
+  link_urls: z.array(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(CrmTelephone$inboundSchema).optional(),
@@ -86,6 +88,7 @@ export const CrmContact$inboundSchema: z.ZodType<
     "company_ids": "companyIds",
     "created_at": "createdAt",
     "deal_ids": "dealIds",
+    "link_urls": "linkUrls",
     "updated_at": "updatedAt",
     "user_id": "userId",
   });
@@ -100,6 +103,7 @@ export type CrmContact$Outbound = {
   deal_ids?: Array<string> | undefined;
   emails?: Array<CrmEmail$Outbound> | undefined;
   id?: string | undefined;
+  link_urls?: Array<string> | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
@@ -121,6 +125,7 @@ export const CrmContact$outboundSchema: z.ZodType<
   dealIds: z.array(z.string()).optional(),
   emails: z.array(CrmEmail$outboundSchema).optional(),
   id: z.string().optional(),
+  linkUrls: z.array(z.string()).optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),
@@ -132,6 +137,7 @@ export const CrmContact$outboundSchema: z.ZodType<
     companyIds: "company_ids",
     createdAt: "created_at",
     dealIds: "deal_ids",
+    linkUrls: "link_urls",
     updatedAt: "updated_at",
     userId: "user_id",
   });

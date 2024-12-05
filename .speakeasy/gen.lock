@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3707cd341db19ec6652e51126ae52977
+  docChecksum: fdbcce3cd82999739c54ae5c1af3eaae
   docVersion: "1.0"
-  speakeasyVersion: 1.451.4
-  generationVersion: 2.471.2
-  releaseVersion: 2.9.5
-  configChecksum: 5d8032f91876ce53866bd4f435892a71
+  speakeasyVersion: 1.452.0
+  generationVersion: 2.472.1
+  releaseVersion: 2.9.6
+  configChecksum: 4ca4b7a962f5c70bd909c4aaf50e3fe5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
