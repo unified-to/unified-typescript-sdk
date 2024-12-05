@@ -77,6 +77,7 @@ export * from "./integration.js";
 export * from "./integrationsupport.js";
 export * from "./issue.js";
 export * from "./kmspage.js";
+export * from "./kmspagemetadata.js";
 export * from "./kmsspace.js";
 export * from "./lmsclass.js";
 export * from "./lmscourse.js";

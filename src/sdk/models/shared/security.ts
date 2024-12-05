@@ -8,7 +8,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type Security = {
-  jwt?: string | undefined;
+  jwt: string;
 };
 
 /** @internal */
@@ -17,12 +17,12 @@ export const Security$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  jwt: z.string().optional(),
+  jwt: z.string(),
 });
 
 /** @internal */
 export type Security$Outbound = {
-  jwt?: string | undefined;
+  jwt: string;
 };
 
 /** @internal */
@@ -31,7 +31,7 @@ export const Security$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Security
 > = z.object({
-  jwt: z.string().optional(),
+  jwt: z.string(),
 });
 
 /**

@@ -9,19 +9,19 @@ Unified.to API: One API to Rule Them All
 
 <!-- Start Table of Contents [toc] -->
 ## Table of Contents
+<!-- $toc-max-depth=2 -->
+  * [Installation](#installation)
+  * [SDK Example Usage](#sdk-example-usage)
+  * [Server Selection](#server-selection)
+  * [Custom HTTP Client](#custom-http-client)
+  * [Authentication](#authentication)
+  * [Error Handling](#error-handling)
+  * [Requirements](#requirements)
+  * [File uploads](#file-uploads)
+  * [Retries](#retries)
+  * [Debugging](#debugging)
+  * [Standalone functions](#standalone-functions)
 
-* [SDK Installation](#sdk-installation)
-* [Requirements](#requirements)
-* [SDK Example Usage](#sdk-example-usage)
-* [Available Resources and Operations](#available-resources-and-operations)
-* [Standalone functions](#standalone-functions)
-* [File uploads](#file-uploads)
-* [Retries](#retries)
-* [Error Handling](#error-handling)
-* [Server Selection](#server-selection)
-* [Custom HTTP Client](#custom-http-client)
-* [Authentication](#authentication)
-* [Debugging](#debugging)
 <!-- End Table of Contents [toc] -->
 
 <!-- Start SDK Installation [installation] -->
@@ -89,6 +89,9 @@ import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
   serverIdx: 1,
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
 });
 
 async function run() {
@@ -112,6 +115,9 @@ import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
   serverURL: "https://api.unified.to",
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
 });
 
 async function run() {
@@ -244,7 +250,11 @@ In addition, when custom error responses are specified for an operation, the SDK
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 import { SDKValidationError } from "@unified-api/typescript-sdk/sdk/models/errors";
 
-const unifiedTo = new UnifiedTo();
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
 
 async function run() {
   let result;
@@ -301,7 +311,11 @@ Certain SDK methods accept files as part of a multi-part request. It is possible
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
-const unifiedTo = new UnifiedTo();
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
 
 async function run() {
   const result = await unifiedTo.passthrough.createPassthroughRaw({
@@ -327,7 +341,11 @@ To change the default retry strategy for a single API call, simply provide a ret
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
-const unifiedTo = new UnifiedTo();
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
@@ -367,6 +385,9 @@ const unifiedTo = new UnifiedTo({
       maxElapsedTime: 100,
     },
     retryConnectionErrors: false,
+  },
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
   },
 });
 

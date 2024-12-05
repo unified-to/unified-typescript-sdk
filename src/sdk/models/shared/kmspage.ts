@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  KmsPageMetadata,
+  KmsPageMetadata$inboundSchema,
+  KmsPageMetadata$Outbound,
+  KmsPageMetadata$outboundSchema,
+} from "./kmspagemetadata.js";
 
 export const KmsPageType = {
   Html: "HTML",
@@ -19,8 +25,10 @@ export type KmsPageType = ClosedEnum<typeof KmsPageType>;
 export type KmsPage = {
   createdAt?: Date | undefined;
   downloadUrl: string;
+  hasChildren?: boolean | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  metadata?: Array<KmsPageMetadata> | undefined;
   parentPageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   spaceId: string;
@@ -56,8 +64,10 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
       new Date(v)
     ).optional(),
     download_url: z.string(),
+    has_children: z.boolean().optional(),
     id: z.string().optional(),
     is_active: z.boolean().optional(),
+    metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
     parent_page_id: z.string().optional(),
     raw: z.record(z.any()).optional(),
     space_id: z.string(),
@@ -71,6 +81,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
     return remap$(v, {
       "created_at": "createdAt",
       "download_url": "downloadUrl",
+      "has_children": "hasChildren",
       "is_active": "isActive",
       "parent_page_id": "parentPageId",
       "space_id": "spaceId",
@@ -83,8 +94,10 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
 export type KmsPage$Outbound = {
   created_at?: string | undefined;
   download_url: string;
+  has_children?: boolean | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  metadata?: Array<KmsPageMetadata$Outbound> | undefined;
   parent_page_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   space_id: string;
@@ -102,8 +115,10 @@ export const KmsPage$outboundSchema: z.ZodType<
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   downloadUrl: z.string(),
+  hasChildren: z.boolean().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
   parentPageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   spaceId: z.string(),
@@ -115,6 +130,7 @@ export const KmsPage$outboundSchema: z.ZodType<
   return remap$(v, {
     createdAt: "created_at",
     downloadUrl: "download_url",
+    hasChildren: "has_children",
     isActive: "is_active",
     parentPageId: "parent_page_id",
     spaceId: "space_id",

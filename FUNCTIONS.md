@@ -25,7 +25,11 @@ import { SDKValidationError } from "@unified-api/typescript-sdk/sdk/models/error
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore();
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
 
 async function run() {
   const res = await accountingCreateAccountingAccount(unifiedTo, {

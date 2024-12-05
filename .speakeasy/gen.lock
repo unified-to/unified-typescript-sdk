@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: a69d016e113a8d9eb83404e95207c9eb
+  docChecksum: 3707cd341db19ec6652e51126ae52977
   docVersion: "1.0"
-  speakeasyVersion: 1.445.2
-  generationVersion: 2.461.4
-  releaseVersion: 2.9.4
-  configChecksum: 7c88bdd8cf79220c83657efafae94ad4
+  speakeasyVersion: 1.451.4
+  generationVersion: 2.471.2
+  releaseVersion: 2.9.5
+  configChecksum: 5d8032f91876ce53866bd4f435892a71
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.6
+    core: 3.18.8
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -36,6 +36,7 @@ generatedFiles:
   - FUNCTIONS.md
   - RUNTIMES.md
   - USAGE.md
+  - docs/lib/utils/retryconfig.md
   - docs/sdk/models/operations/categories.md
   - docs/sdk/models/operations/connectionid.md
   - docs/sdk/models/operations/createaccountingaccountrequest.md
@@ -606,6 +607,7 @@ generatedFiles:
   - docs/sdk/models/shared/issue.md
   - docs/sdk/models/shared/issuestatus.md
   - docs/sdk/models/shared/kmspage.md
+  - docs/sdk/models/shared/kmspagemetadata.md
   - docs/sdk/models/shared/kmspagetype.md
   - docs/sdk/models/shared/kmsspace.md
   - docs/sdk/models/shared/listaccountid.md
@@ -802,6 +804,91 @@ generatedFiles:
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weightunit.md
+  - docs/sdks/account/README.md
+  - docs/sdks/accounting/README.md
+  - docs/sdks/activity/README.md
+  - docs/sdks/apicall/README.md
+  - docs/sdks/application/README.md
+  - docs/sdks/applicationstatus/README.md
+  - docs/sdks/ats/README.md
+  - docs/sdks/auth/README.md
+  - docs/sdks/branch/README.md
+  - docs/sdks/call/README.md
+  - docs/sdks/candidate/README.md
+  - docs/sdks/channel/README.md
+  - docs/sdks/class/README.md
+  - docs/sdks/collection/README.md
+  - docs/sdks/commerce/README.md
+  - docs/sdks/commit/README.md
+  - docs/sdks/company/README.md
+  - docs/sdks/connection/README.md
+  - docs/sdks/contact/README.md
+  - docs/sdks/course/README.md
+  - docs/sdks/crm/README.md
+  - docs/sdks/customer/README.md
+  - docs/sdks/deal/README.md
+  - docs/sdks/document/README.md
+  - docs/sdks/employee/README.md
+  - docs/sdks/enrich/README.md
+  - docs/sdks/event/README.md
+  - docs/sdks/file/README.md
+  - docs/sdks/genai/README.md
+  - docs/sdks/group/README.md
+  - docs/sdks/hris/README.md
+  - docs/sdks/instructor/README.md
+  - docs/sdks/integration/README.md
+  - docs/sdks/interview/README.md
+  - docs/sdks/inventory/README.md
+  - docs/sdks/invoice/README.md
+  - docs/sdks/issue/README.md
+  - docs/sdks/item/README.md
+  - docs/sdks/job/README.md
+  - docs/sdks/journal/README.md
+  - docs/sdks/kms/README.md
+  - docs/sdks/lead/README.md
+  - docs/sdks/link/README.md
+  - docs/sdks/list/README.md
+  - docs/sdks/lms/README.md
+  - docs/sdks/location/README.md
+  - docs/sdks/login/README.md
+  - docs/sdks/martech/README.md
+  - docs/sdks/member/README.md
+  - docs/sdks/message/README.md
+  - docs/sdks/messaging/README.md
+  - docs/sdks/metadata/README.md
+  - docs/sdks/model/README.md
+  - docs/sdks/note/README.md
+  - docs/sdks/order/README.md
+  - docs/sdks/organization/README.md
+  - docs/sdks/page/README.md
+  - docs/sdks/passthrough/README.md
+  - docs/sdks/payment/README.md
+  - docs/sdks/payout/README.md
+  - docs/sdks/payslip/README.md
+  - docs/sdks/person/README.md
+  - docs/sdks/pipeline/README.md
+  - docs/sdks/project/README.md
+  - docs/sdks/prompt/README.md
+  - docs/sdks/pullrequest/README.md
+  - docs/sdks/refund/README.md
+  - docs/sdks/repo/README.md
+  - docs/sdks/repository/README.md
+  - docs/sdks/scim/README.md
+  - docs/sdks/scorecard/README.md
+  - docs/sdks/space/README.md
+  - docs/sdks/storage/README.md
+  - docs/sdks/student/README.md
+  - docs/sdks/task/README.md
+  - docs/sdks/taxrate/README.md
+  - docs/sdks/ticket/README.md
+  - docs/sdks/ticketing/README.md
+  - docs/sdks/timeoff/README.md
+  - docs/sdks/transaction/README.md
+  - docs/sdks/uc/README.md
+  - docs/sdks/unified/README.md
+  - docs/sdks/unifiedto/README.md
+  - docs/sdks/user/README.md
+  - docs/sdks/webhook/README.md
   - jsr.json
   - package.json
   - src/core.ts
@@ -2058,6 +2145,7 @@ generatedFiles:
   - src/sdk/models/shared/integrationsupport.ts
   - src/sdk/models/shared/issue.ts
   - src/sdk/models/shared/kmspage.ts
+  - src/sdk/models/shared/kmspagemetadata.ts
   - src/sdk/models/shared/kmsspace.ts
   - src/sdk/models/shared/lmsclass.ts
   - src/sdk/models/shared/lmscourse.ts
@@ -5075,3 +5163,4 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+generatedTests: {}
