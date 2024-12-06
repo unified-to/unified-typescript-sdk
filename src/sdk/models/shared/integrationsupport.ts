@@ -211,6 +211,13 @@ export const ListRawFields = {
 } as const;
 export type ListRawFields = ClosedEnum<typeof ListRawFields>;
 
+export const ListRootId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListRootId = ClosedEnum<typeof ListRootId>;
+
 export const ListSortByCreatedAt = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -431,6 +438,7 @@ export type IntegrationSupport = {
   listProjectId?: ListProjectId | undefined;
   listQuery?: ListQuery | undefined;
   listRawFields?: ListRawFields | undefined;
+  listRootId?: ListRootId | undefined;
   listSortByCreatedAt?: ListSortByCreatedAt | undefined;
   listSortByName?: ListSortByName | undefined;
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
@@ -1029,6 +1037,25 @@ export namespace ListRawFields$ {
 }
 
 /** @internal */
+export const ListRootId$inboundSchema: z.ZodNativeEnum<typeof ListRootId> = z
+  .nativeEnum(ListRootId);
+
+/** @internal */
+export const ListRootId$outboundSchema: z.ZodNativeEnum<typeof ListRootId> =
+  ListRootId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListRootId$ {
+  /** @deprecated use `ListRootId$inboundSchema` instead. */
+  export const inboundSchema = ListRootId$inboundSchema;
+  /** @deprecated use `ListRootId$outboundSchema` instead. */
+  export const outboundSchema = ListRootId$outboundSchema;
+}
+
+/** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodNativeEnum<
   typeof ListSortByCreatedAt
 > = z.nativeEnum(ListSortByCreatedAt);
@@ -1595,6 +1622,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
   list_raw_fields: ListRawFields$inboundSchema.optional(),
+  list_root_id: ListRootId$inboundSchema.optional(),
   list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
@@ -1658,6 +1686,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_project_id": "listProjectId",
     "list_query": "listQuery",
     "list_raw_fields": "listRawFields",
+    "list_root_id": "listRootId",
     "list_sort_by_created_at": "listSortByCreatedAt",
     "list_sort_by_name": "listSortByName",
     "list_sort_by_updated_at": "listSortByUpdatedAt",
@@ -1721,6 +1750,7 @@ export type IntegrationSupport$Outbound = {
   list_project_id?: string | undefined;
   list_query?: string | undefined;
   list_raw_fields?: string | undefined;
+  list_root_id?: string | undefined;
   list_sort_by_created_at?: string | undefined;
   list_sort_by_name?: string | undefined;
   list_sort_by_updated_at?: string | undefined;
@@ -1788,6 +1818,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listProjectId: ListProjectId$outboundSchema.optional(),
   listQuery: ListQuery$outboundSchema.optional(),
   listRawFields: ListRawFields$outboundSchema.optional(),
+  listRootId: ListRootId$outboundSchema.optional(),
   listSortByCreatedAt: ListSortByCreatedAt$outboundSchema.optional(),
   listSortByName: ListSortByName$outboundSchema.optional(),
   listSortByUpdatedAt: ListSortByUpdatedAt$outboundSchema.optional(),
@@ -1850,6 +1881,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listProjectId: "list_project_id",
     listQuery: "list_query",
     listRawFields: "list_raw_fields",
+    listRootId: "list_root_id",
     listSortByCreatedAt: "list_sort_by_created_at",
     listSortByName: "list_sort_by_name",
     listSortByUpdatedAt: "list_sort_by_updated_at",

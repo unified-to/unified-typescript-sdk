@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: fdbcce3cd82999739c54ae5c1af3eaae
+  docChecksum: 42f573170bad12dc387a71808ef7cd22
   docVersion: "1.0"
-  speakeasyVersion: 1.452.0
-  generationVersion: 2.472.1
-  releaseVersion: 2.9.6
-  configChecksum: 4ca4b7a962f5c70bd909c4aaf50e3fe5
+  speakeasyVersion: 1.453.1
+  generationVersion: 2.474.4
+  releaseVersion: 2.9.7
+  configChecksum: 55b0fca0762d32b485c9655f2f2fea19
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -38,7 +38,6 @@ generatedFiles:
   - USAGE.md
   - docs/lib/utils/retryconfig.md
   - docs/sdk/models/operations/categories.md
-  - docs/sdk/models/operations/connectionid.md
   - docs/sdk/models/operations/createaccountingaccountrequest.md
   - docs/sdk/models/operations/createaccountingcontactrequest.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
@@ -167,7 +166,6 @@ generatedFiles:
   - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
   - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
   - docs/sdk/models/operations/getunifiedwebhookrequest.md
-  - docs/sdk/models/operations/integrationtype.md
   - docs/sdk/models/operations/listaccountingaccountsrequest.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
@@ -637,6 +635,7 @@ generatedFiles:
   - docs/sdk/models/shared/listprojectid.md
   - docs/sdk/models/shared/listquery.md
   - docs/sdk/models/shared/listrawfields.md
+  - docs/sdk/models/shared/listrootid.md
   - docs/sdk/models/shared/listsortbycreatedat.md
   - docs/sdk/models/shared/listsortbyname.md
   - docs/sdk/models/shared/listsortbyupdatedat.md

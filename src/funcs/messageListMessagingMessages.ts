@@ -71,6 +71,7 @@ export async function messageListMessagingMessages(
     "order": payload.order,
     "parent_id": payload.parent_id,
     "query": payload.query,
+    "root_id": payload.root_id,
     "sort": payload.sort,
     "updated_gte": payload.updated_gte,
   });

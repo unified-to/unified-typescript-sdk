@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedApicallsRequest = {
   /**
-   * Filter the results to just this integration's API calls
+   * Filter the results to just this integration
    */
   connectionId?: string | undefined;
   env?: string | undefined;
@@ -23,7 +23,7 @@ export type ListUnifiedApicallsRequest = {
    */
   externalXref?: string | undefined;
   /**
-   * Filter the results for connections with this integration
+   * Filter the results to just this integration
    */
   integrationType?: string | undefined;
   limit?: number | undefined;

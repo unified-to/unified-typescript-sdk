@@ -40,6 +40,7 @@ export type MessagingMessage = {
   parentMessageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  rootMessageId?: string | undefined;
   subject?: string | undefined;
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
@@ -65,6 +66,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   parent_message_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  root_message_id: z.string().optional(),
   subject: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -79,6 +81,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "mentioned_members": "mentionedMembers",
     "message_html": "messageHtml",
     "parent_message_id": "parentMessageId",
+    "root_message_id": "rootMessageId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
   });
@@ -99,6 +102,7 @@ export type MessagingMessage$Outbound = {
   parent_message_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
+  root_message_id?: string | undefined;
   subject?: string | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -123,6 +127,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   parentMessageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
+  rootMessageId: z.string().optional(),
   subject: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
@@ -136,6 +141,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     mentionedMembers: "mentioned_members",
     messageHtml: "message_html",
     parentMessageId: "parent_message_id",
+    rootMessageId: "root_message_id",
     updatedAt: "updated_at",
     webUrl: "web_url",
   });

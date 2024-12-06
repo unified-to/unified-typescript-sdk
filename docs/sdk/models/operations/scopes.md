@@ -5,7 +5,7 @@
 ```typescript
 import { Scopes } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: Scopes = "payment_payment_write";
+let value: Scopes = "martech_list_read";
 ```
 
 ## Values

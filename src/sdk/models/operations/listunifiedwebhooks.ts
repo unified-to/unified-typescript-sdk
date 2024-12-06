@@ -8,30 +8,20 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-/**
- * A connection represents a specific authentication of an integration.
- */
-export type ConnectionId = {};
-
-/**
- * Informational object for supported integrations.
- */
-export type IntegrationType = {};
-
 export type ListUnifiedWebhooksRequest = {
   /**
-   * A connection represents a specific authentication of an integration.
+   * Filter the results to just this integration
    */
-  connectionId?: ConnectionId | undefined;
+  connectionId?: string | undefined;
   /**
    * Return only results whose created date is equal or less to this value
    */
   createdLte?: Date | undefined;
   env?: string | undefined;
   /**
-   * Informational object for supported integrations.
+   * Filter the results to just this integration
    */
-  integrationType?: IntegrationType | undefined;
+  integrationType?: string | undefined;
   limit?: number | undefined;
   /**
    * Filter the results for webhooks for only this object
@@ -47,106 +37,16 @@ export type ListUnifiedWebhooksRequest = {
 };
 
 /** @internal */
-export const ConnectionId$inboundSchema: z.ZodType<
-  ConnectionId,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type ConnectionId$Outbound = {};
-
-/** @internal */
-export const ConnectionId$outboundSchema: z.ZodType<
-  ConnectionId$Outbound,
-  z.ZodTypeDef,
-  ConnectionId
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ConnectionId$ {
-  /** @deprecated use `ConnectionId$inboundSchema` instead. */
-  export const inboundSchema = ConnectionId$inboundSchema;
-  /** @deprecated use `ConnectionId$outboundSchema` instead. */
-  export const outboundSchema = ConnectionId$outboundSchema;
-  /** @deprecated use `ConnectionId$Outbound` instead. */
-  export type Outbound = ConnectionId$Outbound;
-}
-
-export function connectionIdToJSON(connectionId: ConnectionId): string {
-  return JSON.stringify(ConnectionId$outboundSchema.parse(connectionId));
-}
-
-export function connectionIdFromJSON(
-  jsonString: string,
-): SafeParseResult<ConnectionId, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ConnectionId$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ConnectionId' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationType$inboundSchema: z.ZodType<
-  IntegrationType,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationType$Outbound = {};
-
-/** @internal */
-export const IntegrationType$outboundSchema: z.ZodType<
-  IntegrationType$Outbound,
-  z.ZodTypeDef,
-  IntegrationType
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationType$ {
-  /** @deprecated use `IntegrationType$inboundSchema` instead. */
-  export const inboundSchema = IntegrationType$inboundSchema;
-  /** @deprecated use `IntegrationType$outboundSchema` instead. */
-  export const outboundSchema = IntegrationType$outboundSchema;
-  /** @deprecated use `IntegrationType$Outbound` instead. */
-  export type Outbound = IntegrationType$Outbound;
-}
-
-export function integrationTypeToJSON(
-  integrationType: IntegrationType,
-): string {
-  return JSON.stringify(IntegrationType$outboundSchema.parse(integrationType));
-}
-
-export function integrationTypeFromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationType, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationType$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationType' from JSON`,
-  );
-}
-
-/** @internal */
 export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
   ListUnifiedWebhooksRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  connection_id: z.lazy(() => ConnectionId$inboundSchema).optional(),
+  connection_id: z.string().optional(),
   created_lte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   env: z.string().optional(),
-  integration_type: z.lazy(() => IntegrationType$inboundSchema).optional(),
+  integration_type: z.string().optional(),
   limit: z.number().optional(),
   object: z.string().optional(),
   offset: z.number().optional(),
@@ -165,10 +65,10 @@ export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListUnifiedWebhooksRequest$Outbound = {
-  connection_id?: ConnectionId$Outbound | undefined;
+  connection_id?: string | undefined;
   created_lte?: string | undefined;
   env?: string | undefined;
-  integration_type?: IntegrationType$Outbound | undefined;
+  integration_type?: string | undefined;
   limit?: number | undefined;
   object?: string | undefined;
   offset?: number | undefined;
@@ -183,10 +83,10 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListUnifiedWebhooksRequest
 > = z.object({
-  connectionId: z.lazy(() => ConnectionId$outboundSchema).optional(),
+  connectionId: z.string().optional(),
   createdLte: z.date().transform(v => v.toISOString()).optional(),
   env: z.string().optional(),
-  integrationType: z.lazy(() => IntegrationType$outboundSchema).optional(),
+  integrationType: z.string().optional(),
   limit: z.number().optional(),
   object: z.string().optional(),
   offset: z.number().optional(),
