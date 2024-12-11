@@ -24,13 +24,13 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * Remove a metadata
  */
-export async function metadataRemoveCommerceMetadata(
+export async function metadataRemoveMetadataMetadata(
   client: UnifiedToCore,
-  request: operations.RemoveCommerceMetadataRequest,
+  request: operations.RemoveMetadataMetadataRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    operations.RemoveCommerceMetadataResponse | undefined,
+    operations.RemoveMetadataMetadataResponse | undefined,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -43,7 +43,7 @@ export async function metadataRemoveCommerceMetadata(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.RemoveCommerceMetadataRequest$outboundSchema.parse(value),
+      operations.RemoveMetadataMetadataRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -63,7 +63,7 @@ export async function metadataRemoveCommerceMetadata(
     }),
   };
 
-  const path = pathToFunc("/commerce/{connection_id}/metadata/{id}")(
+  const path = pathToFunc("/metadata/{connection_id}/metadata/{id}")(
     pathParams,
   );
 
@@ -75,7 +75,7 @@ export async function metadataRemoveCommerceMetadata(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "removeCommerceMetadata",
+    operationID: "removeMetadataMetadata",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -116,7 +116,7 @@ export async function metadataRemoveCommerceMetadata(
   };
 
   const [result] = await M.match<
-    operations.RemoveCommerceMetadataResponse | undefined,
+    operations.RemoveMetadataMetadataResponse | undefined,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -127,12 +127,12 @@ export async function metadataRemoveCommerceMetadata(
   >(
     M.nil(
       200,
-      operations.RemoveCommerceMetadataResponse$inboundSchema.optional(),
+      operations.RemoveMetadataMetadataResponse$inboundSchema.optional(),
     ),
     M.fail(["4XX", "5XX"]),
     M.nil(
       "default",
-      operations.RemoveCommerceMetadataResponse$inboundSchema.optional(),
+      operations.RemoveMetadataMetadataResponse$inboundSchema.optional(),
       { hdrs: true },
     ),
   )(response, { extraFields: responseFields });

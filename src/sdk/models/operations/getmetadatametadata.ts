@@ -8,7 +8,7 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type GetCommerceMetadataRequest = {
+export type GetMetadataMetadataRequest = {
   /**
    * ID of the connection
    */
@@ -24,8 +24,8 @@ export type GetCommerceMetadataRequest = {
 };
 
 /** @internal */
-export const GetCommerceMetadataRequest$inboundSchema: z.ZodType<
-  GetCommerceMetadataRequest,
+export const GetMetadataMetadataRequest$inboundSchema: z.ZodType<
+  GetMetadataMetadataRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -39,17 +39,17 @@ export const GetCommerceMetadataRequest$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type GetCommerceMetadataRequest$Outbound = {
+export type GetMetadataMetadataRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
 };
 
 /** @internal */
-export const GetCommerceMetadataRequest$outboundSchema: z.ZodType<
-  GetCommerceMetadataRequest$Outbound,
+export const GetMetadataMetadataRequest$outboundSchema: z.ZodType<
+  GetMetadataMetadataRequest$Outbound,
   z.ZodTypeDef,
-  GetCommerceMetadataRequest
+  GetMetadataMetadataRequest
 > = z.object({
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
@@ -64,29 +64,29 @@ export const GetCommerceMetadataRequest$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace GetCommerceMetadataRequest$ {
-  /** @deprecated use `GetCommerceMetadataRequest$inboundSchema` instead. */
-  export const inboundSchema = GetCommerceMetadataRequest$inboundSchema;
-  /** @deprecated use `GetCommerceMetadataRequest$outboundSchema` instead. */
-  export const outboundSchema = GetCommerceMetadataRequest$outboundSchema;
-  /** @deprecated use `GetCommerceMetadataRequest$Outbound` instead. */
-  export type Outbound = GetCommerceMetadataRequest$Outbound;
+export namespace GetMetadataMetadataRequest$ {
+  /** @deprecated use `GetMetadataMetadataRequest$inboundSchema` instead. */
+  export const inboundSchema = GetMetadataMetadataRequest$inboundSchema;
+  /** @deprecated use `GetMetadataMetadataRequest$outboundSchema` instead. */
+  export const outboundSchema = GetMetadataMetadataRequest$outboundSchema;
+  /** @deprecated use `GetMetadataMetadataRequest$Outbound` instead. */
+  export type Outbound = GetMetadataMetadataRequest$Outbound;
 }
 
-export function getCommerceMetadataRequestToJSON(
-  getCommerceMetadataRequest: GetCommerceMetadataRequest,
+export function getMetadataMetadataRequestToJSON(
+  getMetadataMetadataRequest: GetMetadataMetadataRequest,
 ): string {
   return JSON.stringify(
-    GetCommerceMetadataRequest$outboundSchema.parse(getCommerceMetadataRequest),
+    GetMetadataMetadataRequest$outboundSchema.parse(getMetadataMetadataRequest),
   );
 }
 
-export function getCommerceMetadataRequestFromJSON(
+export function getMetadataMetadataRequestFromJSON(
   jsonString: string,
-): SafeParseResult<GetCommerceMetadataRequest, SDKValidationError> {
+): SafeParseResult<GetMetadataMetadataRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => GetCommerceMetadataRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCommerceMetadataRequest' from JSON`,
+    (x) => GetMetadataMetadataRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'GetMetadataMetadataRequest' from JSON`,
   );
 }

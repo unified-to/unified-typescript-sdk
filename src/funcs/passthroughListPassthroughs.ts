@@ -26,7 +26,7 @@ export enum ListPassthroughsAcceptEnum {
   textCsv = "text/csv",
   textPlain = "text/plain",
   applicationXml = "application/xml",
-  wildcardWildcard = "*/*",
+  wildcardRootWildcard = "*/*",
 }
 
 /**

@@ -26,7 +26,7 @@ export enum PatchPassthroughJsonAcceptEnum {
   textCsv = "text/csv",
   textPlain = "text/plain",
   applicationXml = "application/xml",
-  wildcardWildcard = "*/*",
+  wildcardRootWildcard = "*/*",
 }
 
 /**

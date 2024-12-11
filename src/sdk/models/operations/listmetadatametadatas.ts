@@ -8,7 +8,7 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListCommerceMetadatasRequest = {
+export type ListMetadataMetadatasRequest = {
   /**
    * ID of the connection
    */
@@ -25,6 +25,7 @@ export type ListCommerceMetadatasRequest = {
    */
   query?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -32,8 +33,8 @@ export type ListCommerceMetadatasRequest = {
 };
 
 /** @internal */
-export const ListCommerceMetadatasRequest$inboundSchema: z.ZodType<
-  ListCommerceMetadatasRequest,
+export const ListMetadataMetadatasRequest$inboundSchema: z.ZodType<
+  ListMetadataMetadatasRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -44,6 +45,7 @@ export const ListCommerceMetadatasRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -54,7 +56,7 @@ export const ListCommerceMetadatasRequest$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ListCommerceMetadatasRequest$Outbound = {
+export type ListMetadataMetadatasRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -62,14 +64,15 @@ export type ListCommerceMetadatasRequest$Outbound = {
   order?: string | undefined;
   query?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
 /** @internal */
-export const ListCommerceMetadatasRequest$outboundSchema: z.ZodType<
-  ListCommerceMetadatasRequest$Outbound,
+export const ListMetadataMetadatasRequest$outboundSchema: z.ZodType<
+  ListMetadataMetadatasRequest$Outbound,
   z.ZodTypeDef,
-  ListCommerceMetadatasRequest
+  ListMetadataMetadatasRequest
 > = z.object({
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
@@ -78,6 +81,7 @@ export const ListCommerceMetadatasRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -90,31 +94,31 @@ export const ListCommerceMetadatasRequest$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ListCommerceMetadatasRequest$ {
-  /** @deprecated use `ListCommerceMetadatasRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCommerceMetadatasRequest$inboundSchema;
-  /** @deprecated use `ListCommerceMetadatasRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCommerceMetadatasRequest$outboundSchema;
-  /** @deprecated use `ListCommerceMetadatasRequest$Outbound` instead. */
-  export type Outbound = ListCommerceMetadatasRequest$Outbound;
+export namespace ListMetadataMetadatasRequest$ {
+  /** @deprecated use `ListMetadataMetadatasRequest$inboundSchema` instead. */
+  export const inboundSchema = ListMetadataMetadatasRequest$inboundSchema;
+  /** @deprecated use `ListMetadataMetadatasRequest$outboundSchema` instead. */
+  export const outboundSchema = ListMetadataMetadatasRequest$outboundSchema;
+  /** @deprecated use `ListMetadataMetadatasRequest$Outbound` instead. */
+  export type Outbound = ListMetadataMetadatasRequest$Outbound;
 }
 
-export function listCommerceMetadatasRequestToJSON(
-  listCommerceMetadatasRequest: ListCommerceMetadatasRequest,
+export function listMetadataMetadatasRequestToJSON(
+  listMetadataMetadatasRequest: ListMetadataMetadatasRequest,
 ): string {
   return JSON.stringify(
-    ListCommerceMetadatasRequest$outboundSchema.parse(
-      listCommerceMetadatasRequest,
+    ListMetadataMetadatasRequest$outboundSchema.parse(
+      listMetadataMetadatasRequest,
     ),
   );
 }
 
-export function listCommerceMetadatasRequestFromJSON(
+export function listMetadataMetadatasRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ListCommerceMetadatasRequest, SDKValidationError> {
+): SafeParseResult<ListMetadataMetadatasRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ListCommerceMetadatasRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCommerceMetadatasRequest' from JSON`,
+    (x) => ListMetadataMetadatasRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListMetadataMetadatasRequest' from JSON`,
   );
 }

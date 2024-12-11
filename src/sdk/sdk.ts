@@ -209,11 +209,6 @@ export class UnifiedTo extends ClientSDK {
     return (this._location ??= new Location(this._options));
   }
 
-  private _metadata?: Metadata;
-  get metadata(): Metadata {
-    return (this._metadata ??= new Metadata(this._options));
-  }
-
   private _crm?: Crm;
   get crm(): Crm {
     return (this._crm ??= new Crm(this._options));
@@ -357,6 +352,11 @@ export class UnifiedTo extends ClientSDK {
   private _message?: Message;
   get message(): Message {
     return (this._message ??= new Message(this._options));
+  }
+
+  private _metadata?: Metadata;
+  get metadata(): Metadata {
+    return (this._metadata ??= new Metadata(this._options));
   }
 
   private _passthrough?: Passthrough;

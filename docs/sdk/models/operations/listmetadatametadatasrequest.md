@@ -1,11 +1,11 @@
-# ListCommerceMetadatasRequest
+# ListMetadataMetadatasRequest
 
 ## Example Usage
 
 ```typescript
-import { ListCommerceMetadatasRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { ListMetadataMetadatasRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: ListCommerceMetadatasRequest = {
+let value: ListMetadataMetadatasRequest = {
   connectionId: "<id>",
 };
 ```
@@ -21,4 +21,5 @@ let value: ListCommerceMetadatasRequest = {
 | `order`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `query`                                                                                       | *string*                                                                                      | :heavy_minus_sign:                                                                            | Query string to search. eg. email address or name                                             |
 | `sort`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `type`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedGte`                                                                                  | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | Return only results whose updated date is equal or greater to this value                      |

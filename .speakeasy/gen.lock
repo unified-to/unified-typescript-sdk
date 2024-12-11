@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 42f573170bad12dc387a71808ef7cd22
+  docChecksum: 41f6fed774011bab102d612247a8bfd9
   docVersion: "1.0"
-  speakeasyVersion: 1.453.3
-  generationVersion: 2.474.6
-  releaseVersion: 2.9.8
-  configChecksum: fb76f6dae1ae07e04f05f41e41249c10
+  speakeasyVersion: 1.453.10
+  generationVersion: 2.474.15
+  releaseVersion: 2.9.9
+  configChecksum: 452d9d3a34947982412ee9e604214b33
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.8
+    core: 3.18.9
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -56,7 +56,6 @@ generatedFiles:
   - docs/sdk/models/operations/createcommerceinventoryrequest.md
   - docs/sdk/models/operations/createcommerceitemrequest.md
   - docs/sdk/models/operations/createcommercelocationrequest.md
-  - docs/sdk/models/operations/createcommercemetadatarequest.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcontactrequest.md
   - docs/sdk/models/operations/createcrmdealrequest.md
@@ -77,6 +76,7 @@ generatedFiles:
   - docs/sdk/models/operations/createmartechlistrequest.md
   - docs/sdk/models/operations/createmartechmemberrequest.md
   - docs/sdk/models/operations/createmessagingmessagerequest.md
+  - docs/sdk/models/operations/createmetadatametadatarequest.md
   - docs/sdk/models/operations/createpassthroughjsonrequest.md
   - docs/sdk/models/operations/createpassthroughjsonresponse.md
   - docs/sdk/models/operations/createpassthroughjsonresponseresult.md
@@ -120,7 +120,6 @@ generatedFiles:
   - docs/sdk/models/operations/getcommerceinventoryrequest.md
   - docs/sdk/models/operations/getcommerceitemrequest.md
   - docs/sdk/models/operations/getcommercelocationrequest.md
-  - docs/sdk/models/operations/getcommercemetadatarequest.md
   - docs/sdk/models/operations/getcrmcompanyrequest.md
   - docs/sdk/models/operations/getcrmcontactrequest.md
   - docs/sdk/models/operations/getcrmdealrequest.md
@@ -143,6 +142,7 @@ generatedFiles:
   - docs/sdk/models/operations/getmartechmemberrequest.md
   - docs/sdk/models/operations/getmessagingchannelrequest.md
   - docs/sdk/models/operations/getmessagingmessagerequest.md
+  - docs/sdk/models/operations/getmetadatametadatarequest.md
   - docs/sdk/models/operations/getpaymentlinkrequest.md
   - docs/sdk/models/operations/getpaymentpaymentrequest.md
   - docs/sdk/models/operations/getpaymentpayoutrequest.md
@@ -187,7 +187,6 @@ generatedFiles:
   - docs/sdk/models/operations/listcommerceinventoriesrequest.md
   - docs/sdk/models/operations/listcommerceitemsrequest.md
   - docs/sdk/models/operations/listcommercelocationsrequest.md
-  - docs/sdk/models/operations/listcommercemetadatasrequest.md
   - docs/sdk/models/operations/listcrmcompaniesrequest.md
   - docs/sdk/models/operations/listcrmcontactsrequest.md
   - docs/sdk/models/operations/listcrmdealsrequest.md
@@ -213,6 +212,7 @@ generatedFiles:
   - docs/sdk/models/operations/listmartechmembersrequest.md
   - docs/sdk/models/operations/listmessagingchannelsrequest.md
   - docs/sdk/models/operations/listmessagingmessagesrequest.md
+  - docs/sdk/models/operations/listmetadatametadatasrequest.md
   - docs/sdk/models/operations/listpassthroughsrequest.md
   - docs/sdk/models/operations/listpassthroughsresponse.md
   - docs/sdk/models/operations/listpassthroughsresponseresult.md
@@ -260,7 +260,6 @@ generatedFiles:
   - docs/sdk/models/operations/patchcommerceinventoryrequest.md
   - docs/sdk/models/operations/patchcommerceitemrequest.md
   - docs/sdk/models/operations/patchcommercelocationrequest.md
-  - docs/sdk/models/operations/patchcommercemetadatarequest.md
   - docs/sdk/models/operations/patchcrmcompanyrequest.md
   - docs/sdk/models/operations/patchcrmcontactrequest.md
   - docs/sdk/models/operations/patchcrmdealrequest.md
@@ -280,6 +279,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchmartechlistrequest.md
   - docs/sdk/models/operations/patchmartechmemberrequest.md
   - docs/sdk/models/operations/patchmessagingmessagerequest.md
+  - docs/sdk/models/operations/patchmetadatametadatarequest.md
   - docs/sdk/models/operations/patchpassthroughjsonrequest.md
   - docs/sdk/models/operations/patchpassthroughjsonresponse.md
   - docs/sdk/models/operations/patchpassthroughjsonresponseresult.md
@@ -343,8 +343,6 @@ generatedFiles:
   - docs/sdk/models/operations/removecommerceitemresponse.md
   - docs/sdk/models/operations/removecommercelocationrequest.md
   - docs/sdk/models/operations/removecommercelocationresponse.md
-  - docs/sdk/models/operations/removecommercemetadatarequest.md
-  - docs/sdk/models/operations/removecommercemetadataresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
   - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmcontactrequest.md
@@ -383,6 +381,8 @@ generatedFiles:
   - docs/sdk/models/operations/removemartechmemberresponse.md
   - docs/sdk/models/operations/removemessagingmessagerequest.md
   - docs/sdk/models/operations/removemessagingmessageresponse.md
+  - docs/sdk/models/operations/removemetadatametadatarequest.md
+  - docs/sdk/models/operations/removemetadatametadataresponse.md
   - docs/sdk/models/operations/removepassthroughrequest.md
   - docs/sdk/models/operations/removepassthroughresponse.md
   - docs/sdk/models/operations/removepassthroughresponseresult.md
@@ -441,7 +441,6 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceinventoryrequest.md
   - docs/sdk/models/operations/updatecommerceitemrequest.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
-  - docs/sdk/models/operations/updatecommercemetadatarequest.md
   - docs/sdk/models/operations/updatecrmcompanyrequest.md
   - docs/sdk/models/operations/updatecrmcontactrequest.md
   - docs/sdk/models/operations/updatecrmdealrequest.md
@@ -461,6 +460,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatemartechlistrequest.md
   - docs/sdk/models/operations/updatemartechmemberrequest.md
   - docs/sdk/models/operations/updatemessagingmessagerequest.md
+  - docs/sdk/models/operations/updatemetadatametadatarequest.md
   - docs/sdk/models/operations/updatepassthroughjsonrequest.md
   - docs/sdk/models/operations/updatepassthroughjsonresponse.md
   - docs/sdk/models/operations/updatepassthroughjsonresponseresult.md
@@ -549,7 +549,6 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemprice.md
   - docs/sdk/models/shared/commerceitemvariant.md
   - docs/sdk/models/shared/commercelocation.md
-  - docs/sdk/models/shared/commercemetadata.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/crmcompany.md
   - docs/sdk/models/shared/crmcontact.md
@@ -663,6 +662,7 @@ generatedFiles:
   - docs/sdk/models/shared/messagingchannel.md
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
+  - docs/sdk/models/shared/metadatametadata.md
   - docs/sdk/models/shared/nativewebhookparentid.md
   - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md
@@ -1034,32 +1034,26 @@ generatedFiles:
   - src/funcs/commerceCreateCommerceInventory.ts
   - src/funcs/commerceCreateCommerceItem.ts
   - src/funcs/commerceCreateCommerceLocation.ts
-  - src/funcs/commerceCreateCommerceMetadata.ts
   - src/funcs/commerceGetCommerceCollection.ts
   - src/funcs/commerceGetCommerceInventory.ts
   - src/funcs/commerceGetCommerceItem.ts
   - src/funcs/commerceGetCommerceLocation.ts
-  - src/funcs/commerceGetCommerceMetadata.ts
   - src/funcs/commerceListCommerceCollections.ts
   - src/funcs/commerceListCommerceInventories.ts
   - src/funcs/commerceListCommerceItems.ts
   - src/funcs/commerceListCommerceLocations.ts
-  - src/funcs/commerceListCommerceMetadatas.ts
   - src/funcs/commercePatchCommerceCollection.ts
   - src/funcs/commercePatchCommerceInventory.ts
   - src/funcs/commercePatchCommerceItem.ts
   - src/funcs/commercePatchCommerceLocation.ts
-  - src/funcs/commercePatchCommerceMetadata.ts
   - src/funcs/commerceRemoveCommerceCollection.ts
   - src/funcs/commerceRemoveCommerceInventory.ts
   - src/funcs/commerceRemoveCommerceItem.ts
   - src/funcs/commerceRemoveCommerceLocation.ts
-  - src/funcs/commerceRemoveCommerceMetadata.ts
   - src/funcs/commerceUpdateCommerceCollection.ts
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
-  - src/funcs/commerceUpdateCommerceMetadata.ts
   - src/funcs/commitCreateRepoCommit.ts
   - src/funcs/commitGetRepoCommit.ts
   - src/funcs/commitListRepoCommits.ts
@@ -1372,12 +1366,12 @@ generatedFiles:
   - src/funcs/messagingPatchMessagingMessage.ts
   - src/funcs/messagingRemoveMessagingMessage.ts
   - src/funcs/messagingUpdateMessagingMessage.ts
-  - src/funcs/metadataCreateCommerceMetadata.ts
-  - src/funcs/metadataGetCommerceMetadata.ts
-  - src/funcs/metadataListCommerceMetadatas.ts
-  - src/funcs/metadataPatchCommerceMetadata.ts
-  - src/funcs/metadataRemoveCommerceMetadata.ts
-  - src/funcs/metadataUpdateCommerceMetadata.ts
+  - src/funcs/metadataCreateMetadataMetadata.ts
+  - src/funcs/metadataGetMetadataMetadata.ts
+  - src/funcs/metadataListMetadataMetadatas.ts
+  - src/funcs/metadataPatchMetadataMetadata.ts
+  - src/funcs/metadataRemoveMetadataMetadata.ts
+  - src/funcs/metadataUpdateMetadataMetadata.ts
   - src/funcs/modelListGenaiModels.ts
   - src/funcs/noteCreateTicketingNote.ts
   - src/funcs/noteGetTicketingNote.ts
@@ -1713,7 +1707,6 @@ generatedFiles:
   - src/sdk/models/operations/createcommerceinventory.ts
   - src/sdk/models/operations/createcommerceitem.ts
   - src/sdk/models/operations/createcommercelocation.ts
-  - src/sdk/models/operations/createcommercemetadata.ts
   - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createcrmdeal.ts
@@ -1734,6 +1727,7 @@ generatedFiles:
   - src/sdk/models/operations/createmartechlist.ts
   - src/sdk/models/operations/createmartechmember.ts
   - src/sdk/models/operations/createmessagingmessage.ts
+  - src/sdk/models/operations/createmetadatametadata.ts
   - src/sdk/models/operations/createpassthroughjson.ts
   - src/sdk/models/operations/createpassthroughraw.ts
   - src/sdk/models/operations/createpaymentlink.ts
@@ -1773,7 +1767,6 @@ generatedFiles:
   - src/sdk/models/operations/getcommerceinventory.ts
   - src/sdk/models/operations/getcommerceitem.ts
   - src/sdk/models/operations/getcommercelocation.ts
-  - src/sdk/models/operations/getcommercemetadata.ts
   - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmcontact.ts
   - src/sdk/models/operations/getcrmdeal.ts
@@ -1796,6 +1789,7 @@ generatedFiles:
   - src/sdk/models/operations/getmartechmember.ts
   - src/sdk/models/operations/getmessagingchannel.ts
   - src/sdk/models/operations/getmessagingmessage.ts
+  - src/sdk/models/operations/getmetadatametadata.ts
   - src/sdk/models/operations/getpaymentlink.ts
   - src/sdk/models/operations/getpaymentpayment.ts
   - src/sdk/models/operations/getpaymentpayout.ts
@@ -1841,7 +1835,6 @@ generatedFiles:
   - src/sdk/models/operations/listcommerceinventories.ts
   - src/sdk/models/operations/listcommerceitems.ts
   - src/sdk/models/operations/listcommercelocations.ts
-  - src/sdk/models/operations/listcommercemetadatas.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmcontacts.ts
   - src/sdk/models/operations/listcrmdeals.ts
@@ -1867,6 +1860,7 @@ generatedFiles:
   - src/sdk/models/operations/listmartechmembers.ts
   - src/sdk/models/operations/listmessagingchannels.ts
   - src/sdk/models/operations/listmessagingmessages.ts
+  - src/sdk/models/operations/listmetadatametadatas.ts
   - src/sdk/models/operations/listpassthroughs.ts
   - src/sdk/models/operations/listpaymentlinks.ts
   - src/sdk/models/operations/listpaymentpayments.ts
@@ -1911,7 +1905,6 @@ generatedFiles:
   - src/sdk/models/operations/patchcommerceinventory.ts
   - src/sdk/models/operations/patchcommerceitem.ts
   - src/sdk/models/operations/patchcommercelocation.ts
-  - src/sdk/models/operations/patchcommercemetadata.ts
   - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmcontact.ts
   - src/sdk/models/operations/patchcrmdeal.ts
@@ -1931,6 +1924,7 @@ generatedFiles:
   - src/sdk/models/operations/patchmartechlist.ts
   - src/sdk/models/operations/patchmartechmember.ts
   - src/sdk/models/operations/patchmessagingmessage.ts
+  - src/sdk/models/operations/patchmetadatametadata.ts
   - src/sdk/models/operations/patchpassthroughjson.ts
   - src/sdk/models/operations/patchpassthroughraw.ts
   - src/sdk/models/operations/patchpaymentlink.ts
@@ -1970,7 +1964,6 @@ generatedFiles:
   - src/sdk/models/operations/removecommerceinventory.ts
   - src/sdk/models/operations/removecommerceitem.ts
   - src/sdk/models/operations/removecommercelocation.ts
-  - src/sdk/models/operations/removecommercemetadata.ts
   - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmcontact.ts
   - src/sdk/models/operations/removecrmdeal.ts
@@ -1990,6 +1983,7 @@ generatedFiles:
   - src/sdk/models/operations/removemartechlist.ts
   - src/sdk/models/operations/removemartechmember.ts
   - src/sdk/models/operations/removemessagingmessage.ts
+  - src/sdk/models/operations/removemetadatametadata.ts
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/removepaymentlink.ts
   - src/sdk/models/operations/removepaymentpayment.ts
@@ -2027,7 +2021,6 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
-  - src/sdk/models/operations/updatecommercemetadata.ts
   - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
@@ -2047,6 +2040,7 @@ generatedFiles:
   - src/sdk/models/operations/updatemartechlist.ts
   - src/sdk/models/operations/updatemartechmember.ts
   - src/sdk/models/operations/updatemessagingmessage.ts
+  - src/sdk/models/operations/updatemetadatametadata.ts
   - src/sdk/models/operations/updatepassthroughjson.ts
   - src/sdk/models/operations/updatepassthroughraw.ts
   - src/sdk/models/operations/updatepaymentlink.ts
@@ -2110,7 +2104,6 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemprice.ts
   - src/sdk/models/shared/commerceitemvariant.ts
   - src/sdk/models/shared/commercelocation.ts
-  - src/sdk/models/shared/commercemetadata.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/crmcontact.ts
@@ -2160,6 +2153,7 @@ generatedFiles:
   - src/sdk/models/shared/messagingchannel.ts
   - src/sdk/models/shared/messagingmember.ts
   - src/sdk/models/shared/messagingmessage.ts
+  - src/sdk/models/shared/metadatametadata.ts
   - src/sdk/models/shared/paymentlink.ts
   - src/sdk/models/shared/paymentlinklineitem.ts
   - src/sdk/models/shared/paymentpayment.ts
@@ -5162,4 +5156,58 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  createMetadataMetadata:
+    speakeasy-default-create-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  getMetadataMetadata:
+    speakeasy-default-get-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  listMetadataMetadatas:
+    speakeasy-default-list-metadata-metadatas:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: []
+  patchMetadataMetadata:
+    speakeasy-default-patch-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  removeMetadataMetadata:
+    speakeasy-default-remove-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateMetadataMetadata:
+    speakeasy-default-update-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
 generatedTests: {}

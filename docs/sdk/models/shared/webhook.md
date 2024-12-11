@@ -11,7 +11,7 @@ let value: Webhook = {
   connectionId: "<id>",
   event: "updated",
   hookUrl: "https://elliptical-fog.org",
-  objectType: "enrich_company",
+  objectType: "storage_file",
 };
 ```
 

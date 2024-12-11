@@ -25,13 +25,13 @@ import { Result } from "../sdk/types/fp.js";
 /**
  * Update a metadata
  */
-export async function metadataUpdateCommerceMetadata(
+export async function metadataUpdateMetadataMetadata(
   client: UnifiedToCore,
-  request: operations.UpdateCommerceMetadataRequest,
+  request: operations.UpdateMetadataMetadataRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    shared.CommerceMetadata,
+    shared.MetadataMetadata,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -44,14 +44,14 @@ export async function metadataUpdateCommerceMetadata(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.UpdateCommerceMetadataRequest$outboundSchema.parse(value),
+      operations.UpdateMetadataMetadataRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.CommerceMetadata, { explode: true });
+  const body = encodeJSON("body", payload.MetadataMetadata, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -64,7 +64,7 @@ export async function metadataUpdateCommerceMetadata(
     }),
   };
 
-  const path = pathToFunc("/commerce/{connection_id}/metadata/{id}")(
+  const path = pathToFunc("/metadata/{connection_id}/metadata/{id}")(
     pathParams,
   );
 
@@ -81,7 +81,7 @@ export async function metadataUpdateCommerceMetadata(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "updateCommerceMetadata",
+    operationID: "updateMetadataMetadata",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -119,7 +119,7 @@ export async function metadataUpdateCommerceMetadata(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.CommerceMetadata,
+    shared.MetadataMetadata,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -128,7 +128,7 @@ export async function metadataUpdateCommerceMetadata(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, shared.CommerceMetadata$inboundSchema),
+    M.json(200, shared.MetadataMetadata$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

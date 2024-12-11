@@ -26,6 +26,7 @@ export const PropertyConnectionCategories = {
   Scim: "scim",
   Lms: "lms",
   Repo: "repo",
+  Metadata: "metadata",
 } as const;
 export type PropertyConnectionCategories = ClosedEnum<
   typeof PropertyConnectionCategories

@@ -30,6 +30,7 @@ export const QueryParamCategories = {
   Scim: "scim",
   Lms: "lms",
   Repo: "repo",
+  Metadata: "metadata",
 } as const;
 export type QueryParamCategories = ClosedEnum<typeof QueryParamCategories>;
 

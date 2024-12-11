@@ -1,11 +1,11 @@
-# GetCommerceMetadataRequest
+# GetMetadataMetadataRequest
 
 ## Example Usage
 
 ```typescript
-import { GetCommerceMetadataRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { GetMetadataMetadataRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: GetCommerceMetadataRequest = {
+let value: GetMetadataMetadataRequest = {
   connectionId: "<id>",
   id: "<id>",
 };

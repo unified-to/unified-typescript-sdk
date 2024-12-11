@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
@@ -23,15 +23,15 @@ import * as shared from "../sdk/models/shared/index.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Retrieve a metadata
+ * Update a metadata
  */
-export async function metadataGetCommerceMetadata(
+export async function metadataPatchMetadataMetadata(
   client: UnifiedToCore,
-  request: operations.GetCommerceMetadataRequest,
+  request: operations.PatchMetadataMetadataRequest,
   options?: RequestOptions,
 ): Promise<
   Result<
-    shared.CommerceMetadata,
+    shared.MetadataMetadata,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -44,14 +44,14 @@ export async function metadataGetCommerceMetadata(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.GetCommerceMetadataRequest$outboundSchema.parse(value),
+      operations.PatchMetadataMetadataRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return parsed;
   }
   const payload = parsed.value;
-  const body = null;
+  const body = encodeJSON("body", payload.MetadataMetadata, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -64,7 +64,7 @@ export async function metadataGetCommerceMetadata(
     }),
   };
 
-  const path = pathToFunc("/commerce/{connection_id}/metadata/{id}")(
+  const path = pathToFunc("/metadata/{connection_id}/metadata/{id}")(
     pathParams,
   );
 
@@ -73,6 +73,7 @@ export async function metadataGetCommerceMetadata(
   });
 
   const headers = new Headers({
+    "Content-Type": "application/json",
     Accept: "application/json",
   });
 
@@ -80,7 +81,7 @@ export async function metadataGetCommerceMetadata(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    operationID: "getCommerceMetadata",
+    operationID: "patchMetadataMetadata",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -94,7 +95,7 @@ export async function metadataGetCommerceMetadata(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "GET",
+    method: "PATCH",
     path: path,
     headers: headers,
     query: query,
@@ -118,7 +119,7 @@ export async function metadataGetCommerceMetadata(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.CommerceMetadata,
+    shared.MetadataMetadata,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -127,7 +128,7 @@ export async function metadataGetCommerceMetadata(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, shared.CommerceMetadata$inboundSchema),
+    M.json(200, shared.MetadataMetadata$inboundSchema),
     M.fail(["4XX", "5XX"]),
   )(response);
   if (!result.ok) {

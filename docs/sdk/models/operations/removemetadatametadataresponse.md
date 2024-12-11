@@ -1,11 +1,11 @@
-# RemoveCommerceMetadataResponse
+# RemoveMetadataMetadataResponse
 
 ## Example Usage
 
 ```typescript
-import { RemoveCommerceMetadataResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
+import { RemoveMetadataMetadataResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCommerceMetadataResponse = {
+let value: RemoveMetadataMetadataResponse = {
   headers: {
     "key": [
       "<value>",

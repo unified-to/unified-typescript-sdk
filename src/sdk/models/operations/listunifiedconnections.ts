@@ -30,6 +30,7 @@ export const Categories = {
   Scim: "scim",
   Lms: "lms",
   Repo: "repo",
+  Metadata: "metadata",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

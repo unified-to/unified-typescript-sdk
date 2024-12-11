@@ -9,32 +9,26 @@
 * [createCommerceInventory](#createcommerceinventory) - Create an inventory
 * [createCommerceItem](#createcommerceitem) - Create an item
 * [createCommerceLocation](#createcommercelocation) - Create a location
-* [createCommerceMetadata](#createcommercemetadata) - Create a metadata
 * [getCommerceCollection](#getcommercecollection) - Retrieve a collection
 * [getCommerceInventory](#getcommerceinventory) - Retrieve an inventory
 * [getCommerceItem](#getcommerceitem) - Retrieve an item
 * [getCommerceLocation](#getcommercelocation) - Retrieve a location
-* [getCommerceMetadata](#getcommercemetadata) - Retrieve a metadata
 * [listCommerceCollections](#listcommercecollections) - List all collections
 * [listCommerceInventories](#listcommerceinventories) - List all inventories
 * [listCommerceItems](#listcommerceitems) - List all items
 * [listCommerceLocations](#listcommercelocations) - List all locations
-* [listCommerceMetadatas](#listcommercemetadatas) - List all metadatas
 * [patchCommerceCollection](#patchcommercecollection) - Update a collection
 * [patchCommerceInventory](#patchcommerceinventory) - Update an inventory
 * [patchCommerceItem](#patchcommerceitem) - Update an item
 * [patchCommerceLocation](#patchcommercelocation) - Update a location
-* [patchCommerceMetadata](#patchcommercemetadata) - Update a metadata
 * [removeCommerceCollection](#removecommercecollection) - Remove a collection
 * [removeCommerceInventory](#removecommerceinventory) - Remove an inventory
 * [removeCommerceItem](#removecommerceitem) - Remove an item
 * [removeCommerceLocation](#removecommercelocation) - Remove a location
-* [removeCommerceMetadata](#removecommercemetadata) - Remove a metadata
 * [updateCommerceCollection](#updatecommercecollection) - Update a collection
 * [updateCommerceInventory](#updatecommerceinventory) - Update an inventory
 * [updateCommerceItem](#updatecommerceitem) - Update an item
 * [updateCommerceLocation](#updatecommercelocation) - Update a location
-* [updateCommerceMetadata](#updatecommercemetadata) - Update a metadata
 
 ## createCommerceCollection
 
@@ -349,86 +343,6 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceLocation](../../sdk/models/shared/commercelocation.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
-## createCommerceMetadata
-
-Create a metadata
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.createCommerceMetadata({
-    connectionId: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceCreateCommerceMetadata } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceMetadata.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commerceCreateCommerceMetadata(unifiedTo, {
-    connectionId: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.CreateCommerceMetadataRequest](../../sdk/models/operations/createcommercemetadatarequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CommerceMetadata](../../sdk/models/shared/commercemetadata.md)\>**
 
 ### Errors
 
@@ -764,88 +678,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## getCommerceMetadata
-
-Retrieve a metadata
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.getCommerceMetadata({
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceGetCommerceMetadata } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceMetadata.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commerceGetCommerceMetadata(unifiedTo, {
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.GetCommerceMetadataRequest](../../sdk/models/operations/getcommercemetadatarequest.md)                                                                             | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CommerceMetadata](../../sdk/models/shared/commercemetadata.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## listCommerceCollections
 
 List all collections
@@ -1159,86 +991,6 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceLocation[]](../../models/.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
-## listCommerceMetadatas
-
-List all metadatas
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.listCommerceMetadatas({
-    connectionId: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceListCommerceMetadatas } from "@unified-api/typescript-sdk/funcs/commerceListCommerceMetadatas.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commerceListCommerceMetadatas(unifiedTo, {
-    connectionId: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.ListCommerceMetadatasRequest](../../sdk/models/operations/listcommercemetadatasrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CommerceMetadata[]](../../models/.md)\>**
 
 ### Errors
 
@@ -1574,88 +1326,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## patchCommerceMetadata
-
-Update a metadata
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.patchCommerceMetadata({
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commercePatchCommerceMetadata } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceMetadata.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commercePatchCommerceMetadata(unifiedTo, {
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.PatchCommerceMetadataRequest](../../sdk/models/operations/patchcommercemetadatarequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CommerceMetadata](../../sdk/models/shared/commercemetadata.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## removeCommerceCollection
 
 Remove a collection
@@ -1984,88 +1654,6 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
-## removeCommerceMetadata
-
-Remove a metadata
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.removeCommerceMetadata({
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceRemoveCommerceMetadata } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceMetadata.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commerceRemoveCommerceMetadata(unifiedTo, {
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.RemoveCommerceMetadataRequest](../../sdk/models/operations/removecommercemetadatarequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[operations.RemoveCommerceMetadataResponse](../../sdk/models/operations/removecommercemetadataresponse.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
 ## updateCommerceCollection
 
 Update a collection
@@ -2387,88 +1975,6 @@ run();
 ### Response
 
 **Promise\<[shared.CommerceLocation](../../sdk/models/shared/commercelocation.md)\>**
-
-### Errors
-
-| Error Type      | Status Code     | Content Type    |
-| --------------- | --------------- | --------------- |
-| errors.SDKError | 4XX, 5XX        | \*/\*           |
-
-## updateCommerceMetadata
-
-Update a metadata
-
-### Example Usage
-
-```typescript
-import { UnifiedTo } from "@unified-api/typescript-sdk";
-
-const unifiedTo = new UnifiedTo({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const result = await unifiedTo.commerce.updateCommerceMetadata({
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Standalone function
-
-The standalone function version of this method:
-
-```typescript
-import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commerceUpdateCommerceMetadata } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceMetadata.js";
-
-// Use `UnifiedToCore` for best tree-shaking performance.
-// You can create one instance of it to use across an application.
-const unifiedTo = new UnifiedToCore({
-  security: {
-    jwt: "<YOUR_API_KEY_HERE>",
-  },
-});
-
-async function run() {
-  const res = await commerceUpdateCommerceMetadata(unifiedTo, {
-    connectionId: "<id>",
-    id: "<id>",
-  });
-
-  if (!res.ok) {
-    throw res.error;
-  }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
-}
-
-run();
-```
-
-### Parameters
-
-| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                                                                                      | [operations.UpdateCommerceMetadataRequest](../../sdk/models/operations/updatecommercemetadatarequest.md)                                                                       | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
-| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
-| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
-| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
-
-### Response
-
-**Promise\<[shared.CommerceMetadata](../../sdk/models/shared/commercemetadata.md)\>**
 
 ### Errors
 
