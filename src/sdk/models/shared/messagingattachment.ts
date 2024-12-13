@@ -9,6 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MessagingAttachment = {
+  contentIdentifier?: string | undefined;
   contentType?: string | undefined;
   downloadUrl?: string | undefined;
   filename?: string | undefined;
@@ -22,6 +23,7 @@ export const MessagingAttachment$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  content_identifier: z.string().optional(),
   content_type: z.string().optional(),
   download_url: z.string().optional(),
   filename: z.string().optional(),
@@ -29,6 +31,7 @@ export const MessagingAttachment$inboundSchema: z.ZodType<
   size: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "content_identifier": "contentIdentifier",
     "content_type": "contentType",
     "download_url": "downloadUrl",
     "message_id": "messageId",
@@ -37,6 +40,7 @@ export const MessagingAttachment$inboundSchema: z.ZodType<
 
 /** @internal */
 export type MessagingAttachment$Outbound = {
+  content_identifier?: string | undefined;
   content_type?: string | undefined;
   download_url?: string | undefined;
   filename?: string | undefined;
@@ -50,6 +54,7 @@ export const MessagingAttachment$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   MessagingAttachment
 > = z.object({
+  contentIdentifier: z.string().optional(),
   contentType: z.string().optional(),
   downloadUrl: z.string().optional(),
   filename: z.string().optional(),
@@ -57,6 +62,7 @@ export const MessagingAttachment$outboundSchema: z.ZodType<
   size: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
+    contentIdentifier: "content_identifier",
     contentType: "content_type",
     downloadUrl: "download_url",
     messageId: "message_id",
