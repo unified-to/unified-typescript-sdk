@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: aa3c8602e58a30faa2d1085e078be4b2
+  docChecksum: 5cab2e21dd40857ac20e5d0a4eaf95d0
   docVersion: "1.0"
-  speakeasyVersion: 1.454.2
-  generationVersion: 2.477.4
-  releaseVersion: 2.9.10
-  configChecksum: 09fe75d58d1def1ac3181a6558f4607e
+  speakeasyVersion: 1.455.3
+  generationVersion: 2.479.3
+  releaseVersion: 2.9.11
+  configChecksum: 720bbc804c73de8ab23dcf8d106b49fa
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -630,10 +630,12 @@ generatedFiles:
   - docs/sdk/models/shared/listlocationid.md
   - docs/sdk/models/shared/listoffset.md
   - docs/sdk/models/shared/listorder.md
+  - docs/sdk/models/shared/listorgid.md
   - docs/sdk/models/shared/listparentid.md
   - docs/sdk/models/shared/listprojectid.md
   - docs/sdk/models/shared/listquery.md
   - docs/sdk/models/shared/listrawfields.md
+  - docs/sdk/models/shared/listrepoid.md
   - docs/sdk/models/shared/listrootid.md
   - docs/sdk/models/shared/listsortbycreatedat.md
   - docs/sdk/models/shared/listsortbyname.md
@@ -794,6 +796,7 @@ generatedFiles:
   - docs/sdk/models/shared/virtualwebhookcompanyid.md
   - docs/sdk/models/shared/virtualwebhookcontactid.md
   - docs/sdk/models/shared/virtualwebhookdealid.md
+  - docs/sdk/models/shared/virtualwebhookjobid.md
   - docs/sdk/models/shared/virtualwebhooklimit.md
   - docs/sdk/models/shared/virtualwebhookparentid.md
   - docs/sdk/models/shared/virtualwebhookticketid.md

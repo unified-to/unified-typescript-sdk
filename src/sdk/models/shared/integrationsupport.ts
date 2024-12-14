@@ -183,6 +183,13 @@ export const ListOrder = {
 } as const;
 export type ListOrder = ClosedEnum<typeof ListOrder>;
 
+export const ListOrgId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListOrgId = ClosedEnum<typeof ListOrgId>;
+
 export const ListParentId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -210,6 +217,13 @@ export const ListRawFields = {
   NotSupported: "not-supported",
 } as const;
 export type ListRawFields = ClosedEnum<typeof ListRawFields>;
+
+export const ListRepoId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListRepoId = ClosedEnum<typeof ListRepoId>;
 
 export const ListRootId = {
   SupportedRequired: "supported-required",
@@ -364,6 +378,13 @@ export const VirtualWebhookDealId = {
 } as const;
 export type VirtualWebhookDealId = ClosedEnum<typeof VirtualWebhookDealId>;
 
+export const VirtualWebhookJobId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookJobId = ClosedEnum<typeof VirtualWebhookJobId>;
+
 export const VirtualWebhookLimit = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -434,10 +455,12 @@ export type IntegrationSupport = {
   listLocationId?: ListLocationId | undefined;
   listOffset?: ListOffset | undefined;
   listOrder?: ListOrder | undefined;
+  listOrgId?: ListOrgId | undefined;
   listParentId?: ListParentId | undefined;
   listProjectId?: ListProjectId | undefined;
   listQuery?: ListQuery | undefined;
   listRawFields?: ListRawFields | undefined;
+  listRepoId?: ListRepoId | undefined;
   listRootId?: ListRootId | undefined;
   listSortByCreatedAt?: ListSortByCreatedAt | undefined;
   listSortByName?: ListSortByName | undefined;
@@ -465,6 +488,7 @@ export type IntegrationSupport = {
   virtualWebhookCompanyId?: VirtualWebhookCompanyId | undefined;
   virtualWebhookContactId?: VirtualWebhookContactId | undefined;
   virtualWebhookDealId?: VirtualWebhookDealId | undefined;
+  virtualWebhookJobId?: VirtualWebhookJobId | undefined;
   virtualWebhookLimit?: VirtualWebhookLimit | undefined;
   virtualWebhookParentId?: VirtualWebhookParentId | undefined;
   virtualWebhookTicketId?: VirtualWebhookTicketId | undefined;
@@ -957,6 +981,25 @@ export namespace ListOrder$ {
 }
 
 /** @internal */
+export const ListOrgId$inboundSchema: z.ZodNativeEnum<typeof ListOrgId> = z
+  .nativeEnum(ListOrgId);
+
+/** @internal */
+export const ListOrgId$outboundSchema: z.ZodNativeEnum<typeof ListOrgId> =
+  ListOrgId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListOrgId$ {
+  /** @deprecated use `ListOrgId$inboundSchema` instead. */
+  export const inboundSchema = ListOrgId$inboundSchema;
+  /** @deprecated use `ListOrgId$outboundSchema` instead. */
+  export const outboundSchema = ListOrgId$outboundSchema;
+}
+
+/** @internal */
 export const ListParentId$inboundSchema: z.ZodNativeEnum<typeof ListParentId> =
   z.nativeEnum(ListParentId);
 
@@ -1034,6 +1077,25 @@ export namespace ListRawFields$ {
   export const inboundSchema = ListRawFields$inboundSchema;
   /** @deprecated use `ListRawFields$outboundSchema` instead. */
   export const outboundSchema = ListRawFields$outboundSchema;
+}
+
+/** @internal */
+export const ListRepoId$inboundSchema: z.ZodNativeEnum<typeof ListRepoId> = z
+  .nativeEnum(ListRepoId);
+
+/** @internal */
+export const ListRepoId$outboundSchema: z.ZodNativeEnum<typeof ListRepoId> =
+  ListRepoId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListRepoId$ {
+  /** @deprecated use `ListRepoId$inboundSchema` instead. */
+  export const inboundSchema = ListRepoId$inboundSchema;
+  /** @deprecated use `ListRepoId$outboundSchema` instead. */
+  export const outboundSchema = ListRepoId$outboundSchema;
 }
 
 /** @internal */
@@ -1462,6 +1524,27 @@ export namespace VirtualWebhookDealId$ {
 }
 
 /** @internal */
+export const VirtualWebhookJobId$inboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookJobId
+> = z.nativeEnum(VirtualWebhookJobId);
+
+/** @internal */
+export const VirtualWebhookJobId$outboundSchema: z.ZodNativeEnum<
+  typeof VirtualWebhookJobId
+> = VirtualWebhookJobId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace VirtualWebhookJobId$ {
+  /** @deprecated use `VirtualWebhookJobId$inboundSchema` instead. */
+  export const inboundSchema = VirtualWebhookJobId$inboundSchema;
+  /** @deprecated use `VirtualWebhookJobId$outboundSchema` instead. */
+  export const outboundSchema = VirtualWebhookJobId$outboundSchema;
+}
+
+/** @internal */
 export const VirtualWebhookLimit$inboundSchema: z.ZodNativeEnum<
   typeof VirtualWebhookLimit
 > = z.nativeEnum(VirtualWebhookLimit);
@@ -1618,10 +1701,12 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_location_id: ListLocationId$inboundSchema.optional(),
   list_offset: ListOffset$inboundSchema.optional(),
   list_order: ListOrder$inboundSchema.optional(),
+  list_org_id: ListOrgId$inboundSchema.optional(),
   list_parent_id: ListParentId$inboundSchema.optional(),
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
   list_raw_fields: ListRawFields$inboundSchema.optional(),
+  list_repo_id: ListRepoId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
   list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
@@ -1646,6 +1731,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema.optional(),
   virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema.optional(),
   virtual_webhook_deal_id: VirtualWebhookDealId$inboundSchema.optional(),
+  virtual_webhook_job_id: VirtualWebhookJobId$inboundSchema.optional(),
   virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
   virtual_webhook_parent_id: VirtualWebhookParentId$inboundSchema.optional(),
   virtual_webhook_ticket_id: VirtualWebhookTicketId$inboundSchema.optional(),
@@ -1682,10 +1768,12 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_location_id": "listLocationId",
     "list_offset": "listOffset",
     "list_order": "listOrder",
+    "list_org_id": "listOrgId",
     "list_parent_id": "listParentId",
     "list_project_id": "listProjectId",
     "list_query": "listQuery",
     "list_raw_fields": "listRawFields",
+    "list_repo_id": "listRepoId",
     "list_root_id": "listRootId",
     "list_sort_by_created_at": "listSortByCreatedAt",
     "list_sort_by_name": "listSortByName",
@@ -1709,6 +1797,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_company_id": "virtualWebhookCompanyId",
     "virtual_webhook_contact_id": "virtualWebhookContactId",
     "virtual_webhook_deal_id": "virtualWebhookDealId",
+    "virtual_webhook_job_id": "virtualWebhookJobId",
     "virtual_webhook_limit": "virtualWebhookLimit",
     "virtual_webhook_parent_id": "virtualWebhookParentId",
     "virtual_webhook_ticket_id": "virtualWebhookTicketId",
@@ -1746,10 +1835,12 @@ export type IntegrationSupport$Outbound = {
   list_location_id?: string | undefined;
   list_offset?: string | undefined;
   list_order?: string | undefined;
+  list_org_id?: string | undefined;
   list_parent_id?: string | undefined;
   list_project_id?: string | undefined;
   list_query?: string | undefined;
   list_raw_fields?: string | undefined;
+  list_repo_id?: string | undefined;
   list_root_id?: string | undefined;
   list_sort_by_created_at?: string | undefined;
   list_sort_by_name?: string | undefined;
@@ -1774,6 +1865,7 @@ export type IntegrationSupport$Outbound = {
   virtual_webhook_company_id?: string | undefined;
   virtual_webhook_contact_id?: string | undefined;
   virtual_webhook_deal_id?: string | undefined;
+  virtual_webhook_job_id?: string | undefined;
   virtual_webhook_limit?: string | undefined;
   virtual_webhook_parent_id?: string | undefined;
   virtual_webhook_ticket_id?: string | undefined;
@@ -1814,10 +1906,12 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listLocationId: ListLocationId$outboundSchema.optional(),
   listOffset: ListOffset$outboundSchema.optional(),
   listOrder: ListOrder$outboundSchema.optional(),
+  listOrgId: ListOrgId$outboundSchema.optional(),
   listParentId: ListParentId$outboundSchema.optional(),
   listProjectId: ListProjectId$outboundSchema.optional(),
   listQuery: ListQuery$outboundSchema.optional(),
   listRawFields: ListRawFields$outboundSchema.optional(),
+  listRepoId: ListRepoId$outboundSchema.optional(),
   listRootId: ListRootId$outboundSchema.optional(),
   listSortByCreatedAt: ListSortByCreatedAt$outboundSchema.optional(),
   listSortByName: ListSortByName$outboundSchema.optional(),
@@ -1842,6 +1936,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   virtualWebhookCompanyId: VirtualWebhookCompanyId$outboundSchema.optional(),
   virtualWebhookContactId: VirtualWebhookContactId$outboundSchema.optional(),
   virtualWebhookDealId: VirtualWebhookDealId$outboundSchema.optional(),
+  virtualWebhookJobId: VirtualWebhookJobId$outboundSchema.optional(),
   virtualWebhookLimit: VirtualWebhookLimit$outboundSchema.optional(),
   virtualWebhookParentId: VirtualWebhookParentId$outboundSchema.optional(),
   virtualWebhookTicketId: VirtualWebhookTicketId$outboundSchema.optional(),
@@ -1877,10 +1972,12 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listLocationId: "list_location_id",
     listOffset: "list_offset",
     listOrder: "list_order",
+    listOrgId: "list_org_id",
     listParentId: "list_parent_id",
     listProjectId: "list_project_id",
     listQuery: "list_query",
     listRawFields: "list_raw_fields",
+    listRepoId: "list_repo_id",
     listRootId: "list_root_id",
     listSortByCreatedAt: "list_sort_by_created_at",
     listSortByName: "list_sort_by_name",
@@ -1904,6 +2001,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     virtualWebhookCompanyId: "virtual_webhook_company_id",
     virtualWebhookContactId: "virtual_webhook_contact_id",
     virtualWebhookDealId: "virtual_webhook_deal_id",
+    virtualWebhookJobId: "virtual_webhook_job_id",
     virtualWebhookLimit: "virtual_webhook_limit",
     virtualWebhookParentId: "virtual_webhook_parent_id",
     virtualWebhookTicketId: "virtual_webhook_ticket_id",

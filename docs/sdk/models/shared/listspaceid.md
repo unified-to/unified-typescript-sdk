@@ -5,7 +5,7 @@
 ```typescript
 import { ListSpaceId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListSpaceId = "not-supported";
+let value: ListSpaceId = "supported";
 ```
 
 ## Values
