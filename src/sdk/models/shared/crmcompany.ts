@@ -31,6 +31,10 @@ import {
  */
 export type CrmCompany = {
   address?: PropertyCrmCompanyAddress | undefined;
+  /**
+   * An array of contact IDs associated with this company
+   */
+  contactIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   /**
    * An array of deal IDs associated with this contact
@@ -63,6 +67,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   address: PropertyCrmCompanyAddress$inboundSchema.optional(),
+  contact_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   deal_ids: z.array(z.string()).optional(),
@@ -84,6 +89,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
   websites: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    "contact_ids": "contactIds",
     "created_at": "createdAt",
     "deal_ids": "dealIds",
     "is_active": "isActive",
@@ -96,6 +102,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
 /** @internal */
 export type CrmCompany$Outbound = {
   address?: PropertyCrmCompanyAddress$Outbound | undefined;
+  contact_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   deal_ids?: Array<string> | undefined;
   description?: string | undefined;
@@ -122,6 +129,7 @@ export const CrmCompany$outboundSchema: z.ZodType<
   CrmCompany
 > = z.object({
   address: PropertyCrmCompanyAddress$outboundSchema.optional(),
+  contactIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dealIds: z.array(z.string()).optional(),
   description: z.string().optional(),
@@ -141,6 +149,7 @@ export const CrmCompany$outboundSchema: z.ZodType<
   websites: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    contactIds: "contact_ids",
     createdAt: "created_at",
     dealIds: "deal_ids",
     isActive: "is_active",
