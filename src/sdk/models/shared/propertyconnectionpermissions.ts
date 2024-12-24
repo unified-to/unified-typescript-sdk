@@ -87,6 +87,8 @@ export const PropertyConnectionPermissions = {
   HrisLocationRead: "hris_location_read",
   HrisLocationWrite: "hris_location_write",
   UcCallRead: "uc_call_read",
+  UcContactRead: "uc_contact_read",
+  UcContactWrite: "uc_contact_write",
   StorageFileRead: "storage_file_read",
   StorageFileWrite: "storage_file_write",
   Webhook: "webhook",
