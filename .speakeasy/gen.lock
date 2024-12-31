@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 11363cbfd40306b24119fb60c9ea2fc5
+  docChecksum: 05ab7803e5b317202af3aacb4835f336
   docVersion: "1.0"
-  speakeasyVersion: 1.460.2
+  speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 2.9.13
-  configChecksum: 48fcec57e3715b670c796797a61a6ca2
+  releaseVersion: 2.9.14
+  configChecksum: 7ade750c4842ef9909edcdf7bcaaaae4
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -556,6 +556,9 @@ generatedFiles:
   - docs/sdk/models/shared/crmemail.md
   - docs/sdk/models/shared/crmemailtype.md
   - docs/sdk/models/shared/crmevent.md
+  - docs/sdk/models/shared/crmeventformfield.md
+  - docs/sdk/models/shared/crmeventformfieldtype.md
+  - docs/sdk/models/shared/crmeventformoption.md
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/crmpipeline.md
@@ -697,8 +700,11 @@ generatedFiles:
   - docs/sdk/models/shared/propertycrmcontactaddress.md
   - docs/sdk/models/shared/propertycrmeventcall.md
   - docs/sdk/models/shared/propertycrmeventemail.md
+  - docs/sdk/models/shared/propertycrmeventform.md
+  - docs/sdk/models/shared/propertycrmeventmarketingemail.md
   - docs/sdk/models/shared/propertycrmeventmeeting.md
   - docs/sdk/models/shared/propertycrmeventnote.md
+  - docs/sdk/models/shared/propertycrmeventpageview.md
   - docs/sdk/models/shared/propertycrmeventtask.md
   - docs/sdk/models/shared/propertycrmeventtaskstatus.md
   - docs/sdk/models/shared/propertycrmleadaddress.md
@@ -2113,6 +2119,8 @@ generatedFiles:
   - src/sdk/models/shared/crmdeal.ts
   - src/sdk/models/shared/crmemail.ts
   - src/sdk/models/shared/crmevent.ts
+  - src/sdk/models/shared/crmeventformfield.ts
+  - src/sdk/models/shared/crmeventformoption.ts
   - src/sdk/models/shared/crmlead.ts
   - src/sdk/models/shared/crmpipeline.ts
   - src/sdk/models/shared/crmstage.ts
@@ -2178,8 +2186,11 @@ generatedFiles:
   - src/sdk/models/shared/propertycrmcontactaddress.ts
   - src/sdk/models/shared/propertycrmeventcall.ts
   - src/sdk/models/shared/propertycrmeventemail.ts
+  - src/sdk/models/shared/propertycrmeventform.ts
+  - src/sdk/models/shared/propertycrmeventmarketingemail.ts
   - src/sdk/models/shared/propertycrmeventmeeting.ts
   - src/sdk/models/shared/propertycrmeventnote.ts
+  - src/sdk/models/shared/propertycrmeventpageview.ts
   - src/sdk/models/shared/propertycrmeventtask.ts
   - src/sdk/models/shared/propertycrmleadaddress.ts
   - src/sdk/models/shared/propertyenrichcompanyaddress.ts

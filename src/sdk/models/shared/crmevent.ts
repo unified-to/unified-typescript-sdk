@@ -21,6 +21,18 @@ import {
   PropertyCrmEventEmail$outboundSchema,
 } from "./propertycrmeventemail.js";
 import {
+  PropertyCrmEventForm,
+  PropertyCrmEventForm$inboundSchema,
+  PropertyCrmEventForm$Outbound,
+  PropertyCrmEventForm$outboundSchema,
+} from "./propertycrmeventform.js";
+import {
+  PropertyCrmEventMarketingEmail,
+  PropertyCrmEventMarketingEmail$inboundSchema,
+  PropertyCrmEventMarketingEmail$Outbound,
+  PropertyCrmEventMarketingEmail$outboundSchema,
+} from "./propertycrmeventmarketingemail.js";
+import {
   PropertyCrmEventMeeting,
   PropertyCrmEventMeeting$inboundSchema,
   PropertyCrmEventMeeting$Outbound,
@@ -32,6 +44,12 @@ import {
   PropertyCrmEventNote$Outbound,
   PropertyCrmEventNote$outboundSchema,
 } from "./propertycrmeventnote.js";
+import {
+  PropertyCrmEventPageView,
+  PropertyCrmEventPageView$inboundSchema,
+  PropertyCrmEventPageView$Outbound,
+  PropertyCrmEventPageView$outboundSchema,
+} from "./propertycrmeventpageview.js";
 import {
   PropertyCrmEventTask,
   PropertyCrmEventTask$inboundSchema,
@@ -45,6 +63,9 @@ export const CrmEventType = {
   Task: "TASK",
   Meeting: "MEETING",
   Call: "CALL",
+  MarketingEmail: "MARKETING_EMAIL",
+  Form: "FORM",
+  PageView: "PAGE_VIEW",
 } as const;
 export type CrmEventType = ClosedEnum<typeof CrmEventType>;
 
@@ -73,8 +94,10 @@ export type CrmEvent = {
    * The email object, when type = email
    */
   email?: PropertyCrmEventEmail | undefined;
+  form?: PropertyCrmEventForm | undefined;
   id?: string | undefined;
   leadIds?: Array<string> | undefined;
+  marketingEmail?: PropertyCrmEventMarketingEmail | undefined;
   /**
    * The meeting object, when type = meeting
    */
@@ -83,6 +106,7 @@ export type CrmEvent = {
    * The note object, when type = note
    */
   note?: PropertyCrmEventNote | undefined;
+  pageView?: PropertyCrmEventPageView | undefined;
   /**
    * The raw data returned by the integration for this event.
    */
@@ -128,10 +152,13 @@ export const CrmEvent$inboundSchema: z.ZodType<
     .optional(),
   deal_ids: z.array(z.string()).optional(),
   email: PropertyCrmEventEmail$inboundSchema.optional(),
+  form: PropertyCrmEventForm$inboundSchema.optional(),
   id: z.string().optional(),
   lead_ids: z.array(z.string()).optional(),
+  marketing_email: PropertyCrmEventMarketingEmail$inboundSchema.optional(),
   meeting: PropertyCrmEventMeeting$inboundSchema.optional(),
   note: PropertyCrmEventNote$inboundSchema.optional(),
+  page_view: PropertyCrmEventPageView$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   task: PropertyCrmEventTask$inboundSchema.optional(),
   type: CrmEventType$inboundSchema.optional(),
@@ -145,6 +172,8 @@ export const CrmEvent$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "deal_ids": "dealIds",
     "lead_ids": "leadIds",
+    "marketing_email": "marketingEmail",
+    "page_view": "pageView",
     "updated_at": "updatedAt",
     "user_id": "userId",
   });
@@ -158,10 +187,13 @@ export type CrmEvent$Outbound = {
   created_at?: string | undefined;
   deal_ids?: Array<string> | undefined;
   email?: PropertyCrmEventEmail$Outbound | undefined;
+  form?: PropertyCrmEventForm$Outbound | undefined;
   id?: string | undefined;
   lead_ids?: Array<string> | undefined;
+  marketing_email?: PropertyCrmEventMarketingEmail$Outbound | undefined;
   meeting?: PropertyCrmEventMeeting$Outbound | undefined;
   note?: PropertyCrmEventNote$Outbound | undefined;
+  page_view?: PropertyCrmEventPageView$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
   task?: PropertyCrmEventTask$Outbound | undefined;
   type?: string | undefined;
@@ -181,10 +213,13 @@ export const CrmEvent$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dealIds: z.array(z.string()).optional(),
   email: PropertyCrmEventEmail$outboundSchema.optional(),
+  form: PropertyCrmEventForm$outboundSchema.optional(),
   id: z.string().optional(),
   leadIds: z.array(z.string()).optional(),
+  marketingEmail: PropertyCrmEventMarketingEmail$outboundSchema.optional(),
   meeting: PropertyCrmEventMeeting$outboundSchema.optional(),
   note: PropertyCrmEventNote$outboundSchema.optional(),
+  pageView: PropertyCrmEventPageView$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
   task: PropertyCrmEventTask$outboundSchema.optional(),
   type: CrmEventType$outboundSchema.optional(),
@@ -197,6 +232,8 @@ export const CrmEvent$outboundSchema: z.ZodType<
     createdAt: "created_at",
     dealIds: "deal_ids",
     leadIds: "lead_ids",
+    marketingEmail: "marketing_email",
+    pageView: "page_view",
     updatedAt: "updated_at",
     userId: "user_id",
   });

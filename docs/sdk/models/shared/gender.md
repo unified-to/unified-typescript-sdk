@@ -5,7 +5,7 @@
 ```typescript
 import { Gender } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Gender = "FEMALE";
+let value: Gender = "MALE";
 ```
 
 ## Values
