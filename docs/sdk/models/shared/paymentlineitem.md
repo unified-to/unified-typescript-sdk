@@ -1,11 +1,11 @@
-# PaymentLinkLineitem
+# PaymentLineitem
 
 ## Example Usage
 
 ```typescript
-import { PaymentLinkLineitem } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { PaymentLineitem } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentLinkLineitem = {};
+let value: PaymentLineitem = {};
 ```
 
 ## Fields

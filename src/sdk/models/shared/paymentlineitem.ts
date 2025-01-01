@@ -8,7 +8,7 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type PaymentLinkLineitem = {
+export type PaymentLineitem = {
   accountId?: string | undefined;
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
@@ -29,8 +29,8 @@ export type PaymentLinkLineitem = {
 };
 
 /** @internal */
-export const PaymentLinkLineitem$inboundSchema: z.ZodType<
-  PaymentLinkLineitem,
+export const PaymentLineitem$inboundSchema: z.ZodType<
+  PaymentLineitem,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -75,7 +75,7 @@ export const PaymentLinkLineitem$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type PaymentLinkLineitem$Outbound = {
+export type PaymentLineitem$Outbound = {
   account_id?: string | undefined;
   created_at?: string | undefined;
   discount_amount?: number | undefined;
@@ -96,10 +96,10 @@ export type PaymentLinkLineitem$Outbound = {
 };
 
 /** @internal */
-export const PaymentLinkLineitem$outboundSchema: z.ZodType<
-  PaymentLinkLineitem$Outbound,
+export const PaymentLineitem$outboundSchema: z.ZodType<
+  PaymentLineitem$Outbound,
   z.ZodTypeDef,
-  PaymentLinkLineitem
+  PaymentLineitem
 > = z.object({
   accountId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
@@ -142,29 +142,27 @@ export const PaymentLinkLineitem$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace PaymentLinkLineitem$ {
-  /** @deprecated use `PaymentLinkLineitem$inboundSchema` instead. */
-  export const inboundSchema = PaymentLinkLineitem$inboundSchema;
-  /** @deprecated use `PaymentLinkLineitem$outboundSchema` instead. */
-  export const outboundSchema = PaymentLinkLineitem$outboundSchema;
-  /** @deprecated use `PaymentLinkLineitem$Outbound` instead. */
-  export type Outbound = PaymentLinkLineitem$Outbound;
+export namespace PaymentLineitem$ {
+  /** @deprecated use `PaymentLineitem$inboundSchema` instead. */
+  export const inboundSchema = PaymentLineitem$inboundSchema;
+  /** @deprecated use `PaymentLineitem$outboundSchema` instead. */
+  export const outboundSchema = PaymentLineitem$outboundSchema;
+  /** @deprecated use `PaymentLineitem$Outbound` instead. */
+  export type Outbound = PaymentLineitem$Outbound;
 }
 
-export function paymentLinkLineitemToJSON(
-  paymentLinkLineitem: PaymentLinkLineitem,
+export function paymentLineitemToJSON(
+  paymentLineitem: PaymentLineitem,
 ): string {
-  return JSON.stringify(
-    PaymentLinkLineitem$outboundSchema.parse(paymentLinkLineitem),
-  );
+  return JSON.stringify(PaymentLineitem$outboundSchema.parse(paymentLineitem));
 }
 
-export function paymentLinkLineitemFromJSON(
+export function paymentLineitemFromJSON(
   jsonString: string,
-): SafeParseResult<PaymentLinkLineitem, SDKValidationError> {
+): SafeParseResult<PaymentLineitem, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => PaymentLinkLineitem$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PaymentLinkLineitem' from JSON`,
+    (x) => PaymentLineitem$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PaymentLineitem' from JSON`,
   );
 }

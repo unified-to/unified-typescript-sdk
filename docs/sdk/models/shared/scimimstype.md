@@ -5,7 +5,7 @@
 ```typescript
 import { ScimImsType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ScimImsType = "aim";
+let value: ScimImsType = "skype";
 ```
 
 ## Values

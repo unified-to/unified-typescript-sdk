@@ -8,11 +8,11 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  PaymentLinkLineitem,
-  PaymentLinkLineitem$inboundSchema,
-  PaymentLinkLineitem$Outbound,
-  PaymentLinkLineitem$outboundSchema,
-} from "./paymentlinklineitem.js";
+  PaymentLineitem,
+  PaymentLineitem$inboundSchema,
+  PaymentLineitem$Outbound,
+  PaymentLineitem$outboundSchema,
+} from "./paymentlineitem.js";
 
 export type PaymentLink = {
   amount?: number | undefined;
@@ -22,7 +22,7 @@ export type PaymentLink = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   isChargeableNow?: boolean | undefined;
-  lineitems?: Array<PaymentLinkLineitem> | undefined;
+  lineitems?: Array<PaymentLineitem> | undefined;
   paymentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   successUrl?: string | undefined;
@@ -44,7 +44,7 @@ export const PaymentLink$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   is_chargeable_now: z.boolean().optional(),
-  lineitems: z.array(PaymentLinkLineitem$inboundSchema).optional(),
+  lineitems: z.array(PaymentLineitem$inboundSchema).optional(),
   payment_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   success_url: z.string().optional(),
@@ -72,7 +72,7 @@ export type PaymentLink$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   is_chargeable_now?: boolean | undefined;
-  lineitems?: Array<PaymentLinkLineitem$Outbound> | undefined;
+  lineitems?: Array<PaymentLineitem$Outbound> | undefined;
   payment_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   success_url?: string | undefined;
@@ -93,7 +93,7 @@ export const PaymentLink$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   isChargeableNow: z.boolean().optional(),
-  lineitems: z.array(PaymentLinkLineitem$outboundSchema).optional(),
+  lineitems: z.array(PaymentLineitem$outboundSchema).optional(),
   paymentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   successUrl: z.string().optional(),

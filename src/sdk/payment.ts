@@ -4,20 +4,26 @@
 
 import { paymentCreatePaymentLink } from "../funcs/paymentCreatePaymentLink.js";
 import { paymentCreatePaymentPayment } from "../funcs/paymentCreatePaymentPayment.js";
+import { paymentCreatePaymentSubscription } from "../funcs/paymentCreatePaymentSubscription.js";
 import { paymentGetPaymentLink } from "../funcs/paymentGetPaymentLink.js";
 import { paymentGetPaymentPayment } from "../funcs/paymentGetPaymentPayment.js";
 import { paymentGetPaymentPayout } from "../funcs/paymentGetPaymentPayout.js";
 import { paymentGetPaymentRefund } from "../funcs/paymentGetPaymentRefund.js";
+import { paymentGetPaymentSubscription } from "../funcs/paymentGetPaymentSubscription.js";
 import { paymentListPaymentLinks } from "../funcs/paymentListPaymentLinks.js";
 import { paymentListPaymentPayments } from "../funcs/paymentListPaymentPayments.js";
 import { paymentListPaymentPayouts } from "../funcs/paymentListPaymentPayouts.js";
 import { paymentListPaymentRefunds } from "../funcs/paymentListPaymentRefunds.js";
+import { paymentListPaymentSubscriptions } from "../funcs/paymentListPaymentSubscriptions.js";
 import { paymentPatchPaymentLink } from "../funcs/paymentPatchPaymentLink.js";
 import { paymentPatchPaymentPayment } from "../funcs/paymentPatchPaymentPayment.js";
+import { paymentPatchPaymentSubscription } from "../funcs/paymentPatchPaymentSubscription.js";
 import { paymentRemovePaymentLink } from "../funcs/paymentRemovePaymentLink.js";
 import { paymentRemovePaymentPayment } from "../funcs/paymentRemovePaymentPayment.js";
+import { paymentRemovePaymentSubscription } from "../funcs/paymentRemovePaymentSubscription.js";
 import { paymentUpdatePaymentLink } from "../funcs/paymentUpdatePaymentLink.js";
 import { paymentUpdatePaymentPayment } from "../funcs/paymentUpdatePaymentPayment.js";
+import { paymentUpdatePaymentSubscription } from "../funcs/paymentUpdatePaymentSubscription.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -46,6 +52,20 @@ export class Payment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.PaymentPayment> {
     return unwrapAsync(paymentCreatePaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a subscription
+   */
+  async createPaymentSubscription(
+    request: operations.CreatePaymentSubscriptionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentSubscription> {
+    return unwrapAsync(paymentCreatePaymentSubscription(
       this,
       request,
       options,
@@ -109,6 +129,20 @@ export class Payment extends ClientSDK {
   }
 
   /**
+   * Retrieve a subscription
+   */
+  async getPaymentSubscription(
+    request: operations.GetPaymentSubscriptionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentSubscription> {
+    return unwrapAsync(paymentGetPaymentSubscription(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all links
    */
   async listPaymentLinks(
@@ -165,6 +199,20 @@ export class Payment extends ClientSDK {
   }
 
   /**
+   * List all subscriptions
+   */
+  async listPaymentSubscriptions(
+    request: operations.ListPaymentSubscriptionsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.PaymentSubscription>> {
+    return unwrapAsync(paymentListPaymentSubscriptions(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a link
    */
   async patchPaymentLink(
@@ -186,6 +234,20 @@ export class Payment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.PaymentPayment> {
     return unwrapAsync(paymentPatchPaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a subscription
+   */
+  async patchPaymentSubscription(
+    request: operations.PatchPaymentSubscriptionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentSubscription> {
+    return unwrapAsync(paymentPatchPaymentSubscription(
       this,
       request,
       options,
@@ -221,6 +283,20 @@ export class Payment extends ClientSDK {
   }
 
   /**
+   * Remove a subscription
+   */
+  async removePaymentSubscription(
+    request: operations.RemovePaymentSubscriptionRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemovePaymentSubscriptionResponse | undefined> {
+    return unwrapAsync(paymentRemovePaymentSubscription(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a link
    */
   async updatePaymentLink(
@@ -242,6 +318,20 @@ export class Payment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.PaymentPayment> {
     return unwrapAsync(paymentUpdatePaymentPayment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a subscription
+   */
+  async updatePaymentSubscription(
+    request: operations.UpdatePaymentSubscriptionRequest,
+    options?: RequestOptions,
+  ): Promise<shared.PaymentSubscription> {
+    return unwrapAsync(paymentUpdatePaymentSubscription(
       this,
       request,
       options,

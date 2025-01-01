@@ -18,7 +18,7 @@ export const PaymentRefundStatus = {
 export type PaymentRefundStatus = ClosedEnum<typeof PaymentRefundStatus>;
 
 export type PaymentRefund = {
-  createdAt?: string | undefined;
+  createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
   notes?: string | undefined;
@@ -27,7 +27,7 @@ export type PaymentRefund = {
   reference?: string | undefined;
   status?: PaymentRefundStatus | undefined;
   totalAmount: number;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
 };
 
 /** @internal */
@@ -57,7 +57,8 @@ export const PaymentRefund$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  created_at: z.string().optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
   notes: z.string().optional(),
@@ -66,7 +67,8 @@ export const PaymentRefund$inboundSchema: z.ZodType<
   reference: z.string().optional(),
   status: PaymentRefundStatus$inboundSchema.optional(),
   total_amount: z.number(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
@@ -96,7 +98,7 @@ export const PaymentRefund$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PaymentRefund
 > = z.object({
-  createdAt: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
   notes: z.string().optional(),
@@ -105,7 +107,7 @@ export const PaymentRefund$outboundSchema: z.ZodType<
   reference: z.string().optional(),
   status: PaymentRefundStatus$outboundSchema.optional(),
   totalAmount: z.number(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",

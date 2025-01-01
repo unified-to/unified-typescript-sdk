@@ -32,6 +32,8 @@ export const Scopes = {
   PaymentRefundRead: "payment_refund_read",
   PaymentLinkRead: "payment_link_read",
   PaymentLinkWrite: "payment_link_write",
+  PaymentSubscriptionRead: "payment_subscription_read",
+  PaymentSubscriptionWrite: "payment_subscription_write",
   CommerceItemRead: "commerce_item_read",
   CommerceItemWrite: "commerce_item_write",
   CommerceCollectionRead: "commerce_collection_read",

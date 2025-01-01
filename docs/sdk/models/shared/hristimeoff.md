@@ -6,7 +6,7 @@
 import { HrisTimeoff } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisTimeoff = {
-  startAt: new Date("2024-01-13T21:17:10.262Z"),
+  startAt: new Date("2025-01-12T21:17:10.262Z"),
   userId: "<id>",
 };
 ```

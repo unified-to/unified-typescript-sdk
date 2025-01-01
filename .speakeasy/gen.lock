@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 05ab7803e5b317202af3aacb4835f336
+  docChecksum: d3ff121f2a7d483c6c660192f0d72464
   docVersion: "1.0"
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 2.9.14
-  configChecksum: 7ade750c4842ef9909edcdf7bcaaaae4
+  releaseVersion: 2.9.15
+  configChecksum: c12ae43abfe7c4fd16e3e33b3bf19b4f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -85,6 +85,7 @@ generatedFiles:
   - docs/sdk/models/operations/createpassthroughrawresponseresult.md
   - docs/sdk/models/operations/createpaymentlinkrequest.md
   - docs/sdk/models/operations/createpaymentpaymentrequest.md
+  - docs/sdk/models/operations/createpaymentsubscriptionrequest.md
   - docs/sdk/models/operations/createrepobranchrequest.md
   - docs/sdk/models/operations/createrepocommitrequest.md
   - docs/sdk/models/operations/createrepoorganizationrequest.md
@@ -147,6 +148,7 @@ generatedFiles:
   - docs/sdk/models/operations/getpaymentpaymentrequest.md
   - docs/sdk/models/operations/getpaymentpayoutrequest.md
   - docs/sdk/models/operations/getpaymentrefundrequest.md
+  - docs/sdk/models/operations/getpaymentsubscriptionrequest.md
   - docs/sdk/models/operations/getrepobranchrequest.md
   - docs/sdk/models/operations/getrepocommitrequest.md
   - docs/sdk/models/operations/getrepoorganizationrequest.md
@@ -220,6 +222,7 @@ generatedFiles:
   - docs/sdk/models/operations/listpaymentpaymentsrequest.md
   - docs/sdk/models/operations/listpaymentpayoutsrequest.md
   - docs/sdk/models/operations/listpaymentrefundsrequest.md
+  - docs/sdk/models/operations/listpaymentsubscriptionsrequest.md
   - docs/sdk/models/operations/listrepobranchesrequest.md
   - docs/sdk/models/operations/listrepocommitsrequest.md
   - docs/sdk/models/operations/listrepoorganizationsrequest.md
@@ -288,6 +291,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchpassthroughrawresponseresult.md
   - docs/sdk/models/operations/patchpaymentlinkrequest.md
   - docs/sdk/models/operations/patchpaymentpaymentrequest.md
+  - docs/sdk/models/operations/patchpaymentsubscriptionrequest.md
   - docs/sdk/models/operations/patchrepobranchrequest.md
   - docs/sdk/models/operations/patchrepocommitrequest.md
   - docs/sdk/models/operations/patchrepoorganizationrequest.md
@@ -390,6 +394,8 @@ generatedFiles:
   - docs/sdk/models/operations/removepaymentlinkresponse.md
   - docs/sdk/models/operations/removepaymentpaymentrequest.md
   - docs/sdk/models/operations/removepaymentpaymentresponse.md
+  - docs/sdk/models/operations/removepaymentsubscriptionrequest.md
+  - docs/sdk/models/operations/removepaymentsubscriptionresponse.md
   - docs/sdk/models/operations/removerepobranchrequest.md
   - docs/sdk/models/operations/removerepobranchresponse.md
   - docs/sdk/models/operations/removerepocommitrequest.md
@@ -469,6 +475,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatepassthroughrawresponseresult.md
   - docs/sdk/models/operations/updatepaymentlinkrequest.md
   - docs/sdk/models/operations/updatepaymentpaymentrequest.md
+  - docs/sdk/models/operations/updatepaymentsubscriptionrequest.md
   - docs/sdk/models/operations/updaterepobranchrequest.md
   - docs/sdk/models/operations/updaterepocommitrequest.md
   - docs/sdk/models/operations/updaterepoorganizationrequest.md
@@ -604,6 +611,7 @@ generatedFiles:
   - docs/sdk/models/shared/hristimeofftype.md
   - docs/sdk/models/shared/integration.md
   - docs/sdk/models/shared/integrationsupport.md
+  - docs/sdk/models/shared/intervalunit.md
   - docs/sdk/models/shared/issue.md
   - docs/sdk/models/shared/issuestatus.md
   - docs/sdk/models/shared/kmspage.md
@@ -674,13 +682,15 @@ generatedFiles:
   - docs/sdk/models/shared/operation.md
   - docs/sdk/models/shared/origin.md
   - docs/sdk/models/shared/paymentcollectionmethod.md
+  - docs/sdk/models/shared/paymentlineitem.md
   - docs/sdk/models/shared/paymentlink.md
-  - docs/sdk/models/shared/paymentlinklineitem.md
   - docs/sdk/models/shared/paymentpayment.md
   - docs/sdk/models/shared/paymentpayout.md
   - docs/sdk/models/shared/paymentpayoutstatus.md
   - docs/sdk/models/shared/paymentrefund.md
   - docs/sdk/models/shared/paymentrefundstatus.md
+  - docs/sdk/models/shared/paymentsubscription.md
+  - docs/sdk/models/shared/paymentsubscriptionstatus.md
   - docs/sdk/models/shared/paymenttype.md
   - docs/sdk/models/shared/priority.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
@@ -886,6 +896,7 @@ generatedFiles:
   - docs/sdks/space/README.md
   - docs/sdks/storage/README.md
   - docs/sdks/student/README.md
+  - docs/sdks/subscription/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taxrate/README.md
   - docs/sdks/ticket/README.md
@@ -1418,20 +1429,26 @@ generatedFiles:
   - src/funcs/passthroughUpdatePassthroughRaw.ts
   - src/funcs/paymentCreatePaymentLink.ts
   - src/funcs/paymentCreatePaymentPayment.ts
+  - src/funcs/paymentCreatePaymentSubscription.ts
   - src/funcs/paymentGetPaymentLink.ts
   - src/funcs/paymentGetPaymentPayment.ts
   - src/funcs/paymentGetPaymentPayout.ts
   - src/funcs/paymentGetPaymentRefund.ts
+  - src/funcs/paymentGetPaymentSubscription.ts
   - src/funcs/paymentListPaymentLinks.ts
   - src/funcs/paymentListPaymentPayments.ts
   - src/funcs/paymentListPaymentPayouts.ts
   - src/funcs/paymentListPaymentRefunds.ts
+  - src/funcs/paymentListPaymentSubscriptions.ts
   - src/funcs/paymentPatchPaymentLink.ts
   - src/funcs/paymentPatchPaymentPayment.ts
+  - src/funcs/paymentPatchPaymentSubscription.ts
   - src/funcs/paymentRemovePaymentLink.ts
   - src/funcs/paymentRemovePaymentPayment.ts
+  - src/funcs/paymentRemovePaymentSubscription.ts
   - src/funcs/paymentUpdatePaymentLink.ts
   - src/funcs/paymentUpdatePaymentPayment.ts
+  - src/funcs/paymentUpdatePaymentSubscription.ts
   - src/funcs/payoutGetPaymentPayout.ts
   - src/funcs/payoutListPaymentPayouts.ts
   - src/funcs/payslipGetHrisPayslip.ts
@@ -1530,6 +1547,12 @@ generatedFiles:
   - src/funcs/studentPatchLmsStudent.ts
   - src/funcs/studentRemoveLmsStudent.ts
   - src/funcs/studentUpdateLmsStudent.ts
+  - src/funcs/subscriptionCreatePaymentSubscription.ts
+  - src/funcs/subscriptionGetPaymentSubscription.ts
+  - src/funcs/subscriptionListPaymentSubscriptions.ts
+  - src/funcs/subscriptionPatchPaymentSubscription.ts
+  - src/funcs/subscriptionRemovePaymentSubscription.ts
+  - src/funcs/subscriptionUpdatePaymentSubscription.ts
   - src/funcs/taskCreateTaskProject.ts
   - src/funcs/taskCreateTaskTask.ts
   - src/funcs/taskGetTaskProject.ts
@@ -1741,6 +1764,7 @@ generatedFiles:
   - src/sdk/models/operations/createpassthroughraw.ts
   - src/sdk/models/operations/createpaymentlink.ts
   - src/sdk/models/operations/createpaymentpayment.ts
+  - src/sdk/models/operations/createpaymentsubscription.ts
   - src/sdk/models/operations/createrepobranch.ts
   - src/sdk/models/operations/createrepocommit.ts
   - src/sdk/models/operations/createrepoorganization.ts
@@ -1803,6 +1827,7 @@ generatedFiles:
   - src/sdk/models/operations/getpaymentpayment.ts
   - src/sdk/models/operations/getpaymentpayout.ts
   - src/sdk/models/operations/getpaymentrefund.ts
+  - src/sdk/models/operations/getpaymentsubscription.ts
   - src/sdk/models/operations/getrepobranch.ts
   - src/sdk/models/operations/getrepocommit.ts
   - src/sdk/models/operations/getrepoorganization.ts
@@ -1875,6 +1900,7 @@ generatedFiles:
   - src/sdk/models/operations/listpaymentpayments.ts
   - src/sdk/models/operations/listpaymentpayouts.ts
   - src/sdk/models/operations/listpaymentrefunds.ts
+  - src/sdk/models/operations/listpaymentsubscriptions.ts
   - src/sdk/models/operations/listrepobranches.ts
   - src/sdk/models/operations/listrepocommits.ts
   - src/sdk/models/operations/listrepoorganizations.ts
@@ -1938,6 +1964,7 @@ generatedFiles:
   - src/sdk/models/operations/patchpassthroughraw.ts
   - src/sdk/models/operations/patchpaymentlink.ts
   - src/sdk/models/operations/patchpaymentpayment.ts
+  - src/sdk/models/operations/patchpaymentsubscription.ts
   - src/sdk/models/operations/patchrepobranch.ts
   - src/sdk/models/operations/patchrepocommit.ts
   - src/sdk/models/operations/patchrepoorganization.ts
@@ -1996,6 +2023,7 @@ generatedFiles:
   - src/sdk/models/operations/removepassthrough.ts
   - src/sdk/models/operations/removepaymentlink.ts
   - src/sdk/models/operations/removepaymentpayment.ts
+  - src/sdk/models/operations/removepaymentsubscription.ts
   - src/sdk/models/operations/removerepobranch.ts
   - src/sdk/models/operations/removerepocommit.ts
   - src/sdk/models/operations/removerepoorganization.ts
@@ -2054,6 +2082,7 @@ generatedFiles:
   - src/sdk/models/operations/updatepassthroughraw.ts
   - src/sdk/models/operations/updatepaymentlink.ts
   - src/sdk/models/operations/updatepaymentpayment.ts
+  - src/sdk/models/operations/updatepaymentsubscription.ts
   - src/sdk/models/operations/updaterepobranch.ts
   - src/sdk/models/operations/updaterepocommit.ts
   - src/sdk/models/operations/updaterepoorganization.ts
@@ -2165,11 +2194,12 @@ generatedFiles:
   - src/sdk/models/shared/messagingmember.ts
   - src/sdk/models/shared/messagingmessage.ts
   - src/sdk/models/shared/metadatametadata.ts
+  - src/sdk/models/shared/paymentlineitem.ts
   - src/sdk/models/shared/paymentlink.ts
-  - src/sdk/models/shared/paymentlinklineitem.ts
   - src/sdk/models/shared/paymentpayment.ts
   - src/sdk/models/shared/paymentpayout.ts
   - src/sdk/models/shared/paymentrefund.ts
+  - src/sdk/models/shared/paymentsubscription.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
@@ -2271,6 +2301,7 @@ generatedFiles:
   - src/sdk/space.ts
   - src/sdk/storage.ts
   - src/sdk/student.ts
+  - src/sdk/subscription.ts
   - src/sdk/task.ts
   - src/sdk/taxrate.ts
   - src/sdk/ticket.ts
@@ -5728,4 +5759,58 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>", "object_type": "<value>"}
+  createPaymentSubscription:
+    speakeasy-default-create-payment-subscription:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  getPaymentSubscription:
+    speakeasy-default-get-payment-subscription:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  listPaymentSubscriptions:
+    speakeasy-default-list-payment-subscriptions:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{}]
+  patchPaymentSubscription:
+    speakeasy-default-patch-payment-subscription:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  removePaymentSubscription:
+    speakeasy-default-remove-payment-subscription:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updatePaymentSubscription:
+    speakeasy-default-update-payment-subscription:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
 generatedTests: {}

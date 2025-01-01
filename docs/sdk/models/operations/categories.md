@@ -5,7 +5,7 @@
 ```typescript
 import { Categories } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: Categories = "kms";
+let value: Categories = "hris";
 ```
 
 ## Values

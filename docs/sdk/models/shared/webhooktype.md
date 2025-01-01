@@ -5,7 +5,7 @@
 ```typescript
 import { WebhookType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: WebhookType = "virtual";
+let value: WebhookType = "native";
 ```
 
 ## Values

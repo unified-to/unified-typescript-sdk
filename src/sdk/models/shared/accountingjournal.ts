@@ -15,7 +15,7 @@ import {
 } from "./accountingjournallineitem.js";
 
 export type AccountingJournal = {
-  createdAt?: string | undefined;
+  createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
@@ -27,7 +27,7 @@ export type AccountingJournal = {
   reference?: string | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
 };
 
 /** @internal */
@@ -36,7 +36,8 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  created_at: z.string().optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
@@ -45,7 +46,8 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   reference: z.string().optional(),
   tax_amount: z.number().optional(),
   taxrate_id: z.string().optional(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
@@ -75,7 +77,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingJournal
 > = z.object({
-  createdAt: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
@@ -84,7 +86,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   reference: z.string().optional(),
   taxAmount: z.number().optional(),
   taxrateId: z.string().optional(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",

@@ -10,12 +10,12 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type RepoOrganization = {
   avatarUrl?: string | undefined;
-  createdAt?: string | undefined;
+  createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };
 
@@ -26,12 +26,14 @@ export const RepoOrganization$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   avatar_url: z.string().optional(),
-  created_at: z.string().optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   description: z.string().optional(),
   id: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -48,7 +50,7 @@ export type RepoOrganization$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
-  name: string;
+  name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -61,12 +63,12 @@ export const RepoOrganization$outboundSchema: z.ZodType<
   RepoOrganization
 > = z.object({
   avatarUrl: z.string().optional(),
-  createdAt: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

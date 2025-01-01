@@ -15,7 +15,7 @@ export type TicketingNote = {
   id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   ticketId?: string | undefined;
-  updatedAt?: string | undefined;
+  updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
 
@@ -32,7 +32,8 @@ export const TicketingNote$inboundSchema: z.ZodType<
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   ticket_id: z.string().optional(),
-  updated_at: z.string().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -68,7 +69,7 @@ export const TicketingNote$outboundSchema: z.ZodType<
   id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   ticketId: z.string().optional(),
-  updatedAt: z.string().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

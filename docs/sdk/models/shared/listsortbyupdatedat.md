@@ -5,7 +5,7 @@
 ```typescript
 import { ListSortByUpdatedAt } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListSortByUpdatedAt = "supported-required";
+let value: ListSortByUpdatedAt = "supported";
 ```
 
 ## Values

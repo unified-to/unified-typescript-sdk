@@ -5,7 +5,7 @@
 ```typescript
 import { Ethnicity } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Ethnicity = "Filipino";
+let value: Ethnicity = "South Asian";
 ```
 
 ## Values

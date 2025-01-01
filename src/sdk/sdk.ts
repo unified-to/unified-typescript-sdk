@@ -77,6 +77,7 @@ import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
 import { Student } from "./student.js";
+import { Subscription } from "./subscription.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
 import { Ticket } from "./ticket.js";
@@ -382,6 +383,11 @@ export class UnifiedTo extends ClientSDK {
   private _refund?: Refund;
   get refund(): Refund {
     return (this._refund ??= new Refund(this._options));
+  }
+
+  private _subscription?: Subscription;
+  get subscription(): Subscription {
+    return (this._subscription ??= new Subscription(this._options));
   }
 
   private _repo?: Repo;
