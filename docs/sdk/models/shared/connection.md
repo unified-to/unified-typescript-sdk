@@ -13,7 +13,7 @@ let value: Connection = {
   ],
   integrationType: "<value>",
   permissions: [
-    "payment_link_write",
+    "payment_subscription_read",
   ],
 };
 ```

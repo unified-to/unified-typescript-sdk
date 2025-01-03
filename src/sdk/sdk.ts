@@ -17,6 +17,7 @@ import { Candidate } from "./candidate.js";
 import { Channel } from "./channel.js";
 import { Class } from "./class.js";
 import { Collection } from "./collection.js";
+import { Comment } from "./comment.js";
 import { Commerce } from "./commerce.js";
 import { Commit } from "./commit.js";
 import { Company } from "./company.js";
@@ -438,6 +439,11 @@ export class UnifiedTo extends ClientSDK {
   private _task?: Task;
   get task(): Task {
     return (this._task ??= new Task(this._options));
+  }
+
+  private _comment?: Comment;
+  get comment(): Comment {
+    return (this._comment ??= new Comment(this._options));
   }
 
   private _project?: Project;

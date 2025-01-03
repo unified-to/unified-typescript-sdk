@@ -110,6 +110,8 @@ export const PropertyConnectionPermissions = {
   TaskProjectWrite: "task_project_write",
   TaskTaskRead: "task_task_read",
   TaskTaskWrite: "task_task_write",
+  TaskCommentRead: "task_comment_read",
+  TaskCommentWrite: "task_comment_write",
   ScimUsersRead: "scim_users_read",
   ScimUsersWrite: "scim_users_write",
   ScimGroupsRead: "scim_groups_read",

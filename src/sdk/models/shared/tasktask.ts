@@ -18,6 +18,10 @@ export type TaskTaskStatus = ClosedEnum<typeof TaskTaskStatus>;
 
 export type TaskTask = {
   assignedUserIds?: Array<string> | undefined;
+  /**
+   * Array of attachment IDs retrieved from StorageFile.Get endpoint
+   */
+  attachmentIds?: Array<string> | undefined;
   completedAt?: Date | undefined;
   createdAt?: Date | undefined;
   creatorUserId?: string | undefined;
@@ -65,6 +69,7 @@ export const TaskTask$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   assigned_user_ids: z.array(z.string()).optional(),
+  attachment_ids: z.array(z.string()).optional(),
   completed_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
@@ -90,6 +95,7 @@ export const TaskTask$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "assigned_user_ids": "assignedUserIds",
+    "attachment_ids": "attachmentIds",
     "completed_at": "completedAt",
     "created_at": "createdAt",
     "creator_user_id": "creatorUserId",
@@ -105,6 +111,7 @@ export const TaskTask$inboundSchema: z.ZodType<
 /** @internal */
 export type TaskTask$Outbound = {
   assigned_user_ids?: Array<string> | undefined;
+  attachment_ids?: Array<string> | undefined;
   completed_at?: string | undefined;
   created_at?: string | undefined;
   creator_user_id?: string | undefined;
@@ -131,6 +138,7 @@ export const TaskTask$outboundSchema: z.ZodType<
   TaskTask
 > = z.object({
   assignedUserIds: z.array(z.string()).optional(),
+  attachmentIds: z.array(z.string()).optional(),
   completedAt: z.date().transform(v => v.toISOString()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   creatorUserId: z.string().optional(),
@@ -151,6 +159,7 @@ export const TaskTask$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     assignedUserIds: "assigned_user_ids",
+    attachmentIds: "attachment_ids",
     completedAt: "completed_at",
     createdAt: "created_at",
     creatorUserId: "creator_user_id",
