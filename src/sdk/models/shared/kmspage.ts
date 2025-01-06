@@ -31,7 +31,7 @@ export type KmsPage = {
   metadata?: Array<KmsPageMetadata> | undefined;
   parentPageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  spaceId: string;
+  spaceId?: string | undefined;
   title: string;
   type: KmsPageType;
   updatedAt?: Date | undefined;
@@ -70,7 +70,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
     metadata: z.array(KmsPageMetadata$inboundSchema).optional(),
     parent_page_id: z.string().optional(),
     raw: z.record(z.any()).optional(),
-    space_id: z.string(),
+    space_id: z.string().optional(),
     title: z.string(),
     type: KmsPageType$inboundSchema,
     updated_at: z.string().datetime({ offset: true }).transform(v =>
@@ -100,7 +100,7 @@ export type KmsPage$Outbound = {
   metadata?: Array<KmsPageMetadata$Outbound> | undefined;
   parent_page_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  space_id: string;
+  space_id?: string | undefined;
   title: string;
   type: string;
   updated_at?: string | undefined;
@@ -121,7 +121,7 @@ export const KmsPage$outboundSchema: z.ZodType<
   metadata: z.array(KmsPageMetadata$outboundSchema).optional(),
   parentPageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  spaceId: z.string(),
+  spaceId: z.string().optional(),
   title: z.string(),
   type: KmsPageType$outboundSchema,
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
