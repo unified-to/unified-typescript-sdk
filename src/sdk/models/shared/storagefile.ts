@@ -38,6 +38,7 @@ export type StorageFile = {
   updatedAt?: Date | undefined;
   userId?: string | undefined;
   version?: string | undefined;
+  webUrl?: string | undefined;
 };
 
 /** @internal */
@@ -85,6 +86,7 @@ export const StorageFile$inboundSchema: z.ZodType<
     .optional(),
   user_id: z.string().optional(),
   version: z.string().optional(),
+  web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
@@ -93,6 +95,7 @@ export const StorageFile$inboundSchema: z.ZodType<
     "parent_id": "parentId",
     "updated_at": "updatedAt",
     "user_id": "userId",
+    "web_url": "webUrl",
   });
 });
 
@@ -114,6 +117,7 @@ export type StorageFile$Outbound = {
   updated_at?: string | undefined;
   user_id?: string | undefined;
   version?: string | undefined;
+  web_url?: string | undefined;
 };
 
 /** @internal */
@@ -138,6 +142,7 @@ export const StorageFile$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
   version: z.string().optional(),
+  webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
@@ -146,6 +151,7 @@ export const StorageFile$outboundSchema: z.ZodType<
     parentId: "parent_id",
     updatedAt: "updated_at",
     userId: "user_id",
+    webUrl: "web_url",
   });
 });
 

@@ -36,6 +36,7 @@ export type KmsPage = {
   type: KmsPageType;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
+  webUrl?: string | undefined;
 };
 
 /** @internal */
@@ -77,6 +78,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
       new Date(v)
     ).optional(),
     user_id: z.string().optional(),
+    web_url: z.string().optional(),
   }).transform((v) => {
     return remap$(v, {
       "created_at": "createdAt",
@@ -87,6 +89,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
       "space_id": "spaceId",
       "updated_at": "updatedAt",
       "user_id": "userId",
+      "web_url": "webUrl",
     });
   });
 
@@ -105,6 +108,7 @@ export type KmsPage$Outbound = {
   type: string;
   updated_at?: string | undefined;
   user_id?: string | undefined;
+  web_url?: string | undefined;
 };
 
 /** @internal */
@@ -126,6 +130,7 @@ export const KmsPage$outboundSchema: z.ZodType<
   type: KmsPageType$outboundSchema,
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
+  webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
@@ -136,6 +141,7 @@ export const KmsPage$outboundSchema: z.ZodType<
     spaceId: "space_id",
     updatedAt: "updated_at",
     userId: "user_id",
+    webUrl: "web_url",
   });
 });
 

@@ -15,6 +15,8 @@ import {
 
 export type StoragePermission = {
   groupId?: string | undefined;
+  isHidden?: boolean | undefined;
+  isPublic?: boolean | undefined;
   roles: Array<PropertyStoragePermissionRoles>;
   userId?: string | undefined;
 };
@@ -26,11 +28,15 @@ export const StoragePermission$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   group_id: z.string().optional(),
+  is_hidden: z.boolean().optional(),
+  is_public: z.boolean().optional(),
   roles: z.array(PropertyStoragePermissionRoles$inboundSchema),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "group_id": "groupId",
+    "is_hidden": "isHidden",
+    "is_public": "isPublic",
     "user_id": "userId",
   });
 });
@@ -38,6 +44,8 @@ export const StoragePermission$inboundSchema: z.ZodType<
 /** @internal */
 export type StoragePermission$Outbound = {
   group_id?: string | undefined;
+  is_hidden?: boolean | undefined;
+  is_public?: boolean | undefined;
   roles: Array<string>;
   user_id?: string | undefined;
 };
@@ -49,11 +57,15 @@ export const StoragePermission$outboundSchema: z.ZodType<
   StoragePermission
 > = z.object({
   groupId: z.string().optional(),
+  isHidden: z.boolean().optional(),
+  isPublic: z.boolean().optional(),
   roles: z.array(PropertyStoragePermissionRoles$outboundSchema),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     groupId: "group_id",
+    isHidden: "is_hidden",
+    isPublic: "is_public",
     userId: "user_id",
   });
 });
