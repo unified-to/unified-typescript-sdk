@@ -267,6 +267,13 @@ export const ListStudentId = {
 } as const;
 export type ListStudentId = ClosedEnum<typeof ListStudentId>;
 
+export const ListTaskId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListTaskId = ClosedEnum<typeof ListTaskId>;
+
 export const ListTicketId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -467,6 +474,7 @@ export type IntegrationSupport = {
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
   listSpaceId?: ListSpaceId | undefined;
   listStudentId?: ListStudentId | undefined;
+  listTaskId?: ListTaskId | undefined;
   listTicketId?: ListTicketId | undefined;
   listType?: ListType | undefined;
   listUpdatedGte?: ListUpdatedGte | undefined;
@@ -1221,6 +1229,25 @@ export namespace ListStudentId$ {
 }
 
 /** @internal */
+export const ListTaskId$inboundSchema: z.ZodNativeEnum<typeof ListTaskId> = z
+  .nativeEnum(ListTaskId);
+
+/** @internal */
+export const ListTaskId$outboundSchema: z.ZodNativeEnum<typeof ListTaskId> =
+  ListTaskId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListTaskId$ {
+  /** @deprecated use `ListTaskId$inboundSchema` instead. */
+  export const inboundSchema = ListTaskId$inboundSchema;
+  /** @deprecated use `ListTaskId$outboundSchema` instead. */
+  export const outboundSchema = ListTaskId$outboundSchema;
+}
+
+/** @internal */
 export const ListTicketId$inboundSchema: z.ZodNativeEnum<typeof ListTicketId> =
   z.nativeEnum(ListTicketId);
 
@@ -1713,6 +1740,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
   list_space_id: ListSpaceId$inboundSchema.optional(),
   list_student_id: ListStudentId$inboundSchema.optional(),
+  list_task_id: ListTaskId$inboundSchema.optional(),
   list_ticket_id: ListTicketId$inboundSchema.optional(),
   list_type: ListType$inboundSchema.optional(),
   list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
@@ -1780,6 +1808,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_sort_by_updated_at": "listSortByUpdatedAt",
     "list_space_id": "listSpaceId",
     "list_student_id": "listStudentId",
+    "list_task_id": "listTaskId",
     "list_ticket_id": "listTicketId",
     "list_type": "listType",
     "list_updated_gte": "listUpdatedGte",
@@ -1847,6 +1876,7 @@ export type IntegrationSupport$Outbound = {
   list_sort_by_updated_at?: string | undefined;
   list_space_id?: string | undefined;
   list_student_id?: string | undefined;
+  list_task_id?: string | undefined;
   list_ticket_id?: string | undefined;
   list_type?: string | undefined;
   list_updated_gte?: string | undefined;
@@ -1918,6 +1948,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listSortByUpdatedAt: ListSortByUpdatedAt$outboundSchema.optional(),
   listSpaceId: ListSpaceId$outboundSchema.optional(),
   listStudentId: ListStudentId$outboundSchema.optional(),
+  listTaskId: ListTaskId$outboundSchema.optional(),
   listTicketId: ListTicketId$outboundSchema.optional(),
   listType: ListType$outboundSchema.optional(),
   listUpdatedGte: ListUpdatedGte$outboundSchema.optional(),
@@ -1984,6 +2015,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listSortByUpdatedAt: "list_sort_by_updated_at",
     listSpaceId: "list_space_id",
     listStudentId: "list_student_id",
+    listTaskId: "list_task_id",
     listTicketId: "list_ticket_id",
     listType: "list_type",
     listUpdatedGte: "list_updated_gte",

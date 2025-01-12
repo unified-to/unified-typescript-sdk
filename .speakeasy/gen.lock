@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3613acd1631dbba37d5cd8b1d0150cb1
+  docChecksum: d4d729a2453d8e64af714d75ba2fa32b
   docVersion: "1.0"
-  speakeasyVersion: 1.465.1
-  generationVersion: 2.488.4
-  releaseVersion: 2.9.18
-  configChecksum: 933f3c93e0a63a26aa0375f2934c441c
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 2.9.19
+  configChecksum: 36c2d7086086f12364b66d4cf25b2ac6
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -32,7 +32,6 @@ generatedFiles:
   - .eslintrc.cjs
   - .gitattributes
   - .npmignore
-  - CONTRIBUTING.md
   - FUNCTIONS.md
   - RUNTIMES.md
   - USAGE.md
@@ -660,6 +659,7 @@ generatedFiles:
   - docs/sdk/models/shared/listsortbyupdatedat.md
   - docs/sdk/models/shared/listspaceid.md
   - docs/sdk/models/shared/liststudentid.md
+  - docs/sdk/models/shared/listtaskid.md
   - docs/sdk/models/shared/listticketid.md
   - docs/sdk/models/shared/listtype.md
   - docs/sdk/models/shared/listupdatedgte.md

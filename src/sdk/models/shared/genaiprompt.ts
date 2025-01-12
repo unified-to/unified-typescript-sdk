@@ -21,6 +21,7 @@ export type GenaiPrompt = {
   raw?: { [k: string]: any } | undefined;
   responses?: Array<string> | undefined;
   temperature?: number | undefined;
+  tokensUsed?: number | undefined;
 };
 
 /** @internal */
@@ -35,10 +36,12 @@ export const GenaiPrompt$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   responses: z.array(z.string()).optional(),
   temperature: z.number().optional(),
+  tokens_used: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     "max_tokens": "maxTokens",
     "model_id": "modelId",
+    "tokens_used": "tokensUsed",
   });
 });
 
@@ -50,6 +53,7 @@ export type GenaiPrompt$Outbound = {
   raw?: { [k: string]: any } | undefined;
   responses?: Array<string> | undefined;
   temperature?: number | undefined;
+  tokens_used?: number | undefined;
 };
 
 /** @internal */
@@ -64,10 +68,12 @@ export const GenaiPrompt$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   responses: z.array(z.string()).optional(),
   temperature: z.number().optional(),
+  tokensUsed: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     maxTokens: "max_tokens",
     modelId: "model_id",
+    tokensUsed: "tokens_used",
   });
 });
 

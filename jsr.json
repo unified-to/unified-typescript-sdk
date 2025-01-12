@@ -2,7 +2,7 @@
 
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.9.18",
+  "version": "2.9.19",
   "exports": {
     ".": "./src/index.ts",    
     "./sdk/models/errors": "./src/sdk/models/errors/index.ts",    
