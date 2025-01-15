@@ -30,6 +30,10 @@ export type MessagingMessage = {
   attachments?: Array<MessagingAttachment> | undefined;
   authorMember?: PropertyMessagingMessageAuthorMember | undefined;
   channelId?: string | undefined;
+  /**
+   * Represents the IDs of all channels to which the message is sent. Identifies the channels where the message is posted.
+   */
+  channelIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   destinationMembers?: Array<MessagingMember> | undefined;
   hiddenMembers?: Array<MessagingMember> | undefined;
@@ -55,6 +59,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$inboundSchema).optional(),
   author_member: PropertyMessagingMessageAuthorMember$inboundSchema.optional(),
   channel_id: z.string().optional(),
+  channel_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   destination_members: z.array(MessagingMember$inboundSchema).optional(),
@@ -75,6 +80,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   return remap$(v, {
     "author_member": "authorMember",
     "channel_id": "channelId",
+    "channel_ids": "channelIds",
     "created_at": "createdAt",
     "destination_members": "destinationMembers",
     "hidden_members": "hiddenMembers",
@@ -92,6 +98,7 @@ export type MessagingMessage$Outbound = {
   attachments?: Array<MessagingAttachment$Outbound> | undefined;
   author_member?: PropertyMessagingMessageAuthorMember$Outbound | undefined;
   channel_id?: string | undefined;
+  channel_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   destination_members?: Array<MessagingMember$Outbound> | undefined;
   hidden_members?: Array<MessagingMember$Outbound> | undefined;
@@ -117,6 +124,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   attachments: z.array(MessagingAttachment$outboundSchema).optional(),
   authorMember: PropertyMessagingMessageAuthorMember$outboundSchema.optional(),
   channelId: z.string().optional(),
+  channelIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
   hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
@@ -135,6 +143,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   return remap$(v, {
     authorMember: "author_member",
     channelId: "channel_id",
+    channelIds: "channel_ids",
     createdAt: "created_at",
     destinationMembers: "destination_members",
     hiddenMembers: "hidden_members",

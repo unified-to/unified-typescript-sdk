@@ -6,7 +6,7 @@
 import { CommerceInventory } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CommerceInventory = {
-  available: 1589.70,
+  available: 1589.69,
 };
 ```
 

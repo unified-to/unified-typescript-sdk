@@ -12,14 +12,19 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
  * Mailing List
  */
 export type MarketingList = {
-  createdAt?: string | undefined;
+  createdAt?: Date | undefined;
+  description?: string | undefined;
+  endAt?: Date | undefined;
   id?: string | undefined;
+  isActive?: boolean | undefined;
   name?: string | undefined;
   /**
    * The raw data returned by the integration for this list
    */
   raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
   updatedAt?: Date | undefined;
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -28,26 +33,43 @@ export const MarketingList$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  created_at: z.string().optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  description: z.string().optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   id: z.string().optional(),
+  is_active: z.boolean().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "end_at": "endAt",
+    "is_active": "isActive",
+    "start_at": "startAt",
     "updated_at": "updatedAt",
+    "user_id": "userId",
   });
 });
 
 /** @internal */
 export type MarketingList$Outbound = {
   created_at?: string | undefined;
+  description?: string | undefined;
+  end_at?: string | undefined;
   id?: string | undefined;
+  is_active?: boolean | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
   updated_at?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -56,15 +78,24 @@ export const MarketingList$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   MarketingList
 > = z.object({
-  createdAt: z.string().optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  description: z.string().optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  isActive: z.boolean().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    endAt: "end_at",
+    isActive: "is_active",
+    startAt: "start_at",
     updatedAt: "updated_at",
+    userId: "user_id",
   });
 });
 

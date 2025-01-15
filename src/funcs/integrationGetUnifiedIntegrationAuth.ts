@@ -6,6 +6,7 @@ import * as z from "zod";
 import { UnifiedToCore } from "../core.js";
 import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
+import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
@@ -84,9 +85,9 @@ export async function integrationGetUnifiedIntegrationAuth(
     "success_redirect": payload.success_redirect,
   });
 
-  const headers = new Headers({
+  const headers = new Headers(compactMap({
     Accept: "text/plain",
-  });
+  }));
 
   const securityInput = await extractSecurity(client._options.security);
   const requestSecurity = resolveGlobalSecurity(securityInput);
