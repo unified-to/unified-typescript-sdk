@@ -125,7 +125,8 @@ export async function atsRemoveAtsCandidate(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveAtsCandidateResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAtsCandidateResponse$inboundSchema.optional(),

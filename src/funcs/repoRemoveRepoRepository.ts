@@ -129,7 +129,8 @@ export async function repoRemoveRepoRepository(
       200,
       operations.RemoveRepoRepositoryResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveRepoRepositoryResponse$inboundSchema.optional(),

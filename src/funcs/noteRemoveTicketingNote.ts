@@ -126,7 +126,8 @@ export async function noteRemoveTicketingNote(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveTicketingNoteResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveTicketingNoteResponse$inboundSchema.optional(),

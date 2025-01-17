@@ -125,7 +125,8 @@ export async function crmRemoveCrmEvent(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveCrmEventResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveCrmEventResponse$inboundSchema.optional(),

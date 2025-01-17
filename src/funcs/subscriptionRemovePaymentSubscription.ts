@@ -131,7 +131,8 @@ export async function subscriptionRemovePaymentSubscription(
       200,
       operations.RemovePaymentSubscriptionResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemovePaymentSubscriptionResponse$inboundSchema.optional(),

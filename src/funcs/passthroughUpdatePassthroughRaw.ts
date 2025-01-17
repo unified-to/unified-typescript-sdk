@@ -138,11 +138,17 @@ export async function passthroughUpdatePassthroughRaw(
     | ConnectionError
   >(
     M.nil(
-      [204, 205, 304],
+      [204, 205],
       operations.UpdatePassthroughRawResponse$inboundSchema.optional(),
       { hdrs: true },
     ),
-    M.fail(["4XX", "5XX"]),
+    M.nil(
+      304,
+      operations.UpdatePassthroughRawResponse$inboundSchema.optional(),
+      { hdrs: true },
+    ),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.json(
       "default",
       operations.UpdatePassthroughRawResponse$inboundSchema.optional(),

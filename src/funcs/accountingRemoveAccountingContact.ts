@@ -131,7 +131,8 @@ export async function accountingRemoveAccountingContact(
       200,
       operations.RemoveAccountingContactResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAccountingContactResponse$inboundSchema.optional(),

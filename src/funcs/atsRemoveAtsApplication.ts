@@ -129,7 +129,8 @@ export async function atsRemoveAtsApplication(
       200,
       operations.RemoveAtsApplicationResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAtsApplicationResponse$inboundSchema.optional(),

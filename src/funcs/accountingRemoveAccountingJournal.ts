@@ -131,7 +131,8 @@ export async function accountingRemoveAccountingJournal(
       200,
       operations.RemoveAccountingJournalResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAccountingJournalResponse$inboundSchema.optional(),

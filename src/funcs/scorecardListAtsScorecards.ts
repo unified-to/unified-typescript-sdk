@@ -134,7 +134,8 @@ export async function scorecardListAtsScorecards(
     | ConnectionError
   >(
     M.json(200, z.array(shared.AtsScorecard$inboundSchema)),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
     return result;

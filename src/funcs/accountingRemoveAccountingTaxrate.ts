@@ -131,7 +131,8 @@ export async function accountingRemoveAccountingTaxrate(
       200,
       operations.RemoveAccountingTaxrateResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAccountingTaxrateResponse$inboundSchema.optional(),

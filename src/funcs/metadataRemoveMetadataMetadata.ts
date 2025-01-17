@@ -131,7 +131,8 @@ export async function metadataRemoveMetadataMetadata(
       200,
       operations.RemoveMetadataMetadataResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveMetadataMetadataResponse$inboundSchema.optional(),

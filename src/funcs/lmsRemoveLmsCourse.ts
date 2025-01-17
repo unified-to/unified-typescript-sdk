@@ -125,7 +125,8 @@ export async function lmsRemoveLmsCourse(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveLmsCourseResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveLmsCourseResponse$inboundSchema.optional(),

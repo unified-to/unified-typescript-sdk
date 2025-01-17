@@ -125,7 +125,8 @@ export async function scorecardRemoveAtsScorecard(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveAtsScorecardResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveAtsScorecardResponse$inboundSchema.optional(),

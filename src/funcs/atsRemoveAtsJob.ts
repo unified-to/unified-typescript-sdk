@@ -125,7 +125,8 @@ export async function atsRemoveAtsJob(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveAtsJobResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil("default", operations.RemoveAtsJobResponse$inboundSchema.optional(), {
       hdrs: true,
     }),

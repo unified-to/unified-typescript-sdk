@@ -125,7 +125,8 @@ export async function spaceRemoveKmsSpace(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveKmsSpaceResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveKmsSpaceResponse$inboundSchema.optional(),

@@ -131,7 +131,8 @@ export async function messageRemoveMessagingMessage(
       200,
       operations.RemoveMessagingMessageResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveMessagingMessageResponse$inboundSchema.optional(),

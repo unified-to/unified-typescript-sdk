@@ -136,11 +136,15 @@ export async function passthroughRemovePassthrough(
     | ConnectionError
   >(
     M.nil(
-      [204, 205, 304],
+      [204, 205],
       operations.RemovePassthroughResponse$inboundSchema.optional(),
       { hdrs: true },
     ),
-    M.fail(["4XX", "5XX"]),
+    M.nil(304, operations.RemovePassthroughResponse$inboundSchema.optional(), {
+      hdrs: true,
+    }),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.json(
       "default",
       operations.RemovePassthroughResponse$inboundSchema.optional(),

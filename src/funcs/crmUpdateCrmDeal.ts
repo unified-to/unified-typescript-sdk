@@ -128,7 +128,8 @@ export async function crmUpdateCrmDeal(
     | ConnectionError
   >(
     M.json(200, shared.CrmDeal$inboundSchema),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
     return result;

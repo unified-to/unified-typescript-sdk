@@ -125,7 +125,8 @@ export async function leadRemoveCrmLead(
     | ConnectionError
   >(
     M.nil(200, operations.RemoveCrmLeadResponse$inboundSchema.optional()),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.RemoveCrmLeadResponse$inboundSchema.optional(),

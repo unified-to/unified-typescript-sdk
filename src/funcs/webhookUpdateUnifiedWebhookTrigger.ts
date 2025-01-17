@@ -125,7 +125,8 @@ export async function webhookUpdateUnifiedWebhookTrigger(
       200,
       operations.UpdateUnifiedWebhookTriggerResponse$inboundSchema.optional(),
     ),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
     M.nil(
       "default",
       operations.UpdateUnifiedWebhookTriggerResponse$inboundSchema.optional(),

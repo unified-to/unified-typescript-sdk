@@ -26,14 +26,26 @@ export type ListUnifiedApicallsRequest = {
    * Filter the results to just this integration
    */
   integrationType?: string | undefined;
+  /**
+   * Filter the results for only billable API Calls
+   */
+  isBillable?: boolean | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   sort?: string | undefined;
   /**
+   * Filter the results to just this type
+   */
+  type?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * Filter the results to just this webhook
+   */
+  webhookId?: string | undefined;
 };
 
 /** @internal */
@@ -47,18 +59,23 @@ export const ListUnifiedApicallsRequest$inboundSchema: z.ZodType<
   error: z.boolean().optional(),
   external_xref: z.string().optional(),
   integration_type: z.string().optional(),
+  is_billable: z.boolean().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  webhook_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
     "external_xref": "externalXref",
     "integration_type": "integrationType",
+    "is_billable": "isBillable",
     "updated_gte": "updatedGte",
+    "webhook_id": "webhookId",
   });
 });
 
@@ -69,11 +86,14 @@ export type ListUnifiedApicallsRequest$Outbound = {
   error?: boolean | undefined;
   external_xref?: string | undefined;
   integration_type?: string | undefined;
+  is_billable?: boolean | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
+  webhook_id?: string | undefined;
 };
 
 /** @internal */
@@ -87,17 +107,22 @@ export const ListUnifiedApicallsRequest$outboundSchema: z.ZodType<
   error: z.boolean().optional(),
   externalXref: z.string().optional(),
   integrationType: z.string().optional(),
+  isBillable: z.boolean().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  webhookId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
     externalXref: "external_xref",
     integrationType: "integration_type",
+    isBillable: "is_billable",
     updatedGte: "updated_gte",
+    webhookId: "webhook_id",
   });
 });
 

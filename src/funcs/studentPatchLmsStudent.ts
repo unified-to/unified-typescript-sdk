@@ -128,7 +128,8 @@ export async function studentPatchLmsStudent(
     | ConnectionError
   >(
     M.json(200, shared.LmsStudent$inboundSchema),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
     return result;

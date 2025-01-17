@@ -63,11 +63,14 @@ export async function unifiedListUnifiedApicalls(
     "error": payload.error,
     "external_xref": payload.external_xref,
     "integration_type": payload.integration_type,
+    "is_billable": payload.is_billable,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
     "sort": payload.sort,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
+    "webhook_id": payload.webhook_id,
   });
 
   const headers = new Headers(compactMap({
@@ -127,7 +130,8 @@ export async function unifiedListUnifiedApicalls(
     | ConnectionError
   >(
     M.json(200, z.array(shared.ApiCall$inboundSchema)),
-    M.fail(["4XX", "5XX"]),
+    M.fail("4XX"),
+    M.fail("5XX"),
   )(response);
   if (!result.ok) {
     return result;
