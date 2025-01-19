@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type KmsPageMetadata = {
   name: string;
   type?: string | undefined;
-  value?: { [k: string]: any } | undefined;
+  value?: string | undefined;
 };
 
 /** @internal */
@@ -21,14 +21,14 @@ export const KmsPageMetadata$inboundSchema: z.ZodType<
 > = z.object({
   name: z.string(),
   type: z.string().optional(),
-  value: z.record(z.any()).optional(),
+  value: z.string().optional(),
 });
 
 /** @internal */
 export type KmsPageMetadata$Outbound = {
   name: string;
   type?: string | undefined;
-  value?: { [k: string]: any } | undefined;
+  value?: string | undefined;
 };
 
 /** @internal */
@@ -39,7 +39,7 @@ export const KmsPageMetadata$outboundSchema: z.ZodType<
 > = z.object({
   name: z.string(),
   type: z.string().optional(),
-  value: z.record(z.any()).optional(),
+  value: z.string().optional(),
 });
 
 /**
