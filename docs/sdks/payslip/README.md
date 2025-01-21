@@ -25,7 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payslip.getHrisPayslip({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -54,7 +54,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await payslipGetHrisPayslip(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payslip.listHrisPayslips({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await payslipListHrisPayslips(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

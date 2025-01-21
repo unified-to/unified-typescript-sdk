@@ -24,7 +24,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.prompt.createGenaiPrompt({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await promptCreateGenaiPrompt(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

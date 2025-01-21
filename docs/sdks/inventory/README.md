@@ -29,7 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.createCommerceInventory({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -57,7 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryCreateCommerceInventory(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -109,7 +109,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.getCommerceInventory({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryGetCommerceInventory(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -191,7 +191,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.listCommerceInventories({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -219,7 +219,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryListCommerceInventories(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.patchCommerceInventory({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -300,7 +300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryPatchCommerceInventory(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -353,7 +353,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.removeCommerceInventory({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -382,7 +382,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryRemoveCommerceInventory(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.inventory.updateCommerceInventory({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await inventoryUpdateCommerceInventory(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

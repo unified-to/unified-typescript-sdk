@@ -29,7 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -57,7 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountCreateAccountingAccount(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -109,7 +109,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.getAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountGetAccountingAccount(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -191,7 +191,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.listAccountingAccounts({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -219,7 +219,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountListAccountingAccounts(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.patchAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -300,7 +300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountPatchAccountingAccount(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -353,7 +353,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.removeAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -382,7 +382,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountRemoveAccountingAccount(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.account.updateAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountUpdateAccountingAccount(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

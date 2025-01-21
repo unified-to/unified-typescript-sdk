@@ -35,7 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.createHrisGroup({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -63,7 +63,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupCreateHrisGroup(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -195,7 +195,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.getHrisGroup({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -224,7 +224,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupGetHrisGroup(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -359,7 +359,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.listHrisGroups({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -387,7 +387,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupListHrisGroups(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -519,7 +519,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.patchHrisGroup({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -548,7 +548,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupPatchHrisGroup(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -683,7 +683,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.removeHrisGroup({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -712,7 +712,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupRemoveHrisGroup(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -847,7 +847,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.updateHrisGroup({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -876,7 +876,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupUpdateHrisGroup(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

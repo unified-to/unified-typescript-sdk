@@ -77,6 +77,7 @@ export * from "./hristimeoff.js";
 export * from "./integration.js";
 export * from "./integrationsupport.js";
 export * from "./issue.js";
+export * from "./kmscomment.js";
 export * from "./kmspage.js";
 export * from "./kmspagemetadata.js";
 export * from "./kmsspace.js";

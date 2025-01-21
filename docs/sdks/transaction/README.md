@@ -29,7 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.createAccountingTransaction({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -57,7 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionCreateAccountingTransaction(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -109,7 +109,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.getAccountingTransaction({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionGetAccountingTransaction(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -191,7 +191,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.listAccountingTransactions({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -219,7 +219,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionListAccountingTransactions(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.patchAccountingTransaction({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -300,7 +300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionPatchAccountingTransaction(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -353,7 +353,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.removeAccountingTransaction({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -382,7 +382,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionRemoveAccountingTransaction(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.updateAccountingTransaction({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionUpdateAccountingTransaction(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

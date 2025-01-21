@@ -29,7 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.createStorageFile({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -57,7 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageCreateStorageFile(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -109,7 +109,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.getStorageFile({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageGetStorageFile(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -191,7 +191,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.listStorageFiles({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -219,7 +219,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageListStorageFiles(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.patchStorageFile({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -300,7 +300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storagePatchStorageFile(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -353,7 +353,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.removeStorageFile({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -382,7 +382,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageRemoveStorageFile(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.storage.updateStorageFile({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await storageUpdateStorageFile(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

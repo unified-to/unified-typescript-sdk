@@ -29,7 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.createAtsScorecard({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -57,7 +57,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardCreateAtsScorecard(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -109,7 +109,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.getAtsScorecard({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardGetAtsScorecard(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -191,7 +191,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.listAtsScorecards({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -219,7 +219,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardListAtsScorecards(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -271,7 +271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.patchAtsScorecard({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -300,7 +300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardPatchAtsScorecard(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -353,7 +353,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.removeAtsScorecard({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -382,7 +382,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardRemoveAtsScorecard(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.scorecard.updateAtsScorecard({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await scorecardUpdateAtsScorecard(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

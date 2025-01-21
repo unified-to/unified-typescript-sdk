@@ -25,7 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.channel.getMessagingChannel({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -54,7 +54,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await channelGetMessagingChannel(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.channel.listMessagingChannels({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await channelListMessagingChannels(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

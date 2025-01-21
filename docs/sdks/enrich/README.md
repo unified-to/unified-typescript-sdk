@@ -25,7 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.enrich.listEnrichCompanies({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -53,7 +53,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await enrichListEnrichCompanies(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -105,7 +105,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.enrich.listEnrichPeople({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -133,7 +133,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await enrichListEnrichPeople(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

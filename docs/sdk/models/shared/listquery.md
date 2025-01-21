@@ -5,7 +5,7 @@
 ```typescript
 import { ListQuery } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListQuery = "supported";
+let value: ListQuery = "not-supported";
 ```
 
 ## Values

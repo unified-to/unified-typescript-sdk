@@ -35,7 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.createCommerceLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -63,7 +63,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationCreateCommerceLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -115,7 +115,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.createHrisLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -143,7 +143,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationCreateHrisLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -195,7 +195,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.getCommerceLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -224,7 +224,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationGetCommerceLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -277,7 +277,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.getHrisLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -306,7 +306,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationGetHrisLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -359,7 +359,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.listCommerceLocations({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -387,7 +387,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationListCommerceLocations(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -439,7 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.listHrisLocations({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -467,7 +467,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationListHrisLocations(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -519,7 +519,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.patchCommerceLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -548,7 +548,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationPatchCommerceLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -601,7 +601,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.patchHrisLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -630,7 +630,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationPatchHrisLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -683,7 +683,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.removeCommerceLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -712,7 +712,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationRemoveCommerceLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -765,7 +765,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.removeHrisLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -794,7 +794,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationRemoveHrisLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -847,7 +847,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.updateCommerceLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -876,7 +876,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationUpdateCommerceLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -929,7 +929,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.location.updateHrisLocation({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -958,7 +958,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await locationUpdateHrisLocation(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

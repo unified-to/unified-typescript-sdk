@@ -31,7 +31,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.createMessagingMessage({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingCreateMessagingMessage(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -111,7 +111,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.getMessagingChannel({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingGetMessagingChannel(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -193,7 +193,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.getMessagingMessage({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingGetMessagingMessage(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -275,7 +275,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.listMessagingChannels({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -303,7 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingListMessagingChannels(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -355,7 +355,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.listMessagingMessages({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -383,7 +383,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingListMessagingMessages(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -435,7 +435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.patchMessagingMessage({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -464,7 +464,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingPatchMessagingMessage(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -517,7 +517,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.removeMessagingMessage({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -546,7 +546,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingRemoveMessagingMessage(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -599,7 +599,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.messaging.updateMessagingMessage({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -628,7 +628,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await messagingUpdateMessagingMessage(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

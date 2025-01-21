@@ -38,7 +38,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.createCrmCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -66,7 +66,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyCreateCrmCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -118,7 +118,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.createHrisCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -146,7 +146,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyCreateHrisCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -198,7 +198,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.getAtsCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -227,7 +227,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyGetAtsCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -280,7 +280,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.getCrmCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -309,7 +309,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyGetCrmCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -362,7 +362,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.getHrisCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -391,7 +391,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyGetHrisCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -444,7 +444,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.listAtsCompanies({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -472,7 +472,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyListAtsCompanies(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -524,7 +524,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.listCrmCompanies({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -552,7 +552,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyListCrmCompanies(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -604,7 +604,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.listEnrichCompanies({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -632,7 +632,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyListEnrichCompanies(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -684,7 +684,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.listHrisCompanies({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -712,7 +712,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyListHrisCompanies(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -764,7 +764,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.patchCrmCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -793,7 +793,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyPatchCrmCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -846,7 +846,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.patchHrisCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -875,7 +875,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyPatchHrisCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -928,7 +928,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.removeCrmCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -957,7 +957,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyRemoveCrmCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1010,7 +1010,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.removeHrisCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1039,7 +1039,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyRemoveHrisCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1092,7 +1092,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.updateCrmCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1121,7 +1121,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyUpdateCrmCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1174,7 +1174,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.company.updateHrisCompany({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1203,7 +1203,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await companyUpdateHrisCompany(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

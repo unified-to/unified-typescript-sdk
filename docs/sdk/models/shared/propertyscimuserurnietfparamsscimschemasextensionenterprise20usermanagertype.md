@@ -7,7 +7,7 @@ import { PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManage
 
 let value:
   PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType =
-    "direct";
+    "indirect";
 ```
 
 ## Values

@@ -9,9 +9,9 @@ let value: ApiCall = {
   integrationType: "<value>",
   method: "<value>",
   name: "<value>",
-  path: "/selinux",
+  path: "/var/mail",
   status: "<value>",
-  type: "login",
+  type: "webhook",
 };
 ```
 

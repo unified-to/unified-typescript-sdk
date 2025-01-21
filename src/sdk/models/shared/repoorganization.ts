@@ -16,6 +16,10 @@ export type RepoOrganization = {
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
+  /**
+   * id values of the users/employees associated with this organization
+   */
+  userIds?: Array<string> | undefined;
   webUrl?: string | undefined;
 };
 
@@ -34,12 +38,14 @@ export const RepoOrganization$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  user_ids: z.array(z.string()).optional(),
   web_url: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "avatar_url": "avatarUrl",
     "created_at": "createdAt",
     "updated_at": "updatedAt",
+    "user_ids": "userIds",
     "web_url": "webUrl",
   });
 });
@@ -53,6 +59,7 @@ export type RepoOrganization$Outbound = {
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
+  user_ids?: Array<string> | undefined;
   web_url?: string | undefined;
 };
 
@@ -69,12 +76,14 @@ export const RepoOrganization$outboundSchema: z.ZodType<
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userIds: z.array(z.string()).optional(),
   webUrl: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     avatarUrl: "avatar_url",
     createdAt: "created_at",
     updatedAt: "updated_at",
+    userIds: "user_ids",
     webUrl: "web_url",
   });
 });

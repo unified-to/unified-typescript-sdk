@@ -96,7 +96,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -122,7 +122,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -210,7 +210,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -248,7 +248,7 @@ async function run() {
   let result;
   try {
     result = await unifiedTo.accounting.createAccountingAccount({
-      connectionId: "<value>",
+      connectionId: "<id>",
     });
 
     // Handle the result
@@ -327,8 +327,8 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.passthrough.createPassthroughRaw({
-    connectionId: "<value>",
-    path: "/etc/periodic",
+    connectionId: "<id>",
+    path: "/opt/lib",
   });
 
   // Handle the result
@@ -357,7 +357,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   }, {
     retries: {
       strategy: "backoff",
@@ -401,7 +401,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -584,11 +584,17 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`collectionPatchCommerceCollection`](docs/sdks/collection/README.md#patchcommercecollection) - Update a collection
 - [`collectionRemoveCommerceCollection`](docs/sdks/collection/README.md#removecommercecollection) - Remove a collection
 - [`collectionUpdateCommerceCollection`](docs/sdks/collection/README.md#updatecommercecollection) - Update a collection
+- [`commentCreateKmsComment`](docs/sdks/comment/README.md#createkmscomment) - Create a comment
 - [`commentCreateTaskComment`](docs/sdks/comment/README.md#createtaskcomment) - Create a comment
+- [`commentGetKmsComment`](docs/sdks/comment/README.md#getkmscomment) - Retrieve a comment
 - [`commentGetTaskComment`](docs/sdks/comment/README.md#gettaskcomment) - Retrieve a comment
+- [`commentListKmsComments`](docs/sdks/comment/README.md#listkmscomments) - List all comments
 - [`commentListTaskComments`](docs/sdks/comment/README.md#listtaskcomments) - List all comments
+- [`commentPatchKmsComment`](docs/sdks/comment/README.md#patchkmscomment) - Update a comment
 - [`commentPatchTaskComment`](docs/sdks/comment/README.md#patchtaskcomment) - Update a comment
+- [`commentRemoveKmsComment`](docs/sdks/comment/README.md#removekmscomment) - Remove a comment
 - [`commentRemoveTaskComment`](docs/sdks/comment/README.md#removetaskcomment) - Remove a comment
+- [`commentUpdateKmsComment`](docs/sdks/comment/README.md#updatekmscomment) - Update a comment
 - [`commentUpdateTaskComment`](docs/sdks/comment/README.md#updatetaskcomment) - Update a comment
 - [`commerceCreateCommerceCollection`](docs/sdks/commerce/README.md#createcommercecollection) - Create a collection
 - [`commerceCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
@@ -827,16 +833,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`journalPatchAccountingJournal`](docs/sdks/journal/README.md#patchaccountingjournal) - Update a journal
 - [`journalRemoveAccountingJournal`](docs/sdks/journal/README.md#removeaccountingjournal) - Remove a journal
 - [`journalUpdateAccountingJournal`](docs/sdks/journal/README.md#updateaccountingjournal) - Update a journal
+- [`kmsCreateKmsComment`](docs/sdks/kms/README.md#createkmscomment) - Create a comment
 - [`kmsCreateKmsPage`](docs/sdks/kms/README.md#createkmspage) - Create a page
 - [`kmsCreateKmsSpace`](docs/sdks/kms/README.md#createkmsspace) - Create a space
+- [`kmsGetKmsComment`](docs/sdks/kms/README.md#getkmscomment) - Retrieve a comment
 - [`kmsGetKmsPage`](docs/sdks/kms/README.md#getkmspage) - Retrieve a page
 - [`kmsGetKmsSpace`](docs/sdks/kms/README.md#getkmsspace) - Retrieve a space
+- [`kmsListKmsComments`](docs/sdks/kms/README.md#listkmscomments) - List all comments
 - [`kmsListKmsPages`](docs/sdks/kms/README.md#listkmspages) - List all pages
 - [`kmsListKmsSpaces`](docs/sdks/kms/README.md#listkmsspaces) - List all spaces
+- [`kmsPatchKmsComment`](docs/sdks/kms/README.md#patchkmscomment) - Update a comment
 - [`kmsPatchKmsPage`](docs/sdks/kms/README.md#patchkmspage) - Update a page
 - [`kmsPatchKmsSpace`](docs/sdks/kms/README.md#patchkmsspace) - Update a space
+- [`kmsRemoveKmsComment`](docs/sdks/kms/README.md#removekmscomment) - Remove a comment
 - [`kmsRemoveKmsPage`](docs/sdks/kms/README.md#removekmspage) - Remove a page
 - [`kmsRemoveKmsSpace`](docs/sdks/kms/README.md#removekmsspace) - Remove a space
+- [`kmsUpdateKmsComment`](docs/sdks/kms/README.md#updatekmscomment) - Update a comment
 - [`kmsUpdateKmsPage`](docs/sdks/kms/README.md#updatekmspage) - Update a page
 - [`kmsUpdateKmsSpace`](docs/sdks/kms/README.md#updatekmsspace) - Update a space
 - [`leadCreateCrmLead`](docs/sdks/lead/README.md#createcrmlead) - Create a lead

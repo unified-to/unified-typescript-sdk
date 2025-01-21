@@ -41,7 +41,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingCustomer({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -69,7 +69,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingCustomer(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -121,7 +121,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingNote({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingNote(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -201,7 +201,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingTicket({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -229,7 +229,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingTicket(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -281,7 +281,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.getTicketingCustomer({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -310,7 +310,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingGetTicketingCustomer(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -363,7 +363,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.getTicketingNote({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -392,7 +392,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingGetTicketingNote(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -445,7 +445,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.getTicketingTicket({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -474,7 +474,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingGetTicketingTicket(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -527,7 +527,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.listTicketingCustomers({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -555,7 +555,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingListTicketingCustomers(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -607,7 +607,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.listTicketingNotes({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -635,7 +635,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingListTicketingNotes(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -687,7 +687,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.listTicketingTickets({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -715,7 +715,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingListTicketingTickets(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -767,7 +767,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingCustomer({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -796,7 +796,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingCustomer(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -849,7 +849,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingNote({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -878,7 +878,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingNote(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -931,7 +931,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingTicket({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -960,7 +960,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingTicket(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1013,7 +1013,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.removeTicketingCustomer({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1042,7 +1042,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingRemoveTicketingCustomer(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1095,7 +1095,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.removeTicketingNote({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1124,7 +1124,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingRemoveTicketingNote(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1177,7 +1177,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.removeTicketingTicket({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1206,7 +1206,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingRemoveTicketingTicket(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1259,7 +1259,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingCustomer({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1288,7 +1288,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingCustomer(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1341,7 +1341,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingNote({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1370,7 +1370,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingNote(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1423,7 +1423,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingTicket({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1452,7 +1452,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingTicket(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

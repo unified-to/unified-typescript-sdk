@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookTicketId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookTicketId = "not-supported";
+let value: VirtualWebhookTicketId = "supported-required";
 ```
 
 ## Values

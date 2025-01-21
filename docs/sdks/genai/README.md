@@ -25,7 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.genai.createGenaiPrompt({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -53,7 +53,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await genaiCreateGenaiPrompt(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -105,7 +105,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.genai.listGenaiModels({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -133,7 +133,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await genaiListGenaiModels(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

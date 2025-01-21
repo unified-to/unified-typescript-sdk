@@ -190,6 +190,13 @@ export const ListOrgId = {
 } as const;
 export type ListOrgId = ClosedEnum<typeof ListOrgId>;
 
+export const ListPageId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListPageId = ClosedEnum<typeof ListPageId>;
+
 export const ListParentId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -463,6 +470,7 @@ export type IntegrationSupport = {
   listOffset?: ListOffset | undefined;
   listOrder?: ListOrder | undefined;
   listOrgId?: ListOrgId | undefined;
+  listPageId?: ListPageId | undefined;
   listParentId?: ListParentId | undefined;
   listProjectId?: ListProjectId | undefined;
   listQuery?: ListQuery | undefined;
@@ -492,6 +500,7 @@ export type IntegrationSupport = {
   searchLinkedinurl?: SearchLinkedinurl | undefined;
   searchName?: SearchName | undefined;
   searchTwitter?: SearchTwitter | undefined;
+  slowFields?: Array<string> | undefined;
   virtualWebhookChannelId?: VirtualWebhookChannelId | undefined;
   virtualWebhookCompanyId?: VirtualWebhookCompanyId | undefined;
   virtualWebhookContactId?: VirtualWebhookContactId | undefined;
@@ -1005,6 +1014,25 @@ export namespace ListOrgId$ {
   export const inboundSchema = ListOrgId$inboundSchema;
   /** @deprecated use `ListOrgId$outboundSchema` instead. */
   export const outboundSchema = ListOrgId$outboundSchema;
+}
+
+/** @internal */
+export const ListPageId$inboundSchema: z.ZodNativeEnum<typeof ListPageId> = z
+  .nativeEnum(ListPageId);
+
+/** @internal */
+export const ListPageId$outboundSchema: z.ZodNativeEnum<typeof ListPageId> =
+  ListPageId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListPageId$ {
+  /** @deprecated use `ListPageId$inboundSchema` instead. */
+  export const inboundSchema = ListPageId$inboundSchema;
+  /** @deprecated use `ListPageId$outboundSchema` instead. */
+  export const outboundSchema = ListPageId$outboundSchema;
 }
 
 /** @internal */
@@ -1729,6 +1757,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_offset: ListOffset$inboundSchema.optional(),
   list_order: ListOrder$inboundSchema.optional(),
   list_org_id: ListOrgId$inboundSchema.optional(),
+  list_page_id: ListPageId$inboundSchema.optional(),
   list_parent_id: ListParentId$inboundSchema.optional(),
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
@@ -1755,6 +1784,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   search_linkedinurl: SearchLinkedinurl$inboundSchema.optional(),
   search_name: SearchName$inboundSchema.optional(),
   search_twitter: SearchTwitter$inboundSchema.optional(),
+  slow_fields: z.array(z.string()).optional(),
   virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema.optional(),
   virtual_webhook_company_id: VirtualWebhookCompanyId$inboundSchema.optional(),
   virtual_webhook_contact_id: VirtualWebhookContactId$inboundSchema.optional(),
@@ -1797,6 +1827,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_offset": "listOffset",
     "list_order": "listOrder",
     "list_org_id": "listOrgId",
+    "list_page_id": "listPageId",
     "list_parent_id": "listParentId",
     "list_project_id": "listProjectId",
     "list_query": "listQuery",
@@ -1822,6 +1853,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "search_linkedinurl": "searchLinkedinurl",
     "search_name": "searchName",
     "search_twitter": "searchTwitter",
+    "slow_fields": "slowFields",
     "virtual_webhook_channel_id": "virtualWebhookChannelId",
     "virtual_webhook_company_id": "virtualWebhookCompanyId",
     "virtual_webhook_contact_id": "virtualWebhookContactId",
@@ -1865,6 +1897,7 @@ export type IntegrationSupport$Outbound = {
   list_offset?: string | undefined;
   list_order?: string | undefined;
   list_org_id?: string | undefined;
+  list_page_id?: string | undefined;
   list_parent_id?: string | undefined;
   list_project_id?: string | undefined;
   list_query?: string | undefined;
@@ -1891,6 +1924,7 @@ export type IntegrationSupport$Outbound = {
   search_linkedinurl?: string | undefined;
   search_name?: string | undefined;
   search_twitter?: string | undefined;
+  slow_fields?: Array<string> | undefined;
   virtual_webhook_channel_id?: string | undefined;
   virtual_webhook_company_id?: string | undefined;
   virtual_webhook_contact_id?: string | undefined;
@@ -1937,6 +1971,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listOffset: ListOffset$outboundSchema.optional(),
   listOrder: ListOrder$outboundSchema.optional(),
   listOrgId: ListOrgId$outboundSchema.optional(),
+  listPageId: ListPageId$outboundSchema.optional(),
   listParentId: ListParentId$outboundSchema.optional(),
   listProjectId: ListProjectId$outboundSchema.optional(),
   listQuery: ListQuery$outboundSchema.optional(),
@@ -1963,6 +1998,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   searchLinkedinurl: SearchLinkedinurl$outboundSchema.optional(),
   searchName: SearchName$outboundSchema.optional(),
   searchTwitter: SearchTwitter$outboundSchema.optional(),
+  slowFields: z.array(z.string()).optional(),
   virtualWebhookChannelId: VirtualWebhookChannelId$outboundSchema.optional(),
   virtualWebhookCompanyId: VirtualWebhookCompanyId$outboundSchema.optional(),
   virtualWebhookContactId: VirtualWebhookContactId$outboundSchema.optional(),
@@ -2004,6 +2040,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listOffset: "list_offset",
     listOrder: "list_order",
     listOrgId: "list_org_id",
+    listPageId: "list_page_id",
     listParentId: "list_parent_id",
     listProjectId: "list_project_id",
     listQuery: "list_query",
@@ -2029,6 +2066,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     searchLinkedinurl: "search_linkedinurl",
     searchName: "search_name",
     searchTwitter: "search_twitter",
+    slowFields: "slow_fields",
     virtualWebhookChannelId: "virtual_webhook_channel_id",
     virtualWebhookCompanyId: "virtual_webhook_company_id",
     virtualWebhookContactId: "virtual_webhook_contact_id",

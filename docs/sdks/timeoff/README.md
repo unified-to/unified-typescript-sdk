@@ -25,7 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.timeoff.getHrisTimeoff({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -54,7 +54,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await timeoffGetHrisTimeoff(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -107,7 +107,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.timeoff.listHrisTimeoffs({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -135,7 +135,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await timeoffListHrisTimeoffs(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {

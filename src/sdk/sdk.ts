@@ -291,6 +291,11 @@ export class UnifiedTo extends ClientSDK {
     return (this._kms ??= new Kms(this._options));
   }
 
+  private _comment?: Comment;
+  get comment(): Comment {
+    return (this._comment ??= new Comment(this._options));
+  }
+
   private _page?: Page;
   get page(): Page {
     return (this._page ??= new Page(this._options));
@@ -439,11 +444,6 @@ export class UnifiedTo extends ClientSDK {
   private _task?: Task;
   get task(): Task {
     return (this._task ??= new Task(this._options));
-  }
-
-  private _comment?: Comment;
-  get comment(): Comment {
-    return (this._comment ??= new Comment(this._options));
   }
 
   private _project?: Project;

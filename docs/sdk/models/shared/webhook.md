@@ -9,9 +9,9 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
   connectionId: "<id>",
-  event: "updated",
-  hookUrl: "https://velvety-presume.com/",
-  objectType: "payment_refund",
+  event: "deleted",
+  hookUrl: "https://angelic-coliseum.name",
+  objectType: "passthrough",
 };
 ```
 

@@ -41,7 +41,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createAccountingContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -69,7 +69,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateAccountingContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -121,7 +121,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createCrmContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateCrmContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -201,7 +201,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.createUcContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -229,7 +229,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactCreateUcContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -281,7 +281,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.getAccountingContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -310,7 +310,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactGetAccountingContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -363,7 +363,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.getCrmContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -392,7 +392,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactGetCrmContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -445,7 +445,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.getUcContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -474,7 +474,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactGetUcContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -527,7 +527,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.listAccountingContacts({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -555,7 +555,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactListAccountingContacts(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -607,7 +607,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.listCrmContacts({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -635,7 +635,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactListCrmContacts(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -687,7 +687,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.listUcContacts({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -715,7 +715,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactListUcContacts(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
@@ -767,7 +767,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchAccountingContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -796,7 +796,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchAccountingContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -849,7 +849,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchCrmContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -878,7 +878,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchCrmContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -931,7 +931,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.patchUcContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -960,7 +960,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactPatchUcContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1013,7 +1013,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.removeAccountingContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1042,7 +1042,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactRemoveAccountingContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1095,7 +1095,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.removeCrmContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1124,7 +1124,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactRemoveCrmContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1177,7 +1177,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.removeUcContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1206,7 +1206,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactRemoveUcContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1259,7 +1259,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateAccountingContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1288,7 +1288,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateAccountingContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1341,7 +1341,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateCrmContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1370,7 +1370,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateCrmContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1423,7 +1423,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.contact.updateUcContact({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -1452,7 +1452,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await contactUpdateUcContact(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 

@@ -6,7 +6,7 @@
 import { KmsPage } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: KmsPage = {
-  downloadUrl: "https://runny-epic.net",
+  downloadUrl: "https://stylish-gripper.org/",
   title: "<value>",
   type: "MARKDOWN",
 };

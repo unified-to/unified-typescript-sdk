@@ -27,7 +27,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.integration.getUnifiedIntegrationAuth({
     integrationType: "<value>",
-    workspaceId: "<value>",
+    workspaceId: "<id>",
   });
 
   // Handle the result
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await integrationGetUnifiedIntegrationAuth(unifiedTo, {
     integrationType: "<value>",
-    workspaceId: "<value>",
+    workspaceId: "<id>",
   });
 
   if (!res.ok) {
@@ -108,7 +108,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.integration.listUnifiedIntegrationWorkspaces({
-    workspaceId: "<value>",
+    workspaceId: "<id>",
   });
 
   // Handle the result
@@ -136,7 +136,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await integrationListUnifiedIntegrationWorkspaces(unifiedTo, {
-    workspaceId: "<value>",
+    workspaceId: "<id>",
   });
 
   if (!res.ok) {

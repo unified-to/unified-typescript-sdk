@@ -111,7 +111,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.getAccountingOrganization({
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationGetAccountingOrganization(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
   });
 
@@ -275,7 +275,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.listAccountingOrganizations({
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   // Handle the result
@@ -303,7 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationListAccountingOrganizations(unifiedTo, {
-    connectionId: "<value>",
+    connectionId: "<id>",
   });
 
   if (!res.ok) {
