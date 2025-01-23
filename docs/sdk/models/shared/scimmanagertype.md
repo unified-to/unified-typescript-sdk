@@ -5,7 +5,7 @@
 ```typescript
 import { ScimManagerType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ScimManagerType = "indirect";
+let value: ScimManagerType = "direct";
 ```
 
 ## Values

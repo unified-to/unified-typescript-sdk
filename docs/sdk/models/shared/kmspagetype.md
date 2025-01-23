@@ -11,5 +11,5 @@ let value: KmsPageType = "TEXT";
 ## Values
 
 ```typescript
-"HTML" | "MARKDOWN" | "TEXT"
+"HTML" | "MARKDOWN" | "TEXT" | "OTHER"
 ```

@@ -13,6 +13,7 @@ export const ContentType = {
   Html: "HTML",
   Markdown: "MARKDOWN",
   Text: "TEXT",
+  Other: "OTHER",
 } as const;
 export type ContentType = ClosedEnum<typeof ContentType>;
 

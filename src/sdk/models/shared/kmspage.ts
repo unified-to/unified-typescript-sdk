@@ -19,12 +19,13 @@ export const KmsPageType = {
   Html: "HTML",
   Markdown: "MARKDOWN",
   Text: "TEXT",
+  Other: "OTHER",
 } as const;
 export type KmsPageType = ClosedEnum<typeof KmsPageType>;
 
 export type KmsPage = {
   createdAt?: Date | undefined;
-  downloadUrl: string;
+  downloadUrl?: string | undefined;
   hasChildren?: boolean | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
@@ -64,7 +65,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
-    download_url: z.string(),
+    download_url: z.string().optional(),
     has_children: z.boolean().optional(),
     id: z.string().optional(),
     is_active: z.boolean().optional(),
@@ -96,7 +97,7 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
 /** @internal */
 export type KmsPage$Outbound = {
   created_at?: string | undefined;
-  download_url: string;
+  download_url?: string | undefined;
   has_children?: boolean | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
@@ -118,7 +119,7 @@ export const KmsPage$outboundSchema: z.ZodType<
   KmsPage
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  downloadUrl: z.string(),
+  downloadUrl: z.string().optional(),
   hasChildren: z.boolean().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),

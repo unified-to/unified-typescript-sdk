@@ -11,5 +11,5 @@ let value: ContentType = "MARKDOWN";
 ## Values
 
 ```typescript
-"HTML" | "MARKDOWN" | "TEXT"
+"HTML" | "MARKDOWN" | "TEXT" | "OTHER"
 ```
