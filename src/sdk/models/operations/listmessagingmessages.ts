@@ -26,7 +26,6 @@ export type ListMessagingMessagesRequest = {
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
-  rootId?: string | undefined;
   sort?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
@@ -48,7 +47,6 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   parent_id: z.string().optional(),
   query: z.string().optional(),
-  root_id: z.string().optional(),
   sort: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -57,7 +55,6 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
     "channel_id": "channelId",
     "connection_id": "connectionId",
     "parent_id": "parentId",
-    "root_id": "rootId",
     "updated_gte": "updatedGte",
   });
 });
@@ -72,7 +69,6 @@ export type ListMessagingMessagesRequest$Outbound = {
   order?: string | undefined;
   parent_id?: string | undefined;
   query?: string | undefined;
-  root_id?: string | undefined;
   sort?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -91,7 +87,6 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   parentId: z.string().optional(),
   query: z.string().optional(),
-  rootId: z.string().optional(),
   sort: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
@@ -99,7 +94,6 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
     channelId: "channel_id",
     connectionId: "connection_id",
     parentId: "parent_id",
-    rootId: "root_id",
     updatedGte: "updated_gte",
   });
 });
