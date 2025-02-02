@@ -12,11 +12,11 @@ let value: CommerceItemMetadata = {
 
 ## Fields
 
-| Field                 | Type                  | Required              | Description           |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| `extraData`           | Record<string, *any*> | :heavy_minus_sign:    | N/A                   |
-| `id`                  | *string*              | :heavy_minus_sign:    | N/A                   |
-| `key`                 | *string*              | :heavy_check_mark:    | N/A                   |
-| `namespace`           | *string*              | :heavy_minus_sign:    | N/A                   |
-| `type`                | *string*              | :heavy_minus_sign:    | N/A                   |
-| `value`               | Record<string, *any*> | :heavy_minus_sign:    | N/A                   |
+| Field                                                       | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `extraData`                                                 | [shared.ExtraData](../../../sdk/models/shared/extradata.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `id`                                                        | *string*                                                    | :heavy_minus_sign:                                          | N/A                                                         |
+| `key`                                                       | *string*                                                    | :heavy_check_mark:                                          | N/A                                                         |
+| `namespace`                                                 | *string*                                                    | :heavy_minus_sign:                                          | N/A                                                         |
+| `type`                                                      | *string*                                                    | :heavy_minus_sign:                                          | N/A                                                         |
+| `value`                                                     | [shared.Value](../../../sdk/models/shared/value.md)         | :heavy_minus_sign:                                          | N/A                                                         |

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0348382e89126471fa3b06fe46a31486
+  docChecksum: 00e71c38f182c4bad7a19b0c7bb3e211
   docVersion: "1.0"
-  speakeasyVersion: 1.474.0
-  generationVersion: 2.495.0
-  releaseVersion: 2.9.25
-  configChecksum: 99af82be94b3076e45591d7d7b5abb65
+  speakeasyVersion: 1.481.1
+  generationVersion: 2.500.5
+  releaseVersion: 2.9.26
+  configChecksum: 3b10deff2179f4ac069778e1c910a20f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.17
+    core: 3.18.22
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -29,7 +29,6 @@ features:
     sdkHooks: 0.2.0
     uploadStreams: 0.1.0
 generatedFiles:
-  - .eslintrc.cjs
   - .gitattributes
   - .npmignore
   - FUNCTIONS.md
@@ -561,14 +560,17 @@ generatedFiles:
   - docs/sdk/models/shared/commercecollection.md
   - docs/sdk/models/shared/commercecollectiontype.md
   - docs/sdk/models/shared/commerceinventory.md
+  - docs/sdk/models/shared/commerceinventoryraw.md
   - docs/sdk/models/shared/commerceitem.md
   - docs/sdk/models/shared/commerceitemmedia.md
   - docs/sdk/models/shared/commerceitemmediatype.md
   - docs/sdk/models/shared/commerceitemmetadata.md
   - docs/sdk/models/shared/commerceitemoption.md
   - docs/sdk/models/shared/commerceitemprice.md
+  - docs/sdk/models/shared/commerceitemraw.md
   - docs/sdk/models/shared/commerceitemvariant.md
   - docs/sdk/models/shared/commercelocation.md
+  - docs/sdk/models/shared/commercelocationraw.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
   - docs/sdk/models/shared/crmcompany.md
@@ -597,6 +599,7 @@ generatedFiles:
   - docs/sdk/models/shared/enrichtelephonetype.md
   - docs/sdk/models/shared/ethnicity.md
   - docs/sdk/models/shared/event.md
+  - docs/sdk/models/shared/extradata.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/fromwebhook.md
   - docs/sdk/models/shared/genaicontent.md
@@ -765,6 +768,7 @@ generatedFiles:
   - docs/sdk/models/shared/propertystoragepermissionroles.md
   - docs/sdk/models/shared/propertyuccalltelephone.md
   - docs/sdk/models/shared/propertyuccalltelephonetype.md
+  - docs/sdk/models/shared/raw.md
   - docs/sdk/models/shared/recommendation.md
   - docs/sdk/models/shared/repobranch.md
   - docs/sdk/models/shared/repocommit.md
@@ -826,6 +830,7 @@ generatedFiles:
   - docs/sdk/models/shared/ucemailtype.md
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
+  - docs/sdk/models/shared/value.md
   - docs/sdk/models/shared/virtualwebhookchannelid.md
   - docs/sdk/models/shared/virtualwebhookcompanyid.md
   - docs/sdk/models/shared/virtualwebhookcontactid.md
@@ -927,6 +932,7 @@ generatedFiles:
   - docs/sdks/unifiedto/README.md
   - docs/sdks/user/README.md
   - docs/sdks/webhook/README.md
+  - eslint.config.mjs
   - jsr.json
   - package.json
   - src/core.ts

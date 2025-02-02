@@ -26,6 +26,8 @@ import {
   CommerceItemVariant$outboundSchema,
 } from "./commerceitemvariant.js";
 
+export type CommerceItemRaw = {};
+
 export type CommerceItem = {
   accountId?: string | undefined;
   collectionIds?: Array<string> | undefined;
@@ -39,7 +41,7 @@ export type CommerceItem = {
   name?: string | undefined;
   publicDescription?: string | undefined;
   publicName?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CommerceItemRaw | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
   type?: string | undefined;
@@ -50,6 +52,52 @@ export type CommerceItem = {
   variants?: Array<CommerceItemVariant> | undefined;
   vendorName?: string | undefined;
 };
+
+/** @internal */
+export const CommerceItemRaw$inboundSchema: z.ZodType<
+  CommerceItemRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceItemRaw$Outbound = {};
+
+/** @internal */
+export const CommerceItemRaw$outboundSchema: z.ZodType<
+  CommerceItemRaw$Outbound,
+  z.ZodTypeDef,
+  CommerceItemRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceItemRaw$ {
+  /** @deprecated use `CommerceItemRaw$inboundSchema` instead. */
+  export const inboundSchema = CommerceItemRaw$inboundSchema;
+  /** @deprecated use `CommerceItemRaw$outboundSchema` instead. */
+  export const outboundSchema = CommerceItemRaw$outboundSchema;
+  /** @deprecated use `CommerceItemRaw$Outbound` instead. */
+  export type Outbound = CommerceItemRaw$Outbound;
+}
+
+export function commerceItemRawToJSON(
+  commerceItemRaw: CommerceItemRaw,
+): string {
+  return JSON.stringify(CommerceItemRaw$outboundSchema.parse(commerceItemRaw));
+}
+
+export function commerceItemRawFromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceItemRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceItemRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const CommerceItem$inboundSchema: z.ZodType<
@@ -70,7 +118,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   name: z.string().optional(),
   public_description: z.string().optional(),
   public_name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CommerceItemRaw$inboundSchema).optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
   type: z.string().optional(),
@@ -106,7 +154,7 @@ export type CommerceItem$Outbound = {
   name?: string | undefined;
   public_description?: string | undefined;
   public_name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CommerceItemRaw$Outbound | undefined;
   slug?: string | undefined;
   tags?: Array<string> | undefined;
   type?: string | undefined;
@@ -133,7 +181,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   name: z.string().optional(),
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CommerceItemRaw$outboundSchema).optional(),
   slug: z.string().optional(),
   tags: z.array(z.string()).optional(),
   type: z.string().optional(),
