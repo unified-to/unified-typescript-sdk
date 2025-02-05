@@ -64,6 +64,7 @@ export async function hrisListHrisTimeoffs(
   const path = pathToFunc("/hris/{connection_id}/timeoff")(pathParams);
 
   const query = encodeFormQuery({
+    "company_id": payload.company_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

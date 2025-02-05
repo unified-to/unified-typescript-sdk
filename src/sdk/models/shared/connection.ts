@@ -41,6 +41,7 @@ export type Connection = {
   environment?: string | undefined;
   externalXref?: string | undefined;
   id?: string | undefined;
+  integrationName: string;
   integrationType: string;
   isPaused?: boolean | undefined;
   lastHealthyAt?: Date | undefined;
@@ -64,6 +65,7 @@ export const Connection$inboundSchema: z.ZodType<
   environment: z.string().default("Production"),
   external_xref: z.string().optional(),
   id: z.string().optional(),
+  integration_name: z.string(),
   integration_type: z.string(),
   is_paused: z.boolean().optional(),
   last_healthy_at: z.string().datetime({ offset: true }).transform(v =>
@@ -81,6 +83,7 @@ export const Connection$inboundSchema: z.ZodType<
     "auth_aws_arn": "authAwsArn",
     "created_at": "createdAt",
     "external_xref": "externalXref",
+    "integration_name": "integrationName",
     "integration_type": "integrationType",
     "is_paused": "isPaused",
     "last_healthy_at": "lastHealthyAt",
@@ -99,6 +102,7 @@ export type Connection$Outbound = {
   environment: string;
   external_xref?: string | undefined;
   id?: string | undefined;
+  integration_name: string;
   integration_type: string;
   is_paused?: boolean | undefined;
   last_healthy_at?: string | undefined;
@@ -121,6 +125,7 @@ export const Connection$outboundSchema: z.ZodType<
   environment: z.string().default("Production"),
   externalXref: z.string().optional(),
   id: z.string().optional(),
+  integrationName: z.string(),
   integrationType: z.string(),
   isPaused: z.boolean().optional(),
   lastHealthyAt: z.date().transform(v => v.toISOString()).optional(),
@@ -133,6 +138,7 @@ export const Connection$outboundSchema: z.ZodType<
     authAwsArn: "auth_aws_arn",
     createdAt: "created_at",
     externalXref: "external_xref",
+    integrationName: "integration_name",
     integrationType: "integration_type",
     isPaused: "is_paused",
     lastHealthyAt: "last_healthy_at",

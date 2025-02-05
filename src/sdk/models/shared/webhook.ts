@@ -16,6 +16,8 @@ export const Event = {
 } as const;
 export type Event = ClosedEnum<typeof Event>;
 
+export type Meta = {};
+
 export const ObjectType = {
   AccountingAccount: "accounting_account",
   AccountingTransaction: "accounting_transaction",
@@ -113,7 +115,7 @@ export type Webhook = {
   integrationType?: string | undefined;
   interval?: number | undefined;
   isHealthy?: boolean | undefined;
-  meta?: { [k: string]: any } | undefined;
+  meta?: Meta | undefined;
   objectType: ObjectType;
   pageMaxLimit?: number | undefined;
   /**
@@ -143,6 +145,44 @@ export namespace Event$ {
   export const inboundSchema = Event$inboundSchema;
   /** @deprecated use `Event$outboundSchema` instead. */
   export const outboundSchema = Event$outboundSchema;
+}
+
+/** @internal */
+export const Meta$inboundSchema: z.ZodType<Meta, z.ZodTypeDef, unknown> = z
+  .object({});
+
+/** @internal */
+export type Meta$Outbound = {};
+
+/** @internal */
+export const Meta$outboundSchema: z.ZodType<Meta$Outbound, z.ZodTypeDef, Meta> =
+  z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Meta$ {
+  /** @deprecated use `Meta$inboundSchema` instead. */
+  export const inboundSchema = Meta$inboundSchema;
+  /** @deprecated use `Meta$outboundSchema` instead. */
+  export const outboundSchema = Meta$outboundSchema;
+  /** @deprecated use `Meta$Outbound` instead. */
+  export type Outbound = Meta$Outbound;
+}
+
+export function metaToJSON(meta: Meta): string {
+  return JSON.stringify(Meta$outboundSchema.parse(meta));
+}
+
+export function metaFromJSON(
+  jsonString: string,
+): SafeParseResult<Meta, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Meta$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Meta' from JSON`,
+  );
 }
 
 /** @internal */
@@ -202,7 +242,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     integration_type: z.string().optional(),
     interval: z.number().optional(),
     is_healthy: z.boolean().optional(),
-    meta: z.record(z.any()).optional(),
+    meta: z.lazy(() => Meta$inboundSchema).optional(),
     object_type: ObjectType$inboundSchema,
     page_max_limit: z.number().optional(),
     runs: z.array(z.string()).optional(),
@@ -241,7 +281,7 @@ export type Webhook$Outbound = {
   integration_type?: string | undefined;
   interval?: number | undefined;
   is_healthy?: boolean | undefined;
-  meta?: { [k: string]: any } | undefined;
+  meta?: Meta$Outbound | undefined;
   object_type: string;
   page_max_limit?: number | undefined;
   runs?: Array<string> | undefined;
@@ -268,7 +308,7 @@ export const Webhook$outboundSchema: z.ZodType<
   integrationType: z.string().optional(),
   interval: z.number().optional(),
   isHealthy: z.boolean().optional(),
-  meta: z.record(z.any()).optional(),
+  meta: z.lazy(() => Meta$outboundSchema).optional(),
   objectType: ObjectType$outboundSchema,
   pageMaxLimit: z.number().optional(),
   runs: z.array(z.string()).optional(),

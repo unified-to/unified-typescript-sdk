@@ -9,6 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListHrisTimeoffsRequest = {
+  companyId?: string | undefined;
   /**
    * ID of the connection
    */
@@ -38,6 +39,7 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  company_id: z.string().optional(),
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -50,6 +52,7 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "company_id": "companyId",
     "connection_id": "connectionId",
     "updated_gte": "updatedGte",
     "user_id": "userId",
@@ -58,6 +61,7 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListHrisTimeoffsRequest$Outbound = {
+  company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -75,6 +79,7 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListHrisTimeoffsRequest
 > = z.object({
+  companyId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -86,6 +91,7 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    companyId: "company_id",
     connectionId: "connection_id",
     updatedGte: "updated_gte",
     userId: "user_id",

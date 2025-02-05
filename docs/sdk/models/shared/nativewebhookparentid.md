@@ -5,7 +5,7 @@
 ```typescript
 import { NativeWebhookParentId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: NativeWebhookParentId = "supported-required";
+let value: NativeWebhookParentId = "not-supported";
 ```
 
 ## Values

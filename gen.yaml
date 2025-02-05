@@ -14,7 +14,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.9.26
+  version: 2.9.27
   additionalDependencies:
     dependencies: {}
     devDependencies: {}

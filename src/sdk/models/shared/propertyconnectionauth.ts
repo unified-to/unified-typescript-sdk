@@ -8,6 +8,8 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type PropertyConnectionAuthMeta = {};
+
 /**
  * An authentication object that represents a specific authorized user's connection to an integration.
  */
@@ -25,7 +27,7 @@ export type PropertyConnectionAuth = {
   expiresIn?: number | undefined;
   expiryDate?: Date | undefined;
   key?: string | undefined;
-  meta?: { [k: string]: any } | undefined;
+  meta?: PropertyConnectionAuthMeta | undefined;
   name?: string | undefined;
   /**
    * When integration.auth_type = "other", this field contains the authentication credentials in the same order as token_names
@@ -39,6 +41,54 @@ export type PropertyConnectionAuth = {
   token?: string | undefined;
   tokenUrl?: string | undefined;
 };
+
+/** @internal */
+export const PropertyConnectionAuthMeta$inboundSchema: z.ZodType<
+  PropertyConnectionAuthMeta,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type PropertyConnectionAuthMeta$Outbound = {};
+
+/** @internal */
+export const PropertyConnectionAuthMeta$outboundSchema: z.ZodType<
+  PropertyConnectionAuthMeta$Outbound,
+  z.ZodTypeDef,
+  PropertyConnectionAuthMeta
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace PropertyConnectionAuthMeta$ {
+  /** @deprecated use `PropertyConnectionAuthMeta$inboundSchema` instead. */
+  export const inboundSchema = PropertyConnectionAuthMeta$inboundSchema;
+  /** @deprecated use `PropertyConnectionAuthMeta$outboundSchema` instead. */
+  export const outboundSchema = PropertyConnectionAuthMeta$outboundSchema;
+  /** @deprecated use `PropertyConnectionAuthMeta$Outbound` instead. */
+  export type Outbound = PropertyConnectionAuthMeta$Outbound;
+}
+
+export function propertyConnectionAuthMetaToJSON(
+  propertyConnectionAuthMeta: PropertyConnectionAuthMeta,
+): string {
+  return JSON.stringify(
+    PropertyConnectionAuthMeta$outboundSchema.parse(propertyConnectionAuthMeta),
+  );
+}
+
+export function propertyConnectionAuthMetaFromJSON(
+  jsonString: string,
+): SafeParseResult<PropertyConnectionAuthMeta, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => PropertyConnectionAuthMeta$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyConnectionAuthMeta' from JSON`,
+  );
+}
 
 /** @internal */
 export const PropertyConnectionAuth$inboundSchema: z.ZodType<
@@ -60,7 +110,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
   expiry_date: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   key: z.string().optional(),
-  meta: z.record(z.any()).optional(),
+  meta: z.lazy(() => PropertyConnectionAuthMeta$inboundSchema).optional(),
   name: z.string().optional(),
   other_auth_info: z.array(z.string()).optional(),
   pem: z.string().optional(),
@@ -108,7 +158,7 @@ export type PropertyConnectionAuth$Outbound = {
   expires_in?: number | undefined;
   expiry_date?: string | undefined;
   key?: string | undefined;
-  meta?: { [k: string]: any } | undefined;
+  meta?: PropertyConnectionAuthMeta$Outbound | undefined;
   name?: string | undefined;
   other_auth_info?: Array<string> | undefined;
   pem?: string | undefined;
@@ -139,7 +189,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   expiresIn: z.number().optional(),
   expiryDate: z.date().transform(v => v.toISOString()).optional(),
   key: z.string().optional(),
-  meta: z.record(z.any()).optional(),
+  meta: z.lazy(() => PropertyConnectionAuthMeta$outboundSchema).optional(),
   name: z.string().optional(),
   otherAuthInfo: z.array(z.string()).optional(),
   pem: z.string().optional(),
