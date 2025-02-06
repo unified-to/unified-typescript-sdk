@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyConnectionPermissions } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionPermissions = "kms_space_read";
+let value: PropertyConnectionPermissions = "payment_subscription_read";
 ```
 
 ## Values

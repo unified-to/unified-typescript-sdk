@@ -5,7 +5,7 @@
 ```typescript
 import { ListChannelId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListChannelId = "supported";
+let value: ListChannelId = "not-supported";
 ```
 
 ## Values

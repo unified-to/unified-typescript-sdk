@@ -9,7 +9,7 @@ let value: ApiCall = {
   integrationType: "<value>",
   method: "<value>",
   name: "<value>",
-  path: "/etc/periodic",
+  path: "/System",
   status: "<value>",
   type: "webhook",
 };

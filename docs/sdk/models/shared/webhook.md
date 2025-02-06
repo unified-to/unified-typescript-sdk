@@ -9,9 +9,9 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
   connectionId: "<id>",
-  event: "updated",
-  hookUrl: "https://elliptical-fog.org",
-  objectType: "genai_prompt",
+  event: "deleted",
+  hookUrl: "https://grubby-trash.net/",
+  objectType: "accounting_journal",
 };
 ```
 

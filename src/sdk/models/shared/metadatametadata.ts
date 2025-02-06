@@ -5,8 +5,28 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+
+export type MetadataMetadataRaw = {};
+
+export const MetadataMetadataType = {
+  Text: "TEXT",
+  Number: "NUMBER",
+  Date: "DATE",
+  Boolean: "BOOLEAN",
+  File: "FILE",
+  Textarea: "TEXTAREA",
+  SingleSelect: "SINGLE_SELECT",
+  MultipleSelect: "MULTIPLE_SELECT",
+  Measurement: "MEASUREMENT",
+  Price: "PRICE",
+  YesNo: "YES_NO",
+  Currency: "CURRENCY",
+  Url: "URL",
+} as const;
+export type MetadataMetadataType = ClosedEnum<typeof MetadataMetadataType>;
 
 export type MetadataMetadata = {
   createdAt?: Date | undefined;
@@ -14,10 +34,80 @@ export type MetadataMetadata = {
   name: string;
   objectType: string;
   objects?: { [k: string]: string } | undefined;
-  raw?: { [k: string]: any } | undefined;
-  type?: string | undefined;
+  options?: Array<string> | undefined;
+  raw?: MetadataMetadataRaw | undefined;
+  type?: MetadataMetadataType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const MetadataMetadataRaw$inboundSchema: z.ZodType<
+  MetadataMetadataRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type MetadataMetadataRaw$Outbound = {};
+
+/** @internal */
+export const MetadataMetadataRaw$outboundSchema: z.ZodType<
+  MetadataMetadataRaw$Outbound,
+  z.ZodTypeDef,
+  MetadataMetadataRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace MetadataMetadataRaw$ {
+  /** @deprecated use `MetadataMetadataRaw$inboundSchema` instead. */
+  export const inboundSchema = MetadataMetadataRaw$inboundSchema;
+  /** @deprecated use `MetadataMetadataRaw$outboundSchema` instead. */
+  export const outboundSchema = MetadataMetadataRaw$outboundSchema;
+  /** @deprecated use `MetadataMetadataRaw$Outbound` instead. */
+  export type Outbound = MetadataMetadataRaw$Outbound;
+}
+
+export function metadataMetadataRawToJSON(
+  metadataMetadataRaw: MetadataMetadataRaw,
+): string {
+  return JSON.stringify(
+    MetadataMetadataRaw$outboundSchema.parse(metadataMetadataRaw),
+  );
+}
+
+export function metadataMetadataRawFromJSON(
+  jsonString: string,
+): SafeParseResult<MetadataMetadataRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => MetadataMetadataRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'MetadataMetadataRaw' from JSON`,
+  );
+}
+
+/** @internal */
+export const MetadataMetadataType$inboundSchema: z.ZodNativeEnum<
+  typeof MetadataMetadataType
+> = z.nativeEnum(MetadataMetadataType);
+
+/** @internal */
+export const MetadataMetadataType$outboundSchema: z.ZodNativeEnum<
+  typeof MetadataMetadataType
+> = MetadataMetadataType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace MetadataMetadataType$ {
+  /** @deprecated use `MetadataMetadataType$inboundSchema` instead. */
+  export const inboundSchema = MetadataMetadataType$inboundSchema;
+  /** @deprecated use `MetadataMetadataType$outboundSchema` instead. */
+  export const outboundSchema = MetadataMetadataType$outboundSchema;
+}
 
 /** @internal */
 export const MetadataMetadata$inboundSchema: z.ZodType<
@@ -31,8 +121,9 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   name: z.string(),
   object_type: z.string(),
   objects: z.record(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  type: z.string().optional(),
+  options: z.array(z.string()).optional(),
+  raw: z.lazy(() => MetadataMetadataRaw$inboundSchema).optional(),
+  type: MetadataMetadataType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -50,7 +141,8 @@ export type MetadataMetadata$Outbound = {
   name: string;
   object_type: string;
   objects?: { [k: string]: string } | undefined;
-  raw?: { [k: string]: any } | undefined;
+  options?: Array<string> | undefined;
+  raw?: MetadataMetadataRaw$Outbound | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -66,8 +158,9 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   name: z.string(),
   objectType: z.string(),
   objects: z.record(z.string()).optional(),
-  raw: z.record(z.any()).optional(),
-  type: z.string().optional(),
+  options: z.array(z.string()).optional(),
+  raw: z.lazy(() => MetadataMetadataRaw$outboundSchema).optional(),
+  type: MetadataMetadataType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

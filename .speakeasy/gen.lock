@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 075b9cea2675db23b5f8cea829ebb57f
+  docChecksum: d11952529f2b721f734977d81996920c
   docVersion: "1.0"
   speakeasyVersion: 1.484.1
   generationVersion: 2.503.2
-  releaseVersion: 2.9.27
-  configChecksum: 2342713c33b303be9bd78eeed33f5512
+  releaseVersion: 2.9.28
+  configChecksum: 409e63ea625bdc6516925d497002b1c2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -698,6 +698,8 @@ generatedFiles:
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/meta.md
   - docs/sdk/models/shared/metadatametadata.md
+  - docs/sdk/models/shared/metadatametadataraw.md
+  - docs/sdk/models/shared/metadatametadatatype.md
   - docs/sdk/models/shared/nativewebhookparentid.md
   - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md

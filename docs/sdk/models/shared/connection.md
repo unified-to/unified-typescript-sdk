@@ -9,12 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "passthrough",
+    "ticketing",
   ],
-  integrationName: "<value>",
   integrationType: "<value>",
   permissions: [
-    "ats_scorecard_read",
+    "kms_space_read",
   ],
 };
 ```
@@ -30,7 +29,7 @@ let value: Connection = {
 | `environment`                                                                                         | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `externalXref`                                                                                        | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `id`                                                                                                  | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
-| `integrationName`                                                                                     | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
+| `integrationName`                                                                                     | *string*                                                                                              | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `integrationType`                                                                                     | *string*                                                                                              | :heavy_check_mark:                                                                                    | N/A                                                                                                   |
 | `isPaused`                                                                                            | *boolean*                                                                                             | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |
 | `lastHealthyAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)         | :heavy_minus_sign:                                                                                    | N/A                                                                                                   |

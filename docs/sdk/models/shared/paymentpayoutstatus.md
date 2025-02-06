@@ -5,7 +5,7 @@
 ```typescript
 import { PaymentPayoutStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentPayoutStatus = "FAILED";
+let value: PaymentPayoutStatus = "PENDING";
 ```
 
 ## Values
