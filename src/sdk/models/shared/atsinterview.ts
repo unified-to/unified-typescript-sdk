@@ -9,6 +9,8 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AtsInterviewRaw = {};
+
 export const AtsInterviewStatus = {
   Scheduled: "SCHEDULED",
   AwaitingFeedback: "AWAITING_FEEDBACK",
@@ -27,12 +29,58 @@ export type AtsInterview = {
   id?: string | undefined;
   jobId?: string | undefined;
   location?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsInterviewRaw | undefined;
   startAt?: Date | undefined;
   status?: AtsInterviewStatus | undefined;
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };
+
+/** @internal */
+export const AtsInterviewRaw$inboundSchema: z.ZodType<
+  AtsInterviewRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsInterviewRaw$Outbound = {};
+
+/** @internal */
+export const AtsInterviewRaw$outboundSchema: z.ZodType<
+  AtsInterviewRaw$Outbound,
+  z.ZodTypeDef,
+  AtsInterviewRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsInterviewRaw$ {
+  /** @deprecated use `AtsInterviewRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsInterviewRaw$inboundSchema;
+  /** @deprecated use `AtsInterviewRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsInterviewRaw$outboundSchema;
+  /** @deprecated use `AtsInterviewRaw$Outbound` instead. */
+  export type Outbound = AtsInterviewRaw$Outbound;
+}
+
+export function atsInterviewRawToJSON(
+  atsInterviewRaw: AtsInterviewRaw,
+): string {
+  return JSON.stringify(AtsInterviewRaw$outboundSchema.parse(atsInterviewRaw));
+}
+
+export function atsInterviewRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsInterviewRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsInterviewRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsInterviewRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsInterviewStatus$inboundSchema: z.ZodNativeEnum<
@@ -71,7 +119,7 @@ export const AtsInterview$inboundSchema: z.ZodType<
   id: z.string().optional(),
   job_id: z.string().optional(),
   location: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsInterviewRaw$inboundSchema).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   status: AtsInterviewStatus$inboundSchema.optional(),
@@ -102,7 +150,7 @@ export type AtsInterview$Outbound = {
   id?: string | undefined;
   job_id?: string | undefined;
   location?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsInterviewRaw$Outbound | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
   updated_at?: string | undefined;
@@ -123,7 +171,7 @@ export const AtsInterview$outboundSchema: z.ZodType<
   id: z.string().optional(),
   jobId: z.string().optional(),
   location: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsInterviewRaw$outboundSchema).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   status: AtsInterviewStatus$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

@@ -21,6 +21,8 @@ import {
   AtsOffer$outboundSchema,
 } from "./atsoffer.js";
 
+export type AtsApplicationRaw = {};
+
 export const AtsApplicationStatus = {
   New: "NEW",
   Reviewing: "REVIEWING",
@@ -49,13 +51,61 @@ export type AtsApplication = {
   jobId?: string | undefined;
   offers?: Array<AtsOffer> | undefined;
   originalStatus?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsApplicationRaw | undefined;
   rejectedAt?: Date | undefined;
   rejectedReason?: string | undefined;
   source?: string | undefined;
   status?: AtsApplicationStatus | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AtsApplicationRaw$inboundSchema: z.ZodType<
+  AtsApplicationRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsApplicationRaw$Outbound = {};
+
+/** @internal */
+export const AtsApplicationRaw$outboundSchema: z.ZodType<
+  AtsApplicationRaw$Outbound,
+  z.ZodTypeDef,
+  AtsApplicationRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsApplicationRaw$ {
+  /** @deprecated use `AtsApplicationRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsApplicationRaw$inboundSchema;
+  /** @deprecated use `AtsApplicationRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsApplicationRaw$outboundSchema;
+  /** @deprecated use `AtsApplicationRaw$Outbound` instead. */
+  export type Outbound = AtsApplicationRaw$Outbound;
+}
+
+export function atsApplicationRawToJSON(
+  atsApplicationRaw: AtsApplicationRaw,
+): string {
+  return JSON.stringify(
+    AtsApplicationRaw$outboundSchema.parse(atsApplicationRaw),
+  );
+}
+
+export function atsApplicationRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsApplicationRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsApplicationRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsApplicationRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsApplicationStatus$inboundSchema: z.ZodNativeEnum<
@@ -96,7 +146,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
   job_id: z.string().optional(),
   offers: z.array(AtsOffer$inboundSchema).optional(),
   original_status: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsApplicationRaw$inboundSchema).optional(),
   rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   rejected_reason: z.string().optional(),
@@ -129,7 +179,7 @@ export type AtsApplication$Outbound = {
   job_id?: string | undefined;
   offers?: Array<AtsOffer$Outbound> | undefined;
   original_status?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsApplicationRaw$Outbound | undefined;
   rejected_at?: string | undefined;
   rejected_reason?: string | undefined;
   source?: string | undefined;
@@ -152,7 +202,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   jobId: z.string().optional(),
   offers: z.array(AtsOffer$outboundSchema).optional(),
   originalStatus: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsApplicationRaw$outboundSchema).optional(),
   rejectedAt: z.date().transform(v => v.toISOString()).optional(),
   rejectedReason: z.string().optional(),
   source: z.string().optional(),

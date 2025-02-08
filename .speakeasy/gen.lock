@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d11952529f2b721f734977d81996920c
+  docChecksum: 079a662c33e65673ca2fb2b1cc54edc4
   docVersion: "1.0"
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 2.9.28
-  configChecksum: 409e63ea625bdc6516925d497002b1c2
+  speakeasyVersion: 1.487.1
+  generationVersion: 2.506.0
+  releaseVersion: 2.10.0
+  configChecksum: 6270fdbeb4795cefbe01d982859f03d9
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.18.22
+    core: 3.19.0
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -535,29 +535,39 @@ generatedFiles:
   - docs/sdk/models/shared/atsaddress.md
   - docs/sdk/models/shared/atsapplication.md
   - docs/sdk/models/shared/atsapplicationanswer.md
+  - docs/sdk/models/shared/atsapplicationraw.md
   - docs/sdk/models/shared/atsapplicationstatus.md
   - docs/sdk/models/shared/atscandidate.md
+  - docs/sdk/models/shared/atscandidateraw.md
   - docs/sdk/models/shared/atscompany.md
+  - docs/sdk/models/shared/atscompanyraw.md
   - docs/sdk/models/shared/atscompensation.md
   - docs/sdk/models/shared/atscompensationtype.md
   - docs/sdk/models/shared/atsdocument.md
+  - docs/sdk/models/shared/atsdocumentraw.md
   - docs/sdk/models/shared/atsdocumenttype.md
   - docs/sdk/models/shared/atsemail.md
   - docs/sdk/models/shared/atsemailtype.md
   - docs/sdk/models/shared/atsinterview.md
+  - docs/sdk/models/shared/atsinterviewraw.md
   - docs/sdk/models/shared/atsinterviewstatus.md
   - docs/sdk/models/shared/atsjob.md
+  - docs/sdk/models/shared/atsjobposting.md
   - docs/sdk/models/shared/atsjobquestion.md
   - docs/sdk/models/shared/atsjobquestiontype.md
+  - docs/sdk/models/shared/atsjobraw.md
   - docs/sdk/models/shared/atsjobstatus.md
   - docs/sdk/models/shared/atsoffer.md
   - docs/sdk/models/shared/atsscorecard.md
   - docs/sdk/models/shared/atsscorecardquestion.md
+  - docs/sdk/models/shared/atsscorecardraw.md
   - docs/sdk/models/shared/atsstatus.md
+  - docs/sdk/models/shared/atsstatusraw.md
   - docs/sdk/models/shared/atsstatusstatus.md
   - docs/sdk/models/shared/atstelephone.md
   - docs/sdk/models/shared/atstelephonetype.md
   - docs/sdk/models/shared/commercecollection.md
+  - docs/sdk/models/shared/commercecollectionraw.md
   - docs/sdk/models/shared/commercecollectiontype.md
   - docs/sdk/models/shared/commerceinventory.md
   - docs/sdk/models/shared/commerceinventoryraw.md
@@ -726,6 +736,7 @@ generatedFiles:
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
   - docs/sdk/models/shared/propertyatscompanyaddress.md
+  - docs/sdk/models/shared/propertyatsjobpostingaddress.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/propertyconnectionauthmeta.md
@@ -2194,6 +2205,7 @@ generatedFiles:
   - src/sdk/models/shared/atsemail.ts
   - src/sdk/models/shared/atsinterview.ts
   - src/sdk/models/shared/atsjob.ts
+  - src/sdk/models/shared/atsjobposting.ts
   - src/sdk/models/shared/atsjobquestion.ts
   - src/sdk/models/shared/atsoffer.ts
   - src/sdk/models/shared/atsscorecard.ts
@@ -2276,6 +2288,7 @@ generatedFiles:
   - src/sdk/models/shared/propertyatsactivityfrom.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts
+  - src/sdk/models/shared/propertyatsjobpostingaddress.ts
   - src/sdk/models/shared/propertycommercelocationaddress.ts
   - src/sdk/models/shared/propertyconnectionauth.ts
   - src/sdk/models/shared/propertyconnectioncategories.ts

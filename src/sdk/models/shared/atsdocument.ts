@@ -9,6 +9,8 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AtsDocumentRaw = {};
+
 export const AtsDocumentType = {
   Resume: "RESUME",
   CoverLetter: "COVER_LETTER",
@@ -28,11 +30,55 @@ export type AtsDocument = {
   filename?: string | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsDocumentRaw | undefined;
   type?: AtsDocumentType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
+
+/** @internal */
+export const AtsDocumentRaw$inboundSchema: z.ZodType<
+  AtsDocumentRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsDocumentRaw$Outbound = {};
+
+/** @internal */
+export const AtsDocumentRaw$outboundSchema: z.ZodType<
+  AtsDocumentRaw$Outbound,
+  z.ZodTypeDef,
+  AtsDocumentRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsDocumentRaw$ {
+  /** @deprecated use `AtsDocumentRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsDocumentRaw$inboundSchema;
+  /** @deprecated use `AtsDocumentRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsDocumentRaw$outboundSchema;
+  /** @deprecated use `AtsDocumentRaw$Outbound` instead. */
+  export type Outbound = AtsDocumentRaw$Outbound;
+}
+
+export function atsDocumentRawToJSON(atsDocumentRaw: AtsDocumentRaw): string {
+  return JSON.stringify(AtsDocumentRaw$outboundSchema.parse(atsDocumentRaw));
+}
+
+export function atsDocumentRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsDocumentRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsDocumentRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsDocumentRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsDocumentType$inboundSchema: z.ZodNativeEnum<
@@ -70,7 +116,7 @@ export const AtsDocument$inboundSchema: z.ZodType<
   filename: z.string().optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsDocumentRaw$inboundSchema).optional(),
   type: AtsDocumentType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -98,7 +144,7 @@ export type AtsDocument$Outbound = {
   filename?: string | undefined;
   id?: string | undefined;
   job_id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsDocumentRaw$Outbound | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -118,7 +164,7 @@ export const AtsDocument$outboundSchema: z.ZodType<
   filename: z.string().optional(),
   id: z.string().optional(),
   jobId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsDocumentRaw$outboundSchema).optional(),
   type: AtsDocumentType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),

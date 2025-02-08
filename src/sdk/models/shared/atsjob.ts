@@ -21,6 +21,12 @@ import {
   AtsCompensation$outboundSchema,
 } from "./atscompensation.js";
 import {
+  AtsJobPosting,
+  AtsJobPosting$inboundSchema,
+  AtsJobPosting$Outbound,
+  AtsJobPosting$outboundSchema,
+} from "./atsjobposting.js";
+import {
   AtsJobQuestion,
   AtsJobQuestion$inboundSchema,
   AtsJobQuestion$Outbound,
@@ -40,6 +46,8 @@ export const EmploymentType = {
   Other: "OTHER",
 } as const;
 export type EmploymentType = ClosedEnum<typeof EmploymentType>;
+
+export type AtsJobRaw = {};
 
 export const AtsJobStatus = {
   Archived: "ARCHIVED",
@@ -68,11 +76,15 @@ export type AtsJob = {
   name?: string | undefined;
   numberOfOpenings?: number | undefined;
   /**
+   * Public job postings
+   */
+  postings?: Array<AtsJobPosting> | undefined;
+  /**
    * URLs for pages containing public listings for the job
    */
   publicJobUrls?: Array<string> | undefined;
   questions?: Array<AtsJobQuestion> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsJobRaw | undefined;
   recruiterIds?: Array<string> | undefined;
   remote?: boolean | undefined;
   status?: AtsJobStatus | undefined;
@@ -98,6 +110,50 @@ export namespace EmploymentType$ {
   export const inboundSchema = EmploymentType$inboundSchema;
   /** @deprecated use `EmploymentType$outboundSchema` instead. */
   export const outboundSchema = EmploymentType$outboundSchema;
+}
+
+/** @internal */
+export const AtsJobRaw$inboundSchema: z.ZodType<
+  AtsJobRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsJobRaw$Outbound = {};
+
+/** @internal */
+export const AtsJobRaw$outboundSchema: z.ZodType<
+  AtsJobRaw$Outbound,
+  z.ZodTypeDef,
+  AtsJobRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsJobRaw$ {
+  /** @deprecated use `AtsJobRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsJobRaw$inboundSchema;
+  /** @deprecated use `AtsJobRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsJobRaw$outboundSchema;
+  /** @deprecated use `AtsJobRaw$Outbound` instead. */
+  export type Outbound = AtsJobRaw$Outbound;
+}
+
+export function atsJobRawToJSON(atsJobRaw: AtsJobRaw): string {
+  return JSON.stringify(AtsJobRaw$outboundSchema.parse(atsJobRaw));
+}
+
+export function atsJobRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsJobRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsJobRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsJobRaw' from JSON`,
+  );
 }
 
 /** @internal */
@@ -138,9 +194,10 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     language_locale: z.string().optional(),
     name: z.string().optional(),
     number_of_openings: z.number().optional(),
+    postings: z.array(AtsJobPosting$inboundSchema).optional(),
     public_job_urls: z.array(z.string()).optional(),
     questions: z.array(AtsJobQuestion$inboundSchema).optional(),
-    raw: z.record(z.any()).optional(),
+    raw: z.lazy(() => AtsJobRaw$inboundSchema).optional(),
     recruiter_ids: z.array(z.string()).optional(),
     remote: z.boolean().optional(),
     status: AtsJobStatus$inboundSchema.optional(),
@@ -177,9 +234,10 @@ export type AtsJob$Outbound = {
   language_locale?: string | undefined;
   name?: string | undefined;
   number_of_openings?: number | undefined;
+  postings?: Array<AtsJobPosting$Outbound> | undefined;
   public_job_urls?: Array<string> | undefined;
   questions?: Array<AtsJobQuestion$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsJobRaw$Outbound | undefined;
   recruiter_ids?: Array<string> | undefined;
   remote?: boolean | undefined;
   status?: string | undefined;
@@ -205,9 +263,10 @@ export const AtsJob$outboundSchema: z.ZodType<
   languageLocale: z.string().optional(),
   name: z.string().optional(),
   numberOfOpenings: z.number().optional(),
+  postings: z.array(AtsJobPosting$outboundSchema).optional(),
   publicJobUrls: z.array(z.string()).optional(),
   questions: z.array(AtsJobQuestion$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsJobRaw$outboundSchema).optional(),
   recruiterIds: z.array(z.string()).optional(),
   remote: z.boolean().optional(),
   status: AtsJobStatus$outboundSchema.optional(),

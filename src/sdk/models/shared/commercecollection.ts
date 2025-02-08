@@ -21,7 +21,7 @@ import {
   CommerceItemMetadata$outboundSchema,
 } from "./commerceitemmetadata.js";
 
-export type Raw = {};
+export type CommerceCollectionRaw = {};
 
 export const CommerceCollectionType = {
   Collection: "COLLECTION",
@@ -46,47 +46,57 @@ export type CommerceCollection = {
   parentId?: string | undefined;
   publicDescription?: string | undefined;
   publicName?: string | undefined;
-  raw?: Raw | undefined;
+  raw?: CommerceCollectionRaw | undefined;
   tags?: Array<string> | undefined;
   type?: CommerceCollectionType | undefined;
   updatedAt?: Date | undefined;
 };
 
 /** @internal */
-export const Raw$inboundSchema: z.ZodType<Raw, z.ZodTypeDef, unknown> = z
-  .object({});
+export const CommerceCollectionRaw$inboundSchema: z.ZodType<
+  CommerceCollectionRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
 
 /** @internal */
-export type Raw$Outbound = {};
+export type CommerceCollectionRaw$Outbound = {};
 
 /** @internal */
-export const Raw$outboundSchema: z.ZodType<Raw$Outbound, z.ZodTypeDef, Raw> = z
-  .object({});
+export const CommerceCollectionRaw$outboundSchema: z.ZodType<
+  CommerceCollectionRaw$Outbound,
+  z.ZodTypeDef,
+  CommerceCollectionRaw
+> = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Raw$ {
-  /** @deprecated use `Raw$inboundSchema` instead. */
-  export const inboundSchema = Raw$inboundSchema;
-  /** @deprecated use `Raw$outboundSchema` instead. */
-  export const outboundSchema = Raw$outboundSchema;
-  /** @deprecated use `Raw$Outbound` instead. */
-  export type Outbound = Raw$Outbound;
+export namespace CommerceCollectionRaw$ {
+  /** @deprecated use `CommerceCollectionRaw$inboundSchema` instead. */
+  export const inboundSchema = CommerceCollectionRaw$inboundSchema;
+  /** @deprecated use `CommerceCollectionRaw$outboundSchema` instead. */
+  export const outboundSchema = CommerceCollectionRaw$outboundSchema;
+  /** @deprecated use `CommerceCollectionRaw$Outbound` instead. */
+  export type Outbound = CommerceCollectionRaw$Outbound;
 }
 
-export function rawToJSON(raw: Raw): string {
-  return JSON.stringify(Raw$outboundSchema.parse(raw));
+export function commerceCollectionRawToJSON(
+  commerceCollectionRaw: CommerceCollectionRaw,
+): string {
+  return JSON.stringify(
+    CommerceCollectionRaw$outboundSchema.parse(commerceCollectionRaw),
+  );
 }
 
-export function rawFromJSON(
+export function commerceCollectionRawFromJSON(
   jsonString: string,
-): SafeParseResult<Raw, SDKValidationError> {
+): SafeParseResult<CommerceCollectionRaw, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Raw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Raw' from JSON`,
+    (x) => CommerceCollectionRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceCollectionRaw' from JSON`,
   );
 }
 
@@ -130,7 +140,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   parent_id: z.string().optional(),
   public_description: z.string().optional(),
   public_name: z.string().optional(),
-  raw: z.lazy(() => Raw$inboundSchema).optional(),
+  raw: z.lazy(() => CommerceCollectionRaw$inboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   type: CommerceCollectionType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -162,7 +172,7 @@ export type CommerceCollection$Outbound = {
   parent_id?: string | undefined;
   public_description?: string | undefined;
   public_name?: string | undefined;
-  raw?: Raw$Outbound | undefined;
+  raw?: CommerceCollectionRaw$Outbound | undefined;
   tags?: Array<string> | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -186,7 +196,7 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   parentId: z.string().optional(),
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),
-  raw: z.lazy(() => Raw$outboundSchema).optional(),
+  raw: z.lazy(() => CommerceCollectionRaw$outboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   type: CommerceCollectionType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

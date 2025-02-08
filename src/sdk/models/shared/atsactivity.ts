@@ -21,6 +21,8 @@ import {
   PropertyAtsActivityFrom$outboundSchema,
 } from "./propertyatsactivityfrom.js";
 
+export type Raw = {};
+
 export const AtsActivityType = {
   Note: "NOTE",
   Task: "TASK",
@@ -41,7 +43,7 @@ export type AtsActivity = {
   interviewId?: string | undefined;
   isPrivate?: boolean | undefined;
   jobId?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: Raw | undefined;
   subType?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail> | undefined;
@@ -52,6 +54,44 @@ export type AtsActivity = {
    */
   userIds?: Array<string> | undefined;
 };
+
+/** @internal */
+export const Raw$inboundSchema: z.ZodType<Raw, z.ZodTypeDef, unknown> = z
+  .object({});
+
+/** @internal */
+export type Raw$Outbound = {};
+
+/** @internal */
+export const Raw$outboundSchema: z.ZodType<Raw$Outbound, z.ZodTypeDef, Raw> = z
+  .object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Raw$ {
+  /** @deprecated use `Raw$inboundSchema` instead. */
+  export const inboundSchema = Raw$inboundSchema;
+  /** @deprecated use `Raw$outboundSchema` instead. */
+  export const outboundSchema = Raw$outboundSchema;
+  /** @deprecated use `Raw$Outbound` instead. */
+  export type Outbound = Raw$Outbound;
+}
+
+export function rawToJSON(raw: Raw): string {
+  return JSON.stringify(Raw$outboundSchema.parse(raw));
+}
+
+export function rawFromJSON(
+  jsonString: string,
+): SafeParseResult<Raw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Raw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Raw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsActivityType$inboundSchema: z.ZodNativeEnum<
@@ -93,7 +133,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   interview_id: z.string().optional(),
   is_private: z.boolean().optional(),
   job_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => Raw$inboundSchema).optional(),
   sub_type: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$inboundSchema).optional(),
@@ -130,7 +170,7 @@ export type AtsActivity$Outbound = {
   interview_id?: string | undefined;
   is_private?: boolean | undefined;
   job_id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: Raw$Outbound | undefined;
   sub_type?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail$Outbound> | undefined;
@@ -157,7 +197,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   interviewId: z.string().optional(),
   isPrivate: z.boolean().optional(),
   jobId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => Raw$outboundSchema).optional(),
   subType: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$outboundSchema).optional(),

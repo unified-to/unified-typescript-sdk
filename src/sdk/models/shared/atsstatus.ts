@@ -9,6 +9,8 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AtsStatusRaw = {};
+
 export const AtsStatusStatus = {
   New: "NEW",
   Reviewing: "REVIEWING",
@@ -31,9 +33,53 @@ export type AtsStatus = {
   description?: string | undefined;
   id?: string | undefined;
   originalStatus?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsStatusRaw | undefined;
   status?: AtsStatusStatus | undefined;
 };
+
+/** @internal */
+export const AtsStatusRaw$inboundSchema: z.ZodType<
+  AtsStatusRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsStatusRaw$Outbound = {};
+
+/** @internal */
+export const AtsStatusRaw$outboundSchema: z.ZodType<
+  AtsStatusRaw$Outbound,
+  z.ZodTypeDef,
+  AtsStatusRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsStatusRaw$ {
+  /** @deprecated use `AtsStatusRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsStatusRaw$inboundSchema;
+  /** @deprecated use `AtsStatusRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsStatusRaw$outboundSchema;
+  /** @deprecated use `AtsStatusRaw$Outbound` instead. */
+  export type Outbound = AtsStatusRaw$Outbound;
+}
+
+export function atsStatusRawToJSON(atsStatusRaw: AtsStatusRaw): string {
+  return JSON.stringify(AtsStatusRaw$outboundSchema.parse(atsStatusRaw));
+}
+
+export function atsStatusRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsStatusRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsStatusRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsStatusRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsStatusStatus$inboundSchema: z.ZodNativeEnum<
@@ -65,7 +111,7 @@ export const AtsStatus$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   original_status: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsStatusRaw$inboundSchema).optional(),
   status: AtsStatusStatus$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -78,7 +124,7 @@ export type AtsStatus$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   original_status?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsStatusRaw$Outbound | undefined;
   status?: string | undefined;
 };
 
@@ -91,7 +137,7 @@ export const AtsStatus$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   originalStatus: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsStatusRaw$outboundSchema).optional(),
   status: AtsStatusStatus$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {

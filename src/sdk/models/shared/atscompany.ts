@@ -14,6 +14,8 @@ import {
   PropertyAtsCompanyAddress$outboundSchema,
 } from "./propertyatscompanyaddress.js";
 
+export type AtsCompanyRaw = {};
+
 export type AtsCompany = {
   address?: PropertyAtsCompanyAddress | undefined;
   createdAt?: Date | undefined;
@@ -21,11 +23,55 @@ export type AtsCompany = {
   name: string;
   parentId?: string | undefined;
   phone?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsCompanyRaw | undefined;
   recruiterIds?: Array<string> | undefined;
   updatedAt?: Date | undefined;
   websiteUrl?: string | undefined;
 };
+
+/** @internal */
+export const AtsCompanyRaw$inboundSchema: z.ZodType<
+  AtsCompanyRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AtsCompanyRaw$Outbound = {};
+
+/** @internal */
+export const AtsCompanyRaw$outboundSchema: z.ZodType<
+  AtsCompanyRaw$Outbound,
+  z.ZodTypeDef,
+  AtsCompanyRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsCompanyRaw$ {
+  /** @deprecated use `AtsCompanyRaw$inboundSchema` instead. */
+  export const inboundSchema = AtsCompanyRaw$inboundSchema;
+  /** @deprecated use `AtsCompanyRaw$outboundSchema` instead. */
+  export const outboundSchema = AtsCompanyRaw$outboundSchema;
+  /** @deprecated use `AtsCompanyRaw$Outbound` instead. */
+  export type Outbound = AtsCompanyRaw$Outbound;
+}
+
+export function atsCompanyRawToJSON(atsCompanyRaw: AtsCompanyRaw): string {
+  return JSON.stringify(AtsCompanyRaw$outboundSchema.parse(atsCompanyRaw));
+}
+
+export function atsCompanyRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AtsCompanyRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsCompanyRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsCompanyRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AtsCompany$inboundSchema: z.ZodType<
@@ -40,7 +86,7 @@ export const AtsCompany$inboundSchema: z.ZodType<
   name: z.string(),
   parent_id: z.string().optional(),
   phone: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsCompanyRaw$inboundSchema).optional(),
   recruiter_ids: z.array(z.string()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -63,7 +109,7 @@ export type AtsCompany$Outbound = {
   name: string;
   parent_id?: string | undefined;
   phone?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AtsCompanyRaw$Outbound | undefined;
   recruiter_ids?: Array<string> | undefined;
   updated_at?: string | undefined;
   website_url?: string | undefined;
@@ -81,7 +127,7 @@ export const AtsCompany$outboundSchema: z.ZodType<
   name: z.string(),
   parentId: z.string().optional(),
   phone: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AtsCompanyRaw$outboundSchema).optional(),
   recruiterIds: z.array(z.string()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   websiteUrl: z.string().optional(),
