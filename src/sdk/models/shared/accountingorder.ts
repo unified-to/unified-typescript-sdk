@@ -27,6 +27,8 @@ import {
   PropertyAccountingOrderShippingAddress$outboundSchema,
 } from "./propertyaccountingordershippingaddress.js";
 
+export type AccountingOrderRaw = {};
+
 export const AccountingOrderStatus = {
   Draft: "DRAFT",
   Voided: "VOIDED",
@@ -52,13 +54,61 @@ export type AccountingOrder = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingOrderRaw | undefined;
   shippingAddress?: PropertyAccountingOrderShippingAddress | undefined;
   status?: AccountingOrderStatus | undefined;
   totalAmount?: number | undefined;
   type?: AccountingOrderType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingOrderRaw$inboundSchema: z.ZodType<
+  AccountingOrderRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AccountingOrderRaw$Outbound = {};
+
+/** @internal */
+export const AccountingOrderRaw$outboundSchema: z.ZodType<
+  AccountingOrderRaw$Outbound,
+  z.ZodTypeDef,
+  AccountingOrderRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingOrderRaw$ {
+  /** @deprecated use `AccountingOrderRaw$inboundSchema` instead. */
+  export const inboundSchema = AccountingOrderRaw$inboundSchema;
+  /** @deprecated use `AccountingOrderRaw$outboundSchema` instead. */
+  export const outboundSchema = AccountingOrderRaw$outboundSchema;
+  /** @deprecated use `AccountingOrderRaw$Outbound` instead. */
+  export type Outbound = AccountingOrderRaw$Outbound;
+}
+
+export function accountingOrderRawToJSON(
+  accountingOrderRaw: AccountingOrderRaw,
+): string {
+  return JSON.stringify(
+    AccountingOrderRaw$outboundSchema.parse(accountingOrderRaw),
+  );
+}
+
+export function accountingOrderRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingOrderRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingOrderRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingOrderRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AccountingOrderStatus$inboundSchema: z.ZodNativeEnum<
@@ -117,7 +167,7 @@ export const AccountingOrder$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingOrderRaw$inboundSchema).optional(),
   shipping_address: PropertyAccountingOrderShippingAddress$inboundSchema
     .optional(),
   status: AccountingOrderStatus$inboundSchema.optional(),
@@ -146,7 +196,7 @@ export type AccountingOrder$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingOrderRaw$Outbound | undefined;
   shipping_address?:
     | PropertyAccountingOrderShippingAddress$Outbound
     | undefined;
@@ -170,7 +220,7 @@ export const AccountingOrder$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingOrderRaw$outboundSchema).optional(),
   shippingAddress: PropertyAccountingOrderShippingAddress$outboundSchema
     .optional(),
   status: AccountingOrderStatus$outboundSchema.optional(),

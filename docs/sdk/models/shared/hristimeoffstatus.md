@@ -5,7 +5,7 @@
 ```typescript
 import { HrisTimeoffStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisTimeoffStatus = "DENIED";
+let value: HrisTimeoffStatus = "APPROVED";
 ```
 
 ## Values

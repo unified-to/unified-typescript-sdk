@@ -9,6 +9,8 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type HrisGroupRaw = {};
+
 export const HrisGroupType = {
   Team: "TEAM",
   Group: "GROUP",
@@ -29,11 +31,55 @@ export type HrisGroup = {
   managerIds?: Array<string> | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisGroupRaw | undefined;
   type?: HrisGroupType | undefined;
   updatedAt?: Date | undefined;
   userIds?: Array<string> | undefined;
 };
+
+/** @internal */
+export const HrisGroupRaw$inboundSchema: z.ZodType<
+  HrisGroupRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type HrisGroupRaw$Outbound = {};
+
+/** @internal */
+export const HrisGroupRaw$outboundSchema: z.ZodType<
+  HrisGroupRaw$Outbound,
+  z.ZodTypeDef,
+  HrisGroupRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisGroupRaw$ {
+  /** @deprecated use `HrisGroupRaw$inboundSchema` instead. */
+  export const inboundSchema = HrisGroupRaw$inboundSchema;
+  /** @deprecated use `HrisGroupRaw$outboundSchema` instead. */
+  export const outboundSchema = HrisGroupRaw$outboundSchema;
+  /** @deprecated use `HrisGroupRaw$Outbound` instead. */
+  export type Outbound = HrisGroupRaw$Outbound;
+}
+
+export function hrisGroupRawToJSON(hrisGroupRaw: HrisGroupRaw): string {
+  return JSON.stringify(HrisGroupRaw$outboundSchema.parse(hrisGroupRaw));
+}
+
+export function hrisGroupRawFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisGroupRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisGroupRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisGroupRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const HrisGroupType$inboundSchema: z.ZodNativeEnum<
@@ -71,7 +117,7 @@ export const HrisGroup$inboundSchema: z.ZodType<
   manager_ids: z.array(z.string()).optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisGroupRaw$inboundSchema).optional(),
   type: HrisGroupType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -98,7 +144,7 @@ export type HrisGroup$Outbound = {
   manager_ids?: Array<string> | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisGroupRaw$Outbound | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
   user_ids?: Array<string> | undefined;
@@ -118,7 +164,7 @@ export const HrisGroup$outboundSchema: z.ZodType<
   managerIds: z.array(z.string()).optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisGroupRaw$outboundSchema).optional(),
   type: HrisGroupType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userIds: z.array(z.string()).optional(),

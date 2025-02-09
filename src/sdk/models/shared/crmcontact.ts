@@ -26,6 +26,8 @@ import {
   PropertyCrmContactAddress$outboundSchema,
 } from "./propertycrmcontactaddress.js";
 
+export type CrmContactRaw = {};
+
 /**
  * A contact represents a person that optionally is associated with a deal and/or a company
  */
@@ -46,12 +48,12 @@ export type CrmContact = {
    */
   emails?: Array<CrmEmail> | undefined;
   id?: string | undefined;
+  /**
+   * Additional URLs associated with the contact e.g., LinkedIn, website, etc
+   */
   linkUrls?: Array<string> | undefined;
   name?: string | undefined;
-  /**
-   * The raw data returned by the integration for this contact
-   */
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmContactRaw | undefined;
   /**
    * An array of telephones for this contact
    */
@@ -60,6 +62,50 @@ export type CrmContact = {
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
+
+/** @internal */
+export const CrmContactRaw$inboundSchema: z.ZodType<
+  CrmContactRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmContactRaw$Outbound = {};
+
+/** @internal */
+export const CrmContactRaw$outboundSchema: z.ZodType<
+  CrmContactRaw$Outbound,
+  z.ZodTypeDef,
+  CrmContactRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmContactRaw$ {
+  /** @deprecated use `CrmContactRaw$inboundSchema` instead. */
+  export const inboundSchema = CrmContactRaw$inboundSchema;
+  /** @deprecated use `CrmContactRaw$outboundSchema` instead. */
+  export const outboundSchema = CrmContactRaw$outboundSchema;
+  /** @deprecated use `CrmContactRaw$Outbound` instead. */
+  export type Outbound = CrmContactRaw$Outbound;
+}
+
+export function crmContactRawToJSON(crmContactRaw: CrmContactRaw): string {
+  return JSON.stringify(CrmContactRaw$outboundSchema.parse(crmContactRaw));
+}
+
+export function crmContactRawFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmContactRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmContactRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmContactRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const CrmContact$inboundSchema: z.ZodType<
@@ -77,7 +123,7 @@ export const CrmContact$inboundSchema: z.ZodType<
   id: z.string().optional(),
   link_urls: z.array(z.string()).optional(),
   name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmContactRaw$inboundSchema).optional(),
   telephones: z.array(CrmTelephone$inboundSchema).optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -105,7 +151,7 @@ export type CrmContact$Outbound = {
   id?: string | undefined;
   link_urls?: Array<string> | undefined;
   name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmContactRaw$Outbound | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
@@ -127,7 +173,7 @@ export const CrmContact$outboundSchema: z.ZodType<
   id: z.string().optional(),
   linkUrls: z.array(z.string()).optional(),
   name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmContactRaw$outboundSchema).optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

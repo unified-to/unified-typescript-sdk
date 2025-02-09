@@ -14,6 +14,8 @@ import {
   AccountingJournalLineitem$outboundSchema,
 } from "./accountingjournallineitem.js";
 
+export type AccountingJournalRaw = {};
+
 export type AccountingJournal = {
   createdAt?: Date | undefined;
   currency?: string | undefined;
@@ -23,12 +25,60 @@ export type AccountingJournal = {
    * new field name
    */
   lineitems?: Array<AccountingJournalLineitem> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingJournalRaw | undefined;
   reference?: string | undefined;
   taxAmount?: number | undefined;
   taxrateId?: string | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingJournalRaw$inboundSchema: z.ZodType<
+  AccountingJournalRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AccountingJournalRaw$Outbound = {};
+
+/** @internal */
+export const AccountingJournalRaw$outboundSchema: z.ZodType<
+  AccountingJournalRaw$Outbound,
+  z.ZodTypeDef,
+  AccountingJournalRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingJournalRaw$ {
+  /** @deprecated use `AccountingJournalRaw$inboundSchema` instead. */
+  export const inboundSchema = AccountingJournalRaw$inboundSchema;
+  /** @deprecated use `AccountingJournalRaw$outboundSchema` instead. */
+  export const outboundSchema = AccountingJournalRaw$outboundSchema;
+  /** @deprecated use `AccountingJournalRaw$Outbound` instead. */
+  export type Outbound = AccountingJournalRaw$Outbound;
+}
+
+export function accountingJournalRawToJSON(
+  accountingJournalRaw: AccountingJournalRaw,
+): string {
+  return JSON.stringify(
+    AccountingJournalRaw$outboundSchema.parse(accountingJournalRaw),
+  );
+}
+
+export function accountingJournalRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingJournalRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingJournalRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingJournalRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AccountingJournal$inboundSchema: z.ZodType<
@@ -42,7 +92,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingJournalRaw$inboundSchema).optional(),
   reference: z.string().optional(),
   tax_amount: z.number().optional(),
   taxrate_id: z.string().optional(),
@@ -64,7 +114,7 @@ export type AccountingJournal$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingJournalRaw$Outbound | undefined;
   reference?: string | undefined;
   tax_amount?: number | undefined;
   taxrate_id?: string | undefined;
@@ -82,7 +132,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingJournalRaw$outboundSchema).optional(),
   reference: z.string().optional(),
   taxAmount: z.number().optional(),
   taxrateId: z.string().optional(),

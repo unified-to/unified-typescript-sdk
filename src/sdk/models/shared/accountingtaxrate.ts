@@ -8,6 +8,8 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type AccountingTaxrateRaw = {};
+
 export type AccountingTaxrate = {
   createdAt?: Date | undefined;
   description?: string | undefined;
@@ -15,9 +17,57 @@ export type AccountingTaxrate = {
   isActive?: boolean | undefined;
   name?: string | undefined;
   rate?: number | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingTaxrateRaw | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AccountingTaxrateRaw$inboundSchema: z.ZodType<
+  AccountingTaxrateRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AccountingTaxrateRaw$Outbound = {};
+
+/** @internal */
+export const AccountingTaxrateRaw$outboundSchema: z.ZodType<
+  AccountingTaxrateRaw$Outbound,
+  z.ZodTypeDef,
+  AccountingTaxrateRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingTaxrateRaw$ {
+  /** @deprecated use `AccountingTaxrateRaw$inboundSchema` instead. */
+  export const inboundSchema = AccountingTaxrateRaw$inboundSchema;
+  /** @deprecated use `AccountingTaxrateRaw$outboundSchema` instead. */
+  export const outboundSchema = AccountingTaxrateRaw$outboundSchema;
+  /** @deprecated use `AccountingTaxrateRaw$Outbound` instead. */
+  export type Outbound = AccountingTaxrateRaw$Outbound;
+}
+
+export function accountingTaxrateRawToJSON(
+  accountingTaxrateRaw: AccountingTaxrateRaw,
+): string {
+  return JSON.stringify(
+    AccountingTaxrateRaw$outboundSchema.parse(accountingTaxrateRaw),
+  );
+}
+
+export function accountingTaxrateRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingTaxrateRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingTaxrateRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingTaxrateRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AccountingTaxrate$inboundSchema: z.ZodType<
@@ -32,7 +82,7 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   name: z.string().optional(),
   rate: z.number().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingTaxrateRaw$inboundSchema).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -51,7 +101,7 @@ export type AccountingTaxrate$Outbound = {
   is_active?: boolean | undefined;
   name?: string | undefined;
   rate?: number | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingTaxrateRaw$Outbound | undefined;
   updated_at?: string | undefined;
 };
 
@@ -67,7 +117,7 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   name: z.string().optional(),
   rate: z.number().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingTaxrateRaw$outboundSchema).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

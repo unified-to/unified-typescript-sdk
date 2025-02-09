@@ -5,7 +5,7 @@
 ```typescript
 import { FromWebhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: FromWebhook = "not-supported";
+let value: FromWebhook = "supported";
 ```
 
 ## Values

@@ -57,6 +57,8 @@ import {
   PropertyCrmEventTask$outboundSchema,
 } from "./propertycrmeventtask.js";
 
+export type CrmEventRaw = {};
+
 export const CrmEventType = {
   Note: "NOTE",
   Email: "EMAIL",
@@ -107,10 +109,7 @@ export type CrmEvent = {
    */
   note?: PropertyCrmEventNote | undefined;
   pageView?: PropertyCrmEventPageView | undefined;
-  /**
-   * The raw data returned by the integration for this event.
-   */
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmEventRaw | undefined;
   /**
    * The task object, when type = task
    */
@@ -119,6 +118,50 @@ export type CrmEvent = {
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
+
+/** @internal */
+export const CrmEventRaw$inboundSchema: z.ZodType<
+  CrmEventRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmEventRaw$Outbound = {};
+
+/** @internal */
+export const CrmEventRaw$outboundSchema: z.ZodType<
+  CrmEventRaw$Outbound,
+  z.ZodTypeDef,
+  CrmEventRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmEventRaw$ {
+  /** @deprecated use `CrmEventRaw$inboundSchema` instead. */
+  export const inboundSchema = CrmEventRaw$inboundSchema;
+  /** @deprecated use `CrmEventRaw$outboundSchema` instead. */
+  export const outboundSchema = CrmEventRaw$outboundSchema;
+  /** @deprecated use `CrmEventRaw$Outbound` instead. */
+  export type Outbound = CrmEventRaw$Outbound;
+}
+
+export function crmEventRawToJSON(crmEventRaw: CrmEventRaw): string {
+  return JSON.stringify(CrmEventRaw$outboundSchema.parse(crmEventRaw));
+}
+
+export function crmEventRawFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmEventRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmEventRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmEventRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const CrmEventType$inboundSchema: z.ZodNativeEnum<typeof CrmEventType> =
@@ -159,7 +202,7 @@ export const CrmEvent$inboundSchema: z.ZodType<
   meeting: PropertyCrmEventMeeting$inboundSchema.optional(),
   note: PropertyCrmEventNote$inboundSchema.optional(),
   page_view: PropertyCrmEventPageView$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmEventRaw$inboundSchema).optional(),
   task: PropertyCrmEventTask$inboundSchema.optional(),
   type: CrmEventType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -194,7 +237,7 @@ export type CrmEvent$Outbound = {
   meeting?: PropertyCrmEventMeeting$Outbound | undefined;
   note?: PropertyCrmEventNote$Outbound | undefined;
   page_view?: PropertyCrmEventPageView$Outbound | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmEventRaw$Outbound | undefined;
   task?: PropertyCrmEventTask$Outbound | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -220,7 +263,7 @@ export const CrmEvent$outboundSchema: z.ZodType<
   meeting: PropertyCrmEventMeeting$outboundSchema.optional(),
   note: PropertyCrmEventNote$outboundSchema.optional(),
   pageView: PropertyCrmEventPageView$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmEventRaw$outboundSchema).optional(),
   task: PropertyCrmEventTask$outboundSchema.optional(),
   type: CrmEventType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

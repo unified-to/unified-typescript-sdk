@@ -9,9 +9,9 @@ let value: ApiCall = {
   integrationType: "<value>",
   method: "<value>",
   name: "<value>",
-  path: "/System",
+  path: "/lib",
   status: "<value>",
-  type: "webhook",
+  type: "inbound",
 };
 ```
 

@@ -8,12 +8,16 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type CrmDealRaw = {};
+
 /**
  * A deal represents an opportunity with companies and/or contacts
  */
 export type CrmDeal = {
   amount?: number | undefined;
   closedAt?: Date | undefined;
+  companyIds?: Array<string> | undefined;
+  contactIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   id?: string | undefined;
@@ -22,10 +26,7 @@ export type CrmDeal = {
   pipeline?: string | undefined;
   pipelineId?: string | undefined;
   probability?: number | undefined;
-  /**
-   * The raw data returned by the integration for this deal
-   */
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmDealRaw | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stageId?: string | undefined;
@@ -36,11 +37,57 @@ export type CrmDeal = {
 };
 
 /** @internal */
+export const CrmDealRaw$inboundSchema: z.ZodType<
+  CrmDealRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmDealRaw$Outbound = {};
+
+/** @internal */
+export const CrmDealRaw$outboundSchema: z.ZodType<
+  CrmDealRaw$Outbound,
+  z.ZodTypeDef,
+  CrmDealRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmDealRaw$ {
+  /** @deprecated use `CrmDealRaw$inboundSchema` instead. */
+  export const inboundSchema = CrmDealRaw$inboundSchema;
+  /** @deprecated use `CrmDealRaw$outboundSchema` instead. */
+  export const outboundSchema = CrmDealRaw$outboundSchema;
+  /** @deprecated use `CrmDealRaw$Outbound` instead. */
+  export type Outbound = CrmDealRaw$Outbound;
+}
+
+export function crmDealRawToJSON(crmDealRaw: CrmDealRaw): string {
+  return JSON.stringify(CrmDealRaw$outboundSchema.parse(crmDealRaw));
+}
+
+export function crmDealRawFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmDealRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmDealRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmDealRaw' from JSON`,
+  );
+}
+
+/** @internal */
 export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
   z.object({
     amount: z.number().optional(),
     closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
+    company_ids: z.array(z.string()).optional(),
+    contact_ids: z.array(z.string()).optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
@@ -51,7 +98,7 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
     pipeline: z.string().optional(),
     pipeline_id: z.string().optional(),
     probability: z.number().optional(),
-    raw: z.record(z.any()).optional(),
+    raw: z.lazy(() => CrmDealRaw$inboundSchema).optional(),
     source: z.string().optional(),
     stage: z.string().optional(),
     stage_id: z.string().optional(),
@@ -64,6 +111,8 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
   }).transform((v) => {
     return remap$(v, {
       "closed_at": "closedAt",
+      "company_ids": "companyIds",
+      "contact_ids": "contactIds",
       "created_at": "createdAt",
       "lost_reason": "lostReason",
       "pipeline_id": "pipelineId",
@@ -78,6 +127,8 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
 export type CrmDeal$Outbound = {
   amount?: number | undefined;
   closed_at?: string | undefined;
+  company_ids?: Array<string> | undefined;
+  contact_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   id?: string | undefined;
@@ -86,7 +137,7 @@ export type CrmDeal$Outbound = {
   pipeline?: string | undefined;
   pipeline_id?: string | undefined;
   probability?: number | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmDealRaw$Outbound | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stage_id?: string | undefined;
@@ -104,6 +155,8 @@ export const CrmDeal$outboundSchema: z.ZodType<
 > = z.object({
   amount: z.number().optional(),
   closedAt: z.date().transform(v => v.toISOString()).optional(),
+  companyIds: z.array(z.string()).optional(),
+  contactIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   id: z.string().optional(),
@@ -112,7 +165,7 @@ export const CrmDeal$outboundSchema: z.ZodType<
   pipeline: z.string().optional(),
   pipelineId: z.string().optional(),
   probability: z.number().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmDealRaw$outboundSchema).optional(),
   source: z.string().optional(),
   stage: z.string().optional(),
   stageId: z.string().optional(),
@@ -123,6 +176,8 @@ export const CrmDeal$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     closedAt: "closed_at",
+    companyIds: "company_ids",
+    contactIds: "contact_ids",
     createdAt: "created_at",
     lostReason: "lost_reason",
     pipelineId: "pipeline_id",

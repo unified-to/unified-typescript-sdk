@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 079a662c33e65673ca2fb2b1cc54edc4
+  docChecksum: b8229482579a72269cca223071c1d36c
   docVersion: "1.0"
   speakeasyVersion: 1.487.1
   generationVersion: 2.506.0
-  releaseVersion: 2.10.0
-  configChecksum: 6270fdbeb4795cefbe01d982859f03d9
+  releaseVersion: 2.10.1
+  configChecksum: eb2fc49703821af3066258cc978d3d88
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -510,27 +510,35 @@ generatedFiles:
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
+  - docs/sdk/models/shared/accountingcontactraw.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountinginvoice.md
+  - docs/sdk/models/shared/accountinginvoiceraw.md
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoicetype.md
   - docs/sdk/models/shared/accountingjournal.md
   - docs/sdk/models/shared/accountingjournallineitem.md
+  - docs/sdk/models/shared/accountingjournalraw.md
   - docs/sdk/models/shared/accountinglineitem.md
   - docs/sdk/models/shared/accountingorder.md
+  - docs/sdk/models/shared/accountingorderraw.md
   - docs/sdk/models/shared/accountingorderstatus.md
   - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
+  - docs/sdk/models/shared/accountingorganizationraw.md
   - docs/sdk/models/shared/accountingtaxrate.md
+  - docs/sdk/models/shared/accountingtaxrateraw.md
   - docs/sdk/models/shared/accountingtelephone.md
   - docs/sdk/models/shared/accountingtelephonetype.md
   - docs/sdk/models/shared/accountingtransaction.md
   - docs/sdk/models/shared/accountingtransactioncontact.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
+  - docs/sdk/models/shared/accountingtransactionraw.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/apicalltype.md
   - docs/sdk/models/shared/atsactivity.md
+  - docs/sdk/models/shared/atsactivityraw.md
   - docs/sdk/models/shared/atsactivitytype.md
   - docs/sdk/models/shared/atsaddress.md
   - docs/sdk/models/shared/atsapplication.md
@@ -558,6 +566,8 @@ generatedFiles:
   - docs/sdk/models/shared/atsjobraw.md
   - docs/sdk/models/shared/atsjobstatus.md
   - docs/sdk/models/shared/atsoffer.md
+  - docs/sdk/models/shared/atsofferraw.md
+  - docs/sdk/models/shared/atsofferstatus.md
   - docs/sdk/models/shared/atsscorecard.md
   - docs/sdk/models/shared/atsscorecardquestion.md
   - docs/sdk/models/shared/atsscorecardraw.md
@@ -584,17 +594,23 @@ generatedFiles:
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
   - docs/sdk/models/shared/crmcompany.md
+  - docs/sdk/models/shared/crmcompanyraw.md
   - docs/sdk/models/shared/crmcontact.md
+  - docs/sdk/models/shared/crmcontactraw.md
   - docs/sdk/models/shared/crmdeal.md
+  - docs/sdk/models/shared/crmdealraw.md
   - docs/sdk/models/shared/crmemail.md
   - docs/sdk/models/shared/crmemailtype.md
   - docs/sdk/models/shared/crmevent.md
   - docs/sdk/models/shared/crmeventformfield.md
   - docs/sdk/models/shared/crmeventformfieldtype.md
   - docs/sdk/models/shared/crmeventformoption.md
+  - docs/sdk/models/shared/crmeventraw.md
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmlead.md
+  - docs/sdk/models/shared/crmleadraw.md
   - docs/sdk/models/shared/crmpipeline.md
+  - docs/sdk/models/shared/crmpipelineraw.md
   - docs/sdk/models/shared/crmstage.md
   - docs/sdk/models/shared/crmtelephone.md
   - docs/sdk/models/shared/crmtelephonetype.md
@@ -617,6 +633,7 @@ generatedFiles:
   - docs/sdk/models/shared/genaiprompt.md
   - docs/sdk/models/shared/gender.md
   - docs/sdk/models/shared/hriscompany.md
+  - docs/sdk/models/shared/hriscompanyraw.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/hriscompensationfrequency.md
   - docs/sdk/models/shared/hriscompensationtype.md
@@ -625,15 +642,20 @@ generatedFiles:
   - docs/sdk/models/shared/hrisemployee.md
   - docs/sdk/models/shared/hrisemployeeemploymenttype.md
   - docs/sdk/models/shared/hrisemployeegender.md
+  - docs/sdk/models/shared/hrisemployeeraw.md
   - docs/sdk/models/shared/hrisgroup.md
+  - docs/sdk/models/shared/hrisgroupraw.md
   - docs/sdk/models/shared/hrisgrouptype.md
   - docs/sdk/models/shared/hrislocation.md
+  - docs/sdk/models/shared/hrislocationraw.md
   - docs/sdk/models/shared/hrispayslip.md
   - docs/sdk/models/shared/hrispayslipdetail.md
   - docs/sdk/models/shared/hrispayslipdetailtype.md
+  - docs/sdk/models/shared/hrispayslipraw.md
   - docs/sdk/models/shared/hristelephone.md
   - docs/sdk/models/shared/hristelephonetype.md
   - docs/sdk/models/shared/hristimeoff.md
+  - docs/sdk/models/shared/hristimeoffraw.md
   - docs/sdk/models/shared/hristimeoffstatus.md
   - docs/sdk/models/shared/hristimeofftype.md
   - docs/sdk/models/shared/integration.md
@@ -4083,7 +4105,7 @@ examples:
         query: {}
       responses:
         "200":
-          application/json: [{"raw": {"key": "<value>"}, "user_id": "<id>"}]
+          application/json: [{"raw": {}, "user_id": "<id>"}]
   listHrisTimeoffs:
     speakeasy-default-list-hris-timeoffs:
       parameters:

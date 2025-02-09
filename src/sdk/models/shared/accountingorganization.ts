@@ -14,6 +14,8 @@ import {
   PropertyAccountingOrganizationAddress$outboundSchema,
 } from "./propertyaccountingorganizationaddress.js";
 
+export type AccountingOrganizationRaw = {};
+
 export type AccountingOrganization = {
   address?: PropertyAccountingOrganizationAddress | undefined;
   createdAt?: Date | undefined;
@@ -23,12 +25,60 @@ export type AccountingOrganization = {
   legalName?: string | undefined;
   name: string;
   organizationCode?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingOrganizationRaw | undefined;
   taxNumber?: string | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
   website?: string | undefined;
 };
+
+/** @internal */
+export const AccountingOrganizationRaw$inboundSchema: z.ZodType<
+  AccountingOrganizationRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AccountingOrganizationRaw$Outbound = {};
+
+/** @internal */
+export const AccountingOrganizationRaw$outboundSchema: z.ZodType<
+  AccountingOrganizationRaw$Outbound,
+  z.ZodTypeDef,
+  AccountingOrganizationRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingOrganizationRaw$ {
+  /** @deprecated use `AccountingOrganizationRaw$inboundSchema` instead. */
+  export const inboundSchema = AccountingOrganizationRaw$inboundSchema;
+  /** @deprecated use `AccountingOrganizationRaw$outboundSchema` instead. */
+  export const outboundSchema = AccountingOrganizationRaw$outboundSchema;
+  /** @deprecated use `AccountingOrganizationRaw$Outbound` instead. */
+  export type Outbound = AccountingOrganizationRaw$Outbound;
+}
+
+export function accountingOrganizationRawToJSON(
+  accountingOrganizationRaw: AccountingOrganizationRaw,
+): string {
+  return JSON.stringify(
+    AccountingOrganizationRaw$outboundSchema.parse(accountingOrganizationRaw),
+  );
+}
+
+export function accountingOrganizationRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingOrganizationRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingOrganizationRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingOrganizationRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const AccountingOrganization$inboundSchema: z.ZodType<
@@ -45,7 +95,7 @@ export const AccountingOrganization$inboundSchema: z.ZodType<
   legal_name: z.string().optional(),
   name: z.string(),
   organization_code: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingOrganizationRaw$inboundSchema).optional(),
   tax_number: z.string().optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -72,7 +122,7 @@ export type AccountingOrganization$Outbound = {
   legal_name?: string | undefined;
   name: string;
   organization_code?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingOrganizationRaw$Outbound | undefined;
   tax_number?: string | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
@@ -93,7 +143,7 @@ export const AccountingOrganization$outboundSchema: z.ZodType<
   legalName: z.string().optional(),
   name: z.string(),
   organizationCode: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingOrganizationRaw$outboundSchema).optional(),
   taxNumber: z.string().optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

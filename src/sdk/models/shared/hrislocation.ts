@@ -20,6 +20,8 @@ import {
   PropertyHrisLocationAddress$outboundSchema,
 } from "./propertyhrislocationaddress.js";
 
+export type HrisLocationRaw = {};
+
 export type HrisLocation = {
   address?: PropertyHrisLocationAddress | undefined;
   createdAt?: Date | undefined;
@@ -32,11 +34,57 @@ export type HrisLocation = {
   languageLocale?: string | undefined;
   name?: string | undefined;
   parentId?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisLocationRaw | undefined;
   telephones?: Array<HrisTelephone> | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const HrisLocationRaw$inboundSchema: z.ZodType<
+  HrisLocationRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type HrisLocationRaw$Outbound = {};
+
+/** @internal */
+export const HrisLocationRaw$outboundSchema: z.ZodType<
+  HrisLocationRaw$Outbound,
+  z.ZodTypeDef,
+  HrisLocationRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisLocationRaw$ {
+  /** @deprecated use `HrisLocationRaw$inboundSchema` instead. */
+  export const inboundSchema = HrisLocationRaw$inboundSchema;
+  /** @deprecated use `HrisLocationRaw$outboundSchema` instead. */
+  export const outboundSchema = HrisLocationRaw$outboundSchema;
+  /** @deprecated use `HrisLocationRaw$Outbound` instead. */
+  export type Outbound = HrisLocationRaw$Outbound;
+}
+
+export function hrisLocationRawToJSON(
+  hrisLocationRaw: HrisLocationRaw,
+): string {
+  return JSON.stringify(HrisLocationRaw$outboundSchema.parse(hrisLocationRaw));
+}
+
+export function hrisLocationRawFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisLocationRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisLocationRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisLocationRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const HrisLocation$inboundSchema: z.ZodType<
@@ -56,7 +104,7 @@ export const HrisLocation$inboundSchema: z.ZodType<
   language_locale: z.string().optional(),
   name: z.string().optional(),
   parent_id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisLocationRaw$inboundSchema).optional(),
   telephones: z.array(HrisTelephone$inboundSchema).optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -86,7 +134,7 @@ export type HrisLocation$Outbound = {
   language_locale?: string | undefined;
   name?: string | undefined;
   parent_id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisLocationRaw$Outbound | undefined;
   telephones?: Array<HrisTelephone$Outbound> | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
@@ -109,7 +157,7 @@ export const HrisLocation$outboundSchema: z.ZodType<
   languageLocale: z.string().optional(),
   name: z.string().optional(),
   parentId: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisLocationRaw$outboundSchema).optional(),
   telephones: z.array(HrisTelephone$outboundSchema).optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

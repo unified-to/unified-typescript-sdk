@@ -9,9 +9,9 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
   connectionId: "<id>",
-  event: "deleted",
-  hookUrl: "https://grubby-trash.net/",
-  objectType: "accounting_journal",
+  event: "created",
+  hookUrl: "https://same-alligator.com",
+  objectType: "uc_contact",
 };
 ```
 

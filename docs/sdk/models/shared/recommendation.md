@@ -5,7 +5,7 @@
 ```typescript
 import { Recommendation } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Recommendation = "NO";
+let value: Recommendation = "STRONG_YES";
 ```
 
 ## Values

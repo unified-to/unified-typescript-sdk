@@ -9,6 +9,8 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export type HrisTimeoffRaw = {};
+
 export const HrisTimeoffStatus = {
   Approved: "APPROVED",
   Pending: "PENDING",
@@ -26,16 +28,61 @@ export type HrisTimeoff = {
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
   comments?: string | undefined;
+  companyId?: string | undefined;
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisTimeoffRaw | undefined;
   startAt: Date;
   status?: HrisTimeoffStatus | undefined;
   type?: HrisTimeoffType | undefined;
   updatedAt?: Date | undefined;
-  userId: string;
+  userId?: string | undefined;
 };
+
+/** @internal */
+export const HrisTimeoffRaw$inboundSchema: z.ZodType<
+  HrisTimeoffRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type HrisTimeoffRaw$Outbound = {};
+
+/** @internal */
+export const HrisTimeoffRaw$outboundSchema: z.ZodType<
+  HrisTimeoffRaw$Outbound,
+  z.ZodTypeDef,
+  HrisTimeoffRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisTimeoffRaw$ {
+  /** @deprecated use `HrisTimeoffRaw$inboundSchema` instead. */
+  export const inboundSchema = HrisTimeoffRaw$inboundSchema;
+  /** @deprecated use `HrisTimeoffRaw$outboundSchema` instead. */
+  export const outboundSchema = HrisTimeoffRaw$outboundSchema;
+  /** @deprecated use `HrisTimeoffRaw$Outbound` instead. */
+  export type Outbound = HrisTimeoffRaw$Outbound;
+}
+
+export function hrisTimeoffRawToJSON(hrisTimeoffRaw: HrisTimeoffRaw): string {
+  return JSON.stringify(HrisTimeoffRaw$outboundSchema.parse(hrisTimeoffRaw));
+}
+
+export function hrisTimeoffRawFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisTimeoffRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisTimeoffRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisTimeoffRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const HrisTimeoffStatus$inboundSchema: z.ZodNativeEnum<
@@ -89,22 +136,24 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     .optional(),
   approver_user_id: z.string().optional(),
   comments: z.string().optional(),
+  company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisTimeoffRaw$inboundSchema).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   status: HrisTimeoffStatus$inboundSchema.optional(),
   type: HrisTimeoffType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  user_id: z.string(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "approved_at": "approvedAt",
     "approver_user_id": "approverUserId",
+    "company_id": "companyId",
     "created_at": "createdAt",
     "end_at": "endAt",
     "start_at": "startAt",
@@ -118,15 +167,16 @@ export type HrisTimeoff$Outbound = {
   approved_at?: string | undefined;
   approver_user_id?: string | undefined;
   comments?: string | undefined;
+  company_id?: string | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
   id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisTimeoffRaw$Outbound | undefined;
   start_at: string;
   status?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
-  user_id: string;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -138,19 +188,21 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   approvedAt: z.date().transform(v => v.toISOString()).optional(),
   approverUserId: z.string().optional(),
   comments: z.string().optional(),
+  companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisTimeoffRaw$outboundSchema).optional(),
   startAt: z.date().transform(v => v.toISOString()),
   status: HrisTimeoffStatus$outboundSchema.optional(),
   type: HrisTimeoffType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     approvedAt: "approved_at",
     approverUserId: "approver_user_id",
+    companyId: "company_id",
     createdAt: "created_at",
     endAt: "end_at",
     startAt: "start_at",

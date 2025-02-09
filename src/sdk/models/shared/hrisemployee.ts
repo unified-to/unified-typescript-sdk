@@ -87,6 +87,8 @@ export const MaritalStatus = {
 } as const;
 export type MaritalStatus = ClosedEnum<typeof MaritalStatus>;
 
+export type HrisEmployeeRaw = {};
+
 export type HrisEmployee = {
   address?: PropertyHrisEmployeeAddress | undefined;
   bio?: string | undefined;
@@ -117,7 +119,7 @@ export type HrisEmployee = {
   maritalStatus?: MaritalStatus | undefined;
   name?: string | undefined;
   pronouns?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisEmployeeRaw | undefined;
   salutation?: string | undefined;
   ssnSin?: string | undefined;
   telephones?: Array<HrisTelephone> | undefined;
@@ -212,6 +214,52 @@ export namespace MaritalStatus$ {
 }
 
 /** @internal */
+export const HrisEmployeeRaw$inboundSchema: z.ZodType<
+  HrisEmployeeRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type HrisEmployeeRaw$Outbound = {};
+
+/** @internal */
+export const HrisEmployeeRaw$outboundSchema: z.ZodType<
+  HrisEmployeeRaw$Outbound,
+  z.ZodTypeDef,
+  HrisEmployeeRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisEmployeeRaw$ {
+  /** @deprecated use `HrisEmployeeRaw$inboundSchema` instead. */
+  export const inboundSchema = HrisEmployeeRaw$inboundSchema;
+  /** @deprecated use `HrisEmployeeRaw$outboundSchema` instead. */
+  export const outboundSchema = HrisEmployeeRaw$outboundSchema;
+  /** @deprecated use `HrisEmployeeRaw$Outbound` instead. */
+  export type Outbound = HrisEmployeeRaw$Outbound;
+}
+
+export function hrisEmployeeRawToJSON(
+  hrisEmployeeRaw: HrisEmployeeRaw,
+): string {
+  return JSON.stringify(HrisEmployeeRaw$outboundSchema.parse(hrisEmployeeRaw));
+}
+
+export function hrisEmployeeRawFromJSON(
+  jsonString: string,
+): SafeParseResult<HrisEmployeeRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisEmployeeRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisEmployeeRaw' from JSON`,
+  );
+}
+
+/** @internal */
 export const HrisEmployee$inboundSchema: z.ZodType<
   HrisEmployee,
   z.ZodTypeDef,
@@ -248,7 +296,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   marital_status: MaritalStatus$inboundSchema.optional(),
   name: z.string().optional(),
   pronouns: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisEmployeeRaw$inboundSchema).optional(),
   salutation: z.string().optional(),
   ssn_sin: z.string().optional(),
   telephones: z.array(HrisTelephone$inboundSchema).optional(),
@@ -307,7 +355,7 @@ export type HrisEmployee$Outbound = {
   marital_status?: string | undefined;
   name?: string | undefined;
   pronouns?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: HrisEmployeeRaw$Outbound | undefined;
   salutation?: string | undefined;
   ssn_sin?: string | undefined;
   telephones?: Array<HrisTelephone$Outbound> | undefined;
@@ -350,7 +398,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   maritalStatus: MaritalStatus$outboundSchema.optional(),
   name: z.string().optional(),
   pronouns: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => HrisEmployeeRaw$outboundSchema).optional(),
   salutation: z.string().optional(),
   ssnSin: z.string().optional(),
   telephones: z.array(HrisTelephone$outboundSchema).optional(),

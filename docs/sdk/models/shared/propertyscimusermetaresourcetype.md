@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyScimUserMetaResourceType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyScimUserMetaResourceType = "User";
+let value: PropertyScimUserMetaResourceType = "Group";
 ```
 
 ## Values

@@ -23,6 +23,8 @@ export type PaymentCollectionMethod = ClosedEnum<
   typeof PaymentCollectionMethod
 >;
 
+export type AccountingInvoiceRaw = {};
+
 export const AccountingInvoiceStatus = {
   Draft: "DRAFT",
   Voided: "VOIDED",
@@ -58,7 +60,7 @@ export type AccountingInvoice = {
   paidAmount?: number | undefined;
   paidAt?: Date | undefined;
   paymentCollectionMethod?: PaymentCollectionMethod | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingInvoiceRaw | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
   refundedAt?: Date | undefined;
@@ -89,6 +91,54 @@ export namespace PaymentCollectionMethod$ {
   export const inboundSchema = PaymentCollectionMethod$inboundSchema;
   /** @deprecated use `PaymentCollectionMethod$outboundSchema` instead. */
   export const outboundSchema = PaymentCollectionMethod$outboundSchema;
+}
+
+/** @internal */
+export const AccountingInvoiceRaw$inboundSchema: z.ZodType<
+  AccountingInvoiceRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type AccountingInvoiceRaw$Outbound = {};
+
+/** @internal */
+export const AccountingInvoiceRaw$outboundSchema: z.ZodType<
+  AccountingInvoiceRaw$Outbound,
+  z.ZodTypeDef,
+  AccountingInvoiceRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AccountingInvoiceRaw$ {
+  /** @deprecated use `AccountingInvoiceRaw$inboundSchema` instead. */
+  export const inboundSchema = AccountingInvoiceRaw$inboundSchema;
+  /** @deprecated use `AccountingInvoiceRaw$outboundSchema` instead. */
+  export const outboundSchema = AccountingInvoiceRaw$outboundSchema;
+  /** @deprecated use `AccountingInvoiceRaw$Outbound` instead. */
+  export type Outbound = AccountingInvoiceRaw$Outbound;
+}
+
+export function accountingInvoiceRawToJSON(
+  accountingInvoiceRaw: AccountingInvoiceRaw,
+): string {
+  return JSON.stringify(
+    AccountingInvoiceRaw$outboundSchema.parse(accountingInvoiceRaw),
+  );
+}
+
+export function accountingInvoiceRawFromJSON(
+  jsonString: string,
+): SafeParseResult<AccountingInvoiceRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AccountingInvoiceRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingInvoiceRaw' from JSON`,
+  );
 }
 
 /** @internal */
@@ -160,7 +210,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   payment_collection_method: PaymentCollectionMethod$inboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingInvoiceRaw$inboundSchema).optional(),
   refund_amount: z.number().optional(),
   refund_reason: z.string().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -211,7 +261,7 @@ export type AccountingInvoice$Outbound = {
   paid_amount?: number | undefined;
   paid_at?: string | undefined;
   payment_collection_method?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: AccountingInvoiceRaw$Outbound | undefined;
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
   refunded_at?: string | undefined;
@@ -244,7 +294,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   paidAmount: z.number().optional(),
   paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentCollectionMethod: PaymentCollectionMethod$outboundSchema.optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => AccountingInvoiceRaw$outboundSchema).optional(),
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),

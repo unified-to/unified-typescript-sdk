@@ -26,6 +26,8 @@ import {
   PropertyCrmCompanyAddress$outboundSchema,
 } from "./propertycrmcompanyaddress.js";
 
+export type CrmCompanyRaw = {};
+
 /**
  * A company represents an organization that optionally is associated with a deal and/or contacts
  */
@@ -46,12 +48,12 @@ export type CrmCompany = {
   id?: string | undefined;
   industry?: string | undefined;
   isActive?: boolean | undefined;
+  /**
+   * Additional URLs associated with the contact e.g., LinkedIn, website, etc
+   */
   linkUrls?: Array<string> | undefined;
   name?: string | undefined;
-  /**
-   * The raw data returned by the integration for this company
-   */
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmCompanyRaw | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<CrmTelephone> | undefined;
   timezone?: string | undefined;
@@ -59,6 +61,50 @@ export type CrmCompany = {
   userId?: string | undefined;
   websites?: Array<string> | undefined;
 };
+
+/** @internal */
+export const CrmCompanyRaw$inboundSchema: z.ZodType<
+  CrmCompanyRaw,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmCompanyRaw$Outbound = {};
+
+/** @internal */
+export const CrmCompanyRaw$outboundSchema: z.ZodType<
+  CrmCompanyRaw$Outbound,
+  z.ZodTypeDef,
+  CrmCompanyRaw
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmCompanyRaw$ {
+  /** @deprecated use `CrmCompanyRaw$inboundSchema` instead. */
+  export const inboundSchema = CrmCompanyRaw$inboundSchema;
+  /** @deprecated use `CrmCompanyRaw$outboundSchema` instead. */
+  export const outboundSchema = CrmCompanyRaw$outboundSchema;
+  /** @deprecated use `CrmCompanyRaw$Outbound` instead. */
+  export type Outbound = CrmCompanyRaw$Outbound;
+}
+
+export function crmCompanyRawToJSON(crmCompanyRaw: CrmCompanyRaw): string {
+  return JSON.stringify(CrmCompanyRaw$outboundSchema.parse(crmCompanyRaw));
+}
+
+export function crmCompanyRawFromJSON(
+  jsonString: string,
+): SafeParseResult<CrmCompanyRaw, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmCompanyRaw$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmCompanyRaw' from JSON`,
+  );
+}
 
 /** @internal */
 export const CrmCompany$inboundSchema: z.ZodType<
@@ -79,7 +125,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   link_urls: z.array(z.string()).optional(),
   name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmCompanyRaw$inboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(CrmTelephone$inboundSchema).optional(),
   timezone: z.string().optional(),
@@ -113,7 +159,7 @@ export type CrmCompany$Outbound = {
   is_active?: boolean | undefined;
   link_urls?: Array<string> | undefined;
   name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
+  raw?: CrmCompanyRaw$Outbound | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
   timezone?: string | undefined;
@@ -140,7 +186,7 @@ export const CrmCompany$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   linkUrls: z.array(z.string()).optional(),
   name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
+  raw: z.lazy(() => CrmCompanyRaw$outboundSchema).optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),
   timezone: z.string().optional(),

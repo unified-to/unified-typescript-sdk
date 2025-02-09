@@ -5,11 +5,11 @@
 ```typescript
 import { CrmEventFormFieldType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CrmEventFormFieldType = "YES_NO";
+let value: CrmEventFormFieldType = "NUMBER";
 ```
 
 ## Values
 
 ```typescript
-"TEXT" | "NUMBER" | "DATE" | "BOOLEAN" | "MULTIPLE_CHOICE" | "FILE" | "TEXTAREA" | "MULTIPLE_SELECT" | "EMAIL" | "PHONE" | "YES_NO" | "CURRENCY" | "URL"
+"TEXT" | "NUMBER" | "DATE" | "BOOLEAN" | "MULTIPLE_CHOICE" | "FILE" | "TEXTAREA" | "SINGLE_SELECT" | "MULTIPLE_SELECT" | "EMAIL" | "PHONE" | "YES_NO" | "CURRENCY" | "URL"
 ```
