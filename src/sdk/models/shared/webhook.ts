@@ -9,6 +9,15 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
+export const DbType = {
+  Mongodb: "mongodb",
+  Mysql: "mysql",
+  Postgres: "postgres",
+  Mssql: "mssql",
+  Mariadb: "mariadb",
+} as const;
+export type DbType = ClosedEnum<typeof DbType>;
+
 export const Event = {
   Updated: "updated",
   Created: "created",
@@ -106,11 +115,14 @@ export type Webhook = {
   checkedAt?: Date | undefined;
   connectionId: string;
   createdAt?: Date | undefined;
+  dbNamePrefix?: string | undefined;
+  dbType?: DbType | undefined;
+  dbUrl?: string | undefined;
   environment?: string | undefined;
   event: Event;
   fields?: string | undefined;
   filters?: { [k: string]: string } | undefined;
-  hookUrl: string;
+  hookUrl?: string | undefined;
   id?: string | undefined;
   integrationType?: string | undefined;
   interval?: number | undefined;
@@ -126,6 +138,25 @@ export type Webhook = {
   webhookType?: WebhookType | undefined;
   workspaceId?: string | undefined;
 };
+
+/** @internal */
+export const DbType$inboundSchema: z.ZodNativeEnum<typeof DbType> = z
+  .nativeEnum(DbType);
+
+/** @internal */
+export const DbType$outboundSchema: z.ZodNativeEnum<typeof DbType> =
+  DbType$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace DbType$ {
+  /** @deprecated use `DbType$inboundSchema` instead. */
+  export const inboundSchema = DbType$inboundSchema;
+  /** @deprecated use `DbType$outboundSchema` instead. */
+  export const outboundSchema = DbType$outboundSchema;
+}
 
 /** @internal */
 export const Event$inboundSchema: z.ZodNativeEnum<typeof Event> = z.nativeEnum(
@@ -233,11 +264,14 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
+    db_name_prefix: z.string().optional(),
+    db_type: DbType$inboundSchema.optional(),
+    db_url: z.string().optional(),
     environment: z.string().default("Production"),
     event: Event$inboundSchema,
     fields: z.string().optional(),
     filters: z.record(z.string()).optional(),
-    hook_url: z.string(),
+    hook_url: z.string().optional(),
     id: z.string().optional(),
     integration_type: z.string().optional(),
     interval: z.number().optional(),
@@ -256,6 +290,9 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       "checked_at": "checkedAt",
       "connection_id": "connectionId",
       "created_at": "createdAt",
+      "db_name_prefix": "dbNamePrefix",
+      "db_type": "dbType",
+      "db_url": "dbUrl",
       "hook_url": "hookUrl",
       "integration_type": "integrationType",
       "is_healthy": "isHealthy",
@@ -272,11 +309,14 @@ export type Webhook$Outbound = {
   checked_at?: string | undefined;
   connection_id: string;
   created_at?: string | undefined;
+  db_name_prefix?: string | undefined;
+  db_type?: string | undefined;
+  db_url?: string | undefined;
   environment: string;
   event: string;
   fields?: string | undefined;
   filters?: { [k: string]: string } | undefined;
-  hook_url: string;
+  hook_url?: string | undefined;
   id?: string | undefined;
   integration_type?: string | undefined;
   interval?: number | undefined;
@@ -299,11 +339,14 @@ export const Webhook$outboundSchema: z.ZodType<
   checkedAt: z.date().transform(v => v.toISOString()).optional(),
   connectionId: z.string(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  dbNamePrefix: z.string().optional(),
+  dbType: DbType$outboundSchema.optional(),
+  dbUrl: z.string().optional(),
   environment: z.string().default("Production"),
   event: Event$outboundSchema,
   fields: z.string().optional(),
   filters: z.record(z.string()).optional(),
-  hookUrl: z.string(),
+  hookUrl: z.string().optional(),
   id: z.string().optional(),
   integrationType: z.string().optional(),
   interval: z.number().optional(),
@@ -320,6 +363,9 @@ export const Webhook$outboundSchema: z.ZodType<
     checkedAt: "checked_at",
     connectionId: "connection_id",
     createdAt: "created_at",
+    dbNamePrefix: "db_name_prefix",
+    dbType: "db_type",
+    dbUrl: "db_url",
     hookUrl: "hook_url",
     integrationType: "integration_type",
     isHealthy: "is_healthy",

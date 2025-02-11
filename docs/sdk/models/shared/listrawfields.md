@@ -5,7 +5,7 @@
 ```typescript
 import { ListRawFields } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListRawFields = "not-supported";
+let value: ListRawFields = "supported";
 ```
 
 ## Values

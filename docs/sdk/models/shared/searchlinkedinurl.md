@@ -5,7 +5,7 @@
 ```typescript
 import { SearchLinkedinurl } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SearchLinkedinurl = "supported";
+let value: SearchLinkedinurl = "not-supported";
 ```
 
 ## Values

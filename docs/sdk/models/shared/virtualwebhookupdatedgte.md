@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookUpdatedGte } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookUpdatedGte = "not-supported";
+let value: VirtualWebhookUpdatedGte = "supported-required";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyIntegrationCategories } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyIntegrationCategories = "storage";
+let value: PropertyIntegrationCategories = "commerce";
 ```
 
 ## Values
