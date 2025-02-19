@@ -21,6 +21,7 @@ import {
 import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
@@ -29,11 +30,11 @@ import { Result } from "../sdk/types/fp.js";
  * @remarks
  * Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
  */
-export async function authGetUnifiedIntegrationLogin(
+export function authGetUnifiedIntegrationLogin(
   client: UnifiedToCore,
   request: operations.GetUnifiedIntegrationLoginRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     string,
     | SDKError
@@ -45,6 +46,32 @@ export async function authGetUnifiedIntegrationLogin(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.GetUnifiedIntegrationLoginRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      string,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) =>
@@ -52,7 +79,7 @@ export async function authGetUnifiedIntegrationLogin(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -89,6 +116,7 @@ export async function authGetUnifiedIntegrationLogin(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "getUnifiedIntegrationLogin",
     oAuth2Scopes: [],
 
@@ -112,7 +140,7 @@ export async function authGetUnifiedIntegrationLogin(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -123,7 +151,7 @@ export async function authGetUnifiedIntegrationLogin(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -142,8 +170,8 @@ export async function authGetUnifiedIntegrationLogin(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

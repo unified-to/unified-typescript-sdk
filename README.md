@@ -77,10 +77,10 @@ run();
 
 You can override the default server globally by passing a server index to the `serverIdx: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| #   | Server                      |
-| --- | --------------------------- |
-| 0   | `https://api.unified.to`    |
-| 1   | `https://api-eu.unified.to` |
+| #   | Server                      | Description                |
+| --- | --------------------------- | -------------------------- |
+| 0   | `https://api.unified.to`    | North American data region |
+| 1   | `https://api-eu.unified.to` | European data region       |
 
 #### Example
 

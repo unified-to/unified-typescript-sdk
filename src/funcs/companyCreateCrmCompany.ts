@@ -21,16 +21,17 @@ import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Create a company
  */
-export async function companyCreateCrmCompany(
+export function companyCreateCrmCompany(
   client: UnifiedToCore,
   request: operations.CreateCrmCompanyRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     shared.CrmCompany,
     | SDKError
@@ -42,13 +43,39 @@ export async function companyCreateCrmCompany(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.CreateCrmCompanyRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      shared.CrmCompany,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.CreateCrmCompanyRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload.CrmCompany, { explode: true });
@@ -75,6 +102,7 @@ export async function companyCreateCrmCompany(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "createCrmCompany",
     oAuth2Scopes: [],
 
@@ -98,7 +126,7 @@ export async function companyCreateCrmCompany(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -109,7 +137,7 @@ export async function companyCreateCrmCompany(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -128,8 +156,8 @@ export async function companyCreateCrmCompany(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

@@ -21,16 +21,17 @@ import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a comment
  */
-export async function kmsUpdateKmsComment(
+export function kmsUpdateKmsComment(
   client: UnifiedToCore,
   request: operations.UpdateKmsCommentRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     shared.KmsComment,
     | SDKError
@@ -42,13 +43,39 @@ export async function kmsUpdateKmsComment(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.UpdateKmsCommentRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      shared.KmsComment,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.UpdateKmsCommentRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload.KmsComment, { explode: true });
@@ -79,6 +106,7 @@ export async function kmsUpdateKmsComment(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "updateKmsComment",
     oAuth2Scopes: [],
 
@@ -102,7 +130,7 @@ export async function kmsUpdateKmsComment(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -113,7 +141,7 @@ export async function kmsUpdateKmsComment(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -132,8 +160,8 @@ export async function kmsUpdateKmsComment(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

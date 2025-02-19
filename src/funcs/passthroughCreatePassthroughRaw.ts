@@ -20,6 +20,7 @@ import {
 import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 export enum CreatePassthroughRawAcceptEnum {
@@ -33,13 +34,13 @@ export enum CreatePassthroughRawAcceptEnum {
 /**
  * Passthrough POST
  */
-export async function passthroughCreatePassthroughRaw(
+export function passthroughCreatePassthroughRaw(
   client: UnifiedToCore,
   request: operations.CreatePassthroughRawRequest,
   options?: RequestOptions & {
     acceptHeaderOverride?: CreatePassthroughRawAcceptEnum;
   },
-): Promise<
+): APIPromise<
   Result<
     operations.CreatePassthroughRawResponse | undefined,
     | SDKError
@@ -51,6 +52,34 @@ export async function passthroughCreatePassthroughRaw(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.CreatePassthroughRawRequest,
+  options?: RequestOptions & {
+    acceptHeaderOverride?: CreatePassthroughRawAcceptEnum;
+  },
+): Promise<
+  [
+    Result<
+      operations.CreatePassthroughRawResponse | undefined,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) =>
@@ -58,7 +87,7 @@ export async function passthroughCreatePassthroughRaw(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = payload.RequestBody;
@@ -86,6 +115,7 @@ export async function passthroughCreatePassthroughRaw(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "createPassthrough_raw",
     oAuth2Scopes: [],
 
@@ -108,7 +138,7 @@ export async function passthroughCreatePassthroughRaw(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -119,7 +149,7 @@ export async function passthroughCreatePassthroughRaw(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -176,8 +206,8 @@ export async function passthroughCreatePassthroughRaw(
     ),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

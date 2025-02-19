@@ -20,16 +20,17 @@ import {
 import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove an order
  */
-export async function accountingRemoveAccountingOrder(
+export function accountingRemoveAccountingOrder(
   client: UnifiedToCore,
   request: operations.RemoveAccountingOrderRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     operations.RemoveAccountingOrderResponse | undefined,
     | SDKError
@@ -41,6 +42,32 @@ export async function accountingRemoveAccountingOrder(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.RemoveAccountingOrderRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      operations.RemoveAccountingOrderResponse | undefined,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) =>
@@ -48,7 +75,7 @@ export async function accountingRemoveAccountingOrder(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -74,6 +101,7 @@ export async function accountingRemoveAccountingOrder(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "removeAccountingOrder",
     oAuth2Scopes: [],
 
@@ -96,7 +124,7 @@ export async function accountingRemoveAccountingOrder(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -107,7 +135,7 @@ export async function accountingRemoveAccountingOrder(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -138,8 +166,8 @@ export async function accountingRemoveAccountingOrder(
     ),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

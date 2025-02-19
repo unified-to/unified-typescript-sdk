@@ -22,16 +22,17 @@ import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * List all documents
  */
-export async function atsListAtsDocuments(
+export function atsListAtsDocuments(
   client: UnifiedToCore,
   request: operations.ListAtsDocumentsRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     Array<shared.AtsDocument>,
     | SDKError
@@ -43,13 +44,39 @@ export async function atsListAtsDocuments(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.ListAtsDocumentsRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      Array<shared.AtsDocument>,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.ListAtsDocumentsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -83,6 +110,7 @@ export async function atsListAtsDocuments(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "listAtsDocuments",
     oAuth2Scopes: [],
 
@@ -106,7 +134,7 @@ export async function atsListAtsDocuments(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -117,7 +145,7 @@ export async function atsListAtsDocuments(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -136,8 +164,8 @@ export async function atsListAtsDocuments(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

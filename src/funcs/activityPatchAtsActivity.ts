@@ -21,16 +21,17 @@ import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update an activity
  */
-export async function activityPatchAtsActivity(
+export function activityPatchAtsActivity(
   client: UnifiedToCore,
   request: operations.PatchAtsActivityRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     shared.AtsActivity,
     | SDKError
@@ -42,13 +43,39 @@ export async function activityPatchAtsActivity(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.PatchAtsActivityRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      shared.AtsActivity,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.PatchAtsActivityRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload.AtsActivity, { explode: true });
@@ -79,6 +106,7 @@ export async function activityPatchAtsActivity(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "patchAtsActivity",
     oAuth2Scopes: [],
 
@@ -102,7 +130,7 @@ export async function activityPatchAtsActivity(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -113,7 +141,7 @@ export async function activityPatchAtsActivity(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -132,8 +160,8 @@ export async function activityPatchAtsActivity(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

@@ -21,16 +21,17 @@ import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Update a collection
  */
-export async function collectionUpdateCommerceCollection(
+export function collectionUpdateCommerceCollection(
   client: UnifiedToCore,
   request: operations.UpdateCommerceCollectionRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     shared.CommerceCollection,
     | SDKError
@@ -42,6 +43,32 @@ export async function collectionUpdateCommerceCollection(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.UpdateCommerceCollectionRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      shared.CommerceCollection,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) =>
@@ -49,7 +76,7 @@ export async function collectionUpdateCommerceCollection(
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = encodeJSON("body", payload.CommerceCollection, {
@@ -84,6 +111,7 @@ export async function collectionUpdateCommerceCollection(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "updateCommerceCollection",
     oAuth2Scopes: [],
 
@@ -107,7 +135,7 @@ export async function collectionUpdateCommerceCollection(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -118,7 +146,7 @@ export async function collectionUpdateCommerceCollection(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -137,8 +165,8 @@ export async function collectionUpdateCommerceCollection(
     M.fail("5XX"),
   )(response);
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }

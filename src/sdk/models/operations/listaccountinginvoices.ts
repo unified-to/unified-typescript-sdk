@@ -26,6 +26,7 @@ export type ListAccountingInvoicesRequest = {
    */
   query?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -46,6 +47,7 @@ export const ListAccountingInvoicesRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -66,6 +68,7 @@ export type ListAccountingInvoicesRequest$Outbound = {
   order?: string | undefined;
   query?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -83,6 +86,7 @@ export const ListAccountingInvoicesRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

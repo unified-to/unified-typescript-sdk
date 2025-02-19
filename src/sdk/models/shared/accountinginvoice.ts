@@ -41,6 +41,7 @@ export type AccountingInvoiceStatus = ClosedEnum<
 export const AccountingInvoiceType = {
   Bill: "BILL",
   Invoice: "INVOICE",
+  Creditmemo: "CREDITMEMO",
 } as const;
 export type AccountingInvoiceType = ClosedEnum<typeof AccountingInvoiceType>;
 

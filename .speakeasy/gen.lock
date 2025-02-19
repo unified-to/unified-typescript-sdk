@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 9242e0b56a832180eec64ef3e27e0be0
+  docChecksum: 3da93e71a8a8edbd419c4dd261a040f9
   docVersion: "1.0"
-  speakeasyVersion: 1.488.0
-  generationVersion: 2.506.0
-  releaseVersion: 2.10.2
-  configChecksum: a71bbf07af7b8a4a55f81d878169086d
+  speakeasyVersion: 1.494.0
+  generationVersion: 2.515.0
+  releaseVersion: 2.11.0
+  configChecksum: 9fe328902906c709cb6c3441ca4b1706
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,12 +16,12 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.19.0
+    core: 3.20.0
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
-    globalSecurity: 2.82.12
+    globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.4
     responseFormat: 0.2.3
@@ -2413,6 +2413,7 @@ generatedFiles:
   - src/sdk/ticketing.ts
   - src/sdk/timeoff.ts
   - src/sdk/transaction.ts
+  - src/sdk/types/async.ts
   - src/sdk/types/blobs.ts
   - src/sdk/types/constdatetime.ts
   - src/sdk/types/enums.ts

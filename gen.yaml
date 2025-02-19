@@ -5,16 +5,17 @@ generation:
     optionalPropertyRendering: withExample
   useClassNamesForArrayFields: true
   fixes:
-    nameResolutionDec2023: false
+    nameResolutionFeb2025: false
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
+    securityFeb2025: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.10.2
+  version: 2.11.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}

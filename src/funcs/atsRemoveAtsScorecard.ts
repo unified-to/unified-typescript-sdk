@@ -20,16 +20,17 @@ import {
 import { SDKError } from "../sdk/models/errors/sdkerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
  * Remove a scorecard
  */
-export async function atsRemoveAtsScorecard(
+export function atsRemoveAtsScorecard(
   client: UnifiedToCore,
   request: operations.RemoveAtsScorecardRequest,
   options?: RequestOptions,
-): Promise<
+): APIPromise<
   Result<
     operations.RemoveAtsScorecardResponse | undefined,
     | SDKError
@@ -41,13 +42,39 @@ export async function atsRemoveAtsScorecard(
     | ConnectionError
   >
 > {
+  return new APIPromise($do(
+    client,
+    request,
+    options,
+  ));
+}
+
+async function $do(
+  client: UnifiedToCore,
+  request: operations.RemoveAtsScorecardRequest,
+  options?: RequestOptions,
+): Promise<
+  [
+    Result<
+      operations.RemoveAtsScorecardResponse | undefined,
+      | SDKError
+      | SDKValidationError
+      | UnexpectedClientError
+      | InvalidRequestError
+      | RequestAbortedError
+      | RequestTimeoutError
+      | ConnectionError
+    >,
+    APICall,
+  ]
+> {
   const parsed = safeParse(
     request,
     (value) => operations.RemoveAtsScorecardRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
-    return parsed;
+    return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
   const body = null;
@@ -73,6 +100,7 @@ export async function atsRemoveAtsScorecard(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
+    baseURL: options?.serverURL ?? "",
     operationID: "removeAtsScorecard",
     oAuth2Scopes: [],
 
@@ -95,7 +123,7 @@ export async function atsRemoveAtsScorecard(
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);
   if (!requestRes.ok) {
-    return requestRes;
+    return [requestRes, { status: "invalid" }];
   }
   const req = requestRes.value;
 
@@ -106,7 +134,7 @@ export async function atsRemoveAtsScorecard(
     retryCodes: context.retryCodes,
   });
   if (!doResult.ok) {
-    return doResult;
+    return [doResult, { status: "request-error", request: req }];
   }
   const response = doResult.value;
 
@@ -134,8 +162,8 @@ export async function atsRemoveAtsScorecard(
     ),
   )(response, { extraFields: responseFields });
   if (!result.ok) {
-    return result;
+    return [result, { status: "complete", request: req, response }];
   }
 
-  return result;
+  return [result, { status: "complete", request: req, response }];
 }
