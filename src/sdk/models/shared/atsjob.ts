@@ -21,6 +21,12 @@ import {
   AtsCompensation$outboundSchema,
 } from "./atscompensation.js";
 import {
+  AtsGroup,
+  AtsGroup$inboundSchema,
+  AtsGroup$Outbound,
+  AtsGroup$outboundSchema,
+} from "./atsgroup.js";
+import {
   AtsJobPosting,
   AtsJobPosting$inboundSchema,
   AtsJobPosting$Outbound,
@@ -65,11 +71,15 @@ export type AtsJob = {
   compensation?: Array<AtsCompensation> | undefined;
   createdAt?: Date | undefined;
   /**
-   * The names of the departments/divisions that this job belongs to
+   * @deprecated Use `groups` instead
    */
   departments?: Array<string> | undefined;
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;
+  /**
+   * The departments/divisions/teams that this job belongs to
+   */
+  groups?: Array<AtsGroup> | undefined;
   hiringManagerIds?: Array<string> | undefined;
   id?: string | undefined;
   languageLocale?: string | undefined;
@@ -189,6 +199,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     departments: z.array(z.string()).optional(),
     description: z.string().optional(),
     employment_type: EmploymentType$inboundSchema.optional(),
+    groups: z.array(AtsGroup$inboundSchema).optional(),
     hiring_manager_ids: z.array(z.string()).optional(),
     id: z.string().optional(),
     language_locale: z.string().optional(),
@@ -229,6 +240,7 @@ export type AtsJob$Outbound = {
   departments?: Array<string> | undefined;
   description?: string | undefined;
   employment_type?: string | undefined;
+  groups?: Array<AtsGroup$Outbound> | undefined;
   hiring_manager_ids?: Array<string> | undefined;
   id?: string | undefined;
   language_locale?: string | undefined;
@@ -258,6 +270,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   departments: z.array(z.string()).optional(),
   description: z.string().optional(),
   employmentType: EmploymentType$outboundSchema.optional(),
+  groups: z.array(AtsGroup$outboundSchema).optional(),
   hiringManagerIds: z.array(z.string()).optional(),
   id: z.string().optional(),
   languageLocale: z.string().optional(),

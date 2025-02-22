@@ -94,6 +94,7 @@ async function $do(
     "application_id": payload.application_id,
     "candidate_id": payload.candidate_id,
     "fields": payload.fields,
+    "job_id": payload.job_id,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
@@ -110,7 +111,7 @@ async function $do(
   const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
-    baseURL: options?.serverURL ?? "",
+    baseURL: options?.serverURL ?? client._baseURL ?? "",
     operationID: "listAtsDocuments",
     oAuth2Scopes: [],
 

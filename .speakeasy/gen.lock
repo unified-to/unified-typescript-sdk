@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3da93e71a8a8edbd419c4dd261a040f9
+  docChecksum: c0d6af0ca0a33fa3f44a1fca666d6fae
   docVersion: "1.0"
-  speakeasyVersion: 1.494.0
-  generationVersion: 2.515.0
-  releaseVersion: 2.11.0
-  configChecksum: 9fe328902906c709cb6c3441ca4b1706
+  speakeasyVersion: 1.501.0
+  generationVersion: 2.522.1
+  releaseVersion: 2.12.0
+  configChecksum: 80cf0989b0af22d4d59aa4b551bbde02
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.20.0
+    core: 3.21.1
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -556,6 +556,8 @@ generatedFiles:
   - docs/sdk/models/shared/atsdocumenttype.md
   - docs/sdk/models/shared/atsemail.md
   - docs/sdk/models/shared/atsemailtype.md
+  - docs/sdk/models/shared/atsgroup.md
+  - docs/sdk/models/shared/atsgrouptype.md
   - docs/sdk/models/shared/atsinterview.md
   - docs/sdk/models/shared/atsinterviewraw.md
   - docs/sdk/models/shared/atsinterviewstatus.md
@@ -627,6 +629,7 @@ generatedFiles:
   - docs/sdk/models/shared/ethnicity.md
   - docs/sdk/models/shared/event.md
   - docs/sdk/models/shared/extradata.md
+  - docs/sdk/models/shared/format.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/fromwebhook.md
   - docs/sdk/models/shared/genaicontent.md
@@ -732,7 +735,6 @@ generatedFiles:
   - docs/sdk/models/shared/meta.md
   - docs/sdk/models/shared/metadatametadata.md
   - docs/sdk/models/shared/metadatametadataraw.md
-  - docs/sdk/models/shared/metadatametadatatype.md
   - docs/sdk/models/shared/nativewebhookparentid.md
   - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md
@@ -2226,6 +2228,7 @@ generatedFiles:
   - src/sdk/models/shared/atscompensation.ts
   - src/sdk/models/shared/atsdocument.ts
   - src/sdk/models/shared/atsemail.ts
+  - src/sdk/models/shared/atsgroup.ts
   - src/sdk/models/shared/atsinterview.ts
   - src/sdk/models/shared/atsjob.ts
   - src/sdk/models/shared/atsjobposting.ts

@@ -5,7 +5,7 @@
 ```typescript
 import { HrisCompensationType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisCompensationType = "SALARY";
+let value: HrisCompensationType = "STOCK_OPTIONS";
 ```
 
 ## Values

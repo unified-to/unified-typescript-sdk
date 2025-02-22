@@ -19,6 +19,7 @@ export type ListAtsDocumentsRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -43,6 +44,7 @@ export const ListAtsDocumentsRequest$inboundSchema: z.ZodType<
   candidate_id: z.string().optional(),
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  job_id: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -55,6 +57,7 @@ export const ListAtsDocumentsRequest$inboundSchema: z.ZodType<
     "application_id": "applicationId",
     "candidate_id": "candidateId",
     "connection_id": "connectionId",
+    "job_id": "jobId",
     "updated_gte": "updatedGte",
   });
 });
@@ -65,6 +68,7 @@ export type ListAtsDocumentsRequest$Outbound = {
   candidate_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
+  job_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -83,6 +87,7 @@ export const ListAtsDocumentsRequest$outboundSchema: z.ZodType<
   candidateId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -94,6 +99,7 @@ export const ListAtsDocumentsRequest$outboundSchema: z.ZodType<
     applicationId: "application_id",
     candidateId: "candidate_id",
     connectionId: "connection_id",
+    jobId: "job_id",
     updatedGte: "updated_gte",
   });
 });

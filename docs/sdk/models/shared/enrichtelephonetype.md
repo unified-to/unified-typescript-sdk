@@ -5,7 +5,7 @@
 ```typescript
 import { EnrichTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: EnrichTelephoneType = "HOME";
+let value: EnrichTelephoneType = "WORK";
 ```
 
 ## Values

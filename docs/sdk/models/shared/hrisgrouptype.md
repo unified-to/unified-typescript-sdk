@@ -5,7 +5,7 @@
 ```typescript
 import { HrisGroupType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisGroupType = "DIVISION";
+let value: HrisGroupType = "GROUP";
 ```
 
 ## Values

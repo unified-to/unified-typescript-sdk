@@ -127,6 +127,7 @@ export type Webhook = {
   integrationType?: string | undefined;
   interval?: number | undefined;
   isHealthy?: boolean | undefined;
+  isPaused?: boolean | undefined;
   meta?: Meta | undefined;
   objectType: ObjectType;
   pageMaxLimit?: number | undefined;
@@ -276,6 +277,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     integration_type: z.string().optional(),
     interval: z.number().optional(),
     is_healthy: z.boolean().optional(),
+    is_paused: z.boolean().optional(),
     meta: z.lazy(() => Meta$inboundSchema).optional(),
     object_type: ObjectType$inboundSchema,
     page_max_limit: z.number().optional(),
@@ -296,6 +298,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       "hook_url": "hookUrl",
       "integration_type": "integrationType",
       "is_healthy": "isHealthy",
+      "is_paused": "isPaused",
       "object_type": "objectType",
       "page_max_limit": "pageMaxLimit",
       "updated_at": "updatedAt",
@@ -321,6 +324,7 @@ export type Webhook$Outbound = {
   integration_type?: string | undefined;
   interval?: number | undefined;
   is_healthy?: boolean | undefined;
+  is_paused?: boolean | undefined;
   meta?: Meta$Outbound | undefined;
   object_type: string;
   page_max_limit?: number | undefined;
@@ -351,6 +355,7 @@ export const Webhook$outboundSchema: z.ZodType<
   integrationType: z.string().optional(),
   interval: z.number().optional(),
   isHealthy: z.boolean().optional(),
+  isPaused: z.boolean().optional(),
   meta: z.lazy(() => Meta$outboundSchema).optional(),
   objectType: ObjectType$outboundSchema,
   pageMaxLimit: z.number().optional(),
@@ -369,6 +374,7 @@ export const Webhook$outboundSchema: z.ZodType<
     hookUrl: "hook_url",
     integrationType: "integration_type",
     isHealthy: "is_healthy",
+    isPaused: "is_paused",
     objectType: "object_type",
     pageMaxLimit: "page_max_limit",
     updatedAt: "updated_at",

@@ -9,9 +9,7 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type MetadataMetadataRaw = {};
-
-export const MetadataMetadataType = {
+export const Format = {
   Text: "TEXT",
   Number: "NUMBER",
   Date: "DATE",
@@ -26,19 +24,41 @@ export const MetadataMetadataType = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type MetadataMetadataType = ClosedEnum<typeof MetadataMetadataType>;
+export type Format = ClosedEnum<typeof Format>;
+
+export type MetadataMetadataRaw = {};
 
 export type MetadataMetadata = {
   createdAt?: Date | undefined;
+  format?: Format | undefined;
   id?: string | undefined;
   name: string;
   objectType: string;
   objects?: { [k: string]: string } | undefined;
   options?: Array<string> | undefined;
+  originalFormat?: string | undefined;
   raw?: MetadataMetadataRaw | undefined;
-  type?: MetadataMetadataType | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const Format$inboundSchema: z.ZodNativeEnum<typeof Format> = z
+  .nativeEnum(Format);
+
+/** @internal */
+export const Format$outboundSchema: z.ZodNativeEnum<typeof Format> =
+  Format$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Format$ {
+  /** @deprecated use `Format$inboundSchema` instead. */
+  export const inboundSchema = Format$inboundSchema;
+  /** @deprecated use `Format$outboundSchema` instead. */
+  export const outboundSchema = Format$outboundSchema;
+}
 
 /** @internal */
 export const MetadataMetadataRaw$inboundSchema: z.ZodType<
@@ -89,27 +109,6 @@ export function metadataMetadataRawFromJSON(
 }
 
 /** @internal */
-export const MetadataMetadataType$inboundSchema: z.ZodNativeEnum<
-  typeof MetadataMetadataType
-> = z.nativeEnum(MetadataMetadataType);
-
-/** @internal */
-export const MetadataMetadataType$outboundSchema: z.ZodNativeEnum<
-  typeof MetadataMetadataType
-> = MetadataMetadataType$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MetadataMetadataType$ {
-  /** @deprecated use `MetadataMetadataType$inboundSchema` instead. */
-  export const inboundSchema = MetadataMetadataType$inboundSchema;
-  /** @deprecated use `MetadataMetadataType$outboundSchema` instead. */
-  export const outboundSchema = MetadataMetadataType$outboundSchema;
-}
-
-/** @internal */
 export const MetadataMetadata$inboundSchema: z.ZodType<
   MetadataMetadata,
   z.ZodTypeDef,
@@ -117,19 +116,21 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
 > = z.object({
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  format: Format$inboundSchema.optional(),
   id: z.string().optional(),
   name: z.string(),
   object_type: z.string(),
   objects: z.record(z.string()).optional(),
   options: z.array(z.string()).optional(),
+  original_format: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$inboundSchema).optional(),
-  type: MetadataMetadataType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
     "object_type": "objectType",
+    "original_format": "originalFormat",
     "updated_at": "updatedAt",
   });
 });
@@ -137,13 +138,14 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
 /** @internal */
 export type MetadataMetadata$Outbound = {
   created_at?: string | undefined;
+  format?: string | undefined;
   id?: string | undefined;
   name: string;
   object_type: string;
   objects?: { [k: string]: string } | undefined;
   options?: Array<string> | undefined;
+  original_format?: string | undefined;
   raw?: MetadataMetadataRaw$Outbound | undefined;
-  type?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -154,18 +156,20 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   MetadataMetadata
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  format: Format$outboundSchema.optional(),
   id: z.string().optional(),
   name: z.string(),
   objectType: z.string(),
   objects: z.record(z.string()).optional(),
   options: z.array(z.string()).optional(),
+  originalFormat: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$outboundSchema).optional(),
-  type: MetadataMetadataType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
     objectType: "object_type",
+    originalFormat: "original_format",
     updatedAt: "updated_at",
   });
 });

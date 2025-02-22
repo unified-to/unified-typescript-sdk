@@ -1,11 +1,11 @@
-# MetadataMetadataType
+# Format
 
 ## Example Usage
 
 ```typescript
-import { MetadataMetadataType } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { Format } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: MetadataMetadataType = "MEASUREMENT";
+let value: Format = "MEASUREMENT";
 ```
 
 ## Values

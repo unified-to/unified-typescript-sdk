@@ -5,7 +5,7 @@
 ```typescript
 import { HrisTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisTelephoneType = "HOME";
+let value: HrisTelephoneType = "MOBILE";
 ```
 
 ## Values

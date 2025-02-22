@@ -6,7 +6,7 @@
 import { EnrichEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: EnrichEmail = {
-  email: "Lelah.Batz12@hotmail.com",
+  email: "Myrtis.Grady29@yahoo.com",
 };
 ```
 

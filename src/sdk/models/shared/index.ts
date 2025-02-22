@@ -27,6 +27,7 @@ export * from "./atscompany.js";
 export * from "./atscompensation.js";
 export * from "./atsdocument.js";
 export * from "./atsemail.js";
+export * from "./atsgroup.js";
 export * from "./atsinterview.js";
 export * from "./atsjob.js";
 export * from "./atsjobposting.js";

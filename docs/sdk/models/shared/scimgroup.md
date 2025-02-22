@@ -6,7 +6,7 @@
 import { ScimGroup } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: ScimGroup = {
-  displayName: "Mustafa_Franey-Mayer57",
+  displayName: "Vilma_Mayer57",
 };
 ```
 
