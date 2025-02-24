@@ -31,7 +31,7 @@ import { Result } from "../sdk/types/fp.js";
  */
 export function unifiedCreateUnifiedConnection(
   client: UnifiedToCore,
-  request?: shared.Connection | undefined,
+  request: shared.Connection,
   options?: RequestOptions,
 ): APIPromise<
   Result<
@@ -54,7 +54,7 @@ export function unifiedCreateUnifiedConnection(
 
 async function $do(
   client: UnifiedToCore,
-  request?: shared.Connection | undefined,
+  request: shared.Connection,
   options?: RequestOptions,
 ): Promise<
   [
@@ -73,16 +73,14 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => shared.Connection$outboundSchema.optional().parse(value),
+    (value) => shared.Connection$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = payload === undefined
-    ? null
-    : encodeJSON("body", payload, { explode: true });
+  const body = encodeJSON("body", payload, { explode: true });
 
   const path = pathToFunc("/unified/connection")();
 

@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.createAccountingOrder({
+    accountingOrder: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await orderCreateAccountingOrder(unifiedTo, {
+    accountingOrder: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.patchAccountingOrder({
+    accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await orderPatchAccountingOrder(unifiedTo, {
+    accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.order.updateAccountingOrder({
+    accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await orderUpdateAccountingOrder(unifiedTo, {
+    accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
   });

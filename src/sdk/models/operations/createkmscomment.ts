@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateKmsCommentRequest = {
-  kmsComment?: shared.KmsComment | undefined;
+  kmsComment: shared.KmsComment;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateKmsCommentRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  KmsComment: shared.KmsComment$inboundSchema.optional(),
+  KmsComment: shared.KmsComment$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateKmsCommentRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateKmsCommentRequest$Outbound = {
-  KmsComment?: shared.KmsComment$Outbound | undefined;
+  KmsComment: shared.KmsComment$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateKmsCommentRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateKmsCommentRequest
 > = z.object({
-  kmsComment: shared.KmsComment$outboundSchema.optional(),
+  kmsComment: shared.KmsComment$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

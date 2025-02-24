@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsApplicationRequest = {
-  atsApplication?: shared.AtsApplication | undefined;
+  atsApplication: shared.AtsApplication;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateAtsApplicationRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AtsApplication: shared.AtsApplication$inboundSchema.optional(),
+  AtsApplication: shared.AtsApplication$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateAtsApplicationRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateAtsApplicationRequest$Outbound = {
-  AtsApplication?: shared.AtsApplication$Outbound | undefined;
+  AtsApplication: shared.AtsApplication$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateAtsApplicationRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateAtsApplicationRequest
 > = z.object({
-  atsApplication: shared.AtsApplication$outboundSchema.optional(),
+  atsApplication: shared.AtsApplication$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

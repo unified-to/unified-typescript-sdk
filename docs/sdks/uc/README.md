@@ -30,6 +30,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.createUcContact({
+    ucContact: {},
     connectionId: "<id>",
   });
 
@@ -58,6 +59,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ucCreateUcContact(unifiedTo, {
+    ucContact: {},
     connectionId: "<id>",
   });
 
@@ -352,6 +354,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.patchUcContact({
+    ucContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -381,6 +384,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ucPatchUcContact(unifiedTo, {
+    ucContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -516,6 +520,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.uc.updateUcContact({
+    ucContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -545,6 +550,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ucUpdateUcContact(unifiedTo, {
+    ucContact: {},
     connectionId: "<id>",
     id: "<id>",
   });

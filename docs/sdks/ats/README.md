@@ -68,6 +68,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsActivity({
+    atsActivity: {},
     connectionId: "<id>",
   });
 
@@ -96,6 +97,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsActivity(unifiedTo, {
+    atsActivity: {},
     connectionId: "<id>",
   });
 
@@ -148,6 +150,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsApplication({
+    atsApplication: {},
     connectionId: "<id>",
   });
 
@@ -176,6 +179,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsApplication(unifiedTo, {
+    atsApplication: {},
     connectionId: "<id>",
   });
 
@@ -228,6 +232,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsCandidate({
+    atsCandidate: {},
     connectionId: "<id>",
   });
 
@@ -256,6 +261,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsCandidate(unifiedTo, {
+    atsCandidate: {},
     connectionId: "<id>",
   });
 
@@ -308,6 +314,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsDocument({
+    atsDocument: {},
     connectionId: "<id>",
   });
 
@@ -336,6 +343,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsDocument(unifiedTo, {
+    atsDocument: {},
     connectionId: "<id>",
   });
 
@@ -388,6 +396,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
   });
 
@@ -416,6 +425,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
   });
 
@@ -468,6 +478,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsJob({
+    atsJob: {},
     connectionId: "<id>",
   });
 
@@ -496,6 +507,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsJob(unifiedTo, {
+    atsJob: {},
     connectionId: "<id>",
   });
 
@@ -548,6 +560,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.createAtsScorecard({
+    atsScorecard: {},
     connectionId: "<id>",
   });
 
@@ -576,6 +589,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsCreateAtsScorecard(unifiedTo, {
+    atsScorecard: {},
     connectionId: "<id>",
   });
 
@@ -2004,6 +2018,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsActivity({
+    atsActivity: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2033,6 +2048,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsActivity(unifiedTo, {
+    atsActivity: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2086,6 +2102,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsApplication({
+    atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2115,6 +2132,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsApplication(unifiedTo, {
+    atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2168,6 +2186,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsCandidate({
+    atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2197,6 +2216,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsCandidate(unifiedTo, {
+    atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2250,6 +2270,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsDocument({
+    atsDocument: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2279,6 +2300,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsDocument(unifiedTo, {
+    atsDocument: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2332,6 +2354,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2361,6 +2384,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2414,6 +2438,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsJob({
+    atsJob: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2443,6 +2468,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsJob(unifiedTo, {
+    atsJob: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2496,6 +2522,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.patchAtsScorecard({
+    atsScorecard: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2525,6 +2552,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsPatchAtsScorecard(unifiedTo, {
+    atsScorecard: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3152,6 +3180,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsActivity({
+    atsActivity: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3181,6 +3210,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsActivity(unifiedTo, {
+    atsActivity: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3234,6 +3264,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsApplication({
+    atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3263,6 +3294,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsApplication(unifiedTo, {
+    atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3316,6 +3348,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsCandidate({
+    atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3345,6 +3378,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsCandidate(unifiedTo, {
+    atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3398,6 +3432,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsDocument({
+    atsDocument: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3427,6 +3462,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsDocument(unifiedTo, {
+    atsDocument: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3480,6 +3516,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3509,6 +3546,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3562,6 +3600,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsJob({
+    atsJob: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3591,6 +3630,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsJob(unifiedTo, {
+    atsJob: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3644,6 +3684,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ats.updateAtsScorecard({
+    atsScorecard: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3673,6 +3714,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await atsUpdateAtsScorecard(unifiedTo, {
+    atsScorecard: {},
     connectionId: "<id>",
     id: "<id>",
   });

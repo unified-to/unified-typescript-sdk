@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.createAccountingTransaction({
+    accountingTransaction: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionCreateAccountingTransaction(unifiedTo, {
+    accountingTransaction: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.patchAccountingTransaction({
+    accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionPatchAccountingTransaction(unifiedTo, {
+    accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.transaction.updateAccountingTransaction({
+    accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await transactionUpdateAccountingTransaction(unifiedTo, {
+    accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
   });

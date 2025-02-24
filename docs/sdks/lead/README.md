@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.createCrmLead({
+    crmLead: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await leadCreateCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.patchCrmLead({
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await leadPatchCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.lead.updateCrmLead({
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await leadUpdateCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });

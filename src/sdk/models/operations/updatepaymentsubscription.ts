@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdatePaymentSubscriptionRequest = {
-  paymentSubscription?: shared.PaymentSubscription | undefined;
+  paymentSubscription: shared.PaymentSubscription;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdatePaymentSubscriptionRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  PaymentSubscription: shared.PaymentSubscription$inboundSchema.optional(),
+  PaymentSubscription: shared.PaymentSubscription$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdatePaymentSubscriptionRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdatePaymentSubscriptionRequest$Outbound = {
-  PaymentSubscription?: shared.PaymentSubscription$Outbound | undefined;
+  PaymentSubscription: shared.PaymentSubscription$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdatePaymentSubscriptionRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdatePaymentSubscriptionRequest
 > = z.object({
-  paymentSubscription: shared.PaymentSubscription$outboundSchema.optional(),
+  paymentSubscription: shared.PaymentSubscription$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

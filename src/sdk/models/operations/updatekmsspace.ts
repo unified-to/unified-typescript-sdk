@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateKmsSpaceRequest = {
-  kmsSpace?: shared.KmsSpace | undefined;
+  kmsSpace: shared.KmsSpace;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateKmsSpaceRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  KmsSpace: shared.KmsSpace$inboundSchema.optional(),
+  KmsSpace: shared.KmsSpace$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateKmsSpaceRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateKmsSpaceRequest$Outbound = {
-  KmsSpace?: shared.KmsSpace$Outbound | undefined;
+  KmsSpace: shared.KmsSpace$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateKmsSpaceRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateKmsSpaceRequest
 > = z.object({
-  kmsSpace: shared.KmsSpace$outboundSchema.optional(),
+  kmsSpace: shared.KmsSpace$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

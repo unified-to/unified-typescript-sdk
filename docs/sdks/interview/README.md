@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.createAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await interviewCreateAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.patchAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await interviewPatchAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.interview.updateAtsInterview({
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await interviewUpdateAtsInterview(unifiedTo, {
+    atsInterview: {},
     connectionId: "<id>",
     id: "<id>",
   });

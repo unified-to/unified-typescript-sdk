@@ -13,7 +13,7 @@ export type PatchCommerceCollectionRequest = {
   /**
    * A collection of items/products/services
    */
-  commerceCollection?: shared.CommerceCollection | undefined;
+  commerceCollection: shared.CommerceCollection;
   /**
    * ID of the connection
    */
@@ -34,7 +34,7 @@ export const PatchCommerceCollectionRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CommerceCollection: shared.CommerceCollection$inboundSchema.optional(),
+  CommerceCollection: shared.CommerceCollection$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -47,7 +47,7 @@ export const PatchCommerceCollectionRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchCommerceCollectionRequest$Outbound = {
-  CommerceCollection?: shared.CommerceCollection$Outbound | undefined;
+  CommerceCollection: shared.CommerceCollection$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -59,7 +59,7 @@ export const PatchCommerceCollectionRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchCommerceCollectionRequest
 > = z.object({
-  commerceCollection: shared.CommerceCollection$outboundSchema.optional(),
+  commerceCollection: shared.CommerceCollection$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.createHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await employeeCreateHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.patchHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await employeePatchHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.employee.updateHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await employeeUpdateHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });

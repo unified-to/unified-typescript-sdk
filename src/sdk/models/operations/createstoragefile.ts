@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateStorageFileRequest = {
-  storageFile?: shared.StorageFile | undefined;
+  storageFile: shared.StorageFile;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateStorageFileRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  StorageFile: shared.StorageFile$inboundSchema.optional(),
+  StorageFile: shared.StorageFile$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateStorageFileRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateStorageFileRequest$Outbound = {
-  StorageFile?: shared.StorageFile$Outbound | undefined;
+  StorageFile: shared.StorageFile$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateStorageFileRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateStorageFileRequest
 > = z.object({
-  storageFile: shared.StorageFile$outboundSchema.optional(),
+  storageFile: shared.StorageFile$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

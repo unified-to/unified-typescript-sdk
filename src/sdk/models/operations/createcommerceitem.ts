@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCommerceItemRequest = {
-  commerceItem?: shared.CommerceItem | undefined;
+  commerceItem: shared.CommerceItem;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateCommerceItemRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CommerceItem: shared.CommerceItem$inboundSchema.optional(),
+  CommerceItem: shared.CommerceItem$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateCommerceItemRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateCommerceItemRequest$Outbound = {
-  CommerceItem?: shared.CommerceItem$Outbound | undefined;
+  CommerceItem: shared.CommerceItem$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateCommerceItemRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateCommerceItemRequest
 > = z.object({
-  commerceItem: shared.CommerceItem$outboundSchema.optional(),
+  commerceItem: shared.CommerceItem$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

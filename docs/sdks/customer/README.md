@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.createTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await customerCreateTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.patchTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await customerPatchTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.customer.updateTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await customerUpdateTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });

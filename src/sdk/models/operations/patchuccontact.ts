@@ -13,7 +13,7 @@ export type PatchUcContactRequest = {
   /**
    * A contact represents a person that optionally is associated with a call
    */
-  ucContact?: shared.UcContact | undefined;
+  ucContact: shared.UcContact;
   /**
    * ID of the connection
    */
@@ -34,7 +34,7 @@ export const PatchUcContactRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  UcContact: shared.UcContact$inboundSchema.optional(),
+  UcContact: shared.UcContact$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -47,7 +47,7 @@ export const PatchUcContactRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchUcContactRequest$Outbound = {
-  UcContact?: shared.UcContact$Outbound | undefined;
+  UcContact: shared.UcContact$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -59,7 +59,7 @@ export const PatchUcContactRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchUcContactRequest
 > = z.object({
-  ucContact: shared.UcContact$outboundSchema.optional(),
+  ucContact: shared.UcContact$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

@@ -31,6 +31,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.createRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
   });
 
@@ -59,6 +60,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationCreateRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
   });
 
@@ -435,6 +437,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.patchRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +467,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationPatchRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -599,6 +603,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.organization.updateRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -628,6 +633,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await organizationUpdateRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });

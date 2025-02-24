@@ -41,6 +41,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskComment({
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -69,6 +73,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskCreateTaskComment(unifiedTo, {
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -121,6 +129,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskProject({
+    taskProject: {},
     connectionId: "<id>",
   });
 
@@ -149,6 +158,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskCreateTaskProject(unifiedTo, {
+    taskProject: {},
     connectionId: "<id>",
   });
 
@@ -201,6 +211,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.createTaskTask({
+    taskTask: {},
     connectionId: "<id>",
   });
 
@@ -229,6 +240,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskCreateTaskTask(unifiedTo, {
+    taskTask: {},
     connectionId: "<id>",
   });
 
@@ -767,6 +779,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskComment({
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -796,6 +812,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskPatchTaskComment(unifiedTo, {
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -849,6 +869,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskProject({
+    taskProject: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -878,6 +899,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskPatchTaskProject(unifiedTo, {
+    taskProject: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -931,6 +953,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.patchTaskTask({
+    taskTask: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -960,6 +983,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskPatchTaskTask(unifiedTo, {
+    taskTask: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1259,6 +1283,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskComment({
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1288,6 +1316,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskUpdateTaskComment(unifiedTo, {
+    taskComment: {
+      taskId: "<id>",
+      text: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1341,6 +1373,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskProject({
+    taskProject: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1370,6 +1403,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskUpdateTaskProject(unifiedTo, {
+    taskProject: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1423,6 +1457,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.task.updateTaskTask({
+    taskTask: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1452,6 +1487,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taskUpdateTaskTask(unifiedTo, {
+    taskTask: {},
     connectionId: "<id>",
     id: "<id>",
   });

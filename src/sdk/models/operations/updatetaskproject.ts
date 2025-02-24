@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateTaskProjectRequest = {
-  taskProject?: shared.TaskProject | undefined;
+  taskProject: shared.TaskProject;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateTaskProjectRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  TaskProject: shared.TaskProject$inboundSchema.optional(),
+  TaskProject: shared.TaskProject$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateTaskProjectRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateTaskProjectRequest$Outbound = {
-  TaskProject?: shared.TaskProject$Outbound | undefined;
+  TaskProject: shared.TaskProject$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateTaskProjectRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateTaskProjectRequest
 > = z.object({
-  taskProject: shared.TaskProject$outboundSchema.optional(),
+  taskProject: shared.TaskProject$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

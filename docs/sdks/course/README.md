@@ -29,6 +29,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.createLmsCourse({
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -57,6 +60,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await courseCreateLmsCourse(unifiedTo, {
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -271,6 +277,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.patchLmsCourse({
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +309,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await coursePatchLmsCourse(unifiedTo, {
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +447,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.course.updateLmsCourse({
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +479,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await courseUpdateLmsCourse(unifiedTo, {
+    lmsCourse: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

@@ -35,6 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.createMartechList({
+    marketingList: {},
     connectionId: "<id>",
   });
 
@@ -63,6 +64,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechCreateMartechList(unifiedTo, {
+    marketingList: {},
     connectionId: "<id>",
   });
 
@@ -115,6 +117,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.createMartechMember({
+    marketingMember: {},
     connectionId: "<id>",
   });
 
@@ -143,6 +146,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechCreateMartechMember(unifiedTo, {
+    marketingMember: {},
     connectionId: "<id>",
   });
 
@@ -519,6 +523,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.patchMartechList({
+    marketingList: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -548,6 +553,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechPatchMartechList(unifiedTo, {
+    marketingList: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -601,6 +607,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.patchMartechMember({
+    marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -630,6 +637,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechPatchMartechMember(unifiedTo, {
+    marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -847,6 +855,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.updateMartechList({
+    marketingList: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -876,6 +885,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechUpdateMartechList(unifiedTo, {
+    marketingList: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -929,6 +939,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.martech.updateMartechMember({
+    marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -958,6 +969,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await martechUpdateMartechMember(unifiedTo, {
+    marketingMember: {},
     connectionId: "<id>",
     id: "<id>",
   });

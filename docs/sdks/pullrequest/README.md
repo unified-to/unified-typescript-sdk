@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.createRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await pullrequestCreateRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.patchRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await pullrequestPatchRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.pullrequest.updateRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await pullrequestUpdateRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });

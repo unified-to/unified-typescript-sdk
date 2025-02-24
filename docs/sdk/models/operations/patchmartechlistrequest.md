@@ -6,6 +6,7 @@
 import { PatchMartechListRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchMartechListRequest = {
+  marketingList: {},
   connectionId: "<id>",
   id: "<id>",
 };
@@ -15,7 +16,7 @@ let value: PatchMartechListRequest = {
 
 | Field                                                               | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `marketingList`                                                     | [shared.MarketingList](../../../sdk/models/shared/marketinglist.md) | :heavy_minus_sign:                                                  | Mailing List                                                        |
+| `marketingList`                                                     | [shared.MarketingList](../../../sdk/models/shared/marketinglist.md) | :heavy_check_mark:                                                  | Mailing List                                                        |
 | `connectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `fields`                                                            | *string*[]                                                          | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 | `id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the List                                                      |

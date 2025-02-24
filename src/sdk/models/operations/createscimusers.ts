@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimUsersRequest = {
-  scimUser?: shared.ScimUser | undefined;
+  scimUser: shared.ScimUser;
   /**
    * ID of the connection
    */
@@ -28,7 +28,7 @@ export const CreateScimUsersRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  ScimUser: shared.ScimUser$inboundSchema.optional(),
+  ScimUser: shared.ScimUser$inboundSchema,
   connection_id: z.string(),
   count: z.number().optional(),
   filter: z.string().optional(),
@@ -44,7 +44,7 @@ export const CreateScimUsersRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateScimUsersRequest$Outbound = {
-  ScimUser?: shared.ScimUser$Outbound | undefined;
+  ScimUser: shared.ScimUser$Outbound;
   connection_id: string;
   count?: number | undefined;
   filter?: string | undefined;
@@ -59,7 +59,7 @@ export const CreateScimUsersRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateScimUsersRequest
 > = z.object({
-  scimUser: shared.ScimUser$outboundSchema.optional(),
+  scimUser: shared.ScimUser$outboundSchema,
   connectionId: z.string(),
   count: z.number().optional(),
   filter: z.string().optional(),

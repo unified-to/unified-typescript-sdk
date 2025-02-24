@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsJobRequest = {
-  atsJob?: shared.AtsJob | undefined;
+  atsJob: shared.AtsJob;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const PatchAtsJobRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AtsJob: shared.AtsJob$inboundSchema.optional(),
+  AtsJob: shared.AtsJob$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const PatchAtsJobRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchAtsJobRequest$Outbound = {
-  AtsJob?: shared.AtsJob$Outbound | undefined;
+  AtsJob: shared.AtsJob$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const PatchAtsJobRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchAtsJobRequest
 > = z.object({
-  atsJob: shared.AtsJob$outboundSchema.optional(),
+  atsJob: shared.AtsJob$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

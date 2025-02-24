@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.createAccountingTaxrate({
+    accountingTaxrate: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taxrateCreateAccountingTaxrate(unifiedTo, {
+    accountingTaxrate: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.patchAccountingTaxrate({
+    accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taxratePatchAccountingTaxrate(unifiedTo, {
+    accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.taxrate.updateAccountingTaxrate({
+    accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await taxrateUpdateAccountingTaxrate(unifiedTo, {
+    accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
   });

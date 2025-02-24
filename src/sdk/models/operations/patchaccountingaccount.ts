@@ -13,7 +13,7 @@ export type PatchAccountingAccountRequest = {
   /**
    * Chart of accounts
    */
-  accountingAccount?: shared.AccountingAccount | undefined;
+  accountingAccount: shared.AccountingAccount;
   /**
    * ID of the connection
    */
@@ -34,7 +34,7 @@ export const PatchAccountingAccountRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingAccount: shared.AccountingAccount$inboundSchema.optional(),
+  AccountingAccount: shared.AccountingAccount$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -47,7 +47,7 @@ export const PatchAccountingAccountRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchAccountingAccountRequest$Outbound = {
-  AccountingAccount?: shared.AccountingAccount$Outbound | undefined;
+  AccountingAccount: shared.AccountingAccount$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -59,7 +59,7 @@ export const PatchAccountingAccountRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchAccountingAccountRequest
 > = z.object({
-  accountingAccount: shared.AccountingAccount$outboundSchema.optional(),
+  accountingAccount: shared.AccountingAccount$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

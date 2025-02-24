@@ -41,6 +41,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
   });
 
@@ -69,6 +70,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
   });
 
@@ -121,6 +123,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingNote({
+    ticketingNote: {},
     connectionId: "<id>",
   });
 
@@ -149,6 +152,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingNote(unifiedTo, {
+    ticketingNote: {},
     connectionId: "<id>",
   });
 
@@ -201,6 +205,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.createTicketingTicket({
+    ticketingTicket: {},
     connectionId: "<id>",
   });
 
@@ -229,6 +234,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingCreateTicketingTicket(unifiedTo, {
+    ticketingTicket: {},
     connectionId: "<id>",
   });
 
@@ -767,6 +773,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -796,6 +803,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -849,6 +857,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingNote({
+    ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -878,6 +887,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingNote(unifiedTo, {
+    ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -931,6 +941,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.patchTicketingTicket({
+    ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -960,6 +971,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingPatchTicketingTicket(unifiedTo, {
+    ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1259,6 +1271,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingCustomer({
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1288,6 +1301,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingCustomer(unifiedTo, {
+    ticketingCustomer: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1341,6 +1355,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingNote({
+    ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1370,6 +1385,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingNote(unifiedTo, {
+    ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1423,6 +1439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.ticketing.updateTicketingTicket({
+    ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1452,6 +1469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await ticketingUpdateTicketingTicket(unifiedTo, {
+    ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
   });

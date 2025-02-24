@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateTicketingNoteRequest = {
-  ticketingNote?: shared.TicketingNote | undefined;
+  ticketingNote: shared.TicketingNote;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateTicketingNoteRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  TicketingNote: shared.TicketingNote$inboundSchema.optional(),
+  TicketingNote: shared.TicketingNote$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateTicketingNoteRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateTicketingNoteRequest$Outbound = {
-  TicketingNote?: shared.TicketingNote$Outbound | undefined;
+  TicketingNote: shared.TicketingNote$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateTicketingNoteRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateTicketingNoteRequest
 > = z.object({
-  ticketingNote: shared.TicketingNote$outboundSchema.optional(),
+  ticketingNote: shared.TicketingNote$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

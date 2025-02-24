@@ -13,7 +13,7 @@ export type CreateAccountingAccountRequest = {
   /**
    * Chart of accounts
    */
-  accountingAccount?: shared.AccountingAccount | undefined;
+  accountingAccount: shared.AccountingAccount;
   /**
    * ID of the connection
    */
@@ -30,7 +30,7 @@ export const CreateAccountingAccountRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingAccount: shared.AccountingAccount$inboundSchema.optional(),
+  AccountingAccount: shared.AccountingAccount$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -42,7 +42,7 @@ export const CreateAccountingAccountRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateAccountingAccountRequest$Outbound = {
-  AccountingAccount?: shared.AccountingAccount$Outbound | undefined;
+  AccountingAccount: shared.AccountingAccount$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -53,7 +53,7 @@ export const CreateAccountingAccountRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateAccountingAccountRequest
 > = z.object({
-  accountingAccount: shared.AccountingAccount$outboundSchema.optional(),
+  accountingAccount: shared.AccountingAccount$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

@@ -13,7 +13,7 @@ export type PatchCrmDealRequest = {
   /**
    * A deal represents an opportunity with companies and/or contacts
    */
-  crmDeal?: shared.CrmDeal | undefined;
+  crmDeal: shared.CrmDeal;
   /**
    * ID of the connection
    */
@@ -34,7 +34,7 @@ export const PatchCrmDealRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CrmDeal: shared.CrmDeal$inboundSchema.optional(),
+  CrmDeal: shared.CrmDeal$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -47,7 +47,7 @@ export const PatchCrmDealRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchCrmDealRequest$Outbound = {
-  CrmDeal?: shared.CrmDeal$Outbound | undefined;
+  CrmDeal: shared.CrmDeal$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -59,7 +59,7 @@ export const PatchCrmDealRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchCrmDealRequest
 > = z.object({
-  crmDeal: shared.CrmDeal$outboundSchema.optional(),
+  crmDeal: shared.CrmDeal$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

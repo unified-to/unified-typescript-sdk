@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingContactRequest = {
-  accountingContact?: shared.AccountingContact | undefined;
+  accountingContact: shared.AccountingContact;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateAccountingContactRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingContact: shared.AccountingContact$inboundSchema.optional(),
+  AccountingContact: shared.AccountingContact$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateAccountingContactRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateAccountingContactRequest$Outbound = {
-  AccountingContact?: shared.AccountingContact$Outbound | undefined;
+  AccountingContact: shared.AccountingContact$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateAccountingContactRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateAccountingContactRequest
 > = z.object({
-  accountingContact: shared.AccountingContact$outboundSchema.optional(),
+  accountingContact: shared.AccountingContact$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

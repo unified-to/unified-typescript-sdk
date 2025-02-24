@@ -13,7 +13,7 @@ export type PatchUnifiedConnectionRequest = {
   /**
    * A connection represents a specific authentication of an integration.
    */
-  connection?: shared.Connection | undefined;
+  connection: shared.Connection;
   /**
    * ID of the Connection
    */
@@ -26,7 +26,7 @@ export const PatchUnifiedConnectionRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Connection: shared.Connection$inboundSchema.optional(),
+  Connection: shared.Connection$inboundSchema,
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -36,7 +36,7 @@ export const PatchUnifiedConnectionRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchUnifiedConnectionRequest$Outbound = {
-  Connection?: shared.Connection$Outbound | undefined;
+  Connection: shared.Connection$Outbound;
   id: string;
 };
 
@@ -46,7 +46,7 @@ export const PatchUnifiedConnectionRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchUnifiedConnectionRequest
 > = z.object({
-  connection: shared.Connection$outboundSchema.optional(),
+  connection: shared.Connection$outboundSchema,
   id: z.string(),
 }).transform((v) => {
   return remap$(v, {

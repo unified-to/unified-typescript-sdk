@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreatePaymentPaymentRequest = {
-  paymentPayment?: shared.PaymentPayment | undefined;
+  paymentPayment: shared.PaymentPayment;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreatePaymentPaymentRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  PaymentPayment: shared.PaymentPayment$inboundSchema.optional(),
+  PaymentPayment: shared.PaymentPayment$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreatePaymentPaymentRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreatePaymentPaymentRequest$Outbound = {
-  PaymentPayment?: shared.PaymentPayment$Outbound | undefined;
+  PaymentPayment: shared.PaymentPayment$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreatePaymentPaymentRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreatePaymentPaymentRequest
 > = z.object({
-  paymentPayment: shared.PaymentPayment$outboundSchema.optional(),
+  paymentPayment: shared.PaymentPayment$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

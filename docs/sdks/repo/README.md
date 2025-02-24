@@ -53,6 +53,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -81,6 +85,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -133,6 +141,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoCommit({
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -161,6 +173,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -213,6 +229,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
   });
 
@@ -241,6 +258,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
   });
 
@@ -293,6 +311,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
   });
 
@@ -321,6 +340,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
   });
 
@@ -373,6 +393,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.createRepoRepository({
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -401,6 +424,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoCreateRepoRepository(unifiedTo, {
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -1263,6 +1289,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1292,6 +1322,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1345,6 +1379,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoCommit({
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1374,6 +1412,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1427,6 +1469,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1456,6 +1499,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1509,6 +1553,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1538,6 +1583,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1591,6 +1637,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.patchRepoRepository({
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1620,6 +1669,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoPatchRepoRepository(unifiedTo, {
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2083,6 +2135,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2112,6 +2168,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2165,6 +2225,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoCommit({
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2194,6 +2258,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
+    repoCommit: {
+      repoId: "<id>",
+      userId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2247,6 +2315,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoOrganization({
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2276,6 +2345,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoOrganization(unifiedTo, {
+    repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2329,6 +2399,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoPullrequest({
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2358,6 +2429,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoPullrequest(unifiedTo, {
+    repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2411,6 +2483,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.repo.updateRepoRepository({
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2440,6 +2515,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await repoUpdateRepoRepository(unifiedTo, {
+    repoRepository: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

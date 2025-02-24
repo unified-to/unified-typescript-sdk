@@ -13,7 +13,7 @@ export type CreateUnifiedWebhookRequest = {
   /**
    * A webhook is used to POST new/updated information to your server.
    */
-  webhook?: shared.Webhook | undefined;
+  webhook: shared.Webhook;
   /**
    * When set, all of the existing data will sent back to your server.
    */
@@ -26,7 +26,7 @@ export const CreateUnifiedWebhookRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Webhook: shared.Webhook$inboundSchema.optional(),
+  Webhook: shared.Webhook$inboundSchema,
   include_all: z.boolean().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -37,7 +37,7 @@ export const CreateUnifiedWebhookRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateUnifiedWebhookRequest$Outbound = {
-  Webhook?: shared.Webhook$Outbound | undefined;
+  Webhook: shared.Webhook$Outbound;
   include_all?: boolean | undefined;
 };
 
@@ -47,7 +47,7 @@ export const CreateUnifiedWebhookRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateUnifiedWebhookRequest
 > = z.object({
-  webhook: shared.Webhook$outboundSchema.optional(),
+  webhook: shared.Webhook$outboundSchema,
   includeAll: z.boolean().optional(),
 }).transform((v) => {
   return remap$(v, {

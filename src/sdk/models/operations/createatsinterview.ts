@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsInterviewRequest = {
-  atsInterview?: shared.AtsInterview | undefined;
+  atsInterview: shared.AtsInterview;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateAtsInterviewRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AtsInterview: shared.AtsInterview$inboundSchema.optional(),
+  AtsInterview: shared.AtsInterview$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateAtsInterviewRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateAtsInterviewRequest$Outbound = {
-  AtsInterview?: shared.AtsInterview$Outbound | undefined;
+  AtsInterview: shared.AtsInterview$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateAtsInterviewRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateAtsInterviewRequest
 > = z.object({
-  atsInterview: shared.AtsInterview$outboundSchema.optional(),
+  atsInterview: shared.AtsInterview$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

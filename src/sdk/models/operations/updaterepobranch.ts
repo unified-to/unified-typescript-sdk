@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoBranchRequest = {
-  repoBranch?: shared.RepoBranch | undefined;
+  repoBranch: shared.RepoBranch;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateRepoBranchRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  RepoBranch: shared.RepoBranch$inboundSchema.optional(),
+  RepoBranch: shared.RepoBranch$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateRepoBranchRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateRepoBranchRequest$Outbound = {
-  RepoBranch?: shared.RepoBranch$Outbound | undefined;
+  RepoBranch: shared.RepoBranch$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateRepoBranchRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateRepoBranchRequest
 > = z.object({
-  repoBranch: shared.RepoBranch$outboundSchema.optional(),
+  repoBranch: shared.RepoBranch$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

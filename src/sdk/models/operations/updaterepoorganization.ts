@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoOrganizationRequest = {
-  repoOrganization?: shared.RepoOrganization | undefined;
+  repoOrganization: shared.RepoOrganization;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateRepoOrganizationRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  RepoOrganization: shared.RepoOrganization$inboundSchema.optional(),
+  RepoOrganization: shared.RepoOrganization$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateRepoOrganizationRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateRepoOrganizationRequest$Outbound = {
-  RepoOrganization?: shared.RepoOrganization$Outbound | undefined;
+  RepoOrganization: shared.RepoOrganization$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateRepoOrganizationRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateRepoOrganizationRequest
 > = z.object({
-  repoOrganization: shared.RepoOrganization$outboundSchema.optional(),
+  repoOrganization: shared.RepoOrganization$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

@@ -6,6 +6,11 @@
 import { UpdateUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateUnifiedWebhookRequest = {
+  webhook: {
+    connectionId: "<id>",
+    event: "created",
+    objectType: "payment_link",
+  },
   id: "<id>",
 };
 ```
@@ -14,5 +19,5 @@ let value: UpdateUnifiedWebhookRequest = {
 
 | Field                                                             | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `webhook`                                                         | [shared.Webhook](../../../sdk/models/shared/webhook.md)           | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
+| `webhook`                                                         | [shared.Webhook](../../../sdk/models/shared/webhook.md)           | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
 | `id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |

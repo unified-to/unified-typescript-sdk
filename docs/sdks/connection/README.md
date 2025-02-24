@@ -28,7 +28,18 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.connection.createUnifiedConnection();
+  const result = await unifiedTo.connection.createUnifiedConnection({
+    categories: [
+      "accounting",
+      "martech",
+      "martech",
+    ],
+    integrationType: "<value>",
+    permissions: [
+      "lms_course_read",
+      "scim_users_read",
+    ],
+  });
 
   // Handle the result
   console.log(result);
@@ -54,7 +65,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionCreateUnifiedConnection(unifiedTo);
+  const res = await connectionCreateUnifiedConnection(unifiedTo, {
+    categories: [
+      "accounting",
+      "martech",
+      "martech",
+    ],
+    integrationType: "<value>",
+    permissions: [
+      "lms_course_read",
+      "scim_users_read",
+    ],
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -261,6 +283,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.connection.patchUnifiedConnection({
+    connection: {
+      categories: [
+        "metadata",
+        "crm",
+      ],
+      integrationType: "<value>",
+      permissions: [
+
+      ],
+    },
     id: "<id>",
   });
 
@@ -289,6 +321,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await connectionPatchUnifiedConnection(unifiedTo, {
+    connection: {
+      categories: [
+        "metadata",
+        "crm",
+      ],
+      integrationType: "<value>",
+      permissions: [
+  
+      ],
+    },
     id: "<id>",
   });
 
@@ -421,6 +463,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.connection.updateUnifiedConnection({
+    connection: {
+      categories: [
+        "metadata",
+        "accounting",
+        "metadata",
+      ],
+      integrationType: "<value>",
+      permissions: [
+
+      ],
+    },
     id: "<id>",
   });
 
@@ -449,6 +502,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await connectionUpdateUnifiedConnection(unifiedTo, {
+    connection: {
+      categories: [
+        "metadata",
+        "accounting",
+        "metadata",
+      ],
+      integrationType: "<value>",
+      permissions: [
+  
+      ],
+    },
     id: "<id>",
   });
 

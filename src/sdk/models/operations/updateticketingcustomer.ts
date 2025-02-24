@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateTicketingCustomerRequest = {
-  ticketingCustomer?: shared.TicketingCustomer | undefined;
+  ticketingCustomer: shared.TicketingCustomer;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateTicketingCustomerRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  TicketingCustomer: shared.TicketingCustomer$inboundSchema.optional(),
+  TicketingCustomer: shared.TicketingCustomer$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateTicketingCustomerRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateTicketingCustomerRequest$Outbound = {
-  TicketingCustomer?: shared.TicketingCustomer$Outbound | undefined;
+  TicketingCustomer: shared.TicketingCustomer$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateTicketingCustomerRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateTicketingCustomerRequest
 > = z.object({
-  ticketingCustomer: shared.TicketingCustomer$outboundSchema.optional(),
+  ticketingCustomer: shared.TicketingCustomer$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

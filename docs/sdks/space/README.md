@@ -29,6 +29,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.createKmsSpace({
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -57,6 +60,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await spaceCreateKmsSpace(unifiedTo, {
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -271,6 +277,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.patchKmsSpace({
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +309,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await spacePatchKmsSpace(unifiedTo, {
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +447,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.space.updateKmsSpace({
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +479,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await spaceUpdateKmsSpace(unifiedTo, {
+    kmsSpace: {
+      name: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

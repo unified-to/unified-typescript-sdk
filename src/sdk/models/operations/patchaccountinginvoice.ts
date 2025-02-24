@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAccountingInvoiceRequest = {
-  accountingInvoice?: shared.AccountingInvoice | undefined;
+  accountingInvoice: shared.AccountingInvoice;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const PatchAccountingInvoiceRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingInvoice: shared.AccountingInvoice$inboundSchema.optional(),
+  AccountingInvoice: shared.AccountingInvoice$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const PatchAccountingInvoiceRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchAccountingInvoiceRequest$Outbound = {
-  AccountingInvoice?: shared.AccountingInvoice$Outbound | undefined;
+  AccountingInvoice: shared.AccountingInvoice$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const PatchAccountingInvoiceRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchAccountingInvoiceRequest
 > = z.object({
-  accountingInvoice: shared.AccountingInvoice$outboundSchema.optional(),
+  accountingInvoice: shared.AccountingInvoice$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

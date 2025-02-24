@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingJournalRequest = {
-  accountingJournal?: shared.AccountingJournal | undefined;
+  accountingJournal: shared.AccountingJournal;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateAccountingJournalRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingJournal: shared.AccountingJournal$inboundSchema.optional(),
+  AccountingJournal: shared.AccountingJournal$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateAccountingJournalRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateAccountingJournalRequest$Outbound = {
-  AccountingJournal?: shared.AccountingJournal$Outbound | undefined;
+  AccountingJournal: shared.AccountingJournal$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateAccountingJournalRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateAccountingJournalRequest
 > = z.object({
-  accountingJournal: shared.AccountingJournal$outboundSchema.optional(),
+  accountingJournal: shared.AccountingJournal$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

@@ -6,6 +6,15 @@
 import { PatchUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUnifiedConnectionRequest = {
+  connection: {
+    categories: [
+      "ticketing",
+    ],
+    integrationType: "<value>",
+    permissions: [
+      "payment_refund_read",
+    ],
+  },
   id: "<id>",
 };
 ```
@@ -14,5 +23,5 @@ let value: PatchUnifiedConnectionRequest = {
 
 | Field                                                                | Type                                                                 | Required                                                             | Description                                                          |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `connection`                                                         | [shared.Connection](../../../sdk/models/shared/connection.md)        | :heavy_minus_sign:                                                   | A connection represents a specific authentication of an integration. |
+| `connection`                                                         | [shared.Connection](../../../sdk/models/shared/connection.md)        | :heavy_check_mark:                                                   | A connection represents a specific authentication of an integration. |
 | `id`                                                                 | *string*                                                             | :heavy_check_mark:                                                   | ID of the Connection                                                 |

@@ -13,7 +13,7 @@ export type CreateCommerceCollectionRequest = {
   /**
    * A collection of items/products/services
    */
-  commerceCollection?: shared.CommerceCollection | undefined;
+  commerceCollection: shared.CommerceCollection;
   /**
    * ID of the connection
    */
@@ -30,7 +30,7 @@ export const CreateCommerceCollectionRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CommerceCollection: shared.CommerceCollection$inboundSchema.optional(),
+  CommerceCollection: shared.CommerceCollection$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -42,7 +42,7 @@ export const CreateCommerceCollectionRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateCommerceCollectionRequest$Outbound = {
-  CommerceCollection?: shared.CommerceCollection$Outbound | undefined;
+  CommerceCollection: shared.CommerceCollection$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -53,7 +53,7 @@ export const CreateCommerceCollectionRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateCommerceCollectionRequest
 > = z.object({
-  commerceCollection: shared.CommerceCollection$outboundSchema.optional(),
+  commerceCollection: shared.CommerceCollection$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

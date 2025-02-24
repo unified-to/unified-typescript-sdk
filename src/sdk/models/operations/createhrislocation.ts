@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisLocationRequest = {
-  hrisLocation?: shared.HrisLocation | undefined;
+  hrisLocation: shared.HrisLocation;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateHrisLocationRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  HrisLocation: shared.HrisLocation$inboundSchema.optional(),
+  HrisLocation: shared.HrisLocation$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateHrisLocationRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateHrisLocationRequest$Outbound = {
-  HrisLocation?: shared.HrisLocation$Outbound | undefined;
+  HrisLocation: shared.HrisLocation$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateHrisLocationRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateHrisLocationRequest
 > = z.object({
-  hrisLocation: shared.HrisLocation$outboundSchema.optional(),
+  hrisLocation: shared.HrisLocation$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

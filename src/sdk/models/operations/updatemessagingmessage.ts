@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateMessagingMessageRequest = {
-  messagingMessage?: shared.MessagingMessage | undefined;
+  messagingMessage: shared.MessagingMessage;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateMessagingMessageRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  MessagingMessage: shared.MessagingMessage$inboundSchema.optional(),
+  MessagingMessage: shared.MessagingMessage$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateMessagingMessageRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateMessagingMessageRequest$Outbound = {
-  MessagingMessage?: shared.MessagingMessage$Outbound | undefined;
+  MessagingMessage: shared.MessagingMessage$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateMessagingMessageRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateMessagingMessageRequest
 > = z.object({
-  messagingMessage: shared.MessagingMessage$outboundSchema.optional(),
+  messagingMessage: shared.MessagingMessage$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

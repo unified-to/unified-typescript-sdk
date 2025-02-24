@@ -13,7 +13,7 @@ export type CreateCrmCompanyRequest = {
   /**
    * A company represents an organization that optionally is associated with a deal and/or contacts
    */
-  crmCompany?: shared.CrmCompany | undefined;
+  crmCompany: shared.CrmCompany;
   /**
    * ID of the connection
    */
@@ -30,7 +30,7 @@ export const CreateCrmCompanyRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CrmCompany: shared.CrmCompany$inboundSchema.optional(),
+  CrmCompany: shared.CrmCompany$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -42,7 +42,7 @@ export const CreateCrmCompanyRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateCrmCompanyRequest$Outbound = {
-  CrmCompany?: shared.CrmCompany$Outbound | undefined;
+  CrmCompany: shared.CrmCompany$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -53,7 +53,7 @@ export const CreateCrmCompanyRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateCrmCompanyRequest
 > = z.object({
-  crmCompany: shared.CrmCompany$outboundSchema.optional(),
+  crmCompany: shared.CrmCompany$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoCommitRequest = {
-  repoCommit?: shared.RepoCommit | undefined;
+  repoCommit: shared.RepoCommit;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateRepoCommitRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  RepoCommit: shared.RepoCommit$inboundSchema.optional(),
+  RepoCommit: shared.RepoCommit$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateRepoCommitRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateRepoCommitRequest$Outbound = {
-  RepoCommit?: shared.RepoCommit$Outbound | undefined;
+  RepoCommit: shared.RepoCommit$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateRepoCommitRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateRepoCommitRequest
 > = z.object({
-  repoCommit: shared.RepoCommit$outboundSchema.optional(),
+  repoCommit: shared.RepoCommit$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

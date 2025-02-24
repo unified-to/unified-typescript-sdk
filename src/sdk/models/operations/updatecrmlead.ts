@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCrmLeadRequest = {
-  crmLead?: shared.CrmLead | undefined;
+  crmLead: shared.CrmLead;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateCrmLeadRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CrmLead: shared.CrmLead$inboundSchema.optional(),
+  CrmLead: shared.CrmLead$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateCrmLeadRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateCrmLeadRequest$Outbound = {
-  CrmLead?: shared.CrmLead$Outbound | undefined;
+  CrmLead: shared.CrmLead$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateCrmLeadRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateCrmLeadRequest
 > = z.object({
-  crmLead: shared.CrmLead$outboundSchema.optional(),
+  crmLead: shared.CrmLead$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

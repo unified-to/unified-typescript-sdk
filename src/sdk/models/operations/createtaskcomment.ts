@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateTaskCommentRequest = {
-  taskComment?: shared.TaskComment | undefined;
+  taskComment: shared.TaskComment;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateTaskCommentRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  TaskComment: shared.TaskComment$inboundSchema.optional(),
+  TaskComment: shared.TaskComment$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateTaskCommentRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateTaskCommentRequest$Outbound = {
-  TaskComment?: shared.TaskComment$Outbound | undefined;
+  TaskComment: shared.TaskComment$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateTaskCommentRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateTaskCommentRequest
 > = z.object({
-  taskComment: shared.TaskComment$outboundSchema.optional(),
+  taskComment: shared.TaskComment$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

@@ -13,7 +13,7 @@ export type CreateMartechMemberRequest = {
   /**
    * A member represents a person
    */
-  marketingMember?: shared.MarketingMember | undefined;
+  marketingMember: shared.MarketingMember;
   /**
    * ID of the connection
    */
@@ -30,7 +30,7 @@ export const CreateMartechMemberRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  MarketingMember: shared.MarketingMember$inboundSchema.optional(),
+  MarketingMember: shared.MarketingMember$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -42,7 +42,7 @@ export const CreateMartechMemberRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateMartechMemberRequest$Outbound = {
-  MarketingMember?: shared.MarketingMember$Outbound | undefined;
+  MarketingMember: shared.MarketingMember$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -53,7 +53,7 @@ export const CreateMartechMemberRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateMartechMemberRequest
 > = z.object({
-  marketingMember: shared.MarketingMember$outboundSchema.optional(),
+  marketingMember: shared.MarketingMember$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

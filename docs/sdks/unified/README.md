@@ -42,7 +42,18 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.unified.createUnifiedConnection();
+  const result = await unifiedTo.unified.createUnifiedConnection({
+    categories: [
+      "accounting",
+      "martech",
+      "martech",
+    ],
+    integrationType: "<value>",
+    permissions: [
+      "lms_course_read",
+      "scim_users_read",
+    ],
+  });
 
   // Handle the result
   console.log(result);
@@ -68,7 +79,18 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await unifiedCreateUnifiedConnection(unifiedTo);
+  const res = await unifiedCreateUnifiedConnection(unifiedTo, {
+    categories: [
+      "accounting",
+      "martech",
+      "martech",
+    ],
+    integrationType: "<value>",
+    permissions: [
+      "lms_course_read",
+      "scim_users_read",
+    ],
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -118,7 +140,13 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.unified.createUnifiedWebhook({});
+  const result = await unifiedTo.unified.createUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "hris_employee",
+    },
+  });
 
   // Handle the result
   console.log(result);
@@ -144,7 +172,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await unifiedCreateUnifiedWebhook(unifiedTo, {});
+  const res = await unifiedCreateUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "hris_employee",
+    },
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -977,6 +1011,16 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.unified.patchUnifiedConnection({
+    connection: {
+      categories: [
+        "metadata",
+        "crm",
+      ],
+      integrationType: "<value>",
+      permissions: [
+
+      ],
+    },
     id: "<id>",
   });
 
@@ -1005,6 +1049,16 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedPatchUnifiedConnection(unifiedTo, {
+    connection: {
+      categories: [
+        "metadata",
+        "crm",
+      ],
+      integrationType: "<value>",
+      permissions: [
+  
+      ],
+    },
     id: "<id>",
   });
 
@@ -1057,6 +1111,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.unified.patchUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "deleted",
+      objectType: "crm_deal",
+    },
     id: "<id>",
   });
 
@@ -1085,6 +1144,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedPatchUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "deleted",
+      objectType: "crm_deal",
+    },
     id: "<id>",
   });
 
@@ -1377,6 +1441,17 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.unified.updateUnifiedConnection({
+    connection: {
+      categories: [
+        "metadata",
+        "accounting",
+        "metadata",
+      ],
+      integrationType: "<value>",
+      permissions: [
+
+      ],
+    },
     id: "<id>",
   });
 
@@ -1405,6 +1480,17 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedUpdateUnifiedConnection(unifiedTo, {
+    connection: {
+      categories: [
+        "metadata",
+        "accounting",
+        "metadata",
+      ],
+      integrationType: "<value>",
+      permissions: [
+  
+      ],
+    },
     id: "<id>",
   });
 
@@ -1457,6 +1543,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.unified.updateUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "payment_link",
+    },
     id: "<id>",
   });
 
@@ -1485,6 +1576,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedUpdateUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "payment_link",
+    },
     id: "<id>",
   });
 

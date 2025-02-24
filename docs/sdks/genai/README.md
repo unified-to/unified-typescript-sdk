@@ -25,6 +25,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.genai.createGenaiPrompt({
+    genaiPrompt: {},
     connectionId: "<id>",
   });
 
@@ -53,6 +54,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await genaiCreateGenaiPrompt(unifiedTo, {
+    genaiPrompt: {},
     connectionId: "<id>",
   });
 

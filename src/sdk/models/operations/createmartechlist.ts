@@ -13,7 +13,7 @@ export type CreateMartechListRequest = {
   /**
    * Mailing List
    */
-  marketingList?: shared.MarketingList | undefined;
+  marketingList: shared.MarketingList;
   /**
    * ID of the connection
    */
@@ -30,7 +30,7 @@ export const CreateMartechListRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  MarketingList: shared.MarketingList$inboundSchema.optional(),
+  MarketingList: shared.MarketingList$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -42,7 +42,7 @@ export const CreateMartechListRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateMartechListRequest$Outbound = {
-  MarketingList?: shared.MarketingList$Outbound | undefined;
+  MarketingList: shared.MarketingList$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -53,7 +53,7 @@ export const CreateMartechListRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateMartechListRequest
 > = z.object({
-  marketingList: shared.MarketingList$outboundSchema.optional(),
+  marketingList: shared.MarketingList$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

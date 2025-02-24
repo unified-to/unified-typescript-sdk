@@ -6,6 +6,7 @@
 import { UpdatePaymentLinkRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdatePaymentLinkRequest = {
+  paymentLink: {},
   connectionId: "<id>",
   id: "<id>",
 };
@@ -15,7 +16,7 @@ let value: UpdatePaymentLinkRequest = {
 
 | Field                                                           | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `paymentLink`                                                   | [shared.PaymentLink](../../../sdk/models/shared/paymentlink.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `paymentLink`                                                   | [shared.PaymentLink](../../../sdk/models/shared/paymentlink.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `connectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `fields`                                                        | *string*[]                                                      | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 | `id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Link                                                  |

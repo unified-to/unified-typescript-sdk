@@ -29,6 +29,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.metadata.createMetadataMetadata({
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -57,6 +61,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await metadataCreateMetadataMetadata(unifiedTo, {
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
   });
 
@@ -271,6 +279,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.metadata.patchMetadataMetadata({
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +312,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await metadataPatchMetadataMetadata(unifiedTo, {
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +451,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.metadata.updateMetadataMetadata({
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +484,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await metadataUpdateMetadataMetadata(unifiedTo, {
+    metadataMetadata: {
+      name: "<value>",
+      objectType: "<value>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

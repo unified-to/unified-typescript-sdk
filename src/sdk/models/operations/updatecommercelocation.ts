@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCommerceLocationRequest = {
-  commerceLocation?: shared.CommerceLocation | undefined;
+  commerceLocation: shared.CommerceLocation;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const UpdateCommerceLocationRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CommerceLocation: shared.CommerceLocation$inboundSchema.optional(),
+  CommerceLocation: shared.CommerceLocation$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const UpdateCommerceLocationRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateCommerceLocationRequest$Outbound = {
-  CommerceLocation?: shared.CommerceLocation$Outbound | undefined;
+  CommerceLocation: shared.CommerceLocation$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const UpdateCommerceLocationRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateCommerceLocationRequest
 > = z.object({
-  commerceLocation: shared.CommerceLocation$outboundSchema.optional(),
+  commerceLocation: shared.CommerceLocation$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

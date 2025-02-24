@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateLmsStudentRequest = {
-  lmsStudent?: shared.LmsStudent | undefined;
+  lmsStudent: shared.LmsStudent;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateLmsStudentRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  LmsStudent: shared.LmsStudent$inboundSchema.optional(),
+  LmsStudent: shared.LmsStudent$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateLmsStudentRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateLmsStudentRequest$Outbound = {
-  LmsStudent?: shared.LmsStudent$Outbound | undefined;
+  LmsStudent: shared.LmsStudent$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateLmsStudentRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateLmsStudentRequest
 > = z.object({
-  lmsStudent: shared.LmsStudent$outboundSchema.optional(),
+  lmsStudent: shared.LmsStudent$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

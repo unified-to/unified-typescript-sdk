@@ -6,6 +6,9 @@
 import { CreateScimGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateScimGroupsRequest = {
+  scimGroup: {
+    displayName: "Nova.Turner",
+  },
   connectionId: "<id>",
 };
 ```
@@ -14,5 +17,5 @@ let value: CreateScimGroupsRequest = {
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `scimGroup`                                                 | [shared.ScimGroup](../../../sdk/models/shared/scimgroup.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `scimGroup`                                                 | [shared.ScimGroup](../../../sdk/models/shared/scimgroup.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `connectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |

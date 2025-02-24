@@ -29,6 +29,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.createPaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
   });
 
@@ -57,6 +58,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await subscriptionCreatePaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
   });
 
@@ -271,6 +273,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.patchPaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +303,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await subscriptionPatchPaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +439,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.subscription.updatePaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +469,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await subscriptionUpdatePaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });

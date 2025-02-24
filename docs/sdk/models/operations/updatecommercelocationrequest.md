@@ -6,6 +6,9 @@
 import { UpdateCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCommerceLocationRequest = {
+  commerceLocation: {
+    name: "<value>",
+  },
   connectionId: "<id>",
   id: "<id>",
 };
@@ -15,7 +18,7 @@ let value: UpdateCommerceLocationRequest = {
 
 | Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `commerceLocation`                                                        | [shared.CommerceLocation](../../../sdk/models/shared/commercelocation.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `commerceLocation`                                                        | [shared.CommerceLocation](../../../sdk/models/shared/commercelocation.md) | :heavy_check_mark:                                                        | N/A                                                                       |
 | `connectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `fields`                                                                  | *string*[]                                                                | :heavy_minus_sign:                                                        | Comma-delimited fields to return                                          |
 | `id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Location                                                        |

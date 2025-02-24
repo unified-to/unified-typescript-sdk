@@ -35,7 +35,7 @@ export class Unified extends ClientSDK {
    * Used only to import existing customer credentials; use "Create connection indirectly" instead
    */
   async createUnifiedConnection(
-    request?: shared.Connection | undefined,
+    request: shared.Connection,
     options?: RequestOptions,
   ): Promise<shared.Connection> {
     return unwrapAsync(unifiedCreateUnifiedConnection(

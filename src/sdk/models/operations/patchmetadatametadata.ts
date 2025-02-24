@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchMetadataMetadataRequest = {
-  metadataMetadata?: shared.MetadataMetadata | undefined;
+  metadataMetadata: shared.MetadataMetadata;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const PatchMetadataMetadataRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  MetadataMetadata: shared.MetadataMetadata$inboundSchema.optional(),
+  MetadataMetadata: shared.MetadataMetadata$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const PatchMetadataMetadataRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchMetadataMetadataRequest$Outbound = {
-  MetadataMetadata?: shared.MetadataMetadata$Outbound | undefined;
+  MetadataMetadata: shared.MetadataMetadata$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const PatchMetadataMetadataRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchMetadataMetadataRequest
 > = z.object({
-  metadataMetadata: shared.MetadataMetadata$outboundSchema.optional(),
+  metadataMetadata: shared.MetadataMetadata$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

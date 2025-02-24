@@ -30,7 +30,13 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  const result = await unifiedTo.webhook.createUnifiedWebhook({});
+  const result = await unifiedTo.webhook.createUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "hris_employee",
+    },
+  });
 
   // Handle the result
   console.log(result);
@@ -56,7 +62,13 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookCreateUnifiedWebhook(unifiedTo, {});
+  const res = await webhookCreateUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "hris_employee",
+    },
+  });
 
   if (!res.ok) {
     throw res.error;
@@ -263,6 +275,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.webhook.patchUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "deleted",
+      objectType: "crm_deal",
+    },
     id: "<id>",
   });
 
@@ -291,6 +308,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await webhookPatchUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "deleted",
+      objectType: "crm_deal",
+    },
     id: "<id>",
   });
 
@@ -503,6 +525,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.webhook.updateUnifiedWebhook({
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "payment_link",
+    },
     id: "<id>",
   });
 
@@ -531,6 +558,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await webhookUpdateUnifiedWebhook(unifiedTo, {
+    webhook: {
+      connectionId: "<id>",
+      event: "created",
+      objectType: "payment_link",
+    },
     id: "<id>",
   });
 

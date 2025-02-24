@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingTaxrateRequest = {
-  accountingTaxrate?: shared.AccountingTaxrate | undefined;
+  accountingTaxrate: shared.AccountingTaxrate;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateAccountingTaxrateRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  AccountingTaxrate: shared.AccountingTaxrate$inboundSchema.optional(),
+  AccountingTaxrate: shared.AccountingTaxrate$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateAccountingTaxrateRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateAccountingTaxrateRequest$Outbound = {
-  AccountingTaxrate?: shared.AccountingTaxrate$Outbound | undefined;
+  AccountingTaxrate: shared.AccountingTaxrate$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateAccountingTaxrateRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateAccountingTaxrateRequest
 > = z.object({
-  accountingTaxrate: shared.AccountingTaxrate$outboundSchema.optional(),
+  accountingTaxrate: shared.AccountingTaxrate$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchHrisEmployeeRequest = {
-  hrisEmployee?: shared.HrisEmployee | undefined;
+  hrisEmployee: shared.HrisEmployee;
   /**
    * ID of the connection
    */
@@ -31,7 +31,7 @@ export const PatchHrisEmployeeRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  HrisEmployee: shared.HrisEmployee$inboundSchema.optional(),
+  HrisEmployee: shared.HrisEmployee$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -44,7 +44,7 @@ export const PatchHrisEmployeeRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchHrisEmployeeRequest$Outbound = {
-  HrisEmployee?: shared.HrisEmployee$Outbound | undefined;
+  HrisEmployee: shared.HrisEmployee$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -56,7 +56,7 @@ export const PatchHrisEmployeeRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchHrisEmployeeRequest
 > = z.object({
-  hrisEmployee: shared.HrisEmployee$outboundSchema.optional(),
+  hrisEmployee: shared.HrisEmployee$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

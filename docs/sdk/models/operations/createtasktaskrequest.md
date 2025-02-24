@@ -6,6 +6,7 @@
 import { CreateTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateTaskTaskRequest = {
+  taskTask: {},
   connectionId: "<id>",
 };
 ```
@@ -14,6 +15,6 @@ let value: CreateTaskTaskRequest = {
 
 | Field                                                     | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `taskTask`                                                | [shared.TaskTask](../../../sdk/models/shared/tasktask.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `taskTask`                                                | [shared.TaskTask](../../../sdk/models/shared/tasktask.md) | :heavy_check_mark:                                        | N/A                                                       |
 | `connectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `fields`                                                  | *string*[]                                                | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |

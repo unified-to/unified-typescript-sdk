@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateGenaiPromptRequest = {
-  genaiPrompt?: shared.GenaiPrompt | undefined;
+  genaiPrompt: shared.GenaiPrompt;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateGenaiPromptRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  GenaiPrompt: shared.GenaiPrompt$inboundSchema.optional(),
+  GenaiPrompt: shared.GenaiPrompt$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateGenaiPromptRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateGenaiPromptRequest$Outbound = {
-  GenaiPrompt?: shared.GenaiPrompt$Outbound | undefined;
+  GenaiPrompt: shared.GenaiPrompt$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateGenaiPromptRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateGenaiPromptRequest
 > = z.object({
-  genaiPrompt: shared.GenaiPrompt$outboundSchema.optional(),
+  genaiPrompt: shared.GenaiPrompt$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

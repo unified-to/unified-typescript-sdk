@@ -6,6 +6,7 @@
 import { CreateScimUsersRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateScimUsersRequest = {
+  scimUser: {},
   connectionId: "<id>",
 };
 ```
@@ -14,7 +15,7 @@ let value: CreateScimUsersRequest = {
 
 | Field                                                     | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `scimUser`                                                | [shared.ScimUser](../../../sdk/models/shared/scimuser.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `scimUser`                                                | [shared.ScimUser](../../../sdk/models/shared/scimuser.md) | :heavy_check_mark:                                        | N/A                                                       |
 | `connectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `count`                                                   | *number*                                                  | :heavy_minus_sign:                                        | N/A                                                       |
 | `filter`                                                  | *string*                                                  | :heavy_minus_sign:                                        | N/A                                                       |

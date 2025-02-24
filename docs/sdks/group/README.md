@@ -35,6 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.createHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
   });
 
@@ -63,6 +64,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupCreateHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
   });
 
@@ -115,6 +117,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.createScimGroups({
+    scimGroup: {
+      displayName: "Bert89",
+    },
     connectionId: "<id>",
   });
 
@@ -143,6 +148,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupCreateScimGroups(unifiedTo, {
+    scimGroup: {
+      displayName: "Bert89",
+    },
     connectionId: "<id>",
   });
 
@@ -519,6 +527,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.patchHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -548,6 +557,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupPatchHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -601,6 +611,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.patchScimGroups({
+    scimGroup: {
+      displayName: "Damon_Rutherford93",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -630,6 +643,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupPatchScimGroups(unifiedTo, {
+    scimGroup: {
+      displayName: "Damon_Rutherford93",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -847,6 +863,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.updateHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -876,6 +893,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupUpdateHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -929,6 +947,9 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.group.updateScimGroups({
+    scimGroup: {
+      displayName: "Frederic.Reichel",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -958,6 +979,9 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await groupUpdateScimGroups(unifiedTo, {
+    scimGroup: {
+      displayName: "Frederic.Reichel",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

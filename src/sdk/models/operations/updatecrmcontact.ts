@@ -13,7 +13,7 @@ export type UpdateCrmContactRequest = {
   /**
    * A contact represents a person that optionally is associated with a deal and/or a company
    */
-  crmContact?: shared.CrmContact | undefined;
+  crmContact: shared.CrmContact;
   /**
    * ID of the connection
    */
@@ -34,7 +34,7 @@ export const UpdateCrmContactRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CrmContact: shared.CrmContact$inboundSchema.optional(),
+  CrmContact: shared.CrmContact$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
@@ -47,7 +47,7 @@ export const UpdateCrmContactRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UpdateCrmContactRequest$Outbound = {
-  CrmContact?: shared.CrmContact$Outbound | undefined;
+  CrmContact: shared.CrmContact$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
@@ -59,7 +59,7 @@ export const UpdateCrmContactRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UpdateCrmContactRequest
 > = z.object({
-  crmContact: shared.CrmContact$outboundSchema.optional(),
+  crmContact: shared.CrmContact$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),

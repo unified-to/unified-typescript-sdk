@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchScimGroupsRequest = {
-  scimGroup?: shared.ScimGroup | undefined;
+  scimGroup: shared.ScimGroup;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const PatchScimGroupsRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  ScimGroup: shared.ScimGroup$inboundSchema.optional(),
+  ScimGroup: shared.ScimGroup$inboundSchema,
   connection_id: z.string(),
   id: z.string(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const PatchScimGroupsRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PatchScimGroupsRequest$Outbound = {
-  ScimGroup?: shared.ScimGroup$Outbound | undefined;
+  ScimGroup: shared.ScimGroup$Outbound;
   connection_id: string;
   id: string;
 };
@@ -50,7 +50,7 @@ export const PatchScimGroupsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PatchScimGroupsRequest
 > = z.object({
-  scimGroup: shared.ScimGroup$outboundSchema.optional(),
+  scimGroup: shared.ScimGroup$outboundSchema,
   connectionId: z.string(),
   id: z.string(),
 }).transform((v) => {

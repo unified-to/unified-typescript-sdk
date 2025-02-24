@@ -96,6 +96,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
+    accountingAccount: {},
     connectionId: "<id>",
   });
 
@@ -122,6 +123,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
+    accountingAccount: {},
     connectionId: "<id>",
   });
 
@@ -210,6 +212,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
+    accountingAccount: {},
     connectionId: "<id>",
   });
 
@@ -248,6 +251,7 @@ async function run() {
   let result;
   try {
     result = await unifiedTo.accounting.createAccountingAccount({
+      accountingAccount: {},
       connectionId: "<id>",
     });
 
@@ -357,6 +361,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
+    accountingAccount: {},
     connectionId: "<id>",
   }, {
     retries: {
@@ -401,6 +406,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.accounting.createAccountingAccount({
+    accountingAccount: {},
     connectionId: "<id>",
   });
 

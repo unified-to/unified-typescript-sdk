@@ -45,6 +45,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentLink({
+    paymentLink: {},
     connectionId: "<id>",
   });
 
@@ -73,6 +74,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentLink(unifiedTo, {
+    paymentLink: {},
     connectionId: "<id>",
   });
 
@@ -125,6 +127,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentPayment({
+    paymentPayment: {},
     connectionId: "<id>",
   });
 
@@ -153,6 +156,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentPayment(unifiedTo, {
+    paymentPayment: {},
     connectionId: "<id>",
   });
 
@@ -205,6 +209,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.createPaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
   });
 
@@ -233,6 +238,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentCreatePaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
   });
 
@@ -1095,6 +1101,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentLink({
+    paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1124,6 +1131,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentLink(unifiedTo, {
+    paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1177,6 +1185,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentPayment({
+    paymentPayment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1206,6 +1215,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentPayment(unifiedTo, {
+    paymentPayment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1259,6 +1269,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.patchPaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1288,6 +1299,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentPatchPaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1587,6 +1599,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentLink({
+    paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1616,6 +1629,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentLink(unifiedTo, {
+    paymentLink: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1669,6 +1683,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentPayment({
+    paymentPayment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1698,6 +1713,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentPayment(unifiedTo, {
+    paymentPayment: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1751,6 +1767,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.payment.updatePaymentSubscription({
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1780,6 +1797,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await paymentUpdatePaymentSubscription(unifiedTo, {
+    paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
   });

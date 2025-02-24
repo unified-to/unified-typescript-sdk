@@ -33,6 +33,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await accountingCreateAccountingAccount(unifiedTo, {
+    accountingAccount: {},
     connectionId: "<id>",
   });
 

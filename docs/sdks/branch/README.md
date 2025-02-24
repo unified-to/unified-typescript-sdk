@@ -29,6 +29,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.branch.createRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -57,6 +61,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await branchCreateRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
   });
 
@@ -271,6 +279,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.branch.patchRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -300,6 +312,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await branchPatchRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -435,6 +451,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.branch.updateRepoBranch({
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -464,6 +484,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await branchUpdateRepoBranch(unifiedTo, {
+    repoBranch: {
+      name: "<value>",
+      repoId: "<id>",
+    },
     connectionId: "<id>",
     id: "<id>",
   });

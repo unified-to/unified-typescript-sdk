@@ -10,7 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmPipelineRequest = {
-  crmPipeline?: shared.CrmPipeline | undefined;
+  crmPipeline: shared.CrmPipeline;
   /**
    * ID of the connection
    */
@@ -27,7 +27,7 @@ export const CreateCrmPipelineRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  CrmPipeline: shared.CrmPipeline$inboundSchema.optional(),
+  CrmPipeline: shared.CrmPipeline$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {
@@ -39,7 +39,7 @@ export const CreateCrmPipelineRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CreateCrmPipelineRequest$Outbound = {
-  CrmPipeline?: shared.CrmPipeline$Outbound | undefined;
+  CrmPipeline: shared.CrmPipeline$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
 };
@@ -50,7 +50,7 @@ export const CreateCrmPipelineRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CreateCrmPipelineRequest
 > = z.object({
-  crmPipeline: shared.CrmPipeline$outboundSchema.optional(),
+  crmPipeline: shared.CrmPipeline$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
 }).transform((v) => {

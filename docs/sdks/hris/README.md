@@ -51,6 +51,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisCompany({
+    hrisCompany: {},
     connectionId: "<id>",
   });
 
@@ -79,6 +80,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisCompany(unifiedTo, {
+    hrisCompany: {},
     connectionId: "<id>",
   });
 
@@ -131,6 +133,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
   });
 
@@ -159,6 +162,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
   });
 
@@ -211,6 +215,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
   });
 
@@ -239,6 +244,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
   });
 
@@ -291,6 +297,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisLocation({
+    hrisLocation: {},
     connectionId: "<id>",
   });
 
@@ -319,6 +326,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisLocation(unifiedTo, {
+    hrisLocation: {},
     connectionId: "<id>",
   });
 
@@ -1343,6 +1351,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisCompany({
+    hrisCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1372,6 +1381,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisCompany(unifiedTo, {
+    hrisCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1425,6 +1435,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1454,6 +1465,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1507,6 +1519,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1536,6 +1549,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1589,6 +1603,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisLocation({
+    hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1618,6 +1633,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisLocation(unifiedTo, {
+    hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1999,6 +2015,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisCompany({
+    hrisCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2028,6 +2045,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisCompany(unifiedTo, {
+    hrisCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2081,6 +2099,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisEmployee({
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2110,6 +2129,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisEmployee(unifiedTo, {
+    hrisEmployee: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2163,6 +2183,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisGroup({
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2192,6 +2213,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisGroup(unifiedTo, {
+    hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2245,6 +2267,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisLocation({
+    hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2274,6 +2297,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisLocation(unifiedTo, {
+    hrisLocation: {},
     connectionId: "<id>",
     id: "<id>",
   });

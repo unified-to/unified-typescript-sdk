@@ -59,6 +59,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmCompany({
+    crmCompany: {},
     connectionId: "<id>",
   });
 
@@ -87,6 +88,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmCompany(unifiedTo, {
+    crmCompany: {},
     connectionId: "<id>",
   });
 
@@ -139,6 +141,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmContact({
+    crmContact: {},
     connectionId: "<id>",
   });
 
@@ -167,6 +170,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmContact(unifiedTo, {
+    crmContact: {},
     connectionId: "<id>",
   });
 
@@ -219,6 +223,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmDeal({
+    crmDeal: {},
     connectionId: "<id>",
   });
 
@@ -247,6 +252,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmDeal(unifiedTo, {
+    crmDeal: {},
     connectionId: "<id>",
   });
 
@@ -299,6 +305,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmEvent({
+    crmEvent: {},
     connectionId: "<id>",
   });
 
@@ -327,6 +334,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmEvent(unifiedTo, {
+    crmEvent: {},
     connectionId: "<id>",
   });
 
@@ -379,6 +387,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmLead({
+    crmLead: {},
     connectionId: "<id>",
   });
 
@@ -407,6 +416,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
   });
 
@@ -459,6 +469,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.createCrmPipeline({
+    crmPipeline: {},
     connectionId: "<id>",
   });
 
@@ -487,6 +498,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmCreateCrmPipeline(unifiedTo, {
+    crmPipeline: {},
     connectionId: "<id>",
   });
 
@@ -1511,6 +1523,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmCompany({
+    crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1540,6 +1553,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmCompany(unifiedTo, {
+    crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1593,6 +1607,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmContact({
+    crmContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1622,6 +1637,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmContact(unifiedTo, {
+    crmContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1675,6 +1691,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmDeal({
+    crmDeal: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1704,6 +1721,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmDeal(unifiedTo, {
+    crmDeal: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1757,6 +1775,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmEvent({
+    crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1786,6 +1805,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmEvent(unifiedTo, {
+    crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1839,6 +1859,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmLead({
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1868,6 +1889,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1921,6 +1943,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.patchCrmPipeline({
+    crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1950,6 +1973,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmPatchCrmPipeline(unifiedTo, {
+    crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2495,6 +2519,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmCompany({
+    crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2524,6 +2549,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmCompany(unifiedTo, {
+    crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2577,6 +2603,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmContact({
+    crmContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2606,6 +2633,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmContact(unifiedTo, {
+    crmContact: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2659,6 +2687,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmDeal({
+    crmDeal: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2688,6 +2717,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmDeal(unifiedTo, {
+    crmDeal: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2741,6 +2771,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmEvent({
+    crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2770,6 +2801,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmEvent(unifiedTo, {
+    crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2823,6 +2855,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmLead({
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2852,6 +2885,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmLead(unifiedTo, {
+    crmLead: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2905,6 +2939,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.crm.updateCrmPipeline({
+    crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2934,6 +2969,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await crmUpdateCrmPipeline(unifiedTo, {
+    crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
   });
