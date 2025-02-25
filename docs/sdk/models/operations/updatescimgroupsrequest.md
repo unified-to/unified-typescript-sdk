@@ -7,7 +7,7 @@ import { UpdateScimGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/
 
 let value: UpdateScimGroupsRequest = {
   scimGroup: {
-    displayName: "Marcia_Grady",
+    displayName: "Earline97",
   },
   connectionId: "<id>",
   id: "<id>",

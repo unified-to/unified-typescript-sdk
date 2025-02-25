@@ -5,7 +5,7 @@
 ```typescript
 import { Scopes } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: Scopes = "ats_candidate_write";
+let value: Scopes = "hris_location_read";
 ```
 
 ## Values

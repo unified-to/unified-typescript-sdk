@@ -8,11 +8,11 @@ import { UpdateUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/
 let value: UpdateUnifiedConnectionRequest = {
   connection: {
     categories: [
-      "storage",
+      "ticketing",
     ],
     integrationType: "<value>",
     permissions: [
-      "uc_contact_read",
+      "payment_payment_write",
     ],
   },
   id: "<id>",

@@ -5,7 +5,7 @@
 ```typescript
 import { IssueStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: IssueStatus = "NEW";
+let value: IssueStatus = "IN_PROGRESS";
 ```
 
 ## Values

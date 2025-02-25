@@ -8,8 +8,8 @@ import { PatchUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/mode
 let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
-    event: "deleted",
-    objectType: "hris_group",
+    event: "created",
+    objectType: "uc_call",
   },
   id: "<id>",
 };

@@ -99,6 +99,13 @@ export const ListDealId = {
 } as const;
 export type ListDealId = ClosedEnum<typeof ListDealId>;
 
+export const ListEndLe = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListEndLe = ClosedEnum<typeof ListEndLe>;
+
 export const ListInstructorId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -266,6 +273,13 @@ export const ListSpaceId = {
   NotSupported: "not-supported",
 } as const;
 export type ListSpaceId = ClosedEnum<typeof ListSpaceId>;
+
+export const ListStartGte = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListStartGte = ClosedEnum<typeof ListStartGte>;
 
 export const ListStudentId = {
   SupportedRequired: "supported-required",
@@ -457,6 +471,7 @@ export type IntegrationSupport = {
   listCourseId?: ListCourseId | undefined;
   listCustomerId?: ListCustomerId | undefined;
   listDealId?: ListDealId | undefined;
+  listEndLe?: ListEndLe | undefined;
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
@@ -481,6 +496,7 @@ export type IntegrationSupport = {
   listSortByName?: ListSortByName | undefined;
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
   listSpaceId?: ListSpaceId | undefined;
+  listStartGte?: ListStartGte | undefined;
   listStudentId?: ListStudentId | undefined;
   listTaskId?: ListTaskId | undefined;
   listTicketId?: ListTicketId | undefined;
@@ -757,6 +773,25 @@ export namespace ListDealId$ {
   export const inboundSchema = ListDealId$inboundSchema;
   /** @deprecated use `ListDealId$outboundSchema` instead. */
   export const outboundSchema = ListDealId$outboundSchema;
+}
+
+/** @internal */
+export const ListEndLe$inboundSchema: z.ZodNativeEnum<typeof ListEndLe> = z
+  .nativeEnum(ListEndLe);
+
+/** @internal */
+export const ListEndLe$outboundSchema: z.ZodNativeEnum<typeof ListEndLe> =
+  ListEndLe$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListEndLe$ {
+  /** @deprecated use `ListEndLe$inboundSchema` instead. */
+  export const inboundSchema = ListEndLe$inboundSchema;
+  /** @deprecated use `ListEndLe$outboundSchema` instead. */
+  export const outboundSchema = ListEndLe$outboundSchema;
 }
 
 /** @internal */
@@ -1233,6 +1268,25 @@ export namespace ListSpaceId$ {
   export const inboundSchema = ListSpaceId$inboundSchema;
   /** @deprecated use `ListSpaceId$outboundSchema` instead. */
   export const outboundSchema = ListSpaceId$outboundSchema;
+}
+
+/** @internal */
+export const ListStartGte$inboundSchema: z.ZodNativeEnum<typeof ListStartGte> =
+  z.nativeEnum(ListStartGte);
+
+/** @internal */
+export const ListStartGte$outboundSchema: z.ZodNativeEnum<typeof ListStartGte> =
+  ListStartGte$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListStartGte$ {
+  /** @deprecated use `ListStartGte$inboundSchema` instead. */
+  export const inboundSchema = ListStartGte$inboundSchema;
+  /** @deprecated use `ListStartGte$outboundSchema` instead. */
+  export const outboundSchema = ListStartGte$outboundSchema;
 }
 
 /** @internal */
@@ -1744,6 +1798,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_course_id: ListCourseId$inboundSchema.optional(),
   list_customer_id: ListCustomerId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
+  list_end_le: ListEndLe$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
@@ -1768,6 +1823,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
   list_space_id: ListSpaceId$inboundSchema.optional(),
+  list_start_gte: ListStartGte$inboundSchema.optional(),
   list_student_id: ListStudentId$inboundSchema.optional(),
   list_task_id: ListTaskId$inboundSchema.optional(),
   list_ticket_id: ListTicketId$inboundSchema.optional(),
@@ -1814,6 +1870,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_course_id": "listCourseId",
     "list_customer_id": "listCustomerId",
     "list_deal_id": "listDealId",
+    "list_end_le": "listEndLe",
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
@@ -1838,6 +1895,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_sort_by_name": "listSortByName",
     "list_sort_by_updated_at": "listSortByUpdatedAt",
     "list_space_id": "listSpaceId",
+    "list_start_gte": "listStartGte",
     "list_student_id": "listStudentId",
     "list_task_id": "listTaskId",
     "list_ticket_id": "listTicketId",
@@ -1884,6 +1942,7 @@ export type IntegrationSupport$Outbound = {
   list_course_id?: string | undefined;
   list_customer_id?: string | undefined;
   list_deal_id?: string | undefined;
+  list_end_le?: string | undefined;
   list_instructor_id?: string | undefined;
   list_interview_id?: string | undefined;
   list_invoice_id?: string | undefined;
@@ -1908,6 +1967,7 @@ export type IntegrationSupport$Outbound = {
   list_sort_by_name?: string | undefined;
   list_sort_by_updated_at?: string | undefined;
   list_space_id?: string | undefined;
+  list_start_gte?: string | undefined;
   list_student_id?: string | undefined;
   list_task_id?: string | undefined;
   list_ticket_id?: string | undefined;
@@ -1958,6 +2018,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listCourseId: ListCourseId$outboundSchema.optional(),
   listCustomerId: ListCustomerId$outboundSchema.optional(),
   listDealId: ListDealId$outboundSchema.optional(),
+  listEndLe: ListEndLe$outboundSchema.optional(),
   listInstructorId: ListInstructorId$outboundSchema.optional(),
   listInterviewId: ListInterviewId$outboundSchema.optional(),
   listInvoiceId: ListInvoiceId$outboundSchema.optional(),
@@ -1982,6 +2043,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listSortByName: ListSortByName$outboundSchema.optional(),
   listSortByUpdatedAt: ListSortByUpdatedAt$outboundSchema.optional(),
   listSpaceId: ListSpaceId$outboundSchema.optional(),
+  listStartGte: ListStartGte$outboundSchema.optional(),
   listStudentId: ListStudentId$outboundSchema.optional(),
   listTaskId: ListTaskId$outboundSchema.optional(),
   listTicketId: ListTicketId$outboundSchema.optional(),
@@ -2027,6 +2089,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listCourseId: "list_course_id",
     listCustomerId: "list_customer_id",
     listDealId: "list_deal_id",
+    listEndLe: "list_end_le",
     listInstructorId: "list_instructor_id",
     listInterviewId: "list_interview_id",
     listInvoiceId: "list_invoice_id",
@@ -2051,6 +2114,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listSortByName: "list_sort_by_name",
     listSortByUpdatedAt: "list_sort_by_updated_at",
     listSpaceId: "list_space_id",
+    listStartGte: "list_start_gte",
     listStudentId: "list_student_id",
     listTaskId: "list_task_id",
     listTicketId: "list_ticket_id",

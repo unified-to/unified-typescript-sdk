@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3c83ac41ca19a0aa4a6ad1896f8a1398
+  docChecksum: 9075a5eee0d5e437f7630ea01fb59832
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.12.1
-  configChecksum: 21ab0dd3ea985d9932cb433ee1713a84
+  releaseVersion: 2.14.0
+  configChecksum: e7306c3576a5d81a49cf064ca9e6a30b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -684,6 +684,7 @@ generatedFiles:
   - docs/sdk/models/shared/listcourseid.md
   - docs/sdk/models/shared/listcustomerid.md
   - docs/sdk/models/shared/listdealid.md
+  - docs/sdk/models/shared/listendle.md
   - docs/sdk/models/shared/listinstructorid.md
   - docs/sdk/models/shared/listinterviewid.md
   - docs/sdk/models/shared/listinvoiceid.md
@@ -708,6 +709,7 @@ generatedFiles:
   - docs/sdk/models/shared/listsortbyname.md
   - docs/sdk/models/shared/listsortbyupdatedat.md
   - docs/sdk/models/shared/listspaceid.md
+  - docs/sdk/models/shared/liststartgte.md
   - docs/sdk/models/shared/liststudentid.md
   - docs/sdk/models/shared/listtaskid.md
   - docs/sdk/models/shared/listticketid.md

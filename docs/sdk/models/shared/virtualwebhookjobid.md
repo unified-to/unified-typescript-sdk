@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookJobId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookJobId = "supported";
+let value: VirtualWebhookJobId = "supported-required";
 ```
 
 ## Values
