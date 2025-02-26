@@ -93,6 +93,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "channel_id": payload.channel_id,
+    "end_le": payload.end_le,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
@@ -100,6 +101,7 @@ async function $do(
     "parent_id": payload.parent_id,
     "query": payload.query,
     "sort": payload.sort,
+    "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
   });
 

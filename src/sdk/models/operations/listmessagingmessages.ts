@@ -14,6 +14,7 @@ export type ListMessagingMessagesRequest = {
    * ID of the connection
    */
   connectionId: string;
+  endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
@@ -27,6 +28,7 @@ export type ListMessagingMessagesRequest = {
    */
   query?: string | undefined;
   sort?: string | undefined;
+  startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -41,6 +43,7 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
 > = z.object({
   channel_id: z.string().optional(),
   connection_id: z.string(),
+  end_le: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -48,13 +51,16 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
   parent_id: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  start_gte: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "channel_id": "channelId",
     "connection_id": "connectionId",
+    "end_le": "endLe",
     "parent_id": "parentId",
+    "start_gte": "startGte",
     "updated_gte": "updatedGte",
   });
 });
@@ -63,6 +69,7 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
 export type ListMessagingMessagesRequest$Outbound = {
   channel_id?: string | undefined;
   connection_id: string;
+  end_le?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -70,6 +77,7 @@ export type ListMessagingMessagesRequest$Outbound = {
   parent_id?: string | undefined;
   query?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -81,6 +89,7 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
 > = z.object({
   channelId: z.string().optional(),
   connectionId: z.string(),
+  endLe: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -88,12 +97,15 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   parentId: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     channelId: "channel_id",
     connectionId: "connection_id",
+    endLe: "end_le",
     parentId: "parent_id",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });
