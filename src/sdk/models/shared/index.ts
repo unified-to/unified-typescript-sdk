@@ -23,6 +23,8 @@ export * from "./atsaddress.js";
 export * from "./atsapplication.js";
 export * from "./atsapplicationanswer.js";
 export * from "./atscandidate.js";
+export * from "./atscandidateeducation.js";
+export * from "./atscandidateexperience.js";
 export * from "./atscompany.js";
 export * from "./atscompensation.js";
 export * from "./atsdocument.js";

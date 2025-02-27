@@ -9,6 +9,18 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AtsCandidateEducation,
+  AtsCandidateEducation$inboundSchema,
+  AtsCandidateEducation$Outbound,
+  AtsCandidateEducation$outboundSchema,
+} from "./atscandidateeducation.js";
+import {
+  AtsCandidateExperience,
+  AtsCandidateExperience$inboundSchema,
+  AtsCandidateExperience$Outbound,
+  AtsCandidateExperience$outboundSchema,
+} from "./atscandidateexperience.js";
+import {
   AtsEmail,
   AtsEmail$inboundSchema,
   AtsEmail$Outbound,
@@ -45,7 +57,9 @@ export type AtsCandidate = {
   companyName?: string | undefined;
   createdAt?: Date | undefined;
   dateOfBirth?: Date | undefined;
+  education?: Array<AtsCandidateEducation> | undefined;
   emails?: Array<AtsEmail> | undefined;
+  experiences?: Array<AtsCandidateExperience> | undefined;
   externalIdentifier?: string | undefined;
   id?: string | undefined;
   imageUrl?: string | undefined;
@@ -56,6 +70,7 @@ export type AtsCandidate = {
   name?: string | undefined;
   origin?: Origin | undefined;
   raw?: AtsCandidateRaw | undefined;
+  skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone> | undefined;
@@ -144,7 +159,9 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   date_of_birth: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  education: z.array(AtsCandidateEducation$inboundSchema).optional(),
   emails: z.array(AtsEmail$inboundSchema).optional(),
+  experiences: z.array(AtsCandidateExperience$inboundSchema).optional(),
   external_identifier: z.string().optional(),
   id: z.string().optional(),
   image_url: z.string().optional(),
@@ -152,6 +169,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   name: z.string().optional(),
   origin: Origin$inboundSchema.optional(),
   raw: z.lazy(() => AtsCandidateRaw$inboundSchema).optional(),
+  skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$inboundSchema).optional(),
@@ -182,7 +200,9 @@ export type AtsCandidate$Outbound = {
   company_name?: string | undefined;
   created_at?: string | undefined;
   date_of_birth?: string | undefined;
+  education?: Array<AtsCandidateEducation$Outbound> | undefined;
   emails?: Array<AtsEmail$Outbound> | undefined;
+  experiences?: Array<AtsCandidateExperience$Outbound> | undefined;
   external_identifier?: string | undefined;
   id?: string | undefined;
   image_url?: string | undefined;
@@ -190,6 +210,7 @@ export type AtsCandidate$Outbound = {
   name?: string | undefined;
   origin?: string | undefined;
   raw?: AtsCandidateRaw$Outbound | undefined;
+  skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
   tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone$Outbound> | undefined;
@@ -210,7 +231,9 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   companyName: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dateOfBirth: z.date().transform(v => v.toISOString()).optional(),
+  education: z.array(AtsCandidateEducation$outboundSchema).optional(),
   emails: z.array(AtsEmail$outboundSchema).optional(),
+  experiences: z.array(AtsCandidateExperience$outboundSchema).optional(),
   externalIdentifier: z.string().optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
@@ -218,6 +241,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   name: z.string().optional(),
   origin: Origin$outboundSchema.optional(),
   raw: z.lazy(() => AtsCandidateRaw$outboundSchema).optional(),
+  skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$outboundSchema).optional(),

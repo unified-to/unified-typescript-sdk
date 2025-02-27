@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: eed3e21cce15d18d6d589ec03e5be2ce
+  docChecksum: a642c7bece4e0a94752d9efa149625ea
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.16.0
-  configChecksum: 17d013c60094a73bf3b11117793db4bf
+  releaseVersion: 2.18.0
+  configChecksum: d7fff33730391cc4012159aade2e4ee7
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -546,6 +546,8 @@ generatedFiles:
   - docs/sdk/models/shared/atsapplicationraw.md
   - docs/sdk/models/shared/atsapplicationstatus.md
   - docs/sdk/models/shared/atscandidate.md
+  - docs/sdk/models/shared/atscandidateeducation.md
+  - docs/sdk/models/shared/atscandidateexperience.md
   - docs/sdk/models/shared/atscandidateraw.md
   - docs/sdk/models/shared/atscompany.md
   - docs/sdk/models/shared/atscompanyraw.md
@@ -2226,6 +2228,8 @@ generatedFiles:
   - src/sdk/models/shared/atsapplication.ts
   - src/sdk/models/shared/atsapplicationanswer.ts
   - src/sdk/models/shared/atscandidate.ts
+  - src/sdk/models/shared/atscandidateeducation.ts
+  - src/sdk/models/shared/atscandidateexperience.ts
   - src/sdk/models/shared/atscompany.ts
   - src/sdk/models/shared/atscompensation.ts
   - src/sdk/models/shared/atsdocument.ts

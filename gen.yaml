@@ -15,7 +15,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.16.0
+  version: 2.18.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -39,6 +39,7 @@ typescript:
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
   inputModelSuffix: input
+  jsonpath: legacy
   maxMethodParams: 0
   methodArguments: require-security-and-request
   moduleFormat: commonjs
