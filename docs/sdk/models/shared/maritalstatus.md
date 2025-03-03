@@ -5,7 +5,7 @@
 ```typescript
 import { MaritalStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: MaritalStatus = "SINGLE";
+let value: MaritalStatus = "MARRIED";
 ```
 
 ## Values

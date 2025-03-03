@@ -5,7 +5,7 @@
 ```typescript
 import { CommerceCollectionType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceCollectionType = "SAVED_SEARCH";
+let value: CommerceCollectionType = "CATEGORY";
 ```
 
 ## Values

@@ -1,0 +1,24 @@
+# CalendarRecording
+
+## Example Usage
+
+```typescript
+import { CalendarRecording } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: CalendarRecording = {};
+```
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `createdAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `endAt`                                                                                       | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `eventId`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `expiresAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `media`                                                                                       | [shared.CalendarRecordingMedia](../../../sdk/models/shared/calendarrecordingmedia.md)[]       | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `raw`                                                                                         | [shared.CalendarRecordingRaw](../../../sdk/models/shared/calendarrecordingraw.md)             | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `startAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `webUrl`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

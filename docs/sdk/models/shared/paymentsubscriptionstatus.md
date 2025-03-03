@@ -5,7 +5,7 @@
 ```typescript
 import { PaymentSubscriptionStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentSubscriptionStatus = "ACTIVE";
+let value: PaymentSubscriptionStatus = "INACTIVE";
 ```
 
 ## Values

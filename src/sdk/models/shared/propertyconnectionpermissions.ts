@@ -136,6 +136,16 @@ export const PropertyConnectionPermissions = {
   RepoPullrequestWrite: "repo_pullrequest_write",
   MetadataMetadataRead: "metadata_metadata_read",
   MetadataMetadataWrite: "metadata_metadata_write",
+  CalendarCalendarRead: "calendar_calendar_read",
+  CalendarCalendarWrite: "calendar_calendar_write",
+  CalendarEventRead: "calendar_event_read",
+  CalendarEventWrite: "calendar_event_write",
+  CalendarBusyRead: "calendar_busy_read",
+  CalendarBusyWrite: "calendar_busy_write",
+  CalendarLinkRead: "calendar_link_read",
+  CalendarLinkWrite: "calendar_link_write",
+  CalendarRecordingRead: "calendar_recording_read",
+  CalendarRecordingWrite: "calendar_recording_write",
 } as const;
 export type PropertyConnectionPermissions = ClosedEnum<
   typeof PropertyConnectionPermissions

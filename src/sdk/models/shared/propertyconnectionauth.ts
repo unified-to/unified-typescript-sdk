@@ -40,6 +40,7 @@ export type PropertyConnectionAuth = {
   state?: string | undefined;
   token?: string | undefined;
   tokenUrl?: string | undefined;
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -122,6 +123,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
   state: z.string().optional(),
   token: z.string().optional(),
   token_url: z.string().optional(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "access_token": "accessToken",
@@ -140,6 +142,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
     "refresh_token_expires_date": "refreshTokenExpiresDate",
     "refresh_token_expires_in": "refreshTokenExpiresIn",
     "token_url": "tokenUrl",
+    "user_id": "userId",
   });
 });
 
@@ -168,6 +171,7 @@ export type PropertyConnectionAuth$Outbound = {
   state?: string | undefined;
   token?: string | undefined;
   token_url?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -199,6 +203,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   state: z.string().optional(),
   token: z.string().optional(),
   tokenUrl: z.string().optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     accessToken: "access_token",
@@ -217,6 +222,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
     refreshTokenExpiresDate: "refresh_token_expires_date",
     refreshTokenExpiresIn: "refresh_token_expires_in",
     tokenUrl: "token_url",
+    userId: "user_id",
   });
 });
 

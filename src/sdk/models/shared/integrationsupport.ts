@@ -36,6 +36,13 @@ export const ListApplicationId = {
 } as const;
 export type ListApplicationId = ClosedEnum<typeof ListApplicationId>;
 
+export const ListCalendarId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListCalendarId = ClosedEnum<typeof ListCalendarId>;
+
 export const ListCandidateId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -105,6 +112,13 @@ export const ListEndLe = {
   NotSupported: "not-supported",
 } as const;
 export type ListEndLe = ClosedEnum<typeof ListEndLe>;
+
+export const ListEventId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListEventId = ClosedEnum<typeof ListEventId>;
 
 export const ListInstructorId = {
   SupportedRequired: "supported-required",
@@ -462,6 +476,7 @@ export type IntegrationSupport = {
   inboundFields?: { [k: string]: any } | undefined;
   listAccountId?: ListAccountId | undefined;
   listApplicationId?: ListApplicationId | undefined;
+  listCalendarId?: ListCalendarId | undefined;
   listCandidateId?: ListCandidateId | undefined;
   listChannelId?: ListChannelId | undefined;
   listClassId?: ListClassId | undefined;
@@ -472,6 +487,7 @@ export type IntegrationSupport = {
   listCustomerId?: ListCustomerId | undefined;
   listDealId?: ListDealId | undefined;
   listEndLe?: ListEndLe | undefined;
+  listEventId?: ListEventId | undefined;
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
@@ -590,6 +606,27 @@ export namespace ListApplicationId$ {
   export const inboundSchema = ListApplicationId$inboundSchema;
   /** @deprecated use `ListApplicationId$outboundSchema` instead. */
   export const outboundSchema = ListApplicationId$outboundSchema;
+}
+
+/** @internal */
+export const ListCalendarId$inboundSchema: z.ZodNativeEnum<
+  typeof ListCalendarId
+> = z.nativeEnum(ListCalendarId);
+
+/** @internal */
+export const ListCalendarId$outboundSchema: z.ZodNativeEnum<
+  typeof ListCalendarId
+> = ListCalendarId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListCalendarId$ {
+  /** @deprecated use `ListCalendarId$inboundSchema` instead. */
+  export const inboundSchema = ListCalendarId$inboundSchema;
+  /** @deprecated use `ListCalendarId$outboundSchema` instead. */
+  export const outboundSchema = ListCalendarId$outboundSchema;
 }
 
 /** @internal */
@@ -792,6 +829,25 @@ export namespace ListEndLe$ {
   export const inboundSchema = ListEndLe$inboundSchema;
   /** @deprecated use `ListEndLe$outboundSchema` instead. */
   export const outboundSchema = ListEndLe$outboundSchema;
+}
+
+/** @internal */
+export const ListEventId$inboundSchema: z.ZodNativeEnum<typeof ListEventId> = z
+  .nativeEnum(ListEventId);
+
+/** @internal */
+export const ListEventId$outboundSchema: z.ZodNativeEnum<typeof ListEventId> =
+  ListEventId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListEventId$ {
+  /** @deprecated use `ListEventId$inboundSchema` instead. */
+  export const inboundSchema = ListEventId$inboundSchema;
+  /** @deprecated use `ListEventId$outboundSchema` instead. */
+  export const outboundSchema = ListEventId$outboundSchema;
 }
 
 /** @internal */
@@ -1789,6 +1845,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   inbound_fields: z.record(z.any()).optional(),
   list_account_id: ListAccountId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
+  list_calendar_id: ListCalendarId$inboundSchema.optional(),
   list_candidate_id: ListCandidateId$inboundSchema.optional(),
   list_channel_id: ListChannelId$inboundSchema.optional(),
   list_class_id: ListClassId$inboundSchema.optional(),
@@ -1799,6 +1856,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_customer_id: ListCustomerId$inboundSchema.optional(),
   list_deal_id: ListDealId$inboundSchema.optional(),
   list_end_le: ListEndLe$inboundSchema.optional(),
+  list_event_id: ListEventId$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
@@ -1861,6 +1919,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "inbound_fields": "inboundFields",
     "list_account_id": "listAccountId",
     "list_application_id": "listApplicationId",
+    "list_calendar_id": "listCalendarId",
     "list_candidate_id": "listCandidateId",
     "list_channel_id": "listChannelId",
     "list_class_id": "listClassId",
@@ -1871,6 +1930,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_customer_id": "listCustomerId",
     "list_deal_id": "listDealId",
     "list_end_le": "listEndLe",
+    "list_event_id": "listEventId",
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
@@ -1933,6 +1993,7 @@ export type IntegrationSupport$Outbound = {
   inbound_fields?: { [k: string]: any } | undefined;
   list_account_id?: string | undefined;
   list_application_id?: string | undefined;
+  list_calendar_id?: string | undefined;
   list_candidate_id?: string | undefined;
   list_channel_id?: string | undefined;
   list_class_id?: string | undefined;
@@ -1943,6 +2004,7 @@ export type IntegrationSupport$Outbound = {
   list_customer_id?: string | undefined;
   list_deal_id?: string | undefined;
   list_end_le?: string | undefined;
+  list_event_id?: string | undefined;
   list_instructor_id?: string | undefined;
   list_interview_id?: string | undefined;
   list_invoice_id?: string | undefined;
@@ -2009,6 +2071,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   inboundFields: z.record(z.any()).optional(),
   listAccountId: ListAccountId$outboundSchema.optional(),
   listApplicationId: ListApplicationId$outboundSchema.optional(),
+  listCalendarId: ListCalendarId$outboundSchema.optional(),
   listCandidateId: ListCandidateId$outboundSchema.optional(),
   listChannelId: ListChannelId$outboundSchema.optional(),
   listClassId: ListClassId$outboundSchema.optional(),
@@ -2019,6 +2082,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listCustomerId: ListCustomerId$outboundSchema.optional(),
   listDealId: ListDealId$outboundSchema.optional(),
   listEndLe: ListEndLe$outboundSchema.optional(),
+  listEventId: ListEventId$outboundSchema.optional(),
   listInstructorId: ListInstructorId$outboundSchema.optional(),
   listInterviewId: ListInterviewId$outboundSchema.optional(),
   listInvoiceId: ListInvoiceId$outboundSchema.optional(),
@@ -2080,6 +2144,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     inboundFields: "inbound_fields",
     listAccountId: "list_account_id",
     listApplicationId: "list_application_id",
+    listCalendarId: "list_calendar_id",
     listCandidateId: "list_candidate_id",
     listChannelId: "list_channel_id",
     listClassId: "list_class_id",
@@ -2090,6 +2155,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listCustomerId: "list_customer_id",
     listDealId: "list_deal_id",
     listEndLe: "list_end_le",
+    listEventId: "list_event_id",
     listInstructorId: "list_instructor_id",
     listInterviewId: "list_interview_id",
     listInvoiceId: "list_invoice_id",

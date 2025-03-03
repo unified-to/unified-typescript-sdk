@@ -6,7 +6,7 @@
 import { HrisEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisEmail = {
-  email: "Tobin.Orn71@yahoo.com",
+  email: "Abigale_Glover96@hotmail.com",
 };
 ```
 

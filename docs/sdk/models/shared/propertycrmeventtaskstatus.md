@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyCrmEventTaskStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyCrmEventTaskStatus = "COMPLETED";
+let value: PropertyCrmEventTaskStatus = "DEFERRED";
 ```
 
 ## Values

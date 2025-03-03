@@ -7,7 +7,7 @@ import { CreateScimGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/
 
 let value: CreateScimGroupsRequest = {
   scimGroup: {
-    displayName: "Stone_Lueilwitz96",
+    displayName: "Lon_Greenholt61",
   },
   connectionId: "<id>",
 };

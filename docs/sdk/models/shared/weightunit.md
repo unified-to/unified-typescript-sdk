@@ -5,7 +5,7 @@
 ```typescript
 import { WeightUnit } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: WeightUnit = "g";
+let value: WeightUnit = "kg";
 ```
 
 ## Values

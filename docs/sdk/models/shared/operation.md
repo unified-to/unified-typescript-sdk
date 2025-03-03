@@ -5,7 +5,7 @@
 ```typescript
 import { Operation } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Operation = "add";
+let value: Operation = "delete";
 ```
 
 ## Values

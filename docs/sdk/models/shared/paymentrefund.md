@@ -7,7 +7,7 @@ import { PaymentRefund } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: PaymentRefund = {
   paymentId: "<id>",
-  totalAmount: 5743.25,
+  totalAmount: 1002.26,
 };
 ```
 

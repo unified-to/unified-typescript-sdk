@@ -12,6 +12,8 @@ import { Applicationstatus } from "./applicationstatus.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
 import { Branch } from "./branch.js";
+import { Busy } from "./busy.js";
+import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
 import { Candidate } from "./candidate.js";
 import { Channel } from "./channel.js";
@@ -70,6 +72,7 @@ import { Pipeline } from "./pipeline.js";
 import { Project } from "./project.js";
 import { Prompt } from "./prompt.js";
 import { Pullrequest } from "./pullrequest.js";
+import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
 import { Repository } from "./repository.js";
@@ -186,6 +189,31 @@ export class UnifiedTo extends ClientSDK {
     return (this._scorecard ??= new Scorecard(this._options));
   }
 
+  private _calendar?: Calendar;
+  get calendar(): Calendar {
+    return (this._calendar ??= new Calendar(this._options));
+  }
+
+  private _busy?: Busy;
+  get busy(): Busy {
+    return (this._busy ??= new Busy(this._options));
+  }
+
+  private _event?: Event;
+  get event(): Event {
+    return (this._event ??= new Event(this._options));
+  }
+
+  private _link?: Link;
+  get link(): Link {
+    return (this._link ??= new Link(this._options));
+  }
+
+  private _recording?: Recording;
+  get recording(): Recording {
+    return (this._recording ??= new Recording(this._options));
+  }
+
   private _commerce?: Commerce;
   get commerce(): Commerce {
     return (this._commerce ??= new Commerce(this._options));
@@ -219,11 +247,6 @@ export class UnifiedTo extends ClientSDK {
   private _deal?: Deal;
   get deal(): Deal {
     return (this._deal ??= new Deal(this._options));
-  }
-
-  private _event?: Event;
-  get event(): Event {
-    return (this._event ??= new Event(this._options));
   }
 
   private _lead?: Lead;
@@ -374,11 +397,6 @@ export class UnifiedTo extends ClientSDK {
   private _payment?: Payment;
   get payment(): Payment {
     return (this._payment ??= new Payment(this._options));
-  }
-
-  private _link?: Link;
-  get link(): Link {
-    return (this._link ??= new Link(this._options));
   }
 
   private _payout?: Payout;

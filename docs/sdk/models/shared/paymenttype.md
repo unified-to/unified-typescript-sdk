@@ -5,7 +5,7 @@
 ```typescript
 import { PaymentType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentType = "DIRECT";
+let value: PaymentType = "CHEQUE";
 ```
 
 ## Values

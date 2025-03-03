@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookType = "supported";
+let value: VirtualWebhookType = "not-supported";
 ```
 
 ## Values

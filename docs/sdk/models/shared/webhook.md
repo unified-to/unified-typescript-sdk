@@ -9,8 +9,8 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
   connectionId: "<id>",
-  event: "deleted",
-  objectType: "genai_prompt",
+  event: "created",
+  objectType: "kms_comment",
 };
 ```
 

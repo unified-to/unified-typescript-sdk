@@ -6,7 +6,7 @@
 import { MarketingEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: MarketingEmail = {
-  email: "Henry.Aufderhar66@yahoo.com",
+  email: "Kevon_Marvin@gmail.com",
 };
 ```
 
