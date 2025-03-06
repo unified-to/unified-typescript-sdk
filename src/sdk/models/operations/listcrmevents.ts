@@ -20,6 +20,7 @@ export type ListCrmEventsRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  leadId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -47,6 +48,7 @@ export const ListCrmEventsRequest$inboundSchema: z.ZodType<
   contact_id: z.string().optional(),
   deal_id: z.string().optional(),
   fields: z.array(z.string()).optional(),
+  lead_id: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -62,6 +64,7 @@ export const ListCrmEventsRequest$inboundSchema: z.ZodType<
     "connection_id": "connectionId",
     "contact_id": "contactId",
     "deal_id": "dealId",
+    "lead_id": "leadId",
     "updated_gte": "updatedGte",
     "user_id": "userId",
   });
@@ -74,6 +77,7 @@ export type ListCrmEventsRequest$Outbound = {
   contact_id?: string | undefined;
   deal_id?: string | undefined;
   fields?: Array<string> | undefined;
+  lead_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -95,6 +99,7 @@ export const ListCrmEventsRequest$outboundSchema: z.ZodType<
   contactId: z.string().optional(),
   dealId: z.string().optional(),
   fields: z.array(z.string()).optional(),
+  leadId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -109,6 +114,7 @@ export const ListCrmEventsRequest$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     contactId: "contact_id",
     dealId: "deal_id",
+    leadId: "lead_id",
     updatedGte: "updated_gte",
     userId: "user_id",
   });

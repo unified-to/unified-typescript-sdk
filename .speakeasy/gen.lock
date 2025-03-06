@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 03fb3687a9211f1c85a85fd634fa1c98
+  docChecksum: 469567133059289c1dda4dbb71768014
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.22.0
-  configChecksum: fb56e53f50009f081574885e18cfeadf
+  releaseVersion: 2.24.0
+  configChecksum: 08828e8ab2b9270bdd7411f311cd82d1
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -459,7 +459,6 @@ generatedFiles:
   - docs/sdk/models/operations/removeunifiedconnectionresponse.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookresponse.md
-  - docs/sdk/models/operations/scopes.md
   - docs/sdk/models/operations/updateaccountingaccountrequest.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md

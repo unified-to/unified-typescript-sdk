@@ -95,6 +95,7 @@ async function $do(
     "contact_id": payload.contact_id,
     "deal_id": payload.deal_id,
     "fields": payload.fields,
+    "lead_id": payload.lead_id,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
