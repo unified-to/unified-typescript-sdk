@@ -162,6 +162,13 @@ export const ListJobId = {
 } as const;
 export type ListJobId = ClosedEnum<typeof ListJobId>;
 
+export const ListLeadId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListLeadId = ClosedEnum<typeof ListLeadId>;
+
 export const ListLimit = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -494,6 +501,7 @@ export type IntegrationSupport = {
   listItemId?: ListItemId | undefined;
   listItemVariantId?: ListItemVariantId | undefined;
   listJobId?: ListJobId | undefined;
+  listLeadId?: ListLeadId | undefined;
   listLimit?: ListLimit | undefined;
   listLinkId?: ListLinkId | undefined;
   listListId?: ListListId | undefined;
@@ -970,6 +978,25 @@ export namespace ListJobId$ {
   export const inboundSchema = ListJobId$inboundSchema;
   /** @deprecated use `ListJobId$outboundSchema` instead. */
   export const outboundSchema = ListJobId$outboundSchema;
+}
+
+/** @internal */
+export const ListLeadId$inboundSchema: z.ZodNativeEnum<typeof ListLeadId> = z
+  .nativeEnum(ListLeadId);
+
+/** @internal */
+export const ListLeadId$outboundSchema: z.ZodNativeEnum<typeof ListLeadId> =
+  ListLeadId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListLeadId$ {
+  /** @deprecated use `ListLeadId$inboundSchema` instead. */
+  export const inboundSchema = ListLeadId$inboundSchema;
+  /** @deprecated use `ListLeadId$outboundSchema` instead. */
+  export const outboundSchema = ListLeadId$outboundSchema;
 }
 
 /** @internal */
@@ -1863,6 +1890,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_item_id: ListItemId$inboundSchema.optional(),
   list_item_variant_id: ListItemVariantId$inboundSchema.optional(),
   list_job_id: ListJobId$inboundSchema.optional(),
+  list_lead_id: ListLeadId$inboundSchema.optional(),
   list_limit: ListLimit$inboundSchema.optional(),
   list_link_id: ListLinkId$inboundSchema.optional(),
   list_list_id: ListListId$inboundSchema.optional(),
@@ -1937,6 +1965,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_item_id": "listItemId",
     "list_item_variant_id": "listItemVariantId",
     "list_job_id": "listJobId",
+    "list_lead_id": "listLeadId",
     "list_limit": "listLimit",
     "list_link_id": "listLinkId",
     "list_list_id": "listListId",
@@ -2011,6 +2040,7 @@ export type IntegrationSupport$Outbound = {
   list_item_id?: string | undefined;
   list_item_variant_id?: string | undefined;
   list_job_id?: string | undefined;
+  list_lead_id?: string | undefined;
   list_limit?: string | undefined;
   list_link_id?: string | undefined;
   list_list_id?: string | undefined;
@@ -2089,6 +2119,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listItemId: ListItemId$outboundSchema.optional(),
   listItemVariantId: ListItemVariantId$outboundSchema.optional(),
   listJobId: ListJobId$outboundSchema.optional(),
+  listLeadId: ListLeadId$outboundSchema.optional(),
   listLimit: ListLimit$outboundSchema.optional(),
   listLinkId: ListLinkId$outboundSchema.optional(),
   listListId: ListListId$outboundSchema.optional(),
@@ -2162,6 +2193,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listItemId: "list_item_id",
     listItemVariantId: "list_item_variant_id",
     listJobId: "list_job_id",
+    listLeadId: "list_lead_id",
     listLimit: "list_limit",
     listLinkId: "list_link_id",
     listListId: "list_list_id",

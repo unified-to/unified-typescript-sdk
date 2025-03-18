@@ -7,7 +7,7 @@ import { UpdateCalendarLinkRequest } from "@unified-api/typescript-sdk/sdk/model
 
 let value: UpdateCalendarLinkRequest = {
   calendarLink: {
-    url: "https://grimy-verve.biz",
+    url: "https://whispered-density.org/",
   },
   connectionId: "<id>",
   id: "<id>",

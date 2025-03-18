@@ -7,7 +7,7 @@ import { UpdatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/mo
 
 let value: UpdatePassthroughJsonRequest = {
   connectionId: "<id>",
-  path: "/dev",
+  path: "/home/user/dir",
 };
 ```
 

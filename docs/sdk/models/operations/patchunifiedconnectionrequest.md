@@ -8,11 +8,11 @@ import { PatchUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/m
 let value: PatchUnifiedConnectionRequest = {
   connection: {
     categories: [
-      "passthrough",
+      "auth",
     ],
     integrationType: "<value>",
     permissions: [
-      "scim_users_write",
+      "accounting_taxrate_read",
     ],
   },
   id: "<id>",

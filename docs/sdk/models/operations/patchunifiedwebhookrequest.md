@@ -9,7 +9,7 @@ let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "accounting_organization",
+    objectType: "messaging_message",
   },
   id: "<id>",
 };
