@@ -16,6 +16,8 @@ export const AccountingContactPaymentMethodType = {
   Ideal: "IDEAL",
   Other: "OTHER",
   Paypal: "PAYPAL",
+  Wire: "WIRE",
+  Check: "CHECK",
 } as const;
 export type AccountingContactPaymentMethodType = ClosedEnum<
   typeof AccountingContactPaymentMethodType
