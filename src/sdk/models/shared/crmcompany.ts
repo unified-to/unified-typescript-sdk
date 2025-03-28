@@ -14,6 +14,12 @@ import {
   CrmEmail$outboundSchema,
 } from "./crmemail.js";
 import {
+  CrmMetadata,
+  CrmMetadata$inboundSchema,
+  CrmMetadata$Outbound,
+  CrmMetadata$outboundSchema,
+} from "./crmmetadata.js";
+import {
   CrmTelephone,
   CrmTelephone$inboundSchema,
   CrmTelephone$Outbound,
@@ -52,6 +58,7 @@ export type CrmCompany = {
    * Additional URLs associated with the contact e.g., LinkedIn, website, etc
    */
   linkUrls?: Array<string> | undefined;
+  metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
   raw?: CrmCompanyRaw | undefined;
   tags?: Array<string> | undefined;
@@ -124,6 +131,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
   industry: z.string().optional(),
   is_active: z.boolean().optional(),
   link_urls: z.array(z.string()).optional(),
+  metadata: z.array(CrmMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   raw: z.lazy(() => CrmCompanyRaw$inboundSchema).optional(),
   tags: z.array(z.string()).optional(),
@@ -158,6 +166,7 @@ export type CrmCompany$Outbound = {
   industry?: string | undefined;
   is_active?: boolean | undefined;
   link_urls?: Array<string> | undefined;
+  metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
   raw?: CrmCompanyRaw$Outbound | undefined;
   tags?: Array<string> | undefined;
@@ -185,6 +194,7 @@ export const CrmCompany$outboundSchema: z.ZodType<
   industry: z.string().optional(),
   isActive: z.boolean().optional(),
   linkUrls: z.array(z.string()).optional(),
+  metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   raw: z.lazy(() => CrmCompanyRaw$outboundSchema).optional(),
   tags: z.array(z.string()).optional(),

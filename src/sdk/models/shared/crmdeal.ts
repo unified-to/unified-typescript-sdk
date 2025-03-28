@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CrmMetadata,
+  CrmMetadata$inboundSchema,
+  CrmMetadata$Outbound,
+  CrmMetadata$outboundSchema,
+} from "./crmmetadata.js";
 
 export type CrmDealRaw = {};
 
@@ -22,6 +28,7 @@ export type CrmDeal = {
   currency?: string | undefined;
   id?: string | undefined;
   lostReason?: string | undefined;
+  metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
   pipeline?: string | undefined;
   pipelineId?: string | undefined;
@@ -94,6 +101,7 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
     currency: z.string().optional(),
     id: z.string().optional(),
     lost_reason: z.string().optional(),
+    metadata: z.array(CrmMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     pipeline: z.string().optional(),
     pipeline_id: z.string().optional(),
@@ -133,6 +141,7 @@ export type CrmDeal$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   lost_reason?: string | undefined;
+  metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
   pipeline?: string | undefined;
   pipeline_id?: string | undefined;
@@ -161,6 +170,7 @@ export const CrmDeal$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lostReason: z.string().optional(),
+  metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   pipeline: z.string().optional(),
   pipelineId: z.string().optional(),

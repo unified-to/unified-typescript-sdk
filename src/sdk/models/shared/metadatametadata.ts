@@ -34,7 +34,7 @@ export type MetadataMetadata = {
   id?: string | undefined;
   name: string;
   objectType: string;
-  objects?: { [k: string]: string } | undefined;
+  objects?: { [k: string]: any } | undefined;
   options?: Array<string> | undefined;
   originalFormat?: string | undefined;
   raw?: MetadataMetadataRaw | undefined;
@@ -120,7 +120,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   object_type: z.string(),
-  objects: z.record(z.string()).optional(),
+  objects: z.record(z.any()).optional(),
   options: z.array(z.string()).optional(),
   original_format: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$inboundSchema).optional(),
@@ -142,7 +142,7 @@ export type MetadataMetadata$Outbound = {
   id?: string | undefined;
   name: string;
   object_type: string;
-  objects?: { [k: string]: string } | undefined;
+  objects?: { [k: string]: any } | undefined;
   options?: Array<string> | undefined;
   original_format?: string | undefined;
   raw?: MetadataMetadataRaw$Outbound | undefined;
@@ -160,7 +160,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   objectType: z.string(),
-  objects: z.record(z.string()).optional(),
+  objects: z.record(z.any()).optional(),
   options: z.array(z.string()).optional(),
   originalFormat: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$outboundSchema).optional(),

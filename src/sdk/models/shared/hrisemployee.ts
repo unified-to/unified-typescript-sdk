@@ -33,6 +33,12 @@ import {
   HrisLocation$outboundSchema,
 } from "./hrislocation.js";
 import {
+  HrisMetadata,
+  HrisMetadata$inboundSchema,
+  HrisMetadata$Outbound,
+  HrisMetadata$outboundSchema,
+} from "./hrismetadata.js";
+import {
   HrisTelephone,
   HrisTelephone$inboundSchema,
   HrisTelephone$Outbound,
@@ -117,6 +123,7 @@ export type HrisEmployee = {
   locations?: Array<HrisLocation> | undefined;
   managerId?: string | undefined;
   maritalStatus?: MaritalStatus | undefined;
+  metadata?: Array<HrisMetadata> | undefined;
   name?: string | undefined;
   pronouns?: string | undefined;
   raw?: HrisEmployeeRaw | undefined;
@@ -294,6 +301,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   locations: z.array(HrisLocation$inboundSchema).optional(),
   manager_id: z.string().optional(),
   marital_status: MaritalStatus$inboundSchema.optional(),
+  metadata: z.array(HrisMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   pronouns: z.string().optional(),
   raw: z.lazy(() => HrisEmployeeRaw$inboundSchema).optional(),
@@ -353,6 +361,7 @@ export type HrisEmployee$Outbound = {
   locations?: Array<HrisLocation$Outbound> | undefined;
   manager_id?: string | undefined;
   marital_status?: string | undefined;
+  metadata?: Array<HrisMetadata$Outbound> | undefined;
   name?: string | undefined;
   pronouns?: string | undefined;
   raw?: HrisEmployeeRaw$Outbound | undefined;
@@ -396,6 +405,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   locations: z.array(HrisLocation$outboundSchema).optional(),
   managerId: z.string().optional(),
   maritalStatus: MaritalStatus$outboundSchema.optional(),
+  metadata: z.array(HrisMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   pronouns: z.string().optional(),
   raw: z.lazy(() => HrisEmployeeRaw$outboundSchema).optional(),

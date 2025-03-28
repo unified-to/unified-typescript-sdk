@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
+import {
   PropertyAtsCompanyAddress,
   PropertyAtsCompanyAddress$inboundSchema,
   PropertyAtsCompanyAddress$Outbound,
@@ -20,6 +26,7 @@ export type AtsCompany = {
   address?: PropertyAtsCompanyAddress | undefined;
   createdAt?: Date | undefined;
   id?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   name: string;
   parentId?: string | undefined;
   phone?: string | undefined;
@@ -83,6 +90,7 @@ export const AtsCompany$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   name: z.string(),
   parent_id: z.string().optional(),
   phone: z.string().optional(),
@@ -106,6 +114,7 @@ export type AtsCompany$Outbound = {
   address?: PropertyAtsCompanyAddress$Outbound | undefined;
   created_at?: string | undefined;
   id?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   name: string;
   parent_id?: string | undefined;
   phone?: string | undefined;
@@ -124,6 +133,7 @@ export const AtsCompany$outboundSchema: z.ZodType<
   address: PropertyAtsCompanyAddress$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string(),
   parentId: z.string().optional(),
   phone: z.string().optional(),

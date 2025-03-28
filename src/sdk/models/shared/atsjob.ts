@@ -38,6 +38,12 @@ import {
   AtsJobQuestion$Outbound,
   AtsJobQuestion$outboundSchema,
 } from "./atsjobquestion.js";
+import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
 
 export const EmploymentType = {
   FullTime: "FULL_TIME",
@@ -83,6 +89,7 @@ export type AtsJob = {
   hiringManagerIds?: Array<string> | undefined;
   id?: string | undefined;
   languageLocale?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   name?: string | undefined;
   numberOfOpenings?: number | undefined;
   /**
@@ -203,6 +210,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     hiring_manager_ids: z.array(z.string()).optional(),
     id: z.string().optional(),
     language_locale: z.string().optional(),
+    metadata: z.array(AtsMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     number_of_openings: z.number().optional(),
     postings: z.array(AtsJobPosting$inboundSchema).optional(),
@@ -244,6 +252,7 @@ export type AtsJob$Outbound = {
   hiring_manager_ids?: Array<string> | undefined;
   id?: string | undefined;
   language_locale?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   name?: string | undefined;
   number_of_openings?: number | undefined;
   postings?: Array<AtsJobPosting$Outbound> | undefined;
@@ -274,6 +283,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   hiringManagerIds: z.array(z.string()).optional(),
   id: z.string().optional(),
   languageLocale: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   numberOfOpenings: z.number().optional(),
   postings: z.array(AtsJobPosting$outboundSchema).optional(),

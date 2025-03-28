@@ -15,6 +15,12 @@ import {
   AtsApplicationAnswer$outboundSchema,
 } from "./atsapplicationanswer.js";
 import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
+import {
   AtsOffer,
   AtsOffer$inboundSchema,
   AtsOffer$Outbound,
@@ -49,6 +55,7 @@ export type AtsApplication = {
   hiredAt?: Date | undefined;
   id?: string | undefined;
   jobId?: string | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   offers?: Array<AtsOffer> | undefined;
   originalStatus?: string | undefined;
   raw?: AtsApplicationRaw | undefined;
@@ -144,6 +151,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   job_id: z.string().optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   offers: z.array(AtsOffer$inboundSchema).optional(),
   original_status: z.string().optional(),
   raw: z.lazy(() => AtsApplicationRaw$inboundSchema).optional(),
@@ -177,6 +185,7 @@ export type AtsApplication$Outbound = {
   hired_at?: string | undefined;
   id?: string | undefined;
   job_id?: string | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   offers?: Array<AtsOffer$Outbound> | undefined;
   original_status?: string | undefined;
   raw?: AtsApplicationRaw$Outbound | undefined;
@@ -200,6 +209,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   hiredAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   jobId: z.string().optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   offers: z.array(AtsOffer$outboundSchema).optional(),
   originalStatus: z.string().optional(),
   raw: z.lazy(() => AtsApplicationRaw$outboundSchema).optional(),

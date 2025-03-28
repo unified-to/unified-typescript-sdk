@@ -61,6 +61,7 @@ export type AccountingInvoice = {
   paidAmount?: number | undefined;
   paidAt?: Date | undefined;
   paymentCollectionMethod?: PaymentCollectionMethod | undefined;
+  postedAt?: Date | undefined;
   raw?: AccountingInvoiceRaw | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
@@ -211,6 +212,8 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   payment_collection_method: PaymentCollectionMethod$inboundSchema.optional(),
+  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   raw: z.lazy(() => AccountingInvoiceRaw$inboundSchema).optional(),
   refund_amount: z.number().optional(),
   refund_reason: z.string().optional(),
@@ -236,6 +239,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "paid_amount": "paidAmount",
     "paid_at": "paidAt",
     "payment_collection_method": "paymentCollectionMethod",
+    "posted_at": "postedAt",
     "refund_amount": "refundAmount",
     "refund_reason": "refundReason",
     "refunded_at": "refundedAt",
@@ -262,6 +266,7 @@ export type AccountingInvoice$Outbound = {
   paid_amount?: number | undefined;
   paid_at?: string | undefined;
   payment_collection_method?: string | undefined;
+  posted_at?: string | undefined;
   raw?: AccountingInvoiceRaw$Outbound | undefined;
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
@@ -295,6 +300,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   paidAmount: z.number().optional(),
   paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentCollectionMethod: PaymentCollectionMethod$outboundSchema.optional(),
+  postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.lazy(() => AccountingInvoiceRaw$outboundSchema).optional(),
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
@@ -318,6 +324,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     paidAmount: "paid_amount",
     paidAt: "paid_at",
     paymentCollectionMethod: "payment_collection_method",
+    postedAt: "posted_at",
     refundAmount: "refund_amount",
     refundReason: "refund_reason",
     refundedAt: "refunded_at",

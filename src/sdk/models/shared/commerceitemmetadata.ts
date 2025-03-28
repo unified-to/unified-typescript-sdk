@@ -8,101 +8,114 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ExtraData = {};
+export type CommerceItemMetadataExtraData = {};
 
-export type Value = {};
+export type CommerceItemMetadataValue = {};
 
 export type CommerceItemMetadata = {
-  extraData?: ExtraData | undefined;
+  extraData?: CommerceItemMetadataExtraData | undefined;
   id?: string | undefined;
   key: string;
   namespace?: string | undefined;
   type?: string | undefined;
-  value?: Value | undefined;
+  value?: CommerceItemMetadataValue | undefined;
 };
 
 /** @internal */
-export const ExtraData$inboundSchema: z.ZodType<
-  ExtraData,
+export const CommerceItemMetadataExtraData$inboundSchema: z.ZodType<
+  CommerceItemMetadataExtraData,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
 /** @internal */
-export type ExtraData$Outbound = {};
+export type CommerceItemMetadataExtraData$Outbound = {};
 
 /** @internal */
-export const ExtraData$outboundSchema: z.ZodType<
-  ExtraData$Outbound,
+export const CommerceItemMetadataExtraData$outboundSchema: z.ZodType<
+  CommerceItemMetadataExtraData$Outbound,
   z.ZodTypeDef,
-  ExtraData
+  CommerceItemMetadataExtraData
 > = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ExtraData$ {
-  /** @deprecated use `ExtraData$inboundSchema` instead. */
-  export const inboundSchema = ExtraData$inboundSchema;
-  /** @deprecated use `ExtraData$outboundSchema` instead. */
-  export const outboundSchema = ExtraData$outboundSchema;
-  /** @deprecated use `ExtraData$Outbound` instead. */
-  export type Outbound = ExtraData$Outbound;
+export namespace CommerceItemMetadataExtraData$ {
+  /** @deprecated use `CommerceItemMetadataExtraData$inboundSchema` instead. */
+  export const inboundSchema = CommerceItemMetadataExtraData$inboundSchema;
+  /** @deprecated use `CommerceItemMetadataExtraData$outboundSchema` instead. */
+  export const outboundSchema = CommerceItemMetadataExtraData$outboundSchema;
+  /** @deprecated use `CommerceItemMetadataExtraData$Outbound` instead. */
+  export type Outbound = CommerceItemMetadataExtraData$Outbound;
 }
 
-export function extraDataToJSON(extraData: ExtraData): string {
-  return JSON.stringify(ExtraData$outboundSchema.parse(extraData));
+export function commerceItemMetadataExtraDataToJSON(
+  commerceItemMetadataExtraData: CommerceItemMetadataExtraData,
+): string {
+  return JSON.stringify(
+    CommerceItemMetadataExtraData$outboundSchema.parse(
+      commerceItemMetadataExtraData,
+    ),
+  );
 }
 
-export function extraDataFromJSON(
+export function commerceItemMetadataExtraDataFromJSON(
   jsonString: string,
-): SafeParseResult<ExtraData, SDKValidationError> {
+): SafeParseResult<CommerceItemMetadataExtraData, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ExtraData$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ExtraData' from JSON`,
+    (x) => CommerceItemMetadataExtraData$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemMetadataExtraData' from JSON`,
   );
 }
 
 /** @internal */
-export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
-  .object({});
-
-/** @internal */
-export type Value$Outbound = {};
-
-/** @internal */
-export const Value$outboundSchema: z.ZodType<
-  Value$Outbound,
+export const CommerceItemMetadataValue$inboundSchema: z.ZodType<
+  CommerceItemMetadataValue,
   z.ZodTypeDef,
-  Value
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceItemMetadataValue$Outbound = {};
+
+/** @internal */
+export const CommerceItemMetadataValue$outboundSchema: z.ZodType<
+  CommerceItemMetadataValue$Outbound,
+  z.ZodTypeDef,
+  CommerceItemMetadataValue
 > = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Value$ {
-  /** @deprecated use `Value$inboundSchema` instead. */
-  export const inboundSchema = Value$inboundSchema;
-  /** @deprecated use `Value$outboundSchema` instead. */
-  export const outboundSchema = Value$outboundSchema;
-  /** @deprecated use `Value$Outbound` instead. */
-  export type Outbound = Value$Outbound;
+export namespace CommerceItemMetadataValue$ {
+  /** @deprecated use `CommerceItemMetadataValue$inboundSchema` instead. */
+  export const inboundSchema = CommerceItemMetadataValue$inboundSchema;
+  /** @deprecated use `CommerceItemMetadataValue$outboundSchema` instead. */
+  export const outboundSchema = CommerceItemMetadataValue$outboundSchema;
+  /** @deprecated use `CommerceItemMetadataValue$Outbound` instead. */
+  export type Outbound = CommerceItemMetadataValue$Outbound;
 }
 
-export function valueToJSON(value: Value): string {
-  return JSON.stringify(Value$outboundSchema.parse(value));
+export function commerceItemMetadataValueToJSON(
+  commerceItemMetadataValue: CommerceItemMetadataValue,
+): string {
+  return JSON.stringify(
+    CommerceItemMetadataValue$outboundSchema.parse(commerceItemMetadataValue),
+  );
 }
 
-export function valueFromJSON(
+export function commerceItemMetadataValueFromJSON(
   jsonString: string,
-): SafeParseResult<Value, SDKValidationError> {
+): SafeParseResult<CommerceItemMetadataValue, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => Value$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Value' from JSON`,
+    (x) => CommerceItemMetadataValue$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceItemMetadataValue' from JSON`,
   );
 }
 
@@ -112,12 +125,13 @@ export const CommerceItemMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  extra_data: z.lazy(() => ExtraData$inboundSchema).optional(),
+  extra_data: z.lazy(() => CommerceItemMetadataExtraData$inboundSchema)
+    .optional(),
   id: z.string().optional(),
   key: z.string(),
   namespace: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => Value$inboundSchema).optional(),
+  value: z.lazy(() => CommerceItemMetadataValue$inboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     "extra_data": "extraData",
@@ -126,12 +140,12 @@ export const CommerceItemMetadata$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CommerceItemMetadata$Outbound = {
-  extra_data?: ExtraData$Outbound | undefined;
+  extra_data?: CommerceItemMetadataExtraData$Outbound | undefined;
   id?: string | undefined;
   key: string;
   namespace?: string | undefined;
   type?: string | undefined;
-  value?: Value$Outbound | undefined;
+  value?: CommerceItemMetadataValue$Outbound | undefined;
 };
 
 /** @internal */
@@ -140,12 +154,13 @@ export const CommerceItemMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceItemMetadata
 > = z.object({
-  extraData: z.lazy(() => ExtraData$outboundSchema).optional(),
+  extraData: z.lazy(() => CommerceItemMetadataExtraData$outboundSchema)
+    .optional(),
   id: z.string().optional(),
   key: z.string(),
   namespace: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => Value$outboundSchema).optional(),
+  value: z.lazy(() => CommerceItemMetadataValue$outboundSchema).optional(),
 }).transform((v) => {
   return remap$(v, {
     extraData: "extra_data",

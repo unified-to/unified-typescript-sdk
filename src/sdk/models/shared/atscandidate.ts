@@ -27,6 +27,12 @@ import {
   AtsEmail$outboundSchema,
 } from "./atsemail.js";
 import {
+  AtsMetadata,
+  AtsMetadata$inboundSchema,
+  AtsMetadata$Outbound,
+  AtsMetadata$outboundSchema,
+} from "./atsmetadata.js";
+import {
   AtsTelephone,
   AtsTelephone$inboundSchema,
   AtsTelephone$Outbound,
@@ -67,6 +73,7 @@ export type AtsCandidate = {
    * URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
    */
   linkUrls?: Array<string> | undefined;
+  metadata?: Array<AtsMetadata> | undefined;
   name?: string | undefined;
   origin?: Origin | undefined;
   raw?: AtsCandidateRaw | undefined;
@@ -166,6 +173,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   id: z.string().optional(),
   image_url: z.string().optional(),
   link_urls: z.array(z.string()).optional(),
+  metadata: z.array(AtsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$inboundSchema.optional(),
   raw: z.lazy(() => AtsCandidateRaw$inboundSchema).optional(),
@@ -207,6 +215,7 @@ export type AtsCandidate$Outbound = {
   id?: string | undefined;
   image_url?: string | undefined;
   link_urls?: Array<string> | undefined;
+  metadata?: Array<AtsMetadata$Outbound> | undefined;
   name?: string | undefined;
   origin?: string | undefined;
   raw?: AtsCandidateRaw$Outbound | undefined;
@@ -238,6 +247,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   id: z.string().optional(),
   imageUrl: z.string().optional(),
   linkUrls: z.array(z.string()).optional(),
+  metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$outboundSchema.optional(),
   raw: z.lazy(() => AtsCandidateRaw$outboundSchema).optional(),

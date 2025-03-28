@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 34e2f659b85467cb5f9d62c4f5261dd8
+  docChecksum: d7c4d10aa3021eb73869b5af504ea3df
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.28.0
-  configChecksum: 9875b6aa497bc8eeaa482490483d6c5a
+  releaseVersion: 2.30.0
+  configChecksum: bcd863b37ab4a4d557486b967426749d
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -592,6 +592,7 @@ generatedFiles:
   - docs/sdk/models/shared/atsjobquestiontype.md
   - docs/sdk/models/shared/atsjobraw.md
   - docs/sdk/models/shared/atsjobstatus.md
+  - docs/sdk/models/shared/atsmetadata.md
   - docs/sdk/models/shared/atsoffer.md
   - docs/sdk/models/shared/atsofferraw.md
   - docs/sdk/models/shared/atsofferstatus.md
@@ -627,6 +628,8 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemmedia.md
   - docs/sdk/models/shared/commerceitemmediatype.md
   - docs/sdk/models/shared/commerceitemmetadata.md
+  - docs/sdk/models/shared/commerceitemmetadataextradata.md
+  - docs/sdk/models/shared/commerceitemmetadatavalue.md
   - docs/sdk/models/shared/commerceitemoption.md
   - docs/sdk/models/shared/commerceitemprice.md
   - docs/sdk/models/shared/commerceitemraw.md
@@ -651,6 +654,9 @@ generatedFiles:
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/crmleadraw.md
+  - docs/sdk/models/shared/crmmetadata.md
+  - docs/sdk/models/shared/crmmetadataextradata.md
+  - docs/sdk/models/shared/crmmetadatavalue.md
   - docs/sdk/models/shared/crmpipeline.md
   - docs/sdk/models/shared/crmpipelineraw.md
   - docs/sdk/models/shared/crmstage.md
@@ -692,6 +698,9 @@ generatedFiles:
   - docs/sdk/models/shared/hrisgrouptype.md
   - docs/sdk/models/shared/hrislocation.md
   - docs/sdk/models/shared/hrislocationraw.md
+  - docs/sdk/models/shared/hrismetadata.md
+  - docs/sdk/models/shared/hrismetadataextradata.md
+  - docs/sdk/models/shared/hrismetadatavalue.md
   - docs/sdk/models/shared/hrispayslip.md
   - docs/sdk/models/shared/hrispayslipdetail.md
   - docs/sdk/models/shared/hrispayslipdetailtype.md
@@ -2346,6 +2355,7 @@ generatedFiles:
   - src/sdk/models/shared/atsjob.ts
   - src/sdk/models/shared/atsjobposting.ts
   - src/sdk/models/shared/atsjobquestion.ts
+  - src/sdk/models/shared/atsmetadata.ts
   - src/sdk/models/shared/atsoffer.ts
   - src/sdk/models/shared/atsscorecard.ts
   - src/sdk/models/shared/atsscorecardquestion.ts
@@ -2377,6 +2387,7 @@ generatedFiles:
   - src/sdk/models/shared/crmeventformfield.ts
   - src/sdk/models/shared/crmeventformoption.ts
   - src/sdk/models/shared/crmlead.ts
+  - src/sdk/models/shared/crmmetadata.ts
   - src/sdk/models/shared/crmpipeline.ts
   - src/sdk/models/shared/crmstage.ts
   - src/sdk/models/shared/crmtelephone.ts
@@ -2394,6 +2405,7 @@ generatedFiles:
   - src/sdk/models/shared/hrisemployee.ts
   - src/sdk/models/shared/hrisgroup.ts
   - src/sdk/models/shared/hrislocation.ts
+  - src/sdk/models/shared/hrismetadata.ts
   - src/sdk/models/shared/hrispayslip.ts
   - src/sdk/models/shared/hrispayslipdetail.ts
   - src/sdk/models/shared/hristelephone.ts
