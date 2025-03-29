@@ -25,6 +25,7 @@ export type AccountingJournal = {
    * new field name
    */
   lineitems?: Array<AccountingJournalLineitem> | undefined;
+  postedAt?: Date | undefined;
   raw?: AccountingJournalRaw | undefined;
   reference?: string | undefined;
   taxAmount?: number | undefined;
@@ -92,6 +93,8 @@ export const AccountingJournal$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$inboundSchema).optional(),
+  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   raw: z.lazy(() => AccountingJournalRaw$inboundSchema).optional(),
   reference: z.string().optional(),
   tax_amount: z.number().optional(),
@@ -101,6 +104,7 @@ export const AccountingJournal$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "posted_at": "postedAt",
     "tax_amount": "taxAmount",
     "taxrate_id": "taxrateId",
     "updated_at": "updatedAt",
@@ -114,6 +118,7 @@ export type AccountingJournal$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingJournalLineitem$Outbound> | undefined;
+  posted_at?: string | undefined;
   raw?: AccountingJournalRaw$Outbound | undefined;
   reference?: string | undefined;
   tax_amount?: number | undefined;
@@ -132,6 +137,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingJournalLineitem$outboundSchema).optional(),
+  postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.lazy(() => AccountingJournalRaw$outboundSchema).optional(),
   reference: z.string().optional(),
   taxAmount: z.number().optional(),
@@ -140,6 +146,7 @@ export const AccountingJournal$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    postedAt: "posted_at",
     taxAmount: "tax_amount",
     taxrateId: "taxrate_id",
     updatedAt: "updated_at",
