@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 9857048e17c51b706f1f1755ce5dafdc
+  docChecksum: b86a0a7e009b89c881979b0459cdcf9b
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.32.0
-  configChecksum: 3f6e3d414f28342496f75cb68513542e
+  releaseVersion: 2.34.0
+  configChecksum: 3bd7ba40c5d3eea6ef5850e494f944ad
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -786,7 +786,6 @@ generatedFiles:
   - docs/sdk/models/shared/messagingchannel.md
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
-  - docs/sdk/models/shared/meta.md
   - docs/sdk/models/shared/metadatametadata.md
   - docs/sdk/models/shared/metadatametadataraw.md
   - docs/sdk/models/shared/nativewebhookparentid.md
@@ -822,7 +821,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertycalendarrecordingtranscriptattendeestatus.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
   - docs/sdk/models/shared/propertyconnectionauth.md
-  - docs/sdk/models/shared/propertyconnectionauthmeta.md
   - docs/sdk/models/shared/propertyconnectioncategories.md
   - docs/sdk/models/shared/propertyconnectionpermissions.md
   - docs/sdk/models/shared/propertycrmcompanyaddress.md
