@@ -12,6 +12,7 @@ export * from "./accountingjournallineitem.js";
 export * from "./accountinglineitem.js";
 export * from "./accountingorder.js";
 export * from "./accountingorganization.js";
+export * from "./accountingreport.js";
 export * from "./accountingtaxrate.js";
 export * from "./accountingtelephone.js";
 export * from "./accountingtransaction.js";

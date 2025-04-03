@@ -9,8 +9,8 @@ import { Webhook } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Webhook = {
   connectionId: "<id>",
-  event: "created",
-  objectType: "kms_comment",
+  event: "deleted",
+  objectType: "ats_job",
 };
 ```
 
@@ -27,7 +27,7 @@ let value: Webhook = {
 | `environment`                                                                                 | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `event`                                                                                       | [shared.Event](../../../sdk/models/shared/event.md)                                           | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `fields`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `filters`                                                                                     | Record<string, *string*>                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `filters`                                                                                     | Record<string, *any*>                                                                         | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `hookUrl`                                                                                     | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `id`                                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `integrationType`                                                                             | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

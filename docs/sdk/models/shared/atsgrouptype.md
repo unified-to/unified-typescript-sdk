@@ -5,7 +5,7 @@
 ```typescript
 import { AtsGroupType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsGroupType = "SUB_DEPARTMENT";
+let value: AtsGroupType = "TEAM";
 ```
 
 ## Values

@@ -9,11 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "passthrough",
+    "auth",
   ],
   integrationType: "<value>",
   permissions: [
-    "payment_subscription_write",
+    "storage_file_write",
   ],
 };
 ```

@@ -527,7 +527,7 @@ export type IntegrationSupport = {
   listType?: ListType | undefined;
   listUpdatedGte?: ListUpdatedGte | undefined;
   listUserId?: ListUserId | undefined;
-  methods?: { [k: string]: boolean } | undefined;
+  methods?: { [k: string]: any } | undefined;
   nativeWebhookParentId?: NativeWebhookParentId | undefined;
   nativeWebhookProjectId?: NativeWebhookProjectId | undefined;
   outboundFields?: { [k: string]: any } | undefined;
@@ -1916,7 +1916,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_type: ListType$inboundSchema.optional(),
   list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
   list_user_id: ListUserId$inboundSchema.optional(),
-  methods: z.record(z.boolean()).optional(),
+  methods: z.record(z.any()).optional(),
   native_webhook_parent_id: NativeWebhookParentId$inboundSchema.optional(),
   native_webhook_project_id: NativeWebhookProjectId$inboundSchema.optional(),
   outbound_fields: z.record(z.any()).optional(),
@@ -2066,7 +2066,7 @@ export type IntegrationSupport$Outbound = {
   list_type?: string | undefined;
   list_updated_gte?: string | undefined;
   list_user_id?: string | undefined;
-  methods?: { [k: string]: boolean } | undefined;
+  methods?: { [k: string]: any } | undefined;
   native_webhook_parent_id?: string | undefined;
   native_webhook_project_id?: string | undefined;
   outbound_fields?: { [k: string]: any } | undefined;
@@ -2145,7 +2145,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listType: ListType$outboundSchema.optional(),
   listUpdatedGte: ListUpdatedGte$outboundSchema.optional(),
   listUserId: ListUserId$outboundSchema.optional(),
-  methods: z.record(z.boolean()).optional(),
+  methods: z.record(z.any()).optional(),
   nativeWebhookParentId: NativeWebhookParentId$outboundSchema.optional(),
   nativeWebhookProjectId: NativeWebhookProjectId$outboundSchema.optional(),
   outboundFields: z.record(z.any()).optional(),

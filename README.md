@@ -466,6 +466,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingJournal`](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
 - [`accountingGetAccountingOrder`](docs/sdks/accounting/README.md#getaccountingorder) - Retrieve an order
 - [`accountingGetAccountingOrganization`](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
+- [`accountingGetAccountingReport`](docs/sdks/accounting/README.md#getaccountingreport) - Retrieve a report
 - [`accountingGetAccountingTaxrate`](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
 - [`accountingGetAccountingTransaction`](docs/sdks/accounting/README.md#getaccountingtransaction) - Retrieve a transaction
 - [`accountingListAccountingAccounts`](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
@@ -474,6 +475,7 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingJournals`](docs/sdks/accounting/README.md#listaccountingjournals) - List all journals
 - [`accountingListAccountingOrders`](docs/sdks/accounting/README.md#listaccountingorders) - List all orders
 - [`accountingListAccountingOrganizations`](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
+- [`accountingListAccountingReports`](docs/sdks/accounting/README.md#listaccountingreports) - List all reports
 - [`accountingListAccountingTaxrates`](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
 - [`accountingListAccountingTransactions`](docs/sdks/accounting/README.md#listaccountingtransactions) - List all transactions
 - [`accountingPatchAccountingAccount`](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
@@ -1094,6 +1096,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoRemoveRepoOrganization`](docs/sdks/repo/README.md#removerepoorganization) - Remove an organization
 - [`repoRemoveRepoPullrequest`](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
 - [`repoRemoveRepoRepository`](docs/sdks/repo/README.md#removereporepository) - Remove a repository
+- [`reportGetAccountingReport`](docs/sdks/report/README.md#getaccountingreport) - Retrieve a report
+- [`reportListAccountingReports`](docs/sdks/report/README.md#listaccountingreports) - List all reports
 - [`repositoryCreateRepoRepository`](docs/sdks/repository/README.md#createreporepository) - Create a repository
 - [`repositoryGetRepoRepository`](docs/sdks/repository/README.md#getreporepository) - Retrieve a repository
 - [`repositoryListRepoRepositories`](docs/sdks/repository/README.md#listreporepositories) - List all repositories

@@ -5,7 +5,7 @@
 ```typescript
 import { AtsDocumentType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsDocumentType = "COVER_LETTER";
+let value: AtsDocumentType = "RESUME";
 ```
 
 ## Values

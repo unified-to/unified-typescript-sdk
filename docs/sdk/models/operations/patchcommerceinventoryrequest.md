@@ -7,7 +7,7 @@ import { PatchCommerceInventoryRequest } from "@unified-api/typescript-sdk/sdk/m
 
 let value: PatchCommerceInventoryRequest = {
   commerceInventory: {
-    available: 7992.03,
+    available: 6304.48,
   },
   connectionId: "<id>",
   id: "<id>",

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b86a0a7e009b89c881979b0459cdcf9b
+  docChecksum: 17d655d886642d9b7380dfa9cd15cb96
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.34.0
-  configChecksum: 3bd7ba40c5d3eea6ef5850e494f944ad
+  releaseVersion: 2.36.0
+  configChecksum: dbbef94f08a0e68e227bb25929f55d61
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -110,6 +110,7 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingjournalrequest.md
   - docs/sdk/models/operations/getaccountingorderrequest.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
+  - docs/sdk/models/operations/getaccountingreportrequest.md
   - docs/sdk/models/operations/getaccountingtaxraterequest.md
   - docs/sdk/models/operations/getaccountingtransactionrequest.md
   - docs/sdk/models/operations/getatsactivityrequest.md
@@ -183,6 +184,7 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingjournalsrequest.md
   - docs/sdk/models/operations/listaccountingordersrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
+  - docs/sdk/models/operations/listaccountingreportsrequest.md
   - docs/sdk/models/operations/listaccountingtaxratesrequest.md
   - docs/sdk/models/operations/listaccountingtransactionsrequest.md
   - docs/sdk/models/operations/listatsactivitiesrequest.md
@@ -550,6 +552,9 @@ generatedFiles:
   - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
   - docs/sdk/models/shared/accountingorganizationraw.md
+  - docs/sdk/models/shared/accountingreport.md
+  - docs/sdk/models/shared/accountingreportraw.md
+  - docs/sdk/models/shared/accountingreporttype.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtaxrateraw.md
   - docs/sdk/models/shared/accountingtelephone.md
@@ -1014,6 +1019,7 @@ generatedFiles:
   - docs/sdks/recording/README.md
   - docs/sdks/refund/README.md
   - docs/sdks/repo/README.md
+  - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
@@ -1055,6 +1061,7 @@ generatedFiles:
   - src/funcs/accountingGetAccountingJournal.ts
   - src/funcs/accountingGetAccountingOrder.ts
   - src/funcs/accountingGetAccountingOrganization.ts
+  - src/funcs/accountingGetAccountingReport.ts
   - src/funcs/accountingGetAccountingTaxrate.ts
   - src/funcs/accountingGetAccountingTransaction.ts
   - src/funcs/accountingListAccountingAccounts.ts
@@ -1063,6 +1070,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingJournals.ts
   - src/funcs/accountingListAccountingOrders.ts
   - src/funcs/accountingListAccountingOrganizations.ts
+  - src/funcs/accountingListAccountingReports.ts
   - src/funcs/accountingListAccountingTaxrates.ts
   - src/funcs/accountingListAccountingTransactions.ts
   - src/funcs/accountingPatchAccountingAccount.ts
@@ -1684,6 +1692,8 @@ generatedFiles:
   - src/funcs/repoUpdateRepoOrganization.ts
   - src/funcs/repoUpdateRepoPullrequest.ts
   - src/funcs/repoUpdateRepoRepository.ts
+  - src/funcs/reportGetAccountingReport.ts
+  - src/funcs/reportListAccountingReports.ts
   - src/funcs/repositoryCreateRepoRepository.ts
   - src/funcs/repositoryGetRepoRepository.ts
   - src/funcs/repositoryListRepoRepositories.ts
@@ -1979,6 +1989,7 @@ generatedFiles:
   - src/sdk/models/operations/getaccountingjournal.ts
   - src/sdk/models/operations/getaccountingorder.ts
   - src/sdk/models/operations/getaccountingorganization.ts
+  - src/sdk/models/operations/getaccountingreport.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
   - src/sdk/models/operations/getaccountingtransaction.ts
   - src/sdk/models/operations/getatsactivity.ts
@@ -2053,6 +2064,7 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingjournals.ts
   - src/sdk/models/operations/listaccountingorders.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
+  - src/sdk/models/operations/listaccountingreports.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
   - src/sdk/models/operations/listaccountingtransactions.ts
   - src/sdk/models/operations/listatsactivities.ts
@@ -2331,6 +2343,7 @@ generatedFiles:
   - src/sdk/models/shared/accountinglineitem.ts
   - src/sdk/models/shared/accountingorder.ts
   - src/sdk/models/shared/accountingorganization.ts
+  - src/sdk/models/shared/accountingreport.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtelephone.ts
   - src/sdk/models/shared/accountingtransaction.ts
@@ -2536,6 +2549,7 @@ generatedFiles:
   - src/sdk/recording.ts
   - src/sdk/refund.ts
   - src/sdk/repo.ts
+  - src/sdk/report.ts
   - src/sdk/repository.ts
   - src/sdk/scim.ts
   - src/sdk/scorecard.ts
@@ -6628,5 +6642,24 @@ examples:
       responses:
         "200":
           application/json: {"url": "https://standard-birth.info/"}
+  getAccountingReport:
+    speakeasy-default-get-accounting-report:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  listAccountingReports:
+    speakeasy-default-list-accounting-reports:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
 examplesVersion: 1.0.0
 generatedTests: {}

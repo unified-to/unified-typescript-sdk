@@ -9,7 +9,7 @@ let value: ApiCall = {
   integrationType: "<value>",
   method: "<value>",
   name: "<value>",
-  path: "/opt/include",
+  path: "/home/user",
   status: "<value>",
   type: "login",
 };

@@ -75,6 +75,7 @@ import { Pullrequest } from "./pullrequest.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
+import { Report } from "./report.js";
 import { Repository } from "./repository.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
@@ -127,6 +128,11 @@ export class UnifiedTo extends ClientSDK {
   private _organization?: Organization;
   get organization(): Organization {
     return (this._organization ??= new Organization(this._options));
+  }
+
+  private _report?: Report;
+  get report(): Report {
+    return (this._report ??= new Report(this._options));
   }
 
   private _taxrate?: Taxrate;

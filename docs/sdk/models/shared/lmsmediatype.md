@@ -5,7 +5,7 @@
 ```typescript
 import { LmsMediaType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: LmsMediaType = "IMAGE";
+let value: LmsMediaType = "HEADSHOT";
 ```
 
 ## Values

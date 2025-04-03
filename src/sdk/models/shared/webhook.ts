@@ -34,6 +34,7 @@ export const ObjectType = {
   AccountingTaxrate: "accounting_taxrate",
   AccountingOrganization: "accounting_organization",
   AccountingOrder: "accounting_order",
+  AccountingReport: "accounting_report",
   PaymentPayment: "payment_payment",
   PaymentLink: "payment_link",
   PaymentPayout: "payment_payout",
@@ -124,7 +125,7 @@ export type Webhook = {
   environment?: string | undefined;
   event: Event;
   fields?: string | undefined;
-  filters?: { [k: string]: string } | undefined;
+  filters?: { [k: string]: any } | undefined;
   hookUrl?: string | undefined;
   id?: string | undefined;
   integrationType?: string | undefined;
@@ -236,7 +237,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
     environment: z.string().default("Production"),
     event: Event$inboundSchema,
     fields: z.string().optional(),
-    filters: z.record(z.string()).optional(),
+    filters: z.record(z.any()).optional(),
     hook_url: z.string().optional(),
     id: z.string().optional(),
     integration_type: z.string().optional(),
@@ -283,7 +284,7 @@ export type Webhook$Outbound = {
   environment: string;
   event: string;
   fields?: string | undefined;
-  filters?: { [k: string]: string } | undefined;
+  filters?: { [k: string]: any } | undefined;
   hook_url?: string | undefined;
   id?: string | undefined;
   integration_type?: string | undefined;
@@ -314,7 +315,7 @@ export const Webhook$outboundSchema: z.ZodType<
   environment: z.string().default("Production"),
   event: Event$outboundSchema,
   fields: z.string().optional(),
-  filters: z.record(z.string()).optional(),
+  filters: z.record(z.any()).optional(),
   hookUrl: z.string().optional(),
   id: z.string().optional(),
   integrationType: z.string().optional(),

@@ -5,7 +5,7 @@
 ```typescript
 import { Frequency } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Frequency = "HOUR";
+let value: Frequency = "ONE_TIME";
 ```
 
 ## Values

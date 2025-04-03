@@ -22,6 +22,8 @@ export const PropertyConnectionPermissions = {
   AccountingOrganizationRead: "accounting_organization_read",
   AccountingOrderRead: "accounting_order_read",
   AccountingOrderWrite: "accounting_order_write",
+  AccountingReportRead: "accounting_report_read",
+  AccountingReportWrite: "accounting_report_write",
   PaymentPaymentRead: "payment_payment_read",
   PaymentPaymentWrite: "payment_payment_write",
   PaymentPayoutRead: "payment_payout_read",

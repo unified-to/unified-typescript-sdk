@@ -5,7 +5,7 @@
 ```typescript
 import { TaskTaskStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: TaskTaskStatus = "IN_PROGRESS";
+let value: TaskTaskStatus = "COMPLETED";
 ```
 
 ## Values

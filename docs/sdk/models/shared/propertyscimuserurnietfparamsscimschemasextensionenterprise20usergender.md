@@ -7,7 +7,7 @@ import { PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
 
 let value:
   PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender =
-    "male";
+    "female";
 ```
 
 ## Values

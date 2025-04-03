@@ -5,7 +5,7 @@
 ```typescript
 import { EnrichEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: EnrichEmailType = "WORK";
+let value: EnrichEmailType = "OTHER";
 ```
 
 ## Values
