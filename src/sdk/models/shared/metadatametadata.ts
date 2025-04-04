@@ -38,6 +38,7 @@ export type MetadataMetadata = {
   options?: Array<string> | undefined;
   originalFormat?: string | undefined;
   raw?: MetadataMetadataRaw | undefined;
+  slug?: string | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -124,6 +125,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   options: z.array(z.string()).optional(),
   original_format: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$inboundSchema).optional(),
+  slug: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -146,6 +148,7 @@ export type MetadataMetadata$Outbound = {
   options?: Array<string> | undefined;
   original_format?: string | undefined;
   raw?: MetadataMetadataRaw$Outbound | undefined;
+  slug?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -164,6 +167,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   options: z.array(z.string()).optional(),
   originalFormat: z.string().optional(),
   raw: z.lazy(() => MetadataMetadataRaw$outboundSchema).optional(),
+  slug: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

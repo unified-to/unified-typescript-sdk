@@ -129,6 +129,9 @@ export type HrisEmployee = {
   raw?: HrisEmployeeRaw | undefined;
   salutation?: string | undefined;
   ssnSin?: string | undefined;
+  storageQuotaAllocated?: number | undefined;
+  storageQuotaAvailable?: number | undefined;
+  storageQuotaUsed?: number | undefined;
   telephones?: Array<HrisTelephone> | undefined;
   terminatedAt?: Date | undefined;
   timezone?: string | undefined;
@@ -307,6 +310,9 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   raw: z.lazy(() => HrisEmployeeRaw$inboundSchema).optional(),
   salutation: z.string().optional(),
   ssn_sin: z.string().optional(),
+  storage_quota_allocated: z.number().optional(),
+  storage_quota_available: z.number().optional(),
+  storage_quota_used: z.number().optional(),
   telephones: z.array(HrisTelephone$inboundSchema).optional(),
   terminated_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
@@ -330,6 +336,9 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "manager_id": "managerId",
     "marital_status": "maritalStatus",
     "ssn_sin": "ssnSin",
+    "storage_quota_allocated": "storageQuotaAllocated",
+    "storage_quota_available": "storageQuotaAvailable",
+    "storage_quota_used": "storageQuotaUsed",
     "terminated_at": "terminatedAt",
     "updated_at": "updatedAt",
   });
@@ -367,6 +376,9 @@ export type HrisEmployee$Outbound = {
   raw?: HrisEmployeeRaw$Outbound | undefined;
   salutation?: string | undefined;
   ssn_sin?: string | undefined;
+  storage_quota_allocated?: number | undefined;
+  storage_quota_available?: number | undefined;
+  storage_quota_used?: number | undefined;
   telephones?: Array<HrisTelephone$Outbound> | undefined;
   terminated_at?: string | undefined;
   timezone?: string | undefined;
@@ -411,6 +423,9 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   raw: z.lazy(() => HrisEmployeeRaw$outboundSchema).optional(),
   salutation: z.string().optional(),
   ssnSin: z.string().optional(),
+  storageQuotaAllocated: z.number().optional(),
+  storageQuotaAvailable: z.number().optional(),
+  storageQuotaUsed: z.number().optional(),
   telephones: z.array(HrisTelephone$outboundSchema).optional(),
   terminatedAt: z.date().transform(v => v.toISOString()).optional(),
   timezone: z.string().optional(),
@@ -431,6 +446,9 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     managerId: "manager_id",
     maritalStatus: "marital_status",
     ssnSin: "ssn_sin",
+    storageQuotaAllocated: "storage_quota_allocated",
+    storageQuotaAvailable: "storage_quota_available",
+    storageQuotaUsed: "storage_quota_used",
     terminatedAt: "terminated_at",
     updatedAt: "updated_at",
   });
