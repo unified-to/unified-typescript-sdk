@@ -50,8 +50,8 @@ async function run() {
     ],
     integrationType: "<value>",
     permissions: [
-      "lms_course_read",
-      "scim_users_read",
+      "repo_organization_read",
+      "lms_class_write",
     ],
   });
 
@@ -87,8 +87,8 @@ async function run() {
     ],
     integrationType: "<value>",
     permissions: [
-      "lms_course_read",
-      "scim_users_read",
+      "repo_organization_read",
+      "lms_class_write",
     ],
   });
 
@@ -144,7 +144,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_employee",
+      objectType: "hris_payslip",
     },
   });
 
@@ -176,7 +176,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_employee",
+      objectType: "hris_payslip",
     },
   });
 
@@ -1013,8 +1013,8 @@ async function run() {
   const result = await unifiedTo.unified.patchUnifiedConnection({
     connection: {
       categories: [
-        "metadata",
-        "crm",
+        "calendar",
+        "enrich",
       ],
       integrationType: "<value>",
       permissions: [
@@ -1051,8 +1051,8 @@ async function run() {
   const res = await unifiedPatchUnifiedConnection(unifiedTo, {
     connection: {
       categories: [
-        "metadata",
-        "crm",
+        "calendar",
+        "enrich",
       ],
       integrationType: "<value>",
       permissions: [
@@ -1114,7 +1114,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_deal",
+      objectType: "crm_lead",
     },
     id: "<id>",
   });
@@ -1147,7 +1147,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_deal",
+      objectType: "crm_lead",
     },
     id: "<id>",
   });
@@ -1443,9 +1443,9 @@ async function run() {
   const result = await unifiedTo.unified.updateUnifiedConnection({
     connection: {
       categories: [
-        "metadata",
-        "accounting",
-        "metadata",
+        "calendar",
+        "storage",
+        "calendar",
       ],
       integrationType: "<value>",
       permissions: [
@@ -1482,9 +1482,9 @@ async function run() {
   const res = await unifiedUpdateUnifiedConnection(unifiedTo, {
     connection: {
       categories: [
-        "metadata",
-        "accounting",
-        "metadata",
+        "calendar",
+        "storage",
+        "calendar",
       ],
       integrationType: "<value>",
       permissions: [

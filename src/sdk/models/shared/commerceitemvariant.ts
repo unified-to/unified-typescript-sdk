@@ -15,12 +15,6 @@ import {
   CommerceItemMedia$outboundSchema,
 } from "./commerceitemmedia.js";
 import {
-  CommerceItemMetadata,
-  CommerceItemMetadata$inboundSchema,
-  CommerceItemMetadata$Outbound,
-  CommerceItemMetadata$outboundSchema,
-} from "./commerceitemmetadata.js";
-import {
   CommerceItemOption,
   CommerceItemOption$inboundSchema,
   CommerceItemOption$Outbound,
@@ -32,6 +26,12 @@ import {
   CommerceItemPrice$Outbound,
   CommerceItemPrice$outboundSchema,
 } from "./commerceitemprice.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export const SizeUnit = {
   Cm: "cm",
@@ -58,7 +58,7 @@ export type CommerceItemVariant = {
   isVisible?: boolean | undefined;
   length?: number | undefined;
   media?: Array<CommerceItemMedia> | undefined;
-  metadata?: Array<CommerceItemMetadata> | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   name?: string | undefined;
   options?: Array<CommerceItemOption> | undefined;
   prices?: Array<CommerceItemPrice> | undefined;
@@ -130,7 +130,7 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
   is_visible: z.boolean().optional(),
   length: z.number().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceItemMetadata$inboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   options: z.array(CommerceItemOption$inboundSchema).optional(),
   prices: z.array(CommerceItemPrice$inboundSchema).optional(),
@@ -172,7 +172,7 @@ export type CommerceItemVariant$Outbound = {
   is_visible?: boolean | undefined;
   length?: number | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
-  metadata?: Array<CommerceItemMetadata$Outbound> | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name?: string | undefined;
   options?: Array<CommerceItemOption$Outbound> | undefined;
   prices?: Array<CommerceItemPrice$Outbound> | undefined;
@@ -204,7 +204,7 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
   isVisible: z.boolean().optional(),
   length: z.number().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceItemMetadata$outboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   options: z.array(CommerceItemOption$outboundSchema).optional(),
   prices: z.array(CommerceItemPrice$outboundSchema).optional(),

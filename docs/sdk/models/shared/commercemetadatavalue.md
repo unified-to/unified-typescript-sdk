@@ -1,11 +1,11 @@
-# CommerceItemMetadataValue
+# CommerceMetadataValue
 
 ## Example Usage
 
 ```typescript
-import { CommerceItemMetadataValue } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { CommerceMetadataValue } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceItemMetadataValue = {};
+let value: CommerceMetadataValue = {};
 ```
 
 ## Fields

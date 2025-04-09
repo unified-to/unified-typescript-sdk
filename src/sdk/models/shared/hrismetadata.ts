@@ -15,8 +15,9 @@ export type HrisMetadataValue = {};
 export type HrisMetadata = {
   extraData?: HrisMetadataExtraData | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: HrisMetadataValue | undefined;
 };
@@ -125,8 +126,9 @@ export const HrisMetadata$inboundSchema: z.ZodType<
 > = z.object({
   extra_data: z.lazy(() => HrisMetadataExtraData$inboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => HrisMetadataValue$inboundSchema).optional(),
 }).transform((v) => {
@@ -139,8 +141,9 @@ export const HrisMetadata$inboundSchema: z.ZodType<
 export type HrisMetadata$Outbound = {
   extra_data?: HrisMetadataExtraData$Outbound | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: HrisMetadataValue$Outbound | undefined;
 };
@@ -153,8 +156,9 @@ export const HrisMetadata$outboundSchema: z.ZodType<
 > = z.object({
   extraData: z.lazy(() => HrisMetadataExtraData$outboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => HrisMetadataValue$outboundSchema).optional(),
 }).transform((v) => {

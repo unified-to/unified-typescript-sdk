@@ -15,8 +15,9 @@ export type Value = {};
 export type AtsMetadata = {
   extraData?: ExtraData | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: Value | undefined;
 };
@@ -114,8 +115,9 @@ export const AtsMetadata$inboundSchema: z.ZodType<
 > = z.object({
   extra_data: z.lazy(() => ExtraData$inboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => Value$inboundSchema).optional(),
 }).transform((v) => {
@@ -128,8 +130,9 @@ export const AtsMetadata$inboundSchema: z.ZodType<
 export type AtsMetadata$Outbound = {
   extra_data?: ExtraData$Outbound | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: Value$Outbound | undefined;
 };
@@ -142,8 +145,9 @@ export const AtsMetadata$outboundSchema: z.ZodType<
 > = z.object({
   extraData: z.lazy(() => ExtraData$outboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => Value$outboundSchema).optional(),
 }).transform((v) => {

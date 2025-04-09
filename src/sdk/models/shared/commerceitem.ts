@@ -14,17 +14,17 @@ import {
   CommerceItemMedia$outboundSchema,
 } from "./commerceitemmedia.js";
 import {
-  CommerceItemMetadata,
-  CommerceItemMetadata$inboundSchema,
-  CommerceItemMetadata$Outbound,
-  CommerceItemMetadata$outboundSchema,
-} from "./commerceitemmetadata.js";
-import {
   CommerceItemVariant,
   CommerceItemVariant$inboundSchema,
   CommerceItemVariant$Outbound,
   CommerceItemVariant$outboundSchema,
 } from "./commerceitemvariant.js";
+import {
+  CommerceMetadata,
+  CommerceMetadata$inboundSchema,
+  CommerceMetadata$Outbound,
+  CommerceMetadata$outboundSchema,
+} from "./commercemetadata.js";
 
 export type CommerceItemRaw = {};
 
@@ -37,7 +37,7 @@ export type CommerceItem = {
   isActive?: boolean | undefined;
   isTaxable?: boolean | undefined;
   media?: Array<CommerceItemMedia> | undefined;
-  metadata?: Array<CommerceItemMetadata> | undefined;
+  metadata?: Array<CommerceMetadata> | undefined;
   name?: string | undefined;
   publicDescription?: string | undefined;
   publicName?: string | undefined;
@@ -114,7 +114,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_taxable: z.boolean().optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
-  metadata: z.array(CommerceItemMetadata$inboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   public_description: z.string().optional(),
   public_name: z.string().optional(),
@@ -150,7 +150,7 @@ export type CommerceItem$Outbound = {
   is_active?: boolean | undefined;
   is_taxable?: boolean | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
-  metadata?: Array<CommerceItemMetadata$Outbound> | undefined;
+  metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name?: string | undefined;
   public_description?: string | undefined;
   public_name?: string | undefined;
@@ -177,7 +177,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isTaxable: z.boolean().optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
-  metadata: z.array(CommerceItemMetadata$outboundSchema).optional(),
+  metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),

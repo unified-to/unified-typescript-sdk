@@ -15,8 +15,9 @@ export type CrmMetadataValue = {};
 export type CrmMetadata = {
   extraData?: CrmMetadataExtraData | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: CrmMetadataValue | undefined;
 };
@@ -125,8 +126,9 @@ export const CrmMetadata$inboundSchema: z.ZodType<
 > = z.object({
   extra_data: z.lazy(() => CrmMetadataExtraData$inboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => CrmMetadataValue$inboundSchema).optional(),
 }).transform((v) => {
@@ -139,8 +141,9 @@ export const CrmMetadata$inboundSchema: z.ZodType<
 export type CrmMetadata$Outbound = {
   extra_data?: CrmMetadataExtraData$Outbound | undefined;
   id?: string | undefined;
-  key: string;
+  key?: string | undefined;
   namespace?: string | undefined;
+  slug?: string | undefined;
   type?: string | undefined;
   value?: CrmMetadataValue$Outbound | undefined;
 };
@@ -153,8 +156,9 @@ export const CrmMetadata$outboundSchema: z.ZodType<
 > = z.object({
   extraData: z.lazy(() => CrmMetadataExtraData$outboundSchema).optional(),
   id: z.string().optional(),
-  key: z.string(),
+  key: z.string().optional(),
   namespace: z.string().optional(),
+  slug: z.string().optional(),
   type: z.string().optional(),
   value: z.lazy(() => CrmMetadataValue$outboundSchema).optional(),
 }).transform((v) => {
