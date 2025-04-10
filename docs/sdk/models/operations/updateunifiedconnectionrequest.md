@@ -12,7 +12,7 @@ let value: UpdateUnifiedConnectionRequest = {
     ],
     integrationType: "<value>",
     permissions: [
-      "crm_lead_write",
+      "crm_pipeline_read",
     ],
   },
   id: "<id>",

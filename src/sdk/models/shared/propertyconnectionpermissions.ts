@@ -148,6 +148,8 @@ export const PropertyConnectionPermissions = {
   CalendarLinkWrite: "calendar_link_write",
   CalendarRecordingRead: "calendar_recording_read",
   CalendarRecordingWrite: "calendar_recording_write",
+  EnrichPersonRead: "enrich_person_read",
+  EnrichCompanyRead: "enrich_company_read",
 } as const;
 export type PropertyConnectionPermissions = ClosedEnum<
   typeof PropertyConnectionPermissions

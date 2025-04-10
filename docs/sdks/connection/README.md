@@ -36,8 +36,8 @@ async function run() {
     ],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_read",
-      "lms_class_write",
+      "repo_repository_read",
+      "lms_student_write",
     ],
   });
 
@@ -73,8 +73,8 @@ async function run() {
     ],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_read",
-      "lms_class_write",
+      "repo_repository_read",
+      "lms_student_write",
     ],
   });
 

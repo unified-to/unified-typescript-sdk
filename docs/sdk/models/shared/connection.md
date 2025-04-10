@@ -13,7 +13,7 @@ let value: Connection = {
   ],
   integrationType: "<value>",
   permissions: [
-    "storage_file_write",
+    "webhook",
   ],
 };
 ```
