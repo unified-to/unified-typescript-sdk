@@ -8,8 +8,6 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CommerceInventoryRaw = {};
-
 export type CommerceInventory = {
   available: number;
   id?: string | undefined;
@@ -17,57 +15,9 @@ export type CommerceInventory = {
   itemOptionId?: string | undefined;
   itemVariantId?: string | undefined;
   locationId?: string | undefined;
-  raw?: CommerceInventoryRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const CommerceInventoryRaw$inboundSchema: z.ZodType<
-  CommerceInventoryRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CommerceInventoryRaw$Outbound = {};
-
-/** @internal */
-export const CommerceInventoryRaw$outboundSchema: z.ZodType<
-  CommerceInventoryRaw$Outbound,
-  z.ZodTypeDef,
-  CommerceInventoryRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceInventoryRaw$ {
-  /** @deprecated use `CommerceInventoryRaw$inboundSchema` instead. */
-  export const inboundSchema = CommerceInventoryRaw$inboundSchema;
-  /** @deprecated use `CommerceInventoryRaw$outboundSchema` instead. */
-  export const outboundSchema = CommerceInventoryRaw$outboundSchema;
-  /** @deprecated use `CommerceInventoryRaw$Outbound` instead. */
-  export type Outbound = CommerceInventoryRaw$Outbound;
-}
-
-export function commerceInventoryRawToJSON(
-  commerceInventoryRaw: CommerceInventoryRaw,
-): string {
-  return JSON.stringify(
-    CommerceInventoryRaw$outboundSchema.parse(commerceInventoryRaw),
-  );
-}
-
-export function commerceInventoryRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CommerceInventoryRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CommerceInventoryRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CommerceInventoryRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CommerceInventory$inboundSchema: z.ZodType<
@@ -81,7 +31,7 @@ export const CommerceInventory$inboundSchema: z.ZodType<
   item_option_id: z.string().optional(),
   item_variant_id: z.string().optional(),
   location_id: z.string().optional(),
-  raw: z.lazy(() => CommerceInventoryRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -102,7 +52,7 @@ export type CommerceInventory$Outbound = {
   item_option_id?: string | undefined;
   item_variant_id?: string | undefined;
   location_id?: string | undefined;
-  raw?: CommerceInventoryRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
 };
 
@@ -118,7 +68,7 @@ export const CommerceInventory$outboundSchema: z.ZodType<
   itemOptionId: z.string().optional(),
   itemVariantId: z.string().optional(),
   locationId: z.string().optional(),
-  raw: z.lazy(() => CommerceInventoryRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

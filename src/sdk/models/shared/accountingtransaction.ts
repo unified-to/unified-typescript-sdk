@@ -20,8 +20,6 @@ import {
   AccountingTransactionLineItem$outboundSchema,
 } from "./accountingtransactionlineitem.js";
 
-export type AccountingTransactionRaw = {};
-
 export type AccountingTransaction = {
   accountId?: string | undefined;
   contactId?: string | undefined;
@@ -34,7 +32,7 @@ export type AccountingTransaction = {
   memo?: string | undefined;
   paymentMethod?: string | undefined;
   paymentTerms?: string | undefined;
-  raw?: AccountingTransactionRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   splitAccountId?: string | undefined;
   subTotalAmount?: number | undefined;
@@ -43,54 +41,6 @@ export type AccountingTransaction = {
   type?: string | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const AccountingTransactionRaw$inboundSchema: z.ZodType<
-  AccountingTransactionRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AccountingTransactionRaw$Outbound = {};
-
-/** @internal */
-export const AccountingTransactionRaw$outboundSchema: z.ZodType<
-  AccountingTransactionRaw$Outbound,
-  z.ZodTypeDef,
-  AccountingTransactionRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTransactionRaw$ {
-  /** @deprecated use `AccountingTransactionRaw$inboundSchema` instead. */
-  export const inboundSchema = AccountingTransactionRaw$inboundSchema;
-  /** @deprecated use `AccountingTransactionRaw$outboundSchema` instead. */
-  export const outboundSchema = AccountingTransactionRaw$outboundSchema;
-  /** @deprecated use `AccountingTransactionRaw$Outbound` instead. */
-  export type Outbound = AccountingTransactionRaw$Outbound;
-}
-
-export function accountingTransactionRawToJSON(
-  accountingTransactionRaw: AccountingTransactionRaw,
-): string {
-  return JSON.stringify(
-    AccountingTransactionRaw$outboundSchema.parse(accountingTransactionRaw),
-  );
-}
-
-export function accountingTransactionRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AccountingTransactionRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AccountingTransactionRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountingTransactionRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const AccountingTransaction$inboundSchema: z.ZodType<
@@ -110,7 +60,7 @@ export const AccountingTransaction$inboundSchema: z.ZodType<
   memo: z.string().optional(),
   payment_method: z.string().optional(),
   payment_terms: z.string().optional(),
-  raw: z.lazy(() => AccountingTransactionRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   split_account_id: z.string().optional(),
   sub_total_amount: z.number().optional(),
@@ -148,7 +98,7 @@ export type AccountingTransaction$Outbound = {
   memo?: string | undefined;
   payment_method?: string | undefined;
   payment_terms?: string | undefined;
-  raw?: AccountingTransactionRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
   split_account_id?: string | undefined;
   sub_total_amount?: number | undefined;
@@ -175,7 +125,7 @@ export const AccountingTransaction$outboundSchema: z.ZodType<
   memo: z.string().optional(),
   paymentMethod: z.string().optional(),
   paymentTerms: z.string().optional(),
-  raw: z.lazy(() => AccountingTransactionRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
   splitAccountId: z.string().optional(),
   subTotalAmount: z.number().optional(),

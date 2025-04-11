@@ -14,8 +14,6 @@ import {
   CrmMetadata$outboundSchema,
 } from "./crmmetadata.js";
 
-export type CrmDealRaw = {};
-
 /**
  * A deal represents an opportunity with companies and/or contacts
  */
@@ -33,7 +31,7 @@ export type CrmDeal = {
   pipeline?: string | undefined;
   pipelineId?: string | undefined;
   probability?: number | undefined;
-  raw?: CrmDealRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stageId?: string | undefined;
@@ -42,50 +40,6 @@ export type CrmDeal = {
   userId?: string | undefined;
   wonReason?: string | undefined;
 };
-
-/** @internal */
-export const CrmDealRaw$inboundSchema: z.ZodType<
-  CrmDealRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CrmDealRaw$Outbound = {};
-
-/** @internal */
-export const CrmDealRaw$outboundSchema: z.ZodType<
-  CrmDealRaw$Outbound,
-  z.ZodTypeDef,
-  CrmDealRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmDealRaw$ {
-  /** @deprecated use `CrmDealRaw$inboundSchema` instead. */
-  export const inboundSchema = CrmDealRaw$inboundSchema;
-  /** @deprecated use `CrmDealRaw$outboundSchema` instead. */
-  export const outboundSchema = CrmDealRaw$outboundSchema;
-  /** @deprecated use `CrmDealRaw$Outbound` instead. */
-  export type Outbound = CrmDealRaw$Outbound;
-}
-
-export function crmDealRawToJSON(crmDealRaw: CrmDealRaw): string {
-  return JSON.stringify(CrmDealRaw$outboundSchema.parse(crmDealRaw));
-}
-
-export function crmDealRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CrmDealRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CrmDealRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CrmDealRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
@@ -106,7 +60,7 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
     pipeline: z.string().optional(),
     pipeline_id: z.string().optional(),
     probability: z.number().optional(),
-    raw: z.lazy(() => CrmDealRaw$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
     source: z.string().optional(),
     stage: z.string().optional(),
     stage_id: z.string().optional(),
@@ -146,7 +100,7 @@ export type CrmDeal$Outbound = {
   pipeline?: string | undefined;
   pipeline_id?: string | undefined;
   probability?: number | undefined;
-  raw?: CrmDealRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   stage?: string | undefined;
   stage_id?: string | undefined;
@@ -175,7 +129,7 @@ export const CrmDeal$outboundSchema: z.ZodType<
   pipeline: z.string().optional(),
   pipelineId: z.string().optional(),
   probability: z.number().optional(),
-  raw: z.lazy(() => CrmDealRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   source: z.string().optional(),
   stage: z.string().optional(),
   stageId: z.string().optional(),

@@ -21,8 +21,6 @@ import {
   PropertyCalendarEventOrganizer$outboundSchema,
 } from "./propertycalendareventorganizer.js";
 
-export type CalendarEventRaw = {};
-
 export const CalendarEventStatus = {
   Canceled: "CANCELED",
   Confirmed: "CONFIRMED",
@@ -42,7 +40,7 @@ export type CalendarEvent = {
   location?: string | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer | undefined;
-  raw?: CalendarEventRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   startAt: string;
   status?: CalendarEventStatus | undefined;
   subject: string;
@@ -50,54 +48,6 @@ export type CalendarEvent = {
   updatedAt?: string | undefined;
   webUrl?: string | undefined;
 };
-
-/** @internal */
-export const CalendarEventRaw$inboundSchema: z.ZodType<
-  CalendarEventRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CalendarEventRaw$Outbound = {};
-
-/** @internal */
-export const CalendarEventRaw$outboundSchema: z.ZodType<
-  CalendarEventRaw$Outbound,
-  z.ZodTypeDef,
-  CalendarEventRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarEventRaw$ {
-  /** @deprecated use `CalendarEventRaw$inboundSchema` instead. */
-  export const inboundSchema = CalendarEventRaw$inboundSchema;
-  /** @deprecated use `CalendarEventRaw$outboundSchema` instead. */
-  export const outboundSchema = CalendarEventRaw$outboundSchema;
-  /** @deprecated use `CalendarEventRaw$Outbound` instead. */
-  export type Outbound = CalendarEventRaw$Outbound;
-}
-
-export function calendarEventRawToJSON(
-  calendarEventRaw: CalendarEventRaw,
-): string {
-  return JSON.stringify(
-    CalendarEventRaw$outboundSchema.parse(calendarEventRaw),
-  );
-}
-
-export function calendarEventRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CalendarEventRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CalendarEventRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CalendarEventRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CalendarEventStatus$inboundSchema: z.ZodNativeEnum<
@@ -137,7 +87,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   location: z.string().optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
-  raw: z.lazy(() => CalendarEventRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   start_at: z.string(),
   status: CalendarEventStatus$inboundSchema.optional(),
   subject: z.string(),
@@ -171,7 +121,7 @@ export type CalendarEvent$Outbound = {
   location?: string | undefined;
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer$Outbound | undefined;
-  raw?: CalendarEventRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   start_at: string;
   status?: string | undefined;
   subject: string;
@@ -197,7 +147,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   location: z.string().optional(),
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
-  raw: z.lazy(() => CalendarEventRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   startAt: z.string(),
   status: CalendarEventStatus$outboundSchema.optional(),
   subject: z.string(),

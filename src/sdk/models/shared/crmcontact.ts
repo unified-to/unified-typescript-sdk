@@ -32,8 +32,6 @@ import {
   PropertyCrmContactAddress$outboundSchema,
 } from "./propertycrmcontactaddress.js";
 
-export type CrmContactRaw = {};
-
 /**
  * A contact represents a person that optionally is associated with a deal and/or a company
  */
@@ -60,7 +58,7 @@ export type CrmContact = {
   linkUrls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
-  raw?: CrmContactRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   /**
    * An array of telephones for this contact
    */
@@ -69,50 +67,6 @@ export type CrmContact = {
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
-
-/** @internal */
-export const CrmContactRaw$inboundSchema: z.ZodType<
-  CrmContactRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CrmContactRaw$Outbound = {};
-
-/** @internal */
-export const CrmContactRaw$outboundSchema: z.ZodType<
-  CrmContactRaw$Outbound,
-  z.ZodTypeDef,
-  CrmContactRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmContactRaw$ {
-  /** @deprecated use `CrmContactRaw$inboundSchema` instead. */
-  export const inboundSchema = CrmContactRaw$inboundSchema;
-  /** @deprecated use `CrmContactRaw$outboundSchema` instead. */
-  export const outboundSchema = CrmContactRaw$outboundSchema;
-  /** @deprecated use `CrmContactRaw$Outbound` instead. */
-  export type Outbound = CrmContactRaw$Outbound;
-}
-
-export function crmContactRawToJSON(crmContactRaw: CrmContactRaw): string {
-  return JSON.stringify(CrmContactRaw$outboundSchema.parse(crmContactRaw));
-}
-
-export function crmContactRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CrmContactRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CrmContactRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CrmContactRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CrmContact$inboundSchema: z.ZodType<
@@ -131,7 +85,7 @@ export const CrmContact$inboundSchema: z.ZodType<
   link_urls: z.array(z.string()).optional(),
   metadata: z.array(CrmMetadata$inboundSchema).optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => CrmContactRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   telephones: z.array(CrmTelephone$inboundSchema).optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -160,7 +114,7 @@ export type CrmContact$Outbound = {
   link_urls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
-  raw?: CrmContactRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
@@ -183,7 +137,7 @@ export const CrmContact$outboundSchema: z.ZodType<
   linkUrls: z.array(z.string()).optional(),
   metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => CrmContactRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

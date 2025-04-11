@@ -9,8 +9,6 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type HrisTimeoffRaw = {};
-
 export const HrisTimeoffStatus = {
   Approved: "APPROVED",
   Pending: "PENDING",
@@ -32,57 +30,13 @@ export type HrisTimeoff = {
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
-  raw?: HrisTimeoffRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   startAt: Date;
   status?: HrisTimeoffStatus | undefined;
   type?: HrisTimeoffType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
-
-/** @internal */
-export const HrisTimeoffRaw$inboundSchema: z.ZodType<
-  HrisTimeoffRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisTimeoffRaw$Outbound = {};
-
-/** @internal */
-export const HrisTimeoffRaw$outboundSchema: z.ZodType<
-  HrisTimeoffRaw$Outbound,
-  z.ZodTypeDef,
-  HrisTimeoffRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTimeoffRaw$ {
-  /** @deprecated use `HrisTimeoffRaw$inboundSchema` instead. */
-  export const inboundSchema = HrisTimeoffRaw$inboundSchema;
-  /** @deprecated use `HrisTimeoffRaw$outboundSchema` instead. */
-  export const outboundSchema = HrisTimeoffRaw$outboundSchema;
-  /** @deprecated use `HrisTimeoffRaw$Outbound` instead. */
-  export type Outbound = HrisTimeoffRaw$Outbound;
-}
-
-export function hrisTimeoffRawToJSON(hrisTimeoffRaw: HrisTimeoffRaw): string {
-  return JSON.stringify(HrisTimeoffRaw$outboundSchema.parse(hrisTimeoffRaw));
-}
-
-export function hrisTimeoffRawFromJSON(
-  jsonString: string,
-): SafeParseResult<HrisTimeoffRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisTimeoffRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisTimeoffRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const HrisTimeoffStatus$inboundSchema: z.ZodNativeEnum<
@@ -142,7 +96,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => HrisTimeoffRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   status: HrisTimeoffStatus$inboundSchema.optional(),
   type: HrisTimeoffType$inboundSchema.optional(),
@@ -171,7 +125,7 @@ export type HrisTimeoff$Outbound = {
   created_at?: string | undefined;
   end_at?: string | undefined;
   id?: string | undefined;
-  raw?: HrisTimeoffRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   start_at: string;
   status?: string | undefined;
   type?: string | undefined;
@@ -192,7 +146,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => HrisTimeoffRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()),
   status: HrisTimeoffStatus$outboundSchema.optional(),
   type: HrisTimeoffType$outboundSchema.optional(),

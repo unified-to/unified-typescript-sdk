@@ -8,8 +8,6 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CalendarLinkRaw = {};
-
 export type CalendarLink = {
   createdAt?: string | undefined;
   description?: string | undefined;
@@ -19,56 +17,10 @@ export type CalendarLink = {
   name?: string | undefined;
   priceAmount?: number | undefined;
   priceCurrency?: string | undefined;
-  raw?: CalendarLinkRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   updatedAt?: string | undefined;
   url: string;
 };
-
-/** @internal */
-export const CalendarLinkRaw$inboundSchema: z.ZodType<
-  CalendarLinkRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CalendarLinkRaw$Outbound = {};
-
-/** @internal */
-export const CalendarLinkRaw$outboundSchema: z.ZodType<
-  CalendarLinkRaw$Outbound,
-  z.ZodTypeDef,
-  CalendarLinkRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarLinkRaw$ {
-  /** @deprecated use `CalendarLinkRaw$inboundSchema` instead. */
-  export const inboundSchema = CalendarLinkRaw$inboundSchema;
-  /** @deprecated use `CalendarLinkRaw$outboundSchema` instead. */
-  export const outboundSchema = CalendarLinkRaw$outboundSchema;
-  /** @deprecated use `CalendarLinkRaw$Outbound` instead. */
-  export type Outbound = CalendarLinkRaw$Outbound;
-}
-
-export function calendarLinkRawToJSON(
-  calendarLinkRaw: CalendarLinkRaw,
-): string {
-  return JSON.stringify(CalendarLinkRaw$outboundSchema.parse(calendarLinkRaw));
-}
-
-export function calendarLinkRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CalendarLinkRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CalendarLinkRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CalendarLinkRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CalendarLink$inboundSchema: z.ZodType<
@@ -84,7 +36,7 @@ export const CalendarLink$inboundSchema: z.ZodType<
   name: z.string().optional(),
   price_amount: z.number().optional(),
   price_currency: z.string().optional(),
-  raw: z.lazy(() => CalendarLinkRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updated_at: z.string().optional(),
   url: z.string(),
 }).transform((v) => {
@@ -107,7 +59,7 @@ export type CalendarLink$Outbound = {
   name?: string | undefined;
   price_amount?: number | undefined;
   price_currency?: string | undefined;
-  raw?: CalendarLinkRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
   url: string;
 };
@@ -126,7 +78,7 @@ export const CalendarLink$outboundSchema: z.ZodType<
   name: z.string().optional(),
   priceAmount: z.number().optional(),
   priceCurrency: z.string().optional(),
-  raw: z.lazy(() => CalendarLinkRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updatedAt: z.string().optional(),
   url: z.string(),
 }).transform((v) => {

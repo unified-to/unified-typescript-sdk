@@ -21,8 +21,6 @@ import {
   PropertyAtsActivityFrom$outboundSchema,
 } from "./propertyatsactivityfrom.js";
 
-export type AtsActivityRaw = {};
-
 export const AtsActivityType = {
   Note: "NOTE",
   Task: "TASK",
@@ -47,7 +45,7 @@ export type AtsActivity = {
   interviewId?: string | undefined;
   isPrivate?: boolean | undefined;
   jobId?: string | undefined;
-  raw?: AtsActivityRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   subType?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail> | undefined;
@@ -58,50 +56,6 @@ export type AtsActivity = {
    */
   userIds?: Array<string> | undefined;
 };
-
-/** @internal */
-export const AtsActivityRaw$inboundSchema: z.ZodType<
-  AtsActivityRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsActivityRaw$Outbound = {};
-
-/** @internal */
-export const AtsActivityRaw$outboundSchema: z.ZodType<
-  AtsActivityRaw$Outbound,
-  z.ZodTypeDef,
-  AtsActivityRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsActivityRaw$ {
-  /** @deprecated use `AtsActivityRaw$inboundSchema` instead. */
-  export const inboundSchema = AtsActivityRaw$inboundSchema;
-  /** @deprecated use `AtsActivityRaw$outboundSchema` instead. */
-  export const outboundSchema = AtsActivityRaw$outboundSchema;
-  /** @deprecated use `AtsActivityRaw$Outbound` instead. */
-  export type Outbound = AtsActivityRaw$Outbound;
-}
-
-export function atsActivityRawToJSON(atsActivityRaw: AtsActivityRaw): string {
-  return JSON.stringify(AtsActivityRaw$outboundSchema.parse(atsActivityRaw));
-}
-
-export function atsActivityRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AtsActivityRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsActivityRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsActivityRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const AtsActivityType$inboundSchema: z.ZodNativeEnum<
@@ -144,7 +98,7 @@ export const AtsActivity$inboundSchema: z.ZodType<
   interview_id: z.string().optional(),
   is_private: z.boolean().optional(),
   job_id: z.string().optional(),
-  raw: z.lazy(() => AtsActivityRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   sub_type: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$inboundSchema).optional(),
@@ -183,7 +137,7 @@ export type AtsActivity$Outbound = {
   interview_id?: string | undefined;
   is_private?: boolean | undefined;
   job_id?: string | undefined;
-  raw?: AtsActivityRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   sub_type?: string | undefined;
   title?: string | undefined;
   to?: Array<AtsEmail$Outbound> | undefined;
@@ -211,7 +165,7 @@ export const AtsActivity$outboundSchema: z.ZodType<
   interviewId: z.string().optional(),
   isPrivate: z.boolean().optional(),
   jobId: z.string().optional(),
-  raw: z.lazy(() => AtsActivityRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   subType: z.string().optional(),
   title: z.string().optional(),
   to: z.array(AtsEmail$outboundSchema).optional(),

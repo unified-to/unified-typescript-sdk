@@ -26,8 +26,6 @@ export const Format = {
 } as const;
 export type Format = ClosedEnum<typeof Format>;
 
-export type MetadataMetadataRaw = {};
-
 export type MetadataMetadata = {
   createdAt?: Date | undefined;
   format?: Format | undefined;
@@ -37,7 +35,7 @@ export type MetadataMetadata = {
   objects?: { [k: string]: any } | undefined;
   options?: Array<string> | undefined;
   originalFormat?: string | undefined;
-  raw?: MetadataMetadataRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   updatedAt?: Date | undefined;
 };
@@ -62,54 +60,6 @@ export namespace Format$ {
 }
 
 /** @internal */
-export const MetadataMetadataRaw$inboundSchema: z.ZodType<
-  MetadataMetadataRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type MetadataMetadataRaw$Outbound = {};
-
-/** @internal */
-export const MetadataMetadataRaw$outboundSchema: z.ZodType<
-  MetadataMetadataRaw$Outbound,
-  z.ZodTypeDef,
-  MetadataMetadataRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MetadataMetadataRaw$ {
-  /** @deprecated use `MetadataMetadataRaw$inboundSchema` instead. */
-  export const inboundSchema = MetadataMetadataRaw$inboundSchema;
-  /** @deprecated use `MetadataMetadataRaw$outboundSchema` instead. */
-  export const outboundSchema = MetadataMetadataRaw$outboundSchema;
-  /** @deprecated use `MetadataMetadataRaw$Outbound` instead. */
-  export type Outbound = MetadataMetadataRaw$Outbound;
-}
-
-export function metadataMetadataRawToJSON(
-  metadataMetadataRaw: MetadataMetadataRaw,
-): string {
-  return JSON.stringify(
-    MetadataMetadataRaw$outboundSchema.parse(metadataMetadataRaw),
-  );
-}
-
-export function metadataMetadataRawFromJSON(
-  jsonString: string,
-): SafeParseResult<MetadataMetadataRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => MetadataMetadataRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MetadataMetadataRaw' from JSON`,
-  );
-}
-
-/** @internal */
 export const MetadataMetadata$inboundSchema: z.ZodType<
   MetadataMetadata,
   z.ZodTypeDef,
@@ -124,7 +74,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   objects: z.record(z.any()).optional(),
   options: z.array(z.string()).optional(),
   original_format: z.string().optional(),
-  raw: z.lazy(() => MetadataMetadataRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -147,7 +97,7 @@ export type MetadataMetadata$Outbound = {
   objects?: { [k: string]: any } | undefined;
   options?: Array<string> | undefined;
   original_format?: string | undefined;
-  raw?: MetadataMetadataRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -166,7 +116,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   objects: z.record(z.any()).optional(),
   options: z.array(z.string()).optional(),
   originalFormat: z.string().optional(),
-  raw: z.lazy(() => MetadataMetadataRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

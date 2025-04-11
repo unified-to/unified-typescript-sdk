@@ -8,62 +8,14 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CalendarBusyRaw = {};
-
 export type CalendarBusy = {
   description?: string | undefined;
   endAt: Date;
   id?: string | undefined;
-  raw?: CalendarBusyRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   startAt: Date;
   timezone?: string | undefined;
 };
-
-/** @internal */
-export const CalendarBusyRaw$inboundSchema: z.ZodType<
-  CalendarBusyRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CalendarBusyRaw$Outbound = {};
-
-/** @internal */
-export const CalendarBusyRaw$outboundSchema: z.ZodType<
-  CalendarBusyRaw$Outbound,
-  z.ZodTypeDef,
-  CalendarBusyRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarBusyRaw$ {
-  /** @deprecated use `CalendarBusyRaw$inboundSchema` instead. */
-  export const inboundSchema = CalendarBusyRaw$inboundSchema;
-  /** @deprecated use `CalendarBusyRaw$outboundSchema` instead. */
-  export const outboundSchema = CalendarBusyRaw$outboundSchema;
-  /** @deprecated use `CalendarBusyRaw$Outbound` instead. */
-  export type Outbound = CalendarBusyRaw$Outbound;
-}
-
-export function calendarBusyRawToJSON(
-  calendarBusyRaw: CalendarBusyRaw,
-): string {
-  return JSON.stringify(CalendarBusyRaw$outboundSchema.parse(calendarBusyRaw));
-}
-
-export function calendarBusyRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CalendarBusyRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CalendarBusyRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CalendarBusyRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CalendarBusy$inboundSchema: z.ZodType<
@@ -74,7 +26,7 @@ export const CalendarBusy$inboundSchema: z.ZodType<
   description: z.string().optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   id: z.string().optional(),
-  raw: z.lazy(() => CalendarBusyRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   timezone: z.string().optional(),
 }).transform((v) => {
@@ -89,7 +41,7 @@ export type CalendarBusy$Outbound = {
   description?: string | undefined;
   end_at: string;
   id?: string | undefined;
-  raw?: CalendarBusyRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   start_at: string;
   timezone?: string | undefined;
 };
@@ -103,7 +55,7 @@ export const CalendarBusy$outboundSchema: z.ZodType<
   description: z.string().optional(),
   endAt: z.date().transform(v => v.toISOString()),
   id: z.string().optional(),
-  raw: z.lazy(() => CalendarBusyRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()),
   timezone: z.string().optional(),
 }).transform((v) => {

@@ -9,8 +9,6 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type Raw = {};
-
 export const Status = {
   Active: "ACTIVE",
   Archived: "ARCHIVED",
@@ -45,7 +43,7 @@ export type AccountingAccount = {
   isPayable?: boolean | undefined;
   name?: string | undefined;
   parentAccountId?: string | undefined;
-  raw?: Raw | undefined;
+  raw?: { [k: string]: any } | undefined;
   section?: string | undefined;
   status?: Status | undefined;
   subgroup?: string | undefined;
@@ -53,44 +51,6 @@ export type AccountingAccount = {
   type?: Type | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const Raw$inboundSchema: z.ZodType<Raw, z.ZodTypeDef, unknown> = z
-  .object({});
-
-/** @internal */
-export type Raw$Outbound = {};
-
-/** @internal */
-export const Raw$outboundSchema: z.ZodType<Raw$Outbound, z.ZodTypeDef, Raw> = z
-  .object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Raw$ {
-  /** @deprecated use `Raw$inboundSchema` instead. */
-  export const inboundSchema = Raw$inboundSchema;
-  /** @deprecated use `Raw$outboundSchema` instead. */
-  export const outboundSchema = Raw$outboundSchema;
-  /** @deprecated use `Raw$Outbound` instead. */
-  export type Outbound = Raw$Outbound;
-}
-
-export function rawToJSON(raw: Raw): string {
-  return JSON.stringify(Raw$outboundSchema.parse(raw));
-}
-
-export function rawFromJSON(
-  jsonString: string,
-): SafeParseResult<Raw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Raw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Raw' from JSON`,
-  );
-}
 
 /** @internal */
 export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
@@ -148,7 +108,7 @@ export const AccountingAccount$inboundSchema: z.ZodType<
   is_payable: z.boolean().optional(),
   name: z.string().optional(),
   parent_account_id: z.string().optional(),
-  raw: z.lazy(() => Raw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   section: z.string().optional(),
   status: Status$inboundSchema.optional(),
   subgroup: z.string().optional(),
@@ -178,7 +138,7 @@ export type AccountingAccount$Outbound = {
   is_payable?: boolean | undefined;
   name?: string | undefined;
   parent_account_id?: string | undefined;
-  raw?: Raw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   section?: string | undefined;
   status?: string | undefined;
   subgroup?: string | undefined;
@@ -203,7 +163,7 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   isPayable: z.boolean().optional(),
   name: z.string().optional(),
   parentAccountId: z.string().optional(),
-  raw: z.lazy(() => Raw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   section: z.string().optional(),
   status: Status$outboundSchema.optional(),
   subgroup: z.string().optional(),

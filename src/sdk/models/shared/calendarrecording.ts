@@ -14,8 +14,6 @@ import {
   CalendarRecordingMedia$outboundSchema,
 } from "./calendarrecordingmedia.js";
 
-export type CalendarRecordingRaw = {};
-
 export type CalendarRecording = {
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
@@ -23,59 +21,11 @@ export type CalendarRecording = {
   expiresAt?: Date | undefined;
   id?: string | undefined;
   media?: Array<CalendarRecordingMedia> | undefined;
-  raw?: CalendarRecordingRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
 };
-
-/** @internal */
-export const CalendarRecordingRaw$inboundSchema: z.ZodType<
-  CalendarRecordingRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CalendarRecordingRaw$Outbound = {};
-
-/** @internal */
-export const CalendarRecordingRaw$outboundSchema: z.ZodType<
-  CalendarRecordingRaw$Outbound,
-  z.ZodTypeDef,
-  CalendarRecordingRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarRecordingRaw$ {
-  /** @deprecated use `CalendarRecordingRaw$inboundSchema` instead. */
-  export const inboundSchema = CalendarRecordingRaw$inboundSchema;
-  /** @deprecated use `CalendarRecordingRaw$outboundSchema` instead. */
-  export const outboundSchema = CalendarRecordingRaw$outboundSchema;
-  /** @deprecated use `CalendarRecordingRaw$Outbound` instead. */
-  export type Outbound = CalendarRecordingRaw$Outbound;
-}
-
-export function calendarRecordingRawToJSON(
-  calendarRecordingRaw: CalendarRecordingRaw,
-): string {
-  return JSON.stringify(
-    CalendarRecordingRaw$outboundSchema.parse(calendarRecordingRaw),
-  );
-}
-
-export function calendarRecordingRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CalendarRecordingRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CalendarRecordingRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CalendarRecordingRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CalendarRecording$inboundSchema: z.ZodType<
@@ -92,7 +42,7 @@ export const CalendarRecording$inboundSchema: z.ZodType<
     .optional(),
   id: z.string().optional(),
   media: z.array(CalendarRecordingMedia$inboundSchema).optional(),
-  raw: z.lazy(() => CalendarRecordingRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -118,7 +68,7 @@ export type CalendarRecording$Outbound = {
   expires_at?: string | undefined;
   id?: string | undefined;
   media?: Array<CalendarRecordingMedia$Outbound> | undefined;
-  raw?: CalendarRecordingRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   start_at?: string | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -136,7 +86,7 @@ export const CalendarRecording$outboundSchema: z.ZodType<
   expiresAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   media: z.array(CalendarRecordingMedia$outboundSchema).optional(),
-  raw: z.lazy(() => CalendarRecordingRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),

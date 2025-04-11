@@ -14,8 +14,6 @@ import {
   CrmStage$outboundSchema,
 } from "./crmstage.js";
 
-export type CrmPipelineRaw = {};
-
 export type CrmPipeline = {
   createdAt?: Date | undefined;
   dealProbability?: number | undefined;
@@ -23,54 +21,10 @@ export type CrmPipeline = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
-  raw?: CrmPipelineRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   stages?: Array<CrmStage> | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const CrmPipelineRaw$inboundSchema: z.ZodType<
-  CrmPipelineRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CrmPipelineRaw$Outbound = {};
-
-/** @internal */
-export const CrmPipelineRaw$outboundSchema: z.ZodType<
-  CrmPipelineRaw$Outbound,
-  z.ZodTypeDef,
-  CrmPipelineRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmPipelineRaw$ {
-  /** @deprecated use `CrmPipelineRaw$inboundSchema` instead. */
-  export const inboundSchema = CrmPipelineRaw$inboundSchema;
-  /** @deprecated use `CrmPipelineRaw$outboundSchema` instead. */
-  export const outboundSchema = CrmPipelineRaw$outboundSchema;
-  /** @deprecated use `CrmPipelineRaw$Outbound` instead. */
-  export type Outbound = CrmPipelineRaw$Outbound;
-}
-
-export function crmPipelineRawToJSON(crmPipelineRaw: CrmPipelineRaw): string {
-  return JSON.stringify(CrmPipelineRaw$outboundSchema.parse(crmPipelineRaw));
-}
-
-export function crmPipelineRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CrmPipelineRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CrmPipelineRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CrmPipelineRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CrmPipeline$inboundSchema: z.ZodType<
@@ -85,7 +39,7 @@ export const CrmPipeline$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => CrmPipelineRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   stages: z.array(CrmStage$inboundSchema).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -107,7 +61,7 @@ export type CrmPipeline$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   name?: string | undefined;
-  raw?: CrmPipelineRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   stages?: Array<CrmStage$Outbound> | undefined;
   updated_at?: string | undefined;
 };
@@ -124,7 +78,7 @@ export const CrmPipeline$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => CrmPipelineRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   stages: z.array(CrmStage$outboundSchema).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

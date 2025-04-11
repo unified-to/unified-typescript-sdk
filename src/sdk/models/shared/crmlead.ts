@@ -32,8 +32,6 @@ import {
   PropertyCrmLeadAddress$outboundSchema,
 } from "./propertycrmleadaddress.js";
 
-export type CrmLeadRaw = {};
-
 export type CrmLead = {
   address?: PropertyCrmLeadAddress | undefined;
   companyId?: string | undefined;
@@ -47,57 +45,13 @@ export type CrmLead = {
   linkUrls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata> | undefined;
   name?: string | undefined;
-  raw?: CrmLeadRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   status?: string | undefined;
   telephones?: Array<CrmTelephone> | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
-
-/** @internal */
-export const CrmLeadRaw$inboundSchema: z.ZodType<
-  CrmLeadRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CrmLeadRaw$Outbound = {};
-
-/** @internal */
-export const CrmLeadRaw$outboundSchema: z.ZodType<
-  CrmLeadRaw$Outbound,
-  z.ZodTypeDef,
-  CrmLeadRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmLeadRaw$ {
-  /** @deprecated use `CrmLeadRaw$inboundSchema` instead. */
-  export const inboundSchema = CrmLeadRaw$inboundSchema;
-  /** @deprecated use `CrmLeadRaw$outboundSchema` instead. */
-  export const outboundSchema = CrmLeadRaw$outboundSchema;
-  /** @deprecated use `CrmLeadRaw$Outbound` instead. */
-  export type Outbound = CrmLeadRaw$Outbound;
-}
-
-export function crmLeadRawToJSON(crmLeadRaw: CrmLeadRaw): string {
-  return JSON.stringify(CrmLeadRaw$outboundSchema.parse(crmLeadRaw));
-}
-
-export function crmLeadRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CrmLeadRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CrmLeadRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CrmLeadRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
@@ -116,7 +70,7 @@ export const CrmLead$inboundSchema: z.ZodType<CrmLead, z.ZodTypeDef, unknown> =
     link_urls: z.array(z.string()).optional(),
     metadata: z.array(CrmMetadata$inboundSchema).optional(),
     name: z.string().optional(),
-    raw: z.lazy(() => CrmLeadRaw$inboundSchema).optional(),
+    raw: z.record(z.any()).optional(),
     source: z.string().optional(),
     status: z.string().optional(),
     telephones: z.array(CrmTelephone$inboundSchema).optional(),
@@ -152,7 +106,7 @@ export type CrmLead$Outbound = {
   link_urls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
-  raw?: CrmLeadRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   source?: string | undefined;
   status?: string | undefined;
   telephones?: Array<CrmTelephone$Outbound> | undefined;
@@ -178,7 +132,7 @@ export const CrmLead$outboundSchema: z.ZodType<
   linkUrls: z.array(z.string()).optional(),
   metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => CrmLeadRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   source: z.string().optional(),
   status: z.string().optional(),
   telephones: z.array(CrmTelephone$outboundSchema).optional(),

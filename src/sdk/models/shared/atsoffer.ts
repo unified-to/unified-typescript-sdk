@@ -15,8 +15,6 @@ import {
   AtsCompensation$outboundSchema,
 } from "./atscompensation.js";
 
-export type AtsOfferRaw = {};
-
 export const AtsOfferStatus = {
   Created: "CREATED",
   Sent: "SENT",
@@ -35,57 +33,13 @@ export type AtsOffer = {
   creatorUserId?: string | undefined;
   employeeUserId?: string | undefined;
   id?: string | undefined;
-  raw?: AtsOfferRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   rejectedAt?: Date | undefined;
   sentAt?: Date | undefined;
   startAt?: Date | undefined;
   status?: AtsOfferStatus | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const AtsOfferRaw$inboundSchema: z.ZodType<
-  AtsOfferRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsOfferRaw$Outbound = {};
-
-/** @internal */
-export const AtsOfferRaw$outboundSchema: z.ZodType<
-  AtsOfferRaw$Outbound,
-  z.ZodTypeDef,
-  AtsOfferRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsOfferRaw$ {
-  /** @deprecated use `AtsOfferRaw$inboundSchema` instead. */
-  export const inboundSchema = AtsOfferRaw$inboundSchema;
-  /** @deprecated use `AtsOfferRaw$outboundSchema` instead. */
-  export const outboundSchema = AtsOfferRaw$outboundSchema;
-  /** @deprecated use `AtsOfferRaw$Outbound` instead. */
-  export type Outbound = AtsOfferRaw$Outbound;
-}
-
-export function atsOfferRawToJSON(atsOfferRaw: AtsOfferRaw): string {
-  return JSON.stringify(AtsOfferRaw$outboundSchema.parse(atsOfferRaw));
-}
-
-export function atsOfferRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AtsOfferRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsOfferRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsOfferRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const AtsOfferStatus$inboundSchema: z.ZodNativeEnum<
@@ -122,7 +76,7 @@ export const AtsOffer$inboundSchema: z.ZodType<
   creator_user_id: z.string().optional(),
   employee_user_id: z.string().optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => AtsOfferRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   rejected_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   sent_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -153,7 +107,7 @@ export type AtsOffer$Outbound = {
   creator_user_id?: string | undefined;
   employee_user_id?: string | undefined;
   id?: string | undefined;
-  raw?: AtsOfferRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   rejected_at?: string | undefined;
   sent_at?: string | undefined;
   start_at?: string | undefined;
@@ -173,7 +127,7 @@ export const AtsOffer$outboundSchema: z.ZodType<
   creatorUserId: z.string().optional(),
   employeeUserId: z.string().optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => AtsOfferRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   rejectedAt: z.date().transform(v => v.toISOString()).optional(),
   sentAt: z.date().transform(v => v.toISOString()).optional(),
   startAt: z.date().transform(v => v.toISOString()).optional(),

@@ -6,7 +6,9 @@
 import { HrisPayslip } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisPayslip = {
-  raw: {},
+  raw: {
+    "key": "<value>",
+  },
 };
 ```
 
@@ -24,7 +26,7 @@ let value: HrisPayslip = {
 | `netAmount`                                                                                   | *number*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `paidAt`                                                                                      | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `paymentType`                                                                                 | [shared.PaymentType](../../../sdk/models/shared/paymenttype.md)                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
-| `raw`                                                                                         | [shared.HrisPayslipRaw](../../../sdk/models/shared/hrispayslipraw.md)                         | :heavy_check_mark:                                                                            | N/A                                                                                           |
+| `raw`                                                                                         | Record<string, *any*>                                                                         | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `startAt`                                                                                     | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `updatedAt`                                                                                   | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `userId`                                                                                      | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |

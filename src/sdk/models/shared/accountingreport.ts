@@ -9,8 +9,6 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountingReportRaw = {};
-
 export const AccountingReportType = {
   TrialBalance: "TRIAL_BALANCE",
   BalanceSheet: "BALANCE_SHEET",
@@ -25,59 +23,11 @@ export type AccountingReport = {
   createdAt?: Date | undefined;
   group?: string | undefined;
   id?: string | undefined;
-  raw?: AccountingReportRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   subgroup?: string | undefined;
   type?: AccountingReportType | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const AccountingReportRaw$inboundSchema: z.ZodType<
-  AccountingReportRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AccountingReportRaw$Outbound = {};
-
-/** @internal */
-export const AccountingReportRaw$outboundSchema: z.ZodType<
-  AccountingReportRaw$Outbound,
-  z.ZodTypeDef,
-  AccountingReportRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingReportRaw$ {
-  /** @deprecated use `AccountingReportRaw$inboundSchema` instead. */
-  export const inboundSchema = AccountingReportRaw$inboundSchema;
-  /** @deprecated use `AccountingReportRaw$outboundSchema` instead. */
-  export const outboundSchema = AccountingReportRaw$outboundSchema;
-  /** @deprecated use `AccountingReportRaw$Outbound` instead. */
-  export type Outbound = AccountingReportRaw$Outbound;
-}
-
-export function accountingReportRawToJSON(
-  accountingReportRaw: AccountingReportRaw,
-): string {
-  return JSON.stringify(
-    AccountingReportRaw$outboundSchema.parse(accountingReportRaw),
-  );
-}
-
-export function accountingReportRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AccountingReportRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AccountingReportRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountingReportRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const AccountingReportType$inboundSchema: z.ZodNativeEnum<
@@ -113,7 +63,7 @@ export const AccountingReport$inboundSchema: z.ZodType<
     .optional(),
   group: z.string().optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => AccountingReportRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   subgroup: z.string().optional(),
   type: AccountingReportType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -135,7 +85,7 @@ export type AccountingReport$Outbound = {
   created_at?: string | undefined;
   group?: string | undefined;
   id?: string | undefined;
-  raw?: AccountingReportRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   subgroup?: string | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
@@ -153,7 +103,7 @@ export const AccountingReport$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   group: z.string().optional(),
   id: z.string().optional(),
-  raw: z.lazy(() => AccountingReportRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   subgroup: z.string().optional(),
   type: AccountingReportType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

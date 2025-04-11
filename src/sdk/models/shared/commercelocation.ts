@@ -14,8 +14,6 @@ import {
   PropertyCommerceLocationAddress$outboundSchema,
 } from "./propertycommercelocationaddress.js";
 
-export type CommerceLocationRaw = {};
-
 export type CommerceLocation = {
   address?: PropertyCommerceLocationAddress | undefined;
   createdAt?: Date | undefined;
@@ -23,57 +21,9 @@ export type CommerceLocation = {
   id?: string | undefined;
   isActive?: boolean | undefined;
   name: string;
-  raw?: CommerceLocationRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const CommerceLocationRaw$inboundSchema: z.ZodType<
-  CommerceLocationRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CommerceLocationRaw$Outbound = {};
-
-/** @internal */
-export const CommerceLocationRaw$outboundSchema: z.ZodType<
-  CommerceLocationRaw$Outbound,
-  z.ZodTypeDef,
-  CommerceLocationRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceLocationRaw$ {
-  /** @deprecated use `CommerceLocationRaw$inboundSchema` instead. */
-  export const inboundSchema = CommerceLocationRaw$inboundSchema;
-  /** @deprecated use `CommerceLocationRaw$outboundSchema` instead. */
-  export const outboundSchema = CommerceLocationRaw$outboundSchema;
-  /** @deprecated use `CommerceLocationRaw$Outbound` instead. */
-  export type Outbound = CommerceLocationRaw$Outbound;
-}
-
-export function commerceLocationRawToJSON(
-  commerceLocationRaw: CommerceLocationRaw,
-): string {
-  return JSON.stringify(
-    CommerceLocationRaw$outboundSchema.parse(commerceLocationRaw),
-  );
-}
-
-export function commerceLocationRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CommerceLocationRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CommerceLocationRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CommerceLocationRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CommerceLocation$inboundSchema: z.ZodType<
@@ -88,7 +38,7 @@ export const CommerceLocation$inboundSchema: z.ZodType<
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string(),
-  raw: z.lazy(() => CommerceLocationRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -107,7 +57,7 @@ export type CommerceLocation$Outbound = {
   id?: string | undefined;
   is_active?: boolean | undefined;
   name: string;
-  raw?: CommerceLocationRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
 };
 
@@ -123,7 +73,7 @@ export const CommerceLocation$outboundSchema: z.ZodType<
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string(),
-  raw: z.lazy(() => CommerceLocationRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

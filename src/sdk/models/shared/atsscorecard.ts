@@ -15,8 +15,6 @@ import {
   AtsScorecardQuestion$outboundSchema,
 } from "./atsscorecardquestion.js";
 
-export type AtsScorecardRaw = {};
-
 export const Recommendation = {
   DefinitelyNo: "DEFINITELY_NO",
   No: "NO",
@@ -35,56 +33,10 @@ export type AtsScorecard = {
   interviewerId?: string | undefined;
   jobId?: string | undefined;
   questions?: Array<AtsScorecardQuestion> | undefined;
-  raw?: AtsScorecardRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   recommendation?: Recommendation | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const AtsScorecardRaw$inboundSchema: z.ZodType<
-  AtsScorecardRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsScorecardRaw$Outbound = {};
-
-/** @internal */
-export const AtsScorecardRaw$outboundSchema: z.ZodType<
-  AtsScorecardRaw$Outbound,
-  z.ZodTypeDef,
-  AtsScorecardRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsScorecardRaw$ {
-  /** @deprecated use `AtsScorecardRaw$inboundSchema` instead. */
-  export const inboundSchema = AtsScorecardRaw$inboundSchema;
-  /** @deprecated use `AtsScorecardRaw$outboundSchema` instead. */
-  export const outboundSchema = AtsScorecardRaw$outboundSchema;
-  /** @deprecated use `AtsScorecardRaw$Outbound` instead. */
-  export type Outbound = AtsScorecardRaw$Outbound;
-}
-
-export function atsScorecardRawToJSON(
-  atsScorecardRaw: AtsScorecardRaw,
-): string {
-  return JSON.stringify(AtsScorecardRaw$outboundSchema.parse(atsScorecardRaw));
-}
-
-export function atsScorecardRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AtsScorecardRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsScorecardRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsScorecardRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const Recommendation$inboundSchema: z.ZodNativeEnum<
@@ -123,7 +75,7 @@ export const AtsScorecard$inboundSchema: z.ZodType<
   interviewer_id: z.string().optional(),
   job_id: z.string().optional(),
   questions: z.array(AtsScorecardQuestion$inboundSchema).optional(),
-  raw: z.lazy(() => AtsScorecardRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   recommendation: Recommendation$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -150,7 +102,7 @@ export type AtsScorecard$Outbound = {
   interviewer_id?: string | undefined;
   job_id?: string | undefined;
   questions?: Array<AtsScorecardQuestion$Outbound> | undefined;
-  raw?: AtsScorecardRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   recommendation?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -170,7 +122,7 @@ export const AtsScorecard$outboundSchema: z.ZodType<
   interviewerId: z.string().optional(),
   jobId: z.string().optional(),
   questions: z.array(AtsScorecardQuestion$outboundSchema).optional(),
-  raw: z.lazy(() => AtsScorecardRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   recommendation: Recommendation$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

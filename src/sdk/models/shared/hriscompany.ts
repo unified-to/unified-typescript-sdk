@@ -14,61 +14,15 @@ import {
   PropertyHrisCompanyAddress$outboundSchema,
 } from "./propertyhriscompanyaddress.js";
 
-export type HrisCompanyRaw = {};
-
 export type HrisCompany = {
   address?: PropertyHrisCompanyAddress | undefined;
   createdAt?: Date | undefined;
   id?: string | undefined;
   legalName?: string | undefined;
   name?: string | undefined;
-  raw?: HrisCompanyRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const HrisCompanyRaw$inboundSchema: z.ZodType<
-  HrisCompanyRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisCompanyRaw$Outbound = {};
-
-/** @internal */
-export const HrisCompanyRaw$outboundSchema: z.ZodType<
-  HrisCompanyRaw$Outbound,
-  z.ZodTypeDef,
-  HrisCompanyRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisCompanyRaw$ {
-  /** @deprecated use `HrisCompanyRaw$inboundSchema` instead. */
-  export const inboundSchema = HrisCompanyRaw$inboundSchema;
-  /** @deprecated use `HrisCompanyRaw$outboundSchema` instead. */
-  export const outboundSchema = HrisCompanyRaw$outboundSchema;
-  /** @deprecated use `HrisCompanyRaw$Outbound` instead. */
-  export type Outbound = HrisCompanyRaw$Outbound;
-}
-
-export function hrisCompanyRawToJSON(hrisCompanyRaw: HrisCompanyRaw): string {
-  return JSON.stringify(HrisCompanyRaw$outboundSchema.parse(hrisCompanyRaw));
-}
-
-export function hrisCompanyRawFromJSON(
-  jsonString: string,
-): SafeParseResult<HrisCompanyRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisCompanyRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisCompanyRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const HrisCompany$inboundSchema: z.ZodType<
@@ -82,7 +36,7 @@ export const HrisCompany$inboundSchema: z.ZodType<
   id: z.string().optional(),
   legal_name: z.string().optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => HrisCompanyRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -100,7 +54,7 @@ export type HrisCompany$Outbound = {
   id?: string | undefined;
   legal_name?: string | undefined;
   name?: string | undefined;
-  raw?: HrisCompanyRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
 };
 
@@ -115,7 +69,7 @@ export const HrisCompany$outboundSchema: z.ZodType<
   id: z.string().optional(),
   legalName: z.string().optional(),
   name: z.string().optional(),
-  raw: z.lazy(() => HrisCompanyRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

@@ -39,8 +39,6 @@ import {
   PropertyAccountingContactShippingAddress$outboundSchema,
 } from "./propertyaccountingcontactshippingaddress.js";
 
-export type AccountingContactRaw = {};
-
 export const TaxExemption = {
   FederalGov: "FEDERAL_GOV",
   RegionGov: "REGION_GOV",
@@ -70,61 +68,13 @@ export type AccountingContact = {
   name?: string | undefined;
   paymentMethods?: Array<AccountingContactPaymentMethod> | undefined;
   portalUrl?: string | undefined;
-  raw?: AccountingContactRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingContactShippingAddress | undefined;
   taxExemption?: TaxExemption | undefined;
   taxNumber?: string | undefined;
   telephones?: Array<AccountingTelephone> | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const AccountingContactRaw$inboundSchema: z.ZodType<
-  AccountingContactRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AccountingContactRaw$Outbound = {};
-
-/** @internal */
-export const AccountingContactRaw$outboundSchema: z.ZodType<
-  AccountingContactRaw$Outbound,
-  z.ZodTypeDef,
-  AccountingContactRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingContactRaw$ {
-  /** @deprecated use `AccountingContactRaw$inboundSchema` instead. */
-  export const inboundSchema = AccountingContactRaw$inboundSchema;
-  /** @deprecated use `AccountingContactRaw$outboundSchema` instead. */
-  export const outboundSchema = AccountingContactRaw$outboundSchema;
-  /** @deprecated use `AccountingContactRaw$Outbound` instead. */
-  export type Outbound = AccountingContactRaw$Outbound;
-}
-
-export function accountingContactRawToJSON(
-  accountingContactRaw: AccountingContactRaw,
-): string {
-  return JSON.stringify(
-    AccountingContactRaw$outboundSchema.parse(accountingContactRaw),
-  );
-}
-
-export function accountingContactRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AccountingContactRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AccountingContactRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountingContactRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const TaxExemption$inboundSchema: z.ZodNativeEnum<typeof TaxExemption> =
@@ -167,7 +117,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
   payment_methods: z.array(AccountingContactPaymentMethod$inboundSchema)
     .optional(),
   portal_url: z.string().optional(),
-  raw: z.lazy(() => AccountingContactRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   shipping_address: PropertyAccountingContactShippingAddress$inboundSchema
     .optional(),
   tax_exemption: TaxExemption$inboundSchema.optional(),
@@ -209,7 +159,7 @@ export type AccountingContact$Outbound = {
   name?: string | undefined;
   payment_methods?: Array<AccountingContactPaymentMethod$Outbound> | undefined;
   portal_url?: string | undefined;
-  raw?: AccountingContactRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   shipping_address?:
     | PropertyAccountingContactShippingAddress$Outbound
     | undefined;
@@ -240,7 +190,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   paymentMethods: z.array(AccountingContactPaymentMethod$outboundSchema)
     .optional(),
   portalUrl: z.string().optional(),
-  raw: z.lazy(() => AccountingContactRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   shippingAddress: PropertyAccountingContactShippingAddress$outboundSchema
     .optional(),
   taxExemption: TaxExemption$outboundSchema.optional(),

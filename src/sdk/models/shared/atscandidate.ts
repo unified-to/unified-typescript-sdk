@@ -55,8 +55,6 @@ export const Origin = {
 } as const;
 export type Origin = ClosedEnum<typeof Origin>;
 
-export type AtsCandidateRaw = {};
-
 export type AtsCandidate = {
   address?: PropertyAtsCandidateAddress | undefined;
   companyId?: string | undefined;
@@ -76,7 +74,7 @@ export type AtsCandidate = {
   metadata?: Array<AtsMetadata> | undefined;
   name?: string | undefined;
   origin?: Origin | undefined;
-  raw?: AtsCandidateRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
   tags?: Array<string> | undefined;
@@ -107,52 +105,6 @@ export namespace Origin$ {
 }
 
 /** @internal */
-export const AtsCandidateRaw$inboundSchema: z.ZodType<
-  AtsCandidateRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsCandidateRaw$Outbound = {};
-
-/** @internal */
-export const AtsCandidateRaw$outboundSchema: z.ZodType<
-  AtsCandidateRaw$Outbound,
-  z.ZodTypeDef,
-  AtsCandidateRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCandidateRaw$ {
-  /** @deprecated use `AtsCandidateRaw$inboundSchema` instead. */
-  export const inboundSchema = AtsCandidateRaw$inboundSchema;
-  /** @deprecated use `AtsCandidateRaw$outboundSchema` instead. */
-  export const outboundSchema = AtsCandidateRaw$outboundSchema;
-  /** @deprecated use `AtsCandidateRaw$Outbound` instead. */
-  export type Outbound = AtsCandidateRaw$Outbound;
-}
-
-export function atsCandidateRawToJSON(
-  atsCandidateRaw: AtsCandidateRaw,
-): string {
-  return JSON.stringify(AtsCandidateRaw$outboundSchema.parse(atsCandidateRaw));
-}
-
-export function atsCandidateRawFromJSON(
-  jsonString: string,
-): SafeParseResult<AtsCandidateRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsCandidateRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsCandidateRaw' from JSON`,
-  );
-}
-
-/** @internal */
 export const AtsCandidate$inboundSchema: z.ZodType<
   AtsCandidate,
   z.ZodTypeDef,
@@ -176,7 +128,7 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   metadata: z.array(AtsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$inboundSchema.optional(),
-  raw: z.lazy(() => AtsCandidateRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),
@@ -218,7 +170,7 @@ export type AtsCandidate$Outbound = {
   metadata?: Array<AtsMetadata$Outbound> | undefined;
   name?: string | undefined;
   origin?: string | undefined;
-  raw?: AtsCandidateRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   skills?: Array<string> | undefined;
   sources?: Array<string> | undefined;
   tags?: Array<string> | undefined;
@@ -250,7 +202,7 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$outboundSchema.optional(),
-  raw: z.lazy(() => AtsCandidateRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   skills: z.array(z.string()).optional(),
   sources: z.array(z.string()).optional(),
   tags: z.array(z.string()).optional(),

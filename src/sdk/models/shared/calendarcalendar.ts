@@ -8,66 +8,16 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CalendarCalendarRaw = {};
-
 export type CalendarCalendar = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
   name: string;
   primary?: boolean | undefined;
-  raw?: CalendarCalendarRaw | undefined;
+  raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
 };
-
-/** @internal */
-export const CalendarCalendarRaw$inboundSchema: z.ZodType<
-  CalendarCalendarRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type CalendarCalendarRaw$Outbound = {};
-
-/** @internal */
-export const CalendarCalendarRaw$outboundSchema: z.ZodType<
-  CalendarCalendarRaw$Outbound,
-  z.ZodTypeDef,
-  CalendarCalendarRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarCalendarRaw$ {
-  /** @deprecated use `CalendarCalendarRaw$inboundSchema` instead. */
-  export const inboundSchema = CalendarCalendarRaw$inboundSchema;
-  /** @deprecated use `CalendarCalendarRaw$outboundSchema` instead. */
-  export const outboundSchema = CalendarCalendarRaw$outboundSchema;
-  /** @deprecated use `CalendarCalendarRaw$Outbound` instead. */
-  export type Outbound = CalendarCalendarRaw$Outbound;
-}
-
-export function calendarCalendarRawToJSON(
-  calendarCalendarRaw: CalendarCalendarRaw,
-): string {
-  return JSON.stringify(
-    CalendarCalendarRaw$outboundSchema.parse(calendarCalendarRaw),
-  );
-}
-
-export function calendarCalendarRawFromJSON(
-  jsonString: string,
-): SafeParseResult<CalendarCalendarRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CalendarCalendarRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CalendarCalendarRaw' from JSON`,
-  );
-}
 
 /** @internal */
 export const CalendarCalendar$inboundSchema: z.ZodType<
@@ -81,7 +31,7 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   primary: z.boolean().optional(),
-  raw: z.lazy(() => CalendarCalendarRaw$inboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -99,7 +49,7 @@ export type CalendarCalendar$Outbound = {
   id?: string | undefined;
   name: string;
   primary?: boolean | undefined;
-  raw?: CalendarCalendarRaw$Outbound | undefined;
+  raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -115,7 +65,7 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   primary: z.boolean().optional(),
-  raw: z.lazy(() => CalendarCalendarRaw$outboundSchema).optional(),
+  raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

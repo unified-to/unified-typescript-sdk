@@ -22,8 +22,6 @@ export const PaymentType = {
 } as const;
 export type PaymentType = ClosedEnum<typeof PaymentType>;
 
-export type HrisPayslipRaw = {};
-
 export type HrisPayslip = {
   companyId?: string | undefined;
   createdAt?: Date | undefined;
@@ -35,7 +33,7 @@ export type HrisPayslip = {
   netAmount?: number | undefined;
   paidAt?: Date | undefined;
   paymentType?: PaymentType | undefined;
-  raw: HrisPayslipRaw;
+  raw: { [k: string]: any };
   startAt?: Date | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
@@ -61,50 +59,6 @@ export namespace PaymentType$ {
 }
 
 /** @internal */
-export const HrisPayslipRaw$inboundSchema: z.ZodType<
-  HrisPayslipRaw,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisPayslipRaw$Outbound = {};
-
-/** @internal */
-export const HrisPayslipRaw$outboundSchema: z.ZodType<
-  HrisPayslipRaw$Outbound,
-  z.ZodTypeDef,
-  HrisPayslipRaw
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisPayslipRaw$ {
-  /** @deprecated use `HrisPayslipRaw$inboundSchema` instead. */
-  export const inboundSchema = HrisPayslipRaw$inboundSchema;
-  /** @deprecated use `HrisPayslipRaw$outboundSchema` instead. */
-  export const outboundSchema = HrisPayslipRaw$outboundSchema;
-  /** @deprecated use `HrisPayslipRaw$Outbound` instead. */
-  export type Outbound = HrisPayslipRaw$Outbound;
-}
-
-export function hrisPayslipRawToJSON(hrisPayslipRaw: HrisPayslipRaw): string {
-  return JSON.stringify(HrisPayslipRaw$outboundSchema.parse(hrisPayslipRaw));
-}
-
-export function hrisPayslipRawFromJSON(
-  jsonString: string,
-): SafeParseResult<HrisPayslipRaw, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisPayslipRaw$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisPayslipRaw' from JSON`,
-  );
-}
-
-/** @internal */
 export const HrisPayslip$inboundSchema: z.ZodType<
   HrisPayslip,
   z.ZodTypeDef,
@@ -123,7 +77,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   payment_type: PaymentType$inboundSchema.optional(),
-  raw: z.lazy(() => HrisPayslipRaw$inboundSchema),
+  raw: z.record(z.any()),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -156,7 +110,7 @@ export type HrisPayslip$Outbound = {
   net_amount?: number | undefined;
   paid_at?: string | undefined;
   payment_type?: string | undefined;
-  raw: HrisPayslipRaw$Outbound;
+  raw: { [k: string]: any };
   start_at?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
@@ -178,7 +132,7 @@ export const HrisPayslip$outboundSchema: z.ZodType<
   netAmount: z.number().optional(),
   paidAt: z.date().transform(v => v.toISOString()).optional(),
   paymentType: PaymentType$outboundSchema.optional(),
-  raw: z.lazy(() => HrisPayslipRaw$outboundSchema),
+  raw: z.record(z.any()),
   startAt: z.date().transform(v => v.toISOString()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
