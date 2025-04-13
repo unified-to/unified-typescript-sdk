@@ -81,6 +81,7 @@ You can override the default server globally by passing a server index to the `s
 | --- | --------------------------- | -------------------------- |
 | 0   | `https://api.unified.to`    | North American data region |
 | 1   | `https://api-eu.unified.to` | European data region       |
+| 2   | `https://api-au.unified.to` | Australian data region     |
 
 #### Example
 
@@ -88,7 +89,7 @@ You can override the default server globally by passing a server index to the `s
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-  serverIdx: 1,
+  serverIdx: 2,
   security: {
     jwt: "<YOUR_API_KEY_HERE>",
   },
