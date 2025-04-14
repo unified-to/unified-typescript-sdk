@@ -18,7 +18,7 @@ export const ContentType = {
 export type ContentType = ClosedEnum<typeof ContentType>;
 
 export const KmsCommentType = {
-  PageInline: "PAGE-INLINE",
+  PageInline: "PAGE_INLINE",
   Page: "PAGE",
 } as const;
 export type KmsCommentType = ClosedEnum<typeof KmsCommentType>;
