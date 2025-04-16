@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: f8c33b302b35d5dce19e700a53e8ea50
+  docChecksum: ce6ebc30e4ad046db9275dc804220d8b
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.48.0
-  configChecksum: 454c99ef81483677c9f1be57a70965dd
+  releaseVersion: 2.50.0
+  configChecksum: bad3054742cad2632595a62d68c8dd44
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -532,6 +532,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
   - docs/sdk/models/operations/updateunifiedwebhooktriggerresponse.md
   - docs/sdk/models/shared/accountingaccount.md
+  - docs/sdk/models/shared/accountingattachment.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
@@ -2293,6 +2294,7 @@ generatedFiles:
   - src/sdk/models/operations/updateunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
   - src/sdk/models/shared/accountingaccount.ts
+  - src/sdk/models/shared/accountingattachment.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
   - src/sdk/models/shared/accountingemail.ts

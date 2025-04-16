@@ -5,7 +5,7 @@
 ```typescript
 import { ListLimit } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListLimit = "supported-required";
+let value: ListLimit = "supported";
 ```
 
 ## Values

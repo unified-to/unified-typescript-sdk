@@ -7,7 +7,7 @@ import { CreatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/mo
 
 let value: CreatePassthroughJsonRequest = {
   connectionId: "<id>",
-  path: "/usr/libexec",
+  path: "/home/user/dir",
 };
 ```
 

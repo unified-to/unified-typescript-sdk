@@ -3,6 +3,7 @@
  */
 
 export * from "./accountingaccount.js";
+export * from "./accountingattachment.js";
 export * from "./accountingcontact.js";
 export * from "./accountingcontactpaymentmethod.js";
 export * from "./accountingemail.js";

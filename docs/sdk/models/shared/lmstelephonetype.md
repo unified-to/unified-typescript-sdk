@@ -5,7 +5,7 @@
 ```typescript
 import { LmsTelephoneType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: LmsTelephoneType = "WORK";
+let value: LmsTelephoneType = "OTHER";
 ```
 
 ## Values

@@ -9,6 +9,12 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingAttachment,
+  AccountingAttachment$inboundSchema,
+  AccountingAttachment$Outbound,
+  AccountingAttachment$outboundSchema,
+} from "./accountingattachment.js";
+import {
   AccountingLineitem,
   AccountingLineitem$inboundSchema,
   AccountingLineitem$Outbound,
@@ -44,6 +50,7 @@ export const AccountingInvoiceType = {
 export type AccountingInvoiceType = ClosedEnum<typeof AccountingInvoiceType>;
 
 export type AccountingInvoice = {
+  attachments?: Array<AccountingAttachment> | undefined;
   balanceAmount?: number | undefined;
   cancelledAt?: Date | undefined;
   contactId?: string | undefined;
@@ -141,6 +148,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  attachments: z.array(AccountingAttachment$inboundSchema).optional(),
   balance_amount: z.number().optional(),
   cancelled_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
@@ -201,6 +209,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
 
 /** @internal */
 export type AccountingInvoice$Outbound = {
+  attachments?: Array<AccountingAttachment$Outbound> | undefined;
   balance_amount?: number | undefined;
   cancelled_at?: string | undefined;
   contact_id?: string | undefined;
@@ -235,6 +244,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingInvoice
 > = z.object({
+  attachments: z.array(AccountingAttachment$outboundSchema).optional(),
   balanceAmount: z.number().optional(),
   cancelledAt: z.date().transform(v => v.toISOString()).optional(),
   contactId: z.string().optional(),

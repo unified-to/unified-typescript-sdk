@@ -6,7 +6,7 @@
 import { TicketingEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: TicketingEmail = {
-  email: "Cody34@gmail.com",
+  email: "Ewell.Purdy@gmail.com",
 };
 ```
 

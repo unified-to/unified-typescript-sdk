@@ -5,7 +5,7 @@
 ```typescript
 import { Format } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Format = "FILE";
+let value: Format = "PRICE";
 ```
 
 ## Values

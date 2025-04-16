@@ -5,7 +5,7 @@
 ```typescript
 import { StorageFileType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: StorageFileType = "FOLDER";
+let value: StorageFileType = "FILE";
 ```
 
 ## Values

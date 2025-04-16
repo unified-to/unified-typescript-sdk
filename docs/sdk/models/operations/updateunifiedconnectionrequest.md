@@ -8,11 +8,11 @@ import { UpdateUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/
 let value: UpdateUnifiedConnectionRequest = {
   connection: {
     categories: [
-      "enrich",
+      "kms",
     ],
     integrationType: "<value>",
     permissions: [
-      "crm_pipeline_read",
+      "ats_applicationstatus_read",
     ],
   },
   id: "<id>",

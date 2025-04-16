@@ -8,8 +8,8 @@ import { PatchUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/mode
 let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
-    event: "updated",
-    objectType: "genai_prompt",
+    event: "created",
+    objectType: "repo_organization",
   },
   id: "<id>",
 };

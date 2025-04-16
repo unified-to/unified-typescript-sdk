@@ -5,7 +5,7 @@
 ```typescript
 import { TicketingEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: TicketingEmailType = "HOME";
+let value: TicketingEmailType = "OTHER";
 ```
 
 ## Values
