@@ -17,7 +17,6 @@ export type ListAtsCandidatesRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
-  jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -40,7 +39,6 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
 > = z.object({
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
-  job_id: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -51,7 +49,6 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
-    "job_id": "jobId",
     "updated_gte": "updatedGte",
   });
 });
@@ -60,7 +57,6 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
 export type ListAtsCandidatesRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
-  job_id?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -77,7 +73,6 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
-  jobId: z.string().optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
@@ -87,7 +82,6 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    jobId: "job_id",
     updatedGte: "updated_gte",
   });
 });
