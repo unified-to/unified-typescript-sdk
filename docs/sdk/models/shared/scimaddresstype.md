@@ -5,7 +5,7 @@
 ```typescript
 import { ScimAddressType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ScimAddressType = "other";
+let value: ScimAddressType = "work";
 ```
 
 ## Values

@@ -29,6 +29,7 @@ import { Course } from "./course.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
 import { Deal } from "./deal.js";
+import { Device } from "./device.js";
 import { Document } from "./document.js";
 import { Employee } from "./employee.js";
 import { Enrich } from "./enrich.js";
@@ -293,6 +294,11 @@ export class UnifiedTo extends ClientSDK {
   private _hris?: Hris;
   get hris(): Hris {
     return (this._hris ??= new Hris(this._options));
+  }
+
+  private _device?: Device;
+  get device(): Device {
+    return (this._device ??= new Device(this._options));
   }
 
   private _employee?: Employee;

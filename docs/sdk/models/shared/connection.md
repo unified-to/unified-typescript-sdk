@@ -9,11 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "metadata",
+    "genai",
   ],
   integrationType: "<value>",
   permissions: [
-    "storage_file_write",
+    "hris_timeoff_read",
   ],
 };
 ```

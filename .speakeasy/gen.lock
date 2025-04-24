@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 55f4dd2a712f44154e41aa0daba1b8ca
+  docChecksum: 8813ee1f8602d4e03a2488861b978482
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.52.0
-  configChecksum: b5bc9920081b5ebb4e1f92da8efbe7fe
+  releaseVersion: 2.54.0
+  configChecksum: 5bee8c0b06d7a7ec4e51da09c7115b79
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -65,6 +65,7 @@ generatedFiles:
   - docs/sdk/models/operations/createcrmpipelinerequest.md
   - docs/sdk/models/operations/creategenaipromptrequest.md
   - docs/sdk/models/operations/createhriscompanyrequest.md
+  - docs/sdk/models/operations/createhrisdevicerequest.md
   - docs/sdk/models/operations/createhrisemployeerequest.md
   - docs/sdk/models/operations/createhrisgrouprequest.md
   - docs/sdk/models/operations/createhrislocationrequest.md
@@ -136,6 +137,7 @@ generatedFiles:
   - docs/sdk/models/operations/getcrmleadrequest.md
   - docs/sdk/models/operations/getcrmpipelinerequest.md
   - docs/sdk/models/operations/gethriscompanyrequest.md
+  - docs/sdk/models/operations/gethrisdevicerequest.md
   - docs/sdk/models/operations/gethrisemployeerequest.md
   - docs/sdk/models/operations/gethrisgrouprequest.md
   - docs/sdk/models/operations/gethrislocationrequest.md
@@ -215,6 +217,7 @@ generatedFiles:
   - docs/sdk/models/operations/listenrichpeoplerequest.md
   - docs/sdk/models/operations/listgenaimodelsrequest.md
   - docs/sdk/models/operations/listhriscompaniesrequest.md
+  - docs/sdk/models/operations/listhrisdevicesrequest.md
   - docs/sdk/models/operations/listhrisemployeesrequest.md
   - docs/sdk/models/operations/listhrisgroupsrequest.md
   - docs/sdk/models/operations/listhrislocationsrequest.md
@@ -291,6 +294,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchcrmleadrequest.md
   - docs/sdk/models/operations/patchcrmpipelinerequest.md
   - docs/sdk/models/operations/patchhriscompanyrequest.md
+  - docs/sdk/models/operations/patchhrisdevicerequest.md
   - docs/sdk/models/operations/patchhrisemployeerequest.md
   - docs/sdk/models/operations/patchhrisgrouprequest.md
   - docs/sdk/models/operations/patchhrislocationrequest.md
@@ -390,6 +394,8 @@ generatedFiles:
   - docs/sdk/models/operations/removecrmpipelineresponse.md
   - docs/sdk/models/operations/removehriscompanyrequest.md
   - docs/sdk/models/operations/removehriscompanyresponse.md
+  - docs/sdk/models/operations/removehrisdevicerequest.md
+  - docs/sdk/models/operations/removehrisdeviceresponse.md
   - docs/sdk/models/operations/removehrisemployeerequest.md
   - docs/sdk/models/operations/removehrisemployeeresponse.md
   - docs/sdk/models/operations/removehrisgrouprequest.md
@@ -489,6 +495,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatecrmleadrequest.md
   - docs/sdk/models/operations/updatecrmpipelinerequest.md
   - docs/sdk/models/operations/updatehriscompanyrequest.md
+  - docs/sdk/models/operations/updatehrisdevicerequest.md
   - docs/sdk/models/operations/updatehrisemployeerequest.md
   - docs/sdk/models/operations/updatehrisgrouprequest.md
   - docs/sdk/models/operations/updatehrislocationrequest.md
@@ -532,6 +539,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
   - docs/sdk/models/operations/updateunifiedwebhooktriggerresponse.md
   - docs/sdk/models/shared/accountingaccount.md
+  - docs/sdk/models/shared/accountingassociatedcontact.md
   - docs/sdk/models/shared/accountingattachment.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
@@ -579,6 +587,8 @@ generatedFiles:
   - docs/sdk/models/shared/atsinterview.md
   - docs/sdk/models/shared/atsinterviewstatus.md
   - docs/sdk/models/shared/atsjob.md
+  - docs/sdk/models/shared/atsjobopening.md
+  - docs/sdk/models/shared/atsjobopeningstatus.md
   - docs/sdk/models/shared/atsjobposting.md
   - docs/sdk/models/shared/atsjobquestion.md
   - docs/sdk/models/shared/atsjobquestiontype.md
@@ -659,6 +669,7 @@ generatedFiles:
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/hriscompensationfrequency.md
   - docs/sdk/models/shared/hriscompensationtype.md
+  - docs/sdk/models/shared/hrisdevice.md
   - docs/sdk/models/shared/hrisemail.md
   - docs/sdk/models/shared/hrisemailtype.md
   - docs/sdk/models/shared/hrisemployee.md
@@ -933,6 +944,7 @@ generatedFiles:
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
+  - docs/sdks/device/README.md
   - docs/sdks/document/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
@@ -1300,6 +1312,12 @@ generatedFiles:
   - src/funcs/dealPatchCrmDeal.ts
   - src/funcs/dealRemoveCrmDeal.ts
   - src/funcs/dealUpdateCrmDeal.ts
+  - src/funcs/deviceCreateHrisDevice.ts
+  - src/funcs/deviceGetHrisDevice.ts
+  - src/funcs/deviceListHrisDevices.ts
+  - src/funcs/devicePatchHrisDevice.ts
+  - src/funcs/deviceRemoveHrisDevice.ts
+  - src/funcs/deviceUpdateHrisDevice.ts
   - src/funcs/documentCreateAtsDocument.ts
   - src/funcs/documentGetAtsDocument.ts
   - src/funcs/documentListAtsDocuments.ts
@@ -1347,30 +1365,36 @@ generatedFiles:
   - src/funcs/groupUpdateHrisGroup.ts
   - src/funcs/groupUpdateScimGroups.ts
   - src/funcs/hrisCreateHrisCompany.ts
+  - src/funcs/hrisCreateHrisDevice.ts
   - src/funcs/hrisCreateHrisEmployee.ts
   - src/funcs/hrisCreateHrisGroup.ts
   - src/funcs/hrisCreateHrisLocation.ts
   - src/funcs/hrisGetHrisCompany.ts
+  - src/funcs/hrisGetHrisDevice.ts
   - src/funcs/hrisGetHrisEmployee.ts
   - src/funcs/hrisGetHrisGroup.ts
   - src/funcs/hrisGetHrisLocation.ts
   - src/funcs/hrisGetHrisPayslip.ts
   - src/funcs/hrisGetHrisTimeoff.ts
   - src/funcs/hrisListHrisCompanies.ts
+  - src/funcs/hrisListHrisDevices.ts
   - src/funcs/hrisListHrisEmployees.ts
   - src/funcs/hrisListHrisGroups.ts
   - src/funcs/hrisListHrisLocations.ts
   - src/funcs/hrisListHrisPayslips.ts
   - src/funcs/hrisListHrisTimeoffs.ts
   - src/funcs/hrisPatchHrisCompany.ts
+  - src/funcs/hrisPatchHrisDevice.ts
   - src/funcs/hrisPatchHrisEmployee.ts
   - src/funcs/hrisPatchHrisGroup.ts
   - src/funcs/hrisPatchHrisLocation.ts
   - src/funcs/hrisRemoveHrisCompany.ts
+  - src/funcs/hrisRemoveHrisDevice.ts
   - src/funcs/hrisRemoveHrisEmployee.ts
   - src/funcs/hrisRemoveHrisGroup.ts
   - src/funcs/hrisRemoveHrisLocation.ts
   - src/funcs/hrisUpdateHrisCompany.ts
+  - src/funcs/hrisUpdateHrisDevice.ts
   - src/funcs/hrisUpdateHrisEmployee.ts
   - src/funcs/hrisUpdateHrisGroup.ts
   - src/funcs/hrisUpdateHrisLocation.ts
@@ -1844,6 +1868,7 @@ generatedFiles:
   - src/sdk/crm.ts
   - src/sdk/customer.ts
   - src/sdk/deal.ts
+  - src/sdk/device.ts
   - src/sdk/document.ts
   - src/sdk/employee.ts
   - src/sdk/enrich.ts
@@ -1908,6 +1933,7 @@ generatedFiles:
   - src/sdk/models/operations/createcrmpipeline.ts
   - src/sdk/models/operations/creategenaiprompt.ts
   - src/sdk/models/operations/createhriscompany.ts
+  - src/sdk/models/operations/createhrisdevice.ts
   - src/sdk/models/operations/createhrisemployee.ts
   - src/sdk/models/operations/createhrisgroup.ts
   - src/sdk/models/operations/createhrislocation.ts
@@ -1975,6 +2001,7 @@ generatedFiles:
   - src/sdk/models/operations/getcrmlead.ts
   - src/sdk/models/operations/getcrmpipeline.ts
   - src/sdk/models/operations/gethriscompany.ts
+  - src/sdk/models/operations/gethrisdevice.ts
   - src/sdk/models/operations/gethrisemployee.ts
   - src/sdk/models/operations/gethrisgroup.ts
   - src/sdk/models/operations/gethrislocation.ts
@@ -2055,6 +2082,7 @@ generatedFiles:
   - src/sdk/models/operations/listenrichpeople.ts
   - src/sdk/models/operations/listgenaimodels.ts
   - src/sdk/models/operations/listhriscompanies.ts
+  - src/sdk/models/operations/listhrisdevices.ts
   - src/sdk/models/operations/listhrisemployees.ts
   - src/sdk/models/operations/listhrisgroups.ts
   - src/sdk/models/operations/listhrislocations.ts
@@ -2128,6 +2156,7 @@ generatedFiles:
   - src/sdk/models/operations/patchcrmlead.ts
   - src/sdk/models/operations/patchcrmpipeline.ts
   - src/sdk/models/operations/patchhriscompany.ts
+  - src/sdk/models/operations/patchhrisdevice.ts
   - src/sdk/models/operations/patchhrisemployee.ts
   - src/sdk/models/operations/patchhrisgroup.ts
   - src/sdk/models/operations/patchhrislocation.ts
@@ -2193,6 +2222,7 @@ generatedFiles:
   - src/sdk/models/operations/removecrmlead.ts
   - src/sdk/models/operations/removecrmpipeline.ts
   - src/sdk/models/operations/removehriscompany.ts
+  - src/sdk/models/operations/removehrisdevice.ts
   - src/sdk/models/operations/removehrisemployee.ts
   - src/sdk/models/operations/removehrisgroup.ts
   - src/sdk/models/operations/removehrislocation.ts
@@ -2256,6 +2286,7 @@ generatedFiles:
   - src/sdk/models/operations/updatecrmlead.ts
   - src/sdk/models/operations/updatecrmpipeline.ts
   - src/sdk/models/operations/updatehriscompany.ts
+  - src/sdk/models/operations/updatehrisdevice.ts
   - src/sdk/models/operations/updatehrisemployee.ts
   - src/sdk/models/operations/updatehrisgroup.ts
   - src/sdk/models/operations/updatehrislocation.ts
@@ -2294,6 +2325,7 @@ generatedFiles:
   - src/sdk/models/operations/updateunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
   - src/sdk/models/shared/accountingaccount.ts
+  - src/sdk/models/shared/accountingassociatedcontact.ts
   - src/sdk/models/shared/accountingattachment.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
@@ -2325,6 +2357,7 @@ generatedFiles:
   - src/sdk/models/shared/atsgroup.ts
   - src/sdk/models/shared/atsinterview.ts
   - src/sdk/models/shared/atsjob.ts
+  - src/sdk/models/shared/atsjobopening.ts
   - src/sdk/models/shared/atsjobposting.ts
   - src/sdk/models/shared/atsjobquestion.ts
   - src/sdk/models/shared/atsmetadata.ts
@@ -2373,6 +2406,7 @@ generatedFiles:
   - src/sdk/models/shared/genaiprompt.ts
   - src/sdk/models/shared/hriscompany.ts
   - src/sdk/models/shared/hriscompensation.ts
+  - src/sdk/models/shared/hrisdevice.ts
   - src/sdk/models/shared/hrisemail.ts
   - src/sdk/models/shared/hrisemployee.ts
   - src/sdk/models/shared/hrisgroup.ts
@@ -4070,6 +4104,14 @@ examples:
         path:
           connection_id: "<id>"
         query: {}
+  createHrisDevice:
+    speakeasy-default-create-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
   createHrisEmployee:
     speakeasy-default-create-hris-employee:
       parameters:
@@ -4086,6 +4128,13 @@ examples:
         query: {}
       requestBody:
         application/json: {}
+  getHrisDevice:
+    speakeasy-default-get-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
   getHrisEmployee:
     speakeasy-default-get-hris-employee:
       parameters:
@@ -4114,6 +4163,12 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  listHrisDevices:
+    speakeasy-default-list-hris-devices:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
   listHrisEmployees:
     speakeasy-default-list-hris-employees:
       parameters:
@@ -4138,6 +4193,15 @@ examples:
         path:
           connection_id: "<id>"
         query: {}
+  patchHrisDevice:
+    speakeasy-default-patch-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
   patchHrisEmployee:
     speakeasy-default-patch-hris-employee:
       parameters:
@@ -4156,6 +4220,12 @@ examples:
         query: {}
       requestBody:
         application/json: {}
+  removeHrisDevice:
+    speakeasy-default-remove-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
   removeHrisEmployee:
     speakeasy-default-remove-hris-employee:
       parameters:
@@ -4168,6 +4238,15 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
+  updateHrisDevice:
+    speakeasy-default-update-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
   updateHrisEmployee:
     speakeasy-default-update-hris-employee:
       parameters:

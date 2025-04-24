@@ -27,6 +27,12 @@ import {
   AtsGroup$outboundSchema,
 } from "./atsgroup.js";
 import {
+  AtsJobOpening,
+  AtsJobOpening$inboundSchema,
+  AtsJobOpening$Outbound,
+  AtsJobOpening$outboundSchema,
+} from "./atsjobopening.js";
+import {
   AtsJobPosting,
   AtsJobPosting$inboundSchema,
   AtsJobPosting$Outbound,
@@ -90,6 +96,7 @@ export type AtsJob = {
   metadata?: Array<AtsMetadata> | undefined;
   name?: string | undefined;
   numberOfOpenings?: number | undefined;
+  openings?: Array<AtsJobOpening> | undefined;
   /**
    * Public job postings
    */
@@ -167,6 +174,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     metadata: z.array(AtsMetadata$inboundSchema).optional(),
     name: z.string().optional(),
     number_of_openings: z.number().optional(),
+    openings: z.array(AtsJobOpening$inboundSchema).optional(),
     postings: z.array(AtsJobPosting$inboundSchema).optional(),
     public_job_urls: z.array(z.string()).optional(),
     questions: z.array(AtsJobQuestion$inboundSchema).optional(),
@@ -209,6 +217,7 @@ export type AtsJob$Outbound = {
   metadata?: Array<AtsMetadata$Outbound> | undefined;
   name?: string | undefined;
   number_of_openings?: number | undefined;
+  openings?: Array<AtsJobOpening$Outbound> | undefined;
   postings?: Array<AtsJobPosting$Outbound> | undefined;
   public_job_urls?: Array<string> | undefined;
   questions?: Array<AtsJobQuestion$Outbound> | undefined;
@@ -240,6 +249,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   numberOfOpenings: z.number().optional(),
+  openings: z.array(AtsJobOpening$outboundSchema).optional(),
   postings: z.array(AtsJobPosting$outboundSchema).optional(),
   publicJobUrls: z.array(z.string()).optional(),
   questions: z.array(AtsJobQuestion$outboundSchema).optional(),

@@ -6,7 +6,7 @@
 import { CommerceItemMedia } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CommerceItemMedia = {
-  url: "https://frequent-cardboard.biz/",
+  url: "https://close-farm.info/",
 };
 ```
 

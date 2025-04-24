@@ -98,6 +98,7 @@ async function $do(
     "parent_id": payload.parent_id,
     "query": payload.query,
     "sort": payload.sort,
+    "type": payload.type,
     "updated_gte": payload.updated_gte,
   });
 

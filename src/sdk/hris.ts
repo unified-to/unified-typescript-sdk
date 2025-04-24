@@ -3,30 +3,36 @@
  */
 
 import { hrisCreateHrisCompany } from "../funcs/hrisCreateHrisCompany.js";
+import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
 import { hrisCreateHrisGroup } from "../funcs/hrisCreateHrisGroup.js";
 import { hrisCreateHrisLocation } from "../funcs/hrisCreateHrisLocation.js";
 import { hrisGetHrisCompany } from "../funcs/hrisGetHrisCompany.js";
+import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
 import { hrisGetHrisGroup } from "../funcs/hrisGetHrisGroup.js";
 import { hrisGetHrisLocation } from "../funcs/hrisGetHrisLocation.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisListHrisCompanies } from "../funcs/hrisListHrisCompanies.js";
+import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
 import { hrisListHrisGroups } from "../funcs/hrisListHrisGroups.js";
 import { hrisListHrisLocations } from "../funcs/hrisListHrisLocations.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisPatchHrisCompany } from "../funcs/hrisPatchHrisCompany.js";
+import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
 import { hrisPatchHrisGroup } from "../funcs/hrisPatchHrisGroup.js";
 import { hrisPatchHrisLocation } from "../funcs/hrisPatchHrisLocation.js";
 import { hrisRemoveHrisCompany } from "../funcs/hrisRemoveHrisCompany.js";
+import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
 import { hrisRemoveHrisGroup } from "../funcs/hrisRemoveHrisGroup.js";
 import { hrisRemoveHrisLocation } from "../funcs/hrisRemoveHrisLocation.js";
 import { hrisUpdateHrisCompany } from "../funcs/hrisUpdateHrisCompany.js";
+import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
 import { hrisUpdateHrisGroup } from "../funcs/hrisUpdateHrisGroup.js";
 import { hrisUpdateHrisLocation } from "../funcs/hrisUpdateHrisLocation.js";
@@ -44,6 +50,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisCompany> {
     return unwrapAsync(hrisCreateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a device
+   */
+  async createHrisDevice(
+    request: operations.CreateHrisDeviceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDevice> {
+    return unwrapAsync(hrisCreateHrisDevice(
       this,
       request,
       options,
@@ -100,6 +120,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisCompany> {
     return unwrapAsync(hrisGetHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a device
+   */
+  async getHrisDevice(
+    request: operations.GetHrisDeviceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDevice> {
+    return unwrapAsync(hrisGetHrisDevice(
       this,
       request,
       options,
@@ -191,6 +225,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all devices
+   */
+  async listHrisDevices(
+    request: operations.ListHrisDevicesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisDevice>> {
+    return unwrapAsync(hrisListHrisDevices(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all employees
    */
   async listHrisEmployees(
@@ -275,6 +323,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Update a device
+   */
+  async patchHrisDevice(
+    request: operations.PatchHrisDeviceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDevice> {
+    return unwrapAsync(hrisPatchHrisDevice(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an employee
    */
   async patchHrisEmployee(
@@ -331,6 +393,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a device
+   */
+  async removeHrisDevice(
+    request: operations.RemoveHrisDeviceRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisDeviceResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisDevice(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an employee
    */
   async removeHrisEmployee(
@@ -380,6 +456,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisCompany> {
     return unwrapAsync(hrisUpdateHrisCompany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a device
+   */
+  async updateHrisDevice(
+    request: operations.UpdateHrisDeviceRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisDevice> {
+    return unwrapAsync(hrisUpdateHrisDevice(
       this,
       request,
       options,

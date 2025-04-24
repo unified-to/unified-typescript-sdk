@@ -90,6 +90,8 @@ export const PropertyConnectionPermissions = {
   HrisCompanyWrite: "hris_company_write",
   HrisLocationRead: "hris_location_read",
   HrisLocationWrite: "hris_location_write",
+  HrisDeviceRead: "hris_device_read",
+  HrisDeviceWrite: "hris_device_write",
   UcCallRead: "uc_call_read",
   UcContactRead: "uc_contact_read",
   UcContactWrite: "uc_contact_write",

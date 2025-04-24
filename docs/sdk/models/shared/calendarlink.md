@@ -6,7 +6,7 @@
 import { CalendarLink } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CalendarLink = {
-  url: "https://hoarse-slide.com/",
+  url: "https://sugary-brace.org/",
 };
 ```
 

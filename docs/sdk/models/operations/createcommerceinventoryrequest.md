@@ -7,7 +7,7 @@ import { CreateCommerceInventoryRequest } from "@unified-api/typescript-sdk/sdk/
 
 let value: CreateCommerceInventoryRequest = {
   commerceInventory: {
-    available: 8489.44,
+    available: 6178.77,
   },
   connectionId: "<id>",
 };

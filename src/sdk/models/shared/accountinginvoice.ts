@@ -71,6 +71,7 @@ export type AccountingInvoice = {
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
   refundedAt?: Date | undefined;
+  send?: boolean | undefined;
   status?: AccountingInvoiceStatus | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
@@ -177,6 +178,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   refund_reason: z.string().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  send: z.boolean().optional(),
   status: AccountingInvoiceStatus$inboundSchema.optional(),
   tax_amount: z.number().optional(),
   total_amount: z.number().optional(),
@@ -230,6 +232,7 @@ export type AccountingInvoice$Outbound = {
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
   refunded_at?: string | undefined;
+  send?: boolean | undefined;
   status?: string | undefined;
   tax_amount?: number | undefined;
   total_amount?: number | undefined;
@@ -265,6 +268,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),
+  send: z.boolean().optional(),
   status: AccountingInvoiceStatus$outboundSchema.optional(),
   taxAmount: z.number().optional(),
   totalAmount: z.number().optional(),

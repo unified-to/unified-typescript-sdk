@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyCalendarRecordingTranscriptAttendeeStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyCalendarRecordingTranscriptAttendeeStatus = "TENTATIVE";
+let value: PropertyCalendarRecordingTranscriptAttendeeStatus = "ACCEPTED";
 ```
 
 ## Values

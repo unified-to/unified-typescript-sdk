@@ -5,7 +5,7 @@
 ```typescript
 import { HrisCompensationFrequency } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisCompensationFrequency = "YEAR";
+let value: HrisCompensationFrequency = "MONTH";
 ```
 
 ## Values

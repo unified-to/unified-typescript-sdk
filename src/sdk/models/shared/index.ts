@@ -3,6 +3,7 @@
  */
 
 export * from "./accountingaccount.js";
+export * from "./accountingassociatedcontact.js";
 export * from "./accountingattachment.js";
 export * from "./accountingcontact.js";
 export * from "./accountingcontactpaymentmethod.js";
@@ -34,6 +35,7 @@ export * from "./atsemail.js";
 export * from "./atsgroup.js";
 export * from "./atsinterview.js";
 export * from "./atsjob.js";
+export * from "./atsjobopening.js";
 export * from "./atsjobposting.js";
 export * from "./atsjobquestion.js";
 export * from "./atsmetadata.js";
@@ -82,6 +84,7 @@ export * from "./genaimodel.js";
 export * from "./genaiprompt.js";
 export * from "./hriscompany.js";
 export * from "./hriscompensation.js";
+export * from "./hrisdevice.js";
 export * from "./hrisemail.js";
 export * from "./hrisemployee.js";
 export * from "./hrisgroup.js";

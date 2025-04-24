@@ -5,7 +5,7 @@
 ```typescript
 import { ListEndLe } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListEndLe = "supported-required";
+let value: ListEndLe = "supported";
 ```
 
 ## Values

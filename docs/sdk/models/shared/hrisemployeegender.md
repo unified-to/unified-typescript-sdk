@@ -5,7 +5,7 @@
 ```typescript
 import { HrisEmployeeGender } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisEmployeeGender = "NON_BINARY";
+let value: HrisEmployeeGender = "MALE";
 ```
 
 ## Values

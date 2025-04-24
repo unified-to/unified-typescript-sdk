@@ -5,7 +5,7 @@
 ```typescript
 import { ListStartGte } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListStartGte = "supported-required";
+let value: ListStartGte = "supported";
 ```
 
 ## Values

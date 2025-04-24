@@ -9,6 +9,12 @@ import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  AccountingAssociatedContact,
+  AccountingAssociatedContact$inboundSchema,
+  AccountingAssociatedContact$Outbound,
+  AccountingAssociatedContact$outboundSchema,
+} from "./accountingassociatedcontact.js";
+import {
   AccountingContactPaymentMethod,
   AccountingContactPaymentMethod$inboundSchema,
   AccountingContactPaymentMethod$Outbound,
@@ -55,6 +61,7 @@ export const TaxExemption = {
 export type TaxExemption = ClosedEnum<typeof TaxExemption>;
 
 export type AccountingContact = {
+  associatedContacts?: Array<AccountingAssociatedContact> | undefined;
   billingAddress?: PropertyAccountingContactBillingAddress | undefined;
   companyName?: string | undefined;
   createdAt?: Date | undefined;
@@ -101,6 +108,8 @@ export const AccountingContact$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  associated_contacts: z.array(AccountingAssociatedContact$inboundSchema)
+    .optional(),
   billing_address: PropertyAccountingContactBillingAddress$inboundSchema
     .optional(),
   company_name: z.string().optional(),
@@ -127,6 +136,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "associated_contacts": "associatedContacts",
     "billing_address": "billingAddress",
     "company_name": "companyName",
     "created_at": "createdAt",
@@ -144,6 +154,7 @@ export const AccountingContact$inboundSchema: z.ZodType<
 
 /** @internal */
 export type AccountingContact$Outbound = {
+  associated_contacts?: Array<AccountingAssociatedContact$Outbound> | undefined;
   billing_address?:
     | PropertyAccountingContactBillingAddress$Outbound
     | undefined;
@@ -175,6 +186,8 @@ export const AccountingContact$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingContact
 > = z.object({
+  associatedContacts: z.array(AccountingAssociatedContact$outboundSchema)
+    .optional(),
   billingAddress: PropertyAccountingContactBillingAddress$outboundSchema
     .optional(),
   companyName: z.string().optional(),
@@ -199,6 +212,7 @@ export const AccountingContact$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    associatedContacts: "associated_contacts",
     billingAddress: "billing_address",
     companyName: "company_name",
     createdAt: "created_at",

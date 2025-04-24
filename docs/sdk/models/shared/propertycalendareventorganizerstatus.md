@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyCalendarEventOrganizerStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyCalendarEventOrganizerStatus = "REJECTED";
+let value: PropertyCalendarEventOrganizerStatus = "ACCEPTED";
 ```
 
 ## Values

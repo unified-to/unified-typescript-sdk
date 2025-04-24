@@ -5,7 +5,7 @@
 ```typescript
 import { ScimPhotoType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ScimPhotoType = "photo";
+let value: ScimPhotoType = "thumbnail";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { SizeUnit } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SizeUnit = "cm";
+let value: SizeUnit = "inch";
 ```
 
 ## Values

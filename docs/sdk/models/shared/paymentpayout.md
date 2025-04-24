@@ -6,7 +6,7 @@
 import { PaymentPayout } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: PaymentPayout = {
-  totalAmount: 9988.48,
+  totalAmount: 1494.48,
 };
 ```
 
