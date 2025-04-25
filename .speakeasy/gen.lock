@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 8813ee1f8602d4e03a2488861b978482
+  docChecksum: 3cc7cb33432bf3a1c948159a8589fc49
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.54.0
-  configChecksum: 5bee8c0b06d7a7ec4e51da09c7115b79
+  releaseVersion: 2.56.0
+  configChecksum: dc5d3ba38c06874740777a1d8ee09ca0
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -541,6 +541,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingaccount.md
   - docs/sdk/models/shared/accountingassociatedcontact.md
   - docs/sdk/models/shared/accountingattachment.md
+  - docs/sdk/models/shared/accountingbalancesheetitem.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
@@ -556,6 +557,8 @@ generatedFiles:
   - docs/sdk/models/shared/accountingorderstatus.md
   - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
+  - docs/sdk/models/shared/accountingprofitandlosscategory.md
+  - docs/sdk/models/shared/accountingprofitandlosssubcategory.md
   - docs/sdk/models/shared/accountingreport.md
   - docs/sdk/models/shared/accountingreporttype.md
   - docs/sdk/models/shared/accountingtaxrate.md
@@ -564,6 +567,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingtransaction.md
   - docs/sdk/models/shared/accountingtransactioncontact.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
+  - docs/sdk/models/shared/accountingtrialbalancesubitem.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/apicalltype.md
   - docs/sdk/models/shared/atsactivity.md
@@ -782,11 +786,15 @@ generatedFiles:
   - docs/sdk/models/shared/paymentsubscriptionstatus.md
   - docs/sdk/models/shared/paymenttype.md
   - docs/sdk/models/shared/priority.md
+  - docs/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorderbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingordershippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
+  - docs/sdk/models/shared/propertyaccountingreportbalancesheet.md
+  - docs/sdk/models/shared/propertyaccountingreportprofitandloss.md
+  - docs/sdk/models/shared/propertyaccountingreporttrialbalance.md
   - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
@@ -2327,6 +2335,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingaccount.ts
   - src/sdk/models/shared/accountingassociatedcontact.ts
   - src/sdk/models/shared/accountingattachment.ts
+  - src/sdk/models/shared/accountingbalancesheetitem.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
   - src/sdk/models/shared/accountingemail.ts
@@ -2336,12 +2345,15 @@ generatedFiles:
   - src/sdk/models/shared/accountinglineitem.ts
   - src/sdk/models/shared/accountingorder.ts
   - src/sdk/models/shared/accountingorganization.ts
+  - src/sdk/models/shared/accountingprofitandlosscategory.ts
+  - src/sdk/models/shared/accountingprofitandlosssubcategory.ts
   - src/sdk/models/shared/accountingreport.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtelephone.ts
   - src/sdk/models/shared/accountingtransaction.ts
   - src/sdk/models/shared/accountingtransactioncontact.ts
   - src/sdk/models/shared/accountingtransactionlineitem.ts
+  - src/sdk/models/shared/accountingtrialbalancesubitem.ts
   - src/sdk/models/shared/apicall.ts
   - src/sdk/models/shared/atsactivity.ts
   - src/sdk/models/shared/atsaddress.ts
@@ -2445,11 +2457,15 @@ generatedFiles:
   - src/sdk/models/shared/paymentpayout.ts
   - src/sdk/models/shared/paymentrefund.ts
   - src/sdk/models/shared/paymentsubscription.ts
+  - src/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingordershippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
+  - src/sdk/models/shared/propertyaccountingreportbalancesheet.ts
+  - src/sdk/models/shared/propertyaccountingreportprofitandloss.ts
+  - src/sdk/models/shared/propertyaccountingreporttrialbalance.ts
   - src/sdk/models/shared/propertyatsactivityfrom.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts

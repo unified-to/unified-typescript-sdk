@@ -8,6 +8,24 @@ import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PropertyAccountingReportBalanceSheet,
+  PropertyAccountingReportBalanceSheet$inboundSchema,
+  PropertyAccountingReportBalanceSheet$Outbound,
+  PropertyAccountingReportBalanceSheet$outboundSchema,
+} from "./propertyaccountingreportbalancesheet.js";
+import {
+  PropertyAccountingReportProfitAndLoss,
+  PropertyAccountingReportProfitAndLoss$inboundSchema,
+  PropertyAccountingReportProfitAndLoss$Outbound,
+  PropertyAccountingReportProfitAndLoss$outboundSchema,
+} from "./propertyaccountingreportprofitandloss.js";
+import {
+  PropertyAccountingReportTrialBalance,
+  PropertyAccountingReportTrialBalance$inboundSchema,
+  PropertyAccountingReportTrialBalance$Outbound,
+  PropertyAccountingReportTrialBalance$outboundSchema,
+} from "./propertyaccountingreporttrialbalance.js";
 
 export const AccountingReportType = {
   TrialBalance: "TRIAL_BALANCE",
@@ -17,14 +35,16 @@ export const AccountingReportType = {
 export type AccountingReportType = ClosedEnum<typeof AccountingReportType>;
 
 export type AccountingReport = {
-  accountId?: string | undefined;
-  amount?: number | undefined;
-  contactId?: string | undefined;
+  balanceSheet?: PropertyAccountingReportBalanceSheet | undefined;
   createdAt?: Date | undefined;
-  group?: string | undefined;
+  currency?: string | undefined;
+  endAt?: Date | undefined;
   id?: string | undefined;
+  name?: string | undefined;
+  profitAndLoss?: PropertyAccountingReportProfitAndLoss | undefined;
   raw?: { [k: string]: any } | undefined;
-  subgroup?: string | undefined;
+  startAt?: Date | undefined;
+  trialBalance?: PropertyAccountingReportTrialBalance | undefined;
   type?: AccountingReportType | undefined;
   updatedAt?: Date | undefined;
 };
@@ -56,37 +76,47 @@ export const AccountingReport$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  account_id: z.string().optional(),
-  amount: z.number().optional(),
-  contact_id: z.string().optional(),
+  balance_sheet: PropertyAccountingReportBalanceSheet$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  group: z.string().optional(),
+  currency: z.string().optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   id: z.string().optional(),
+  name: z.string().optional(),
+  profit_and_loss: PropertyAccountingReportProfitAndLoss$inboundSchema
+    .optional(),
   raw: z.record(z.any()).optional(),
-  subgroup: z.string().optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  trial_balance: PropertyAccountingReportTrialBalance$inboundSchema.optional(),
   type: AccountingReportType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
-    "account_id": "accountId",
-    "contact_id": "contactId",
+    "balance_sheet": "balanceSheet",
     "created_at": "createdAt",
+    "end_at": "endAt",
+    "profit_and_loss": "profitAndLoss",
+    "start_at": "startAt",
+    "trial_balance": "trialBalance",
     "updated_at": "updatedAt",
   });
 });
 
 /** @internal */
 export type AccountingReport$Outbound = {
-  account_id?: string | undefined;
-  amount?: number | undefined;
-  contact_id?: string | undefined;
+  balance_sheet?: PropertyAccountingReportBalanceSheet$Outbound | undefined;
   created_at?: string | undefined;
-  group?: string | undefined;
+  currency?: string | undefined;
+  end_at?: string | undefined;
   id?: string | undefined;
+  name?: string | undefined;
+  profit_and_loss?: PropertyAccountingReportProfitAndLoss$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
-  subgroup?: string | undefined;
+  start_at?: string | undefined;
+  trial_balance?: PropertyAccountingReportTrialBalance$Outbound | undefined;
   type?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -97,21 +127,27 @@ export const AccountingReport$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingReport
 > = z.object({
-  accountId: z.string().optional(),
-  amount: z.number().optional(),
-  contactId: z.string().optional(),
+  balanceSheet: PropertyAccountingReportBalanceSheet$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  group: z.string().optional(),
+  currency: z.string().optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  name: z.string().optional(),
+  profitAndLoss: PropertyAccountingReportProfitAndLoss$outboundSchema
+    .optional(),
   raw: z.record(z.any()).optional(),
-  subgroup: z.string().optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
+  trialBalance: PropertyAccountingReportTrialBalance$outboundSchema.optional(),
   type: AccountingReportType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
-    accountId: "account_id",
-    contactId: "contact_id",
+    balanceSheet: "balance_sheet",
     createdAt: "created_at",
+    endAt: "end_at",
+    profitAndLoss: "profit_and_loss",
+    startAt: "start_at",
+    trialBalance: "trial_balance",
     updatedAt: "updated_at",
   });
 });

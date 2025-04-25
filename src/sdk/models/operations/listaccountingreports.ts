@@ -13,6 +13,7 @@ export type ListAccountingReportsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
@@ -25,6 +26,7 @@ export type ListAccountingReportsRequest = {
    */
   query?: string | undefined;
   sort?: string | undefined;
+  startGte?: string | undefined;
   type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
@@ -39,18 +41,22 @@ export const ListAccountingReportsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   connection_id: z.string(),
+  end_le: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  start_gte: z.string().optional(),
   type: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
+    "end_le": "endLe",
+    "start_gte": "startGte",
     "updated_gte": "updatedGte",
   });
 });
@@ -58,12 +64,14 @@ export const ListAccountingReportsRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type ListAccountingReportsRequest$Outbound = {
   connection_id: string;
+  end_le?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
   sort?: string | undefined;
+  start_gte?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -75,17 +83,21 @@ export const ListAccountingReportsRequest$outboundSchema: z.ZodType<
   ListAccountingReportsRequest
 > = z.object({
   connectionId: z.string(),
+  endLe: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
+  startGte: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    endLe: "end_le",
+    startGte: "start_gte",
     updatedGte: "updated_gte",
   });
 });
