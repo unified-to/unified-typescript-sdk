@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3cc7cb33432bf3a1c948159a8589fc49
+  docChecksum: e254ae145e90e83e726dc49d774763d7
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.56.0
-  configChecksum: dc5d3ba38c06874740777a1d8ee09ca0
+  releaseVersion: 2.58.0
+  configChecksum: f00390aedc9a4494bc6011c04b88d285
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -103,7 +103,9 @@ generatedFiles:
   - docs/sdk/models/operations/createticketingcustomerrequest.md
   - docs/sdk/models/operations/createticketingnoterequest.md
   - docs/sdk/models/operations/createticketingticketrequest.md
+  - docs/sdk/models/operations/createuccommentrequest.md
   - docs/sdk/models/operations/createuccontactrequest.md
+  - docs/sdk/models/operations/createucrecordingrequest.md
   - docs/sdk/models/operations/createunifiedwebhookrequest.md
   - docs/sdk/models/operations/getaccountingaccountrequest.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
@@ -174,7 +176,9 @@ generatedFiles:
   - docs/sdk/models/operations/getticketingcustomerrequest.md
   - docs/sdk/models/operations/getticketingnoterequest.md
   - docs/sdk/models/operations/getticketingticketrequest.md
+  - docs/sdk/models/operations/getuccommentrequest.md
   - docs/sdk/models/operations/getuccontactrequest.md
+  - docs/sdk/models/operations/getucrecordingrequest.md
   - docs/sdk/models/operations/getunifiedapicallrequest.md
   - docs/sdk/models/operations/getunifiedconnectionrequest.md
   - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
@@ -258,7 +262,9 @@ generatedFiles:
   - docs/sdk/models/operations/listticketingnotesrequest.md
   - docs/sdk/models/operations/listticketingticketsrequest.md
   - docs/sdk/models/operations/listuccallsrequest.md
+  - docs/sdk/models/operations/listuccommentsrequest.md
   - docs/sdk/models/operations/listuccontactsrequest.md
+  - docs/sdk/models/operations/listucrecordingsrequest.md
   - docs/sdk/models/operations/listunifiedapicallsrequest.md
   - docs/sdk/models/operations/listunifiedconnectionsrequest.md
   - docs/sdk/models/operations/listunifiedintegrationsqueryparamcategories.md
@@ -332,7 +338,9 @@ generatedFiles:
   - docs/sdk/models/operations/patchticketingcustomerrequest.md
   - docs/sdk/models/operations/patchticketingnoterequest.md
   - docs/sdk/models/operations/patchticketingticketrequest.md
+  - docs/sdk/models/operations/patchuccommentrequest.md
   - docs/sdk/models/operations/patchuccontactrequest.md
+  - docs/sdk/models/operations/patchucrecordingrequest.md
   - docs/sdk/models/operations/patchunifiedconnectionrequest.md
   - docs/sdk/models/operations/patchunifiedwebhookrequest.md
   - docs/sdk/models/operations/patchunifiedwebhooktriggerrequest.md
@@ -461,8 +469,12 @@ generatedFiles:
   - docs/sdk/models/operations/removeticketingnoteresponse.md
   - docs/sdk/models/operations/removeticketingticketrequest.md
   - docs/sdk/models/operations/removeticketingticketresponse.md
+  - docs/sdk/models/operations/removeuccommentrequest.md
+  - docs/sdk/models/operations/removeuccommentresponse.md
   - docs/sdk/models/operations/removeuccontactrequest.md
   - docs/sdk/models/operations/removeuccontactresponse.md
+  - docs/sdk/models/operations/removeucrecordingrequest.md
+  - docs/sdk/models/operations/removeucrecordingresponse.md
   - docs/sdk/models/operations/removeunifiedconnectionrequest.md
   - docs/sdk/models/operations/removeunifiedconnectionresponse.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
@@ -533,7 +545,9 @@ generatedFiles:
   - docs/sdk/models/operations/updateticketingcustomerrequest.md
   - docs/sdk/models/operations/updateticketingnoterequest.md
   - docs/sdk/models/operations/updateticketingticketrequest.md
+  - docs/sdk/models/operations/updateuccommentrequest.md
   - docs/sdk/models/operations/updateuccontactrequest.md
+  - docs/sdk/models/operations/updateucrecordingrequest.md
   - docs/sdk/models/operations/updateunifiedconnectionrequest.md
   - docs/sdk/models/operations/updateunifiedwebhookrequest.md
   - docs/sdk/models/operations/updateunifiedwebhooktriggerrequest.md
@@ -707,6 +721,7 @@ generatedFiles:
   - docs/sdk/models/shared/listaccountid.md
   - docs/sdk/models/shared/listapplicationid.md
   - docs/sdk/models/shared/listcalendarid.md
+  - docs/sdk/models/shared/listcallid.md
   - docs/sdk/models/shared/listcandidateid.md
   - docs/sdk/models/shared/listchannelid.md
   - docs/sdk/models/shared/listclassid.md
@@ -906,9 +921,13 @@ generatedFiles:
   - docs/sdk/models/shared/ticketingticketstatus.md
   - docs/sdk/models/shared/type.md
   - docs/sdk/models/shared/uccall.md
+  - docs/sdk/models/shared/uccomment.md
   - docs/sdk/models/shared/uccontact.md
   - docs/sdk/models/shared/ucemail.md
   - docs/sdk/models/shared/ucemailtype.md
+  - docs/sdk/models/shared/ucrecording.md
+  - docs/sdk/models/shared/ucrecordingmedia.md
+  - docs/sdk/models/shared/ucrecordingtranscript.md
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
   - docs/sdk/models/shared/value.md
@@ -1187,16 +1206,22 @@ generatedFiles:
   - src/funcs/collectionUpdateCommerceCollection.ts
   - src/funcs/commentCreateKmsComment.ts
   - src/funcs/commentCreateTaskComment.ts
+  - src/funcs/commentCreateUcComment.ts
   - src/funcs/commentGetKmsComment.ts
   - src/funcs/commentGetTaskComment.ts
+  - src/funcs/commentGetUcComment.ts
   - src/funcs/commentListKmsComments.ts
   - src/funcs/commentListTaskComments.ts
+  - src/funcs/commentListUcComments.ts
   - src/funcs/commentPatchKmsComment.ts
   - src/funcs/commentPatchTaskComment.ts
+  - src/funcs/commentPatchUcComment.ts
   - src/funcs/commentRemoveKmsComment.ts
   - src/funcs/commentRemoveTaskComment.ts
+  - src/funcs/commentRemoveUcComment.ts
   - src/funcs/commentUpdateKmsComment.ts
   - src/funcs/commentUpdateTaskComment.ts
+  - src/funcs/commentUpdateUcComment.ts
   - src/funcs/commerceCreateCommerceCollection.ts
   - src/funcs/commerceCreateCommerceInventory.ts
   - src/funcs/commerceCreateCommerceItem.ts
@@ -1650,8 +1675,14 @@ generatedFiles:
   - src/funcs/pullrequestPatchRepoPullrequest.ts
   - src/funcs/pullrequestRemoveRepoPullrequest.ts
   - src/funcs/pullrequestUpdateRepoPullrequest.ts
+  - src/funcs/recordingCreateUcRecording.ts
   - src/funcs/recordingGetCalendarRecording.ts
+  - src/funcs/recordingGetUcRecording.ts
   - src/funcs/recordingListCalendarRecordings.ts
+  - src/funcs/recordingListUcRecordings.ts
+  - src/funcs/recordingPatchUcRecording.ts
+  - src/funcs/recordingRemoveUcRecording.ts
+  - src/funcs/recordingUpdateUcRecording.ts
   - src/funcs/refundGetPaymentRefund.ts
   - src/funcs/refundListPaymentRefunds.ts
   - src/funcs/repoCreateRepoBranch.ts
@@ -1790,13 +1821,25 @@ generatedFiles:
   - src/funcs/transactionPatchAccountingTransaction.ts
   - src/funcs/transactionRemoveAccountingTransaction.ts
   - src/funcs/transactionUpdateAccountingTransaction.ts
+  - src/funcs/ucCreateUcComment.ts
   - src/funcs/ucCreateUcContact.ts
+  - src/funcs/ucCreateUcRecording.ts
+  - src/funcs/ucGetUcComment.ts
   - src/funcs/ucGetUcContact.ts
+  - src/funcs/ucGetUcRecording.ts
   - src/funcs/ucListUcCalls.ts
+  - src/funcs/ucListUcComments.ts
   - src/funcs/ucListUcContacts.ts
+  - src/funcs/ucListUcRecordings.ts
+  - src/funcs/ucPatchUcComment.ts
   - src/funcs/ucPatchUcContact.ts
+  - src/funcs/ucPatchUcRecording.ts
+  - src/funcs/ucRemoveUcComment.ts
   - src/funcs/ucRemoveUcContact.ts
+  - src/funcs/ucRemoveUcRecording.ts
+  - src/funcs/ucUpdateUcComment.ts
   - src/funcs/ucUpdateUcContact.ts
+  - src/funcs/ucUpdateUcRecording.ts
   - src/funcs/unifiedCreateUnifiedConnection.ts
   - src/funcs/unifiedCreateUnifiedWebhook.ts
   - src/funcs/unifiedGetUnifiedApicall.ts
@@ -1975,7 +2018,9 @@ generatedFiles:
   - src/sdk/models/operations/createticketingcustomer.ts
   - src/sdk/models/operations/createticketingnote.ts
   - src/sdk/models/operations/createticketingticket.ts
+  - src/sdk/models/operations/createuccomment.ts
   - src/sdk/models/operations/createuccontact.ts
+  - src/sdk/models/operations/createucrecording.ts
   - src/sdk/models/operations/createunifiedwebhook.ts
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingcontact.ts
@@ -2046,7 +2091,9 @@ generatedFiles:
   - src/sdk/models/operations/getticketingcustomer.ts
   - src/sdk/models/operations/getticketingnote.ts
   - src/sdk/models/operations/getticketingticket.ts
+  - src/sdk/models/operations/getuccomment.ts
   - src/sdk/models/operations/getuccontact.ts
+  - src/sdk/models/operations/getucrecording.ts
   - src/sdk/models/operations/getunifiedapicall.ts
   - src/sdk/models/operations/getunifiedconnection.ts
   - src/sdk/models/operations/getunifiedintegrationauth.ts
@@ -2129,7 +2176,9 @@ generatedFiles:
   - src/sdk/models/operations/listticketingnotes.ts
   - src/sdk/models/operations/listticketingtickets.ts
   - src/sdk/models/operations/listuccalls.ts
+  - src/sdk/models/operations/listuccomments.ts
   - src/sdk/models/operations/listuccontacts.ts
+  - src/sdk/models/operations/listucrecordings.ts
   - src/sdk/models/operations/listunifiedapicalls.ts
   - src/sdk/models/operations/listunifiedconnections.ts
   - src/sdk/models/operations/listunifiedintegrations.ts
@@ -2198,7 +2247,9 @@ generatedFiles:
   - src/sdk/models/operations/patchticketingcustomer.ts
   - src/sdk/models/operations/patchticketingnote.ts
   - src/sdk/models/operations/patchticketingticket.ts
+  - src/sdk/models/operations/patchuccomment.ts
   - src/sdk/models/operations/patchuccontact.ts
+  - src/sdk/models/operations/patchucrecording.ts
   - src/sdk/models/operations/patchunifiedconnection.ts
   - src/sdk/models/operations/patchunifiedwebhook.ts
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
@@ -2263,7 +2314,9 @@ generatedFiles:
   - src/sdk/models/operations/removeticketingcustomer.ts
   - src/sdk/models/operations/removeticketingnote.ts
   - src/sdk/models/operations/removeticketingticket.ts
+  - src/sdk/models/operations/removeuccomment.ts
   - src/sdk/models/operations/removeuccontact.ts
+  - src/sdk/models/operations/removeucrecording.ts
   - src/sdk/models/operations/removeunifiedconnection.ts
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
@@ -2328,7 +2381,9 @@ generatedFiles:
   - src/sdk/models/operations/updateticketingcustomer.ts
   - src/sdk/models/operations/updateticketingnote.ts
   - src/sdk/models/operations/updateticketingticket.ts
+  - src/sdk/models/operations/updateuccomment.ts
   - src/sdk/models/operations/updateuccontact.ts
+  - src/sdk/models/operations/updateucrecording.ts
   - src/sdk/models/operations/updateunifiedconnection.ts
   - src/sdk/models/operations/updateunifiedwebhook.ts
   - src/sdk/models/operations/updateunifiedwebhooktrigger.ts
@@ -2540,8 +2595,12 @@ generatedFiles:
   - src/sdk/models/shared/ticketingtelephone.ts
   - src/sdk/models/shared/ticketingticket.ts
   - src/sdk/models/shared/uccall.ts
+  - src/sdk/models/shared/uccomment.ts
   - src/sdk/models/shared/uccontact.ts
   - src/sdk/models/shared/ucemail.ts
+  - src/sdk/models/shared/ucrecording.ts
+  - src/sdk/models/shared/ucrecordingmedia.ts
+  - src/sdk/models/shared/ucrecordingtranscript.ts
   - src/sdk/models/shared/uctelephone.ts
   - src/sdk/models/shared/webhook.ts
   - src/sdk/note.ts
@@ -3740,6 +3799,51 @@ examples:
         query: {}
       requestBody:
         application/json: {}
+  createUcRecording:
+    speakeasy-default-create-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
+  getUcRecording:
+    speakeasy-default-get-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listUcRecordings:
+    speakeasy-default-list-uc-recordings:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchUcRecording:
+    speakeasy-default-patch-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
+  removeUcRecording:
+    speakeasy-default-remove-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateUcRecording:
+    speakeasy-default-update-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
   createCommerceCollection:
     speakeasy-default-create-commerce-collection:
       parameters:
@@ -4465,6 +4569,14 @@ examples:
         query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+  createUcComment:
+    speakeasy-default-create-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
   getTaskComment:
     speakeasy-default-get-task-comment:
       parameters:
@@ -4472,8 +4584,21 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  getUcComment:
+    speakeasy-default-get-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
   listTaskComments:
     speakeasy-default-list-task-comments:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listUcComments:
+    speakeasy-default-list-uc-comments:
       parameters:
         path:
           connection_id: "<id>"
@@ -4487,8 +4612,23 @@ examples:
         query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+  patchUcComment:
+    speakeasy-default-patch-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
   removeTaskComment:
     speakeasy-default-remove-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeUcComment:
+    speakeasy-default-remove-uc-comment:
       parameters:
         path:
           connection_id: "<id>"
@@ -4502,6 +4642,15 @@ examples:
         query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+  updateUcComment:
+    speakeasy-default-update-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
   createLmsClass:
     speakeasy-default-create-lms-class:
       parameters:
@@ -4881,45 +5030,53 @@ examples:
         path:
           connection_id: "<id>"
           path: "/opt/lib"
+        query: {}
     speakeasy-default-create-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
           path: "/etc/namedb"
+        query: {}
   listPassthroughs:
     speakeasy-default-list-passthroughs:
       parameters:
         path:
           connection_id: "<id>"
           path: "/selinux"
+        query: {}
   patchPassthrough:
     speakeasy-default-patch-passthrough-json:
       parameters:
         path:
           connection_id: "<id>"
           path: "/home/user"
+        query: {}
     speakeasy-default-patch-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
           path: "/etc/mail"
+        query: {}
   removePassthrough:
     speakeasy-default-remove-passthrough:
       parameters:
         path:
           connection_id: "<id>"
           path: "/Applications"
+        query: {}
   updatePassthrough:
     speakeasy-default-update-passthrough-json:
       parameters:
         path:
           connection_id: "<id>"
           path: "/etc/namedb"
+        query: {}
     speakeasy-default-update-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
           path: "/System"
+        query: {}
   createPaymentPayment:
     speakeasy-default-create-payment-payment:
       parameters:
@@ -5537,11 +5694,11 @@ examples:
   createUnifiedConnection:
     speakeasy-default-create-unified-connection:
       requestBody:
-        application/json: {"categories": ["accounting", "martech", "martech"], "environment": "Production", "integration_type": "<value>", "permissions": ["repo_repository_read", "lms_student_write"]}
+        application/json: {"categories": ["accounting", "martech", "martech"], "environment": "Production", "integration_type": "<value>", "permissions": ["repo_organization_write", "lms_student_read"]}
   createUnifiedWebhook:
     speakeasy-default-create-unified-webhook:
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "hris_payslip"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "hris_timeoff"}
   getUnifiedApicall:
     speakeasy-default-get-unified-apicall:
       parameters:
@@ -5588,7 +5745,7 @@ examples:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_lead"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_pipeline"}
   patchUnifiedWebhookTrigger:
     speakeasy-default-patch-unified-webhook-trigger:
       parameters:
@@ -5617,7 +5774,7 @@ examples:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "payment_link"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "payment_payout"}
   updateUnifiedWebhookTrigger:
     speakeasy-default-update-unified-webhook-trigger:
       parameters:

@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeJSON, encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -105,6 +105,10 @@ async function $do(
 
   const path = pathToFunc("/passthrough/{connection_id}/{path}")(pathParams);
 
+  const query = encodeFormQuery({
+    "query": payload.query,
+  });
+
   const headers = new Headers(compactMap({
     "Content-Type": "application/json",
     Accept: options?.acceptHeaderOverride
@@ -134,6 +138,7 @@ async function $do(
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
     body: body,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
   }, options);

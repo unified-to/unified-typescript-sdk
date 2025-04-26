@@ -5,7 +5,7 @@
 ```typescript
 import { AtsOfferStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AtsOfferStatus = "CREATED";
+let value: AtsOfferStatus = "ACCEPTED";
 ```
 
 ## Values

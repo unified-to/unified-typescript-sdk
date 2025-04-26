@@ -7,7 +7,7 @@ import { AtsJobQuestion } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AtsJobQuestion = {
   question: "<value>",
-  type: "MULTIPLE_SELECT",
+  type: "URL",
 };
 ```
 

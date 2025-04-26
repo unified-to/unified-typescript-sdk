@@ -32,9 +32,6 @@ export type UcContact = {
   emails?: Array<UcEmail> | undefined;
   id?: string | undefined;
   name?: string | undefined;
-  /**
-   * The raw data returned by the integration for this contact
-   */
   raw?: { [k: string]: any } | undefined;
   /**
    * An array of telephones for this contact

@@ -5,7 +5,7 @@
 ```typescript
 import { ScimGroupMemberType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ScimGroupMemberType = "User";
+let value: ScimGroupMemberType = "Group";
 ```
 
 ## Values

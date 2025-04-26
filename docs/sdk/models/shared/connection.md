@@ -13,7 +13,7 @@ let value: Connection = {
   ],
   integrationType: "<value>",
   permissions: [
-    "hris_timeoff_read",
+    "uc_call_read",
   ],
 };
 ```

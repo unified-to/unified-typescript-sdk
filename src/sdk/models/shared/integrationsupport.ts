@@ -43,6 +43,13 @@ export const ListCalendarId = {
 } as const;
 export type ListCalendarId = ClosedEnum<typeof ListCalendarId>;
 
+export const ListCallId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListCallId = ClosedEnum<typeof ListCallId>;
+
 export const ListCandidateId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -484,6 +491,7 @@ export type IntegrationSupport = {
   listAccountId?: ListAccountId | undefined;
   listApplicationId?: ListApplicationId | undefined;
   listCalendarId?: ListCalendarId | undefined;
+  listCallId?: ListCallId | undefined;
   listCandidateId?: ListCandidateId | undefined;
   listChannelId?: ListChannelId | undefined;
   listClassId?: ListClassId | undefined;
@@ -635,6 +643,25 @@ export namespace ListCalendarId$ {
   export const inboundSchema = ListCalendarId$inboundSchema;
   /** @deprecated use `ListCalendarId$outboundSchema` instead. */
   export const outboundSchema = ListCalendarId$outboundSchema;
+}
+
+/** @internal */
+export const ListCallId$inboundSchema: z.ZodNativeEnum<typeof ListCallId> = z
+  .nativeEnum(ListCallId);
+
+/** @internal */
+export const ListCallId$outboundSchema: z.ZodNativeEnum<typeof ListCallId> =
+  ListCallId$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace ListCallId$ {
+  /** @deprecated use `ListCallId$inboundSchema` instead. */
+  export const inboundSchema = ListCallId$inboundSchema;
+  /** @deprecated use `ListCallId$outboundSchema` instead. */
+  export const outboundSchema = ListCallId$outboundSchema;
 }
 
 /** @internal */
@@ -1873,6 +1900,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_account_id: ListAccountId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
   list_calendar_id: ListCalendarId$inboundSchema.optional(),
+  list_call_id: ListCallId$inboundSchema.optional(),
   list_candidate_id: ListCandidateId$inboundSchema.optional(),
   list_channel_id: ListChannelId$inboundSchema.optional(),
   list_class_id: ListClassId$inboundSchema.optional(),
@@ -1948,6 +1976,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_account_id": "listAccountId",
     "list_application_id": "listApplicationId",
     "list_calendar_id": "listCalendarId",
+    "list_call_id": "listCallId",
     "list_candidate_id": "listCandidateId",
     "list_channel_id": "listChannelId",
     "list_class_id": "listClassId",
@@ -2023,6 +2052,7 @@ export type IntegrationSupport$Outbound = {
   list_account_id?: string | undefined;
   list_application_id?: string | undefined;
   list_calendar_id?: string | undefined;
+  list_call_id?: string | undefined;
   list_candidate_id?: string | undefined;
   list_channel_id?: string | undefined;
   list_class_id?: string | undefined;
@@ -2102,6 +2132,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
   listAccountId: ListAccountId$outboundSchema.optional(),
   listApplicationId: ListApplicationId$outboundSchema.optional(),
   listCalendarId: ListCalendarId$outboundSchema.optional(),
+  listCallId: ListCallId$outboundSchema.optional(),
   listCandidateId: ListCandidateId$outboundSchema.optional(),
   listChannelId: ListChannelId$outboundSchema.optional(),
   listClassId: ListClassId$outboundSchema.optional(),
@@ -2176,6 +2207,7 @@ export const IntegrationSupport$outboundSchema: z.ZodType<
     listAccountId: "list_account_id",
     listApplicationId: "list_application_id",
     listCalendarId: "list_calendar_id",
+    listCallId: "list_call_id",
     listCandidateId: "list_candidate_id",
     listChannelId: "list_channel_id",
     listClassId: "list_class_id",

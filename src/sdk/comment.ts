@@ -4,16 +4,22 @@
 
 import { commentCreateKmsComment } from "../funcs/commentCreateKmsComment.js";
 import { commentCreateTaskComment } from "../funcs/commentCreateTaskComment.js";
+import { commentCreateUcComment } from "../funcs/commentCreateUcComment.js";
 import { commentGetKmsComment } from "../funcs/commentGetKmsComment.js";
 import { commentGetTaskComment } from "../funcs/commentGetTaskComment.js";
+import { commentGetUcComment } from "../funcs/commentGetUcComment.js";
 import { commentListKmsComments } from "../funcs/commentListKmsComments.js";
 import { commentListTaskComments } from "../funcs/commentListTaskComments.js";
+import { commentListUcComments } from "../funcs/commentListUcComments.js";
 import { commentPatchKmsComment } from "../funcs/commentPatchKmsComment.js";
 import { commentPatchTaskComment } from "../funcs/commentPatchTaskComment.js";
+import { commentPatchUcComment } from "../funcs/commentPatchUcComment.js";
 import { commentRemoveKmsComment } from "../funcs/commentRemoveKmsComment.js";
 import { commentRemoveTaskComment } from "../funcs/commentRemoveTaskComment.js";
+import { commentRemoveUcComment } from "../funcs/commentRemoveUcComment.js";
 import { commentUpdateKmsComment } from "../funcs/commentUpdateKmsComment.js";
 import { commentUpdateTaskComment } from "../funcs/commentUpdateTaskComment.js";
+import { commentUpdateUcComment } from "../funcs/commentUpdateUcComment.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -49,6 +55,20 @@ export class Comment extends ClientSDK {
   }
 
   /**
+   * Create a comment
+   */
+  async createUcComment(
+    request: operations.CreateUcCommentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcComment> {
+    return unwrapAsync(commentCreateUcComment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a comment
    */
   async getKmsComment(
@@ -70,6 +90,20 @@ export class Comment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.TaskComment> {
     return unwrapAsync(commentGetTaskComment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a comment
+   */
+  async getUcComment(
+    request: operations.GetUcCommentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcComment> {
+    return unwrapAsync(commentGetUcComment(
       this,
       request,
       options,
@@ -105,6 +139,20 @@ export class Comment extends ClientSDK {
   }
 
   /**
+   * List all comments
+   */
+  async listUcComments(
+    request: operations.ListUcCommentsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.UcComment>> {
+    return unwrapAsync(commentListUcComments(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a comment
    */
   async patchKmsComment(
@@ -126,6 +174,20 @@ export class Comment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.TaskComment> {
     return unwrapAsync(commentPatchTaskComment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a comment
+   */
+  async patchUcComment(
+    request: operations.PatchUcCommentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcComment> {
+    return unwrapAsync(commentPatchUcComment(
       this,
       request,
       options,
@@ -161,6 +223,20 @@ export class Comment extends ClientSDK {
   }
 
   /**
+   * Remove a comment
+   */
+  async removeUcComment(
+    request: operations.RemoveUcCommentRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveUcCommentResponse | undefined> {
+    return unwrapAsync(commentRemoveUcComment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a comment
    */
   async updateKmsComment(
@@ -182,6 +258,20 @@ export class Comment extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.TaskComment> {
     return unwrapAsync(commentUpdateTaskComment(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a comment
+   */
+  async updateUcComment(
+    request: operations.UpdateUcCommentRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcComment> {
+    return unwrapAsync(commentUpdateUcComment(
       this,
       request,
       options,

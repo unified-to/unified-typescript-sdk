@@ -9,9 +9,9 @@ let value: ApiCall = {
   integrationType: "<value>",
   method: "<value>",
   name: "<value>",
-  path: "/home/user/dir",
+  path: "/home",
   status: "<value>",
-  type: "login",
+  type: "inbound",
 };
 ```
 

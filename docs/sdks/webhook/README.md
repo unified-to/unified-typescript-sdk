@@ -34,7 +34,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_payslip",
+      objectType: "hris_timeoff",
     },
   });
 
@@ -66,7 +66,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_payslip",
+      objectType: "hris_timeoff",
     },
   });
 
@@ -278,7 +278,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_lead",
+      objectType: "crm_pipeline",
     },
     id: "<id>",
   });
@@ -311,7 +311,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_lead",
+      objectType: "crm_pipeline",
     },
     id: "<id>",
   });
@@ -528,7 +528,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "payment_link",
+      objectType: "payment_payout",
     },
     id: "<id>",
   });
@@ -561,7 +561,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "payment_link",
+      objectType: "payment_payout",
     },
     id: "<id>",
   });

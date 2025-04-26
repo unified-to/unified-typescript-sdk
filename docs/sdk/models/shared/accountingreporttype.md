@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingReportType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingReportType = "TRIAL_BALANCE";
+let value: AccountingReportType = "BALANCE_SHEET";
 ```
 
 ## Values

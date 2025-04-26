@@ -19,9 +19,6 @@ export type UcCall = {
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
-  /**
-   * The raw data returned by the integration for this call
-   */
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   /**

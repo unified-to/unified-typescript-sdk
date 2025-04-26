@@ -6,7 +6,7 @@
 import { AtsEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: AtsEmail = {
-  email: "Ona.Mante@gmail.com",
+  email: "Tyrel.Johns@gmail.com",
 };
 ```
 

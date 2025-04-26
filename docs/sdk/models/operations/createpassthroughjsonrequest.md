@@ -7,7 +7,7 @@ import { CreatePassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/mo
 
 let value: CreatePassthroughJsonRequest = {
   connectionId: "<id>",
-  path: "/usr/include",
+  path: "/dev",
 };
 ```
 
@@ -18,3 +18,4 @@ let value: CreatePassthroughJsonRequest = {
 | `requestBody`                | *any*                        | :heavy_minus_sign:           | integration-specific payload |
 | `connectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `query`                      | Record<string, *any*>        | :heavy_minus_sign:           | N/A                          |

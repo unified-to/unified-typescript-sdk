@@ -18,6 +18,7 @@ export type PatchPassthroughJsonRequest = {
    */
   connectionId: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 export type PatchPassthroughJsonResponseResult =
@@ -47,6 +48,7 @@ export const PatchPassthroughJsonRequest$inboundSchema: z.ZodType<
   RequestBody: z.any().optional(),
   connection_id: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "RequestBody": "requestBody",
@@ -59,6 +61,7 @@ export type PatchPassthroughJsonRequest$Outbound = {
   RequestBody?: any | undefined;
   connection_id: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 /** @internal */
@@ -70,6 +73,7 @@ export const PatchPassthroughJsonRequest$outboundSchema: z.ZodType<
   requestBody: z.any().optional(),
   connectionId: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     requestBody: "RequestBody",

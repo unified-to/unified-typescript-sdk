@@ -5,7 +5,7 @@
 ```typescript
 import { ListOffset } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListOffset = "not-supported";
+let value: ListOffset = "supported-required";
 ```
 
 ## Values

@@ -9,10 +9,10 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingAttachment = {
-  downloadUrl: string;
-  id: string;
+  downloadUrl?: string | undefined;
+  id?: string | undefined;
   mimeType?: string | undefined;
-  name: string;
+  name?: string | undefined;
 };
 
 /** @internal */
@@ -21,10 +21,10 @@ export const AccountingAttachment$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  download_url: z.string(),
-  id: z.string(),
+  download_url: z.string().optional(),
+  id: z.string().optional(),
   mime_type: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "download_url": "downloadUrl",
@@ -34,10 +34,10 @@ export const AccountingAttachment$inboundSchema: z.ZodType<
 
 /** @internal */
 export type AccountingAttachment$Outbound = {
-  download_url: string;
-  id: string;
+  download_url?: string | undefined;
+  id?: string | undefined;
   mime_type?: string | undefined;
-  name: string;
+  name?: string | undefined;
 };
 
 /** @internal */
@@ -46,10 +46,10 @@ export const AccountingAttachment$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AccountingAttachment
 > = z.object({
-  downloadUrl: z.string(),
-  id: z.string(),
+  downloadUrl: z.string().optional(),
+  id: z.string().optional(),
   mimeType: z.string().optional(),
-  name: z.string(),
+  name: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     downloadUrl: "download_url",

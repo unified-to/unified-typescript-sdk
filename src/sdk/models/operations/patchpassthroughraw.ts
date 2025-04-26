@@ -23,6 +23,7 @@ export type PatchPassthroughRawRequest = {
    */
   connectionId: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 export type PatchPassthroughRawResponseResult =
@@ -57,6 +58,7 @@ export const PatchPassthroughRawRequest$inboundSchema: z.ZodType<
   ]).optional(),
   connection_id: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "RequestBody": "requestBody",
@@ -74,6 +76,7 @@ export type PatchPassthroughRawRequest$Outbound = {
     | undefined;
   connection_id: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 /** @internal */
@@ -90,6 +93,7 @@ export const PatchPassthroughRawRequest$outboundSchema: z.ZodType<
   ]).optional(),
   connectionId: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     requestBody: "RequestBody",

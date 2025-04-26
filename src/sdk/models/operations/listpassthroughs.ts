@@ -14,6 +14,7 @@ export type ListPassthroughsRequest = {
    */
   connectionId: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 export type ListPassthroughsResponseResult =
@@ -42,6 +43,7 @@ export const ListPassthroughsRequest$inboundSchema: z.ZodType<
 > = z.object({
   connection_id: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
@@ -52,6 +54,7 @@ export const ListPassthroughsRequest$inboundSchema: z.ZodType<
 export type ListPassthroughsRequest$Outbound = {
   connection_id: string;
   path: string;
+  query?: { [k: string]: any } | undefined;
 };
 
 /** @internal */
@@ -62,6 +65,7 @@ export const ListPassthroughsRequest$outboundSchema: z.ZodType<
 > = z.object({
   connectionId: z.string(),
   path: z.string(),
+  query: z.record(z.any()).optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",

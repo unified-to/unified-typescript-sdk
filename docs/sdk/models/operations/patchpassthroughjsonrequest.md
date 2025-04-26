@@ -7,7 +7,7 @@ import { PatchPassthroughJsonRequest } from "@unified-api/typescript-sdk/sdk/mod
 
 let value: PatchPassthroughJsonRequest = {
   connectionId: "<id>",
-  path: "/usr/libexec",
+  path: "/home/user/dir",
 };
 ```
 
@@ -18,3 +18,4 @@ let value: PatchPassthroughJsonRequest = {
 | `requestBody`                | *any*                        | :heavy_minus_sign:           | integration-specific payload |
 | `connectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `query`                      | Record<string, *any*>        | :heavy_minus_sign:           | N/A                          |

@@ -6,7 +6,7 @@
 import { CommerceItemPrice } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CommerceItemPrice = {
-  price: 2653.89,
+  price: 4142.63,
 };
 ```
 

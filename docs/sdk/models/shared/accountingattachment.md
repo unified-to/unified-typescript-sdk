@@ -5,18 +5,14 @@
 ```typescript
 import { AccountingAttachment } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingAttachment = {
-  downloadUrl: "https://motionless-metabolite.org",
-  id: "<id>",
-  name: "<value>",
-};
+let value: AccountingAttachment = {};
 ```
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `downloadUrl`      | *string*           | :heavy_check_mark: | N/A                |
-| `id`               | *string*           | :heavy_check_mark: | N/A                |
+| `downloadUrl`      | *string*           | :heavy_minus_sign: | N/A                |
+| `id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `mimeType`         | *string*           | :heavy_minus_sign: | N/A                |
-| `name`             | *string*           | :heavy_check_mark: | N/A                |
+| `name`             | *string*           | :heavy_minus_sign: | N/A                |

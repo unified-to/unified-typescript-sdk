@@ -7,13 +7,14 @@ import { RemovePassthroughRequest } from "@unified-api/typescript-sdk/sdk/models
 
 let value: RemovePassthroughRequest = {
   connectionId: "<id>",
-  path: "/etc/namedb",
+  path: "/etc/mail",
 };
 ```
 
 ## Fields
 
-| Field                | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `connectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `path`               | *string*             | :heavy_check_mark:   | N/A                  |
+| Field                 | Type                  | Required              | Description           |
+| --------------------- | --------------------- | --------------------- | --------------------- |
+| `connectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
+| `path`                | *string*              | :heavy_check_mark:    | N/A                   |
+| `query`               | Record<string, *any*> | :heavy_minus_sign:    | N/A                   |
