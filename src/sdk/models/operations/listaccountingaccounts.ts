@@ -20,6 +20,7 @@ export type ListAccountingAccountsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  orgId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -42,6 +43,7 @@ export const ListAccountingAccountsRequest$inboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  org_id: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -49,6 +51,7 @@ export const ListAccountingAccountsRequest$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
+    "org_id": "orgId",
     "updated_gte": "updatedGte",
   });
 });
@@ -60,6 +63,7 @@ export type ListAccountingAccountsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   sort?: string | undefined;
   updated_gte?: string | undefined;
@@ -76,12 +80,14 @@ export const ListAccountingAccountsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   sort: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });
