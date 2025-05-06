@@ -97,6 +97,7 @@ async function $do(
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,
+    "raw": payload.raw,
     "repo_id": payload.repo_id,
     "sort": payload.sort,
     "updated_gte": payload.updated_gte,

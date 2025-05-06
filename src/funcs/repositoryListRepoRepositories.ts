@@ -98,6 +98,7 @@ async function $do(
     "order": payload.order,
     "org_id": payload.org_id,
     "query": payload.query,
+    "raw": payload.raw,
     "sort": payload.sort,
     "updated_gte": payload.updated_gte,
   });

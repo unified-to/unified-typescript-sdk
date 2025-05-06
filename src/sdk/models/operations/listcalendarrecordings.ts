@@ -26,6 +26,10 @@ export type ListCalendarRecordingsRequest = {
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
   sort?: string | undefined;
   startGte?: string | undefined;
   /**
@@ -48,6 +52,7 @@ export const ListCalendarRecordingsRequest$inboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   start_gte: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -72,6 +77,7 @@ export type ListCalendarRecordingsRequest$Outbound = {
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
+  raw?: string | undefined;
   sort?: string | undefined;
   start_gte?: string | undefined;
   updated_gte?: string | undefined;
@@ -91,6 +97,7 @@ export const ListCalendarRecordingsRequest$outboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),

@@ -19,6 +19,10 @@ export type CreateLmsCourseRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -30,6 +34,7 @@ export const CreateLmsCourseRequest$inboundSchema: z.ZodType<
   LmsCourse: shared.LmsCourse$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "LmsCourse": "lmsCourse",
@@ -42,6 +47,7 @@ export type CreateLmsCourseRequest$Outbound = {
   LmsCourse: shared.LmsCourse$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -53,6 +59,7 @@ export const CreateLmsCourseRequest$outboundSchema: z.ZodType<
   lmsCourse: shared.LmsCourse$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     lmsCourse: "LmsCourse",

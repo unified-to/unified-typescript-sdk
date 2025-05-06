@@ -22,6 +22,10 @@ export type CreateAccountingAccountRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -33,6 +37,7 @@ export const CreateAccountingAccountRequest$inboundSchema: z.ZodType<
   AccountingAccount: shared.AccountingAccount$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "AccountingAccount": "accountingAccount",
@@ -45,6 +50,7 @@ export type CreateAccountingAccountRequest$Outbound = {
   AccountingAccount: shared.AccountingAccount$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -56,6 +62,7 @@ export const CreateAccountingAccountRequest$outboundSchema: z.ZodType<
   accountingAccount: shared.AccountingAccount$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     accountingAccount: "AccountingAccount",

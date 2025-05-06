@@ -26,6 +26,10 @@ export type UpdateCrmCompanyRequest = {
    * ID of the Company
    */
   id: string;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -38,6 +42,7 @@ export const UpdateCrmCompanyRequest$inboundSchema: z.ZodType<
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmCompany": "crmCompany",
@@ -51,6 +56,7 @@ export type UpdateCrmCompanyRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -63,6 +69,7 @@ export const UpdateCrmCompanyRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     crmCompany: "CrmCompany",

@@ -96,6 +96,7 @@ async function $do(
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,
+    "raw": payload.raw,
     "sort": payload.sort,
     "task_id": payload.task_id,
     "updated_gte": payload.updated_gte,

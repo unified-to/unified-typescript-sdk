@@ -23,6 +23,10 @@ export type UpdateCommerceInventoryRequest = {
    * ID of the Inventory
    */
   id: string;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -35,6 +39,7 @@ export const UpdateCommerceInventoryRequest$inboundSchema: z.ZodType<
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "CommerceInventory": "commerceInventory",
@@ -48,6 +53,7 @@ export type UpdateCommerceInventoryRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -60,6 +66,7 @@ export const UpdateCommerceInventoryRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     commerceInventory: "CommerceInventory",

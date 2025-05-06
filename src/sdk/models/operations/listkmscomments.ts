@@ -26,6 +26,10 @@ export type ListKmsCommentsRequest = {
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
   sort?: string | undefined;
   type?: string | undefined;
   /**
@@ -48,6 +52,7 @@ export const ListKmsCommentsRequest$inboundSchema: z.ZodType<
   page_id: z.string().optional(),
   parent_id: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   type: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -71,6 +76,7 @@ export type ListKmsCommentsRequest$Outbound = {
   page_id?: string | undefined;
   parent_id?: string | undefined;
   query?: string | undefined;
+  raw?: string | undefined;
   sort?: string | undefined;
   type?: string | undefined;
   updated_gte?: string | undefined;
@@ -90,6 +96,7 @@ export const ListKmsCommentsRequest$outboundSchema: z.ZodType<
   pageId: z.string().optional(),
   parentId: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   type: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),

@@ -25,6 +25,10 @@ export type ListRepoRepositoriesRequest = {
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
   sort?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
@@ -45,6 +49,7 @@ export const ListRepoRepositoriesRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   org_id: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -65,6 +70,7 @@ export type ListRepoRepositoriesRequest$Outbound = {
   order?: string | undefined;
   org_id?: string | undefined;
   query?: string | undefined;
+  raw?: string | undefined;
   sort?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -82,6 +88,7 @@ export const ListRepoRepositoriesRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   orgId: z.string().optional(),
   query: z.string().optional(),
+  raw: z.string().optional(),
   sort: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

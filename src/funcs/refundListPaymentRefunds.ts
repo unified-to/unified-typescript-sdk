@@ -97,6 +97,7 @@ async function $do(
     "order": payload.order,
     "payment_id": payload.payment_id,
     "query": payload.query,
+    "raw": payload.raw,
     "sort": payload.sort,
     "updated_gte": payload.updated_gte,
   });

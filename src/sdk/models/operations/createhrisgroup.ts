@@ -19,6 +19,10 @@ export type CreateHrisGroupRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -30,6 +34,7 @@ export const CreateHrisGroupRequest$inboundSchema: z.ZodType<
   HrisGroup: shared.HrisGroup$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "HrisGroup": "hrisGroup",
@@ -42,6 +47,7 @@ export type CreateHrisGroupRequest$Outbound = {
   HrisGroup: shared.HrisGroup$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -53,6 +59,7 @@ export const CreateHrisGroupRequest$outboundSchema: z.ZodType<
   hrisGroup: shared.HrisGroup$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     hrisGroup: "HrisGroup",

@@ -26,6 +26,10 @@ export type UpdateMartechListRequest = {
    * ID of the List
    */
   id: string;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -38,6 +42,7 @@ export const UpdateMartechListRequest$inboundSchema: z.ZodType<
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "MarketingList": "marketingList",
@@ -51,6 +56,7 @@ export type UpdateMartechListRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -63,6 +69,7 @@ export const UpdateMartechListRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     marketingList: "MarketingList",

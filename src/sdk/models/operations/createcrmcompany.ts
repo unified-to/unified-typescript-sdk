@@ -22,6 +22,10 @@ export type CreateCrmCompanyRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -33,6 +37,7 @@ export const CreateCrmCompanyRequest$inboundSchema: z.ZodType<
   CrmCompany: shared.CrmCompany$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmCompany": "crmCompany",
@@ -45,6 +50,7 @@ export type CreateCrmCompanyRequest$Outbound = {
   CrmCompany: shared.CrmCompany$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -56,6 +62,7 @@ export const CreateCrmCompanyRequest$outboundSchema: z.ZodType<
   crmCompany: shared.CrmCompany$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     crmCompany: "CrmCompany",

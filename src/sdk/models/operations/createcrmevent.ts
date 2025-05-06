@@ -22,6 +22,10 @@ export type CreateCrmEventRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -33,6 +37,7 @@ export const CreateCrmEventRequest$inboundSchema: z.ZodType<
   CrmEvent: shared.CrmEvent$inboundSchema,
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "CrmEvent": "crmEvent",
@@ -45,6 +50,7 @@ export type CreateCrmEventRequest$Outbound = {
   CrmEvent: shared.CrmEvent$Outbound;
   connection_id: string;
   fields?: Array<string> | undefined;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -56,6 +62,7 @@ export const CreateCrmEventRequest$outboundSchema: z.ZodType<
   crmEvent: shared.CrmEvent$outboundSchema,
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     crmEvent: "CrmEvent",

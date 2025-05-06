@@ -21,6 +21,10 @@ export type GetHrisDeviceRequest = {
    * ID of the Device
    */
   id: string;
+  /**
+   * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
+   */
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -32,6 +36,7 @@ export const GetHrisDeviceRequest$inboundSchema: z.ZodType<
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
@@ -43,6 +48,7 @@ export type GetHrisDeviceRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   id: string;
+  raw?: string | undefined;
 };
 
 /** @internal */
@@ -54,6 +60,7 @@ export const GetHrisDeviceRequest$outboundSchema: z.ZodType<
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   id: z.string(),
+  raw: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",

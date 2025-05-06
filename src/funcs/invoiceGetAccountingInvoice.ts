@@ -98,6 +98,7 @@ async function $do(
 
   const query = encodeFormQuery({
     "fields": payload.fields,
+    "raw": payload.raw,
   });
 
   const headers = new Headers(compactMap({

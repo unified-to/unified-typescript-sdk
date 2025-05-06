@@ -97,6 +97,7 @@ async function $do(
     "order": payload.order,
     "parent_id": payload.parent_id,
     "query": payload.query,
+    "raw": payload.raw,
     "sort": payload.sort,
     "space_id": payload.space_id,
     "updated_gte": payload.updated_gte,
