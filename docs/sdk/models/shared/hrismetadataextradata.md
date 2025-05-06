@@ -1,14 +1,35 @@
 # HrisMetadataExtraData
 
-## Example Usage
+
+## Supported Types
+
+### `shared.HrisMetadata1`
 
 ```typescript
-import { HrisMetadataExtraData } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: HrisMetadataExtraData = {};
+const value: shared.HrisMetadata1 = {};
 ```
 
-## Fields
+### `shared.HrisMetadata2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.HrisMetadata2 = {};
+```
+
+### `shared.HrisMetadata3`
+
+```typescript
+const value: shared.HrisMetadata3 = {};
+```
+
+### `shared.HrisMetadata4`
+
+```typescript
+const value: shared.HrisMetadata4 = {};
+```
+
+### `shared.HrisMetadata5`
+
+```typescript
+const value: shared.HrisMetadata5 = {};
+```
+

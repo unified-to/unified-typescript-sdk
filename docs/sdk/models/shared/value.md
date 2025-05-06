@@ -1,14 +1,35 @@
 # Value
 
-## Example Usage
+
+## Supported Types
+
+### `shared.AtsMetadata1`
 
 ```typescript
-import { Value } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: Value = {};
+const value: shared.AtsMetadata1 = {};
 ```
 
-## Fields
+### `shared.AtsMetadata2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.AtsMetadata2 = "<value>";
+```
+
+### `shared.AtsMetadata3`
+
+```typescript
+const value: shared.AtsMetadata3 = 8209.94;
+```
+
+### `shared.AtsMetadata4`
+
+```typescript
+const value: shared.AtsMetadata4 = false;
+```
+
+### `shared.AtsMetadata5`
+
+```typescript
+const value: shared.AtsMetadata5 = {};
+```
+

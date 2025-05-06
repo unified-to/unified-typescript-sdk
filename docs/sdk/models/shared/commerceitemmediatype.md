@@ -5,7 +5,7 @@
 ```typescript
 import { CommerceItemMediaType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceItemMediaType = "video";
+let value: CommerceItemMediaType = "image";
 ```
 
 ## Values

@@ -8,36 +8,607 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CrmMetadataExtraData = {};
+export type CrmMetadataSchemasExtraData52 = {};
 
-export type CrmMetadataValue = {};
+export type CrmMetadata5 = CrmMetadataSchemasExtraData52 | Array<any>;
+
+export type CrmMetadataSchemasExtraData2 = {};
+
+export type CrmMetadata4 = CrmMetadataSchemasExtraData2 | boolean;
+
+export type CrmMetadataSchemasExtraData32 = {};
+
+export type CrmMetadata3 = CrmMetadataSchemasExtraData32 | number;
+
+export type CrmMetadataSchemasExtraData22 = {};
+
+export type CrmMetadata2 = CrmMetadataSchemasExtraData22 | string;
+
+export type CrmMetadata1 = {};
+
+export type CrmMetadataExtraData =
+  | CrmMetadata1
+  | CrmMetadataSchemasExtraData22
+  | string
+  | CrmMetadataSchemasExtraData32
+  | number
+  | CrmMetadataSchemasExtraData2
+  | boolean
+  | CrmMetadataSchemasExtraData52
+  | Array<any>;
+
+export type CrmMetadataSchemasValue52 = {};
+
+export type CrmMetadataSchemas5 = CrmMetadataSchemasValue52 | Array<any>;
+
+export type CrmMetadataSchemasValue42 = {};
+
+export type CrmMetadataSchemas4 = CrmMetadataSchemasValue42 | boolean;
+
+export type CrmMetadataSchemasValue32 = {};
+
+export type CrmMetadataSchemas3 = CrmMetadataSchemasValue32 | number;
+
+export type CrmMetadataSchemasValue2 = {};
+
+export type CrmMetadataSchemas2 = CrmMetadataSchemasValue2 | string;
+
+export type CrmMetadataSchemas1 = {};
+
+export type CrmMetadataValue =
+  | CrmMetadataSchemas1
+  | CrmMetadataSchemasValue2
+  | string
+  | CrmMetadataSchemasValue32
+  | number
+  | CrmMetadataSchemasValue42
+  | boolean
+  | CrmMetadataSchemasValue52
+  | Array<any>;
 
 export type CrmMetadata = {
-  extraData?: CrmMetadataExtraData | undefined;
+  extraData?:
+    | CrmMetadata1
+    | CrmMetadataSchemasExtraData22
+    | string
+    | CrmMetadataSchemasExtraData32
+    | number
+    | CrmMetadataSchemasExtraData2
+    | boolean
+    | CrmMetadataSchemasExtraData52
+    | Array<any>
+    | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
   type?: string | undefined;
-  value?: CrmMetadataValue | undefined;
+  value?:
+    | CrmMetadataSchemas1
+    | CrmMetadataSchemasValue2
+    | string
+    | CrmMetadataSchemasValue32
+    | number
+    | CrmMetadataSchemasValue42
+    | boolean
+    | CrmMetadataSchemasValue52
+    | Array<any>
+    | undefined;
 };
+
+/** @internal */
+export const CrmMetadataSchemasExtraData52$inboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData52,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasExtraData52$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasExtraData52$outboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData52$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasExtraData52
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasExtraData52$ {
+  /** @deprecated use `CrmMetadataSchemasExtraData52$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasExtraData52$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData52$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasExtraData52$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData52$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasExtraData52$Outbound;
+}
+
+export function crmMetadataSchemasExtraData52ToJSON(
+  crmMetadataSchemasExtraData52: CrmMetadataSchemasExtraData52,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasExtraData52$outboundSchema.parse(
+      crmMetadataSchemasExtraData52,
+    ),
+  );
+}
+
+export function crmMetadataSchemasExtraData52FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasExtraData52, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasExtraData52$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasExtraData52' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadata5$inboundSchema: z.ZodType<
+  CrmMetadata5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData52$inboundSchema),
+  z.array(z.any()),
+]);
+
+/** @internal */
+export type CrmMetadata5$Outbound =
+  | CrmMetadataSchemasExtraData52$Outbound
+  | Array<any>;
+
+/** @internal */
+export const CrmMetadata5$outboundSchema: z.ZodType<
+  CrmMetadata5$Outbound,
+  z.ZodTypeDef,
+  CrmMetadata5
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData52$outboundSchema),
+  z.array(z.any()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadata5$ {
+  /** @deprecated use `CrmMetadata5$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadata5$inboundSchema;
+  /** @deprecated use `CrmMetadata5$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadata5$outboundSchema;
+  /** @deprecated use `CrmMetadata5$Outbound` instead. */
+  export type Outbound = CrmMetadata5$Outbound;
+}
+
+export function crmMetadata5ToJSON(crmMetadata5: CrmMetadata5): string {
+  return JSON.stringify(CrmMetadata5$outboundSchema.parse(crmMetadata5));
+}
+
+export function crmMetadata5FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadata5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadata5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadata5' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasExtraData2$inboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasExtraData2$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasExtraData2$outboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData2$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasExtraData2
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasExtraData2$ {
+  /** @deprecated use `CrmMetadataSchemasExtraData2$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasExtraData2$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData2$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasExtraData2$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData2$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasExtraData2$Outbound;
+}
+
+export function crmMetadataSchemasExtraData2ToJSON(
+  crmMetadataSchemasExtraData2: CrmMetadataSchemasExtraData2,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasExtraData2$outboundSchema.parse(
+      crmMetadataSchemasExtraData2,
+    ),
+  );
+}
+
+export function crmMetadataSchemasExtraData2FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasExtraData2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasExtraData2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasExtraData2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadata4$inboundSchema: z.ZodType<
+  CrmMetadata4,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData2$inboundSchema),
+  z.boolean(),
+]);
+
+/** @internal */
+export type CrmMetadata4$Outbound =
+  | CrmMetadataSchemasExtraData2$Outbound
+  | boolean;
+
+/** @internal */
+export const CrmMetadata4$outboundSchema: z.ZodType<
+  CrmMetadata4$Outbound,
+  z.ZodTypeDef,
+  CrmMetadata4
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData2$outboundSchema),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadata4$ {
+  /** @deprecated use `CrmMetadata4$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadata4$inboundSchema;
+  /** @deprecated use `CrmMetadata4$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadata4$outboundSchema;
+  /** @deprecated use `CrmMetadata4$Outbound` instead. */
+  export type Outbound = CrmMetadata4$Outbound;
+}
+
+export function crmMetadata4ToJSON(crmMetadata4: CrmMetadata4): string {
+  return JSON.stringify(CrmMetadata4$outboundSchema.parse(crmMetadata4));
+}
+
+export function crmMetadata4FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadata4, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadata4$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadata4' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasExtraData32$inboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData32,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasExtraData32$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasExtraData32$outboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData32$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasExtraData32
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasExtraData32$ {
+  /** @deprecated use `CrmMetadataSchemasExtraData32$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasExtraData32$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData32$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasExtraData32$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData32$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasExtraData32$Outbound;
+}
+
+export function crmMetadataSchemasExtraData32ToJSON(
+  crmMetadataSchemasExtraData32: CrmMetadataSchemasExtraData32,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasExtraData32$outboundSchema.parse(
+      crmMetadataSchemasExtraData32,
+    ),
+  );
+}
+
+export function crmMetadataSchemasExtraData32FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasExtraData32, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasExtraData32$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasExtraData32' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadata3$inboundSchema: z.ZodType<
+  CrmMetadata3,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData32$inboundSchema),
+  z.number(),
+]);
+
+/** @internal */
+export type CrmMetadata3$Outbound =
+  | CrmMetadataSchemasExtraData32$Outbound
+  | number;
+
+/** @internal */
+export const CrmMetadata3$outboundSchema: z.ZodType<
+  CrmMetadata3$Outbound,
+  z.ZodTypeDef,
+  CrmMetadata3
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData32$outboundSchema),
+  z.number(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadata3$ {
+  /** @deprecated use `CrmMetadata3$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadata3$inboundSchema;
+  /** @deprecated use `CrmMetadata3$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadata3$outboundSchema;
+  /** @deprecated use `CrmMetadata3$Outbound` instead. */
+  export type Outbound = CrmMetadata3$Outbound;
+}
+
+export function crmMetadata3ToJSON(crmMetadata3: CrmMetadata3): string {
+  return JSON.stringify(CrmMetadata3$outboundSchema.parse(crmMetadata3));
+}
+
+export function crmMetadata3FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadata3, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadata3$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadata3' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasExtraData22$inboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData22,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasExtraData22$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasExtraData22$outboundSchema: z.ZodType<
+  CrmMetadataSchemasExtraData22$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasExtraData22
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasExtraData22$ {
+  /** @deprecated use `CrmMetadataSchemasExtraData22$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasExtraData22$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData22$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasExtraData22$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasExtraData22$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasExtraData22$Outbound;
+}
+
+export function crmMetadataSchemasExtraData22ToJSON(
+  crmMetadataSchemasExtraData22: CrmMetadataSchemasExtraData22,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasExtraData22$outboundSchema.parse(
+      crmMetadataSchemasExtraData22,
+    ),
+  );
+}
+
+export function crmMetadataSchemasExtraData22FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasExtraData22, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasExtraData22$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasExtraData22' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadata2$inboundSchema: z.ZodType<
+  CrmMetadata2,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData22$inboundSchema),
+  z.string(),
+]);
+
+/** @internal */
+export type CrmMetadata2$Outbound =
+  | CrmMetadataSchemasExtraData22$Outbound
+  | string;
+
+/** @internal */
+export const CrmMetadata2$outboundSchema: z.ZodType<
+  CrmMetadata2$Outbound,
+  z.ZodTypeDef,
+  CrmMetadata2
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasExtraData22$outboundSchema),
+  z.string(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadata2$ {
+  /** @deprecated use `CrmMetadata2$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadata2$inboundSchema;
+  /** @deprecated use `CrmMetadata2$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadata2$outboundSchema;
+  /** @deprecated use `CrmMetadata2$Outbound` instead. */
+  export type Outbound = CrmMetadata2$Outbound;
+}
+
+export function crmMetadata2ToJSON(crmMetadata2: CrmMetadata2): string {
+  return JSON.stringify(CrmMetadata2$outboundSchema.parse(crmMetadata2));
+}
+
+export function crmMetadata2FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadata2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadata2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadata2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadata1$inboundSchema: z.ZodType<
+  CrmMetadata1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadata1$Outbound = {};
+
+/** @internal */
+export const CrmMetadata1$outboundSchema: z.ZodType<
+  CrmMetadata1$Outbound,
+  z.ZodTypeDef,
+  CrmMetadata1
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadata1$ {
+  /** @deprecated use `CrmMetadata1$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadata1$inboundSchema;
+  /** @deprecated use `CrmMetadata1$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadata1$outboundSchema;
+  /** @deprecated use `CrmMetadata1$Outbound` instead. */
+  export type Outbound = CrmMetadata1$Outbound;
+}
+
+export function crmMetadata1ToJSON(crmMetadata1: CrmMetadata1): string {
+  return JSON.stringify(CrmMetadata1$outboundSchema.parse(crmMetadata1));
+}
+
+export function crmMetadata1FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadata1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadata1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadata1' from JSON`,
+  );
+}
 
 /** @internal */
 export const CrmMetadataExtraData$inboundSchema: z.ZodType<
   CrmMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = z.union([
+  z.lazy(() => CrmMetadata1$inboundSchema),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData22$inboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData32$inboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData2$inboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData52$inboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /** @internal */
-export type CrmMetadataExtraData$Outbound = {};
+export type CrmMetadataExtraData$Outbound =
+  | CrmMetadata1$Outbound
+  | CrmMetadataSchemasExtraData22$Outbound
+  | string
+  | CrmMetadataSchemasExtraData32$Outbound
+  | number
+  | CrmMetadataSchemasExtraData2$Outbound
+  | boolean
+  | CrmMetadataSchemasExtraData52$Outbound
+  | Array<any>;
 
 /** @internal */
 export const CrmMetadataExtraData$outboundSchema: z.ZodType<
   CrmMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CrmMetadataExtraData
-> = z.object({});
+> = z.union([
+  z.lazy(() => CrmMetadata1$outboundSchema),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData22$outboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData32$outboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData2$outboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasExtraData52$outboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /**
  * @internal
@@ -71,21 +642,512 @@ export function crmMetadataExtraDataFromJSON(
 }
 
 /** @internal */
-export const CrmMetadataValue$inboundSchema: z.ZodType<
-  CrmMetadataValue,
+export const CrmMetadataSchemasValue52$inboundSchema: z.ZodType<
+  CrmMetadataSchemasValue52,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
 /** @internal */
-export type CrmMetadataValue$Outbound = {};
+export type CrmMetadataSchemasValue52$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasValue52$outboundSchema: z.ZodType<
+  CrmMetadataSchemasValue52$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasValue52
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasValue52$ {
+  /** @deprecated use `CrmMetadataSchemasValue52$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasValue52$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue52$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasValue52$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue52$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasValue52$Outbound;
+}
+
+export function crmMetadataSchemasValue52ToJSON(
+  crmMetadataSchemasValue52: CrmMetadataSchemasValue52,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasValue52$outboundSchema.parse(crmMetadataSchemasValue52),
+  );
+}
+
+export function crmMetadataSchemasValue52FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasValue52, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasValue52$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasValue52' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemas5$inboundSchema: z.ZodType<
+  CrmMetadataSchemas5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue52$inboundSchema),
+  z.array(z.any()),
+]);
+
+/** @internal */
+export type CrmMetadataSchemas5$Outbound =
+  | CrmMetadataSchemasValue52$Outbound
+  | Array<any>;
+
+/** @internal */
+export const CrmMetadataSchemas5$outboundSchema: z.ZodType<
+  CrmMetadataSchemas5$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemas5
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue52$outboundSchema),
+  z.array(z.any()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemas5$ {
+  /** @deprecated use `CrmMetadataSchemas5$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemas5$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemas5$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemas5$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemas5$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemas5$Outbound;
+}
+
+export function crmMetadataSchemas5ToJSON(
+  crmMetadataSchemas5: CrmMetadataSchemas5,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemas5$outboundSchema.parse(crmMetadataSchemas5),
+  );
+}
+
+export function crmMetadataSchemas5FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemas5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemas5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemas5' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasValue42$inboundSchema: z.ZodType<
+  CrmMetadataSchemasValue42,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasValue42$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasValue42$outboundSchema: z.ZodType<
+  CrmMetadataSchemasValue42$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasValue42
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasValue42$ {
+  /** @deprecated use `CrmMetadataSchemasValue42$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasValue42$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue42$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasValue42$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue42$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasValue42$Outbound;
+}
+
+export function crmMetadataSchemasValue42ToJSON(
+  crmMetadataSchemasValue42: CrmMetadataSchemasValue42,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasValue42$outboundSchema.parse(crmMetadataSchemasValue42),
+  );
+}
+
+export function crmMetadataSchemasValue42FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasValue42, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasValue42$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasValue42' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemas4$inboundSchema: z.ZodType<
+  CrmMetadataSchemas4,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue42$inboundSchema),
+  z.boolean(),
+]);
+
+/** @internal */
+export type CrmMetadataSchemas4$Outbound =
+  | CrmMetadataSchemasValue42$Outbound
+  | boolean;
+
+/** @internal */
+export const CrmMetadataSchemas4$outboundSchema: z.ZodType<
+  CrmMetadataSchemas4$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemas4
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue42$outboundSchema),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemas4$ {
+  /** @deprecated use `CrmMetadataSchemas4$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemas4$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemas4$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemas4$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemas4$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemas4$Outbound;
+}
+
+export function crmMetadataSchemas4ToJSON(
+  crmMetadataSchemas4: CrmMetadataSchemas4,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemas4$outboundSchema.parse(crmMetadataSchemas4),
+  );
+}
+
+export function crmMetadataSchemas4FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemas4, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemas4$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemas4' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasValue32$inboundSchema: z.ZodType<
+  CrmMetadataSchemasValue32,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasValue32$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasValue32$outboundSchema: z.ZodType<
+  CrmMetadataSchemasValue32$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasValue32
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasValue32$ {
+  /** @deprecated use `CrmMetadataSchemasValue32$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasValue32$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue32$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasValue32$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue32$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasValue32$Outbound;
+}
+
+export function crmMetadataSchemasValue32ToJSON(
+  crmMetadataSchemasValue32: CrmMetadataSchemasValue32,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasValue32$outboundSchema.parse(crmMetadataSchemasValue32),
+  );
+}
+
+export function crmMetadataSchemasValue32FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasValue32, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasValue32$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasValue32' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemas3$inboundSchema: z.ZodType<
+  CrmMetadataSchemas3,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue32$inboundSchema),
+  z.number(),
+]);
+
+/** @internal */
+export type CrmMetadataSchemas3$Outbound =
+  | CrmMetadataSchemasValue32$Outbound
+  | number;
+
+/** @internal */
+export const CrmMetadataSchemas3$outboundSchema: z.ZodType<
+  CrmMetadataSchemas3$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemas3
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue32$outboundSchema),
+  z.number(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemas3$ {
+  /** @deprecated use `CrmMetadataSchemas3$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemas3$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemas3$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemas3$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemas3$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemas3$Outbound;
+}
+
+export function crmMetadataSchemas3ToJSON(
+  crmMetadataSchemas3: CrmMetadataSchemas3,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemas3$outboundSchema.parse(crmMetadataSchemas3),
+  );
+}
+
+export function crmMetadataSchemas3FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemas3, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemas3$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemas3' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemasValue2$inboundSchema: z.ZodType<
+  CrmMetadataSchemasValue2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemasValue2$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemasValue2$outboundSchema: z.ZodType<
+  CrmMetadataSchemasValue2$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemasValue2
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemasValue2$ {
+  /** @deprecated use `CrmMetadataSchemasValue2$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemasValue2$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue2$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemasValue2$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemasValue2$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemasValue2$Outbound;
+}
+
+export function crmMetadataSchemasValue2ToJSON(
+  crmMetadataSchemasValue2: CrmMetadataSchemasValue2,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemasValue2$outboundSchema.parse(crmMetadataSchemasValue2),
+  );
+}
+
+export function crmMetadataSchemasValue2FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemasValue2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemasValue2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemasValue2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemas2$inboundSchema: z.ZodType<
+  CrmMetadataSchemas2,
+  z.ZodTypeDef,
+  unknown
+> = z.union([z.lazy(() => CrmMetadataSchemasValue2$inboundSchema), z.string()]);
+
+/** @internal */
+export type CrmMetadataSchemas2$Outbound =
+  | CrmMetadataSchemasValue2$Outbound
+  | string;
+
+/** @internal */
+export const CrmMetadataSchemas2$outboundSchema: z.ZodType<
+  CrmMetadataSchemas2$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemas2
+> = z.union([
+  z.lazy(() => CrmMetadataSchemasValue2$outboundSchema),
+  z.string(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemas2$ {
+  /** @deprecated use `CrmMetadataSchemas2$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemas2$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemas2$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemas2$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemas2$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemas2$Outbound;
+}
+
+export function crmMetadataSchemas2ToJSON(
+  crmMetadataSchemas2: CrmMetadataSchemas2,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemas2$outboundSchema.parse(crmMetadataSchemas2),
+  );
+}
+
+export function crmMetadataSchemas2FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemas2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemas2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemas2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataSchemas1$inboundSchema: z.ZodType<
+  CrmMetadataSchemas1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CrmMetadataSchemas1$Outbound = {};
+
+/** @internal */
+export const CrmMetadataSchemas1$outboundSchema: z.ZodType<
+  CrmMetadataSchemas1$Outbound,
+  z.ZodTypeDef,
+  CrmMetadataSchemas1
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataSchemas1$ {
+  /** @deprecated use `CrmMetadataSchemas1$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataSchemas1$inboundSchema;
+  /** @deprecated use `CrmMetadataSchemas1$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataSchemas1$outboundSchema;
+  /** @deprecated use `CrmMetadataSchemas1$Outbound` instead. */
+  export type Outbound = CrmMetadataSchemas1$Outbound;
+}
+
+export function crmMetadataSchemas1ToJSON(
+  crmMetadataSchemas1: CrmMetadataSchemas1,
+): string {
+  return JSON.stringify(
+    CrmMetadataSchemas1$outboundSchema.parse(crmMetadataSchemas1),
+  );
+}
+
+export function crmMetadataSchemas1FromJSON(
+  jsonString: string,
+): SafeParseResult<CrmMetadataSchemas1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CrmMetadataSchemas1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CrmMetadataSchemas1' from JSON`,
+  );
+}
+
+/** @internal */
+export const CrmMetadataValue$inboundSchema: z.ZodType<
+  CrmMetadataValue,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CrmMetadataSchemas1$inboundSchema),
+  z.union([z.lazy(() => CrmMetadataSchemasValue2$inboundSchema), z.string()]),
+  z.union([z.lazy(() => CrmMetadataSchemasValue32$inboundSchema), z.number()]),
+  z.union([z.lazy(() => CrmMetadataSchemasValue42$inboundSchema), z.boolean()]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasValue52$inboundSchema),
+    z.array(z.any()),
+  ]),
+]);
+
+/** @internal */
+export type CrmMetadataValue$Outbound =
+  | CrmMetadataSchemas1$Outbound
+  | CrmMetadataSchemasValue2$Outbound
+  | string
+  | CrmMetadataSchemasValue32$Outbound
+  | number
+  | CrmMetadataSchemasValue42$Outbound
+  | boolean
+  | CrmMetadataSchemasValue52$Outbound
+  | Array<any>;
 
 /** @internal */
 export const CrmMetadataValue$outboundSchema: z.ZodType<
   CrmMetadataValue$Outbound,
   z.ZodTypeDef,
   CrmMetadataValue
-> = z.object({});
+> = z.union([
+  z.lazy(() => CrmMetadataSchemas1$outboundSchema),
+  z.union([z.lazy(() => CrmMetadataSchemasValue2$outboundSchema), z.string()]),
+  z.union([z.lazy(() => CrmMetadataSchemasValue32$outboundSchema), z.number()]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasValue42$outboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CrmMetadataSchemasValue52$outboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /**
  * @internal
@@ -124,13 +1186,46 @@ export const CrmMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  extra_data: z.lazy(() => CrmMetadataExtraData$inboundSchema).optional(),
+  extra_data: z.union([
+    z.lazy(() => CrmMetadata1$inboundSchema),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData22$inboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData32$inboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData2$inboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData52$inboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => CrmMetadataValue$inboundSchema).optional(),
+  value: z.union([
+    z.lazy(() => CrmMetadataSchemas1$inboundSchema),
+    z.union([z.lazy(() => CrmMetadataSchemasValue2$inboundSchema), z.string()]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue32$inboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue42$inboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue52$inboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     "extra_data": "extraData",
@@ -139,13 +1234,33 @@ export const CrmMetadata$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CrmMetadata$Outbound = {
-  extra_data?: CrmMetadataExtraData$Outbound | undefined;
+  extra_data?:
+    | CrmMetadata1$Outbound
+    | CrmMetadataSchemasExtraData22$Outbound
+    | string
+    | CrmMetadataSchemasExtraData32$Outbound
+    | number
+    | CrmMetadataSchemasExtraData2$Outbound
+    | boolean
+    | CrmMetadataSchemasExtraData52$Outbound
+    | Array<any>
+    | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
   type?: string | undefined;
-  value?: CrmMetadataValue$Outbound | undefined;
+  value?:
+    | CrmMetadataSchemas1$Outbound
+    | CrmMetadataSchemasValue2$Outbound
+    | string
+    | CrmMetadataSchemasValue32$Outbound
+    | number
+    | CrmMetadataSchemasValue42$Outbound
+    | boolean
+    | CrmMetadataSchemasValue52$Outbound
+    | Array<any>
+    | undefined;
 };
 
 /** @internal */
@@ -154,13 +1269,49 @@ export const CrmMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CrmMetadata
 > = z.object({
-  extraData: z.lazy(() => CrmMetadataExtraData$outboundSchema).optional(),
+  extraData: z.union([
+    z.lazy(() => CrmMetadata1$outboundSchema),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData22$outboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData32$outboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData2$outboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasExtraData52$outboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => CrmMetadataValue$outboundSchema).optional(),
+  value: z.union([
+    z.lazy(() => CrmMetadataSchemas1$outboundSchema),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue2$outboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue32$outboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue42$outboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CrmMetadataSchemasValue52$outboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     extraData: "extra_data",

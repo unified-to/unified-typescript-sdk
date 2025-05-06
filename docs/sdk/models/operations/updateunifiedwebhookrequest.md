@@ -8,8 +8,8 @@ import { UpdateUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/mod
 let value: UpdateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
-    event: "deleted",
-    objectType: "ats_candidate",
+    event: "created",
+    objectType: "kms_space",
   },
   id: "<id>",
 };

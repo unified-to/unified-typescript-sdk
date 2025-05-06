@@ -5,7 +5,7 @@
 ```typescript
 import { CrmEventFormFieldType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CrmEventFormFieldType = "TEXTAREA";
+let value: CrmEventFormFieldType = "DATE";
 ```
 
 ## Values

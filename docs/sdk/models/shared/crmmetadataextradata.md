@@ -1,14 +1,35 @@
 # CrmMetadataExtraData
 
-## Example Usage
+
+## Supported Types
+
+### `shared.CrmMetadata1`
 
 ```typescript
-import { CrmMetadataExtraData } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: CrmMetadataExtraData = {};
+const value: shared.CrmMetadata1 = {};
 ```
 
-## Fields
+### `shared.CrmMetadata2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.CrmMetadata2 = "<value>";
+```
+
+### `shared.CrmMetadata3`
+
+```typescript
+const value: shared.CrmMetadata3 = 8326.2;
+```
+
+### `shared.CrmMetadata4`
+
+```typescript
+const value: shared.CrmMetadata4 = {};
+```
+
+### `shared.CrmMetadata5`
+
+```typescript
+const value: shared.CrmMetadata5 = {};
+```
+

@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookChannelId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookChannelId = "supported";
+let value: VirtualWebhookChannelId = "supported-required";
 ```
 
 ## Values

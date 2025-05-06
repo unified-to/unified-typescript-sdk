@@ -1,14 +1,37 @@
 # HrisMetadataValue
 
-## Example Usage
+
+## Supported Types
+
+### `shared.HrisMetadataSchemas1`
 
 ```typescript
-import { HrisMetadataValue } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: HrisMetadataValue = {};
+const value: shared.HrisMetadataSchemas1 = {};
 ```
 
-## Fields
+### `shared.HrisMetadataSchemas2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.HrisMetadataSchemas2 = "<value>";
+```
+
+### `shared.HrisMetadataSchemas3`
+
+```typescript
+const value: shared.HrisMetadataSchemas3 = {};
+```
+
+### `shared.HrisMetadataSchemas4`
+
+```typescript
+const value: shared.HrisMetadataSchemas4 = false;
+```
+
+### `shared.HrisMetadataSchemas5`
+
+```typescript
+const value: shared.HrisMetadataSchemas5 = [
+  "<value>",
+];
+```
+

@@ -1,14 +1,35 @@
 # ExtraData
 
-## Example Usage
+
+## Supported Types
+
+### `shared.One`
 
 ```typescript
-import { ExtraData } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: ExtraData = {};
+const value: shared.One = {};
 ```
 
-## Fields
+### `shared.Two`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.Two = "<value>";
+```
+
+### `shared.Three`
+
+```typescript
+const value: shared.Three = 1589.69;
+```
+
+### `shared.Four`
+
+```typescript
+const value: shared.Four = false;
+```
+
+### `shared.Five`
+
+```typescript
+const value: shared.Five = {};
+```
+

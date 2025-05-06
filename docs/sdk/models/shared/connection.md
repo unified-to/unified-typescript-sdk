@@ -9,11 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "genai",
+    "crm",
   ],
   integrationType: "<value>",
   permissions: [
-    "uc_call_read",
+    "calendar_busy_read",
   ],
 };
 ```

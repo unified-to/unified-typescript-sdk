@@ -5,7 +5,7 @@
 ```typescript
 import { HrisPayslipDetailType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: HrisPayslipDetailType = "PRETAX_DEDUCTION";
+let value: HrisPayslipDetailType = "TAX_LOCAL";
 ```
 
 ## Values

@@ -5,7 +5,7 @@
 ```typescript
 import { CalendarAttendeeStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CalendarAttendeeStatus = "ACCEPTED";
+let value: CalendarAttendeeStatus = "REJECTED";
 ```
 
 ## Values

@@ -1,14 +1,35 @@
 # CommerceMetadataExtraData
 
-## Example Usage
+
+## Supported Types
+
+### `shared.CommerceMetadata1`
 
 ```typescript
-import { CommerceMetadataExtraData } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: CommerceMetadataExtraData = {};
+const value: shared.CommerceMetadata1 = {};
 ```
 
-## Fields
+### `shared.CommerceMetadata2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.CommerceMetadata2 = {};
+```
+
+### `shared.CommerceMetadata3`
+
+```typescript
+const value: shared.CommerceMetadata3 = 6778.17;
+```
+
+### `shared.CommerceMetadata4`
+
+```typescript
+const value: shared.CommerceMetadata4 = false;
+```
+
+### `shared.CommerceMetadata5`
+
+```typescript
+const value: shared.CommerceMetadata5 = {};
+```
+

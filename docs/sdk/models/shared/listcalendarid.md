@@ -5,7 +5,7 @@
 ```typescript
 import { ListCalendarId } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ListCalendarId = "supported-required";
+let value: ListCalendarId = "not-supported";
 ```
 
 ## Values

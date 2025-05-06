@@ -5,7 +5,7 @@
 ```typescript
 import { Origin } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Origin = "SOURCED";
+let value: Origin = "AGENCY";
 ```
 
 ## Values

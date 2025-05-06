@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: f032e2d929e6463e2d345fa322684244
+  docChecksum: 2625a6ddd69ded1a0dfa97e04747a5af
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.62.0
-  configChecksum: ef2fbaaa2becc8d704bfde23cbe58579
+  releaseVersion: 2.64.0
+  configChecksum: 9d643f5251b0259427746b1bdef95355
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -27,6 +27,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
+    unions: 2.85.8
     uploadStreams: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -612,6 +613,19 @@ generatedFiles:
   - docs/sdk/models/shared/atsjobquestiontype.md
   - docs/sdk/models/shared/atsjobstatus.md
   - docs/sdk/models/shared/atsmetadata.md
+  - docs/sdk/models/shared/atsmetadata1.md
+  - docs/sdk/models/shared/atsmetadata2.md
+  - docs/sdk/models/shared/atsmetadata3.md
+  - docs/sdk/models/shared/atsmetadata4.md
+  - docs/sdk/models/shared/atsmetadata5.md
+  - docs/sdk/models/shared/atsmetadataschemas2.md
+  - docs/sdk/models/shared/atsmetadataschemasextradata2.md
+  - docs/sdk/models/shared/atsmetadataschemasextradata22.md
+  - docs/sdk/models/shared/atsmetadataschemasextradata32.md
+  - docs/sdk/models/shared/atsmetadataschemasvalue2.md
+  - docs/sdk/models/shared/atsmetadataschemasvalue32.md
+  - docs/sdk/models/shared/atsmetadataschemasvalue42.md
+  - docs/sdk/models/shared/atsmetadataschemasvalue52.md
   - docs/sdk/models/shared/atsoffer.md
   - docs/sdk/models/shared/atsofferstatus.md
   - docs/sdk/models/shared/atsscorecard.md
@@ -641,7 +655,25 @@ generatedFiles:
   - docs/sdk/models/shared/commerceitemvariant.md
   - docs/sdk/models/shared/commercelocation.md
   - docs/sdk/models/shared/commercemetadata.md
+  - docs/sdk/models/shared/commercemetadata1.md
+  - docs/sdk/models/shared/commercemetadata2.md
+  - docs/sdk/models/shared/commercemetadata3.md
+  - docs/sdk/models/shared/commercemetadata4.md
+  - docs/sdk/models/shared/commercemetadata5.md
   - docs/sdk/models/shared/commercemetadataextradata.md
+  - docs/sdk/models/shared/commercemetadataschemas1.md
+  - docs/sdk/models/shared/commercemetadataschemas2.md
+  - docs/sdk/models/shared/commercemetadataschemas3.md
+  - docs/sdk/models/shared/commercemetadataschemas4.md
+  - docs/sdk/models/shared/commercemetadataschemas5.md
+  - docs/sdk/models/shared/commercemetadataschemasextradata2.md
+  - docs/sdk/models/shared/commercemetadataschemasextradata22.md
+  - docs/sdk/models/shared/commercemetadataschemasextradata32.md
+  - docs/sdk/models/shared/commercemetadataschemasextradata52.md
+  - docs/sdk/models/shared/commercemetadataschemasvalue2.md
+  - docs/sdk/models/shared/commercemetadataschemasvalue32.md
+  - docs/sdk/models/shared/commercemetadataschemasvalue42.md
+  - docs/sdk/models/shared/commercemetadataschemasvalue52.md
   - docs/sdk/models/shared/commercemetadatavalue.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
@@ -657,7 +689,25 @@ generatedFiles:
   - docs/sdk/models/shared/crmeventtype.md
   - docs/sdk/models/shared/crmlead.md
   - docs/sdk/models/shared/crmmetadata.md
+  - docs/sdk/models/shared/crmmetadata1.md
+  - docs/sdk/models/shared/crmmetadata2.md
+  - docs/sdk/models/shared/crmmetadata3.md
+  - docs/sdk/models/shared/crmmetadata4.md
+  - docs/sdk/models/shared/crmmetadata5.md
   - docs/sdk/models/shared/crmmetadataextradata.md
+  - docs/sdk/models/shared/crmmetadataschemas1.md
+  - docs/sdk/models/shared/crmmetadataschemas2.md
+  - docs/sdk/models/shared/crmmetadataschemas3.md
+  - docs/sdk/models/shared/crmmetadataschemas4.md
+  - docs/sdk/models/shared/crmmetadataschemas5.md
+  - docs/sdk/models/shared/crmmetadataschemasextradata2.md
+  - docs/sdk/models/shared/crmmetadataschemasextradata22.md
+  - docs/sdk/models/shared/crmmetadataschemasextradata32.md
+  - docs/sdk/models/shared/crmmetadataschemasextradata52.md
+  - docs/sdk/models/shared/crmmetadataschemasvalue2.md
+  - docs/sdk/models/shared/crmmetadataschemasvalue32.md
+  - docs/sdk/models/shared/crmmetadataschemasvalue42.md
+  - docs/sdk/models/shared/crmmetadataschemasvalue52.md
   - docs/sdk/models/shared/crmmetadatavalue.md
   - docs/sdk/models/shared/crmpipeline.md
   - docs/sdk/models/shared/crmstage.md
@@ -676,7 +726,9 @@ generatedFiles:
   - docs/sdk/models/shared/ethnicity.md
   - docs/sdk/models/shared/event.md
   - docs/sdk/models/shared/extradata.md
+  - docs/sdk/models/shared/five.md
   - docs/sdk/models/shared/format.md
+  - docs/sdk/models/shared/four.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/fromwebhook.md
   - docs/sdk/models/shared/genaicontent.md
@@ -697,7 +749,25 @@ generatedFiles:
   - docs/sdk/models/shared/hrisgrouptype.md
   - docs/sdk/models/shared/hrislocation.md
   - docs/sdk/models/shared/hrismetadata.md
+  - docs/sdk/models/shared/hrismetadata1.md
+  - docs/sdk/models/shared/hrismetadata2.md
+  - docs/sdk/models/shared/hrismetadata3.md
+  - docs/sdk/models/shared/hrismetadata4.md
+  - docs/sdk/models/shared/hrismetadata5.md
   - docs/sdk/models/shared/hrismetadataextradata.md
+  - docs/sdk/models/shared/hrismetadataschemas1.md
+  - docs/sdk/models/shared/hrismetadataschemas2.md
+  - docs/sdk/models/shared/hrismetadataschemas3.md
+  - docs/sdk/models/shared/hrismetadataschemas4.md
+  - docs/sdk/models/shared/hrismetadataschemas5.md
+  - docs/sdk/models/shared/hrismetadataschemasextradata2.md
+  - docs/sdk/models/shared/hrismetadataschemasextradata22.md
+  - docs/sdk/models/shared/hrismetadataschemasextradata32.md
+  - docs/sdk/models/shared/hrismetadataschemasextradata52.md
+  - docs/sdk/models/shared/hrismetadataschemasvalue2.md
+  - docs/sdk/models/shared/hrismetadataschemasvalue32.md
+  - docs/sdk/models/shared/hrismetadataschemasvalue42.md
+  - docs/sdk/models/shared/hrismetadataschemasvalue52.md
   - docs/sdk/models/shared/hrismetadatavalue.md
   - docs/sdk/models/shared/hrispayslip.md
   - docs/sdk/models/shared/hrispayslipdetail.md
@@ -787,6 +857,7 @@ generatedFiles:
   - docs/sdk/models/shared/nativewebhookparentid.md
   - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md
+  - docs/sdk/models/shared/one.md
   - docs/sdk/models/shared/operation.md
   - docs/sdk/models/shared/origin.md
   - docs/sdk/models/shared/paymentcollectionmethod.md
@@ -911,6 +982,7 @@ generatedFiles:
   - docs/sdk/models/shared/tasktask.md
   - docs/sdk/models/shared/tasktaskstatus.md
   - docs/sdk/models/shared/taxexemption.md
+  - docs/sdk/models/shared/three.md
   - docs/sdk/models/shared/ticketingcustomer.md
   - docs/sdk/models/shared/ticketingemail.md
   - docs/sdk/models/shared/ticketingemailtype.md
@@ -919,6 +991,7 @@ generatedFiles:
   - docs/sdk/models/shared/ticketingtelephonetype.md
   - docs/sdk/models/shared/ticketingticket.md
   - docs/sdk/models/shared/ticketingticketstatus.md
+  - docs/sdk/models/shared/two.md
   - docs/sdk/models/shared/type.md
   - docs/sdk/models/shared/uccall.md
   - docs/sdk/models/shared/uccomment.md

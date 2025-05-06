@@ -1,14 +1,35 @@
 # CommerceMetadataValue
 
-## Example Usage
+
+## Supported Types
+
+### `shared.CommerceMetadataSchemas1`
 
 ```typescript
-import { CommerceMetadataValue } from "@unified-api/typescript-sdk/sdk/models/shared";
-
-let value: CommerceMetadataValue = {};
+const value: shared.CommerceMetadataSchemas1 = {};
 ```
 
-## Fields
+### `shared.CommerceMetadataSchemas2`
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+```typescript
+const value: shared.CommerceMetadataSchemas2 = "<value>";
+```
+
+### `shared.CommerceMetadataSchemas3`
+
+```typescript
+const value: shared.CommerceMetadataSchemas3 = {};
+```
+
+### `shared.CommerceMetadataSchemas4`
+
+```typescript
+const value: shared.CommerceMetadataSchemas4 = {};
+```
+
+### `shared.CommerceMetadataSchemas5`
+
+```typescript
+const value: shared.CommerceMetadataSchemas5 = {};
+```
+

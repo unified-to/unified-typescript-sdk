@@ -5,7 +5,7 @@
 ```typescript
 import { VirtualWebhookLimit } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: VirtualWebhookLimit = "supported-required";
+let value: VirtualWebhookLimit = "not-supported";
 ```
 
 ## Values

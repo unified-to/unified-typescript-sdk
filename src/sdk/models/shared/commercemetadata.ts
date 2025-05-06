@@ -8,36 +8,636 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type CommerceMetadataExtraData = {};
+export type CommerceMetadataSchemasExtraData52 = {};
 
-export type CommerceMetadataValue = {};
+export type CommerceMetadata5 = CommerceMetadataSchemasExtraData52 | Array<any>;
+
+export type CommerceMetadataSchemasExtraData2 = {};
+
+export type CommerceMetadata4 = CommerceMetadataSchemasExtraData2 | boolean;
+
+export type CommerceMetadataSchemasExtraData32 = {};
+
+export type CommerceMetadata3 = CommerceMetadataSchemasExtraData32 | number;
+
+export type CommerceMetadataSchemasExtraData22 = {};
+
+export type CommerceMetadata2 = CommerceMetadataSchemasExtraData22 | string;
+
+export type CommerceMetadata1 = {};
+
+export type CommerceMetadataExtraData =
+  | CommerceMetadata1
+  | CommerceMetadataSchemasExtraData22
+  | string
+  | CommerceMetadataSchemasExtraData32
+  | number
+  | CommerceMetadataSchemasExtraData2
+  | boolean
+  | CommerceMetadataSchemasExtraData52
+  | Array<any>;
+
+export type CommerceMetadataSchemasValue52 = {};
+
+export type CommerceMetadataSchemas5 =
+  | CommerceMetadataSchemasValue52
+  | Array<any>;
+
+export type CommerceMetadataSchemasValue42 = {};
+
+export type CommerceMetadataSchemas4 = CommerceMetadataSchemasValue42 | boolean;
+
+export type CommerceMetadataSchemasValue32 = {};
+
+export type CommerceMetadataSchemas3 = CommerceMetadataSchemasValue32 | number;
+
+export type CommerceMetadataSchemasValue2 = {};
+
+export type CommerceMetadataSchemas2 = CommerceMetadataSchemasValue2 | string;
+
+export type CommerceMetadataSchemas1 = {};
+
+export type CommerceMetadataValue =
+  | CommerceMetadataSchemas1
+  | CommerceMetadataSchemasValue2
+  | string
+  | CommerceMetadataSchemasValue32
+  | number
+  | CommerceMetadataSchemasValue42
+  | boolean
+  | CommerceMetadataSchemasValue52
+  | Array<any>;
 
 export type CommerceMetadata = {
-  extraData?: CommerceMetadataExtraData | undefined;
+  extraData?:
+    | CommerceMetadata1
+    | CommerceMetadataSchemasExtraData22
+    | string
+    | CommerceMetadataSchemasExtraData32
+    | number
+    | CommerceMetadataSchemasExtraData2
+    | boolean
+    | CommerceMetadataSchemasExtraData52
+    | Array<any>
+    | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
   type?: string | undefined;
-  value?: CommerceMetadataValue | undefined;
+  value?:
+    | CommerceMetadataSchemas1
+    | CommerceMetadataSchemasValue2
+    | string
+    | CommerceMetadataSchemasValue32
+    | number
+    | CommerceMetadataSchemasValue42
+    | boolean
+    | CommerceMetadataSchemasValue52
+    | Array<any>
+    | undefined;
 };
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData52$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData52,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasExtraData52$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData52$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData52$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasExtraData52
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasExtraData52$ {
+  /** @deprecated use `CommerceMetadataSchemasExtraData52$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasExtraData52$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData52$outboundSchema` instead. */
+  export const outboundSchema =
+    CommerceMetadataSchemasExtraData52$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData52$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasExtraData52$Outbound;
+}
+
+export function commerceMetadataSchemasExtraData52ToJSON(
+  commerceMetadataSchemasExtraData52: CommerceMetadataSchemasExtraData52,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasExtraData52$outboundSchema.parse(
+      commerceMetadataSchemasExtraData52,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasExtraData52FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasExtraData52, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      CommerceMetadataSchemasExtraData52$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasExtraData52' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadata5$inboundSchema: z.ZodType<
+  CommerceMetadata5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData52$inboundSchema),
+  z.array(z.any()),
+]);
+
+/** @internal */
+export type CommerceMetadata5$Outbound =
+  | CommerceMetadataSchemasExtraData52$Outbound
+  | Array<any>;
+
+/** @internal */
+export const CommerceMetadata5$outboundSchema: z.ZodType<
+  CommerceMetadata5$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadata5
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData52$outboundSchema),
+  z.array(z.any()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadata5$ {
+  /** @deprecated use `CommerceMetadata5$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadata5$inboundSchema;
+  /** @deprecated use `CommerceMetadata5$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadata5$outboundSchema;
+  /** @deprecated use `CommerceMetadata5$Outbound` instead. */
+  export type Outbound = CommerceMetadata5$Outbound;
+}
+
+export function commerceMetadata5ToJSON(
+  commerceMetadata5: CommerceMetadata5,
+): string {
+  return JSON.stringify(
+    CommerceMetadata5$outboundSchema.parse(commerceMetadata5),
+  );
+}
+
+export function commerceMetadata5FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata5' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData2$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasExtraData2$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData2$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData2$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasExtraData2
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasExtraData2$ {
+  /** @deprecated use `CommerceMetadataSchemasExtraData2$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasExtraData2$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData2$outboundSchema` instead. */
+  export const outboundSchema =
+    CommerceMetadataSchemasExtraData2$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData2$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasExtraData2$Outbound;
+}
+
+export function commerceMetadataSchemasExtraData2ToJSON(
+  commerceMetadataSchemasExtraData2: CommerceMetadataSchemasExtraData2,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasExtraData2$outboundSchema.parse(
+      commerceMetadataSchemasExtraData2,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasExtraData2FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasExtraData2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemasExtraData2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasExtraData2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadata4$inboundSchema: z.ZodType<
+  CommerceMetadata4,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData2$inboundSchema),
+  z.boolean(),
+]);
+
+/** @internal */
+export type CommerceMetadata4$Outbound =
+  | CommerceMetadataSchemasExtraData2$Outbound
+  | boolean;
+
+/** @internal */
+export const CommerceMetadata4$outboundSchema: z.ZodType<
+  CommerceMetadata4$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadata4
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData2$outboundSchema),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadata4$ {
+  /** @deprecated use `CommerceMetadata4$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadata4$inboundSchema;
+  /** @deprecated use `CommerceMetadata4$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadata4$outboundSchema;
+  /** @deprecated use `CommerceMetadata4$Outbound` instead. */
+  export type Outbound = CommerceMetadata4$Outbound;
+}
+
+export function commerceMetadata4ToJSON(
+  commerceMetadata4: CommerceMetadata4,
+): string {
+  return JSON.stringify(
+    CommerceMetadata4$outboundSchema.parse(commerceMetadata4),
+  );
+}
+
+export function commerceMetadata4FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata4, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata4$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata4' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData32$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData32,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasExtraData32$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData32$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData32$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasExtraData32
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasExtraData32$ {
+  /** @deprecated use `CommerceMetadataSchemasExtraData32$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasExtraData32$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData32$outboundSchema` instead. */
+  export const outboundSchema =
+    CommerceMetadataSchemasExtraData32$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData32$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasExtraData32$Outbound;
+}
+
+export function commerceMetadataSchemasExtraData32ToJSON(
+  commerceMetadataSchemasExtraData32: CommerceMetadataSchemasExtraData32,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasExtraData32$outboundSchema.parse(
+      commerceMetadataSchemasExtraData32,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasExtraData32FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasExtraData32, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      CommerceMetadataSchemasExtraData32$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasExtraData32' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadata3$inboundSchema: z.ZodType<
+  CommerceMetadata3,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData32$inboundSchema),
+  z.number(),
+]);
+
+/** @internal */
+export type CommerceMetadata3$Outbound =
+  | CommerceMetadataSchemasExtraData32$Outbound
+  | number;
+
+/** @internal */
+export const CommerceMetadata3$outboundSchema: z.ZodType<
+  CommerceMetadata3$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadata3
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData32$outboundSchema),
+  z.number(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadata3$ {
+  /** @deprecated use `CommerceMetadata3$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadata3$inboundSchema;
+  /** @deprecated use `CommerceMetadata3$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadata3$outboundSchema;
+  /** @deprecated use `CommerceMetadata3$Outbound` instead. */
+  export type Outbound = CommerceMetadata3$Outbound;
+}
+
+export function commerceMetadata3ToJSON(
+  commerceMetadata3: CommerceMetadata3,
+): string {
+  return JSON.stringify(
+    CommerceMetadata3$outboundSchema.parse(commerceMetadata3),
+  );
+}
+
+export function commerceMetadata3FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata3, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata3$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata3' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData22$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData22,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasExtraData22$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasExtraData22$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasExtraData22$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasExtraData22
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasExtraData22$ {
+  /** @deprecated use `CommerceMetadataSchemasExtraData22$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasExtraData22$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData22$outboundSchema` instead. */
+  export const outboundSchema =
+    CommerceMetadataSchemasExtraData22$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasExtraData22$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasExtraData22$Outbound;
+}
+
+export function commerceMetadataSchemasExtraData22ToJSON(
+  commerceMetadataSchemasExtraData22: CommerceMetadataSchemasExtraData22,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasExtraData22$outboundSchema.parse(
+      commerceMetadataSchemasExtraData22,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasExtraData22FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasExtraData22, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) =>
+      CommerceMetadataSchemasExtraData22$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasExtraData22' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadata2$inboundSchema: z.ZodType<
+  CommerceMetadata2,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData22$inboundSchema),
+  z.string(),
+]);
+
+/** @internal */
+export type CommerceMetadata2$Outbound =
+  | CommerceMetadataSchemasExtraData22$Outbound
+  | string;
+
+/** @internal */
+export const CommerceMetadata2$outboundSchema: z.ZodType<
+  CommerceMetadata2$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadata2
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasExtraData22$outboundSchema),
+  z.string(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadata2$ {
+  /** @deprecated use `CommerceMetadata2$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadata2$inboundSchema;
+  /** @deprecated use `CommerceMetadata2$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadata2$outboundSchema;
+  /** @deprecated use `CommerceMetadata2$Outbound` instead. */
+  export type Outbound = CommerceMetadata2$Outbound;
+}
+
+export function commerceMetadata2ToJSON(
+  commerceMetadata2: CommerceMetadata2,
+): string {
+  return JSON.stringify(
+    CommerceMetadata2$outboundSchema.parse(commerceMetadata2),
+  );
+}
+
+export function commerceMetadata2FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadata1$inboundSchema: z.ZodType<
+  CommerceMetadata1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadata1$Outbound = {};
+
+/** @internal */
+export const CommerceMetadata1$outboundSchema: z.ZodType<
+  CommerceMetadata1$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadata1
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadata1$ {
+  /** @deprecated use `CommerceMetadata1$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadata1$inboundSchema;
+  /** @deprecated use `CommerceMetadata1$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadata1$outboundSchema;
+  /** @deprecated use `CommerceMetadata1$Outbound` instead. */
+  export type Outbound = CommerceMetadata1$Outbound;
+}
+
+export function commerceMetadata1ToJSON(
+  commerceMetadata1: CommerceMetadata1,
+): string {
+  return JSON.stringify(
+    CommerceMetadata1$outboundSchema.parse(commerceMetadata1),
+  );
+}
+
+export function commerceMetadata1FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadata1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadata1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadata1' from JSON`,
+  );
+}
 
 /** @internal */
 export const CommerceMetadataExtraData$inboundSchema: z.ZodType<
   CommerceMetadataExtraData,
   z.ZodTypeDef,
   unknown
-> = z.object({});
+> = z.union([
+  z.lazy(() => CommerceMetadata1$inboundSchema),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData22$inboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData32$inboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData2$inboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData52$inboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /** @internal */
-export type CommerceMetadataExtraData$Outbound = {};
+export type CommerceMetadataExtraData$Outbound =
+  | CommerceMetadata1$Outbound
+  | CommerceMetadataSchemasExtraData22$Outbound
+  | string
+  | CommerceMetadataSchemasExtraData32$Outbound
+  | number
+  | CommerceMetadataSchemasExtraData2$Outbound
+  | boolean
+  | CommerceMetadataSchemasExtraData52$Outbound
+  | Array<any>;
 
 /** @internal */
 export const CommerceMetadataExtraData$outboundSchema: z.ZodType<
   CommerceMetadataExtraData$Outbound,
   z.ZodTypeDef,
   CommerceMetadataExtraData
-> = z.object({});
+> = z.union([
+  z.lazy(() => CommerceMetadata1$outboundSchema),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData22$outboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData32$outboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData2$outboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasExtraData52$outboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /**
  * @internal
@@ -71,21 +671,538 @@ export function commerceMetadataExtraDataFromJSON(
 }
 
 /** @internal */
-export const CommerceMetadataValue$inboundSchema: z.ZodType<
-  CommerceMetadataValue,
+export const CommerceMetadataSchemasValue52$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue52,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
 /** @internal */
-export type CommerceMetadataValue$Outbound = {};
+export type CommerceMetadataSchemasValue52$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasValue52$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue52$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasValue52
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasValue52$ {
+  /** @deprecated use `CommerceMetadataSchemasValue52$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasValue52$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue52$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemasValue52$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue52$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasValue52$Outbound;
+}
+
+export function commerceMetadataSchemasValue52ToJSON(
+  commerceMetadataSchemasValue52: CommerceMetadataSchemasValue52,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasValue52$outboundSchema.parse(
+      commerceMetadataSchemasValue52,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasValue52FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasValue52, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemasValue52$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasValue52' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemas5$inboundSchema: z.ZodType<
+  CommerceMetadataSchemas5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue52$inboundSchema),
+  z.array(z.any()),
+]);
+
+/** @internal */
+export type CommerceMetadataSchemas5$Outbound =
+  | CommerceMetadataSchemasValue52$Outbound
+  | Array<any>;
+
+/** @internal */
+export const CommerceMetadataSchemas5$outboundSchema: z.ZodType<
+  CommerceMetadataSchemas5$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemas5
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue52$outboundSchema),
+  z.array(z.any()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemas5$ {
+  /** @deprecated use `CommerceMetadataSchemas5$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemas5$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas5$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemas5$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas5$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemas5$Outbound;
+}
+
+export function commerceMetadataSchemas5ToJSON(
+  commerceMetadataSchemas5: CommerceMetadataSchemas5,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemas5$outboundSchema.parse(commerceMetadataSchemas5),
+  );
+}
+
+export function commerceMetadataSchemas5FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemas5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemas5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemas5' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasValue42$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue42,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasValue42$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasValue42$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue42$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasValue42
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasValue42$ {
+  /** @deprecated use `CommerceMetadataSchemasValue42$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasValue42$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue42$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemasValue42$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue42$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasValue42$Outbound;
+}
+
+export function commerceMetadataSchemasValue42ToJSON(
+  commerceMetadataSchemasValue42: CommerceMetadataSchemasValue42,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasValue42$outboundSchema.parse(
+      commerceMetadataSchemasValue42,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasValue42FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasValue42, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemasValue42$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasValue42' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemas4$inboundSchema: z.ZodType<
+  CommerceMetadataSchemas4,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue42$inboundSchema),
+  z.boolean(),
+]);
+
+/** @internal */
+export type CommerceMetadataSchemas4$Outbound =
+  | CommerceMetadataSchemasValue42$Outbound
+  | boolean;
+
+/** @internal */
+export const CommerceMetadataSchemas4$outboundSchema: z.ZodType<
+  CommerceMetadataSchemas4$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemas4
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue42$outboundSchema),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemas4$ {
+  /** @deprecated use `CommerceMetadataSchemas4$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemas4$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas4$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemas4$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas4$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemas4$Outbound;
+}
+
+export function commerceMetadataSchemas4ToJSON(
+  commerceMetadataSchemas4: CommerceMetadataSchemas4,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemas4$outboundSchema.parse(commerceMetadataSchemas4),
+  );
+}
+
+export function commerceMetadataSchemas4FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemas4, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemas4$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemas4' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasValue32$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue32,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasValue32$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasValue32$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue32$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasValue32
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasValue32$ {
+  /** @deprecated use `CommerceMetadataSchemasValue32$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasValue32$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue32$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemasValue32$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue32$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasValue32$Outbound;
+}
+
+export function commerceMetadataSchemasValue32ToJSON(
+  commerceMetadataSchemasValue32: CommerceMetadataSchemasValue32,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasValue32$outboundSchema.parse(
+      commerceMetadataSchemasValue32,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasValue32FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasValue32, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemasValue32$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasValue32' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemas3$inboundSchema: z.ZodType<
+  CommerceMetadataSchemas3,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue32$inboundSchema),
+  z.number(),
+]);
+
+/** @internal */
+export type CommerceMetadataSchemas3$Outbound =
+  | CommerceMetadataSchemasValue32$Outbound
+  | number;
+
+/** @internal */
+export const CommerceMetadataSchemas3$outboundSchema: z.ZodType<
+  CommerceMetadataSchemas3$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemas3
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue32$outboundSchema),
+  z.number(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemas3$ {
+  /** @deprecated use `CommerceMetadataSchemas3$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemas3$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas3$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemas3$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas3$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemas3$Outbound;
+}
+
+export function commerceMetadataSchemas3ToJSON(
+  commerceMetadataSchemas3: CommerceMetadataSchemas3,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemas3$outboundSchema.parse(commerceMetadataSchemas3),
+  );
+}
+
+export function commerceMetadataSchemas3FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemas3, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemas3$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemas3' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemasValue2$inboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue2,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemasValue2$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemasValue2$outboundSchema: z.ZodType<
+  CommerceMetadataSchemasValue2$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemasValue2
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemasValue2$ {
+  /** @deprecated use `CommerceMetadataSchemasValue2$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemasValue2$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue2$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemasValue2$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemasValue2$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemasValue2$Outbound;
+}
+
+export function commerceMetadataSchemasValue2ToJSON(
+  commerceMetadataSchemasValue2: CommerceMetadataSchemasValue2,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemasValue2$outboundSchema.parse(
+      commerceMetadataSchemasValue2,
+    ),
+  );
+}
+
+export function commerceMetadataSchemasValue2FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemasValue2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemasValue2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemasValue2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemas2$inboundSchema: z.ZodType<
+  CommerceMetadataSchemas2,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue2$inboundSchema),
+  z.string(),
+]);
+
+/** @internal */
+export type CommerceMetadataSchemas2$Outbound =
+  | CommerceMetadataSchemasValue2$Outbound
+  | string;
+
+/** @internal */
+export const CommerceMetadataSchemas2$outboundSchema: z.ZodType<
+  CommerceMetadataSchemas2$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemas2
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemasValue2$outboundSchema),
+  z.string(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemas2$ {
+  /** @deprecated use `CommerceMetadataSchemas2$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemas2$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas2$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemas2$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas2$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemas2$Outbound;
+}
+
+export function commerceMetadataSchemas2ToJSON(
+  commerceMetadataSchemas2: CommerceMetadataSchemas2,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemas2$outboundSchema.parse(commerceMetadataSchemas2),
+  );
+}
+
+export function commerceMetadataSchemas2FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemas2, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemas2$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemas2' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataSchemas1$inboundSchema: z.ZodType<
+  CommerceMetadataSchemas1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type CommerceMetadataSchemas1$Outbound = {};
+
+/** @internal */
+export const CommerceMetadataSchemas1$outboundSchema: z.ZodType<
+  CommerceMetadataSchemas1$Outbound,
+  z.ZodTypeDef,
+  CommerceMetadataSchemas1
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataSchemas1$ {
+  /** @deprecated use `CommerceMetadataSchemas1$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataSchemas1$inboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas1$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataSchemas1$outboundSchema;
+  /** @deprecated use `CommerceMetadataSchemas1$Outbound` instead. */
+  export type Outbound = CommerceMetadataSchemas1$Outbound;
+}
+
+export function commerceMetadataSchemas1ToJSON(
+  commerceMetadataSchemas1: CommerceMetadataSchemas1,
+): string {
+  return JSON.stringify(
+    CommerceMetadataSchemas1$outboundSchema.parse(commerceMetadataSchemas1),
+  );
+}
+
+export function commerceMetadataSchemas1FromJSON(
+  jsonString: string,
+): SafeParseResult<CommerceMetadataSchemas1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => CommerceMetadataSchemas1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'CommerceMetadataSchemas1' from JSON`,
+  );
+}
+
+/** @internal */
+export const CommerceMetadataValue$inboundSchema: z.ZodType<
+  CommerceMetadataValue,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue2$inboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue32$inboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue42$inboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue52$inboundSchema),
+    z.array(z.any()),
+  ]),
+]);
+
+/** @internal */
+export type CommerceMetadataValue$Outbound =
+  | CommerceMetadataSchemas1$Outbound
+  | CommerceMetadataSchemasValue2$Outbound
+  | string
+  | CommerceMetadataSchemasValue32$Outbound
+  | number
+  | CommerceMetadataSchemasValue42$Outbound
+  | boolean
+  | CommerceMetadataSchemasValue52$Outbound
+  | Array<any>;
 
 /** @internal */
 export const CommerceMetadataValue$outboundSchema: z.ZodType<
   CommerceMetadataValue$Outbound,
   z.ZodTypeDef,
   CommerceMetadataValue
-> = z.object({});
+> = z.union([
+  z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue2$outboundSchema),
+    z.string(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue32$outboundSchema),
+    z.number(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue42$outboundSchema),
+    z.boolean(),
+  ]),
+  z.union([
+    z.lazy(() => CommerceMetadataSchemasValue52$outboundSchema),
+    z.array(z.any()),
+  ]),
+]);
 
 /**
  * @internal
@@ -124,13 +1241,49 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  extra_data: z.lazy(() => CommerceMetadataExtraData$inboundSchema).optional(),
+  extra_data: z.union([
+    z.lazy(() => CommerceMetadata1$inboundSchema),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData22$inboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData32$inboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData2$inboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData52$inboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => CommerceMetadataValue$inboundSchema).optional(),
+  value: z.union([
+    z.lazy(() => CommerceMetadataSchemas1$inboundSchema),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue2$inboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue32$inboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue42$inboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue52$inboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     "extra_data": "extraData",
@@ -139,13 +1292,33 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CommerceMetadata$Outbound = {
-  extra_data?: CommerceMetadataExtraData$Outbound | undefined;
+  extra_data?:
+    | CommerceMetadata1$Outbound
+    | CommerceMetadataSchemasExtraData22$Outbound
+    | string
+    | CommerceMetadataSchemasExtraData32$Outbound
+    | number
+    | CommerceMetadataSchemasExtraData2$Outbound
+    | boolean
+    | CommerceMetadataSchemasExtraData52$Outbound
+    | Array<any>
+    | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
   type?: string | undefined;
-  value?: CommerceMetadataValue$Outbound | undefined;
+  value?:
+    | CommerceMetadataSchemas1$Outbound
+    | CommerceMetadataSchemasValue2$Outbound
+    | string
+    | CommerceMetadataSchemasValue32$Outbound
+    | number
+    | CommerceMetadataSchemasValue42$Outbound
+    | boolean
+    | CommerceMetadataSchemasValue52$Outbound
+    | Array<any>
+    | undefined;
 };
 
 /** @internal */
@@ -154,13 +1327,49 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceMetadata
 > = z.object({
-  extraData: z.lazy(() => CommerceMetadataExtraData$outboundSchema).optional(),
+  extraData: z.union([
+    z.lazy(() => CommerceMetadata1$outboundSchema),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData22$outboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData32$outboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData2$outboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasExtraData52$outboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
-  value: z.lazy(() => CommerceMetadataValue$outboundSchema).optional(),
+  value: z.union([
+    z.lazy(() => CommerceMetadataSchemas1$outboundSchema),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue2$outboundSchema),
+      z.string(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue32$outboundSchema),
+      z.number(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue42$outboundSchema),
+      z.boolean(),
+    ]),
+    z.union([
+      z.lazy(() => CommerceMetadataSchemasValue52$outboundSchema),
+      z.array(z.any()),
+    ]),
+  ]).optional(),
 }).transform((v) => {
   return remap$(v, {
     extraData: "extra_data",
