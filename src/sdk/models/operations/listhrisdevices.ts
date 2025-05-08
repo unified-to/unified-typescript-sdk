@@ -33,6 +33,9 @@ export type ListHrisDevicesRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

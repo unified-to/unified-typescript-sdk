@@ -5,7 +5,7 @@
 ```typescript
 import { RepoPullrequestStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: RepoPullrequestStatus = "APPROVED";
+let value: RepoPullrequestStatus = "PENDING";
 ```
 
 ## Values

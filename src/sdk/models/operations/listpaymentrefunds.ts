@@ -20,6 +20,9 @@ export type ListPaymentRefundsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The payment ID to filter by
+   */
   paymentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name

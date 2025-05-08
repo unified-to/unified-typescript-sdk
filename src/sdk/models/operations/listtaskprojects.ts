@@ -20,6 +20,9 @@ export type ListTaskProjectsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
   parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name

@@ -9,12 +9,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListLmsCoursesRequest = {
+  /**
+   * The class ID to filter by
+   */
   classId?: string | undefined;
+  /**
+   * The company ID to filter by
+   */
   companyId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The course ID to filter by
+   */
   courseId?: string | undefined;
   /**
    * Comma-delimited fields to return

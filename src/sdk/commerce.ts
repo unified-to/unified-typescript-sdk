@@ -6,26 +6,32 @@ import { commerceCreateCommerceCollection } from "../funcs/commerceCreateCommerc
 import { commerceCreateCommerceInventory } from "../funcs/commerceCreateCommerceInventory.js";
 import { commerceCreateCommerceItem } from "../funcs/commerceCreateCommerceItem.js";
 import { commerceCreateCommerceLocation } from "../funcs/commerceCreateCommerceLocation.js";
+import { commerceCreateCommerceReview } from "../funcs/commerceCreateCommerceReview.js";
 import { commerceGetCommerceCollection } from "../funcs/commerceGetCommerceCollection.js";
 import { commerceGetCommerceInventory } from "../funcs/commerceGetCommerceInventory.js";
 import { commerceGetCommerceItem } from "../funcs/commerceGetCommerceItem.js";
 import { commerceGetCommerceLocation } from "../funcs/commerceGetCommerceLocation.js";
+import { commerceGetCommerceReview } from "../funcs/commerceGetCommerceReview.js";
 import { commerceListCommerceCollections } from "../funcs/commerceListCommerceCollections.js";
 import { commerceListCommerceInventories } from "../funcs/commerceListCommerceInventories.js";
 import { commerceListCommerceItems } from "../funcs/commerceListCommerceItems.js";
 import { commerceListCommerceLocations } from "../funcs/commerceListCommerceLocations.js";
+import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReviews.js";
 import { commercePatchCommerceCollection } from "../funcs/commercePatchCommerceCollection.js";
 import { commercePatchCommerceInventory } from "../funcs/commercePatchCommerceInventory.js";
 import { commercePatchCommerceItem } from "../funcs/commercePatchCommerceItem.js";
 import { commercePatchCommerceLocation } from "../funcs/commercePatchCommerceLocation.js";
+import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceReview.js";
 import { commerceRemoveCommerceCollection } from "../funcs/commerceRemoveCommerceCollection.js";
 import { commerceRemoveCommerceInventory } from "../funcs/commerceRemoveCommerceInventory.js";
 import { commerceRemoveCommerceItem } from "../funcs/commerceRemoveCommerceItem.js";
 import { commerceRemoveCommerceLocation } from "../funcs/commerceRemoveCommerceLocation.js";
+import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
 import { commerceUpdateCommerceCollection } from "../funcs/commerceUpdateCommerceCollection.js";
 import { commerceUpdateCommerceInventory } from "../funcs/commerceUpdateCommerceInventory.js";
 import { commerceUpdateCommerceItem } from "../funcs/commerceUpdateCommerceItem.js";
 import { commerceUpdateCommerceLocation } from "../funcs/commerceUpdateCommerceLocation.js";
+import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -89,6 +95,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Create a review
+   */
+  async createCommerceReview(
+    request: operations.CreateCommerceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceReview> {
+    return unwrapAsync(commerceCreateCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a collection
    */
   async getCommerceCollection(
@@ -138,6 +158,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commerceGetCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a review
+   */
+  async getCommerceReview(
+    request: operations.GetCommerceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceReview> {
+    return unwrapAsync(commerceGetCommerceReview(
       this,
       request,
       options,
@@ -201,6 +235,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * List all reviews
+   */
+  async listCommerceReviews(
+    request: operations.ListCommerceReviewsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceReview>> {
+    return unwrapAsync(commerceListCommerceReviews(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async patchCommerceCollection(
@@ -250,6 +298,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commercePatchCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   */
+  async patchCommerceReview(
+    request: operations.PatchCommerceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceReview> {
+    return unwrapAsync(commercePatchCommerceReview(
       this,
       request,
       options,
@@ -313,6 +375,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Remove a review
+   */
+  async removeCommerceReview(
+    request: operations.RemoveCommerceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveCommerceReviewResponse | undefined> {
+    return unwrapAsync(commerceRemoveCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async updateCommerceCollection(
@@ -362,6 +438,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceLocation> {
     return unwrapAsync(commerceUpdateCommerceLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a review
+   */
+  async updateCommerceReview(
+    request: operations.UpdateCommerceReviewRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceReview> {
+    return unwrapAsync(commerceUpdateCommerceReview(
       this,
       request,
       options,

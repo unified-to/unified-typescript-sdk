@@ -9,11 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCalendarBusiesRequest = {
+  /**
+   * The calendar ID to filter by
+   */
   calendarId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The end date to filter by
+   */
   endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -31,6 +37,9 @@ export type ListCalendarBusiesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by
+   */
   startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

@@ -78,6 +78,7 @@ import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
+import { Review } from "./review.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
@@ -244,6 +245,11 @@ export class UnifiedTo extends ClientSDK {
   private _location?: Location;
   get location(): Location {
     return (this._location ??= new Location(this._options));
+  }
+
+  private _review?: Review;
+  get review(): Review {
+    return (this._review ??= new Review(this._options));
   }
 
   private _crm?: Crm;

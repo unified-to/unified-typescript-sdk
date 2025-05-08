@@ -29,6 +29,9 @@ export type ListMetadataMetadatasRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The type to filter by
+   */
   type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

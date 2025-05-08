@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListHrisEmployeesRequest = {
+  /**
+   * The company ID to filter by
+   */
   companyId?: string | undefined;
   /**
    * ID of the connection

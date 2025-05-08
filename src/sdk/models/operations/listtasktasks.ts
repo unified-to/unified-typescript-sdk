@@ -20,7 +20,13 @@ export type ListTaskTasksRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
   parentId?: string | undefined;
+  /**
+   * The project ID to filter by
+   */
   projectId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
@@ -35,6 +41,9 @@ export type ListTaskTasksRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

@@ -13,7 +13,13 @@ export type ListCalendarRecordingsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The end date to filter by
+   */
   endLe?: string | undefined;
+  /**
+   * The event ID to filter by
+   */
   eventId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -31,6 +37,9 @@ export type ListCalendarRecordingsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by
+   */
   startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

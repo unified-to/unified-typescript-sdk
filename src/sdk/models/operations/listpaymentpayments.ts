@@ -13,11 +13,17 @@ export type ListPaymentPaymentsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * The invoice ID to filter by
+   */
   invoiceId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;

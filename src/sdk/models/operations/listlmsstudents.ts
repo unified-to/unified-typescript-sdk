@@ -9,17 +9,26 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListLmsStudentsRequest = {
+  /**
+   * The class ID to filter by
+   */
   classId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The course ID to filter by
+   */
   courseId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  /**
+   * The location ID to filter by
+   */
   locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
@@ -31,7 +40,6 @@ export type ListLmsStudentsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
-  sessionId?: string | undefined;
   sort?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
@@ -55,7 +63,6 @@ export const ListLmsStudentsRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
-  session_id: z.string().optional(),
   sort: z.string().optional(),
   updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -65,7 +72,6 @@ export const ListLmsStudentsRequest$inboundSchema: z.ZodType<
     "connection_id": "connectionId",
     "course_id": "courseId",
     "location_id": "locationId",
-    "session_id": "sessionId",
     "updated_gte": "updatedGte",
   });
 });
@@ -82,7 +88,6 @@ export type ListLmsStudentsRequest$Outbound = {
   order?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
-  session_id?: string | undefined;
   sort?: string | undefined;
   updated_gte?: string | undefined;
 };
@@ -103,7 +108,6 @@ export const ListLmsStudentsRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
-  sessionId: z.string().optional(),
   sort: z.string().optional(),
   updatedGte: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
@@ -112,7 +116,6 @@ export const ListLmsStudentsRequest$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     courseId: "course_id",
     locationId: "location_id",
-    sessionId: "session_id",
     updatedGte: "updated_gte",
   });
 });

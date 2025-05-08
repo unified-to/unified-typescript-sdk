@@ -5,7 +5,7 @@
 ```typescript
 import { Categories } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: Categories = "martech";
+let value: Categories = "calendar";
 ```
 
 ## Values

@@ -13,6 +13,9 @@ export type ListPaymentLinksRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -21,6 +24,9 @@ export type ListPaymentLinksRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The payment ID to filter by
+   */
   paymentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name

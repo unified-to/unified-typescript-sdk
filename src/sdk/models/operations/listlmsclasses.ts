@@ -13,12 +13,18 @@ export type ListLmsClassesRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The course ID to filter by
+   */
   courseId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  /**
+   * The location ID to filter by
+   */
   locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;

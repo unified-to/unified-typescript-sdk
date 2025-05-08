@@ -6,7 +6,7 @@
 import { LmsMedia } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: LmsMedia = {
-  url: "https://grubby-trash.net/",
+  url: "https://angelic-coliseum.name",
 };
 ```
 

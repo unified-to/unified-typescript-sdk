@@ -13,6 +13,9 @@ export type ListTicketingTicketsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The customer ID to filter by
+   */
   customerId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -34,6 +37,9 @@ export type ListTicketingTicketsRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

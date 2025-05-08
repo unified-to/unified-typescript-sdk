@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsApplicationsRequest = {
+  /**
+   * The candidate ID to filter by
+   */
   candidateId?: string | undefined;
   /**
    * ID of the connection
@@ -18,6 +21,9 @@ export type ListAtsApplicationsRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * The job ID to filter by
+   */
   jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;

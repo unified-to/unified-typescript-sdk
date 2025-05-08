@@ -13,7 +13,13 @@ export type ListCrmCompaniesRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
+  /**
+   * The deal ID to filter by
+   */
   dealId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -35,6 +41,9 @@ export type ListCrmCompaniesRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

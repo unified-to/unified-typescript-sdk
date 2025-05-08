@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUcCommentsRequest = {
+  /**
+   * The call ID to filter by
+   */
   callId?: string | undefined;
   /**
    * ID of the connection
@@ -34,6 +37,9 @@ export type ListUcCommentsRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

@@ -20,6 +20,9 @@ export type ListRepoRepositoriesRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The org ID to filter by
+   */
   orgId?: string | undefined;
   /**
    * Query string to search. eg. email address or name

@@ -9,11 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCrmDealsRequest = {
+  /**
+   * The company ID to filter by
+   */
   companyId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -35,6 +41,9 @@ export type ListCrmDealsRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

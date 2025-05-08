@@ -65,6 +65,8 @@ export * from "./commerceitemprice.js";
 export * from "./commerceitemvariant.js";
 export * from "./commercelocation.js";
 export * from "./commercemetadata.js";
+export * from "./commercereview.js";
+export * from "./commercereviewcomment.js";
 export * from "./connection.js";
 export * from "./crmcompany.js";
 export * from "./crmcontact.js";

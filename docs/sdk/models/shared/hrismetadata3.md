@@ -6,7 +6,7 @@
 ### `number`
 
 ```typescript
-const value: number = 2982.82;
+const value: number = 5699.65;
 ```
 
 ### `shared.HrisMetadataSchemasExtraData32`

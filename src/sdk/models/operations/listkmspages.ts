@@ -20,6 +20,9 @@ export type ListKmsPagesRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
   parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
@@ -30,6 +33,9 @@ export type ListKmsPagesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The space ID to filter by
+   */
   spaceId?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

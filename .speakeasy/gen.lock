@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 2625a6ddd69ded1a0dfa97e04747a5af
+  docChecksum: 1cbf51aa4a732ad7a3160606fa7ef127
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.64.0
-  configChecksum: 9d643f5251b0259427746b1bdef95355
+  releaseVersion: 2.66.0
+  configChecksum: 4ef6e677320e23063442302d7bca1c54
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -58,6 +58,7 @@ generatedFiles:
   - docs/sdk/models/operations/createcommerceinventoryrequest.md
   - docs/sdk/models/operations/createcommerceitemrequest.md
   - docs/sdk/models/operations/createcommercelocationrequest.md
+  - docs/sdk/models/operations/createcommercereviewrequest.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcontactrequest.md
   - docs/sdk/models/operations/createcrmdealrequest.md
@@ -133,6 +134,7 @@ generatedFiles:
   - docs/sdk/models/operations/getcommerceinventoryrequest.md
   - docs/sdk/models/operations/getcommerceitemrequest.md
   - docs/sdk/models/operations/getcommercelocationrequest.md
+  - docs/sdk/models/operations/getcommercereviewrequest.md
   - docs/sdk/models/operations/getcrmcompanyrequest.md
   - docs/sdk/models/operations/getcrmcontactrequest.md
   - docs/sdk/models/operations/getcrmdealrequest.md
@@ -212,6 +214,7 @@ generatedFiles:
   - docs/sdk/models/operations/listcommerceinventoriesrequest.md
   - docs/sdk/models/operations/listcommerceitemsrequest.md
   - docs/sdk/models/operations/listcommercelocationsrequest.md
+  - docs/sdk/models/operations/listcommercereviewsrequest.md
   - docs/sdk/models/operations/listcrmcompaniesrequest.md
   - docs/sdk/models/operations/listcrmcontactsrequest.md
   - docs/sdk/models/operations/listcrmdealsrequest.md
@@ -294,6 +297,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchcommerceinventoryrequest.md
   - docs/sdk/models/operations/patchcommerceitemrequest.md
   - docs/sdk/models/operations/patchcommercelocationrequest.md
+  - docs/sdk/models/operations/patchcommercereviewrequest.md
   - docs/sdk/models/operations/patchcrmcompanyrequest.md
   - docs/sdk/models/operations/patchcrmcontactrequest.md
   - docs/sdk/models/operations/patchcrmdealrequest.md
@@ -389,6 +393,8 @@ generatedFiles:
   - docs/sdk/models/operations/removecommerceitemresponse.md
   - docs/sdk/models/operations/removecommercelocationrequest.md
   - docs/sdk/models/operations/removecommercelocationresponse.md
+  - docs/sdk/models/operations/removecommercereviewrequest.md
+  - docs/sdk/models/operations/removecommercereviewresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
   - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmcontactrequest.md
@@ -501,6 +507,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceinventoryrequest.md
   - docs/sdk/models/operations/updatecommerceitemrequest.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
+  - docs/sdk/models/operations/updatecommercereviewrequest.md
   - docs/sdk/models/operations/updatecrmcompanyrequest.md
   - docs/sdk/models/operations/updatecrmcontactrequest.md
   - docs/sdk/models/operations/updatecrmdealrequest.md
@@ -675,6 +682,10 @@ generatedFiles:
   - docs/sdk/models/shared/commercemetadataschemasvalue42.md
   - docs/sdk/models/shared/commercemetadataschemasvalue52.md
   - docs/sdk/models/shared/commercemetadatavalue.md
+  - docs/sdk/models/shared/commercereview.md
+  - docs/sdk/models/shared/commercereviewcomment.md
+  - docs/sdk/models/shared/commercereviewcommentstatus.md
+  - docs/sdk/models/shared/commercereviewstatus.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
   - docs/sdk/models/shared/crmcompany.md
@@ -1093,6 +1104,7 @@ generatedFiles:
   - docs/sdks/repo/README.md
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
+  - docs/sdks/review/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
@@ -1299,26 +1311,32 @@ generatedFiles:
   - src/funcs/commerceCreateCommerceInventory.ts
   - src/funcs/commerceCreateCommerceItem.ts
   - src/funcs/commerceCreateCommerceLocation.ts
+  - src/funcs/commerceCreateCommerceReview.ts
   - src/funcs/commerceGetCommerceCollection.ts
   - src/funcs/commerceGetCommerceInventory.ts
   - src/funcs/commerceGetCommerceItem.ts
   - src/funcs/commerceGetCommerceLocation.ts
+  - src/funcs/commerceGetCommerceReview.ts
   - src/funcs/commerceListCommerceCollections.ts
   - src/funcs/commerceListCommerceInventories.ts
   - src/funcs/commerceListCommerceItems.ts
   - src/funcs/commerceListCommerceLocations.ts
+  - src/funcs/commerceListCommerceReviews.ts
   - src/funcs/commercePatchCommerceCollection.ts
   - src/funcs/commercePatchCommerceInventory.ts
   - src/funcs/commercePatchCommerceItem.ts
   - src/funcs/commercePatchCommerceLocation.ts
+  - src/funcs/commercePatchCommerceReview.ts
   - src/funcs/commerceRemoveCommerceCollection.ts
   - src/funcs/commerceRemoveCommerceInventory.ts
   - src/funcs/commerceRemoveCommerceItem.ts
   - src/funcs/commerceRemoveCommerceLocation.ts
+  - src/funcs/commerceRemoveCommerceReview.ts
   - src/funcs/commerceUpdateCommerceCollection.ts
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
+  - src/funcs/commerceUpdateCommerceReview.ts
   - src/funcs/commitCreateRepoCommit.ts
   - src/funcs/commitGetRepoCommit.ts
   - src/funcs/commitListRepoCommits.ts
@@ -1796,6 +1814,12 @@ generatedFiles:
   - src/funcs/repositoryPatchRepoRepository.ts
   - src/funcs/repositoryRemoveRepoRepository.ts
   - src/funcs/repositoryUpdateRepoRepository.ts
+  - src/funcs/reviewCreateCommerceReview.ts
+  - src/funcs/reviewGetCommerceReview.ts
+  - src/funcs/reviewListCommerceReviews.ts
+  - src/funcs/reviewPatchCommerceReview.ts
+  - src/funcs/reviewRemoveCommerceReview.ts
+  - src/funcs/reviewUpdateCommerceReview.ts
   - src/funcs/scimCreateScimGroups.ts
   - src/funcs/scimCreateScimUsers.ts
   - src/funcs/scimGetScimGroups.ts
@@ -2049,6 +2073,7 @@ generatedFiles:
   - src/sdk/models/operations/createcommerceinventory.ts
   - src/sdk/models/operations/createcommerceitem.ts
   - src/sdk/models/operations/createcommercelocation.ts
+  - src/sdk/models/operations/createcommercereview.ts
   - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createcrmdeal.ts
@@ -2120,6 +2145,7 @@ generatedFiles:
   - src/sdk/models/operations/getcommerceinventory.ts
   - src/sdk/models/operations/getcommerceitem.ts
   - src/sdk/models/operations/getcommercelocation.ts
+  - src/sdk/models/operations/getcommercereview.ts
   - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmcontact.ts
   - src/sdk/models/operations/getcrmdeal.ts
@@ -2200,6 +2226,7 @@ generatedFiles:
   - src/sdk/models/operations/listcommerceinventories.ts
   - src/sdk/models/operations/listcommerceitems.ts
   - src/sdk/models/operations/listcommercelocations.ts
+  - src/sdk/models/operations/listcommercereviews.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmcontacts.ts
   - src/sdk/models/operations/listcrmdeals.ts
@@ -2279,6 +2306,7 @@ generatedFiles:
   - src/sdk/models/operations/patchcommerceinventory.ts
   - src/sdk/models/operations/patchcommerceitem.ts
   - src/sdk/models/operations/patchcommercelocation.ts
+  - src/sdk/models/operations/patchcommercereview.ts
   - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmcontact.ts
   - src/sdk/models/operations/patchcrmdeal.ts
@@ -2347,6 +2375,7 @@ generatedFiles:
   - src/sdk/models/operations/removecommerceinventory.ts
   - src/sdk/models/operations/removecommerceitem.ts
   - src/sdk/models/operations/removecommercelocation.ts
+  - src/sdk/models/operations/removecommercereview.ts
   - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmcontact.ts
   - src/sdk/models/operations/removecrmdeal.ts
@@ -2413,6 +2442,7 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceinventory.ts
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
+  - src/sdk/models/operations/updatecommercereview.ts
   - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
@@ -2523,6 +2553,8 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemvariant.ts
   - src/sdk/models/shared/commercelocation.ts
   - src/sdk/models/shared/commercemetadata.ts
+  - src/sdk/models/shared/commercereview.ts
+  - src/sdk/models/shared/commercereviewcomment.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/crmcontact.ts
@@ -2694,6 +2726,7 @@ generatedFiles:
   - src/sdk/repo.ts
   - src/sdk/report.ts
   - src/sdk/repository.ts
+  - src/sdk/review.ts
   - src/sdk/scim.ts
   - src/sdk/scorecard.ts
   - src/sdk/sdk.ts
@@ -3949,6 +3982,14 @@ examples:
         query: {}
       requestBody:
         application/json: {"name": "<value>"}
+  createCommerceReview:
+    speakeasy-default-create-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
   getCommerceCollection:
     speakeasy-default-get-commerce-collection:
       parameters:
@@ -3977,6 +4018,13 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  getCommerceReview:
+    speakeasy-default-get-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
   listCommerceCollections:
     speakeasy-default-list-commerce-collections:
       parameters:
@@ -3997,6 +4045,12 @@ examples:
         query: {}
   listCommerceLocations:
     speakeasy-default-list-commerce-locations:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listCommerceReviews:
+    speakeasy-default-list-commerce-reviews:
       parameters:
         path:
           connection_id: "<id>"
@@ -4037,6 +4091,15 @@ examples:
         query: {}
       requestBody:
         application/json: {"name": "<value>"}
+  patchCommerceReview:
+    speakeasy-default-patch-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
   removeCommerceCollection:
     speakeasy-default-remove-commerce-collection:
       parameters:
@@ -4057,6 +4120,12 @@ examples:
           id: "<id>"
   removeCommerceLocation:
     speakeasy-default-remove-commerce-location:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeCommerceReview:
+    speakeasy-default-remove-commerce-review:
       parameters:
         path:
           connection_id: "<id>"
@@ -4097,6 +4166,15 @@ examples:
         query: {}
       requestBody:
         application/json: {"name": "<value>"}
+  updateCommerceReview:
+    speakeasy-default-update-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
   createHrisLocation:
     speakeasy-default-create-hris-location:
       parameters:

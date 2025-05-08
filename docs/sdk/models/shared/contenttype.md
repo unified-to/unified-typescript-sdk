@@ -5,7 +5,7 @@
 ```typescript
 import { ContentType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ContentType = "TEXT";
+let value: ContentType = "HTML";
 ```
 
 ## Values

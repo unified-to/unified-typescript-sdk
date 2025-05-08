@@ -17,8 +17,14 @@ export type ListCommerceInventoriesRequest = {
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * The item variant ID to filter by
+   */
   itemVariantId?: string | undefined;
   limit?: number | undefined;
+  /**
+   * The location ID to filter by
+   */
   locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;

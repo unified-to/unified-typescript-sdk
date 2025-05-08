@@ -9,11 +9,17 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListMessagingMessagesRequest = {
+  /**
+   * The channel ID to filter by
+   */
   channelId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The end date to filter by
+   */
   endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -22,6 +28,9 @@ export type ListMessagingMessagesRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
   parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
@@ -32,6 +41,9 @@ export type ListMessagingMessagesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by
+   */
   startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

@@ -5,7 +5,7 @@
 ```typescript
 import { PaymentRefundStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PaymentRefundStatus = "CANCELED";
+let value: PaymentRefundStatus = "SUCCEEDED";
 ```
 
 ## Values

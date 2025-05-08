@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListRepoCommitsRequest = {
+  /**
+   * The repo branch ID to filter by
+   */
   branchId?: string | undefined;
   /**
    * ID of the connection
@@ -29,6 +32,9 @@ export type ListRepoCommitsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
+  /**
+   * The repo ID to filter by
+   */
   repoId?: string | undefined;
   sort?: string | undefined;
   /**

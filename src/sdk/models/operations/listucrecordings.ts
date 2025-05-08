@@ -9,11 +9,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUcRecordingsRequest = {
+  /**
+   * The call ID to filter by
+   */
   callId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
+  contactId?: string | undefined;
+  /**
+   * The end date to filter by
+   */
   endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -31,11 +41,17 @@ export type ListUcRecordingsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by
+   */
   startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 
@@ -47,6 +63,7 @@ export const ListUcRecordingsRequest$inboundSchema: z.ZodType<
 > = z.object({
   call_id: z.string().optional(),
   connection_id: z.string(),
+  contact_id: z.string().optional(),
   end_le: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -63,6 +80,7 @@ export const ListUcRecordingsRequest$inboundSchema: z.ZodType<
   return remap$(v, {
     "call_id": "callId",
     "connection_id": "connectionId",
+    "contact_id": "contactId",
     "end_le": "endLe",
     "start_gte": "startGte",
     "updated_gte": "updatedGte",
@@ -74,6 +92,7 @@ export const ListUcRecordingsRequest$inboundSchema: z.ZodType<
 export type ListUcRecordingsRequest$Outbound = {
   call_id?: string | undefined;
   connection_id: string;
+  contact_id?: string | undefined;
   end_le?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -95,6 +114,7 @@ export const ListUcRecordingsRequest$outboundSchema: z.ZodType<
 > = z.object({
   callId: z.string().optional(),
   connectionId: z.string(),
+  contactId: z.string().optional(),
   endLe: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -110,6 +130,7 @@ export const ListUcRecordingsRequest$outboundSchema: z.ZodType<
   return remap$(v, {
     callId: "call_id",
     connectionId: "connection_id",
+    contactId: "contact_id",
     endLe: "end_le",
     startGte: "start_gte",
     updatedGte: "updated_gte",

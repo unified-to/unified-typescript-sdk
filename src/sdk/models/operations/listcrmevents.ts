@@ -9,17 +9,29 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCrmEventsRequest = {
+  /**
+   * The company ID to filter by
+   */
   companyId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
+  /**
+   * The deal ID to filter by
+   */
   dealId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * The CRM lead ID to filter by
+   */
   leadId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -38,6 +50,9 @@ export type ListCrmEventsRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

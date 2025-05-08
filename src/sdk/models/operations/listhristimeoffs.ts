@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListHrisTimeoffsRequest = {
+  /**
+   * The company ID to filter by
+   */
   companyId?: string | undefined;
   /**
    * ID of the connection
@@ -34,6 +37,9 @@ export type ListHrisTimeoffsRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

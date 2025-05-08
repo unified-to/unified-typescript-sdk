@@ -13,6 +13,9 @@ export type ListPaymentSubscriptionsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
   contactId?: string | undefined;
   /**
    * Comma-delimited fields to return

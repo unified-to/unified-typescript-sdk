@@ -9,6 +9,9 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCommerceItemsRequest = {
+  /**
+   * The collection ID to filter by
+   */
   collectionId?: string | undefined;
   /**
    * ID of the connection

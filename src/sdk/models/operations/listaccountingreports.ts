@@ -13,6 +13,9 @@ export type ListAccountingReportsRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The end date to filter by
+   */
   endLe?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -30,6 +33,9 @@ export type ListAccountingReportsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The start date to filter by
+   */
   startGte?: string | undefined;
   type?: string | undefined;
   /**

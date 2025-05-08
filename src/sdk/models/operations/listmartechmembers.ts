@@ -18,6 +18,9 @@ export type ListMartechMembersRequest = {
    */
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  /**
+   * The list ID to filter by
+   */
   listId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;

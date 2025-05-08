@@ -9,18 +9,33 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsActivitiesRequest = {
+  /**
+   * The application ID to filter by
+   */
   applicationId?: string | undefined;
+  /**
+   * The candidate ID to filter by
+   */
   candidateId?: string | undefined;
   /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The document ID to filter by
+   */
   documentId?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
+  /**
+   * The interview ID to filter by
+   */
   interviewId?: string | undefined;
+  /**
+   * The job ID to filter by
+   */
   jobId?: string | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -38,6 +53,9 @@ export type ListAtsActivitiesRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: Date | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
   userId?: string | undefined;
 };
 

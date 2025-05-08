@@ -21,6 +21,10 @@ export type ListAccountingContactsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The org ID to filter by
+   */
+  orgId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -47,6 +51,7 @@ export const ListAccountingContactsRequest$inboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  org_id: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -56,6 +61,7 @@ export const ListAccountingContactsRequest$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
+    "org_id": "orgId",
     "updated_gte": "updatedGte",
   });
 });
@@ -67,6 +73,7 @@ export type ListAccountingContactsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -85,6 +92,7 @@ export const ListAccountingContactsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -93,6 +101,7 @@ export const ListAccountingContactsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    orgId: "org_id",
     updatedGte: "updated_gte",
   });
 });

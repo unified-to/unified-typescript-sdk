@@ -5,7 +5,7 @@
 ```typescript
 import { IntervalUnit } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: IntervalUnit = "MONTH";
+let value: IntervalUnit = "YEAR";
 ```
 
 ## Values

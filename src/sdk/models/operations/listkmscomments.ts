@@ -20,7 +20,13 @@ export type ListKmsCommentsRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  /**
+   * The page ID to filter by
+   */
   pageId?: string | undefined;
+  /**
+   * The parent ID to filter by
+   */
   parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
@@ -31,6 +37,9 @@ export type ListKmsCommentsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The type to filter by
+   */
   type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

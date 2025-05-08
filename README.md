@@ -637,26 +637,32 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceInventory`](docs/sdks/commerce/README.md#createcommerceinventory) - Create an inventory
 - [`commerceCreateCommerceItem`](docs/sdks/commerce/README.md#createcommerceitem) - Create an item
 - [`commerceCreateCommerceLocation`](docs/sdks/commerce/README.md#createcommercelocation) - Create a location
+- [`commerceCreateCommerceReview`](docs/sdks/commerce/README.md#createcommercereview) - Create a review
 - [`commerceGetCommerceCollection`](docs/sdks/commerce/README.md#getcommercecollection) - Retrieve a collection
 - [`commerceGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
 - [`commerceGetCommerceItem`](docs/sdks/commerce/README.md#getcommerceitem) - Retrieve an item
 - [`commerceGetCommerceLocation`](docs/sdks/commerce/README.md#getcommercelocation) - Retrieve a location
+- [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
 - [`commerceListCommerceCollections`](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
 - [`commerceListCommerceItems`](docs/sdks/commerce/README.md#listcommerceitems) - List all items
 - [`commerceListCommerceLocations`](docs/sdks/commerce/README.md#listcommercelocations) - List all locations
+- [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
 - [`commercePatchCommerceCollection`](docs/sdks/commerce/README.md#patchcommercecollection) - Update a collection
 - [`commercePatchCommerceInventory`](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
 - [`commercePatchCommerceItem`](docs/sdks/commerce/README.md#patchcommerceitem) - Update an item
 - [`commercePatchCommerceLocation`](docs/sdks/commerce/README.md#patchcommercelocation) - Update a location
+- [`commercePatchCommerceReview`](docs/sdks/commerce/README.md#patchcommercereview) - Update a review
 - [`commerceRemoveCommerceCollection`](docs/sdks/commerce/README.md#removecommercecollection) - Remove a collection
 - [`commerceRemoveCommerceInventory`](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
 - [`commerceRemoveCommerceItem`](docs/sdks/commerce/README.md#removecommerceitem) - Remove an item
 - [`commerceRemoveCommerceLocation`](docs/sdks/commerce/README.md#removecommercelocation) - Remove a location
+- [`commerceRemoveCommerceReview`](docs/sdks/commerce/README.md#removecommercereview) - Remove a review
 - [`commerceUpdateCommerceCollection`](docs/sdks/commerce/README.md#updatecommercecollection) - Update a collection
 - [`commerceUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
 - [`commerceUpdateCommerceItem`](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
 - [`commerceUpdateCommerceLocation`](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+- [`commerceUpdateCommerceReview`](docs/sdks/commerce/README.md#updatecommercereview) - Update a review
 - [`commitCreateRepoCommit`](docs/sdks/commit/README.md#createrepocommit) - Create a commit
 - [`commitGetRepoCommit`](docs/sdks/commit/README.md#getrepocommit) - Retrieve a commit
 - [`commitListRepoCommits`](docs/sdks/commit/README.md#listrepocommits) - List all commits
@@ -1134,6 +1140,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoUpdateRepoOrganization`](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
 - [`repoUpdateRepoPullrequest`](docs/sdks/repo/README.md#updaterepopullrequest) - Update a pullrequest
 - [`repoUpdateRepoRepository`](docs/sdks/repo/README.md#updatereporepository) - Update a repository
+- [`reviewCreateCommerceReview`](docs/sdks/review/README.md#createcommercereview) - Create a review
+- [`reviewGetCommerceReview`](docs/sdks/review/README.md#getcommercereview) - Retrieve a review
+- [`reviewListCommerceReviews`](docs/sdks/review/README.md#listcommercereviews) - List all reviews
+- [`reviewPatchCommerceReview`](docs/sdks/review/README.md#patchcommercereview) - Update a review
+- [`reviewRemoveCommerceReview`](docs/sdks/review/README.md#removecommercereview) - Remove a review
+- [`reviewUpdateCommerceReview`](docs/sdks/review/README.md#updatecommercereview) - Update a review
 - [`scimCreateScimGroups`](docs/sdks/scim/README.md#createscimgroups) - Create group
 - [`scimCreateScimUsers`](docs/sdks/scim/README.md#createscimusers) - Create user
 - [`scimGetScimGroups`](docs/sdks/scim/README.md#getscimgroups) - Get group

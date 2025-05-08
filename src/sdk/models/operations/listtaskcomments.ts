@@ -29,6 +29,9 @@ export type ListTaskCommentsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The task ID to filter by
+   */
   taskId?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value

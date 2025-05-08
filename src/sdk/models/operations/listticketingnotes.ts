@@ -13,6 +13,9 @@ export type ListTicketingNotesRequest = {
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The customer ID to filter by
+   */
   customerId?: string | undefined;
   /**
    * Comma-delimited fields to return
@@ -30,6 +33,9 @@ export type ListTicketingNotesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  /**
+   * The ticket ID to filter by
+   */
   ticketId?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
