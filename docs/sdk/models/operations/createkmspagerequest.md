@@ -8,7 +8,7 @@ import { CreateKmsPageRequest } from "@unified-api/typescript-sdk/sdk/models/ope
 let value: CreateKmsPageRequest = {
   kmsPage: {
     title: "<value>",
-    type: "OTHER",
+    type: "HTML",
   },
   connectionId: "<id>",
 };

@@ -278,7 +278,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_pipeline",
+      objectType: "crm_lead",
     },
     id: "<id>",
   });
@@ -311,7 +311,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
-      objectType: "crm_pipeline",
+      objectType: "crm_lead",
     },
     id: "<id>",
   });

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 1cbf51aa4a732ad7a3160606fa7ef127
+  docChecksum: 384d22984f53ba58e35d8b7c45507e05
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.66.0
-  configChecksum: 4ef6e677320e23063442302d7bca1c54
+  releaseVersion: 2.68.0
+  configChecksum: 81116c73930ac17f07caadf57141703b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -590,6 +590,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingtransactioncontact.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
   - docs/sdk/models/shared/accountingtrialbalancesubitem.md
+  - docs/sdk/models/shared/api.md
   - docs/sdk/models/shared/apicall.md
   - docs/sdk/models/shared/apicalltype.md
   - docs/sdk/models/shared/atsactivity.md
@@ -741,7 +742,6 @@ generatedFiles:
   - docs/sdk/models/shared/format.md
   - docs/sdk/models/shared/four.md
   - docs/sdk/models/shared/frequency.md
-  - docs/sdk/models/shared/fromwebhook.md
   - docs/sdk/models/shared/genaicontent.md
   - docs/sdk/models/shared/genaimodel.md
   - docs/sdk/models/shared/genaiprompt.md
@@ -789,7 +789,33 @@ generatedFiles:
   - docs/sdk/models/shared/hristimeoffstatus.md
   - docs/sdk/models/shared/hristimeofftype.md
   - docs/sdk/models/shared/integration.md
-  - docs/sdk/models/shared/integrationsupport.md
+  - docs/sdk/models/shared/integration1.md
+  - docs/sdk/models/shared/integration2.md
+  - docs/sdk/models/shared/integration3.md
+  - docs/sdk/models/shared/integration4.md
+  - docs/sdk/models/shared/integration5.md
+  - docs/sdk/models/shared/integrationschemas1.md
+  - docs/sdk/models/shared/integrationschemas2.md
+  - docs/sdk/models/shared/integrationschemas3.md
+  - docs/sdk/models/shared/integrationschemas4.md
+  - docs/sdk/models/shared/integrationschemas5.md
+  - docs/sdk/models/shared/integrationschemasapi2.md
+  - docs/sdk/models/shared/integrationschemasapi22.md
+  - docs/sdk/models/shared/integrationschemasapi32.md
+  - docs/sdk/models/shared/integrationschemasapi52.md
+  - docs/sdk/models/shared/integrationschemaspartnership2.md
+  - docs/sdk/models/shared/integrationschemaspartnership32.md
+  - docs/sdk/models/shared/integrationschemaspartnership42.md
+  - docs/sdk/models/shared/integrationschemaspartnership52.md
+  - docs/sdk/models/shared/integrationschemassandbox1.md
+  - docs/sdk/models/shared/integrationschemassandbox2.md
+  - docs/sdk/models/shared/integrationschemassandbox22.md
+  - docs/sdk/models/shared/integrationschemassandbox3.md
+  - docs/sdk/models/shared/integrationschemassandbox32.md
+  - docs/sdk/models/shared/integrationschemassandbox4.md
+  - docs/sdk/models/shared/integrationschemassandbox42.md
+  - docs/sdk/models/shared/integrationschemassandbox5.md
+  - docs/sdk/models/shared/integrationschemassandbox52.md
   - docs/sdk/models/shared/intervalunit.md
   - docs/sdk/models/shared/issue.md
   - docs/sdk/models/shared/issuestatus.md
@@ -799,53 +825,6 @@ generatedFiles:
   - docs/sdk/models/shared/kmspagemetadata.md
   - docs/sdk/models/shared/kmspagetype.md
   - docs/sdk/models/shared/kmsspace.md
-  - docs/sdk/models/shared/listaccountid.md
-  - docs/sdk/models/shared/listapplicationid.md
-  - docs/sdk/models/shared/listcalendarid.md
-  - docs/sdk/models/shared/listcallid.md
-  - docs/sdk/models/shared/listcandidateid.md
-  - docs/sdk/models/shared/listchannelid.md
-  - docs/sdk/models/shared/listclassid.md
-  - docs/sdk/models/shared/listcollectionid.md
-  - docs/sdk/models/shared/listcompanyid.md
-  - docs/sdk/models/shared/listcontactid.md
-  - docs/sdk/models/shared/listcourseid.md
-  - docs/sdk/models/shared/listcustomerid.md
-  - docs/sdk/models/shared/listdealid.md
-  - docs/sdk/models/shared/listendle.md
-  - docs/sdk/models/shared/listeventid.md
-  - docs/sdk/models/shared/listinstructorid.md
-  - docs/sdk/models/shared/listinterviewid.md
-  - docs/sdk/models/shared/listinvoiceid.md
-  - docs/sdk/models/shared/listitemid.md
-  - docs/sdk/models/shared/listitemvariantid.md
-  - docs/sdk/models/shared/listjobid.md
-  - docs/sdk/models/shared/listleadid.md
-  - docs/sdk/models/shared/listlimit.md
-  - docs/sdk/models/shared/listlinkid.md
-  - docs/sdk/models/shared/listlistid.md
-  - docs/sdk/models/shared/listlocationid.md
-  - docs/sdk/models/shared/listoffset.md
-  - docs/sdk/models/shared/listorder.md
-  - docs/sdk/models/shared/listorgid.md
-  - docs/sdk/models/shared/listpageid.md
-  - docs/sdk/models/shared/listparentid.md
-  - docs/sdk/models/shared/listprojectid.md
-  - docs/sdk/models/shared/listquery.md
-  - docs/sdk/models/shared/listrawfields.md
-  - docs/sdk/models/shared/listrepoid.md
-  - docs/sdk/models/shared/listrootid.md
-  - docs/sdk/models/shared/listsortbycreatedat.md
-  - docs/sdk/models/shared/listsortbyname.md
-  - docs/sdk/models/shared/listsortbyupdatedat.md
-  - docs/sdk/models/shared/listspaceid.md
-  - docs/sdk/models/shared/liststartgte.md
-  - docs/sdk/models/shared/liststudentid.md
-  - docs/sdk/models/shared/listtaskid.md
-  - docs/sdk/models/shared/listticketid.md
-  - docs/sdk/models/shared/listtype.md
-  - docs/sdk/models/shared/listupdatedgte.md
-  - docs/sdk/models/shared/listuserid.md
   - docs/sdk/models/shared/lmsclass.md
   - docs/sdk/models/shared/lmscourse.md
   - docs/sdk/models/shared/lmsemail.md
@@ -865,12 +844,11 @@ generatedFiles:
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/metadatametadata.md
-  - docs/sdk/models/shared/nativewebhookparentid.md
-  - docs/sdk/models/shared/nativewebhookprojectid.md
   - docs/sdk/models/shared/objecttype.md
   - docs/sdk/models/shared/one.md
   - docs/sdk/models/shared/operation.md
   - docs/sdk/models/shared/origin.md
+  - docs/sdk/models/shared/partnership.md
   - docs/sdk/models/shared/paymentcollectionmethod.md
   - docs/sdk/models/shared/paymentlineitem.md
   - docs/sdk/models/shared/paymentlink.md
@@ -924,10 +902,6 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/propertyhrislocationaddress.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
-  - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
-  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.md
-  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventsdeleted.md
-  - docs/sdk/models/shared/propertyintegrationsupportwebhookeventsupdated.md
   - docs/sdk/models/shared/propertylmsstudentaddress.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
   - docs/sdk/models/shared/propertyscimgroupmeta.md
@@ -956,6 +930,7 @@ generatedFiles:
   - docs/sdk/models/shared/reporepository.md
   - docs/sdk/models/shared/resourcetype.md
   - docs/sdk/models/shared/role.md
+  - docs/sdk/models/shared/sandbox.md
   - docs/sdk/models/shared/scimaddress.md
   - docs/sdk/models/shared/scimaddresstype.md
   - docs/sdk/models/shared/scimemail.md
@@ -976,11 +951,6 @@ generatedFiles:
   - docs/sdk/models/shared/scimuser.md
   - docs/sdk/models/shared/scimusergroups.md
   - docs/sdk/models/shared/scimusergroupstype.md
-  - docs/sdk/models/shared/searchdomain.md
-  - docs/sdk/models/shared/searchemail.md
-  - docs/sdk/models/shared/searchlinkedinurl.md
-  - docs/sdk/models/shared/searchname.md
-  - docs/sdk/models/shared/searchtwitter.md
   - docs/sdk/models/shared/security.md
   - docs/sdk/models/shared/sexualorientation.md
   - docs/sdk/models/shared/sizeunit.md
@@ -1015,17 +985,6 @@ generatedFiles:
   - docs/sdk/models/shared/uctelephone.md
   - docs/sdk/models/shared/uctelephonetype.md
   - docs/sdk/models/shared/value.md
-  - docs/sdk/models/shared/virtualwebhookchannelid.md
-  - docs/sdk/models/shared/virtualwebhookcompanyid.md
-  - docs/sdk/models/shared/virtualwebhookcontactid.md
-  - docs/sdk/models/shared/virtualwebhookdealid.md
-  - docs/sdk/models/shared/virtualwebhookjobid.md
-  - docs/sdk/models/shared/virtualwebhooklimit.md
-  - docs/sdk/models/shared/virtualwebhookparentid.md
-  - docs/sdk/models/shared/virtualwebhookticketid.md
-  - docs/sdk/models/shared/virtualwebhooktype.md
-  - docs/sdk/models/shared/virtualwebhookupdatedgte.md
-  - docs/sdk/models/shared/virtualwebhookuserid.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weightunit.md
@@ -2590,7 +2549,6 @@ generatedFiles:
   - src/sdk/models/shared/hristimeoff.ts
   - src/sdk/models/shared/index.ts
   - src/sdk/models/shared/integration.ts
-  - src/sdk/models/shared/integrationsupport.ts
   - src/sdk/models/shared/issue.ts
   - src/sdk/models/shared/kmscomment.ts
   - src/sdk/models/shared/kmspage.ts
@@ -2654,10 +2612,6 @@ generatedFiles:
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/propertyhrislocationaddress.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
-  - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
-  - src/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.ts
-  - src/sdk/models/shared/propertyintegrationsupportwebhookeventsdeleted.ts
-  - src/sdk/models/shared/propertyintegrationsupportwebhookeventsupdated.ts
   - src/sdk/models/shared/propertylmsstudentaddress.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
   - src/sdk/models/shared/propertyscimgroupmeta.ts
@@ -5896,7 +5850,7 @@ examples:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_pipeline"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_lead"}
   patchUnifiedWebhookTrigger:
     speakeasy-default-patch-unified-webhook-trigger:
       parameters:

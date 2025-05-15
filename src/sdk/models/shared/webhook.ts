@@ -44,6 +44,7 @@ export const ObjectType = {
   CommerceCollection: "commerce_collection",
   CommerceInventory: "commerce_inventory",
   CommerceLocation: "commerce_location",
+  CommerceReview: "commerce_review",
   AtsActivity: "ats_activity",
   AtsApplication: "ats_application",
   AtsApplicationstatus: "ats_applicationstatus",

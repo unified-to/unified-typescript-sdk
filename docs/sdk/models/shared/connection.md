@@ -13,7 +13,7 @@ let value: Connection = {
   ],
   integrationType: "<value>",
   permissions: [
-    "commerce_inventory_write",
+    "commerce_location_read",
   ],
 };
 ```
