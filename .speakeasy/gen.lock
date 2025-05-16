@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 384d22984f53ba58e35d8b7c45507e05
+  docChecksum: 896ad02cb1fe122b37a5db9ff432b9bf
   docVersion: "1.0"
   speakeasyVersion: 1.501.0
   generationVersion: 2.522.1
-  releaseVersion: 2.68.0
-  configChecksum: 81116c73930ac17f07caadf57141703b
+  releaseVersion: 2.70.0
+  configChecksum: a7bea337d57a1dabb0594773ab3a03e2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -902,6 +902,7 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/propertyhrislocationaddress.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
+  - docs/sdk/models/shared/propertyintegrationtokeninstructions.md
   - docs/sdk/models/shared/propertylmsstudentaddress.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
   - docs/sdk/models/shared/propertyscimgroupmeta.md
@@ -2612,6 +2613,7 @@ generatedFiles:
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/propertyhrislocationaddress.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
+  - src/sdk/models/shared/propertyintegrationtokeninstructions.ts
   - src/sdk/models/shared/propertylmsstudentaddress.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
   - src/sdk/models/shared/propertyscimgroupmeta.ts

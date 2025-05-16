@@ -21,6 +21,10 @@ export type ListTaskProjectsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The org ID to filter by
+   */
+  orgId?: string | undefined;
+  /**
    * The parent ID to filter by
    */
   parentId?: string | undefined;
@@ -50,6 +54,7 @@ export const ListTaskProjectsRequest$inboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  org_id: z.string().optional(),
   parent_id: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
@@ -59,6 +64,7 @@ export const ListTaskProjectsRequest$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
+    "org_id": "orgId",
     "parent_id": "parentId",
     "updated_gte": "updatedGte",
   });
@@ -71,6 +77,7 @@ export type ListTaskProjectsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  org_id?: string | undefined;
   parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
@@ -89,6 +96,7 @@ export const ListTaskProjectsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  orgId: z.string().optional(),
   parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
@@ -97,6 +105,7 @@ export const ListTaskProjectsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
+    orgId: "org_id",
     parentId: "parent_id",
     updatedGte: "updated_gte",
   });

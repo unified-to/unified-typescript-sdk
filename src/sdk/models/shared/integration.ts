@@ -12,6 +12,11 @@ import {
   PropertyIntegrationCategories$inboundSchema,
   PropertyIntegrationCategories$outboundSchema,
 } from "./propertyintegrationcategories.js";
+import {
+  PropertyIntegrationTokenInstructions,
+  PropertyIntegrationTokenInstructions$inboundSchema,
+  PropertyIntegrationTokenInstructions$outboundSchema,
+} from "./propertyintegrationtokeninstructions.js";
 
 export type IntegrationSchemasApi52 = {};
 
@@ -163,7 +168,7 @@ export type Integration = {
   /**
    * instructions for the user on how to find the token/key
    */
-  tokenInstructions?: Array<string> | undefined;
+  tokenInstructions?: Array<PropertyIntegrationTokenInstructions> | undefined;
   /**
    * if auth_types = 'token'
    */
@@ -1851,7 +1856,9 @@ export const Integration$inboundSchema: z.ZodType<
   tested_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   text_color: z.string().optional(),
-  token_instructions: z.array(z.string()).optional(),
+  token_instructions: z.array(
+    PropertyIntegrationTokenInstructions$inboundSchema,
+  ).optional(),
   token_names: z.array(z.string()).optional(),
   type: z.string(),
   updated_at: z.string().optional(),
@@ -2007,7 +2014,9 @@ export const Integration$outboundSchema: z.ZodType<
   support: z.record(z.any()).optional(),
   testedAt: z.date().transform(v => v.toISOString()).optional(),
   textColor: z.string().optional(),
-  tokenInstructions: z.array(z.string()).optional(),
+  tokenInstructions: z.array(
+    PropertyIntegrationTokenInstructions$outboundSchema,
+  ).optional(),
   tokenNames: z.array(z.string()).optional(),
   type: z.string(),
   updatedAt: z.string().optional(),

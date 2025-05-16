@@ -164,6 +164,7 @@ export * from "./propertyhrisemployeeaddress.js";
 export * from "./propertyhrisemployeeemployeeroles.js";
 export * from "./propertyhrislocationaddress.js";
 export * from "./propertyintegrationcategories.js";
+export * from "./propertyintegrationtokeninstructions.js";
 export * from "./propertylmsstudentaddress.js";
 export * from "./propertymessagingmessageauthormember.js";
 export * from "./propertyscimgroupmeta.js";
