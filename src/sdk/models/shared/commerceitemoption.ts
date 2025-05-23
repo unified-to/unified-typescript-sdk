@@ -6,12 +6,17 @@ import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PropertyCommerceItemOptionValues,
+  PropertyCommerceItemOptionValues$inboundSchema,
+  PropertyCommerceItemOptionValues$outboundSchema,
+} from "./propertycommerceitemoptionvalues.js";
 
 export type CommerceItemOption = {
   id?: string | undefined;
   name: string;
   position?: number | undefined;
-  values: Array<string>;
+  values: Array<PropertyCommerceItemOptionValues>;
 };
 
 /** @internal */
@@ -23,7 +28,7 @@ export const CommerceItemOption$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   position: z.number().optional(),
-  values: z.array(z.string()),
+  values: z.array(PropertyCommerceItemOptionValues$inboundSchema),
 });
 
 /** @internal */
@@ -43,7 +48,7 @@ export const CommerceItemOption$outboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string(),
   position: z.number().optional(),
-  values: z.array(z.string()),
+  values: z.array(PropertyCommerceItemOptionValues$outboundSchema),
 });
 
 /**

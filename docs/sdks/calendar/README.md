@@ -221,7 +221,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.calendar.createCalendarLink({
     calendarLink: {
-      url: "https://sturdy-begonia.biz/",
+      url: "https://misguided-thongs.info",
     },
     connectionId: "<id>",
   });
@@ -252,7 +252,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarCreateCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://sturdy-begonia.biz/",
+      url: "https://misguided-thongs.info",
     },
     connectionId: "<id>",
   });
@@ -1215,7 +1215,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.calendar.patchCalendarLink({
     calendarLink: {
-      url: "https://curly-skyline.biz/",
+      url: "https://warm-hexagon.name/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1247,7 +1247,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarPatchCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://curly-skyline.biz/",
+      url: "https://warm-hexagon.name/",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1729,7 +1729,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.calendar.updateCalendarLink({
     calendarLink: {
-      url: "https://quiet-coordination.name",
+      url: "https://partial-hydrocarbon.info",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1761,7 +1761,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await calendarUpdateCalendarLink(unifiedTo, {
     calendarLink: {
-      url: "https://quiet-coordination.name",
+      url: "https://partial-hydrocarbon.info",
     },
     connectionId: "<id>",
     id: "<id>",

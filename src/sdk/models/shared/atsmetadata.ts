@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,6 +37,23 @@ export type ExtraData =
   | boolean
   | AtsMetadataSchemasExtraData2
   | Array<any>;
+
+export const Format = {
+  Text: "TEXT",
+  Number: "NUMBER",
+  Date: "DATE",
+  Boolean: "BOOLEAN",
+  File: "FILE",
+  Textarea: "TEXTAREA",
+  SingleSelect: "SINGLE_SELECT",
+  MultipleSelect: "MULTIPLE_SELECT",
+  Measurement: "MEASUREMENT",
+  Price: "PRICE",
+  YesNo: "YES_NO",
+  Currency: "CURRENCY",
+  Url: "URL",
+} as const;
+export type Format = ClosedEnum<typeof Format>;
 
 export type AtsMetadataSchemasValue52 = {};
 
@@ -78,6 +96,7 @@ export type AtsMetadata = {
     | AtsMetadataSchemasExtraData2
     | Array<any>
     | undefined;
+  format?: Format | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -584,6 +603,25 @@ export function extraDataFromJSON(
     (x) => ExtraData$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'ExtraData' from JSON`,
   );
+}
+
+/** @internal */
+export const Format$inboundSchema: z.ZodNativeEnum<typeof Format> = z
+  .nativeEnum(Format);
+
+/** @internal */
+export const Format$outboundSchema: z.ZodNativeEnum<typeof Format> =
+  Format$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Format$ {
+  /** @deprecated use `Format$inboundSchema` instead. */
+  export const inboundSchema = Format$inboundSchema;
+  /** @deprecated use `Format$outboundSchema` instead. */
+  export const outboundSchema = Format$outboundSchema;
 }
 
 /** @internal */
@@ -1122,6 +1160,7 @@ export const AtsMetadata$inboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: Format$inboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
@@ -1162,6 +1201,7 @@ export type AtsMetadata$Outbound = {
     | AtsMetadataSchemasExtraData2$Outbound
     | Array<any>
     | undefined;
+  format?: string | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -1202,6 +1242,7 @@ export const AtsMetadata$outboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: Format$outboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),

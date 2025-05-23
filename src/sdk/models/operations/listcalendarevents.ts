@@ -22,6 +22,10 @@ export type ListCalendarEventsRequest = {
    */
   endLe?: string | undefined;
   /**
+   * Whether to expand recurring calendar events
+   */
+  expandRecurringEvents?: string | undefined;
+  /**
    * Comma-delimited fields to return
    */
   fields?: Array<string> | undefined;
@@ -44,7 +48,7 @@ export type ListCalendarEventsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -56,6 +60,7 @@ export const ListCalendarEventsRequest$inboundSchema: z.ZodType<
   calendar_id: z.string().optional(),
   connection_id: z.string(),
   end_le: z.string().optional(),
+  expand_recurring_events: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -64,13 +69,13 @@ export const ListCalendarEventsRequest$inboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   start_gte: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "calendar_id": "calendarId",
     "connection_id": "connectionId",
     "end_le": "endLe",
+    "expand_recurring_events": "expandRecurringEvents",
     "start_gte": "startGte",
     "updated_gte": "updatedGte",
   });
@@ -81,6 +86,7 @@ export type ListCalendarEventsRequest$Outbound = {
   calendar_id?: string | undefined;
   connection_id: string;
   end_le?: string | undefined;
+  expand_recurring_events?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -101,6 +107,7 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   calendarId: z.string().optional(),
   connectionId: z.string(),
   endLe: z.string().optional(),
+  expandRecurringEvents: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -109,12 +116,13 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     calendarId: "calendar_id",
     connectionId: "connection_id",
     endLe: "end_le",
+    expandRecurringEvents: "expand_recurring_events",
     startGte: "start_gte",
     updatedGte: "updated_gte",
   });

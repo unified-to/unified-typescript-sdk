@@ -32,7 +32,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.createPassthroughJson({
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
   });
 
   // Handle the result
@@ -61,7 +61,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughCreatePassthroughJson(unifiedTo, {
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
   });
 
   if (!res.ok) {
@@ -114,7 +114,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.createPassthroughRaw({
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
   });
 
   // Handle the result
@@ -143,7 +143,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughCreatePassthroughRaw(unifiedTo, {
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
   });
 
   if (!res.ok) {
@@ -196,7 +196,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.listPassthroughs({
     connectionId: "<id>",
-    path: "/selinux",
+    path: "/System",
   });
 
   // Handle the result
@@ -225,7 +225,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughListPassthroughs(unifiedTo, {
     connectionId: "<id>",
-    path: "/selinux",
+    path: "/System",
   });
 
   if (!res.ok) {
@@ -278,7 +278,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.patchPassthroughJson({
     connectionId: "<id>",
-    path: "/home/user",
+    path: "/System",
   });
 
   // Handle the result
@@ -307,7 +307,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughPatchPassthroughJson(unifiedTo, {
     connectionId: "<id>",
-    path: "/home/user",
+    path: "/System",
   });
 
   if (!res.ok) {
@@ -360,7 +360,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.patchPassthroughRaw({
     connectionId: "<id>",
-    path: "/home/user",
+    path: "/System",
   });
 
   // Handle the result
@@ -389,7 +389,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughPatchPassthroughRaw(unifiedTo, {
     connectionId: "<id>",
-    path: "/home/user",
+    path: "/System",
   });
 
   if (!res.ok) {
@@ -442,7 +442,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.removePassthrough({
     connectionId: "<id>",
-    path: "/Applications",
+    path: "/bin",
   });
 
   // Handle the result
@@ -471,7 +471,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughRemovePassthrough(unifiedTo, {
     connectionId: "<id>",
-    path: "/Applications",
+    path: "/bin",
   });
 
   if (!res.ok) {
@@ -524,7 +524,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.updatePassthroughJson({
     connectionId: "<id>",
-    path: "/etc/namedb",
+    path: "/var/tmp",
   });
 
   // Handle the result
@@ -553,7 +553,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughUpdatePassthroughJson(unifiedTo, {
     connectionId: "<id>",
-    path: "/etc/namedb",
+    path: "/var/tmp",
   });
 
   if (!res.ok) {
@@ -606,7 +606,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.updatePassthroughRaw({
     connectionId: "<id>",
-    path: "/etc/namedb",
+    path: "/var/tmp",
   });
 
   // Handle the result
@@ -635,7 +635,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await passthroughUpdatePassthroughRaw(unifiedTo, {
     connectionId: "<id>",
-    path: "/etc/namedb",
+    path: "/var/tmp",
   });
 
   if (!res.ok) {

@@ -5,7 +5,7 @@
 ```typescript
 import { CalendarEventStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CalendarEventStatus = "CANCELED";
+let value: CalendarEventStatus = "TENTATIVE";
 ```
 
 ## Values

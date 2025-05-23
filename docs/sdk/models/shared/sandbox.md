@@ -12,7 +12,7 @@ const value: shared.IntegrationSchemasSandbox1 = {};
 ### `shared.IntegrationSchemasSandbox2`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox2 = "<value>";
+const value: shared.IntegrationSchemasSandbox2 = {};
 ```
 
 ### `shared.IntegrationSchemasSandbox3`
@@ -30,6 +30,8 @@ const value: shared.IntegrationSchemasSandbox4 = {};
 ### `shared.IntegrationSchemasSandbox5`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox5 = {};
+const value: shared.IntegrationSchemasSandbox5 = [
+  "<value>",
+];
 ```
 

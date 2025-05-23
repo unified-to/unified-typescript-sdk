@@ -7,7 +7,7 @@ import { AtsApplicationAnswer } from "@unified-api/typescript-sdk/sdk/models/sha
 
 let value: AtsApplicationAnswer = {
   answers: [
-    "<value>",
+    "",
   ],
   questionId: "<id>",
 };
@@ -15,7 +15,7 @@ let value: AtsApplicationAnswer = {
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `answers`          | *string*[]         | :heavy_check_mark: | N/A                |
-| `questionId`       | *string*           | :heavy_check_mark: | N/A                |
+| Field                                                                                                             | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `answers`                                                                                                         | [shared.PropertyAtsApplicationAnswerAnswers](../../../sdk/models/shared/propertyatsapplicationansweranswers.md)[] | :heavy_check_mark:                                                                                                | N/A                                                                                                               |
+| `questionId`                                                                                                      | *string*                                                                                                          | :heavy_check_mark:                                                                                                | N/A                                                                                                               |

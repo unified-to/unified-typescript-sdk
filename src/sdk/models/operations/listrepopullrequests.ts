@@ -36,7 +36,7 @@ export type ListRepoPullrequestsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -54,8 +54,7 @@ export const ListRepoPullrequestsRequest$inboundSchema: z.ZodType<
   raw: z.string().optional(),
   repo_id: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
@@ -93,7 +92,7 @@ export const ListRepoPullrequestsRequest$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   repoId: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",

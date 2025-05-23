@@ -6,8 +6,8 @@
 import { CalendarBusy } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: CalendarBusy = {
-  endAt: new Date("2023-12-16T03:38:15.811Z"),
-  startAt: new Date("2025-01-01T11:33:45.485Z"),
+  endAt: new Date("2025-06-13T05:50:57.770Z"),
+  startAt: new Date("2023-07-13T16:32:39.910Z"),
 };
 ```
 

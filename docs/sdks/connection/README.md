@@ -29,15 +29,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.connection.createUnifiedConnection({
-    categories: [
-      "accounting",
-      "martech",
-      "martech",
-    ],
+    categories: [],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_write",
-      "lms_student_read",
+      "enrich_company_read",
     ],
   });
 
@@ -66,15 +61,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await connectionCreateUnifiedConnection(unifiedTo, {
-    categories: [
-      "accounting",
-      "martech",
-      "martech",
-    ],
+    categories: [],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_write",
-      "lms_student_read",
+      "enrich_company_read",
     ],
   });
 
@@ -285,12 +275,11 @@ async function run() {
   const result = await unifiedTo.connection.patchUnifiedConnection({
     connection: {
       categories: [
-        "calendar",
-        "enrich",
+        "storage",
       ],
       integrationType: "<value>",
       permissions: [
-
+        "uc_contact_write",
       ],
     },
     id: "<id>",
@@ -323,12 +312,11 @@ async function run() {
   const res = await connectionPatchUnifiedConnection(unifiedTo, {
     connection: {
       categories: [
-        "calendar",
-        "enrich",
+        "storage",
       ],
       integrationType: "<value>",
       permissions: [
-  
+        "uc_contact_write",
       ],
     },
     id: "<id>",
@@ -464,14 +452,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.connection.updateUnifiedConnection({
     connection: {
-      categories: [
-        "calendar",
-        "storage",
-        "calendar",
-      ],
+      categories: [],
       integrationType: "<value>",
       permissions: [
-
+        "commerce_review_read",
+        "calendar_calendar_read",
       ],
     },
     id: "<id>",
@@ -503,14 +488,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await connectionUpdateUnifiedConnection(unifiedTo, {
     connection: {
-      categories: [
-        "calendar",
-        "storage",
-        "calendar",
-      ],
+      categories: [],
       integrationType: "<value>",
       permissions: [
-  
+        "commerce_review_read",
+        "calendar_calendar_read",
       ],
     },
     id: "<id>",

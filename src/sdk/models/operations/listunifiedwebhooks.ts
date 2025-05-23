@@ -16,7 +16,7 @@ export type ListUnifiedWebhooksRequest = {
   /**
    * Return only results whose created date is equal or less to this value
    */
-  createdLte?: Date | undefined;
+  createdLte?: string | undefined;
   env?: string | undefined;
   /**
    * Filter the results to just this integration
@@ -33,7 +33,7 @@ export type ListUnifiedWebhooksRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -43,8 +43,7 @@ export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   connection_id: z.string().optional(),
-  created_lte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  created_lte: z.string().optional(),
   env: z.string().optional(),
   integration_type: z.string().optional(),
   limit: z.number().optional(),
@@ -52,8 +51,7 @@ export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
@@ -84,7 +82,7 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   ListUnifiedWebhooksRequest
 > = z.object({
   connectionId: z.string().optional(),
-  createdLte: z.date().transform(v => v.toISOString()).optional(),
+  createdLte: z.string().optional(),
   env: z.string().optional(),
   integrationType: z.string().optional(),
   limit: z.number().optional(),
@@ -92,7 +90,7 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",

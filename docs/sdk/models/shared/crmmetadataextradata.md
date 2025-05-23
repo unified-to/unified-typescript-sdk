@@ -18,7 +18,7 @@ const value: shared.CrmMetadata2 = "<value>";
 ### `shared.CrmMetadata3`
 
 ```typescript
-const value: shared.CrmMetadata3 = 8326.2;
+const value: shared.CrmMetadata3 = 680.41;
 ```
 
 ### `shared.CrmMetadata4`
@@ -30,6 +30,8 @@ const value: shared.CrmMetadata4 = {};
 ### `shared.CrmMetadata5`
 
 ```typescript
-const value: shared.CrmMetadata5 = {};
+const value: shared.CrmMetadata5 = [
+  "<value>",
+];
 ```
 

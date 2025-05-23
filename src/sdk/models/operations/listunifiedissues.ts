@@ -16,7 +16,7 @@ export type ListUnifiedIssuesRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -29,8 +29,7 @@ export const ListUnifiedIssuesRequest$inboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "updated_gte": "updatedGte",
@@ -56,7 +55,7 @@ export const ListUnifiedIssuesRequest$outboundSchema: z.ZodType<
   offset: z.number().optional(),
   order: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     updatedGte: "updated_gte",

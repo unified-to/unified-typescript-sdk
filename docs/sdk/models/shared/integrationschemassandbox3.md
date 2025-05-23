@@ -6,7 +6,7 @@
 ### `number`
 
 ```typescript
-const value: number = 9037.2;
+const value: number = 1284.03;
 ```
 
 ### `shared.IntegrationSchemasSandbox32`

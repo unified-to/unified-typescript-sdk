@@ -18,13 +18,13 @@ const value: shared.Integration2 = {};
 ### `shared.Integration3`
 
 ```typescript
-const value: shared.Integration3 = 5654.21;
+const value: shared.Integration3 = 2370.75;
 ```
 
 ### `shared.Integration4`
 
 ```typescript
-const value: shared.Integration4 = false;
+const value: shared.Integration4 = {};
 ```
 
 ### `shared.Integration5`

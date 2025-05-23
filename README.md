@@ -116,7 +116,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-  serverURL: "https://api.unified.to",
+  serverURL: "https://api-au.unified.to",
   security: {
     jwt: "<YOUR_API_KEY_HERE>",
   },
@@ -333,7 +333,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.passthrough.createPassthroughRaw({
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
   });
 
   // Handle the result

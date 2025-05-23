@@ -7,6 +7,11 @@ import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PropertyAtsJobQuestionOptions,
+  PropertyAtsJobQuestionOptions$inboundSchema,
+  PropertyAtsJobQuestionOptions$outboundSchema,
+} from "./propertyatsjobquestionoptions.js";
 
 export const AtsJobQuestionType = {
   Text: "TEXT",
@@ -27,7 +32,7 @@ export type AtsJobQuestionType = ClosedEnum<typeof AtsJobQuestionType>;
 export type AtsJobQuestion = {
   description?: string | undefined;
   id?: string | undefined;
-  options?: Array<string> | undefined;
+  options?: Array<PropertyAtsJobQuestionOptions> | undefined;
   prompt?: string | undefined;
   question: string;
   required?: boolean | undefined;
@@ -63,7 +68,7 @@ export const AtsJobQuestion$inboundSchema: z.ZodType<
 > = z.object({
   description: z.string().optional(),
   id: z.string().optional(),
-  options: z.array(z.string()).optional(),
+  options: z.array(PropertyAtsJobQuestionOptions$inboundSchema).optional(),
   prompt: z.string().optional(),
   question: z.string(),
   required: z.boolean().optional(),
@@ -89,7 +94,7 @@ export const AtsJobQuestion$outboundSchema: z.ZodType<
 > = z.object({
   description: z.string().optional(),
   id: z.string().optional(),
-  options: z.array(z.string()).optional(),
+  options: z.array(PropertyAtsJobQuestionOptions$outboundSchema).optional(),
   prompt: z.string().optional(),
   question: z.string(),
   required: z.boolean().optional(),

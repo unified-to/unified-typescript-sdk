@@ -12,13 +12,13 @@ const value: shared.One = {};
 ### `shared.Two`
 
 ```typescript
-const value: shared.Two = "<value>";
+const value: shared.Two = {};
 ```
 
 ### `shared.Three`
 
 ```typescript
-const value: shared.Three = 1589.69;
+const value: shared.Three = 1408.09;
 ```
 
 ### `shared.Four`

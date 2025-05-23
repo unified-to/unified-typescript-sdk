@@ -44,7 +44,7 @@ export type ListCalendarBusiesRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -64,8 +64,7 @@ export const ListCalendarBusiesRequest$inboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   start_gte: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "calendar_id": "calendarId",
@@ -109,7 +108,7 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     calendarId: "calendar_id",

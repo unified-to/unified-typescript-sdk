@@ -50,9 +50,13 @@ export type ListAtsActivitiesRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The type to filter by
+   */
+  type?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
   /**
    * The user/employee ID to filter by
    */
@@ -78,8 +82,8 @@ export const ListAtsActivitiesRequest$inboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  type: z.string().optional(),
+  updated_gte: z.string().optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -109,6 +113,7 @@ export type ListAtsActivitiesRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
@@ -132,7 +137,8 @@ export const ListAtsActivitiesRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  type: z.string().optional(),
+  updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

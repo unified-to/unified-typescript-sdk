@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingContactPaymentMethodType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingContactPaymentMethodType = "GIROPAY";
+let value: AccountingContactPaymentMethodType = "PAYPAL";
 ```
 
 ## Values

@@ -6,7 +6,7 @@
 import { ScimEmail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: ScimEmail = {
-  type: "work",
+  type: "other",
 };
 ```
 

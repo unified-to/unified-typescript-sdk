@@ -5,7 +5,7 @@
 ```typescript
 import { PropertyConnectionPermissions } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyConnectionPermissions = "hris_payslip_read";
+let value: PropertyConnectionPermissions = "repo_branch_write";
 ```
 
 ## Values

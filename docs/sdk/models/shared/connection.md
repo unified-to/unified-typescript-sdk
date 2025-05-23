@@ -9,11 +9,11 @@ import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
   categories: [
-    "enrich",
+    "accounting",
   ],
   integrationType: "<value>",
   permissions: [
-    "commerce_location_read",
+    "ats_scorecard_write",
   ],
 };
 ```

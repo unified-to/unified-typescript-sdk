@@ -43,15 +43,10 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.unified.createUnifiedConnection({
-    categories: [
-      "accounting",
-      "martech",
-      "martech",
-    ],
+    categories: [],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_write",
-      "lms_student_read",
+      "enrich_company_read",
     ],
   });
 
@@ -80,15 +75,10 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedCreateUnifiedConnection(unifiedTo, {
-    categories: [
-      "accounting",
-      "martech",
-      "martech",
-    ],
+    categories: [],
     integrationType: "<value>",
     permissions: [
-      "repo_organization_write",
-      "lms_student_read",
+      "enrich_company_read",
     ],
   });
 
@@ -144,7 +134,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_timeoff",
+      objectType: "ats_scorecard",
     },
   });
 
@@ -176,7 +166,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_timeoff",
+      objectType: "ats_scorecard",
     },
   });
 
@@ -1013,12 +1003,11 @@ async function run() {
   const result = await unifiedTo.unified.patchUnifiedConnection({
     connection: {
       categories: [
-        "calendar",
-        "enrich",
+        "storage",
       ],
       integrationType: "<value>",
       permissions: [
-
+        "uc_contact_write",
       ],
     },
     id: "<id>",
@@ -1051,12 +1040,11 @@ async function run() {
   const res = await unifiedPatchUnifiedConnection(unifiedTo, {
     connection: {
       categories: [
-        "calendar",
-        "enrich",
+        "storage",
       ],
       integrationType: "<value>",
       permissions: [
-  
+        "uc_contact_write",
       ],
     },
     id: "<id>",
@@ -1113,8 +1101,8 @@ async function run() {
   const result = await unifiedTo.unified.patchUnifiedWebhook({
     webhook: {
       connectionId: "<id>",
-      event: "deleted",
-      objectType: "crm_lead",
+      event: "updated",
+      objectType: "ticketing_customer",
     },
     id: "<id>",
   });
@@ -1146,8 +1134,8 @@ async function run() {
   const res = await unifiedPatchUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
-      event: "deleted",
-      objectType: "crm_lead",
+      event: "updated",
+      objectType: "ticketing_customer",
     },
     id: "<id>",
   });
@@ -1442,14 +1430,11 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.updateUnifiedConnection({
     connection: {
-      categories: [
-        "calendar",
-        "storage",
-        "calendar",
-      ],
+      categories: [],
       integrationType: "<value>",
       permissions: [
-
+        "commerce_review_read",
+        "calendar_calendar_read",
       ],
     },
     id: "<id>",
@@ -1481,14 +1466,11 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await unifiedUpdateUnifiedConnection(unifiedTo, {
     connection: {
-      categories: [
-        "calendar",
-        "storage",
-        "calendar",
-      ],
+      categories: [],
       integrationType: "<value>",
       permissions: [
-  
+        "commerce_review_read",
+        "calendar_calendar_read",
       ],
     },
     id: "<id>",
@@ -1545,8 +1527,8 @@ async function run() {
   const result = await unifiedTo.unified.updateUnifiedWebhook({
     webhook: {
       connectionId: "<id>",
-      event: "created",
-      objectType: "payment_payout",
+      event: "deleted",
+      objectType: "messaging_channel",
     },
     id: "<id>",
   });
@@ -1578,8 +1560,8 @@ async function run() {
   const res = await unifiedUpdateUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
-      event: "created",
-      objectType: "payment_payout",
+      event: "deleted",
+      objectType: "messaging_channel",
     },
     id: "<id>",
   });

@@ -5,7 +5,7 @@
 ```typescript
 import { DbType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: DbType = "mysql";
+let value: DbType = "mariadb";
 ```
 
 ## Values

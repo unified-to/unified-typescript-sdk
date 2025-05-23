@@ -7,7 +7,7 @@ import { CreateCalendarLinkRequest } from "@unified-api/typescript-sdk/sdk/model
 
 let value: CreateCalendarLinkRequest = {
   calendarLink: {
-    url: "https://reasonable-schnitzel.biz",
+    url: "https://animated-cornet.com/",
   },
   connectionId: "<id>",
 };

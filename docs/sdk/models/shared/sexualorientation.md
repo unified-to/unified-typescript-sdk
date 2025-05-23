@@ -5,7 +5,7 @@
 ```typescript
 import { SexualOrientation } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: SexualOrientation = "Heterosexual";
+let value: SexualOrientation = "Straight";
 ```
 
 ## Values

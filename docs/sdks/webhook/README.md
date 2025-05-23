@@ -34,7 +34,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_timeoff",
+      objectType: "ats_scorecard",
     },
   });
 
@@ -66,7 +66,7 @@ async function run() {
     webhook: {
       connectionId: "<id>",
       event: "created",
-      objectType: "hris_timeoff",
+      objectType: "ats_scorecard",
     },
   });
 
@@ -277,8 +277,8 @@ async function run() {
   const result = await unifiedTo.webhook.patchUnifiedWebhook({
     webhook: {
       connectionId: "<id>",
-      event: "deleted",
-      objectType: "crm_lead",
+      event: "updated",
+      objectType: "ticketing_customer",
     },
     id: "<id>",
   });
@@ -310,8 +310,8 @@ async function run() {
   const res = await webhookPatchUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
-      event: "deleted",
-      objectType: "crm_lead",
+      event: "updated",
+      objectType: "ticketing_customer",
     },
     id: "<id>",
   });
@@ -527,8 +527,8 @@ async function run() {
   const result = await unifiedTo.webhook.updateUnifiedWebhook({
     webhook: {
       connectionId: "<id>",
-      event: "created",
-      objectType: "payment_payout",
+      event: "deleted",
+      objectType: "messaging_channel",
     },
     id: "<id>",
   });
@@ -560,8 +560,8 @@ async function run() {
   const res = await webhookUpdateUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
-      event: "created",
-      objectType: "payment_payout",
+      event: "deleted",
+      objectType: "messaging_channel",
     },
     id: "<id>",
   });

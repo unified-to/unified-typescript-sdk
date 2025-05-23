@@ -5,7 +5,7 @@
 ```typescript
 import { Priority } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Priority = "LOW";
+let value: Priority = "MEDIUM";
 ```
 
 ## Values

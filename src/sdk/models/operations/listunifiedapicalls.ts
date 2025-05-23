@@ -41,7 +41,7 @@ export type ListUnifiedApicallsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
   /**
    * Filter the results to just this webhook
    */
@@ -65,8 +65,7 @@ export const ListUnifiedApicallsRequest$inboundSchema: z.ZodType<
   order: z.string().optional(),
   sort: z.string().optional(),
   type: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
   webhook_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -113,7 +112,7 @@ export const ListUnifiedApicallsRequest$outboundSchema: z.ZodType<
   order: z.string().optional(),
   sort: z.string().optional(),
   type: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
   webhookId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

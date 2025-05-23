@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingOrderStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingOrderStatus = "PARTIALLY_REFUNDED";
+let value: AccountingOrderStatus = "REFUNDED";
 ```
 
 ## Values

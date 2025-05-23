@@ -15,6 +15,12 @@ import {
   CalendarAttendee$outboundSchema,
 } from "./calendarattendee.js";
 import {
+  CalendarEventRecurrence,
+  CalendarEventRecurrence$inboundSchema,
+  CalendarEventRecurrence$Outbound,
+  CalendarEventRecurrence$outboundSchema,
+} from "./calendareventrecurrence.js";
+import {
   PropertyCalendarEventOrganizer,
   PropertyCalendarEventOrganizer$inboundSchema,
   PropertyCalendarEventOrganizer$Outbound,
@@ -41,6 +47,8 @@ export type CalendarEvent = {
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer | undefined;
   raw?: { [k: string]: any } | undefined;
+  recurrence?: Array<CalendarEventRecurrence> | undefined;
+  recurringEventId?: string | undefined;
   startAt: string;
   status?: CalendarEventStatus | undefined;
   subject: string;
@@ -88,6 +96,8 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
+  recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
+  recurring_event_id: z.string().optional(),
   start_at: z.string(),
   status: CalendarEventStatus$inboundSchema.optional(),
   subject: z.string(),
@@ -102,6 +112,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "is_all_day": "isAllDay",
     "is_free": "isFree",
     "is_private": "isPrivate",
+    "recurring_event_id": "recurringEventId",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
@@ -122,6 +133,8 @@ export type CalendarEvent$Outbound = {
   notes?: string | undefined;
   organizer?: PropertyCalendarEventOrganizer$Outbound | undefined;
   raw?: { [k: string]: any } | undefined;
+  recurrence?: Array<CalendarEventRecurrence$Outbound> | undefined;
+  recurring_event_id?: string | undefined;
   start_at: string;
   status?: string | undefined;
   subject: string;
@@ -148,6 +161,8 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   notes: z.string().optional(),
   organizer: PropertyCalendarEventOrganizer$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
+  recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
+  recurringEventId: z.string().optional(),
   startAt: z.string(),
   status: CalendarEventStatus$outboundSchema.optional(),
   subject: z.string(),
@@ -162,6 +177,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
     isAllDay: "is_all_day",
     isFree: "is_free",
     isPrivate: "is_private",
+    recurringEventId: "recurring_event_id",
     startAt: "start_at",
     updatedAt: "updated_at",
     webUrl: "web_url",

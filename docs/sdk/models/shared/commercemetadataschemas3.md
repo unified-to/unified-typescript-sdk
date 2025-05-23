@@ -6,7 +6,7 @@
 ### `number`
 
 ```typescript
-const value: number = 9621.89;
+const value: number = 1284.03;
 ```
 
 ### `shared.CommerceMetadataSchemasValue32`

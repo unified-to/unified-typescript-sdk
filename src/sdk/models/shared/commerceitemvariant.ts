@@ -32,6 +32,11 @@ import {
   CommerceMetadata$Outbound,
   CommerceMetadata$outboundSchema,
 } from "./commercemetadata.js";
+import {
+  PropertyCommerceItemVariantTags,
+  PropertyCommerceItemVariantTags$inboundSchema,
+  PropertyCommerceItemVariantTags$outboundSchema,
+} from "./propertycommerceitemvarianttags.js";
 
 export const SizeUnit = {
   Cm: "cm",
@@ -67,7 +72,7 @@ export type CommerceItemVariant = {
   requiresShipping?: boolean | undefined;
   sizeUnit?: SizeUnit | undefined;
   sku?: string | undefined;
-  tags?: Array<string> | undefined;
+  tags?: Array<PropertyCommerceItemVariantTags> | undefined;
   totalStock?: number | undefined;
   weight?: number | undefined;
   weightUnit?: WeightUnit | undefined;
@@ -139,7 +144,7 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
   requires_shipping: z.boolean().optional(),
   size_unit: SizeUnit$inboundSchema.optional(),
   sku: z.string().optional(),
-  tags: z.array(z.string()).optional(),
+  tags: z.array(PropertyCommerceItemVariantTags$inboundSchema).optional(),
   total_stock: z.number().optional(),
   weight: z.number().optional(),
   weight_unit: WeightUnit$inboundSchema.optional(),
@@ -213,7 +218,7 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
   requiresShipping: z.boolean().optional(),
   sizeUnit: SizeUnit$outboundSchema.optional(),
   sku: z.string().optional(),
-  tags: z.array(z.string()).optional(),
+  tags: z.array(PropertyCommerceItemVariantTags$outboundSchema).optional(),
   totalStock: z.number().optional(),
   weight: z.number().optional(),
   weightUnit: WeightUnit$outboundSchema.optional(),

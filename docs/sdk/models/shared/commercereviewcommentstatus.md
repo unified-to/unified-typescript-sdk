@@ -5,7 +5,7 @@
 ```typescript
 import { CommerceReviewCommentStatus } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: CommerceReviewCommentStatus = "SPAM";
+let value: CommerceReviewCommentStatus = "REJECTED";
 ```
 
 ## Values

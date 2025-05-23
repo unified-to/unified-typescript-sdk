@@ -8,8 +8,13 @@ import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  PropertyMetadataMetadataOptions,
+  PropertyMetadataMetadataOptions$inboundSchema,
+  PropertyMetadataMetadataOptions$outboundSchema,
+} from "./propertymetadatametadataoptions.js";
 
-export const Format = {
+export const MetadataMetadataFormat = {
   Text: "TEXT",
   Number: "NUMBER",
   Date: "DATE",
@@ -24,16 +29,16 @@ export const Format = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type Format = ClosedEnum<typeof Format>;
+export type MetadataMetadataFormat = ClosedEnum<typeof MetadataMetadataFormat>;
 
 export type MetadataMetadata = {
   createdAt?: Date | undefined;
-  format?: Format | undefined;
+  format?: MetadataMetadataFormat | undefined;
   id?: string | undefined;
   name: string;
   objectType: string;
   objects?: { [k: string]: any } | undefined;
-  options?: Array<string> | undefined;
+  options?: Array<PropertyMetadataMetadataOptions> | undefined;
   originalFormat?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
@@ -41,22 +46,24 @@ export type MetadataMetadata = {
 };
 
 /** @internal */
-export const Format$inboundSchema: z.ZodNativeEnum<typeof Format> = z
-  .nativeEnum(Format);
+export const MetadataMetadataFormat$inboundSchema: z.ZodNativeEnum<
+  typeof MetadataMetadataFormat
+> = z.nativeEnum(MetadataMetadataFormat);
 
 /** @internal */
-export const Format$outboundSchema: z.ZodNativeEnum<typeof Format> =
-  Format$inboundSchema;
+export const MetadataMetadataFormat$outboundSchema: z.ZodNativeEnum<
+  typeof MetadataMetadataFormat
+> = MetadataMetadataFormat$inboundSchema;
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace Format$ {
-  /** @deprecated use `Format$inboundSchema` instead. */
-  export const inboundSchema = Format$inboundSchema;
-  /** @deprecated use `Format$outboundSchema` instead. */
-  export const outboundSchema = Format$outboundSchema;
+export namespace MetadataMetadataFormat$ {
+  /** @deprecated use `MetadataMetadataFormat$inboundSchema` instead. */
+  export const inboundSchema = MetadataMetadataFormat$inboundSchema;
+  /** @deprecated use `MetadataMetadataFormat$outboundSchema` instead. */
+  export const outboundSchema = MetadataMetadataFormat$outboundSchema;
 }
 
 /** @internal */
@@ -67,12 +74,12 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
 > = z.object({
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  format: Format$inboundSchema.optional(),
+  format: MetadataMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
   name: z.string(),
   object_type: z.string(),
   objects: z.record(z.any()).optional(),
-  options: z.array(z.string()).optional(),
+  options: z.array(PropertyMetadataMetadataOptions$inboundSchema).optional(),
   original_format: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
@@ -109,12 +116,12 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   MetadataMetadata
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  format: Format$outboundSchema.optional(),
+  format: MetadataMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
   name: z.string(),
   objectType: z.string(),
   objects: z.record(z.any()).optional(),
-  options: z.array(z.string()).optional(),
+  options: z.array(PropertyMetadataMetadataOptions$outboundSchema).optional(),
   originalFormat: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),

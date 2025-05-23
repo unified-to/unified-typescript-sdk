@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,6 +37,23 @@ export type HrisMetadataExtraData =
   | boolean
   | HrisMetadataSchemasExtraData52
   | Array<any>;
+
+export const HrisMetadataFormat = {
+  Text: "TEXT",
+  Number: "NUMBER",
+  Date: "DATE",
+  Boolean: "BOOLEAN",
+  File: "FILE",
+  Textarea: "TEXTAREA",
+  SingleSelect: "SINGLE_SELECT",
+  MultipleSelect: "MULTIPLE_SELECT",
+  Measurement: "MEASUREMENT",
+  Price: "PRICE",
+  YesNo: "YES_NO",
+  Currency: "CURRENCY",
+  Url: "URL",
+} as const;
+export type HrisMetadataFormat = ClosedEnum<typeof HrisMetadataFormat>;
 
 export type HrisMetadataSchemasValue52 = {};
 
@@ -78,6 +96,7 @@ export type HrisMetadata = {
     | HrisMetadataSchemasExtraData52
     | Array<any>
     | undefined;
+  format?: HrisMetadataFormat | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -639,6 +658,27 @@ export function hrisMetadataExtraDataFromJSON(
     (x) => HrisMetadataExtraData$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'HrisMetadataExtraData' from JSON`,
   );
+}
+
+/** @internal */
+export const HrisMetadataFormat$inboundSchema: z.ZodNativeEnum<
+  typeof HrisMetadataFormat
+> = z.nativeEnum(HrisMetadataFormat);
+
+/** @internal */
+export const HrisMetadataFormat$outboundSchema: z.ZodNativeEnum<
+  typeof HrisMetadataFormat
+> = HrisMetadataFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisMetadataFormat$ {
+  /** @deprecated use `HrisMetadataFormat$inboundSchema` instead. */
+  export const inboundSchema = HrisMetadataFormat$inboundSchema;
+  /** @deprecated use `HrisMetadataFormat$outboundSchema` instead. */
+  export const outboundSchema = HrisMetadataFormat$outboundSchema;
 }
 
 /** @internal */
@@ -1214,6 +1254,7 @@ export const HrisMetadata$inboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: HrisMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
@@ -1257,6 +1298,7 @@ export type HrisMetadata$Outbound = {
     | HrisMetadataSchemasExtraData52$Outbound
     | Array<any>
     | undefined;
+  format?: string | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -1300,6 +1342,7 @@ export const HrisMetadata$outboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: HrisMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),

@@ -48,7 +48,7 @@ export type ListLmsInstructorsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -69,8 +69,7 @@ export const ListLmsInstructorsRequest$inboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "class_id": "classId",
@@ -117,7 +116,7 @@ export const ListLmsInstructorsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     classId: "class_id",

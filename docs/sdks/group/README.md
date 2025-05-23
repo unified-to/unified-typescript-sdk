@@ -118,7 +118,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.group.createScimGroups({
     scimGroup: {
-      displayName: "Bert89",
+      displayName: "Nina.Tremblay",
     },
     connectionId: "<id>",
   });
@@ -149,7 +149,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await groupCreateScimGroups(unifiedTo, {
     scimGroup: {
-      displayName: "Bert89",
+      displayName: "Nina.Tremblay",
     },
     connectionId: "<id>",
   });
@@ -612,7 +612,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.group.patchScimGroups({
     scimGroup: {
-      displayName: "Damon_Rutherford93",
+      displayName: "Newell.Hoeger",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -644,7 +644,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await groupPatchScimGroups(unifiedTo, {
     scimGroup: {
-      displayName: "Damon_Rutherford93",
+      displayName: "Newell.Hoeger",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -948,7 +948,7 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.group.updateScimGroups({
     scimGroup: {
-      displayName: "Frederic.Reichel",
+      displayName: "Reynold90",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -980,7 +980,7 @@ const unifiedTo = new UnifiedToCore({
 async function run() {
   const res = await groupUpdateScimGroups(unifiedTo, {
     scimGroup: {
-      displayName: "Frederic.Reichel",
+      displayName: "Reynold90",
     },
     connectionId: "<id>",
     id: "<id>",

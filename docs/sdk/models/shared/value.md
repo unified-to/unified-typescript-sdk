@@ -18,7 +18,7 @@ const value: shared.AtsMetadata2 = "<value>";
 ### `shared.AtsMetadata3`
 
 ```typescript
-const value: shared.AtsMetadata3 = 8209.94;
+const value: shared.AtsMetadata3 = 1282.77;
 ```
 
 ### `shared.AtsMetadata4`
@@ -30,6 +30,8 @@ const value: shared.AtsMetadata4 = false;
 ### `shared.AtsMetadata5`
 
 ```typescript
-const value: shared.AtsMetadata5 = {};
+const value: shared.AtsMetadata5 = [
+  "<value>",
+];
 ```
 

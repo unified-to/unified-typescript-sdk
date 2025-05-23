@@ -41,7 +41,7 @@ export type ListAccountingReportsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -61,8 +61,7 @@ export const ListAccountingReportsRequest$inboundSchema: z.ZodType<
   sort: z.string().optional(),
   start_gte: z.string().optional(),
   type: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "connection_id": "connectionId",
@@ -105,7 +104,7 @@ export const ListAccountingReportsRequest$outboundSchema: z.ZodType<
   sort: z.string().optional(),
   startGte: z.string().optional(),
   type: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",

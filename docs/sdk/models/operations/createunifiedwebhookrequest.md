@@ -8,8 +8,8 @@ import { CreateUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/mod
 let value: CreateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
-    event: "created",
-    objectType: "commerce_review",
+    event: "updated",
+    objectType: "messaging_channel",
   },
 };
 ```

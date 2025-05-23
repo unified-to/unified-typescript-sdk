@@ -40,7 +40,7 @@ export type ListAtsApplicationsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -59,8 +59,7 @@ export const ListAtsApplicationsRequest$inboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "candidate_id": "candidateId",
@@ -101,7 +100,7 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     candidateId: "candidate_id",

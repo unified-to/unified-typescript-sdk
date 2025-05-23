@@ -42,9 +42,13 @@ export type ListAtsDocumentsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The type to filter by
+   */
+  type?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
 };
 
 /** @internal */
@@ -64,8 +68,8 @@ export const ListAtsDocumentsRequest$inboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  type: z.string().optional(),
+  updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "application_id": "applicationId",
@@ -89,6 +93,7 @@ export type ListAtsDocumentsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -109,7 +114,8 @@ export const ListAtsDocumentsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  type: z.string().optional(),
+  updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     applicationId: "application_id",

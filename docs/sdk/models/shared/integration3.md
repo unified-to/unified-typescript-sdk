@@ -6,7 +6,7 @@
 ### `number`
 
 ```typescript
-const value: number = 1320.68;
+const value: number = 1284.03;
 ```
 
 ### `shared.IntegrationSchemasApi32`

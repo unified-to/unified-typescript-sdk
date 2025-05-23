@@ -48,7 +48,7 @@ export type ListUcRecordingsRequest = {
   /**
    * Return only results whose updated date is equal or greater to this value
    */
-  updatedGte?: Date | undefined;
+  updatedGte?: string | undefined;
   /**
    * The user/employee ID to filter by
    */
@@ -73,8 +73,7 @@ export const ListUcRecordingsRequest$inboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   start_gte: z.string().optional(),
-  updated_gte: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  updated_gte: z.string().optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -124,7 +123,7 @@ export const ListUcRecordingsRequest$outboundSchema: z.ZodType<
   raw: z.string().optional(),
   sort: z.string().optional(),
   startGte: z.string().optional(),
-  updatedGte: z.date().transform(v => v.toISOString()).optional(),
+  updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

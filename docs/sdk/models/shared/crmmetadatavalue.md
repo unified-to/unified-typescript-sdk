@@ -18,18 +18,20 @@ const value: shared.CrmMetadataSchemas2 = {};
 ### `shared.CrmMetadataSchemas3`
 
 ```typescript
-const value: shared.CrmMetadataSchemas3 = 7805.29;
+const value: shared.CrmMetadataSchemas3 = {};
 ```
 
 ### `shared.CrmMetadataSchemas4`
 
 ```typescript
-const value: shared.CrmMetadataSchemas4 = false;
+const value: shared.CrmMetadataSchemas4 = {};
 ```
 
 ### `shared.CrmMetadataSchemas5`
 
 ```typescript
-const value: shared.CrmMetadataSchemas5 = {};
+const value: shared.CrmMetadataSchemas5 = [
+  "<value>",
+];
 ```
 

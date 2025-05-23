@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 896ad02cb1fe122b37a5db9ff432b9bf
+  docChecksum: 0410d1777305583960db5f8722b2f00f
   docVersion: "1.0"
-  speakeasyVersion: 1.501.0
-  generationVersion: 2.522.1
-  releaseVersion: 2.70.0
-  configChecksum: a7bea337d57a1dabb0594773ab3a03e2
+  speakeasyVersion: 1.550.0
+  generationVersion: 2.610.0
+  releaseVersion: 2.71.0
+  configChecksum: 8bafbbbe07b15db16eb075c04f9d2ac8
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,14 +16,15 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.1
+    core: 3.21.9
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
     globalSecurity: 2.82.13
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.4
+    globalServerURLs: 2.82.5
+    mcpServer: 0.9.2
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.2.0
@@ -647,6 +648,8 @@ generatedFiles:
   - docs/sdk/models/shared/calendarbusy.md
   - docs/sdk/models/shared/calendarcalendar.md
   - docs/sdk/models/shared/calendarevent.md
+  - docs/sdk/models/shared/calendareventrecurrence.md
+  - docs/sdk/models/shared/calendareventrecurrencefrequency.md
   - docs/sdk/models/shared/calendareventstatus.md
   - docs/sdk/models/shared/calendarlink.md
   - docs/sdk/models/shared/calendarrecording.md
@@ -669,6 +672,7 @@ generatedFiles:
   - docs/sdk/models/shared/commercemetadata4.md
   - docs/sdk/models/shared/commercemetadata5.md
   - docs/sdk/models/shared/commercemetadataextradata.md
+  - docs/sdk/models/shared/commercemetadataformat.md
   - docs/sdk/models/shared/commercemetadataschemas1.md
   - docs/sdk/models/shared/commercemetadataschemas2.md
   - docs/sdk/models/shared/commercemetadataschemas3.md
@@ -766,6 +770,7 @@ generatedFiles:
   - docs/sdk/models/shared/hrismetadata4.md
   - docs/sdk/models/shared/hrismetadata5.md
   - docs/sdk/models/shared/hrismetadataextradata.md
+  - docs/sdk/models/shared/hrismetadataformat.md
   - docs/sdk/models/shared/hrismetadataschemas1.md
   - docs/sdk/models/shared/hrismetadataschemas2.md
   - docs/sdk/models/shared/hrismetadataschemas3.md
@@ -823,6 +828,27 @@ generatedFiles:
   - docs/sdk/models/shared/kmscommenttype.md
   - docs/sdk/models/shared/kmspage.md
   - docs/sdk/models/shared/kmspagemetadata.md
+  - docs/sdk/models/shared/kmspagemetadata1.md
+  - docs/sdk/models/shared/kmspagemetadata2.md
+  - docs/sdk/models/shared/kmspagemetadata3.md
+  - docs/sdk/models/shared/kmspagemetadata4.md
+  - docs/sdk/models/shared/kmspagemetadata5.md
+  - docs/sdk/models/shared/kmspagemetadataextradata.md
+  - docs/sdk/models/shared/kmspagemetadataformat.md
+  - docs/sdk/models/shared/kmspagemetadataschemas1.md
+  - docs/sdk/models/shared/kmspagemetadataschemas2.md
+  - docs/sdk/models/shared/kmspagemetadataschemas3.md
+  - docs/sdk/models/shared/kmspagemetadataschemas4.md
+  - docs/sdk/models/shared/kmspagemetadataschemas5.md
+  - docs/sdk/models/shared/kmspagemetadataschemasextradata2.md
+  - docs/sdk/models/shared/kmspagemetadataschemasextradata22.md
+  - docs/sdk/models/shared/kmspagemetadataschemasextradata32.md
+  - docs/sdk/models/shared/kmspagemetadataschemasextradata52.md
+  - docs/sdk/models/shared/kmspagemetadataschemasvalue2.md
+  - docs/sdk/models/shared/kmspagemetadataschemasvalue32.md
+  - docs/sdk/models/shared/kmspagemetadataschemasvalue42.md
+  - docs/sdk/models/shared/kmspagemetadataschemasvalue52.md
+  - docs/sdk/models/shared/kmspagemetadatavalue.md
   - docs/sdk/models/shared/kmspagetype.md
   - docs/sdk/models/shared/kmsspace.md
   - docs/sdk/models/shared/lmsclass.md
@@ -844,6 +870,7 @@ generatedFiles:
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/metadatametadata.md
+  - docs/sdk/models/shared/metadatametadataformat.md
   - docs/sdk/models/shared/objecttype.md
   - docs/sdk/models/shared/one.md
   - docs/sdk/models/shared/operation.md
@@ -872,13 +899,26 @@ generatedFiles:
   - docs/sdk/models/shared/propertyaccountingreporttrialbalance.md
   - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
+  - docs/sdk/models/shared/propertyatsapplicationansweranswers.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
+  - docs/sdk/models/shared/propertyatscandidatelinkurls.md
+  - docs/sdk/models/shared/propertyatscandidateskills.md
+  - docs/sdk/models/shared/propertyatscandidatesources.md
+  - docs/sdk/models/shared/propertyatscandidatetags.md
   - docs/sdk/models/shared/propertyatscompanyaddress.md
+  - docs/sdk/models/shared/propertyatsjobdepartments.md
   - docs/sdk/models/shared/propertyatsjobpostingaddress.md
+  - docs/sdk/models/shared/propertyatsjobpublicjoburls.md
+  - docs/sdk/models/shared/propertyatsjobquestionoptions.md
   - docs/sdk/models/shared/propertycalendareventorganizer.md
   - docs/sdk/models/shared/propertycalendareventorganizerstatus.md
+  - docs/sdk/models/shared/propertycalendareventrecurrenceondays.md
   - docs/sdk/models/shared/propertycalendarrecordingtranscriptattendee.md
   - docs/sdk/models/shared/propertycalendarrecordingtranscriptattendeestatus.md
+  - docs/sdk/models/shared/propertycommercecollectiontags.md
+  - docs/sdk/models/shared/propertycommerceitemoptionvalues.md
+  - docs/sdk/models/shared/propertycommerceitemtags.md
+  - docs/sdk/models/shared/propertycommerceitemvarianttags.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/propertyconnectioncategories.md
@@ -905,6 +945,7 @@ generatedFiles:
   - docs/sdk/models/shared/propertyintegrationtokeninstructions.md
   - docs/sdk/models/shared/propertylmsstudentaddress.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
+  - docs/sdk/models/shared/propertymetadatametadataoptions.md
   - docs/sdk/models/shared/propertyscimgroupmeta.md
   - docs/sdk/models/shared/propertyscimgroupschemas.md
   - docs/sdk/models/shared/propertyscimusermeta.md
@@ -1950,6 +1991,864 @@ generatedFiles:
   - src/lib/sdks.ts
   - src/lib/security.ts
   - src/lib/url.ts
+  - src/mcp-server/build.mts
+  - src/mcp-server/cli.ts
+  - src/mcp-server/cli/start/command.ts
+  - src/mcp-server/cli/start/impl.ts
+  - src/mcp-server/console-logger.ts
+  - src/mcp-server/extensions.ts
+  - src/mcp-server/mcp-server.ts
+  - src/mcp-server/prompts.ts
+  - src/mcp-server/resources.ts
+  - src/mcp-server/scopes.ts
+  - src/mcp-server/server.ts
+  - src/mcp-server/shared.ts
+  - src/mcp-server/tools.ts
+  - src/mcp-server/tools/accountCreateAccountingAccount.ts
+  - src/mcp-server/tools/accountGetAccountingAccount.ts
+  - src/mcp-server/tools/accountListAccountingAccounts.ts
+  - src/mcp-server/tools/accountPatchAccountingAccount.ts
+  - src/mcp-server/tools/accountRemoveAccountingAccount.ts
+  - src/mcp-server/tools/accountUpdateAccountingAccount.ts
+  - src/mcp-server/tools/accountingCreateAccountingAccount.ts
+  - src/mcp-server/tools/accountingCreateAccountingContact.ts
+  - src/mcp-server/tools/accountingCreateAccountingInvoice.ts
+  - src/mcp-server/tools/accountingCreateAccountingJournal.ts
+  - src/mcp-server/tools/accountingCreateAccountingOrder.ts
+  - src/mcp-server/tools/accountingCreateAccountingTaxrate.ts
+  - src/mcp-server/tools/accountingCreateAccountingTransaction.ts
+  - src/mcp-server/tools/accountingGetAccountingAccount.ts
+  - src/mcp-server/tools/accountingGetAccountingContact.ts
+  - src/mcp-server/tools/accountingGetAccountingInvoice.ts
+  - src/mcp-server/tools/accountingGetAccountingJournal.ts
+  - src/mcp-server/tools/accountingGetAccountingOrder.ts
+  - src/mcp-server/tools/accountingGetAccountingOrganization.ts
+  - src/mcp-server/tools/accountingGetAccountingReport.ts
+  - src/mcp-server/tools/accountingGetAccountingTaxrate.ts
+  - src/mcp-server/tools/accountingGetAccountingTransaction.ts
+  - src/mcp-server/tools/accountingListAccountingAccounts.ts
+  - src/mcp-server/tools/accountingListAccountingContacts.ts
+  - src/mcp-server/tools/accountingListAccountingInvoices.ts
+  - src/mcp-server/tools/accountingListAccountingJournals.ts
+  - src/mcp-server/tools/accountingListAccountingOrders.ts
+  - src/mcp-server/tools/accountingListAccountingOrganizations.ts
+  - src/mcp-server/tools/accountingListAccountingReports.ts
+  - src/mcp-server/tools/accountingListAccountingTaxrates.ts
+  - src/mcp-server/tools/accountingListAccountingTransactions.ts
+  - src/mcp-server/tools/accountingPatchAccountingAccount.ts
+  - src/mcp-server/tools/accountingPatchAccountingContact.ts
+  - src/mcp-server/tools/accountingPatchAccountingInvoice.ts
+  - src/mcp-server/tools/accountingPatchAccountingJournal.ts
+  - src/mcp-server/tools/accountingPatchAccountingOrder.ts
+  - src/mcp-server/tools/accountingPatchAccountingTaxrate.ts
+  - src/mcp-server/tools/accountingPatchAccountingTransaction.ts
+  - src/mcp-server/tools/accountingRemoveAccountingAccount.ts
+  - src/mcp-server/tools/accountingRemoveAccountingContact.ts
+  - src/mcp-server/tools/accountingRemoveAccountingInvoice.ts
+  - src/mcp-server/tools/accountingRemoveAccountingJournal.ts
+  - src/mcp-server/tools/accountingRemoveAccountingOrder.ts
+  - src/mcp-server/tools/accountingRemoveAccountingTaxrate.ts
+  - src/mcp-server/tools/accountingRemoveAccountingTransaction.ts
+  - src/mcp-server/tools/accountingUpdateAccountingAccount.ts
+  - src/mcp-server/tools/accountingUpdateAccountingContact.ts
+  - src/mcp-server/tools/accountingUpdateAccountingInvoice.ts
+  - src/mcp-server/tools/accountingUpdateAccountingJournal.ts
+  - src/mcp-server/tools/accountingUpdateAccountingOrder.ts
+  - src/mcp-server/tools/accountingUpdateAccountingTaxrate.ts
+  - src/mcp-server/tools/accountingUpdateAccountingTransaction.ts
+  - src/mcp-server/tools/activityCreateAtsActivity.ts
+  - src/mcp-server/tools/activityGetAtsActivity.ts
+  - src/mcp-server/tools/activityListAtsActivities.ts
+  - src/mcp-server/tools/activityPatchAtsActivity.ts
+  - src/mcp-server/tools/activityRemoveAtsActivity.ts
+  - src/mcp-server/tools/activityUpdateAtsActivity.ts
+  - src/mcp-server/tools/apicallGetUnifiedApicall.ts
+  - src/mcp-server/tools/apicallListUnifiedApicalls.ts
+  - src/mcp-server/tools/applicationCreateAtsApplication.ts
+  - src/mcp-server/tools/applicationGetAtsApplication.ts
+  - src/mcp-server/tools/applicationListAtsApplications.ts
+  - src/mcp-server/tools/applicationPatchAtsApplication.ts
+  - src/mcp-server/tools/applicationRemoveAtsApplication.ts
+  - src/mcp-server/tools/applicationUpdateAtsApplication.ts
+  - src/mcp-server/tools/applicationstatusListAtsApplicationstatuses.ts
+  - src/mcp-server/tools/atsCreateAtsActivity.ts
+  - src/mcp-server/tools/atsCreateAtsApplication.ts
+  - src/mcp-server/tools/atsCreateAtsCandidate.ts
+  - src/mcp-server/tools/atsCreateAtsDocument.ts
+  - src/mcp-server/tools/atsCreateAtsInterview.ts
+  - src/mcp-server/tools/atsCreateAtsJob.ts
+  - src/mcp-server/tools/atsCreateAtsScorecard.ts
+  - src/mcp-server/tools/atsGetAtsActivity.ts
+  - src/mcp-server/tools/atsGetAtsApplication.ts
+  - src/mcp-server/tools/atsGetAtsCandidate.ts
+  - src/mcp-server/tools/atsGetAtsCompany.ts
+  - src/mcp-server/tools/atsGetAtsDocument.ts
+  - src/mcp-server/tools/atsGetAtsInterview.ts
+  - src/mcp-server/tools/atsGetAtsJob.ts
+  - src/mcp-server/tools/atsGetAtsScorecard.ts
+  - src/mcp-server/tools/atsListAtsActivities.ts
+  - src/mcp-server/tools/atsListAtsApplications.ts
+  - src/mcp-server/tools/atsListAtsApplicationstatuses.ts
+  - src/mcp-server/tools/atsListAtsCandidates.ts
+  - src/mcp-server/tools/atsListAtsCompanies.ts
+  - src/mcp-server/tools/atsListAtsDocuments.ts
+  - src/mcp-server/tools/atsListAtsInterviews.ts
+  - src/mcp-server/tools/atsListAtsJobs.ts
+  - src/mcp-server/tools/atsListAtsScorecards.ts
+  - src/mcp-server/tools/atsPatchAtsActivity.ts
+  - src/mcp-server/tools/atsPatchAtsApplication.ts
+  - src/mcp-server/tools/atsPatchAtsCandidate.ts
+  - src/mcp-server/tools/atsPatchAtsDocument.ts
+  - src/mcp-server/tools/atsPatchAtsInterview.ts
+  - src/mcp-server/tools/atsPatchAtsJob.ts
+  - src/mcp-server/tools/atsPatchAtsScorecard.ts
+  - src/mcp-server/tools/atsRemoveAtsActivity.ts
+  - src/mcp-server/tools/atsRemoveAtsApplication.ts
+  - src/mcp-server/tools/atsRemoveAtsCandidate.ts
+  - src/mcp-server/tools/atsRemoveAtsDocument.ts
+  - src/mcp-server/tools/atsRemoveAtsInterview.ts
+  - src/mcp-server/tools/atsRemoveAtsJob.ts
+  - src/mcp-server/tools/atsRemoveAtsScorecard.ts
+  - src/mcp-server/tools/atsUpdateAtsActivity.ts
+  - src/mcp-server/tools/atsUpdateAtsApplication.ts
+  - src/mcp-server/tools/atsUpdateAtsCandidate.ts
+  - src/mcp-server/tools/atsUpdateAtsDocument.ts
+  - src/mcp-server/tools/atsUpdateAtsInterview.ts
+  - src/mcp-server/tools/atsUpdateAtsJob.ts
+  - src/mcp-server/tools/atsUpdateAtsScorecard.ts
+  - src/mcp-server/tools/authGetUnifiedIntegrationAuth.ts
+  - src/mcp-server/tools/authGetUnifiedIntegrationLogin.ts
+  - src/mcp-server/tools/branchCreateRepoBranch.ts
+  - src/mcp-server/tools/branchGetRepoBranch.ts
+  - src/mcp-server/tools/branchListRepoBranches.ts
+  - src/mcp-server/tools/branchPatchRepoBranch.ts
+  - src/mcp-server/tools/branchRemoveRepoBranch.ts
+  - src/mcp-server/tools/branchUpdateRepoBranch.ts
+  - src/mcp-server/tools/busyListCalendarBusies.ts
+  - src/mcp-server/tools/calendarCreateCalendarCalendar.ts
+  - src/mcp-server/tools/calendarCreateCalendarEvent.ts
+  - src/mcp-server/tools/calendarCreateCalendarLink.ts
+  - src/mcp-server/tools/calendarGetCalendarCalendar.ts
+  - src/mcp-server/tools/calendarGetCalendarEvent.ts
+  - src/mcp-server/tools/calendarGetCalendarLink.ts
+  - src/mcp-server/tools/calendarGetCalendarRecording.ts
+  - src/mcp-server/tools/calendarListCalendarBusies.ts
+  - src/mcp-server/tools/calendarListCalendarCalendars.ts
+  - src/mcp-server/tools/calendarListCalendarEvents.ts
+  - src/mcp-server/tools/calendarListCalendarLinks.ts
+  - src/mcp-server/tools/calendarListCalendarRecordings.ts
+  - src/mcp-server/tools/calendarPatchCalendarCalendar.ts
+  - src/mcp-server/tools/calendarPatchCalendarEvent.ts
+  - src/mcp-server/tools/calendarPatchCalendarLink.ts
+  - src/mcp-server/tools/calendarRemoveCalendarCalendar.ts
+  - src/mcp-server/tools/calendarRemoveCalendarEvent.ts
+  - src/mcp-server/tools/calendarRemoveCalendarLink.ts
+  - src/mcp-server/tools/calendarUpdateCalendarCalendar.ts
+  - src/mcp-server/tools/calendarUpdateCalendarEvent.ts
+  - src/mcp-server/tools/calendarUpdateCalendarLink.ts
+  - src/mcp-server/tools/callListUcCalls.ts
+  - src/mcp-server/tools/candidateCreateAtsCandidate.ts
+  - src/mcp-server/tools/candidateGetAtsCandidate.ts
+  - src/mcp-server/tools/candidateListAtsCandidates.ts
+  - src/mcp-server/tools/candidatePatchAtsCandidate.ts
+  - src/mcp-server/tools/candidateRemoveAtsCandidate.ts
+  - src/mcp-server/tools/candidateUpdateAtsCandidate.ts
+  - src/mcp-server/tools/channelGetMessagingChannel.ts
+  - src/mcp-server/tools/channelListMessagingChannels.ts
+  - src/mcp-server/tools/classCreateLmsClass.ts
+  - src/mcp-server/tools/classGetLmsClass.ts
+  - src/mcp-server/tools/classListLmsClasses.ts
+  - src/mcp-server/tools/classPatchLmsClass.ts
+  - src/mcp-server/tools/classRemoveLmsClass.ts
+  - src/mcp-server/tools/classUpdateLmsClass.ts
+  - src/mcp-server/tools/collectionCreateCommerceCollection.ts
+  - src/mcp-server/tools/collectionGetCommerceCollection.ts
+  - src/mcp-server/tools/collectionListCommerceCollections.ts
+  - src/mcp-server/tools/collectionPatchCommerceCollection.ts
+  - src/mcp-server/tools/collectionRemoveCommerceCollection.ts
+  - src/mcp-server/tools/collectionUpdateCommerceCollection.ts
+  - src/mcp-server/tools/commentCreateKmsComment.ts
+  - src/mcp-server/tools/commentCreateTaskComment.ts
+  - src/mcp-server/tools/commentCreateUcComment.ts
+  - src/mcp-server/tools/commentGetKmsComment.ts
+  - src/mcp-server/tools/commentGetTaskComment.ts
+  - src/mcp-server/tools/commentGetUcComment.ts
+  - src/mcp-server/tools/commentListKmsComments.ts
+  - src/mcp-server/tools/commentListTaskComments.ts
+  - src/mcp-server/tools/commentListUcComments.ts
+  - src/mcp-server/tools/commentPatchKmsComment.ts
+  - src/mcp-server/tools/commentPatchTaskComment.ts
+  - src/mcp-server/tools/commentPatchUcComment.ts
+  - src/mcp-server/tools/commentRemoveKmsComment.ts
+  - src/mcp-server/tools/commentRemoveTaskComment.ts
+  - src/mcp-server/tools/commentRemoveUcComment.ts
+  - src/mcp-server/tools/commentUpdateKmsComment.ts
+  - src/mcp-server/tools/commentUpdateTaskComment.ts
+  - src/mcp-server/tools/commentUpdateUcComment.ts
+  - src/mcp-server/tools/commerceCreateCommerceCollection.ts
+  - src/mcp-server/tools/commerceCreateCommerceInventory.ts
+  - src/mcp-server/tools/commerceCreateCommerceItem.ts
+  - src/mcp-server/tools/commerceCreateCommerceLocation.ts
+  - src/mcp-server/tools/commerceCreateCommerceReview.ts
+  - src/mcp-server/tools/commerceGetCommerceCollection.ts
+  - src/mcp-server/tools/commerceGetCommerceInventory.ts
+  - src/mcp-server/tools/commerceGetCommerceItem.ts
+  - src/mcp-server/tools/commerceGetCommerceLocation.ts
+  - src/mcp-server/tools/commerceGetCommerceReview.ts
+  - src/mcp-server/tools/commerceListCommerceCollections.ts
+  - src/mcp-server/tools/commerceListCommerceInventories.ts
+  - src/mcp-server/tools/commerceListCommerceItems.ts
+  - src/mcp-server/tools/commerceListCommerceLocations.ts
+  - src/mcp-server/tools/commerceListCommerceReviews.ts
+  - src/mcp-server/tools/commercePatchCommerceCollection.ts
+  - src/mcp-server/tools/commercePatchCommerceInventory.ts
+  - src/mcp-server/tools/commercePatchCommerceItem.ts
+  - src/mcp-server/tools/commercePatchCommerceLocation.ts
+  - src/mcp-server/tools/commercePatchCommerceReview.ts
+  - src/mcp-server/tools/commerceRemoveCommerceCollection.ts
+  - src/mcp-server/tools/commerceRemoveCommerceInventory.ts
+  - src/mcp-server/tools/commerceRemoveCommerceItem.ts
+  - src/mcp-server/tools/commerceRemoveCommerceLocation.ts
+  - src/mcp-server/tools/commerceRemoveCommerceReview.ts
+  - src/mcp-server/tools/commerceUpdateCommerceCollection.ts
+  - src/mcp-server/tools/commerceUpdateCommerceInventory.ts
+  - src/mcp-server/tools/commerceUpdateCommerceItem.ts
+  - src/mcp-server/tools/commerceUpdateCommerceLocation.ts
+  - src/mcp-server/tools/commerceUpdateCommerceReview.ts
+  - src/mcp-server/tools/commitCreateRepoCommit.ts
+  - src/mcp-server/tools/commitGetRepoCommit.ts
+  - src/mcp-server/tools/commitListRepoCommits.ts
+  - src/mcp-server/tools/commitPatchRepoCommit.ts
+  - src/mcp-server/tools/commitRemoveRepoCommit.ts
+  - src/mcp-server/tools/commitUpdateRepoCommit.ts
+  - src/mcp-server/tools/companyCreateCrmCompany.ts
+  - src/mcp-server/tools/companyCreateHrisCompany.ts
+  - src/mcp-server/tools/companyGetAtsCompany.ts
+  - src/mcp-server/tools/companyGetCrmCompany.ts
+  - src/mcp-server/tools/companyGetHrisCompany.ts
+  - src/mcp-server/tools/companyListAtsCompanies.ts
+  - src/mcp-server/tools/companyListCrmCompanies.ts
+  - src/mcp-server/tools/companyListEnrichCompanies.ts
+  - src/mcp-server/tools/companyListHrisCompanies.ts
+  - src/mcp-server/tools/companyPatchCrmCompany.ts
+  - src/mcp-server/tools/companyPatchHrisCompany.ts
+  - src/mcp-server/tools/companyRemoveCrmCompany.ts
+  - src/mcp-server/tools/companyRemoveHrisCompany.ts
+  - src/mcp-server/tools/companyUpdateCrmCompany.ts
+  - src/mcp-server/tools/companyUpdateHrisCompany.ts
+  - src/mcp-server/tools/connectionCreateUnifiedConnection.ts
+  - src/mcp-server/tools/connectionGetUnifiedConnection.ts
+  - src/mcp-server/tools/connectionListUnifiedConnections.ts
+  - src/mcp-server/tools/connectionPatchUnifiedConnection.ts
+  - src/mcp-server/tools/connectionRemoveUnifiedConnection.ts
+  - src/mcp-server/tools/connectionUpdateUnifiedConnection.ts
+  - src/mcp-server/tools/contactCreateAccountingContact.ts
+  - src/mcp-server/tools/contactCreateCrmContact.ts
+  - src/mcp-server/tools/contactCreateUcContact.ts
+  - src/mcp-server/tools/contactGetAccountingContact.ts
+  - src/mcp-server/tools/contactGetCrmContact.ts
+  - src/mcp-server/tools/contactGetUcContact.ts
+  - src/mcp-server/tools/contactListAccountingContacts.ts
+  - src/mcp-server/tools/contactListCrmContacts.ts
+  - src/mcp-server/tools/contactListUcContacts.ts
+  - src/mcp-server/tools/contactPatchAccountingContact.ts
+  - src/mcp-server/tools/contactPatchCrmContact.ts
+  - src/mcp-server/tools/contactPatchUcContact.ts
+  - src/mcp-server/tools/contactRemoveAccountingContact.ts
+  - src/mcp-server/tools/contactRemoveCrmContact.ts
+  - src/mcp-server/tools/contactRemoveUcContact.ts
+  - src/mcp-server/tools/contactUpdateAccountingContact.ts
+  - src/mcp-server/tools/contactUpdateCrmContact.ts
+  - src/mcp-server/tools/contactUpdateUcContact.ts
+  - src/mcp-server/tools/courseCreateLmsCourse.ts
+  - src/mcp-server/tools/courseGetLmsCourse.ts
+  - src/mcp-server/tools/courseListLmsCourses.ts
+  - src/mcp-server/tools/coursePatchLmsCourse.ts
+  - src/mcp-server/tools/courseRemoveLmsCourse.ts
+  - src/mcp-server/tools/courseUpdateLmsCourse.ts
+  - src/mcp-server/tools/crmCreateCrmCompany.ts
+  - src/mcp-server/tools/crmCreateCrmContact.ts
+  - src/mcp-server/tools/crmCreateCrmDeal.ts
+  - src/mcp-server/tools/crmCreateCrmEvent.ts
+  - src/mcp-server/tools/crmCreateCrmLead.ts
+  - src/mcp-server/tools/crmCreateCrmPipeline.ts
+  - src/mcp-server/tools/crmGetCrmCompany.ts
+  - src/mcp-server/tools/crmGetCrmContact.ts
+  - src/mcp-server/tools/crmGetCrmDeal.ts
+  - src/mcp-server/tools/crmGetCrmEvent.ts
+  - src/mcp-server/tools/crmGetCrmLead.ts
+  - src/mcp-server/tools/crmGetCrmPipeline.ts
+  - src/mcp-server/tools/crmListCrmCompanies.ts
+  - src/mcp-server/tools/crmListCrmContacts.ts
+  - src/mcp-server/tools/crmListCrmDeals.ts
+  - src/mcp-server/tools/crmListCrmEvents.ts
+  - src/mcp-server/tools/crmListCrmLeads.ts
+  - src/mcp-server/tools/crmListCrmPipelines.ts
+  - src/mcp-server/tools/crmPatchCrmCompany.ts
+  - src/mcp-server/tools/crmPatchCrmContact.ts
+  - src/mcp-server/tools/crmPatchCrmDeal.ts
+  - src/mcp-server/tools/crmPatchCrmEvent.ts
+  - src/mcp-server/tools/crmPatchCrmLead.ts
+  - src/mcp-server/tools/crmPatchCrmPipeline.ts
+  - src/mcp-server/tools/crmRemoveCrmCompany.ts
+  - src/mcp-server/tools/crmRemoveCrmContact.ts
+  - src/mcp-server/tools/crmRemoveCrmDeal.ts
+  - src/mcp-server/tools/crmRemoveCrmEvent.ts
+  - src/mcp-server/tools/crmRemoveCrmLead.ts
+  - src/mcp-server/tools/crmRemoveCrmPipeline.ts
+  - src/mcp-server/tools/crmUpdateCrmCompany.ts
+  - src/mcp-server/tools/crmUpdateCrmContact.ts
+  - src/mcp-server/tools/crmUpdateCrmDeal.ts
+  - src/mcp-server/tools/crmUpdateCrmEvent.ts
+  - src/mcp-server/tools/crmUpdateCrmLead.ts
+  - src/mcp-server/tools/crmUpdateCrmPipeline.ts
+  - src/mcp-server/tools/customerCreateTicketingCustomer.ts
+  - src/mcp-server/tools/customerGetTicketingCustomer.ts
+  - src/mcp-server/tools/customerListTicketingCustomers.ts
+  - src/mcp-server/tools/customerPatchTicketingCustomer.ts
+  - src/mcp-server/tools/customerRemoveTicketingCustomer.ts
+  - src/mcp-server/tools/customerUpdateTicketingCustomer.ts
+  - src/mcp-server/tools/dealCreateCrmDeal.ts
+  - src/mcp-server/tools/dealGetCrmDeal.ts
+  - src/mcp-server/tools/dealListCrmDeals.ts
+  - src/mcp-server/tools/dealPatchCrmDeal.ts
+  - src/mcp-server/tools/dealRemoveCrmDeal.ts
+  - src/mcp-server/tools/dealUpdateCrmDeal.ts
+  - src/mcp-server/tools/deviceCreateHrisDevice.ts
+  - src/mcp-server/tools/deviceGetHrisDevice.ts
+  - src/mcp-server/tools/deviceListHrisDevices.ts
+  - src/mcp-server/tools/devicePatchHrisDevice.ts
+  - src/mcp-server/tools/deviceRemoveHrisDevice.ts
+  - src/mcp-server/tools/deviceUpdateHrisDevice.ts
+  - src/mcp-server/tools/documentCreateAtsDocument.ts
+  - src/mcp-server/tools/documentGetAtsDocument.ts
+  - src/mcp-server/tools/documentListAtsDocuments.ts
+  - src/mcp-server/tools/documentPatchAtsDocument.ts
+  - src/mcp-server/tools/documentRemoveAtsDocument.ts
+  - src/mcp-server/tools/documentUpdateAtsDocument.ts
+  - src/mcp-server/tools/employeeCreateHrisEmployee.ts
+  - src/mcp-server/tools/employeeGetHrisEmployee.ts
+  - src/mcp-server/tools/employeeListHrisEmployees.ts
+  - src/mcp-server/tools/employeePatchHrisEmployee.ts
+  - src/mcp-server/tools/employeeRemoveHrisEmployee.ts
+  - src/mcp-server/tools/employeeUpdateHrisEmployee.ts
+  - src/mcp-server/tools/enrichListEnrichCompanies.ts
+  - src/mcp-server/tools/enrichListEnrichPeople.ts
+  - src/mcp-server/tools/eventCreateCalendarEvent.ts
+  - src/mcp-server/tools/eventCreateCrmEvent.ts
+  - src/mcp-server/tools/eventGetCalendarEvent.ts
+  - src/mcp-server/tools/eventGetCrmEvent.ts
+  - src/mcp-server/tools/eventListCalendarEvents.ts
+  - src/mcp-server/tools/eventListCrmEvents.ts
+  - src/mcp-server/tools/eventPatchCalendarEvent.ts
+  - src/mcp-server/tools/eventPatchCrmEvent.ts
+  - src/mcp-server/tools/eventRemoveCalendarEvent.ts
+  - src/mcp-server/tools/eventRemoveCrmEvent.ts
+  - src/mcp-server/tools/eventUpdateCalendarEvent.ts
+  - src/mcp-server/tools/eventUpdateCrmEvent.ts
+  - src/mcp-server/tools/fileCreateStorageFile.ts
+  - src/mcp-server/tools/fileGetStorageFile.ts
+  - src/mcp-server/tools/fileListStorageFiles.ts
+  - src/mcp-server/tools/filePatchStorageFile.ts
+  - src/mcp-server/tools/fileRemoveStorageFile.ts
+  - src/mcp-server/tools/fileUpdateStorageFile.ts
+  - src/mcp-server/tools/genaiCreateGenaiPrompt.ts
+  - src/mcp-server/tools/genaiListGenaiModels.ts
+  - src/mcp-server/tools/groupCreateHrisGroup.ts
+  - src/mcp-server/tools/groupCreateScimGroups.ts
+  - src/mcp-server/tools/groupGetHrisGroup.ts
+  - src/mcp-server/tools/groupGetScimGroups.ts
+  - src/mcp-server/tools/groupListHrisGroups.ts
+  - src/mcp-server/tools/groupListScimGroups.ts
+  - src/mcp-server/tools/groupPatchHrisGroup.ts
+  - src/mcp-server/tools/groupPatchScimGroups.ts
+  - src/mcp-server/tools/groupRemoveHrisGroup.ts
+  - src/mcp-server/tools/groupRemoveScimGroups.ts
+  - src/mcp-server/tools/groupUpdateHrisGroup.ts
+  - src/mcp-server/tools/groupUpdateScimGroups.ts
+  - src/mcp-server/tools/hrisCreateHrisCompany.ts
+  - src/mcp-server/tools/hrisCreateHrisDevice.ts
+  - src/mcp-server/tools/hrisCreateHrisEmployee.ts
+  - src/mcp-server/tools/hrisCreateHrisGroup.ts
+  - src/mcp-server/tools/hrisCreateHrisLocation.ts
+  - src/mcp-server/tools/hrisGetHrisCompany.ts
+  - src/mcp-server/tools/hrisGetHrisDevice.ts
+  - src/mcp-server/tools/hrisGetHrisEmployee.ts
+  - src/mcp-server/tools/hrisGetHrisGroup.ts
+  - src/mcp-server/tools/hrisGetHrisLocation.ts
+  - src/mcp-server/tools/hrisGetHrisPayslip.ts
+  - src/mcp-server/tools/hrisGetHrisTimeoff.ts
+  - src/mcp-server/tools/hrisListHrisCompanies.ts
+  - src/mcp-server/tools/hrisListHrisDevices.ts
+  - src/mcp-server/tools/hrisListHrisEmployees.ts
+  - src/mcp-server/tools/hrisListHrisGroups.ts
+  - src/mcp-server/tools/hrisListHrisLocations.ts
+  - src/mcp-server/tools/hrisListHrisPayslips.ts
+  - src/mcp-server/tools/hrisListHrisTimeoffs.ts
+  - src/mcp-server/tools/hrisPatchHrisCompany.ts
+  - src/mcp-server/tools/hrisPatchHrisDevice.ts
+  - src/mcp-server/tools/hrisPatchHrisEmployee.ts
+  - src/mcp-server/tools/hrisPatchHrisGroup.ts
+  - src/mcp-server/tools/hrisPatchHrisLocation.ts
+  - src/mcp-server/tools/hrisRemoveHrisCompany.ts
+  - src/mcp-server/tools/hrisRemoveHrisDevice.ts
+  - src/mcp-server/tools/hrisRemoveHrisEmployee.ts
+  - src/mcp-server/tools/hrisRemoveHrisGroup.ts
+  - src/mcp-server/tools/hrisRemoveHrisLocation.ts
+  - src/mcp-server/tools/hrisUpdateHrisCompany.ts
+  - src/mcp-server/tools/hrisUpdateHrisDevice.ts
+  - src/mcp-server/tools/hrisUpdateHrisEmployee.ts
+  - src/mcp-server/tools/hrisUpdateHrisGroup.ts
+  - src/mcp-server/tools/hrisUpdateHrisLocation.ts
+  - src/mcp-server/tools/instructorCreateLmsInstructor.ts
+  - src/mcp-server/tools/instructorGetLmsInstructor.ts
+  - src/mcp-server/tools/instructorListLmsInstructors.ts
+  - src/mcp-server/tools/instructorPatchLmsInstructor.ts
+  - src/mcp-server/tools/instructorRemoveLmsInstructor.ts
+  - src/mcp-server/tools/instructorUpdateLmsInstructor.ts
+  - src/mcp-server/tools/integrationGetUnifiedIntegrationAuth.ts
+  - src/mcp-server/tools/integrationListUnifiedIntegrationWorkspaces.ts
+  - src/mcp-server/tools/integrationListUnifiedIntegrations.ts
+  - src/mcp-server/tools/interviewCreateAtsInterview.ts
+  - src/mcp-server/tools/interviewGetAtsInterview.ts
+  - src/mcp-server/tools/interviewListAtsInterviews.ts
+  - src/mcp-server/tools/interviewPatchAtsInterview.ts
+  - src/mcp-server/tools/interviewRemoveAtsInterview.ts
+  - src/mcp-server/tools/interviewUpdateAtsInterview.ts
+  - src/mcp-server/tools/inventoryCreateCommerceInventory.ts
+  - src/mcp-server/tools/inventoryGetCommerceInventory.ts
+  - src/mcp-server/tools/inventoryListCommerceInventories.ts
+  - src/mcp-server/tools/inventoryPatchCommerceInventory.ts
+  - src/mcp-server/tools/inventoryRemoveCommerceInventory.ts
+  - src/mcp-server/tools/inventoryUpdateCommerceInventory.ts
+  - src/mcp-server/tools/invoiceCreateAccountingInvoice.ts
+  - src/mcp-server/tools/invoiceGetAccountingInvoice.ts
+  - src/mcp-server/tools/invoiceListAccountingInvoices.ts
+  - src/mcp-server/tools/invoicePatchAccountingInvoice.ts
+  - src/mcp-server/tools/invoiceRemoveAccountingInvoice.ts
+  - src/mcp-server/tools/invoiceUpdateAccountingInvoice.ts
+  - src/mcp-server/tools/issueListUnifiedIssues.ts
+  - src/mcp-server/tools/itemCreateCommerceItem.ts
+  - src/mcp-server/tools/itemGetCommerceItem.ts
+  - src/mcp-server/tools/itemListCommerceItems.ts
+  - src/mcp-server/tools/itemPatchCommerceItem.ts
+  - src/mcp-server/tools/itemRemoveCommerceItem.ts
+  - src/mcp-server/tools/itemUpdateCommerceItem.ts
+  - src/mcp-server/tools/jobCreateAtsJob.ts
+  - src/mcp-server/tools/jobGetAtsJob.ts
+  - src/mcp-server/tools/jobListAtsJobs.ts
+  - src/mcp-server/tools/jobPatchAtsJob.ts
+  - src/mcp-server/tools/jobRemoveAtsJob.ts
+  - src/mcp-server/tools/jobUpdateAtsJob.ts
+  - src/mcp-server/tools/journalCreateAccountingJournal.ts
+  - src/mcp-server/tools/journalGetAccountingJournal.ts
+  - src/mcp-server/tools/journalListAccountingJournals.ts
+  - src/mcp-server/tools/journalPatchAccountingJournal.ts
+  - src/mcp-server/tools/journalRemoveAccountingJournal.ts
+  - src/mcp-server/tools/journalUpdateAccountingJournal.ts
+  - src/mcp-server/tools/kmsCreateKmsComment.ts
+  - src/mcp-server/tools/kmsCreateKmsPage.ts
+  - src/mcp-server/tools/kmsCreateKmsSpace.ts
+  - src/mcp-server/tools/kmsGetKmsComment.ts
+  - src/mcp-server/tools/kmsGetKmsPage.ts
+  - src/mcp-server/tools/kmsGetKmsSpace.ts
+  - src/mcp-server/tools/kmsListKmsComments.ts
+  - src/mcp-server/tools/kmsListKmsPages.ts
+  - src/mcp-server/tools/kmsListKmsSpaces.ts
+  - src/mcp-server/tools/kmsPatchKmsComment.ts
+  - src/mcp-server/tools/kmsPatchKmsPage.ts
+  - src/mcp-server/tools/kmsPatchKmsSpace.ts
+  - src/mcp-server/tools/kmsRemoveKmsComment.ts
+  - src/mcp-server/tools/kmsRemoveKmsPage.ts
+  - src/mcp-server/tools/kmsRemoveKmsSpace.ts
+  - src/mcp-server/tools/kmsUpdateKmsComment.ts
+  - src/mcp-server/tools/kmsUpdateKmsPage.ts
+  - src/mcp-server/tools/kmsUpdateKmsSpace.ts
+  - src/mcp-server/tools/leadCreateCrmLead.ts
+  - src/mcp-server/tools/leadGetCrmLead.ts
+  - src/mcp-server/tools/leadListCrmLeads.ts
+  - src/mcp-server/tools/leadPatchCrmLead.ts
+  - src/mcp-server/tools/leadRemoveCrmLead.ts
+  - src/mcp-server/tools/leadUpdateCrmLead.ts
+  - src/mcp-server/tools/linkCreateCalendarLink.ts
+  - src/mcp-server/tools/linkCreatePaymentLink.ts
+  - src/mcp-server/tools/linkGetCalendarLink.ts
+  - src/mcp-server/tools/linkGetPaymentLink.ts
+  - src/mcp-server/tools/linkListCalendarLinks.ts
+  - src/mcp-server/tools/linkListPaymentLinks.ts
+  - src/mcp-server/tools/linkPatchCalendarLink.ts
+  - src/mcp-server/tools/linkPatchPaymentLink.ts
+  - src/mcp-server/tools/linkRemoveCalendarLink.ts
+  - src/mcp-server/tools/linkRemovePaymentLink.ts
+  - src/mcp-server/tools/linkUpdateCalendarLink.ts
+  - src/mcp-server/tools/linkUpdatePaymentLink.ts
+  - src/mcp-server/tools/listCreateMartechList.ts
+  - src/mcp-server/tools/listGetMartechList.ts
+  - src/mcp-server/tools/listListMartechLists.ts
+  - src/mcp-server/tools/listPatchMartechList.ts
+  - src/mcp-server/tools/listRemoveMartechList.ts
+  - src/mcp-server/tools/listUpdateMartechList.ts
+  - src/mcp-server/tools/lmsCreateLmsClass.ts
+  - src/mcp-server/tools/lmsCreateLmsCourse.ts
+  - src/mcp-server/tools/lmsCreateLmsInstructor.ts
+  - src/mcp-server/tools/lmsCreateLmsStudent.ts
+  - src/mcp-server/tools/lmsGetLmsClass.ts
+  - src/mcp-server/tools/lmsGetLmsCourse.ts
+  - src/mcp-server/tools/lmsGetLmsInstructor.ts
+  - src/mcp-server/tools/lmsGetLmsStudent.ts
+  - src/mcp-server/tools/lmsListLmsClasses.ts
+  - src/mcp-server/tools/lmsListLmsCourses.ts
+  - src/mcp-server/tools/lmsListLmsInstructors.ts
+  - src/mcp-server/tools/lmsListLmsStudents.ts
+  - src/mcp-server/tools/lmsPatchLmsClass.ts
+  - src/mcp-server/tools/lmsPatchLmsCourse.ts
+  - src/mcp-server/tools/lmsPatchLmsInstructor.ts
+  - src/mcp-server/tools/lmsPatchLmsStudent.ts
+  - src/mcp-server/tools/lmsRemoveLmsClass.ts
+  - src/mcp-server/tools/lmsRemoveLmsCourse.ts
+  - src/mcp-server/tools/lmsRemoveLmsInstructor.ts
+  - src/mcp-server/tools/lmsRemoveLmsStudent.ts
+  - src/mcp-server/tools/lmsUpdateLmsClass.ts
+  - src/mcp-server/tools/lmsUpdateLmsCourse.ts
+  - src/mcp-server/tools/lmsUpdateLmsInstructor.ts
+  - src/mcp-server/tools/lmsUpdateLmsStudent.ts
+  - src/mcp-server/tools/locationCreateCommerceLocation.ts
+  - src/mcp-server/tools/locationCreateHrisLocation.ts
+  - src/mcp-server/tools/locationGetCommerceLocation.ts
+  - src/mcp-server/tools/locationGetHrisLocation.ts
+  - src/mcp-server/tools/locationListCommerceLocations.ts
+  - src/mcp-server/tools/locationListHrisLocations.ts
+  - src/mcp-server/tools/locationPatchCommerceLocation.ts
+  - src/mcp-server/tools/locationPatchHrisLocation.ts
+  - src/mcp-server/tools/locationRemoveCommerceLocation.ts
+  - src/mcp-server/tools/locationRemoveHrisLocation.ts
+  - src/mcp-server/tools/locationUpdateCommerceLocation.ts
+  - src/mcp-server/tools/locationUpdateHrisLocation.ts
+  - src/mcp-server/tools/loginGetUnifiedIntegrationLogin.ts
+  - src/mcp-server/tools/martechCreateMartechList.ts
+  - src/mcp-server/tools/martechCreateMartechMember.ts
+  - src/mcp-server/tools/martechGetMartechList.ts
+  - src/mcp-server/tools/martechGetMartechMember.ts
+  - src/mcp-server/tools/martechListMartechLists.ts
+  - src/mcp-server/tools/martechListMartechMembers.ts
+  - src/mcp-server/tools/martechPatchMartechList.ts
+  - src/mcp-server/tools/martechPatchMartechMember.ts
+  - src/mcp-server/tools/martechRemoveMartechList.ts
+  - src/mcp-server/tools/martechRemoveMartechMember.ts
+  - src/mcp-server/tools/martechUpdateMartechList.ts
+  - src/mcp-server/tools/martechUpdateMartechMember.ts
+  - src/mcp-server/tools/memberCreateMartechMember.ts
+  - src/mcp-server/tools/memberGetMartechMember.ts
+  - src/mcp-server/tools/memberListMartechMembers.ts
+  - src/mcp-server/tools/memberPatchMartechMember.ts
+  - src/mcp-server/tools/memberRemoveMartechMember.ts
+  - src/mcp-server/tools/memberUpdateMartechMember.ts
+  - src/mcp-server/tools/messageCreateMessagingMessage.ts
+  - src/mcp-server/tools/messageGetMessagingMessage.ts
+  - src/mcp-server/tools/messageListMessagingMessages.ts
+  - src/mcp-server/tools/messagePatchMessagingMessage.ts
+  - src/mcp-server/tools/messageRemoveMessagingMessage.ts
+  - src/mcp-server/tools/messageUpdateMessagingMessage.ts
+  - src/mcp-server/tools/messagingCreateMessagingMessage.ts
+  - src/mcp-server/tools/messagingGetMessagingChannel.ts
+  - src/mcp-server/tools/messagingGetMessagingMessage.ts
+  - src/mcp-server/tools/messagingListMessagingChannels.ts
+  - src/mcp-server/tools/messagingListMessagingMessages.ts
+  - src/mcp-server/tools/messagingPatchMessagingMessage.ts
+  - src/mcp-server/tools/messagingRemoveMessagingMessage.ts
+  - src/mcp-server/tools/messagingUpdateMessagingMessage.ts
+  - src/mcp-server/tools/metadataCreateMetadataMetadata.ts
+  - src/mcp-server/tools/metadataGetMetadataMetadata.ts
+  - src/mcp-server/tools/metadataListMetadataMetadatas.ts
+  - src/mcp-server/tools/metadataPatchMetadataMetadata.ts
+  - src/mcp-server/tools/metadataRemoveMetadataMetadata.ts
+  - src/mcp-server/tools/metadataUpdateMetadataMetadata.ts
+  - src/mcp-server/tools/modelListGenaiModels.ts
+  - src/mcp-server/tools/noteCreateTicketingNote.ts
+  - src/mcp-server/tools/noteGetTicketingNote.ts
+  - src/mcp-server/tools/noteListTicketingNotes.ts
+  - src/mcp-server/tools/notePatchTicketingNote.ts
+  - src/mcp-server/tools/noteRemoveTicketingNote.ts
+  - src/mcp-server/tools/noteUpdateTicketingNote.ts
+  - src/mcp-server/tools/orderCreateAccountingOrder.ts
+  - src/mcp-server/tools/orderGetAccountingOrder.ts
+  - src/mcp-server/tools/orderListAccountingOrders.ts
+  - src/mcp-server/tools/orderPatchAccountingOrder.ts
+  - src/mcp-server/tools/orderRemoveAccountingOrder.ts
+  - src/mcp-server/tools/orderUpdateAccountingOrder.ts
+  - src/mcp-server/tools/organizationCreateRepoOrganization.ts
+  - src/mcp-server/tools/organizationGetAccountingOrganization.ts
+  - src/mcp-server/tools/organizationGetRepoOrganization.ts
+  - src/mcp-server/tools/organizationListAccountingOrganizations.ts
+  - src/mcp-server/tools/organizationListRepoOrganizations.ts
+  - src/mcp-server/tools/organizationPatchRepoOrganization.ts
+  - src/mcp-server/tools/organizationRemoveRepoOrganization.ts
+  - src/mcp-server/tools/organizationUpdateRepoOrganization.ts
+  - src/mcp-server/tools/pageCreateKmsPage.ts
+  - src/mcp-server/tools/pageGetKmsPage.ts
+  - src/mcp-server/tools/pageListKmsPages.ts
+  - src/mcp-server/tools/pagePatchKmsPage.ts
+  - src/mcp-server/tools/pageRemoveKmsPage.ts
+  - src/mcp-server/tools/pageUpdateKmsPage.ts
+  - src/mcp-server/tools/passthroughCreatePassthroughJson.ts
+  - src/mcp-server/tools/passthroughCreatePassthroughRaw.ts
+  - src/mcp-server/tools/passthroughListPassthroughs.ts
+  - src/mcp-server/tools/passthroughPatchPassthroughJson.ts
+  - src/mcp-server/tools/passthroughPatchPassthroughRaw.ts
+  - src/mcp-server/tools/passthroughRemovePassthrough.ts
+  - src/mcp-server/tools/passthroughUpdatePassthroughJson.ts
+  - src/mcp-server/tools/passthroughUpdatePassthroughRaw.ts
+  - src/mcp-server/tools/paymentCreatePaymentLink.ts
+  - src/mcp-server/tools/paymentCreatePaymentPayment.ts
+  - src/mcp-server/tools/paymentCreatePaymentSubscription.ts
+  - src/mcp-server/tools/paymentGetPaymentLink.ts
+  - src/mcp-server/tools/paymentGetPaymentPayment.ts
+  - src/mcp-server/tools/paymentGetPaymentPayout.ts
+  - src/mcp-server/tools/paymentGetPaymentRefund.ts
+  - src/mcp-server/tools/paymentGetPaymentSubscription.ts
+  - src/mcp-server/tools/paymentListPaymentLinks.ts
+  - src/mcp-server/tools/paymentListPaymentPayments.ts
+  - src/mcp-server/tools/paymentListPaymentPayouts.ts
+  - src/mcp-server/tools/paymentListPaymentRefunds.ts
+  - src/mcp-server/tools/paymentListPaymentSubscriptions.ts
+  - src/mcp-server/tools/paymentPatchPaymentLink.ts
+  - src/mcp-server/tools/paymentPatchPaymentPayment.ts
+  - src/mcp-server/tools/paymentPatchPaymentSubscription.ts
+  - src/mcp-server/tools/paymentRemovePaymentLink.ts
+  - src/mcp-server/tools/paymentRemovePaymentPayment.ts
+  - src/mcp-server/tools/paymentRemovePaymentSubscription.ts
+  - src/mcp-server/tools/paymentUpdatePaymentLink.ts
+  - src/mcp-server/tools/paymentUpdatePaymentPayment.ts
+  - src/mcp-server/tools/paymentUpdatePaymentSubscription.ts
+  - src/mcp-server/tools/payoutGetPaymentPayout.ts
+  - src/mcp-server/tools/payoutListPaymentPayouts.ts
+  - src/mcp-server/tools/payslipGetHrisPayslip.ts
+  - src/mcp-server/tools/payslipListHrisPayslips.ts
+  - src/mcp-server/tools/personListEnrichPeople.ts
+  - src/mcp-server/tools/pipelineCreateCrmPipeline.ts
+  - src/mcp-server/tools/pipelineGetCrmPipeline.ts
+  - src/mcp-server/tools/pipelineListCrmPipelines.ts
+  - src/mcp-server/tools/pipelinePatchCrmPipeline.ts
+  - src/mcp-server/tools/pipelineRemoveCrmPipeline.ts
+  - src/mcp-server/tools/pipelineUpdateCrmPipeline.ts
+  - src/mcp-server/tools/projectCreateTaskProject.ts
+  - src/mcp-server/tools/projectGetTaskProject.ts
+  - src/mcp-server/tools/projectListTaskProjects.ts
+  - src/mcp-server/tools/projectPatchTaskProject.ts
+  - src/mcp-server/tools/projectRemoveTaskProject.ts
+  - src/mcp-server/tools/projectUpdateTaskProject.ts
+  - src/mcp-server/tools/promptCreateGenaiPrompt.ts
+  - src/mcp-server/tools/pullrequestCreateRepoPullrequest.ts
+  - src/mcp-server/tools/pullrequestGetRepoPullrequest.ts
+  - src/mcp-server/tools/pullrequestListRepoPullrequests.ts
+  - src/mcp-server/tools/pullrequestPatchRepoPullrequest.ts
+  - src/mcp-server/tools/pullrequestRemoveRepoPullrequest.ts
+  - src/mcp-server/tools/pullrequestUpdateRepoPullrequest.ts
+  - src/mcp-server/tools/recordingCreateUcRecording.ts
+  - src/mcp-server/tools/recordingGetCalendarRecording.ts
+  - src/mcp-server/tools/recordingGetUcRecording.ts
+  - src/mcp-server/tools/recordingListCalendarRecordings.ts
+  - src/mcp-server/tools/recordingListUcRecordings.ts
+  - src/mcp-server/tools/recordingPatchUcRecording.ts
+  - src/mcp-server/tools/recordingRemoveUcRecording.ts
+  - src/mcp-server/tools/recordingUpdateUcRecording.ts
+  - src/mcp-server/tools/refundGetPaymentRefund.ts
+  - src/mcp-server/tools/refundListPaymentRefunds.ts
+  - src/mcp-server/tools/repoCreateRepoBranch.ts
+  - src/mcp-server/tools/repoCreateRepoCommit.ts
+  - src/mcp-server/tools/repoCreateRepoOrganization.ts
+  - src/mcp-server/tools/repoCreateRepoPullrequest.ts
+  - src/mcp-server/tools/repoCreateRepoRepository.ts
+  - src/mcp-server/tools/repoGetRepoBranch.ts
+  - src/mcp-server/tools/repoGetRepoCommit.ts
+  - src/mcp-server/tools/repoGetRepoOrganization.ts
+  - src/mcp-server/tools/repoGetRepoPullrequest.ts
+  - src/mcp-server/tools/repoGetRepoRepository.ts
+  - src/mcp-server/tools/repoListRepoBranches.ts
+  - src/mcp-server/tools/repoListRepoCommits.ts
+  - src/mcp-server/tools/repoListRepoOrganizations.ts
+  - src/mcp-server/tools/repoListRepoPullrequests.ts
+  - src/mcp-server/tools/repoListRepoRepositories.ts
+  - src/mcp-server/tools/repoPatchRepoBranch.ts
+  - src/mcp-server/tools/repoPatchRepoCommit.ts
+  - src/mcp-server/tools/repoPatchRepoOrganization.ts
+  - src/mcp-server/tools/repoPatchRepoPullrequest.ts
+  - src/mcp-server/tools/repoPatchRepoRepository.ts
+  - src/mcp-server/tools/repoRemoveRepoBranch.ts
+  - src/mcp-server/tools/repoRemoveRepoCommit.ts
+  - src/mcp-server/tools/repoRemoveRepoOrganization.ts
+  - src/mcp-server/tools/repoRemoveRepoPullrequest.ts
+  - src/mcp-server/tools/repoRemoveRepoRepository.ts
+  - src/mcp-server/tools/repoUpdateRepoBranch.ts
+  - src/mcp-server/tools/repoUpdateRepoCommit.ts
+  - src/mcp-server/tools/repoUpdateRepoOrganization.ts
+  - src/mcp-server/tools/repoUpdateRepoPullrequest.ts
+  - src/mcp-server/tools/repoUpdateRepoRepository.ts
+  - src/mcp-server/tools/reportGetAccountingReport.ts
+  - src/mcp-server/tools/reportListAccountingReports.ts
+  - src/mcp-server/tools/repositoryCreateRepoRepository.ts
+  - src/mcp-server/tools/repositoryGetRepoRepository.ts
+  - src/mcp-server/tools/repositoryListRepoRepositories.ts
+  - src/mcp-server/tools/repositoryPatchRepoRepository.ts
+  - src/mcp-server/tools/repositoryRemoveRepoRepository.ts
+  - src/mcp-server/tools/repositoryUpdateRepoRepository.ts
+  - src/mcp-server/tools/reviewCreateCommerceReview.ts
+  - src/mcp-server/tools/reviewGetCommerceReview.ts
+  - src/mcp-server/tools/reviewListCommerceReviews.ts
+  - src/mcp-server/tools/reviewPatchCommerceReview.ts
+  - src/mcp-server/tools/reviewRemoveCommerceReview.ts
+  - src/mcp-server/tools/reviewUpdateCommerceReview.ts
+  - src/mcp-server/tools/scimCreateScimGroups.ts
+  - src/mcp-server/tools/scimCreateScimUsers.ts
+  - src/mcp-server/tools/scimGetScimGroups.ts
+  - src/mcp-server/tools/scimGetScimUsers.ts
+  - src/mcp-server/tools/scimListScimGroups.ts
+  - src/mcp-server/tools/scimListScimUsers.ts
+  - src/mcp-server/tools/scimPatchScimGroups.ts
+  - src/mcp-server/tools/scimPatchScimUsers.ts
+  - src/mcp-server/tools/scimRemoveScimGroups.ts
+  - src/mcp-server/tools/scimRemoveScimUsers.ts
+  - src/mcp-server/tools/scimUpdateScimGroups.ts
+  - src/mcp-server/tools/scimUpdateScimUsers.ts
+  - src/mcp-server/tools/scorecardCreateAtsScorecard.ts
+  - src/mcp-server/tools/scorecardGetAtsScorecard.ts
+  - src/mcp-server/tools/scorecardListAtsScorecards.ts
+  - src/mcp-server/tools/scorecardPatchAtsScorecard.ts
+  - src/mcp-server/tools/scorecardRemoveAtsScorecard.ts
+  - src/mcp-server/tools/scorecardUpdateAtsScorecard.ts
+  - src/mcp-server/tools/spaceCreateKmsSpace.ts
+  - src/mcp-server/tools/spaceGetKmsSpace.ts
+  - src/mcp-server/tools/spaceListKmsSpaces.ts
+  - src/mcp-server/tools/spacePatchKmsSpace.ts
+  - src/mcp-server/tools/spaceRemoveKmsSpace.ts
+  - src/mcp-server/tools/spaceUpdateKmsSpace.ts
+  - src/mcp-server/tools/storageCreateStorageFile.ts
+  - src/mcp-server/tools/storageGetStorageFile.ts
+  - src/mcp-server/tools/storageListStorageFiles.ts
+  - src/mcp-server/tools/storagePatchStorageFile.ts
+  - src/mcp-server/tools/storageRemoveStorageFile.ts
+  - src/mcp-server/tools/storageUpdateStorageFile.ts
+  - src/mcp-server/tools/studentCreateLmsStudent.ts
+  - src/mcp-server/tools/studentGetLmsStudent.ts
+  - src/mcp-server/tools/studentListLmsStudents.ts
+  - src/mcp-server/tools/studentPatchLmsStudent.ts
+  - src/mcp-server/tools/studentRemoveLmsStudent.ts
+  - src/mcp-server/tools/studentUpdateLmsStudent.ts
+  - src/mcp-server/tools/subscriptionCreatePaymentSubscription.ts
+  - src/mcp-server/tools/subscriptionGetPaymentSubscription.ts
+  - src/mcp-server/tools/subscriptionListPaymentSubscriptions.ts
+  - src/mcp-server/tools/subscriptionPatchPaymentSubscription.ts
+  - src/mcp-server/tools/subscriptionRemovePaymentSubscription.ts
+  - src/mcp-server/tools/subscriptionUpdatePaymentSubscription.ts
+  - src/mcp-server/tools/taskCreateTaskComment.ts
+  - src/mcp-server/tools/taskCreateTaskProject.ts
+  - src/mcp-server/tools/taskCreateTaskTask.ts
+  - src/mcp-server/tools/taskGetTaskComment.ts
+  - src/mcp-server/tools/taskGetTaskProject.ts
+  - src/mcp-server/tools/taskGetTaskTask.ts
+  - src/mcp-server/tools/taskListTaskComments.ts
+  - src/mcp-server/tools/taskListTaskProjects.ts
+  - src/mcp-server/tools/taskListTaskTasks.ts
+  - src/mcp-server/tools/taskPatchTaskComment.ts
+  - src/mcp-server/tools/taskPatchTaskProject.ts
+  - src/mcp-server/tools/taskPatchTaskTask.ts
+  - src/mcp-server/tools/taskRemoveTaskComment.ts
+  - src/mcp-server/tools/taskRemoveTaskProject.ts
+  - src/mcp-server/tools/taskRemoveTaskTask.ts
+  - src/mcp-server/tools/taskUpdateTaskComment.ts
+  - src/mcp-server/tools/taskUpdateTaskProject.ts
+  - src/mcp-server/tools/taskUpdateTaskTask.ts
+  - src/mcp-server/tools/taxrateCreateAccountingTaxrate.ts
+  - src/mcp-server/tools/taxrateGetAccountingTaxrate.ts
+  - src/mcp-server/tools/taxrateListAccountingTaxrates.ts
+  - src/mcp-server/tools/taxratePatchAccountingTaxrate.ts
+  - src/mcp-server/tools/taxrateRemoveAccountingTaxrate.ts
+  - src/mcp-server/tools/taxrateUpdateAccountingTaxrate.ts
+  - src/mcp-server/tools/ticketCreateTicketingTicket.ts
+  - src/mcp-server/tools/ticketGetTicketingTicket.ts
+  - src/mcp-server/tools/ticketListTicketingTickets.ts
+  - src/mcp-server/tools/ticketPatchTicketingTicket.ts
+  - src/mcp-server/tools/ticketRemoveTicketingTicket.ts
+  - src/mcp-server/tools/ticketUpdateTicketingTicket.ts
+  - src/mcp-server/tools/ticketingCreateTicketingCustomer.ts
+  - src/mcp-server/tools/ticketingCreateTicketingNote.ts
+  - src/mcp-server/tools/ticketingCreateTicketingTicket.ts
+  - src/mcp-server/tools/ticketingGetTicketingCustomer.ts
+  - src/mcp-server/tools/ticketingGetTicketingNote.ts
+  - src/mcp-server/tools/ticketingGetTicketingTicket.ts
+  - src/mcp-server/tools/ticketingListTicketingCustomers.ts
+  - src/mcp-server/tools/ticketingListTicketingNotes.ts
+  - src/mcp-server/tools/ticketingListTicketingTickets.ts
+  - src/mcp-server/tools/ticketingPatchTicketingCustomer.ts
+  - src/mcp-server/tools/ticketingPatchTicketingNote.ts
+  - src/mcp-server/tools/ticketingPatchTicketingTicket.ts
+  - src/mcp-server/tools/ticketingRemoveTicketingCustomer.ts
+  - src/mcp-server/tools/ticketingRemoveTicketingNote.ts
+  - src/mcp-server/tools/ticketingRemoveTicketingTicket.ts
+  - src/mcp-server/tools/ticketingUpdateTicketingCustomer.ts
+  - src/mcp-server/tools/ticketingUpdateTicketingNote.ts
+  - src/mcp-server/tools/ticketingUpdateTicketingTicket.ts
+  - src/mcp-server/tools/timeoffGetHrisTimeoff.ts
+  - src/mcp-server/tools/timeoffListHrisTimeoffs.ts
+  - src/mcp-server/tools/transactionCreateAccountingTransaction.ts
+  - src/mcp-server/tools/transactionGetAccountingTransaction.ts
+  - src/mcp-server/tools/transactionListAccountingTransactions.ts
+  - src/mcp-server/tools/transactionPatchAccountingTransaction.ts
+  - src/mcp-server/tools/transactionRemoveAccountingTransaction.ts
+  - src/mcp-server/tools/transactionUpdateAccountingTransaction.ts
+  - src/mcp-server/tools/ucCreateUcComment.ts
+  - src/mcp-server/tools/ucCreateUcContact.ts
+  - src/mcp-server/tools/ucCreateUcRecording.ts
+  - src/mcp-server/tools/ucGetUcComment.ts
+  - src/mcp-server/tools/ucGetUcContact.ts
+  - src/mcp-server/tools/ucGetUcRecording.ts
+  - src/mcp-server/tools/ucListUcCalls.ts
+  - src/mcp-server/tools/ucListUcComments.ts
+  - src/mcp-server/tools/ucListUcContacts.ts
+  - src/mcp-server/tools/ucListUcRecordings.ts
+  - src/mcp-server/tools/ucPatchUcComment.ts
+  - src/mcp-server/tools/ucPatchUcContact.ts
+  - src/mcp-server/tools/ucPatchUcRecording.ts
+  - src/mcp-server/tools/ucRemoveUcComment.ts
+  - src/mcp-server/tools/ucRemoveUcContact.ts
+  - src/mcp-server/tools/ucRemoveUcRecording.ts
+  - src/mcp-server/tools/ucUpdateUcComment.ts
+  - src/mcp-server/tools/ucUpdateUcContact.ts
+  - src/mcp-server/tools/ucUpdateUcRecording.ts
+  - src/mcp-server/tools/unifiedCreateUnifiedConnection.ts
+  - src/mcp-server/tools/unifiedCreateUnifiedWebhook.ts
+  - src/mcp-server/tools/unifiedGetUnifiedApicall.ts
+  - src/mcp-server/tools/unifiedGetUnifiedConnection.ts
+  - src/mcp-server/tools/unifiedGetUnifiedIntegrationAuth.ts
+  - src/mcp-server/tools/unifiedGetUnifiedWebhook.ts
+  - src/mcp-server/tools/unifiedListUnifiedApicalls.ts
+  - src/mcp-server/tools/unifiedListUnifiedConnections.ts
+  - src/mcp-server/tools/unifiedListUnifiedIntegrationWorkspaces.ts
+  - src/mcp-server/tools/unifiedListUnifiedIntegrations.ts
+  - src/mcp-server/tools/unifiedListUnifiedIssues.ts
+  - src/mcp-server/tools/unifiedListUnifiedWebhooks.ts
+  - src/mcp-server/tools/unifiedPatchUnifiedConnection.ts
+  - src/mcp-server/tools/unifiedPatchUnifiedWebhook.ts
+  - src/mcp-server/tools/unifiedPatchUnifiedWebhookTrigger.ts
+  - src/mcp-server/tools/unifiedRemoveUnifiedConnection.ts
+  - src/mcp-server/tools/unifiedRemoveUnifiedWebhook.ts
+  - src/mcp-server/tools/unifiedUpdateUnifiedConnection.ts
+  - src/mcp-server/tools/unifiedUpdateUnifiedWebhook.ts
+  - src/mcp-server/tools/unifiedUpdateUnifiedWebhookTrigger.ts
+  - src/mcp-server/tools/userCreateScimUsers.ts
+  - src/mcp-server/tools/userGetScimUsers.ts
+  - src/mcp-server/tools/userListScimUsers.ts
+  - src/mcp-server/tools/userPatchScimUsers.ts
+  - src/mcp-server/tools/userRemoveScimUsers.ts
+  - src/mcp-server/tools/userUpdateScimUsers.ts
+  - src/mcp-server/tools/webhookCreateUnifiedWebhook.ts
+  - src/mcp-server/tools/webhookGetUnifiedWebhook.ts
+  - src/mcp-server/tools/webhookListUnifiedWebhooks.ts
+  - src/mcp-server/tools/webhookPatchUnifiedWebhook.ts
+  - src/mcp-server/tools/webhookPatchUnifiedWebhookTrigger.ts
+  - src/mcp-server/tools/webhookRemoveUnifiedWebhook.ts
+  - src/mcp-server/tools/webhookUpdateUnifiedWebhook.ts
+  - src/mcp-server/tools/webhookUpdateUnifiedWebhookTrigger.ts
   - src/sdk/account.ts
   - src/sdk/accounting.ts
   - src/sdk/activity.ts
@@ -2500,6 +3399,7 @@ generatedFiles:
   - src/sdk/models/shared/calendarbusy.ts
   - src/sdk/models/shared/calendarcalendar.ts
   - src/sdk/models/shared/calendarevent.ts
+  - src/sdk/models/shared/calendareventrecurrence.ts
   - src/sdk/models/shared/calendarlink.ts
   - src/sdk/models/shared/calendarrecording.ts
   - src/sdk/models/shared/calendarrecordingmedia.ts
@@ -2586,11 +3486,24 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingreportprofitandloss.ts
   - src/sdk/models/shared/propertyaccountingreporttrialbalance.ts
   - src/sdk/models/shared/propertyatsactivityfrom.ts
+  - src/sdk/models/shared/propertyatsapplicationansweranswers.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
+  - src/sdk/models/shared/propertyatscandidatelinkurls.ts
+  - src/sdk/models/shared/propertyatscandidateskills.ts
+  - src/sdk/models/shared/propertyatscandidatesources.ts
+  - src/sdk/models/shared/propertyatscandidatetags.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts
+  - src/sdk/models/shared/propertyatsjobdepartments.ts
   - src/sdk/models/shared/propertyatsjobpostingaddress.ts
+  - src/sdk/models/shared/propertyatsjobpublicjoburls.ts
+  - src/sdk/models/shared/propertyatsjobquestionoptions.ts
   - src/sdk/models/shared/propertycalendareventorganizer.ts
+  - src/sdk/models/shared/propertycalendareventrecurrenceondays.ts
   - src/sdk/models/shared/propertycalendarrecordingtranscriptattendee.ts
+  - src/sdk/models/shared/propertycommercecollectiontags.ts
+  - src/sdk/models/shared/propertycommerceitemoptionvalues.ts
+  - src/sdk/models/shared/propertycommerceitemtags.ts
+  - src/sdk/models/shared/propertycommerceitemvarianttags.ts
   - src/sdk/models/shared/propertycommercelocationaddress.ts
   - src/sdk/models/shared/propertyconnectionauth.ts
   - src/sdk/models/shared/propertyconnectioncategories.ts
@@ -2616,6 +3529,7 @@ generatedFiles:
   - src/sdk/models/shared/propertyintegrationtokeninstructions.ts
   - src/sdk/models/shared/propertylmsstudentaddress.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
+  - src/sdk/models/shared/propertymetadatametadataoptions.ts
   - src/sdk/models/shared/propertyscimgroupmeta.ts
   - src/sdk/models/shared/propertyscimgroupschemas.ts
   - src/sdk/models/shared/propertyscimusermeta.ts
@@ -2716,237 +3630,301 @@ examples:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAccountingContact:
     speakeasy-default-create-accounting-contact:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   createAccountingInvoice:
     speakeasy-default-create-accounting-invoice:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAccountingJournal:
     speakeasy-default-create-accounting-journal:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAccountingOrder:
     speakeasy-default-create-accounting-order:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAccountingTaxrate:
     speakeasy-default-create-accounting-taxrate:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAccountingTransaction:
     speakeasy-default-create-accounting-transaction:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingAccount:
     speakeasy-default-get-accounting-account:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingContact:
     speakeasy-default-get-accounting-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   getAccountingInvoice:
     speakeasy-default-get-accounting-invoice:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingJournal:
     speakeasy-default-get-accounting-journal:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingOrder:
     speakeasy-default-get-accounting-order:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingOrganization:
     speakeasy-default-get-accounting-organization:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getAccountingReport:
     speakeasy-default-get-accounting-report:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingTaxrate:
     speakeasy-default-get-accounting-taxrate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAccountingTransaction:
     speakeasy-default-get-accounting-transaction:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listAccountingAccounts:
     speakeasy-default-list-accounting-accounts:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAccountingContacts:
     speakeasy-default-list-accounting-contacts:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"currency": "USD"}, {"currency": "USD"}]
   listAccountingInvoices:
     speakeasy-default-list-accounting-invoices:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAccountingJournals:
     speakeasy-default-list-accounting-journals:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAccountingOrders:
     speakeasy-default-list-accounting-orders:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   listAccountingOrganizations:
     speakeasy-default-list-accounting-organizations:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}, {"name": "<value>"}]
   listAccountingReports:
     speakeasy-default-list-accounting-reports:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAccountingTaxrates:
     speakeasy-default-list-accounting-taxrates:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAccountingTransactions:
     speakeasy-default-list-accounting-transactions:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchAccountingAccount:
     speakeasy-default-patch-accounting-account:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAccountingContact:
     speakeasy-default-patch-accounting-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   patchAccountingInvoice:
     speakeasy-default-patch-accounting-invoice:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAccountingJournal:
     speakeasy-default-patch-accounting-journal:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAccountingOrder:
     speakeasy-default-patch-accounting-order:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAccountingTaxrate:
     speakeasy-default-patch-accounting-taxrate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAccountingTransaction:
     speakeasy-default-patch-accounting-transaction:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeAccountingAccount:
     speakeasy-default-remove-accounting-account:
       parameters:
@@ -2995,123 +3973,153 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAccountingContact:
     speakeasy-default-update-accounting-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   updateAccountingInvoice:
     speakeasy-default-update-accounting-invoice:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAccountingJournal:
     speakeasy-default-update-accounting-journal:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAccountingOrder:
     speakeasy-default-update-accounting-order:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAccountingTaxrate:
     speakeasy-default-update-accounting-taxrate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAccountingTransaction:
     speakeasy-default-update-accounting-transaction:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCrmContact:
     speakeasy-default-create-crm-contact:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createUcContact:
     speakeasy-default-create-uc-contact:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmContact:
     speakeasy-default-get-crm-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getUcContact:
     speakeasy-default-get-uc-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listCrmContacts:
     speakeasy-default-list-crm-contacts:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listUcContacts:
     speakeasy-default-list-uc-contacts:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   patchCrmContact:
     speakeasy-default-patch-crm-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchUcContact:
     speakeasy-default-patch-uc-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeCrmContact:
     speakeasy-default-remove-crm-contact:
       parameters:
@@ -3130,48 +4138,60 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateUcContact:
     speakeasy-default-update-uc-contact:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createRepoOrganization:
     speakeasy-default-create-repo-organization:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getRepoOrganization:
     speakeasy-default-get-repo-organization:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listRepoOrganizations:
     speakeasy-default-list-repo-organizations:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchRepoOrganization:
     speakeasy-default-patch-repo-organization:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeRepoOrganization:
     speakeasy-default-remove-repo-organization:
       parameters:
@@ -3184,238 +4204,302 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsActivity:
     speakeasy-default-create-ats-activity:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsApplication:
     speakeasy-default-create-ats-application:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsCandidate:
     speakeasy-default-create-ats-candidate:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsDocument:
     speakeasy-default-create-ats-document:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsInterview:
     speakeasy-default-create-ats-interview:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsJob:
     speakeasy-default-create-ats-job:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createAtsScorecard:
     speakeasy-default-create-ats-scorecard:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsActivity:
     speakeasy-default-get-ats-activity:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsApplication:
     speakeasy-default-get-ats-application:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsCandidate:
     speakeasy-default-get-ats-candidate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsCompany:
     speakeasy-default-get-ats-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getAtsDocument:
     speakeasy-default-get-ats-document:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsInterview:
     speakeasy-default-get-ats-interview:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsJob:
     speakeasy-default-get-ats-job:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getAtsScorecard:
     speakeasy-default-get-ats-scorecard:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listAtsActivities:
     speakeasy-default-list-ats-activities:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   listAtsApplications:
     speakeasy-default-list-ats-applications:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAtsApplicationstatuses:
     speakeasy-default-list-ats-applicationstatuses:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAtsCandidates:
     speakeasy-default-list-ats-candidates:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   listAtsCompanies:
     speakeasy-default-list-ats-companies:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
   listAtsDocuments:
     speakeasy-default-list-ats-documents:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listAtsInterviews:
     speakeasy-default-list-ats-interviews:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listAtsJobs:
     speakeasy-default-list-ats-jobs:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listAtsScorecards:
     speakeasy-default-list-ats-scorecards:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   patchAtsActivity:
     speakeasy-default-patch-ats-activity:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsApplication:
     speakeasy-default-patch-ats-application:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsCandidate:
     speakeasy-default-patch-ats-candidate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsDocument:
     speakeasy-default-patch-ats-document:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsInterview:
     speakeasy-default-patch-ats-interview:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsJob:
     speakeasy-default-patch-ats-job:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchAtsScorecard:
     speakeasy-default-patch-ats-scorecard:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeAtsActivity:
     speakeasy-default-remove-ats-activity:
       parameters:
@@ -3464,129 +4548,161 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsApplication:
     speakeasy-default-update-ats-application:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsCandidate:
     speakeasy-default-update-ats-candidate:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsDocument:
     speakeasy-default-update-ats-document:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsInterview:
     speakeasy-default-update-ats-interview:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsJob:
     speakeasy-default-update-ats-job:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateAtsScorecard:
     speakeasy-default-update-ats-scorecard:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCrmCompany:
     speakeasy-default-create-crm-company:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createHrisCompany:
     speakeasy-default-create-hris-company:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmCompany:
     speakeasy-default-get-crm-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getHrisCompany:
     speakeasy-default-get-hris-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listCrmCompanies:
     speakeasy-default-list-crm-companies:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listEnrichCompanies:
     speakeasy-default-list-enrich-companies:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listHrisCompanies:
     speakeasy-default-list-hris-companies:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   patchCrmCompany:
     speakeasy-default-patch-crm-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchHrisCompany:
     speakeasy-default-patch-hris-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeCrmCompany:
     speakeasy-default-remove-crm-company:
       parameters:
@@ -3605,127 +4721,161 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateHrisCompany:
     speakeasy-default-update-hris-company:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCalendarCalendar:
     speakeasy-default-create-calendar-calendar:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createCalendarEvent:
     speakeasy-default-create-calendar-event:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+      responses:
+        "200":
+          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
   createCalendarLink:
     speakeasy-default-create-calendar-link:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"url": "https://sturdy-begonia.biz/"}
+        application/json: {"url": "https://misguided-thongs.info"}
+      responses:
+        "200":
+          application/json: {"url": "https://remarkable-dependency.info/"}
   getCalendarCalendar:
     speakeasy-default-get-calendar-calendar:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getCalendarEvent:
     speakeasy-default-get-calendar-event:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
   getCalendarLink:
     speakeasy-default-get-calendar-link:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"url": "https://sleepy-puritan.org"}
   getCalendarRecording:
     speakeasy-default-get-calendar-recording:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listCalendarBusies:
     speakeasy-default-list-calendar-busies:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"end_at": "2025-03-06T14:51:56.953Z", "start_at": "2024-10-15T04:40:38.516Z"}, {"end_at": "2025-03-06T14:51:56.953Z", "start_at": "2024-10-15T04:40:38.516Z"}, {"end_at": "2025-03-06T14:51:56.953Z", "start_at": "2024-10-15T04:40:38.516Z"}]
   listCalendarCalendars:
     speakeasy-default-list-calendar-calendars:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
   listCalendarEvents:
     speakeasy-default-list-calendar-events:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}, {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}]
   listCalendarLinks:
     speakeasy-default-list-calendar-links:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"url": "https://limp-peninsula.biz"}, {"url": "https://limp-peninsula.biz"}, {"url": "https://limp-peninsula.biz"}]
   listCalendarRecordings:
     speakeasy-default-list-calendar-recordings:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   patchCalendarCalendar:
     speakeasy-default-patch-calendar-calendar:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   patchCalendarEvent:
     speakeasy-default-patch-calendar-event:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+      responses:
+        "200":
+          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
   patchCalendarLink:
     speakeasy-default-patch-calendar-link:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"url": "https://curly-skyline.biz/"}
+        application/json: {"url": "https://warm-hexagon.name/"}
+      responses:
+        "200":
+          application/json: {"url": "https://torn-marathon.biz/"}
   removeCalendarCalendar:
     speakeasy-default-remove-calendar-calendar:
       parameters:
@@ -3750,57 +4900,71 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   updateCalendarEvent:
     speakeasy-default-update-calendar-event:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+      responses:
+        "200":
+          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
   updateCalendarLink:
     speakeasy-default-update-calendar-link:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"url": "https://quiet-coordination.name"}
+        application/json: {"url": "https://partial-hydrocarbon.info"}
+      responses:
+        "200":
+          application/json: {"url": "https://knotty-roundabout.net"}
   createCrmEvent:
     speakeasy-default-create-crm-event:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmEvent:
     speakeasy-default-get-crm-event:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listCrmEvents:
     speakeasy-default-list-crm-events:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchCrmEvent:
     speakeasy-default-patch-crm-event:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeCrmEvent:
     speakeasy-default-remove-crm-event:
       parameters:
@@ -3813,39 +4977,49 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createPaymentLink:
     speakeasy-default-create-payment-link:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getPaymentLink:
     speakeasy-default-get-payment-link:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listPaymentLinks:
     speakeasy-default-list-payment-links:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   patchPaymentLink:
     speakeasy-default-patch-payment-link:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removePaymentLink:
     speakeasy-default-remove-payment-link:
       parameters:
@@ -3858,39 +5032,49 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createUcRecording:
     speakeasy-default-create-uc-recording:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getUcRecording:
     speakeasy-default-get-uc-recording:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listUcRecordings:
     speakeasy-default-list-uc-recordings:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchUcRecording:
     speakeasy-default-patch-uc-recording:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeUcRecording:
     speakeasy-default-remove-uc-recording:
       parameters:
@@ -3903,159 +5087,201 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCommerceCollection:
     speakeasy-default-create-commerce-collection:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createCommerceInventory:
     speakeasy-default-create-commerce-inventory:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"available": 5165.08}
+        application/json: {"available": 7463.62}
+      responses:
+        "200":
+          application/json: {"available": 6187.04}
   createCommerceItem:
     speakeasy-default-create-commerce-item:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCommerceLocation:
     speakeasy-default-create-commerce-location:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createCommerceReview:
     speakeasy-default-create-commerce-review:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
   getCommerceCollection:
     speakeasy-default-get-commerce-collection:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getCommerceInventory:
     speakeasy-default-get-commerce-inventory:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"available": 7122.77}
   getCommerceItem:
     speakeasy-default-get-commerce-item:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getCommerceLocation:
     speakeasy-default-get-commerce-location:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getCommerceReview:
     speakeasy-default-get-commerce-review:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
   listCommerceCollections:
     speakeasy-default-list-commerce-collections:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
   listCommerceInventories:
     speakeasy-default-list-commerce-inventories:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"available": 5696.58}]
   listCommerceItems:
     speakeasy-default-list-commerce-items:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listCommerceLocations:
     speakeasy-default-list-commerce-locations:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
   listCommerceReviews:
     speakeasy-default-list-commerce-reviews:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"item_id": "<id>"}, {"item_id": "<id>"}]
   patchCommerceCollection:
     speakeasy-default-patch-commerce-collection:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   patchCommerceInventory:
     speakeasy-default-patch-commerce-inventory:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"available": 615.23}
+        application/json: {"available": 7859.84}
+      responses:
+        "200":
+          application/json: {"available": 5724.03}
   patchCommerceItem:
     speakeasy-default-patch-commerce-item:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchCommerceLocation:
     speakeasy-default-patch-commerce-location:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   patchCommerceReview:
     speakeasy-default-patch-commerce-review:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
   removeCommerceCollection:
     speakeasy-default-remove-commerce-collection:
       parameters:
@@ -4092,75 +5318,93 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   updateCommerceInventory:
     speakeasy-default-update-commerce-inventory:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"available": 9360.02}
+        application/json: {"available": 4497.29}
+      responses:
+        "200":
+          application/json: {"available": 2114.08}
   updateCommerceItem:
     speakeasy-default-update-commerce-item:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateCommerceLocation:
     speakeasy-default-update-commerce-location:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   updateCommerceReview:
     speakeasy-default-update-commerce-review:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
   createHrisLocation:
     speakeasy-default-create-hris-location:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getHrisLocation:
     speakeasy-default-get-hris-location:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listHrisLocations:
     speakeasy-default-list-hris-locations:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   patchHrisLocation:
     speakeasy-default-patch-hris-location:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeHrisLocation:
     speakeasy-default-remove-hris-location:
       parameters:
@@ -4173,99 +5417,125 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCrmDeal:
     speakeasy-default-create-crm-deal:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCrmLead:
     speakeasy-default-create-crm-lead:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createCrmPipeline:
     speakeasy-default-create-crm-pipeline:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmDeal:
     speakeasy-default-get-crm-deal:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmLead:
     speakeasy-default-get-crm-lead:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getCrmPipeline:
     speakeasy-default-get-crm-pipeline:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listCrmDeals:
     speakeasy-default-list-crm-deals:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listCrmLeads:
     speakeasy-default-list-crm-leads:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   listCrmPipelines:
     speakeasy-default-list-crm-pipelines:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   patchCrmDeal:
     speakeasy-default-patch-crm-deal:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchCrmLead:
     speakeasy-default-patch-crm-lead:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchCrmPipeline:
     speakeasy-default-patch-crm-pipeline:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeCrmDeal:
     speakeasy-default-remove-crm-deal:
       parameters:
@@ -4290,163 +5560,207 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateCrmLead:
     speakeasy-default-update-crm-lead:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateCrmPipeline:
     speakeasy-default-update-crm-pipeline:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   listEnrichPeople:
     speakeasy-default-list-enrich-people:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   createGenaiPrompt:
     speakeasy-default-create-genai-prompt:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   listGenaiModels:
     speakeasy-default-list-genai-models:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   createHrisDevice:
     speakeasy-default-create-hris-device:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createHrisEmployee:
     speakeasy-default-create-hris-employee:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createHrisGroup:
     speakeasy-default-create-hris-group:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getHrisDevice:
     speakeasy-default-get-hris-device:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getHrisEmployee:
     speakeasy-default-get-hris-employee:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getHrisGroup:
     speakeasy-default-get-hris-group:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getHrisPayslip:
     speakeasy-default-get-hris-payslip:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"raw": {"key": "<value>"}}
   getHrisTimeoff:
     speakeasy-default-get-hris-timeoff:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"start_at": "2024-10-20T08:12:47.408Z"}
   listHrisDevices:
     speakeasy-default-list-hris-devices:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
   listHrisEmployees:
     speakeasy-default-list-hris-employees:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listHrisGroups:
     speakeasy-default-list-hris-groups:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listHrisPayslips:
     speakeasy-default-list-hris-payslips:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"raw": {"key": "<value>"}}]
   listHrisTimeoffs:
     speakeasy-default-list-hris-timeoffs:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"start_at": "2023-08-30T10:18:36.702Z"}, {"start_at": "2023-08-30T10:18:36.702Z"}]
   patchHrisDevice:
     speakeasy-default-patch-hris-device:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   patchHrisEmployee:
     speakeasy-default-patch-hris-employee:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchHrisGroup:
     speakeasy-default-patch-hris-group:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeHrisDevice:
     speakeasy-default-remove-hris-device:
       parameters:
@@ -4471,46 +5785,60 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   updateHrisEmployee:
     speakeasy-default-update-hris-employee:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateHrisGroup:
     speakeasy-default-update-hris-group:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createScimGroups:
     speakeasy-default-create-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"displayName": "Bert89"}
+        application/json: {"displayName": "Nina.Tremblay"}
+      responses:
+        "200":
+          application/json: {"displayName": "Rosemary_Vandervort"}
   getScimGroups:
     speakeasy-default-get-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Susana.Bernhard24"}
   listScimGroups:
     speakeasy-default-list-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"displayName": "Lilly.Ernser1"}, {"displayName": "Lilly.Ernser1"}, {"displayName": "Lilly.Ernser1"}]
   patchScimGroups:
     speakeasy-default-patch-scim-groups:
       parameters:
@@ -4518,7 +5846,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"displayName": "Damon_Rutherford93"}
+        application/json: {"displayName": "Newell.Hoeger"}
+      responses:
+        "200":
+          application/json: {"displayName": "Remington.Labadie0"}
   removeScimGroups:
     speakeasy-default-remove-scim-groups:
       parameters:
@@ -4532,97 +5863,124 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"displayName": "Frederic.Reichel"}
+        application/json: {"displayName": "Reynold90"}
+      responses:
+        "200":
+          application/json: {"displayName": "Watson_Jacobs"}
   createKmsComment:
     speakeasy-default-create-kms-comment:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   createKmsPage:
     speakeasy-default-create-kms-page:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"title": "<value>", "type": "HTML"}
+        application/json: {"title": "<value>", "type": "TEXT"}
+      responses:
+        "200":
+          application/json: {"title": "<value>", "type": "TEXT"}
   createKmsSpace:
     speakeasy-default-create-kms-space:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "parent_space_id": "sp"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "parent_space_id": "sp"}
   getKmsComment:
     speakeasy-default-get-kms-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   getKmsPage:
     speakeasy-default-get-kms-page:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"title": "<value>", "type": "HTML"}
   getKmsSpace:
     speakeasy-default-get-kms-space:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "parent_space_id": "sp"}
   listKmsComments:
     speakeasy-default-list-kms-comments:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"content": "<value>"}, {"content": "<value>"}]
   listKmsPages:
     speakeasy-default-list-kms-pages:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"title": "<value>", "type": "OTHER"}, {"title": "<value>", "type": "OTHER"}]
   listKmsSpaces:
     speakeasy-default-list-kms-spaces:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>", "parent_space_id": "sp"}, {"name": "<value>", "parent_space_id": "sp"}, {"name": "<value>", "parent_space_id": "sp"}]
   patchKmsComment:
     speakeasy-default-patch-kms-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   patchKmsPage:
     speakeasy-default-patch-kms-page:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
-        application/json: {"title": "<value>", "type": "TEXT"}
+        application/json: {"title": "<value>", "type": "OTHER"}
+      responses:
+        "200":
+          application/json: {"title": "<value>", "type": "MARKDOWN"}
   patchKmsSpace:
     speakeasy-default-patch-kms-space:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "parent_space_id": "sp"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "parent_space_id": "sp"}
   removeKmsComment:
     speakeasy-default-remove-kms-comment:
       parameters:
@@ -4647,87 +6005,109 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   updateKmsPage:
     speakeasy-default-update-kms-page:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"title": "<value>", "type": "OTHER"}
+      responses:
+        "200":
+          application/json: {"title": "<value>", "type": "MARKDOWN"}
   updateKmsSpace:
     speakeasy-default-update-kms-space:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "parent_space_id": "sp"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "parent_space_id": "sp"}
   createTaskComment:
     speakeasy-default-create-task-comment:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
   createUcComment:
     speakeasy-default-create-uc-comment:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   getTaskComment:
     speakeasy-default-get-task-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
   getUcComment:
     speakeasy-default-get-uc-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   listTaskComments:
     speakeasy-default-list-task-comments:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"task_id": "<id>", "text": "<value>"}]
   listUcComments:
     speakeasy-default-list-uc-comments:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"content": "<value>"}, {"content": "<value>"}, {"content": "<value>"}]
   patchTaskComment:
     speakeasy-default-patch-task-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
   patchUcComment:
     speakeasy-default-patch-uc-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   removeTaskComment:
     speakeasy-default-remove-task-comment:
       parameters:
@@ -4746,138 +6126,174 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"task_id": "<id>", "text": "<value>"}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
   updateUcComment:
     speakeasy-default-update-uc-comment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
   createLmsClass:
     speakeasy-default-create-lms-class:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"course_id": "<id>", "name": "<value>"}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
   createLmsCourse:
     speakeasy-default-create-lms-course:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createLmsInstructor:
     speakeasy-default-create-lms-instructor:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createLmsStudent:
     speakeasy-default-create-lms-student:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getLmsClass:
     speakeasy-default-get-lms-class:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
   getLmsCourse:
     speakeasy-default-get-lms-course:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getLmsInstructor:
     speakeasy-default-get-lms-instructor:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getLmsStudent:
     speakeasy-default-get-lms-student:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listLmsClasses:
     speakeasy-default-list-lms-classes:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"course_id": "<id>", "name": "<value>"}]
   listLmsCourses:
     speakeasy-default-list-lms-courses:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
   listLmsInstructors:
     speakeasy-default-list-lms-instructors:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listLmsStudents:
     speakeasy-default-list-lms-students:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchLmsClass:
     speakeasy-default-patch-lms-class:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"course_id": "<id>", "name": "<value>"}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
   patchLmsCourse:
     speakeasy-default-patch-lms-course:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   patchLmsInstructor:
     speakeasy-default-patch-lms-instructor:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchLmsStudent:
     speakeasy-default-patch-lms-student:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeLmsClass:
     speakeasy-default-remove-lms-class:
       parameters:
@@ -4908,96 +6324,120 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"course_id": "<id>", "name": "<value>"}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
   updateLmsCourse:
     speakeasy-default-update-lms-course:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   updateLmsInstructor:
     speakeasy-default-update-lms-instructor:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateLmsStudent:
     speakeasy-default-update-lms-student:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createMartechList:
     speakeasy-default-create-martech-list:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createMartechMember:
     speakeasy-default-create-martech-member:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getMartechList:
     speakeasy-default-get-martech-list:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getMartechMember:
     speakeasy-default-get-martech-member:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listMartechLists:
     speakeasy-default-list-martech-lists:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listMartechMembers:
     speakeasy-default-list-martech-members:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchMartechList:
     speakeasy-default-patch-martech-list:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchMartechMember:
     speakeasy-default-patch-martech-member:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeMartechList:
     speakeasy-default-remove-martech-list:
       parameters:
@@ -5016,61 +6456,77 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateMartechMember:
     speakeasy-default-update-martech-member:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createMessagingMessage:
     speakeasy-default-create-messaging-message:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getMessagingChannel:
     speakeasy-default-get-messaging-channel:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getMessagingMessage:
     speakeasy-default-get-messaging-message:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listMessagingChannels:
     speakeasy-default-list-messaging-channels:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
   listMessagingMessages:
     speakeasy-default-list-messaging-messages:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchMessagingMessage:
     speakeasy-default-patch-messaging-message:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeMessagingMessage:
     speakeasy-default-remove-messaging-message:
       parameters:
@@ -5083,39 +6539,49 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createMetadataMetadata:
     speakeasy-default-create-metadata-metadata:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "object_type": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
   getMetadataMetadata:
     speakeasy-default-get-metadata-metadata:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
   listMetadataMetadatas:
     speakeasy-default-list-metadata-metadatas:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>", "object_type": "<value>"}, {"name": "<value>", "object_type": "<value>"}, {"name": "<value>", "object_type": "<value>"}]
   patchMetadataMetadata:
     speakeasy-default-patch-metadata-metadata:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "object_type": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
   removeMetadataMetadata:
     speakeasy-default-remove-metadata-metadata:
       parameters:
@@ -5128,148 +6594,222 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "object_type": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
   createPassthrough:
     speakeasy-default-create-passthrough-json:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/opt/lib"
-        query: {}
+          path: "/var/log"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
     speakeasy-default-create-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/etc/namedb"
-        query: {}
+          path: "/var/log"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
   listPassthroughs:
     speakeasy-default-list-passthroughs:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/selinux"
-        query: {}
+          path: "/System"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
   patchPassthrough:
     speakeasy-default-patch-passthrough-json:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/home/user"
-        query: {}
+          path: "/System"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
     speakeasy-default-patch-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/etc/mail"
-        query: {}
+          path: "/System"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
   removePassthrough:
     speakeasy-default-remove-passthrough:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/Applications"
-        query: {}
+          path: "/bin"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
   updatePassthrough:
     speakeasy-default-update-passthrough-json:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/etc/namedb"
-        query: {}
+          path: "/var/tmp"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
     speakeasy-default-update-passthrough-raw:
       parameters:
         path:
           connection_id: "<id>"
-          path: "/System"
-        query: {}
+          path: "/var/tmp"
+      responses:
+        default:
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
+          '*/*': "x-file: example.file"
   createPaymentPayment:
     speakeasy-default-create-payment-payment:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   createPaymentSubscription:
     speakeasy-default-create-payment-subscription:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getPaymentPayment:
     speakeasy-default-get-payment-payment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   getPaymentPayout:
     speakeasy-default-get-payment-payout:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"total_amount": 2074.25}
   getPaymentRefund:
     speakeasy-default-get-payment-refund:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"payment_id": "<id>", "total_amount": 2321.11}
   getPaymentSubscription:
     speakeasy-default-get-payment-subscription:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listPaymentPayments:
     speakeasy-default-list-payment-payments:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"currency": "USD"}, {"currency": "USD"}]
   listPaymentPayouts:
     speakeasy-default-list-payment-payouts:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"total_amount": 3117.01}, {"total_amount": 3117.01}]
   listPaymentRefunds:
     speakeasy-default-list-payment-refunds:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"payment_id": "<id>", "total_amount": 8253.01}, {"payment_id": "<id>", "total_amount": 8253.01}]
   listPaymentSubscriptions:
     speakeasy-default-list-payment-subscriptions:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchPaymentPayment:
     speakeasy-default-patch-payment-payment:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   patchPaymentSubscription:
     speakeasy-default-patch-payment-subscription:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removePaymentPayment:
     speakeasy-default-remove-payment-payment:
       parameters:
@@ -5288,138 +6828,174 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"currency": "USD"}
+      responses:
+        "200":
+          application/json: {"currency": "USD"}
   updatePaymentSubscription:
     speakeasy-default-update-payment-subscription:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createRepoBranch:
     speakeasy-default-create-repo-branch:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "repo_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
   createRepoCommit:
     speakeasy-default-create-repo-commit:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"repo_id": "<id>", "user_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
   createRepoPullrequest:
     speakeasy-default-create-repo-pullrequest:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createRepoRepository:
     speakeasy-default-create-repo-repository:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   getRepoBranch:
     speakeasy-default-get-repo-branch:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
   getRepoCommit:
     speakeasy-default-get-repo-commit:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
   getRepoPullrequest:
     speakeasy-default-get-repo-pullrequest:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getRepoRepository:
     speakeasy-default-get-repo-repository:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   listRepoBranches:
     speakeasy-default-list-repo-branches:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>", "repo_id": "<id>"}]
   listRepoCommits:
     speakeasy-default-list-repo-commits:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"repo_id": "<id>", "user_id": "<id>"}, {"repo_id": "<id>", "user_id": "<id>"}, {"repo_id": "<id>", "user_id": "<id>"}]
   listRepoPullrequests:
     speakeasy-default-list-repo-pullrequests:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   listRepoRepositories:
     speakeasy-default-list-repo-repositories:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
   patchRepoBranch:
     speakeasy-default-patch-repo-branch:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "repo_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
   patchRepoCommit:
     speakeasy-default-patch-repo-commit:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"repo_id": "<id>", "user_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
   patchRepoPullrequest:
     speakeasy-default-patch-repo-pullrequest:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchRepoRepository:
     speakeasy-default-patch-repo-repository:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   removeRepoBranch:
     speakeasy-default-remove-repo-branch:
       parameters:
@@ -5450,56 +7026,71 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>", "repo_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
   updateRepoCommit:
     speakeasy-default-update-repo-commit:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"repo_id": "<id>", "user_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
   updateRepoPullrequest:
     speakeasy-default-update-repo-pullrequest:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateRepoRepository:
     speakeasy-default-update-repo-repository:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
   createScimUsers:
     speakeasy-default-create-scim-users:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getScimUsers:
     speakeasy-default-get-scim-users:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {}
   listScimUsers:
     speakeasy-default-list-scim-users:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   patchScimUsers:
     speakeasy-default-patch-scim-users:
       parameters:
@@ -5508,6 +7099,9 @@ examples:
           id: "<id>"
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeScimUsers:
     speakeasy-default-remove-scim-users:
       parameters:
@@ -5522,36 +7116,47 @@ examples:
           id: "<id>"
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createStorageFile:
     speakeasy-default-create-storage-file:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getStorageFile:
     speakeasy-default-get-storage-file:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listStorageFiles:
     speakeasy-default-list-storage-files:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   patchStorageFile:
     speakeasy-default-patch-storage-file:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeStorageFile:
     speakeasy-default-remove-storage-file:
       parameters:
@@ -5564,69 +7169,87 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createTaskProject:
     speakeasy-default-create-task-project:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createTaskTask:
     speakeasy-default-create-task-task:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getTaskProject:
     speakeasy-default-get-task-project:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getTaskTask:
     speakeasy-default-get-task-task:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listTaskProjects:
     speakeasy-default-list-task-projects:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listTaskTasks:
     speakeasy-default-list-task-tasks:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   patchTaskProject:
     speakeasy-default-patch-task-project:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchTaskTask:
     speakeasy-default-patch-task-task:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeTaskProject:
     speakeasy-default-remove-task-project:
       parameters:
@@ -5645,108 +7268,136 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateTaskTask:
     speakeasy-default-update-task-task:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createTicketingCustomer:
     speakeasy-default-create-ticketing-customer:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createTicketingNote:
     speakeasy-default-create-ticketing-note:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   createTicketingTicket:
     speakeasy-default-create-ticketing-ticket:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   getTicketingCustomer:
     speakeasy-default-get-ticketing-customer:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getTicketingNote:
     speakeasy-default-get-ticketing-note:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   getTicketingTicket:
     speakeasy-default-get-ticketing-ticket:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: {}
   listTicketingCustomers:
     speakeasy-default-list-ticketing-customers:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}]
   listTicketingNotes:
     speakeasy-default-list-ticketing-notes:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
   listTicketingTickets:
     speakeasy-default-list-ticketing-tickets:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   patchTicketingCustomer:
     speakeasy-default-patch-ticketing-customer:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchTicketingNote:
     speakeasy-default-patch-ticketing-note:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   patchTicketingTicket:
     speakeasy-default-patch-ticketing-ticket:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   removeTicketingCustomer:
     speakeasy-default-remove-ticketing-customer:
       parameters:
@@ -5771,88 +7422,141 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateTicketingNote:
     speakeasy-default-update-ticketing-note:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   updateTicketingTicket:
     speakeasy-default-update-ticketing-ticket:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
-        query: {}
       requestBody:
         application/json: {}
+      responses:
+        "200":
+          application/json: {}
   listUcCalls:
     speakeasy-default-list-uc-calls:
       parameters:
         path:
           connection_id: "<id>"
-        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}]
   createUnifiedConnection:
     speakeasy-default-create-unified-connection:
       requestBody:
-        application/json: {"categories": ["accounting", "martech", "martech"], "environment": "Production", "integration_type": "<value>", "permissions": ["repo_organization_write", "lms_student_read"]}
+        application/json: {"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["enrich_company_read"]}
+      responses:
+        "200":
+          application/json: {"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_write"]}
   createUnifiedWebhook:
     speakeasy-default-create-unified-webhook:
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "hris_timeoff"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "ats_scorecard"}
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_deal"}
   getUnifiedApicall:
     speakeasy-default-get-unified-apicall:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"environment": "Production", "integration_type": "<value>", "method": "<value>", "name": "<value>", "path": "/private/tmp", "status": "<value>", "type": "inbound"}
   getUnifiedConnection:
     speakeasy-default-get-unified-connection:
       parameters:
         path:
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_read", "auth_login"]}
   getUnifiedIntegrationAuth:
     speakeasy-default-get-unified-integration-auth:
       parameters:
         path:
           workspace_id: "<id>"
           integration_type: "<value>"
-        query: {}
+      responses:
+        "200":
+          text/plain: "<value>"
   getUnifiedWebhook:
     speakeasy-default-get-unified-webhook:
       parameters:
         path:
           id: "<id>"
-  listUnifiedApicalls: {}
-  listUnifiedConnections: {}
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "martech_member"}
+  listUnifiedApicalls:
+    speakeasy-default-list-unified-apicalls:
+      responses:
+        "200":
+          application/json: [{"environment": "Production", "integration_type": "<value>", "method": "<value>", "name": "<value>", "path": "/etc/namedb", "status": "<value>", "type": "login"}, {"environment": "Production", "integration_type": "<value>", "method": "<value>", "name": "<value>", "path": "/etc/namedb", "status": "<value>", "type": "login"}, {"environment": "Production", "integration_type": "<value>", "method": "<value>", "name": "<value>", "path": "/etc/namedb", "status": "<value>", "type": "login"}]
+  listUnifiedConnections:
+    speakeasy-default-list-unified-connections:
+      responses:
+        "200":
+          application/json: [{"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["commerce_location_read", "ticketing_customer_write"]}, {"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["commerce_location_read", "ticketing_customer_write"]}, {"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["commerce_location_read", "ticketing_customer_write"]}]
   listUnifiedIntegrationWorkspaces:
     speakeasy-default-list-unified-integration-workspaces:
       parameters:
         path:
           workspace_id: "<id>"
-        query: {}
-  listUnifiedIntegrations: {}
-  listUnifiedIssues: {}
-  listUnifiedWebhooks: {}
+      responses:
+        "200":
+          application/json: [{"categories": ["crm"], "name": "<value>", "type": "<value>"}, {"categories": ["crm"], "name": "<value>", "type": "<value>"}]
+  listUnifiedIntegrations:
+    speakeasy-default-list-unified-integrations:
+      responses:
+        "200":
+          application/json: [{"categories": [], "name": "<value>", "type": "<value>"}, {"categories": [], "name": "<value>", "type": "<value>"}, {"categories": [], "name": "<value>", "type": "<value>"}]
+  listUnifiedIssues:
+    speakeasy-default-list-unified-issues:
+      responses:
+        "200":
+          application/json: [{"status": "IN_PROGRESS", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}, {"status": "IN_PROGRESS", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}, {"status": "IN_PROGRESS", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}]
+  listUnifiedWebhooks:
+    speakeasy-default-list-unified-webhooks:
+      responses:
+        "200":
+          application/json: [{"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "hris_payslip"}, {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "hris_payslip"}, {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "hris_payslip"}]
   patchUnifiedConnection:
     speakeasy-default-patch-unified-connection:
       parameters:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"categories": ["calendar", "enrich"], "environment": "Production", "integration_type": "<value>", "permissions": []}
+        application/json: {"categories": ["storage"], "environment": "Production", "integration_type": "<value>", "permissions": ["uc_contact_write"]}
+      responses:
+        "200":
+          application/json: {"categories": ["messaging", "ats", "martech"], "environment": "Production", "integration_type": "<value>", "permissions": ["payment_payment_write", "ats_company_read", "lms_course_write"]}
   patchUnifiedWebhook:
     speakeasy-default-patch-unified-webhook:
       parameters:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "crm_lead"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "updated", "object_type": "ticketing_customer"}
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "payment_payment"}
   patchUnifiedWebhookTrigger:
     speakeasy-default-patch-unified-webhook-trigger:
       parameters:
@@ -5874,14 +7578,20 @@ examples:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"categories": ["calendar", "storage", "calendar"], "environment": "Production", "integration_type": "<value>", "permissions": []}
+        application/json: {"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["commerce_review_read", "calendar_calendar_read"]}
+      responses:
+        "200":
+          application/json: {"categories": ["enrich", "payment"], "environment": "Production", "integration_type": "<value>", "permissions": []}
   updateUnifiedWebhook:
     speakeasy-default-update-unified-webhook:
       parameters:
         path:
           id: "<id>"
       requestBody:
-        application/json: {"connection_id": "<id>", "environment": "Production", "event": "created", "object_type": "payment_payout"}
+        application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "messaging_channel"}
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "environment": "Production", "event": "deleted", "object_type": "ats_job"}
   updateUnifiedWebhookTrigger:
     speakeasy-default-update-unified-webhook-trigger:
       parameters:
@@ -5893,6 +7603,8 @@ examples:
         path:
           workspace_id: "<id>"
           integration_type: "<value>"
-        query: {}
-examplesVersion: 1.0.0
+      responses:
+        "200":
+          text/plain: "<value>"
+examplesVersion: 1.0.2
 generatedTests: {}

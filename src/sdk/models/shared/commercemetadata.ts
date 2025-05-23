@@ -5,6 +5,7 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,6 +37,23 @@ export type CommerceMetadataExtraData =
   | boolean
   | CommerceMetadataSchemasExtraData52
   | Array<any>;
+
+export const CommerceMetadataFormat = {
+  Text: "TEXT",
+  Number: "NUMBER",
+  Date: "DATE",
+  Boolean: "BOOLEAN",
+  File: "FILE",
+  Textarea: "TEXTAREA",
+  SingleSelect: "SINGLE_SELECT",
+  MultipleSelect: "MULTIPLE_SELECT",
+  Measurement: "MEASUREMENT",
+  Price: "PRICE",
+  YesNo: "YES_NO",
+  Currency: "CURRENCY",
+  Url: "URL",
+} as const;
+export type CommerceMetadataFormat = ClosedEnum<typeof CommerceMetadataFormat>;
 
 export type CommerceMetadataSchemasValue52 = {};
 
@@ -80,6 +98,7 @@ export type CommerceMetadata = {
     | CommerceMetadataSchemasExtraData52
     | Array<any>
     | undefined;
+  format?: CommerceMetadataFormat | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -668,6 +687,27 @@ export function commerceMetadataExtraDataFromJSON(
     (x) => CommerceMetadataExtraData$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'CommerceMetadataExtraData' from JSON`,
   );
+}
+
+/** @internal */
+export const CommerceMetadataFormat$inboundSchema: z.ZodNativeEnum<
+  typeof CommerceMetadataFormat
+> = z.nativeEnum(CommerceMetadataFormat);
+
+/** @internal */
+export const CommerceMetadataFormat$outboundSchema: z.ZodNativeEnum<
+  typeof CommerceMetadataFormat
+> = CommerceMetadataFormat$inboundSchema;
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CommerceMetadataFormat$ {
+  /** @deprecated use `CommerceMetadataFormat$inboundSchema` instead. */
+  export const inboundSchema = CommerceMetadataFormat$inboundSchema;
+  /** @deprecated use `CommerceMetadataFormat$outboundSchema` instead. */
+  export const outboundSchema = CommerceMetadataFormat$outboundSchema;
 }
 
 /** @internal */
@@ -1260,6 +1300,7 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: CommerceMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
@@ -1303,6 +1344,7 @@ export type CommerceMetadata$Outbound = {
     | CommerceMetadataSchemasExtraData52$Outbound
     | Array<any>
     | undefined;
+  format?: string | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -1346,6 +1388,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
       z.array(z.any()),
     ]),
   ]).optional(),
+  format: CommerceMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),

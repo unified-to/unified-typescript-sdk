@@ -5,7 +5,7 @@
 ```typescript
 import { AccountingEmailType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingEmailType = "HOME";
+let value: AccountingEmailType = "WORK";
 ```
 
 ## Values

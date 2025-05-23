@@ -12,13 +12,13 @@ const value: shared.CommerceMetadata1 = {};
 ### `shared.CommerceMetadata2`
 
 ```typescript
-const value: shared.CommerceMetadata2 = {};
+const value: shared.CommerceMetadata2 = "<value>";
 ```
 
 ### `shared.CommerceMetadata3`
 
 ```typescript
-const value: shared.CommerceMetadata3 = 6778.17;
+const value: shared.CommerceMetadata3 = 6470.19;
 ```
 
 ### `shared.CommerceMetadata4`

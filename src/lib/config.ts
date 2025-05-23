@@ -30,7 +30,7 @@ export type SDKOptions = {
   /**
    * The security details required to authenticate the SDK
    */
-  security?: shared.Security | (() => Promise<shared.Security>);
+  security?: shared.Security | (() => Promise<shared.Security>) | undefined;
 
   httpClient?: HTTPClient;
   /**
@@ -69,8 +69,8 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "1.0",
-  sdkVersion: "2.70.0",
-  genVersion: "2.522.1",
+  sdkVersion: "2.71.0",
+  genVersion: "2.610.0",
   userAgent:
-    "speakeasy-sdk/typescript 2.70.0 2.522.1 1.0 @unified-api/typescript-sdk",
+    "speakeasy-sdk/typescript 2.71.0 2.610.0 1.0 @unified-api/typescript-sdk",
 } as const;

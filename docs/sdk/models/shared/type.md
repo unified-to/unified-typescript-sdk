@@ -5,7 +5,7 @@
 ```typescript
 import { Type } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: Type = "EXPENSE";
+let value: Type = "ACCOUNTS_RECEIVABLE";
 ```
 
 ## Values

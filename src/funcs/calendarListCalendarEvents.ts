@@ -93,6 +93,7 @@ async function $do(
   const query = encodeFormQuery({
     "calendar_id": payload.calendar_id,
     "end_le": payload.end_le,
+    "expand_recurring_events": payload.expand_recurring_events,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

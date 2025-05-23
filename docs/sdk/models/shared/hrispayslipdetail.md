@@ -6,7 +6,7 @@
 import { HrisPayslipDetail } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisPayslipDetail = {
-  amount: 691.67,
+  amount: 8174.14,
 };
 ```
 
