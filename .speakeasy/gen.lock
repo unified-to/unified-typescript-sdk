@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0410d1777305583960db5f8722b2f00f
+  docChecksum: 22dac4e470df3ae38d82ad39b894304a
   docVersion: "1.0"
-  speakeasyVersion: 1.550.0
+  speakeasyVersion: 1.551.0
   generationVersion: 2.610.0
-  releaseVersion: 2.71.0
-  configChecksum: 8bafbbbe07b15db16eb075c04f9d2ac8
+  releaseVersion: 2.71.1
+  configChecksum: a4caed69317d9acfdb0158e0d131503b
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -72,6 +72,7 @@ generatedFiles:
   - docs/sdk/models/operations/createhrisemployeerequest.md
   - docs/sdk/models/operations/createhrisgrouprequest.md
   - docs/sdk/models/operations/createhrislocationrequest.md
+  - docs/sdk/models/operations/createhristimeshiftrequest.md
   - docs/sdk/models/operations/createkmscommentrequest.md
   - docs/sdk/models/operations/createkmspagerequest.md
   - docs/sdk/models/operations/createkmsspacerequest.md
@@ -149,6 +150,7 @@ generatedFiles:
   - docs/sdk/models/operations/gethrislocationrequest.md
   - docs/sdk/models/operations/gethrispaysliprequest.md
   - docs/sdk/models/operations/gethristimeoffrequest.md
+  - docs/sdk/models/operations/gethristimeshiftrequest.md
   - docs/sdk/models/operations/getkmscommentrequest.md
   - docs/sdk/models/operations/getkmspagerequest.md
   - docs/sdk/models/operations/getkmsspacerequest.md
@@ -232,6 +234,7 @@ generatedFiles:
   - docs/sdk/models/operations/listhrislocationsrequest.md
   - docs/sdk/models/operations/listhrispayslipsrequest.md
   - docs/sdk/models/operations/listhristimeoffsrequest.md
+  - docs/sdk/models/operations/listhristimeshiftsrequest.md
   - docs/sdk/models/operations/listkmscommentsrequest.md
   - docs/sdk/models/operations/listkmspagesrequest.md
   - docs/sdk/models/operations/listkmsspacesrequest.md
@@ -310,6 +313,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchhrisemployeerequest.md
   - docs/sdk/models/operations/patchhrisgrouprequest.md
   - docs/sdk/models/operations/patchhrislocationrequest.md
+  - docs/sdk/models/operations/patchhristimeshiftrequest.md
   - docs/sdk/models/operations/patchkmscommentrequest.md
   - docs/sdk/models/operations/patchkmspagerequest.md
   - docs/sdk/models/operations/patchkmsspacerequest.md
@@ -418,6 +422,8 @@ generatedFiles:
   - docs/sdk/models/operations/removehrisgroupresponse.md
   - docs/sdk/models/operations/removehrislocationrequest.md
   - docs/sdk/models/operations/removehrislocationresponse.md
+  - docs/sdk/models/operations/removehristimeshiftrequest.md
+  - docs/sdk/models/operations/removehristimeshiftresponse.md
   - docs/sdk/models/operations/removekmscommentrequest.md
   - docs/sdk/models/operations/removekmscommentresponse.md
   - docs/sdk/models/operations/removekmspagerequest.md
@@ -520,6 +526,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatehrisemployeerequest.md
   - docs/sdk/models/operations/updatehrisgrouprequest.md
   - docs/sdk/models/operations/updatehrislocationrequest.md
+  - docs/sdk/models/operations/updatehristimeshiftrequest.md
   - docs/sdk/models/operations/updatekmscommentrequest.md
   - docs/sdk/models/operations/updatekmspagerequest.md
   - docs/sdk/models/operations/updatekmsspacerequest.md
@@ -793,6 +800,7 @@ generatedFiles:
   - docs/sdk/models/shared/hristimeoff.md
   - docs/sdk/models/shared/hristimeoffstatus.md
   - docs/sdk/models/shared/hristimeofftype.md
+  - docs/sdk/models/shared/hristimeshift.md
   - docs/sdk/models/shared/integration.md
   - docs/sdk/models/shared/integration1.md
   - docs/sdk/models/shared/integration2.md
@@ -1117,6 +1125,7 @@ generatedFiles:
   - docs/sdks/ticket/README.md
   - docs/sdks/ticketing/README.md
   - docs/sdks/timeoff/README.md
+  - docs/sdks/timeshift/README.md
   - docs/sdks/transaction/README.md
   - docs/sdks/uc/README.md
   - docs/sdks/unified/README.md
@@ -1494,6 +1503,7 @@ generatedFiles:
   - src/funcs/hrisCreateHrisEmployee.ts
   - src/funcs/hrisCreateHrisGroup.ts
   - src/funcs/hrisCreateHrisLocation.ts
+  - src/funcs/hrisCreateHrisTimeshift.ts
   - src/funcs/hrisGetHrisCompany.ts
   - src/funcs/hrisGetHrisDevice.ts
   - src/funcs/hrisGetHrisEmployee.ts
@@ -1501,6 +1511,7 @@ generatedFiles:
   - src/funcs/hrisGetHrisLocation.ts
   - src/funcs/hrisGetHrisPayslip.ts
   - src/funcs/hrisGetHrisTimeoff.ts
+  - src/funcs/hrisGetHrisTimeshift.ts
   - src/funcs/hrisListHrisCompanies.ts
   - src/funcs/hrisListHrisDevices.ts
   - src/funcs/hrisListHrisEmployees.ts
@@ -1508,21 +1519,25 @@ generatedFiles:
   - src/funcs/hrisListHrisLocations.ts
   - src/funcs/hrisListHrisPayslips.ts
   - src/funcs/hrisListHrisTimeoffs.ts
+  - src/funcs/hrisListHrisTimeshifts.ts
   - src/funcs/hrisPatchHrisCompany.ts
   - src/funcs/hrisPatchHrisDevice.ts
   - src/funcs/hrisPatchHrisEmployee.ts
   - src/funcs/hrisPatchHrisGroup.ts
   - src/funcs/hrisPatchHrisLocation.ts
+  - src/funcs/hrisPatchHrisTimeshift.ts
   - src/funcs/hrisRemoveHrisCompany.ts
   - src/funcs/hrisRemoveHrisDevice.ts
   - src/funcs/hrisRemoveHrisEmployee.ts
   - src/funcs/hrisRemoveHrisGroup.ts
   - src/funcs/hrisRemoveHrisLocation.ts
+  - src/funcs/hrisRemoveHrisTimeshift.ts
   - src/funcs/hrisUpdateHrisCompany.ts
   - src/funcs/hrisUpdateHrisDevice.ts
   - src/funcs/hrisUpdateHrisEmployee.ts
   - src/funcs/hrisUpdateHrisGroup.ts
   - src/funcs/hrisUpdateHrisLocation.ts
+  - src/funcs/hrisUpdateHrisTimeshift.ts
   - src/funcs/instructorCreateLmsInstructor.ts
   - src/funcs/instructorGetLmsInstructor.ts
   - src/funcs/instructorListLmsInstructors.ts
@@ -1913,6 +1928,12 @@ generatedFiles:
   - src/funcs/ticketingUpdateTicketingTicket.ts
   - src/funcs/timeoffGetHrisTimeoff.ts
   - src/funcs/timeoffListHrisTimeoffs.ts
+  - src/funcs/timeshiftCreateHrisTimeshift.ts
+  - src/funcs/timeshiftGetHrisTimeshift.ts
+  - src/funcs/timeshiftListHrisTimeshifts.ts
+  - src/funcs/timeshiftPatchHrisTimeshift.ts
+  - src/funcs/timeshiftRemoveHrisTimeshift.ts
+  - src/funcs/timeshiftUpdateHrisTimeshift.ts
   - src/funcs/transactionCreateAccountingTransaction.ts
   - src/funcs/transactionGetAccountingTransaction.ts
   - src/funcs/transactionListAccountingTransactions.ts
@@ -2371,6 +2392,7 @@ generatedFiles:
   - src/mcp-server/tools/hrisCreateHrisEmployee.ts
   - src/mcp-server/tools/hrisCreateHrisGroup.ts
   - src/mcp-server/tools/hrisCreateHrisLocation.ts
+  - src/mcp-server/tools/hrisCreateHrisTimeshift.ts
   - src/mcp-server/tools/hrisGetHrisCompany.ts
   - src/mcp-server/tools/hrisGetHrisDevice.ts
   - src/mcp-server/tools/hrisGetHrisEmployee.ts
@@ -2378,6 +2400,7 @@ generatedFiles:
   - src/mcp-server/tools/hrisGetHrisLocation.ts
   - src/mcp-server/tools/hrisGetHrisPayslip.ts
   - src/mcp-server/tools/hrisGetHrisTimeoff.ts
+  - src/mcp-server/tools/hrisGetHrisTimeshift.ts
   - src/mcp-server/tools/hrisListHrisCompanies.ts
   - src/mcp-server/tools/hrisListHrisDevices.ts
   - src/mcp-server/tools/hrisListHrisEmployees.ts
@@ -2385,21 +2408,25 @@ generatedFiles:
   - src/mcp-server/tools/hrisListHrisLocations.ts
   - src/mcp-server/tools/hrisListHrisPayslips.ts
   - src/mcp-server/tools/hrisListHrisTimeoffs.ts
+  - src/mcp-server/tools/hrisListHrisTimeshifts.ts
   - src/mcp-server/tools/hrisPatchHrisCompany.ts
   - src/mcp-server/tools/hrisPatchHrisDevice.ts
   - src/mcp-server/tools/hrisPatchHrisEmployee.ts
   - src/mcp-server/tools/hrisPatchHrisGroup.ts
   - src/mcp-server/tools/hrisPatchHrisLocation.ts
+  - src/mcp-server/tools/hrisPatchHrisTimeshift.ts
   - src/mcp-server/tools/hrisRemoveHrisCompany.ts
   - src/mcp-server/tools/hrisRemoveHrisDevice.ts
   - src/mcp-server/tools/hrisRemoveHrisEmployee.ts
   - src/mcp-server/tools/hrisRemoveHrisGroup.ts
   - src/mcp-server/tools/hrisRemoveHrisLocation.ts
+  - src/mcp-server/tools/hrisRemoveHrisTimeshift.ts
   - src/mcp-server/tools/hrisUpdateHrisCompany.ts
   - src/mcp-server/tools/hrisUpdateHrisDevice.ts
   - src/mcp-server/tools/hrisUpdateHrisEmployee.ts
   - src/mcp-server/tools/hrisUpdateHrisGroup.ts
   - src/mcp-server/tools/hrisUpdateHrisLocation.ts
+  - src/mcp-server/tools/hrisUpdateHrisTimeshift.ts
   - src/mcp-server/tools/instructorCreateLmsInstructor.ts
   - src/mcp-server/tools/instructorGetLmsInstructor.ts
   - src/mcp-server/tools/instructorListLmsInstructors.ts
@@ -2790,6 +2817,12 @@ generatedFiles:
   - src/mcp-server/tools/ticketingUpdateTicketingTicket.ts
   - src/mcp-server/tools/timeoffGetHrisTimeoff.ts
   - src/mcp-server/tools/timeoffListHrisTimeoffs.ts
+  - src/mcp-server/tools/timeshiftCreateHrisTimeshift.ts
+  - src/mcp-server/tools/timeshiftGetHrisTimeshift.ts
+  - src/mcp-server/tools/timeshiftListHrisTimeshifts.ts
+  - src/mcp-server/tools/timeshiftPatchHrisTimeshift.ts
+  - src/mcp-server/tools/timeshiftRemoveHrisTimeshift.ts
+  - src/mcp-server/tools/timeshiftUpdateHrisTimeshift.ts
   - src/mcp-server/tools/transactionCreateAccountingTransaction.ts
   - src/mcp-server/tools/transactionGetAccountingTransaction.ts
   - src/mcp-server/tools/transactionListAccountingTransactions.ts
@@ -2945,6 +2978,7 @@ generatedFiles:
   - src/sdk/models/operations/createhrisemployee.ts
   - src/sdk/models/operations/createhrisgroup.ts
   - src/sdk/models/operations/createhrislocation.ts
+  - src/sdk/models/operations/createhristimeshift.ts
   - src/sdk/models/operations/createkmscomment.ts
   - src/sdk/models/operations/createkmspage.ts
   - src/sdk/models/operations/createkmsspace.ts
@@ -3018,6 +3052,7 @@ generatedFiles:
   - src/sdk/models/operations/gethrislocation.ts
   - src/sdk/models/operations/gethrispayslip.ts
   - src/sdk/models/operations/gethristimeoff.ts
+  - src/sdk/models/operations/gethristimeshift.ts
   - src/sdk/models/operations/getkmscomment.ts
   - src/sdk/models/operations/getkmspage.ts
   - src/sdk/models/operations/getkmsspace.ts
@@ -3102,6 +3137,7 @@ generatedFiles:
   - src/sdk/models/operations/listhrislocations.ts
   - src/sdk/models/operations/listhrispayslips.ts
   - src/sdk/models/operations/listhristimeoffs.ts
+  - src/sdk/models/operations/listhristimeshifts.ts
   - src/sdk/models/operations/listkmscomments.ts
   - src/sdk/models/operations/listkmspages.ts
   - src/sdk/models/operations/listkmsspaces.ts
@@ -3177,6 +3213,7 @@ generatedFiles:
   - src/sdk/models/operations/patchhrisemployee.ts
   - src/sdk/models/operations/patchhrisgroup.ts
   - src/sdk/models/operations/patchhrislocation.ts
+  - src/sdk/models/operations/patchhristimeshift.ts
   - src/sdk/models/operations/patchkmscomment.ts
   - src/sdk/models/operations/patchkmspage.ts
   - src/sdk/models/operations/patchkmsspace.ts
@@ -3246,6 +3283,7 @@ generatedFiles:
   - src/sdk/models/operations/removehrisemployee.ts
   - src/sdk/models/operations/removehrisgroup.ts
   - src/sdk/models/operations/removehrislocation.ts
+  - src/sdk/models/operations/removehristimeshift.ts
   - src/sdk/models/operations/removekmscomment.ts
   - src/sdk/models/operations/removekmspage.ts
   - src/sdk/models/operations/removekmsspace.ts
@@ -3313,6 +3351,7 @@ generatedFiles:
   - src/sdk/models/operations/updatehrisemployee.ts
   - src/sdk/models/operations/updatehrisgroup.ts
   - src/sdk/models/operations/updatehrislocation.ts
+  - src/sdk/models/operations/updatehristimeshift.ts
   - src/sdk/models/operations/updatekmscomment.ts
   - src/sdk/models/operations/updatekmspage.ts
   - src/sdk/models/operations/updatekmsspace.ts
@@ -3448,6 +3487,7 @@ generatedFiles:
   - src/sdk/models/shared/hrispayslipdetail.ts
   - src/sdk/models/shared/hristelephone.ts
   - src/sdk/models/shared/hristimeoff.ts
+  - src/sdk/models/shared/hristimeshift.ts
   - src/sdk/models/shared/index.ts
   - src/sdk/models/shared/integration.ts
   - src/sdk/models/shared/issue.ts
@@ -3609,6 +3649,7 @@ generatedFiles:
   - src/sdk/ticket.ts
   - src/sdk/ticketing.ts
   - src/sdk/timeoff.ts
+  - src/sdk/timeshift.ts
   - src/sdk/transaction.ts
   - src/sdk/types/async.ts
   - src/sdk/types/blobs.ts
@@ -7606,5 +7647,60 @@ examples:
       responses:
         "200":
           text/plain: "<value>"
+  createHrisTimeshift:
+    speakeasy-default-create-hris-timeshift:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getHrisTimeshift:
+    speakeasy-default-get-hris-timeshift:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisTimeshifts:
+    speakeasy-default-list-hris-timeshifts:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
+  patchHrisTimeshift:
+    speakeasy-default-patch-hris-timeshift:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeHrisTimeshift:
+    speakeasy-default-remove-hris-timeshift:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisTimeshift:
+    speakeasy-default-update-hris-timeshift:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}

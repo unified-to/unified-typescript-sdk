@@ -101,6 +101,7 @@ export * from "./hrispayslip.js";
 export * from "./hrispayslipdetail.js";
 export * from "./hristelephone.js";
 export * from "./hristimeoff.js";
+export * from "./hristimeshift.js";
 export * from "./integration.js";
 export * from "./issue.js";
 export * from "./kmscomment.js";

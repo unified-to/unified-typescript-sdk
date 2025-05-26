@@ -7,6 +7,7 @@ import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
 import { hrisCreateHrisGroup } from "../funcs/hrisCreateHrisGroup.js";
 import { hrisCreateHrisLocation } from "../funcs/hrisCreateHrisLocation.js";
+import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
 import { hrisGetHrisCompany } from "../funcs/hrisGetHrisCompany.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
@@ -14,6 +15,7 @@ import { hrisGetHrisGroup } from "../funcs/hrisGetHrisGroup.js";
 import { hrisGetHrisLocation } from "../funcs/hrisGetHrisLocation.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
+import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
 import { hrisListHrisCompanies } from "../funcs/hrisListHrisCompanies.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
@@ -21,21 +23,25 @@ import { hrisListHrisGroups } from "../funcs/hrisListHrisGroups.js";
 import { hrisListHrisLocations } from "../funcs/hrisListHrisLocations.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
+import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
 import { hrisPatchHrisCompany } from "../funcs/hrisPatchHrisCompany.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
 import { hrisPatchHrisGroup } from "../funcs/hrisPatchHrisGroup.js";
 import { hrisPatchHrisLocation } from "../funcs/hrisPatchHrisLocation.js";
+import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
 import { hrisRemoveHrisCompany } from "../funcs/hrisRemoveHrisCompany.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
 import { hrisRemoveHrisGroup } from "../funcs/hrisRemoveHrisGroup.js";
 import { hrisRemoveHrisLocation } from "../funcs/hrisRemoveHrisLocation.js";
+import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
 import { hrisUpdateHrisCompany } from "../funcs/hrisUpdateHrisCompany.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
 import { hrisUpdateHrisGroup } from "../funcs/hrisUpdateHrisGroup.js";
 import { hrisUpdateHrisLocation } from "../funcs/hrisUpdateHrisLocation.js";
+import { hrisUpdateHrisTimeshift } from "../funcs/hrisUpdateHrisTimeshift.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -106,6 +112,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(hrisCreateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a timeshift
+   */
+  async createHrisTimeshift(
+    request: operations.CreateHrisTimeshiftRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeshift> {
+    return unwrapAsync(hrisCreateHrisTimeshift(
       this,
       request,
       options,
@@ -211,6 +231,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Retrieve a timeshift
+   */
+  async getHrisTimeshift(
+    request: operations.GetHrisTimeshiftRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeshift> {
+    return unwrapAsync(hrisGetHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all companies
    */
   async listHrisCompanies(
@@ -309,6 +343,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * List all timeshifts
+   */
+  async listHrisTimeshifts(
+    request: operations.ListHrisTimeshiftsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.HrisTimeshift>> {
+    return unwrapAsync(hrisListHrisTimeshifts(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a company
    */
   async patchHrisCompany(
@@ -372,6 +420,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(hrisPatchHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a timeshift
+   */
+  async patchHrisTimeshift(
+    request: operations.PatchHrisTimeshiftRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeshift> {
+    return unwrapAsync(hrisPatchHrisTimeshift(
       this,
       request,
       options,
@@ -449,6 +511,20 @@ export class Hris extends ClientSDK {
   }
 
   /**
+   * Remove a timeshift
+   */
+  async removeHrisTimeshift(
+    request: operations.RemoveHrisTimeshiftRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveHrisTimeshiftResponse | undefined> {
+    return unwrapAsync(hrisRemoveHrisTimeshift(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a company
    */
   async updateHrisCompany(
@@ -512,6 +588,20 @@ export class Hris extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.HrisLocation> {
     return unwrapAsync(hrisUpdateHrisLocation(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a timeshift
+   */
+  async updateHrisTimeshift(
+    request: operations.UpdateHrisTimeshiftRequest,
+    options?: RequestOptions,
+  ): Promise<shared.HrisTimeshift> {
+    return unwrapAsync(hrisUpdateHrisTimeshift(
       this,
       request,
       options,

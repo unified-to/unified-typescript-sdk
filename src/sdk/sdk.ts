@@ -90,6 +90,7 @@ import { Taxrate } from "./taxrate.js";
 import { Ticket } from "./ticket.js";
 import { Ticketing } from "./ticketing.js";
 import { Timeoff } from "./timeoff.js";
+import { Timeshift } from "./timeshift.js";
 import { Transaction } from "./transaction.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
@@ -325,6 +326,11 @@ export class UnifiedTo extends ClientSDK {
   private _timeoff?: Timeoff;
   get timeoff(): Timeoff {
     return (this._timeoff ??= new Timeoff(this._options));
+  }
+
+  private _timeshift?: Timeshift;
+  get timeshift(): Timeshift {
+    return (this._timeshift ??= new Timeshift(this._options));
   }
 
   private _kms?: Kms;

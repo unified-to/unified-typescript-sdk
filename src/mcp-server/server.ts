@@ -380,6 +380,7 @@ import { tool$hrisCreateHrisDevice } from "./tools/hrisCreateHrisDevice.js";
 import { tool$hrisCreateHrisEmployee } from "./tools/hrisCreateHrisEmployee.js";
 import { tool$hrisCreateHrisGroup } from "./tools/hrisCreateHrisGroup.js";
 import { tool$hrisCreateHrisLocation } from "./tools/hrisCreateHrisLocation.js";
+import { tool$hrisCreateHrisTimeshift } from "./tools/hrisCreateHrisTimeshift.js";
 import { tool$hrisGetHrisCompany } from "./tools/hrisGetHrisCompany.js";
 import { tool$hrisGetHrisDevice } from "./tools/hrisGetHrisDevice.js";
 import { tool$hrisGetHrisEmployee } from "./tools/hrisGetHrisEmployee.js";
@@ -387,6 +388,7 @@ import { tool$hrisGetHrisGroup } from "./tools/hrisGetHrisGroup.js";
 import { tool$hrisGetHrisLocation } from "./tools/hrisGetHrisLocation.js";
 import { tool$hrisGetHrisPayslip } from "./tools/hrisGetHrisPayslip.js";
 import { tool$hrisGetHrisTimeoff } from "./tools/hrisGetHrisTimeoff.js";
+import { tool$hrisGetHrisTimeshift } from "./tools/hrisGetHrisTimeshift.js";
 import { tool$hrisListHrisCompanies } from "./tools/hrisListHrisCompanies.js";
 import { tool$hrisListHrisDevices } from "./tools/hrisListHrisDevices.js";
 import { tool$hrisListHrisEmployees } from "./tools/hrisListHrisEmployees.js";
@@ -394,21 +396,25 @@ import { tool$hrisListHrisGroups } from "./tools/hrisListHrisGroups.js";
 import { tool$hrisListHrisLocations } from "./tools/hrisListHrisLocations.js";
 import { tool$hrisListHrisPayslips } from "./tools/hrisListHrisPayslips.js";
 import { tool$hrisListHrisTimeoffs } from "./tools/hrisListHrisTimeoffs.js";
+import { tool$hrisListHrisTimeshifts } from "./tools/hrisListHrisTimeshifts.js";
 import { tool$hrisPatchHrisCompany } from "./tools/hrisPatchHrisCompany.js";
 import { tool$hrisPatchHrisDevice } from "./tools/hrisPatchHrisDevice.js";
 import { tool$hrisPatchHrisEmployee } from "./tools/hrisPatchHrisEmployee.js";
 import { tool$hrisPatchHrisGroup } from "./tools/hrisPatchHrisGroup.js";
 import { tool$hrisPatchHrisLocation } from "./tools/hrisPatchHrisLocation.js";
+import { tool$hrisPatchHrisTimeshift } from "./tools/hrisPatchHrisTimeshift.js";
 import { tool$hrisRemoveHrisCompany } from "./tools/hrisRemoveHrisCompany.js";
 import { tool$hrisRemoveHrisDevice } from "./tools/hrisRemoveHrisDevice.js";
 import { tool$hrisRemoveHrisEmployee } from "./tools/hrisRemoveHrisEmployee.js";
 import { tool$hrisRemoveHrisGroup } from "./tools/hrisRemoveHrisGroup.js";
 import { tool$hrisRemoveHrisLocation } from "./tools/hrisRemoveHrisLocation.js";
+import { tool$hrisRemoveHrisTimeshift } from "./tools/hrisRemoveHrisTimeshift.js";
 import { tool$hrisUpdateHrisCompany } from "./tools/hrisUpdateHrisCompany.js";
 import { tool$hrisUpdateHrisDevice } from "./tools/hrisUpdateHrisDevice.js";
 import { tool$hrisUpdateHrisEmployee } from "./tools/hrisUpdateHrisEmployee.js";
 import { tool$hrisUpdateHrisGroup } from "./tools/hrisUpdateHrisGroup.js";
 import { tool$hrisUpdateHrisLocation } from "./tools/hrisUpdateHrisLocation.js";
+import { tool$hrisUpdateHrisTimeshift } from "./tools/hrisUpdateHrisTimeshift.js";
 import { tool$instructorCreateLmsInstructor } from "./tools/instructorCreateLmsInstructor.js";
 import { tool$instructorGetLmsInstructor } from "./tools/instructorGetLmsInstructor.js";
 import { tool$instructorListLmsInstructors } from "./tools/instructorListLmsInstructors.js";
@@ -799,6 +805,12 @@ import { tool$ticketRemoveTicketingTicket } from "./tools/ticketRemoveTicketingT
 import { tool$ticketUpdateTicketingTicket } from "./tools/ticketUpdateTicketingTicket.js";
 import { tool$timeoffGetHrisTimeoff } from "./tools/timeoffGetHrisTimeoff.js";
 import { tool$timeoffListHrisTimeoffs } from "./tools/timeoffListHrisTimeoffs.js";
+import { tool$timeshiftCreateHrisTimeshift } from "./tools/timeshiftCreateHrisTimeshift.js";
+import { tool$timeshiftGetHrisTimeshift } from "./tools/timeshiftGetHrisTimeshift.js";
+import { tool$timeshiftListHrisTimeshifts } from "./tools/timeshiftListHrisTimeshifts.js";
+import { tool$timeshiftPatchHrisTimeshift } from "./tools/timeshiftPatchHrisTimeshift.js";
+import { tool$timeshiftRemoveHrisTimeshift } from "./tools/timeshiftRemoveHrisTimeshift.js";
+import { tool$timeshiftUpdateHrisTimeshift } from "./tools/timeshiftUpdateHrisTimeshift.js";
 import { tool$transactionCreateAccountingTransaction } from "./tools/transactionCreateAccountingTransaction.js";
 import { tool$transactionGetAccountingTransaction } from "./tools/transactionGetAccountingTransaction.js";
 import { tool$transactionListAccountingTransactions } from "./tools/transactionListAccountingTransactions.js";
@@ -869,7 +881,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.71.0",
+    version: "2.71.1",
   });
 
   const client = new UnifiedToCore({
@@ -1298,6 +1310,7 @@ export function createMCPServer(deps: {
   tool(tool$hrisCreateHrisEmployee);
   tool(tool$hrisCreateHrisGroup);
   tool(tool$hrisCreateHrisLocation);
+  tool(tool$hrisCreateHrisTimeshift);
   tool(tool$hrisGetHrisCompany);
   tool(tool$hrisGetHrisDevice);
   tool(tool$hrisGetHrisEmployee);
@@ -1305,6 +1318,7 @@ export function createMCPServer(deps: {
   tool(tool$hrisGetHrisLocation);
   tool(tool$hrisGetHrisPayslip);
   tool(tool$hrisGetHrisTimeoff);
+  tool(tool$hrisGetHrisTimeshift);
   tool(tool$hrisListHrisCompanies);
   tool(tool$hrisListHrisDevices);
   tool(tool$hrisListHrisEmployees);
@@ -1312,21 +1326,25 @@ export function createMCPServer(deps: {
   tool(tool$hrisListHrisLocations);
   tool(tool$hrisListHrisPayslips);
   tool(tool$hrisListHrisTimeoffs);
+  tool(tool$hrisListHrisTimeshifts);
   tool(tool$hrisPatchHrisCompany);
   tool(tool$hrisPatchHrisDevice);
   tool(tool$hrisPatchHrisEmployee);
   tool(tool$hrisPatchHrisGroup);
   tool(tool$hrisPatchHrisLocation);
+  tool(tool$hrisPatchHrisTimeshift);
   tool(tool$hrisRemoveHrisCompany);
   tool(tool$hrisRemoveHrisDevice);
   tool(tool$hrisRemoveHrisEmployee);
   tool(tool$hrisRemoveHrisGroup);
   tool(tool$hrisRemoveHrisLocation);
+  tool(tool$hrisRemoveHrisTimeshift);
   tool(tool$hrisUpdateHrisCompany);
   tool(tool$hrisUpdateHrisDevice);
   tool(tool$hrisUpdateHrisEmployee);
   tool(tool$hrisUpdateHrisGroup);
   tool(tool$hrisUpdateHrisLocation);
+  tool(tool$hrisUpdateHrisTimeshift);
   tool(tool$deviceCreateHrisDevice);
   tool(tool$deviceGetHrisDevice);
   tool(tool$deviceListHrisDevices);
@@ -1355,6 +1373,12 @@ export function createMCPServer(deps: {
   tool(tool$payslipListHrisPayslips);
   tool(tool$timeoffGetHrisTimeoff);
   tool(tool$timeoffListHrisTimeoffs);
+  tool(tool$timeshiftCreateHrisTimeshift);
+  tool(tool$timeshiftGetHrisTimeshift);
+  tool(tool$timeshiftListHrisTimeshifts);
+  tool(tool$timeshiftPatchHrisTimeshift);
+  tool(tool$timeshiftRemoveHrisTimeshift);
+  tool(tool$timeshiftUpdateHrisTimeshift);
   tool(tool$kmsCreateKmsComment);
   tool(tool$kmsCreateKmsPage);
   tool(tool$kmsCreateKmsSpace);

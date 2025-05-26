@@ -26,15 +26,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all timeoffs
+ * List all timeshifts
  */
-export function hrisListHrisTimeoffs(
+export function timeshiftListHrisTimeshifts(
   client: UnifiedToCore,
-  request: operations.ListHrisTimeoffsRequest,
+  request: operations.ListHrisTimeshiftsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.HrisTimeoff>,
+    Array<shared.HrisTimeshift>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -53,12 +53,12 @@ export function hrisListHrisTimeoffs(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListHrisTimeoffsRequest,
+  request: operations.ListHrisTimeshiftsRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.HrisTimeoff>,
+      Array<shared.HrisTimeshift>,
       | SDKError
       | SDKValidationError
       | UnexpectedClientError
@@ -72,7 +72,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.ListHrisTimeoffsRequest$outboundSchema.parse(value),
+    (value) => operations.ListHrisTimeshiftsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -88,13 +88,14 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/hris/{connection_id}/timeoff")(pathParams);
+  const path = pathToFunc("/hris/{connection_id}/timeshift")(pathParams);
 
   const query = encodeFormQuery({
     "company_id": payload.company_id,
     "end_le": payload.end_le,
     "fields": payload.fields,
     "limit": payload.limit,
+    "location_id": payload.location_id,
     "offset": payload.offset,
     "order": payload.order,
     "query": payload.query,
@@ -114,7 +115,7 @@ async function $do(
 
   const context = {
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listHrisTimeoffs",
+    operationID: "listHrisTimeshifts",
     oAuth2Scopes: [],
 
     resolvedSecurity: requestSecurity,
@@ -153,7 +154,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.HrisTimeoff>,
+    Array<shared.HrisTimeshift>,
     | SDKError
     | SDKValidationError
     | UnexpectedClientError
@@ -162,7 +163,7 @@ async function $do(
     | RequestTimeoutError
     | ConnectionError
   >(
-    M.json(200, z.array(shared.HrisTimeoff$inboundSchema)),
+    M.json(200, z.array(shared.HrisTimeshift$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response);

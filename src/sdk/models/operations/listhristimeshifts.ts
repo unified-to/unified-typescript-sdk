@@ -8,7 +8,7 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListHrisTimeoffsRequest = {
+export type ListHrisTimeshiftsRequest = {
   /**
    * The company ID to filter by
    */
@@ -26,6 +26,10 @@ export type ListHrisTimeoffsRequest = {
    */
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  /**
+   * The location ID to filter by
+   */
+  locationId?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   /**
@@ -52,8 +56,8 @@ export type ListHrisTimeoffsRequest = {
 };
 
 /** @internal */
-export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
-  ListHrisTimeoffsRequest,
+export const ListHrisTimeshiftsRequest$inboundSchema: z.ZodType<
+  ListHrisTimeshiftsRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -62,6 +66,7 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
   end_le: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
+  location_id: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -75,6 +80,7 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
     "company_id": "companyId",
     "connection_id": "connectionId",
     "end_le": "endLe",
+    "location_id": "locationId",
     "start_gte": "startGte",
     "updated_gte": "updatedGte",
     "user_id": "userId",
@@ -82,12 +88,13 @@ export const ListHrisTimeoffsRequest$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type ListHrisTimeoffsRequest$Outbound = {
+export type ListHrisTimeshiftsRequest$Outbound = {
   company_id?: string | undefined;
   connection_id: string;
   end_le?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
+  location_id?: string | undefined;
   offset?: number | undefined;
   order?: string | undefined;
   query?: string | undefined;
@@ -99,16 +106,17 @@ export type ListHrisTimeoffsRequest$Outbound = {
 };
 
 /** @internal */
-export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
-  ListHrisTimeoffsRequest$Outbound,
+export const ListHrisTimeshiftsRequest$outboundSchema: z.ZodType<
+  ListHrisTimeshiftsRequest$Outbound,
   z.ZodTypeDef,
-  ListHrisTimeoffsRequest
+  ListHrisTimeshiftsRequest
 > = z.object({
   companyId: z.string().optional(),
   connectionId: z.string(),
   endLe: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
+  locationId: z.string().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
   query: z.string().optional(),
@@ -122,6 +130,7 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
     companyId: "company_id",
     connectionId: "connection_id",
     endLe: "end_le",
+    locationId: "location_id",
     startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",
@@ -132,29 +141,29 @@ export const ListHrisTimeoffsRequest$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ListHrisTimeoffsRequest$ {
-  /** @deprecated use `ListHrisTimeoffsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListHrisTimeoffsRequest$inboundSchema;
-  /** @deprecated use `ListHrisTimeoffsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListHrisTimeoffsRequest$outboundSchema;
-  /** @deprecated use `ListHrisTimeoffsRequest$Outbound` instead. */
-  export type Outbound = ListHrisTimeoffsRequest$Outbound;
+export namespace ListHrisTimeshiftsRequest$ {
+  /** @deprecated use `ListHrisTimeshiftsRequest$inboundSchema` instead. */
+  export const inboundSchema = ListHrisTimeshiftsRequest$inboundSchema;
+  /** @deprecated use `ListHrisTimeshiftsRequest$outboundSchema` instead. */
+  export const outboundSchema = ListHrisTimeshiftsRequest$outboundSchema;
+  /** @deprecated use `ListHrisTimeshiftsRequest$Outbound` instead. */
+  export type Outbound = ListHrisTimeshiftsRequest$Outbound;
 }
 
-export function listHrisTimeoffsRequestToJSON(
-  listHrisTimeoffsRequest: ListHrisTimeoffsRequest,
+export function listHrisTimeshiftsRequestToJSON(
+  listHrisTimeshiftsRequest: ListHrisTimeshiftsRequest,
 ): string {
   return JSON.stringify(
-    ListHrisTimeoffsRequest$outboundSchema.parse(listHrisTimeoffsRequest),
+    ListHrisTimeshiftsRequest$outboundSchema.parse(listHrisTimeshiftsRequest),
   );
 }
 
-export function listHrisTimeoffsRequestFromJSON(
+export function listHrisTimeshiftsRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ListHrisTimeoffsRequest, SDKValidationError> {
+): SafeParseResult<ListHrisTimeshiftsRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ListHrisTimeoffsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListHrisTimeoffsRequest' from JSON`,
+    (x) => ListHrisTimeshiftsRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListHrisTimeshiftsRequest' from JSON`,
   );
 }
