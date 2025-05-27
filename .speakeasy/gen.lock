@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5d7224eae5351ceaef9292fed7b8c35a
+  docChecksum: 644afcd407e559d62d0759a8b0b1d1d1
   docVersion: "1.0"
-  speakeasyVersion: 1.551.0
+  speakeasyVersion: 1.552.0
   generationVersion: 2.610.0
-  releaseVersion: 2.71.2
-  configChecksum: 719bdc478e487b2d768bc8384eaf61c8
+  releaseVersion: 2.71.3
+  configChecksum: c5d95fd7a69b50343de2544a47ceb2f5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -4794,10 +4794,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   createCalendarLink:
     speakeasy-default-create-calendar-link:
       parameters:
@@ -4825,7 +4825,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   getCalendarLink:
     speakeasy-default-get-calendar-link:
       parameters:
@@ -4902,10 +4902,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   patchCalendarLink:
     speakeasy-default-patch-calendar-link:
       parameters:
@@ -4953,10 +4953,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   updateCalendarLink:
     speakeasy-default-update-calendar-link:
       parameters:

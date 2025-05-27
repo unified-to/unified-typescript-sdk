@@ -6,11 +6,7 @@
 import { CreateCalendarEventRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCalendarEventRequest = {
-  calendarEvent: {
-    endAt: "<value>",
-    startAt: "<value>",
-    subject: "<value>",
-  },
+  calendarEvent: {},
   connectionId: "<id>",
 };
 ```

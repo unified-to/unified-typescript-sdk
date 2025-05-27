@@ -38,7 +38,7 @@ export type CalendarEvent = {
   attendees?: Array<CalendarAttendee> | undefined;
   calendarId?: string | undefined;
   createdAt?: string | undefined;
-  endAt: string;
+  endAt?: string | undefined;
   id?: string | undefined;
   isAllDay?: boolean | undefined;
   isFree?: boolean | undefined;
@@ -49,9 +49,9 @@ export type CalendarEvent = {
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence> | undefined;
   recurringEventId?: string | undefined;
-  startAt: string;
+  startAt?: string | undefined;
   status?: CalendarEventStatus | undefined;
-  subject: string;
+  subject?: string | undefined;
   timezone?: string | undefined;
   updatedAt?: string | undefined;
   webUrl?: string | undefined;
@@ -87,7 +87,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   attendees: z.array(CalendarAttendee$inboundSchema).optional(),
   calendar_id: z.string().optional(),
   created_at: z.string().optional(),
-  end_at: z.string(),
+  end_at: z.string().optional(),
   id: z.string().optional(),
   is_all_day: z.boolean().optional(),
   is_free: z.boolean().optional(),
@@ -98,9 +98,9 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
   recurring_event_id: z.string().optional(),
-  start_at: z.string(),
+  start_at: z.string().optional(),
   status: CalendarEventStatus$inboundSchema.optional(),
-  subject: z.string(),
+  subject: z.string().optional(),
   timezone: z.string().optional(),
   updated_at: z.string().optional(),
   web_url: z.string().optional(),
@@ -124,7 +124,7 @@ export type CalendarEvent$Outbound = {
   attendees?: Array<CalendarAttendee$Outbound> | undefined;
   calendar_id?: string | undefined;
   created_at?: string | undefined;
-  end_at: string;
+  end_at?: string | undefined;
   id?: string | undefined;
   is_all_day?: boolean | undefined;
   is_free?: boolean | undefined;
@@ -135,9 +135,9 @@ export type CalendarEvent$Outbound = {
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence$Outbound> | undefined;
   recurring_event_id?: string | undefined;
-  start_at: string;
+  start_at?: string | undefined;
   status?: string | undefined;
-  subject: string;
+  subject?: string | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -152,7 +152,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   attendees: z.array(CalendarAttendee$outboundSchema).optional(),
   calendarId: z.string().optional(),
   createdAt: z.string().optional(),
-  endAt: z.string(),
+  endAt: z.string().optional(),
   id: z.string().optional(),
   isAllDay: z.boolean().optional(),
   isFree: z.boolean().optional(),
@@ -163,9 +163,9 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
   recurringEventId: z.string().optional(),
-  startAt: z.string(),
+  startAt: z.string().optional(),
   status: CalendarEventStatus$outboundSchema.optional(),
-  subject: z.string(),
+  subject: z.string().optional(),
   timezone: z.string().optional(),
   updatedAt: z.string().optional(),
   webUrl: z.string().optional(),

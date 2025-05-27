@@ -35,11 +35,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.event.createCalendarEvent({
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
   });
 
@@ -68,11 +64,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventCreateCalendarEvent(unifiedTo, {
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
   });
 
@@ -531,11 +523,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.event.patchCalendarEvent({
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -565,11 +553,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventPatchCalendarEvent(unifiedTo, {
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -871,11 +855,7 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.event.updateCalendarEvent({
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
@@ -905,11 +885,7 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await eventUpdateCalendarEvent(unifiedTo, {
-    calendarEvent: {
-      endAt: "<value>",
-      startAt: "<value>",
-      subject: "<value>",
-    },
+    calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
   });
