@@ -25,11 +25,6 @@ import {
   CommerceMetadata$Outbound,
   CommerceMetadata$outboundSchema,
 } from "./commercemetadata.js";
-import {
-  PropertyCommerceItemTags,
-  PropertyCommerceItemTags$inboundSchema,
-  PropertyCommerceItemTags$outboundSchema,
-} from "./propertycommerceitemtags.js";
 
 export type CommerceItem = {
   accountId?: string | undefined;
@@ -46,7 +41,7 @@ export type CommerceItem = {
   publicName?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
-  tags?: Array<PropertyCommerceItemTags> | undefined;
+  tags?: Array<string> | undefined;
   type?: string | undefined;
   updatedAt?: Date | undefined;
   /**
@@ -77,7 +72,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   public_name: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
-  tags: z.array(PropertyCommerceItemTags$inboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   type: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -140,7 +135,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   publicName: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
-  tags: z.array(PropertyCommerceItemTags$outboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   type: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   variants: z.array(CommerceItemVariant$outboundSchema).optional(),

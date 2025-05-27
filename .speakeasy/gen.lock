@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 644afcd407e559d62d0759a8b0b1d1d1
+  docChecksum: d14d19d0a1732100e72235d3371aa316
   docVersion: "1.0"
   speakeasyVersion: 1.552.0
   generationVersion: 2.610.0
-  releaseVersion: 2.71.3
-  configChecksum: c5d95fd7a69b50343de2544a47ceb2f5
+  releaseVersion: 2.71.4
+  configChecksum: fcd0969f3edfcf70a0e49e14cff66d0c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -907,26 +907,14 @@ generatedFiles:
   - docs/sdk/models/shared/propertyaccountingreporttrialbalance.md
   - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
-  - docs/sdk/models/shared/propertyatsapplicationansweranswers.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
-  - docs/sdk/models/shared/propertyatscandidatelinkurls.md
-  - docs/sdk/models/shared/propertyatscandidateskills.md
-  - docs/sdk/models/shared/propertyatscandidatesources.md
-  - docs/sdk/models/shared/propertyatscandidatetags.md
   - docs/sdk/models/shared/propertyatscompanyaddress.md
-  - docs/sdk/models/shared/propertyatsjobdepartments.md
   - docs/sdk/models/shared/propertyatsjobpostingaddress.md
-  - docs/sdk/models/shared/propertyatsjobpublicjoburls.md
-  - docs/sdk/models/shared/propertyatsjobquestionoptions.md
   - docs/sdk/models/shared/propertycalendareventorganizer.md
   - docs/sdk/models/shared/propertycalendareventorganizerstatus.md
   - docs/sdk/models/shared/propertycalendareventrecurrenceondays.md
   - docs/sdk/models/shared/propertycalendarrecordingtranscriptattendee.md
   - docs/sdk/models/shared/propertycalendarrecordingtranscriptattendeestatus.md
-  - docs/sdk/models/shared/propertycommercecollectiontags.md
-  - docs/sdk/models/shared/propertycommerceitemoptionvalues.md
-  - docs/sdk/models/shared/propertycommerceitemtags.md
-  - docs/sdk/models/shared/propertycommerceitemvarianttags.md
   - docs/sdk/models/shared/propertycommercelocationaddress.md
   - docs/sdk/models/shared/propertyconnectionauth.md
   - docs/sdk/models/shared/propertyconnectioncategories.md
@@ -950,10 +938,8 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/propertyhrislocationaddress.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
-  - docs/sdk/models/shared/propertyintegrationtokeninstructions.md
   - docs/sdk/models/shared/propertylmsstudentaddress.md
   - docs/sdk/models/shared/propertymessagingmessageauthormember.md
-  - docs/sdk/models/shared/propertymetadatametadataoptions.md
   - docs/sdk/models/shared/propertyscimgroupmeta.md
   - docs/sdk/models/shared/propertyscimgroupschemas.md
   - docs/sdk/models/shared/propertyscimusermeta.md
@@ -3526,24 +3512,12 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingreportprofitandloss.ts
   - src/sdk/models/shared/propertyaccountingreporttrialbalance.ts
   - src/sdk/models/shared/propertyatsactivityfrom.ts
-  - src/sdk/models/shared/propertyatsapplicationansweranswers.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
-  - src/sdk/models/shared/propertyatscandidatelinkurls.ts
-  - src/sdk/models/shared/propertyatscandidateskills.ts
-  - src/sdk/models/shared/propertyatscandidatesources.ts
-  - src/sdk/models/shared/propertyatscandidatetags.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts
-  - src/sdk/models/shared/propertyatsjobdepartments.ts
   - src/sdk/models/shared/propertyatsjobpostingaddress.ts
-  - src/sdk/models/shared/propertyatsjobpublicjoburls.ts
-  - src/sdk/models/shared/propertyatsjobquestionoptions.ts
   - src/sdk/models/shared/propertycalendareventorganizer.ts
   - src/sdk/models/shared/propertycalendareventrecurrenceondays.ts
   - src/sdk/models/shared/propertycalendarrecordingtranscriptattendee.ts
-  - src/sdk/models/shared/propertycommercecollectiontags.ts
-  - src/sdk/models/shared/propertycommerceitemoptionvalues.ts
-  - src/sdk/models/shared/propertycommerceitemtags.ts
-  - src/sdk/models/shared/propertycommerceitemvarianttags.ts
   - src/sdk/models/shared/propertycommercelocationaddress.ts
   - src/sdk/models/shared/propertyconnectionauth.ts
   - src/sdk/models/shared/propertyconnectioncategories.ts
@@ -3566,10 +3540,8 @@ generatedFiles:
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/propertyhrislocationaddress.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
-  - src/sdk/models/shared/propertyintegrationtokeninstructions.ts
   - src/sdk/models/shared/propertylmsstudentaddress.ts
   - src/sdk/models/shared/propertymessagingmessageauthormember.ts
-  - src/sdk/models/shared/propertymetadatametadataoptions.ts
   - src/sdk/models/shared/propertyscimgroupmeta.ts
   - src/sdk/models/shared/propertyscimgroupschemas.ts
   - src/sdk/models/shared/propertyscimusermeta.ts

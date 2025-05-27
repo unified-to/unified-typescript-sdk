@@ -20,11 +20,6 @@ import {
   CommerceMetadata$Outbound,
   CommerceMetadata$outboundSchema,
 } from "./commercemetadata.js";
-import {
-  PropertyCommerceCollectionTags,
-  PropertyCommerceCollectionTags$inboundSchema,
-  PropertyCommerceCollectionTags$outboundSchema,
-} from "./propertycommercecollectiontags.js";
 
 export const CommerceCollectionType = {
   Collection: "COLLECTION",
@@ -50,7 +45,7 @@ export type CommerceCollection = {
   publicDescription?: string | undefined;
   publicName?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  tags?: Array<PropertyCommerceCollectionTags> | undefined;
+  tags?: Array<string> | undefined;
   type?: CommerceCollectionType | undefined;
   updatedAt?: Date | undefined;
 };
@@ -96,7 +91,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   public_description: z.string().optional(),
   public_name: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  tags: z.array(PropertyCommerceCollectionTags$inboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   type: CommerceCollectionType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -152,7 +147,7 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   publicDescription: z.string().optional(),
   publicName: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  tags: z.array(PropertyCommerceCollectionTags$outboundSchema).optional(),
+  tags: z.array(z.string()).optional(),
   type: CommerceCollectionType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

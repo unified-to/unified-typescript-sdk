@@ -8,11 +8,6 @@ import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  PropertyMetadataMetadataOptions,
-  PropertyMetadataMetadataOptions$inboundSchema,
-  PropertyMetadataMetadataOptions$outboundSchema,
-} from "./propertymetadatametadataoptions.js";
 
 export const MetadataMetadataFormat = {
   Text: "TEXT",
@@ -38,7 +33,7 @@ export type MetadataMetadata = {
   name: string;
   objectType: string;
   objects?: { [k: string]: any } | undefined;
-  options?: Array<PropertyMetadataMetadataOptions> | undefined;
+  options?: Array<string> | undefined;
   originalFormat?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
@@ -79,7 +74,7 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
   name: z.string(),
   object_type: z.string(),
   objects: z.record(z.any()).optional(),
-  options: z.array(PropertyMetadataMetadataOptions$inboundSchema).optional(),
+  options: z.array(z.string()).optional(),
   original_format: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
@@ -121,7 +116,7 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   name: z.string(),
   objectType: z.string(),
   objects: z.record(z.any()).optional(),
-  options: z.array(PropertyMetadataMetadataOptions$outboundSchema).optional(),
+  options: z.array(z.string()).optional(),
   originalFormat: z.string().optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),

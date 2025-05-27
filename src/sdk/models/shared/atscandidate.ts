@@ -44,26 +44,6 @@ import {
   PropertyAtsCandidateAddress$Outbound,
   PropertyAtsCandidateAddress$outboundSchema,
 } from "./propertyatscandidateaddress.js";
-import {
-  PropertyAtsCandidateLinkUrls,
-  PropertyAtsCandidateLinkUrls$inboundSchema,
-  PropertyAtsCandidateLinkUrls$outboundSchema,
-} from "./propertyatscandidatelinkurls.js";
-import {
-  PropertyAtsCandidateSkills,
-  PropertyAtsCandidateSkills$inboundSchema,
-  PropertyAtsCandidateSkills$outboundSchema,
-} from "./propertyatscandidateskills.js";
-import {
-  PropertyAtsCandidateSources,
-  PropertyAtsCandidateSources$inboundSchema,
-  PropertyAtsCandidateSources$outboundSchema,
-} from "./propertyatscandidatesources.js";
-import {
-  PropertyAtsCandidateTags,
-  PropertyAtsCandidateTags$inboundSchema,
-  PropertyAtsCandidateTags$outboundSchema,
-} from "./propertyatscandidatetags.js";
 
 export const Origin = {
   Agency: "AGENCY",
@@ -90,14 +70,14 @@ export type AtsCandidate = {
   /**
    * URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
    */
-  linkUrls?: Array<PropertyAtsCandidateLinkUrls> | undefined;
+  linkUrls?: Array<string> | undefined;
   metadata?: Array<AtsMetadata> | undefined;
   name?: string | undefined;
   origin?: Origin | undefined;
   raw?: { [k: string]: any } | undefined;
-  skills?: Array<PropertyAtsCandidateSkills> | undefined;
-  sources?: Array<PropertyAtsCandidateSources> | undefined;
-  tags?: Array<PropertyAtsCandidateTags> | undefined;
+  skills?: Array<string> | undefined;
+  sources?: Array<string> | undefined;
+  tags?: Array<string> | undefined;
   telephones?: Array<AtsTelephone> | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
@@ -144,14 +124,14 @@ export const AtsCandidate$inboundSchema: z.ZodType<
   external_identifier: z.string().optional(),
   id: z.string().optional(),
   image_url: z.string().optional(),
-  link_urls: z.array(PropertyAtsCandidateLinkUrls$inboundSchema).optional(),
+  link_urls: z.array(z.string()).optional(),
   metadata: z.array(AtsMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$inboundSchema.optional(),
   raw: z.record(z.any()).optional(),
-  skills: z.array(PropertyAtsCandidateSkills$inboundSchema).optional(),
-  sources: z.array(PropertyAtsCandidateSources$inboundSchema).optional(),
-  tags: z.array(PropertyAtsCandidateTags$inboundSchema).optional(),
+  skills: z.array(z.string()).optional(),
+  sources: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$inboundSchema).optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -218,14 +198,14 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   externalIdentifier: z.string().optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
-  linkUrls: z.array(PropertyAtsCandidateLinkUrls$outboundSchema).optional(),
+  linkUrls: z.array(z.string()).optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   origin: Origin$outboundSchema.optional(),
   raw: z.record(z.any()).optional(),
-  skills: z.array(PropertyAtsCandidateSkills$outboundSchema).optional(),
-  sources: z.array(PropertyAtsCandidateSources$outboundSchema).optional(),
-  tags: z.array(PropertyAtsCandidateTags$outboundSchema).optional(),
+  skills: z.array(z.string()).optional(),
+  sources: z.array(z.string()).optional(),
+  tags: z.array(z.string()).optional(),
   telephones: z.array(AtsTelephone$outboundSchema).optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),

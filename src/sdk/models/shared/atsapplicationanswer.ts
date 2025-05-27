@@ -7,14 +7,9 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  PropertyAtsApplicationAnswerAnswers,
-  PropertyAtsApplicationAnswerAnswers$inboundSchema,
-  PropertyAtsApplicationAnswerAnswers$outboundSchema,
-} from "./propertyatsapplicationansweranswers.js";
 
 export type AtsApplicationAnswer = {
-  answers: Array<PropertyAtsApplicationAnswerAnswers>;
+  answers: Array<string>;
   questionId: string;
 };
 
@@ -24,7 +19,7 @@ export const AtsApplicationAnswer$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  answers: z.array(PropertyAtsApplicationAnswerAnswers$inboundSchema),
+  answers: z.array(z.string()),
   question_id: z.string(),
 }).transform((v) => {
   return remap$(v, {
@@ -44,7 +39,7 @@ export const AtsApplicationAnswer$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AtsApplicationAnswer
 > = z.object({
-  answers: z.array(PropertyAtsApplicationAnswerAnswers$outboundSchema),
+  answers: z.array(z.string()),
   questionId: z.string(),
 }).transform((v) => {
   return remap$(v, {

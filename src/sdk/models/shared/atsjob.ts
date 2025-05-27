@@ -50,16 +50,6 @@ import {
   AtsMetadata$Outbound,
   AtsMetadata$outboundSchema,
 } from "./atsmetadata.js";
-import {
-  PropertyAtsJobDepartments,
-  PropertyAtsJobDepartments$inboundSchema,
-  PropertyAtsJobDepartments$outboundSchema,
-} from "./propertyatsjobdepartments.js";
-import {
-  PropertyAtsJobPublicJobUrls,
-  PropertyAtsJobPublicJobUrls$inboundSchema,
-  PropertyAtsJobPublicJobUrls$outboundSchema,
-} from "./propertyatsjobpublicjoburls.js";
 
 export const EmploymentType = {
   FullTime: "FULL_TIME",
@@ -93,7 +83,7 @@ export type AtsJob = {
   /**
    * @deprecated Use `groups` instead
    */
-  departments?: Array<PropertyAtsJobDepartments> | undefined;
+  departments?: Array<string> | undefined;
   description?: string | undefined;
   employmentType?: EmploymentType | undefined;
   /**
@@ -114,7 +104,7 @@ export type AtsJob = {
   /**
    * URLs for pages containing public listings for the job
    */
-  publicJobUrls?: Array<PropertyAtsJobPublicJobUrls> | undefined;
+  publicJobUrls?: Array<string> | undefined;
   questions?: Array<AtsJobQuestion> | undefined;
   raw?: { [k: string]: any } | undefined;
   recruiterIds?: Array<string> | undefined;
@@ -174,7 +164,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
-    departments: z.array(PropertyAtsJobDepartments$inboundSchema).optional(),
+    departments: z.array(z.string()).optional(),
     description: z.string().optional(),
     employment_type: EmploymentType$inboundSchema.optional(),
     groups: z.array(AtsGroup$inboundSchema).optional(),
@@ -186,8 +176,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     number_of_openings: z.number().optional(),
     openings: z.array(AtsJobOpening$inboundSchema).optional(),
     postings: z.array(AtsJobPosting$inboundSchema).optional(),
-    public_job_urls: z.array(PropertyAtsJobPublicJobUrls$inboundSchema)
-      .optional(),
+    public_job_urls: z.array(z.string()).optional(),
     questions: z.array(AtsJobQuestion$inboundSchema).optional(),
     raw: z.record(z.any()).optional(),
     recruiter_ids: z.array(z.string()).optional(),
@@ -250,7 +239,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   compensation: z.array(AtsCompensation$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  departments: z.array(PropertyAtsJobDepartments$outboundSchema).optional(),
+  departments: z.array(z.string()).optional(),
   description: z.string().optional(),
   employmentType: EmploymentType$outboundSchema.optional(),
   groups: z.array(AtsGroup$outboundSchema).optional(),
@@ -262,7 +251,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   numberOfOpenings: z.number().optional(),
   openings: z.array(AtsJobOpening$outboundSchema).optional(),
   postings: z.array(AtsJobPosting$outboundSchema).optional(),
-  publicJobUrls: z.array(PropertyAtsJobPublicJobUrls$outboundSchema).optional(),
+  publicJobUrls: z.array(z.string()).optional(),
   questions: z.array(AtsJobQuestion$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   recruiterIds: z.array(z.string()).optional(),
