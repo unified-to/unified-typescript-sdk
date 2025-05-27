@@ -52,6 +52,7 @@ export type AccountingOrder = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem> | undefined;
+  postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   shippingAddress?: PropertyAccountingOrderShippingAddress | undefined;
   status?: AccountingOrderStatus | undefined;
@@ -117,6 +118,8 @@ export const AccountingOrder$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$inboundSchema).optional(),
+  posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   raw: z.record(z.any()).optional(),
   shipping_address: PropertyAccountingOrderShippingAddress$inboundSchema
     .optional(),
@@ -131,6 +134,7 @@ export const AccountingOrder$inboundSchema: z.ZodType<
     "billing_address": "billingAddress",
     "contact_id": "contactId",
     "created_at": "createdAt",
+    "posted_at": "postedAt",
     "shipping_address": "shippingAddress",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
@@ -146,6 +150,7 @@ export type AccountingOrder$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
+  posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   shipping_address?:
     | PropertyAccountingOrderShippingAddress$Outbound
@@ -170,6 +175,7 @@ export const AccountingOrder$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
+  postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   shippingAddress: PropertyAccountingOrderShippingAddress$outboundSchema
     .optional(),
@@ -183,6 +189,7 @@ export const AccountingOrder$outboundSchema: z.ZodType<
     billingAddress: "billing_address",
     contactId: "contact_id",
     createdAt: "created_at",
+    postedAt: "posted_at",
     shippingAddress: "shipping_address",
     totalAmount: "total_amount",
     updatedAt: "updated_at",

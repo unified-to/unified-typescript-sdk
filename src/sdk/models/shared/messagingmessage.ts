@@ -36,6 +36,7 @@ export type MessagingMessage = {
   channelIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   destinationMembers?: Array<MessagingMember> | undefined;
+  hasChildren?: boolean | undefined;
   hiddenMembers?: Array<MessagingMember> | undefined;
   id?: string | undefined;
   mentionedMembers?: Array<MessagingMember> | undefined;
@@ -63,6 +64,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   destination_members: z.array(MessagingMember$inboundSchema).optional(),
+  has_children: z.boolean().optional(),
   hidden_members: z.array(MessagingMember$inboundSchema).optional(),
   id: z.string().optional(),
   mentioned_members: z.array(MessagingMember$inboundSchema).optional(),
@@ -83,6 +85,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "channel_ids": "channelIds",
     "created_at": "createdAt",
     "destination_members": "destinationMembers",
+    "has_children": "hasChildren",
     "hidden_members": "hiddenMembers",
     "mentioned_members": "mentionedMembers",
     "message_html": "messageHtml",
@@ -101,6 +104,7 @@ export type MessagingMessage$Outbound = {
   channel_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   destination_members?: Array<MessagingMember$Outbound> | undefined;
+  has_children?: boolean | undefined;
   hidden_members?: Array<MessagingMember$Outbound> | undefined;
   id?: string | undefined;
   mentioned_members?: Array<MessagingMember$Outbound> | undefined;
@@ -127,6 +131,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   channelIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
+  hasChildren: z.boolean().optional(),
   hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
   id: z.string().optional(),
   mentionedMembers: z.array(MessagingMember$outboundSchema).optional(),
@@ -146,6 +151,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     channelIds: "channel_ids",
     createdAt: "created_at",
     destinationMembers: "destination_members",
+    hasChildren: "has_children",
     hiddenMembers: "hidden_members",
     mentionedMembers: "mentioned_members",
     messageHtml: "message_html",
