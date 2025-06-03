@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d14d19d0a1732100e72235d3371aa316
+  docChecksum: f9bc57192bd992fcccfe33378ff85c27
   docVersion: "1.0"
-  speakeasyVersion: 1.552.0
-  generationVersion: 2.610.0
-  releaseVersion: 2.71.4
-  configChecksum: fcd0969f3edfcf70a0e49e14cff66d0c
+  speakeasyVersion: 1.555.0
+  generationVersion: 2.618.0
+  releaseVersion: 2.72.0
+  configChecksum: b2e4b62318e3e1817fdc18784a03869e
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.9
+    core: 3.21.10
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -27,7 +27,7 @@ features:
     mcpServer: 0.9.2
     responseFormat: 0.2.3
     retries: 2.83.0
-    sdkHooks: 0.2.0
+    sdkHooks: 0.3.0
     unions: 2.85.8
     uploadStreams: 0.1.0
 generatedFiles:

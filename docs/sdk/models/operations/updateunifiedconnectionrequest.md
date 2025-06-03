@@ -12,7 +12,7 @@ let value: UpdateUnifiedConnectionRequest = {
     ],
     integrationType: "<value>",
     permissions: [
-      "repo_branch_write",
+      "repo_branch_read",
     ],
   },
   id: "<id>",

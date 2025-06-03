@@ -12,7 +12,7 @@ let value: PatchUnifiedConnectionRequest = {
     ],
     integrationType: "<value>",
     permissions: [
-      "task_task_write",
+      "task_task_read",
     ],
   },
   id: "<id>",

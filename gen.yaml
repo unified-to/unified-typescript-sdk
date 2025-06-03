@@ -3,6 +3,7 @@ generation:
   sdkClassName: Unified-to
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionFeb2025: false
@@ -16,7 +17,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.71.4
+  version: 2.72.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
