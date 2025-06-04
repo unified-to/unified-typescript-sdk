@@ -35,7 +35,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -65,15 +64,12 @@ async function run() {
     },
     connectionId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryCreateRepoRepository failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -119,7 +115,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -147,15 +142,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryGetRepoRepository failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -200,7 +192,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -227,15 +218,12 @@ async function run() {
   const res = await repositoryListRepoRepositories(unifiedTo, {
     connectionId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryListRepoRepositories failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -284,7 +272,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -315,15 +302,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryPatchRepoRepository failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -369,7 +353,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -397,15 +380,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryRemoveRepoRepository failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -454,7 +434,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -485,15 +464,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("repositoryUpdateRepoRepository failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

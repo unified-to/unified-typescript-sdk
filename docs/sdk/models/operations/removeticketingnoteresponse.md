@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveTicketingNoteResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveTicketingNoteResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveTicketingNoteResponse = {};
 ```
 
 ## Fields

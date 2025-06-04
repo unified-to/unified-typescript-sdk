@@ -6,7 +6,6 @@
 import { PatchAccountingContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAccountingContactRequest = {
-  accountingContact: {},
   connectionId: "<id>",
   id: "<id>",
 };

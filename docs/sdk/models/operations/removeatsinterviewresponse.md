@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveAtsInterviewResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveAtsInterviewResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveAtsInterviewResponse = {};
 ```
 
 ## Fields

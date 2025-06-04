@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveCommerceInventoryResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCommerceInventoryResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveCommerceInventoryResponse = {};
 ```
 
 ## Fields

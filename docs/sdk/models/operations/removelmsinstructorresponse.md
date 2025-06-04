@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveLmsInstructorResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveLmsInstructorResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveLmsInstructorResponse = {};
 ```
 
 ## Fields

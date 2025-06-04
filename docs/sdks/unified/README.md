@@ -50,7 +50,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -81,15 +80,12 @@ async function run() {
       "enrich_company_read",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedCreateUnifiedConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -138,7 +134,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -169,15 +164,12 @@ async function run() {
       objectType: "ats_scorecard",
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedCreateUnifiedWebhook failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -222,7 +214,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -249,15 +240,12 @@ async function run() {
   const res = await unifiedGetUnifiedApicall(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedGetUnifiedApicall failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -302,7 +290,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -329,15 +316,12 @@ async function run() {
   const res = await unifiedGetUnifiedConnection(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedGetUnifiedConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -383,7 +367,6 @@ async function run() {
     workspaceId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -411,15 +394,12 @@ async function run() {
     integrationType: "<value>",
     workspaceId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedGetUnifiedIntegrationAuth failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -464,7 +444,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -491,15 +470,12 @@ async function run() {
   const res = await unifiedGetUnifiedWebhook(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedGetUnifiedWebhook failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -542,7 +518,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.listUnifiedApicalls({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -567,15 +542,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedListUnifiedApicalls(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedApicalls failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -618,7 +590,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.listUnifiedConnections({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -643,15 +614,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedListUnifiedConnections(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedConnections failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -696,7 +664,6 @@ async function run() {
     workspaceId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -723,15 +690,12 @@ async function run() {
   const res = await unifiedListUnifiedIntegrationWorkspaces(unifiedTo, {
     workspaceId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedIntegrationWorkspaces failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -774,7 +738,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.listUnifiedIntegrations({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -799,15 +762,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedListUnifiedIntegrations(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedIntegrations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -850,7 +810,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.listUnifiedIssues({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -875,15 +834,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedListUnifiedIssues(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedIssues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -926,7 +882,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.unified.listUnifiedWebhooks({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -951,15 +906,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await unifiedListUnifiedWebhooks(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedListUnifiedWebhooks failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1013,7 +965,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1049,15 +1000,12 @@ async function run() {
     },
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedPatchUnifiedConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1107,7 +1055,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1139,15 +1086,12 @@ async function run() {
     },
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedPatchUnifiedWebhook failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1192,7 +1136,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1219,15 +1162,12 @@ async function run() {
   const res = await unifiedPatchUnifiedWebhookTrigger(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedPatchUnifiedWebhookTrigger failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1272,7 +1212,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1299,15 +1238,12 @@ async function run() {
   const res = await unifiedRemoveUnifiedConnection(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedRemoveUnifiedConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1352,7 +1288,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1379,15 +1314,12 @@ async function run() {
   const res = await unifiedRemoveUnifiedWebhook(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedRemoveUnifiedWebhook failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1440,7 +1372,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1475,15 +1406,12 @@ async function run() {
     },
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedUpdateUnifiedConnection failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1533,7 +1461,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1565,15 +1492,12 @@ async function run() {
     },
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedUpdateUnifiedWebhook failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -1618,7 +1542,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -1645,15 +1568,12 @@ async function run() {
   const res = await unifiedUpdateUnifiedWebhookTrigger(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("unifiedUpdateUnifiedWebhookTrigger failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

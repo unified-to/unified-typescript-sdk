@@ -28,7 +28,6 @@ async function run() {
     workspaceId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -56,15 +55,12 @@ async function run() {
     integrationType: "<value>",
     workspaceId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("loginGetUnifiedIntegrationLogin failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

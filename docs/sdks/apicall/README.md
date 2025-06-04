@@ -28,7 +28,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -55,15 +54,12 @@ async function run() {
   const res = await apicallGetUnifiedApicall(unifiedTo, {
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("apicallGetUnifiedApicall failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -106,7 +102,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.apicall.listUnifiedApicalls({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -131,15 +126,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await apicallListUnifiedApicalls(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("apicallListUnifiedApicalls failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

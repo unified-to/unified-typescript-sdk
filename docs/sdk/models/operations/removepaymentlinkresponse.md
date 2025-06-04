@@ -5,13 +5,7 @@
 ```typescript
 import { RemovePaymentLinkResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemovePaymentLinkResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemovePaymentLinkResponse = {};
 ```
 
 ## Fields

@@ -6,7 +6,6 @@
 import { PatchAtsScorecardRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsScorecardRequest = {
-  atsScorecard: {},
   connectionId: "<id>",
   id: "<id>",
 };

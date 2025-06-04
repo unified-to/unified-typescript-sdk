@@ -6,15 +6,6 @@
 import { UpdateUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateUnifiedConnectionRequest = {
-  connection: {
-    categories: [
-      "calendar",
-    ],
-    integrationType: "<value>",
-    permissions: [
-      "repo_branch_read",
-    ],
-  },
   id: "<id>",
 };
 ```

@@ -31,7 +31,8 @@ const value: shared.KmsPageMetadataSchemas4 = false;
 
 ```typescript
 const value: shared.KmsPageMetadataSchemas5 = [
-  "<value>",
+  "<value 1>",
+  "<value 2>",
 ];
 ```
 

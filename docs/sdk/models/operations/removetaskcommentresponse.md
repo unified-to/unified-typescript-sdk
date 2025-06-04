@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveTaskCommentResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveTaskCommentResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveTaskCommentResponse = {};
 ```
 
 ## Fields

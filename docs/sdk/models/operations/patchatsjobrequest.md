@@ -6,7 +6,6 @@
 import { PatchAtsJobRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsJobRequest = {
-  atsJob: {},
   connectionId: "<id>",
   id: "<id>",
 };

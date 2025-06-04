@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveScimGroupsResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveScimGroupsResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveScimGroupsResponse = {};
 ```
 
 ## Fields

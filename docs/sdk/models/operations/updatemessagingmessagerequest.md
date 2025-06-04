@@ -6,7 +6,6 @@
 import { UpdateMessagingMessageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateMessagingMessageRequest = {
-  messagingMessage: {},
   connectionId: "<id>",
   id: "<id>",
 };

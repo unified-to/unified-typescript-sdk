@@ -6,11 +6,6 @@
 import { PatchUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUnifiedWebhookRequest = {
-  webhook: {
-    connectionId: "<id>",
-    event: "updated",
-    objectType: "uc_comment",
-  },
   id: "<id>",
 };
 ```

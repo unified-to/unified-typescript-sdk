@@ -8,7 +8,9 @@ import { CommerceItemOption } from "@unified-api/typescript-sdk/sdk/models/share
 let value: CommerceItemOption = {
   name: "<value>",
   values: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```

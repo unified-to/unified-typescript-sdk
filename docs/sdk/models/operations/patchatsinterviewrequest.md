@@ -6,7 +6,6 @@
 import { PatchAtsInterviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsInterviewRequest = {
-  atsInterview: {},
   connectionId: "<id>",
   id: "<id>",
 };

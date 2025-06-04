@@ -6,9 +6,6 @@
 import { PatchCommerceReviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCommerceReviewRequest = {
-  commerceReview: {
-    itemId: "<id>",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveMetadataMetadataResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveMetadataMetadataResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveMetadataMetadataResponse = {};
 ```
 
 ## Fields

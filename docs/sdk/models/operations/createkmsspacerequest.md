@@ -6,9 +6,6 @@
 import { CreateKmsSpaceRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateKmsSpaceRequest = {
-  kmsSpace: {
-    name: "<value>",
-  },
   connectionId: "<id>",
 };
 ```

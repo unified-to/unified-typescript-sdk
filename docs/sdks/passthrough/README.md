@@ -35,7 +35,6 @@ async function run() {
     path: "/var/log",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -63,15 +62,12 @@ async function run() {
     connectionId: "<id>",
     path: "/var/log",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughCreatePassthroughJson failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -117,7 +113,6 @@ async function run() {
     path: "/var/log",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -145,15 +140,12 @@ async function run() {
     connectionId: "<id>",
     path: "/var/log",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughCreatePassthroughRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -199,7 +191,6 @@ async function run() {
     path: "/System",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -227,15 +218,12 @@ async function run() {
     connectionId: "<id>",
     path: "/System",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughListPassthroughs failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -281,7 +269,6 @@ async function run() {
     path: "/System",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -309,15 +296,12 @@ async function run() {
     connectionId: "<id>",
     path: "/System",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughPatchPassthroughJson failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -363,7 +347,6 @@ async function run() {
     path: "/System",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -391,15 +374,12 @@ async function run() {
     connectionId: "<id>",
     path: "/System",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughPatchPassthroughRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -445,7 +425,6 @@ async function run() {
     path: "/bin",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -473,15 +452,12 @@ async function run() {
     connectionId: "<id>",
     path: "/bin",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughRemovePassthrough failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -527,7 +503,6 @@ async function run() {
     path: "/var/tmp",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -555,15 +530,12 @@ async function run() {
     connectionId: "<id>",
     path: "/var/tmp",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughUpdatePassthroughJson failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -609,7 +581,6 @@ async function run() {
     path: "/var/tmp",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -637,15 +608,12 @@ async function run() {
     connectionId: "<id>",
     path: "/var/tmp",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("passthroughUpdatePassthroughRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

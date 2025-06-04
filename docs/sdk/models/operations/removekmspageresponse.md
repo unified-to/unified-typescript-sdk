@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveKmsPageResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveKmsPageResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveKmsPageResponse = {};
 ```
 
 ## Fields

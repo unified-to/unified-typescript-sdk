@@ -35,7 +35,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -63,15 +62,12 @@ async function run() {
     repoOrganization: {},
     connectionId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationCreateRepoOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -117,7 +113,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -145,15 +140,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationGetAccountingOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -199,7 +191,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -227,15 +218,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationGetRepoOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -280,7 +268,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -307,15 +294,12 @@ async function run() {
   const res = await organizationListAccountingOrganizations(unifiedTo, {
     connectionId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationListAccountingOrganizations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -360,7 +344,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -387,15 +370,12 @@ async function run() {
   const res = await organizationListRepoOrganizations(unifiedTo, {
     connectionId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationListRepoOrganizations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -442,7 +422,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -471,15 +450,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationPatchRepoOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -525,7 +501,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -553,15 +528,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationRemoveRepoOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -608,7 +580,6 @@ async function run() {
     id: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -637,15 +608,12 @@ async function run() {
     connectionId: "<id>",
     id: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("organizationUpdateRepoOrganization failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

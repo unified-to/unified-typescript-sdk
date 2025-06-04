@@ -31,7 +31,7 @@ const value: shared.CrmMetadataSchemas4 = {};
 
 ```typescript
 const value: shared.CrmMetadataSchemas5 = [
-  "<value>",
+  "<value 1>",
 ];
 ```
 

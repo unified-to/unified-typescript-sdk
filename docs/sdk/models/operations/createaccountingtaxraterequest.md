@@ -6,7 +6,6 @@
 import { CreateAccountingTaxrateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAccountingTaxrateRequest = {
-  accountingTaxrate: {},
   connectionId: "<id>",
 };
 ```

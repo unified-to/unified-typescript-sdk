@@ -6,7 +6,6 @@
 import { CreateRepoPullrequestRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateRepoPullrequestRequest = {
-  repoPullrequest: {},
   connectionId: "<id>",
 };
 ```

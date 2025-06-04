@@ -6,7 +6,6 @@
 import { CreateAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAtsDocumentRequest = {
-  atsDocument: {},
   connectionId: "<id>",
 };
 ```

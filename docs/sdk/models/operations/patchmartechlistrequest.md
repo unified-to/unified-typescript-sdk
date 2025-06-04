@@ -6,7 +6,6 @@
 import { PatchMartechListRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchMartechListRequest = {
-  marketingList: {},
   connectionId: "<id>",
   id: "<id>",
 };

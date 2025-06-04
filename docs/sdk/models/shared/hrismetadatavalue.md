@@ -24,7 +24,7 @@ const value: shared.HrisMetadataSchemas3 = 9966.89;
 ### `shared.HrisMetadataSchemas4`
 
 ```typescript
-const value: shared.HrisMetadataSchemas4 = false;
+const value: shared.HrisMetadataSchemas4 = true;
 ```
 
 ### `shared.HrisMetadataSchemas5`

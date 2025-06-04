@@ -6,9 +6,6 @@
 import { UpdateCalendarCalendarRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCalendarCalendarRequest = {
-  calendarCalendar: {
-    name: "<value>",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

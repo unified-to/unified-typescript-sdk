@@ -101,7 +101,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -128,7 +127,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -217,7 +215,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -232,15 +229,22 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-If the request fails due to, for example 4XX or 5XX status codes, it will throw a `SDKError`.
+This table shows properties which are common on error classes. For full details see [error classes](#error-classes).
 
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| errors.SDKError | 4XX, 5XX    | \*/\*        |
+| Property            | Type       | Description                                                                             |
+| ------------------- | ---------- | --------------------------------------------------------------------------------------- |
+| `error.name`        | `string`   | Error class name eg `SDKError`                                                          |
+| `error.message`     | `string`   | Error message                                                                           |
+| `error.statusCode`  | `number`   | HTTP status code eg `404`                                                               |
+| `error.contentType` | `string`   | HTTP content type eg `application/json`                                                 |
+| `error.body`        | `string`   | HTTP body. Can be empty string if no body is returned.                                  |
+| `error.rawResponse` | `Response` | Raw HTTP response. Access to headers and more.                                          |
+| `error.data$`       |            | Optional. Some errors may contain structured data. [See Error Classes](#error-classes). |
 
+### Example
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
-import { SDKValidationError } from "@unified-api/typescript-sdk/sdk/models/errors";
+import * as errors from "@unified-api/typescript-sdk/sdk/models/errors";
 
 const unifiedTo = new UnifiedTo({
   security: {
@@ -249,37 +253,19 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function run() {
-  let result;
   try {
-    result = await unifiedTo.accounting.createAccountingAccount({
+    const result = await unifiedTo.accounting.createAccountingAccount({
       accountingAccount: {},
       connectionId: "<id>",
     });
 
-    // Handle the result
     console.log(result);
-  } catch (err) {
-    switch (true) {
-      // The server response does not match the expected SDK schema
-      case (err instanceof SDKValidationError):
-        {
-          // Pretty-print will provide a human-readable multi-line error message
-          console.error(err.pretty());
-          // Raw value may also be inspected
-          console.error(err.rawValue);
-          return;
-        }
-        sdkerror.js;
-      // Server returned an error status code or an unknown content type
-      case (err instanceof SDKError): {
-        console.error(err.statusCode);
-        console.error(err.rawResponse.body);
-        return;
-      }
-      default: {
-        // Other errors such as network errors, see HTTPClientErrors for more details
-        throw err;
-      }
+  } catch (error) {
+    if (error instanceof errors.SDKError) {
+      console.log(error.message);
+      console.log(error.statusCode);
+      console.log(error.body);
+      console.log(error.rawResponse.headers);
     }
   }
 }
@@ -288,17 +274,15 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
-
-In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `sdk/models/errors/httpclienterrors.ts` module:
-
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+### Error Classes
+* `SDKError`: The fallback error class, if no other more specific error class is matched.
+* `SDKValidationError`: Type mismatch between the data returned from the server and the structure expected by the SDK. This can also be thrown for invalid method arguments. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
+* Network errors:
+    * `ConnectionError`: HTTP client was unable to make a request to a server.
+    * `RequestTimeoutError`: HTTP request timed out due to an AbortSignal signal.
+    * `RequestAbortedError`: HTTP request was aborted by the client.
+    * `InvalidRequestError`: Any input used to create a request is invalid.
+    * `UnexpectedClientError`: Unrecognised or unexpected error.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Requirements [requirements] -->
@@ -336,7 +320,6 @@ async function run() {
     path: "/var/log",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -377,7 +360,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -411,7 +393,6 @@ async function run() {
     connectionId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 

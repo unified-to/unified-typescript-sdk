@@ -7,7 +7,9 @@
 
 ```typescript
 const value: any[] = [
-  "<value>",
+  "<value 1>",
+  "<value 2>",
+  "<value 3>",
 ];
 ```
 

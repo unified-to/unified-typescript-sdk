@@ -6,7 +6,6 @@
 import { CreateHrisLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateHrisLocationRequest = {
-  hrisLocation: {},
   connectionId: "<id>",
 };
 ```

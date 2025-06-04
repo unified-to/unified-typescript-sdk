@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveRepoRepositoryResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveRepoRepositoryResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveRepoRepositoryResponse = {};
 ```
 
 ## Fields

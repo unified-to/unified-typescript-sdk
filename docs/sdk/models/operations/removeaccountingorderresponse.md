@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveAccountingOrderResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveAccountingOrderResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveAccountingOrderResponse = {};
 ```
 
 ## Fields

@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveCrmLeadResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCrmLeadResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveCrmLeadResponse = {};
 ```
 
 ## Fields

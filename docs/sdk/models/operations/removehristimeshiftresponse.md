@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveHrisTimeshiftResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveHrisTimeshiftResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveHrisTimeshiftResponse = {};
 ```
 
 ## Fields

@@ -6,9 +6,6 @@
 import { CreateKmsCommentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateKmsCommentRequest = {
-  kmsComment: {
-    content: "<value>",
-  },
   connectionId: "<id>",
 };
 ```

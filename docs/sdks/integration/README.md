@@ -30,7 +30,6 @@ async function run() {
     workspaceId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -58,15 +57,12 @@ async function run() {
     integrationType: "<value>",
     workspaceId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("integrationGetUnifiedIntegrationAuth failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -111,7 +107,6 @@ async function run() {
     workspaceId: "<id>",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -138,15 +133,12 @@ async function run() {
   const res = await integrationListUnifiedIntegrationWorkspaces(unifiedTo, {
     workspaceId: "<id>",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("integrationListUnifiedIntegrationWorkspaces failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -189,7 +181,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.integration.listUnifiedIntegrations({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -214,15 +205,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await integrationListUnifiedIntegrations(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("integrationListUnifiedIntegrations failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

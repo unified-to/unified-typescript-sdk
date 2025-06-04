@@ -6,7 +6,6 @@
 import { PatchRepoOrganizationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchRepoOrganizationRequest = {
-  repoOrganization: {},
   connectionId: "<id>",
   id: "<id>",
 };

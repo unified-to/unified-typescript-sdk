@@ -5,13 +5,7 @@
 ```typescript
 import { CreateUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: CreateUnifiedWebhookRequest = {
-  webhook: {
-    connectionId: "<id>",
-    event: "updated",
-    objectType: "messaging_channel",
-  },
-};
+let value: CreateUnifiedWebhookRequest = {};
 ```
 
 ## Fields

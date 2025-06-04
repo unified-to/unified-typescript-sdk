@@ -6,7 +6,6 @@
 import { PatchAccountingTaxrateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAccountingTaxrateRequest = {
-  accountingTaxrate: {},
   connectionId: "<id>",
   id: "<id>",
 };

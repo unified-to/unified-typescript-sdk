@@ -31,7 +31,9 @@ const value: shared.Integration4 = {};
 
 ```typescript
 const value: shared.Integration5 = [
-  "<value>",
+  "<value 1>",
+  "<value 2>",
+  "<value 3>",
 ];
 ```
 

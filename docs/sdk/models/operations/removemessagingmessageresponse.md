@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveMessagingMessageResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveMessagingMessageResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveMessagingMessageResponse = {};
 ```
 
 ## Fields

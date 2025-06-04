@@ -6,9 +6,7 @@
 import { StoragePermission } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: StoragePermission = {
-  roles: [
-    "OWNER",
-  ],
+  roles: [],
 };
 ```
 

@@ -6,7 +6,6 @@
 import { UpdateStorageFileRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateStorageFileRequest = {
-  storageFile: {},
   connectionId: "<id>",
   id: "<id>",
 };

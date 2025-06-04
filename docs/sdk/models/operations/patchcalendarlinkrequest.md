@@ -6,9 +6,6 @@
 import { PatchCalendarLinkRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCalendarLinkRequest = {
-  calendarLink: {
-    url: "https://tasty-paintwork.net/",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

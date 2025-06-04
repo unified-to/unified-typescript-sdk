@@ -6,9 +6,6 @@
 import { CreateRepoRepositoryRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateRepoRepositoryRequest = {
-  repoRepository: {
-    name: "<value>",
-  },
   connectionId: "<id>",
 };
 ```

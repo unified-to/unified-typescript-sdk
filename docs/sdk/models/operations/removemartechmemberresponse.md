@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveMartechMemberResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveMartechMemberResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveMartechMemberResponse = {};
 ```
 
 ## Fields

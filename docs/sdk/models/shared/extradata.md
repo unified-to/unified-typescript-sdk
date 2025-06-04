@@ -24,7 +24,7 @@ const value: shared.Three = 1408.09;
 ### `shared.Four`
 
 ```typescript
-const value: shared.Four = false;
+const value: shared.Four = true;
 ```
 
 ### `shared.Five`

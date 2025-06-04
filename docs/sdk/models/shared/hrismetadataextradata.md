@@ -24,14 +24,16 @@ const value: shared.HrisMetadata3 = {};
 ### `shared.HrisMetadata4`
 
 ```typescript
-const value: shared.HrisMetadata4 = false;
+const value: shared.HrisMetadata4 = true;
 ```
 
 ### `shared.HrisMetadata5`
 
 ```typescript
 const value: shared.HrisMetadata5 = [
-  "<value>",
+  "<value 1>",
+  "<value 2>",
+  "<value 3>",
 ];
 ```
 

@@ -6,7 +6,6 @@
 import { PatchUcContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUcContactRequest = {
-  ucContact: {},
   connectionId: "<id>",
   id: "<id>",
 };

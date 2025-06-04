@@ -6,10 +6,6 @@
 import { UpdateKmsPageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateKmsPageRequest = {
-  kmsPage: {
-    title: "<value>",
-    type: "MARKDOWN",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

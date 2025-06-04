@@ -6,7 +6,6 @@
 import { PatchCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCrmPipelineRequest = {
-  crmPipeline: {},
   connectionId: "<id>",
   id: "<id>",
 };

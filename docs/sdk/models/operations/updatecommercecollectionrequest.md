@@ -6,9 +6,6 @@
 import { UpdateCommerceCollectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCommerceCollectionRequest = {
-  commerceCollection: {
-    name: "<value>",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

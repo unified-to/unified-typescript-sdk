@@ -6,7 +6,6 @@
 import { PatchUcRecordingRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUcRecordingRequest = {
-  ucRecording: {},
   connectionId: "<id>",
   id: "<id>",
 };

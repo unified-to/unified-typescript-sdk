@@ -6,7 +6,6 @@
 import { UpdateCrmCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCrmCompanyRequest = {
-  crmCompany: {},
   connectionId: "<id>",
   id: "<id>",
 };

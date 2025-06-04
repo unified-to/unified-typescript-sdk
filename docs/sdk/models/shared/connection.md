@@ -8,13 +8,9 @@ A connection represents a specific authentication of an integration.
 import { Connection } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: Connection = {
-  categories: [
-    "accounting",
-  ],
+  categories: [],
   integrationType: "<value>",
-  permissions: [
-    "ats_scorecard_write",
-  ],
+  permissions: [],
 };
 ```
 

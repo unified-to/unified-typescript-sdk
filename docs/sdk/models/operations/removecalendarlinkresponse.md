@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveCalendarLinkResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCalendarLinkResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveCalendarLinkResponse = {};
 ```
 
 ## Fields

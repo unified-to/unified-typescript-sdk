@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveUcRecordingResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveUcRecordingResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveUcRecordingResponse = {};
 ```
 
 ## Fields

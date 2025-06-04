@@ -6,7 +6,6 @@
 import { CreateCrmEventRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCrmEventRequest = {
-  crmEvent: {},
   connectionId: "<id>",
 };
 ```

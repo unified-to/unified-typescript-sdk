@@ -6,9 +6,6 @@
 import { PatchRepoRepositoryRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchRepoRepositoryRequest = {
-  repoRepository: {
-    name: "<value>",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

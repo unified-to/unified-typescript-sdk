@@ -6,10 +6,6 @@
 import { PatchKmsPageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchKmsPageRequest = {
-  kmsPage: {
-    title: "<value>",
-    type: "TEXT",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

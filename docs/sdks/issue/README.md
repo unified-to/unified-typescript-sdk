@@ -25,7 +25,6 @@ const unifiedTo = new UnifiedTo({
 async function run() {
   const result = await unifiedTo.issue.listUnifiedIssues({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -50,15 +49,12 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await issueListUnifiedIssues(unifiedTo, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("issueListUnifiedIssues failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

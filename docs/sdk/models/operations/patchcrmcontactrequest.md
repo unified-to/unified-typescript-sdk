@@ -6,7 +6,6 @@
 import { PatchCrmContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCrmContactRequest = {
-  crmContact: {},
   connectionId: "<id>",
   id: "<id>",
 };

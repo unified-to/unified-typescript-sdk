@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveScimUsersResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveScimUsersResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveScimUsersResponse = {};
 ```
 
 ## Fields

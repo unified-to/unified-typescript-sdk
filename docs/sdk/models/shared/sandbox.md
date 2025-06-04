@@ -31,7 +31,8 @@ const value: shared.IntegrationSchemasSandbox4 = {};
 
 ```typescript
 const value: shared.IntegrationSchemasSandbox5 = [
-  "<value>",
+  "<value 1>",
+  "<value 2>",
 ];
 ```
 

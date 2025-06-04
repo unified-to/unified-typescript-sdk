@@ -6,7 +6,6 @@
 import { PatchCrmLeadRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCrmLeadRequest = {
-  crmLead: {},
   connectionId: "<id>",
   id: "<id>",
 };

@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveUnifiedConnectionResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveUnifiedConnectionResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveUnifiedConnectionResponse = {};
 ```
 
 ## Fields

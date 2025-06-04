@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveRepoBranchResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveRepoBranchResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveRepoBranchResponse = {};
 ```
 
 ## Fields

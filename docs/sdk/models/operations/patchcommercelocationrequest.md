@@ -6,9 +6,6 @@
 import { PatchCommerceLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCommerceLocationRequest = {
-  commerceLocation: {
-    name: "<value>",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

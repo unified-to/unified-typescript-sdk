@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveHrisEmployeeResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveHrisEmployeeResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveHrisEmployeeResponse = {};
 ```
 
 ## Fields

@@ -6,10 +6,6 @@
 import { CreateMetadataMetadataRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateMetadataMetadataRequest = {
-  metadataMetadata: {
-    name: "<value>",
-    objectType: "<value>",
-  },
   connectionId: "<id>",
 };
 ```

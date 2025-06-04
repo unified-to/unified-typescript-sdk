@@ -6,7 +6,6 @@
 import { CreatePaymentPaymentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreatePaymentPaymentRequest = {
-  paymentPayment: {},
   connectionId: "<id>",
 };
 ```

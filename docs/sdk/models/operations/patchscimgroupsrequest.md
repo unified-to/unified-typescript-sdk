@@ -6,9 +6,6 @@
 import { PatchScimGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchScimGroupsRequest = {
-  scimGroup: {
-    displayName: "Sanford_Balistreri",
-  },
   connectionId: "<id>",
   id: "<id>",
 };

@@ -5,13 +5,7 @@
 ```typescript
 import { RemoveUnifiedWebhookResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveUnifiedWebhookResponse = {
-  headers: {
-    "key": [
-      "<value>",
-    ],
-  },
-};
+let value: RemoveUnifiedWebhookResponse = {};
 ```
 
 ## Fields

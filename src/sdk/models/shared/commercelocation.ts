@@ -17,10 +17,13 @@ import {
 export type CommerceLocation = {
   address?: PropertyCommerceLocationAddress | undefined;
   createdAt?: Date | undefined;
+  currency?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
+  languageLocale?: string | undefined;
   name: string;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
 };
@@ -34,10 +37,13 @@ export const CommerceLocation$inboundSchema: z.ZodType<
   address: PropertyCommerceLocationAddress$inboundSchema.optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  currency: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
+  language_locale: z.string().optional(),
   name: z.string(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -45,6 +51,8 @@ export const CommerceLocation$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "is_active": "isActive",
+    "language_locale": "languageLocale",
+    "parent_id": "parentId",
     "updated_at": "updatedAt",
   });
 });
@@ -53,10 +61,13 @@ export const CommerceLocation$inboundSchema: z.ZodType<
 export type CommerceLocation$Outbound = {
   address?: PropertyCommerceLocationAddress$Outbound | undefined;
   created_at?: string | undefined;
+  currency?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
+  language_locale?: string | undefined;
   name: string;
+  parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
 };
@@ -69,16 +80,21 @@ export const CommerceLocation$outboundSchema: z.ZodType<
 > = z.object({
   address: PropertyCommerceLocationAddress$outboundSchema.optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
+  languageLocale: z.string().optional(),
   name: z.string(),
+  parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
     isActive: "is_active",
+    languageLocale: "language_locale",
+    parentId: "parent_id",
     updatedAt: "updated_at",
   });
 });
