@@ -14,6 +14,10 @@ export type ListAtsApplicationsRequest = {
    */
   candidateId?: string | undefined;
   /**
+   * The company ID to filter by
+   */
+  companyId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -50,6 +54,7 @@ export const ListAtsApplicationsRequest$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   candidate_id: z.string().optional(),
+  company_id: z.string().optional(),
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   job_id: z.string().optional(),
@@ -63,6 +68,7 @@ export const ListAtsApplicationsRequest$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "candidate_id": "candidateId",
+    "company_id": "companyId",
     "connection_id": "connectionId",
     "job_id": "jobId",
     "updated_gte": "updatedGte",
@@ -72,6 +78,7 @@ export const ListAtsApplicationsRequest$inboundSchema: z.ZodType<
 /** @internal */
 export type ListAtsApplicationsRequest$Outbound = {
   candidate_id?: string | undefined;
+  company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   job_id?: string | undefined;
@@ -91,6 +98,7 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
   ListAtsApplicationsRequest
 > = z.object({
   candidateId: z.string().optional(),
+  companyId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   jobId: z.string().optional(),
@@ -104,6 +112,7 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     candidateId: "candidate_id",
+    companyId: "company_id",
     connectionId: "connection_id",
     jobId: "job_id",
     updatedGte: "updated_gte",

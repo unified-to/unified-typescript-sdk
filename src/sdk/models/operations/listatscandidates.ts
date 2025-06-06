@@ -10,6 +10,10 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsCandidatesRequest = {
   /**
+   * The company ID to filter by
+   */
+  companyId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -41,6 +45,7 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  company_id: z.string().optional(),
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -52,6 +57,7 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
   updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "company_id": "companyId",
     "connection_id": "connectionId",
     "updated_gte": "updatedGte",
   });
@@ -59,6 +65,7 @@ export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListAtsCandidatesRequest$Outbound = {
+  company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -76,6 +83,7 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAtsCandidatesRequest
 > = z.object({
+  companyId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -87,6 +95,7 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    companyId: "company_id",
     connectionId: "connection_id",
     updatedGte: "updated_gte",
   });

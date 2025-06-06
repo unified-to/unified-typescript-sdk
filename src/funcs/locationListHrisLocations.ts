@@ -91,6 +91,7 @@ async function $do(
   const path = pathToFunc("/hris/{connection_id}/location")(pathParams);
 
   const query = encodeFormQuery({
+    "company_id": payload.company_id,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

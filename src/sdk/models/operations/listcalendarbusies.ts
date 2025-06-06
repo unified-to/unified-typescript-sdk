@@ -45,6 +45,10 @@ export type ListCalendarBusiesRequest = {
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: string | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -65,6 +69,7 @@ export const ListCalendarBusiesRequest$inboundSchema: z.ZodType<
   sort: z.string().optional(),
   start_gte: z.string().optional(),
   updated_gte: z.string().optional(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "calendar_id": "calendarId",
@@ -72,6 +77,7 @@ export const ListCalendarBusiesRequest$inboundSchema: z.ZodType<
     "end_le": "endLe",
     "start_gte": "startGte",
     "updated_gte": "updatedGte",
+    "user_id": "userId",
   });
 });
 
@@ -89,6 +95,7 @@ export type ListCalendarBusiesRequest$Outbound = {
   sort?: string | undefined;
   start_gte?: string | undefined;
   updated_gte?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -109,6 +116,7 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
   sort: z.string().optional(),
   startGte: z.string().optional(),
   updatedGte: z.string().optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     calendarId: "calendar_id",
@@ -116,6 +124,7 @@ export const ListCalendarBusiesRequest$outboundSchema: z.ZodType<
     endLe: "end_le",
     startGte: "start_gte",
     updatedGte: "updated_gte",
+    userId: "user_id",
   });
 });
 

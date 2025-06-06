@@ -102,6 +102,7 @@ async function $do(
     "sort": payload.sort,
     "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
+    "user_id": payload.user_id,
   });
 
   const headers = new Headers(compactMap({

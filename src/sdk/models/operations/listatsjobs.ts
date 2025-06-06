@@ -10,6 +10,10 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsJobsRequest = {
   /**
+   * The company ID to filter by
+   */
+  companyId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
@@ -45,6 +49,7 @@ export const ListAtsJobsRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  company_id: z.string().optional(),
   connection_id: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -57,6 +62,7 @@ export const ListAtsJobsRequest$inboundSchema: z.ZodType<
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "company_id": "companyId",
     "connection_id": "connectionId",
     "updated_gte": "updatedGte",
     "user_id": "userId",
@@ -65,6 +71,7 @@ export const ListAtsJobsRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListAtsJobsRequest$Outbound = {
+  company_id?: string | undefined;
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -83,6 +90,7 @@ export const ListAtsJobsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAtsJobsRequest
 > = z.object({
+  companyId: z.string().optional(),
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -95,6 +103,7 @@ export const ListAtsJobsRequest$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    companyId: "company_id",
     connectionId: "connection_id",
     updatedGte: "updated_gte",
     userId: "user_id",
