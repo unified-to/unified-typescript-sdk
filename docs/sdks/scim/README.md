@@ -53,7 +53,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimCreateScimGroups } from "@unified-api/typescript-sdk/funcs/scimCreateScimGroups.js";
+import { groupCreateScimGroups } from "@unified-api/typescript-sdk/funcs/groupCreateScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,7 +64,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimCreateScimGroups(unifiedTo, {
+  const res = await groupCreateScimGroups(unifiedTo, {
     scimGroup: {
       displayName: "Nina.Tremblay",
     },
@@ -74,7 +74,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimCreateScimGroups failed:", res.error);
+    console.log("groupCreateScimGroups failed:", res.error);
   }
 }
 
@@ -211,7 +211,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimGetScimGroups } from "@unified-api/typescript-sdk/funcs/scimGetScimGroups.js";
+import { groupGetScimGroups } from "@unified-api/typescript-sdk/funcs/groupGetScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimGetScimGroups(unifiedTo, {
+  const res = await groupGetScimGroups(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -230,7 +230,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimGetScimGroups failed:", res.error);
+    console.log("groupGetScimGroups failed:", res.error);
   }
 }
 
@@ -366,7 +366,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimListScimGroups } from "@unified-api/typescript-sdk/funcs/scimListScimGroups.js";
+import { groupListScimGroups } from "@unified-api/typescript-sdk/funcs/groupListScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -377,14 +377,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimListScimGroups(unifiedTo, {
+  const res = await groupListScimGroups(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimListScimGroups failed:", res.error);
+    console.log("groupListScimGroups failed:", res.error);
   }
 }
 
@@ -522,7 +522,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimPatchScimGroups } from "@unified-api/typescript-sdk/funcs/scimPatchScimGroups.js";
+import { groupPatchScimGroups } from "@unified-api/typescript-sdk/funcs/groupPatchScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -533,7 +533,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimPatchScimGroups(unifiedTo, {
+  const res = await groupPatchScimGroups(unifiedTo, {
     scimGroup: {
       displayName: "Newell.Hoeger",
     },
@@ -544,7 +544,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimPatchScimGroups failed:", res.error);
+    console.log("groupPatchScimGroups failed:", res.error);
   }
 }
 
@@ -683,7 +683,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimRemoveScimGroups } from "@unified-api/typescript-sdk/funcs/scimRemoveScimGroups.js";
+import { groupRemoveScimGroups } from "@unified-api/typescript-sdk/funcs/groupRemoveScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -694,7 +694,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimRemoveScimGroups(unifiedTo, {
+  const res = await groupRemoveScimGroups(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -702,7 +702,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimRemoveScimGroups failed:", res.error);
+    console.log("groupRemoveScimGroups failed:", res.error);
   }
 }
 
@@ -842,7 +842,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { scimUpdateScimGroups } from "@unified-api/typescript-sdk/funcs/scimUpdateScimGroups.js";
+import { groupUpdateScimGroups } from "@unified-api/typescript-sdk/funcs/groupUpdateScimGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -853,7 +853,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await scimUpdateScimGroups(unifiedTo, {
+  const res = await groupUpdateScimGroups(unifiedTo, {
     scimGroup: {
       displayName: "Reynold90",
     },
@@ -864,7 +864,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("scimUpdateScimGroups failed:", res.error);
+    console.log("groupUpdateScimGroups failed:", res.error);
   }
 }
 

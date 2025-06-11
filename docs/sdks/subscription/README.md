@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionCreatePaymentSubscription } from "@unified-api/typescript-sdk/funcs/subscriptionCreatePaymentSubscription.js";
+import { paymentCreatePaymentSubscription } from "@unified-api/typescript-sdk/funcs/paymentCreatePaymentSubscription.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionCreatePaymentSubscription(unifiedTo, {
+  const res = await paymentCreatePaymentSubscription(unifiedTo, {
     paymentSubscription: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionCreatePaymentSubscription failed:", res.error);
+    console.log("paymentCreatePaymentSubscription failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionGetPaymentSubscription } from "@unified-api/typescript-sdk/funcs/subscriptionGetPaymentSubscription.js";
+import { paymentGetPaymentSubscription } from "@unified-api/typescript-sdk/funcs/paymentGetPaymentSubscription.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionGetPaymentSubscription(unifiedTo, {
+  const res = await paymentGetPaymentSubscription(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionGetPaymentSubscription failed:", res.error);
+    console.log("paymentGetPaymentSubscription failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionListPaymentSubscriptions } from "@unified-api/typescript-sdk/funcs/subscriptionListPaymentSubscriptions.js";
+import { paymentListPaymentSubscriptions } from "@unified-api/typescript-sdk/funcs/paymentListPaymentSubscriptions.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionListPaymentSubscriptions(unifiedTo, {
+  const res = await paymentListPaymentSubscriptions(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionListPaymentSubscriptions failed:", res.error);
+    console.log("paymentListPaymentSubscriptions failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionPatchPaymentSubscription } from "@unified-api/typescript-sdk/funcs/subscriptionPatchPaymentSubscription.js";
+import { paymentPatchPaymentSubscription } from "@unified-api/typescript-sdk/funcs/paymentPatchPaymentSubscription.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionPatchPaymentSubscription(unifiedTo, {
+  const res = await paymentPatchPaymentSubscription(unifiedTo, {
     paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionPatchPaymentSubscription failed:", res.error);
+    console.log("paymentPatchPaymentSubscription failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionRemovePaymentSubscription } from "@unified-api/typescript-sdk/funcs/subscriptionRemovePaymentSubscription.js";
+import { paymentRemovePaymentSubscription } from "@unified-api/typescript-sdk/funcs/paymentRemovePaymentSubscription.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionRemovePaymentSubscription(unifiedTo, {
+  const res = await paymentRemovePaymentSubscription(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionRemovePaymentSubscription failed:", res.error);
+    console.log("paymentRemovePaymentSubscription failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { subscriptionUpdatePaymentSubscription } from "@unified-api/typescript-sdk/funcs/subscriptionUpdatePaymentSubscription.js";
+import { paymentUpdatePaymentSubscription } from "@unified-api/typescript-sdk/funcs/paymentUpdatePaymentSubscription.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await subscriptionUpdatePaymentSubscription(unifiedTo, {
+  const res = await paymentUpdatePaymentSubscription(unifiedTo, {
     paymentSubscription: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("subscriptionUpdatePaymentSubscription failed:", res.error);
+    console.log("paymentUpdatePaymentSubscription failed:", res.error);
   }
 }
 

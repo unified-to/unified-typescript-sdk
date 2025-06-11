@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userCreateScimUsers } from "@unified-api/typescript-sdk/funcs/userCreateScimUsers.js";
+import { scimCreateScimUsers } from "@unified-api/typescript-sdk/funcs/scimCreateScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userCreateScimUsers(unifiedTo, {
+  const res = await scimCreateScimUsers(unifiedTo, {
     scimUser: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userCreateScimUsers failed:", res.error);
+    console.log("scimCreateScimUsers failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userGetScimUsers } from "@unified-api/typescript-sdk/funcs/userGetScimUsers.js";
+import { scimGetScimUsers } from "@unified-api/typescript-sdk/funcs/scimGetScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userGetScimUsers(unifiedTo, {
+  const res = await scimGetScimUsers(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userGetScimUsers failed:", res.error);
+    console.log("scimGetScimUsers failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userListScimUsers } from "@unified-api/typescript-sdk/funcs/userListScimUsers.js";
+import { scimListScimUsers } from "@unified-api/typescript-sdk/funcs/scimListScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userListScimUsers(unifiedTo, {
+  const res = await scimListScimUsers(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userListScimUsers failed:", res.error);
+    console.log("scimListScimUsers failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userPatchScimUsers } from "@unified-api/typescript-sdk/funcs/userPatchScimUsers.js";
+import { scimPatchScimUsers } from "@unified-api/typescript-sdk/funcs/scimPatchScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userPatchScimUsers(unifiedTo, {
+  const res = await scimPatchScimUsers(unifiedTo, {
     scimUser: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userPatchScimUsers failed:", res.error);
+    console.log("scimPatchScimUsers failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userRemoveScimUsers } from "@unified-api/typescript-sdk/funcs/userRemoveScimUsers.js";
+import { scimRemoveScimUsers } from "@unified-api/typescript-sdk/funcs/scimRemoveScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userRemoveScimUsers(unifiedTo, {
+  const res = await scimRemoveScimUsers(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userRemoveScimUsers failed:", res.error);
+    console.log("scimRemoveScimUsers failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { userUpdateScimUsers } from "@unified-api/typescript-sdk/funcs/userUpdateScimUsers.js";
+import { scimUpdateScimUsers } from "@unified-api/typescript-sdk/funcs/scimUpdateScimUsers.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await userUpdateScimUsers(unifiedTo, {
+  const res = await scimUpdateScimUsers(unifiedTo, {
     scimUser: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("userUpdateScimUsers failed:", res.error);
+    console.log("scimUpdateScimUsers failed:", res.error);
   }
 }
 

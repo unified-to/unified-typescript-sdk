@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { apicallGetUnifiedApicall } from "@unified-api/typescript-sdk/funcs/apicallGetUnifiedApicall.js";
+import { unifiedGetUnifiedApicall } from "@unified-api/typescript-sdk/funcs/unifiedGetUnifiedApicall.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,14 +51,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await apicallGetUnifiedApicall(unifiedTo, {
+  const res = await unifiedGetUnifiedApicall(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("apicallGetUnifiedApicall failed:", res.error);
+    console.log("unifiedGetUnifiedApicall failed:", res.error);
   }
 }
 
@@ -114,7 +114,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { apicallListUnifiedApicalls } from "@unified-api/typescript-sdk/funcs/apicallListUnifiedApicalls.js";
+import { unifiedListUnifiedApicalls } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedApicalls.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -125,12 +125,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await apicallListUnifiedApicalls(unifiedTo, {});
+  const res = await unifiedListUnifiedApicalls(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("apicallListUnifiedApicalls failed:", res.error);
+    console.log("unifiedListUnifiedApicalls failed:", res.error);
   }
 }
 

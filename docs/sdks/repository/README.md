@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryCreateRepoRepository } from "@unified-api/typescript-sdk/funcs/repositoryCreateRepoRepository.js";
+import { repoCreateRepoRepository } from "@unified-api/typescript-sdk/funcs/repoCreateRepoRepository.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryCreateRepoRepository(unifiedTo, {
+  const res = await repoCreateRepoRepository(unifiedTo, {
     repoRepository: {
       name: "<value>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryCreateRepoRepository failed:", res.error);
+    console.log("repoCreateRepoRepository failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryGetRepoRepository } from "@unified-api/typescript-sdk/funcs/repositoryGetRepoRepository.js";
+import { repoGetRepoRepository } from "@unified-api/typescript-sdk/funcs/repoGetRepoRepository.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryGetRepoRepository(unifiedTo, {
+  const res = await repoGetRepoRepository(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryGetRepoRepository failed:", res.error);
+    console.log("repoGetRepoRepository failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryListRepoRepositories } from "@unified-api/typescript-sdk/funcs/repositoryListRepoRepositories.js";
+import { repoListRepoRepositories } from "@unified-api/typescript-sdk/funcs/repoListRepoRepositories.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryListRepoRepositories(unifiedTo, {
+  const res = await repoListRepoRepositories(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryListRepoRepositories failed:", res.error);
+    console.log("repoListRepoRepositories failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryPatchRepoRepository } from "@unified-api/typescript-sdk/funcs/repositoryPatchRepoRepository.js";
+import { repoPatchRepoRepository } from "@unified-api/typescript-sdk/funcs/repoPatchRepoRepository.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryPatchRepoRepository(unifiedTo, {
+  const res = await repoPatchRepoRepository(unifiedTo, {
     repoRepository: {
       name: "<value>",
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryPatchRepoRepository failed:", res.error);
+    console.log("repoPatchRepoRepository failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryRemoveRepoRepository } from "@unified-api/typescript-sdk/funcs/repositoryRemoveRepoRepository.js";
+import { repoRemoveRepoRepository } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoRepository.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryRemoveRepoRepository(unifiedTo, {
+  const res = await repoRemoveRepoRepository(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryRemoveRepoRepository failed:", res.error);
+    console.log("repoRemoveRepoRepository failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repositoryUpdateRepoRepository } from "@unified-api/typescript-sdk/funcs/repositoryUpdateRepoRepository.js";
+import { repoUpdateRepoRepository } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoRepository.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repositoryUpdateRepoRepository(unifiedTo, {
+  const res = await repoUpdateRepoRepository(unifiedTo, {
     repoRepository: {
       name: "<value>",
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repositoryUpdateRepoRepository failed:", res.error);
+    console.log("repoUpdateRepoRepository failed:", res.error);
   }
 }
 

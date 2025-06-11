@@ -237,7 +237,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoCreateRepoOrganization } from "@unified-api/typescript-sdk/funcs/repoCreateRepoOrganization.js";
+import { organizationCreateRepoOrganization } from "@unified-api/typescript-sdk/funcs/organizationCreateRepoOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -248,7 +248,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoCreateRepoOrganization(unifiedTo, {
+  const res = await organizationCreateRepoOrganization(unifiedTo, {
     repoOrganization: {},
     connectionId: "<id>",
   });
@@ -256,7 +256,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoCreateRepoOrganization failed:", res.error);
+    console.log("organizationCreateRepoOrganization failed:", res.error);
   }
 }
 
@@ -631,7 +631,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoGetRepoOrganization } from "@unified-api/typescript-sdk/funcs/repoGetRepoOrganization.js";
+import { organizationGetRepoOrganization } from "@unified-api/typescript-sdk/funcs/organizationGetRepoOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -642,7 +642,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoGetRepoOrganization(unifiedTo, {
+  const res = await organizationGetRepoOrganization(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -650,7 +650,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoGetRepoOrganization failed:", res.error);
+    console.log("organizationGetRepoOrganization failed:", res.error);
   }
 }
 
@@ -1016,7 +1016,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoListRepoOrganizations } from "@unified-api/typescript-sdk/funcs/repoListRepoOrganizations.js";
+import { organizationListRepoOrganizations } from "@unified-api/typescript-sdk/funcs/organizationListRepoOrganizations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1027,14 +1027,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoListRepoOrganizations(unifiedTo, {
+  const res = await organizationListRepoOrganizations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoListRepoOrganizations failed:", res.error);
+    console.log("organizationListRepoOrganizations failed:", res.error);
   }
 }
 
@@ -1418,7 +1418,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoPatchRepoOrganization } from "@unified-api/typescript-sdk/funcs/repoPatchRepoOrganization.js";
+import { organizationPatchRepoOrganization } from "@unified-api/typescript-sdk/funcs/organizationPatchRepoOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1429,7 +1429,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoPatchRepoOrganization(unifiedTo, {
+  const res = await organizationPatchRepoOrganization(unifiedTo, {
     repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1438,7 +1438,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoPatchRepoOrganization failed:", res.error);
+    console.log("organizationPatchRepoOrganization failed:", res.error);
   }
 }
 
@@ -1817,7 +1817,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoRemoveRepoOrganization } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoOrganization.js";
+import { organizationRemoveRepoOrganization } from "@unified-api/typescript-sdk/funcs/organizationRemoveRepoOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1828,7 +1828,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoRemoveRepoOrganization(unifiedTo, {
+  const res = await organizationRemoveRepoOrganization(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1836,7 +1836,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoRemoveRepoOrganization failed:", res.error);
+    console.log("organizationRemoveRepoOrganization failed:", res.error);
   }
 }
 
@@ -2224,7 +2224,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { repoUpdateRepoOrganization } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoOrganization.js";
+import { organizationUpdateRepoOrganization } from "@unified-api/typescript-sdk/funcs/organizationUpdateRepoOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2235,7 +2235,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await repoUpdateRepoOrganization(unifiedTo, {
+  const res = await organizationUpdateRepoOrganization(unifiedTo, {
     repoOrganization: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2244,7 +2244,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("repoUpdateRepoOrganization failed:", res.error);
+    console.log("organizationUpdateRepoOrganization failed:", res.error);
   }
 }
 

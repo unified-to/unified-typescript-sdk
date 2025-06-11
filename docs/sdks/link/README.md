@@ -53,7 +53,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkCreateCalendarLink } from "@unified-api/typescript-sdk/funcs/linkCreateCalendarLink.js";
+import { calendarCreateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarLink.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -64,7 +64,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkCreateCalendarLink(unifiedTo, {
+  const res = await calendarCreateCalendarLink(unifiedTo, {
     calendarLink: {
       url: "https://misguided-thongs.info",
     },
@@ -74,7 +74,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkCreateCalendarLink failed:", res.error);
+    console.log("calendarCreateCalendarLink failed:", res.error);
   }
 }
 
@@ -211,7 +211,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkGetCalendarLink } from "@unified-api/typescript-sdk/funcs/linkGetCalendarLink.js";
+import { calendarGetCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarLink.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkGetCalendarLink(unifiedTo, {
+  const res = await calendarGetCalendarLink(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -230,7 +230,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkGetCalendarLink failed:", res.error);
+    console.log("calendarGetCalendarLink failed:", res.error);
   }
 }
 
@@ -366,7 +366,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkListCalendarLinks } from "@unified-api/typescript-sdk/funcs/linkListCalendarLinks.js";
+import { calendarListCalendarLinks } from "@unified-api/typescript-sdk/funcs/calendarListCalendarLinks.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -377,14 +377,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkListCalendarLinks(unifiedTo, {
+  const res = await calendarListCalendarLinks(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkListCalendarLinks failed:", res.error);
+    console.log("calendarListCalendarLinks failed:", res.error);
   }
 }
 
@@ -522,7 +522,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkPatchCalendarLink } from "@unified-api/typescript-sdk/funcs/linkPatchCalendarLink.js";
+import { calendarPatchCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarLink.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -533,7 +533,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkPatchCalendarLink(unifiedTo, {
+  const res = await calendarPatchCalendarLink(unifiedTo, {
     calendarLink: {
       url: "https://warm-hexagon.name/",
     },
@@ -544,7 +544,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkPatchCalendarLink failed:", res.error);
+    console.log("calendarPatchCalendarLink failed:", res.error);
   }
 }
 
@@ -683,7 +683,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkRemoveCalendarLink } from "@unified-api/typescript-sdk/funcs/linkRemoveCalendarLink.js";
+import { calendarRemoveCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarLink.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -694,7 +694,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkRemoveCalendarLink(unifiedTo, {
+  const res = await calendarRemoveCalendarLink(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -702,7 +702,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkRemoveCalendarLink failed:", res.error);
+    console.log("calendarRemoveCalendarLink failed:", res.error);
   }
 }
 
@@ -842,7 +842,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { linkUpdateCalendarLink } from "@unified-api/typescript-sdk/funcs/linkUpdateCalendarLink.js";
+import { calendarUpdateCalendarLink } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarLink.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -853,7 +853,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await linkUpdateCalendarLink(unifiedTo, {
+  const res = await calendarUpdateCalendarLink(unifiedTo, {
     calendarLink: {
       url: "https://partial-hydrocarbon.info",
     },
@@ -864,7 +864,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("linkUpdateCalendarLink failed:", res.error);
+    console.log("calendarUpdateCalendarLink failed:", res.error);
   }
 }
 

@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidateCreateAtsCandidate } from "@unified-api/typescript-sdk/funcs/candidateCreateAtsCandidate.js";
+import { atsCreateAtsCandidate } from "@unified-api/typescript-sdk/funcs/atsCreateAtsCandidate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidateCreateAtsCandidate(unifiedTo, {
+  const res = await atsCreateAtsCandidate(unifiedTo, {
     atsCandidate: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidateCreateAtsCandidate failed:", res.error);
+    console.log("atsCreateAtsCandidate failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidateGetAtsCandidate } from "@unified-api/typescript-sdk/funcs/candidateGetAtsCandidate.js";
+import { atsGetAtsCandidate } from "@unified-api/typescript-sdk/funcs/atsGetAtsCandidate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidateGetAtsCandidate(unifiedTo, {
+  const res = await atsGetAtsCandidate(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidateGetAtsCandidate failed:", res.error);
+    console.log("atsGetAtsCandidate failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidateListAtsCandidates } from "@unified-api/typescript-sdk/funcs/candidateListAtsCandidates.js";
+import { atsListAtsCandidates } from "@unified-api/typescript-sdk/funcs/atsListAtsCandidates.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidateListAtsCandidates(unifiedTo, {
+  const res = await atsListAtsCandidates(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidateListAtsCandidates failed:", res.error);
+    console.log("atsListAtsCandidates failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidatePatchAtsCandidate } from "@unified-api/typescript-sdk/funcs/candidatePatchAtsCandidate.js";
+import { atsPatchAtsCandidate } from "@unified-api/typescript-sdk/funcs/atsPatchAtsCandidate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidatePatchAtsCandidate(unifiedTo, {
+  const res = await atsPatchAtsCandidate(unifiedTo, {
     atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidatePatchAtsCandidate failed:", res.error);
+    console.log("atsPatchAtsCandidate failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidateRemoveAtsCandidate } from "@unified-api/typescript-sdk/funcs/candidateRemoveAtsCandidate.js";
+import { atsRemoveAtsCandidate } from "@unified-api/typescript-sdk/funcs/atsRemoveAtsCandidate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidateRemoveAtsCandidate(unifiedTo, {
+  const res = await atsRemoveAtsCandidate(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidateRemoveAtsCandidate failed:", res.error);
+    console.log("atsRemoveAtsCandidate failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { candidateUpdateAtsCandidate } from "@unified-api/typescript-sdk/funcs/candidateUpdateAtsCandidate.js";
+import { atsUpdateAtsCandidate } from "@unified-api/typescript-sdk/funcs/atsUpdateAtsCandidate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await candidateUpdateAtsCandidate(unifiedTo, {
+  const res = await atsUpdateAtsCandidate(unifiedTo, {
     atsCandidate: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("candidateUpdateAtsCandidate failed:", res.error);
+    console.log("atsUpdateAtsCandidate failed:", res.error);
   }
 }
 

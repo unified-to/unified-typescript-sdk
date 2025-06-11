@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { modelListGenaiModels } from "@unified-api/typescript-sdk/funcs/modelListGenaiModels.js";
+import { genaiListGenaiModels } from "@unified-api/typescript-sdk/funcs/genaiListGenaiModels.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -50,14 +50,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await modelListGenaiModels(unifiedTo, {
+  const res = await genaiListGenaiModels(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("modelListGenaiModels failed:", res.error);
+    console.log("genaiListGenaiModels failed:", res.error);
   }
 }
 

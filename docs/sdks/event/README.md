@@ -51,7 +51,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventCreateCalendarEvent } from "@unified-api/typescript-sdk/funcs/eventCreateCalendarEvent.js";
+import { calendarCreateCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarCreateCalendarEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -62,7 +62,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventCreateCalendarEvent(unifiedTo, {
+  const res = await calendarCreateCalendarEvent(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
   });
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventCreateCalendarEvent failed:", res.error);
+    console.log("calendarCreateCalendarEvent failed:", res.error);
   }
 }
 
@@ -207,7 +207,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventGetCalendarEvent } from "@unified-api/typescript-sdk/funcs/eventGetCalendarEvent.js";
+import { calendarGetCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -218,7 +218,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventGetCalendarEvent(unifiedTo, {
+  const res = await calendarGetCalendarEvent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -226,7 +226,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventGetCalendarEvent failed:", res.error);
+    console.log("calendarGetCalendarEvent failed:", res.error);
   }
 }
 
@@ -362,7 +362,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventListCalendarEvents } from "@unified-api/typescript-sdk/funcs/eventListCalendarEvents.js";
+import { calendarListCalendarEvents } from "@unified-api/typescript-sdk/funcs/calendarListCalendarEvents.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -373,14 +373,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventListCalendarEvents(unifiedTo, {
+  const res = await calendarListCalendarEvents(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventListCalendarEvents failed:", res.error);
+    console.log("calendarListCalendarEvents failed:", res.error);
   }
 }
 
@@ -516,7 +516,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventPatchCalendarEvent } from "@unified-api/typescript-sdk/funcs/eventPatchCalendarEvent.js";
+import { calendarPatchCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarPatchCalendarEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -527,7 +527,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventPatchCalendarEvent(unifiedTo, {
+  const res = await calendarPatchCalendarEvent(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -536,7 +536,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventPatchCalendarEvent failed:", res.error);
+    console.log("calendarPatchCalendarEvent failed:", res.error);
   }
 }
 
@@ -675,7 +675,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventRemoveCalendarEvent } from "@unified-api/typescript-sdk/funcs/eventRemoveCalendarEvent.js";
+import { calendarRemoveCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarRemoveCalendarEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -686,7 +686,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventRemoveCalendarEvent(unifiedTo, {
+  const res = await calendarRemoveCalendarEvent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -694,7 +694,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventRemoveCalendarEvent failed:", res.error);
+    console.log("calendarRemoveCalendarEvent failed:", res.error);
   }
 }
 
@@ -832,7 +832,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { eventUpdateCalendarEvent } from "@unified-api/typescript-sdk/funcs/eventUpdateCalendarEvent.js";
+import { calendarUpdateCalendarEvent } from "@unified-api/typescript-sdk/funcs/calendarUpdateCalendarEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -843,7 +843,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await eventUpdateCalendarEvent(unifiedTo, {
+  const res = await calendarUpdateCalendarEvent(unifiedTo, {
     calendarEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -852,7 +852,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("eventUpdateCalendarEvent failed:", res.error);
+    console.log("calendarUpdateCalendarEvent failed:", res.error);
   }
 }
 

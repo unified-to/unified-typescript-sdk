@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { busyListCalendarBusies } from "@unified-api/typescript-sdk/funcs/busyListCalendarBusies.js";
+import { calendarListCalendarBusies } from "@unified-api/typescript-sdk/funcs/calendarListCalendarBusies.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -50,14 +50,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await busyListCalendarBusies(unifiedTo, {
+  const res = await calendarListCalendarBusies(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("busyListCalendarBusies failed:", res.error);
+    console.log("calendarListCalendarBusies failed:", res.error);
   }
 }
 

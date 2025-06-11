@@ -17,8 +17,9 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../sdk/models/errors/httpclienterrors.js";
-import { SDKError } from "../sdk/models/errors/sdkerror.js";
+import { ResponseValidationError } from "../sdk/models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
+import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
@@ -33,13 +34,14 @@ export function atsRemoveAtsApplication(
 ): APIPromise<
   Result<
     operations.RemoveAtsApplicationResponse | undefined,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -57,13 +59,14 @@ async function $do(
   [
     Result<
       operations.RemoveAtsApplicationResponse | undefined,
-      | SDKError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | UnifiedToError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -147,13 +150,14 @@ async function $do(
 
   const [result] = await M.match<
     operations.RemoveAtsApplicationResponse | undefined,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.nil(
       200,
@@ -166,7 +170,7 @@ async function $do(
       operations.RemoveAtsApplicationResponse$inboundSchema.optional(),
       { hdrs: true },
     ),
-  )(response, { extraFields: responseFields });
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

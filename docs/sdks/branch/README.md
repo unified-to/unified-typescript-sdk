@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchCreateRepoBranch } from "@unified-api/typescript-sdk/funcs/branchCreateRepoBranch.js";
+import { repoCreateRepoBranch } from "@unified-api/typescript-sdk/funcs/repoCreateRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchCreateRepoBranch(unifiedTo, {
+  const res = await repoCreateRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchCreateRepoBranch failed:", res.error);
+    console.log("repoCreateRepoBranch failed:", res.error);
   }
 }
 
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchGetRepoBranch } from "@unified-api/typescript-sdk/funcs/branchGetRepoBranch.js";
+import { repoGetRepoBranch } from "@unified-api/typescript-sdk/funcs/repoGetRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchGetRepoBranch(unifiedTo, {
+  const res = await repoGetRepoBranch(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -148,7 +148,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchGetRepoBranch failed:", res.error);
+    console.log("repoGetRepoBranch failed:", res.error);
   }
 }
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchListRepoBranches } from "@unified-api/typescript-sdk/funcs/branchListRepoBranches.js";
+import { repoListRepoBranches } from "@unified-api/typescript-sdk/funcs/repoListRepoBranches.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchListRepoBranches(unifiedTo, {
+  const res = await repoListRepoBranches(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchListRepoBranches failed:", res.error);
+    console.log("repoListRepoBranches failed:", res.error);
   }
 }
 
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchPatchRepoBranch } from "@unified-api/typescript-sdk/funcs/branchPatchRepoBranch.js";
+import { repoPatchRepoBranch } from "@unified-api/typescript-sdk/funcs/repoPatchRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchPatchRepoBranch(unifiedTo, {
+  const res = await repoPatchRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -310,7 +310,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchPatchRepoBranch failed:", res.error);
+    console.log("repoPatchRepoBranch failed:", res.error);
   }
 }
 
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchRemoveRepoBranch } from "@unified-api/typescript-sdk/funcs/branchRemoveRepoBranch.js";
+import { repoRemoveRepoBranch } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchRemoveRepoBranch(unifiedTo, {
+  const res = await repoRemoveRepoBranch(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchRemoveRepoBranch failed:", res.error);
+    console.log("repoRemoveRepoBranch failed:", res.error);
   }
 }
 
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { branchUpdateRepoBranch } from "@unified-api/typescript-sdk/funcs/branchUpdateRepoBranch.js";
+import { repoUpdateRepoBranch } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoBranch.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,7 +462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await branchUpdateRepoBranch(unifiedTo, {
+  const res = await repoUpdateRepoBranch(unifiedTo, {
     repoBranch: {
       name: "<value>",
       repoId: "<id>",
@@ -474,7 +474,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("branchUpdateRepoBranch failed:", res.error);
+    console.log("repoUpdateRepoBranch failed:", res.error);
   }
 }
 

@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messageCreateMessagingMessage } from "@unified-api/typescript-sdk/funcs/messageCreateMessagingMessage.js";
+import { messagingCreateMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagingCreateMessagingMessage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messageCreateMessagingMessage(unifiedTo, {
+  const res = await messagingCreateMessagingMessage(unifiedTo, {
     messagingMessage: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messageCreateMessagingMessage failed:", res.error);
+    console.log("messagingCreateMessagingMessage failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messageGetMessagingMessage } from "@unified-api/typescript-sdk/funcs/messageGetMessagingMessage.js";
+import { messagingGetMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagingGetMessagingMessage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messageGetMessagingMessage(unifiedTo, {
+  const res = await messagingGetMessagingMessage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messageGetMessagingMessage failed:", res.error);
+    console.log("messagingGetMessagingMessage failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messageListMessagingMessages } from "@unified-api/typescript-sdk/funcs/messageListMessagingMessages.js";
+import { messagingListMessagingMessages } from "@unified-api/typescript-sdk/funcs/messagingListMessagingMessages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messageListMessagingMessages(unifiedTo, {
+  const res = await messagingListMessagingMessages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messageListMessagingMessages failed:", res.error);
+    console.log("messagingListMessagingMessages failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messagePatchMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagePatchMessagingMessage.js";
+import { messagingPatchMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagingPatchMessagingMessage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messagePatchMessagingMessage(unifiedTo, {
+  const res = await messagingPatchMessagingMessage(unifiedTo, {
     messagingMessage: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messagePatchMessagingMessage failed:", res.error);
+    console.log("messagingPatchMessagingMessage failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messageRemoveMessagingMessage } from "@unified-api/typescript-sdk/funcs/messageRemoveMessagingMessage.js";
+import { messagingRemoveMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagingRemoveMessagingMessage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messageRemoveMessagingMessage(unifiedTo, {
+  const res = await messagingRemoveMessagingMessage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messageRemoveMessagingMessage failed:", res.error);
+    console.log("messagingRemoveMessagingMessage failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { messageUpdateMessagingMessage } from "@unified-api/typescript-sdk/funcs/messageUpdateMessagingMessage.js";
+import { messagingUpdateMessagingMessage } from "@unified-api/typescript-sdk/funcs/messagingUpdateMessagingMessage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await messageUpdateMessagingMessage(unifiedTo, {
+  const res = await messagingUpdateMessagingMessage(unifiedTo, {
     messagingMessage: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("messageUpdateMessagingMessage failed:", res.error);
+    console.log("messagingUpdateMessagingMessage failed:", res.error);
   }
 }
 

@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { deviceCreateHrisDevice } from "@unified-api/typescript-sdk/funcs/deviceCreateHrisDevice.js";
+import { hrisCreateHrisDevice } from "@unified-api/typescript-sdk/funcs/hrisCreateHrisDevice.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await deviceCreateHrisDevice(unifiedTo, {
+  const res = await hrisCreateHrisDevice(unifiedTo, {
     hrisDevice: {
       name: "<value>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("deviceCreateHrisDevice failed:", res.error);
+    console.log("hrisCreateHrisDevice failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { deviceGetHrisDevice } from "@unified-api/typescript-sdk/funcs/deviceGetHrisDevice.js";
+import { hrisGetHrisDevice } from "@unified-api/typescript-sdk/funcs/hrisGetHrisDevice.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await deviceGetHrisDevice(unifiedTo, {
+  const res = await hrisGetHrisDevice(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("deviceGetHrisDevice failed:", res.error);
+    console.log("hrisGetHrisDevice failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { deviceListHrisDevices } from "@unified-api/typescript-sdk/funcs/deviceListHrisDevices.js";
+import { hrisListHrisDevices } from "@unified-api/typescript-sdk/funcs/hrisListHrisDevices.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await deviceListHrisDevices(unifiedTo, {
+  const res = await hrisListHrisDevices(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("deviceListHrisDevices failed:", res.error);
+    console.log("hrisListHrisDevices failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { devicePatchHrisDevice } from "@unified-api/typescript-sdk/funcs/devicePatchHrisDevice.js";
+import { hrisPatchHrisDevice } from "@unified-api/typescript-sdk/funcs/hrisPatchHrisDevice.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await devicePatchHrisDevice(unifiedTo, {
+  const res = await hrisPatchHrisDevice(unifiedTo, {
     hrisDevice: {
       name: "<value>",
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("devicePatchHrisDevice failed:", res.error);
+    console.log("hrisPatchHrisDevice failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { deviceRemoveHrisDevice } from "@unified-api/typescript-sdk/funcs/deviceRemoveHrisDevice.js";
+import { hrisRemoveHrisDevice } from "@unified-api/typescript-sdk/funcs/hrisRemoveHrisDevice.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await deviceRemoveHrisDevice(unifiedTo, {
+  const res = await hrisRemoveHrisDevice(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("deviceRemoveHrisDevice failed:", res.error);
+    console.log("hrisRemoveHrisDevice failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { deviceUpdateHrisDevice } from "@unified-api/typescript-sdk/funcs/deviceUpdateHrisDevice.js";
+import { hrisUpdateHrisDevice } from "@unified-api/typescript-sdk/funcs/hrisUpdateHrisDevice.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await deviceUpdateHrisDevice(unifiedTo, {
+  const res = await hrisUpdateHrisDevice(unifiedTo, {
     hrisDevice: {
       name: "<value>",
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("deviceUpdateHrisDevice failed:", res.error);
+    console.log("hrisUpdateHrisDevice failed:", res.error);
   }
 }
 

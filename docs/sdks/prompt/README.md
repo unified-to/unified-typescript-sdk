@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { promptCreateGenaiPrompt } from "@unified-api/typescript-sdk/funcs/promptCreateGenaiPrompt.js";
+import { genaiCreateGenaiPrompt } from "@unified-api/typescript-sdk/funcs/genaiCreateGenaiPrompt.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await promptCreateGenaiPrompt(unifiedTo, {
+  const res = await genaiCreateGenaiPrompt(unifiedTo, {
     genaiPrompt: {},
     connectionId: "<id>",
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("promptCreateGenaiPrompt failed:", res.error);
+    console.log("genaiCreateGenaiPrompt failed:", res.error);
   }
 }
 

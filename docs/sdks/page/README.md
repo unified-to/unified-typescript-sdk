@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pageCreateKmsPage } from "@unified-api/typescript-sdk/funcs/pageCreateKmsPage.js";
+import { kmsCreateKmsPage } from "@unified-api/typescript-sdk/funcs/kmsCreateKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pageCreateKmsPage(unifiedTo, {
+  const res = await kmsCreateKmsPage(unifiedTo, {
     kmsPage: {
       title: "<value>",
       type: "TEXT",
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pageCreateKmsPage failed:", res.error);
+    console.log("kmsCreateKmsPage failed:", res.error);
   }
 }
 
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pageGetKmsPage } from "@unified-api/typescript-sdk/funcs/pageGetKmsPage.js";
+import { kmsGetKmsPage } from "@unified-api/typescript-sdk/funcs/kmsGetKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pageGetKmsPage(unifiedTo, {
+  const res = await kmsGetKmsPage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -148,7 +148,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pageGetKmsPage failed:", res.error);
+    console.log("kmsGetKmsPage failed:", res.error);
   }
 }
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pageListKmsPages } from "@unified-api/typescript-sdk/funcs/pageListKmsPages.js";
+import { kmsListKmsPages } from "@unified-api/typescript-sdk/funcs/kmsListKmsPages.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pageListKmsPages(unifiedTo, {
+  const res = await kmsListKmsPages(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pageListKmsPages failed:", res.error);
+    console.log("kmsListKmsPages failed:", res.error);
   }
 }
 
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pagePatchKmsPage } from "@unified-api/typescript-sdk/funcs/pagePatchKmsPage.js";
+import { kmsPatchKmsPage } from "@unified-api/typescript-sdk/funcs/kmsPatchKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pagePatchKmsPage(unifiedTo, {
+  const res = await kmsPatchKmsPage(unifiedTo, {
     kmsPage: {
       title: "<value>",
       type: "OTHER",
@@ -310,7 +310,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pagePatchKmsPage failed:", res.error);
+    console.log("kmsPatchKmsPage failed:", res.error);
   }
 }
 
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pageRemoveKmsPage } from "@unified-api/typescript-sdk/funcs/pageRemoveKmsPage.js";
+import { kmsRemoveKmsPage } from "@unified-api/typescript-sdk/funcs/kmsRemoveKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pageRemoveKmsPage(unifiedTo, {
+  const res = await kmsRemoveKmsPage(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pageRemoveKmsPage failed:", res.error);
+    console.log("kmsRemoveKmsPage failed:", res.error);
   }
 }
 
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pageUpdateKmsPage } from "@unified-api/typescript-sdk/funcs/pageUpdateKmsPage.js";
+import { kmsUpdateKmsPage } from "@unified-api/typescript-sdk/funcs/kmsUpdateKmsPage.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,7 +462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pageUpdateKmsPage(unifiedTo, {
+  const res = await kmsUpdateKmsPage(unifiedTo, {
     kmsPage: {
       title: "<value>",
       type: "OTHER",
@@ -474,7 +474,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pageUpdateKmsPage failed:", res.error);
+    console.log("kmsUpdateKmsPage failed:", res.error);
   }
 }
 

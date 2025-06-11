@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classCreateLmsClass } from "@unified-api/typescript-sdk/funcs/classCreateLmsClass.js";
+import { lmsCreateLmsClass } from "@unified-api/typescript-sdk/funcs/lmsCreateLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classCreateLmsClass(unifiedTo, {
+  const res = await lmsCreateLmsClass(unifiedTo, {
     lmsClass: {
       courseId: "<id>",
       name: "<value>",
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classCreateLmsClass failed:", res.error);
+    console.log("lmsCreateLmsClass failed:", res.error);
   }
 }
 
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classGetLmsClass } from "@unified-api/typescript-sdk/funcs/classGetLmsClass.js";
+import { lmsGetLmsClass } from "@unified-api/typescript-sdk/funcs/lmsGetLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classGetLmsClass(unifiedTo, {
+  const res = await lmsGetLmsClass(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -148,7 +148,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classGetLmsClass failed:", res.error);
+    console.log("lmsGetLmsClass failed:", res.error);
   }
 }
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classListLmsClasses } from "@unified-api/typescript-sdk/funcs/classListLmsClasses.js";
+import { lmsListLmsClasses } from "@unified-api/typescript-sdk/funcs/lmsListLmsClasses.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classListLmsClasses(unifiedTo, {
+  const res = await lmsListLmsClasses(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classListLmsClasses failed:", res.error);
+    console.log("lmsListLmsClasses failed:", res.error);
   }
 }
 
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classPatchLmsClass } from "@unified-api/typescript-sdk/funcs/classPatchLmsClass.js";
+import { lmsPatchLmsClass } from "@unified-api/typescript-sdk/funcs/lmsPatchLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classPatchLmsClass(unifiedTo, {
+  const res = await lmsPatchLmsClass(unifiedTo, {
     lmsClass: {
       courseId: "<id>",
       name: "<value>",
@@ -310,7 +310,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classPatchLmsClass failed:", res.error);
+    console.log("lmsPatchLmsClass failed:", res.error);
   }
 }
 
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classRemoveLmsClass } from "@unified-api/typescript-sdk/funcs/classRemoveLmsClass.js";
+import { lmsRemoveLmsClass } from "@unified-api/typescript-sdk/funcs/lmsRemoveLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classRemoveLmsClass(unifiedTo, {
+  const res = await lmsRemoveLmsClass(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classRemoveLmsClass failed:", res.error);
+    console.log("lmsRemoveLmsClass failed:", res.error);
   }
 }
 
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { classUpdateLmsClass } from "@unified-api/typescript-sdk/funcs/classUpdateLmsClass.js";
+import { lmsUpdateLmsClass } from "@unified-api/typescript-sdk/funcs/lmsUpdateLmsClass.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,7 +462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await classUpdateLmsClass(unifiedTo, {
+  const res = await lmsUpdateLmsClass(unifiedTo, {
     lmsClass: {
       courseId: "<id>",
       name: "<value>",
@@ -474,7 +474,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("classUpdateLmsClass failed:", res.error);
+    console.log("lmsUpdateLmsClass failed:", res.error);
   }
 }
 

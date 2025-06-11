@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalCreateAccountingJournal } from "@unified-api/typescript-sdk/funcs/journalCreateAccountingJournal.js";
+import { accountingCreateAccountingJournal } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingJournal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalCreateAccountingJournal(unifiedTo, {
+  const res = await accountingCreateAccountingJournal(unifiedTo, {
     accountingJournal: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalCreateAccountingJournal failed:", res.error);
+    console.log("accountingCreateAccountingJournal failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalGetAccountingJournal } from "@unified-api/typescript-sdk/funcs/journalGetAccountingJournal.js";
+import { accountingGetAccountingJournal } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingJournal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalGetAccountingJournal(unifiedTo, {
+  const res = await accountingGetAccountingJournal(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalGetAccountingJournal failed:", res.error);
+    console.log("accountingGetAccountingJournal failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalListAccountingJournals } from "@unified-api/typescript-sdk/funcs/journalListAccountingJournals.js";
+import { accountingListAccountingJournals } from "@unified-api/typescript-sdk/funcs/accountingListAccountingJournals.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalListAccountingJournals(unifiedTo, {
+  const res = await accountingListAccountingJournals(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalListAccountingJournals failed:", res.error);
+    console.log("accountingListAccountingJournals failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalPatchAccountingJournal } from "@unified-api/typescript-sdk/funcs/journalPatchAccountingJournal.js";
+import { accountingPatchAccountingJournal } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingJournal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalPatchAccountingJournal(unifiedTo, {
+  const res = await accountingPatchAccountingJournal(unifiedTo, {
     accountingJournal: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalPatchAccountingJournal failed:", res.error);
+    console.log("accountingPatchAccountingJournal failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalRemoveAccountingJournal } from "@unified-api/typescript-sdk/funcs/journalRemoveAccountingJournal.js";
+import { accountingRemoveAccountingJournal } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingJournal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalRemoveAccountingJournal(unifiedTo, {
+  const res = await accountingRemoveAccountingJournal(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalRemoveAccountingJournal failed:", res.error);
+    console.log("accountingRemoveAccountingJournal failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { journalUpdateAccountingJournal } from "@unified-api/typescript-sdk/funcs/journalUpdateAccountingJournal.js";
+import { accountingUpdateAccountingJournal } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingJournal.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await journalUpdateAccountingJournal(unifiedTo, {
+  const res = await accountingUpdateAccountingJournal(unifiedTo, {
     accountingJournal: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("journalUpdateAccountingJournal failed:", res.error);
+    console.log("accountingUpdateAccountingJournal failed:", res.error);
   }
 }
 

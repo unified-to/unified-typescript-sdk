@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewCreateCommerceReview } from "@unified-api/typescript-sdk/funcs/reviewCreateCommerceReview.js";
+import { commerceCreateCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceReview.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewCreateCommerceReview(unifiedTo, {
+  const res = await commerceCreateCommerceReview(unifiedTo, {
     commerceReview: {
       itemId: "<id>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewCreateCommerceReview failed:", res.error);
+    console.log("commerceCreateCommerceReview failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewGetCommerceReview } from "@unified-api/typescript-sdk/funcs/reviewGetCommerceReview.js";
+import { commerceGetCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceReview.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewGetCommerceReview(unifiedTo, {
+  const res = await commerceGetCommerceReview(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewGetCommerceReview failed:", res.error);
+    console.log("commerceGetCommerceReview failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewListCommerceReviews } from "@unified-api/typescript-sdk/funcs/reviewListCommerceReviews.js";
+import { commerceListCommerceReviews } from "@unified-api/typescript-sdk/funcs/commerceListCommerceReviews.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewListCommerceReviews(unifiedTo, {
+  const res = await commerceListCommerceReviews(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewListCommerceReviews failed:", res.error);
+    console.log("commerceListCommerceReviews failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewPatchCommerceReview } from "@unified-api/typescript-sdk/funcs/reviewPatchCommerceReview.js";
+import { commercePatchCommerceReview } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceReview.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewPatchCommerceReview(unifiedTo, {
+  const res = await commercePatchCommerceReview(unifiedTo, {
     commerceReview: {
       itemId: "<id>",
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewPatchCommerceReview failed:", res.error);
+    console.log("commercePatchCommerceReview failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewRemoveCommerceReview } from "@unified-api/typescript-sdk/funcs/reviewRemoveCommerceReview.js";
+import { commerceRemoveCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceReview.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewRemoveCommerceReview(unifiedTo, {
+  const res = await commerceRemoveCommerceReview(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewRemoveCommerceReview failed:", res.error);
+    console.log("commerceRemoveCommerceReview failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reviewUpdateCommerceReview } from "@unified-api/typescript-sdk/funcs/reviewUpdateCommerceReview.js";
+import { commerceUpdateCommerceReview } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceReview.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reviewUpdateCommerceReview(unifiedTo, {
+  const res = await commerceUpdateCommerceReview(unifiedTo, {
     commerceReview: {
       itemId: "<id>",
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reviewUpdateCommerceReview failed:", res.error);
+    console.log("commerceUpdateCommerceReview failed:", res.error);
   }
 }
 

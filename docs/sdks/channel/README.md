@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { channelGetMessagingChannel } from "@unified-api/typescript-sdk/funcs/channelGetMessagingChannel.js";
+import { messagingGetMessagingChannel } from "@unified-api/typescript-sdk/funcs/messagingGetMessagingChannel.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await channelGetMessagingChannel(unifiedTo, {
+  const res = await messagingGetMessagingChannel(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("channelGetMessagingChannel failed:", res.error);
+    console.log("messagingGetMessagingChannel failed:", res.error);
   }
 }
 
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { channelListMessagingChannels } from "@unified-api/typescript-sdk/funcs/channelListMessagingChannels.js";
+import { messagingListMessagingChannels } from "@unified-api/typescript-sdk/funcs/messagingListMessagingChannels.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -129,14 +129,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await channelListMessagingChannels(unifiedTo, {
+  const res = await messagingListMessagingChannels(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("channelListMessagingChannels failed:", res.error);
+    console.log("messagingListMessagingChannels failed:", res.error);
   }
 }
 

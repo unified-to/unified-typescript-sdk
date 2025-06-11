@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelineCreateCrmPipeline } from "@unified-api/typescript-sdk/funcs/pipelineCreateCrmPipeline.js";
+import { crmCreateCrmPipeline } from "@unified-api/typescript-sdk/funcs/crmCreateCrmPipeline.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelineCreateCrmPipeline(unifiedTo, {
+  const res = await crmCreateCrmPipeline(unifiedTo, {
     crmPipeline: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelineCreateCrmPipeline failed:", res.error);
+    console.log("crmCreateCrmPipeline failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelineGetCrmPipeline } from "@unified-api/typescript-sdk/funcs/pipelineGetCrmPipeline.js";
+import { crmGetCrmPipeline } from "@unified-api/typescript-sdk/funcs/crmGetCrmPipeline.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelineGetCrmPipeline(unifiedTo, {
+  const res = await crmGetCrmPipeline(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelineGetCrmPipeline failed:", res.error);
+    console.log("crmGetCrmPipeline failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelineListCrmPipelines } from "@unified-api/typescript-sdk/funcs/pipelineListCrmPipelines.js";
+import { crmListCrmPipelines } from "@unified-api/typescript-sdk/funcs/crmListCrmPipelines.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelineListCrmPipelines(unifiedTo, {
+  const res = await crmListCrmPipelines(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelineListCrmPipelines failed:", res.error);
+    console.log("crmListCrmPipelines failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelinePatchCrmPipeline } from "@unified-api/typescript-sdk/funcs/pipelinePatchCrmPipeline.js";
+import { crmPatchCrmPipeline } from "@unified-api/typescript-sdk/funcs/crmPatchCrmPipeline.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelinePatchCrmPipeline(unifiedTo, {
+  const res = await crmPatchCrmPipeline(unifiedTo, {
     crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelinePatchCrmPipeline failed:", res.error);
+    console.log("crmPatchCrmPipeline failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelineRemoveCrmPipeline } from "@unified-api/typescript-sdk/funcs/pipelineRemoveCrmPipeline.js";
+import { crmRemoveCrmPipeline } from "@unified-api/typescript-sdk/funcs/crmRemoveCrmPipeline.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelineRemoveCrmPipeline(unifiedTo, {
+  const res = await crmRemoveCrmPipeline(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelineRemoveCrmPipeline failed:", res.error);
+    console.log("crmRemoveCrmPipeline failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pipelineUpdateCrmPipeline } from "@unified-api/typescript-sdk/funcs/pipelineUpdateCrmPipeline.js";
+import { crmUpdateCrmPipeline } from "@unified-api/typescript-sdk/funcs/crmUpdateCrmPipeline.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pipelineUpdateCrmPipeline(unifiedTo, {
+  const res = await crmUpdateCrmPipeline(unifiedTo, {
     crmPipeline: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pipelineUpdateCrmPipeline failed:", res.error);
+    console.log("crmUpdateCrmPipeline failed:", res.error);
   }
 }
 

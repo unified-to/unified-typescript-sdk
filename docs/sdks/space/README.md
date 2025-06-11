@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spaceCreateKmsSpace } from "@unified-api/typescript-sdk/funcs/spaceCreateKmsSpace.js";
+import { kmsCreateKmsSpace } from "@unified-api/typescript-sdk/funcs/kmsCreateKmsSpace.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spaceCreateKmsSpace(unifiedTo, {
+  const res = await kmsCreateKmsSpace(unifiedTo, {
     kmsSpace: {
       name: "<value>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spaceCreateKmsSpace failed:", res.error);
+    console.log("kmsCreateKmsSpace failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spaceGetKmsSpace } from "@unified-api/typescript-sdk/funcs/spaceGetKmsSpace.js";
+import { kmsGetKmsSpace } from "@unified-api/typescript-sdk/funcs/kmsGetKmsSpace.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spaceGetKmsSpace(unifiedTo, {
+  const res = await kmsGetKmsSpace(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spaceGetKmsSpace failed:", res.error);
+    console.log("kmsGetKmsSpace failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spaceListKmsSpaces } from "@unified-api/typescript-sdk/funcs/spaceListKmsSpaces.js";
+import { kmsListKmsSpaces } from "@unified-api/typescript-sdk/funcs/kmsListKmsSpaces.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spaceListKmsSpaces(unifiedTo, {
+  const res = await kmsListKmsSpaces(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spaceListKmsSpaces failed:", res.error);
+    console.log("kmsListKmsSpaces failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spacePatchKmsSpace } from "@unified-api/typescript-sdk/funcs/spacePatchKmsSpace.js";
+import { kmsPatchKmsSpace } from "@unified-api/typescript-sdk/funcs/kmsPatchKmsSpace.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spacePatchKmsSpace(unifiedTo, {
+  const res = await kmsPatchKmsSpace(unifiedTo, {
     kmsSpace: {
       name: "<value>",
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spacePatchKmsSpace failed:", res.error);
+    console.log("kmsPatchKmsSpace failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spaceRemoveKmsSpace } from "@unified-api/typescript-sdk/funcs/spaceRemoveKmsSpace.js";
+import { kmsRemoveKmsSpace } from "@unified-api/typescript-sdk/funcs/kmsRemoveKmsSpace.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spaceRemoveKmsSpace(unifiedTo, {
+  const res = await kmsRemoveKmsSpace(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spaceRemoveKmsSpace failed:", res.error);
+    console.log("kmsRemoveKmsSpace failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { spaceUpdateKmsSpace } from "@unified-api/typescript-sdk/funcs/spaceUpdateKmsSpace.js";
+import { kmsUpdateKmsSpace } from "@unified-api/typescript-sdk/funcs/kmsUpdateKmsSpace.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await spaceUpdateKmsSpace(unifiedTo, {
+  const res = await kmsUpdateKmsSpace(unifiedTo, {
     kmsSpace: {
       name: "<value>",
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("spaceUpdateKmsSpace failed:", res.error);
+    console.log("kmsUpdateKmsSpace failed:", res.error);
   }
 }
 

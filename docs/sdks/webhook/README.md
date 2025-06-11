@@ -50,7 +50,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookCreateUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/webhookCreateUnifiedWebhook.js";
+import { unifiedCreateUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/unifiedCreateUnifiedWebhook.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -61,7 +61,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookCreateUnifiedWebhook(unifiedTo, {
+  const res = await unifiedCreateUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
       event: "created",
@@ -72,7 +72,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookCreateUnifiedWebhook failed:", res.error);
+    console.log("unifiedCreateUnifiedWebhook failed:", res.error);
   }
 }
 
@@ -130,7 +130,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookGetUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/webhookGetUnifiedWebhook.js";
+import { unifiedGetUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/unifiedGetUnifiedWebhook.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -141,14 +141,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookGetUnifiedWebhook(unifiedTo, {
+  const res = await unifiedGetUnifiedWebhook(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookGetUnifiedWebhook failed:", res.error);
+    console.log("unifiedGetUnifiedWebhook failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookListUnifiedWebhooks } from "@unified-api/typescript-sdk/funcs/webhookListUnifiedWebhooks.js";
+import { unifiedListUnifiedWebhooks } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedWebhooks.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,12 +215,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookListUnifiedWebhooks(unifiedTo, {});
+  const res = await unifiedListUnifiedWebhooks(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookListUnifiedWebhooks failed:", res.error);
+    console.log("unifiedListUnifiedWebhooks failed:", res.error);
   }
 }
 
@@ -283,7 +283,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookPatchUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/webhookPatchUnifiedWebhook.js";
+import { unifiedPatchUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/unifiedPatchUnifiedWebhook.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -294,7 +294,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookPatchUnifiedWebhook(unifiedTo, {
+  const res = await unifiedPatchUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
       event: "updated",
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookPatchUnifiedWebhook failed:", res.error);
+    console.log("unifiedPatchUnifiedWebhook failed:", res.error);
   }
 }
 
@@ -364,7 +364,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookPatchUnifiedWebhookTrigger } from "@unified-api/typescript-sdk/funcs/webhookPatchUnifiedWebhookTrigger.js";
+import { unifiedPatchUnifiedWebhookTrigger } from "@unified-api/typescript-sdk/funcs/unifiedPatchUnifiedWebhookTrigger.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -375,14 +375,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookPatchUnifiedWebhookTrigger(unifiedTo, {
+  const res = await unifiedPatchUnifiedWebhookTrigger(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookPatchUnifiedWebhookTrigger failed:", res.error);
+    console.log("unifiedPatchUnifiedWebhookTrigger failed:", res.error);
   }
 }
 
@@ -440,7 +440,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookRemoveUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/webhookRemoveUnifiedWebhook.js";
+import { unifiedRemoveUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/unifiedRemoveUnifiedWebhook.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -451,14 +451,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookRemoveUnifiedWebhook(unifiedTo, {
+  const res = await unifiedRemoveUnifiedWebhook(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookRemoveUnifiedWebhook failed:", res.error);
+    console.log("unifiedRemoveUnifiedWebhook failed:", res.error);
   }
 }
 
@@ -521,7 +521,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookUpdateUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/webhookUpdateUnifiedWebhook.js";
+import { unifiedUpdateUnifiedWebhook } from "@unified-api/typescript-sdk/funcs/unifiedUpdateUnifiedWebhook.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -532,7 +532,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookUpdateUnifiedWebhook(unifiedTo, {
+  const res = await unifiedUpdateUnifiedWebhook(unifiedTo, {
     webhook: {
       connectionId: "<id>",
       event: "deleted",
@@ -544,7 +544,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookUpdateUnifiedWebhook failed:", res.error);
+    console.log("unifiedUpdateUnifiedWebhook failed:", res.error);
   }
 }
 
@@ -602,7 +602,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { webhookUpdateUnifiedWebhookTrigger } from "@unified-api/typescript-sdk/funcs/webhookUpdateUnifiedWebhookTrigger.js";
+import { unifiedUpdateUnifiedWebhookTrigger } from "@unified-api/typescript-sdk/funcs/unifiedUpdateUnifiedWebhookTrigger.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -613,14 +613,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await webhookUpdateUnifiedWebhookTrigger(unifiedTo, {
+  const res = await unifiedUpdateUnifiedWebhookTrigger(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("webhookUpdateUnifiedWebhookTrigger failed:", res.error);
+    console.log("unifiedUpdateUnifiedWebhookTrigger failed:", res.error);
   }
 }
 

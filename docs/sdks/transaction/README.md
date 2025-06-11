@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionCreateAccountingTransaction } from "@unified-api/typescript-sdk/funcs/transactionCreateAccountingTransaction.js";
+import { accountingCreateAccountingTransaction } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingTransaction.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionCreateAccountingTransaction(unifiedTo, {
+  const res = await accountingCreateAccountingTransaction(unifiedTo, {
     accountingTransaction: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionCreateAccountingTransaction failed:", res.error);
+    console.log("accountingCreateAccountingTransaction failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionGetAccountingTransaction } from "@unified-api/typescript-sdk/funcs/transactionGetAccountingTransaction.js";
+import { accountingGetAccountingTransaction } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingTransaction.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionGetAccountingTransaction(unifiedTo, {
+  const res = await accountingGetAccountingTransaction(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionGetAccountingTransaction failed:", res.error);
+    console.log("accountingGetAccountingTransaction failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionListAccountingTransactions } from "@unified-api/typescript-sdk/funcs/transactionListAccountingTransactions.js";
+import { accountingListAccountingTransactions } from "@unified-api/typescript-sdk/funcs/accountingListAccountingTransactions.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionListAccountingTransactions(unifiedTo, {
+  const res = await accountingListAccountingTransactions(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionListAccountingTransactions failed:", res.error);
+    console.log("accountingListAccountingTransactions failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionPatchAccountingTransaction } from "@unified-api/typescript-sdk/funcs/transactionPatchAccountingTransaction.js";
+import { accountingPatchAccountingTransaction } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingTransaction.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionPatchAccountingTransaction(unifiedTo, {
+  const res = await accountingPatchAccountingTransaction(unifiedTo, {
     accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionPatchAccountingTransaction failed:", res.error);
+    console.log("accountingPatchAccountingTransaction failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionRemoveAccountingTransaction } from "@unified-api/typescript-sdk/funcs/transactionRemoveAccountingTransaction.js";
+import { accountingRemoveAccountingTransaction } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingTransaction.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionRemoveAccountingTransaction(unifiedTo, {
+  const res = await accountingRemoveAccountingTransaction(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionRemoveAccountingTransaction failed:", res.error);
+    console.log("accountingRemoveAccountingTransaction failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { transactionUpdateAccountingTransaction } from "@unified-api/typescript-sdk/funcs/transactionUpdateAccountingTransaction.js";
+import { accountingUpdateAccountingTransaction } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingTransaction.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await transactionUpdateAccountingTransaction(unifiedTo, {
+  const res = await accountingUpdateAccountingTransaction(unifiedTo, {
     accountingTransaction: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("transactionUpdateAccountingTransaction failed:", res.error);
+    console.log("accountingUpdateAccountingTransaction failed:", res.error);
   }
 }
 

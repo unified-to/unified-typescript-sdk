@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderCreateAccountingOrder } from "@unified-api/typescript-sdk/funcs/orderCreateAccountingOrder.js";
+import { accountingCreateAccountingOrder } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingOrder.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderCreateAccountingOrder(unifiedTo, {
+  const res = await accountingCreateAccountingOrder(unifiedTo, {
     accountingOrder: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderCreateAccountingOrder failed:", res.error);
+    console.log("accountingCreateAccountingOrder failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderGetAccountingOrder } from "@unified-api/typescript-sdk/funcs/orderGetAccountingOrder.js";
+import { accountingGetAccountingOrder } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingOrder.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderGetAccountingOrder(unifiedTo, {
+  const res = await accountingGetAccountingOrder(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderGetAccountingOrder failed:", res.error);
+    console.log("accountingGetAccountingOrder failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderListAccountingOrders } from "@unified-api/typescript-sdk/funcs/orderListAccountingOrders.js";
+import { accountingListAccountingOrders } from "@unified-api/typescript-sdk/funcs/accountingListAccountingOrders.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderListAccountingOrders(unifiedTo, {
+  const res = await accountingListAccountingOrders(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderListAccountingOrders failed:", res.error);
+    console.log("accountingListAccountingOrders failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderPatchAccountingOrder } from "@unified-api/typescript-sdk/funcs/orderPatchAccountingOrder.js";
+import { accountingPatchAccountingOrder } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingOrder.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderPatchAccountingOrder(unifiedTo, {
+  const res = await accountingPatchAccountingOrder(unifiedTo, {
     accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderPatchAccountingOrder failed:", res.error);
+    console.log("accountingPatchAccountingOrder failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderRemoveAccountingOrder } from "@unified-api/typescript-sdk/funcs/orderRemoveAccountingOrder.js";
+import { accountingRemoveAccountingOrder } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingOrder.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderRemoveAccountingOrder(unifiedTo, {
+  const res = await accountingRemoveAccountingOrder(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderRemoveAccountingOrder failed:", res.error);
+    console.log("accountingRemoveAccountingOrder failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { orderUpdateAccountingOrder } from "@unified-api/typescript-sdk/funcs/orderUpdateAccountingOrder.js";
+import { accountingUpdateAccountingOrder } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingOrder.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await orderUpdateAccountingOrder(unifiedTo, {
+  const res = await accountingUpdateAccountingOrder(unifiedTo, {
     accountingOrder: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("orderUpdateAccountingOrder failed:", res.error);
+    console.log("accountingUpdateAccountingOrder failed:", res.error);
   }
 }
 

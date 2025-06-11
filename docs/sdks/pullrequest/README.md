@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestCreateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/pullrequestCreateRepoPullrequest.js";
+import { repoCreateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoCreateRepoPullrequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestCreateRepoPullrequest(unifiedTo, {
+  const res = await repoCreateRepoPullrequest(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestCreateRepoPullrequest failed:", res.error);
+    console.log("repoCreateRepoPullrequest failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestGetRepoPullrequest } from "@unified-api/typescript-sdk/funcs/pullrequestGetRepoPullrequest.js";
+import { repoGetRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoGetRepoPullrequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestGetRepoPullrequest(unifiedTo, {
+  const res = await repoGetRepoPullrequest(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestGetRepoPullrequest failed:", res.error);
+    console.log("repoGetRepoPullrequest failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestListRepoPullrequests } from "@unified-api/typescript-sdk/funcs/pullrequestListRepoPullrequests.js";
+import { repoListRepoPullrequests } from "@unified-api/typescript-sdk/funcs/repoListRepoPullrequests.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestListRepoPullrequests(unifiedTo, {
+  const res = await repoListRepoPullrequests(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestListRepoPullrequests failed:", res.error);
+    console.log("repoListRepoPullrequests failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestPatchRepoPullrequest } from "@unified-api/typescript-sdk/funcs/pullrequestPatchRepoPullrequest.js";
+import { repoPatchRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoPatchRepoPullrequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestPatchRepoPullrequest(unifiedTo, {
+  const res = await repoPatchRepoPullrequest(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestPatchRepoPullrequest failed:", res.error);
+    console.log("repoPatchRepoPullrequest failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestRemoveRepoPullrequest } from "@unified-api/typescript-sdk/funcs/pullrequestRemoveRepoPullrequest.js";
+import { repoRemoveRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoPullrequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestRemoveRepoPullrequest(unifiedTo, {
+  const res = await repoRemoveRepoPullrequest(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestRemoveRepoPullrequest failed:", res.error);
+    console.log("repoRemoveRepoPullrequest failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { pullrequestUpdateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/pullrequestUpdateRepoPullrequest.js";
+import { repoUpdateRepoPullrequest } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoPullrequest.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await pullrequestUpdateRepoPullrequest(unifiedTo, {
+  const res = await repoUpdateRepoPullrequest(unifiedTo, {
     repoPullrequest: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("pullrequestUpdateRepoPullrequest failed:", res.error);
+    console.log("repoUpdateRepoPullrequest failed:", res.error);
   }
 }
 

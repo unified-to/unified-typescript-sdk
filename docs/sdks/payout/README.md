@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { payoutGetPaymentPayout } from "@unified-api/typescript-sdk/funcs/payoutGetPaymentPayout.js";
+import { paymentGetPaymentPayout } from "@unified-api/typescript-sdk/funcs/paymentGetPaymentPayout.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await payoutGetPaymentPayout(unifiedTo, {
+  const res = await paymentGetPaymentPayout(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("payoutGetPaymentPayout failed:", res.error);
+    console.log("paymentGetPaymentPayout failed:", res.error);
   }
 }
 
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { payoutListPaymentPayouts } from "@unified-api/typescript-sdk/funcs/payoutListPaymentPayouts.js";
+import { paymentListPaymentPayouts } from "@unified-api/typescript-sdk/funcs/paymentListPaymentPayouts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -129,14 +129,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await payoutListPaymentPayouts(unifiedTo, {
+  const res = await paymentListPaymentPayouts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("payoutListPaymentPayouts failed:", res.error);
+    console.log("paymentListPaymentPayouts failed:", res.error);
   }
 }
 

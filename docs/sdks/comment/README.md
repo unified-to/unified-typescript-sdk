@@ -59,7 +59,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentCreateKmsComment } from "@unified-api/typescript-sdk/funcs/commentCreateKmsComment.js";
+import { kmsCreateKmsComment } from "@unified-api/typescript-sdk/funcs/kmsCreateKmsComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -70,7 +70,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentCreateKmsComment(unifiedTo, {
+  const res = await kmsCreateKmsComment(unifiedTo, {
     kmsComment: {
       content: "<value>",
     },
@@ -80,7 +80,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentCreateKmsComment failed:", res.error);
+    console.log("kmsCreateKmsComment failed:", res.error);
   }
 }
 
@@ -305,7 +305,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentGetKmsComment } from "@unified-api/typescript-sdk/funcs/commentGetKmsComment.js";
+import { kmsGetKmsComment } from "@unified-api/typescript-sdk/funcs/kmsGetKmsComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -316,7 +316,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentGetKmsComment(unifiedTo, {
+  const res = await kmsGetKmsComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -324,7 +324,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentGetKmsComment failed:", res.error);
+    console.log("kmsGetKmsComment failed:", res.error);
   }
 }
 
@@ -538,7 +538,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentListKmsComments } from "@unified-api/typescript-sdk/funcs/commentListKmsComments.js";
+import { kmsListKmsComments } from "@unified-api/typescript-sdk/funcs/kmsListKmsComments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -549,14 +549,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentListKmsComments(unifiedTo, {
+  const res = await kmsListKmsComments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentListKmsComments failed:", res.error);
+    console.log("kmsListKmsComments failed:", res.error);
   }
 }
 
@@ -770,7 +770,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentPatchKmsComment } from "@unified-api/typescript-sdk/funcs/commentPatchKmsComment.js";
+import { kmsPatchKmsComment } from "@unified-api/typescript-sdk/funcs/kmsPatchKmsComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -781,7 +781,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentPatchKmsComment(unifiedTo, {
+  const res = await kmsPatchKmsComment(unifiedTo, {
     kmsComment: {
       content: "<value>",
     },
@@ -792,7 +792,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentPatchKmsComment failed:", res.error);
+    console.log("kmsPatchKmsComment failed:", res.error);
   }
 }
 
@@ -1021,7 +1021,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentRemoveKmsComment } from "@unified-api/typescript-sdk/funcs/commentRemoveKmsComment.js";
+import { kmsRemoveKmsComment } from "@unified-api/typescript-sdk/funcs/kmsRemoveKmsComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1032,7 +1032,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentRemoveKmsComment(unifiedTo, {
+  const res = await kmsRemoveKmsComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1040,7 +1040,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentRemoveKmsComment failed:", res.error);
+    console.log("kmsRemoveKmsComment failed:", res.error);
   }
 }
 
@@ -1258,7 +1258,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commentUpdateKmsComment } from "@unified-api/typescript-sdk/funcs/commentUpdateKmsComment.js";
+import { kmsUpdateKmsComment } from "@unified-api/typescript-sdk/funcs/kmsUpdateKmsComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1269,7 +1269,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commentUpdateKmsComment(unifiedTo, {
+  const res = await kmsUpdateKmsComment(unifiedTo, {
     kmsComment: {
       content: "<value>",
     },
@@ -1280,7 +1280,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commentUpdateKmsComment failed:", res.error);
+    console.log("kmsUpdateKmsComment failed:", res.error);
   }
 }
 

@@ -42,7 +42,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { integrationGetUnifiedIntegrationAuth } from "@unified-api/typescript-sdk/funcs/integrationGetUnifiedIntegrationAuth.js";
+import { unifiedGetUnifiedIntegrationAuth } from "@unified-api/typescript-sdk/funcs/unifiedGetUnifiedIntegrationAuth.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -53,7 +53,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await integrationGetUnifiedIntegrationAuth(unifiedTo, {
+  const res = await unifiedGetUnifiedIntegrationAuth(unifiedTo, {
     integrationType: "<value>",
     workspaceId: "<id>",
   });
@@ -61,7 +61,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("integrationGetUnifiedIntegrationAuth failed:", res.error);
+    console.log("unifiedGetUnifiedIntegrationAuth failed:", res.error);
   }
 }
 
@@ -119,7 +119,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { integrationListUnifiedIntegrationWorkspaces } from "@unified-api/typescript-sdk/funcs/integrationListUnifiedIntegrationWorkspaces.js";
+import { unifiedListUnifiedIntegrationWorkspaces } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedIntegrationWorkspaces.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -130,14 +130,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await integrationListUnifiedIntegrationWorkspaces(unifiedTo, {
+  const res = await unifiedListUnifiedIntegrationWorkspaces(unifiedTo, {
     workspaceId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("integrationListUnifiedIntegrationWorkspaces failed:", res.error);
+    console.log("unifiedListUnifiedIntegrationWorkspaces failed:", res.error);
   }
 }
 
@@ -193,7 +193,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { integrationListUnifiedIntegrations } from "@unified-api/typescript-sdk/funcs/integrationListUnifiedIntegrations.js";
+import { unifiedListUnifiedIntegrations } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedIntegrations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -204,12 +204,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await integrationListUnifiedIntegrations(unifiedTo, {});
+  const res = await unifiedListUnifiedIntegrations(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("integrationListUnifiedIntegrations failed:", res.error);
+    console.log("unifiedListUnifiedIntegrations failed:", res.error);
   }
 }
 

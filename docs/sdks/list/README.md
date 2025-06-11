@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listCreateMartechList } from "@unified-api/typescript-sdk/funcs/listCreateMartechList.js";
+import { martechCreateMartechList } from "@unified-api/typescript-sdk/funcs/martechCreateMartechList.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listCreateMartechList(unifiedTo, {
+  const res = await martechCreateMartechList(unifiedTo, {
     marketingList: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listCreateMartechList failed:", res.error);
+    console.log("martechCreateMartechList failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listGetMartechList } from "@unified-api/typescript-sdk/funcs/listGetMartechList.js";
+import { martechGetMartechList } from "@unified-api/typescript-sdk/funcs/martechGetMartechList.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listGetMartechList(unifiedTo, {
+  const res = await martechGetMartechList(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listGetMartechList failed:", res.error);
+    console.log("martechGetMartechList failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listListMartechLists } from "@unified-api/typescript-sdk/funcs/listListMartechLists.js";
+import { martechListMartechLists } from "@unified-api/typescript-sdk/funcs/martechListMartechLists.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listListMartechLists(unifiedTo, {
+  const res = await martechListMartechLists(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listListMartechLists failed:", res.error);
+    console.log("martechListMartechLists failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listPatchMartechList } from "@unified-api/typescript-sdk/funcs/listPatchMartechList.js";
+import { martechPatchMartechList } from "@unified-api/typescript-sdk/funcs/martechPatchMartechList.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listPatchMartechList(unifiedTo, {
+  const res = await martechPatchMartechList(unifiedTo, {
     marketingList: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listPatchMartechList failed:", res.error);
+    console.log("martechPatchMartechList failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listRemoveMartechList } from "@unified-api/typescript-sdk/funcs/listRemoveMartechList.js";
+import { martechRemoveMartechList } from "@unified-api/typescript-sdk/funcs/martechRemoveMartechList.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listRemoveMartechList(unifiedTo, {
+  const res = await martechRemoveMartechList(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listRemoveMartechList failed:", res.error);
+    console.log("martechRemoveMartechList failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { listUpdateMartechList } from "@unified-api/typescript-sdk/funcs/listUpdateMartechList.js";
+import { martechUpdateMartechList } from "@unified-api/typescript-sdk/funcs/martechUpdateMartechList.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await listUpdateMartechList(unifiedTo, {
+  const res = await martechUpdateMartechList(unifiedTo, {
     marketingList: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("listUpdateMartechList failed:", res.error);
+    console.log("martechUpdateMartechList failed:", res.error);
   }
 }
 

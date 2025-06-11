@@ -18,8 +18,9 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../sdk/models/errors/httpclienterrors.js";
-import { SDKError } from "../sdk/models/errors/sdkerror.js";
+import { ResponseValidationError } from "../sdk/models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
+import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
@@ -38,13 +39,14 @@ export function unifiedListUnifiedIntegrationWorkspaces(
 ): APIPromise<
   Result<
     Array<shared.Integration>,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -62,13 +64,14 @@ async function $do(
   [
     Result<
       Array<shared.Integration>,
-      | SDKError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | UnifiedToError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -159,18 +162,19 @@ async function $do(
 
   const [result] = await M.match<
     Array<shared.Integration>,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.json(200, z.array(shared.Integration$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
-  )(response);
+  )(response, req);
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

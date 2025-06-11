@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryCreateCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryCreateCommerceInventory.js";
+import { commerceCreateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryCreateCommerceInventory(unifiedTo, {
+  const res = await commerceCreateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 7463.62,
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryCreateCommerceInventory failed:", res.error);
+    console.log("commerceCreateCommerceInventory failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryGetCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryGetCommerceInventory.js";
+import { commerceGetCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryGetCommerceInventory(unifiedTo, {
+  const res = await commerceGetCommerceInventory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryGetCommerceInventory failed:", res.error);
+    console.log("commerceGetCommerceInventory failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryListCommerceInventories } from "@unified-api/typescript-sdk/funcs/inventoryListCommerceInventories.js";
+import { commerceListCommerceInventories } from "@unified-api/typescript-sdk/funcs/commerceListCommerceInventories.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryListCommerceInventories(unifiedTo, {
+  const res = await commerceListCommerceInventories(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryListCommerceInventories failed:", res.error);
+    console.log("commerceListCommerceInventories failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryPatchCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryPatchCommerceInventory.js";
+import { commercePatchCommerceInventory } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryPatchCommerceInventory(unifiedTo, {
+  const res = await commercePatchCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 7859.84,
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryPatchCommerceInventory failed:", res.error);
+    console.log("commercePatchCommerceInventory failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryRemoveCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryRemoveCommerceInventory.js";
+import { commerceRemoveCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryRemoveCommerceInventory(unifiedTo, {
+  const res = await commerceRemoveCommerceInventory(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryRemoveCommerceInventory failed:", res.error);
+    console.log("commerceRemoveCommerceInventory failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { inventoryUpdateCommerceInventory } from "@unified-api/typescript-sdk/funcs/inventoryUpdateCommerceInventory.js";
+import { commerceUpdateCommerceInventory } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceInventory.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await inventoryUpdateCommerceInventory(unifiedTo, {
+  const res = await commerceUpdateCommerceInventory(unifiedTo, {
     commerceInventory: {
       available: 4497.29,
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("inventoryUpdateCommerceInventory failed:", res.error);
+    console.log("commerceUpdateCommerceInventory failed:", res.error);
   }
 }
 

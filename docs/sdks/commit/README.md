@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitCreateRepoCommit } from "@unified-api/typescript-sdk/funcs/commitCreateRepoCommit.js";
+import { repoCreateRepoCommit } from "@unified-api/typescript-sdk/funcs/repoCreateRepoCommit.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitCreateRepoCommit(unifiedTo, {
+  const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
       userId: "<id>",
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitCreateRepoCommit failed:", res.error);
+    console.log("repoCreateRepoCommit failed:", res.error);
   }
 }
 
@@ -129,7 +129,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitGetRepoCommit } from "@unified-api/typescript-sdk/funcs/commitGetRepoCommit.js";
+import { repoGetRepoCommit } from "@unified-api/typescript-sdk/funcs/repoGetRepoCommit.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -140,7 +140,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitGetRepoCommit(unifiedTo, {
+  const res = await repoGetRepoCommit(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -148,7 +148,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitGetRepoCommit failed:", res.error);
+    console.log("repoGetRepoCommit failed:", res.error);
   }
 }
 
@@ -206,7 +206,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitListRepoCommits } from "@unified-api/typescript-sdk/funcs/commitListRepoCommits.js";
+import { repoListRepoCommits } from "@unified-api/typescript-sdk/funcs/repoListRepoCommits.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -217,14 +217,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitListRepoCommits(unifiedTo, {
+  const res = await repoListRepoCommits(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitListRepoCommits failed:", res.error);
+    console.log("repoListRepoCommits failed:", res.error);
   }
 }
 
@@ -287,7 +287,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitPatchRepoCommit } from "@unified-api/typescript-sdk/funcs/commitPatchRepoCommit.js";
+import { repoPatchRepoCommit } from "@unified-api/typescript-sdk/funcs/repoPatchRepoCommit.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -298,7 +298,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitPatchRepoCommit(unifiedTo, {
+  const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
       userId: "<id>",
@@ -310,7 +310,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitPatchRepoCommit failed:", res.error);
+    console.log("repoPatchRepoCommit failed:", res.error);
   }
 }
 
@@ -369,7 +369,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitRemoveRepoCommit } from "@unified-api/typescript-sdk/funcs/commitRemoveRepoCommit.js";
+import { repoRemoveRepoCommit } from "@unified-api/typescript-sdk/funcs/repoRemoveRepoCommit.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -380,7 +380,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitRemoveRepoCommit(unifiedTo, {
+  const res = await repoRemoveRepoCommit(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -388,7 +388,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitRemoveRepoCommit failed:", res.error);
+    console.log("repoRemoveRepoCommit failed:", res.error);
   }
 }
 
@@ -451,7 +451,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { commitUpdateRepoCommit } from "@unified-api/typescript-sdk/funcs/commitUpdateRepoCommit.js";
+import { repoUpdateRepoCommit } from "@unified-api/typescript-sdk/funcs/repoUpdateRepoCommit.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -462,7 +462,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await commitUpdateRepoCommit(unifiedTo, {
+  const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
       userId: "<id>",
@@ -474,7 +474,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("commitUpdateRepoCommit failed:", res.error);
+    console.log("repoUpdateRepoCommit failed:", res.error);
   }
 }
 

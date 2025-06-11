@@ -47,7 +47,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionCreateCommerceCollection } from "@unified-api/typescript-sdk/funcs/collectionCreateCommerceCollection.js";
+import { commerceCreateCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceCreateCommerceCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -58,7 +58,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionCreateCommerceCollection(unifiedTo, {
+  const res = await commerceCreateCommerceCollection(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -68,7 +68,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionCreateCommerceCollection failed:", res.error);
+    console.log("commerceCreateCommerceCollection failed:", res.error);
   }
 }
 
@@ -127,7 +127,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionGetCommerceCollection } from "@unified-api/typescript-sdk/funcs/collectionGetCommerceCollection.js";
+import { commerceGetCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceGetCommerceCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -138,7 +138,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionGetCommerceCollection(unifiedTo, {
+  const res = await commerceGetCommerceCollection(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -146,7 +146,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionGetCommerceCollection failed:", res.error);
+    console.log("commerceGetCommerceCollection failed:", res.error);
   }
 }
 
@@ -204,7 +204,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionListCommerceCollections } from "@unified-api/typescript-sdk/funcs/collectionListCommerceCollections.js";
+import { commerceListCommerceCollections } from "@unified-api/typescript-sdk/funcs/commerceListCommerceCollections.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -215,14 +215,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionListCommerceCollections(unifiedTo, {
+  const res = await commerceListCommerceCollections(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionListCommerceCollections failed:", res.error);
+    console.log("commerceListCommerceCollections failed:", res.error);
   }
 }
 
@@ -284,7 +284,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionPatchCommerceCollection } from "@unified-api/typescript-sdk/funcs/collectionPatchCommerceCollection.js";
+import { commercePatchCommerceCollection } from "@unified-api/typescript-sdk/funcs/commercePatchCommerceCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -295,7 +295,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionPatchCommerceCollection(unifiedTo, {
+  const res = await commercePatchCommerceCollection(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -306,7 +306,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionPatchCommerceCollection failed:", res.error);
+    console.log("commercePatchCommerceCollection failed:", res.error);
   }
 }
 
@@ -365,7 +365,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionRemoveCommerceCollection } from "@unified-api/typescript-sdk/funcs/collectionRemoveCommerceCollection.js";
+import { commerceRemoveCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceRemoveCommerceCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -376,7 +376,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionRemoveCommerceCollection(unifiedTo, {
+  const res = await commerceRemoveCommerceCollection(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -384,7 +384,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionRemoveCommerceCollection failed:", res.error);
+    console.log("commerceRemoveCommerceCollection failed:", res.error);
   }
 }
 
@@ -446,7 +446,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { collectionUpdateCommerceCollection } from "@unified-api/typescript-sdk/funcs/collectionUpdateCommerceCollection.js";
+import { commerceUpdateCommerceCollection } from "@unified-api/typescript-sdk/funcs/commerceUpdateCommerceCollection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -457,7 +457,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await collectionUpdateCommerceCollection(unifiedTo, {
+  const res = await commerceUpdateCommerceCollection(unifiedTo, {
     commerceCollection: {
       name: "<value>",
     },
@@ -468,7 +468,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("collectionUpdateCommerceCollection failed:", res.error);
+    console.log("commerceUpdateCommerceCollection failed:", res.error);
   }
 }
 

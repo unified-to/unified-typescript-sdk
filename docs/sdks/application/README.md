@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationCreateAtsApplication } from "@unified-api/typescript-sdk/funcs/applicationCreateAtsApplication.js";
+import { atsCreateAtsApplication } from "@unified-api/typescript-sdk/funcs/atsCreateAtsApplication.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationCreateAtsApplication(unifiedTo, {
+  const res = await atsCreateAtsApplication(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationCreateAtsApplication failed:", res.error);
+    console.log("atsCreateAtsApplication failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationGetAtsApplication } from "@unified-api/typescript-sdk/funcs/applicationGetAtsApplication.js";
+import { atsGetAtsApplication } from "@unified-api/typescript-sdk/funcs/atsGetAtsApplication.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationGetAtsApplication(unifiedTo, {
+  const res = await atsGetAtsApplication(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationGetAtsApplication failed:", res.error);
+    console.log("atsGetAtsApplication failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationListAtsApplications } from "@unified-api/typescript-sdk/funcs/applicationListAtsApplications.js";
+import { atsListAtsApplications } from "@unified-api/typescript-sdk/funcs/atsListAtsApplications.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationListAtsApplications(unifiedTo, {
+  const res = await atsListAtsApplications(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationListAtsApplications failed:", res.error);
+    console.log("atsListAtsApplications failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationPatchAtsApplication } from "@unified-api/typescript-sdk/funcs/applicationPatchAtsApplication.js";
+import { atsPatchAtsApplication } from "@unified-api/typescript-sdk/funcs/atsPatchAtsApplication.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationPatchAtsApplication(unifiedTo, {
+  const res = await atsPatchAtsApplication(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationPatchAtsApplication failed:", res.error);
+    console.log("atsPatchAtsApplication failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationRemoveAtsApplication } from "@unified-api/typescript-sdk/funcs/applicationRemoveAtsApplication.js";
+import { atsRemoveAtsApplication } from "@unified-api/typescript-sdk/funcs/atsRemoveAtsApplication.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationRemoveAtsApplication(unifiedTo, {
+  const res = await atsRemoveAtsApplication(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationRemoveAtsApplication failed:", res.error);
+    console.log("atsRemoveAtsApplication failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationUpdateAtsApplication } from "@unified-api/typescript-sdk/funcs/applicationUpdateAtsApplication.js";
+import { atsUpdateAtsApplication } from "@unified-api/typescript-sdk/funcs/atsUpdateAtsApplication.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationUpdateAtsApplication(unifiedTo, {
+  const res = await atsUpdateAtsApplication(unifiedTo, {
     atsApplication: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationUpdateAtsApplication failed:", res.error);
+    console.log("atsUpdateAtsApplication failed:", res.error);
   }
 }
 

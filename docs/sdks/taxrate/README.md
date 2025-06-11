@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxrateCreateAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/taxrateCreateAccountingTaxrate.js";
+import { accountingCreateAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingTaxrate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxrateCreateAccountingTaxrate(unifiedTo, {
+  const res = await accountingCreateAccountingTaxrate(unifiedTo, {
     accountingTaxrate: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxrateCreateAccountingTaxrate failed:", res.error);
+    console.log("accountingCreateAccountingTaxrate failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxrateGetAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/taxrateGetAccountingTaxrate.js";
+import { accountingGetAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingTaxrate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxrateGetAccountingTaxrate(unifiedTo, {
+  const res = await accountingGetAccountingTaxrate(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxrateGetAccountingTaxrate failed:", res.error);
+    console.log("accountingGetAccountingTaxrate failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxrateListAccountingTaxrates } from "@unified-api/typescript-sdk/funcs/taxrateListAccountingTaxrates.js";
+import { accountingListAccountingTaxrates } from "@unified-api/typescript-sdk/funcs/accountingListAccountingTaxrates.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxrateListAccountingTaxrates(unifiedTo, {
+  const res = await accountingListAccountingTaxrates(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxrateListAccountingTaxrates failed:", res.error);
+    console.log("accountingListAccountingTaxrates failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxratePatchAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/taxratePatchAccountingTaxrate.js";
+import { accountingPatchAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingTaxrate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxratePatchAccountingTaxrate(unifiedTo, {
+  const res = await accountingPatchAccountingTaxrate(unifiedTo, {
     accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxratePatchAccountingTaxrate failed:", res.error);
+    console.log("accountingPatchAccountingTaxrate failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxrateRemoveAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/taxrateRemoveAccountingTaxrate.js";
+import { accountingRemoveAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingTaxrate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxrateRemoveAccountingTaxrate(unifiedTo, {
+  const res = await accountingRemoveAccountingTaxrate(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxrateRemoveAccountingTaxrate failed:", res.error);
+    console.log("accountingRemoveAccountingTaxrate failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taxrateUpdateAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/taxrateUpdateAccountingTaxrate.js";
+import { accountingUpdateAccountingTaxrate } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingTaxrate.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taxrateUpdateAccountingTaxrate(unifiedTo, {
+  const res = await accountingUpdateAccountingTaxrate(unifiedTo, {
     accountingTaxrate: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taxrateUpdateAccountingTaxrate failed:", res.error);
+    console.log("accountingUpdateAccountingTaxrate failed:", res.error);
   }
 }
 

@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportGetAccountingReport } from "@unified-api/typescript-sdk/funcs/reportGetAccountingReport.js";
+import { accountingGetAccountingReport } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingReport.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportGetAccountingReport(unifiedTo, {
+  const res = await accountingGetAccountingReport(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportGetAccountingReport failed:", res.error);
+    console.log("accountingGetAccountingReport failed:", res.error);
   }
 }
 
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { reportListAccountingReports } from "@unified-api/typescript-sdk/funcs/reportListAccountingReports.js";
+import { accountingListAccountingReports } from "@unified-api/typescript-sdk/funcs/accountingListAccountingReports.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -129,14 +129,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await reportListAccountingReports(unifiedTo, {
+  const res = await accountingListAccountingReports(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("reportListAccountingReports failed:", res.error);
+    console.log("accountingListAccountingReports failed:", res.error);
   }
 }
 

@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadCreateCrmLead } from "@unified-api/typescript-sdk/funcs/leadCreateCrmLead.js";
+import { crmCreateCrmLead } from "@unified-api/typescript-sdk/funcs/crmCreateCrmLead.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadCreateCrmLead(unifiedTo, {
+  const res = await crmCreateCrmLead(unifiedTo, {
     crmLead: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadCreateCrmLead failed:", res.error);
+    console.log("crmCreateCrmLead failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadGetCrmLead } from "@unified-api/typescript-sdk/funcs/leadGetCrmLead.js";
+import { crmGetCrmLead } from "@unified-api/typescript-sdk/funcs/crmGetCrmLead.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadGetCrmLead(unifiedTo, {
+  const res = await crmGetCrmLead(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadGetCrmLead failed:", res.error);
+    console.log("crmGetCrmLead failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadListCrmLeads } from "@unified-api/typescript-sdk/funcs/leadListCrmLeads.js";
+import { crmListCrmLeads } from "@unified-api/typescript-sdk/funcs/crmListCrmLeads.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadListCrmLeads(unifiedTo, {
+  const res = await crmListCrmLeads(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadListCrmLeads failed:", res.error);
+    console.log("crmListCrmLeads failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadPatchCrmLead } from "@unified-api/typescript-sdk/funcs/leadPatchCrmLead.js";
+import { crmPatchCrmLead } from "@unified-api/typescript-sdk/funcs/crmPatchCrmLead.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadPatchCrmLead(unifiedTo, {
+  const res = await crmPatchCrmLead(unifiedTo, {
     crmLead: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadPatchCrmLead failed:", res.error);
+    console.log("crmPatchCrmLead failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadRemoveCrmLead } from "@unified-api/typescript-sdk/funcs/leadRemoveCrmLead.js";
+import { crmRemoveCrmLead } from "@unified-api/typescript-sdk/funcs/crmRemoveCrmLead.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadRemoveCrmLead(unifiedTo, {
+  const res = await crmRemoveCrmLead(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadRemoveCrmLead failed:", res.error);
+    console.log("crmRemoveCrmLead failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { leadUpdateCrmLead } from "@unified-api/typescript-sdk/funcs/leadUpdateCrmLead.js";
+import { crmUpdateCrmLead } from "@unified-api/typescript-sdk/funcs/crmUpdateCrmLead.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await leadUpdateCrmLead(unifiedTo, {
+  const res = await crmUpdateCrmLead(unifiedTo, {
     crmLead: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("leadUpdateCrmLead failed:", res.error);
+    console.log("crmUpdateCrmLead failed:", res.error);
   }
 }
 

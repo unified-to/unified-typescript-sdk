@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { fileCreateStorageFile } from "@unified-api/typescript-sdk/funcs/fileCreateStorageFile.js";
+import { storageCreateStorageFile } from "@unified-api/typescript-sdk/funcs/storageCreateStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await fileCreateStorageFile(unifiedTo, {
+  const res = await storageCreateStorageFile(unifiedTo, {
     storageFile: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("fileCreateStorageFile failed:", res.error);
+    console.log("storageCreateStorageFile failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { fileGetStorageFile } from "@unified-api/typescript-sdk/funcs/fileGetStorageFile.js";
+import { storageGetStorageFile } from "@unified-api/typescript-sdk/funcs/storageGetStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await fileGetStorageFile(unifiedTo, {
+  const res = await storageGetStorageFile(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("fileGetStorageFile failed:", res.error);
+    console.log("storageGetStorageFile failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { fileListStorageFiles } from "@unified-api/typescript-sdk/funcs/fileListStorageFiles.js";
+import { storageListStorageFiles } from "@unified-api/typescript-sdk/funcs/storageListStorageFiles.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await fileListStorageFiles(unifiedTo, {
+  const res = await storageListStorageFiles(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("fileListStorageFiles failed:", res.error);
+    console.log("storageListStorageFiles failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { filePatchStorageFile } from "@unified-api/typescript-sdk/funcs/filePatchStorageFile.js";
+import { storagePatchStorageFile } from "@unified-api/typescript-sdk/funcs/storagePatchStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await filePatchStorageFile(unifiedTo, {
+  const res = await storagePatchStorageFile(unifiedTo, {
     storageFile: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("filePatchStorageFile failed:", res.error);
+    console.log("storagePatchStorageFile failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { fileRemoveStorageFile } from "@unified-api/typescript-sdk/funcs/fileRemoveStorageFile.js";
+import { storageRemoveStorageFile } from "@unified-api/typescript-sdk/funcs/storageRemoveStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await fileRemoveStorageFile(unifiedTo, {
+  const res = await storageRemoveStorageFile(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("fileRemoveStorageFile failed:", res.error);
+    console.log("storageRemoveStorageFile failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { fileUpdateStorageFile } from "@unified-api/typescript-sdk/funcs/fileUpdateStorageFile.js";
+import { storageUpdateStorageFile } from "@unified-api/typescript-sdk/funcs/storageUpdateStorageFile.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await fileUpdateStorageFile(unifiedTo, {
+  const res = await storageUpdateStorageFile(unifiedTo, {
     storageFile: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("fileUpdateStorageFile failed:", res.error);
+    console.log("storageUpdateStorageFile failed:", res.error);
   }
 }
 

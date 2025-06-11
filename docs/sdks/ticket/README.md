@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketCreateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketCreateTicketingTicket.js";
+import { ticketingCreateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketCreateTicketingTicket(unifiedTo, {
+  const res = await ticketingCreateTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketCreateTicketingTicket failed:", res.error);
+    console.log("ticketingCreateTicketingTicket failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketGetTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketGetTicketingTicket.js";
+import { ticketingGetTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketGetTicketingTicket(unifiedTo, {
+  const res = await ticketingGetTicketingTicket(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketGetTicketingTicket failed:", res.error);
+    console.log("ticketingGetTicketingTicket failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketListTicketingTickets } from "@unified-api/typescript-sdk/funcs/ticketListTicketingTickets.js";
+import { ticketingListTicketingTickets } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingTickets.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketListTicketingTickets(unifiedTo, {
+  const res = await ticketingListTicketingTickets(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketListTicketingTickets failed:", res.error);
+    console.log("ticketingListTicketingTickets failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketPatchTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketPatchTicketingTicket.js";
+import { ticketingPatchTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketPatchTicketingTicket(unifiedTo, {
+  const res = await ticketingPatchTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketPatchTicketingTicket failed:", res.error);
+    console.log("ticketingPatchTicketingTicket failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketRemoveTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketRemoveTicketingTicket.js";
+import { ticketingRemoveTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketRemoveTicketingTicket(unifiedTo, {
+  const res = await ticketingRemoveTicketingTicket(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketRemoveTicketingTicket failed:", res.error);
+    console.log("ticketingRemoveTicketingTicket failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ticketUpdateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketUpdateTicketingTicket.js";
+import { ticketingUpdateTicketingTicket } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingTicket.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ticketUpdateTicketingTicket(unifiedTo, {
+  const res = await ticketingUpdateTicketingTicket(unifiedTo, {
     ticketingTicket: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ticketUpdateTicketingTicket failed:", res.error);
+    console.log("ticketingUpdateTicketingTicket failed:", res.error);
   }
 }
 

@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { payslipGetHrisPayslip } from "@unified-api/typescript-sdk/funcs/payslipGetHrisPayslip.js";
+import { hrisGetHrisPayslip } from "@unified-api/typescript-sdk/funcs/hrisGetHrisPayslip.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await payslipGetHrisPayslip(unifiedTo, {
+  const res = await hrisGetHrisPayslip(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("payslipGetHrisPayslip failed:", res.error);
+    console.log("hrisGetHrisPayslip failed:", res.error);
   }
 }
 
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { payslipListHrisPayslips } from "@unified-api/typescript-sdk/funcs/payslipListHrisPayslips.js";
+import { hrisListHrisPayslips } from "@unified-api/typescript-sdk/funcs/hrisListHrisPayslips.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -129,14 +129,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await payslipListHrisPayslips(unifiedTo, {
+  const res = await hrisListHrisPayslips(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("payslipListHrisPayslips failed:", res.error);
+    console.log("hrisListHrisPayslips failed:", res.error);
   }
 }
 

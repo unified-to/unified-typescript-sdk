@@ -48,7 +48,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionCreateUnifiedConnection } from "@unified-api/typescript-sdk/funcs/connectionCreateUnifiedConnection.js";
+import { unifiedCreateUnifiedConnection } from "@unified-api/typescript-sdk/funcs/unifiedCreateUnifiedConnection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -59,7 +59,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionCreateUnifiedConnection(unifiedTo, {
+  const res = await unifiedCreateUnifiedConnection(unifiedTo, {
     categories: [],
     integrationType: "<value>",
     permissions: [
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionCreateUnifiedConnection failed:", res.error);
+    console.log("unifiedCreateUnifiedConnection failed:", res.error);
   }
 }
 
@@ -128,7 +128,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionGetUnifiedConnection } from "@unified-api/typescript-sdk/funcs/connectionGetUnifiedConnection.js";
+import { unifiedGetUnifiedConnection } from "@unified-api/typescript-sdk/funcs/unifiedGetUnifiedConnection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -139,14 +139,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionGetUnifiedConnection(unifiedTo, {
+  const res = await unifiedGetUnifiedConnection(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionGetUnifiedConnection failed:", res.error);
+    console.log("unifiedGetUnifiedConnection failed:", res.error);
   }
 }
 
@@ -202,7 +202,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionListUnifiedConnections } from "@unified-api/typescript-sdk/funcs/connectionListUnifiedConnections.js";
+import { unifiedListUnifiedConnections } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedConnections.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -213,12 +213,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionListUnifiedConnections(unifiedTo, {});
+  const res = await unifiedListUnifiedConnections(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionListUnifiedConnections failed:", res.error);
+    console.log("unifiedListUnifiedConnections failed:", res.error);
   }
 }
 
@@ -285,7 +285,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionPatchUnifiedConnection } from "@unified-api/typescript-sdk/funcs/connectionPatchUnifiedConnection.js";
+import { unifiedPatchUnifiedConnection } from "@unified-api/typescript-sdk/funcs/unifiedPatchUnifiedConnection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -296,7 +296,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionPatchUnifiedConnection(unifiedTo, {
+  const res = await unifiedPatchUnifiedConnection(unifiedTo, {
     connection: {
       categories: [
         "storage",
@@ -312,7 +312,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionPatchUnifiedConnection failed:", res.error);
+    console.log("unifiedPatchUnifiedConnection failed:", res.error);
   }
 }
 
@@ -370,7 +370,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionRemoveUnifiedConnection } from "@unified-api/typescript-sdk/funcs/connectionRemoveUnifiedConnection.js";
+import { unifiedRemoveUnifiedConnection } from "@unified-api/typescript-sdk/funcs/unifiedRemoveUnifiedConnection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -381,14 +381,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionRemoveUnifiedConnection(unifiedTo, {
+  const res = await unifiedRemoveUnifiedConnection(unifiedTo, {
     id: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionRemoveUnifiedConnection failed:", res.error);
+    console.log("unifiedRemoveUnifiedConnection failed:", res.error);
   }
 }
 
@@ -454,7 +454,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { connectionUpdateUnifiedConnection } from "@unified-api/typescript-sdk/funcs/connectionUpdateUnifiedConnection.js";
+import { unifiedUpdateUnifiedConnection } from "@unified-api/typescript-sdk/funcs/unifiedUpdateUnifiedConnection.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -465,7 +465,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await connectionUpdateUnifiedConnection(unifiedTo, {
+  const res = await unifiedUpdateUnifiedConnection(unifiedTo, {
     connection: {
       categories: [],
       integrationType: "<value>",
@@ -480,7 +480,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("connectionUpdateUnifiedConnection failed:", res.error);
+    console.log("unifiedUpdateUnifiedConnection failed:", res.error);
   }
 }
 

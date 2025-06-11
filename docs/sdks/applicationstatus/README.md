@@ -39,7 +39,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { applicationstatusListAtsApplicationstatuses } from "@unified-api/typescript-sdk/funcs/applicationstatusListAtsApplicationstatuses.js";
+import { atsListAtsApplicationstatuses } from "@unified-api/typescript-sdk/funcs/atsListAtsApplicationstatuses.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -50,14 +50,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await applicationstatusListAtsApplicationstatuses(unifiedTo, {
+  const res = await atsListAtsApplicationstatuses(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("applicationstatusListAtsApplicationstatuses failed:", res.error);
+    console.log("atsListAtsApplicationstatuses failed:", res.error);
   }
 }
 

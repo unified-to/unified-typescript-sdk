@@ -45,7 +45,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { noteCreateTicketingNote } from "@unified-api/typescript-sdk/funcs/noteCreateTicketingNote.js";
+import { ticketingCreateTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingCreateTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -56,7 +56,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await noteCreateTicketingNote(unifiedTo, {
+  const res = await ticketingCreateTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
   });
@@ -64,7 +64,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("noteCreateTicketingNote failed:", res.error);
+    console.log("ticketingCreateTicketingNote failed:", res.error);
   }
 }
 
@@ -123,7 +123,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { noteGetTicketingNote } from "@unified-api/typescript-sdk/funcs/noteGetTicketingNote.js";
+import { ticketingGetTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingGetTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -134,7 +134,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await noteGetTicketingNote(unifiedTo, {
+  const res = await ticketingGetTicketingNote(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -142,7 +142,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("noteGetTicketingNote failed:", res.error);
+    console.log("ticketingGetTicketingNote failed:", res.error);
   }
 }
 
@@ -200,7 +200,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { noteListTicketingNotes } from "@unified-api/typescript-sdk/funcs/noteListTicketingNotes.js";
+import { ticketingListTicketingNotes } from "@unified-api/typescript-sdk/funcs/ticketingListTicketingNotes.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -211,14 +211,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await noteListTicketingNotes(unifiedTo, {
+  const res = await ticketingListTicketingNotes(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("noteListTicketingNotes failed:", res.error);
+    console.log("ticketingListTicketingNotes failed:", res.error);
   }
 }
 
@@ -278,7 +278,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { notePatchTicketingNote } from "@unified-api/typescript-sdk/funcs/notePatchTicketingNote.js";
+import { ticketingPatchTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingPatchTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -289,7 +289,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await notePatchTicketingNote(unifiedTo, {
+  const res = await ticketingPatchTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -298,7 +298,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("notePatchTicketingNote failed:", res.error);
+    console.log("ticketingPatchTicketingNote failed:", res.error);
   }
 }
 
@@ -357,7 +357,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { noteRemoveTicketingNote } from "@unified-api/typescript-sdk/funcs/noteRemoveTicketingNote.js";
+import { ticketingRemoveTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingRemoveTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -368,7 +368,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await noteRemoveTicketingNote(unifiedTo, {
+  const res = await ticketingRemoveTicketingNote(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -376,7 +376,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("noteRemoveTicketingNote failed:", res.error);
+    console.log("ticketingRemoveTicketingNote failed:", res.error);
   }
 }
 
@@ -436,7 +436,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { noteUpdateTicketingNote } from "@unified-api/typescript-sdk/funcs/noteUpdateTicketingNote.js";
+import { ticketingUpdateTicketingNote } from "@unified-api/typescript-sdk/funcs/ticketingUpdateTicketingNote.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -447,7 +447,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await noteUpdateTicketingNote(unifiedTo, {
+  const res = await ticketingUpdateTicketingNote(unifiedTo, {
     ticketingNote: {},
     connectionId: "<id>",
     id: "<id>",
@@ -456,7 +456,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("noteUpdateTicketingNote failed:", res.error);
+    console.log("ticketingUpdateTicketingNote failed:", res.error);
   }
 }
 

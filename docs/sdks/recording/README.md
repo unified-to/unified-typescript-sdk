@@ -125,7 +125,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { recordingGetCalendarRecording } from "@unified-api/typescript-sdk/funcs/recordingGetCalendarRecording.js";
+import { calendarGetCalendarRecording } from "@unified-api/typescript-sdk/funcs/calendarGetCalendarRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -136,7 +136,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await recordingGetCalendarRecording(unifiedTo, {
+  const res = await calendarGetCalendarRecording(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -144,7 +144,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("recordingGetCalendarRecording failed:", res.error);
+    console.log("calendarGetCalendarRecording failed:", res.error);
   }
 }
 
@@ -280,7 +280,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { recordingListCalendarRecordings } from "@unified-api/typescript-sdk/funcs/recordingListCalendarRecordings.js";
+import { calendarListCalendarRecordings } from "@unified-api/typescript-sdk/funcs/calendarListCalendarRecordings.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -291,14 +291,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await recordingListCalendarRecordings(unifiedTo, {
+  const res = await calendarListCalendarRecordings(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("recordingListCalendarRecordings failed:", res.error);
+    console.log("calendarListCalendarRecordings failed:", res.error);
   }
 }
 

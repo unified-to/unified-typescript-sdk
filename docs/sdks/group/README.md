@@ -51,7 +51,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupCreateHrisGroup } from "@unified-api/typescript-sdk/funcs/groupCreateHrisGroup.js";
+import { hrisCreateHrisGroup } from "@unified-api/typescript-sdk/funcs/hrisCreateHrisGroup.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -62,7 +62,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupCreateHrisGroup(unifiedTo, {
+  const res = await hrisCreateHrisGroup(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
   });
@@ -70,7 +70,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupCreateHrisGroup failed:", res.error);
+    console.log("hrisCreateHrisGroup failed:", res.error);
   }
 }
 
@@ -211,7 +211,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupGetHrisGroup } from "@unified-api/typescript-sdk/funcs/groupGetHrisGroup.js";
+import { hrisGetHrisGroup } from "@unified-api/typescript-sdk/funcs/hrisGetHrisGroup.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -222,7 +222,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupGetHrisGroup(unifiedTo, {
+  const res = await hrisGetHrisGroup(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -230,7 +230,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupGetHrisGroup failed:", res.error);
+    console.log("hrisGetHrisGroup failed:", res.error);
   }
 }
 
@@ -366,7 +366,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupListHrisGroups } from "@unified-api/typescript-sdk/funcs/groupListHrisGroups.js";
+import { hrisListHrisGroups } from "@unified-api/typescript-sdk/funcs/hrisListHrisGroups.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -377,14 +377,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupListHrisGroups(unifiedTo, {
+  const res = await hrisListHrisGroups(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupListHrisGroups failed:", res.error);
+    console.log("hrisListHrisGroups failed:", res.error);
   }
 }
 
@@ -520,7 +520,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupPatchHrisGroup } from "@unified-api/typescript-sdk/funcs/groupPatchHrisGroup.js";
+import { hrisPatchHrisGroup } from "@unified-api/typescript-sdk/funcs/hrisPatchHrisGroup.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -531,7 +531,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupPatchHrisGroup(unifiedTo, {
+  const res = await hrisPatchHrisGroup(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -540,7 +540,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupPatchHrisGroup failed:", res.error);
+    console.log("hrisPatchHrisGroup failed:", res.error);
   }
 }
 
@@ -683,7 +683,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupRemoveHrisGroup } from "@unified-api/typescript-sdk/funcs/groupRemoveHrisGroup.js";
+import { hrisRemoveHrisGroup } from "@unified-api/typescript-sdk/funcs/hrisRemoveHrisGroup.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -694,7 +694,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupRemoveHrisGroup(unifiedTo, {
+  const res = await hrisRemoveHrisGroup(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -702,7 +702,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupRemoveHrisGroup failed:", res.error);
+    console.log("hrisRemoveHrisGroup failed:", res.error);
   }
 }
 
@@ -840,7 +840,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { groupUpdateHrisGroup } from "@unified-api/typescript-sdk/funcs/groupUpdateHrisGroup.js";
+import { hrisUpdateHrisGroup } from "@unified-api/typescript-sdk/funcs/hrisUpdateHrisGroup.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -851,7 +851,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await groupUpdateHrisGroup(unifiedTo, {
+  const res = await hrisUpdateHrisGroup(unifiedTo, {
     hrisGroup: {},
     connectionId: "<id>",
     id: "<id>",
@@ -860,7 +860,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("groupUpdateHrisGroup failed:", res.error);
+    console.log("hrisUpdateHrisGroup failed:", res.error);
   }
 }
 

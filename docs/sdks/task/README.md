@@ -60,7 +60,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskCreateTaskComment } from "@unified-api/typescript-sdk/funcs/taskCreateTaskComment.js";
+import { commentCreateTaskComment } from "@unified-api/typescript-sdk/funcs/commentCreateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -71,7 +71,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskCreateTaskComment(unifiedTo, {
+  const res = await commentCreateTaskComment(unifiedTo, {
     taskComment: {
       taskId: "<id>",
       text: "<value>",
@@ -82,7 +82,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskCreateTaskComment failed:", res.error);
+    console.log("commentCreateTaskComment failed:", res.error);
   }
 }
 
@@ -297,7 +297,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskGetTaskComment } from "@unified-api/typescript-sdk/funcs/taskGetTaskComment.js";
+import { commentGetTaskComment } from "@unified-api/typescript-sdk/funcs/commentGetTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -308,7 +308,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskGetTaskComment(unifiedTo, {
+  const res = await commentGetTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -316,7 +316,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskGetTaskComment failed:", res.error);
+    console.log("commentGetTaskComment failed:", res.error);
   }
 }
 
@@ -530,7 +530,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskListTaskComments } from "@unified-api/typescript-sdk/funcs/taskListTaskComments.js";
+import { commentListTaskComments } from "@unified-api/typescript-sdk/funcs/commentListTaskComments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -541,14 +541,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskListTaskComments(unifiedTo, {
+  const res = await commentListTaskComments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskListTaskComments failed:", res.error);
+    console.log("commentListTaskComments failed:", res.error);
   }
 }
 
@@ -763,7 +763,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskPatchTaskComment } from "@unified-api/typescript-sdk/funcs/taskPatchTaskComment.js";
+import { commentPatchTaskComment } from "@unified-api/typescript-sdk/funcs/commentPatchTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -774,7 +774,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskPatchTaskComment(unifiedTo, {
+  const res = await commentPatchTaskComment(unifiedTo, {
     taskComment: {
       taskId: "<id>",
       text: "<value>",
@@ -786,7 +786,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskPatchTaskComment failed:", res.error);
+    console.log("commentPatchTaskComment failed:", res.error);
   }
 }
 
@@ -1005,7 +1005,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/taskRemoveTaskComment.js";
+import { commentRemoveTaskComment } from "@unified-api/typescript-sdk/funcs/commentRemoveTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1016,7 +1016,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskRemoveTaskComment(unifiedTo, {
+  const res = await commentRemoveTaskComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1024,7 +1024,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskRemoveTaskComment failed:", res.error);
+    console.log("commentRemoveTaskComment failed:", res.error);
   }
 }
 
@@ -1243,7 +1243,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { taskUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/taskUpdateTaskComment.js";
+import { commentUpdateTaskComment } from "@unified-api/typescript-sdk/funcs/commentUpdateTaskComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1254,7 +1254,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await taskUpdateTaskComment(unifiedTo, {
+  const res = await commentUpdateTaskComment(unifiedTo, {
     taskComment: {
       taskId: "<id>",
       text: "<value>",
@@ -1266,7 +1266,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("taskUpdateTaskComment failed:", res.error);
+    console.log("commentUpdateTaskComment failed:", res.error);
   }
 }
 

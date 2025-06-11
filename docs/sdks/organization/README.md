@@ -125,7 +125,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { organizationGetAccountingOrganization } from "@unified-api/typescript-sdk/funcs/organizationGetAccountingOrganization.js";
+import { accountingGetAccountingOrganization } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingOrganization.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -136,7 +136,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await organizationGetAccountingOrganization(unifiedTo, {
+  const res = await accountingGetAccountingOrganization(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -144,7 +144,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("organizationGetAccountingOrganization failed:", res.error);
+    console.log("accountingGetAccountingOrganization failed:", res.error);
   }
 }
 
@@ -280,7 +280,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { organizationListAccountingOrganizations } from "@unified-api/typescript-sdk/funcs/organizationListAccountingOrganizations.js";
+import { accountingListAccountingOrganizations } from "@unified-api/typescript-sdk/funcs/accountingListAccountingOrganizations.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -291,14 +291,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await organizationListAccountingOrganizations(unifiedTo, {
+  const res = await accountingListAccountingOrganizations(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("organizationListAccountingOrganizations failed:", res.error);
+    console.log("accountingListAccountingOrganizations failed:", res.error);
   }
 }
 

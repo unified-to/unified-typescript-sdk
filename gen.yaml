@@ -17,13 +17,14 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.72.2
+  version: 2.72.3
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
     peerDependencies: {}
   additionalPackageJSON: {}
   author: Unified
+  baseErrorName: UnifiedToError
   clientServerStatusCodesAsErrors: true
   defaultErrorName: SDKError
   enableCustomCodeRegions: false

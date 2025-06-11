@@ -75,7 +75,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmCreateCrmCompany } from "@unified-api/typescript-sdk/funcs/crmCreateCrmCompany.js";
+import { companyCreateCrmCompany } from "@unified-api/typescript-sdk/funcs/companyCreateCrmCompany.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -86,7 +86,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmCreateCrmCompany(unifiedTo, {
+  const res = await companyCreateCrmCompany(unifiedTo, {
     crmCompany: {},
     connectionId: "<id>",
   });
@@ -94,7 +94,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmCreateCrmCompany failed:", res.error);
+    console.log("companyCreateCrmCompany failed:", res.error);
   }
 }
 
@@ -153,7 +153,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmCreateCrmContact } from "@unified-api/typescript-sdk/funcs/crmCreateCrmContact.js";
+import { contactCreateCrmContact } from "@unified-api/typescript-sdk/funcs/contactCreateCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -164,7 +164,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmCreateCrmContact(unifiedTo, {
+  const res = await contactCreateCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
   });
@@ -172,7 +172,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmCreateCrmContact failed:", res.error);
+    console.log("contactCreateCrmContact failed:", res.error);
   }
 }
 
@@ -309,7 +309,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmCreateCrmEvent } from "@unified-api/typescript-sdk/funcs/crmCreateCrmEvent.js";
+import { eventCreateCrmEvent } from "@unified-api/typescript-sdk/funcs/eventCreateCrmEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -320,7 +320,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmCreateCrmEvent(unifiedTo, {
+  const res = await eventCreateCrmEvent(unifiedTo, {
     crmEvent: {},
     connectionId: "<id>",
   });
@@ -328,7 +328,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmCreateCrmEvent failed:", res.error);
+    console.log("eventCreateCrmEvent failed:", res.error);
   }
 }
 
@@ -543,7 +543,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmGetCrmCompany } from "@unified-api/typescript-sdk/funcs/crmGetCrmCompany.js";
+import { companyGetCrmCompany } from "@unified-api/typescript-sdk/funcs/companyGetCrmCompany.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -554,7 +554,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmGetCrmCompany(unifiedTo, {
+  const res = await companyGetCrmCompany(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -562,7 +562,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmGetCrmCompany failed:", res.error);
+    console.log("companyGetCrmCompany failed:", res.error);
   }
 }
 
@@ -621,7 +621,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmGetCrmContact } from "@unified-api/typescript-sdk/funcs/crmGetCrmContact.js";
+import { contactGetCrmContact } from "@unified-api/typescript-sdk/funcs/contactGetCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -632,7 +632,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmGetCrmContact(unifiedTo, {
+  const res = await contactGetCrmContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -640,7 +640,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmGetCrmContact failed:", res.error);
+    console.log("contactGetCrmContact failed:", res.error);
   }
 }
 
@@ -777,7 +777,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmGetCrmEvent } from "@unified-api/typescript-sdk/funcs/crmGetCrmEvent.js";
+import { eventGetCrmEvent } from "@unified-api/typescript-sdk/funcs/eventGetCrmEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -788,7 +788,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmGetCrmEvent(unifiedTo, {
+  const res = await eventGetCrmEvent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -796,7 +796,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmGetCrmEvent failed:", res.error);
+    console.log("eventGetCrmEvent failed:", res.error);
   }
 }
 
@@ -1010,7 +1010,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmListCrmCompanies } from "@unified-api/typescript-sdk/funcs/crmListCrmCompanies.js";
+import { companyListCrmCompanies } from "@unified-api/typescript-sdk/funcs/companyListCrmCompanies.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1021,14 +1021,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmListCrmCompanies(unifiedTo, {
+  const res = await companyListCrmCompanies(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmListCrmCompanies failed:", res.error);
+    console.log("companyListCrmCompanies failed:", res.error);
   }
 }
 
@@ -1086,7 +1086,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmListCrmContacts } from "@unified-api/typescript-sdk/funcs/crmListCrmContacts.js";
+import { contactListCrmContacts } from "@unified-api/typescript-sdk/funcs/contactListCrmContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1097,14 +1097,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmListCrmContacts(unifiedTo, {
+  const res = await contactListCrmContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmListCrmContacts failed:", res.error);
+    console.log("contactListCrmContacts failed:", res.error);
   }
 }
 
@@ -1238,7 +1238,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmListCrmEvents } from "@unified-api/typescript-sdk/funcs/crmListCrmEvents.js";
+import { eventListCrmEvents } from "@unified-api/typescript-sdk/funcs/eventListCrmEvents.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1249,14 +1249,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmListCrmEvents(unifiedTo, {
+  const res = await eventListCrmEvents(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmListCrmEvents failed:", res.error);
+    console.log("eventListCrmEvents failed:", res.error);
   }
 }
 
@@ -1468,7 +1468,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmPatchCrmCompany } from "@unified-api/typescript-sdk/funcs/crmPatchCrmCompany.js";
+import { companyPatchCrmCompany } from "@unified-api/typescript-sdk/funcs/companyPatchCrmCompany.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1479,7 +1479,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmPatchCrmCompany(unifiedTo, {
+  const res = await companyPatchCrmCompany(unifiedTo, {
     crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1488,7 +1488,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmPatchCrmCompany failed:", res.error);
+    console.log("companyPatchCrmCompany failed:", res.error);
   }
 }
 
@@ -1548,7 +1548,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmPatchCrmContact } from "@unified-api/typescript-sdk/funcs/crmPatchCrmContact.js";
+import { contactPatchCrmContact } from "@unified-api/typescript-sdk/funcs/contactPatchCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1559,7 +1559,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmPatchCrmContact(unifiedTo, {
+  const res = await contactPatchCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1568,7 +1568,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmPatchCrmContact failed:", res.error);
+    console.log("contactPatchCrmContact failed:", res.error);
   }
 }
 
@@ -1708,7 +1708,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmPatchCrmEvent } from "@unified-api/typescript-sdk/funcs/crmPatchCrmEvent.js";
+import { eventPatchCrmEvent } from "@unified-api/typescript-sdk/funcs/eventPatchCrmEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1719,7 +1719,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmPatchCrmEvent(unifiedTo, {
+  const res = await eventPatchCrmEvent(unifiedTo, {
     crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1728,7 +1728,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmPatchCrmEvent failed:", res.error);
+    console.log("eventPatchCrmEvent failed:", res.error);
   }
 }
 
@@ -1947,7 +1947,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmRemoveCrmCompany } from "@unified-api/typescript-sdk/funcs/crmRemoveCrmCompany.js";
+import { companyRemoveCrmCompany } from "@unified-api/typescript-sdk/funcs/companyRemoveCrmCompany.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1958,7 +1958,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmRemoveCrmCompany(unifiedTo, {
+  const res = await companyRemoveCrmCompany(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1966,7 +1966,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmRemoveCrmCompany failed:", res.error);
+    console.log("companyRemoveCrmCompany failed:", res.error);
   }
 }
 
@@ -2025,7 +2025,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmRemoveCrmContact } from "@unified-api/typescript-sdk/funcs/crmRemoveCrmContact.js";
+import { contactRemoveCrmContact } from "@unified-api/typescript-sdk/funcs/contactRemoveCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2036,7 +2036,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmRemoveCrmContact(unifiedTo, {
+  const res = await contactRemoveCrmContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2044,7 +2044,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmRemoveCrmContact failed:", res.error);
+    console.log("contactRemoveCrmContact failed:", res.error);
   }
 }
 
@@ -2181,7 +2181,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmRemoveCrmEvent } from "@unified-api/typescript-sdk/funcs/crmRemoveCrmEvent.js";
+import { eventRemoveCrmEvent } from "@unified-api/typescript-sdk/funcs/eventRemoveCrmEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2192,7 +2192,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmRemoveCrmEvent(unifiedTo, {
+  const res = await eventRemoveCrmEvent(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2200,7 +2200,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmRemoveCrmEvent failed:", res.error);
+    console.log("eventRemoveCrmEvent failed:", res.error);
   }
 }
 
@@ -2416,7 +2416,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmUpdateCrmCompany } from "@unified-api/typescript-sdk/funcs/crmUpdateCrmCompany.js";
+import { companyUpdateCrmCompany } from "@unified-api/typescript-sdk/funcs/companyUpdateCrmCompany.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2427,7 +2427,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmUpdateCrmCompany(unifiedTo, {
+  const res = await companyUpdateCrmCompany(unifiedTo, {
     crmCompany: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2436,7 +2436,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmUpdateCrmCompany failed:", res.error);
+    console.log("companyUpdateCrmCompany failed:", res.error);
   }
 }
 
@@ -2496,7 +2496,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmUpdateCrmContact } from "@unified-api/typescript-sdk/funcs/crmUpdateCrmContact.js";
+import { contactUpdateCrmContact } from "@unified-api/typescript-sdk/funcs/contactUpdateCrmContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2507,7 +2507,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmUpdateCrmContact(unifiedTo, {
+  const res = await contactUpdateCrmContact(unifiedTo, {
     crmContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2516,7 +2516,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmUpdateCrmContact failed:", res.error);
+    console.log("contactUpdateCrmContact failed:", res.error);
   }
 }
 
@@ -2656,7 +2656,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { crmUpdateCrmEvent } from "@unified-api/typescript-sdk/funcs/crmUpdateCrmEvent.js";
+import { eventUpdateCrmEvent } from "@unified-api/typescript-sdk/funcs/eventUpdateCrmEvent.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -2667,7 +2667,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await crmUpdateCrmEvent(unifiedTo, {
+  const res = await eventUpdateCrmEvent(unifiedTo, {
     crmEvent: {},
     connectionId: "<id>",
     id: "<id>",
@@ -2676,7 +2676,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("crmUpdateCrmEvent failed:", res.error);
+    console.log("eventUpdateCrmEvent failed:", res.error);
   }
 }
 

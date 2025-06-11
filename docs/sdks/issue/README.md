@@ -37,7 +37,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { issueListUnifiedIssues } from "@unified-api/typescript-sdk/funcs/issueListUnifiedIssues.js";
+import { unifiedListUnifiedIssues } from "@unified-api/typescript-sdk/funcs/unifiedListUnifiedIssues.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -48,12 +48,12 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await issueListUnifiedIssues(unifiedTo, {});
+  const res = await unifiedListUnifiedIssues(unifiedTo, {});
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("issueListUnifiedIssues failed:", res.error);
+    console.log("unifiedListUnifiedIssues failed:", res.error);
   }
 }
 

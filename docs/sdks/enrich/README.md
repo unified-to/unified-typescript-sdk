@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { enrichListEnrichCompanies } from "@unified-api/typescript-sdk/funcs/enrichListEnrichCompanies.js";
+import { companyListEnrichCompanies } from "@unified-api/typescript-sdk/funcs/companyListEnrichCompanies.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,14 +51,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await enrichListEnrichCompanies(unifiedTo, {
+  const res = await companyListEnrichCompanies(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("enrichListEnrichCompanies failed:", res.error);
+    console.log("companyListEnrichCompanies failed:", res.error);
   }
 }
 

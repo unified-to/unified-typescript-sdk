@@ -60,7 +60,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucCreateUcComment } from "@unified-api/typescript-sdk/funcs/ucCreateUcComment.js";
+import { commentCreateUcComment } from "@unified-api/typescript-sdk/funcs/commentCreateUcComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -71,7 +71,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucCreateUcComment(unifiedTo, {
+  const res = await commentCreateUcComment(unifiedTo, {
     ucComment: {
       content: "<value>",
     },
@@ -81,7 +81,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucCreateUcComment failed:", res.error);
+    console.log("commentCreateUcComment failed:", res.error);
   }
 }
 
@@ -140,7 +140,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucCreateUcContact } from "@unified-api/typescript-sdk/funcs/ucCreateUcContact.js";
+import { contactCreateUcContact } from "@unified-api/typescript-sdk/funcs/contactCreateUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -151,7 +151,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucCreateUcContact(unifiedTo, {
+  const res = await contactCreateUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
   });
@@ -159,7 +159,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucCreateUcContact failed:", res.error);
+    console.log("contactCreateUcContact failed:", res.error);
   }
 }
 
@@ -218,7 +218,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucCreateUcRecording } from "@unified-api/typescript-sdk/funcs/ucCreateUcRecording.js";
+import { recordingCreateUcRecording } from "@unified-api/typescript-sdk/funcs/recordingCreateUcRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -229,7 +229,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucCreateUcRecording(unifiedTo, {
+  const res = await recordingCreateUcRecording(unifiedTo, {
     ucRecording: {},
     connectionId: "<id>",
   });
@@ -237,7 +237,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucCreateUcRecording failed:", res.error);
+    console.log("recordingCreateUcRecording failed:", res.error);
   }
 }
 
@@ -296,7 +296,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucGetUcComment } from "@unified-api/typescript-sdk/funcs/ucGetUcComment.js";
+import { commentGetUcComment } from "@unified-api/typescript-sdk/funcs/commentGetUcComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -307,7 +307,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucGetUcComment(unifiedTo, {
+  const res = await commentGetUcComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -315,7 +315,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucGetUcComment failed:", res.error);
+    console.log("commentGetUcComment failed:", res.error);
   }
 }
 
@@ -374,7 +374,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucGetUcContact } from "@unified-api/typescript-sdk/funcs/ucGetUcContact.js";
+import { contactGetUcContact } from "@unified-api/typescript-sdk/funcs/contactGetUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -385,7 +385,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucGetUcContact(unifiedTo, {
+  const res = await contactGetUcContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -393,7 +393,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucGetUcContact failed:", res.error);
+    console.log("contactGetUcContact failed:", res.error);
   }
 }
 
@@ -452,7 +452,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucGetUcRecording } from "@unified-api/typescript-sdk/funcs/ucGetUcRecording.js";
+import { recordingGetUcRecording } from "@unified-api/typescript-sdk/funcs/recordingGetUcRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -463,7 +463,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucGetUcRecording(unifiedTo, {
+  const res = await recordingGetUcRecording(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -471,7 +471,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucGetUcRecording failed:", res.error);
+    console.log("recordingGetUcRecording failed:", res.error);
   }
 }
 
@@ -605,7 +605,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucListUcComments } from "@unified-api/typescript-sdk/funcs/ucListUcComments.js";
+import { commentListUcComments } from "@unified-api/typescript-sdk/funcs/commentListUcComments.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -616,14 +616,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucListUcComments(unifiedTo, {
+  const res = await commentListUcComments(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucListUcComments failed:", res.error);
+    console.log("commentListUcComments failed:", res.error);
   }
 }
 
@@ -681,7 +681,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucListUcContacts } from "@unified-api/typescript-sdk/funcs/ucListUcContacts.js";
+import { contactListUcContacts } from "@unified-api/typescript-sdk/funcs/contactListUcContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -692,14 +692,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucListUcContacts(unifiedTo, {
+  const res = await contactListUcContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucListUcContacts failed:", res.error);
+    console.log("contactListUcContacts failed:", res.error);
   }
 }
 
@@ -757,7 +757,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucListUcRecordings } from "@unified-api/typescript-sdk/funcs/ucListUcRecordings.js";
+import { recordingListUcRecordings } from "@unified-api/typescript-sdk/funcs/recordingListUcRecordings.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -768,14 +768,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucListUcRecordings(unifiedTo, {
+  const res = await recordingListUcRecordings(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucListUcRecordings failed:", res.error);
+    console.log("recordingListUcRecordings failed:", res.error);
   }
 }
 
@@ -837,7 +837,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucPatchUcComment } from "@unified-api/typescript-sdk/funcs/ucPatchUcComment.js";
+import { commentPatchUcComment } from "@unified-api/typescript-sdk/funcs/commentPatchUcComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -848,7 +848,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucPatchUcComment(unifiedTo, {
+  const res = await commentPatchUcComment(unifiedTo, {
     ucComment: {
       content: "<value>",
     },
@@ -859,7 +859,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucPatchUcComment failed:", res.error);
+    console.log("commentPatchUcComment failed:", res.error);
   }
 }
 
@@ -919,7 +919,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucPatchUcContact } from "@unified-api/typescript-sdk/funcs/ucPatchUcContact.js";
+import { contactPatchUcContact } from "@unified-api/typescript-sdk/funcs/contactPatchUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -930,7 +930,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucPatchUcContact(unifiedTo, {
+  const res = await contactPatchUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -939,7 +939,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucPatchUcContact failed:", res.error);
+    console.log("contactPatchUcContact failed:", res.error);
   }
 }
 
@@ -999,7 +999,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucPatchUcRecording } from "@unified-api/typescript-sdk/funcs/ucPatchUcRecording.js";
+import { recordingPatchUcRecording } from "@unified-api/typescript-sdk/funcs/recordingPatchUcRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1010,7 +1010,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucPatchUcRecording(unifiedTo, {
+  const res = await recordingPatchUcRecording(unifiedTo, {
     ucRecording: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1019,7 +1019,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucPatchUcRecording failed:", res.error);
+    console.log("recordingPatchUcRecording failed:", res.error);
   }
 }
 
@@ -1078,7 +1078,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucRemoveUcComment } from "@unified-api/typescript-sdk/funcs/ucRemoveUcComment.js";
+import { commentRemoveUcComment } from "@unified-api/typescript-sdk/funcs/commentRemoveUcComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1089,7 +1089,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucRemoveUcComment(unifiedTo, {
+  const res = await commentRemoveUcComment(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1097,7 +1097,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucRemoveUcComment failed:", res.error);
+    console.log("commentRemoveUcComment failed:", res.error);
   }
 }
 
@@ -1156,7 +1156,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucRemoveUcContact } from "@unified-api/typescript-sdk/funcs/ucRemoveUcContact.js";
+import { contactRemoveUcContact } from "@unified-api/typescript-sdk/funcs/contactRemoveUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1167,7 +1167,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucRemoveUcContact(unifiedTo, {
+  const res = await contactRemoveUcContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1175,7 +1175,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucRemoveUcContact failed:", res.error);
+    console.log("contactRemoveUcContact failed:", res.error);
   }
 }
 
@@ -1234,7 +1234,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucRemoveUcRecording } from "@unified-api/typescript-sdk/funcs/ucRemoveUcRecording.js";
+import { recordingRemoveUcRecording } from "@unified-api/typescript-sdk/funcs/recordingRemoveUcRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1245,7 +1245,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucRemoveUcRecording(unifiedTo, {
+  const res = await recordingRemoveUcRecording(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1253,7 +1253,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucRemoveUcRecording failed:", res.error);
+    console.log("recordingRemoveUcRecording failed:", res.error);
   }
 }
 
@@ -1315,7 +1315,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucUpdateUcComment } from "@unified-api/typescript-sdk/funcs/ucUpdateUcComment.js";
+import { commentUpdateUcComment } from "@unified-api/typescript-sdk/funcs/commentUpdateUcComment.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1326,7 +1326,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucUpdateUcComment(unifiedTo, {
+  const res = await commentUpdateUcComment(unifiedTo, {
     ucComment: {
       content: "<value>",
     },
@@ -1337,7 +1337,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucUpdateUcComment failed:", res.error);
+    console.log("commentUpdateUcComment failed:", res.error);
   }
 }
 
@@ -1397,7 +1397,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucUpdateUcContact } from "@unified-api/typescript-sdk/funcs/ucUpdateUcContact.js";
+import { contactUpdateUcContact } from "@unified-api/typescript-sdk/funcs/contactUpdateUcContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1408,7 +1408,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucUpdateUcContact(unifiedTo, {
+  const res = await contactUpdateUcContact(unifiedTo, {
     ucContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1417,7 +1417,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucUpdateUcContact failed:", res.error);
+    console.log("contactUpdateUcContact failed:", res.error);
   }
 }
 
@@ -1477,7 +1477,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { ucUpdateUcRecording } from "@unified-api/typescript-sdk/funcs/ucUpdateUcRecording.js";
+import { recordingUpdateUcRecording } from "@unified-api/typescript-sdk/funcs/recordingUpdateUcRecording.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1488,7 +1488,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await ucUpdateUcRecording(unifiedTo, {
+  const res = await recordingUpdateUcRecording(unifiedTo, {
     ucRecording: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1497,7 +1497,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("ucUpdateUcRecording failed:", res.error);
+    console.log("recordingUpdateUcRecording failed:", res.error);
   }
 }
 

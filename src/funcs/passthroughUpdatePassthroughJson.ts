@@ -17,8 +17,9 @@ import {
   RequestTimeoutError,
   UnexpectedClientError,
 } from "../sdk/models/errors/httpclienterrors.js";
-import { SDKError } from "../sdk/models/errors/sdkerror.js";
+import { ResponseValidationError } from "../sdk/models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
+import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
@@ -43,13 +44,14 @@ export function passthroughUpdatePassthroughJson(
 ): APIPromise<
   Result<
     operations.UpdatePassthroughJsonResponse | undefined,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >
 > {
   return new APIPromise($do(
@@ -69,13 +71,14 @@ async function $do(
   [
     Result<
       operations.UpdatePassthroughJsonResponse | undefined,
-      | SDKError
-      | SDKValidationError
-      | UnexpectedClientError
-      | InvalidRequestError
+      | UnifiedToError
+      | ResponseValidationError
+      | ConnectionError
       | RequestAbortedError
       | RequestTimeoutError
-      | ConnectionError
+      | InvalidRequestError
+      | UnexpectedClientError
+      | SDKValidationError
     >,
     APICall,
   ]
@@ -166,13 +169,14 @@ async function $do(
 
   const [result] = await M.match<
     operations.UpdatePassthroughJsonResponse | undefined,
-    | SDKError
-    | SDKValidationError
-    | UnexpectedClientError
-    | InvalidRequestError
+    | UnifiedToError
+    | ResponseValidationError
+    | ConnectionError
     | RequestAbortedError
     | RequestTimeoutError
-    | ConnectionError
+    | InvalidRequestError
+    | UnexpectedClientError
+    | SDKValidationError
   >(
     M.nil(
       [204, 205],
@@ -211,7 +215,7 @@ async function $do(
       operations.UpdatePassthroughJsonResponse$inboundSchema.optional(),
       { ctype: "*/*", hdrs: true, key: "Result" },
     ),
-  )(response, { extraFields: responseFields });
+  )(response, req, { extraFields: responseFields });
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

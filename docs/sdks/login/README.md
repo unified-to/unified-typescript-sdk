@@ -40,7 +40,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { loginGetUnifiedIntegrationLogin } from "@unified-api/typescript-sdk/funcs/loginGetUnifiedIntegrationLogin.js";
+import { authGetUnifiedIntegrationLogin } from "@unified-api/typescript-sdk/funcs/authGetUnifiedIntegrationLogin.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -51,7 +51,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await loginGetUnifiedIntegrationLogin(unifiedTo, {
+  const res = await authGetUnifiedIntegrationLogin(unifiedTo, {
     integrationType: "<value>",
     workspaceId: "<id>",
   });
@@ -59,7 +59,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("loginGetUnifiedIntegrationLogin failed:", res.error);
+    console.log("authGetUnifiedIntegrationLogin failed:", res.error);
   }
 }
 

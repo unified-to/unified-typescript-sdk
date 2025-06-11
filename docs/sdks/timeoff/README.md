@@ -41,7 +41,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { timeoffGetHrisTimeoff } from "@unified-api/typescript-sdk/funcs/timeoffGetHrisTimeoff.js";
+import { hrisGetHrisTimeoff } from "@unified-api/typescript-sdk/funcs/hrisGetHrisTimeoff.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -52,7 +52,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await timeoffGetHrisTimeoff(unifiedTo, {
+  const res = await hrisGetHrisTimeoff(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -60,7 +60,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("timeoffGetHrisTimeoff failed:", res.error);
+    console.log("hrisGetHrisTimeoff failed:", res.error);
   }
 }
 
@@ -118,7 +118,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { timeoffListHrisTimeoffs } from "@unified-api/typescript-sdk/funcs/timeoffListHrisTimeoffs.js";
+import { hrisListHrisTimeoffs } from "@unified-api/typescript-sdk/funcs/hrisListHrisTimeoffs.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -129,14 +129,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await timeoffListHrisTimeoffs(unifiedTo, {
+  const res = await hrisListHrisTimeoffs(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("timeoffListHrisTimeoffs failed:", res.error);
+    console.log("hrisListHrisTimeoffs failed:", res.error);
   }
 }
 

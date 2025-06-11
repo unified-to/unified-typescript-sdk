@@ -57,7 +57,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactCreateAccountingContact } from "@unified-api/typescript-sdk/funcs/contactCreateAccountingContact.js";
+import { accountingCreateAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -68,7 +68,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactCreateAccountingContact(unifiedTo, {
+  const res = await accountingCreateAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
   });
@@ -76,7 +76,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactCreateAccountingContact failed:", res.error);
+    console.log("accountingCreateAccountingContact failed:", res.error);
   }
 }
 
@@ -291,7 +291,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactGetAccountingContact } from "@unified-api/typescript-sdk/funcs/contactGetAccountingContact.js";
+import { accountingGetAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -302,7 +302,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactGetAccountingContact(unifiedTo, {
+  const res = await accountingGetAccountingContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -310,7 +310,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactGetAccountingContact failed:", res.error);
+    console.log("accountingGetAccountingContact failed:", res.error);
   }
 }
 
@@ -524,7 +524,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactListAccountingContacts } from "@unified-api/typescript-sdk/funcs/contactListAccountingContacts.js";
+import { accountingListAccountingContacts } from "@unified-api/typescript-sdk/funcs/accountingListAccountingContacts.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -535,14 +535,14 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactListAccountingContacts(unifiedTo, {
+  const res = await accountingListAccountingContacts(unifiedTo, {
     connectionId: "<id>",
   });
   if (res.ok) {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactListAccountingContacts failed:", res.error);
+    console.log("accountingListAccountingContacts failed:", res.error);
   }
 }
 
@@ -754,7 +754,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactPatchAccountingContact } from "@unified-api/typescript-sdk/funcs/contactPatchAccountingContact.js";
+import { accountingPatchAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -765,7 +765,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactPatchAccountingContact(unifiedTo, {
+  const res = await accountingPatchAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -774,7 +774,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactPatchAccountingContact failed:", res.error);
+    console.log("accountingPatchAccountingContact failed:", res.error);
   }
 }
 
@@ -993,7 +993,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactRemoveAccountingContact } from "@unified-api/typescript-sdk/funcs/contactRemoveAccountingContact.js";
+import { accountingRemoveAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1004,7 +1004,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactRemoveAccountingContact(unifiedTo, {
+  const res = await accountingRemoveAccountingContact(unifiedTo, {
     connectionId: "<id>",
     id: "<id>",
   });
@@ -1012,7 +1012,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactRemoveAccountingContact failed:", res.error);
+    console.log("accountingRemoveAccountingContact failed:", res.error);
   }
 }
 
@@ -1228,7 +1228,7 @@ The standalone function version of this method:
 
 ```typescript
 import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
-import { contactUpdateAccountingContact } from "@unified-api/typescript-sdk/funcs/contactUpdateAccountingContact.js";
+import { accountingUpdateAccountingContact } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingContact.js";
 
 // Use `UnifiedToCore` for best tree-shaking performance.
 // You can create one instance of it to use across an application.
@@ -1239,7 +1239,7 @@ const unifiedTo = new UnifiedToCore({
 });
 
 async function run() {
-  const res = await contactUpdateAccountingContact(unifiedTo, {
+  const res = await accountingUpdateAccountingContact(unifiedTo, {
     accountingContact: {},
     connectionId: "<id>",
     id: "<id>",
@@ -1248,7 +1248,7 @@ async function run() {
     const { value: result } = res;
     console.log(result);
   } else {
-    console.log("contactUpdateAccountingContact failed:", res.error);
+    console.log("accountingUpdateAccountingContact failed:", res.error);
   }
 }
 
