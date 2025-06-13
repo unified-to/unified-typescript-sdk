@@ -42,6 +42,7 @@ export type MessagingMessage = {
   mentionedMembers?: Array<MessagingMember> | undefined;
   message?: string | undefined;
   messageHtml?: string | undefined;
+  messageMarkdown?: string | undefined;
   parentMessageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -70,6 +71,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   mentioned_members: z.array(MessagingMember$inboundSchema).optional(),
   message: z.string().optional(),
   message_html: z.string().optional(),
+  message_markdown: z.string().optional(),
   parent_message_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -89,6 +91,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "hidden_members": "hiddenMembers",
     "mentioned_members": "mentionedMembers",
     "message_html": "messageHtml",
+    "message_markdown": "messageMarkdown",
     "parent_message_id": "parentMessageId",
     "root_message_id": "rootMessageId",
     "updated_at": "updatedAt",
@@ -110,6 +113,7 @@ export type MessagingMessage$Outbound = {
   mentioned_members?: Array<MessagingMember$Outbound> | undefined;
   message?: string | undefined;
   message_html?: string | undefined;
+  message_markdown?: string | undefined;
   parent_message_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   reference?: string | undefined;
@@ -137,6 +141,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   mentionedMembers: z.array(MessagingMember$outboundSchema).optional(),
   message: z.string().optional(),
   messageHtml: z.string().optional(),
+  messageMarkdown: z.string().optional(),
   parentMessageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   reference: z.string().optional(),
@@ -155,6 +160,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     hiddenMembers: "hidden_members",
     mentionedMembers: "mentioned_members",
     messageHtml: "message_html",
+    messageMarkdown: "message_markdown",
     parentMessageId: "parent_message_id",
     rootMessageId: "root_message_id",
     updatedAt: "updated_at",

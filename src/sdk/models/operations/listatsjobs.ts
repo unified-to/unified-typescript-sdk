@@ -34,6 +34,10 @@ export type ListAtsJobsRequest = {
   raw?: string | undefined;
   sort?: string | undefined;
   /**
+   * The status to filter by
+   */
+  status?: string | undefined;
+  /**
    * Return only results whose updated date is equal or greater to this value
    */
   updatedGte?: string | undefined;
@@ -58,6 +62,7 @@ export const ListAtsJobsRequest$inboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  status: z.string().optional(),
   updated_gte: z.string().optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
@@ -80,6 +85,7 @@ export type ListAtsJobsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  status?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
@@ -99,6 +105,7 @@ export const ListAtsJobsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  status: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
