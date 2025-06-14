@@ -12,6 +12,7 @@ export type TaskProject = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   groupIds?: Array<string> | undefined;
+  hasChildren?: boolean | undefined;
   hasTasks?: boolean | undefined;
   id?: string | undefined;
   name?: string | undefined;
@@ -31,6 +32,7 @@ export const TaskProject$inboundSchema: z.ZodType<
     .optional(),
   description: z.string().optional(),
   group_ids: z.array(z.string()).optional(),
+  has_children: z.boolean().optional(),
   has_tasks: z.boolean().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
@@ -43,6 +45,7 @@ export const TaskProject$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "group_ids": "groupIds",
+    "has_children": "hasChildren",
     "has_tasks": "hasTasks",
     "parent_id": "parentId",
     "updated_at": "updatedAt",
@@ -55,6 +58,7 @@ export type TaskProject$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   group_ids?: Array<string> | undefined;
+  has_children?: boolean | undefined;
   has_tasks?: boolean | undefined;
   id?: string | undefined;
   name?: string | undefined;
@@ -73,6 +77,7 @@ export const TaskProject$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   groupIds: z.array(z.string()).optional(),
+  hasChildren: z.boolean().optional(),
   hasTasks: z.boolean().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
@@ -84,6 +89,7 @@ export const TaskProject$outboundSchema: z.ZodType<
   return remap$(v, {
     createdAt: "created_at",
     groupIds: "group_ids",
+    hasChildren: "has_children",
     hasTasks: "has_tasks",
     parentId: "parent_id",
     updatedAt: "updated_at",

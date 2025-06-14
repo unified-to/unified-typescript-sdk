@@ -100,6 +100,7 @@ async function $do(
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
+    "pipeline_id": payload.pipeline_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,

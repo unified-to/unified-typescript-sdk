@@ -29,6 +29,10 @@ export type ListCrmDealsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
+   * The pipeline ID to filter by
+   */
+  pipelineId?: string | undefined;
+  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -60,6 +64,7 @@ export const ListCrmDealsRequest$inboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  pipeline_id: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -70,6 +75,7 @@ export const ListCrmDealsRequest$inboundSchema: z.ZodType<
     "company_id": "companyId",
     "connection_id": "connectionId",
     "contact_id": "contactId",
+    "pipeline_id": "pipelineId",
     "updated_gte": "updatedGte",
     "user_id": "userId",
   });
@@ -84,6 +90,7 @@ export type ListCrmDealsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
+  pipeline_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
@@ -104,6 +111,7 @@ export const ListCrmDealsRequest$outboundSchema: z.ZodType<
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
+  pipelineId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
@@ -114,6 +122,7 @@ export const ListCrmDealsRequest$outboundSchema: z.ZodType<
     companyId: "company_id",
     connectionId: "connection_id",
     contactId: "contact_id",
+    pipelineId: "pipeline_id",
     updatedGte: "updated_gte",
     userId: "user_id",
   });

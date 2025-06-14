@@ -39,6 +39,7 @@ export type CalendarEvent = {
   calendarId?: string | undefined;
   createdAt?: string | undefined;
   endAt?: string | undefined;
+  hasConference?: boolean | undefined;
   id?: string | undefined;
   isAllDay?: boolean | undefined;
   isFree?: boolean | undefined;
@@ -88,6 +89,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   calendar_id: z.string().optional(),
   created_at: z.string().optional(),
   end_at: z.string().optional(),
+  has_conference: z.boolean().optional(),
   id: z.string().optional(),
   is_all_day: z.boolean().optional(),
   is_free: z.boolean().optional(),
@@ -109,6 +111,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "calendar_id": "calendarId",
     "created_at": "createdAt",
     "end_at": "endAt",
+    "has_conference": "hasConference",
     "is_all_day": "isAllDay",
     "is_free": "isFree",
     "is_private": "isPrivate",
@@ -125,6 +128,7 @@ export type CalendarEvent$Outbound = {
   calendar_id?: string | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
+  has_conference?: boolean | undefined;
   id?: string | undefined;
   is_all_day?: boolean | undefined;
   is_free?: boolean | undefined;
@@ -153,6 +157,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   calendarId: z.string().optional(),
   createdAt: z.string().optional(),
   endAt: z.string().optional(),
+  hasConference: z.boolean().optional(),
   id: z.string().optional(),
   isAllDay: z.boolean().optional(),
   isFree: z.boolean().optional(),
@@ -174,6 +179,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
     calendarId: "calendar_id",
     createdAt: "created_at",
     endAt: "end_at",
+    hasConference: "has_conference",
     isAllDay: "is_all_day",
     isFree: "is_free",
     isPrivate: "is_private",

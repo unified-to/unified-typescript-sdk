@@ -468,7 +468,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.72.4",
+    version: "2.72.5",
   });
 
   const client = new UnifiedToCore({
