@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const ApiCallType = {
   Webhook: "webhook",
   Inbound: "inbound",
 } as const;
-export type ApiCallType = ClosedEnum<typeof ApiCallType>;
+export type ApiCallType = OpenEnum<typeof ApiCallType>;
 
 export type ApiCall = {
   connectionId?: string | undefined;
@@ -37,12 +41,25 @@ export type ApiCall = {
 };
 
 /** @internal */
-export const ApiCallType$inboundSchema: z.ZodNativeEnum<typeof ApiCallType> = z
-  .nativeEnum(ApiCallType);
+export const ApiCallType$inboundSchema: z.ZodType<
+  ApiCallType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ApiCallType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ApiCallType$outboundSchema: z.ZodNativeEnum<typeof ApiCallType> =
-  ApiCallType$inboundSchema;
+export const ApiCallType$outboundSchema: z.ZodType<
+  ApiCallType,
+  z.ZodTypeDef,
+  ApiCallType
+> = z.union([
+  z.nativeEnum(ApiCallType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

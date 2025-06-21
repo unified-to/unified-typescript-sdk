@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const TicketingEmailType = {
   Home: "HOME",
   Other: "OTHER",
 } as const;
-export type TicketingEmailType = ClosedEnum<typeof TicketingEmailType>;
+export type TicketingEmailType = OpenEnum<typeof TicketingEmailType>;
 
 export type TicketingEmail = {
   email: string;
@@ -21,14 +25,25 @@ export type TicketingEmail = {
 };
 
 /** @internal */
-export const TicketingEmailType$inboundSchema: z.ZodNativeEnum<
-  typeof TicketingEmailType
-> = z.nativeEnum(TicketingEmailType);
+export const TicketingEmailType$inboundSchema: z.ZodType<
+  TicketingEmailType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(TicketingEmailType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const TicketingEmailType$outboundSchema: z.ZodNativeEnum<
-  typeof TicketingEmailType
-> = TicketingEmailType$inboundSchema;
+export const TicketingEmailType$outboundSchema: z.ZodType<
+  TicketingEmailType,
+  z.ZodTypeDef,
+  TicketingEmailType
+> = z.union([
+  z.nativeEnum(TicketingEmailType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

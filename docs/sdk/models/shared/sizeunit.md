@@ -10,6 +10,8 @@ let value: SizeUnit = "inch";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"cm" | "inch"
+"cm" | "inch" | Unrecognized<string>
 ```

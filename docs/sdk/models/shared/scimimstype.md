@@ -10,6 +10,8 @@ let value: ScimImsType = "aim";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"aim" | "qtalk" | "icq" | "xmpp" | "msn" | "skype" | "qq" | "yahoo"
+"aim" | "qtalk" | "icq" | "xmpp" | "msn" | "skype" | "qq" | "yahoo" | Unrecognized<string>
 ```

@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,7 +23,7 @@ export const AccountingContactPaymentMethodType = {
   Wire: "WIRE",
   Check: "CHECK",
 } as const;
-export type AccountingContactPaymentMethodType = ClosedEnum<
+export type AccountingContactPaymentMethodType = OpenEnum<
   typeof AccountingContactPaymentMethodType
 >;
 
@@ -31,14 +35,25 @@ export type AccountingContactPaymentMethod = {
 };
 
 /** @internal */
-export const AccountingContactPaymentMethodType$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingContactPaymentMethodType
-> = z.nativeEnum(AccountingContactPaymentMethodType);
+export const AccountingContactPaymentMethodType$inboundSchema: z.ZodType<
+  AccountingContactPaymentMethodType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingContactPaymentMethodType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingContactPaymentMethodType$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingContactPaymentMethodType
-> = AccountingContactPaymentMethodType$inboundSchema;
+export const AccountingContactPaymentMethodType$outboundSchema: z.ZodType<
+  AccountingContactPaymentMethodType,
+  z.ZodTypeDef,
+  AccountingContactPaymentMethodType
+> = z.union([
+  z.nativeEnum(AccountingContactPaymentMethodType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

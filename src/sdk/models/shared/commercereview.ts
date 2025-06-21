@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -33,7 +37,7 @@ export const CommerceReviewStatus = {
   Rejected: "REJECTED",
   Spam: "SPAM",
 } as const;
-export type CommerceReviewStatus = ClosedEnum<typeof CommerceReviewStatus>;
+export type CommerceReviewStatus = OpenEnum<typeof CommerceReviewStatus>;
 
 export type CommerceReview = {
   authorAvatarUrl?: string | undefined;
@@ -65,14 +69,25 @@ export type CommerceReview = {
 };
 
 /** @internal */
-export const CommerceReviewStatus$inboundSchema: z.ZodNativeEnum<
-  typeof CommerceReviewStatus
-> = z.nativeEnum(CommerceReviewStatus);
+export const CommerceReviewStatus$inboundSchema: z.ZodType<
+  CommerceReviewStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CommerceReviewStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CommerceReviewStatus$outboundSchema: z.ZodNativeEnum<
-  typeof CommerceReviewStatus
-> = CommerceReviewStatus$inboundSchema;
+export const CommerceReviewStatus$outboundSchema: z.ZodType<
+  CommerceReviewStatus,
+  z.ZodTypeDef,
+  CommerceReviewStatus
+> = z.union([
+  z.nativeEnum(CommerceReviewStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

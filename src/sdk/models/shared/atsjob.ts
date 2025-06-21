@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -63,7 +67,7 @@ export const EmploymentType = {
   Freelance: "FREELANCE",
   Other: "OTHER",
 } as const;
-export type EmploymentType = ClosedEnum<typeof EmploymentType>;
+export type EmploymentType = OpenEnum<typeof EmploymentType>;
 
 export const AtsJobStatus = {
   Archived: "ARCHIVED",
@@ -72,7 +76,7 @@ export const AtsJobStatus = {
   Open: "OPEN",
   Closed: "CLOSED",
 } as const;
-export type AtsJobStatus = ClosedEnum<typeof AtsJobStatus>;
+export type AtsJobStatus = OpenEnum<typeof AtsJobStatus>;
 
 export type AtsJob = {
   addresses?: Array<AtsAddress> | undefined;
@@ -114,14 +118,25 @@ export type AtsJob = {
 };
 
 /** @internal */
-export const EmploymentType$inboundSchema: z.ZodNativeEnum<
-  typeof EmploymentType
-> = z.nativeEnum(EmploymentType);
+export const EmploymentType$inboundSchema: z.ZodType<
+  EmploymentType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(EmploymentType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const EmploymentType$outboundSchema: z.ZodNativeEnum<
-  typeof EmploymentType
-> = EmploymentType$inboundSchema;
+export const EmploymentType$outboundSchema: z.ZodType<
+  EmploymentType,
+  z.ZodTypeDef,
+  EmploymentType
+> = z.union([
+  z.nativeEnum(EmploymentType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -135,12 +150,25 @@ export namespace EmploymentType$ {
 }
 
 /** @internal */
-export const AtsJobStatus$inboundSchema: z.ZodNativeEnum<typeof AtsJobStatus> =
-  z.nativeEnum(AtsJobStatus);
+export const AtsJobStatus$inboundSchema: z.ZodType<
+  AtsJobStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsJobStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsJobStatus$outboundSchema: z.ZodNativeEnum<typeof AtsJobStatus> =
-  AtsJobStatus$inboundSchema;
+export const AtsJobStatus$outboundSchema: z.ZodType<
+  AtsJobStatus,
+  z.ZodTypeDef,
+  AtsJobStatus
+> = z.union([
+  z.nativeEnum(AtsJobStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

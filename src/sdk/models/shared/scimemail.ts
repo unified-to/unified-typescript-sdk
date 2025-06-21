@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const ScimEmailType = {
   Home: "home",
   Other: "other",
 } as const;
-export type ScimEmailType = ClosedEnum<typeof ScimEmailType>;
+export type ScimEmailType = OpenEnum<typeof ScimEmailType>;
 
 export type ScimEmail = {
   display?: string | undefined;
@@ -23,14 +27,25 @@ export type ScimEmail = {
 };
 
 /** @internal */
-export const ScimEmailType$inboundSchema: z.ZodNativeEnum<
-  typeof ScimEmailType
-> = z.nativeEnum(ScimEmailType);
+export const ScimEmailType$inboundSchema: z.ZodType<
+  ScimEmailType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimEmailType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimEmailType$outboundSchema: z.ZodNativeEnum<
-  typeof ScimEmailType
-> = ScimEmailType$inboundSchema;
+export const ScimEmailType$outboundSchema: z.ZodType<
+  ScimEmailType,
+  z.ZodTypeDef,
+  ScimEmailType
+> = z.union([
+  z.nativeEnum(ScimEmailType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

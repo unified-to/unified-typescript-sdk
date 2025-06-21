@@ -10,6 +10,8 @@ let value: AccountingInvoiceType = "INVOICE";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"BILL" | "INVOICE" | "CREDITMEMO"
+"BILL" | "INVOICE" | "CREDITMEMO" | Unrecognized<string>
 ```

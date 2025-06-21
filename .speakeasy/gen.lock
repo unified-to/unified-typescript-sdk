@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: ee3cd61f0397ce8487b98d4e43c4a292
+  docChecksum: 9c22bf145f46a0257497cabc87445f51
   docVersion: "1.0"
-  speakeasyVersion: 1.563.0
-  generationVersion: 2.629.1
-  releaseVersion: 2.72.5
-  configChecksum: a63d9ef16ebfbd8c2282caff3ce29058
+  speakeasyVersion: 1.568.0
+  generationVersion: 2.632.2
+  releaseVersion: 2.73.0
+  configChecksum: 25b6e83b329aa735155648bf88f5182c
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -15,7 +15,7 @@ features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.11
+    constsAndDefaults: 0.1.12
     core: 3.21.11
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
@@ -25,10 +25,11 @@ features:
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.82.5
     mcpServer: 0.9.2
+    openEnums: 0.1.1
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.3.0
-    unions: 2.85.9
+    unions: 2.85.11
     uploadStreams: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -650,10 +651,12 @@ generatedFiles:
   - docs/sdk/models/shared/atsstatusstatus.md
   - docs/sdk/models/shared/atstelephone.md
   - docs/sdk/models/shared/atstelephonetype.md
+  - docs/sdk/models/shared/calendarattachment.md
   - docs/sdk/models/shared/calendarattendee.md
   - docs/sdk/models/shared/calendarattendeestatus.md
   - docs/sdk/models/shared/calendarbusy.md
   - docs/sdk/models/shared/calendarcalendar.md
+  - docs/sdk/models/shared/calendarconference.md
   - docs/sdk/models/shared/calendarevent.md
   - docs/sdk/models/shared/calendareventrecurrence.md
   - docs/sdk/models/shared/calendareventrecurrencefrequency.md
@@ -2596,9 +2599,11 @@ generatedFiles:
   - src/sdk/models/shared/atsscorecardquestion.ts
   - src/sdk/models/shared/atsstatus.ts
   - src/sdk/models/shared/atstelephone.ts
+  - src/sdk/models/shared/calendarattachment.ts
   - src/sdk/models/shared/calendarattendee.ts
   - src/sdk/models/shared/calendarbusy.ts
   - src/sdk/models/shared/calendarcalendar.ts
+  - src/sdk/models/shared/calendarconference.ts
   - src/sdk/models/shared/calendarevent.ts
   - src/sdk/models/shared/calendareventrecurrence.ts
   - src/sdk/models/shared/calendarlink.ts

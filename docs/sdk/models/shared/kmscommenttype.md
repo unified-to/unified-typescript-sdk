@@ -10,6 +10,8 @@ let value: KmsCommentType = "PAGE_INLINE";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"PAGE_INLINE" | "PAGE"
+"PAGE_INLINE" | "PAGE" | Unrecognized<string>
 ```

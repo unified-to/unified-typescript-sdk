@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -36,13 +40,13 @@ export const AccountingOrderStatus = {
   PartiallyRefunded: "PARTIALLY_REFUNDED",
   Refunded: "REFUNDED",
 } as const;
-export type AccountingOrderStatus = ClosedEnum<typeof AccountingOrderStatus>;
+export type AccountingOrderStatus = OpenEnum<typeof AccountingOrderStatus>;
 
 export const AccountingOrderType = {
   Sales: "SALES",
   Purchase: "PURCHASE",
 } as const;
-export type AccountingOrderType = ClosedEnum<typeof AccountingOrderType>;
+export type AccountingOrderType = OpenEnum<typeof AccountingOrderType>;
 
 export type AccountingOrder = {
   accountId?: string | undefined;
@@ -62,14 +66,25 @@ export type AccountingOrder = {
 };
 
 /** @internal */
-export const AccountingOrderStatus$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingOrderStatus
-> = z.nativeEnum(AccountingOrderStatus);
+export const AccountingOrderStatus$inboundSchema: z.ZodType<
+  AccountingOrderStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingOrderStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingOrderStatus$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingOrderStatus
-> = AccountingOrderStatus$inboundSchema;
+export const AccountingOrderStatus$outboundSchema: z.ZodType<
+  AccountingOrderStatus,
+  z.ZodTypeDef,
+  AccountingOrderStatus
+> = z.union([
+  z.nativeEnum(AccountingOrderStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -83,14 +98,25 @@ export namespace AccountingOrderStatus$ {
 }
 
 /** @internal */
-export const AccountingOrderType$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingOrderType
-> = z.nativeEnum(AccountingOrderType);
+export const AccountingOrderType$inboundSchema: z.ZodType<
+  AccountingOrderType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingOrderType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingOrderType$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingOrderType
-> = AccountingOrderType$inboundSchema;
+export const AccountingOrderType$outboundSchema: z.ZodType<
+  AccountingOrderType,
+  z.ZodTypeDef,
+  AccountingOrderType
+> = z.union([
+  z.nativeEnum(AccountingOrderType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

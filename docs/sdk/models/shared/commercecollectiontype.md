@@ -10,6 +10,8 @@ let value: CommerceCollectionType = "CATEGORY";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"COLLECTION" | "SAVED_SEARCH" | "CATEGORY"
+"COLLECTION" | "SAVED_SEARCH" | "CATEGORY" | Unrecognized<string>
 ```

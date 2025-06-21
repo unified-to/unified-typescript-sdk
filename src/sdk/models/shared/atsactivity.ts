@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,7 +30,7 @@ export const AtsActivityType = {
   Task: "TASK",
   Email: "EMAIL",
 } as const;
-export type AtsActivityType = ClosedEnum<typeof AtsActivityType>;
+export type AtsActivityType = OpenEnum<typeof AtsActivityType>;
 
 export type AtsActivity = {
   applicationId?: string | undefined;
@@ -58,14 +62,25 @@ export type AtsActivity = {
 };
 
 /** @internal */
-export const AtsActivityType$inboundSchema: z.ZodNativeEnum<
-  typeof AtsActivityType
-> = z.nativeEnum(AtsActivityType);
+export const AtsActivityType$inboundSchema: z.ZodType<
+  AtsActivityType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsActivityType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsActivityType$outboundSchema: z.ZodNativeEnum<
-  typeof AtsActivityType
-> = AtsActivityType$inboundSchema;
+export const AtsActivityType$outboundSchema: z.ZodType<
+  AtsActivityType,
+  z.ZodTypeDef,
+  AtsActivityType
+> = z.union([
+  z.nativeEnum(AtsActivityType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

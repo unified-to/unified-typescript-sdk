@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -15,7 +19,7 @@ export const EnrichTelephoneType = {
   Fax: "FAX",
   Mobile: "MOBILE",
 } as const;
-export type EnrichTelephoneType = ClosedEnum<typeof EnrichTelephoneType>;
+export type EnrichTelephoneType = OpenEnum<typeof EnrichTelephoneType>;
 
 export type EnrichTelephone = {
   telephone: string;
@@ -23,14 +27,25 @@ export type EnrichTelephone = {
 };
 
 /** @internal */
-export const EnrichTelephoneType$inboundSchema: z.ZodNativeEnum<
-  typeof EnrichTelephoneType
-> = z.nativeEnum(EnrichTelephoneType);
+export const EnrichTelephoneType$inboundSchema: z.ZodType<
+  EnrichTelephoneType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(EnrichTelephoneType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const EnrichTelephoneType$outboundSchema: z.ZodNativeEnum<
-  typeof EnrichTelephoneType
-> = EnrichTelephoneType$inboundSchema;
+export const EnrichTelephoneType$outboundSchema: z.ZodType<
+  EnrichTelephoneType,
+  z.ZodTypeDef,
+  EnrichTelephoneType
+> = z.union([
+  z.nativeEnum(EnrichTelephoneType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

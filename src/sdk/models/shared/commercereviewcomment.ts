@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -21,7 +25,7 @@ export const CommerceReviewCommentStatus = {
   Rejected: "REJECTED",
   Spam: "SPAM",
 } as const;
-export type CommerceReviewCommentStatus = ClosedEnum<
+export type CommerceReviewCommentStatus = OpenEnum<
   typeof CommerceReviewCommentStatus
 >;
 
@@ -44,14 +48,25 @@ export type CommerceReviewComment = {
 };
 
 /** @internal */
-export const CommerceReviewCommentStatus$inboundSchema: z.ZodNativeEnum<
-  typeof CommerceReviewCommentStatus
-> = z.nativeEnum(CommerceReviewCommentStatus);
+export const CommerceReviewCommentStatus$inboundSchema: z.ZodType<
+  CommerceReviewCommentStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CommerceReviewCommentStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CommerceReviewCommentStatus$outboundSchema: z.ZodNativeEnum<
-  typeof CommerceReviewCommentStatus
-> = CommerceReviewCommentStatus$inboundSchema;
+export const CommerceReviewCommentStatus$outboundSchema: z.ZodType<
+  CommerceReviewCommentStatus,
+  z.ZodTypeDef,
+  CommerceReviewCommentStatus
+> = z.union([
+  z.nativeEnum(CommerceReviewCommentStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

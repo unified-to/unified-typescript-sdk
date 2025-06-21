@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -53,7 +57,7 @@ export const Origin = {
   Sourced: "SOURCED",
   University: "UNIVERSITY",
 } as const;
-export type Origin = ClosedEnum<typeof Origin>;
+export type Origin = OpenEnum<typeof Origin>;
 
 export type AtsCandidate = {
   address?: PropertyAtsCandidateAddress | undefined;
@@ -86,12 +90,18 @@ export type AtsCandidate = {
 };
 
 /** @internal */
-export const Origin$inboundSchema: z.ZodNativeEnum<typeof Origin> = z
-  .nativeEnum(Origin);
+export const Origin$inboundSchema: z.ZodType<Origin, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Origin),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Origin$outboundSchema: z.ZodNativeEnum<typeof Origin> =
-  Origin$inboundSchema;
+export const Origin$outboundSchema: z.ZodType<Origin, z.ZodTypeDef, Origin> = z
+  .union([
+    z.nativeEnum(Origin),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

@@ -10,6 +10,8 @@ let value: Role = "SYSTEM";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"SYSTEM" | "USER"
+"SYSTEM" | "USER" | Unrecognized<string>
 ```

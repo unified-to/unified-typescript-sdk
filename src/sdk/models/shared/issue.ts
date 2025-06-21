@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -19,7 +23,7 @@ export const IssueStatus = {
   Rejected: "REJECTED",
   UpNext: "UP_NEXT",
 } as const;
-export type IssueStatus = ClosedEnum<typeof IssueStatus>;
+export type IssueStatus = OpenEnum<typeof IssueStatus>;
 
 export type Issue = {
   createdAt?: string | undefined;
@@ -37,12 +41,25 @@ export type Issue = {
 };
 
 /** @internal */
-export const IssueStatus$inboundSchema: z.ZodNativeEnum<typeof IssueStatus> = z
-  .nativeEnum(IssueStatus);
+export const IssueStatus$inboundSchema: z.ZodType<
+  IssueStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(IssueStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const IssueStatus$outboundSchema: z.ZodNativeEnum<typeof IssueStatus> =
-  IssueStatus$inboundSchema;
+export const IssueStatus$outboundSchema: z.ZodType<
+  IssueStatus,
+  z.ZodTypeDef,
+  IssueStatus
+> = z.union([
+  z.nativeEnum(IssueStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

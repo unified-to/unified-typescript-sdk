@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const ScimManagerType = {
   Direct: "direct",
   Indirect: "indirect",
 } as const;
-export type ScimManagerType = ClosedEnum<typeof ScimManagerType>;
+export type ScimManagerType = OpenEnum<typeof ScimManagerType>;
 
 /**
  * "id" attribute of another User.
@@ -27,14 +31,25 @@ export type ScimManager = {
 };
 
 /** @internal */
-export const ScimManagerType$inboundSchema: z.ZodNativeEnum<
-  typeof ScimManagerType
-> = z.nativeEnum(ScimManagerType);
+export const ScimManagerType$inboundSchema: z.ZodType<
+  ScimManagerType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimManagerType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimManagerType$outboundSchema: z.ZodNativeEnum<
-  typeof ScimManagerType
-> = ScimManagerType$inboundSchema;
+export const ScimManagerType$outboundSchema: z.ZodType<
+  ScimManagerType,
+  z.ZodTypeDef,
+  ScimManagerType
+> = z.union([
+  z.nativeEnum(ScimManagerType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const PropertyCalendarEventOrganizerStatus = {
   Rejected: "REJECTED",
   Tentative: "TENTATIVE",
 } as const;
-export type PropertyCalendarEventOrganizerStatus = ClosedEnum<
+export type PropertyCalendarEventOrganizerStatus = OpenEnum<
   typeof PropertyCalendarEventOrganizerStatus
 >;
 
@@ -27,15 +31,25 @@ export type PropertyCalendarEventOrganizer = {
 };
 
 /** @internal */
-export const PropertyCalendarEventOrganizerStatus$inboundSchema:
-  z.ZodNativeEnum<typeof PropertyCalendarEventOrganizerStatus> = z.nativeEnum(
-    PropertyCalendarEventOrganizerStatus,
-  );
+export const PropertyCalendarEventOrganizerStatus$inboundSchema: z.ZodType<
+  PropertyCalendarEventOrganizerStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyCalendarEventOrganizerStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyCalendarEventOrganizerStatus$outboundSchema:
-  z.ZodNativeEnum<typeof PropertyCalendarEventOrganizerStatus> =
-    PropertyCalendarEventOrganizerStatus$inboundSchema;
+export const PropertyCalendarEventOrganizerStatus$outboundSchema: z.ZodType<
+  PropertyCalendarEventOrganizerStatus,
+  z.ZodTypeDef,
+  PropertyCalendarEventOrganizerStatus
+> = z.union([
+  z.nativeEnum(PropertyCalendarEventOrganizerStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

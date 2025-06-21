@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -12,7 +16,7 @@ export const Role = {
   System: "SYSTEM",
   User: "USER",
 } as const;
-export type Role = ClosedEnum<typeof Role>;
+export type Role = OpenEnum<typeof Role>;
 
 export type GenaiContent = {
   content: string;
@@ -20,13 +24,19 @@ export type GenaiContent = {
 };
 
 /** @internal */
-export const Role$inboundSchema: z.ZodNativeEnum<typeof Role> = z.nativeEnum(
-  Role,
-);
+export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Role),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Role$outboundSchema: z.ZodNativeEnum<typeof Role> =
-  Role$inboundSchema;
+export const Role$outboundSchema: z.ZodType<Role, z.ZodTypeDef, Role> = z.union(
+  [
+    z.nativeEnum(Role),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ],
+);
 
 /**
  * @internal

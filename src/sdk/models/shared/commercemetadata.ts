@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -53,7 +57,7 @@ export const CommerceMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type CommerceMetadataFormat = ClosedEnum<typeof CommerceMetadataFormat>;
+export type CommerceMetadataFormat = OpenEnum<typeof CommerceMetadataFormat>;
 
 export type CommerceMetadataSchemasValue52 = {};
 
@@ -690,14 +694,25 @@ export function commerceMetadataExtraDataFromJSON(
 }
 
 /** @internal */
-export const CommerceMetadataFormat$inboundSchema: z.ZodNativeEnum<
-  typeof CommerceMetadataFormat
-> = z.nativeEnum(CommerceMetadataFormat);
+export const CommerceMetadataFormat$inboundSchema: z.ZodType<
+  CommerceMetadataFormat,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CommerceMetadataFormat),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CommerceMetadataFormat$outboundSchema: z.ZodNativeEnum<
-  typeof CommerceMetadataFormat
-> = CommerceMetadataFormat$inboundSchema;
+export const CommerceMetadataFormat$outboundSchema: z.ZodType<
+  CommerceMetadataFormat,
+  z.ZodTypeDef,
+  CommerceMetadataFormat
+> = z.union([
+  z.nativeEnum(CommerceMetadataFormat),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

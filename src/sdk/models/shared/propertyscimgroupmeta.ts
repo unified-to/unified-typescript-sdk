@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -12,7 +16,7 @@ export const ResourceType = {
   User: "User",
   Group: "Group",
 } as const;
-export type ResourceType = ClosedEnum<typeof ResourceType>;
+export type ResourceType = OpenEnum<typeof ResourceType>;
 
 export type PropertyScimGroupMeta = {
   created?: string | undefined;
@@ -23,12 +27,25 @@ export type PropertyScimGroupMeta = {
 };
 
 /** @internal */
-export const ResourceType$inboundSchema: z.ZodNativeEnum<typeof ResourceType> =
-  z.nativeEnum(ResourceType);
+export const ResourceType$inboundSchema: z.ZodType<
+  ResourceType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ResourceType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ResourceType$outboundSchema: z.ZodNativeEnum<typeof ResourceType> =
-  ResourceType$inboundSchema;
+export const ResourceType$outboundSchema: z.ZodType<
+  ResourceType,
+  z.ZodTypeDef,
+  ResourceType
+> = z.union([
+  z.nativeEnum(ResourceType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

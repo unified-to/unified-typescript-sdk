@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,7 +20,7 @@ export const ScimPhoneNumberType = {
   Fax: "fax",
   Pager: "pager",
 } as const;
-export type ScimPhoneNumberType = ClosedEnum<typeof ScimPhoneNumberType>;
+export type ScimPhoneNumberType = OpenEnum<typeof ScimPhoneNumberType>;
 
 export type ScimPhoneNumber = {
   display?: string | undefined;
@@ -26,14 +30,25 @@ export type ScimPhoneNumber = {
 };
 
 /** @internal */
-export const ScimPhoneNumberType$inboundSchema: z.ZodNativeEnum<
-  typeof ScimPhoneNumberType
-> = z.nativeEnum(ScimPhoneNumberType);
+export const ScimPhoneNumberType$inboundSchema: z.ZodType<
+  ScimPhoneNumberType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimPhoneNumberType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimPhoneNumberType$outboundSchema: z.ZodNativeEnum<
-  typeof ScimPhoneNumberType
-> = ScimPhoneNumberType$inboundSchema;
+export const ScimPhoneNumberType$outboundSchema: z.ZodType<
+  ScimPhoneNumberType,
+  z.ZodTypeDef,
+  ScimPhoneNumberType
+> = z.union([
+  z.nativeEnum(ScimPhoneNumberType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

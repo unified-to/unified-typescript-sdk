@@ -10,6 +10,8 @@ let value: EmploymentStatus = "INACTIVE";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"ACTIVE" | "INACTIVE"
+"ACTIVE" | "INACTIVE" | Unrecognized<string>
 ```

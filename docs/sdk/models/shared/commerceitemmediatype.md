@@ -10,6 +10,8 @@ let value: CommerceItemMediaType = "video";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"image" | "video"
+"image" | "video" | Unrecognized<string>
 ```

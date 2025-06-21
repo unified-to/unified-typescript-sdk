@@ -10,6 +10,8 @@ let value: HrisTimeoffStatus = "APPROVED";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"APPROVED" | "PENDING" | "DENIED"
+"APPROVED" | "PENDING" | "DENIED" | Unrecognized<string>
 ```

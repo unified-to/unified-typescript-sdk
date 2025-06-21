@@ -5,15 +5,31 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  CalendarAttachment,
+  CalendarAttachment$inboundSchema,
+  CalendarAttachment$Outbound,
+  CalendarAttachment$outboundSchema,
+} from "./calendarattachment.js";
 import {
   CalendarAttendee,
   CalendarAttendee$inboundSchema,
   CalendarAttendee$Outbound,
   CalendarAttendee$outboundSchema,
 } from "./calendarattendee.js";
+import {
+  CalendarConference,
+  CalendarConference$inboundSchema,
+  CalendarConference$Outbound,
+  CalendarConference$outboundSchema,
+} from "./calendarconference.js";
 import {
   CalendarEventRecurrence,
   CalendarEventRecurrence$inboundSchema,
@@ -32,11 +48,13 @@ export const CalendarEventStatus = {
   Confirmed: "CONFIRMED",
   Tentative: "TENTATIVE",
 } as const;
-export type CalendarEventStatus = ClosedEnum<typeof CalendarEventStatus>;
+export type CalendarEventStatus = OpenEnum<typeof CalendarEventStatus>;
 
 export type CalendarEvent = {
+  attachments?: Array<CalendarAttachment> | undefined;
   attendees?: Array<CalendarAttendee> | undefined;
   calendarId?: string | undefined;
+  conference?: Array<CalendarConference> | undefined;
   createdAt?: string | undefined;
   endAt?: string | undefined;
   hasConference?: boolean | undefined;
@@ -59,14 +77,25 @@ export type CalendarEvent = {
 };
 
 /** @internal */
-export const CalendarEventStatus$inboundSchema: z.ZodNativeEnum<
-  typeof CalendarEventStatus
-> = z.nativeEnum(CalendarEventStatus);
+export const CalendarEventStatus$inboundSchema: z.ZodType<
+  CalendarEventStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CalendarEventStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CalendarEventStatus$outboundSchema: z.ZodNativeEnum<
-  typeof CalendarEventStatus
-> = CalendarEventStatus$inboundSchema;
+export const CalendarEventStatus$outboundSchema: z.ZodType<
+  CalendarEventStatus,
+  z.ZodTypeDef,
+  CalendarEventStatus
+> = z.union([
+  z.nativeEnum(CalendarEventStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -85,8 +114,10 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  attachments: z.array(CalendarAttachment$inboundSchema).optional(),
   attendees: z.array(CalendarAttendee$inboundSchema).optional(),
   calendar_id: z.string().optional(),
+  conference: z.array(CalendarConference$inboundSchema).optional(),
   created_at: z.string().optional(),
   end_at: z.string().optional(),
   has_conference: z.boolean().optional(),
@@ -124,8 +155,10 @@ export const CalendarEvent$inboundSchema: z.ZodType<
 
 /** @internal */
 export type CalendarEvent$Outbound = {
+  attachments?: Array<CalendarAttachment$Outbound> | undefined;
   attendees?: Array<CalendarAttendee$Outbound> | undefined;
   calendar_id?: string | undefined;
+  conference?: Array<CalendarConference$Outbound> | undefined;
   created_at?: string | undefined;
   end_at?: string | undefined;
   has_conference?: boolean | undefined;
@@ -153,8 +186,10 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CalendarEvent
 > = z.object({
+  attachments: z.array(CalendarAttachment$outboundSchema).optional(),
   attendees: z.array(CalendarAttendee$outboundSchema).optional(),
   calendarId: z.string().optional(),
+  conference: z.array(CalendarConference$outboundSchema).optional(),
   createdAt: z.string().optional(),
   endAt: z.string().optional(),
   hasConference: z.boolean().optional(),

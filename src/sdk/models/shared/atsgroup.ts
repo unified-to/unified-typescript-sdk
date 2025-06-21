@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,7 +21,7 @@ export const AtsGroupType = {
   Branch: "BRANCH",
   SubDepartment: "SUB_DEPARTMENT",
 } as const;
-export type AtsGroupType = ClosedEnum<typeof AtsGroupType>;
+export type AtsGroupType = OpenEnum<typeof AtsGroupType>;
 
 export type AtsGroup = {
   id?: string | undefined;
@@ -26,12 +30,25 @@ export type AtsGroup = {
 };
 
 /** @internal */
-export const AtsGroupType$inboundSchema: z.ZodNativeEnum<typeof AtsGroupType> =
-  z.nativeEnum(AtsGroupType);
+export const AtsGroupType$inboundSchema: z.ZodType<
+  AtsGroupType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsGroupType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsGroupType$outboundSchema: z.ZodNativeEnum<typeof AtsGroupType> =
-  AtsGroupType$inboundSchema;
+export const AtsGroupType$outboundSchema: z.ZodType<
+  AtsGroupType,
+  z.ZodTypeDef,
+  AtsGroupType
+> = z.union([
+  z.nativeEnum(AtsGroupType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

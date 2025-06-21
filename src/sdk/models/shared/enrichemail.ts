@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const EnrichEmailType = {
   Home: "HOME",
   Other: "OTHER",
 } as const;
-export type EnrichEmailType = ClosedEnum<typeof EnrichEmailType>;
+export type EnrichEmailType = OpenEnum<typeof EnrichEmailType>;
 
 export type EnrichEmail = {
   email: string;
@@ -23,14 +27,25 @@ export type EnrichEmail = {
 };
 
 /** @internal */
-export const EnrichEmailType$inboundSchema: z.ZodNativeEnum<
-  typeof EnrichEmailType
-> = z.nativeEnum(EnrichEmailType);
+export const EnrichEmailType$inboundSchema: z.ZodType<
+  EnrichEmailType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(EnrichEmailType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const EnrichEmailType$outboundSchema: z.ZodNativeEnum<
-  typeof EnrichEmailType
-> = EnrichEmailType$inboundSchema;
+export const EnrichEmailType$outboundSchema: z.ZodType<
+  EnrichEmailType,
+  z.ZodTypeDef,
+  EnrichEmailType
+> = z.union([
+  z.nativeEnum(EnrichEmailType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -11,6 +11,8 @@ let value: PropertyScimUserSchemas =
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"urn:ietf:params:scim:schemas:core:2.0:User" | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" | "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User" | "urn:ietf:params:scim:schemas:extension:peakon:2.0:User"
+"urn:ietf:params:scim:schemas:core:2.0:User" | "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User" | "urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User" | "urn:ietf:params:scim:schemas:extension:peakon:2.0:User" | Unrecognized<string>
 ```

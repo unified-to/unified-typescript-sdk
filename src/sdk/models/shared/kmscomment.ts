@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -15,13 +19,13 @@ export const ContentType = {
   Text: "TEXT",
   Other: "OTHER",
 } as const;
-export type ContentType = ClosedEnum<typeof ContentType>;
+export type ContentType = OpenEnum<typeof ContentType>;
 
 export const KmsCommentType = {
   PageInline: "PAGE_INLINE",
   Page: "PAGE",
 } as const;
-export type KmsCommentType = ClosedEnum<typeof KmsCommentType>;
+export type KmsCommentType = OpenEnum<typeof KmsCommentType>;
 
 export type KmsComment = {
   content: string;
@@ -37,12 +41,25 @@ export type KmsComment = {
 };
 
 /** @internal */
-export const ContentType$inboundSchema: z.ZodNativeEnum<typeof ContentType> = z
-  .nativeEnum(ContentType);
+export const ContentType$inboundSchema: z.ZodType<
+  ContentType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ContentType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ContentType$outboundSchema: z.ZodNativeEnum<typeof ContentType> =
-  ContentType$inboundSchema;
+export const ContentType$outboundSchema: z.ZodType<
+  ContentType,
+  z.ZodTypeDef,
+  ContentType
+> = z.union([
+  z.nativeEnum(ContentType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -56,14 +73,25 @@ export namespace ContentType$ {
 }
 
 /** @internal */
-export const KmsCommentType$inboundSchema: z.ZodNativeEnum<
-  typeof KmsCommentType
-> = z.nativeEnum(KmsCommentType);
+export const KmsCommentType$inboundSchema: z.ZodType<
+  KmsCommentType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(KmsCommentType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const KmsCommentType$outboundSchema: z.ZodNativeEnum<
-  typeof KmsCommentType
-> = KmsCommentType$inboundSchema;
+export const KmsCommentType$outboundSchema: z.ZodType<
+  KmsCommentType,
+  z.ZodTypeDef,
+  KmsCommentType
+> = z.union([
+  z.nativeEnum(KmsCommentType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

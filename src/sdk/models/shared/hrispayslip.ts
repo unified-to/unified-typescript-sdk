@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -20,7 +24,7 @@ export const PaymentType = {
   Cheque: "CHEQUE",
   Cash: "CASH",
 } as const;
-export type PaymentType = ClosedEnum<typeof PaymentType>;
+export type PaymentType = OpenEnum<typeof PaymentType>;
 
 export type HrisPayslip = {
   companyId?: string | undefined;
@@ -40,12 +44,25 @@ export type HrisPayslip = {
 };
 
 /** @internal */
-export const PaymentType$inboundSchema: z.ZodNativeEnum<typeof PaymentType> = z
-  .nativeEnum(PaymentType);
+export const PaymentType$inboundSchema: z.ZodType<
+  PaymentType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PaymentType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PaymentType$outboundSchema: z.ZodNativeEnum<typeof PaymentType> =
-  PaymentType$inboundSchema;
+export const PaymentType$outboundSchema: z.ZodType<
+  PaymentType,
+  z.ZodTypeDef,
+  PaymentType
+> = z.union([
+  z.nativeEnum(PaymentType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const Status = {
   Active: "ACTIVE",
   Archived: "ARCHIVED",
 } as const;
-export type Status = ClosedEnum<typeof Status>;
+export type Status = OpenEnum<typeof Status>;
 
 export const Type = {
   AccountsPayable: "ACCOUNTS_PAYABLE",
@@ -27,7 +31,7 @@ export const Type = {
   Revenue: "REVENUE",
   Other: "OTHER",
 } as const;
-export type Type = ClosedEnum<typeof Type>;
+export type Type = OpenEnum<typeof Type>;
 
 /**
  * Chart of accounts
@@ -54,12 +58,18 @@ export type AccountingAccount = {
 };
 
 /** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z
-  .nativeEnum(Status);
+export const Status$inboundSchema: z.ZodType<Status, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Status),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Status$outboundSchema: z.ZodNativeEnum<typeof Status> =
-  Status$inboundSchema;
+export const Status$outboundSchema: z.ZodType<Status, z.ZodTypeDef, Status> = z
+  .union([
+    z.nativeEnum(Status),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal
@@ -73,13 +83,19 @@ export namespace Status$ {
 }
 
 /** @internal */
-export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(
-  Type,
-);
+export const Type$inboundSchema: z.ZodType<Type, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Type),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> =
-  Type$inboundSchema;
+export const Type$outboundSchema: z.ZodType<Type, z.ZodTypeDef, Type> = z.union(
+  [
+    z.nativeEnum(Type),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ],
+);
 
 /**
  * @internal

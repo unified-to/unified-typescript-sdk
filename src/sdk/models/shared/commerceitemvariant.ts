@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -37,7 +41,7 @@ export const SizeUnit = {
   Cm: "cm",
   Inch: "inch",
 } as const;
-export type SizeUnit = ClosedEnum<typeof SizeUnit>;
+export type SizeUnit = OpenEnum<typeof SizeUnit>;
 
 export const WeightUnit = {
   G: "g",
@@ -45,7 +49,7 @@ export const WeightUnit = {
   Oz: "oz",
   Lb: "lb",
 } as const;
-export type WeightUnit = ClosedEnum<typeof WeightUnit>;
+export type WeightUnit = OpenEnum<typeof WeightUnit>;
 
 export type CommerceItemVariant = {
   availableAt?: Date | undefined;
@@ -75,12 +79,25 @@ export type CommerceItemVariant = {
 };
 
 /** @internal */
-export const SizeUnit$inboundSchema: z.ZodNativeEnum<typeof SizeUnit> = z
-  .nativeEnum(SizeUnit);
+export const SizeUnit$inboundSchema: z.ZodType<
+  SizeUnit,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(SizeUnit),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const SizeUnit$outboundSchema: z.ZodNativeEnum<typeof SizeUnit> =
-  SizeUnit$inboundSchema;
+export const SizeUnit$outboundSchema: z.ZodType<
+  SizeUnit,
+  z.ZodTypeDef,
+  SizeUnit
+> = z.union([
+  z.nativeEnum(SizeUnit),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -94,12 +111,25 @@ export namespace SizeUnit$ {
 }
 
 /** @internal */
-export const WeightUnit$inboundSchema: z.ZodNativeEnum<typeof WeightUnit> = z
-  .nativeEnum(WeightUnit);
+export const WeightUnit$inboundSchema: z.ZodType<
+  WeightUnit,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(WeightUnit),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const WeightUnit$outboundSchema: z.ZodNativeEnum<typeof WeightUnit> =
-  WeightUnit$inboundSchema;
+export const WeightUnit$outboundSchema: z.ZodType<
+  WeightUnit,
+  z.ZodTypeDef,
+  WeightUnit
+> = z.union([
+  z.nativeEnum(WeightUnit),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

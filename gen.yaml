@@ -17,7 +17,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.72.5
+  version: 2.73.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -26,6 +26,7 @@ typescript:
   author: Unified
   baseErrorName: UnifiedToError
   clientServerStatusCodesAsErrors: true
+  constFieldsAlwaysOptional: true
   defaultErrorName: SDKError
   enableCustomCodeRegions: false
   enableMCPServer: true

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -53,7 +57,7 @@ export const KmsPageMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type KmsPageMetadataFormat = ClosedEnum<typeof KmsPageMetadataFormat>;
+export type KmsPageMetadataFormat = OpenEnum<typeof KmsPageMetadataFormat>;
 
 export type KmsPageMetadataSchemasValue52 = {};
 
@@ -686,14 +690,25 @@ export function kmsPageMetadataExtraDataFromJSON(
 }
 
 /** @internal */
-export const KmsPageMetadataFormat$inboundSchema: z.ZodNativeEnum<
-  typeof KmsPageMetadataFormat
-> = z.nativeEnum(KmsPageMetadataFormat);
+export const KmsPageMetadataFormat$inboundSchema: z.ZodType<
+  KmsPageMetadataFormat,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(KmsPageMetadataFormat),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const KmsPageMetadataFormat$outboundSchema: z.ZodNativeEnum<
-  typeof KmsPageMetadataFormat
-> = KmsPageMetadataFormat$inboundSchema;
+export const KmsPageMetadataFormat$outboundSchema: z.ZodType<
+  KmsPageMetadataFormat,
+  z.ZodTypeDef,
+  KmsPageMetadataFormat
+> = z.union([
+  z.nativeEnum(KmsPageMetadataFormat),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

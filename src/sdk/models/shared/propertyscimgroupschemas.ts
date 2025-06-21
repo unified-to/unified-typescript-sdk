@@ -3,25 +3,40 @@
  */
 
 import * as z from "zod";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 
 export const PropertyScimGroupSchemas = {
   UrnIetfParamsScimSchemasCore20Group:
     "urn:ietf:params:scim:schemas:core:2.0:Group",
 } as const;
-export type PropertyScimGroupSchemas = ClosedEnum<
+export type PropertyScimGroupSchemas = OpenEnum<
   typeof PropertyScimGroupSchemas
 >;
 
 /** @internal */
-export const PropertyScimGroupSchemas$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimGroupSchemas
-> = z.nativeEnum(PropertyScimGroupSchemas);
+export const PropertyScimGroupSchemas$inboundSchema: z.ZodType<
+  PropertyScimGroupSchemas,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyScimGroupSchemas),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyScimGroupSchemas$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimGroupSchemas
-> = PropertyScimGroupSchemas$inboundSchema;
+export const PropertyScimGroupSchemas$outboundSchema: z.ZodType<
+  PropertyScimGroupSchemas,
+  z.ZodTypeDef,
+  PropertyScimGroupSchemas
+> = z.union([
+  z.nativeEnum(PropertyScimGroupSchemas),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

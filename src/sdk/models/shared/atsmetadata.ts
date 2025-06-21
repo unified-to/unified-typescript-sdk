@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -53,7 +57,7 @@ export const Format = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type Format = ClosedEnum<typeof Format>;
+export type Format = OpenEnum<typeof Format>;
 
 export type AtsMetadataSchemasValue52 = {};
 
@@ -606,12 +610,18 @@ export function extraDataFromJSON(
 }
 
 /** @internal */
-export const Format$inboundSchema: z.ZodNativeEnum<typeof Format> = z
-  .nativeEnum(Format);
+export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Format),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Format$outboundSchema: z.ZodNativeEnum<typeof Format> =
-  Format$inboundSchema;
+export const Format$outboundSchema: z.ZodType<Format, z.ZodTypeDef, Format> = z
+  .union([
+    z.nativeEnum(Format),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

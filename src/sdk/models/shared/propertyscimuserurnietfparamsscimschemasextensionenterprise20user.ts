@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,7 +30,7 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGe
     Female: "female",
   } as const;
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender =
-  ClosedEnum<
+  OpenEnum<
     typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
   >;
 
@@ -59,18 +63,30 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User =
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema:
-  z.ZodNativeEnum<
-    typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
-  > = z.nativeEnum(
+  z.ZodType<
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
-  );
+    z.ZodTypeDef,
+    unknown
+  > = z
+    .union([
+      z.nativeEnum(
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+      ),
+      z.string().transform(catchUnrecognizedEnum),
+    ]);
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema:
-  z.ZodNativeEnum<
-    typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
-  > =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema;
+  z.ZodType<
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+    z.ZodTypeDef,
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
+  > = z.union([
+    z.nativeEnum(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender,
+    ),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

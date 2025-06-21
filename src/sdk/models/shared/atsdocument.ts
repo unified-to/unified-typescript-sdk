@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,7 +21,7 @@ export const AtsDocumentType = {
   TakeHomeTest: "TAKE_HOME_TEST",
   Other: "OTHER",
 } as const;
-export type AtsDocumentType = ClosedEnum<typeof AtsDocumentType>;
+export type AtsDocumentType = OpenEnum<typeof AtsDocumentType>;
 
 export type AtsDocument = {
   applicationId?: string | undefined;
@@ -35,14 +39,25 @@ export type AtsDocument = {
 };
 
 /** @internal */
-export const AtsDocumentType$inboundSchema: z.ZodNativeEnum<
-  typeof AtsDocumentType
-> = z.nativeEnum(AtsDocumentType);
+export const AtsDocumentType$inboundSchema: z.ZodType<
+  AtsDocumentType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsDocumentType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsDocumentType$outboundSchema: z.ZodNativeEnum<
-  typeof AtsDocumentType
-> = AtsDocumentType$inboundSchema;
+export const AtsDocumentType$outboundSchema: z.ZodType<
+  AtsDocumentType,
+  z.ZodTypeDef,
+  AtsDocumentType
+> = z.union([
+  z.nativeEnum(AtsDocumentType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

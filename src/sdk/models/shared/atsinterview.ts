@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,7 +20,7 @@ export const AtsInterviewStatus = {
   Canceled: "CANCELED",
   NeedsScheduling: "NEEDS_SCHEDULING",
 } as const;
-export type AtsInterviewStatus = ClosedEnum<typeof AtsInterviewStatus>;
+export type AtsInterviewStatus = OpenEnum<typeof AtsInterviewStatus>;
 
 export type AtsInterview = {
   applicationId?: string | undefined;
@@ -35,14 +39,25 @@ export type AtsInterview = {
 };
 
 /** @internal */
-export const AtsInterviewStatus$inboundSchema: z.ZodNativeEnum<
-  typeof AtsInterviewStatus
-> = z.nativeEnum(AtsInterviewStatus);
+export const AtsInterviewStatus$inboundSchema: z.ZodType<
+  AtsInterviewStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsInterviewStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsInterviewStatus$outboundSchema: z.ZodNativeEnum<
-  typeof AtsInterviewStatus
-> = AtsInterviewStatus$inboundSchema;
+export const AtsInterviewStatus$outboundSchema: z.ZodType<
+  AtsInterviewStatus,
+  z.ZodTypeDef,
+  AtsInterviewStatus
+> = z.union([
+  z.nativeEnum(AtsInterviewStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

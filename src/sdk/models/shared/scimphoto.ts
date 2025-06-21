@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -12,7 +16,7 @@ export const ScimPhotoType = {
   Photo: "photo",
   Thumbnail: "thumbnail",
 } as const;
-export type ScimPhotoType = ClosedEnum<typeof ScimPhotoType>;
+export type ScimPhotoType = OpenEnum<typeof ScimPhotoType>;
 
 export type ScimPhoto = {
   display?: string | undefined;
@@ -22,14 +26,25 @@ export type ScimPhoto = {
 };
 
 /** @internal */
-export const ScimPhotoType$inboundSchema: z.ZodNativeEnum<
-  typeof ScimPhotoType
-> = z.nativeEnum(ScimPhotoType);
+export const ScimPhotoType$inboundSchema: z.ZodType<
+  ScimPhotoType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimPhotoType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimPhotoType$outboundSchema: z.ZodNativeEnum<
-  typeof ScimPhotoType
-> = ScimPhotoType$inboundSchema;
+export const ScimPhotoType$outboundSchema: z.ZodType<
+  ScimPhotoType,
+  z.ZodTypeDef,
+  ScimPhotoType
+> = z.union([
+  z.nativeEnum(ScimPhotoType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

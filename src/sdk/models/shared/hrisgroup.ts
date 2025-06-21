@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,7 +22,7 @@ export const HrisGroupType = {
   Branch: "BRANCH",
   SubDepartment: "SUB_DEPARTMENT",
 } as const;
-export type HrisGroupType = ClosedEnum<typeof HrisGroupType>;
+export type HrisGroupType = OpenEnum<typeof HrisGroupType>;
 
 export type HrisGroup = {
   companyId?: string | undefined;
@@ -36,14 +40,25 @@ export type HrisGroup = {
 };
 
 /** @internal */
-export const HrisGroupType$inboundSchema: z.ZodNativeEnum<
-  typeof HrisGroupType
-> = z.nativeEnum(HrisGroupType);
+export const HrisGroupType$inboundSchema: z.ZodType<
+  HrisGroupType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisGroupType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisGroupType$outboundSchema: z.ZodNativeEnum<
-  typeof HrisGroupType
-> = HrisGroupType$inboundSchema;
+export const HrisGroupType$outboundSchema: z.ZodType<
+  HrisGroupType,
+  z.ZodTypeDef,
+  HrisGroupType
+> = z.union([
+  z.nativeEnum(HrisGroupType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

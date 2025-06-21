@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -26,7 +30,7 @@ export const CommerceCollectionType = {
   SavedSearch: "SAVED_SEARCH",
   Category: "CATEGORY",
 } as const;
-export type CommerceCollectionType = ClosedEnum<typeof CommerceCollectionType>;
+export type CommerceCollectionType = OpenEnum<typeof CommerceCollectionType>;
 
 /**
  * A collection of items/products/services
@@ -51,14 +55,25 @@ export type CommerceCollection = {
 };
 
 /** @internal */
-export const CommerceCollectionType$inboundSchema: z.ZodNativeEnum<
-  typeof CommerceCollectionType
-> = z.nativeEnum(CommerceCollectionType);
+export const CommerceCollectionType$inboundSchema: z.ZodType<
+  CommerceCollectionType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CommerceCollectionType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CommerceCollectionType$outboundSchema: z.ZodNativeEnum<
-  typeof CommerceCollectionType
-> = CommerceCollectionType$inboundSchema;
+export const CommerceCollectionType$outboundSchema: z.ZodType<
+  CommerceCollectionType,
+  z.ZodTypeDef,
+  CommerceCollectionType
+> = z.union([
+  z.nativeEnum(CommerceCollectionType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

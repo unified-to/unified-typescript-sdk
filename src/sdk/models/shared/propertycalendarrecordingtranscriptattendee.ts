@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const PropertyCalendarRecordingTranscriptAttendeeStatus = {
   Rejected: "REJECTED",
   Tentative: "TENTATIVE",
 } as const;
-export type PropertyCalendarRecordingTranscriptAttendeeStatus = ClosedEnum<
+export type PropertyCalendarRecordingTranscriptAttendeeStatus = OpenEnum<
   typeof PropertyCalendarRecordingTranscriptAttendeeStatus
 >;
 
@@ -28,13 +32,26 @@ export type PropertyCalendarRecordingTranscriptAttendee = {
 
 /** @internal */
 export const PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema:
-  z.ZodNativeEnum<typeof PropertyCalendarRecordingTranscriptAttendeeStatus> = z
-    .nativeEnum(PropertyCalendarRecordingTranscriptAttendeeStatus);
+  z.ZodType<
+    PropertyCalendarRecordingTranscriptAttendeeStatus,
+    z.ZodTypeDef,
+    unknown
+  > = z
+    .union([
+      z.nativeEnum(PropertyCalendarRecordingTranscriptAttendeeStatus),
+      z.string().transform(catchUnrecognizedEnum),
+    ]);
 
 /** @internal */
 export const PropertyCalendarRecordingTranscriptAttendeeStatus$outboundSchema:
-  z.ZodNativeEnum<typeof PropertyCalendarRecordingTranscriptAttendeeStatus> =
-    PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema;
+  z.ZodType<
+    PropertyCalendarRecordingTranscriptAttendeeStatus,
+    z.ZodTypeDef,
+    PropertyCalendarRecordingTranscriptAttendeeStatus
+  > = z.union([
+    z.nativeEnum(PropertyCalendarRecordingTranscriptAttendeeStatus),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

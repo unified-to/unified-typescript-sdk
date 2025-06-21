@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -43,7 +47,7 @@ export const AtsApplicationStatus = {
   Declined: "DECLINED",
   Withdrawn: "WITHDRAWN",
 } as const;
-export type AtsApplicationStatus = ClosedEnum<typeof AtsApplicationStatus>;
+export type AtsApplicationStatus = OpenEnum<typeof AtsApplicationStatus>;
 
 export type AtsApplication = {
   answers?: Array<AtsApplicationAnswer> | undefined;
@@ -65,14 +69,25 @@ export type AtsApplication = {
 };
 
 /** @internal */
-export const AtsApplicationStatus$inboundSchema: z.ZodNativeEnum<
-  typeof AtsApplicationStatus
-> = z.nativeEnum(AtsApplicationStatus);
+export const AtsApplicationStatus$inboundSchema: z.ZodType<
+  AtsApplicationStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsApplicationStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsApplicationStatus$outboundSchema: z.ZodNativeEnum<
-  typeof AtsApplicationStatus
-> = AtsApplicationStatus$inboundSchema;
+export const AtsApplicationStatus$outboundSchema: z.ZodType<
+  AtsApplicationStatus,
+  z.ZodTypeDef,
+  AtsApplicationStatus
+> = z.union([
+  z.nativeEnum(AtsApplicationStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

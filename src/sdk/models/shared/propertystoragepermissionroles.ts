@@ -3,26 +3,41 @@
  */
 
 import * as z from "zod";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 
 export const PropertyStoragePermissionRoles = {
   Owner: "OWNER",
   Read: "READ",
   Write: "WRITE",
 } as const;
-export type PropertyStoragePermissionRoles = ClosedEnum<
+export type PropertyStoragePermissionRoles = OpenEnum<
   typeof PropertyStoragePermissionRoles
 >;
 
 /** @internal */
-export const PropertyStoragePermissionRoles$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyStoragePermissionRoles
-> = z.nativeEnum(PropertyStoragePermissionRoles);
+export const PropertyStoragePermissionRoles$inboundSchema: z.ZodType<
+  PropertyStoragePermissionRoles,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyStoragePermissionRoles),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyStoragePermissionRoles$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyStoragePermissionRoles
-> = PropertyStoragePermissionRoles$inboundSchema;
+export const PropertyStoragePermissionRoles$outboundSchema: z.ZodType<
+  PropertyStoragePermissionRoles,
+  z.ZodTypeDef,
+  PropertyStoragePermissionRoles
+> = z.union([
+  z.nativeEnum(PropertyStoragePermissionRoles),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

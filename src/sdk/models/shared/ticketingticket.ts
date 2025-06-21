@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const TicketingTicketStatus = {
   Active: "ACTIVE",
   Closed: "CLOSED",
 } as const;
-export type TicketingTicketStatus = ClosedEnum<typeof TicketingTicketStatus>;
+export type TicketingTicketStatus = OpenEnum<typeof TicketingTicketStatus>;
 
 export type TicketingTicket = {
   category?: string | undefined;
@@ -35,14 +39,25 @@ export type TicketingTicket = {
 };
 
 /** @internal */
-export const TicketingTicketStatus$inboundSchema: z.ZodNativeEnum<
-  typeof TicketingTicketStatus
-> = z.nativeEnum(TicketingTicketStatus);
+export const TicketingTicketStatus$inboundSchema: z.ZodType<
+  TicketingTicketStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(TicketingTicketStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const TicketingTicketStatus$outboundSchema: z.ZodNativeEnum<
-  typeof TicketingTicketStatus
-> = TicketingTicketStatus$inboundSchema;
+export const TicketingTicketStatus$outboundSchema: z.ZodType<
+  TicketingTicketStatus,
+  z.ZodTypeDef,
+  TicketingTicketStatus
+> = z.union([
+  z.nativeEnum(TicketingTicketStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

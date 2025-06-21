@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -28,7 +32,7 @@ export const HrisPayslipDetailType = {
   PosttaxGarnishment: "POSTTAX_GARNISHMENT",
   Reimbursement: "REIMBURSEMENT",
 } as const;
-export type HrisPayslipDetailType = ClosedEnum<typeof HrisPayslipDetailType>;
+export type HrisPayslipDetailType = OpenEnum<typeof HrisPayslipDetailType>;
 
 export type HrisPayslipDetail = {
   amount: number;
@@ -40,14 +44,25 @@ export type HrisPayslipDetail = {
 };
 
 /** @internal */
-export const HrisPayslipDetailType$inboundSchema: z.ZodNativeEnum<
-  typeof HrisPayslipDetailType
-> = z.nativeEnum(HrisPayslipDetailType);
+export const HrisPayslipDetailType$inboundSchema: z.ZodType<
+  HrisPayslipDetailType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisPayslipDetailType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisPayslipDetailType$outboundSchema: z.ZodNativeEnum<
-  typeof HrisPayslipDetailType
-> = HrisPayslipDetailType$inboundSchema;
+export const HrisPayslipDetailType$outboundSchema: z.ZodType<
+  HrisPayslipDetailType,
+  z.ZodTypeDef,
+  HrisPayslipDetailType
+> = z.union([
+  z.nativeEnum(HrisPayslipDetailType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const TaskTaskStatus = {
   InProgress: "IN_PROGRESS",
   Completed: "COMPLETED",
 } as const;
-export type TaskTaskStatus = ClosedEnum<typeof TaskTaskStatus>;
+export type TaskTaskStatus = OpenEnum<typeof TaskTaskStatus>;
 
 export type TaskTask = {
   assignedUserIds?: Array<string> | undefined;
@@ -42,14 +46,25 @@ export type TaskTask = {
 };
 
 /** @internal */
-export const TaskTaskStatus$inboundSchema: z.ZodNativeEnum<
-  typeof TaskTaskStatus
-> = z.nativeEnum(TaskTaskStatus);
+export const TaskTaskStatus$inboundSchema: z.ZodType<
+  TaskTaskStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(TaskTaskStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const TaskTaskStatus$outboundSchema: z.ZodNativeEnum<
-  typeof TaskTaskStatus
-> = TaskTaskStatus$inboundSchema;
+export const TaskTaskStatus$outboundSchema: z.ZodType<
+  TaskTaskStatus,
+  z.ZodTypeDef,
+  TaskTaskStatus
+> = z.union([
+  z.nativeEnum(TaskTaskStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

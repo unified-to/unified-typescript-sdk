@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -16,14 +20,14 @@ export const DbType = {
   Mssql: "mssql",
   Mariadb: "mariadb",
 } as const;
-export type DbType = ClosedEnum<typeof DbType>;
+export type DbType = OpenEnum<typeof DbType>;
 
 export const Event = {
   Updated: "updated",
   Created: "created",
   Deleted: "deleted",
 } as const;
-export type Event = ClosedEnum<typeof Event>;
+export type Event = OpenEnum<typeof Event>;
 
 export const ObjectType = {
   AccountingAccount: "accounting_account",
@@ -109,13 +113,13 @@ export const ObjectType = {
   CalendarLink: "calendar_link",
   CalendarRecording: "calendar_recording",
 } as const;
-export type ObjectType = ClosedEnum<typeof ObjectType>;
+export type ObjectType = OpenEnum<typeof ObjectType>;
 
 export const WebhookType = {
   Virtual: "virtual",
   Native: "native",
 } as const;
-export type WebhookType = ClosedEnum<typeof WebhookType>;
+export type WebhookType = OpenEnum<typeof WebhookType>;
 
 /**
  * A webhook is used to POST new/updated information to your server.
@@ -150,12 +154,18 @@ export type Webhook = {
 };
 
 /** @internal */
-export const DbType$inboundSchema: z.ZodNativeEnum<typeof DbType> = z
-  .nativeEnum(DbType);
+export const DbType$inboundSchema: z.ZodType<DbType, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(DbType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const DbType$outboundSchema: z.ZodNativeEnum<typeof DbType> =
-  DbType$inboundSchema;
+export const DbType$outboundSchema: z.ZodType<DbType, z.ZodTypeDef, DbType> = z
+  .union([
+    z.nativeEnum(DbType),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal
@@ -169,13 +179,18 @@ export namespace DbType$ {
 }
 
 /** @internal */
-export const Event$inboundSchema: z.ZodNativeEnum<typeof Event> = z.nativeEnum(
-  Event,
-);
+export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Event),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Event$outboundSchema: z.ZodNativeEnum<typeof Event> =
-  Event$inboundSchema;
+export const Event$outboundSchema: z.ZodType<Event, z.ZodTypeDef, Event> = z
+  .union([
+    z.nativeEnum(Event),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal
@@ -189,12 +204,25 @@ export namespace Event$ {
 }
 
 /** @internal */
-export const ObjectType$inboundSchema: z.ZodNativeEnum<typeof ObjectType> = z
-  .nativeEnum(ObjectType);
+export const ObjectType$inboundSchema: z.ZodType<
+  ObjectType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ObjectType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ObjectType$outboundSchema: z.ZodNativeEnum<typeof ObjectType> =
-  ObjectType$inboundSchema;
+export const ObjectType$outboundSchema: z.ZodType<
+  ObjectType,
+  z.ZodTypeDef,
+  ObjectType
+> = z.union([
+  z.nativeEnum(ObjectType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -208,12 +236,25 @@ export namespace ObjectType$ {
 }
 
 /** @internal */
-export const WebhookType$inboundSchema: z.ZodNativeEnum<typeof WebhookType> = z
-  .nativeEnum(WebhookType);
+export const WebhookType$inboundSchema: z.ZodType<
+  WebhookType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(WebhookType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const WebhookType$outboundSchema: z.ZodNativeEnum<typeof WebhookType> =
-  WebhookType$inboundSchema;
+export const WebhookType$outboundSchema: z.ZodType<
+  WebhookType,
+  z.ZodTypeDef,
+  WebhookType
+> = z.union([
+  z.nativeEnum(WebhookType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

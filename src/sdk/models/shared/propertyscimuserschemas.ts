@@ -3,7 +3,11 @@
  */
 
 import * as z from "zod";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 
 export const PropertyScimUserSchemas = {
   UrnIetfParamsScimSchemasCore20User:
@@ -15,19 +19,28 @@ export const PropertyScimUserSchemas = {
   UrnIetfParamsScimSchemasExtensionPeakon20User:
     "urn:ietf:params:scim:schemas:extension:peakon:2.0:User",
 } as const;
-export type PropertyScimUserSchemas = ClosedEnum<
-  typeof PropertyScimUserSchemas
->;
+export type PropertyScimUserSchemas = OpenEnum<typeof PropertyScimUserSchemas>;
 
 /** @internal */
-export const PropertyScimUserSchemas$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimUserSchemas
-> = z.nativeEnum(PropertyScimUserSchemas);
+export const PropertyScimUserSchemas$inboundSchema: z.ZodType<
+  PropertyScimUserSchemas,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyScimUserSchemas),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyScimUserSchemas$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimUserSchemas
-> = PropertyScimUserSchemas$inboundSchema;
+export const PropertyScimUserSchemas$outboundSchema: z.ZodType<
+  PropertyScimUserSchemas,
+  z.ZodTypeDef,
+  PropertyScimUserSchemas
+> = z.union([
+  z.nativeEnum(PropertyScimUserSchemas),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

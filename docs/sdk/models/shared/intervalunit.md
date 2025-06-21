@@ -10,6 +10,8 @@ let value: IntervalUnit = "WEEK";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"YEAR" | "MONTH" | "WEEK" | "DAY"
+"YEAR" | "MONTH" | "WEEK" | "DAY" | Unrecognized<string>
 ```

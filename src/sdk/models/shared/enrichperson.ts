@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -37,7 +41,7 @@ export const Gender = {
   Male: "MALE",
   Female: "FEMALE",
 } as const;
-export type Gender = ClosedEnum<typeof Gender>;
+export type Gender = OpenEnum<typeof Gender>;
 
 /**
  * A person object from an enrichment integration
@@ -82,12 +86,18 @@ export type EnrichPerson = {
 };
 
 /** @internal */
-export const Gender$inboundSchema: z.ZodNativeEnum<typeof Gender> = z
-  .nativeEnum(Gender);
+export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> = z
+  .union([
+    z.nativeEnum(Gender),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Gender$outboundSchema: z.ZodNativeEnum<typeof Gender> =
-  Gender$inboundSchema;
+export const Gender$outboundSchema: z.ZodType<Gender, z.ZodTypeDef, Gender> = z
+  .union([
+    z.nativeEnum(Gender),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

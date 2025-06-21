@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const PropertyAtsActivityFromType = {
   Home: "HOME",
   Other: "OTHER",
 } as const;
-export type PropertyAtsActivityFromType = ClosedEnum<
+export type PropertyAtsActivityFromType = OpenEnum<
   typeof PropertyAtsActivityFromType
 >;
 
@@ -24,14 +28,25 @@ export type PropertyAtsActivityFrom = {
 };
 
 /** @internal */
-export const PropertyAtsActivityFromType$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyAtsActivityFromType
-> = z.nativeEnum(PropertyAtsActivityFromType);
+export const PropertyAtsActivityFromType$inboundSchema: z.ZodType<
+  PropertyAtsActivityFromType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyAtsActivityFromType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyAtsActivityFromType$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyAtsActivityFromType
-> = PropertyAtsActivityFromType$inboundSchema;
+export const PropertyAtsActivityFromType$outboundSchema: z.ZodType<
+  PropertyAtsActivityFromType,
+  z.ZodTypeDef,
+  PropertyAtsActivityFromType
+> = z.union([
+  z.nativeEnum(PropertyAtsActivityFromType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -10,6 +10,8 @@ let value: PropertyCalendarEventRecurrenceOnDays = "SA";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"SU" | "MO" | "TU" | "WE" | "TH" | "FR" | "SA"
+"SU" | "MO" | "TU" | "WE" | "TH" | "FR" | "SA" | Unrecognized<string>
 ```

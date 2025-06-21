@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const CalendarAttendeeStatus = {
   Rejected: "REJECTED",
   Tentative: "TENTATIVE",
 } as const;
-export type CalendarAttendeeStatus = ClosedEnum<typeof CalendarAttendeeStatus>;
+export type CalendarAttendeeStatus = OpenEnum<typeof CalendarAttendeeStatus>;
 
 export type CalendarAttendee = {
   email?: string | undefined;
@@ -25,14 +29,25 @@ export type CalendarAttendee = {
 };
 
 /** @internal */
-export const CalendarAttendeeStatus$inboundSchema: z.ZodNativeEnum<
-  typeof CalendarAttendeeStatus
-> = z.nativeEnum(CalendarAttendeeStatus);
+export const CalendarAttendeeStatus$inboundSchema: z.ZodType<
+  CalendarAttendeeStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CalendarAttendeeStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CalendarAttendeeStatus$outboundSchema: z.ZodNativeEnum<
-  typeof CalendarAttendeeStatus
-> = CalendarAttendeeStatus$inboundSchema;
+export const CalendarAttendeeStatus$outboundSchema: z.ZodType<
+  CalendarAttendeeStatus,
+  z.ZodTypeDef,
+  CalendarAttendeeStatus
+> = z.union([
+  z.nativeEnum(CalendarAttendeeStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

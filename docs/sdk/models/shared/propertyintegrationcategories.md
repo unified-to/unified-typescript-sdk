@@ -10,6 +10,8 @@ let value: PropertyIntegrationCategories = "ticketing";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar"
+"passthrough" | "hris" | "ats" | "auth" | "crm" | "enrich" | "martech" | "ticketing" | "uc" | "accounting" | "storage" | "commerce" | "payment" | "genai" | "messaging" | "kms" | "task" | "scim" | "lms" | "repo" | "metadata" | "calendar" | Unrecognized<string>
 ```

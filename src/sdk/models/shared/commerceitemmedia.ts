@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -18,7 +22,7 @@ export const CommerceItemMediaType = {
   Image: "image",
   Video: "video",
 } as const;
-export type CommerceItemMediaType = ClosedEnum<typeof CommerceItemMediaType>;
+export type CommerceItemMediaType = OpenEnum<typeof CommerceItemMediaType>;
 
 export type CommerceItemMedia = {
   alt?: string | undefined;
@@ -32,14 +36,25 @@ export type CommerceItemMedia = {
 };
 
 /** @internal */
-export const CommerceItemMediaType$inboundSchema: z.ZodNativeEnum<
-  typeof CommerceItemMediaType
-> = z.nativeEnum(CommerceItemMediaType);
+export const CommerceItemMediaType$inboundSchema: z.ZodType<
+  CommerceItemMediaType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CommerceItemMediaType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CommerceItemMediaType$outboundSchema: z.ZodNativeEnum<
-  typeof CommerceItemMediaType
-> = CommerceItemMediaType$inboundSchema;
+export const CommerceItemMediaType$outboundSchema: z.ZodType<
+  CommerceItemMediaType,
+  z.ZodTypeDef,
+  CommerceItemMediaType
+> = z.union([
+  z.nativeEnum(CommerceItemMediaType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

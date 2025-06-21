@@ -10,6 +10,8 @@ let value: TaskTaskStatus = "OPENED";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"OPENED" | "IN_PROGRESS" | "COMPLETED"
+"OPENED" | "IN_PROGRESS" | "COMPLETED" | Unrecognized<string>
 ```

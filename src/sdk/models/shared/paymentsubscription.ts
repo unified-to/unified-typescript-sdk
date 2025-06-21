@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -21,7 +25,7 @@ export const IntervalUnit = {
   Week: "WEEK",
   Day: "DAY",
 } as const;
-export type IntervalUnit = ClosedEnum<typeof IntervalUnit>;
+export type IntervalUnit = OpenEnum<typeof IntervalUnit>;
 
 export const PaymentSubscriptionStatus = {
   Active: "ACTIVE",
@@ -29,7 +33,7 @@ export const PaymentSubscriptionStatus = {
   Canceled: "CANCELED",
   Paused: "PAUSED",
 } as const;
-export type PaymentSubscriptionStatus = ClosedEnum<
+export type PaymentSubscriptionStatus = OpenEnum<
   typeof PaymentSubscriptionStatus
 >;
 
@@ -57,12 +61,25 @@ export type PaymentSubscription = {
 };
 
 /** @internal */
-export const IntervalUnit$inboundSchema: z.ZodNativeEnum<typeof IntervalUnit> =
-  z.nativeEnum(IntervalUnit);
+export const IntervalUnit$inboundSchema: z.ZodType<
+  IntervalUnit,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(IntervalUnit),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const IntervalUnit$outboundSchema: z.ZodNativeEnum<typeof IntervalUnit> =
-  IntervalUnit$inboundSchema;
+export const IntervalUnit$outboundSchema: z.ZodType<
+  IntervalUnit,
+  z.ZodTypeDef,
+  IntervalUnit
+> = z.union([
+  z.nativeEnum(IntervalUnit),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -76,14 +93,25 @@ export namespace IntervalUnit$ {
 }
 
 /** @internal */
-export const PaymentSubscriptionStatus$inboundSchema: z.ZodNativeEnum<
-  typeof PaymentSubscriptionStatus
-> = z.nativeEnum(PaymentSubscriptionStatus);
+export const PaymentSubscriptionStatus$inboundSchema: z.ZodType<
+  PaymentSubscriptionStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PaymentSubscriptionStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PaymentSubscriptionStatus$outboundSchema: z.ZodNativeEnum<
-  typeof PaymentSubscriptionStatus
-> = PaymentSubscriptionStatus$inboundSchema;
+export const PaymentSubscriptionStatus$outboundSchema: z.ZodType<
+  PaymentSubscriptionStatus,
+  z.ZodTypeDef,
+  PaymentSubscriptionStatus
+> = z.union([
+  z.nativeEnum(PaymentSubscriptionStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,7 +22,7 @@ export const ScimImsType = {
   Qq: "qq",
   Yahoo: "yahoo",
 } as const;
-export type ScimImsType = ClosedEnum<typeof ScimImsType>;
+export type ScimImsType = OpenEnum<typeof ScimImsType>;
 
 export type ScimIms = {
   display?: string | undefined;
@@ -28,12 +32,25 @@ export type ScimIms = {
 };
 
 /** @internal */
-export const ScimImsType$inboundSchema: z.ZodNativeEnum<typeof ScimImsType> = z
-  .nativeEnum(ScimImsType);
+export const ScimImsType$inboundSchema: z.ZodType<
+  ScimImsType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimImsType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimImsType$outboundSchema: z.ZodNativeEnum<typeof ScimImsType> =
-  ScimImsType$inboundSchema;
+export const ScimImsType$outboundSchema: z.ZodType<
+  ScimImsType,
+  z.ZodTypeDef,
+  ScimImsType
+> = z.union([
+  z.nativeEnum(ScimImsType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

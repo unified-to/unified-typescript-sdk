@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,7 +21,7 @@ export const Frequency = {
   Month: "MONTH",
   Week: "WEEK",
 } as const;
-export type Frequency = ClosedEnum<typeof Frequency>;
+export type Frequency = OpenEnum<typeof Frequency>;
 
 export const AtsCompensationType = {
   Salary: "SALARY",
@@ -26,7 +30,7 @@ export const AtsCompensationType = {
   Equity: "EQUITY",
   Other: "OTHER",
 } as const;
-export type AtsCompensationType = ClosedEnum<typeof AtsCompensationType>;
+export type AtsCompensationType = OpenEnum<typeof AtsCompensationType>;
 
 export type AtsCompensation = {
   currency?: string | undefined;
@@ -37,12 +41,25 @@ export type AtsCompensation = {
 };
 
 /** @internal */
-export const Frequency$inboundSchema: z.ZodNativeEnum<typeof Frequency> = z
-  .nativeEnum(Frequency);
+export const Frequency$inboundSchema: z.ZodType<
+  Frequency,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(Frequency),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Frequency$outboundSchema: z.ZodNativeEnum<typeof Frequency> =
-  Frequency$inboundSchema;
+export const Frequency$outboundSchema: z.ZodType<
+  Frequency,
+  z.ZodTypeDef,
+  Frequency
+> = z.union([
+  z.nativeEnum(Frequency),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -56,14 +73,25 @@ export namespace Frequency$ {
 }
 
 /** @internal */
-export const AtsCompensationType$inboundSchema: z.ZodNativeEnum<
-  typeof AtsCompensationType
-> = z.nativeEnum(AtsCompensationType);
+export const AtsCompensationType$inboundSchema: z.ZodType<
+  AtsCompensationType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsCompensationType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsCompensationType$outboundSchema: z.ZodNativeEnum<
-  typeof AtsCompensationType
-> = AtsCompensationType$inboundSchema;
+export const AtsCompensationType$outboundSchema: z.ZodType<
+  AtsCompensationType,
+  z.ZodTypeDef,
+  AtsCompensationType
+> = z.union([
+  z.nativeEnum(AtsCompensationType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -10,6 +10,8 @@ let value: CalendarEventRecurrenceFrequency = "DAILY";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"DAILY" | "WEEKLY" | "MONTHLY" | "YEARLY"
+"DAILY" | "WEEKLY" | "MONTHLY" | "YEARLY" | Unrecognized<string>
 ```

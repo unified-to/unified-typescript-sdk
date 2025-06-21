@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -20,7 +24,7 @@ export const CalendarEventRecurrenceFrequency = {
   Monthly: "MONTHLY",
   Yearly: "YEARLY",
 } as const;
-export type CalendarEventRecurrenceFrequency = ClosedEnum<
+export type CalendarEventRecurrenceFrequency = OpenEnum<
   typeof CalendarEventRecurrenceFrequency
 >;
 
@@ -48,14 +52,25 @@ export type CalendarEventRecurrence = {
 };
 
 /** @internal */
-export const CalendarEventRecurrenceFrequency$inboundSchema: z.ZodNativeEnum<
-  typeof CalendarEventRecurrenceFrequency
-> = z.nativeEnum(CalendarEventRecurrenceFrequency);
+export const CalendarEventRecurrenceFrequency$inboundSchema: z.ZodType<
+  CalendarEventRecurrenceFrequency,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CalendarEventRecurrenceFrequency),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodNativeEnum<
-  typeof CalendarEventRecurrenceFrequency
-> = CalendarEventRecurrenceFrequency$inboundSchema;
+export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodType<
+  CalendarEventRecurrenceFrequency,
+  z.ZodTypeDef,
+  CalendarEventRecurrenceFrequency
+> = z.union([
+  z.nativeEnum(CalendarEventRecurrenceFrequency),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

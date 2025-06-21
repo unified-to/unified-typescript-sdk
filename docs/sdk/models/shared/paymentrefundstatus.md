@@ -10,6 +10,8 @@ let value: PaymentRefundStatus = "SUCCEEDED";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"SUCCEEDED" | "PENDING" | "FAILED" | "CANCELED"
+"SUCCEEDED" | "PENDING" | "FAILED" | "CANCELED" | Unrecognized<string>
 ```

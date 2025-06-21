@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -53,7 +57,7 @@ export const HrisMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type HrisMetadataFormat = ClosedEnum<typeof HrisMetadataFormat>;
+export type HrisMetadataFormat = OpenEnum<typeof HrisMetadataFormat>;
 
 export type HrisMetadataSchemasValue52 = {};
 
@@ -661,14 +665,25 @@ export function hrisMetadataExtraDataFromJSON(
 }
 
 /** @internal */
-export const HrisMetadataFormat$inboundSchema: z.ZodNativeEnum<
-  typeof HrisMetadataFormat
-> = z.nativeEnum(HrisMetadataFormat);
+export const HrisMetadataFormat$inboundSchema: z.ZodType<
+  HrisMetadataFormat,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisMetadataFormat),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisMetadataFormat$outboundSchema: z.ZodNativeEnum<
-  typeof HrisMetadataFormat
-> = HrisMetadataFormat$inboundSchema;
+export const HrisMetadataFormat$outboundSchema: z.ZodType<
+  HrisMetadataFormat,
+  z.ZodTypeDef,
+  HrisMetadataFormat
+> = z.union([
+  z.nativeEnum(HrisMetadataFormat),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

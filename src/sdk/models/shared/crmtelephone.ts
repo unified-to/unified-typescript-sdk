@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -15,7 +19,7 @@ export const CrmTelephoneType = {
   Fax: "FAX",
   Mobile: "MOBILE",
 } as const;
-export type CrmTelephoneType = ClosedEnum<typeof CrmTelephoneType>;
+export type CrmTelephoneType = OpenEnum<typeof CrmTelephoneType>;
 
 export type CrmTelephone = {
   telephone: string;
@@ -23,14 +27,25 @@ export type CrmTelephone = {
 };
 
 /** @internal */
-export const CrmTelephoneType$inboundSchema: z.ZodNativeEnum<
-  typeof CrmTelephoneType
-> = z.nativeEnum(CrmTelephoneType);
+export const CrmTelephoneType$inboundSchema: z.ZodType<
+  CrmTelephoneType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CrmTelephoneType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CrmTelephoneType$outboundSchema: z.ZodNativeEnum<
-  typeof CrmTelephoneType
-> = CrmTelephoneType$inboundSchema;
+export const CrmTelephoneType$outboundSchema: z.ZodType<
+  CrmTelephoneType,
+  z.ZodTypeDef,
+  CrmTelephoneType
+> = z.union([
+  z.nativeEnum(CrmTelephoneType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

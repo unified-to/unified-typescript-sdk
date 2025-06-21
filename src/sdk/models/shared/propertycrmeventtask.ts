@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const Priority = {
   Medium: "MEDIUM",
   Low: "LOW",
 } as const;
-export type Priority = ClosedEnum<typeof Priority>;
+export type Priority = OpenEnum<typeof Priority>;
 
 export const PropertyCrmEventTaskStatus = {
   Completed: "COMPLETED",
@@ -22,7 +26,7 @@ export const PropertyCrmEventTaskStatus = {
   WorkInProgress: "WORK_IN_PROGRESS",
   Deferred: "DEFERRED",
 } as const;
-export type PropertyCrmEventTaskStatus = ClosedEnum<
+export type PropertyCrmEventTaskStatus = OpenEnum<
   typeof PropertyCrmEventTaskStatus
 >;
 
@@ -38,12 +42,25 @@ export type PropertyCrmEventTask = {
 };
 
 /** @internal */
-export const Priority$inboundSchema: z.ZodNativeEnum<typeof Priority> = z
-  .nativeEnum(Priority);
+export const Priority$inboundSchema: z.ZodType<
+  Priority,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(Priority),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Priority$outboundSchema: z.ZodNativeEnum<typeof Priority> =
-  Priority$inboundSchema;
+export const Priority$outboundSchema: z.ZodType<
+  Priority,
+  z.ZodTypeDef,
+  Priority
+> = z.union([
+  z.nativeEnum(Priority),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -57,14 +74,25 @@ export namespace Priority$ {
 }
 
 /** @internal */
-export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyCrmEventTaskStatus
-> = z.nativeEnum(PropertyCrmEventTaskStatus);
+export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodType<
+  PropertyCrmEventTaskStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyCrmEventTaskStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyCrmEventTaskStatus
-> = PropertyCrmEventTaskStatus$inboundSchema;
+export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodType<
+  PropertyCrmEventTaskStatus,
+  z.ZodTypeDef,
+  PropertyCrmEventTaskStatus
+> = z.union([
+  z.nativeEnum(PropertyCrmEventTaskStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

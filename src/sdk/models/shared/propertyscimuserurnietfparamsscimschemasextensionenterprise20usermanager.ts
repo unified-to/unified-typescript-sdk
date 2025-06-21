@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -15,7 +19,7 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     Indirect: "indirect",
   } as const;
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType =
-  ClosedEnum<
+  OpenEnum<
     typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
   >;
 
@@ -35,18 +39,30 @@ export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMan
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema:
-  z.ZodNativeEnum<
-    typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
-  > = z.nativeEnum(
+  z.ZodType<
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
-  );
+    z.ZodTypeDef,
+    unknown
+  > = z
+    .union([
+      z.nativeEnum(
+        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+      ),
+      z.string().transform(catchUnrecognizedEnum),
+    ]);
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema:
-  z.ZodNativeEnum<
-    typeof PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
-  > =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema;
+  z.ZodType<
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+    z.ZodTypeDef,
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
+  > = z.union([
+    z.nativeEnum(
+      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+    ),
+    z.string().and(z.custom<Unrecognized<string>>()),
+  ]);
 
 /**
  * @internal

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,13 +18,13 @@ export const HrisTimeoffStatus = {
   Pending: "PENDING",
   Denied: "DENIED",
 } as const;
-export type HrisTimeoffStatus = ClosedEnum<typeof HrisTimeoffStatus>;
+export type HrisTimeoffStatus = OpenEnum<typeof HrisTimeoffStatus>;
 
 export const HrisTimeoffType = {
   Paid: "PAID",
   Unpaid: "UNPAID",
 } as const;
-export type HrisTimeoffType = ClosedEnum<typeof HrisTimeoffType>;
+export type HrisTimeoffType = OpenEnum<typeof HrisTimeoffType>;
 
 export type HrisTimeoff = {
   approvedAt?: Date | undefined;
@@ -39,14 +43,25 @@ export type HrisTimeoff = {
 };
 
 /** @internal */
-export const HrisTimeoffStatus$inboundSchema: z.ZodNativeEnum<
-  typeof HrisTimeoffStatus
-> = z.nativeEnum(HrisTimeoffStatus);
+export const HrisTimeoffStatus$inboundSchema: z.ZodType<
+  HrisTimeoffStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisTimeoffStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisTimeoffStatus$outboundSchema: z.ZodNativeEnum<
-  typeof HrisTimeoffStatus
-> = HrisTimeoffStatus$inboundSchema;
+export const HrisTimeoffStatus$outboundSchema: z.ZodType<
+  HrisTimeoffStatus,
+  z.ZodTypeDef,
+  HrisTimeoffStatus
+> = z.union([
+  z.nativeEnum(HrisTimeoffStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -60,14 +75,25 @@ export namespace HrisTimeoffStatus$ {
 }
 
 /** @internal */
-export const HrisTimeoffType$inboundSchema: z.ZodNativeEnum<
-  typeof HrisTimeoffType
-> = z.nativeEnum(HrisTimeoffType);
+export const HrisTimeoffType$inboundSchema: z.ZodType<
+  HrisTimeoffType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisTimeoffType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisTimeoffType$outboundSchema: z.ZodNativeEnum<
-  typeof HrisTimeoffType
-> = HrisTimeoffType$inboundSchema;
+export const HrisTimeoffType$outboundSchema: z.ZodType<
+  HrisTimeoffType,
+  z.ZodTypeDef,
+  HrisTimeoffType
+> = z.union([
+  z.nativeEnum(HrisTimeoffType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

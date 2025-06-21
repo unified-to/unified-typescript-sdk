@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -14,7 +18,7 @@ export const RepoPullrequestStatus = {
   Approved: "APPROVED",
   Rejected: "REJECTED",
 } as const;
-export type RepoPullrequestStatus = ClosedEnum<typeof RepoPullrequestStatus>;
+export type RepoPullrequestStatus = OpenEnum<typeof RepoPullrequestStatus>;
 
 export type RepoPullrequest = {
   closedAt?: Date | undefined;
@@ -30,14 +34,25 @@ export type RepoPullrequest = {
 };
 
 /** @internal */
-export const RepoPullrequestStatus$inboundSchema: z.ZodNativeEnum<
-  typeof RepoPullrequestStatus
-> = z.nativeEnum(RepoPullrequestStatus);
+export const RepoPullrequestStatus$inboundSchema: z.ZodType<
+  RepoPullrequestStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(RepoPullrequestStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const RepoPullrequestStatus$outboundSchema: z.ZodNativeEnum<
-  typeof RepoPullrequestStatus
-> = RepoPullrequestStatus$inboundSchema;
+export const RepoPullrequestStatus$outboundSchema: z.ZodType<
+  RepoPullrequestStatus,
+  z.ZodTypeDef,
+  RepoPullrequestStatus
+> = z.union([
+  z.nativeEnum(RepoPullrequestStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -3,7 +3,11 @@
  */
 
 import * as z from "zod";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 
 export const PropertyConnectionPermissions = {
   AuthLogin: "auth_login",
@@ -159,19 +163,30 @@ export const PropertyConnectionPermissions = {
   EnrichPersonRead: "enrich_person_read",
   EnrichCompanyRead: "enrich_company_read",
 } as const;
-export type PropertyConnectionPermissions = ClosedEnum<
+export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions
 >;
 
 /** @internal */
-export const PropertyConnectionPermissions$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyConnectionPermissions
-> = z.nativeEnum(PropertyConnectionPermissions);
+export const PropertyConnectionPermissions$inboundSchema: z.ZodType<
+  PropertyConnectionPermissions,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyConnectionPermissions),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyConnectionPermissions$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyConnectionPermissions
-> = PropertyConnectionPermissions$inboundSchema;
+export const PropertyConnectionPermissions$outboundSchema: z.ZodType<
+  PropertyConnectionPermissions,
+  z.ZodTypeDef,
+  PropertyConnectionPermissions
+> = z.union([
+  z.nativeEnum(PropertyConnectionPermissions),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

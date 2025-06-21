@@ -3,7 +3,11 @@
  */
 
 import * as z from "zod";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 
 export const PropertyHrisEmployeeEmployeeRoles = {
   Admin: "ADMIN",
@@ -12,19 +16,30 @@ export const PropertyHrisEmployeeEmployeeRoles = {
   Salesrep: "SALESREP",
   Interviewer: "INTERVIEWER",
 } as const;
-export type PropertyHrisEmployeeEmployeeRoles = ClosedEnum<
+export type PropertyHrisEmployeeEmployeeRoles = OpenEnum<
   typeof PropertyHrisEmployeeEmployeeRoles
 >;
 
 /** @internal */
-export const PropertyHrisEmployeeEmployeeRoles$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyHrisEmployeeEmployeeRoles
-> = z.nativeEnum(PropertyHrisEmployeeEmployeeRoles);
+export const PropertyHrisEmployeeEmployeeRoles$inboundSchema: z.ZodType<
+  PropertyHrisEmployeeEmployeeRoles,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyHrisEmployeeEmployeeRoles$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyHrisEmployeeEmployeeRoles
-> = PropertyHrisEmployeeEmployeeRoles$inboundSchema;
+export const PropertyHrisEmployeeEmployeeRoles$outboundSchema: z.ZodType<
+  PropertyHrisEmployeeEmployeeRoles,
+  z.ZodTypeDef,
+  PropertyHrisEmployeeEmployeeRoles
+> = z.union([
+  z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

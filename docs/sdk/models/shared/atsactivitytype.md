@@ -10,6 +10,8 @@ let value: AtsActivityType = "EMAIL";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"NOTE" | "TASK" | "EMAIL"
+"NOTE" | "TASK" | "EMAIL" | Unrecognized<string>
 ```

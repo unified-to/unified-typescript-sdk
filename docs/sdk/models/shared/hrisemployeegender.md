@@ -10,6 +10,8 @@ let value: HrisEmployeeGender = "INTERSEX";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"MALE" | "FEMALE" | "INTERSEX" | "TRANS" | "NON_BINARY"
+"MALE" | "FEMALE" | "INTERSEX" | "TRANS" | "NON_BINARY" | Unrecognized<string>
 ```

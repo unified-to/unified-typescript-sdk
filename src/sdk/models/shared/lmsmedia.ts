@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,7 +21,7 @@ export const LmsMediaType = {
   Document: "DOCUMENT",
   Other: "OTHER",
 } as const;
-export type LmsMediaType = ClosedEnum<typeof LmsMediaType>;
+export type LmsMediaType = OpenEnum<typeof LmsMediaType>;
 
 export type LmsMedia = {
   description?: string | undefined;
@@ -28,12 +32,25 @@ export type LmsMedia = {
 };
 
 /** @internal */
-export const LmsMediaType$inboundSchema: z.ZodNativeEnum<typeof LmsMediaType> =
-  z.nativeEnum(LmsMediaType);
+export const LmsMediaType$inboundSchema: z.ZodType<
+  LmsMediaType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(LmsMediaType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const LmsMediaType$outboundSchema: z.ZodNativeEnum<typeof LmsMediaType> =
-  LmsMediaType$inboundSchema;
+export const LmsMediaType$outboundSchema: z.ZodType<
+  LmsMediaType,
+  z.ZodTypeDef,
+  LmsMediaType
+> = z.union([
+  z.nativeEnum(LmsMediaType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

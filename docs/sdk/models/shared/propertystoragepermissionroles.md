@@ -10,6 +10,8 @@ let value: PropertyStoragePermissionRoles = "READ";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"OWNER" | "READ" | "WRITE"
+"OWNER" | "READ" | "WRITE" | Unrecognized<string>
 ```

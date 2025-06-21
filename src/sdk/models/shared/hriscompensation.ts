@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -17,7 +21,7 @@ export const HrisCompensationFrequency = {
   Month: "MONTH",
   Week: "WEEK",
 } as const;
-export type HrisCompensationFrequency = ClosedEnum<
+export type HrisCompensationFrequency = OpenEnum<
   typeof HrisCompensationFrequency
 >;
 
@@ -28,7 +32,7 @@ export const HrisCompensationType = {
   Equity: "EQUITY",
   Other: "OTHER",
 } as const;
-export type HrisCompensationType = ClosedEnum<typeof HrisCompensationType>;
+export type HrisCompensationType = OpenEnum<typeof HrisCompensationType>;
 
 export type HrisCompensation = {
   amount?: number | undefined;
@@ -38,14 +42,25 @@ export type HrisCompensation = {
 };
 
 /** @internal */
-export const HrisCompensationFrequency$inboundSchema: z.ZodNativeEnum<
-  typeof HrisCompensationFrequency
-> = z.nativeEnum(HrisCompensationFrequency);
+export const HrisCompensationFrequency$inboundSchema: z.ZodType<
+  HrisCompensationFrequency,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisCompensationFrequency),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisCompensationFrequency$outboundSchema: z.ZodNativeEnum<
-  typeof HrisCompensationFrequency
-> = HrisCompensationFrequency$inboundSchema;
+export const HrisCompensationFrequency$outboundSchema: z.ZodType<
+  HrisCompensationFrequency,
+  z.ZodTypeDef,
+  HrisCompensationFrequency
+> = z.union([
+  z.nativeEnum(HrisCompensationFrequency),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -59,14 +74,25 @@ export namespace HrisCompensationFrequency$ {
 }
 
 /** @internal */
-export const HrisCompensationType$inboundSchema: z.ZodNativeEnum<
-  typeof HrisCompensationType
-> = z.nativeEnum(HrisCompensationType);
+export const HrisCompensationType$inboundSchema: z.ZodType<
+  HrisCompensationType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(HrisCompensationType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const HrisCompensationType$outboundSchema: z.ZodNativeEnum<
-  typeof HrisCompensationType
-> = HrisCompensationType$inboundSchema;
+export const HrisCompensationType$outboundSchema: z.ZodType<
+  HrisCompensationType,
+  z.ZodTypeDef,
+  HrisCompensationType
+> = z.union([
+  z.nativeEnum(HrisCompensationType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

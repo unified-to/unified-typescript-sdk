@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const AtsJobOpeningStatus = {
   Open: "OPEN",
   Closed: "CLOSED",
 } as const;
-export type AtsJobOpeningStatus = ClosedEnum<typeof AtsJobOpeningStatus>;
+export type AtsJobOpeningStatus = OpenEnum<typeof AtsJobOpeningStatus>;
 
 export type AtsJobOpening = {
   applicationId?: string | undefined;
@@ -24,14 +28,25 @@ export type AtsJobOpening = {
 };
 
 /** @internal */
-export const AtsJobOpeningStatus$inboundSchema: z.ZodNativeEnum<
-  typeof AtsJobOpeningStatus
-> = z.nativeEnum(AtsJobOpeningStatus);
+export const AtsJobOpeningStatus$inboundSchema: z.ZodType<
+  AtsJobOpeningStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsJobOpeningStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsJobOpeningStatus$outboundSchema: z.ZodNativeEnum<
-  typeof AtsJobOpeningStatus
-> = AtsJobOpeningStatus$inboundSchema;
+export const AtsJobOpeningStatus$outboundSchema: z.ZodType<
+  AtsJobOpeningStatus,
+  z.ZodTypeDef,
+  AtsJobOpeningStatus
+> = z.union([
+  z.nativeEnum(AtsJobOpeningStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -10,6 +10,8 @@ let value: PropertyHrisEmployeeEmployeeRoles = "MANAGER";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"ADMIN" | "MANAGER" | "RECRUITER" | "SALESREP" | "INTERVIEWER"
+"ADMIN" | "MANAGER" | "RECRUITER" | "SALESREP" | "INTERVIEWER" | Unrecognized<string>
 ```

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -21,7 +25,7 @@ export const Recommendation = {
   Yes: "YES",
   StrongYes: "STRONG_YES",
 } as const;
-export type Recommendation = ClosedEnum<typeof Recommendation>;
+export type Recommendation = OpenEnum<typeof Recommendation>;
 
 export type AtsScorecard = {
   applicationId?: string | undefined;
@@ -39,14 +43,25 @@ export type AtsScorecard = {
 };
 
 /** @internal */
-export const Recommendation$inboundSchema: z.ZodNativeEnum<
-  typeof Recommendation
-> = z.nativeEnum(Recommendation);
+export const Recommendation$inboundSchema: z.ZodType<
+  Recommendation,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(Recommendation),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const Recommendation$outboundSchema: z.ZodNativeEnum<
-  typeof Recommendation
-> = Recommendation$inboundSchema;
+export const Recommendation$outboundSchema: z.ZodType<
+  Recommendation,
+  z.ZodTypeDef,
+  Recommendation
+> = z.union([
+  z.nativeEnum(Recommendation),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -25,9 +29,7 @@ export const PaymentCollectionMethod = {
   SendInvoice: "send_invoice",
   ChargeAutomatically: "charge_automatically",
 } as const;
-export type PaymentCollectionMethod = ClosedEnum<
-  typeof PaymentCollectionMethod
->;
+export type PaymentCollectionMethod = OpenEnum<typeof PaymentCollectionMethod>;
 
 export const AccountingInvoiceStatus = {
   Draft: "DRAFT",
@@ -38,16 +40,14 @@ export const AccountingInvoiceStatus = {
   PartiallyRefunded: "PARTIALLY_REFUNDED",
   Refunded: "REFUNDED",
 } as const;
-export type AccountingInvoiceStatus = ClosedEnum<
-  typeof AccountingInvoiceStatus
->;
+export type AccountingInvoiceStatus = OpenEnum<typeof AccountingInvoiceStatus>;
 
 export const AccountingInvoiceType = {
   Bill: "BILL",
   Invoice: "INVOICE",
   Creditmemo: "CREDITMEMO",
 } as const;
-export type AccountingInvoiceType = ClosedEnum<typeof AccountingInvoiceType>;
+export type AccountingInvoiceType = OpenEnum<typeof AccountingInvoiceType>;
 
 export type AccountingInvoice = {
   attachments?: Array<AccountingAttachment> | undefined;
@@ -81,14 +81,25 @@ export type AccountingInvoice = {
 };
 
 /** @internal */
-export const PaymentCollectionMethod$inboundSchema: z.ZodNativeEnum<
-  typeof PaymentCollectionMethod
-> = z.nativeEnum(PaymentCollectionMethod);
+export const PaymentCollectionMethod$inboundSchema: z.ZodType<
+  PaymentCollectionMethod,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PaymentCollectionMethod),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PaymentCollectionMethod$outboundSchema: z.ZodNativeEnum<
-  typeof PaymentCollectionMethod
-> = PaymentCollectionMethod$inboundSchema;
+export const PaymentCollectionMethod$outboundSchema: z.ZodType<
+  PaymentCollectionMethod,
+  z.ZodTypeDef,
+  PaymentCollectionMethod
+> = z.union([
+  z.nativeEnum(PaymentCollectionMethod),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -102,14 +113,25 @@ export namespace PaymentCollectionMethod$ {
 }
 
 /** @internal */
-export const AccountingInvoiceStatus$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingInvoiceStatus
-> = z.nativeEnum(AccountingInvoiceStatus);
+export const AccountingInvoiceStatus$inboundSchema: z.ZodType<
+  AccountingInvoiceStatus,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingInvoiceStatus),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingInvoiceStatus$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingInvoiceStatus
-> = AccountingInvoiceStatus$inboundSchema;
+export const AccountingInvoiceStatus$outboundSchema: z.ZodType<
+  AccountingInvoiceStatus,
+  z.ZodTypeDef,
+  AccountingInvoiceStatus
+> = z.union([
+  z.nativeEnum(AccountingInvoiceStatus),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
@@ -123,14 +145,25 @@ export namespace AccountingInvoiceStatus$ {
 }
 
 /** @internal */
-export const AccountingInvoiceType$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingInvoiceType
-> = z.nativeEnum(AccountingInvoiceType);
+export const AccountingInvoiceType$inboundSchema: z.ZodType<
+  AccountingInvoiceType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingInvoiceType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingInvoiceType$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingInvoiceType
-> = AccountingInvoiceType$inboundSchema;
+export const AccountingInvoiceType$outboundSchema: z.ZodType<
+  AccountingInvoiceType,
+  z.ZodTypeDef,
+  AccountingInvoiceType
+> = z.union([
+  z.nativeEnum(AccountingInvoiceType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

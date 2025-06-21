@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -22,7 +26,7 @@ export const AtsJobQuestionType = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type AtsJobQuestionType = ClosedEnum<typeof AtsJobQuestionType>;
+export type AtsJobQuestionType = OpenEnum<typeof AtsJobQuestionType>;
 
 export type AtsJobQuestion = {
   description?: string | undefined;
@@ -35,14 +39,25 @@ export type AtsJobQuestion = {
 };
 
 /** @internal */
-export const AtsJobQuestionType$inboundSchema: z.ZodNativeEnum<
-  typeof AtsJobQuestionType
-> = z.nativeEnum(AtsJobQuestionType);
+export const AtsJobQuestionType$inboundSchema: z.ZodType<
+  AtsJobQuestionType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AtsJobQuestionType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AtsJobQuestionType$outboundSchema: z.ZodNativeEnum<
-  typeof AtsJobQuestionType
-> = AtsJobQuestionType$inboundSchema;
+export const AtsJobQuestionType$outboundSchema: z.ZodType<
+  AtsJobQuestionType,
+  z.ZodTypeDef,
+  AtsJobQuestionType
+> = z.union([
+  z.nativeEnum(AtsJobQuestionType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

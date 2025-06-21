@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -12,7 +16,7 @@ export const PropertyScimUserMetaResourceType = {
   User: "User",
   Group: "Group",
 } as const;
-export type PropertyScimUserMetaResourceType = ClosedEnum<
+export type PropertyScimUserMetaResourceType = OpenEnum<
   typeof PropertyScimUserMetaResourceType
 >;
 
@@ -25,14 +29,25 @@ export type PropertyScimUserMeta = {
 };
 
 /** @internal */
-export const PropertyScimUserMetaResourceType$inboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimUserMetaResourceType
-> = z.nativeEnum(PropertyScimUserMetaResourceType);
+export const PropertyScimUserMetaResourceType$inboundSchema: z.ZodType<
+  PropertyScimUserMetaResourceType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(PropertyScimUserMetaResourceType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const PropertyScimUserMetaResourceType$outboundSchema: z.ZodNativeEnum<
-  typeof PropertyScimUserMetaResourceType
-> = PropertyScimUserMetaResourceType$inboundSchema;
+export const PropertyScimUserMetaResourceType$outboundSchema: z.ZodType<
+  PropertyScimUserMetaResourceType,
+  z.ZodTypeDef,
+  PropertyScimUserMetaResourceType
+> = z.union([
+  z.nativeEnum(PropertyScimUserMetaResourceType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

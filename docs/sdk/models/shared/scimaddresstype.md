@@ -10,6 +10,8 @@ let value: ScimAddressType = "home";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"work" | "home" | "other"
+"work" | "home" | "other" | Unrecognized<string>
 ```

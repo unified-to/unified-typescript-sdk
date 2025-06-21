@@ -4,7 +4,11 @@
 
 import * as z from "zod";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -30,7 +34,7 @@ export const CrmEventFormFieldType = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type CrmEventFormFieldType = ClosedEnum<typeof CrmEventFormFieldType>;
+export type CrmEventFormFieldType = OpenEnum<typeof CrmEventFormFieldType>;
 
 export type CrmEventFormField = {
   name?: string | undefined;
@@ -40,14 +44,25 @@ export type CrmEventFormField = {
 };
 
 /** @internal */
-export const CrmEventFormFieldType$inboundSchema: z.ZodNativeEnum<
-  typeof CrmEventFormFieldType
-> = z.nativeEnum(CrmEventFormFieldType);
+export const CrmEventFormFieldType$inboundSchema: z.ZodType<
+  CrmEventFormFieldType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CrmEventFormFieldType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CrmEventFormFieldType$outboundSchema: z.ZodNativeEnum<
-  typeof CrmEventFormFieldType
-> = CrmEventFormFieldType$inboundSchema;
+export const CrmEventFormFieldType$outboundSchema: z.ZodType<
+  CrmEventFormFieldType,
+  z.ZodTypeDef,
+  CrmEventFormFieldType
+> = z.union([
+  z.nativeEnum(CrmEventFormFieldType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

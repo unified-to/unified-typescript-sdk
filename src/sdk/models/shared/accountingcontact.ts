@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -58,7 +62,7 @@ export const TaxExemption = {
   Foreign: "FOREIGN",
   Other: "OTHER",
 } as const;
-export type TaxExemption = ClosedEnum<typeof TaxExemption>;
+export type TaxExemption = OpenEnum<typeof TaxExemption>;
 
 export type AccountingContact = {
   associatedContacts?: Array<AccountingAssociatedContact> | undefined;
@@ -84,12 +88,25 @@ export type AccountingContact = {
 };
 
 /** @internal */
-export const TaxExemption$inboundSchema: z.ZodNativeEnum<typeof TaxExemption> =
-  z.nativeEnum(TaxExemption);
+export const TaxExemption$inboundSchema: z.ZodType<
+  TaxExemption,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(TaxExemption),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const TaxExemption$outboundSchema: z.ZodNativeEnum<typeof TaxExemption> =
-  TaxExemption$inboundSchema;
+export const TaxExemption$outboundSchema: z.ZodType<
+  TaxExemption,
+  z.ZodTypeDef,
+  TaxExemption
+> = z.union([
+  z.nativeEnum(TaxExemption),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

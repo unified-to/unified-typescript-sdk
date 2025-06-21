@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -67,7 +71,7 @@ export const CrmEventType = {
   Form: "FORM",
   PageView: "PAGE_VIEW",
 } as const;
-export type CrmEventType = ClosedEnum<typeof CrmEventType>;
+export type CrmEventType = OpenEnum<typeof CrmEventType>;
 
 /**
  * An event represents an event, activity, or engagement and is always associated with a deal, contact, or company
@@ -118,12 +122,25 @@ export type CrmEvent = {
 };
 
 /** @internal */
-export const CrmEventType$inboundSchema: z.ZodNativeEnum<typeof CrmEventType> =
-  z.nativeEnum(CrmEventType);
+export const CrmEventType$inboundSchema: z.ZodType<
+  CrmEventType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CrmEventType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const CrmEventType$outboundSchema: z.ZodNativeEnum<typeof CrmEventType> =
-  CrmEventType$inboundSchema;
+export const CrmEventType$outboundSchema: z.ZodType<
+  CrmEventType,
+  z.ZodTypeDef,
+  CrmEventType
+> = z.union([
+  z.nativeEnum(CrmEventType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

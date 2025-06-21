@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,7 +28,7 @@ export const MetadataMetadataFormat = {
   Currency: "CURRENCY",
   Url: "URL",
 } as const;
-export type MetadataMetadataFormat = ClosedEnum<typeof MetadataMetadataFormat>;
+export type MetadataMetadataFormat = OpenEnum<typeof MetadataMetadataFormat>;
 
 export type MetadataMetadata = {
   createdAt?: Date | undefined;
@@ -41,14 +45,25 @@ export type MetadataMetadata = {
 };
 
 /** @internal */
-export const MetadataMetadataFormat$inboundSchema: z.ZodNativeEnum<
-  typeof MetadataMetadataFormat
-> = z.nativeEnum(MetadataMetadataFormat);
+export const MetadataMetadataFormat$inboundSchema: z.ZodType<
+  MetadataMetadataFormat,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(MetadataMetadataFormat),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const MetadataMetadataFormat$outboundSchema: z.ZodNativeEnum<
-  typeof MetadataMetadataFormat
-> = MetadataMetadataFormat$inboundSchema;
+export const MetadataMetadataFormat$outboundSchema: z.ZodType<
+  MetadataMetadataFormat,
+  z.ZodTypeDef,
+  MetadataMetadataFormat
+> = z.union([
+  z.nativeEnum(MetadataMetadataFormat),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

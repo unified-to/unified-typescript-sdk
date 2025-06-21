@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -13,7 +17,7 @@ export const ScimUserGroupsType = {
   Direct: "direct",
   Indirect: "indirect",
 } as const;
-export type ScimUserGroupsType = ClosedEnum<typeof ScimUserGroupsType>;
+export type ScimUserGroupsType = OpenEnum<typeof ScimUserGroupsType>;
 
 export type ScimUserGroups = {
   dollarRef?: string | undefined;
@@ -23,14 +27,25 @@ export type ScimUserGroups = {
 };
 
 /** @internal */
-export const ScimUserGroupsType$inboundSchema: z.ZodNativeEnum<
-  typeof ScimUserGroupsType
-> = z.nativeEnum(ScimUserGroupsType);
+export const ScimUserGroupsType$inboundSchema: z.ZodType<
+  ScimUserGroupsType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(ScimUserGroupsType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const ScimUserGroupsType$outboundSchema: z.ZodNativeEnum<
-  typeof ScimUserGroupsType
-> = ScimUserGroupsType$inboundSchema;
+export const ScimUserGroupsType$outboundSchema: z.ZodType<
+  ScimUserGroupsType,
+  z.ZodTypeDef,
+  ScimUserGroupsType
+> = z.union([
+  z.nativeEnum(ScimUserGroupsType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

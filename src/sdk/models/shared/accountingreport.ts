@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -32,7 +36,7 @@ export const AccountingReportType = {
   BalanceSheet: "BALANCE_SHEET",
   ProfitAndLoss: "PROFIT_AND_LOSS",
 } as const;
-export type AccountingReportType = ClosedEnum<typeof AccountingReportType>;
+export type AccountingReportType = OpenEnum<typeof AccountingReportType>;
 
 export type AccountingReport = {
   balanceSheet?: PropertyAccountingReportBalanceSheet | undefined;
@@ -50,14 +54,25 @@ export type AccountingReport = {
 };
 
 /** @internal */
-export const AccountingReportType$inboundSchema: z.ZodNativeEnum<
-  typeof AccountingReportType
-> = z.nativeEnum(AccountingReportType);
+export const AccountingReportType$inboundSchema: z.ZodType<
+  AccountingReportType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(AccountingReportType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const AccountingReportType$outboundSchema: z.ZodNativeEnum<
-  typeof AccountingReportType
-> = AccountingReportType$inboundSchema;
+export const AccountingReportType$outboundSchema: z.ZodType<
+  AccountingReportType,
+  z.ZodTypeDef,
+  AccountingReportType
+> = z.union([
+  z.nativeEnum(AccountingReportType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal

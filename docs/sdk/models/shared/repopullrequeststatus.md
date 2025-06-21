@@ -10,6 +10,8 @@ let value: RepoPullrequestStatus = "APPROVED";
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"PENDING" | "APPROVED" | "REJECTED"
+"PENDING" | "APPROVED" | "REJECTED" | Unrecognized<string>
 ```

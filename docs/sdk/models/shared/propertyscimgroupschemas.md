@@ -11,6 +11,8 @@ let value: PropertyScimGroupSchemas =
 
 ## Values
 
+This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
+
 ```typescript
-"urn:ietf:params:scim:schemas:core:2.0:Group"
+"urn:ietf:params:scim:schemas:core:2.0:Group" | Unrecognized<string>
 ```

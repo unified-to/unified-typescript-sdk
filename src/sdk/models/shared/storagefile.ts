@@ -5,7 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { ClosedEnum } from "../../types/enums.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -19,7 +23,7 @@ export const StorageFileType = {
   File: "FILE",
   Folder: "FOLDER",
 } as const;
-export type StorageFileType = ClosedEnum<typeof StorageFileType>;
+export type StorageFileType = OpenEnum<typeof StorageFileType>;
 
 export type StorageFile = {
   createdAt?: Date | undefined;
@@ -42,14 +46,25 @@ export type StorageFile = {
 };
 
 /** @internal */
-export const StorageFileType$inboundSchema: z.ZodNativeEnum<
-  typeof StorageFileType
-> = z.nativeEnum(StorageFileType);
+export const StorageFileType$inboundSchema: z.ZodType<
+  StorageFileType,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(StorageFileType),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
 
 /** @internal */
-export const StorageFileType$outboundSchema: z.ZodNativeEnum<
-  typeof StorageFileType
-> = StorageFileType$inboundSchema;
+export const StorageFileType$outboundSchema: z.ZodType<
+  StorageFileType,
+  z.ZodTypeDef,
+  StorageFileType
+> = z.union([
+  z.nativeEnum(StorageFileType),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
 
 /**
  * @internal
