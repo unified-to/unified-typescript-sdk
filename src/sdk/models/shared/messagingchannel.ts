@@ -24,6 +24,7 @@ export type MessagingChannel = {
   members?: Array<MessagingMember> | undefined;
   name: string;
   parentChannelId?: string | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updatedAt?: Date | undefined;
   webUrl?: string | undefined;
@@ -45,6 +46,7 @@ export const MessagingChannel$inboundSchema: z.ZodType<
   members: z.array(MessagingMember$inboundSchema).optional(),
   name: z.string(),
   parent_channel_id: z.string().optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -56,6 +58,7 @@ export const MessagingChannel$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_private": "isPrivate",
     "parent_channel_id": "parentChannelId",
+    "parent_id": "parentId",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
   });
@@ -72,6 +75,7 @@ export type MessagingChannel$Outbound = {
   members?: Array<MessagingMember$Outbound> | undefined;
   name: string;
   parent_channel_id?: string | undefined;
+  parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   updated_at?: string | undefined;
   web_url?: string | undefined;
@@ -92,6 +96,7 @@ export const MessagingChannel$outboundSchema: z.ZodType<
   members: z.array(MessagingMember$outboundSchema).optional(),
   name: z.string(),
   parentChannelId: z.string().optional(),
+  parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   webUrl: z.string().optional(),
@@ -102,6 +107,7 @@ export const MessagingChannel$outboundSchema: z.ZodType<
     isActive: "is_active",
     isPrivate: "is_private",
     parentChannelId: "parent_channel_id",
+    parentId: "parent_id",
     updatedAt: "updated_at",
     webUrl: "web_url",
   });
