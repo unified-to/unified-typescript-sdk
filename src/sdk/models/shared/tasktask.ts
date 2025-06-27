@@ -12,6 +12,12 @@ import {
 } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  TaskMetadata,
+  TaskMetadata$inboundSchema,
+  TaskMetadata$Outbound,
+  TaskMetadata$outboundSchema,
+} from "./taskmetadata.js";
 
 export const TaskTaskStatus = {
   Opened: "OPENED",
@@ -33,6 +39,7 @@ export type TaskTask = {
   followerUserIds?: Array<string> | undefined;
   groupIds?: Array<string> | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata> | undefined;
   name?: string | undefined;
   notes?: string | undefined;
   parentId?: string | undefined;
@@ -96,6 +103,7 @@ export const TaskTask$inboundSchema: z.ZodType<
   follower_user_ids: z.array(z.string()).optional(),
   group_ids: z.array(z.string()).optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$inboundSchema).optional(),
   name: z.string().optional(),
   notes: z.string().optional(),
   parent_id: z.string().optional(),
@@ -134,6 +142,7 @@ export type TaskTask$Outbound = {
   follower_user_ids?: Array<string> | undefined;
   group_ids?: Array<string> | undefined;
   id?: string | undefined;
+  metadata?: Array<TaskMetadata$Outbound> | undefined;
   name?: string | undefined;
   notes?: string | undefined;
   parent_id?: string | undefined;
@@ -161,6 +170,7 @@ export const TaskTask$outboundSchema: z.ZodType<
   followerUserIds: z.array(z.string()).optional(),
   groupIds: z.array(z.string()).optional(),
   id: z.string().optional(),
+  metadata: z.array(TaskMetadata$outboundSchema).optional(),
   name: z.string().optional(),
   notes: z.string().optional(),
   parentId: z.string().optional(),

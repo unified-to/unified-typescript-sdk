@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: eefce76fdb52f66af4668d4a91100b69
+  docChecksum: 1ed136fdd156254f45506d66d75335d4
   docVersion: "1.0"
-  speakeasyVersion: 1.568.0
-  generationVersion: 2.632.2
-  releaseVersion: 2.73.1
-  configChecksum: e29ffd8f936ba954340b8b19a79272f3
+  speakeasyVersion: 1.570.2
+  generationVersion: 2.638.5
+  releaseVersion: 2.73.2
+  configChecksum: 62aa5fe04f914a880e510b64d28b9136
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -998,6 +998,28 @@ generatedFiles:
   - docs/sdk/models/shared/storagefiletype.md
   - docs/sdk/models/shared/storagepermission.md
   - docs/sdk/models/shared/taskcomment.md
+  - docs/sdk/models/shared/taskmetadata.md
+  - docs/sdk/models/shared/taskmetadata1.md
+  - docs/sdk/models/shared/taskmetadata2.md
+  - docs/sdk/models/shared/taskmetadata3.md
+  - docs/sdk/models/shared/taskmetadata4.md
+  - docs/sdk/models/shared/taskmetadata5.md
+  - docs/sdk/models/shared/taskmetadataextradata.md
+  - docs/sdk/models/shared/taskmetadataformat.md
+  - docs/sdk/models/shared/taskmetadataschemas1.md
+  - docs/sdk/models/shared/taskmetadataschemas2.md
+  - docs/sdk/models/shared/taskmetadataschemas3.md
+  - docs/sdk/models/shared/taskmetadataschemas4.md
+  - docs/sdk/models/shared/taskmetadataschemas5.md
+  - docs/sdk/models/shared/taskmetadataschemasextradata2.md
+  - docs/sdk/models/shared/taskmetadataschemasextradata22.md
+  - docs/sdk/models/shared/taskmetadataschemasextradata32.md
+  - docs/sdk/models/shared/taskmetadataschemasextradata52.md
+  - docs/sdk/models/shared/taskmetadataschemasvalue2.md
+  - docs/sdk/models/shared/taskmetadataschemasvalue32.md
+  - docs/sdk/models/shared/taskmetadataschemasvalue42.md
+  - docs/sdk/models/shared/taskmetadataschemasvalue52.md
+  - docs/sdk/models/shared/taskmetadatavalue.md
   - docs/sdk/models/shared/taskproject.md
   - docs/sdk/models/shared/tasktask.md
   - docs/sdk/models/shared/tasktaskstatus.md
@@ -2755,6 +2777,7 @@ generatedFiles:
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
   - src/sdk/models/shared/taskcomment.ts
+  - src/sdk/models/shared/taskmetadata.ts
   - src/sdk/models/shared/taskproject.ts
   - src/sdk/models/shared/tasktask.ts
   - src/sdk/models/shared/ticketingcustomer.ts

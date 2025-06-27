@@ -14,10 +14,14 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.73.1
+  version: 2.73.2
   additionalDependencies:
     dependencies: {}
     devDependencies: {}

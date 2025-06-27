@@ -203,6 +203,7 @@ export * from "./security.js";
 export * from "./storagefile.js";
 export * from "./storagepermission.js";
 export * from "./taskcomment.js";
+export * from "./taskmetadata.js";
 export * from "./taskproject.js";
 export * from "./tasktask.js";
 export * from "./ticketingcustomer.js";
