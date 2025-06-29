@@ -5,6 +5,7 @@
 import { atsCreateAtsActivity } from "../funcs/atsCreateAtsActivity.js";
 import { atsCreateAtsApplication } from "../funcs/atsCreateAtsApplication.js";
 import { atsCreateAtsCandidate } from "../funcs/atsCreateAtsCandidate.js";
+import { atsCreateAtsCompany } from "../funcs/atsCreateAtsCompany.js";
 import { atsCreateAtsDocument } from "../funcs/atsCreateAtsDocument.js";
 import { atsCreateAtsInterview } from "../funcs/atsCreateAtsInterview.js";
 import { atsCreateAtsJob } from "../funcs/atsCreateAtsJob.js";
@@ -29,6 +30,7 @@ import { atsListAtsScorecards } from "../funcs/atsListAtsScorecards.js";
 import { atsPatchAtsActivity } from "../funcs/atsPatchAtsActivity.js";
 import { atsPatchAtsApplication } from "../funcs/atsPatchAtsApplication.js";
 import { atsPatchAtsCandidate } from "../funcs/atsPatchAtsCandidate.js";
+import { atsPatchAtsCompany } from "../funcs/atsPatchAtsCompany.js";
 import { atsPatchAtsDocument } from "../funcs/atsPatchAtsDocument.js";
 import { atsPatchAtsInterview } from "../funcs/atsPatchAtsInterview.js";
 import { atsPatchAtsJob } from "../funcs/atsPatchAtsJob.js";
@@ -36,6 +38,7 @@ import { atsPatchAtsScorecard } from "../funcs/atsPatchAtsScorecard.js";
 import { atsRemoveAtsActivity } from "../funcs/atsRemoveAtsActivity.js";
 import { atsRemoveAtsApplication } from "../funcs/atsRemoveAtsApplication.js";
 import { atsRemoveAtsCandidate } from "../funcs/atsRemoveAtsCandidate.js";
+import { atsRemoveAtsCompany } from "../funcs/atsRemoveAtsCompany.js";
 import { atsRemoveAtsDocument } from "../funcs/atsRemoveAtsDocument.js";
 import { atsRemoveAtsInterview } from "../funcs/atsRemoveAtsInterview.js";
 import { atsRemoveAtsJob } from "../funcs/atsRemoveAtsJob.js";
@@ -43,6 +46,7 @@ import { atsRemoveAtsScorecard } from "../funcs/atsRemoveAtsScorecard.js";
 import { atsUpdateAtsActivity } from "../funcs/atsUpdateAtsActivity.js";
 import { atsUpdateAtsApplication } from "../funcs/atsUpdateAtsApplication.js";
 import { atsUpdateAtsCandidate } from "../funcs/atsUpdateAtsCandidate.js";
+import { atsUpdateAtsCompany } from "../funcs/atsUpdateAtsCompany.js";
 import { atsUpdateAtsDocument } from "../funcs/atsUpdateAtsDocument.js";
 import { atsUpdateAtsInterview } from "../funcs/atsUpdateAtsInterview.js";
 import { atsUpdateAtsJob } from "../funcs/atsUpdateAtsJob.js";
@@ -89,6 +93,20 @@ export class Ats extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsCandidate> {
     return unwrapAsync(atsCreateAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create a company
+   */
+  async createAtsCompany(
+    request: operations.CreateAtsCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCompany> {
+    return unwrapAsync(atsCreateAtsCompany(
       this,
       request,
       options,
@@ -432,6 +450,20 @@ export class Ats extends ClientSDK {
   }
 
   /**
+   * Update a company
+   */
+  async patchAtsCompany(
+    request: operations.PatchAtsCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCompany> {
+    return unwrapAsync(atsPatchAtsCompany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a document
    */
   async patchAtsDocument(
@@ -530,6 +562,20 @@ export class Ats extends ClientSDK {
   }
 
   /**
+   * Remove a company
+   */
+  async removeAtsCompany(
+    request: operations.RemoveAtsCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAtsCompanyResponse | undefined> {
+    return unwrapAsync(atsRemoveAtsCompany(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove a document
    */
   async removeAtsDocument(
@@ -621,6 +667,20 @@ export class Ats extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AtsCandidate> {
     return unwrapAsync(atsUpdateAtsCandidate(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a company
+   */
+  async updateAtsCompany(
+    request: operations.UpdateAtsCompanyRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AtsCompany> {
+    return unwrapAsync(atsUpdateAtsCompany(
       this,
       request,
       options,

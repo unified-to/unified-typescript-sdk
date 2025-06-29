@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 1ed136fdd156254f45506d66d75335d4
+  docChecksum: 30f30cd0f1e19f64975bb2a6da82b7fc
   docVersion: "1.0"
-  speakeasyVersion: 1.570.2
-  generationVersion: 2.638.5
-  releaseVersion: 2.73.2
-  configChecksum: 62aa5fe04f914a880e510b64d28b9136
+  speakeasyVersion: 1.571.1
+  generationVersion: 2.640.2
+  releaseVersion: 2.73.3
+  configChecksum: 7a712842155df553c6ccb2dde971dd42
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -49,6 +49,7 @@ generatedFiles:
   - docs/sdk/models/operations/createatsactivityrequest.md
   - docs/sdk/models/operations/createatsapplicationrequest.md
   - docs/sdk/models/operations/createatscandidaterequest.md
+  - docs/sdk/models/operations/createatscompanyrequest.md
   - docs/sdk/models/operations/createatsdocumentrequest.md
   - docs/sdk/models/operations/createatsinterviewrequest.md
   - docs/sdk/models/operations/createatsjobrequest.md
@@ -291,6 +292,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchatsactivityrequest.md
   - docs/sdk/models/operations/patchatsapplicationrequest.md
   - docs/sdk/models/operations/patchatscandidaterequest.md
+  - docs/sdk/models/operations/patchatscompanyrequest.md
   - docs/sdk/models/operations/patchatsdocumentrequest.md
   - docs/sdk/models/operations/patchatsinterviewrequest.md
   - docs/sdk/models/operations/patchatsjobrequest.md
@@ -377,6 +379,8 @@ generatedFiles:
   - docs/sdk/models/operations/removeatsapplicationresponse.md
   - docs/sdk/models/operations/removeatscandidaterequest.md
   - docs/sdk/models/operations/removeatscandidateresponse.md
+  - docs/sdk/models/operations/removeatscompanyrequest.md
+  - docs/sdk/models/operations/removeatscompanyresponse.md
   - docs/sdk/models/operations/removeatsdocumentrequest.md
   - docs/sdk/models/operations/removeatsdocumentresponse.md
   - docs/sdk/models/operations/removeatsinterviewrequest.md
@@ -504,6 +508,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateatsactivityrequest.md
   - docs/sdk/models/operations/updateatsapplicationrequest.md
   - docs/sdk/models/operations/updateatscandidaterequest.md
+  - docs/sdk/models/operations/updateatscompanyrequest.md
   - docs/sdk/models/operations/updateatsdocumentrequest.md
   - docs/sdk/models/operations/updateatsinterviewrequest.md
   - docs/sdk/models/operations/updateatsjobrequest.md
@@ -1196,6 +1201,7 @@ generatedFiles:
   - src/funcs/atsCreateAtsActivity.ts
   - src/funcs/atsCreateAtsApplication.ts
   - src/funcs/atsCreateAtsCandidate.ts
+  - src/funcs/atsCreateAtsCompany.ts
   - src/funcs/atsCreateAtsDocument.ts
   - src/funcs/atsCreateAtsInterview.ts
   - src/funcs/atsCreateAtsJob.ts
@@ -1220,6 +1226,7 @@ generatedFiles:
   - src/funcs/atsPatchAtsActivity.ts
   - src/funcs/atsPatchAtsApplication.ts
   - src/funcs/atsPatchAtsCandidate.ts
+  - src/funcs/atsPatchAtsCompany.ts
   - src/funcs/atsPatchAtsDocument.ts
   - src/funcs/atsPatchAtsInterview.ts
   - src/funcs/atsPatchAtsJob.ts
@@ -1227,6 +1234,7 @@ generatedFiles:
   - src/funcs/atsRemoveAtsActivity.ts
   - src/funcs/atsRemoveAtsApplication.ts
   - src/funcs/atsRemoveAtsCandidate.ts
+  - src/funcs/atsRemoveAtsCompany.ts
   - src/funcs/atsRemoveAtsDocument.ts
   - src/funcs/atsRemoveAtsInterview.ts
   - src/funcs/atsRemoveAtsJob.ts
@@ -1234,6 +1242,7 @@ generatedFiles:
   - src/funcs/atsUpdateAtsActivity.ts
   - src/funcs/atsUpdateAtsApplication.ts
   - src/funcs/atsUpdateAtsCandidate.ts
+  - src/funcs/atsUpdateAtsCompany.ts
   - src/funcs/atsUpdateAtsDocument.ts
   - src/funcs/atsUpdateAtsInterview.ts
   - src/funcs/atsUpdateAtsJob.ts
@@ -1672,6 +1681,7 @@ generatedFiles:
   - src/mcp-server/tools/atsCreateAtsActivity.ts
   - src/mcp-server/tools/atsCreateAtsApplication.ts
   - src/mcp-server/tools/atsCreateAtsCandidate.ts
+  - src/mcp-server/tools/atsCreateAtsCompany.ts
   - src/mcp-server/tools/atsCreateAtsDocument.ts
   - src/mcp-server/tools/atsCreateAtsInterview.ts
   - src/mcp-server/tools/atsCreateAtsJob.ts
@@ -1696,6 +1706,7 @@ generatedFiles:
   - src/mcp-server/tools/atsPatchAtsActivity.ts
   - src/mcp-server/tools/atsPatchAtsApplication.ts
   - src/mcp-server/tools/atsPatchAtsCandidate.ts
+  - src/mcp-server/tools/atsPatchAtsCompany.ts
   - src/mcp-server/tools/atsPatchAtsDocument.ts
   - src/mcp-server/tools/atsPatchAtsInterview.ts
   - src/mcp-server/tools/atsPatchAtsJob.ts
@@ -1703,6 +1714,7 @@ generatedFiles:
   - src/mcp-server/tools/atsRemoveAtsActivity.ts
   - src/mcp-server/tools/atsRemoveAtsApplication.ts
   - src/mcp-server/tools/atsRemoveAtsCandidate.ts
+  - src/mcp-server/tools/atsRemoveAtsCompany.ts
   - src/mcp-server/tools/atsRemoveAtsDocument.ts
   - src/mcp-server/tools/atsRemoveAtsInterview.ts
   - src/mcp-server/tools/atsRemoveAtsJob.ts
@@ -1710,6 +1722,7 @@ generatedFiles:
   - src/mcp-server/tools/atsUpdateAtsActivity.ts
   - src/mcp-server/tools/atsUpdateAtsApplication.ts
   - src/mcp-server/tools/atsUpdateAtsCandidate.ts
+  - src/mcp-server/tools/atsUpdateAtsCompany.ts
   - src/mcp-server/tools/atsUpdateAtsDocument.ts
   - src/mcp-server/tools/atsUpdateAtsInterview.ts
   - src/mcp-server/tools/atsUpdateAtsJob.ts
@@ -2141,6 +2154,7 @@ generatedFiles:
   - src/sdk/models/operations/createatsactivity.ts
   - src/sdk/models/operations/createatsapplication.ts
   - src/sdk/models/operations/createatscandidate.ts
+  - src/sdk/models/operations/createatscompany.ts
   - src/sdk/models/operations/createatsdocument.ts
   - src/sdk/models/operations/createatsinterview.ts
   - src/sdk/models/operations/createatsjob.ts
@@ -2377,6 +2391,7 @@ generatedFiles:
   - src/sdk/models/operations/patchatsactivity.ts
   - src/sdk/models/operations/patchatsapplication.ts
   - src/sdk/models/operations/patchatscandidate.ts
+  - src/sdk/models/operations/patchatscompany.ts
   - src/sdk/models/operations/patchatsdocument.ts
   - src/sdk/models/operations/patchatsinterview.ts
   - src/sdk/models/operations/patchatsjob.ts
@@ -2447,6 +2462,7 @@ generatedFiles:
   - src/sdk/models/operations/removeatsactivity.ts
   - src/sdk/models/operations/removeatsapplication.ts
   - src/sdk/models/operations/removeatscandidate.ts
+  - src/sdk/models/operations/removeatscompany.ts
   - src/sdk/models/operations/removeatsdocument.ts
   - src/sdk/models/operations/removeatsinterview.ts
   - src/sdk/models/operations/removeatsjob.ts
@@ -2515,6 +2531,7 @@ generatedFiles:
   - src/sdk/models/operations/updateatsactivity.ts
   - src/sdk/models/operations/updateatsapplication.ts
   - src/sdk/models/operations/updateatscandidate.ts
+  - src/sdk/models/operations/updateatscompany.ts
   - src/sdk/models/operations/updateatsdocument.ts
   - src/sdk/models/operations/updateatsinterview.ts
   - src/sdk/models/operations/updateatsjob.ts
@@ -6878,5 +6895,43 @@ examples:
       responses:
         "200":
           application/json: {}
+  createAtsCompany:
+    speakeasy-default-create-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  patchAtsCompany:
+    speakeasy-default-patch-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeAtsCompany:
+    speakeasy-default-remove-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAtsCompany:
+    speakeasy-default-update-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}

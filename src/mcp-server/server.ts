@@ -62,6 +62,7 @@ import { tool$accountingUpdateAccountingTransaction } from "./tools/accountingUp
 import { tool$atsCreateAtsActivity } from "./tools/atsCreateAtsActivity.js";
 import { tool$atsCreateAtsApplication } from "./tools/atsCreateAtsApplication.js";
 import { tool$atsCreateAtsCandidate } from "./tools/atsCreateAtsCandidate.js";
+import { tool$atsCreateAtsCompany } from "./tools/atsCreateAtsCompany.js";
 import { tool$atsCreateAtsDocument } from "./tools/atsCreateAtsDocument.js";
 import { tool$atsCreateAtsInterview } from "./tools/atsCreateAtsInterview.js";
 import { tool$atsCreateAtsJob } from "./tools/atsCreateAtsJob.js";
@@ -86,6 +87,7 @@ import { tool$atsListAtsScorecards } from "./tools/atsListAtsScorecards.js";
 import { tool$atsPatchAtsActivity } from "./tools/atsPatchAtsActivity.js";
 import { tool$atsPatchAtsApplication } from "./tools/atsPatchAtsApplication.js";
 import { tool$atsPatchAtsCandidate } from "./tools/atsPatchAtsCandidate.js";
+import { tool$atsPatchAtsCompany } from "./tools/atsPatchAtsCompany.js";
 import { tool$atsPatchAtsDocument } from "./tools/atsPatchAtsDocument.js";
 import { tool$atsPatchAtsInterview } from "./tools/atsPatchAtsInterview.js";
 import { tool$atsPatchAtsJob } from "./tools/atsPatchAtsJob.js";
@@ -93,6 +95,7 @@ import { tool$atsPatchAtsScorecard } from "./tools/atsPatchAtsScorecard.js";
 import { tool$atsRemoveAtsActivity } from "./tools/atsRemoveAtsActivity.js";
 import { tool$atsRemoveAtsApplication } from "./tools/atsRemoveAtsApplication.js";
 import { tool$atsRemoveAtsCandidate } from "./tools/atsRemoveAtsCandidate.js";
+import { tool$atsRemoveAtsCompany } from "./tools/atsRemoveAtsCompany.js";
 import { tool$atsRemoveAtsDocument } from "./tools/atsRemoveAtsDocument.js";
 import { tool$atsRemoveAtsInterview } from "./tools/atsRemoveAtsInterview.js";
 import { tool$atsRemoveAtsJob } from "./tools/atsRemoveAtsJob.js";
@@ -100,6 +103,7 @@ import { tool$atsRemoveAtsScorecard } from "./tools/atsRemoveAtsScorecard.js";
 import { tool$atsUpdateAtsActivity } from "./tools/atsUpdateAtsActivity.js";
 import { tool$atsUpdateAtsApplication } from "./tools/atsUpdateAtsApplication.js";
 import { tool$atsUpdateAtsCandidate } from "./tools/atsUpdateAtsCandidate.js";
+import { tool$atsUpdateAtsCompany } from "./tools/atsUpdateAtsCompany.js";
 import { tool$atsUpdateAtsDocument } from "./tools/atsUpdateAtsDocument.js";
 import { tool$atsUpdateAtsInterview } from "./tools/atsUpdateAtsInterview.js";
 import { tool$atsUpdateAtsJob } from "./tools/atsUpdateAtsJob.js";
@@ -468,7 +472,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.73.2",
+    version: "2.73.3",
   });
 
   const client = new UnifiedToCore({
@@ -565,6 +569,7 @@ export function createMCPServer(deps: {
   tool(tool$atsCreateAtsActivity);
   tool(tool$atsCreateAtsApplication);
   tool(tool$atsCreateAtsCandidate);
+  tool(tool$atsCreateAtsCompany);
   tool(tool$atsCreateAtsDocument);
   tool(tool$atsCreateAtsInterview);
   tool(tool$atsCreateAtsJob);
@@ -589,6 +594,7 @@ export function createMCPServer(deps: {
   tool(tool$atsPatchAtsActivity);
   tool(tool$atsPatchAtsApplication);
   tool(tool$atsPatchAtsCandidate);
+  tool(tool$atsPatchAtsCompany);
   tool(tool$atsPatchAtsDocument);
   tool(tool$atsPatchAtsInterview);
   tool(tool$atsPatchAtsJob);
@@ -596,6 +602,7 @@ export function createMCPServer(deps: {
   tool(tool$atsRemoveAtsActivity);
   tool(tool$atsRemoveAtsApplication);
   tool(tool$atsRemoveAtsCandidate);
+  tool(tool$atsRemoveAtsCompany);
   tool(tool$atsRemoveAtsDocument);
   tool(tool$atsRemoveAtsInterview);
   tool(tool$atsRemoveAtsJob);
@@ -603,6 +610,7 @@ export function createMCPServer(deps: {
   tool(tool$atsUpdateAtsActivity);
   tool(tool$atsUpdateAtsApplication);
   tool(tool$atsUpdateAtsCandidate);
+  tool(tool$atsUpdateAtsCompany);
   tool(tool$atsUpdateAtsDocument);
   tool(tool$atsUpdateAtsInterview);
   tool(tool$atsUpdateAtsJob);

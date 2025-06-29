@@ -540,6 +540,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsCreateAtsApplication`](docs/sdks/ats/README.md#createatsapplication) - Create an application
 - [`atsCreateAtsCandidate`](docs/sdks/ats/README.md#createatscandidate) - Create a candidate
 - [`atsCreateAtsCandidate`](docs/sdks/candidate/README.md#createatscandidate) - Create a candidate
+- [`atsCreateAtsCompany`](docs/sdks/ats/README.md#createatscompany) - Create a company
+- [`atsCreateAtsCompany`](docs/sdks/company/README.md#createatscompany) - Create a company
 - [`atsCreateAtsDocument`](docs/sdks/ats/README.md#createatsdocument) - Create a document
 - [`atsCreateAtsDocument`](docs/sdks/document/README.md#createatsdocument) - Create a document
 - [`atsCreateAtsInterview`](docs/sdks/ats/README.md#createatsinterview) - Create an interview
@@ -588,6 +590,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsPatchAtsApplication`](docs/sdks/ats/README.md#patchatsapplication) - Update an application
 - [`atsPatchAtsCandidate`](docs/sdks/ats/README.md#patchatscandidate) - Update a candidate
 - [`atsPatchAtsCandidate`](docs/sdks/candidate/README.md#patchatscandidate) - Update a candidate
+- [`atsPatchAtsCompany`](docs/sdks/ats/README.md#patchatscompany) - Update a company
+- [`atsPatchAtsCompany`](docs/sdks/company/README.md#patchatscompany) - Update a company
 - [`atsPatchAtsDocument`](docs/sdks/ats/README.md#patchatsdocument) - Update a document
 - [`atsPatchAtsDocument`](docs/sdks/document/README.md#patchatsdocument) - Update a document
 - [`atsPatchAtsInterview`](docs/sdks/ats/README.md#patchatsinterview) - Update an interview
@@ -602,6 +606,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsRemoveAtsApplication`](docs/sdks/ats/README.md#removeatsapplication) - Remove an application
 - [`atsRemoveAtsCandidate`](docs/sdks/ats/README.md#removeatscandidate) - Remove a candidate
 - [`atsRemoveAtsCandidate`](docs/sdks/candidate/README.md#removeatscandidate) - Remove a candidate
+- [`atsRemoveAtsCompany`](docs/sdks/ats/README.md#removeatscompany) - Remove a company
+- [`atsRemoveAtsCompany`](docs/sdks/company/README.md#removeatscompany) - Remove a company
 - [`atsRemoveAtsDocument`](docs/sdks/ats/README.md#removeatsdocument) - Remove a document
 - [`atsRemoveAtsDocument`](docs/sdks/document/README.md#removeatsdocument) - Remove a document
 - [`atsRemoveAtsInterview`](docs/sdks/ats/README.md#removeatsinterview) - Remove an interview
@@ -616,6 +622,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`atsUpdateAtsApplication`](docs/sdks/ats/README.md#updateatsapplication) - Update an application
 - [`atsUpdateAtsCandidate`](docs/sdks/ats/README.md#updateatscandidate) - Update a candidate
 - [`atsUpdateAtsCandidate`](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
+- [`atsUpdateAtsCompany`](docs/sdks/ats/README.md#updateatscompany) - Update a company
+- [`atsUpdateAtsCompany`](docs/sdks/company/README.md#updateatscompany) - Update a company
 - [`atsUpdateAtsDocument`](docs/sdks/ats/README.md#updateatsdocument) - Update a document
 - [`atsUpdateAtsDocument`](docs/sdks/document/README.md#updateatsdocument) - Update a document
 - [`atsUpdateAtsInterview`](docs/sdks/ats/README.md#updateatsinterview) - Update an interview
