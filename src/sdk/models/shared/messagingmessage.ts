@@ -20,6 +20,12 @@ import {
   MessagingMember$outboundSchema,
 } from "./messagingmember.js";
 import {
+  MessagingReaction,
+  MessagingReaction$inboundSchema,
+  MessagingReaction$Outbound,
+  MessagingReaction$outboundSchema,
+} from "./messagingreaction.js";
+import {
   PropertyMessagingMessageAuthorMember,
   PropertyMessagingMessageAuthorMember$inboundSchema,
   PropertyMessagingMessageAuthorMember$Outbound,
@@ -45,6 +51,7 @@ export type MessagingMessage = {
   messageMarkdown?: string | undefined;
   parentMessageId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reactions?: Array<MessagingReaction> | undefined;
   reference?: string | undefined;
   rootMessageId?: string | undefined;
   subject?: string | undefined;
@@ -74,6 +81,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   message_markdown: z.string().optional(),
   parent_message_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  reactions: z.array(MessagingReaction$inboundSchema).optional(),
   reference: z.string().optional(),
   root_message_id: z.string().optional(),
   subject: z.string().optional(),
@@ -116,6 +124,7 @@ export type MessagingMessage$Outbound = {
   message_markdown?: string | undefined;
   parent_message_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reactions?: Array<MessagingReaction$Outbound> | undefined;
   reference?: string | undefined;
   root_message_id?: string | undefined;
   subject?: string | undefined;
@@ -144,6 +153,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   messageMarkdown: z.string().optional(),
   parentMessageId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  reactions: z.array(MessagingReaction$outboundSchema).optional(),
   reference: z.string().optional(),
   rootMessageId: z.string().optional(),
   subject: z.string().optional(),
