@@ -14,6 +14,9 @@ import {
   AccountingProfitAndLossSubcategory$outboundSchema,
 } from "./accountingprofitandlosssubcategory.js";
 
+/**
+ * @deprecated
+ */
 export type AccountingProfitAndLossCategory = {
   amount?: number | undefined;
   name?: string | undefined;

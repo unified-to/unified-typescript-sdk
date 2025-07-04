@@ -1,5 +1,7 @@
 # AccountingProfitAndLossCategory
 
+@deprecated
+
 ## Example Usage
 
 ```typescript

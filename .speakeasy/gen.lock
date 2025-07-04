@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: b9a9d44d0d49d0a08964e6f3ef075270
+  docChecksum: cfcf5e019d822f732c2d765252728b21
   docVersion: "1.0"
-  speakeasyVersion: 1.575.1
-  generationVersion: 2.648.1
-  releaseVersion: 2.73.4
-  configChecksum: d95bbb139b4b6f823f4b67bf6c3865b4
+  speakeasyVersion: 1.575.4
+  generationVersion: 2.648.7
+  releaseVersion: 2.73.5
+  configChecksum: 6da6dfd1cca8dd5f4334e33a42b916d5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.11
+    core: 3.21.13
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -593,7 +593,9 @@ generatedFiles:
   - docs/sdk/models/shared/accountingorderstatus.md
   - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
+  - docs/sdk/models/shared/accountingprofitandlossaccount.md
   - docs/sdk/models/shared/accountingprofitandlosscategory.md
+  - docs/sdk/models/shared/accountingprofitandlosssection.md
   - docs/sdk/models/shared/accountingprofitandlosssubcategory.md
   - docs/sdk/models/shared/accountingreport.md
   - docs/sdk/models/shared/accountingreporttype.md
@@ -2607,7 +2609,9 @@ generatedFiles:
   - src/sdk/models/shared/accountinglineitem.ts
   - src/sdk/models/shared/accountingorder.ts
   - src/sdk/models/shared/accountingorganization.ts
+  - src/sdk/models/shared/accountingprofitandlossaccount.ts
   - src/sdk/models/shared/accountingprofitandlosscategory.ts
+  - src/sdk/models/shared/accountingprofitandlosssection.ts
   - src/sdk/models/shared/accountingprofitandlosssubcategory.ts
   - src/sdk/models/shared/accountingreport.ts
   - src/sdk/models/shared/accountingtaxrate.ts
