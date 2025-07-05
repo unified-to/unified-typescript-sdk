@@ -11,6 +11,8 @@ import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
+import { Balancesheet } from "./balancesheet.js";
+import { Bill } from "./bill.js";
 import { Branch } from "./branch.js";
 import { Busy } from "./busy.js";
 import { Calendar } from "./calendar.js";
@@ -26,6 +28,7 @@ import { Company } from "./company.js";
 import { Connection } from "./connection.js";
 import { Contact } from "./contact.js";
 import { Course } from "./course.js";
+import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
 import { Deal } from "./deal.js";
@@ -70,15 +73,18 @@ import { Payout } from "./payout.js";
 import { Payslip } from "./payslip.js";
 import { Person } from "./person.js";
 import { Pipeline } from "./pipeline.js";
+import { Profitloss } from "./profitloss.js";
 import { Project } from "./project.js";
 import { Prompt } from "./prompt.js";
 import { Pullrequest } from "./pullrequest.js";
+import { Purchaseorder } from "./purchaseorder.js";
 import { Recording } from "./recording.js";
 import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
 import { Review } from "./review.js";
+import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
@@ -92,6 +98,7 @@ import { Ticketing } from "./ticketing.js";
 import { Timeoff } from "./timeoff.js";
 import { Timeshift } from "./timeshift.js";
 import { Transaction } from "./transaction.js";
+import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
 import { User } from "./user.js";
@@ -108,9 +115,24 @@ export class UnifiedTo extends ClientSDK {
     return (this._account ??= new Account(this._options));
   }
 
+  private _balancesheet?: Balancesheet;
+  get balancesheet(): Balancesheet {
+    return (this._balancesheet ??= new Balancesheet(this._options));
+  }
+
+  private _bill?: Bill;
+  get bill(): Bill {
+    return (this._bill ??= new Bill(this._options));
+  }
+
   private _contact?: Contact;
   get contact(): Contact {
     return (this._contact ??= new Contact(this._options));
+  }
+
+  private _creditmemo?: Creditmemo;
+  get creditmemo(): Creditmemo {
+    return (this._creditmemo ??= new Creditmemo(this._options));
   }
 
   private _invoice?: Invoice;
@@ -133,9 +155,24 @@ export class UnifiedTo extends ClientSDK {
     return (this._organization ??= new Organization(this._options));
   }
 
+  private _profitloss?: Profitloss;
+  get profitloss(): Profitloss {
+    return (this._profitloss ??= new Profitloss(this._options));
+  }
+
+  private _purchaseorder?: Purchaseorder;
+  get purchaseorder(): Purchaseorder {
+    return (this._purchaseorder ??= new Purchaseorder(this._options));
+  }
+
   private _report?: Report;
   get report(): Report {
     return (this._report ??= new Report(this._options));
+  }
+
+  private _salesorder?: Salesorder;
+  get salesorder(): Salesorder {
+    return (this._salesorder ??= new Salesorder(this._options));
   }
 
   private _taxrate?: Taxrate;
@@ -146,6 +183,11 @@ export class UnifiedTo extends ClientSDK {
   private _transaction?: Transaction;
   get transaction(): Transaction {
     return (this._transaction ??= new Transaction(this._options));
+  }
+
+  private _trialbalance?: Trialbalance;
+  get trialbalance(): Trialbalance {
+    return (this._trialbalance ??= new Trialbalance(this._options));
   }
 
   private _ats?: Ats;

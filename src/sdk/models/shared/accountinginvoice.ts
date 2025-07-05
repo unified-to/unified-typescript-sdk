@@ -25,11 +25,13 @@ import {
   AccountingLineitem$outboundSchema,
 } from "./accountinglineitem.js";
 
-export const PaymentCollectionMethod = {
+export const AccountingInvoicePaymentCollectionMethod = {
   SendInvoice: "send_invoice",
   ChargeAutomatically: "charge_automatically",
 } as const;
-export type PaymentCollectionMethod = OpenEnum<typeof PaymentCollectionMethod>;
+export type AccountingInvoicePaymentCollectionMethod = OpenEnum<
+  typeof AccountingInvoicePaymentCollectionMethod
+>;
 
 export const AccountingInvoiceStatus = {
   Draft: "DRAFT",
@@ -65,7 +67,9 @@ export type AccountingInvoice = {
   notes?: string | undefined;
   paidAmount?: number | undefined;
   paidAt?: Date | undefined;
-  paymentCollectionMethod?: PaymentCollectionMethod | undefined;
+  paymentCollectionMethod?:
+    | AccountingInvoicePaymentCollectionMethod
+    | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
   refundAmount?: number | undefined;
@@ -81,23 +85,23 @@ export type AccountingInvoice = {
 };
 
 /** @internal */
-export const PaymentCollectionMethod$inboundSchema: z.ZodType<
-  PaymentCollectionMethod,
+export const AccountingInvoicePaymentCollectionMethod$inboundSchema: z.ZodType<
+  AccountingInvoicePaymentCollectionMethod,
   z.ZodTypeDef,
   unknown
 > = z
   .union([
-    z.nativeEnum(PaymentCollectionMethod),
+    z.nativeEnum(AccountingInvoicePaymentCollectionMethod),
     z.string().transform(catchUnrecognizedEnum),
   ]);
 
 /** @internal */
-export const PaymentCollectionMethod$outboundSchema: z.ZodType<
-  PaymentCollectionMethod,
+export const AccountingInvoicePaymentCollectionMethod$outboundSchema: z.ZodType<
+  AccountingInvoicePaymentCollectionMethod,
   z.ZodTypeDef,
-  PaymentCollectionMethod
+  AccountingInvoicePaymentCollectionMethod
 > = z.union([
-  z.nativeEnum(PaymentCollectionMethod),
+  z.nativeEnum(AccountingInvoicePaymentCollectionMethod),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
@@ -105,11 +109,13 @@ export const PaymentCollectionMethod$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace PaymentCollectionMethod$ {
-  /** @deprecated use `PaymentCollectionMethod$inboundSchema` instead. */
-  export const inboundSchema = PaymentCollectionMethod$inboundSchema;
-  /** @deprecated use `PaymentCollectionMethod$outboundSchema` instead. */
-  export const outboundSchema = PaymentCollectionMethod$outboundSchema;
+export namespace AccountingInvoicePaymentCollectionMethod$ {
+  /** @deprecated use `AccountingInvoicePaymentCollectionMethod$inboundSchema` instead. */
+  export const inboundSchema =
+    AccountingInvoicePaymentCollectionMethod$inboundSchema;
+  /** @deprecated use `AccountingInvoicePaymentCollectionMethod$outboundSchema` instead. */
+  export const outboundSchema =
+    AccountingInvoicePaymentCollectionMethod$outboundSchema;
 }
 
 /** @internal */
@@ -203,7 +209,8 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   paid_amount: z.number().optional(),
   paid_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  payment_collection_method: PaymentCollectionMethod$inboundSchema.optional(),
+  payment_collection_method:
+    AccountingInvoicePaymentCollectionMethod$inboundSchema.optional(),
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
@@ -295,7 +302,8 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   notes: z.string().optional(),
   paidAmount: z.number().optional(),
   paidAt: z.date().transform(v => v.toISOString()).optional(),
-  paymentCollectionMethod: PaymentCollectionMethod$outboundSchema.optional(),
+  paymentCollectionMethod:
+    AccountingInvoicePaymentCollectionMethod$outboundSchema.optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
   refundAmount: z.number().optional(),

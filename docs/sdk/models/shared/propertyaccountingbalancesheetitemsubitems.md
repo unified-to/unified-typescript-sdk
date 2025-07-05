@@ -1,11 +1,11 @@
-# PropertyAccountingBalanceSheetItemSubItems
+# PropertyAccountingBalancesheetItemSubItems
 
 ## Example Usage
 
 ```typescript
-import { PropertyAccountingBalanceSheetItemSubItems } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { PropertyAccountingBalancesheetItemSubItems } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: PropertyAccountingBalanceSheetItemSubItems = {};
+let value: PropertyAccountingBalancesheetItemSubItems = {};
 ```
 
 ## Fields

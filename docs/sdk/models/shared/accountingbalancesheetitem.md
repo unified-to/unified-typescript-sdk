@@ -1,11 +1,11 @@
-# AccountingBalanceSheetItem
+# AccountingBalancesheetItem
 
 ## Example Usage
 
 ```typescript
-import { AccountingBalanceSheetItem } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { AccountingBalancesheetItem } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingBalanceSheetItem = {};
+let value: AccountingBalancesheetItem = {};
 ```
 
 ## Fields
@@ -15,4 +15,4 @@ let value: AccountingBalanceSheetItem = {};
 | `accountId`                                                                                                                     | *string*                                                                                                                        | :heavy_minus_sign:                                                                                                              | N/A                                                                                                                             |
 | `amount`                                                                                                                        | *number*                                                                                                                        | :heavy_minus_sign:                                                                                                              | N/A                                                                                                                             |
 | `name`                                                                                                                          | *string*                                                                                                                        | :heavy_minus_sign:                                                                                                              | N/A                                                                                                                             |
-| `subItems`                                                                                                                      | [shared.PropertyAccountingBalanceSheetItemSubItems](../../../sdk/models/shared/propertyaccountingbalancesheetitemsubitems.md)[] | :heavy_minus_sign:                                                                                                              | N/A                                                                                                                             |
+| `subItems`                                                                                                                      | [shared.PropertyAccountingBalancesheetItemSubItems](../../../sdk/models/shared/propertyaccountingbalancesheetitemsubitems.md)[] | :heavy_minus_sign:                                                                                                              | N/A                                                                                                                             |

@@ -7,62 +7,62 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type PropertyAccountingBalanceSheetItemSubItems = {};
+export type PropertyAccountingBalancesheetItemSubItems = {};
 
 /** @internal */
-export const PropertyAccountingBalanceSheetItemSubItems$inboundSchema:
-  z.ZodType<PropertyAccountingBalanceSheetItemSubItems, z.ZodTypeDef, unknown> =
+export const PropertyAccountingBalancesheetItemSubItems$inboundSchema:
+  z.ZodType<PropertyAccountingBalancesheetItemSubItems, z.ZodTypeDef, unknown> =
     z.object({});
 
 /** @internal */
-export type PropertyAccountingBalanceSheetItemSubItems$Outbound = {};
+export type PropertyAccountingBalancesheetItemSubItems$Outbound = {};
 
 /** @internal */
-export const PropertyAccountingBalanceSheetItemSubItems$outboundSchema:
+export const PropertyAccountingBalancesheetItemSubItems$outboundSchema:
   z.ZodType<
-    PropertyAccountingBalanceSheetItemSubItems$Outbound,
+    PropertyAccountingBalancesheetItemSubItems$Outbound,
     z.ZodTypeDef,
-    PropertyAccountingBalanceSheetItemSubItems
+    PropertyAccountingBalancesheetItemSubItems
   > = z.object({});
 
 /**
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace PropertyAccountingBalanceSheetItemSubItems$ {
-  /** @deprecated use `PropertyAccountingBalanceSheetItemSubItems$inboundSchema` instead. */
+export namespace PropertyAccountingBalancesheetItemSubItems$ {
+  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$inboundSchema` instead. */
   export const inboundSchema =
-    PropertyAccountingBalanceSheetItemSubItems$inboundSchema;
-  /** @deprecated use `PropertyAccountingBalanceSheetItemSubItems$outboundSchema` instead. */
+    PropertyAccountingBalancesheetItemSubItems$inboundSchema;
+  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$outboundSchema` instead. */
   export const outboundSchema =
-    PropertyAccountingBalanceSheetItemSubItems$outboundSchema;
-  /** @deprecated use `PropertyAccountingBalanceSheetItemSubItems$Outbound` instead. */
-  export type Outbound = PropertyAccountingBalanceSheetItemSubItems$Outbound;
+    PropertyAccountingBalancesheetItemSubItems$outboundSchema;
+  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$Outbound` instead. */
+  export type Outbound = PropertyAccountingBalancesheetItemSubItems$Outbound;
 }
 
-export function propertyAccountingBalanceSheetItemSubItemsToJSON(
-  propertyAccountingBalanceSheetItemSubItems:
-    PropertyAccountingBalanceSheetItemSubItems,
+export function propertyAccountingBalancesheetItemSubItemsToJSON(
+  propertyAccountingBalancesheetItemSubItems:
+    PropertyAccountingBalancesheetItemSubItems,
 ): string {
   return JSON.stringify(
-    PropertyAccountingBalanceSheetItemSubItems$outboundSchema.parse(
-      propertyAccountingBalanceSheetItemSubItems,
+    PropertyAccountingBalancesheetItemSubItems$outboundSchema.parse(
+      propertyAccountingBalancesheetItemSubItems,
     ),
   );
 }
 
-export function propertyAccountingBalanceSheetItemSubItemsFromJSON(
+export function propertyAccountingBalancesheetItemSubItemsFromJSON(
   jsonString: string,
 ): SafeParseResult<
-  PropertyAccountingBalanceSheetItemSubItems,
+  PropertyAccountingBalancesheetItemSubItems,
   SDKValidationError
 > {
   return safeParse(
     jsonString,
     (x) =>
-      PropertyAccountingBalanceSheetItemSubItems$inboundSchema.parse(
+      PropertyAccountingBalancesheetItemSubItems$inboundSchema.parse(
         JSON.parse(x),
       ),
-    `Failed to parse 'PropertyAccountingBalanceSheetItemSubItems' from JSON`,
+    `Failed to parse 'PropertyAccountingBalancesheetItemSubItems' from JSON`,
   );
 }

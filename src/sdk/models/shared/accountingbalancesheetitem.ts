@@ -8,29 +8,29 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  PropertyAccountingBalanceSheetItemSubItems,
-  PropertyAccountingBalanceSheetItemSubItems$inboundSchema,
-  PropertyAccountingBalanceSheetItemSubItems$Outbound,
-  PropertyAccountingBalanceSheetItemSubItems$outboundSchema,
+  PropertyAccountingBalancesheetItemSubItems,
+  PropertyAccountingBalancesheetItemSubItems$inboundSchema,
+  PropertyAccountingBalancesheetItemSubItems$Outbound,
+  PropertyAccountingBalancesheetItemSubItems$outboundSchema,
 } from "./propertyaccountingbalancesheetitemsubitems.js";
 
-export type AccountingBalanceSheetItem = {
+export type AccountingBalancesheetItem = {
   accountId?: string | undefined;
   amount?: number | undefined;
   name?: string | undefined;
-  subItems?: Array<PropertyAccountingBalanceSheetItemSubItems> | undefined;
+  subItems?: Array<PropertyAccountingBalancesheetItemSubItems> | undefined;
 };
 
 /** @internal */
-export const AccountingBalanceSheetItem$inboundSchema: z.ZodType<
-  AccountingBalanceSheetItem,
+export const AccountingBalancesheetItem$inboundSchema: z.ZodType<
+  AccountingBalancesheetItem,
   z.ZodTypeDef,
   unknown
 > = z.object({
   account_id: z.string().optional(),
   amount: z.number().optional(),
   name: z.string().optional(),
-  sub_items: z.array(PropertyAccountingBalanceSheetItemSubItems$inboundSchema)
+  sub_items: z.array(PropertyAccountingBalancesheetItemSubItems$inboundSchema)
     .optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -40,25 +40,25 @@ export const AccountingBalanceSheetItem$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountingBalanceSheetItem$Outbound = {
+export type AccountingBalancesheetItem$Outbound = {
   account_id?: string | undefined;
   amount?: number | undefined;
   name?: string | undefined;
   sub_items?:
-    | Array<PropertyAccountingBalanceSheetItemSubItems$Outbound>
+    | Array<PropertyAccountingBalancesheetItemSubItems$Outbound>
     | undefined;
 };
 
 /** @internal */
-export const AccountingBalanceSheetItem$outboundSchema: z.ZodType<
-  AccountingBalanceSheetItem$Outbound,
+export const AccountingBalancesheetItem$outboundSchema: z.ZodType<
+  AccountingBalancesheetItem$Outbound,
   z.ZodTypeDef,
-  AccountingBalanceSheetItem
+  AccountingBalancesheetItem
 > = z.object({
   accountId: z.string().optional(),
   amount: z.number().optional(),
   name: z.string().optional(),
-  subItems: z.array(PropertyAccountingBalanceSheetItemSubItems$outboundSchema)
+  subItems: z.array(PropertyAccountingBalancesheetItemSubItems$outboundSchema)
     .optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -71,29 +71,29 @@ export const AccountingBalanceSheetItem$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountingBalanceSheetItem$ {
-  /** @deprecated use `AccountingBalanceSheetItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingBalanceSheetItem$inboundSchema;
-  /** @deprecated use `AccountingBalanceSheetItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingBalanceSheetItem$outboundSchema;
-  /** @deprecated use `AccountingBalanceSheetItem$Outbound` instead. */
-  export type Outbound = AccountingBalanceSheetItem$Outbound;
+export namespace AccountingBalancesheetItem$ {
+  /** @deprecated use `AccountingBalancesheetItem$inboundSchema` instead. */
+  export const inboundSchema = AccountingBalancesheetItem$inboundSchema;
+  /** @deprecated use `AccountingBalancesheetItem$outboundSchema` instead. */
+  export const outboundSchema = AccountingBalancesheetItem$outboundSchema;
+  /** @deprecated use `AccountingBalancesheetItem$Outbound` instead. */
+  export type Outbound = AccountingBalancesheetItem$Outbound;
 }
 
-export function accountingBalanceSheetItemToJSON(
-  accountingBalanceSheetItem: AccountingBalanceSheetItem,
+export function accountingBalancesheetItemToJSON(
+  accountingBalancesheetItem: AccountingBalancesheetItem,
 ): string {
   return JSON.stringify(
-    AccountingBalanceSheetItem$outboundSchema.parse(accountingBalanceSheetItem),
+    AccountingBalancesheetItem$outboundSchema.parse(accountingBalancesheetItem),
   );
 }
 
-export function accountingBalanceSheetItemFromJSON(
+export function accountingBalancesheetItemFromJSON(
   jsonString: string,
-): SafeParseResult<AccountingBalanceSheetItem, SDKValidationError> {
+): SafeParseResult<AccountingBalancesheetItem, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountingBalanceSheetItem$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountingBalanceSheetItem' from JSON`,
+    (x) => AccountingBalancesheetItem$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingBalancesheetItem' from JSON`,
   );
 }

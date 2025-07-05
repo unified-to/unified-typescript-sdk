@@ -8,15 +8,15 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AccountingTrialBalanceSubItem = {
+export type AccountingTrialbalanceSubItem = {
   accountId?: string | undefined;
   accountName?: string | undefined;
   amount?: number | undefined;
 };
 
 /** @internal */
-export const AccountingTrialBalanceSubItem$inboundSchema: z.ZodType<
-  AccountingTrialBalanceSubItem,
+export const AccountingTrialbalanceSubItem$inboundSchema: z.ZodType<
+  AccountingTrialbalanceSubItem,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -31,17 +31,17 @@ export const AccountingTrialBalanceSubItem$inboundSchema: z.ZodType<
 });
 
 /** @internal */
-export type AccountingTrialBalanceSubItem$Outbound = {
+export type AccountingTrialbalanceSubItem$Outbound = {
   account_id?: string | undefined;
   account_name?: string | undefined;
   amount?: number | undefined;
 };
 
 /** @internal */
-export const AccountingTrialBalanceSubItem$outboundSchema: z.ZodType<
-  AccountingTrialBalanceSubItem$Outbound,
+export const AccountingTrialbalanceSubItem$outboundSchema: z.ZodType<
+  AccountingTrialbalanceSubItem$Outbound,
   z.ZodTypeDef,
-  AccountingTrialBalanceSubItem
+  AccountingTrialbalanceSubItem
 > = z.object({
   accountId: z.string().optional(),
   accountName: z.string().optional(),
@@ -57,31 +57,31 @@ export const AccountingTrialBalanceSubItem$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace AccountingTrialBalanceSubItem$ {
-  /** @deprecated use `AccountingTrialBalanceSubItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingTrialBalanceSubItem$inboundSchema;
-  /** @deprecated use `AccountingTrialBalanceSubItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingTrialBalanceSubItem$outboundSchema;
-  /** @deprecated use `AccountingTrialBalanceSubItem$Outbound` instead. */
-  export type Outbound = AccountingTrialBalanceSubItem$Outbound;
+export namespace AccountingTrialbalanceSubItem$ {
+  /** @deprecated use `AccountingTrialbalanceSubItem$inboundSchema` instead. */
+  export const inboundSchema = AccountingTrialbalanceSubItem$inboundSchema;
+  /** @deprecated use `AccountingTrialbalanceSubItem$outboundSchema` instead. */
+  export const outboundSchema = AccountingTrialbalanceSubItem$outboundSchema;
+  /** @deprecated use `AccountingTrialbalanceSubItem$Outbound` instead. */
+  export type Outbound = AccountingTrialbalanceSubItem$Outbound;
 }
 
-export function accountingTrialBalanceSubItemToJSON(
-  accountingTrialBalanceSubItem: AccountingTrialBalanceSubItem,
+export function accountingTrialbalanceSubItemToJSON(
+  accountingTrialbalanceSubItem: AccountingTrialbalanceSubItem,
 ): string {
   return JSON.stringify(
-    AccountingTrialBalanceSubItem$outboundSchema.parse(
-      accountingTrialBalanceSubItem,
+    AccountingTrialbalanceSubItem$outboundSchema.parse(
+      accountingTrialbalanceSubItem,
     ),
   );
 }
 
-export function accountingTrialBalanceSubItemFromJSON(
+export function accountingTrialbalanceSubItemFromJSON(
   jsonString: string,
-): SafeParseResult<AccountingTrialBalanceSubItem, SDKValidationError> {
+): SafeParseResult<AccountingTrialbalanceSubItem, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => AccountingTrialBalanceSubItem$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AccountingTrialBalanceSubItem' from JSON`,
+    (x) => AccountingTrialbalanceSubItem$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AccountingTrialbalanceSubItem' from JSON`,
   );
 }

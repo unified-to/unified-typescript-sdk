@@ -8,17 +8,25 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AccountingBalanceSheetItem,
-  AccountingBalanceSheetItem$inboundSchema,
-  AccountingBalanceSheetItem$Outbound,
-  AccountingBalanceSheetItem$outboundSchema,
+  AccountingBalancesheetItem,
+  AccountingBalancesheetItem$inboundSchema,
+  AccountingBalancesheetItem$Outbound,
+  AccountingBalancesheetItem$outboundSchema,
 } from "./accountingbalancesheetitem.js";
 
 export type PropertyAccountingReportBalanceSheet = {
-  assets?: Array<AccountingBalanceSheetItem> | undefined;
-  equity?: Array<AccountingBalanceSheetItem> | undefined;
-  liabilities?: Array<AccountingBalanceSheetItem> | undefined;
+  assets?: Array<AccountingBalancesheetItem> | undefined;
+  createdAt?: Date | undefined;
+  currency?: string | undefined;
+  endAt?: Date | undefined;
+  equity?: Array<AccountingBalancesheetItem> | undefined;
+  id?: string | undefined;
+  liabilities?: Array<AccountingBalancesheetItem> | undefined;
+  name?: string | undefined;
   netAssetsAmount?: number | undefined;
+  raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
+  updatedAt?: Date | undefined;
 };
 
 /** @internal */
@@ -27,22 +35,46 @@ export const PropertyAccountingReportBalanceSheet$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  assets: z.array(AccountingBalanceSheetItem$inboundSchema).optional(),
-  equity: z.array(AccountingBalanceSheetItem$inboundSchema).optional(),
-  liabilities: z.array(AccountingBalanceSheetItem$inboundSchema).optional(),
+  assets: z.array(AccountingBalancesheetItem$inboundSchema).optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  currency: z.string().optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  equity: z.array(AccountingBalancesheetItem$inboundSchema).optional(),
+  id: z.string().optional(),
+  liabilities: z.array(AccountingBalancesheetItem$inboundSchema).optional(),
+  name: z.string().optional(),
   net_assets_amount: z.number().optional(),
+  raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "created_at": "createdAt",
+    "end_at": "endAt",
     "net_assets_amount": "netAssetsAmount",
+    "start_at": "startAt",
+    "updated_at": "updatedAt",
   });
 });
 
 /** @internal */
 export type PropertyAccountingReportBalanceSheet$Outbound = {
-  assets?: Array<AccountingBalanceSheetItem$Outbound> | undefined;
-  equity?: Array<AccountingBalanceSheetItem$Outbound> | undefined;
-  liabilities?: Array<AccountingBalanceSheetItem$Outbound> | undefined;
+  assets?: Array<AccountingBalancesheetItem$Outbound> | undefined;
+  created_at?: string | undefined;
+  currency?: string | undefined;
+  end_at?: string | undefined;
+  equity?: Array<AccountingBalancesheetItem$Outbound> | undefined;
+  id?: string | undefined;
+  liabilities?: Array<AccountingBalancesheetItem$Outbound> | undefined;
+  name?: string | undefined;
   net_assets_amount?: number | undefined;
+  raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
+  updated_at?: string | undefined;
 };
 
 /** @internal */
@@ -51,13 +83,25 @@ export const PropertyAccountingReportBalanceSheet$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PropertyAccountingReportBalanceSheet
 > = z.object({
-  assets: z.array(AccountingBalanceSheetItem$outboundSchema).optional(),
-  equity: z.array(AccountingBalanceSheetItem$outboundSchema).optional(),
-  liabilities: z.array(AccountingBalanceSheetItem$outboundSchema).optional(),
+  assets: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
+  equity: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
+  id: z.string().optional(),
+  liabilities: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
+  name: z.string().optional(),
   netAssetsAmount: z.number().optional(),
+  raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    createdAt: "created_at",
+    endAt: "end_at",
     netAssetsAmount: "net_assets_amount",
+    startAt: "start_at",
+    updatedAt: "updated_at",
   });
 });
 

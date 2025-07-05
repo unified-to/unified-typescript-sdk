@@ -1,11 +1,11 @@
-# AccountingTrialBalanceSubItem
+# AccountingTrialbalanceSubItem
 
 ## Example Usage
 
 ```typescript
-import { AccountingTrialBalanceSubItem } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { AccountingTrialbalanceSubItem } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AccountingTrialBalanceSubItem = {};
+let value: AccountingTrialbalanceSubItem = {};
 ```
 
 ## Fields

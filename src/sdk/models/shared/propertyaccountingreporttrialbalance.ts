@@ -8,16 +8,24 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  AccountingTrialBalanceSubItem,
-  AccountingTrialBalanceSubItem$inboundSchema,
-  AccountingTrialBalanceSubItem$Outbound,
-  AccountingTrialBalanceSubItem$outboundSchema,
+  AccountingTrialbalanceSubItem,
+  AccountingTrialbalanceSubItem$inboundSchema,
+  AccountingTrialbalanceSubItem$Outbound,
+  AccountingTrialbalanceSubItem$outboundSchema,
 } from "./accountingtrialbalancesubitem.js";
 
 export type PropertyAccountingReportTrialBalance = {
-  subItems?: Array<AccountingTrialBalanceSubItem> | undefined;
+  createdAt?: Date | undefined;
+  currency?: string | undefined;
+  endAt?: Date | undefined;
+  id?: string | undefined;
+  name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
+  subItems?: Array<AccountingTrialbalanceSubItem> | undefined;
   totalCreditAmount?: number | undefined;
   totalDebitAmount?: number | undefined;
+  updatedAt?: Date | undefined;
 };
 
 /** @internal */
@@ -26,22 +34,46 @@ export const PropertyAccountingReportTrialBalance$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  sub_items: z.array(AccountingTrialBalanceSubItem$inboundSchema).optional(),
+  created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  currency: z.string().optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  id: z.string().optional(),
+  name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  sub_items: z.array(AccountingTrialbalanceSubItem$inboundSchema).optional(),
   total_credit_amount: z.number().optional(),
   total_debit_amount: z.number().optional(),
+  updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "created_at": "createdAt",
+    "end_at": "endAt",
+    "start_at": "startAt",
     "sub_items": "subItems",
     "total_credit_amount": "totalCreditAmount",
     "total_debit_amount": "totalDebitAmount",
+    "updated_at": "updatedAt",
   });
 });
 
 /** @internal */
 export type PropertyAccountingReportTrialBalance$Outbound = {
-  sub_items?: Array<AccountingTrialBalanceSubItem$Outbound> | undefined;
+  created_at?: string | undefined;
+  currency?: string | undefined;
+  end_at?: string | undefined;
+  id?: string | undefined;
+  name?: string | undefined;
+  raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
+  sub_items?: Array<AccountingTrialbalanceSubItem$Outbound> | undefined;
   total_credit_amount?: number | undefined;
   total_debit_amount?: number | undefined;
+  updated_at?: string | undefined;
 };
 
 /** @internal */
@@ -50,14 +82,26 @@ export const PropertyAccountingReportTrialBalance$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PropertyAccountingReportTrialBalance
 > = z.object({
-  subItems: z.array(AccountingTrialBalanceSubItem$outboundSchema).optional(),
+  createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
+  id: z.string().optional(),
+  name: z.string().optional(),
+  raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
+  subItems: z.array(AccountingTrialbalanceSubItem$outboundSchema).optional(),
   totalCreditAmount: z.number().optional(),
   totalDebitAmount: z.number().optional(),
+  updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    createdAt: "created_at",
+    endAt: "end_at",
+    startAt: "start_at",
     subItems: "sub_items",
     totalCreditAmount: "total_credit_amount",
     totalDebitAmount: "total_debit_amount",
+    updatedAt: "updated_at",
   });
 });
 

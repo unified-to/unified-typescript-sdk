@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: cfcf5e019d822f732c2d765252728b21
+  docChecksum: df14941bc85aac484869c35ad39aa806
   docVersion: "1.0"
-  speakeasyVersion: 1.575.4
+  speakeasyVersion: 1.575.5
   generationVersion: 2.648.7
-  releaseVersion: 2.73.5
-  configChecksum: 6da6dfd1cca8dd5f4334e33a42b916d5
+  releaseVersion: 2.73.6
+  configChecksum: 525659bce52cc3f84ff000b31961877d
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -40,10 +40,14 @@ generatedFiles:
   - docs/lib/utils/retryconfig.md
   - docs/sdk/models/operations/categories.md
   - docs/sdk/models/operations/createaccountingaccountrequest.md
+  - docs/sdk/models/operations/createaccountingbillrequest.md
   - docs/sdk/models/operations/createaccountingcontactrequest.md
+  - docs/sdk/models/operations/createaccountingcreditmemorequest.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountingjournalrequest.md
   - docs/sdk/models/operations/createaccountingorderrequest.md
+  - docs/sdk/models/operations/createaccountingpurchaseorderrequest.md
+  - docs/sdk/models/operations/createaccountingsalesorderrequest.md
   - docs/sdk/models/operations/createaccountingtaxraterequest.md
   - docs/sdk/models/operations/createaccountingtransactionrequest.md
   - docs/sdk/models/operations/createatsactivityrequest.md
@@ -114,14 +118,21 @@ generatedFiles:
   - docs/sdk/models/operations/createucrecordingrequest.md
   - docs/sdk/models/operations/createunifiedwebhookrequest.md
   - docs/sdk/models/operations/getaccountingaccountrequest.md
+  - docs/sdk/models/operations/getaccountingbalancesheetrequest.md
+  - docs/sdk/models/operations/getaccountingbillrequest.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
+  - docs/sdk/models/operations/getaccountingcreditmemorequest.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
   - docs/sdk/models/operations/getaccountingjournalrequest.md
   - docs/sdk/models/operations/getaccountingorderrequest.md
   - docs/sdk/models/operations/getaccountingorganizationrequest.md
+  - docs/sdk/models/operations/getaccountingprofitlossrequest.md
+  - docs/sdk/models/operations/getaccountingpurchaseorderrequest.md
   - docs/sdk/models/operations/getaccountingreportrequest.md
+  - docs/sdk/models/operations/getaccountingsalesorderrequest.md
   - docs/sdk/models/operations/getaccountingtaxraterequest.md
   - docs/sdk/models/operations/getaccountingtransactionrequest.md
+  - docs/sdk/models/operations/getaccountingtrialbalancerequest.md
   - docs/sdk/models/operations/getatsactivityrequest.md
   - docs/sdk/models/operations/getatsapplicationrequest.md
   - docs/sdk/models/operations/getatscandidaterequest.md
@@ -193,14 +204,21 @@ generatedFiles:
   - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
   - docs/sdk/models/operations/getunifiedwebhookrequest.md
   - docs/sdk/models/operations/listaccountingaccountsrequest.md
+  - docs/sdk/models/operations/listaccountingbalancesheetsrequest.md
+  - docs/sdk/models/operations/listaccountingbillsrequest.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
+  - docs/sdk/models/operations/listaccountingcreditmemoesrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
   - docs/sdk/models/operations/listaccountingjournalsrequest.md
   - docs/sdk/models/operations/listaccountingordersrequest.md
   - docs/sdk/models/operations/listaccountingorganizationsrequest.md
+  - docs/sdk/models/operations/listaccountingprofitlossesrequest.md
+  - docs/sdk/models/operations/listaccountingpurchaseordersrequest.md
   - docs/sdk/models/operations/listaccountingreportsrequest.md
+  - docs/sdk/models/operations/listaccountingsalesordersrequest.md
   - docs/sdk/models/operations/listaccountingtaxratesrequest.md
   - docs/sdk/models/operations/listaccountingtransactionsrequest.md
+  - docs/sdk/models/operations/listaccountingtrialbalancesrequest.md
   - docs/sdk/models/operations/listatsactivitiesrequest.md
   - docs/sdk/models/operations/listatsapplicationsrequest.md
   - docs/sdk/models/operations/listatsapplicationstatusesrequest.md
@@ -283,10 +301,14 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedissuesrequest.md
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/patchaccountingaccountrequest.md
+  - docs/sdk/models/operations/patchaccountingbillrequest.md
   - docs/sdk/models/operations/patchaccountingcontactrequest.md
+  - docs/sdk/models/operations/patchaccountingcreditmemorequest.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountingjournalrequest.md
   - docs/sdk/models/operations/patchaccountingorderrequest.md
+  - docs/sdk/models/operations/patchaccountingpurchaseorderrequest.md
+  - docs/sdk/models/operations/patchaccountingsalesorderrequest.md
   - docs/sdk/models/operations/patchaccountingtaxraterequest.md
   - docs/sdk/models/operations/patchaccountingtransactionrequest.md
   - docs/sdk/models/operations/patchatsactivityrequest.md
@@ -361,14 +383,22 @@ generatedFiles:
   - docs/sdk/models/operations/queryparamcategories.md
   - docs/sdk/models/operations/removeaccountingaccountrequest.md
   - docs/sdk/models/operations/removeaccountingaccountresponse.md
+  - docs/sdk/models/operations/removeaccountingbillrequest.md
+  - docs/sdk/models/operations/removeaccountingbillresponse.md
   - docs/sdk/models/operations/removeaccountingcontactrequest.md
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
+  - docs/sdk/models/operations/removeaccountingcreditmemorequest.md
+  - docs/sdk/models/operations/removeaccountingcreditmemoresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
   - docs/sdk/models/operations/removeaccountingjournalrequest.md
   - docs/sdk/models/operations/removeaccountingjournalresponse.md
   - docs/sdk/models/operations/removeaccountingorderrequest.md
   - docs/sdk/models/operations/removeaccountingorderresponse.md
+  - docs/sdk/models/operations/removeaccountingpurchaseorderrequest.md
+  - docs/sdk/models/operations/removeaccountingpurchaseorderresponse.md
+  - docs/sdk/models/operations/removeaccountingsalesorderrequest.md
+  - docs/sdk/models/operations/removeaccountingsalesorderresponse.md
   - docs/sdk/models/operations/removeaccountingtaxraterequest.md
   - docs/sdk/models/operations/removeaccountingtaxrateresponse.md
   - docs/sdk/models/operations/removeaccountingtransactionrequest.md
@@ -499,10 +529,14 @@ generatedFiles:
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookresponse.md
   - docs/sdk/models/operations/updateaccountingaccountrequest.md
+  - docs/sdk/models/operations/updateaccountingbillrequest.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
+  - docs/sdk/models/operations/updateaccountingcreditmemorequest.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountingjournalrequest.md
   - docs/sdk/models/operations/updateaccountingorderrequest.md
+  - docs/sdk/models/operations/updateaccountingpurchaseorderrequest.md
+  - docs/sdk/models/operations/updateaccountingsalesorderrequest.md
   - docs/sdk/models/operations/updateaccountingtaxraterequest.md
   - docs/sdk/models/operations/updateaccountingtransactionrequest.md
   - docs/sdk/models/operations/updateatsactivityrequest.md
@@ -577,13 +611,20 @@ generatedFiles:
   - docs/sdk/models/shared/accountingaccount.md
   - docs/sdk/models/shared/accountingassociatedcontact.md
   - docs/sdk/models/shared/accountingattachment.md
+  - docs/sdk/models/shared/accountingbalancesheet.md
   - docs/sdk/models/shared/accountingbalancesheetitem.md
+  - docs/sdk/models/shared/accountingbill.md
+  - docs/sdk/models/shared/accountingbillstatus.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
+  - docs/sdk/models/shared/accountingcreditmemo.md
+  - docs/sdk/models/shared/accountingcreditmemopaymentcollectionmethod.md
+  - docs/sdk/models/shared/accountingcreditmemostatus.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/accountingemailtype.md
   - docs/sdk/models/shared/accountinginvoice.md
+  - docs/sdk/models/shared/accountinginvoicepaymentcollectionmethod.md
   - docs/sdk/models/shared/accountinginvoicestatus.md
   - docs/sdk/models/shared/accountinginvoicetype.md
   - docs/sdk/models/shared/accountingjournal.md
@@ -593,18 +634,24 @@ generatedFiles:
   - docs/sdk/models/shared/accountingorderstatus.md
   - docs/sdk/models/shared/accountingordertype.md
   - docs/sdk/models/shared/accountingorganization.md
-  - docs/sdk/models/shared/accountingprofitandlossaccount.md
-  - docs/sdk/models/shared/accountingprofitandlosscategory.md
-  - docs/sdk/models/shared/accountingprofitandlosssection.md
-  - docs/sdk/models/shared/accountingprofitandlosssubcategory.md
+  - docs/sdk/models/shared/accountingprofitloss.md
+  - docs/sdk/models/shared/accountingprofitlossaccount.md
+  - docs/sdk/models/shared/accountingprofitlosscategory.md
+  - docs/sdk/models/shared/accountingprofitlosssection.md
+  - docs/sdk/models/shared/accountingprofitlosssubcategory.md
+  - docs/sdk/models/shared/accountingpurchaseorder.md
+  - docs/sdk/models/shared/accountingpurchaseorderstatus.md
   - docs/sdk/models/shared/accountingreport.md
   - docs/sdk/models/shared/accountingreporttype.md
+  - docs/sdk/models/shared/accountingsalesorder.md
+  - docs/sdk/models/shared/accountingsalesorderstatus.md
   - docs/sdk/models/shared/accountingtaxrate.md
   - docs/sdk/models/shared/accountingtelephone.md
   - docs/sdk/models/shared/accountingtelephonetype.md
   - docs/sdk/models/shared/accountingtransaction.md
   - docs/sdk/models/shared/accountingtransactioncontact.md
   - docs/sdk/models/shared/accountingtransactionlineitem.md
+  - docs/sdk/models/shared/accountingtrialbalance.md
   - docs/sdk/models/shared/accountingtrialbalancesubitem.md
   - docs/sdk/models/shared/api.md
   - docs/sdk/models/shared/apicall.md
@@ -913,9 +960,13 @@ generatedFiles:
   - docs/sdk/models/shared/propertyaccountingorderbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingordershippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorganizationaddress.md
+  - docs/sdk/models/shared/propertyaccountingpurchaseorderbillingaddress.md
+  - docs/sdk/models/shared/propertyaccountingpurchaseordershippingaddress.md
   - docs/sdk/models/shared/propertyaccountingreportbalancesheet.md
   - docs/sdk/models/shared/propertyaccountingreportprofitandloss.md
   - docs/sdk/models/shared/propertyaccountingreporttrialbalance.md
+  - docs/sdk/models/shared/propertyaccountingsalesorderbillingaddress.md
+  - docs/sdk/models/shared/propertyaccountingsalesordershippingaddress.md
   - docs/sdk/models/shared/propertyatsactivityfrom.md
   - docs/sdk/models/shared/propertyatsactivityfromtype.md
   - docs/sdk/models/shared/propertyatscandidateaddress.md
@@ -1066,6 +1117,8 @@ generatedFiles:
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
+  - docs/sdks/balancesheet/README.md
+  - docs/sdks/bill/README.md
   - docs/sdks/branch/README.md
   - docs/sdks/busy/README.md
   - docs/sdks/calendar/README.md
@@ -1081,6 +1134,7 @@ generatedFiles:
   - docs/sdks/connection/README.md
   - docs/sdks/contact/README.md
   - docs/sdks/course/README.md
+  - docs/sdks/creditmemo/README.md
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
@@ -1125,15 +1179,18 @@ generatedFiles:
   - docs/sdks/payslip/README.md
   - docs/sdks/person/README.md
   - docs/sdks/pipeline/README.md
+  - docs/sdks/profitloss/README.md
   - docs/sdks/project/README.md
   - docs/sdks/prompt/README.md
   - docs/sdks/pullrequest/README.md
+  - docs/sdks/purchaseorder/README.md
   - docs/sdks/recording/README.md
   - docs/sdks/refund/README.md
   - docs/sdks/repo/README.md
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
   - docs/sdks/review/README.md
+  - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
@@ -1147,6 +1204,7 @@ generatedFiles:
   - docs/sdks/timeoff/README.md
   - docs/sdks/timeshift/README.md
   - docs/sdks/transaction/README.md
+  - docs/sdks/trialbalance/README.md
   - docs/sdks/uc/README.md
   - docs/sdks/unified/README.md
   - docs/sdks/unifiedto/README.md
@@ -1157,49 +1215,79 @@ generatedFiles:
   - package.json
   - src/core.ts
   - src/funcs/accountingCreateAccountingAccount.ts
+  - src/funcs/accountingCreateAccountingBill.ts
   - src/funcs/accountingCreateAccountingContact.ts
+  - src/funcs/accountingCreateAccountingCreditmemo.ts
   - src/funcs/accountingCreateAccountingInvoice.ts
   - src/funcs/accountingCreateAccountingJournal.ts
   - src/funcs/accountingCreateAccountingOrder.ts
+  - src/funcs/accountingCreateAccountingPurchaseorder.ts
+  - src/funcs/accountingCreateAccountingSalesorder.ts
   - src/funcs/accountingCreateAccountingTaxrate.ts
   - src/funcs/accountingCreateAccountingTransaction.ts
   - src/funcs/accountingGetAccountingAccount.ts
+  - src/funcs/accountingGetAccountingBalancesheet.ts
+  - src/funcs/accountingGetAccountingBill.ts
   - src/funcs/accountingGetAccountingContact.ts
+  - src/funcs/accountingGetAccountingCreditmemo.ts
   - src/funcs/accountingGetAccountingInvoice.ts
   - src/funcs/accountingGetAccountingJournal.ts
   - src/funcs/accountingGetAccountingOrder.ts
   - src/funcs/accountingGetAccountingOrganization.ts
+  - src/funcs/accountingGetAccountingProfitloss.ts
+  - src/funcs/accountingGetAccountingPurchaseorder.ts
   - src/funcs/accountingGetAccountingReport.ts
+  - src/funcs/accountingGetAccountingSalesorder.ts
   - src/funcs/accountingGetAccountingTaxrate.ts
   - src/funcs/accountingGetAccountingTransaction.ts
+  - src/funcs/accountingGetAccountingTrialbalance.ts
   - src/funcs/accountingListAccountingAccounts.ts
+  - src/funcs/accountingListAccountingBalancesheets.ts
+  - src/funcs/accountingListAccountingBills.ts
   - src/funcs/accountingListAccountingContacts.ts
+  - src/funcs/accountingListAccountingCreditmemoes.ts
   - src/funcs/accountingListAccountingInvoices.ts
   - src/funcs/accountingListAccountingJournals.ts
   - src/funcs/accountingListAccountingOrders.ts
   - src/funcs/accountingListAccountingOrganizations.ts
+  - src/funcs/accountingListAccountingProfitlosses.ts
+  - src/funcs/accountingListAccountingPurchaseorders.ts
   - src/funcs/accountingListAccountingReports.ts
+  - src/funcs/accountingListAccountingSalesorders.ts
   - src/funcs/accountingListAccountingTaxrates.ts
   - src/funcs/accountingListAccountingTransactions.ts
+  - src/funcs/accountingListAccountingTrialbalances.ts
   - src/funcs/accountingPatchAccountingAccount.ts
+  - src/funcs/accountingPatchAccountingBill.ts
   - src/funcs/accountingPatchAccountingContact.ts
+  - src/funcs/accountingPatchAccountingCreditmemo.ts
   - src/funcs/accountingPatchAccountingInvoice.ts
   - src/funcs/accountingPatchAccountingJournal.ts
   - src/funcs/accountingPatchAccountingOrder.ts
+  - src/funcs/accountingPatchAccountingPurchaseorder.ts
+  - src/funcs/accountingPatchAccountingSalesorder.ts
   - src/funcs/accountingPatchAccountingTaxrate.ts
   - src/funcs/accountingPatchAccountingTransaction.ts
   - src/funcs/accountingRemoveAccountingAccount.ts
+  - src/funcs/accountingRemoveAccountingBill.ts
   - src/funcs/accountingRemoveAccountingContact.ts
+  - src/funcs/accountingRemoveAccountingCreditmemo.ts
   - src/funcs/accountingRemoveAccountingInvoice.ts
   - src/funcs/accountingRemoveAccountingJournal.ts
   - src/funcs/accountingRemoveAccountingOrder.ts
+  - src/funcs/accountingRemoveAccountingPurchaseorder.ts
+  - src/funcs/accountingRemoveAccountingSalesorder.ts
   - src/funcs/accountingRemoveAccountingTaxrate.ts
   - src/funcs/accountingRemoveAccountingTransaction.ts
   - src/funcs/accountingUpdateAccountingAccount.ts
+  - src/funcs/accountingUpdateAccountingBill.ts
   - src/funcs/accountingUpdateAccountingContact.ts
+  - src/funcs/accountingUpdateAccountingCreditmemo.ts
   - src/funcs/accountingUpdateAccountingInvoice.ts
   - src/funcs/accountingUpdateAccountingJournal.ts
   - src/funcs/accountingUpdateAccountingOrder.ts
+  - src/funcs/accountingUpdateAccountingPurchaseorder.ts
+  - src/funcs/accountingUpdateAccountingSalesorder.ts
   - src/funcs/accountingUpdateAccountingTaxrate.ts
   - src/funcs/accountingUpdateAccountingTransaction.ts
   - src/funcs/atsCreateAtsActivity.ts
@@ -1637,49 +1725,79 @@ generatedFiles:
   - src/mcp-server/shared.ts
   - src/mcp-server/tools.ts
   - src/mcp-server/tools/accountingCreateAccountingAccount.ts
+  - src/mcp-server/tools/accountingCreateAccountingBill.ts
   - src/mcp-server/tools/accountingCreateAccountingContact.ts
+  - src/mcp-server/tools/accountingCreateAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingCreateAccountingInvoice.ts
   - src/mcp-server/tools/accountingCreateAccountingJournal.ts
   - src/mcp-server/tools/accountingCreateAccountingOrder.ts
+  - src/mcp-server/tools/accountingCreateAccountingPurchaseorder.ts
+  - src/mcp-server/tools/accountingCreateAccountingSalesorder.ts
   - src/mcp-server/tools/accountingCreateAccountingTaxrate.ts
   - src/mcp-server/tools/accountingCreateAccountingTransaction.ts
   - src/mcp-server/tools/accountingGetAccountingAccount.ts
+  - src/mcp-server/tools/accountingGetAccountingBalancesheet.ts
+  - src/mcp-server/tools/accountingGetAccountingBill.ts
   - src/mcp-server/tools/accountingGetAccountingContact.ts
+  - src/mcp-server/tools/accountingGetAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingGetAccountingInvoice.ts
   - src/mcp-server/tools/accountingGetAccountingJournal.ts
   - src/mcp-server/tools/accountingGetAccountingOrder.ts
   - src/mcp-server/tools/accountingGetAccountingOrganization.ts
+  - src/mcp-server/tools/accountingGetAccountingProfitloss.ts
+  - src/mcp-server/tools/accountingGetAccountingPurchaseorder.ts
   - src/mcp-server/tools/accountingGetAccountingReport.ts
+  - src/mcp-server/tools/accountingGetAccountingSalesorder.ts
   - src/mcp-server/tools/accountingGetAccountingTaxrate.ts
   - src/mcp-server/tools/accountingGetAccountingTransaction.ts
+  - src/mcp-server/tools/accountingGetAccountingTrialbalance.ts
   - src/mcp-server/tools/accountingListAccountingAccounts.ts
+  - src/mcp-server/tools/accountingListAccountingBalancesheets.ts
+  - src/mcp-server/tools/accountingListAccountingBills.ts
   - src/mcp-server/tools/accountingListAccountingContacts.ts
+  - src/mcp-server/tools/accountingListAccountingCreditmemoes.ts
   - src/mcp-server/tools/accountingListAccountingInvoices.ts
   - src/mcp-server/tools/accountingListAccountingJournals.ts
   - src/mcp-server/tools/accountingListAccountingOrders.ts
   - src/mcp-server/tools/accountingListAccountingOrganizations.ts
+  - src/mcp-server/tools/accountingListAccountingProfitlosses.ts
+  - src/mcp-server/tools/accountingListAccountingPurchaseorders.ts
   - src/mcp-server/tools/accountingListAccountingReports.ts
+  - src/mcp-server/tools/accountingListAccountingSalesorders.ts
   - src/mcp-server/tools/accountingListAccountingTaxrates.ts
   - src/mcp-server/tools/accountingListAccountingTransactions.ts
+  - src/mcp-server/tools/accountingListAccountingTrialbalances.ts
   - src/mcp-server/tools/accountingPatchAccountingAccount.ts
+  - src/mcp-server/tools/accountingPatchAccountingBill.ts
   - src/mcp-server/tools/accountingPatchAccountingContact.ts
+  - src/mcp-server/tools/accountingPatchAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingPatchAccountingInvoice.ts
   - src/mcp-server/tools/accountingPatchAccountingJournal.ts
   - src/mcp-server/tools/accountingPatchAccountingOrder.ts
+  - src/mcp-server/tools/accountingPatchAccountingPurchaseorder.ts
+  - src/mcp-server/tools/accountingPatchAccountingSalesorder.ts
   - src/mcp-server/tools/accountingPatchAccountingTaxrate.ts
   - src/mcp-server/tools/accountingPatchAccountingTransaction.ts
   - src/mcp-server/tools/accountingRemoveAccountingAccount.ts
+  - src/mcp-server/tools/accountingRemoveAccountingBill.ts
   - src/mcp-server/tools/accountingRemoveAccountingContact.ts
+  - src/mcp-server/tools/accountingRemoveAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingRemoveAccountingInvoice.ts
   - src/mcp-server/tools/accountingRemoveAccountingJournal.ts
   - src/mcp-server/tools/accountingRemoveAccountingOrder.ts
+  - src/mcp-server/tools/accountingRemoveAccountingPurchaseorder.ts
+  - src/mcp-server/tools/accountingRemoveAccountingSalesorder.ts
   - src/mcp-server/tools/accountingRemoveAccountingTaxrate.ts
   - src/mcp-server/tools/accountingRemoveAccountingTransaction.ts
   - src/mcp-server/tools/accountingUpdateAccountingAccount.ts
+  - src/mcp-server/tools/accountingUpdateAccountingBill.ts
   - src/mcp-server/tools/accountingUpdateAccountingContact.ts
+  - src/mcp-server/tools/accountingUpdateAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingUpdateAccountingInvoice.ts
   - src/mcp-server/tools/accountingUpdateAccountingJournal.ts
   - src/mcp-server/tools/accountingUpdateAccountingOrder.ts
+  - src/mcp-server/tools/accountingUpdateAccountingPurchaseorder.ts
+  - src/mcp-server/tools/accountingUpdateAccountingSalesorder.ts
   - src/mcp-server/tools/accountingUpdateAccountingTaxrate.ts
   - src/mcp-server/tools/accountingUpdateAccountingTransaction.ts
   - src/mcp-server/tools/atsCreateAtsActivity.ts
@@ -2092,6 +2210,8 @@ generatedFiles:
   - src/sdk/applicationstatus.ts
   - src/sdk/ats.ts
   - src/sdk/auth.ts
+  - src/sdk/balancesheet.ts
+  - src/sdk/bill.ts
   - src/sdk/branch.ts
   - src/sdk/busy.ts
   - src/sdk/calendar.ts
@@ -2107,6 +2227,7 @@ generatedFiles:
   - src/sdk/connection.ts
   - src/sdk/contact.ts
   - src/sdk/course.ts
+  - src/sdk/creditmemo.ts
   - src/sdk/crm.ts
   - src/sdk/customer.ts
   - src/sdk/deal.ts
@@ -2149,10 +2270,14 @@ generatedFiles:
   - src/sdk/models/errors/sdkvalidationerror.ts
   - src/sdk/models/errors/unifiedtoerror.ts
   - src/sdk/models/operations/createaccountingaccount.ts
+  - src/sdk/models/operations/createaccountingbill.ts
   - src/sdk/models/operations/createaccountingcontact.ts
+  - src/sdk/models/operations/createaccountingcreditmemo.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
   - src/sdk/models/operations/createaccountingjournal.ts
   - src/sdk/models/operations/createaccountingorder.ts
+  - src/sdk/models/operations/createaccountingpurchaseorder.ts
+  - src/sdk/models/operations/createaccountingsalesorder.ts
   - src/sdk/models/operations/createaccountingtaxrate.ts
   - src/sdk/models/operations/createaccountingtransaction.ts
   - src/sdk/models/operations/createatsactivity.ts
@@ -2219,14 +2344,21 @@ generatedFiles:
   - src/sdk/models/operations/createucrecording.ts
   - src/sdk/models/operations/createunifiedwebhook.ts
   - src/sdk/models/operations/getaccountingaccount.ts
+  - src/sdk/models/operations/getaccountingbalancesheet.ts
+  - src/sdk/models/operations/getaccountingbill.ts
   - src/sdk/models/operations/getaccountingcontact.ts
+  - src/sdk/models/operations/getaccountingcreditmemo.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
   - src/sdk/models/operations/getaccountingjournal.ts
   - src/sdk/models/operations/getaccountingorder.ts
   - src/sdk/models/operations/getaccountingorganization.ts
+  - src/sdk/models/operations/getaccountingprofitloss.ts
+  - src/sdk/models/operations/getaccountingpurchaseorder.ts
   - src/sdk/models/operations/getaccountingreport.ts
+  - src/sdk/models/operations/getaccountingsalesorder.ts
   - src/sdk/models/operations/getaccountingtaxrate.ts
   - src/sdk/models/operations/getaccountingtransaction.ts
+  - src/sdk/models/operations/getaccountingtrialbalance.ts
   - src/sdk/models/operations/getatsactivity.ts
   - src/sdk/models/operations/getatsapplication.ts
   - src/sdk/models/operations/getatscandidate.ts
@@ -2299,14 +2431,21 @@ generatedFiles:
   - src/sdk/models/operations/getunifiedwebhook.ts
   - src/sdk/models/operations/index.ts
   - src/sdk/models/operations/listaccountingaccounts.ts
+  - src/sdk/models/operations/listaccountingbalancesheets.ts
+  - src/sdk/models/operations/listaccountingbills.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
+  - src/sdk/models/operations/listaccountingcreditmemoes.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
   - src/sdk/models/operations/listaccountingjournals.ts
   - src/sdk/models/operations/listaccountingorders.ts
   - src/sdk/models/operations/listaccountingorganizations.ts
+  - src/sdk/models/operations/listaccountingprofitlosses.ts
+  - src/sdk/models/operations/listaccountingpurchaseorders.ts
   - src/sdk/models/operations/listaccountingreports.ts
+  - src/sdk/models/operations/listaccountingsalesorders.ts
   - src/sdk/models/operations/listaccountingtaxrates.ts
   - src/sdk/models/operations/listaccountingtransactions.ts
+  - src/sdk/models/operations/listaccountingtrialbalances.ts
   - src/sdk/models/operations/listatsactivities.ts
   - src/sdk/models/operations/listatsapplications.ts
   - src/sdk/models/operations/listatsapplicationstatuses.ts
@@ -2386,10 +2525,14 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedissues.ts
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchaccountingaccount.ts
+  - src/sdk/models/operations/patchaccountingbill.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
+  - src/sdk/models/operations/patchaccountingcreditmemo.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
   - src/sdk/models/operations/patchaccountingjournal.ts
   - src/sdk/models/operations/patchaccountingorder.ts
+  - src/sdk/models/operations/patchaccountingpurchaseorder.ts
+  - src/sdk/models/operations/patchaccountingsalesorder.ts
   - src/sdk/models/operations/patchaccountingtaxrate.ts
   - src/sdk/models/operations/patchaccountingtransaction.ts
   - src/sdk/models/operations/patchatsactivity.ts
@@ -2457,10 +2600,14 @@ generatedFiles:
   - src/sdk/models/operations/patchunifiedwebhook.ts
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
   - src/sdk/models/operations/removeaccountingaccount.ts
+  - src/sdk/models/operations/removeaccountingbill.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
+  - src/sdk/models/operations/removeaccountingcreditmemo.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
   - src/sdk/models/operations/removeaccountingjournal.ts
   - src/sdk/models/operations/removeaccountingorder.ts
+  - src/sdk/models/operations/removeaccountingpurchaseorder.ts
+  - src/sdk/models/operations/removeaccountingsalesorder.ts
   - src/sdk/models/operations/removeaccountingtaxrate.ts
   - src/sdk/models/operations/removeaccountingtransaction.ts
   - src/sdk/models/operations/removeatsactivity.ts
@@ -2526,10 +2673,14 @@ generatedFiles:
   - src/sdk/models/operations/removeunifiedconnection.ts
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
+  - src/sdk/models/operations/updateaccountingbill.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
+  - src/sdk/models/operations/updateaccountingcreditmemo.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
   - src/sdk/models/operations/updateaccountingjournal.ts
   - src/sdk/models/operations/updateaccountingorder.ts
+  - src/sdk/models/operations/updateaccountingpurchaseorder.ts
+  - src/sdk/models/operations/updateaccountingsalesorder.ts
   - src/sdk/models/operations/updateaccountingtaxrate.ts
   - src/sdk/models/operations/updateaccountingtransaction.ts
   - src/sdk/models/operations/updateatsactivity.ts
@@ -2599,9 +2750,12 @@ generatedFiles:
   - src/sdk/models/shared/accountingaccount.ts
   - src/sdk/models/shared/accountingassociatedcontact.ts
   - src/sdk/models/shared/accountingattachment.ts
+  - src/sdk/models/shared/accountingbalancesheet.ts
   - src/sdk/models/shared/accountingbalancesheetitem.ts
+  - src/sdk/models/shared/accountingbill.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
+  - src/sdk/models/shared/accountingcreditmemo.ts
   - src/sdk/models/shared/accountingemail.ts
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/accountingjournal.ts
@@ -2609,16 +2763,20 @@ generatedFiles:
   - src/sdk/models/shared/accountinglineitem.ts
   - src/sdk/models/shared/accountingorder.ts
   - src/sdk/models/shared/accountingorganization.ts
-  - src/sdk/models/shared/accountingprofitandlossaccount.ts
-  - src/sdk/models/shared/accountingprofitandlosscategory.ts
-  - src/sdk/models/shared/accountingprofitandlosssection.ts
-  - src/sdk/models/shared/accountingprofitandlosssubcategory.ts
+  - src/sdk/models/shared/accountingprofitloss.ts
+  - src/sdk/models/shared/accountingprofitlossaccount.ts
+  - src/sdk/models/shared/accountingprofitlosscategory.ts
+  - src/sdk/models/shared/accountingprofitlosssection.ts
+  - src/sdk/models/shared/accountingprofitlosssubcategory.ts
+  - src/sdk/models/shared/accountingpurchaseorder.ts
   - src/sdk/models/shared/accountingreport.ts
+  - src/sdk/models/shared/accountingsalesorder.ts
   - src/sdk/models/shared/accountingtaxrate.ts
   - src/sdk/models/shared/accountingtelephone.ts
   - src/sdk/models/shared/accountingtransaction.ts
   - src/sdk/models/shared/accountingtransactioncontact.ts
   - src/sdk/models/shared/accountingtransactionlineitem.ts
+  - src/sdk/models/shared/accountingtrialbalance.ts
   - src/sdk/models/shared/accountingtrialbalancesubitem.ts
   - src/sdk/models/shared/apicall.ts
   - src/sdk/models/shared/atsactivity.ts
@@ -2735,9 +2893,13 @@ generatedFiles:
   - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingordershippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorganizationaddress.ts
+  - src/sdk/models/shared/propertyaccountingpurchaseorderbillingaddress.ts
+  - src/sdk/models/shared/propertyaccountingpurchaseordershippingaddress.ts
   - src/sdk/models/shared/propertyaccountingreportbalancesheet.ts
   - src/sdk/models/shared/propertyaccountingreportprofitandloss.ts
   - src/sdk/models/shared/propertyaccountingreporttrialbalance.ts
+  - src/sdk/models/shared/propertyaccountingsalesorderbillingaddress.ts
+  - src/sdk/models/shared/propertyaccountingsalesordershippingaddress.ts
   - src/sdk/models/shared/propertyatsactivityfrom.ts
   - src/sdk/models/shared/propertyatscandidateaddress.ts
   - src/sdk/models/shared/propertyatscompanyaddress.ts
@@ -2829,15 +2991,18 @@ generatedFiles:
   - src/sdk/payslip.ts
   - src/sdk/person.ts
   - src/sdk/pipeline.ts
+  - src/sdk/profitloss.ts
   - src/sdk/project.ts
   - src/sdk/prompt.ts
   - src/sdk/pullrequest.ts
+  - src/sdk/purchaseorder.ts
   - src/sdk/recording.ts
   - src/sdk/refund.ts
   - src/sdk/repo.ts
   - src/sdk/report.ts
   - src/sdk/repository.ts
   - src/sdk/review.ts
+  - src/sdk/salesorder.ts
   - src/sdk/scim.ts
   - src/sdk/scorecard.ts
   - src/sdk/sdk.ts
@@ -2852,6 +3017,7 @@ generatedFiles:
   - src/sdk/timeoff.ts
   - src/sdk/timeshift.ts
   - src/sdk/transaction.ts
+  - src/sdk/trialbalance.ts
   - src/sdk/types/async.ts
   - src/sdk/types/blobs.ts
   - src/sdk/types/constdatetime.ts
@@ -6941,5 +7107,276 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>"}
+  createAccountingBill:
+    speakeasy-default-create-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingCreditmemo:
+    speakeasy-default-create-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingPurchaseorder:
+    speakeasy-default-create-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingSalesorder:
+    speakeasy-default-create-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingBalancesheet:
+    speakeasy-default-get-accounting-balancesheet:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingBill:
+    speakeasy-default-get-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingCreditmemo:
+    speakeasy-default-get-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingProfitloss:
+    speakeasy-default-get-accounting-profitloss:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingPurchaseorder:
+    speakeasy-default-get-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingSalesorder:
+    speakeasy-default-get-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingTrialbalance:
+    speakeasy-default-get-accounting-trialbalance:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingBalancesheets:
+    speakeasy-default-list-accounting-balancesheets:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingBills:
+    speakeasy-default-list-accounting-bills:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingCreditmemoes:
+    speakeasy-default-list-accounting-creditmemoes:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingProfitlosses:
+    speakeasy-default-list-accounting-profitlosses:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingPurchaseorders:
+    speakeasy-default-list-accounting-purchaseorders:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingSalesorders:
+    speakeasy-default-list-accounting-salesorders:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingTrialbalances:
+    speakeasy-default-list-accounting-trialbalances:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingBill:
+    speakeasy-default-patch-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingCreditmemo:
+    speakeasy-default-patch-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingPurchaseorder:
+    speakeasy-default-patch-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingSalesorder:
+    speakeasy-default-patch-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingBill:
+    speakeasy-default-remove-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingCreditmemo:
+    speakeasy-default-remove-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingPurchaseorder:
+    speakeasy-default-remove-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingSalesorder:
+    speakeasy-default-remove-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingBill:
+    speakeasy-default-update-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingCreditmemo:
+    speakeasy-default-update-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingPurchaseorder:
+    speakeasy-default-update-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingSalesorder:
+    speakeasy-default-update-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
