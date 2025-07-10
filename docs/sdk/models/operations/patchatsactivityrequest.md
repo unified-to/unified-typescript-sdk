@@ -6,6 +6,7 @@
 import { PatchAtsActivityRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsActivityRequest = {
+  atsActivity: {},
   connectionId: "<id>",
   id: "<id>",
 };

@@ -6,6 +6,9 @@
 import { UpdateScimGroupsRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateScimGroupsRequest = {
+  scimGroup: {
+    displayName: "Rosina_Kerluke14",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

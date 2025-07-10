@@ -6,6 +6,10 @@
 import { UpdateMetadataMetadataRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateMetadataMetadataRequest = {
+  metadataMetadata: {
+    name: "<value>",
+    objectType: "<value>",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

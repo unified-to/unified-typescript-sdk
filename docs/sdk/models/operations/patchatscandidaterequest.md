@@ -6,6 +6,7 @@
 import { PatchAtsCandidateRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsCandidateRequest = {
+  atsCandidate: {},
   connectionId: "<id>",
   id: "<id>",
 };

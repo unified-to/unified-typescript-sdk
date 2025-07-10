@@ -6,6 +6,9 @@
 import { PatchKmsCommentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchKmsCommentRequest = {
+  kmsComment: {
+    content: "<value>",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

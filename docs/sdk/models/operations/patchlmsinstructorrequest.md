@@ -6,6 +6,7 @@
 import { PatchLmsInstructorRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchLmsInstructorRequest = {
+  lmsInstructor: {},
   connectionId: "<id>",
   id: "<id>",
 };

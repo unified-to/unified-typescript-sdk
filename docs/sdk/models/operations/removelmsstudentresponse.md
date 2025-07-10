@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveLmsStudentResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveLmsStudentResponse = {};
+let value: RemoveLmsStudentResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

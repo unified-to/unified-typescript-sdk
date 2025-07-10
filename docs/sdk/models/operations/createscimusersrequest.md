@@ -6,6 +6,7 @@
 import { CreateScimUsersRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateScimUsersRequest = {
+  scimUser: {},
   connectionId: "<id>",
 };
 ```

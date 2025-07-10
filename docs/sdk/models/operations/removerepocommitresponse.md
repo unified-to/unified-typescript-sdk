@@ -5,7 +5,20 @@
 ```typescript
 import { RemoveRepoCommitResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveRepoCommitResponse = {};
+let value: RemoveRepoCommitResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+    "key1": [],
+    "key2": [
+      "<value 1>",
+      "<value 2>",
+    ],
+  },
+};
 ```
 
 ## Fields

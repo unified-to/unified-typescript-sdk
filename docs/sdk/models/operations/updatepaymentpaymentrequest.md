@@ -6,6 +6,7 @@
 import { UpdatePaymentPaymentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdatePaymentPaymentRequest = {
+  paymentPayment: {},
   connectionId: "<id>",
   id: "<id>",
 };

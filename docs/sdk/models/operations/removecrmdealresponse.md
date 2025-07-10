@@ -5,7 +5,17 @@
 ```typescript
 import { RemoveCrmDealResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCrmDealResponse = {};
+let value: RemoveCrmDealResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+    "key1": [
+      "<value 1>",
+      "<value 2>",
+    ],
+  },
+};
 ```
 
 ## Fields

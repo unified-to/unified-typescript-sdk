@@ -6,6 +6,10 @@
 import { CreateLmsClassRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateLmsClassRequest = {
+  lmsClass: {
+    courseId: "<id>",
+    name: "<value>",
+  },
   connectionId: "<id>",
 };
 ```

@@ -6,6 +6,7 @@
 import { PatchAccountingOrderRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAccountingOrderRequest = {
+  accountingOrder: {},
   connectionId: "<id>",
   id: "<id>",
 };

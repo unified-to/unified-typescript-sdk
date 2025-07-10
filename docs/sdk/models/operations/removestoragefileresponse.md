@@ -5,7 +5,14 @@
 ```typescript
 import { RemoveStorageFileResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveStorageFileResponse = {};
+let value: RemoveStorageFileResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+    "key1": [],
+  },
+};
 ```
 
 ## Fields

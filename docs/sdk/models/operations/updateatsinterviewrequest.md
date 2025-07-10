@@ -6,6 +6,7 @@
 import { UpdateAtsInterviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAtsInterviewRequest = {
+  atsInterview: {},
   connectionId: "<id>",
   id: "<id>",
 };

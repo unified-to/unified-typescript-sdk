@@ -6,6 +6,7 @@
 import { CreateCrmPipelineRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCrmPipelineRequest = {
+  crmPipeline: {},
   connectionId: "<id>",
 };
 ```

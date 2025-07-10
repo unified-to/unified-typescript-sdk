@@ -6,6 +6,9 @@
 import { UpdateCalendarLinkRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateCalendarLinkRequest = {
+  calendarLink: {
+    url: "https://animated-cornet.com/",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

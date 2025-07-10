@@ -6,6 +6,7 @@
 import { UpdateAtsJobRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAtsJobRequest = {
+  atsJob: {},
   connectionId: "<id>",
   id: "<id>",
 };

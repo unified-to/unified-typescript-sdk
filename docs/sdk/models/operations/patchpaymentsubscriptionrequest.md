@@ -6,6 +6,7 @@
 import { PatchPaymentSubscriptionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchPaymentSubscriptionRequest = {
+  paymentSubscription: {},
   connectionId: "<id>",
   id: "<id>",
 };

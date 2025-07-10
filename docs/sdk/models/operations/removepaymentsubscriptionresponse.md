@@ -5,7 +5,9 @@
 ```typescript
 import { RemovePaymentSubscriptionResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemovePaymentSubscriptionResponse = {};
+let value: RemovePaymentSubscriptionResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

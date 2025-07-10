@@ -6,6 +6,7 @@
 import { CreateAccountingBillRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAccountingBillRequest = {
+  accountingBill: {},
   connectionId: "<id>",
 };
 ```

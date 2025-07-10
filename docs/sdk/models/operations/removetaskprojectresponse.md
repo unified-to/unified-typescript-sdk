@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveTaskProjectResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveTaskProjectResponse = {};
+let value: RemoveTaskProjectResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

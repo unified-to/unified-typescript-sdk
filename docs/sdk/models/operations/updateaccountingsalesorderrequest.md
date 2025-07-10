@@ -6,6 +6,7 @@
 import { UpdateAccountingSalesorderRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateAccountingSalesorderRequest = {
+  accountingSalesorder: {},
   connectionId: "<id>",
   id: "<id>",
 };

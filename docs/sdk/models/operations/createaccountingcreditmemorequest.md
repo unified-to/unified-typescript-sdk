@@ -6,6 +6,7 @@
 import { CreateAccountingCreditmemoRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAccountingCreditmemoRequest = {
+  accountingCreditmemo: {},
   connectionId: "<id>",
 };
 ```

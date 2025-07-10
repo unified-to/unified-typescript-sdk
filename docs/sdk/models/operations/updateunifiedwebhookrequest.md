@@ -6,6 +6,11 @@
 import { UpdateUnifiedWebhookRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateUnifiedWebhookRequest = {
+  webhook: {
+    connectionId: "<id>",
+    event: "updated",
+    objectType: "messaging_message",
+  },
   id: "<id>",
 };
 ```

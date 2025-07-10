@@ -6,6 +6,7 @@
 import { UpdateTicketingNoteRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateTicketingNoteRequest = {
+  ticketingNote: {},
   connectionId: "<id>",
   id: "<id>",
 };

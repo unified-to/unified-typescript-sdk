@@ -6,6 +6,7 @@
 import { CreateCrmContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCrmContactRequest = {
+  crmContact: {},
   connectionId: "<id>",
 };
 ```

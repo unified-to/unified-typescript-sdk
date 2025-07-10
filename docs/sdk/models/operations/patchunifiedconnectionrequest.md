@@ -6,6 +6,13 @@
 import { PatchUnifiedConnectionRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchUnifiedConnectionRequest = {
+  connection: {
+    categories: [
+      "task",
+    ],
+    integrationType: "<value>",
+    permissions: [],
+  },
   id: "<id>",
 };
 ```

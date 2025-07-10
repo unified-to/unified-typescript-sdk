@@ -6,6 +6,9 @@
 import { PatchAtsCompanyRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsCompanyRequest = {
+  atsCompany: {
+    name: "<value>",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

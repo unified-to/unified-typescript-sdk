@@ -6,6 +6,7 @@
 import { PatchAtsDocumentRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAtsDocumentRequest = {
+  atsDocument: {},
   connectionId: "<id>",
   id: "<id>",
 };

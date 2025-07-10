@@ -6,6 +6,7 @@
 import { CreateAccountingContactRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAccountingContactRequest = {
+  accountingContact: {},
   connectionId: "<id>",
 };
 ```

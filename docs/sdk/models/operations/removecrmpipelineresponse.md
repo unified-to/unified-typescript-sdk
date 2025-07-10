@@ -5,7 +5,13 @@
 ```typescript
 import { RemoveCrmPipelineResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCrmPipelineResponse = {};
+let value: RemoveCrmPipelineResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+};
 ```
 
 ## Fields

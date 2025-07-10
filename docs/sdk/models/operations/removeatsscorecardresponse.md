@@ -5,7 +5,13 @@
 ```typescript
 import { RemoveAtsScorecardResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveAtsScorecardResponse = {};
+let value: RemoveAtsScorecardResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+};
 ```
 
 ## Fields

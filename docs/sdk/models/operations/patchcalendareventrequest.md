@@ -6,6 +6,7 @@
 import { PatchCalendarEventRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchCalendarEventRequest = {
+  calendarEvent: {},
   connectionId: "<id>",
   id: "<id>",
 };

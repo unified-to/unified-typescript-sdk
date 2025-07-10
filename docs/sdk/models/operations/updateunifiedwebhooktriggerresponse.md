@@ -5,7 +5,13 @@
 ```typescript
 import { UpdateUnifiedWebhookTriggerResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: UpdateUnifiedWebhookTriggerResponse = {};
+let value: UpdateUnifiedWebhookTriggerResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+};
 ```
 
 ## Fields

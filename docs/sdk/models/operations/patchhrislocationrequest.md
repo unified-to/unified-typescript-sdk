@@ -6,6 +6,7 @@
 import { PatchHrisLocationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchHrisLocationRequest = {
+  hrisLocation: {},
   connectionId: "<id>",
   id: "<id>",
 };

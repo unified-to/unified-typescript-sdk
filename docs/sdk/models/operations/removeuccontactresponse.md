@@ -5,7 +5,19 @@
 ```typescript
 import { RemoveUcContactResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveUcContactResponse = {};
+let value: RemoveUcContactResponse = {
+  headers: {
+    "key": [],
+    "key1": [
+      "<value 1>",
+    ],
+    "key2": [
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
+    ],
+  },
+};
 ```
 
 ## Fields

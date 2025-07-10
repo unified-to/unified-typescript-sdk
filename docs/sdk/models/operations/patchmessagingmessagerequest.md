@@ -6,6 +6,7 @@
 import { PatchMessagingMessageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchMessagingMessageRequest = {
+  messagingMessage: {},
   connectionId: "<id>",
   id: "<id>",
 };

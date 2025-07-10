@@ -6,6 +6,7 @@
 import { CreateAtsApplicationRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateAtsApplicationRequest = {
+  atsApplication: {},
   connectionId: "<id>",
 };
 ```

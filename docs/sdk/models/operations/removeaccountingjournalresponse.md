@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveAccountingJournalResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveAccountingJournalResponse = {};
+let value: RemoveAccountingJournalResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

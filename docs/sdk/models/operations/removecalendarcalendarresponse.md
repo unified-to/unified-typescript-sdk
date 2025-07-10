@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveCalendarCalendarResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveCalendarCalendarResponse = {};
+let value: RemoveCalendarCalendarResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

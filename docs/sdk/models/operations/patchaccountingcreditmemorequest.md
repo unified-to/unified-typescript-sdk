@@ -6,6 +6,7 @@
 import { PatchAccountingCreditmemoRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchAccountingCreditmemoRequest = {
+  accountingCreditmemo: {},
   connectionId: "<id>",
   id: "<id>",
 };

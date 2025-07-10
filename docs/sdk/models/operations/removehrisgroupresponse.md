@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveHrisGroupResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveHrisGroupResponse = {};
+let value: RemoveHrisGroupResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

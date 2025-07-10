@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveMartechListResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveMartechListResponse = {};
+let value: RemoveMartechListResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

@@ -6,6 +6,9 @@
 import { CreateCommerceReviewRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateCommerceReviewRequest = {
+  commerceReview: {
+    itemId: "<id>",
+  },
   connectionId: "<id>",
 };
 ```

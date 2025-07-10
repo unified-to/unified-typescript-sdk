@@ -6,6 +6,7 @@
 import { CreateMessagingMessageRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateMessagingMessageRequest = {
+  messagingMessage: {},
   connectionId: "<id>",
 };
 ```

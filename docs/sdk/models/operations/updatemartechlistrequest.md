@@ -6,6 +6,7 @@
 import { UpdateMartechListRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateMartechListRequest = {
+  marketingList: {},
   connectionId: "<id>",
   id: "<id>",
 };

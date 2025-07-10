@@ -5,7 +5,9 @@
 ```typescript
 import { RemoveRepoRepositoryResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveRepoRepositoryResponse = {};
+let value: RemoveRepoRepositoryResponse = {
+  headers: {},
+};
 ```
 
 ## Fields

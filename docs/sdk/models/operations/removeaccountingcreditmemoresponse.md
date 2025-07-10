@@ -5,7 +5,13 @@
 ```typescript
 import { RemoveAccountingCreditmemoResponse } from "@unified-api/typescript-sdk/sdk/models/operations";
 
-let value: RemoveAccountingCreditmemoResponse = {};
+let value: RemoveAccountingCreditmemoResponse = {
+  headers: {
+    "key": [
+      "<value 1>",
+    ],
+  },
+};
 ```
 
 ## Fields

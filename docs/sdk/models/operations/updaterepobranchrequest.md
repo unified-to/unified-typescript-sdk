@@ -6,6 +6,10 @@
 import { UpdateRepoBranchRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: UpdateRepoBranchRequest = {
+  repoBranch: {
+    name: "<value>",
+    repoId: "<id>",
+  },
   connectionId: "<id>",
   id: "<id>",
 };

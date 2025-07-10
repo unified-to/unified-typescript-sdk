@@ -6,6 +6,7 @@
 import { CreateTaskTaskRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: CreateTaskTaskRequest = {
+  taskTask: {},
   connectionId: "<id>",
 };
 ```
