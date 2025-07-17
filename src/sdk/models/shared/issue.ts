@@ -21,7 +21,6 @@ export const IssueStatus = {
   OnHold: "ON_HOLD",
   Validating: "VALIDATING",
   Rejected: "REJECTED",
-  UpNext: "UP_NEXT",
 } as const;
 export type IssueStatus = OpenEnum<typeof IssueStatus>;
 

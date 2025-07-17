@@ -38,6 +38,7 @@ export type TaskTask = {
   dueAt?: Date | undefined;
   followerUserIds?: Array<string> | undefined;
   groupIds?: Array<string> | undefined;
+  hasChildren?: boolean | undefined;
   id?: string | undefined;
   metadata?: Array<TaskMetadata> | undefined;
   name?: string | undefined;
@@ -102,6 +103,7 @@ export const TaskTask$inboundSchema: z.ZodType<
     .optional(),
   follower_user_ids: z.array(z.string()).optional(),
   group_ids: z.array(z.string()).optional(),
+  has_children: z.boolean().optional(),
   id: z.string().optional(),
   metadata: z.array(TaskMetadata$inboundSchema).optional(),
   name: z.string().optional(),
@@ -125,6 +127,7 @@ export const TaskTask$inboundSchema: z.ZodType<
     "due_at": "dueAt",
     "follower_user_ids": "followerUserIds",
     "group_ids": "groupIds",
+    "has_children": "hasChildren",
     "parent_id": "parentId",
     "project_id": "projectId",
     "updated_at": "updatedAt",
@@ -141,6 +144,7 @@ export type TaskTask$Outbound = {
   due_at?: string | undefined;
   follower_user_ids?: Array<string> | undefined;
   group_ids?: Array<string> | undefined;
+  has_children?: boolean | undefined;
   id?: string | undefined;
   metadata?: Array<TaskMetadata$Outbound> | undefined;
   name?: string | undefined;
@@ -169,6 +173,7 @@ export const TaskTask$outboundSchema: z.ZodType<
   dueAt: z.date().transform(v => v.toISOString()).optional(),
   followerUserIds: z.array(z.string()).optional(),
   groupIds: z.array(z.string()).optional(),
+  hasChildren: z.boolean().optional(),
   id: z.string().optional(),
   metadata: z.array(TaskMetadata$outboundSchema).optional(),
   name: z.string().optional(),
@@ -191,6 +196,7 @@ export const TaskTask$outboundSchema: z.ZodType<
     dueAt: "due_at",
     followerUserIds: "follower_user_ids",
     groupIds: "group_ids",
+    hasChildren: "has_children",
     parentId: "parent_id",
     projectId: "project_id",
     updatedAt: "updated_at",
