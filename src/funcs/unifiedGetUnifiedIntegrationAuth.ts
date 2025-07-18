@@ -26,7 +26,7 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Create connection indirectly
+ * Authorize new connection
  *
  * @remarks
  * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.

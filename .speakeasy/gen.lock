@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: a8fe650f09e411054ff20cdef36cc669
+  docChecksum: 34e9b060cccb99df9d62ad47f96d358d
   docVersion: "1.0"
   speakeasyVersion: 1.582.0
   generationVersion: 2.657.1
-  releaseVersion: 2.73.9
-  configChecksum: 097abcecdf7e1632073a3fdc9159f530
+  releaseVersion: 2.73.10
+  configChecksum: d0a0238c8c293046b350a250ca3cdc52
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -1108,6 +1108,7 @@ generatedFiles:
   - docs/sdk/models/shared/value.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
+  - docs/sdk/models/shared/weekstart.md
   - docs/sdk/models/shared/weightunit.md
   - docs/sdks/account/README.md
   - docs/sdks/accounting/README.md

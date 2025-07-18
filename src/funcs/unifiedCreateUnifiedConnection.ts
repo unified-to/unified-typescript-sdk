@@ -28,7 +28,7 @@ import { Result } from "../sdk/types/fp.js";
  * Create connection
  *
  * @remarks
- * Used only to import existing customer credentials; use "Create connection indirectly" instead
+ * Used only to import existing customer credentials; use "Authorize new connection" instead
  */
 export function unifiedCreateUnifiedConnection(
   client: UnifiedToCore,

@@ -14,7 +14,7 @@
 
 ## createUnifiedConnection
 
-Used only to import existing customer credentials; use "Create connection indirectly" instead
+Used only to import existing customer credentials; use "Authorize new connection" instead
 
 ### Example Usage
 

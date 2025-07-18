@@ -10,7 +10,7 @@ import { unwrapAsync } from "./types/fp.js";
 
 export class Auth extends ClientSDK {
   /**
-   * Create connection indirectly
+   * Authorize new connection
    *
    * @remarks
    * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.

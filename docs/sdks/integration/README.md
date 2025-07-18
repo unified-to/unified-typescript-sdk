@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
+* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Authorize new connection
 * [listUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [listUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 

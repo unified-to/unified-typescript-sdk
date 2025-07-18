@@ -32,7 +32,7 @@ export class Unified extends ClientSDK {
    * Create connection
    *
    * @remarks
-   * Used only to import existing customer credentials; use "Create connection indirectly" instead
+   * Used only to import existing customer credentials; use "Authorize new connection" instead
    */
   async createUnifiedConnection(
     request: shared.Connection,
@@ -91,7 +91,7 @@ export class Unified extends ClientSDK {
   }
 
   /**
-   * Create connection indirectly
+   * Authorize new connection
    *
    * @remarks
    * Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.

@@ -1334,9 +1334,9 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedGetUnifiedApicall`](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 - [`unifiedGetUnifiedConnection`](docs/sdks/connection/README.md#getunifiedconnection) - Retrieve connection
 - [`unifiedGetUnifiedConnection`](docs/sdks/unified/README.md#getunifiedconnection) - Retrieve connection
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Create connection indirectly
-- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Create connection indirectly
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Authorize new connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Authorize new connection
+- [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize new connection
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls

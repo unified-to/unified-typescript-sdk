@@ -14,7 +14,7 @@ export const tool$unifiedGetUnifiedIntegrationAuth: ToolDefinition<
   typeof args
 > = {
   name: "unified-get-unified-integration-auth",
-  description: `Create connection indirectly
+  description: `Authorize new connection
 
 Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.`,
   args,

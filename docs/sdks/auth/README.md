@@ -5,7 +5,7 @@
 
 ### Available Operations
 
-* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
+* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Authorize new connection
 * [getUnifiedIntegrationLogin](#getunifiedintegrationlogin) - Sign in a user
 
 ## getUnifiedIntegrationAuth

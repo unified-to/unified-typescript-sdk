@@ -15,7 +15,7 @@ export const tool$unifiedCreateUnifiedConnection: ToolDefinition<typeof args> =
     name: "unified-create-unified-connection",
     description: `Create connection
 
-Used only to import existing customer credentials; use "Create connection indirectly" instead`,
+Used only to import existing customer credentials; use "Authorize new connection" instead`,
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await unifiedCreateUnifiedConnection(

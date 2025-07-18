@@ -28,6 +28,17 @@ export type CalendarEventRecurrenceFrequency = OpenEnum<
   typeof CalendarEventRecurrenceFrequency
 >;
 
+export const WeekStart = {
+  Su: "SU",
+  Mo: "MO",
+  Tu: "TU",
+  We: "WE",
+  Th: "TH",
+  Fr: "FR",
+  Sa: "SA",
+} as const;
+export type WeekStart = OpenEnum<typeof WeekStart>;
+
 export type CalendarEventRecurrence = {
   count?: number | undefined;
   endAt?: Date | undefined;
@@ -49,6 +60,16 @@ export type CalendarEventRecurrence = {
    * months of the year to repeat on, defaults to undefined (every month), only used if frequency is YEARLY, January is 1
    */
   onMonths?: Array<number> | undefined;
+  /**
+   * week ordinals for BYDAY (e.g., -1 for last, -2 for second-to-last, 1 for first, 2 for second), only used with on_days. 0 is used for days without week ordinals.
+   */
+  onWeeks?: Array<number> | undefined;
+  /**
+   * days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
+   */
+  onYearDays?: Array<number> | undefined;
+  timezone?: string | undefined;
+  weekStart?: WeekStart | undefined;
 };
 
 /** @internal */
@@ -84,6 +105,38 @@ export namespace CalendarEventRecurrenceFrequency$ {
 }
 
 /** @internal */
+export const WeekStart$inboundSchema: z.ZodType<
+  WeekStart,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(WeekStart),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
+
+/** @internal */
+export const WeekStart$outboundSchema: z.ZodType<
+  WeekStart,
+  z.ZodTypeDef,
+  WeekStart
+> = z.union([
+  z.nativeEnum(WeekStart),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace WeekStart$ {
+  /** @deprecated use `WeekStart$inboundSchema` instead. */
+  export const inboundSchema = WeekStart$inboundSchema;
+  /** @deprecated use `WeekStart$outboundSchema` instead. */
+  export const outboundSchema = WeekStart$outboundSchema;
+}
+
+/** @internal */
 export const CalendarEventRecurrence$inboundSchema: z.ZodType<
   CalendarEventRecurrence,
   z.ZodTypeDef,
@@ -99,6 +152,10 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
     .optional(),
   on_month_days: z.array(z.number()).optional(),
   on_months: z.array(z.number()).optional(),
+  on_weeks: z.array(z.number()).optional(),
+  on_year_days: z.array(z.number()).optional(),
+  timezone: z.string().optional(),
+  week_start: WeekStart$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "end_at": "endAt",
@@ -106,6 +163,9 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
     "on_days": "onDays",
     "on_month_days": "onMonthDays",
     "on_months": "onMonths",
+    "on_weeks": "onWeeks",
+    "on_year_days": "onYearDays",
+    "week_start": "weekStart",
   });
 });
 
@@ -119,6 +179,10 @@ export type CalendarEventRecurrence$Outbound = {
   on_days?: Array<string> | undefined;
   on_month_days?: Array<number> | undefined;
   on_months?: Array<number> | undefined;
+  on_weeks?: Array<number> | undefined;
+  on_year_days?: Array<number> | undefined;
+  timezone?: string | undefined;
+  week_start?: string | undefined;
 };
 
 /** @internal */
@@ -136,6 +200,10 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
     .optional(),
   onMonthDays: z.array(z.number()).optional(),
   onMonths: z.array(z.number()).optional(),
+  onWeeks: z.array(z.number()).optional(),
+  onYearDays: z.array(z.number()).optional(),
+  timezone: z.string().optional(),
+  weekStart: WeekStart$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     endAt: "end_at",
@@ -143,6 +211,9 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
     onDays: "on_days",
     onMonthDays: "on_month_days",
     onMonths: "on_months",
+    onWeeks: "on_weeks",
+    onYearDays: "on_year_days",
+    weekStart: "week_start",
   });
 });
 

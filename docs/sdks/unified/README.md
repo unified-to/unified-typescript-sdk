@@ -9,7 +9,7 @@
 * [createUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [getUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [getUnifiedConnection](#getunifiedconnection) - Retrieve connection
-* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
+* [getUnifiedIntegrationAuth](#getunifiedintegrationauth) - Authorize new connection
 * [getUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [listUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [listUnifiedConnections](#listunifiedconnections) - List all connections
@@ -28,7 +28,7 @@
 
 ## createUnifiedConnection
 
-Used only to import existing customer credentials; use "Create connection indirectly" instead
+Used only to import existing customer credentials; use "Authorize new connection" instead
 
 ### Example Usage
 

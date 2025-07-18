@@ -18,7 +18,7 @@ export class Connection extends ClientSDK {
    * Create connection
    *
    * @remarks
-   * Used only to import existing customer credentials; use "Create connection indirectly" instead
+   * Used only to import existing customer credentials; use "Authorize new connection" instead
    */
   async createUnifiedConnection(
     request: shared.Connection,
