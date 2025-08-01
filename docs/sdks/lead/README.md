@@ -18,6 +18,7 @@ Create a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmLead" method="get" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all leads
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmLeads" method="get" path="/crm/{connection_id}/lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmLead" method="delete" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

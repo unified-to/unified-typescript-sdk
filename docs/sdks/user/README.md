@@ -18,6 +18,7 @@ Create user
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createScimUsers" method="post" path="/scim/{connection_id}/users" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Get user
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getScimUsers" method="get" path="/scim/{connection_id}/users/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List users
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listScimUsers" method="get" path="/scim/{connection_id}/users" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchScimUsers" method="patch" path="/scim/{connection_id}/users/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Delete user
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeScimUsers" method="delete" path="/scim/{connection_id}/users/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateScimUsers" method="put" path="/scim/{connection_id}/users/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

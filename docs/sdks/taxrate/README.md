@@ -18,6 +18,7 @@ Create a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTaxrate" method="get" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all taxrates
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTaxrates" method="get" path="/accounting/{connection_id}/taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingTaxrate" method="delete" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

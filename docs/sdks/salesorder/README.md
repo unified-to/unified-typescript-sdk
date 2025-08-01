@@ -18,6 +18,7 @@ Create a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingSalesorder" method="get" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all salesorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingSalesorders" method="get" path="/accounting/{connection_id}/salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingSalesorder" method="delete" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

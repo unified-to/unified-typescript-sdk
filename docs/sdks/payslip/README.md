@@ -14,6 +14,7 @@ Retrieve a payslip
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisPayslip" method="get" path="/hris/{connection_id}/payslip/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all payslips
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisPayslips" method="get" path="/hris/{connection_id}/payslip" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

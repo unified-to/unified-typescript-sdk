@@ -18,6 +18,7 @@ Create a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTicketingNote" method="get" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTicketingNotes" method="get" path="/ticketing/{connection_id}/note" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeTicketingNote" method="delete" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -30,6 +30,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -112,6 +113,7 @@ Create a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -196,6 +198,7 @@ Create a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -278,6 +281,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getKmsComment" method="get" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -356,6 +360,7 @@ Retrieve a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getKmsPage" method="get" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -434,6 +439,7 @@ Retrieve a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getKmsSpace" method="get" path="/kms/{connection_id}/space/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -512,6 +518,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listKmsComments" method="get" path="/kms/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -588,6 +595,7 @@ List all pages
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listKmsPages" method="get" path="/kms/{connection_id}/page" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -664,6 +672,7 @@ List all spaces
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listKmsSpaces" method="get" path="/kms/{connection_id}/space" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -740,6 +749,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,6 +834,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -910,6 +921,7 @@ Update a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -994,6 +1006,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeKmsComment" method="delete" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1072,6 +1085,7 @@ Remove a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeKmsPage" method="delete" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1150,6 +1164,7 @@ Remove a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeKmsSpace" method="delete" path="/kms/{connection_id}/space/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1228,6 +1243,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1312,6 +1328,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1398,6 +1415,7 @@ Update a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

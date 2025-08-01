@@ -14,6 +14,7 @@ Retrieve a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

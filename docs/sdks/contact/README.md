@@ -30,6 +30,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -108,6 +109,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -186,6 +188,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -264,6 +267,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingContact" method="get" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -342,6 +346,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmContact" method="get" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUcContact" method="get" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -498,6 +504,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingContacts" method="get" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -574,6 +581,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmContacts" method="get" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -650,6 +658,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcContacts" method="get" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -726,6 +735,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -806,6 +816,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -886,6 +897,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -966,6 +978,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingContact" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1044,6 +1057,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmContact" method="delete" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1122,6 +1136,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUcContact" method="delete" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1200,6 +1215,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1280,6 +1296,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1360,6 +1377,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

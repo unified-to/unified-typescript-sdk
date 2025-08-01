@@ -32,6 +32,7 @@ Used only to import existing customer credentials; use "Authorize new connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUnifiedConnection" method="post" path="/unified/connection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -116,6 +117,7 @@ The data payload received by your server is described at https://docs.unified.to
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUnifiedWebhook" method="post" path="/unified/webhook" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -200,6 +202,7 @@ Retrieve specific API Call by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedApicall" method="get" path="/unified/apicall/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -276,6 +279,7 @@ Retrieve connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedConnection" method="get" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -352,6 +356,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedIntegrationAuth" method="get" path="/unified/integration/auth/{workspace_id}/{integration_type}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -430,6 +435,7 @@ Retrieve webhook by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedWebhook" method="get" path="/unified/webhook/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -506,6 +512,7 @@ Returns API Calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedApicalls" method="get" path="/unified/apicall" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -578,6 +585,7 @@ List all connections
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedConnections" method="get" path="/unified/connection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -650,6 +658,7 @@ No authentication required as this is to be used by front-end interface
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIntegrationWorkspaces" method="get" path="/unified/integration/workspace/{workspace_id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -726,6 +735,7 @@ Returns all integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIntegrations" method="get" path="/unified/integration" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -798,6 +808,7 @@ List support issues
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIssues" method="get" path="/unified/issue" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -870,6 +881,7 @@ Returns all registered webhooks
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedWebhooks" method="get" path="/unified/webhook" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -942,6 +954,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUnifiedConnection" method="patch" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1036,6 +1049,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUnifiedWebhook" method="patch" path="/unified/webhook/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1122,6 +1136,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUnifiedWebhookTrigger" method="patch" path="/unified/webhook/{id}/trigger" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1198,6 +1213,7 @@ Remove connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUnifiedConnection" method="delete" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1274,6 +1290,7 @@ Remove webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUnifiedWebhook" method="delete" path="/unified/webhook/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1350,6 +1367,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUnifiedConnection" method="put" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1442,6 +1460,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUnifiedWebhook" method="put" path="/unified/webhook/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1528,6 +1547,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUnifiedWebhookTrigger" method="put" path="/unified/webhook/{id}/trigger" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

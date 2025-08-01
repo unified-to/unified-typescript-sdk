@@ -18,6 +18,7 @@ import { Busy } from "./busy.js";
 import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
 import { Candidate } from "./candidate.js";
+import { Category } from "./category.js";
 import { Channel } from "./channel.js";
 import { Class } from "./class.js";
 import { Collection } from "./collection.js";
@@ -123,6 +124,11 @@ export class UnifiedTo extends ClientSDK {
   private _bill?: Bill;
   get bill(): Bill {
     return (this._bill ??= new Bill(this._options));
+  }
+
+  private _category?: Category;
+  get category(): Category {
+    return (this._category ??= new Category(this._options));
   }
 
   private _contact?: Contact;

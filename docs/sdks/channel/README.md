@@ -14,6 +14,7 @@ Retrieve a channel
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMessagingChannel" method="get" path="/messaging/{connection_id}/channel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all channels
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMessagingChannels" method="get" path="/messaging/{connection_id}/channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Retrieve a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoCommit" method="get" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -180,6 +182,7 @@ List all commits
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoCommits" method="get" path="/repo/{connection_id}/commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -256,6 +259,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -342,6 +346,7 @@ Remove a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoCommit" method="delete" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

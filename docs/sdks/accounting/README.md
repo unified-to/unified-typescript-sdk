@@ -7,6 +7,7 @@
 
 * [createAccountingAccount](#createaccountingaccount) - Create an account
 * [createAccountingBill](#createaccountingbill) - Create a bill
+* [createAccountingCategory](#createaccountingcategory) - Create a category
 * [createAccountingContact](#createaccountingcontact) - Create a contact
 * [createAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
 * [createAccountingInvoice](#createaccountinginvoice) - Create an invoice
@@ -19,6 +20,7 @@
 * [getAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [getAccountingBalancesheet](#getaccountingbalancesheet) - Retrieve a balancesheet
 * [getAccountingBill](#getaccountingbill) - Retrieve a bill
+* [getAccountingCategory](#getaccountingcategory) - Retrieve a category
 * [getAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [getAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
 * [getAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
@@ -35,6 +37,7 @@
 * [listAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [listAccountingBalancesheets](#listaccountingbalancesheets) - List all balancesheets
 * [listAccountingBills](#listaccountingbills) - List all bills
+* [listAccountingCategories](#listaccountingcategories) - List all categories
 * [listAccountingContacts](#listaccountingcontacts) - List all contacts
 * [listAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
 * [listAccountingInvoices](#listaccountinginvoices) - List all invoices
@@ -50,6 +53,7 @@
 * [listAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
 * [patchAccountingAccount](#patchaccountingaccount) - Update an account
 * [patchAccountingBill](#patchaccountingbill) - Update a bill
+* [patchAccountingCategory](#patchaccountingcategory) - Update a category
 * [patchAccountingContact](#patchaccountingcontact) - Update a contact
 * [patchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
 * [patchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
@@ -61,6 +65,7 @@
 * [patchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [removeAccountingAccount](#removeaccountingaccount) - Remove an account
 * [removeAccountingBill](#removeaccountingbill) - Remove a bill
+* [removeAccountingCategory](#removeaccountingcategory) - Remove a category
 * [removeAccountingContact](#removeaccountingcontact) - Remove a contact
 * [removeAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
 * [removeAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
@@ -72,6 +77,7 @@
 * [removeAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [updateAccountingAccount](#updateaccountingaccount) - Update an account
 * [updateAccountingBill](#updateaccountingbill) - Update a bill
+* [updateAccountingCategory](#updateaccountingcategory) - Update a category
 * [updateAccountingContact](#updateaccountingcontact) - Update a contact
 * [updateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
 * [updateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
@@ -88,6 +94,7 @@ Create an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -166,6 +173,7 @@ Create a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -238,12 +246,92 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## createAccountingCategory
+
+Create a category
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.createAccountingCategory({
+    accountingCategory: {},
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingCreateAccountingCategory } from "@unified-api/typescript-sdk/funcs/accountingCreateAccountingCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingCreateAccountingCategory(unifiedTo, {
+    accountingCategory: {},
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingCreateAccountingCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.CreateAccountingCategoryRequest](../../sdk/models/operations/createaccountingcategoryrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingCategory](../../sdk/models/shared/accountingcategory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## createAccountingContact
 
 Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -322,6 +410,7 @@ Create a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -400,6 +489,7 @@ Create an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -478,6 +568,7 @@ Create a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -556,6 +647,7 @@ Create an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -634,6 +726,7 @@ Create a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -712,6 +805,7 @@ Create a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -790,6 +884,7 @@ Create a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -868,6 +963,7 @@ Create a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -946,6 +1042,7 @@ Retrieve an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingAccount" method="get" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1024,6 +1121,7 @@ Retrieve a balancesheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingBalancesheet" method="get" path="/accounting/{connection_id}/balancesheet/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1102,6 +1200,7 @@ Retrieve a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingBill" method="get" path="/accounting/{connection_id}/bill/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1174,12 +1273,92 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## getAccountingCategory
+
+Retrieve a category
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="getAccountingCategory" method="get" path="/accounting/{connection_id}/category/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.getAccountingCategory({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingGetAccountingCategory } from "@unified-api/typescript-sdk/funcs/accountingGetAccountingCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingGetAccountingCategory(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingGetAccountingCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.GetAccountingCategoryRequest](../../sdk/models/operations/getaccountingcategoryrequest.md)                                                                         | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingCategory](../../sdk/models/shared/accountingcategory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## getAccountingContact
 
 Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingContact" method="get" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1258,6 +1437,7 @@ Retrieve a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingCreditmemo" method="get" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1336,6 +1516,7 @@ Retrieve an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingInvoice" method="get" path="/accounting/{connection_id}/invoice/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1414,6 +1595,7 @@ Retrieve a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingJournal" method="get" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1492,6 +1674,7 @@ Retrieve an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingOrder" method="get" path="/accounting/{connection_id}/order/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1570,6 +1753,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingOrganization" method="get" path="/accounting/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1648,6 +1832,7 @@ Retrieve a profitloss
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingProfitloss" method="get" path="/accounting/{connection_id}/profitloss/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1726,6 +1911,7 @@ Retrieve a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingPurchaseorder" method="get" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1804,6 +1990,7 @@ Retrieve a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1882,6 +2069,7 @@ Retrieve a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingSalesorder" method="get" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1960,6 +2148,7 @@ Retrieve a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTaxrate" method="get" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2038,6 +2227,7 @@ Retrieve a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTransaction" method="get" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2116,6 +2306,7 @@ Retrieve a trialbalance
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTrialbalance" method="get" path="/accounting/{connection_id}/trialbalance/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2194,6 +2385,7 @@ List all accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingAccounts" method="get" path="/accounting/{connection_id}/account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2270,6 +2462,7 @@ List all balancesheets
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingBalancesheets" method="get" path="/accounting/{connection_id}/balancesheet" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2346,6 +2539,7 @@ List all bills
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingBills" method="get" path="/accounting/{connection_id}/bill" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2416,12 +2610,90 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## listAccountingCategories
+
+List all categories
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="listAccountingCategories" method="get" path="/accounting/{connection_id}/category" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.listAccountingCategories({
+    connectionId: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingListAccountingCategories } from "@unified-api/typescript-sdk/funcs/accountingListAccountingCategories.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingListAccountingCategories(unifiedTo, {
+    connectionId: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingListAccountingCategories failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.ListAccountingCategoriesRequest](../../sdk/models/operations/listaccountingcategoriesrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingCategory[]](../../models/.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## listAccountingContacts
 
 List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingContacts" method="get" path="/accounting/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2498,6 +2770,7 @@ List all creditmemoes
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingCreditmemoes" method="get" path="/accounting/{connection_id}/creditmemo" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2574,6 +2847,7 @@ List all invoices
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingInvoices" method="get" path="/accounting/{connection_id}/invoice" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2650,6 +2924,7 @@ List all journals
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingJournals" method="get" path="/accounting/{connection_id}/journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2726,6 +3001,7 @@ List all orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingOrders" method="get" path="/accounting/{connection_id}/order" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2802,6 +3078,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingOrganizations" method="get" path="/accounting/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2878,6 +3155,7 @@ List all profitlosses
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingProfitlosses" method="get" path="/accounting/{connection_id}/profitloss" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2954,6 +3232,7 @@ List all purchaseorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingPurchaseorders" method="get" path="/accounting/{connection_id}/purchaseorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3030,6 +3309,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3106,6 +3386,7 @@ List all salesorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingSalesorders" method="get" path="/accounting/{connection_id}/salesorder" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3182,6 +3463,7 @@ List all taxrates
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTaxrates" method="get" path="/accounting/{connection_id}/taxrate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3258,6 +3540,7 @@ List all transactions
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTransactions" method="get" path="/accounting/{connection_id}/transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3334,6 +3617,7 @@ List all trialbalances
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTrialbalances" method="get" path="/accounting/{connection_id}/trialbalance" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3410,6 +3694,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3490,6 +3775,7 @@ Update a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3564,12 +3850,94 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## patchAccountingCategory
+
+Update a category
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.patchAccountingCategory({
+    accountingCategory: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingPatchAccountingCategory } from "@unified-api/typescript-sdk/funcs/accountingPatchAccountingCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingPatchAccountingCategory(unifiedTo, {
+    accountingCategory: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingPatchAccountingCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.PatchAccountingCategoryRequest](../../sdk/models/operations/patchaccountingcategoryrequest.md)                                                                     | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingCategory](../../sdk/models/shared/accountingcategory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## patchAccountingContact
 
 Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3650,6 +4018,7 @@ Update a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3730,6 +4099,7 @@ Update an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3810,6 +4180,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3890,6 +4261,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3970,6 +4342,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4050,6 +4423,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4130,6 +4504,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4210,6 +4585,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4290,6 +4666,7 @@ Remove an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingAccount" method="delete" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4368,6 +4745,7 @@ Remove a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingBill" method="delete" path="/accounting/{connection_id}/bill/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4440,12 +4818,92 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## removeAccountingCategory
+
+Remove a category
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="removeAccountingCategory" method="delete" path="/accounting/{connection_id}/category/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.removeAccountingCategory({
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingRemoveAccountingCategory } from "@unified-api/typescript-sdk/funcs/accountingRemoveAccountingCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingRemoveAccountingCategory(unifiedTo, {
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingRemoveAccountingCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.RemoveAccountingCategoryRequest](../../sdk/models/operations/removeaccountingcategoryrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[operations.RemoveAccountingCategoryResponse](../../sdk/models/operations/removeaccountingcategoryresponse.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## removeAccountingContact
 
 Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingContact" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4524,6 +4982,7 @@ Remove a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingCreditmemo" method="delete" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4602,6 +5061,7 @@ Remove an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingInvoice" method="delete" path="/accounting/{connection_id}/invoice/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4680,6 +5140,7 @@ Remove a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingJournal" method="delete" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4758,6 +5219,7 @@ Remove an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingOrder" method="delete" path="/accounting/{connection_id}/order/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4836,6 +5298,7 @@ Remove a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingPurchaseorder" method="delete" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4914,6 +5377,7 @@ Remove a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingSalesorder" method="delete" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -4992,6 +5456,7 @@ Remove a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingTaxrate" method="delete" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5070,6 +5535,7 @@ Remove a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingTransaction" method="delete" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5148,6 +5614,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5228,6 +5695,7 @@ Update a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5302,12 +5770,94 @@ run();
 | --------------- | --------------- | --------------- |
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
+## updateAccountingCategory
+
+Update a category
+
+### Example Usage
+
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
+```typescript
+import { UnifiedTo } from "@unified-api/typescript-sdk";
+
+const unifiedTo = new UnifiedTo({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const result = await unifiedTo.accounting.updateAccountingCategory({
+    accountingCategory: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+
+  console.log(result);
+}
+
+run();
+```
+
+### Standalone function
+
+The standalone function version of this method:
+
+```typescript
+import { UnifiedToCore } from "@unified-api/typescript-sdk/core.js";
+import { accountingUpdateAccountingCategory } from "@unified-api/typescript-sdk/funcs/accountingUpdateAccountingCategory.js";
+
+// Use `UnifiedToCore` for best tree-shaking performance.
+// You can create one instance of it to use across an application.
+const unifiedTo = new UnifiedToCore({
+  security: {
+    jwt: "<YOUR_API_KEY_HERE>",
+  },
+});
+
+async function run() {
+  const res = await accountingUpdateAccountingCategory(unifiedTo, {
+    accountingCategory: {},
+    connectionId: "<id>",
+    id: "<id>",
+  });
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("accountingUpdateAccountingCategory failed:", res.error);
+  }
+}
+
+run();
+```
+
+### Parameters
+
+| Parameter                                                                                                                                                                      | Type                                                                                                                                                                           | Required                                                                                                                                                                       | Description                                                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                                                                      | [operations.UpdateAccountingCategoryRequest](../../sdk/models/operations/updateaccountingcategoryrequest.md)                                                                   | :heavy_check_mark:                                                                                                                                                             | The request object to use for the request.                                                                                                                                     |
+| `options`                                                                                                                                                                      | RequestOptions                                                                                                                                                                 | :heavy_minus_sign:                                                                                                                                                             | Used to set various options for making HTTP requests.                                                                                                                          |
+| `options.fetchOptions`                                                                                                                                                         | [RequestInit](https://developer.mozilla.org/en-US/docs/Web/API/Request/Request#options)                                                                                        | :heavy_minus_sign:                                                                                                                                                             | Options that are passed to the underlying HTTP request. This can be used to inject extra headers for examples. All `Request` options, except `method` and `body`, are allowed. |
+| `options.retries`                                                                                                                                                              | [RetryConfig](../../lib/utils/retryconfig.md)                                                                                                                                  | :heavy_minus_sign:                                                                                                                                                             | Enables retrying HTTP requests under certain failure conditions.                                                                                                               |
+
+### Response
+
+**Promise\<[shared.AccountingCategory](../../sdk/models/shared/accountingcategory.md)\>**
+
+### Errors
+
+| Error Type      | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4XX, 5XX        | \*/\*           |
+
 ## updateAccountingContact
 
 Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5388,6 +5938,7 @@ Update a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5468,6 +6019,7 @@ Update an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5548,6 +6100,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5628,6 +6181,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5708,6 +6262,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5788,6 +6343,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5868,6 +6424,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -5948,6 +6505,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

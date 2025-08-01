@@ -13,6 +13,7 @@ List all busies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarBusies" method="get" path="/calendar/{connection_id}/busy" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

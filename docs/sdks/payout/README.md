@@ -14,6 +14,7 @@ Retrieve a payout
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentPayout" method="get" path="/payment/{connection_id}/payout/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all payouts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentPayouts" method="get" path="/payment/{connection_id}/payout" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

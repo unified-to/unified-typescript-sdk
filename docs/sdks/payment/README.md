@@ -34,6 +34,7 @@ Create a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -112,6 +113,7 @@ Create a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -190,6 +192,7 @@ Create a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -268,6 +271,7 @@ Retrieve a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentLink" method="get" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -346,6 +350,7 @@ Retrieve a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentPayment" method="get" path="/payment/{connection_id}/payment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -424,6 +429,7 @@ Retrieve a payout
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentPayout" method="get" path="/payment/{connection_id}/payout/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -502,6 +508,7 @@ Retrieve a refund
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentRefund" method="get" path="/payment/{connection_id}/refund/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -580,6 +587,7 @@ Retrieve a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentSubscription" method="get" path="/payment/{connection_id}/subscription/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -658,6 +666,7 @@ List all links
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentLinks" method="get" path="/payment/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -734,6 +743,7 @@ List all payments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentPayments" method="get" path="/payment/{connection_id}/payment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -810,6 +820,7 @@ List all payouts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentPayouts" method="get" path="/payment/{connection_id}/payout" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -886,6 +897,7 @@ List all refunds
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentRefunds" method="get" path="/payment/{connection_id}/refund" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -962,6 +974,7 @@ List all subscriptions
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentSubscriptions" method="get" path="/payment/{connection_id}/subscription" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1038,6 +1051,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1118,6 +1132,7 @@ Update a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1198,6 +1213,7 @@ Update a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1278,6 +1294,7 @@ Remove a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removePaymentLink" method="delete" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1356,6 +1373,7 @@ Remove a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removePaymentPayment" method="delete" path="/payment/{connection_id}/payment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1434,6 +1452,7 @@ Remove a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removePaymentSubscription" method="delete" path="/payment/{connection_id}/subscription/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1512,6 +1531,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1592,6 +1612,7 @@ Update a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1672,6 +1693,7 @@ Update a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

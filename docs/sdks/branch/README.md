@@ -18,6 +18,7 @@ Create a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Retrieve a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoBranch" method="get" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -180,6 +182,7 @@ List all branches
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoBranches" method="get" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -256,6 +259,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -342,6 +346,7 @@ Remove a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoBranch" method="delete" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

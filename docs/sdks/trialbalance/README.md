@@ -14,6 +14,7 @@ Retrieve a trialbalance
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTrialbalance" method="get" path="/accounting/{connection_id}/trialbalance/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all trialbalances
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTrialbalances" method="get" path="/accounting/{connection_id}/trialbalance" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTicketingTicket" method="get" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTicketingTickets" method="get" path="/ticketing/{connection_id}/ticket" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeTicketingTicket" method="delete" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -100,6 +101,7 @@ Retrieve a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisDevice" method="get" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -178,6 +180,7 @@ List all devices
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisDevices" method="get" path="/hris/{connection_id}/device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -254,6 +257,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -338,6 +342,7 @@ Remove a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisDevice" method="delete" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -416,6 +421,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -15,6 +15,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedIntegrationAuth" method="get" path="/unified/integration/auth/{workspace_id}/{integration_type}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -93,6 +94,7 @@ No authentication required as this is to be used by front-end interface
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIntegrationWorkspaces" method="get" path="/unified/integration/workspace/{workspace_id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -169,6 +171,7 @@ Returns all integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIntegrations" method="get" path="/unified/integration" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -13,6 +13,7 @@ Retrieve enrichment information for a person
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listEnrichPeople" method="get" path="/enrich/{connection_id}/person" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getStorageFile" method="get" path="/storage/{connection_id}/file/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all files
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listStorageFiles" method="get" path="/storage/{connection_id}/file" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeStorageFile" method="delete" path="/storage/{connection_id}/file/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

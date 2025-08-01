@@ -8,6 +8,7 @@ export * from "./accountingattachment.js";
 export * from "./accountingbalancesheet.js";
 export * from "./accountingbalancesheetitem.js";
 export * from "./accountingbill.js";
+export * from "./accountingcategory.js";
 export * from "./accountingcontact.js";
 export * from "./accountingcontactpaymentmethod.js";
 export * from "./accountingcreditmemo.js";

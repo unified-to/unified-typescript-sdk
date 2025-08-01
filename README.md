@@ -446,6 +446,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingCreateAccountingAccount`](docs/sdks/accounting/README.md#createaccountingaccount) - Create an account
 - [`accountingCreateAccountingBill`](docs/sdks/accounting/README.md#createaccountingbill) - Create a bill
 - [`accountingCreateAccountingBill`](docs/sdks/bill/README.md#createaccountingbill) - Create a bill
+- [`accountingCreateAccountingCategory`](docs/sdks/accounting/README.md#createaccountingcategory) - Create a category
+- [`accountingCreateAccountingCategory`](docs/sdks/category/README.md#createaccountingcategory) - Create a category
 - [`accountingCreateAccountingContact`](docs/sdks/accounting/README.md#createaccountingcontact) - Create a contact
 - [`accountingCreateAccountingContact`](docs/sdks/contact/README.md#createaccountingcontact) - Create a contact
 - [`accountingCreateAccountingCreditmemo`](docs/sdks/accounting/README.md#createaccountingcreditmemo) - Create a creditmemo
@@ -470,6 +472,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingBalancesheet`](docs/sdks/balancesheet/README.md#getaccountingbalancesheet) - Retrieve a balancesheet
 - [`accountingGetAccountingBill`](docs/sdks/accounting/README.md#getaccountingbill) - Retrieve a bill
 - [`accountingGetAccountingBill`](docs/sdks/bill/README.md#getaccountingbill) - Retrieve a bill
+- [`accountingGetAccountingCategory`](docs/sdks/accounting/README.md#getaccountingcategory) - Retrieve a category
+- [`accountingGetAccountingCategory`](docs/sdks/category/README.md#getaccountingcategory) - Retrieve a category
 - [`accountingGetAccountingContact`](docs/sdks/accounting/README.md#getaccountingcontact) - Retrieve a contact
 - [`accountingGetAccountingContact`](docs/sdks/contact/README.md#getaccountingcontact) - Retrieve a contact
 - [`accountingGetAccountingCreditmemo`](docs/sdks/accounting/README.md#getaccountingcreditmemo) - Retrieve a creditmemo
@@ -502,6 +506,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingBalancesheets`](docs/sdks/balancesheet/README.md#listaccountingbalancesheets) - List all balancesheets
 - [`accountingListAccountingBills`](docs/sdks/accounting/README.md#listaccountingbills) - List all bills
 - [`accountingListAccountingBills`](docs/sdks/bill/README.md#listaccountingbills) - List all bills
+- [`accountingListAccountingCategories`](docs/sdks/accounting/README.md#listaccountingcategories) - List all categories
+- [`accountingListAccountingCategories`](docs/sdks/category/README.md#listaccountingcategories) - List all categories
 - [`accountingListAccountingContacts`](docs/sdks/accounting/README.md#listaccountingcontacts) - List all contacts
 - [`accountingListAccountingContacts`](docs/sdks/contact/README.md#listaccountingcontacts) - List all contacts
 - [`accountingListAccountingCreditmemoes`](docs/sdks/accounting/README.md#listaccountingcreditmemoes) - List all creditmemoes
@@ -532,6 +538,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingAccount`](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
 - [`accountingPatchAccountingBill`](docs/sdks/accounting/README.md#patchaccountingbill) - Update a bill
 - [`accountingPatchAccountingBill`](docs/sdks/bill/README.md#patchaccountingbill) - Update a bill
+- [`accountingPatchAccountingCategory`](docs/sdks/accounting/README.md#patchaccountingcategory) - Update a category
+- [`accountingPatchAccountingCategory`](docs/sdks/category/README.md#patchaccountingcategory) - Update a category
 - [`accountingPatchAccountingContact`](docs/sdks/accounting/README.md#patchaccountingcontact) - Update a contact
 - [`accountingPatchAccountingContact`](docs/sdks/contact/README.md#patchaccountingcontact) - Update a contact
 - [`accountingPatchAccountingCreditmemo`](docs/sdks/accounting/README.md#patchaccountingcreditmemo) - Update a creditmemo
@@ -554,6 +562,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingAccount`](docs/sdks/accounting/README.md#removeaccountingaccount) - Remove an account
 - [`accountingRemoveAccountingBill`](docs/sdks/accounting/README.md#removeaccountingbill) - Remove a bill
 - [`accountingRemoveAccountingBill`](docs/sdks/bill/README.md#removeaccountingbill) - Remove a bill
+- [`accountingRemoveAccountingCategory`](docs/sdks/accounting/README.md#removeaccountingcategory) - Remove a category
+- [`accountingRemoveAccountingCategory`](docs/sdks/category/README.md#removeaccountingcategory) - Remove a category
 - [`accountingRemoveAccountingContact`](docs/sdks/accounting/README.md#removeaccountingcontact) - Remove a contact
 - [`accountingRemoveAccountingContact`](docs/sdks/contact/README.md#removeaccountingcontact) - Remove a contact
 - [`accountingRemoveAccountingCreditmemo`](docs/sdks/accounting/README.md#removeaccountingcreditmemo) - Remove a creditmemo
@@ -576,6 +586,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingAccount`](docs/sdks/accounting/README.md#updateaccountingaccount) - Update an account
 - [`accountingUpdateAccountingBill`](docs/sdks/accounting/README.md#updateaccountingbill) - Update a bill
 - [`accountingUpdateAccountingBill`](docs/sdks/bill/README.md#updateaccountingbill) - Update a bill
+- [`accountingUpdateAccountingCategory`](docs/sdks/accounting/README.md#updateaccountingcategory) - Update a category
+- [`accountingUpdateAccountingCategory`](docs/sdks/category/README.md#updateaccountingcategory) - Update a category
 - [`accountingUpdateAccountingContact`](docs/sdks/accounting/README.md#updateaccountingcontact) - Update a contact
 - [`accountingUpdateAccountingContact`](docs/sdks/contact/README.md#updateaccountingcontact) - Update a contact
 - [`accountingUpdateAccountingCreditmemo`](docs/sdks/accounting/README.md#updateaccountingcreditmemo) - Update a creditmemo

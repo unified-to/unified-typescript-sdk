@@ -20,6 +20,7 @@ Passthrough POST
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createPassthrough_json" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -98,6 +99,7 @@ Passthrough POST
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createPassthrough_raw" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -176,6 +178,7 @@ Passthrough GET
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPassthroughs" method="get" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -254,6 +257,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchPassthrough_json" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -332,6 +336,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchPassthrough_raw" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -410,6 +415,7 @@ Passthrough DELETE
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removePassthrough" method="delete" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -488,6 +494,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updatePassthrough_json" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -566,6 +573,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updatePassthrough_raw" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

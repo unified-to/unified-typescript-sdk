@@ -13,6 +13,7 @@ List all calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcCalls" method="get" path="/uc/{connection_id}/call" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

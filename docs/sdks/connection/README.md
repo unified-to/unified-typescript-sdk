@@ -18,6 +18,7 @@ Used only to import existing customer credentials; use "Authorize new connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUnifiedConnection" method="post" path="/unified/connection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Retrieve connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedConnection" method="get" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -178,6 +180,7 @@ List all connections
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedConnections" method="get" path="/unified/connection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUnifiedConnection" method="patch" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -344,6 +348,7 @@ Remove connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUnifiedConnection" method="delete" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUnifiedConnection" method="put" path="/unified/connection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

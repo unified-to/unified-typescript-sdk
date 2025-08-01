@@ -48,6 +48,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -126,6 +127,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -204,6 +206,7 @@ Create a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -282,6 +285,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -360,6 +364,7 @@ Create a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -438,6 +443,7 @@ Create a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -516,6 +522,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmCompany" method="get" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -594,6 +601,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmContact" method="get" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -672,6 +680,7 @@ Retrieve a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmDeal" method="get" path="/crm/{connection_id}/deal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -750,6 +759,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmEvent" method="get" path="/crm/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -828,6 +838,7 @@ Retrieve a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmLead" method="get" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -906,6 +917,7 @@ Retrieve a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmPipeline" method="get" path="/crm/{connection_id}/pipeline/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -984,6 +996,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmCompanies" method="get" path="/crm/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1060,6 +1073,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmContacts" method="get" path="/crm/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1136,6 +1150,7 @@ List all deals
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmDeals" method="get" path="/crm/{connection_id}/deal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1212,6 +1227,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmEvents" method="get" path="/crm/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1288,6 +1304,7 @@ List all leads
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmLeads" method="get" path="/crm/{connection_id}/lead" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1364,6 +1381,7 @@ List all pipelines
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmPipelines" method="get" path="/crm/{connection_id}/pipeline" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1440,6 +1458,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1520,6 +1539,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1600,6 +1620,7 @@ Update a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1680,6 +1701,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1760,6 +1782,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1840,6 +1863,7 @@ Update a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1920,6 +1944,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmCompany" method="delete" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1998,6 +2023,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmContact" method="delete" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2076,6 +2102,7 @@ Remove a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmDeal" method="delete" path="/crm/{connection_id}/deal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2154,6 +2181,7 @@ Remove an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmEvent" method="delete" path="/crm/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2232,6 +2260,7 @@ Remove a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmLead" method="delete" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2310,6 +2339,7 @@ Remove a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmPipeline" method="delete" path="/crm/{connection_id}/pipeline/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2388,6 +2418,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2468,6 +2499,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2548,6 +2580,7 @@ Update a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2628,6 +2661,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2708,6 +2742,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2788,6 +2823,7 @@ Update a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

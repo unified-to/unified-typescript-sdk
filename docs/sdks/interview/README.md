@@ -18,6 +18,7 @@ Create an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsInterview" method="get" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsInterviews" method="get" path="/ats/{connection_id}/interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsInterview" method="delete" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

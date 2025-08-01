@@ -13,6 +13,7 @@ List support issues
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedIssues" method="get" path="/unified/issue" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

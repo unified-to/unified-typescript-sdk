@@ -18,6 +18,7 @@ Create a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisTimeshift" method="get" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all timeshifts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisTimeshifts" method="get" path="/hris/{connection_id}/timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisTimeshift" method="delete" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

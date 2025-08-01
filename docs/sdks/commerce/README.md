@@ -42,6 +42,7 @@ Create a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -124,6 +125,7 @@ Create an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -206,6 +208,7 @@ Create an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -284,6 +287,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -366,6 +370,7 @@ Create a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -448,6 +453,7 @@ Retrieve a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceCollection" method="get" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -526,6 +532,7 @@ Retrieve an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceInventory" method="get" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -604,6 +611,7 @@ Retrieve an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceItem" method="get" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -682,6 +690,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -760,6 +769,7 @@ Retrieve a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceReview" method="get" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -838,6 +848,7 @@ List all collections
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceCollections" method="get" path="/commerce/{connection_id}/collection" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -914,6 +925,7 @@ List all inventories
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceInventories" method="get" path="/commerce/{connection_id}/inventory" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -990,6 +1002,7 @@ List all items
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceItems" method="get" path="/commerce/{connection_id}/item" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1066,6 +1079,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1142,6 +1156,7 @@ List all reviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceReviews" method="get" path="/commerce/{connection_id}/review" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1218,6 +1233,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1302,6 +1318,7 @@ Update an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1386,6 +1403,7 @@ Update an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1466,6 +1484,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1550,6 +1569,7 @@ Update a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1634,6 +1654,7 @@ Remove a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceCollection" method="delete" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1712,6 +1733,7 @@ Remove an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceInventory" method="delete" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1790,6 +1812,7 @@ Remove an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceItem" method="delete" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1868,6 +1891,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1946,6 +1970,7 @@ Remove a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceReview" method="delete" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2024,6 +2049,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2108,6 +2134,7 @@ Update an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2192,6 +2219,7 @@ Update an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2272,6 +2300,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2356,6 +2385,7 @@ Update a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

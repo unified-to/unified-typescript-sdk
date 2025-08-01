@@ -14,6 +14,7 @@ Retrieve a balancesheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingBalancesheet" method="get" path="/accounting/{connection_id}/balancesheet/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all balancesheets
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingBalancesheets" method="get" path="/accounting/{connection_id}/balancesheet" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

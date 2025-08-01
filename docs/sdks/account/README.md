@@ -18,6 +18,7 @@ Create an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingAccount" method="get" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingAccounts" method="get" path="/accounting/{connection_id}/account" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingAccount" method="delete" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

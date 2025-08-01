@@ -18,6 +18,7 @@ Create a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingTransaction" method="get" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all transactions
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingTransactions" method="get" path="/accounting/{connection_id}/transaction" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingTransaction" method="delete" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

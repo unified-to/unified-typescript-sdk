@@ -14,6 +14,7 @@ Retrieve specific API Call by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUnifiedApicall" method="get" path="/unified/apicall/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -90,6 +91,7 @@ Returns API Calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUnifiedApicalls" method="get" path="/unified/apicall" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

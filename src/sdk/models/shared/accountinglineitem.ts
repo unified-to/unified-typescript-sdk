@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingLineitem = {
   accountId?: string | undefined;
+  categoryIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   discountAmount?: number | undefined;
   id?: string | undefined;
@@ -35,6 +36,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  category_ids: z.array(z.string()).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   discount_amount: z.number().optional(),
@@ -57,6 +59,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
+    "category_ids": "categoryIds",
     "created_at": "createdAt",
     "discount_amount": "discountAmount",
     "item_description": "itemDescription",
@@ -77,6 +80,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingLineitem$Outbound = {
   account_id?: string | undefined;
+  category_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   discount_amount?: number | undefined;
   id?: string | undefined;
@@ -102,6 +106,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   AccountingLineitem
 > = z.object({
   accountId: z.string().optional(),
+  categoryIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   discountAmount: z.number().optional(),
   id: z.string().optional(),
@@ -121,6 +126,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
+    categoryIds: "category_ids",
     createdAt: "created_at",
     discountAmount: "discount_amount",
     itemDescription: "item_description",

@@ -13,6 +13,7 @@ List all applicationstatuses
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsApplicationstatuses" method="get" path="/ats/{connection_id}/applicationstatus" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Retrieve a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMetadataMetadata" method="get" path="/metadata/{connection_id}/metadata/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -180,6 +182,7 @@ List all metadatas
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMetadataMetadatas" method="get" path="/metadata/{connection_id}/metadata" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -256,6 +259,7 @@ Update a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -342,6 +346,7 @@ Remove a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeMetadataMetadata" method="delete" path="/metadata/{connection_id}/metadata/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Update a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

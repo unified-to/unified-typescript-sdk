@@ -14,6 +14,7 @@ Retrieve a refund
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getPaymentRefund" method="get" path="/payment/{connection_id}/refund/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all refunds
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listPaymentRefunds" method="get" path="/payment/{connection_id}/refund" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

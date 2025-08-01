@@ -20,6 +20,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -98,6 +99,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingOrganization" method="get" path="/accounting/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -176,6 +178,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoOrganization" method="get" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -254,6 +257,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingOrganizations" method="get" path="/accounting/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoOrganizations" method="get" path="/repo/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -406,6 +411,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -486,6 +492,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoOrganization" method="delete" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -564,6 +571,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

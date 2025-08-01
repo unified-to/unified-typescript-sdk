@@ -20,6 +20,7 @@ Create a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -98,6 +99,7 @@ Retrieve a channel
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMessagingChannel" method="get" path="/messaging/{connection_id}/channel/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -176,6 +178,7 @@ Retrieve a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMessagingMessage" method="get" path="/messaging/{connection_id}/message/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -254,6 +257,7 @@ List all channels
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMessagingChannels" method="get" path="/messaging/{connection_id}/channel" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ List all messages
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMessagingMessages" method="get" path="/messaging/{connection_id}/message" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -406,6 +411,7 @@ Update a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -486,6 +492,7 @@ Remove a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeMessagingMessage" method="delete" path="/messaging/{connection_id}/message/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -564,6 +571,7 @@ Update a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

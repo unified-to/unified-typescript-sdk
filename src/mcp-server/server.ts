@@ -15,6 +15,7 @@ import { MCPScope } from "./scopes.js";
 import { createRegisterTool } from "./tools.js";
 import { tool$accountingCreateAccountingAccount } from "./tools/accountingCreateAccountingAccount.js";
 import { tool$accountingCreateAccountingBill } from "./tools/accountingCreateAccountingBill.js";
+import { tool$accountingCreateAccountingCategory } from "./tools/accountingCreateAccountingCategory.js";
 import { tool$accountingCreateAccountingContact } from "./tools/accountingCreateAccountingContact.js";
 import { tool$accountingCreateAccountingCreditmemo } from "./tools/accountingCreateAccountingCreditmemo.js";
 import { tool$accountingCreateAccountingInvoice } from "./tools/accountingCreateAccountingInvoice.js";
@@ -27,6 +28,7 @@ import { tool$accountingCreateAccountingTransaction } from "./tools/accountingCr
 import { tool$accountingGetAccountingAccount } from "./tools/accountingGetAccountingAccount.js";
 import { tool$accountingGetAccountingBalancesheet } from "./tools/accountingGetAccountingBalancesheet.js";
 import { tool$accountingGetAccountingBill } from "./tools/accountingGetAccountingBill.js";
+import { tool$accountingGetAccountingCategory } from "./tools/accountingGetAccountingCategory.js";
 import { tool$accountingGetAccountingContact } from "./tools/accountingGetAccountingContact.js";
 import { tool$accountingGetAccountingCreditmemo } from "./tools/accountingGetAccountingCreditmemo.js";
 import { tool$accountingGetAccountingInvoice } from "./tools/accountingGetAccountingInvoice.js";
@@ -43,6 +45,7 @@ import { tool$accountingGetAccountingTrialbalance } from "./tools/accountingGetA
 import { tool$accountingListAccountingAccounts } from "./tools/accountingListAccountingAccounts.js";
 import { tool$accountingListAccountingBalancesheets } from "./tools/accountingListAccountingBalancesheets.js";
 import { tool$accountingListAccountingBills } from "./tools/accountingListAccountingBills.js";
+import { tool$accountingListAccountingCategories } from "./tools/accountingListAccountingCategories.js";
 import { tool$accountingListAccountingContacts } from "./tools/accountingListAccountingContacts.js";
 import { tool$accountingListAccountingCreditmemoes } from "./tools/accountingListAccountingCreditmemoes.js";
 import { tool$accountingListAccountingInvoices } from "./tools/accountingListAccountingInvoices.js";
@@ -58,6 +61,7 @@ import { tool$accountingListAccountingTransactions } from "./tools/accountingLis
 import { tool$accountingListAccountingTrialbalances } from "./tools/accountingListAccountingTrialbalances.js";
 import { tool$accountingPatchAccountingAccount } from "./tools/accountingPatchAccountingAccount.js";
 import { tool$accountingPatchAccountingBill } from "./tools/accountingPatchAccountingBill.js";
+import { tool$accountingPatchAccountingCategory } from "./tools/accountingPatchAccountingCategory.js";
 import { tool$accountingPatchAccountingContact } from "./tools/accountingPatchAccountingContact.js";
 import { tool$accountingPatchAccountingCreditmemo } from "./tools/accountingPatchAccountingCreditmemo.js";
 import { tool$accountingPatchAccountingInvoice } from "./tools/accountingPatchAccountingInvoice.js";
@@ -69,6 +73,7 @@ import { tool$accountingPatchAccountingTaxrate } from "./tools/accountingPatchAc
 import { tool$accountingPatchAccountingTransaction } from "./tools/accountingPatchAccountingTransaction.js";
 import { tool$accountingRemoveAccountingAccount } from "./tools/accountingRemoveAccountingAccount.js";
 import { tool$accountingRemoveAccountingBill } from "./tools/accountingRemoveAccountingBill.js";
+import { tool$accountingRemoveAccountingCategory } from "./tools/accountingRemoveAccountingCategory.js";
 import { tool$accountingRemoveAccountingContact } from "./tools/accountingRemoveAccountingContact.js";
 import { tool$accountingRemoveAccountingCreditmemo } from "./tools/accountingRemoveAccountingCreditmemo.js";
 import { tool$accountingRemoveAccountingInvoice } from "./tools/accountingRemoveAccountingInvoice.js";
@@ -80,6 +85,7 @@ import { tool$accountingRemoveAccountingTaxrate } from "./tools/accountingRemove
 import { tool$accountingRemoveAccountingTransaction } from "./tools/accountingRemoveAccountingTransaction.js";
 import { tool$accountingUpdateAccountingAccount } from "./tools/accountingUpdateAccountingAccount.js";
 import { tool$accountingUpdateAccountingBill } from "./tools/accountingUpdateAccountingBill.js";
+import { tool$accountingUpdateAccountingCategory } from "./tools/accountingUpdateAccountingCategory.js";
 import { tool$accountingUpdateAccountingContact } from "./tools/accountingUpdateAccountingContact.js";
 import { tool$accountingUpdateAccountingCreditmemo } from "./tools/accountingUpdateAccountingCreditmemo.js";
 import { tool$accountingUpdateAccountingInvoice } from "./tools/accountingUpdateAccountingInvoice.js";
@@ -502,7 +508,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.73.10",
+    version: "2.73.11",
   });
 
   const client = new UnifiedToCore({
@@ -534,6 +540,7 @@ export function createMCPServer(deps: {
 
   tool(tool$accountingCreateAccountingAccount);
   tool(tool$accountingCreateAccountingBill);
+  tool(tool$accountingCreateAccountingCategory);
   tool(tool$accountingCreateAccountingContact);
   tool(tool$accountingCreateAccountingCreditmemo);
   tool(tool$accountingCreateAccountingInvoice);
@@ -546,6 +553,7 @@ export function createMCPServer(deps: {
   tool(tool$accountingGetAccountingAccount);
   tool(tool$accountingGetAccountingBalancesheet);
   tool(tool$accountingGetAccountingBill);
+  tool(tool$accountingGetAccountingCategory);
   tool(tool$accountingGetAccountingContact);
   tool(tool$accountingGetAccountingCreditmemo);
   tool(tool$accountingGetAccountingInvoice);
@@ -562,6 +570,7 @@ export function createMCPServer(deps: {
   tool(tool$accountingListAccountingAccounts);
   tool(tool$accountingListAccountingBalancesheets);
   tool(tool$accountingListAccountingBills);
+  tool(tool$accountingListAccountingCategories);
   tool(tool$accountingListAccountingContacts);
   tool(tool$accountingListAccountingCreditmemoes);
   tool(tool$accountingListAccountingInvoices);
@@ -577,6 +586,7 @@ export function createMCPServer(deps: {
   tool(tool$accountingListAccountingTrialbalances);
   tool(tool$accountingPatchAccountingAccount);
   tool(tool$accountingPatchAccountingBill);
+  tool(tool$accountingPatchAccountingCategory);
   tool(tool$accountingPatchAccountingContact);
   tool(tool$accountingPatchAccountingCreditmemo);
   tool(tool$accountingPatchAccountingInvoice);
@@ -588,6 +598,7 @@ export function createMCPServer(deps: {
   tool(tool$accountingPatchAccountingTransaction);
   tool(tool$accountingRemoveAccountingAccount);
   tool(tool$accountingRemoveAccountingBill);
+  tool(tool$accountingRemoveAccountingCategory);
   tool(tool$accountingRemoveAccountingContact);
   tool(tool$accountingRemoveAccountingCreditmemo);
   tool(tool$accountingRemoveAccountingInvoice);
@@ -599,6 +610,7 @@ export function createMCPServer(deps: {
   tool(tool$accountingRemoveAccountingTransaction);
   tool(tool$accountingUpdateAccountingAccount);
   tool(tool$accountingUpdateAccountingBill);
+  tool(tool$accountingUpdateAccountingCategory);
   tool(tool$accountingUpdateAccountingContact);
   tool(tool$accountingUpdateAccountingCreditmemo);
   tool(tool$accountingUpdateAccountingInvoice);

@@ -18,6 +18,7 @@ Create a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMartechMember" method="get" path="/martech/{connection_id}/member/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all members
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMartechMembers" method="get" path="/martech/{connection_id}/member" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeMartechMember" method="delete" path="/martech/{connection_id}/member/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

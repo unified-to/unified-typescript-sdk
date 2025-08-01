@@ -18,6 +18,7 @@ Create a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getMartechList" method="get" path="/martech/{connection_id}/list/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listMartechLists" method="get" path="/martech/{connection_id}/list" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeMartechList" method="delete" path="/martech/{connection_id}/list/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

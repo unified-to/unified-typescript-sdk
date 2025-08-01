@@ -31,6 +31,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -113,6 +114,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -191,6 +193,7 @@ Create a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,6 +272,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUcComment" method="get" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -347,6 +351,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUcContact" method="get" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -425,6 +430,7 @@ Retrieve a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUcRecording" method="get" path="/uc/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -503,6 +509,7 @@ List all calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcCalls" method="get" path="/uc/{connection_id}/call" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -579,6 +586,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcComments" method="get" path="/uc/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -655,6 +663,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcContacts" method="get" path="/uc/{connection_id}/contact" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -731,6 +740,7 @@ List all recordings
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcRecordings" method="get" path="/uc/{connection_id}/recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -807,6 +817,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -891,6 +902,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -971,6 +983,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1051,6 +1064,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUcComment" method="delete" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1129,6 +1143,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUcContact" method="delete" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1207,6 +1222,7 @@ Remove a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUcRecording" method="delete" path="/uc/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1285,6 +1301,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1369,6 +1386,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1449,6 +1467,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

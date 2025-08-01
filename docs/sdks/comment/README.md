@@ -30,6 +30,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -112,6 +113,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -196,6 +198,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -278,6 +281,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getKmsComment" method="get" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -356,6 +360,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTaskComment" method="get" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -434,6 +439,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getUcComment" method="get" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -512,6 +518,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listKmsComments" method="get" path="/kms/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -588,6 +595,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTaskComments" method="get" path="/task/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -664,6 +672,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listUcComments" method="get" path="/uc/{connection_id}/comment" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -740,6 +749,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -824,6 +834,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -910,6 +921,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -994,6 +1006,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeKmsComment" method="delete" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1072,6 +1085,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeTaskComment" method="delete" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1150,6 +1164,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeUcComment" method="delete" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1228,6 +1243,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1312,6 +1328,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1398,6 +1415,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

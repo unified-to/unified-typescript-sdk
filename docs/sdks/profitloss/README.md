@@ -14,6 +14,7 @@ Retrieve a profitloss
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingProfitloss" method="get" path="/accounting/{connection_id}/profitloss/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all profitlosses
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingProfitlosses" method="get" path="/accounting/{connection_id}/profitloss" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

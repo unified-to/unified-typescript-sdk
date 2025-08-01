@@ -52,6 +52,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -130,6 +131,7 @@ Create a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -212,6 +214,7 @@ Create an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -290,6 +293,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -368,6 +372,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -446,6 +451,7 @@ Create a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -524,6 +530,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisCompany" method="get" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -602,6 +609,7 @@ Retrieve a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisDevice" method="get" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -680,6 +688,7 @@ Retrieve an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisEmployee" method="get" path="/hris/{connection_id}/employee/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -758,6 +767,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisGroup" method="get" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -836,6 +846,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisLocation" method="get" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -914,6 +925,7 @@ Retrieve a payslip
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisPayslip" method="get" path="/hris/{connection_id}/payslip/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -992,6 +1004,7 @@ Retrieve a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisTimeoff" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1070,6 +1083,7 @@ Retrieve a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisTimeshift" method="get" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1148,6 +1162,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisCompanies" method="get" path="/hris/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1224,6 +1239,7 @@ List all devices
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisDevices" method="get" path="/hris/{connection_id}/device" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1300,6 +1316,7 @@ List all employees
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisEmployees" method="get" path="/hris/{connection_id}/employee" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1376,6 +1393,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisGroups" method="get" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1452,6 +1470,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisLocations" method="get" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1528,6 +1547,7 @@ List all payslips
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisPayslips" method="get" path="/hris/{connection_id}/payslip" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1604,6 +1624,7 @@ List all timeoffs
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisTimeoffs" method="get" path="/hris/{connection_id}/timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1680,6 +1701,7 @@ List all timeshifts
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisTimeshifts" method="get" path="/hris/{connection_id}/timeshift" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1756,6 +1778,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1836,6 +1859,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1920,6 +1944,7 @@ Update an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2000,6 +2025,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2080,6 +2106,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2160,6 +2187,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2240,6 +2268,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisCompany" method="delete" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2318,6 +2347,7 @@ Remove a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisDevice" method="delete" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2396,6 +2426,7 @@ Remove an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisEmployee" method="delete" path="/hris/{connection_id}/employee/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2474,6 +2505,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisGroup" method="delete" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2552,6 +2584,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisLocation" method="delete" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2630,6 +2663,7 @@ Remove a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisTimeshift" method="delete" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2708,6 +2742,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2788,6 +2823,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2872,6 +2908,7 @@ Update an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2952,6 +2989,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3032,6 +3070,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3112,6 +3151,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

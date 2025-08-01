@@ -13,6 +13,7 @@ Create a prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

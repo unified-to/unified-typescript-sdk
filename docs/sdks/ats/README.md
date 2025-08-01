@@ -61,6 +61,7 @@ Create an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsActivity" method="post" path="/ats/{connection_id}/activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -139,6 +140,7 @@ Create an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -217,6 +219,7 @@ Create a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -295,6 +298,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -377,6 +381,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -455,6 +460,7 @@ Create an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -533,6 +539,7 @@ Create a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsJob" method="post" path="/ats/{connection_id}/job" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -611,6 +618,7 @@ Create a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsScorecard" method="post" path="/ats/{connection_id}/scorecard" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -689,6 +697,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsActivity" method="get" path="/ats/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -767,6 +776,7 @@ Retrieve an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsApplication" method="get" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -845,6 +855,7 @@ Retrieve a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsCandidate" method="get" path="/ats/{connection_id}/candidate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -923,6 +934,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsCompany" method="get" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1001,6 +1013,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsDocument" method="get" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1079,6 +1092,7 @@ Retrieve an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsInterview" method="get" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1157,6 +1171,7 @@ Retrieve a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsJob" method="get" path="/ats/{connection_id}/job/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1235,6 +1250,7 @@ Retrieve a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsScorecard" method="get" path="/ats/{connection_id}/scorecard/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1313,6 +1329,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsActivities" method="get" path="/ats/{connection_id}/activity" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1389,6 +1406,7 @@ List all applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsApplications" method="get" path="/ats/{connection_id}/application" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1465,6 +1483,7 @@ List all applicationstatuses
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsApplicationstatuses" method="get" path="/ats/{connection_id}/applicationstatus" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1541,6 +1560,7 @@ List all candidates
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsCandidates" method="get" path="/ats/{connection_id}/candidate" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1617,6 +1637,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsCompanies" method="get" path="/ats/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1693,6 +1714,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsDocuments" method="get" path="/ats/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1769,6 +1791,7 @@ List all interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsInterviews" method="get" path="/ats/{connection_id}/interview" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1845,6 +1868,7 @@ List all jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsJobs" method="get" path="/ats/{connection_id}/job" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1921,6 +1945,7 @@ List all scorecards
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsScorecards" method="get" path="/ats/{connection_id}/scorecard" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1997,6 +2022,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsActivity" method="patch" path="/ats/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2077,6 +2103,7 @@ Update an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2157,6 +2184,7 @@ Update a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2237,6 +2265,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2321,6 +2350,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2401,6 +2431,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2481,6 +2512,7 @@ Update a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsJob" method="patch" path="/ats/{connection_id}/job/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2561,6 +2593,7 @@ Update a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsScorecard" method="patch" path="/ats/{connection_id}/scorecard/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2641,6 +2674,7 @@ Remove an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsActivity" method="delete" path="/ats/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2719,6 +2753,7 @@ Remove an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsApplication" method="delete" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2797,6 +2832,7 @@ Remove a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsCandidate" method="delete" path="/ats/{connection_id}/candidate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2875,6 +2911,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsCompany" method="delete" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2953,6 +2990,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsDocument" method="delete" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3031,6 +3069,7 @@ Remove an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsInterview" method="delete" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3109,6 +3148,7 @@ Remove a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsJob" method="delete" path="/ats/{connection_id}/job/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3187,6 +3227,7 @@ Remove a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsScorecard" method="delete" path="/ats/{connection_id}/scorecard/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3265,6 +3306,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsActivity" method="put" path="/ats/{connection_id}/activity/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3345,6 +3387,7 @@ Update an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3425,6 +3468,7 @@ Update a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3505,6 +3549,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3589,6 +3634,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3669,6 +3715,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3749,6 +3796,7 @@ Update a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsJob" method="put" path="/ats/{connection_id}/job/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -3829,6 +3877,7 @@ Update a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsScorecard" method="put" path="/ats/{connection_id}/scorecard/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

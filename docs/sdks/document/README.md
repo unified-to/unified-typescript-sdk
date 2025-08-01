@@ -18,6 +18,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsDocument" method="get" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsDocuments" method="get" path="/ats/{connection_id}/document" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsDocument" method="delete" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -36,6 +36,7 @@ Create a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -120,6 +121,7 @@ Create a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -202,6 +204,7 @@ Create an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -280,6 +283,7 @@ Create a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -358,6 +362,7 @@ Retrieve a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLmsClass" method="get" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -436,6 +441,7 @@ Retrieve a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLmsCourse" method="get" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -514,6 +520,7 @@ Retrieve an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLmsInstructor" method="get" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -592,6 +599,7 @@ Retrieve a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLmsStudent" method="get" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -670,6 +678,7 @@ List all classes
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLmsClasses" method="get" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -746,6 +755,7 @@ List all courses
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLmsCourses" method="get" path="/lms/{connection_id}/course" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -822,6 +832,7 @@ List all instructors
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLmsInstructors" method="get" path="/lms/{connection_id}/instructor" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -898,6 +909,7 @@ List all students
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLmsStudents" method="get" path="/lms/{connection_id}/student" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -974,6 +986,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1060,6 +1073,7 @@ Update a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1144,6 +1158,7 @@ Update an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1224,6 +1239,7 @@ Update a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1304,6 +1320,7 @@ Remove a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeLmsClass" method="delete" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1382,6 +1399,7 @@ Remove a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeLmsCourse" method="delete" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1460,6 +1478,7 @@ Remove an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeLmsInstructor" method="delete" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1538,6 +1557,7 @@ Remove a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeLmsStudent" method="delete" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1616,6 +1636,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1702,6 +1723,7 @@ Update a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1786,6 +1808,7 @@ Update an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1866,6 +1889,7 @@ Update a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

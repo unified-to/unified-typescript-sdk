@@ -14,6 +14,7 @@ Create a prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all models
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listGenaiModels" method="get" path="/genai/{connection_id}/model" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

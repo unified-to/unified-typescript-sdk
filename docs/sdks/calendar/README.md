@@ -33,6 +33,7 @@ Create a calendar
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCalendarCalendar" method="post" path="/calendar/{connection_id}/calendar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -115,6 +116,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCalendarEvent" method="post" path="/calendar/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -193,6 +195,7 @@ Create a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -275,6 +278,7 @@ Retrieve a calendar
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCalendarCalendar" method="get" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -353,6 +357,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCalendarEvent" method="get" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -431,6 +436,7 @@ Retrieve a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCalendarLink" method="get" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -509,6 +515,7 @@ Retrieve a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCalendarRecording" method="get" path="/calendar/{connection_id}/recording/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -587,6 +594,7 @@ List all busies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarBusies" method="get" path="/calendar/{connection_id}/busy" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -663,6 +671,7 @@ List all calendars
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarCalendars" method="get" path="/calendar/{connection_id}/calendar" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -739,6 +748,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarEvents" method="get" path="/calendar/{connection_id}/event" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -815,6 +825,7 @@ List all links
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarLinks" method="get" path="/calendar/{connection_id}/link" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -891,6 +902,7 @@ List all recordings
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCalendarRecordings" method="get" path="/calendar/{connection_id}/recording" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -967,6 +979,7 @@ Update a calendar
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCalendarCalendar" method="patch" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1051,6 +1064,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCalendarEvent" method="patch" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1131,6 +1145,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1215,6 +1230,7 @@ Remove a calendar
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCalendarCalendar" method="delete" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1293,6 +1309,7 @@ Remove an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCalendarEvent" method="delete" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1371,6 +1388,7 @@ Remove a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCalendarLink" method="delete" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1449,6 +1467,7 @@ Update a calendar
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCalendarCalendar" method="put" path="/calendar/{connection_id}/calendar/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1533,6 +1552,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCalendarEvent" method="put" path="/calendar/{connection_id}/event/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1613,6 +1633,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

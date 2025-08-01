@@ -18,6 +18,7 @@ Create a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAccountingJournal" method="get" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all journals
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAccountingJournals" method="get" path="/accounting/{connection_id}/journal" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAccountingJournal" method="delete" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -18,6 +18,7 @@ Create a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getTaskProject" method="get" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all projects
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listTaskProjects" method="get" path="/task/{connection_id}/project" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeTaskProject" method="delete" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

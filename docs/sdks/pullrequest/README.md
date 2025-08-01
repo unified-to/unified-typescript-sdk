@@ -18,6 +18,7 @@ Create a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -96,6 +97,7 @@ Retrieve a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoPullrequest" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -174,6 +176,7 @@ List all pullrequests
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoPullrequests" method="get" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -250,6 +253,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -330,6 +334,7 @@ Remove a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoPullrequest" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -408,6 +413,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

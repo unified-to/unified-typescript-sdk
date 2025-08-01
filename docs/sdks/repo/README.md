@@ -42,6 +42,7 @@ Create a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -126,6 +127,7 @@ Create a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -210,6 +212,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -288,6 +291,7 @@ Create a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -366,6 +370,7 @@ Create a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -448,6 +453,7 @@ Retrieve a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoBranch" method="get" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -526,6 +532,7 @@ Retrieve a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoCommit" method="get" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -604,6 +611,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoOrganization" method="get" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -682,6 +690,7 @@ Retrieve a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoPullrequest" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -760,6 +769,7 @@ Retrieve a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoRepository" method="get" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -838,6 +848,7 @@ List all branches
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoBranches" method="get" path="/repo/{connection_id}/branch" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -914,6 +925,7 @@ List all commits
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoCommits" method="get" path="/repo/{connection_id}/commit" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -990,6 +1002,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoOrganizations" method="get" path="/repo/{connection_id}/organization" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1066,6 +1079,7 @@ List all pullrequests
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoPullrequests" method="get" path="/repo/{connection_id}/pullrequest" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1142,6 +1156,7 @@ List all repositories
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoRepositories" method="get" path="/repo/{connection_id}/repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1218,6 +1233,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1304,6 +1320,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1390,6 +1407,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1470,6 +1488,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1550,6 +1569,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1634,6 +1654,7 @@ Remove a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoBranch" method="delete" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1712,6 +1733,7 @@ Remove a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoCommit" method="delete" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1790,6 +1812,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoOrganization" method="delete" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1868,6 +1891,7 @@ Remove a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoPullrequest" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1946,6 +1970,7 @@ Remove a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoRepository" method="delete" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2024,6 +2049,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2110,6 +2136,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2196,6 +2223,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2276,6 +2304,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -2356,6 +2385,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

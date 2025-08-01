@@ -18,6 +18,7 @@ Create a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -100,6 +101,7 @@ Retrieve a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getRepoRepository" method="get" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -178,6 +180,7 @@ List all repositories
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listRepoRepositories" method="get" path="/repo/{connection_id}/repository" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -254,6 +257,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -338,6 +342,7 @@ Remove a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeRepoRepository" method="delete" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -416,6 +421,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

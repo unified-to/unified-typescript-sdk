@@ -24,6 +24,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Create group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createScimGroups" method="post" path="/scim/{connection_id}/groups" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -184,6 +186,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisGroup" method="get" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -262,6 +265,7 @@ Get group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getScimGroups" method="get" path="/scim/{connection_id}/groups/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -340,6 +344,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisGroups" method="get" path="/hris/{connection_id}/group" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -416,6 +421,7 @@ List groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listScimGroups" method="get" path="/scim/{connection_id}/groups" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -492,6 +498,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -572,6 +579,7 @@ Update group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchScimGroups" method="patch" path="/scim/{connection_id}/groups/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -656,6 +664,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisGroup" method="delete" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -734,6 +743,7 @@ Delete group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeScimGroups" method="delete" path="/scim/{connection_id}/groups/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -812,6 +822,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -892,6 +903,7 @@ Update group
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateScimGroups" method="put" path="/scim/{connection_id}/groups/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

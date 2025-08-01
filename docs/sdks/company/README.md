@@ -31,6 +31,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -113,6 +114,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -191,6 +193,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -269,6 +272,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getAtsCompany" method="get" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -347,6 +351,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCrmCompany" method="get" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -425,6 +430,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisCompany" method="get" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -503,6 +509,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listAtsCompanies" method="get" path="/ats/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -579,6 +586,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCrmCompanies" method="get" path="/crm/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -655,6 +663,7 @@ Retrieve enrichment information for a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listEnrichCompanies" method="get" path="/enrich/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -731,6 +740,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisCompanies" method="get" path="/hris/{connection_id}/company" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -807,6 +817,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -891,6 +902,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -971,6 +983,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1051,6 +1064,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeAtsCompany" method="delete" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1129,6 +1143,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCrmCompany" method="delete" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1207,6 +1222,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisCompany" method="delete" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1285,6 +1301,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1369,6 +1386,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -1449,6 +1467,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

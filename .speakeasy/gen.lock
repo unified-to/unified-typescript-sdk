@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 34e9b060cccb99df9d62ad47f96d358d
+  docChecksum: 29f7859e9080ffea0b7fd7e4996b62ce
   docVersion: "1.0"
-  speakeasyVersion: 1.582.0
-  generationVersion: 2.657.1
-  releaseVersion: 2.73.10
-  configChecksum: d0a0238c8c293046b350a250ca3cdc52
+  speakeasyVersion: 1.595.0
+  generationVersion: 2.670.1
+  releaseVersion: 2.73.11
+  configChecksum: c0d82aceeabea95f1f4394b2a8136068
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.14
+    core: 3.21.17
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -41,6 +41,7 @@ generatedFiles:
   - docs/sdk/models/operations/categories.md
   - docs/sdk/models/operations/createaccountingaccountrequest.md
   - docs/sdk/models/operations/createaccountingbillrequest.md
+  - docs/sdk/models/operations/createaccountingcategoryrequest.md
   - docs/sdk/models/operations/createaccountingcontactrequest.md
   - docs/sdk/models/operations/createaccountingcreditmemorequest.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
@@ -120,6 +121,7 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingaccountrequest.md
   - docs/sdk/models/operations/getaccountingbalancesheetrequest.md
   - docs/sdk/models/operations/getaccountingbillrequest.md
+  - docs/sdk/models/operations/getaccountingcategoryrequest.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
   - docs/sdk/models/operations/getaccountingcreditmemorequest.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
@@ -206,6 +208,7 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingaccountsrequest.md
   - docs/sdk/models/operations/listaccountingbalancesheetsrequest.md
   - docs/sdk/models/operations/listaccountingbillsrequest.md
+  - docs/sdk/models/operations/listaccountingcategoriesrequest.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountingcreditmemoesrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
@@ -302,6 +305,7 @@ generatedFiles:
   - docs/sdk/models/operations/listunifiedwebhooksrequest.md
   - docs/sdk/models/operations/patchaccountingaccountrequest.md
   - docs/sdk/models/operations/patchaccountingbillrequest.md
+  - docs/sdk/models/operations/patchaccountingcategoryrequest.md
   - docs/sdk/models/operations/patchaccountingcontactrequest.md
   - docs/sdk/models/operations/patchaccountingcreditmemorequest.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
@@ -385,6 +389,8 @@ generatedFiles:
   - docs/sdk/models/operations/removeaccountingaccountresponse.md
   - docs/sdk/models/operations/removeaccountingbillrequest.md
   - docs/sdk/models/operations/removeaccountingbillresponse.md
+  - docs/sdk/models/operations/removeaccountingcategoryrequest.md
+  - docs/sdk/models/operations/removeaccountingcategoryresponse.md
   - docs/sdk/models/operations/removeaccountingcontactrequest.md
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountingcreditmemorequest.md
@@ -530,6 +536,7 @@ generatedFiles:
   - docs/sdk/models/operations/removeunifiedwebhookresponse.md
   - docs/sdk/models/operations/updateaccountingaccountrequest.md
   - docs/sdk/models/operations/updateaccountingbillrequest.md
+  - docs/sdk/models/operations/updateaccountingcategoryrequest.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
   - docs/sdk/models/operations/updateaccountingcreditmemorequest.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
@@ -615,6 +622,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingbalancesheetitem.md
   - docs/sdk/models/shared/accountingbill.md
   - docs/sdk/models/shared/accountingbillstatus.md
+  - docs/sdk/models/shared/accountingcategory.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
   - docs/sdk/models/shared/accountingcontactpaymentmethodtype.md
@@ -1125,6 +1133,7 @@ generatedFiles:
   - docs/sdks/calendar/README.md
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
+  - docs/sdks/category/README.md
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
@@ -1221,6 +1230,7 @@ generatedFiles:
   - src/core.ts
   - src/funcs/accountingCreateAccountingAccount.ts
   - src/funcs/accountingCreateAccountingBill.ts
+  - src/funcs/accountingCreateAccountingCategory.ts
   - src/funcs/accountingCreateAccountingContact.ts
   - src/funcs/accountingCreateAccountingCreditmemo.ts
   - src/funcs/accountingCreateAccountingInvoice.ts
@@ -1233,6 +1243,7 @@ generatedFiles:
   - src/funcs/accountingGetAccountingAccount.ts
   - src/funcs/accountingGetAccountingBalancesheet.ts
   - src/funcs/accountingGetAccountingBill.ts
+  - src/funcs/accountingGetAccountingCategory.ts
   - src/funcs/accountingGetAccountingContact.ts
   - src/funcs/accountingGetAccountingCreditmemo.ts
   - src/funcs/accountingGetAccountingInvoice.ts
@@ -1249,6 +1260,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingAccounts.ts
   - src/funcs/accountingListAccountingBalancesheets.ts
   - src/funcs/accountingListAccountingBills.ts
+  - src/funcs/accountingListAccountingCategories.ts
   - src/funcs/accountingListAccountingContacts.ts
   - src/funcs/accountingListAccountingCreditmemoes.ts
   - src/funcs/accountingListAccountingInvoices.ts
@@ -1264,6 +1276,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingTrialbalances.ts
   - src/funcs/accountingPatchAccountingAccount.ts
   - src/funcs/accountingPatchAccountingBill.ts
+  - src/funcs/accountingPatchAccountingCategory.ts
   - src/funcs/accountingPatchAccountingContact.ts
   - src/funcs/accountingPatchAccountingCreditmemo.ts
   - src/funcs/accountingPatchAccountingInvoice.ts
@@ -1275,6 +1288,7 @@ generatedFiles:
   - src/funcs/accountingPatchAccountingTransaction.ts
   - src/funcs/accountingRemoveAccountingAccount.ts
   - src/funcs/accountingRemoveAccountingBill.ts
+  - src/funcs/accountingRemoveAccountingCategory.ts
   - src/funcs/accountingRemoveAccountingContact.ts
   - src/funcs/accountingRemoveAccountingCreditmemo.ts
   - src/funcs/accountingRemoveAccountingInvoice.ts
@@ -1286,6 +1300,7 @@ generatedFiles:
   - src/funcs/accountingRemoveAccountingTransaction.ts
   - src/funcs/accountingUpdateAccountingAccount.ts
   - src/funcs/accountingUpdateAccountingBill.ts
+  - src/funcs/accountingUpdateAccountingCategory.ts
   - src/funcs/accountingUpdateAccountingContact.ts
   - src/funcs/accountingUpdateAccountingCreditmemo.ts
   - src/funcs/accountingUpdateAccountingInvoice.ts
@@ -1731,6 +1746,7 @@ generatedFiles:
   - src/mcp-server/tools.ts
   - src/mcp-server/tools/accountingCreateAccountingAccount.ts
   - src/mcp-server/tools/accountingCreateAccountingBill.ts
+  - src/mcp-server/tools/accountingCreateAccountingCategory.ts
   - src/mcp-server/tools/accountingCreateAccountingContact.ts
   - src/mcp-server/tools/accountingCreateAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingCreateAccountingInvoice.ts
@@ -1743,6 +1759,7 @@ generatedFiles:
   - src/mcp-server/tools/accountingGetAccountingAccount.ts
   - src/mcp-server/tools/accountingGetAccountingBalancesheet.ts
   - src/mcp-server/tools/accountingGetAccountingBill.ts
+  - src/mcp-server/tools/accountingGetAccountingCategory.ts
   - src/mcp-server/tools/accountingGetAccountingContact.ts
   - src/mcp-server/tools/accountingGetAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingGetAccountingInvoice.ts
@@ -1759,6 +1776,7 @@ generatedFiles:
   - src/mcp-server/tools/accountingListAccountingAccounts.ts
   - src/mcp-server/tools/accountingListAccountingBalancesheets.ts
   - src/mcp-server/tools/accountingListAccountingBills.ts
+  - src/mcp-server/tools/accountingListAccountingCategories.ts
   - src/mcp-server/tools/accountingListAccountingContacts.ts
   - src/mcp-server/tools/accountingListAccountingCreditmemoes.ts
   - src/mcp-server/tools/accountingListAccountingInvoices.ts
@@ -1774,6 +1792,7 @@ generatedFiles:
   - src/mcp-server/tools/accountingListAccountingTrialbalances.ts
   - src/mcp-server/tools/accountingPatchAccountingAccount.ts
   - src/mcp-server/tools/accountingPatchAccountingBill.ts
+  - src/mcp-server/tools/accountingPatchAccountingCategory.ts
   - src/mcp-server/tools/accountingPatchAccountingContact.ts
   - src/mcp-server/tools/accountingPatchAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingPatchAccountingInvoice.ts
@@ -1785,6 +1804,7 @@ generatedFiles:
   - src/mcp-server/tools/accountingPatchAccountingTransaction.ts
   - src/mcp-server/tools/accountingRemoveAccountingAccount.ts
   - src/mcp-server/tools/accountingRemoveAccountingBill.ts
+  - src/mcp-server/tools/accountingRemoveAccountingCategory.ts
   - src/mcp-server/tools/accountingRemoveAccountingContact.ts
   - src/mcp-server/tools/accountingRemoveAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingRemoveAccountingInvoice.ts
@@ -1796,6 +1816,7 @@ generatedFiles:
   - src/mcp-server/tools/accountingRemoveAccountingTransaction.ts
   - src/mcp-server/tools/accountingUpdateAccountingAccount.ts
   - src/mcp-server/tools/accountingUpdateAccountingBill.ts
+  - src/mcp-server/tools/accountingUpdateAccountingCategory.ts
   - src/mcp-server/tools/accountingUpdateAccountingContact.ts
   - src/mcp-server/tools/accountingUpdateAccountingCreditmemo.ts
   - src/mcp-server/tools/accountingUpdateAccountingInvoice.ts
@@ -2222,6 +2243,7 @@ generatedFiles:
   - src/sdk/calendar.ts
   - src/sdk/call.ts
   - src/sdk/candidate.ts
+  - src/sdk/category.ts
   - src/sdk/channel.ts
   - src/sdk/class.ts
   - src/sdk/collection.ts
@@ -2276,6 +2298,7 @@ generatedFiles:
   - src/sdk/models/errors/unifiedtoerror.ts
   - src/sdk/models/operations/createaccountingaccount.ts
   - src/sdk/models/operations/createaccountingbill.ts
+  - src/sdk/models/operations/createaccountingcategory.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountingcreditmemo.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
@@ -2351,6 +2374,7 @@ generatedFiles:
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingbalancesheet.ts
   - src/sdk/models/operations/getaccountingbill.ts
+  - src/sdk/models/operations/getaccountingcategory.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountingcreditmemo.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
@@ -2438,6 +2462,7 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingaccounts.ts
   - src/sdk/models/operations/listaccountingbalancesheets.ts
   - src/sdk/models/operations/listaccountingbills.ts
+  - src/sdk/models/operations/listaccountingcategories.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountingcreditmemoes.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
@@ -2531,6 +2556,7 @@ generatedFiles:
   - src/sdk/models/operations/listunifiedwebhooks.ts
   - src/sdk/models/operations/patchaccountingaccount.ts
   - src/sdk/models/operations/patchaccountingbill.ts
+  - src/sdk/models/operations/patchaccountingcategory.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountingcreditmemo.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
@@ -2606,6 +2632,7 @@ generatedFiles:
   - src/sdk/models/operations/patchunifiedwebhooktrigger.ts
   - src/sdk/models/operations/removeaccountingaccount.ts
   - src/sdk/models/operations/removeaccountingbill.ts
+  - src/sdk/models/operations/removeaccountingcategory.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountingcreditmemo.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
@@ -2679,6 +2706,7 @@ generatedFiles:
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
   - src/sdk/models/operations/updateaccountingbill.ts
+  - src/sdk/models/operations/updateaccountingcategory.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountingcreditmemo.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
@@ -2758,6 +2786,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingbalancesheet.ts
   - src/sdk/models/shared/accountingbalancesheetitem.ts
   - src/sdk/models/shared/accountingbill.ts
+  - src/sdk/models/shared/accountingcategory.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
   - src/sdk/models/shared/accountingcreditmemo.ts
@@ -7374,6 +7403,61 @@ examples:
           application/json: {}
   updateAccountingSalesorder:
     speakeasy-default-update-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingCategory:
+    speakeasy-default-create-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingCategory:
+    speakeasy-default-get-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingCategories:
+    speakeasy-default-list-accounting-categories:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingCategory:
+    speakeasy-default-patch-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingCategory:
+    speakeasy-default-remove-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingCategory:
+    speakeasy-default-update-accounting-category:
       parameters:
         path:
           connection_id: "<id>"

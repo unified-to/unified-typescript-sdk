@@ -14,6 +14,7 @@ Retrieve a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisTimeoff" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -92,6 +93,7 @@ List all timeoffs
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisTimeoffs" method="get" path="/hris/{connection_id}/timeoff" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

@@ -24,6 +24,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -106,6 +107,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -184,6 +186,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -262,6 +265,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getHrisLocation" method="get" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -340,6 +344,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -416,6 +421,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listHrisLocations" method="get" path="/hris/{connection_id}/location" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -492,6 +498,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -576,6 +583,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -656,6 +664,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -734,6 +743,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeHrisLocation" method="delete" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -812,6 +822,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -896,6 +907,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 

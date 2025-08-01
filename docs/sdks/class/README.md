@@ -18,6 +18,7 @@ Create a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -102,6 +103,7 @@ Retrieve a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="getLmsClass" method="get" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -180,6 +182,7 @@ List all classes
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="listLmsClasses" method="get" path="/lms/{connection_id}/class" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -256,6 +259,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -342,6 +346,7 @@ Remove a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="removeLmsClass" method="delete" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
@@ -420,6 +425,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="typescript" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
 ```typescript
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
