@@ -46,6 +46,7 @@ export const ObjectType = {
   AccountingBalancesheet: "accounting_balancesheet",
   AccountingProfitloss: "accounting_profitloss",
   AccountingTrialbalance: "accounting_trialbalance",
+  AccountingCategory: "accounting_category",
   PaymentPayment: "payment_payment",
   PaymentLink: "payment_link",
   PaymentPayout: "payment_payout",

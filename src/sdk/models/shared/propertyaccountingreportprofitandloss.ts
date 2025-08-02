@@ -22,7 +22,7 @@ import {
 
 export type PropertyAccountingReportProfitAndLoss = {
   /**
-   * @deprecated
+   * @deprecated – use cost_of_goods_sold_sections instead
    */
   costOfGoodsSold?: Array<AccountingProfitlossCategory> | undefined;
   costOfGoodsSoldSections?: Array<AccountingProfitlossSection> | undefined;
@@ -31,7 +31,7 @@ export type PropertyAccountingReportProfitAndLoss = {
   currency?: string | undefined;
   endAt?: Date | undefined;
   /**
-   * @deprecated
+   * @deprecated – use expenses_sections instead
    */
   expenses?: Array<AccountingProfitlossCategory> | undefined;
   expensesSections?: Array<AccountingProfitlossSection> | undefined;
@@ -39,7 +39,7 @@ export type PropertyAccountingReportProfitAndLoss = {
   grossProfitAmount?: number | undefined;
   id?: string | undefined;
   /**
-   * @deprecated
+   * @deprecated – use income_sections instead
    */
   income?: Array<AccountingProfitlossCategory> | undefined;
   incomeSections?: Array<AccountingProfitlossSection> | undefined;
