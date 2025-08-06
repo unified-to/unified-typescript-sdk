@@ -3,33 +3,37 @@
 
 ## Supported Types
 
-### `shared.One`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.One = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.Two`
+### `string`
 
 ```typescript
-const value: shared.Two = {};
+const value: string = "<value>";
 ```
 
-### `shared.Three`
+### `number`
 
 ```typescript
-const value: shared.Three = 1408.09;
+const value: number = 1284.03;
 ```
 
-### `shared.Four`
+### `boolean`
 
 ```typescript
-const value: shared.Four = true;
+const value: boolean = true;
 ```
 
-### `shared.Five`
+### `shared.Five[]`
 
 ```typescript
-const value: shared.Five = {};
+const value: shared.Five[] = [];
 ```
 

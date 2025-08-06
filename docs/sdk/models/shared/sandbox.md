@@ -3,36 +3,37 @@
 
 ## Supported Types
 
-### `shared.IntegrationSchemasSandbox1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.IntegrationSchemasSandbox2`
+### `string`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox2 = {};
+const value: string = "<value>";
 ```
 
-### `shared.IntegrationSchemasSandbox3`
+### `number`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox3 = {};
+const value: number = 1284.03;
 ```
 
-### `shared.IntegrationSchemasSandbox4`
+### `boolean`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox4 = {};
+const value: boolean = true;
 ```
 
-### `shared.IntegrationSchemasSandbox5`
+### `shared.IntegrationSchemasSandbox5[]`
 
 ```typescript
-const value: shared.IntegrationSchemasSandbox5 = [
-  "<value 1>",
-  "<value 2>",
-];
+const value: shared.IntegrationSchemasSandbox5[] = [];
 ```
 

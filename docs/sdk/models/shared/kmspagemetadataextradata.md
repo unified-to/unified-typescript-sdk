@@ -3,36 +3,39 @@
 
 ## Supported Types
 
-### `shared.KmsPageMetadata1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.KmsPageMetadata1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.KmsPageMetadata2`
+### `string`
 
 ```typescript
-const value: shared.KmsPageMetadata2 = {};
+const value: string = "<value>";
 ```
 
-### `shared.KmsPageMetadata3`
+### `number`
 
 ```typescript
-const value: shared.KmsPageMetadata3 = {};
+const value: number = 1284.03;
 ```
 
-### `shared.KmsPageMetadata4`
+### `boolean`
 
 ```typescript
-const value: shared.KmsPageMetadata4 = {};
+const value: boolean = true;
 ```
 
-### `shared.KmsPageMetadata5`
+### `shared.KmsPageMetadata5[]`
 
 ```typescript
-const value: shared.KmsPageMetadata5 = [
-  "<value 1>",
-  "<value 2>",
+const value: shared.KmsPageMetadata5[] = [
+  {},
 ];
 ```
 

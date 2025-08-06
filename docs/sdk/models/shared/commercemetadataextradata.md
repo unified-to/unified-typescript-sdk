@@ -3,33 +3,37 @@
 
 ## Supported Types
 
-### `shared.CommerceMetadata1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.CommerceMetadata1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.CommerceMetadata2`
+### `string`
 
 ```typescript
-const value: shared.CommerceMetadata2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.CommerceMetadata3`
+### `number`
 
 ```typescript
-const value: shared.CommerceMetadata3 = 6470.19;
+const value: number = 1284.03;
 ```
 
-### `shared.CommerceMetadata4`
+### `boolean`
 
 ```typescript
-const value: shared.CommerceMetadata4 = false;
+const value: boolean = true;
 ```
 
-### `shared.CommerceMetadata5`
+### `shared.CommerceMetadata5[]`
 
 ```typescript
-const value: shared.CommerceMetadata5 = {};
+const value: shared.CommerceMetadata5[] = [];
 ```
 

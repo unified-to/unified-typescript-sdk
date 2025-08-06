@@ -13,34 +13,16 @@ import {
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type AtsMetadataSchemasExtraData2 = {};
-
-export type Five = AtsMetadataSchemasExtraData2 | Array<any>;
-
-export type AtsMetadataSchemas2 = {};
-
-export type Four = AtsMetadataSchemas2 | boolean;
-
-export type AtsMetadataSchemasExtraData32 = {};
-
-export type Three = AtsMetadataSchemasExtraData32 | number;
-
-export type AtsMetadataSchemasExtraData22 = {};
-
-export type Two = AtsMetadataSchemasExtraData22 | string;
-
 export type One = {};
 
+export type Five = One | string | number | boolean;
+
 export type ExtraData =
-  | One
-  | AtsMetadataSchemasExtraData22
+  | { [k: string]: any }
   | string
-  | AtsMetadataSchemasExtraData32
   | number
-  | AtsMetadataSchemas2
   | boolean
-  | AtsMetadataSchemasExtraData2
-  | Array<any>;
+  | Array<One | string | number | boolean>;
 
 export const Format = {
   Text: "TEXT",
@@ -59,46 +41,24 @@ export const Format = {
 } as const;
 export type Format = OpenEnum<typeof Format>;
 
-export type AtsMetadataSchemasValue52 = {};
-
-export type AtsMetadata5 = AtsMetadataSchemasValue52 | Array<any>;
-
-export type AtsMetadataSchemasValue42 = {};
-
-export type AtsMetadata4 = AtsMetadataSchemasValue42 | boolean;
-
-export type AtsMetadataSchemasValue32 = {};
-
-export type AtsMetadata3 = AtsMetadataSchemasValue32 | number;
-
-export type AtsMetadataSchemasValue2 = {};
-
-export type AtsMetadata2 = AtsMetadataSchemasValue2 | string;
-
 export type AtsMetadata1 = {};
 
+export type AtsMetadata5 = AtsMetadata1 | string | number | boolean;
+
 export type Value =
-  | AtsMetadata1
-  | AtsMetadataSchemasValue2
+  | { [k: string]: any }
   | string
-  | AtsMetadataSchemasValue32
   | number
-  | AtsMetadataSchemasValue42
   | boolean
-  | AtsMetadataSchemasValue52
-  | Array<any>;
+  | Array<AtsMetadata1 | string | number | boolean>;
 
 export type AtsMetadata = {
   extraData?:
-    | One
-    | AtsMetadataSchemasExtraData22
+    | { [k: string]: any }
     | string
-    | AtsMetadataSchemasExtraData32
     | number
-    | AtsMetadataSchemas2
     | boolean
-    | AtsMetadataSchemasExtraData2
-    | Array<any>
+    | Array<One | string | number | boolean>
     | undefined;
   format?: Format | undefined;
   id?: string | undefined;
@@ -107,386 +67,13 @@ export type AtsMetadata = {
   slug?: string | undefined;
   type?: string | undefined;
   value?:
-    | AtsMetadata1
-    | AtsMetadataSchemasValue2
+    | { [k: string]: any }
     | string
-    | AtsMetadataSchemasValue32
     | number
-    | AtsMetadataSchemasValue42
     | boolean
-    | AtsMetadataSchemasValue52
-    | Array<any>
+    | Array<AtsMetadata1 | string | number | boolean>
     | undefined;
 };
-
-/** @internal */
-export const AtsMetadataSchemasExtraData2$inboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasExtraData2$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasExtraData2$outboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData2$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasExtraData2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasExtraData2$ {
-  /** @deprecated use `AtsMetadataSchemasExtraData2$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasExtraData2$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData2$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasExtraData2$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData2$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasExtraData2$Outbound;
-}
-
-export function atsMetadataSchemasExtraData2ToJSON(
-  atsMetadataSchemasExtraData2: AtsMetadataSchemasExtraData2,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasExtraData2$outboundSchema.parse(
-      atsMetadataSchemasExtraData2,
-    ),
-  );
-}
-
-export function atsMetadataSchemasExtraData2FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasExtraData2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasExtraData2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasExtraData2' from JSON`,
-  );
-}
-
-/** @internal */
-export const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
-  .union([
-    z.lazy(() => AtsMetadataSchemasExtraData2$inboundSchema),
-    z.array(z.any()),
-  ]);
-
-/** @internal */
-export type Five$Outbound = AtsMetadataSchemasExtraData2$Outbound | Array<any>;
-
-/** @internal */
-export const Five$outboundSchema: z.ZodType<Five$Outbound, z.ZodTypeDef, Five> =
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData2$outboundSchema),
-    z.array(z.any()),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Five$ {
-  /** @deprecated use `Five$inboundSchema` instead. */
-  export const inboundSchema = Five$inboundSchema;
-  /** @deprecated use `Five$outboundSchema` instead. */
-  export const outboundSchema = Five$outboundSchema;
-  /** @deprecated use `Five$Outbound` instead. */
-  export type Outbound = Five$Outbound;
-}
-
-export function fiveToJSON(five: Five): string {
-  return JSON.stringify(Five$outboundSchema.parse(five));
-}
-
-export function fiveFromJSON(
-  jsonString: string,
-): SafeParseResult<Five, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Five$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Five' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemas2$inboundSchema: z.ZodType<
-  AtsMetadataSchemas2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemas2$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemas2$outboundSchema: z.ZodType<
-  AtsMetadataSchemas2$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemas2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemas2$ {
-  /** @deprecated use `AtsMetadataSchemas2$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemas2$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemas2$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemas2$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemas2$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemas2$Outbound;
-}
-
-export function atsMetadataSchemas2ToJSON(
-  atsMetadataSchemas2: AtsMetadataSchemas2,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemas2$outboundSchema.parse(atsMetadataSchemas2),
-  );
-}
-
-export function atsMetadataSchemas2FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemas2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemas2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemas2' from JSON`,
-  );
-}
-
-/** @internal */
-export const Four$inboundSchema: z.ZodType<Four, z.ZodTypeDef, unknown> = z
-  .union([z.lazy(() => AtsMetadataSchemas2$inboundSchema), z.boolean()]);
-
-/** @internal */
-export type Four$Outbound = AtsMetadataSchemas2$Outbound | boolean;
-
-/** @internal */
-export const Four$outboundSchema: z.ZodType<Four$Outbound, z.ZodTypeDef, Four> =
-  z.union([z.lazy(() => AtsMetadataSchemas2$outboundSchema), z.boolean()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Four$ {
-  /** @deprecated use `Four$inboundSchema` instead. */
-  export const inboundSchema = Four$inboundSchema;
-  /** @deprecated use `Four$outboundSchema` instead. */
-  export const outboundSchema = Four$outboundSchema;
-  /** @deprecated use `Four$Outbound` instead. */
-  export type Outbound = Four$Outbound;
-}
-
-export function fourToJSON(four: Four): string {
-  return JSON.stringify(Four$outboundSchema.parse(four));
-}
-
-export function fourFromJSON(
-  jsonString: string,
-): SafeParseResult<Four, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Four$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Four' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemasExtraData32$inboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasExtraData32$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasExtraData32$outboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData32$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasExtraData32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasExtraData32$ {
-  /** @deprecated use `AtsMetadataSchemasExtraData32$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasExtraData32$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData32$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasExtraData32$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData32$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasExtraData32$Outbound;
-}
-
-export function atsMetadataSchemasExtraData32ToJSON(
-  atsMetadataSchemasExtraData32: AtsMetadataSchemasExtraData32,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasExtraData32$outboundSchema.parse(
-      atsMetadataSchemasExtraData32,
-    ),
-  );
-}
-
-export function atsMetadataSchemasExtraData32FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasExtraData32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasExtraData32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasExtraData32' from JSON`,
-  );
-}
-
-/** @internal */
-export const Three$inboundSchema: z.ZodType<Three, z.ZodTypeDef, unknown> = z
-  .union([
-    z.lazy(() => AtsMetadataSchemasExtraData32$inboundSchema),
-    z.number(),
-  ]);
-
-/** @internal */
-export type Three$Outbound = AtsMetadataSchemasExtraData32$Outbound | number;
-
-/** @internal */
-export const Three$outboundSchema: z.ZodType<
-  Three$Outbound,
-  z.ZodTypeDef,
-  Three
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasExtraData32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Three$ {
-  /** @deprecated use `Three$inboundSchema` instead. */
-  export const inboundSchema = Three$inboundSchema;
-  /** @deprecated use `Three$outboundSchema` instead. */
-  export const outboundSchema = Three$outboundSchema;
-  /** @deprecated use `Three$Outbound` instead. */
-  export type Outbound = Three$Outbound;
-}
-
-export function threeToJSON(three: Three): string {
-  return JSON.stringify(Three$outboundSchema.parse(three));
-}
-
-export function threeFromJSON(
-  jsonString: string,
-): SafeParseResult<Three, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Three$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Three' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemasExtraData22$inboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData22,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasExtraData22$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasExtraData22$outboundSchema: z.ZodType<
-  AtsMetadataSchemasExtraData22$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasExtraData22
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasExtraData22$ {
-  /** @deprecated use `AtsMetadataSchemasExtraData22$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasExtraData22$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData22$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasExtraData22$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasExtraData22$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasExtraData22$Outbound;
-}
-
-export function atsMetadataSchemasExtraData22ToJSON(
-  atsMetadataSchemasExtraData22: AtsMetadataSchemasExtraData22,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasExtraData22$outboundSchema.parse(
-      atsMetadataSchemasExtraData22,
-    ),
-  );
-}
-
-export function atsMetadataSchemasExtraData22FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasExtraData22, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasExtraData22$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasExtraData22' from JSON`,
-  );
-}
-
-/** @internal */
-export const Two$inboundSchema: z.ZodType<Two, z.ZodTypeDef, unknown> = z.union(
-  [z.lazy(() => AtsMetadataSchemasExtraData22$inboundSchema), z.string()],
-);
-
-/** @internal */
-export type Two$Outbound = AtsMetadataSchemasExtraData22$Outbound | string;
-
-/** @internal */
-export const Two$outboundSchema: z.ZodType<Two$Outbound, z.ZodTypeDef, Two> = z
-  .union([
-    z.lazy(() => AtsMetadataSchemasExtraData22$outboundSchema),
-    z.string(),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Two$ {
-  /** @deprecated use `Two$inboundSchema` instead. */
-  export const inboundSchema = Two$inboundSchema;
-  /** @deprecated use `Two$outboundSchema` instead. */
-  export const outboundSchema = Two$outboundSchema;
-  /** @deprecated use `Two$Outbound` instead. */
-  export type Outbound = Two$Outbound;
-}
-
-export function twoToJSON(two: Two): string {
-  return JSON.stringify(Two$outboundSchema.parse(two));
-}
-
-export function twoFromJSON(
-  jsonString: string,
-): SafeParseResult<Two, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Two$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Two' from JSON`,
-  );
-}
 
 /** @internal */
 export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
@@ -527,38 +114,80 @@ export function oneFromJSON(
 }
 
 /** @internal */
+export const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
+  .union([
+    z.lazy(() => One$inboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ]);
+
+/** @internal */
+export type Five$Outbound = One$Outbound | string | number | boolean;
+
+/** @internal */
+export const Five$outboundSchema: z.ZodType<Five$Outbound, z.ZodTypeDef, Five> =
+  z.union([
+    z.lazy(() => One$outboundSchema),
+    z.string(),
+    z.number(),
+    z.boolean(),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Five$ {
+  /** @deprecated use `Five$inboundSchema` instead. */
+  export const inboundSchema = Five$inboundSchema;
+  /** @deprecated use `Five$outboundSchema` instead. */
+  export const outboundSchema = Five$outboundSchema;
+  /** @deprecated use `Five$Outbound` instead. */
+  export type Outbound = Five$Outbound;
+}
+
+export function fiveToJSON(five: Five): string {
+  return JSON.stringify(Five$outboundSchema.parse(five));
+}
+
+export function fiveFromJSON(
+  jsonString: string,
+): SafeParseResult<Five, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Five$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Five' from JSON`,
+  );
+}
+
+/** @internal */
 export const ExtraData$inboundSchema: z.ZodType<
   ExtraData,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => One$inboundSchema),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData22$inboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData32$inboundSchema),
-    z.number(),
-  ]),
-  z.union([z.lazy(() => AtsMetadataSchemas2$inboundSchema), z.boolean()]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData2$inboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => One$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /** @internal */
 export type ExtraData$Outbound =
-  | One$Outbound
-  | AtsMetadataSchemasExtraData22$Outbound
+  | { [k: string]: any }
   | string
-  | AtsMetadataSchemasExtraData32$Outbound
   | number
-  | AtsMetadataSchemas2$Outbound
   | boolean
-  | AtsMetadataSchemasExtraData2$Outbound
-  | Array<any>;
+  | Array<One$Outbound | string | number | boolean>;
 
 /** @internal */
 export const ExtraData$outboundSchema: z.ZodType<
@@ -566,20 +195,18 @@ export const ExtraData$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ExtraData
 > = z.union([
-  z.lazy(() => One$outboundSchema),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData22$outboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData32$outboundSchema),
-    z.number(),
-  ]),
-  z.union([z.lazy(() => AtsMetadataSchemas2$outboundSchema), z.boolean()]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasExtraData2$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => One$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -635,399 +262,6 @@ export namespace Format$ {
 }
 
 /** @internal */
-export const AtsMetadataSchemasValue52$inboundSchema: z.ZodType<
-  AtsMetadataSchemasValue52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasValue52$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasValue52$outboundSchema: z.ZodType<
-  AtsMetadataSchemasValue52$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasValue52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasValue52$ {
-  /** @deprecated use `AtsMetadataSchemasValue52$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasValue52$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue52$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasValue52$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue52$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasValue52$Outbound;
-}
-
-export function atsMetadataSchemasValue52ToJSON(
-  atsMetadataSchemasValue52: AtsMetadataSchemasValue52,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasValue52$outboundSchema.parse(atsMetadataSchemasValue52),
-  );
-}
-
-export function atsMetadataSchemasValue52FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasValue52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasValue52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasValue52' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadata5$inboundSchema: z.ZodType<
-  AtsMetadata5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type AtsMetadata5$Outbound =
-  | AtsMetadataSchemasValue52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const AtsMetadata5$outboundSchema: z.ZodType<
-  AtsMetadata5$Outbound,
-  z.ZodTypeDef,
-  AtsMetadata5
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata5$ {
-  /** @deprecated use `AtsMetadata5$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata5$inboundSchema;
-  /** @deprecated use `AtsMetadata5$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata5$outboundSchema;
-  /** @deprecated use `AtsMetadata5$Outbound` instead. */
-  export type Outbound = AtsMetadata5$Outbound;
-}
-
-export function atsMetadata5ToJSON(atsMetadata5: AtsMetadata5): string {
-  return JSON.stringify(AtsMetadata5$outboundSchema.parse(atsMetadata5));
-}
-
-export function atsMetadata5FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadata5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadata5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadata5' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemasValue42$inboundSchema: z.ZodType<
-  AtsMetadataSchemasValue42,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasValue42$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasValue42$outboundSchema: z.ZodType<
-  AtsMetadataSchemasValue42$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasValue42
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasValue42$ {
-  /** @deprecated use `AtsMetadataSchemasValue42$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasValue42$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue42$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasValue42$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue42$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasValue42$Outbound;
-}
-
-export function atsMetadataSchemasValue42ToJSON(
-  atsMetadataSchemasValue42: AtsMetadataSchemasValue42,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasValue42$outboundSchema.parse(atsMetadataSchemasValue42),
-  );
-}
-
-export function atsMetadataSchemasValue42FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasValue42, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasValue42$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasValue42' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadata4$inboundSchema: z.ZodType<
-  AtsMetadata4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue42$inboundSchema),
-  z.boolean(),
-]);
-
-/** @internal */
-export type AtsMetadata4$Outbound =
-  | AtsMetadataSchemasValue42$Outbound
-  | boolean;
-
-/** @internal */
-export const AtsMetadata4$outboundSchema: z.ZodType<
-  AtsMetadata4$Outbound,
-  z.ZodTypeDef,
-  AtsMetadata4
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue42$outboundSchema),
-  z.boolean(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata4$ {
-  /** @deprecated use `AtsMetadata4$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata4$inboundSchema;
-  /** @deprecated use `AtsMetadata4$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata4$outboundSchema;
-  /** @deprecated use `AtsMetadata4$Outbound` instead. */
-  export type Outbound = AtsMetadata4$Outbound;
-}
-
-export function atsMetadata4ToJSON(atsMetadata4: AtsMetadata4): string {
-  return JSON.stringify(AtsMetadata4$outboundSchema.parse(atsMetadata4));
-}
-
-export function atsMetadata4FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadata4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadata4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadata4' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemasValue32$inboundSchema: z.ZodType<
-  AtsMetadataSchemasValue32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasValue32$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasValue32$outboundSchema: z.ZodType<
-  AtsMetadataSchemasValue32$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasValue32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasValue32$ {
-  /** @deprecated use `AtsMetadataSchemasValue32$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasValue32$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue32$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasValue32$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue32$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasValue32$Outbound;
-}
-
-export function atsMetadataSchemasValue32ToJSON(
-  atsMetadataSchemasValue32: AtsMetadataSchemasValue32,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasValue32$outboundSchema.parse(atsMetadataSchemasValue32),
-  );
-}
-
-export function atsMetadataSchemasValue32FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasValue32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasValue32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasValue32' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadata3$inboundSchema: z.ZodType<
-  AtsMetadata3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue32$inboundSchema),
-  z.number(),
-]);
-
-/** @internal */
-export type AtsMetadata3$Outbound = AtsMetadataSchemasValue32$Outbound | number;
-
-/** @internal */
-export const AtsMetadata3$outboundSchema: z.ZodType<
-  AtsMetadata3$Outbound,
-  z.ZodTypeDef,
-  AtsMetadata3
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata3$ {
-  /** @deprecated use `AtsMetadata3$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata3$inboundSchema;
-  /** @deprecated use `AtsMetadata3$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata3$outboundSchema;
-  /** @deprecated use `AtsMetadata3$Outbound` instead. */
-  export type Outbound = AtsMetadata3$Outbound;
-}
-
-export function atsMetadata3ToJSON(atsMetadata3: AtsMetadata3): string {
-  return JSON.stringify(AtsMetadata3$outboundSchema.parse(atsMetadata3));
-}
-
-export function atsMetadata3FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadata3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadata3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadata3' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadataSchemasValue2$inboundSchema: z.ZodType<
-  AtsMetadataSchemasValue2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type AtsMetadataSchemasValue2$Outbound = {};
-
-/** @internal */
-export const AtsMetadataSchemasValue2$outboundSchema: z.ZodType<
-  AtsMetadataSchemasValue2$Outbound,
-  z.ZodTypeDef,
-  AtsMetadataSchemasValue2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadataSchemasValue2$ {
-  /** @deprecated use `AtsMetadataSchemasValue2$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadataSchemasValue2$inboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue2$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadataSchemasValue2$outboundSchema;
-  /** @deprecated use `AtsMetadataSchemasValue2$Outbound` instead. */
-  export type Outbound = AtsMetadataSchemasValue2$Outbound;
-}
-
-export function atsMetadataSchemasValue2ToJSON(
-  atsMetadataSchemasValue2: AtsMetadataSchemasValue2,
-): string {
-  return JSON.stringify(
-    AtsMetadataSchemasValue2$outboundSchema.parse(atsMetadataSchemasValue2),
-  );
-}
-
-export function atsMetadataSchemasValue2FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadataSchemasValue2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadataSchemasValue2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadataSchemasValue2' from JSON`,
-  );
-}
-
-/** @internal */
-export const AtsMetadata2$inboundSchema: z.ZodType<
-  AtsMetadata2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([z.lazy(() => AtsMetadataSchemasValue2$inboundSchema), z.string()]);
-
-/** @internal */
-export type AtsMetadata2$Outbound = AtsMetadataSchemasValue2$Outbound | string;
-
-/** @internal */
-export const AtsMetadata2$outboundSchema: z.ZodType<
-  AtsMetadata2$Outbound,
-  z.ZodTypeDef,
-  AtsMetadata2
-> = z.union([
-  z.lazy(() => AtsMetadataSchemasValue2$outboundSchema),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata2$ {
-  /** @deprecated use `AtsMetadata2$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata2$inboundSchema;
-  /** @deprecated use `AtsMetadata2$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata2$outboundSchema;
-  /** @deprecated use `AtsMetadata2$Outbound` instead. */
-  export type Outbound = AtsMetadata2$Outbound;
-}
-
-export function atsMetadata2ToJSON(atsMetadata2: AtsMetadata2): string {
-  return JSON.stringify(AtsMetadata2$outboundSchema.parse(atsMetadata2));
-}
-
-export function atsMetadata2FromJSON(
-  jsonString: string,
-): SafeParseResult<AtsMetadata2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => AtsMetadata2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'AtsMetadata2' from JSON`,
-  );
-}
-
-/** @internal */
 export const AtsMetadata1$inboundSchema: z.ZodType<
   AtsMetadata1,
   z.ZodTypeDef,
@@ -1072,35 +306,87 @@ export function atsMetadata1FromJSON(
 }
 
 /** @internal */
+export const AtsMetadata5$inboundSchema: z.ZodType<
+  AtsMetadata5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => AtsMetadata1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type AtsMetadata5$Outbound =
+  | AtsMetadata1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const AtsMetadata5$outboundSchema: z.ZodType<
+  AtsMetadata5$Outbound,
+  z.ZodTypeDef,
+  AtsMetadata5
+> = z.union([
+  z.lazy(() => AtsMetadata1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace AtsMetadata5$ {
+  /** @deprecated use `AtsMetadata5$inboundSchema` instead. */
+  export const inboundSchema = AtsMetadata5$inboundSchema;
+  /** @deprecated use `AtsMetadata5$outboundSchema` instead. */
+  export const outboundSchema = AtsMetadata5$outboundSchema;
+  /** @deprecated use `AtsMetadata5$Outbound` instead. */
+  export type Outbound = AtsMetadata5$Outbound;
+}
+
+export function atsMetadata5ToJSON(atsMetadata5: AtsMetadata5): string {
+  return JSON.stringify(AtsMetadata5$outboundSchema.parse(atsMetadata5));
+}
+
+export function atsMetadata5FromJSON(
+  jsonString: string,
+): SafeParseResult<AtsMetadata5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => AtsMetadata5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'AtsMetadata5' from JSON`,
+  );
+}
+
+/** @internal */
 export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
   .union([
-    z.lazy(() => AtsMetadata1$inboundSchema),
-    z.union([z.lazy(() => AtsMetadataSchemasValue2$inboundSchema), z.string()]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]);
 
 /** @internal */
 export type Value$Outbound =
-  | AtsMetadata1$Outbound
-  | AtsMetadataSchemasValue2$Outbound
+  | { [k: string]: any }
   | string
-  | AtsMetadataSchemasValue32$Outbound
   | number
-  | AtsMetadataSchemasValue42$Outbound
   | boolean
-  | AtsMetadataSchemasValue52$Outbound
-  | Array<any>;
+  | Array<AtsMetadata1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const Value$outboundSchema: z.ZodType<
@@ -1108,17 +394,18 @@ export const Value$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Value
 > = z.union([
-  z.lazy(() => AtsMetadata1$outboundSchema),
-  z.union([z.lazy(() => AtsMetadataSchemasValue2$outboundSchema), z.string()]),
-  z.union([z.lazy(() => AtsMetadataSchemasValue32$outboundSchema), z.number()]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasValue42$outboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => AtsMetadataSchemasValue52$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => AtsMetadata1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -1155,20 +442,18 @@ export const AtsMetadata$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   extra_data: z.union([
-    z.lazy(() => One$inboundSchema),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData22$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([z.lazy(() => AtsMetadataSchemas2$inboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData2$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => One$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   format: Format$inboundSchema.optional(),
   id: z.string().optional(),
@@ -1177,20 +462,18 @@ export const AtsMetadata$inboundSchema: z.ZodType<
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
-    z.lazy(() => AtsMetadata1$inboundSchema),
-    z.union([z.lazy(() => AtsMetadataSchemasValue2$inboundSchema), z.string()]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -1201,15 +484,11 @@ export const AtsMetadata$inboundSchema: z.ZodType<
 /** @internal */
 export type AtsMetadata$Outbound = {
   extra_data?:
-    | One$Outbound
-    | AtsMetadataSchemasExtraData22$Outbound
+    | { [k: string]: any }
     | string
-    | AtsMetadataSchemasExtraData32$Outbound
     | number
-    | AtsMetadataSchemas2$Outbound
     | boolean
-    | AtsMetadataSchemasExtraData2$Outbound
-    | Array<any>
+    | Array<One$Outbound | string | number | boolean>
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
@@ -1218,15 +497,11 @@ export type AtsMetadata$Outbound = {
   slug?: string | undefined;
   type?: string | undefined;
   value?:
-    | AtsMetadata1$Outbound
-    | AtsMetadataSchemasValue2$Outbound
+    | { [k: string]: any }
     | string
-    | AtsMetadataSchemasValue32$Outbound
     | number
-    | AtsMetadataSchemasValue42$Outbound
     | boolean
-    | AtsMetadataSchemasValue52$Outbound
-    | Array<any>
+    | Array<AtsMetadata1$Outbound | string | number | boolean>
     | undefined;
 };
 
@@ -1237,20 +512,18 @@ export const AtsMetadata$outboundSchema: z.ZodType<
   AtsMetadata
 > = z.object({
   extraData: z.union([
-    z.lazy(() => One$outboundSchema),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData22$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([z.lazy(() => AtsMetadataSchemas2$outboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasExtraData2$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => One$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   format: Format$outboundSchema.optional(),
   id: z.string().optional(),
@@ -1259,23 +532,18 @@ export const AtsMetadata$outboundSchema: z.ZodType<
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
-    z.lazy(() => AtsMetadata1$outboundSchema),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue2$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue42$outboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => AtsMetadataSchemasValue52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => AtsMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
 }).transform((v) => {
   return remap$(v, {

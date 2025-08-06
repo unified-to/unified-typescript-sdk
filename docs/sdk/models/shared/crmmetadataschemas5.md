@@ -3,19 +3,27 @@
 
 ## Supported Types
 
-### `any[]`
+### `shared.CrmMetadataSchemas1`
 
 ```typescript
-const value: any[] = [
-  "<value 1>",
-  "<value 2>",
-  "<value 3>",
-];
+const value: shared.CrmMetadataSchemas1 = {};
 ```
 
-### `shared.CrmMetadataSchemasValue52`
+### `string`
 
 ```typescript
-const value: shared.CrmMetadataSchemasValue52 = {};
+const value: string = "<value>";
+```
+
+### `number`
+
+```typescript
+const value: number = 1284.03;
+```
+
+### `boolean`
+
+```typescript
+const value: boolean = true;
 ```
 

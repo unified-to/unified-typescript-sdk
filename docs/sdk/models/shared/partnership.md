@@ -3,33 +3,39 @@
 
 ## Supported Types
 
-### `shared.IntegrationSchemas1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.IntegrationSchemas1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.IntegrationSchemas2`
+### `string`
 
 ```typescript
-const value: shared.IntegrationSchemas2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.IntegrationSchemas3`
+### `number`
 
 ```typescript
-const value: shared.IntegrationSchemas3 = {};
+const value: number = 1284.03;
 ```
 
-### `shared.IntegrationSchemas4`
+### `boolean`
 
 ```typescript
-const value: shared.IntegrationSchemas4 = {};
+const value: boolean = true;
 ```
 
-### `shared.IntegrationSchemas5`
+### `shared.IntegrationSchemas5[]`
 
 ```typescript
-const value: shared.IntegrationSchemas5 = {};
+const value: shared.IntegrationSchemas5[] = [
+  false,
+];
 ```
 

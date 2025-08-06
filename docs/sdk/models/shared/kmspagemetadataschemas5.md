@@ -3,19 +3,27 @@
 
 ## Supported Types
 
-### `any[]`
+### `shared.KmsPageMetadataSchemas1`
 
 ```typescript
-const value: any[] = [
-  "<value 1>",
-  "<value 2>",
-  "<value 3>",
-];
+const value: shared.KmsPageMetadataSchemas1 = {};
 ```
 
-### `shared.KmsPageMetadataSchemasValue52`
+### `string`
 
 ```typescript
-const value: shared.KmsPageMetadataSchemasValue52 = {};
+const value: string = "<value>";
+```
+
+### `number`
+
+```typescript
+const value: number = 1284.03;
+```
+
+### `boolean`
+
+```typescript
+const value: boolean = true;
 ```
 

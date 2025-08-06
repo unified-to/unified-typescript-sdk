@@ -3,36 +3,37 @@
 
 ## Supported Types
 
-### `shared.TaskMetadataSchemas1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.TaskMetadataSchemas1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.TaskMetadataSchemas2`
+### `string`
 
 ```typescript
-const value: shared.TaskMetadataSchemas2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.TaskMetadataSchemas3`
+### `number`
 
 ```typescript
-const value: shared.TaskMetadataSchemas3 = {};
+const value: number = 1284.03;
 ```
 
-### `shared.TaskMetadataSchemas4`
+### `boolean`
 
 ```typescript
-const value: shared.TaskMetadataSchemas4 = false;
+const value: boolean = true;
 ```
 
-### `shared.TaskMetadataSchemas5`
+### `shared.TaskMetadataSchemas5[]`
 
 ```typescript
-const value: shared.TaskMetadataSchemas5 = [
-  "<value 1>",
-  "<value 2>",
-];
+const value: shared.TaskMetadataSchemas5[] = [];
 ```
 

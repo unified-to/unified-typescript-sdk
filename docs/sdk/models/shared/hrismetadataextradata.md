@@ -3,37 +3,37 @@
 
 ## Supported Types
 
-### `shared.HrisMetadata1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.HrisMetadata1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.HrisMetadata2`
+### `string`
 
 ```typescript
-const value: shared.HrisMetadata2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.HrisMetadata3`
+### `number`
 
 ```typescript
-const value: shared.HrisMetadata3 = {};
+const value: number = 1284.03;
 ```
 
-### `shared.HrisMetadata4`
+### `boolean`
 
 ```typescript
-const value: shared.HrisMetadata4 = true;
+const value: boolean = true;
 ```
 
-### `shared.HrisMetadata5`
+### `shared.HrisMetadata5[]`
 
 ```typescript
-const value: shared.HrisMetadata5 = [
-  "<value 1>",
-  "<value 2>",
-  "<value 3>",
-];
+const value: shared.HrisMetadata5[] = [];
 ```
 

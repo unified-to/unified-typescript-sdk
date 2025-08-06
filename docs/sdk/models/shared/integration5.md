@@ -3,19 +3,27 @@
 
 ## Supported Types
 
-### `any[]`
+### `shared.Integration1`
 
 ```typescript
-const value: any[] = [
-  "<value 1>",
-  "<value 2>",
-  "<value 3>",
-];
+const value: shared.Integration1 = {};
 ```
 
-### `shared.IntegrationSchemasApi52`
+### `string`
 
 ```typescript
-const value: shared.IntegrationSchemasApi52 = {};
+const value: string = "<value>";
+```
+
+### `number`
+
+```typescript
+const value: number = 1284.03;
+```
+
+### `boolean`
+
+```typescript
+const value: boolean = true;
 ```
 

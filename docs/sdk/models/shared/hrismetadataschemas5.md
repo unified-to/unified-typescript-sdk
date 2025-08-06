@@ -3,19 +3,27 @@
 
 ## Supported Types
 
-### `any[]`
+### `shared.HrisMetadataSchemas1`
 
 ```typescript
-const value: any[] = [
-  "<value 1>",
-  "<value 2>",
-  "<value 3>",
-];
+const value: shared.HrisMetadataSchemas1 = {};
 ```
 
-### `shared.HrisMetadataSchemasValue52`
+### `string`
 
 ```typescript
-const value: shared.HrisMetadataSchemasValue52 = {};
+const value: string = "<value>";
+```
+
+### `number`
+
+```typescript
+const value: number = 1284.03;
+```
+
+### `boolean`
+
+```typescript
+const value: boolean = true;
 ```
 

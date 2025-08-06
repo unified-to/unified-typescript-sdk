@@ -13,94 +13,46 @@ import {
   PropertyIntegrationCategories$outboundSchema,
 } from "./propertyintegrationcategories.js";
 
-export type IntegrationSchemasApi52 = {};
-
-export type Integration5 = IntegrationSchemasApi52 | Array<any>;
-
-export type IntegrationSchemasApi2 = {};
-
-export type Integration4 = IntegrationSchemasApi2 | boolean;
-
-export type IntegrationSchemasApi32 = {};
-
-export type Integration3 = IntegrationSchemasApi32 | number;
-
-export type IntegrationSchemasApi22 = {};
-
-export type Integration2 = IntegrationSchemasApi22 | string;
-
 export type Integration1 = {};
 
+export type Integration5 = Integration1 | string | number | boolean;
+
 export type Api =
-  | Integration1
-  | IntegrationSchemasApi22
+  | { [k: string]: any }
   | string
-  | IntegrationSchemasApi32
   | number
-  | IntegrationSchemasApi2
   | boolean
-  | IntegrationSchemasApi52
-  | Array<any>;
-
-export type IntegrationSchemasPartnership52 = {};
-
-export type IntegrationSchemas5 = IntegrationSchemasPartnership52 | Array<any>;
-
-export type IntegrationSchemasPartnership42 = {};
-
-export type IntegrationSchemas4 = IntegrationSchemasPartnership42 | boolean;
-
-export type IntegrationSchemasPartnership32 = {};
-
-export type IntegrationSchemas3 = IntegrationSchemasPartnership32 | number;
-
-export type IntegrationSchemasPartnership2 = {};
-
-export type IntegrationSchemas2 = IntegrationSchemasPartnership2 | string;
+  | Array<Integration1 | string | number | boolean>;
 
 export type IntegrationSchemas1 = {};
 
-export type Partnership =
+export type IntegrationSchemas5 =
   | IntegrationSchemas1
-  | IntegrationSchemasPartnership2
   | string
-  | IntegrationSchemasPartnership32
   | number
-  | IntegrationSchemasPartnership42
+  | boolean;
+
+export type Partnership =
+  | { [k: string]: any }
+  | string
+  | number
   | boolean
-  | IntegrationSchemasPartnership52
-  | Array<any>;
-
-export type IntegrationSchemasSandbox52 = {};
-
-export type IntegrationSchemasSandbox5 =
-  | IntegrationSchemasSandbox52
-  | Array<any>;
-
-export type IntegrationSchemasSandbox42 = {};
-
-export type IntegrationSchemasSandbox4 = IntegrationSchemasSandbox42 | boolean;
-
-export type IntegrationSchemasSandbox32 = {};
-
-export type IntegrationSchemasSandbox3 = IntegrationSchemasSandbox32 | number;
-
-export type IntegrationSchemasSandbox22 = {};
-
-export type IntegrationSchemasSandbox2 = IntegrationSchemasSandbox22 | string;
+  | Array<IntegrationSchemas1 | string | number | boolean>;
 
 export type IntegrationSchemasSandbox1 = {};
 
-export type Sandbox =
+export type IntegrationSchemasSandbox5 =
   | IntegrationSchemasSandbox1
-  | IntegrationSchemasSandbox22
   | string
-  | IntegrationSchemasSandbox32
   | number
-  | IntegrationSchemasSandbox42
+  | boolean;
+
+export type Sandbox =
+  | { [k: string]: any }
+  | string
+  | number
   | boolean
-  | IntegrationSchemasSandbox52
-  | Array<any>;
+  | Array<IntegrationSchemasSandbox1 | string | number | boolean>;
 
 /**
  * Informational object for supported integrations.
@@ -108,15 +60,11 @@ export type Sandbox =
 export type Integration = {
   activeHealthyConnections?: number | undefined;
   api?:
-    | Integration1
-    | IntegrationSchemasApi22
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasApi32
     | number
-    | IntegrationSchemasApi2
     | boolean
-    | IntegrationSchemasApi52
-    | Array<any>
+    | Array<Integration1 | string | number | boolean>
     | undefined;
   apiDocsUrl?: string | undefined;
   beta?: boolean | undefined;
@@ -134,28 +82,20 @@ export type Integration = {
   logoUrl?: string | undefined;
   name: string;
   partnership?:
-    | IntegrationSchemas1
-    | IntegrationSchemasPartnership2
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasPartnership32
     | number
-    | IntegrationSchemasPartnership42
     | boolean
-    | IntegrationSchemasPartnership52
-    | Array<any>
+    | Array<IntegrationSchemas1 | string | number | boolean>
     | undefined;
   popularity?: number | undefined;
   rateLimitDescription?: string | undefined;
   sandbox?:
-    | IntegrationSchemasSandbox1
-    | IntegrationSchemasSandbox22
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasSandbox32
     | number
-    | IntegrationSchemasSandbox42
     | boolean
-    | IntegrationSchemasSandbox52
-    | Array<any>
+    | Array<IntegrationSchemasSandbox1 | string | number | boolean>
     | undefined;
   support?: { [k: string]: any } | undefined;
   testedAt?: Date | undefined;
@@ -172,382 +112,6 @@ export type Integration = {
   updatedAt?: string | undefined;
   webUrl?: string | undefined;
 };
-
-/** @internal */
-export const IntegrationSchemasApi52$inboundSchema: z.ZodType<
-  IntegrationSchemasApi52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasApi52$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasApi52$outboundSchema: z.ZodType<
-  IntegrationSchemasApi52$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasApi52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasApi52$ {
-  /** @deprecated use `IntegrationSchemasApi52$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasApi52$inboundSchema;
-  /** @deprecated use `IntegrationSchemasApi52$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasApi52$outboundSchema;
-  /** @deprecated use `IntegrationSchemasApi52$Outbound` instead. */
-  export type Outbound = IntegrationSchemasApi52$Outbound;
-}
-
-export function integrationSchemasApi52ToJSON(
-  integrationSchemasApi52: IntegrationSchemasApi52,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasApi52$outboundSchema.parse(integrationSchemasApi52),
-  );
-}
-
-export function integrationSchemasApi52FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasApi52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasApi52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasApi52' from JSON`,
-  );
-}
-
-/** @internal */
-export const Integration5$inboundSchema: z.ZodType<
-  Integration5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasApi52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type Integration5$Outbound =
-  | IntegrationSchemasApi52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const Integration5$outboundSchema: z.ZodType<
-  Integration5$Outbound,
-  z.ZodTypeDef,
-  Integration5
-> = z.union([
-  z.lazy(() => IntegrationSchemasApi52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Integration5$ {
-  /** @deprecated use `Integration5$inboundSchema` instead. */
-  export const inboundSchema = Integration5$inboundSchema;
-  /** @deprecated use `Integration5$outboundSchema` instead. */
-  export const outboundSchema = Integration5$outboundSchema;
-  /** @deprecated use `Integration5$Outbound` instead. */
-  export type Outbound = Integration5$Outbound;
-}
-
-export function integration5ToJSON(integration5: Integration5): string {
-  return JSON.stringify(Integration5$outboundSchema.parse(integration5));
-}
-
-export function integration5FromJSON(
-  jsonString: string,
-): SafeParseResult<Integration5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Integration5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Integration5' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasApi2$inboundSchema: z.ZodType<
-  IntegrationSchemasApi2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasApi2$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasApi2$outboundSchema: z.ZodType<
-  IntegrationSchemasApi2$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasApi2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasApi2$ {
-  /** @deprecated use `IntegrationSchemasApi2$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasApi2$inboundSchema;
-  /** @deprecated use `IntegrationSchemasApi2$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasApi2$outboundSchema;
-  /** @deprecated use `IntegrationSchemasApi2$Outbound` instead. */
-  export type Outbound = IntegrationSchemasApi2$Outbound;
-}
-
-export function integrationSchemasApi2ToJSON(
-  integrationSchemasApi2: IntegrationSchemasApi2,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasApi2$outboundSchema.parse(integrationSchemasApi2),
-  );
-}
-
-export function integrationSchemasApi2FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasApi2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasApi2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasApi2' from JSON`,
-  );
-}
-
-/** @internal */
-export const Integration4$inboundSchema: z.ZodType<
-  Integration4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([z.lazy(() => IntegrationSchemasApi2$inboundSchema), z.boolean()]);
-
-/** @internal */
-export type Integration4$Outbound = IntegrationSchemasApi2$Outbound | boolean;
-
-/** @internal */
-export const Integration4$outboundSchema: z.ZodType<
-  Integration4$Outbound,
-  z.ZodTypeDef,
-  Integration4
-> = z.union([z.lazy(() => IntegrationSchemasApi2$outboundSchema), z.boolean()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Integration4$ {
-  /** @deprecated use `Integration4$inboundSchema` instead. */
-  export const inboundSchema = Integration4$inboundSchema;
-  /** @deprecated use `Integration4$outboundSchema` instead. */
-  export const outboundSchema = Integration4$outboundSchema;
-  /** @deprecated use `Integration4$Outbound` instead. */
-  export type Outbound = Integration4$Outbound;
-}
-
-export function integration4ToJSON(integration4: Integration4): string {
-  return JSON.stringify(Integration4$outboundSchema.parse(integration4));
-}
-
-export function integration4FromJSON(
-  jsonString: string,
-): SafeParseResult<Integration4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Integration4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Integration4' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasApi32$inboundSchema: z.ZodType<
-  IntegrationSchemasApi32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasApi32$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasApi32$outboundSchema: z.ZodType<
-  IntegrationSchemasApi32$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasApi32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasApi32$ {
-  /** @deprecated use `IntegrationSchemasApi32$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasApi32$inboundSchema;
-  /** @deprecated use `IntegrationSchemasApi32$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasApi32$outboundSchema;
-  /** @deprecated use `IntegrationSchemasApi32$Outbound` instead. */
-  export type Outbound = IntegrationSchemasApi32$Outbound;
-}
-
-export function integrationSchemasApi32ToJSON(
-  integrationSchemasApi32: IntegrationSchemasApi32,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasApi32$outboundSchema.parse(integrationSchemasApi32),
-  );
-}
-
-export function integrationSchemasApi32FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasApi32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasApi32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasApi32' from JSON`,
-  );
-}
-
-/** @internal */
-export const Integration3$inboundSchema: z.ZodType<
-  Integration3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([z.lazy(() => IntegrationSchemasApi32$inboundSchema), z.number()]);
-
-/** @internal */
-export type Integration3$Outbound = IntegrationSchemasApi32$Outbound | number;
-
-/** @internal */
-export const Integration3$outboundSchema: z.ZodType<
-  Integration3$Outbound,
-  z.ZodTypeDef,
-  Integration3
-> = z.union([z.lazy(() => IntegrationSchemasApi32$outboundSchema), z.number()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Integration3$ {
-  /** @deprecated use `Integration3$inboundSchema` instead. */
-  export const inboundSchema = Integration3$inboundSchema;
-  /** @deprecated use `Integration3$outboundSchema` instead. */
-  export const outboundSchema = Integration3$outboundSchema;
-  /** @deprecated use `Integration3$Outbound` instead. */
-  export type Outbound = Integration3$Outbound;
-}
-
-export function integration3ToJSON(integration3: Integration3): string {
-  return JSON.stringify(Integration3$outboundSchema.parse(integration3));
-}
-
-export function integration3FromJSON(
-  jsonString: string,
-): SafeParseResult<Integration3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Integration3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Integration3' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasApi22$inboundSchema: z.ZodType<
-  IntegrationSchemasApi22,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasApi22$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasApi22$outboundSchema: z.ZodType<
-  IntegrationSchemasApi22$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasApi22
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasApi22$ {
-  /** @deprecated use `IntegrationSchemasApi22$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasApi22$inboundSchema;
-  /** @deprecated use `IntegrationSchemasApi22$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasApi22$outboundSchema;
-  /** @deprecated use `IntegrationSchemasApi22$Outbound` instead. */
-  export type Outbound = IntegrationSchemasApi22$Outbound;
-}
-
-export function integrationSchemasApi22ToJSON(
-  integrationSchemasApi22: IntegrationSchemasApi22,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasApi22$outboundSchema.parse(integrationSchemasApi22),
-  );
-}
-
-export function integrationSchemasApi22FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasApi22, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasApi22$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasApi22' from JSON`,
-  );
-}
-
-/** @internal */
-export const Integration2$inboundSchema: z.ZodType<
-  Integration2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([z.lazy(() => IntegrationSchemasApi22$inboundSchema), z.string()]);
-
-/** @internal */
-export type Integration2$Outbound = IntegrationSchemasApi22$Outbound | string;
-
-/** @internal */
-export const Integration2$outboundSchema: z.ZodType<
-  Integration2$Outbound,
-  z.ZodTypeDef,
-  Integration2
-> = z.union([z.lazy(() => IntegrationSchemasApi22$outboundSchema), z.string()]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Integration2$ {
-  /** @deprecated use `Integration2$inboundSchema` instead. */
-  export const inboundSchema = Integration2$inboundSchema;
-  /** @deprecated use `Integration2$outboundSchema` instead. */
-  export const outboundSchema = Integration2$outboundSchema;
-  /** @deprecated use `Integration2$Outbound` instead. */
-  export type Outbound = Integration2$Outbound;
-}
-
-export function integration2ToJSON(integration2: Integration2): string {
-  return JSON.stringify(Integration2$outboundSchema.parse(integration2));
-}
-
-export function integration2FromJSON(
-  jsonString: string,
-): SafeParseResult<Integration2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => Integration2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'Integration2' from JSON`,
-  );
-}
 
 /** @internal */
 export const Integration1$inboundSchema: z.ZodType<
@@ -594,42 +158,104 @@ export function integration1FromJSON(
 }
 
 /** @internal */
+export const Integration5$inboundSchema: z.ZodType<
+  Integration5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => Integration1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type Integration5$Outbound =
+  | Integration1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const Integration5$outboundSchema: z.ZodType<
+  Integration5$Outbound,
+  z.ZodTypeDef,
+  Integration5
+> = z.union([
+  z.lazy(() => Integration1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Integration5$ {
+  /** @deprecated use `Integration5$inboundSchema` instead. */
+  export const inboundSchema = Integration5$inboundSchema;
+  /** @deprecated use `Integration5$outboundSchema` instead. */
+  export const outboundSchema = Integration5$outboundSchema;
+  /** @deprecated use `Integration5$Outbound` instead. */
+  export type Outbound = Integration5$Outbound;
+}
+
+export function integration5ToJSON(integration5: Integration5): string {
+  return JSON.stringify(Integration5$outboundSchema.parse(integration5));
+}
+
+export function integration5FromJSON(
+  jsonString: string,
+): SafeParseResult<Integration5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Integration5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Integration5' from JSON`,
+  );
+}
+
+/** @internal */
 export const Api$inboundSchema: z.ZodType<Api, z.ZodTypeDef, unknown> = z.union(
   [
-    z.lazy(() => Integration1$inboundSchema),
-    z.union([z.lazy(() => IntegrationSchemasApi22$inboundSchema), z.string()]),
-    z.union([z.lazy(() => IntegrationSchemasApi32$inboundSchema), z.number()]),
-    z.union([z.lazy(() => IntegrationSchemasApi2$inboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => IntegrationSchemasApi52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => Integration1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ],
 );
 
 /** @internal */
 export type Api$Outbound =
-  | Integration1$Outbound
-  | IntegrationSchemasApi22$Outbound
+  | { [k: string]: any }
   | string
-  | IntegrationSchemasApi32$Outbound
   | number
-  | IntegrationSchemasApi2$Outbound
   | boolean
-  | IntegrationSchemasApi52$Outbound
-  | Array<any>;
+  | Array<Integration1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const Api$outboundSchema: z.ZodType<Api$Outbound, z.ZodTypeDef, Api> = z
   .union([
-    z.lazy(() => Integration1$outboundSchema),
-    z.union([z.lazy(() => IntegrationSchemasApi22$outboundSchema), z.string()]),
-    z.union([z.lazy(() => IntegrationSchemasApi32$outboundSchema), z.number()]),
-    z.union([z.lazy(() => IntegrationSchemasApi2$outboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => IntegrationSchemasApi52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => Integration1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]);
 
 /**
@@ -656,430 +282,6 @@ export function apiFromJSON(
     jsonString,
     (x) => Api$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Api' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasPartnership52$inboundSchema: z.ZodType<
-  IntegrationSchemasPartnership52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasPartnership52$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasPartnership52$outboundSchema: z.ZodType<
-  IntegrationSchemasPartnership52$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasPartnership52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasPartnership52$ {
-  /** @deprecated use `IntegrationSchemasPartnership52$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasPartnership52$inboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership52$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasPartnership52$outboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership52$Outbound` instead. */
-  export type Outbound = IntegrationSchemasPartnership52$Outbound;
-}
-
-export function integrationSchemasPartnership52ToJSON(
-  integrationSchemasPartnership52: IntegrationSchemasPartnership52,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasPartnership52$outboundSchema.parse(
-      integrationSchemasPartnership52,
-    ),
-  );
-}
-
-export function integrationSchemasPartnership52FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasPartnership52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasPartnership52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasPartnership52' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemas5$inboundSchema: z.ZodType<
-  IntegrationSchemas5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type IntegrationSchemas5$Outbound =
-  | IntegrationSchemasPartnership52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const IntegrationSchemas5$outboundSchema: z.ZodType<
-  IntegrationSchemas5$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemas5
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemas5$ {
-  /** @deprecated use `IntegrationSchemas5$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemas5$inboundSchema;
-  /** @deprecated use `IntegrationSchemas5$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemas5$outboundSchema;
-  /** @deprecated use `IntegrationSchemas5$Outbound` instead. */
-  export type Outbound = IntegrationSchemas5$Outbound;
-}
-
-export function integrationSchemas5ToJSON(
-  integrationSchemas5: IntegrationSchemas5,
-): string {
-  return JSON.stringify(
-    IntegrationSchemas5$outboundSchema.parse(integrationSchemas5),
-  );
-}
-
-export function integrationSchemas5FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemas5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemas5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemas5' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasPartnership42$inboundSchema: z.ZodType<
-  IntegrationSchemasPartnership42,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasPartnership42$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasPartnership42$outboundSchema: z.ZodType<
-  IntegrationSchemasPartnership42$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasPartnership42
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasPartnership42$ {
-  /** @deprecated use `IntegrationSchemasPartnership42$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasPartnership42$inboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership42$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasPartnership42$outboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership42$Outbound` instead. */
-  export type Outbound = IntegrationSchemasPartnership42$Outbound;
-}
-
-export function integrationSchemasPartnership42ToJSON(
-  integrationSchemasPartnership42: IntegrationSchemasPartnership42,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasPartnership42$outboundSchema.parse(
-      integrationSchemasPartnership42,
-    ),
-  );
-}
-
-export function integrationSchemasPartnership42FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasPartnership42, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasPartnership42$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasPartnership42' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemas4$inboundSchema: z.ZodType<
-  IntegrationSchemas4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership42$inboundSchema),
-  z.boolean(),
-]);
-
-/** @internal */
-export type IntegrationSchemas4$Outbound =
-  | IntegrationSchemasPartnership42$Outbound
-  | boolean;
-
-/** @internal */
-export const IntegrationSchemas4$outboundSchema: z.ZodType<
-  IntegrationSchemas4$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemas4
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership42$outboundSchema),
-  z.boolean(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemas4$ {
-  /** @deprecated use `IntegrationSchemas4$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemas4$inboundSchema;
-  /** @deprecated use `IntegrationSchemas4$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemas4$outboundSchema;
-  /** @deprecated use `IntegrationSchemas4$Outbound` instead. */
-  export type Outbound = IntegrationSchemas4$Outbound;
-}
-
-export function integrationSchemas4ToJSON(
-  integrationSchemas4: IntegrationSchemas4,
-): string {
-  return JSON.stringify(
-    IntegrationSchemas4$outboundSchema.parse(integrationSchemas4),
-  );
-}
-
-export function integrationSchemas4FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemas4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemas4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemas4' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasPartnership32$inboundSchema: z.ZodType<
-  IntegrationSchemasPartnership32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasPartnership32$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasPartnership32$outboundSchema: z.ZodType<
-  IntegrationSchemasPartnership32$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasPartnership32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasPartnership32$ {
-  /** @deprecated use `IntegrationSchemasPartnership32$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasPartnership32$inboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership32$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasPartnership32$outboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership32$Outbound` instead. */
-  export type Outbound = IntegrationSchemasPartnership32$Outbound;
-}
-
-export function integrationSchemasPartnership32ToJSON(
-  integrationSchemasPartnership32: IntegrationSchemasPartnership32,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasPartnership32$outboundSchema.parse(
-      integrationSchemasPartnership32,
-    ),
-  );
-}
-
-export function integrationSchemasPartnership32FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasPartnership32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasPartnership32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasPartnership32' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemas3$inboundSchema: z.ZodType<
-  IntegrationSchemas3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership32$inboundSchema),
-  z.number(),
-]);
-
-/** @internal */
-export type IntegrationSchemas3$Outbound =
-  | IntegrationSchemasPartnership32$Outbound
-  | number;
-
-/** @internal */
-export const IntegrationSchemas3$outboundSchema: z.ZodType<
-  IntegrationSchemas3$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemas3
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemas3$ {
-  /** @deprecated use `IntegrationSchemas3$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemas3$inboundSchema;
-  /** @deprecated use `IntegrationSchemas3$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemas3$outboundSchema;
-  /** @deprecated use `IntegrationSchemas3$Outbound` instead. */
-  export type Outbound = IntegrationSchemas3$Outbound;
-}
-
-export function integrationSchemas3ToJSON(
-  integrationSchemas3: IntegrationSchemas3,
-): string {
-  return JSON.stringify(
-    IntegrationSchemas3$outboundSchema.parse(integrationSchemas3),
-  );
-}
-
-export function integrationSchemas3FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemas3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemas3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemas3' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasPartnership2$inboundSchema: z.ZodType<
-  IntegrationSchemasPartnership2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasPartnership2$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasPartnership2$outboundSchema: z.ZodType<
-  IntegrationSchemasPartnership2$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasPartnership2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasPartnership2$ {
-  /** @deprecated use `IntegrationSchemasPartnership2$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasPartnership2$inboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership2$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasPartnership2$outboundSchema;
-  /** @deprecated use `IntegrationSchemasPartnership2$Outbound` instead. */
-  export type Outbound = IntegrationSchemasPartnership2$Outbound;
-}
-
-export function integrationSchemasPartnership2ToJSON(
-  integrationSchemasPartnership2: IntegrationSchemasPartnership2,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasPartnership2$outboundSchema.parse(
-      integrationSchemasPartnership2,
-    ),
-  );
-}
-
-export function integrationSchemasPartnership2FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasPartnership2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasPartnership2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasPartnership2' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemas2$inboundSchema: z.ZodType<
-  IntegrationSchemas2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership2$inboundSchema),
-  z.string(),
-]);
-
-/** @internal */
-export type IntegrationSchemas2$Outbound =
-  | IntegrationSchemasPartnership2$Outbound
-  | string;
-
-/** @internal */
-export const IntegrationSchemas2$outboundSchema: z.ZodType<
-  IntegrationSchemas2$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemas2
-> = z.union([
-  z.lazy(() => IntegrationSchemasPartnership2$outboundSchema),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemas2$ {
-  /** @deprecated use `IntegrationSchemas2$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemas2$inboundSchema;
-  /** @deprecated use `IntegrationSchemas2$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemas2$outboundSchema;
-  /** @deprecated use `IntegrationSchemas2$Outbound` instead. */
-  export type Outbound = IntegrationSchemas2$Outbound;
-}
-
-export function integrationSchemas2ToJSON(
-  integrationSchemas2: IntegrationSchemas2,
-): string {
-  return JSON.stringify(
-    IntegrationSchemas2$outboundSchema.parse(integrationSchemas2),
-  );
-}
-
-export function integrationSchemas2FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemas2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemas2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemas2' from JSON`,
   );
 }
 
@@ -1132,41 +334,94 @@ export function integrationSchemas1FromJSON(
 }
 
 /** @internal */
+export const IntegrationSchemas5$inboundSchema: z.ZodType<
+  IntegrationSchemas5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => IntegrationSchemas1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type IntegrationSchemas5$Outbound =
+  | IntegrationSchemas1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const IntegrationSchemas5$outboundSchema: z.ZodType<
+  IntegrationSchemas5$Outbound,
+  z.ZodTypeDef,
+  IntegrationSchemas5
+> = z.union([
+  z.lazy(() => IntegrationSchemas1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IntegrationSchemas5$ {
+  /** @deprecated use `IntegrationSchemas5$inboundSchema` instead. */
+  export const inboundSchema = IntegrationSchemas5$inboundSchema;
+  /** @deprecated use `IntegrationSchemas5$outboundSchema` instead. */
+  export const outboundSchema = IntegrationSchemas5$outboundSchema;
+  /** @deprecated use `IntegrationSchemas5$Outbound` instead. */
+  export type Outbound = IntegrationSchemas5$Outbound;
+}
+
+export function integrationSchemas5ToJSON(
+  integrationSchemas5: IntegrationSchemas5,
+): string {
+  return JSON.stringify(
+    IntegrationSchemas5$outboundSchema.parse(integrationSchemas5),
+  );
+}
+
+export function integrationSchemas5FromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationSchemas5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationSchemas5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationSchemas5' from JSON`,
+  );
+}
+
+/** @internal */
 export const Partnership$inboundSchema: z.ZodType<
   Partnership,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => IntegrationSchemas1$inboundSchema),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership2$inboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership32$inboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership42$inboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership52$inboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => IntegrationSchemas1$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /** @internal */
 export type Partnership$Outbound =
-  | IntegrationSchemas1$Outbound
-  | IntegrationSchemasPartnership2$Outbound
+  | { [k: string]: any }
   | string
-  | IntegrationSchemasPartnership32$Outbound
   | number
-  | IntegrationSchemasPartnership42$Outbound
   | boolean
-  | IntegrationSchemasPartnership52$Outbound
-  | Array<any>;
+  | Array<IntegrationSchemas1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const Partnership$outboundSchema: z.ZodType<
@@ -1174,23 +429,18 @@ export const Partnership$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Partnership
 > = z.union([
-  z.lazy(() => IntegrationSchemas1$outboundSchema),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership2$outboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership32$outboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership42$outboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasPartnership52$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => IntegrationSchemas1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -1217,430 +467,6 @@ export function partnershipFromJSON(
     jsonString,
     (x) => Partnership$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'Partnership' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox52$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasSandbox52$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasSandbox52$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox52$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox52$ {
-  /** @deprecated use `IntegrationSchemasSandbox52$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox52$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox52$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox52$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox52$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox52$Outbound;
-}
-
-export function integrationSchemasSandbox52ToJSON(
-  integrationSchemasSandbox52: IntegrationSchemasSandbox52,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox52$outboundSchema.parse(
-      integrationSchemasSandbox52,
-    ),
-  );
-}
-
-export function integrationSchemasSandbox52FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox52' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox5$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type IntegrationSchemasSandbox5$Outbound =
-  | IntegrationSchemasSandbox52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const IntegrationSchemasSandbox5$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox5$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox5
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox5$ {
-  /** @deprecated use `IntegrationSchemasSandbox5$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox5$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox5$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox5$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox5$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox5$Outbound;
-}
-
-export function integrationSchemasSandbox5ToJSON(
-  integrationSchemasSandbox5: IntegrationSchemasSandbox5,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox5$outboundSchema.parse(integrationSchemasSandbox5),
-  );
-}
-
-export function integrationSchemasSandbox5FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox5' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox42$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox42,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasSandbox42$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasSandbox42$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox42$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox42
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox42$ {
-  /** @deprecated use `IntegrationSchemasSandbox42$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox42$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox42$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox42$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox42$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox42$Outbound;
-}
-
-export function integrationSchemasSandbox42ToJSON(
-  integrationSchemasSandbox42: IntegrationSchemasSandbox42,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox42$outboundSchema.parse(
-      integrationSchemasSandbox42,
-    ),
-  );
-}
-
-export function integrationSchemasSandbox42FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox42, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox42$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox42' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox4$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox42$inboundSchema),
-  z.boolean(),
-]);
-
-/** @internal */
-export type IntegrationSchemasSandbox4$Outbound =
-  | IntegrationSchemasSandbox42$Outbound
-  | boolean;
-
-/** @internal */
-export const IntegrationSchemasSandbox4$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox4$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox4
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox42$outboundSchema),
-  z.boolean(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox4$ {
-  /** @deprecated use `IntegrationSchemasSandbox4$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox4$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox4$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox4$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox4$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox4$Outbound;
-}
-
-export function integrationSchemasSandbox4ToJSON(
-  integrationSchemasSandbox4: IntegrationSchemasSandbox4,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox4$outboundSchema.parse(integrationSchemasSandbox4),
-  );
-}
-
-export function integrationSchemasSandbox4FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox4' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox32$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasSandbox32$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasSandbox32$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox32$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox32$ {
-  /** @deprecated use `IntegrationSchemasSandbox32$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox32$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox32$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox32$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox32$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox32$Outbound;
-}
-
-export function integrationSchemasSandbox32ToJSON(
-  integrationSchemasSandbox32: IntegrationSchemasSandbox32,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox32$outboundSchema.parse(
-      integrationSchemasSandbox32,
-    ),
-  );
-}
-
-export function integrationSchemasSandbox32FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox32' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox3$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox32$inboundSchema),
-  z.number(),
-]);
-
-/** @internal */
-export type IntegrationSchemasSandbox3$Outbound =
-  | IntegrationSchemasSandbox32$Outbound
-  | number;
-
-/** @internal */
-export const IntegrationSchemasSandbox3$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox3$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox3
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox3$ {
-  /** @deprecated use `IntegrationSchemasSandbox3$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox3$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox3$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox3$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox3$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox3$Outbound;
-}
-
-export function integrationSchemasSandbox3ToJSON(
-  integrationSchemasSandbox3: IntegrationSchemasSandbox3,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox3$outboundSchema.parse(integrationSchemasSandbox3),
-  );
-}
-
-export function integrationSchemasSandbox3FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox3' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox22$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox22,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type IntegrationSchemasSandbox22$Outbound = {};
-
-/** @internal */
-export const IntegrationSchemasSandbox22$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox22$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox22
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox22$ {
-  /** @deprecated use `IntegrationSchemasSandbox22$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox22$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox22$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox22$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox22$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox22$Outbound;
-}
-
-export function integrationSchemasSandbox22ToJSON(
-  integrationSchemasSandbox22: IntegrationSchemasSandbox22,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox22$outboundSchema.parse(
-      integrationSchemasSandbox22,
-    ),
-  );
-}
-
-export function integrationSchemasSandbox22FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox22, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox22$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox22' from JSON`,
-  );
-}
-
-/** @internal */
-export const IntegrationSchemasSandbox2$inboundSchema: z.ZodType<
-  IntegrationSchemasSandbox2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox22$inboundSchema),
-  z.string(),
-]);
-
-/** @internal */
-export type IntegrationSchemasSandbox2$Outbound =
-  | IntegrationSchemasSandbox22$Outbound
-  | string;
-
-/** @internal */
-export const IntegrationSchemasSandbox2$outboundSchema: z.ZodType<
-  IntegrationSchemasSandbox2$Outbound,
-  z.ZodTypeDef,
-  IntegrationSchemasSandbox2
-> = z.union([
-  z.lazy(() => IntegrationSchemasSandbox22$outboundSchema),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSchemasSandbox2$ {
-  /** @deprecated use `IntegrationSchemasSandbox2$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSchemasSandbox2$inboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox2$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSchemasSandbox2$outboundSchema;
-  /** @deprecated use `IntegrationSchemasSandbox2$Outbound` instead. */
-  export type Outbound = IntegrationSchemasSandbox2$Outbound;
-}
-
-export function integrationSchemasSandbox2ToJSON(
-  integrationSchemasSandbox2: IntegrationSchemasSandbox2,
-): string {
-  return JSON.stringify(
-    IntegrationSchemasSandbox2$outboundSchema.parse(integrationSchemasSandbox2),
-  );
-}
-
-export function integrationSchemasSandbox2FromJSON(
-  jsonString: string,
-): SafeParseResult<IntegrationSchemasSandbox2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => IntegrationSchemasSandbox2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'IntegrationSchemasSandbox2' from JSON`,
   );
 }
 
@@ -1693,38 +519,91 @@ export function integrationSchemasSandbox1FromJSON(
 }
 
 /** @internal */
+export const IntegrationSchemasSandbox5$inboundSchema: z.ZodType<
+  IntegrationSchemasSandbox5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type IntegrationSchemasSandbox5$Outbound =
+  | IntegrationSchemasSandbox1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const IntegrationSchemasSandbox5$outboundSchema: z.ZodType<
+  IntegrationSchemasSandbox5$Outbound,
+  z.ZodTypeDef,
+  IntegrationSchemasSandbox5
+> = z.union([
+  z.lazy(() => IntegrationSchemasSandbox1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IntegrationSchemasSandbox5$ {
+  /** @deprecated use `IntegrationSchemasSandbox5$inboundSchema` instead. */
+  export const inboundSchema = IntegrationSchemasSandbox5$inboundSchema;
+  /** @deprecated use `IntegrationSchemasSandbox5$outboundSchema` instead. */
+  export const outboundSchema = IntegrationSchemasSandbox5$outboundSchema;
+  /** @deprecated use `IntegrationSchemasSandbox5$Outbound` instead. */
+  export type Outbound = IntegrationSchemasSandbox5$Outbound;
+}
+
+export function integrationSchemasSandbox5ToJSON(
+  integrationSchemasSandbox5: IntegrationSchemasSandbox5,
+): string {
+  return JSON.stringify(
+    IntegrationSchemasSandbox5$outboundSchema.parse(integrationSchemasSandbox5),
+  );
+}
+
+export function integrationSchemasSandbox5FromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationSchemasSandbox5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationSchemasSandbox5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationSchemasSandbox5' from JSON`,
+  );
+}
+
+/** @internal */
 export const Sandbox$inboundSchema: z.ZodType<Sandbox, z.ZodTypeDef, unknown> =
   z.union([
-    z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox22$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]);
 
 /** @internal */
 export type Sandbox$Outbound =
-  | IntegrationSchemasSandbox1$Outbound
-  | IntegrationSchemasSandbox22$Outbound
+  | { [k: string]: any }
   | string
-  | IntegrationSchemasSandbox32$Outbound
   | number
-  | IntegrationSchemasSandbox42$Outbound
   | boolean
-  | IntegrationSchemasSandbox52$Outbound
-  | Array<any>;
+  | Array<IntegrationSchemasSandbox1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const Sandbox$outboundSchema: z.ZodType<
@@ -1732,23 +611,18 @@ export const Sandbox$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   Sandbox
 > = z.union([
-  z.lazy(() => IntegrationSchemasSandbox1$outboundSchema),
-  z.union([
-    z.lazy(() => IntegrationSchemasSandbox22$outboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasSandbox32$outboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasSandbox42$outboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => IntegrationSchemasSandbox52$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => IntegrationSchemasSandbox1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -1786,14 +660,18 @@ export const Integration$inboundSchema: z.ZodType<
 > = z.object({
   active_healthy_connections: z.number().optional(),
   api: z.union([
-    z.lazy(() => Integration1$inboundSchema),
-    z.union([z.lazy(() => IntegrationSchemasApi22$inboundSchema), z.string()]),
-    z.union([z.lazy(() => IntegrationSchemasApi32$inboundSchema), z.number()]),
-    z.union([z.lazy(() => IntegrationSchemasApi2$inboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => IntegrationSchemasApi52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => Integration1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   api_docs_url: z.string().optional(),
   beta: z.boolean().optional(),
@@ -1808,44 +686,34 @@ export const Integration$inboundSchema: z.ZodType<
   logo_url: z.string().optional(),
   name: z.string(),
   partnership: z.union([
-    z.lazy(() => IntegrationSchemas1$inboundSchema),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership2$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   popularity: z.number().optional(),
   rate_limit_description: z.string().optional(),
   sandbox: z.union([
-    z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox22$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSandbox1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   support: z.record(z.any()).optional(),
   tested_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -1879,15 +747,11 @@ export const Integration$inboundSchema: z.ZodType<
 export type Integration$Outbound = {
   active_healthy_connections?: number | undefined;
   api?:
-    | Integration1$Outbound
-    | IntegrationSchemasApi22$Outbound
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasApi32$Outbound
     | number
-    | IntegrationSchemasApi2$Outbound
     | boolean
-    | IntegrationSchemasApi52$Outbound
-    | Array<any>
+    | Array<Integration1$Outbound | string | number | boolean>
     | undefined;
   api_docs_url?: string | undefined;
   beta?: boolean | undefined;
@@ -1902,28 +766,20 @@ export type Integration$Outbound = {
   logo_url?: string | undefined;
   name: string;
   partnership?:
-    | IntegrationSchemas1$Outbound
-    | IntegrationSchemasPartnership2$Outbound
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasPartnership32$Outbound
     | number
-    | IntegrationSchemasPartnership42$Outbound
     | boolean
-    | IntegrationSchemasPartnership52$Outbound
-    | Array<any>
+    | Array<IntegrationSchemas1$Outbound | string | number | boolean>
     | undefined;
   popularity?: number | undefined;
   rate_limit_description?: string | undefined;
   sandbox?:
-    | IntegrationSchemasSandbox1$Outbound
-    | IntegrationSchemasSandbox22$Outbound
+    | { [k: string]: any }
     | string
-    | IntegrationSchemasSandbox32$Outbound
     | number
-    | IntegrationSchemasSandbox42$Outbound
     | boolean
-    | IntegrationSchemasSandbox52$Outbound
-    | Array<any>
+    | Array<IntegrationSchemasSandbox1$Outbound | string | number | boolean>
     | undefined;
   support?: { [k: string]: any } | undefined;
   tested_at?: string | undefined;
@@ -1943,14 +799,18 @@ export const Integration$outboundSchema: z.ZodType<
 > = z.object({
   activeHealthyConnections: z.number().optional(),
   api: z.union([
-    z.lazy(() => Integration1$outboundSchema),
-    z.union([z.lazy(() => IntegrationSchemasApi22$outboundSchema), z.string()]),
-    z.union([z.lazy(() => IntegrationSchemasApi32$outboundSchema), z.number()]),
-    z.union([z.lazy(() => IntegrationSchemasApi2$outboundSchema), z.boolean()]),
-    z.union([
-      z.lazy(() => IntegrationSchemasApi52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => Integration1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   apiDocsUrl: z.string().optional(),
   beta: z.boolean().optional(),
@@ -1965,44 +825,34 @@ export const Integration$outboundSchema: z.ZodType<
   logoUrl: z.string().optional(),
   name: z.string(),
   partnership: z.union([
-    z.lazy(() => IntegrationSchemas1$outboundSchema),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership2$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership42$outboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasPartnership52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   popularity: z.number().optional(),
   rateLimitDescription: z.string().optional(),
   sandbox: z.union([
-    z.lazy(() => IntegrationSchemasSandbox1$outboundSchema),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox22$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox42$outboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => IntegrationSchemasSandbox52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSandbox1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   support: z.record(z.any()).optional(),
   testedAt: z.date().transform(v => v.toISOString()).optional(),

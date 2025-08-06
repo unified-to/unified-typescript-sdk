@@ -13,34 +13,16 @@ import {
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type HrisMetadataSchemasExtraData52 = {};
-
-export type HrisMetadata5 = HrisMetadataSchemasExtraData52 | Array<any>;
-
-export type HrisMetadataSchemasExtraData2 = {};
-
-export type HrisMetadata4 = HrisMetadataSchemasExtraData2 | boolean;
-
-export type HrisMetadataSchemasExtraData32 = {};
-
-export type HrisMetadata3 = HrisMetadataSchemasExtraData32 | number;
-
-export type HrisMetadataSchemasExtraData22 = {};
-
-export type HrisMetadata2 = HrisMetadataSchemasExtraData22 | string;
-
 export type HrisMetadata1 = {};
 
+export type HrisMetadata5 = HrisMetadata1 | string | number | boolean;
+
 export type HrisMetadataExtraData =
-  | HrisMetadata1
-  | HrisMetadataSchemasExtraData22
+  | { [k: string]: any }
   | string
-  | HrisMetadataSchemasExtraData32
   | number
-  | HrisMetadataSchemasExtraData2
   | boolean
-  | HrisMetadataSchemasExtraData52
-  | Array<any>;
+  | Array<HrisMetadata1 | string | number | boolean>;
 
 export const HrisMetadataFormat = {
   Text: "TEXT",
@@ -59,46 +41,28 @@ export const HrisMetadataFormat = {
 } as const;
 export type HrisMetadataFormat = OpenEnum<typeof HrisMetadataFormat>;
 
-export type HrisMetadataSchemasValue52 = {};
-
-export type HrisMetadataSchemas5 = HrisMetadataSchemasValue52 | Array<any>;
-
-export type HrisMetadataSchemasValue42 = {};
-
-export type HrisMetadataSchemas4 = HrisMetadataSchemasValue42 | boolean;
-
-export type HrisMetadataSchemasValue32 = {};
-
-export type HrisMetadataSchemas3 = HrisMetadataSchemasValue32 | number;
-
-export type HrisMetadataSchemasValue2 = {};
-
-export type HrisMetadataSchemas2 = HrisMetadataSchemasValue2 | string;
-
 export type HrisMetadataSchemas1 = {};
 
-export type HrisMetadataValue =
+export type HrisMetadataSchemas5 =
   | HrisMetadataSchemas1
-  | HrisMetadataSchemasValue2
   | string
-  | HrisMetadataSchemasValue32
   | number
-  | HrisMetadataSchemasValue42
+  | boolean;
+
+export type HrisMetadataValue =
+  | { [k: string]: any }
+  | string
+  | number
   | boolean
-  | HrisMetadataSchemasValue52
-  | Array<any>;
+  | Array<HrisMetadataSchemas1 | string | number | boolean>;
 
 export type HrisMetadata = {
   extraData?:
-    | HrisMetadata1
-    | HrisMetadataSchemasExtraData22
+    | { [k: string]: any }
     | string
-    | HrisMetadataSchemasExtraData32
     | number
-    | HrisMetadataSchemasExtraData2
     | boolean
-    | HrisMetadataSchemasExtraData52
-    | Array<any>
+    | Array<HrisMetadata1 | string | number | boolean>
     | undefined;
   format?: HrisMetadataFormat | undefined;
   id?: string | undefined;
@@ -107,425 +71,13 @@ export type HrisMetadata = {
   slug?: string | undefined;
   type?: string | undefined;
   value?:
-    | HrisMetadataSchemas1
-    | HrisMetadataSchemasValue2
+    | { [k: string]: any }
     | string
-    | HrisMetadataSchemasValue32
     | number
-    | HrisMetadataSchemasValue42
     | boolean
-    | HrisMetadataSchemasValue52
-    | Array<any>
+    | Array<HrisMetadataSchemas1 | string | number | boolean>
     | undefined;
 };
-
-/** @internal */
-export const HrisMetadataSchemasExtraData52$inboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasExtraData52$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasExtraData52$outboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData52$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasExtraData52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasExtraData52$ {
-  /** @deprecated use `HrisMetadataSchemasExtraData52$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasExtraData52$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData52$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasExtraData52$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData52$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasExtraData52$Outbound;
-}
-
-export function hrisMetadataSchemasExtraData52ToJSON(
-  hrisMetadataSchemasExtraData52: HrisMetadataSchemasExtraData52,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasExtraData52$outboundSchema.parse(
-      hrisMetadataSchemasExtraData52,
-    ),
-  );
-}
-
-export function hrisMetadataSchemasExtraData52FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasExtraData52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasExtraData52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasExtraData52' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadata5$inboundSchema: z.ZodType<
-  HrisMetadata5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type HrisMetadata5$Outbound =
-  | HrisMetadataSchemasExtraData52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const HrisMetadata5$outboundSchema: z.ZodType<
-  HrisMetadata5$Outbound,
-  z.ZodTypeDef,
-  HrisMetadata5
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata5$ {
-  /** @deprecated use `HrisMetadata5$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata5$inboundSchema;
-  /** @deprecated use `HrisMetadata5$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata5$outboundSchema;
-  /** @deprecated use `HrisMetadata5$Outbound` instead. */
-  export type Outbound = HrisMetadata5$Outbound;
-}
-
-export function hrisMetadata5ToJSON(hrisMetadata5: HrisMetadata5): string {
-  return JSON.stringify(HrisMetadata5$outboundSchema.parse(hrisMetadata5));
-}
-
-export function hrisMetadata5FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadata5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadata5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadata5' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasExtraData2$inboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasExtraData2$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasExtraData2$outboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData2$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasExtraData2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasExtraData2$ {
-  /** @deprecated use `HrisMetadataSchemasExtraData2$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasExtraData2$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData2$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasExtraData2$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData2$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasExtraData2$Outbound;
-}
-
-export function hrisMetadataSchemasExtraData2ToJSON(
-  hrisMetadataSchemasExtraData2: HrisMetadataSchemasExtraData2,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasExtraData2$outboundSchema.parse(
-      hrisMetadataSchemasExtraData2,
-    ),
-  );
-}
-
-export function hrisMetadataSchemasExtraData2FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasExtraData2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasExtraData2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasExtraData2' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadata4$inboundSchema: z.ZodType<
-  HrisMetadata4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData2$inboundSchema),
-  z.boolean(),
-]);
-
-/** @internal */
-export type HrisMetadata4$Outbound =
-  | HrisMetadataSchemasExtraData2$Outbound
-  | boolean;
-
-/** @internal */
-export const HrisMetadata4$outboundSchema: z.ZodType<
-  HrisMetadata4$Outbound,
-  z.ZodTypeDef,
-  HrisMetadata4
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData2$outboundSchema),
-  z.boolean(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata4$ {
-  /** @deprecated use `HrisMetadata4$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata4$inboundSchema;
-  /** @deprecated use `HrisMetadata4$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata4$outboundSchema;
-  /** @deprecated use `HrisMetadata4$Outbound` instead. */
-  export type Outbound = HrisMetadata4$Outbound;
-}
-
-export function hrisMetadata4ToJSON(hrisMetadata4: HrisMetadata4): string {
-  return JSON.stringify(HrisMetadata4$outboundSchema.parse(hrisMetadata4));
-}
-
-export function hrisMetadata4FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadata4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadata4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadata4' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasExtraData32$inboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasExtraData32$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasExtraData32$outboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData32$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasExtraData32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasExtraData32$ {
-  /** @deprecated use `HrisMetadataSchemasExtraData32$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasExtraData32$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData32$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasExtraData32$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData32$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasExtraData32$Outbound;
-}
-
-export function hrisMetadataSchemasExtraData32ToJSON(
-  hrisMetadataSchemasExtraData32: HrisMetadataSchemasExtraData32,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasExtraData32$outboundSchema.parse(
-      hrisMetadataSchemasExtraData32,
-    ),
-  );
-}
-
-export function hrisMetadataSchemasExtraData32FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasExtraData32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasExtraData32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasExtraData32' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadata3$inboundSchema: z.ZodType<
-  HrisMetadata3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData32$inboundSchema),
-  z.number(),
-]);
-
-/** @internal */
-export type HrisMetadata3$Outbound =
-  | HrisMetadataSchemasExtraData32$Outbound
-  | number;
-
-/** @internal */
-export const HrisMetadata3$outboundSchema: z.ZodType<
-  HrisMetadata3$Outbound,
-  z.ZodTypeDef,
-  HrisMetadata3
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata3$ {
-  /** @deprecated use `HrisMetadata3$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata3$inboundSchema;
-  /** @deprecated use `HrisMetadata3$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata3$outboundSchema;
-  /** @deprecated use `HrisMetadata3$Outbound` instead. */
-  export type Outbound = HrisMetadata3$Outbound;
-}
-
-export function hrisMetadata3ToJSON(hrisMetadata3: HrisMetadata3): string {
-  return JSON.stringify(HrisMetadata3$outboundSchema.parse(hrisMetadata3));
-}
-
-export function hrisMetadata3FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadata3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadata3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadata3' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasExtraData22$inboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData22,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasExtraData22$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasExtraData22$outboundSchema: z.ZodType<
-  HrisMetadataSchemasExtraData22$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasExtraData22
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasExtraData22$ {
-  /** @deprecated use `HrisMetadataSchemasExtraData22$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasExtraData22$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData22$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasExtraData22$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasExtraData22$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasExtraData22$Outbound;
-}
-
-export function hrisMetadataSchemasExtraData22ToJSON(
-  hrisMetadataSchemasExtraData22: HrisMetadataSchemasExtraData22,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasExtraData22$outboundSchema.parse(
-      hrisMetadataSchemasExtraData22,
-    ),
-  );
-}
-
-export function hrisMetadataSchemasExtraData22FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasExtraData22, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasExtraData22$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasExtraData22' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadata2$inboundSchema: z.ZodType<
-  HrisMetadata2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData22$inboundSchema),
-  z.string(),
-]);
-
-/** @internal */
-export type HrisMetadata2$Outbound =
-  | HrisMetadataSchemasExtraData22$Outbound
-  | string;
-
-/** @internal */
-export const HrisMetadata2$outboundSchema: z.ZodType<
-  HrisMetadata2$Outbound,
-  z.ZodTypeDef,
-  HrisMetadata2
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasExtraData22$outboundSchema),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata2$ {
-  /** @deprecated use `HrisMetadata2$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata2$inboundSchema;
-  /** @deprecated use `HrisMetadata2$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata2$outboundSchema;
-  /** @deprecated use `HrisMetadata2$Outbound` instead. */
-  export type Outbound = HrisMetadata2$Outbound;
-}
-
-export function hrisMetadata2ToJSON(hrisMetadata2: HrisMetadata2): string {
-  return JSON.stringify(HrisMetadata2$outboundSchema.parse(hrisMetadata2));
-}
-
-export function hrisMetadata2FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadata2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadata2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadata2' from JSON`,
-  );
-}
 
 /** @internal */
 export const HrisMetadata1$inboundSchema: z.ZodType<
@@ -572,41 +124,90 @@ export function hrisMetadata1FromJSON(
 }
 
 /** @internal */
+export const HrisMetadata5$inboundSchema: z.ZodType<
+  HrisMetadata5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => HrisMetadata1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type HrisMetadata5$Outbound =
+  | HrisMetadata1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const HrisMetadata5$outboundSchema: z.ZodType<
+  HrisMetadata5$Outbound,
+  z.ZodTypeDef,
+  HrisMetadata5
+> = z.union([
+  z.lazy(() => HrisMetadata1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisMetadata5$ {
+  /** @deprecated use `HrisMetadata5$inboundSchema` instead. */
+  export const inboundSchema = HrisMetadata5$inboundSchema;
+  /** @deprecated use `HrisMetadata5$outboundSchema` instead. */
+  export const outboundSchema = HrisMetadata5$outboundSchema;
+  /** @deprecated use `HrisMetadata5$Outbound` instead. */
+  export type Outbound = HrisMetadata5$Outbound;
+}
+
+export function hrisMetadata5ToJSON(hrisMetadata5: HrisMetadata5): string {
+  return JSON.stringify(HrisMetadata5$outboundSchema.parse(hrisMetadata5));
+}
+
+export function hrisMetadata5FromJSON(
+  jsonString: string,
+): SafeParseResult<HrisMetadata5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisMetadata5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisMetadata5' from JSON`,
+  );
+}
+
+/** @internal */
 export const HrisMetadataExtraData$inboundSchema: z.ZodType<
   HrisMetadataExtraData,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => HrisMetadata1$inboundSchema),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData22$inboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData32$inboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData2$inboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData52$inboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => HrisMetadata1$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /** @internal */
 export type HrisMetadataExtraData$Outbound =
-  | HrisMetadata1$Outbound
-  | HrisMetadataSchemasExtraData22$Outbound
+  | { [k: string]: any }
   | string
-  | HrisMetadataSchemasExtraData32$Outbound
   | number
-  | HrisMetadataSchemasExtraData2$Outbound
   | boolean
-  | HrisMetadataSchemasExtraData52$Outbound
-  | Array<any>;
+  | Array<HrisMetadata1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const HrisMetadataExtraData$outboundSchema: z.ZodType<
@@ -614,23 +215,18 @@ export const HrisMetadataExtraData$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   HrisMetadataExtraData
 > = z.union([
-  z.lazy(() => HrisMetadata1$outboundSchema),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData22$outboundSchema),
-    z.string(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData32$outboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData2$outboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasExtraData52$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => HrisMetadata1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -697,422 +293,6 @@ export namespace HrisMetadataFormat$ {
 }
 
 /** @internal */
-export const HrisMetadataSchemasValue52$inboundSchema: z.ZodType<
-  HrisMetadataSchemasValue52,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasValue52$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasValue52$outboundSchema: z.ZodType<
-  HrisMetadataSchemasValue52$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasValue52
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasValue52$ {
-  /** @deprecated use `HrisMetadataSchemasValue52$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasValue52$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue52$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasValue52$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue52$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasValue52$Outbound;
-}
-
-export function hrisMetadataSchemasValue52ToJSON(
-  hrisMetadataSchemasValue52: HrisMetadataSchemasValue52,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasValue52$outboundSchema.parse(hrisMetadataSchemasValue52),
-  );
-}
-
-export function hrisMetadataSchemasValue52FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasValue52, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasValue52$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasValue52' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemas5$inboundSchema: z.ZodType<
-  HrisMetadataSchemas5,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue52$inboundSchema),
-  z.array(z.any()),
-]);
-
-/** @internal */
-export type HrisMetadataSchemas5$Outbound =
-  | HrisMetadataSchemasValue52$Outbound
-  | Array<any>;
-
-/** @internal */
-export const HrisMetadataSchemas5$outboundSchema: z.ZodType<
-  HrisMetadataSchemas5$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemas5
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue52$outboundSchema),
-  z.array(z.any()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas5$ {
-  /** @deprecated use `HrisMetadataSchemas5$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas5$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas5$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas5$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas5$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas5$Outbound;
-}
-
-export function hrisMetadataSchemas5ToJSON(
-  hrisMetadataSchemas5: HrisMetadataSchemas5,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemas5$outboundSchema.parse(hrisMetadataSchemas5),
-  );
-}
-
-export function hrisMetadataSchemas5FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemas5, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemas5$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemas5' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasValue42$inboundSchema: z.ZodType<
-  HrisMetadataSchemasValue42,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasValue42$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasValue42$outboundSchema: z.ZodType<
-  HrisMetadataSchemasValue42$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasValue42
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasValue42$ {
-  /** @deprecated use `HrisMetadataSchemasValue42$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasValue42$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue42$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasValue42$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue42$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasValue42$Outbound;
-}
-
-export function hrisMetadataSchemasValue42ToJSON(
-  hrisMetadataSchemasValue42: HrisMetadataSchemasValue42,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasValue42$outboundSchema.parse(hrisMetadataSchemasValue42),
-  );
-}
-
-export function hrisMetadataSchemasValue42FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasValue42, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasValue42$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasValue42' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemas4$inboundSchema: z.ZodType<
-  HrisMetadataSchemas4,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue42$inboundSchema),
-  z.boolean(),
-]);
-
-/** @internal */
-export type HrisMetadataSchemas4$Outbound =
-  | HrisMetadataSchemasValue42$Outbound
-  | boolean;
-
-/** @internal */
-export const HrisMetadataSchemas4$outboundSchema: z.ZodType<
-  HrisMetadataSchemas4$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemas4
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue42$outboundSchema),
-  z.boolean(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas4$ {
-  /** @deprecated use `HrisMetadataSchemas4$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas4$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas4$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas4$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas4$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas4$Outbound;
-}
-
-export function hrisMetadataSchemas4ToJSON(
-  hrisMetadataSchemas4: HrisMetadataSchemas4,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemas4$outboundSchema.parse(hrisMetadataSchemas4),
-  );
-}
-
-export function hrisMetadataSchemas4FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemas4, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemas4$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemas4' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasValue32$inboundSchema: z.ZodType<
-  HrisMetadataSchemasValue32,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasValue32$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasValue32$outboundSchema: z.ZodType<
-  HrisMetadataSchemasValue32$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasValue32
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasValue32$ {
-  /** @deprecated use `HrisMetadataSchemasValue32$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasValue32$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue32$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasValue32$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue32$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasValue32$Outbound;
-}
-
-export function hrisMetadataSchemasValue32ToJSON(
-  hrisMetadataSchemasValue32: HrisMetadataSchemasValue32,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasValue32$outboundSchema.parse(hrisMetadataSchemasValue32),
-  );
-}
-
-export function hrisMetadataSchemasValue32FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasValue32, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasValue32$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasValue32' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemas3$inboundSchema: z.ZodType<
-  HrisMetadataSchemas3,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue32$inboundSchema),
-  z.number(),
-]);
-
-/** @internal */
-export type HrisMetadataSchemas3$Outbound =
-  | HrisMetadataSchemasValue32$Outbound
-  | number;
-
-/** @internal */
-export const HrisMetadataSchemas3$outboundSchema: z.ZodType<
-  HrisMetadataSchemas3$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemas3
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue32$outboundSchema),
-  z.number(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas3$ {
-  /** @deprecated use `HrisMetadataSchemas3$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas3$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas3$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas3$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas3$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas3$Outbound;
-}
-
-export function hrisMetadataSchemas3ToJSON(
-  hrisMetadataSchemas3: HrisMetadataSchemas3,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemas3$outboundSchema.parse(hrisMetadataSchemas3),
-  );
-}
-
-export function hrisMetadataSchemas3FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemas3, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemas3$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemas3' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemasValue2$inboundSchema: z.ZodType<
-  HrisMetadataSchemasValue2,
-  z.ZodTypeDef,
-  unknown
-> = z.object({});
-
-/** @internal */
-export type HrisMetadataSchemasValue2$Outbound = {};
-
-/** @internal */
-export const HrisMetadataSchemasValue2$outboundSchema: z.ZodType<
-  HrisMetadataSchemasValue2$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemasValue2
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemasValue2$ {
-  /** @deprecated use `HrisMetadataSchemasValue2$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemasValue2$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue2$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemasValue2$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemasValue2$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemasValue2$Outbound;
-}
-
-export function hrisMetadataSchemasValue2ToJSON(
-  hrisMetadataSchemasValue2: HrisMetadataSchemasValue2,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemasValue2$outboundSchema.parse(hrisMetadataSchemasValue2),
-  );
-}
-
-export function hrisMetadataSchemasValue2FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemasValue2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemasValue2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemasValue2' from JSON`,
-  );
-}
-
-/** @internal */
-export const HrisMetadataSchemas2$inboundSchema: z.ZodType<
-  HrisMetadataSchemas2,
-  z.ZodTypeDef,
-  unknown
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue2$inboundSchema),
-  z.string(),
-]);
-
-/** @internal */
-export type HrisMetadataSchemas2$Outbound =
-  | HrisMetadataSchemasValue2$Outbound
-  | string;
-
-/** @internal */
-export const HrisMetadataSchemas2$outboundSchema: z.ZodType<
-  HrisMetadataSchemas2$Outbound,
-  z.ZodTypeDef,
-  HrisMetadataSchemas2
-> = z.union([
-  z.lazy(() => HrisMetadataSchemasValue2$outboundSchema),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas2$ {
-  /** @deprecated use `HrisMetadataSchemas2$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas2$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas2$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas2$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas2$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas2$Outbound;
-}
-
-export function hrisMetadataSchemas2ToJSON(
-  hrisMetadataSchemas2: HrisMetadataSchemas2,
-): string {
-  return JSON.stringify(
-    HrisMetadataSchemas2$outboundSchema.parse(hrisMetadataSchemas2),
-  );
-}
-
-export function hrisMetadataSchemas2FromJSON(
-  jsonString: string,
-): SafeParseResult<HrisMetadataSchemas2, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => HrisMetadataSchemas2$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'HrisMetadataSchemas2' from JSON`,
-  );
-}
-
-/** @internal */
 export const HrisMetadataSchemas1$inboundSchema: z.ZodType<
   HrisMetadataSchemas1,
   z.ZodTypeDef,
@@ -1161,35 +341,94 @@ export function hrisMetadataSchemas1FromJSON(
 }
 
 /** @internal */
+export const HrisMetadataSchemas5$inboundSchema: z.ZodType<
+  HrisMetadataSchemas5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type HrisMetadataSchemas5$Outbound =
+  | HrisMetadataSchemas1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const HrisMetadataSchemas5$outboundSchema: z.ZodType<
+  HrisMetadataSchemas5$Outbound,
+  z.ZodTypeDef,
+  HrisMetadataSchemas5
+> = z.union([
+  z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace HrisMetadataSchemas5$ {
+  /** @deprecated use `HrisMetadataSchemas5$inboundSchema` instead. */
+  export const inboundSchema = HrisMetadataSchemas5$inboundSchema;
+  /** @deprecated use `HrisMetadataSchemas5$outboundSchema` instead. */
+  export const outboundSchema = HrisMetadataSchemas5$outboundSchema;
+  /** @deprecated use `HrisMetadataSchemas5$Outbound` instead. */
+  export type Outbound = HrisMetadataSchemas5$Outbound;
+}
+
+export function hrisMetadataSchemas5ToJSON(
+  hrisMetadataSchemas5: HrisMetadataSchemas5,
+): string {
+  return JSON.stringify(
+    HrisMetadataSchemas5$outboundSchema.parse(hrisMetadataSchemas5),
+  );
+}
+
+export function hrisMetadataSchemas5FromJSON(
+  jsonString: string,
+): SafeParseResult<HrisMetadataSchemas5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => HrisMetadataSchemas5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'HrisMetadataSchemas5' from JSON`,
+  );
+}
+
+/** @internal */
 export const HrisMetadataValue$inboundSchema: z.ZodType<
   HrisMetadataValue,
   z.ZodTypeDef,
   unknown
 > = z.union([
-  z.lazy(() => HrisMetadataSchemas1$inboundSchema),
-  z.union([z.lazy(() => HrisMetadataSchemasValue2$inboundSchema), z.string()]),
-  z.union([z.lazy(() => HrisMetadataSchemasValue32$inboundSchema), z.number()]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasValue42$inboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasValue52$inboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /** @internal */
 export type HrisMetadataValue$Outbound =
-  | HrisMetadataSchemas1$Outbound
-  | HrisMetadataSchemasValue2$Outbound
+  | { [k: string]: any }
   | string
-  | HrisMetadataSchemasValue32$Outbound
   | number
-  | HrisMetadataSchemasValue42$Outbound
   | boolean
-  | HrisMetadataSchemasValue52$Outbound
-  | Array<any>;
+  | Array<HrisMetadataSchemas1$Outbound | string | number | boolean>;
 
 /** @internal */
 export const HrisMetadataValue$outboundSchema: z.ZodType<
@@ -1197,20 +436,18 @@ export const HrisMetadataValue$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   HrisMetadataValue
 > = z.union([
-  z.lazy(() => HrisMetadataSchemas1$outboundSchema),
-  z.union([z.lazy(() => HrisMetadataSchemasValue2$outboundSchema), z.string()]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasValue32$outboundSchema),
-    z.number(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasValue42$outboundSchema),
-    z.boolean(),
-  ]),
-  z.union([
-    z.lazy(() => HrisMetadataSchemasValue52$outboundSchema),
-    z.array(z.any()),
-  ]),
+  z.record(z.any()),
+  z.string(),
+  z.number(),
+  z.boolean(),
+  z.array(
+    z.union([
+      z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+      z.string(),
+      z.number(),
+      z.boolean(),
+    ]),
+  ),
 ]);
 
 /**
@@ -1251,23 +488,18 @@ export const HrisMetadata$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   extra_data: z.union([
-    z.lazy(() => HrisMetadata1$inboundSchema),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData22$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData2$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadata1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   format: HrisMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
@@ -1276,23 +508,18 @@ export const HrisMetadata$inboundSchema: z.ZodType<
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
-    z.lazy(() => HrisMetadataSchemas1$inboundSchema),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue2$inboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue32$inboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue42$inboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue52$inboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadataSchemas1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -1303,15 +530,11 @@ export const HrisMetadata$inboundSchema: z.ZodType<
 /** @internal */
 export type HrisMetadata$Outbound = {
   extra_data?:
-    | HrisMetadata1$Outbound
-    | HrisMetadataSchemasExtraData22$Outbound
+    | { [k: string]: any }
     | string
-    | HrisMetadataSchemasExtraData32$Outbound
     | number
-    | HrisMetadataSchemasExtraData2$Outbound
     | boolean
-    | HrisMetadataSchemasExtraData52$Outbound
-    | Array<any>
+    | Array<HrisMetadata1$Outbound | string | number | boolean>
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
@@ -1320,15 +543,11 @@ export type HrisMetadata$Outbound = {
   slug?: string | undefined;
   type?: string | undefined;
   value?:
-    | HrisMetadataSchemas1$Outbound
-    | HrisMetadataSchemasValue2$Outbound
+    | { [k: string]: any }
     | string
-    | HrisMetadataSchemasValue32$Outbound
     | number
-    | HrisMetadataSchemasValue42$Outbound
     | boolean
-    | HrisMetadataSchemasValue52$Outbound
-    | Array<any>
+    | Array<HrisMetadataSchemas1$Outbound | string | number | boolean>
     | undefined;
 };
 
@@ -1339,23 +558,18 @@ export const HrisMetadata$outboundSchema: z.ZodType<
   HrisMetadata
 > = z.object({
   extraData: z.union([
-    z.lazy(() => HrisMetadata1$outboundSchema),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData22$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData2$outboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasExtraData52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadata1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
   format: HrisMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
@@ -1364,23 +578,18 @@ export const HrisMetadata$outboundSchema: z.ZodType<
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
-    z.lazy(() => HrisMetadataSchemas1$outboundSchema),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue2$outboundSchema),
-      z.string(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue32$outboundSchema),
-      z.number(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue42$outboundSchema),
-      z.boolean(),
-    ]),
-    z.union([
-      z.lazy(() => HrisMetadataSchemasValue52$outboundSchema),
-      z.array(z.any()),
-    ]),
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => HrisMetadataSchemas1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
   ]).optional(),
 }).transform((v) => {
   return remap$(v, {

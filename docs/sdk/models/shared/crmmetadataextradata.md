@@ -3,36 +3,37 @@
 
 ## Supported Types
 
-### `shared.CrmMetadata1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.CrmMetadata1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.CrmMetadata2`
+### `string`
 
 ```typescript
-const value: shared.CrmMetadata2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.CrmMetadata3`
+### `number`
 
 ```typescript
-const value: shared.CrmMetadata3 = 680.41;
+const value: number = 1284.03;
 ```
 
-### `shared.CrmMetadata4`
+### `boolean`
 
 ```typescript
-const value: shared.CrmMetadata4 = {};
+const value: boolean = true;
 ```
 
-### `shared.CrmMetadata5`
+### `shared.CrmMetadata5[]`
 
 ```typescript
-const value: shared.CrmMetadata5 = [
-  "<value 1>",
-  "<value 2>",
-];
+const value: shared.CrmMetadata5[] = [];
 ```
 

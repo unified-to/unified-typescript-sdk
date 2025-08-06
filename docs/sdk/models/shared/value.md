@@ -3,35 +3,39 @@
 
 ## Supported Types
 
-### `shared.AtsMetadata1`
+### `{ [k: string]: any }`
 
 ```typescript
-const value: shared.AtsMetadata1 = {};
+const value: { [k: string]: any } = {
+  "key": "<value>",
+  "key1": "<value>",
+  "key2": "<value>",
+};
 ```
 
-### `shared.AtsMetadata2`
+### `string`
 
 ```typescript
-const value: shared.AtsMetadata2 = "<value>";
+const value: string = "<value>";
 ```
 
-### `shared.AtsMetadata3`
+### `number`
 
 ```typescript
-const value: shared.AtsMetadata3 = 1282.77;
+const value: number = 1284.03;
 ```
 
-### `shared.AtsMetadata4`
+### `boolean`
 
 ```typescript
-const value: shared.AtsMetadata4 = true;
+const value: boolean = true;
 ```
 
-### `shared.AtsMetadata5`
+### `shared.AtsMetadata5[]`
 
 ```typescript
-const value: shared.AtsMetadata5 = [
-  "<value 1>",
+const value: shared.AtsMetadata5[] = [
+  799.42,
 ];
 ```
 
