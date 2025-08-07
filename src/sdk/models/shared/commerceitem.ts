@@ -31,6 +31,7 @@ export type CommerceItem = {
   collectionIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
+  globalCode?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   isTaxable?: boolean | undefined;
@@ -62,6 +63,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
+  global_code: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   is_taxable: z.boolean().optional(),
@@ -83,6 +85,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
     "account_id": "accountId",
     "collection_ids": "collectionIds",
     "created_at": "createdAt",
+    "global_code": "globalCode",
     "is_active": "isActive",
     "is_taxable": "isTaxable",
     "public_description": "publicDescription",
@@ -98,6 +101,7 @@ export type CommerceItem$Outbound = {
   collection_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
+  global_code?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   is_taxable?: boolean | undefined;
@@ -125,6 +129,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
   collectionIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
+  globalCode: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   isTaxable: z.boolean().optional(),
@@ -145,6 +150,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
     accountId: "account_id",
     collectionIds: "collection_ids",
     createdAt: "created_at",
+    globalCode: "global_code",
     isActive: "is_active",
     isTaxable: "is_taxable",
     publicDescription: "public_description",
