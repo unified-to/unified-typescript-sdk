@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 585a933222a93cac4e23b48d062c4a0c
+  docChecksum: 3a5734f3a7c4cfbbb830e6e58476de9b
   docVersion: "1.0"
-  speakeasyVersion: 1.598.3
-  generationVersion: 2.674.3
-  releaseVersion: 2.73.14
-  configChecksum: 8191f929dd6a734f45d28bee707e79af
+  speakeasyVersion: 1.604.1
+  generationVersion: 2.683.1
+  releaseVersion: 2.73.15
+  configChecksum: 520c16fc9efce88e6cffc05919ee6e19
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -6823,7 +6823,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_read", "auth_login"]}
+          application/json: {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_read", "crm_pipeline_write"]}
   getUnifiedIntegrationAuth:
     speakeasy-default-get-unified-integration-auth:
       parameters:

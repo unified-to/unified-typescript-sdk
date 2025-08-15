@@ -1,6 +1,6 @@
 {
   "name": "@unified-api/typescript-sdk",
-  "version": "2.73.14",
+  "version": "2.73.15",
   "author": "Unified",
   "bin": {
     "mcp": "bin/mcp-server.js"

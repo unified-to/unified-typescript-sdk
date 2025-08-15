@@ -8,7 +8,7 @@ dotenv.config();
  * Example usage of the @unified-api/typescript-sdk SDK
  *
  * To run this example from the examples directory:
- * npm run build && npx tsx accountingCreateAccountingAccount.ts
+ * npm run build && npx tsx accountingCreateAccountingAccount.example.ts
  */
 
 import { UnifiedTo } from "@unified-api/typescript-sdk";

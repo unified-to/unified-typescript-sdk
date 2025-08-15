@@ -21,7 +21,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.73.14
+  version: 2.73.15
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -56,4 +56,5 @@ typescript:
   packageName: '@unified-api/typescript-sdk'
   responseFormat: flat
   templateVersion: v2
+  usageSDKInitImports: []
   useIndexModules: true
