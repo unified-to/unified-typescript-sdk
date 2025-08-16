@@ -19,6 +19,7 @@ import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
 import { Candidate } from "./candidate.js";
 import { Category } from "./category.js";
+import { Change } from "./change.js";
 import { Channel } from "./channel.js";
 import { Class } from "./class.js";
 import { Collection } from "./collection.js";
@@ -534,6 +535,11 @@ export class UnifiedTo extends ClientSDK {
   private _task?: Task;
   get task(): Task {
     return (this._task ??= new Task(this._options));
+  }
+
+  private _change?: Change;
+  get change(): Change {
+    return (this._change ??= new Change(this._options));
   }
 
   private _project?: Project;

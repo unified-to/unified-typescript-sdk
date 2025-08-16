@@ -218,6 +218,8 @@ export * from "./scimusergroups.js";
 export * from "./security.js";
 export * from "./storagefile.js";
 export * from "./storagepermission.js";
+export * from "./taskchange.js";
+export * from "./taskchangeitem.js";
 export * from "./taskcomment.js";
 export * from "./taskmetadata.js";
 export * from "./taskproject.js";

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3a5734f3a7c4cfbbb830e6e58476de9b
+  docChecksum: 190c325c2a6a2949d578db67163791d8
   docVersion: "1.0"
-  speakeasyVersion: 1.604.1
-  generationVersion: 2.683.1
-  releaseVersion: 2.73.15
-  configChecksum: 520c16fc9efce88e6cffc05919ee6e19
+  speakeasyVersion: 1.605.0
+  generationVersion: 2.684.0
+  releaseVersion: 2.73.16
+  configChecksum: 6dac9fffe584db803a4b0574cb4eb5dd
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -191,6 +191,7 @@ generatedFiles:
   - docs/sdk/models/operations/getscimgroupsrequest.md
   - docs/sdk/models/operations/getscimusersrequest.md
   - docs/sdk/models/operations/getstoragefilerequest.md
+  - docs/sdk/models/operations/gettaskchangerequest.md
   - docs/sdk/models/operations/gettaskcommentrequest.md
   - docs/sdk/models/operations/gettaskprojectrequest.md
   - docs/sdk/models/operations/gettasktaskrequest.md
@@ -286,6 +287,7 @@ generatedFiles:
   - docs/sdk/models/operations/listscimgroupsrequest.md
   - docs/sdk/models/operations/listscimusersrequest.md
   - docs/sdk/models/operations/liststoragefilesrequest.md
+  - docs/sdk/models/operations/listtaskchangesrequest.md
   - docs/sdk/models/operations/listtaskcommentsrequest.md
   - docs/sdk/models/operations/listtaskprojectsrequest.md
   - docs/sdk/models/operations/listtasktasksrequest.md
@@ -976,6 +978,8 @@ generatedFiles:
   - docs/sdk/models/shared/storagefile.md
   - docs/sdk/models/shared/storagefiletype.md
   - docs/sdk/models/shared/storagepermission.md
+  - docs/sdk/models/shared/taskchange.md
+  - docs/sdk/models/shared/taskchangeitem.md
   - docs/sdk/models/shared/taskcomment.md
   - docs/sdk/models/shared/taskmetadata.md
   - docs/sdk/models/shared/taskmetadata1.md
@@ -1029,6 +1033,7 @@ generatedFiles:
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
   - docs/sdks/category/README.md
+  - docs/sdks/change/README.md
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
@@ -1558,8 +1563,10 @@ generatedFiles:
   - src/funcs/storageUpdateStorageFile.ts
   - src/funcs/taskCreateTaskProject.ts
   - src/funcs/taskCreateTaskTask.ts
+  - src/funcs/taskGetTaskChange.ts
   - src/funcs/taskGetTaskProject.ts
   - src/funcs/taskGetTaskTask.ts
+  - src/funcs/taskListTaskChanges.ts
   - src/funcs/taskListTaskProjects.ts
   - src/funcs/taskListTaskTasks.ts
   - src/funcs/taskPatchTaskProject.ts
@@ -2074,8 +2081,10 @@ generatedFiles:
   - src/mcp-server/tools/storageUpdateStorageFile.ts
   - src/mcp-server/tools/taskCreateTaskProject.ts
   - src/mcp-server/tools/taskCreateTaskTask.ts
+  - src/mcp-server/tools/taskGetTaskChange.ts
   - src/mcp-server/tools/taskGetTaskProject.ts
   - src/mcp-server/tools/taskGetTaskTask.ts
+  - src/mcp-server/tools/taskListTaskChanges.ts
   - src/mcp-server/tools/taskListTaskProjects.ts
   - src/mcp-server/tools/taskListTaskTasks.ts
   - src/mcp-server/tools/taskPatchTaskProject.ts
@@ -2139,6 +2148,7 @@ generatedFiles:
   - src/sdk/call.ts
   - src/sdk/candidate.ts
   - src/sdk/category.ts
+  - src/sdk/change.ts
   - src/sdk/channel.ts
   - src/sdk/class.ts
   - src/sdk/collection.ts
@@ -2339,6 +2349,7 @@ generatedFiles:
   - src/sdk/models/operations/getscimgroups.ts
   - src/sdk/models/operations/getscimusers.ts
   - src/sdk/models/operations/getstoragefile.ts
+  - src/sdk/models/operations/gettaskchange.ts
   - src/sdk/models/operations/gettaskcomment.ts
   - src/sdk/models/operations/gettaskproject.ts
   - src/sdk/models/operations/gettasktask.ts
@@ -2433,6 +2444,7 @@ generatedFiles:
   - src/sdk/models/operations/listscimgroups.ts
   - src/sdk/models/operations/listscimusers.ts
   - src/sdk/models/operations/liststoragefiles.ts
+  - src/sdk/models/operations/listtaskchanges.ts
   - src/sdk/models/operations/listtaskcomments.ts
   - src/sdk/models/operations/listtaskprojects.ts
   - src/sdk/models/operations/listtasktasks.ts
@@ -2892,6 +2904,8 @@ generatedFiles:
   - src/sdk/models/shared/security.ts
   - src/sdk/models/shared/storagefile.ts
   - src/sdk/models/shared/storagepermission.ts
+  - src/sdk/models/shared/taskchange.ts
+  - src/sdk/models/shared/taskchangeitem.ts
   - src/sdk/models/shared/taskcomment.ts
   - src/sdk/models/shared/taskmetadata.ts
   - src/sdk/models/shared/taskproject.ts
@@ -7362,5 +7376,28 @@ examples:
       responses:
         "200":
           application/json: {}
+  getTaskChange:
+    speakeasy-default-get-task-change:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listTaskChanges:
+    speakeasy-default-list-task-changes:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## SDK Changes Detected:
+  * `unified-to.task.getTaskChange()`: **Added**
+  * `unified-to.task.listTaskChanges()`: **Added**
+  * `unified-to.change.getTaskChange()`: **Added**
+  * `unified-to.change.listTaskChanges()`: **Added**

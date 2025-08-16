@@ -10,8 +10,10 @@ import { commentRemoveTaskComment } from "../funcs/commentRemoveTaskComment.js";
 import { commentUpdateTaskComment } from "../funcs/commentUpdateTaskComment.js";
 import { taskCreateTaskProject } from "../funcs/taskCreateTaskProject.js";
 import { taskCreateTaskTask } from "../funcs/taskCreateTaskTask.js";
+import { taskGetTaskChange } from "../funcs/taskGetTaskChange.js";
 import { taskGetTaskProject } from "../funcs/taskGetTaskProject.js";
 import { taskGetTaskTask } from "../funcs/taskGetTaskTask.js";
+import { taskListTaskChanges } from "../funcs/taskListTaskChanges.js";
 import { taskListTaskProjects } from "../funcs/taskListTaskProjects.js";
 import { taskListTaskTasks } from "../funcs/taskListTaskTasks.js";
 import { taskPatchTaskProject } from "../funcs/taskPatchTaskProject.js";
@@ -69,6 +71,20 @@ export class Task extends ClientSDK {
   }
 
   /**
+   * Retrieve a change
+   */
+  async getTaskChange(
+    request: operations.GetTaskChangeRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TaskChange> {
+    return unwrapAsync(taskGetTaskChange(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a comment
    */
   async getTaskComment(
@@ -104,6 +120,20 @@ export class Task extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.TaskTask> {
     return unwrapAsync(taskGetTaskTask(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all changes
+   */
+  async listTaskChanges(
+    request: operations.ListTaskChangesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.TaskChange>> {
+    return unwrapAsync(taskListTaskChanges(
       this,
       request,
       options,

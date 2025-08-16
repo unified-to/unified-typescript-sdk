@@ -448,8 +448,10 @@ import { tool$storageRemoveStorageFile } from "./tools/storageRemoveStorageFile.
 import { tool$storageUpdateStorageFile } from "./tools/storageUpdateStorageFile.js";
 import { tool$taskCreateTaskProject } from "./tools/taskCreateTaskProject.js";
 import { tool$taskCreateTaskTask } from "./tools/taskCreateTaskTask.js";
+import { tool$taskGetTaskChange } from "./tools/taskGetTaskChange.js";
 import { tool$taskGetTaskProject } from "./tools/taskGetTaskProject.js";
 import { tool$taskGetTaskTask } from "./tools/taskGetTaskTask.js";
+import { tool$taskListTaskChanges } from "./tools/taskListTaskChanges.js";
 import { tool$taskListTaskProjects } from "./tools/taskListTaskProjects.js";
 import { tool$taskListTaskTasks } from "./tools/taskListTaskTasks.js";
 import { tool$taskPatchTaskProject } from "./tools/taskPatchTaskProject.js";
@@ -508,7 +510,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.73.15",
+    version: "2.73.16",
   });
 
   const client = new UnifiedToCore({
@@ -972,8 +974,10 @@ export function createMCPServer(deps: {
   tool(tool$storageUpdateStorageFile);
   tool(tool$taskCreateTaskProject);
   tool(tool$taskCreateTaskTask);
+  tool(tool$taskGetTaskChange);
   tool(tool$taskGetTaskProject);
   tool(tool$taskGetTaskTask);
+  tool(tool$taskListTaskChanges);
   tool(tool$taskListTaskProjects);
   tool(tool$taskListTaskTasks);
   tool(tool$taskPatchTaskProject);

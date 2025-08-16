@@ -1285,9 +1285,13 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`taskCreateTaskProject`](docs/sdks/project/README.md#createtaskproject) - Create a project
 - [`taskCreateTaskProject`](docs/sdks/task/README.md#createtaskproject) - Create a project
 - [`taskCreateTaskTask`](docs/sdks/task/README.md#createtasktask) - Create a task
+- [`taskGetTaskChange`](docs/sdks/change/README.md#gettaskchange) - Retrieve a change
+- [`taskGetTaskChange`](docs/sdks/task/README.md#gettaskchange) - Retrieve a change
 - [`taskGetTaskProject`](docs/sdks/project/README.md#gettaskproject) - Retrieve a project
 - [`taskGetTaskProject`](docs/sdks/task/README.md#gettaskproject) - Retrieve a project
 - [`taskGetTaskTask`](docs/sdks/task/README.md#gettasktask) - Retrieve a task
+- [`taskListTaskChanges`](docs/sdks/change/README.md#listtaskchanges) - List all changes
+- [`taskListTaskChanges`](docs/sdks/task/README.md#listtaskchanges) - List all changes
 - [`taskListTaskProjects`](docs/sdks/project/README.md#listtaskprojects) - List all projects
 - [`taskListTaskProjects`](docs/sdks/task/README.md#listtaskprojects) - List all projects
 - [`taskListTaskTasks`](docs/sdks/task/README.md#listtasktasks) - List all tasks
