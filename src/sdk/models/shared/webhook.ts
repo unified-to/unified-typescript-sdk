@@ -138,6 +138,7 @@ export type Webhook = {
   connectionId: string;
   createdAt?: Date | undefined;
   dbNamePrefix?: string | undefined;
+  dbSchema?: string | undefined;
   dbType?: DbType | undefined;
   dbUrl?: string | undefined;
   environment?: string | undefined;
@@ -287,6 +288,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       new Date(v)
     ).optional(),
     db_name_prefix: z.string().optional(),
+    db_schema: z.string().optional(),
     db_type: DbType$inboundSchema.optional(),
     db_url: z.string().optional(),
     environment: z.string().default("Production"),
@@ -314,6 +316,7 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       "connection_id": "connectionId",
       "created_at": "createdAt",
       "db_name_prefix": "dbNamePrefix",
+      "db_schema": "dbSchema",
       "db_type": "dbType",
       "db_url": "dbUrl",
       "hook_url": "hookUrl",
@@ -334,6 +337,7 @@ export type Webhook$Outbound = {
   connection_id: string;
   created_at?: string | undefined;
   db_name_prefix?: string | undefined;
+  db_schema?: string | undefined;
   db_type?: string | undefined;
   db_url?: string | undefined;
   environment: string;
@@ -365,6 +369,7 @@ export const Webhook$outboundSchema: z.ZodType<
   connectionId: z.string(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dbNamePrefix: z.string().optional(),
+  dbSchema: z.string().optional(),
   dbType: DbType$outboundSchema.optional(),
   dbUrl: z.string().optional(),
   environment: z.string().default("Production"),
@@ -390,6 +395,7 @@ export const Webhook$outboundSchema: z.ZodType<
     connectionId: "connection_id",
     createdAt: "created_at",
     dbNamePrefix: "db_name_prefix",
+    dbSchema: "db_schema",
     dbType: "db_type",
     dbUrl: "db_url",
     hookUrl: "hook_url",

@@ -35,6 +35,7 @@ export type PropertyConnectionAuth = {
   refreshToken?: string | undefined;
   refreshTokenExpiresDate?: Date | undefined;
   refreshTokenExpiresIn?: number | undefined;
+  refreshUrl?: string | undefined;
   state?: string | undefined;
   token?: string | undefined;
   tokenUrl?: string | undefined;
@@ -70,6 +71,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
     v => new Date(v)
   ).optional(),
   refresh_token_expires_in: z.number().optional(),
+  refresh_url: z.string().optional(),
   state: z.string().optional(),
   token: z.string().optional(),
   token_url: z.string().optional(),
@@ -91,6 +93,7 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
     "refresh_token": "refreshToken",
     "refresh_token_expires_date": "refreshTokenExpiresDate",
     "refresh_token_expires_in": "refreshTokenExpiresIn",
+    "refresh_url": "refreshUrl",
     "token_url": "tokenUrl",
     "user_id": "userId",
   });
@@ -118,6 +121,7 @@ export type PropertyConnectionAuth$Outbound = {
   refresh_token?: string | undefined;
   refresh_token_expires_date?: string | undefined;
   refresh_token_expires_in?: number | undefined;
+  refresh_url?: string | undefined;
   state?: string | undefined;
   token?: string | undefined;
   token_url?: string | undefined;
@@ -150,6 +154,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   refreshToken: z.string().optional(),
   refreshTokenExpiresDate: z.date().transform(v => v.toISOString()).optional(),
   refreshTokenExpiresIn: z.number().optional(),
+  refreshUrl: z.string().optional(),
   state: z.string().optional(),
   token: z.string().optional(),
   tokenUrl: z.string().optional(),
@@ -171,6 +176,7 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
     refreshToken: "refresh_token",
     refreshTokenExpiresDate: "refresh_token_expires_date",
     refreshTokenExpiresIn: "refresh_token_expires_in",
+    refreshUrl: "refresh_url",
     tokenUrl: "token_url",
     userId: "user_id",
   });
