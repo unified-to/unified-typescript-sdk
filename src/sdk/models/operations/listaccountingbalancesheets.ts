@@ -10,9 +10,17 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingBalancesheetsRequest = {
   /**
+   * The category ID to filter by
+   */
+  categoryId?: string | undefined;
+  /**
    * ID of the connection
    */
   connectionId: string;
+  /**
+   * The contact ID to filter by
+   */
+  contactId?: string | undefined;
   /**
    * The end date to filter by
    */
@@ -49,7 +57,9 @@ export const ListAccountingBalancesheetsRequest$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  category_id: z.string().optional(),
   connection_id: z.string(),
+  contact_id: z.string().optional(),
   end_le: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -62,7 +72,9 @@ export const ListAccountingBalancesheetsRequest$inboundSchema: z.ZodType<
   updated_gte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "category_id": "categoryId",
     "connection_id": "connectionId",
+    "contact_id": "contactId",
     "end_le": "endLe",
     "start_gte": "startGte",
     "updated_gte": "updatedGte",
@@ -71,7 +83,9 @@ export const ListAccountingBalancesheetsRequest$inboundSchema: z.ZodType<
 
 /** @internal */
 export type ListAccountingBalancesheetsRequest$Outbound = {
+  category_id?: string | undefined;
   connection_id: string;
+  contact_id?: string | undefined;
   end_le?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
@@ -90,7 +104,9 @@ export const ListAccountingBalancesheetsRequest$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   ListAccountingBalancesheetsRequest
 > = z.object({
+  categoryId: z.string().optional(),
   connectionId: z.string(),
+  contactId: z.string().optional(),
   endLe: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
@@ -103,7 +119,9 @@ export const ListAccountingBalancesheetsRequest$outboundSchema: z.ZodType<
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    categoryId: "category_id",
     connectionId: "connection_id",
+    contactId: "contact_id",
     endLe: "end_le",
     startGte: "start_gte",
     updatedGte: "updated_gte",

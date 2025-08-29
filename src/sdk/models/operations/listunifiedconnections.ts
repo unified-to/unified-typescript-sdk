@@ -32,6 +32,7 @@ export const Categories = {
   Repo: "repo",
   Metadata: "metadata",
   Calendar: "calendar",
+  Verification: "verification",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

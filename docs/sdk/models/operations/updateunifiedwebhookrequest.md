@@ -9,7 +9,7 @@ let value: UpdateUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "genai_prompt",
+    objectType: "genai_model",
   },
   id: "<id>",
 };

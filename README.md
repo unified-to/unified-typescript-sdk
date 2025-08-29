@@ -1383,6 +1383,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedUpdateUnifiedWebhook`](docs/sdks/webhook/README.md#updateunifiedwebhook) - Update webhook subscription
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedUpdateUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#updateunifiedwebhooktrigger) - Trigger webhook
+- [`verificationCreateVerificationRequest`](docs/sdks/request/README.md#createverificationrequest) - Create a request
+- [`verificationCreateVerificationRequest`](docs/sdks/verification/README.md#createverificationrequest) - Create a request
+- [`verificationGetVerificationPackage`](docs/sdks/package/README.md#getverificationpackage) - Retrieve a package
+- [`verificationGetVerificationPackage`](docs/sdks/verification/README.md#getverificationpackage) - Retrieve a package
+- [`verificationGetVerificationRequest`](docs/sdks/request/README.md#getverificationrequest) - Retrieve a request
+- [`verificationGetVerificationRequest`](docs/sdks/verification/README.md#getverificationrequest) - Retrieve a request
+- [`verificationListVerificationPackages`](docs/sdks/package/README.md#listverificationpackages) - List all packages
+- [`verificationListVerificationPackages`](docs/sdks/verification/README.md#listverificationpackages) - List all packages
+- [`verificationListVerificationRequests`](docs/sdks/request/README.md#listverificationrequests) - List all requests
+- [`verificationListVerificationRequests`](docs/sdks/verification/README.md#listverificationrequests) - List all requests
+- [`verificationPatchVerificationRequest`](docs/sdks/request/README.md#patchverificationrequest) - Update a request
+- [`verificationPatchVerificationRequest`](docs/sdks/verification/README.md#patchverificationrequest) - Update a request
+- [`verificationRemoveVerificationRequest`](docs/sdks/request/README.md#removeverificationrequest) - Remove a request
+- [`verificationRemoveVerificationRequest`](docs/sdks/verification/README.md#removeverificationrequest) - Remove a request
+- [`verificationUpdateVerificationRequest`](docs/sdks/request/README.md#updateverificationrequest) - Update a request
+- [`verificationUpdateVerificationRequest`](docs/sdks/verification/README.md#updateverificationrequest) - Update a request
 
 </details>
 <!-- End Standalone functions [standalone-funcs] -->

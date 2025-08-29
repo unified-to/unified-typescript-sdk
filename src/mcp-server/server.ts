@@ -499,6 +499,14 @@ import { tool$unifiedRemoveUnifiedWebhook } from "./tools/unifiedRemoveUnifiedWe
 import { tool$unifiedUpdateUnifiedConnection } from "./tools/unifiedUpdateUnifiedConnection.js";
 import { tool$unifiedUpdateUnifiedWebhook } from "./tools/unifiedUpdateUnifiedWebhook.js";
 import { tool$unifiedUpdateUnifiedWebhookTrigger } from "./tools/unifiedUpdateUnifiedWebhookTrigger.js";
+import { tool$verificationCreateVerificationRequest } from "./tools/verificationCreateVerificationRequest.js";
+import { tool$verificationGetVerificationPackage } from "./tools/verificationGetVerificationPackage.js";
+import { tool$verificationGetVerificationRequest } from "./tools/verificationGetVerificationRequest.js";
+import { tool$verificationListVerificationPackages } from "./tools/verificationListVerificationPackages.js";
+import { tool$verificationListVerificationRequests } from "./tools/verificationListVerificationRequests.js";
+import { tool$verificationPatchVerificationRequest } from "./tools/verificationPatchVerificationRequest.js";
+import { tool$verificationRemoveVerificationRequest } from "./tools/verificationRemoveVerificationRequest.js";
+import { tool$verificationUpdateVerificationRequest } from "./tools/verificationUpdateVerificationRequest.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -510,7 +518,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.73.17",
+    version: "2.73.18",
   });
 
   const client = new UnifiedToCore({
@@ -1026,6 +1034,14 @@ export function createMCPServer(deps: {
   tool(tool$unifiedUpdateUnifiedWebhook);
   tool(tool$unifiedUpdateUnifiedWebhookTrigger);
   tool(tool$authGetUnifiedIntegrationLogin);
+  tool(tool$verificationCreateVerificationRequest);
+  tool(tool$verificationGetVerificationPackage);
+  tool(tool$verificationGetVerificationRequest);
+  tool(tool$verificationListVerificationPackages);
+  tool(tool$verificationListVerificationRequests);
+  tool(tool$verificationPatchVerificationRequest);
+  tool(tool$verificationRemoveVerificationRequest);
+  tool(tool$verificationUpdateVerificationRequest);
 
   return server;
 }

@@ -68,6 +68,7 @@ import { Model } from "./model.js";
 import { Note } from "./note.js";
 import { Order } from "./order.js";
 import { Organization } from "./organization.js";
+import { Package } from "./package.js";
 import { Page } from "./page.js";
 import { Passthrough } from "./passthrough.js";
 import { Payment } from "./payment.js";
@@ -85,6 +86,7 @@ import { Refund } from "./refund.js";
 import { Repo } from "./repo.js";
 import { Report } from "./report.js";
 import { Repository } from "./repository.js";
+import { RequestT } from "./request.js";
 import { Review } from "./review.js";
 import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
@@ -104,6 +106,7 @@ import { Trialbalance } from "./trialbalance.js";
 import { Uc } from "./uc.js";
 import { Unified } from "./unified.js";
 import { User } from "./user.js";
+import { Verification } from "./verification.js";
 import { Webhook } from "./webhook.js";
 
 export class UnifiedTo extends ClientSDK {
@@ -615,5 +618,20 @@ export class UnifiedTo extends ClientSDK {
   private _webhook?: Webhook;
   get webhook(): Webhook {
     return (this._webhook ??= new Webhook(this._options));
+  }
+
+  private _verification?: Verification;
+  get verification(): Verification {
+    return (this._verification ??= new Verification(this._options));
+  }
+
+  private _package?: Package;
+  get package(): Package {
+    return (this._package ??= new Package(this._options));
+  }
+
+  private _request?: RequestT;
+  get request(): RequestT {
+    return (this._request ??= new RequestT(this._options));
   }
 }

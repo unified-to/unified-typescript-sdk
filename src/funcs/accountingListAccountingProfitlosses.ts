@@ -95,6 +95,8 @@ async function $do(
   const path = pathToFunc("/accounting/{connection_id}/profitloss")(pathParams);
 
   const query = encodeFormQuery({
+    "category_id": payload.category_id,
+    "contact_id": payload.contact_id,
     "end_le": payload.end_le,
     "fields": payload.fields,
     "limit": payload.limit,
