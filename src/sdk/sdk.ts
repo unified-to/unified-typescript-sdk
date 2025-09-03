@@ -36,6 +36,7 @@ import { Customer } from "./customer.js";
 import { Deal } from "./deal.js";
 import { Device } from "./device.js";
 import { Document } from "./document.js";
+import { Embedding } from "./embedding.js";
 import { Employee } from "./employee.js";
 import { Enrich } from "./enrich.js";
 import { Event } from "./event.js";
@@ -338,6 +339,11 @@ export class UnifiedTo extends ClientSDK {
   private _genai?: Genai;
   get genai(): Genai {
     return (this._genai ??= new Genai(this._options));
+  }
+
+  private _embedding?: Embedding;
+  get embedding(): Embedding {
+    return (this._embedding ??= new Embedding(this._options));
   }
 
   private _model?: Model;

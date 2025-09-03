@@ -8,6 +8,12 @@ import { accountingListAccountingCategories } from "../funcs/accountingListAccou
 import { accountingPatchAccountingCategory } from "../funcs/accountingPatchAccountingCategory.js";
 import { accountingRemoveAccountingCategory } from "../funcs/accountingRemoveAccountingCategory.js";
 import { accountingUpdateAccountingCategory } from "../funcs/accountingUpdateAccountingCategory.js";
+import { categoryCreateTicketingCategory } from "../funcs/categoryCreateTicketingCategory.js";
+import { categoryGetTicketingCategory } from "../funcs/categoryGetTicketingCategory.js";
+import { categoryListTicketingCategories } from "../funcs/categoryListTicketingCategories.js";
+import { categoryPatchTicketingCategory } from "../funcs/categoryPatchTicketingCategory.js";
+import { categoryRemoveTicketingCategory } from "../funcs/categoryRemoveTicketingCategory.js";
+import { categoryUpdateTicketingCategory } from "../funcs/categoryUpdateTicketingCategory.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -29,6 +35,20 @@ export class Category extends ClientSDK {
   }
 
   /**
+   * Create a category
+   */
+  async createTicketingCategory(
+    request: operations.CreateTicketingCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCategory> {
+    return unwrapAsync(categoryCreateTicketingCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a category
    */
   async getAccountingCategory(
@@ -36,6 +56,20 @@ export class Category extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCategory> {
     return unwrapAsync(accountingGetAccountingCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a category
+   */
+  async getTicketingCategory(
+    request: operations.GetTicketingCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCategory> {
+    return unwrapAsync(categoryGetTicketingCategory(
       this,
       request,
       options,
@@ -57,6 +91,20 @@ export class Category extends ClientSDK {
   }
 
   /**
+   * List all categories
+   */
+  async listTicketingCategories(
+    request: operations.ListTicketingCategoriesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.TicketingCategory>> {
+    return unwrapAsync(categoryListTicketingCategories(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a category
    */
   async patchAccountingCategory(
@@ -64,6 +112,20 @@ export class Category extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCategory> {
     return unwrapAsync(accountingPatchAccountingCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a category
+   */
+  async patchTicketingCategory(
+    request: operations.PatchTicketingCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCategory> {
+    return unwrapAsync(categoryPatchTicketingCategory(
       this,
       request,
       options,
@@ -85,6 +147,20 @@ export class Category extends ClientSDK {
   }
 
   /**
+   * Remove a category
+   */
+  async removeTicketingCategory(
+    request: operations.RemoveTicketingCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveTicketingCategoryResponse | undefined> {
+    return unwrapAsync(categoryRemoveTicketingCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a category
    */
   async updateAccountingCategory(
@@ -92,6 +168,20 @@ export class Category extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCategory> {
     return unwrapAsync(accountingUpdateAccountingCategory(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a category
+   */
+  async updateTicketingCategory(
+    request: operations.UpdateTicketingCategoryRequest,
+    options?: RequestOptions,
+  ): Promise<shared.TicketingCategory> {
+    return unwrapAsync(categoryUpdateTicketingCategory(
       this,
       request,
       options,

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 422074ec49c609508b54a0d217c0ad82
+  docChecksum: a9003bf9eba5cb988acee2ba39aeae6f
   docVersion: "1.0"
-  speakeasyVersion: 1.606.9
-  generationVersion: 2.687.13
-  releaseVersion: 2.73.19
-  configChecksum: 4f70c4e0c04300f291b4b0b2a1d20ce1
+  speakeasyVersion: 1.607.0
+  generationVersion: 2.690.1
+  releaseVersion: 2.73.20
+  configChecksum: 14049d18e87769d64ba8a845426c71ff
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.20
+    core: 3.21.21
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -73,6 +73,7 @@ generatedFiles:
   - docs/sdk/models/operations/createcrmeventrequest.md
   - docs/sdk/models/operations/createcrmleadrequest.md
   - docs/sdk/models/operations/createcrmpipelinerequest.md
+  - docs/sdk/models/operations/creategenaiembeddingrequest.md
   - docs/sdk/models/operations/creategenaipromptrequest.md
   - docs/sdk/models/operations/createhriscompanyrequest.md
   - docs/sdk/models/operations/createhrisdevicerequest.md
@@ -111,6 +112,7 @@ generatedFiles:
   - docs/sdk/models/operations/createtaskcommentrequest.md
   - docs/sdk/models/operations/createtaskprojectrequest.md
   - docs/sdk/models/operations/createtasktaskrequest.md
+  - docs/sdk/models/operations/createticketingcategoryrequest.md
   - docs/sdk/models/operations/createticketingcustomerrequest.md
   - docs/sdk/models/operations/createticketingnoterequest.md
   - docs/sdk/models/operations/createticketingticketrequest.md
@@ -159,6 +161,7 @@ generatedFiles:
   - docs/sdk/models/operations/getcrmeventrequest.md
   - docs/sdk/models/operations/getcrmleadrequest.md
   - docs/sdk/models/operations/getcrmpipelinerequest.md
+  - docs/sdk/models/operations/getgenaimodelrequest.md
   - docs/sdk/models/operations/gethriscompanyrequest.md
   - docs/sdk/models/operations/gethrisdevicerequest.md
   - docs/sdk/models/operations/gethrisemployeerequest.md
@@ -196,6 +199,7 @@ generatedFiles:
   - docs/sdk/models/operations/gettaskcommentrequest.md
   - docs/sdk/models/operations/gettaskprojectrequest.md
   - docs/sdk/models/operations/gettasktaskrequest.md
+  - docs/sdk/models/operations/getticketingcategoryrequest.md
   - docs/sdk/models/operations/getticketingcustomerrequest.md
   - docs/sdk/models/operations/getticketingnoterequest.md
   - docs/sdk/models/operations/getticketingticketrequest.md
@@ -294,6 +298,7 @@ generatedFiles:
   - docs/sdk/models/operations/listtaskcommentsrequest.md
   - docs/sdk/models/operations/listtaskprojectsrequest.md
   - docs/sdk/models/operations/listtasktasksrequest.md
+  - docs/sdk/models/operations/listticketingcategoriesrequest.md
   - docs/sdk/models/operations/listticketingcustomersrequest.md
   - docs/sdk/models/operations/listticketingnotesrequest.md
   - docs/sdk/models/operations/listticketingticketsrequest.md
@@ -381,6 +386,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchtaskcommentrequest.md
   - docs/sdk/models/operations/patchtaskprojectrequest.md
   - docs/sdk/models/operations/patchtasktaskrequest.md
+  - docs/sdk/models/operations/patchticketingcategoryrequest.md
   - docs/sdk/models/operations/patchticketingcustomerrequest.md
   - docs/sdk/models/operations/patchticketingnoterequest.md
   - docs/sdk/models/operations/patchticketingticketrequest.md
@@ -526,6 +532,8 @@ generatedFiles:
   - docs/sdk/models/operations/removetaskprojectresponse.md
   - docs/sdk/models/operations/removetasktaskrequest.md
   - docs/sdk/models/operations/removetasktaskresponse.md
+  - docs/sdk/models/operations/removeticketingcategoryrequest.md
+  - docs/sdk/models/operations/removeticketingcategoryresponse.md
   - docs/sdk/models/operations/removeticketingcustomerrequest.md
   - docs/sdk/models/operations/removeticketingcustomerresponse.md
   - docs/sdk/models/operations/removeticketingnoterequest.md
@@ -615,6 +623,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatetaskcommentrequest.md
   - docs/sdk/models/operations/updatetaskprojectrequest.md
   - docs/sdk/models/operations/updatetasktaskrequest.md
+  - docs/sdk/models/operations/updateticketingcategoryrequest.md
   - docs/sdk/models/operations/updateticketingcustomerrequest.md
   - docs/sdk/models/operations/updateticketingnoterequest.md
   - docs/sdk/models/operations/updateticketingticketrequest.md
@@ -776,6 +785,7 @@ generatedFiles:
   - docs/sdk/models/shared/dbtype.md
   - docs/sdk/models/shared/employmentstatus.md
   - docs/sdk/models/shared/employmenttype.md
+  - docs/sdk/models/shared/encondingformat.md
   - docs/sdk/models/shared/enrichcompany.md
   - docs/sdk/models/shared/enrichemail.md
   - docs/sdk/models/shared/enrichemailtype.md
@@ -790,6 +800,8 @@ generatedFiles:
   - docs/sdk/models/shared/format.md
   - docs/sdk/models/shared/frequency.md
   - docs/sdk/models/shared/genaicontent.md
+  - docs/sdk/models/shared/genaiembedding.md
+  - docs/sdk/models/shared/genaiembeddingcontent.md
   - docs/sdk/models/shared/genaimodel.md
   - docs/sdk/models/shared/genaiprompt.md
   - docs/sdk/models/shared/gender.md
@@ -1004,6 +1016,7 @@ generatedFiles:
   - docs/sdk/models/shared/tasktask.md
   - docs/sdk/models/shared/tasktaskstatus.md
   - docs/sdk/models/shared/taxexemption.md
+  - docs/sdk/models/shared/ticketingcategory.md
   - docs/sdk/models/shared/ticketingcustomer.md
   - docs/sdk/models/shared/ticketingemail.md
   - docs/sdk/models/shared/ticketingemailtype.md
@@ -1070,6 +1083,7 @@ generatedFiles:
   - docs/sdks/deal/README.md
   - docs/sdks/device/README.md
   - docs/sdks/document/README.md
+  - docs/sdks/embedding/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
   - docs/sdks/event/README.md
@@ -1304,6 +1318,12 @@ generatedFiles:
   - src/funcs/calendarUpdateCalendarCalendar.ts
   - src/funcs/calendarUpdateCalendarEvent.ts
   - src/funcs/calendarUpdateCalendarLink.ts
+  - src/funcs/categoryCreateTicketingCategory.ts
+  - src/funcs/categoryGetTicketingCategory.ts
+  - src/funcs/categoryListTicketingCategories.ts
+  - src/funcs/categoryPatchTicketingCategory.ts
+  - src/funcs/categoryRemoveTicketingCategory.ts
+  - src/funcs/categoryUpdateTicketingCategory.ts
   - src/funcs/commentCreateTaskComment.ts
   - src/funcs/commentCreateUcComment.ts
   - src/funcs/commentGetTaskComment.ts
@@ -1396,7 +1416,9 @@ generatedFiles:
   - src/funcs/eventPatchCrmEvent.ts
   - src/funcs/eventRemoveCrmEvent.ts
   - src/funcs/eventUpdateCrmEvent.ts
+  - src/funcs/genaiCreateGenaiEmbedding.ts
   - src/funcs/genaiCreateGenaiPrompt.ts
+  - src/funcs/genaiGetGenaiModel.ts
   - src/funcs/genaiListGenaiModels.ts
   - src/funcs/groupCreateScimGroups.ts
   - src/funcs/groupGetScimGroups.ts
@@ -1830,6 +1852,12 @@ generatedFiles:
   - src/mcp-server/tools/calendarUpdateCalendarCalendar.ts
   - src/mcp-server/tools/calendarUpdateCalendarEvent.ts
   - src/mcp-server/tools/calendarUpdateCalendarLink.ts
+  - src/mcp-server/tools/categoryCreateTicketingCategory.ts
+  - src/mcp-server/tools/categoryGetTicketingCategory.ts
+  - src/mcp-server/tools/categoryListTicketingCategories.ts
+  - src/mcp-server/tools/categoryPatchTicketingCategory.ts
+  - src/mcp-server/tools/categoryRemoveTicketingCategory.ts
+  - src/mcp-server/tools/categoryUpdateTicketingCategory.ts
   - src/mcp-server/tools/commentCreateTaskComment.ts
   - src/mcp-server/tools/commentCreateUcComment.ts
   - src/mcp-server/tools/commentGetTaskComment.ts
@@ -1922,7 +1950,9 @@ generatedFiles:
   - src/mcp-server/tools/eventPatchCrmEvent.ts
   - src/mcp-server/tools/eventRemoveCrmEvent.ts
   - src/mcp-server/tools/eventUpdateCrmEvent.ts
+  - src/mcp-server/tools/genaiCreateGenaiEmbedding.ts
   - src/mcp-server/tools/genaiCreateGenaiPrompt.ts
+  - src/mcp-server/tools/genaiGetGenaiModel.ts
   - src/mcp-server/tools/genaiListGenaiModels.ts
   - src/mcp-server/tools/groupCreateScimGroups.ts
   - src/mcp-server/tools/groupGetScimGroups.ts
@@ -2204,6 +2234,7 @@ generatedFiles:
   - src/sdk/deal.ts
   - src/sdk/device.ts
   - src/sdk/document.ts
+  - src/sdk/embedding.ts
   - src/sdk/employee.ts
   - src/sdk/enrich.ts
   - src/sdk/event.ts
@@ -2274,6 +2305,7 @@ generatedFiles:
   - src/sdk/models/operations/createcrmevent.ts
   - src/sdk/models/operations/createcrmlead.ts
   - src/sdk/models/operations/createcrmpipeline.ts
+  - src/sdk/models/operations/creategenaiembedding.ts
   - src/sdk/models/operations/creategenaiprompt.ts
   - src/sdk/models/operations/createhriscompany.ts
   - src/sdk/models/operations/createhrisdevice.ts
@@ -2308,6 +2340,7 @@ generatedFiles:
   - src/sdk/models/operations/createtaskcomment.ts
   - src/sdk/models/operations/createtaskproject.ts
   - src/sdk/models/operations/createtasktask.ts
+  - src/sdk/models/operations/createticketingcategory.ts
   - src/sdk/models/operations/createticketingcustomer.ts
   - src/sdk/models/operations/createticketingnote.ts
   - src/sdk/models/operations/createticketingticket.ts
@@ -2356,6 +2389,7 @@ generatedFiles:
   - src/sdk/models/operations/getcrmevent.ts
   - src/sdk/models/operations/getcrmlead.ts
   - src/sdk/models/operations/getcrmpipeline.ts
+  - src/sdk/models/operations/getgenaimodel.ts
   - src/sdk/models/operations/gethriscompany.ts
   - src/sdk/models/operations/gethrisdevice.ts
   - src/sdk/models/operations/gethrisemployee.ts
@@ -2393,6 +2427,7 @@ generatedFiles:
   - src/sdk/models/operations/gettaskcomment.ts
   - src/sdk/models/operations/gettaskproject.ts
   - src/sdk/models/operations/gettasktask.ts
+  - src/sdk/models/operations/getticketingcategory.ts
   - src/sdk/models/operations/getticketingcustomer.ts
   - src/sdk/models/operations/getticketingnote.ts
   - src/sdk/models/operations/getticketingticket.ts
@@ -2490,6 +2525,7 @@ generatedFiles:
   - src/sdk/models/operations/listtaskcomments.ts
   - src/sdk/models/operations/listtaskprojects.ts
   - src/sdk/models/operations/listtasktasks.ts
+  - src/sdk/models/operations/listticketingcategories.ts
   - src/sdk/models/operations/listticketingcustomers.ts
   - src/sdk/models/operations/listticketingnotes.ts
   - src/sdk/models/operations/listticketingtickets.ts
@@ -2572,6 +2608,7 @@ generatedFiles:
   - src/sdk/models/operations/patchtaskcomment.ts
   - src/sdk/models/operations/patchtaskproject.ts
   - src/sdk/models/operations/patchtasktask.ts
+  - src/sdk/models/operations/patchticketingcategory.ts
   - src/sdk/models/operations/patchticketingcustomer.ts
   - src/sdk/models/operations/patchticketingnote.ts
   - src/sdk/models/operations/patchticketingticket.ts
@@ -2648,6 +2685,7 @@ generatedFiles:
   - src/sdk/models/operations/removetaskcomment.ts
   - src/sdk/models/operations/removetaskproject.ts
   - src/sdk/models/operations/removetasktask.ts
+  - src/sdk/models/operations/removeticketingcategory.ts
   - src/sdk/models/operations/removeticketingcustomer.ts
   - src/sdk/models/operations/removeticketingnote.ts
   - src/sdk/models/operations/removeticketingticket.ts
@@ -2724,6 +2762,7 @@ generatedFiles:
   - src/sdk/models/operations/updatetaskcomment.ts
   - src/sdk/models/operations/updatetaskproject.ts
   - src/sdk/models/operations/updatetasktask.ts
+  - src/sdk/models/operations/updateticketingcategory.ts
   - src/sdk/models/operations/updateticketingcustomer.ts
   - src/sdk/models/operations/updateticketingnote.ts
   - src/sdk/models/operations/updateticketingticket.ts
@@ -2831,6 +2870,8 @@ generatedFiles:
   - src/sdk/models/shared/enrichpersonworkhistory.ts
   - src/sdk/models/shared/enrichtelephone.ts
   - src/sdk/models/shared/genaicontent.ts
+  - src/sdk/models/shared/genaiembedding.ts
+  - src/sdk/models/shared/genaiembeddingcontent.ts
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/genaiprompt.ts
   - src/sdk/models/shared/hriscompany.ts
@@ -2957,6 +2998,7 @@ generatedFiles:
   - src/sdk/models/shared/taskmetadata.ts
   - src/sdk/models/shared/taskproject.ts
   - src/sdk/models/shared/tasktask.ts
+  - src/sdk/models/shared/ticketingcategory.ts
   - src/sdk/models/shared/ticketingcustomer.ts
   - src/sdk/models/shared/ticketingemail.ts
   - src/sdk/models/shared/ticketingnote.ts
@@ -7522,6 +7564,80 @@ examples:
       responses:
         "200":
           application/json: {}
+  createTicketingCategory:
+    speakeasy-default-create-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getTicketingCategory:
+    speakeasy-default-get-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listTicketingCategories:
+    speakeasy-default-list-ticketing-categories:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchTicketingCategory:
+    speakeasy-default-patch-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeTicketingCategory:
+    speakeasy-default-remove-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateTicketingCategory:
+    speakeasy-default-update-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createGenaiEmbedding:
+    speakeasy-default-create-genai-embedding:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getGenaiModel:
+    speakeasy-default-get-genai-model:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `unified-to.genai.createGenaiPrompt()`: \n  *  `request.genaiPrompt.mcpUrl` **Added**\n  *  `response.mcp_url` **Added**\n* `unified-to.prompt.createGenaiPrompt()`: \n  *  `request.genaiPrompt.mcpUrl` **Added**\n  *  `response.mcp_url` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.category.createTicketingCategory()`: **Added**\n* `unified-to.category.getTicketingCategory()`: **Added**\n* `unified-to.category.listTicketingCategories()`: **Added**\n* `unified-to.category.patchTicketingCategory()`: **Added**\n* `unified-to.category.removeTicketingCategory()`: **Added**\n* `unified-to.category.updateTicketingCategory()`: **Added**\n* `unified-to.genai.createGenaiEmbedding()`: **Added**\n* `unified-to.genai.getGenaiModel()`: **Added**\n* `unified-to.embedding.createGenaiEmbedding()`: **Added**\n* `unified-to.model.getGenaiModel()`: **Added**\n* `unified-to.ticketing.createTicketingCategory()`: **Added**\n* `unified-to.ticketing.getTicketingCategory()`: **Added**\n* `unified-to.ticketing.listTicketingCategories()`: **Added**\n* `unified-to.ticketing.patchTicketingCategory()`: **Added**\n* `unified-to.ticketing.removeTicketingCategory()`: **Added**\n* `unified-to.ticketing.updateTicketingCategory()`: **Added**\n* `unified-to.ticketing.createTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticketing.getTicketingTicket()`:  `response.category_id` **Added**\n* `unified-to.ticketing.listTicketingTickets()`:  `response.[].categoryId` **Added**\n* `unified-to.ticketing.patchTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticketing.updateTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.createTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.getTicketingTicket()`:  `response.category_id` **Added**\n* `unified-to.ticket.listTicketingTickets()`:  `response.[].categoryId` **Added**\n* `unified-to.ticket.patchTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.updateTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n"

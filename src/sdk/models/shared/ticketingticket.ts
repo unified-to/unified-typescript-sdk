@@ -21,6 +21,7 @@ export type TicketingTicketStatus = OpenEnum<typeof TicketingTicketStatus>;
 
 export type TicketingTicket = {
   category?: string | undefined;
+  categoryId?: string | undefined;
   closedAt?: Date | undefined;
   createdAt?: Date | undefined;
   customerId?: string | undefined;
@@ -77,6 +78,7 @@ export const TicketingTicket$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   category: z.string().optional(),
+  category_id: z.string().optional(),
   closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -97,6 +99,7 @@ export const TicketingTicket$inboundSchema: z.ZodType<
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "category_id": "categoryId",
     "closed_at": "closedAt",
     "created_at": "createdAt",
     "customer_id": "customerId",
@@ -109,6 +112,7 @@ export const TicketingTicket$inboundSchema: z.ZodType<
 /** @internal */
 export type TicketingTicket$Outbound = {
   category?: string | undefined;
+  category_id?: string | undefined;
   closed_at?: string | undefined;
   created_at?: string | undefined;
   customer_id?: string | undefined;
@@ -133,6 +137,7 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   TicketingTicket
 > = z.object({
   category: z.string().optional(),
+  categoryId: z.string().optional(),
   closedAt: z.date().transform(v => v.toISOString()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   customerId: z.string().optional(),
@@ -150,6 +155,7 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    categoryId: "category_id",
     closedAt: "closed_at",
     createdAt: "created_at",
     customerId: "customer_id",

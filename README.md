@@ -742,6 +742,18 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`calendarUpdateCalendarEvent`](docs/sdks/event/README.md#updatecalendarevent) - Update an event
 - [`calendarUpdateCalendarLink`](docs/sdks/calendar/README.md#updatecalendarlink) - Update a link
 - [`calendarUpdateCalendarLink`](docs/sdks/link/README.md#updatecalendarlink) - Update a link
+- [`categoryCreateTicketingCategory`](docs/sdks/category/README.md#createticketingcategory) - Create a category
+- [`categoryCreateTicketingCategory`](docs/sdks/ticketing/README.md#createticketingcategory) - Create a category
+- [`categoryGetTicketingCategory`](docs/sdks/category/README.md#getticketingcategory) - Retrieve a category
+- [`categoryGetTicketingCategory`](docs/sdks/ticketing/README.md#getticketingcategory) - Retrieve a category
+- [`categoryListTicketingCategories`](docs/sdks/category/README.md#listticketingcategories) - List all categories
+- [`categoryListTicketingCategories`](docs/sdks/ticketing/README.md#listticketingcategories) - List all categories
+- [`categoryPatchTicketingCategory`](docs/sdks/category/README.md#patchticketingcategory) - Update a category
+- [`categoryPatchTicketingCategory`](docs/sdks/ticketing/README.md#patchticketingcategory) - Update a category
+- [`categoryRemoveTicketingCategory`](docs/sdks/category/README.md#removeticketingcategory) - Remove a category
+- [`categoryRemoveTicketingCategory`](docs/sdks/ticketing/README.md#removeticketingcategory) - Remove a category
+- [`categoryUpdateTicketingCategory`](docs/sdks/category/README.md#updateticketingcategory) - Update a category
+- [`categoryUpdateTicketingCategory`](docs/sdks/ticketing/README.md#updateticketingcategory) - Update a category
 - [`commentCreateTaskComment`](docs/sdks/comment/README.md#createtaskcomment) - Create a comment
 - [`commentCreateTaskComment`](docs/sdks/task/README.md#createtaskcomment) - Create a comment
 - [`commentCreateUcComment`](docs/sdks/comment/README.md#createuccomment) - Create a comment
@@ -926,8 +938,12 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`eventRemoveCrmEvent`](docs/sdks/event/README.md#removecrmevent) - Remove an event
 - [`eventUpdateCrmEvent`](docs/sdks/crm/README.md#updatecrmevent) - Update an event
 - [`eventUpdateCrmEvent`](docs/sdks/event/README.md#updatecrmevent) - Update an event
+- [`genaiCreateGenaiEmbedding`](docs/sdks/embedding/README.md#creategenaiembedding) - Create an embedding
+- [`genaiCreateGenaiEmbedding`](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
 - [`genaiCreateGenaiPrompt`](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
+- [`genaiGetGenaiModel`](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
+- [`genaiGetGenaiModel`](docs/sdks/model/README.md#getgenaimodel) - Retrieve a model
 - [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group

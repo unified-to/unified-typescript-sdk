@@ -166,6 +166,12 @@ import { tool$calendarRemoveCalendarLink } from "./tools/calendarRemoveCalendarL
 import { tool$calendarUpdateCalendarCalendar } from "./tools/calendarUpdateCalendarCalendar.js";
 import { tool$calendarUpdateCalendarEvent } from "./tools/calendarUpdateCalendarEvent.js";
 import { tool$calendarUpdateCalendarLink } from "./tools/calendarUpdateCalendarLink.js";
+import { tool$categoryCreateTicketingCategory } from "./tools/categoryCreateTicketingCategory.js";
+import { tool$categoryGetTicketingCategory } from "./tools/categoryGetTicketingCategory.js";
+import { tool$categoryListTicketingCategories } from "./tools/categoryListTicketingCategories.js";
+import { tool$categoryPatchTicketingCategory } from "./tools/categoryPatchTicketingCategory.js";
+import { tool$categoryRemoveTicketingCategory } from "./tools/categoryRemoveTicketingCategory.js";
+import { tool$categoryUpdateTicketingCategory } from "./tools/categoryUpdateTicketingCategory.js";
 import { tool$commentCreateTaskComment } from "./tools/commentCreateTaskComment.js";
 import { tool$commentCreateUcComment } from "./tools/commentCreateUcComment.js";
 import { tool$commentGetTaskComment } from "./tools/commentGetTaskComment.js";
@@ -258,7 +264,9 @@ import { tool$eventListCrmEvents } from "./tools/eventListCrmEvents.js";
 import { tool$eventPatchCrmEvent } from "./tools/eventPatchCrmEvent.js";
 import { tool$eventRemoveCrmEvent } from "./tools/eventRemoveCrmEvent.js";
 import { tool$eventUpdateCrmEvent } from "./tools/eventUpdateCrmEvent.js";
+import { tool$genaiCreateGenaiEmbedding } from "./tools/genaiCreateGenaiEmbedding.js";
 import { tool$genaiCreateGenaiPrompt } from "./tools/genaiCreateGenaiPrompt.js";
+import { tool$genaiGetGenaiModel } from "./tools/genaiGetGenaiModel.js";
 import { tool$genaiListGenaiModels } from "./tools/genaiListGenaiModels.js";
 import { tool$groupCreateScimGroups } from "./tools/groupCreateScimGroups.js";
 import { tool$groupGetScimGroups } from "./tools/groupGetScimGroups.js";
@@ -518,7 +526,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "UnifiedTo",
-    version: "2.73.19",
+    version: "2.73.20",
   });
 
   const client = new UnifiedToCore({
@@ -630,6 +638,12 @@ export function createMCPServer(deps: {
   tool(tool$accountingUpdateAccountingSalesorder);
   tool(tool$accountingUpdateAccountingTaxrate);
   tool(tool$accountingUpdateAccountingTransaction);
+  tool(tool$categoryCreateTicketingCategory);
+  tool(tool$categoryGetTicketingCategory);
+  tool(tool$categoryListTicketingCategories);
+  tool(tool$categoryPatchTicketingCategory);
+  tool(tool$categoryRemoveTicketingCategory);
+  tool(tool$categoryUpdateTicketingCategory);
   tool(tool$contactCreateCrmContact);
   tool(tool$contactCreateUcContact);
   tool(tool$contactGetCrmContact);
@@ -804,7 +818,9 @@ export function createMCPServer(deps: {
   tool(tool$crmUpdateCrmLead);
   tool(tool$crmUpdateCrmPipeline);
   tool(tool$enrichListEnrichPeople);
+  tool(tool$genaiCreateGenaiEmbedding);
   tool(tool$genaiCreateGenaiPrompt);
+  tool(tool$genaiGetGenaiModel);
   tool(tool$genaiListGenaiModels);
   tool(tool$hrisCreateHrisDevice);
   tool(tool$hrisCreateHrisEmployee);
