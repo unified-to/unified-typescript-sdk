@@ -463,7 +463,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.createHrisTimeshift({
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2025-10-18T00:03:45.822Z"),
+      startAt: new Date("2024-06-03T05:33:48.715Z"),
+    },
     connectionId: "<id>",
   });
 
@@ -491,7 +495,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisCreateHrisTimeshift(unifiedTo, {
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2025-10-18T00:03:45.822Z"),
+      startAt: new Date("2024-06-03T05:33:48.715Z"),
+    },
     connectionId: "<id>",
   });
   if (res.ok) {
@@ -2199,7 +2207,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.patchHrisTimeshift({
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2023-11-17T18:53:02.172Z"),
+      startAt: new Date("2023-01-19T02:48:41.002Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -2228,7 +2240,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisPatchHrisTimeshift(unifiedTo, {
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2023-11-17T18:53:02.172Z"),
+      startAt: new Date("2023-01-19T02:48:41.002Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3163,7 +3179,11 @@ const unifiedTo = new UnifiedTo({
 
 async function run() {
   const result = await unifiedTo.hris.updateHrisTimeshift({
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2025-03-03T22:04:09.340Z"),
+      startAt: new Date("2024-05-30T21:19:58.772Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });
@@ -3192,7 +3212,11 @@ const unifiedTo = new UnifiedToCore({
 
 async function run() {
   const res = await hrisUpdateHrisTimeshift(unifiedTo, {
-    hrisTimeshift: {},
+    hrisTimeshift: {
+      employeeUserId: "<id>",
+      endAt: new Date("2025-03-03T22:04:09.340Z"),
+      startAt: new Date("2024-05-30T21:19:58.772Z"),
+    },
     connectionId: "<id>",
     id: "<id>",
   });

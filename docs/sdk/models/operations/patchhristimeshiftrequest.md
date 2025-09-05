@@ -6,7 +6,11 @@
 import { PatchHrisTimeshiftRequest } from "@unified-api/typescript-sdk/sdk/models/operations";
 
 let value: PatchHrisTimeshiftRequest = {
-  hrisTimeshift: {},
+  hrisTimeshift: {
+    employeeUserId: "<id>",
+    endAt: new Date("2024-01-10T03:18:33.365Z"),
+    startAt: new Date("2023-11-26T23:12:10.451Z"),
+  },
   connectionId: "<id>",
   id: "<id>",
 };

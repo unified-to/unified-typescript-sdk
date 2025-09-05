@@ -3,6 +3,7 @@
  */
 
 import * as z from "zod";
+import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import {
   catchUnrecognizedEnum,
@@ -38,6 +39,7 @@ export type HrisCompensation = {
   amount?: number | undefined;
   currency?: string | undefined;
   frequency?: HrisCompensationFrequency | undefined;
+  groupId?: string | undefined;
   type?: HrisCompensationType | undefined;
 };
 
@@ -114,7 +116,12 @@ export const HrisCompensation$inboundSchema: z.ZodType<
   amount: z.number().optional(),
   currency: z.string().optional(),
   frequency: HrisCompensationFrequency$inboundSchema.optional(),
+  group_id: z.string().optional(),
   type: HrisCompensationType$inboundSchema.optional(),
+}).transform((v) => {
+  return remap$(v, {
+    "group_id": "groupId",
+  });
 });
 
 /** @internal */
@@ -122,6 +129,7 @@ export type HrisCompensation$Outbound = {
   amount?: number | undefined;
   currency?: string | undefined;
   frequency?: string | undefined;
+  group_id?: string | undefined;
   type?: string | undefined;
 };
 
@@ -134,7 +142,12 @@ export const HrisCompensation$outboundSchema: z.ZodType<
   amount: z.number().optional(),
   currency: z.string().optional(),
   frequency: HrisCompensationFrequency$outboundSchema.optional(),
+  groupId: z.string().optional(),
   type: HrisCompensationType$outboundSchema.optional(),
+}).transform((v) => {
+  return remap$(v, {
+    groupId: "group_id",
+  });
 });
 
 /**

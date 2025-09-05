@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: a9003bf9eba5cb988acee2ba39aeae6f
+  docChecksum: 815d3eb3e63fd66f5050d707713e3c46
   docVersion: "1.0"
-  speakeasyVersion: 1.607.0
-  generationVersion: 2.690.1
-  releaseVersion: 2.73.20
-  configChecksum: 14049d18e87769d64ba8a845426c71ff
+  speakeasyVersion: 1.609.0
+  generationVersion: 2.692.0
+  releaseVersion: 2.73.21
+  configChecksum: c21b0b8a6905cd29372f784edd130cb2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.21
+    core: 3.21.22
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -7062,10 +7062,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"employee_user_id": "<id>", "end_at": "2025-10-18T00:03:45.822Z", "start_at": "2024-06-03T05:33:48.715Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"employee_user_id": "<id>", "end_at": "2025-04-02T06:29:45.209Z", "start_at": "2025-05-03T19:13:33.398Z"}
   getHrisTimeshift:
     speakeasy-default-get-hris-timeshift:
       parameters:
@@ -7074,7 +7074,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {}
+          application/json: {"employee_user_id": "<id>", "end_at": "2025-02-02T20:47:43.029Z", "start_at": "2023-11-12T09:20:44.392Z"}
   listHrisTimeshifts:
     speakeasy-default-list-hris-timeshifts:
       parameters:
@@ -7082,7 +7082,7 @@ examples:
           connection_id: "<id>"
       responses:
         "200":
-          application/json: [{}, {}, {}]
+          application/json: [{"employee_user_id": "<id>", "end_at": "2025-03-16T00:40:56.364Z", "start_at": "2024-03-12T18:17:36.342Z"}, {"employee_user_id": "<id>", "end_at": "2025-10-31T01:56:56.680Z", "start_at": "2023-07-08T03:03:41.246Z"}, {"employee_user_id": "<id>", "end_at": "2025-11-10T18:31:42.272Z", "start_at": "2025-08-21T01:25:29.562Z"}]
   patchHrisTimeshift:
     speakeasy-default-patch-hris-timeshift:
       parameters:
@@ -7090,10 +7090,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"employee_user_id": "<id>", "end_at": "2023-11-17T18:53:02.172Z", "start_at": "2023-01-19T02:48:41.002Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"employee_user_id": "<id>", "end_at": "2023-05-16T07:27:26.608Z", "start_at": "2024-07-25T03:16:34.281Z"}
   removeHrisTimeshift:
     speakeasy-default-remove-hris-timeshift:
       parameters:
@@ -7107,10 +7107,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"employee_user_id": "<id>", "end_at": "2025-03-03T22:04:09.340Z", "start_at": "2024-05-30T21:19:58.772Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"employee_user_id": "<id>", "end_at": "2024-05-09T22:44:06.400Z", "start_at": "2023-11-14T18:28:16.870Z"}
   createAtsCompany:
     speakeasy-default-create-ats-company:
       parameters:
@@ -7640,4 +7640,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.category.createTicketingCategory()`: **Added**\n* `unified-to.category.getTicketingCategory()`: **Added**\n* `unified-to.category.listTicketingCategories()`: **Added**\n* `unified-to.category.patchTicketingCategory()`: **Added**\n* `unified-to.category.removeTicketingCategory()`: **Added**\n* `unified-to.category.updateTicketingCategory()`: **Added**\n* `unified-to.genai.createGenaiEmbedding()`: **Added**\n* `unified-to.genai.getGenaiModel()`: **Added**\n* `unified-to.embedding.createGenaiEmbedding()`: **Added**\n* `unified-to.model.getGenaiModel()`: **Added**\n* `unified-to.ticketing.createTicketingCategory()`: **Added**\n* `unified-to.ticketing.getTicketingCategory()`: **Added**\n* `unified-to.ticketing.listTicketingCategories()`: **Added**\n* `unified-to.ticketing.patchTicketingCategory()`: **Added**\n* `unified-to.ticketing.removeTicketingCategory()`: **Added**\n* `unified-to.ticketing.updateTicketingCategory()`: **Added**\n* `unified-to.ticketing.createTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticketing.getTicketingTicket()`:  `response.category_id` **Added**\n* `unified-to.ticketing.listTicketingTickets()`:  `response.[].categoryId` **Added**\n* `unified-to.ticketing.patchTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticketing.updateTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.createTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.getTicketingTicket()`:  `response.category_id` **Added**\n* `unified-to.ticket.listTicketingTickets()`:  `response.[].categoryId` **Added**\n* `unified-to.ticket.patchTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n* `unified-to.ticket.updateTicketingTicket()`: \n  *  `request.ticketingTicket.categoryId` **Added**\n  *  `response.category_id` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.hris.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.createHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.createHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.listHrisTimeshifts()`:  `response.[]` **Changed**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].compensation.[].groupId` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].compensation.[].groupId` **Added**\n* `unified-to.timeshift.getHrisTimeshift()`:  `response` **Changed**\n* `unified-to.timeshift.listHrisTimeshifts()`:  `response.[]` **Changed**\n* `unified-to.hris.getHrisTimeshift()`:  `response` **Changed**\n* `unified-to.hris.getHrisEmployee()`:  `response.compensation.[].groupId` **Added**\n"

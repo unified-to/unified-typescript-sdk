@@ -20,15 +20,15 @@ export type HrisTimeshift = {
   companyId?: string | undefined;
   compensation?: Array<HrisCompensation> | undefined;
   createdAt?: Date | undefined;
-  employeeUserId?: string | undefined;
-  endAt?: Date | undefined;
+  employeeUserId: string;
+  endAt: Date;
   groupId?: string | undefined;
   hours?: number | undefined;
   id?: string | undefined;
   isApproved?: boolean | undefined;
   locationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  startAt?: Date | undefined;
+  startAt: Date;
   updatedAt?: Date | undefined;
 };
 
@@ -45,17 +45,15 @@ export const HrisTimeshift$inboundSchema: z.ZodType<
   compensation: z.array(HrisCompensation$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  employee_user_id: z.string().optional(),
-  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  employee_user_id: z.string(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   group_id: z.string().optional(),
   hours: z.number().optional(),
   id: z.string().optional(),
   is_approved: z.boolean().optional(),
   location_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
-    .optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -81,15 +79,15 @@ export type HrisTimeshift$Outbound = {
   company_id?: string | undefined;
   compensation?: Array<HrisCompensation$Outbound> | undefined;
   created_at?: string | undefined;
-  employee_user_id?: string | undefined;
-  end_at?: string | undefined;
+  employee_user_id: string;
+  end_at: string;
   group_id?: string | undefined;
   hours?: number | undefined;
   id?: string | undefined;
   is_approved?: boolean | undefined;
   location_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
+  start_at: string;
   updated_at?: string | undefined;
 };
 
@@ -104,15 +102,15 @@ export const HrisTimeshift$outboundSchema: z.ZodType<
   companyId: z.string().optional(),
   compensation: z.array(HrisCompensation$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
-  employeeUserId: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
+  employeeUserId: z.string(),
+  endAt: z.date().transform(v => v.toISOString()),
   groupId: z.string().optional(),
   hours: z.number().optional(),
   id: z.string().optional(),
   isApproved: z.boolean().optional(),
   locationId: z.string().optional(),
   raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
+  startAt: z.date().transform(v => v.toISOString()),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
