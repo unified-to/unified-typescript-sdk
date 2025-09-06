@@ -20,12 +20,6 @@ export const HrisTimeoffStatus = {
 } as const;
 export type HrisTimeoffStatus = OpenEnum<typeof HrisTimeoffStatus>;
 
-export const HrisTimeoffType = {
-  Paid: "PAID",
-  Unpaid: "UNPAID",
-} as const;
-export type HrisTimeoffType = OpenEnum<typeof HrisTimeoffType>;
-
 export type HrisTimeoff = {
   approvedAt?: Date | undefined;
   approverUserId?: string | undefined;
@@ -34,10 +28,11 @@ export type HrisTimeoff = {
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
+  isPaid?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
+  reason?: string | undefined;
   startAt: Date;
   status?: HrisTimeoffStatus | undefined;
-  type?: HrisTimeoffType | undefined;
   updatedAt?: Date | undefined;
   userId?: string | undefined;
 };
@@ -75,38 +70,6 @@ export namespace HrisTimeoffStatus$ {
 }
 
 /** @internal */
-export const HrisTimeoffType$inboundSchema: z.ZodType<
-  HrisTimeoffType,
-  z.ZodTypeDef,
-  unknown
-> = z
-  .union([
-    z.nativeEnum(HrisTimeoffType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
-
-/** @internal */
-export const HrisTimeoffType$outboundSchema: z.ZodType<
-  HrisTimeoffType,
-  z.ZodTypeDef,
-  HrisTimeoffType
-> = z.union([
-  z.nativeEnum(HrisTimeoffType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTimeoffType$ {
-  /** @deprecated use `HrisTimeoffType$inboundSchema` instead. */
-  export const inboundSchema = HrisTimeoffType$inboundSchema;
-  /** @deprecated use `HrisTimeoffType$outboundSchema` instead. */
-  export const outboundSchema = HrisTimeoffType$outboundSchema;
-}
-
-/** @internal */
 export const HrisTimeoff$inboundSchema: z.ZodType<
   HrisTimeoff,
   z.ZodTypeDef,
@@ -122,10 +85,11 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
+  is_paid: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
+  reason: z.string().optional(),
   start_at: z.string().datetime({ offset: true }).transform(v => new Date(v)),
   status: HrisTimeoffStatus$inboundSchema.optional(),
-  type: HrisTimeoffType$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   user_id: z.string().optional(),
@@ -136,6 +100,7 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     "company_id": "companyId",
     "created_at": "createdAt",
     "end_at": "endAt",
+    "is_paid": "isPaid",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -151,10 +116,11 @@ export type HrisTimeoff$Outbound = {
   created_at?: string | undefined;
   end_at?: string | undefined;
   id?: string | undefined;
+  is_paid?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
+  reason?: string | undefined;
   start_at: string;
   status?: string | undefined;
-  type?: string | undefined;
   updated_at?: string | undefined;
   user_id?: string | undefined;
 };
@@ -172,10 +138,11 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
+  isPaid: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
+  reason: z.string().optional(),
   startAt: z.date().transform(v => v.toISOString()),
   status: HrisTimeoffStatus$outboundSchema.optional(),
-  type: HrisTimeoffType$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
   userId: z.string().optional(),
 }).transform((v) => {
@@ -185,6 +152,7 @@ export const HrisTimeoff$outboundSchema: z.ZodType<
     companyId: "company_id",
     createdAt: "created_at",
     endAt: "end_at",
+    isPaid: "is_paid",
     startAt: "start_at",
     updatedAt: "updated_at",
     userId: "user_id",

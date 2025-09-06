@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 815d3eb3e63fd66f5050d707713e3c46
+  docChecksum: 8ed442c273cdb35b6056af069e0583c0
   docVersion: "1.0"
-  speakeasyVersion: 1.609.0
-  generationVersion: 2.692.0
-  releaseVersion: 2.73.21
-  configChecksum: c21b0b8a6905cd29372f784edd130cb2
+  speakeasyVersion: 1.611.0
+  generationVersion: 2.694.1
+  releaseVersion: 2.73.22
+  configChecksum: 5b0b76e3ec6d28fdb57450c5645f5cfc
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -833,7 +833,6 @@ generatedFiles:
   - docs/sdk/models/shared/hristelephonetype.md
   - docs/sdk/models/shared/hristimeoff.md
   - docs/sdk/models/shared/hristimeoffstatus.md
-  - docs/sdk/models/shared/hristimeofftype.md
   - docs/sdk/models/shared/hristimeshift.md
   - docs/sdk/models/shared/integration.md
   - docs/sdk/models/shared/integration1.md
@@ -7640,4 +7639,9 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.hris.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.createHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.patchHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.timeshift.createHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.updateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `unified-to.hris.listHrisTimeshifts()`:  `response.[]` **Changed**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].compensation.[].groupId` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.compensation.[].groupId` **Added**\n  *  `response.compensation.[].groupId` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].compensation.[].groupId` **Added**\n* `unified-to.timeshift.getHrisTimeshift()`:  `response` **Changed**\n* `unified-to.timeshift.listHrisTimeshifts()`:  `response.[]` **Changed**\n* `unified-to.hris.getHrisTimeshift()`:  `response` **Changed**\n* `unified-to.hris.getHrisEmployee()`:  `response.compensation.[].groupId` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `unified-to.hris.getHrisTimeoff()`:  `response` **Changed** **Breaking** :warning:
+  * `unified-to.hris.listHrisTimeoffs()`:  `response.[]` **Changed** **Breaking** :warning:
+  * `unified-to.timeoff.getHrisTimeoff()`:  `response` **Changed** **Breaking** :warning:
+  * `unified-to.timeoff.listHrisTimeoffs()`:  `response.[]` **Changed** **Breaking** :warning:
