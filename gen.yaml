@@ -14,6 +14,7 @@ generation:
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
+    hoistGlobalSecurity: true
   tests:
     generateTests: true
     generateNewTests: false
@@ -21,7 +22,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.73.22
+  version: 2.73.23
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -55,6 +56,7 @@ typescript:
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'
   responseFormat: flat
+  sseFlatResponse: false
   templateVersion: v2
   usageSDKInitImports: []
   useIndexModules: true

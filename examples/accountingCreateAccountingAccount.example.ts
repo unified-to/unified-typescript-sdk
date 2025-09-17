@@ -20,7 +20,7 @@ const unifiedTo = new UnifiedTo({
 });
 
 async function main() {
-  const result = await unifiedTo.createAccountingAccount({
+  const result = await unifiedTo.accounting.createAccountingAccount({
     accountingAccount: {},
     connectionId: "<id>",
   });

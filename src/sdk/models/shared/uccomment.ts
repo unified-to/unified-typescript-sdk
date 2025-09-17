@@ -9,6 +9,7 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type UcComment = {
+  callId?: string | undefined;
   content: string;
   createdAt?: string | undefined;
   id?: string | undefined;
@@ -23,6 +24,7 @@ export const UcComment$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  call_id: z.string().optional(),
   content: z.string(),
   created_at: z.string().optional(),
   id: z.string().optional(),
@@ -31,6 +33,7 @@ export const UcComment$inboundSchema: z.ZodType<
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "call_id": "callId",
     "created_at": "createdAt",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -39,6 +42,7 @@ export const UcComment$inboundSchema: z.ZodType<
 
 /** @internal */
 export type UcComment$Outbound = {
+  call_id?: string | undefined;
   content: string;
   created_at?: string | undefined;
   id?: string | undefined;
@@ -53,6 +57,7 @@ export const UcComment$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   UcComment
 > = z.object({
+  callId: z.string().optional(),
   content: z.string(),
   createdAt: z.string().optional(),
   id: z.string().optional(),
@@ -61,6 +66,7 @@ export const UcComment$outboundSchema: z.ZodType<
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    callId: "call_id",
     createdAt: "created_at",
     updatedAt: "updated_at",
     userId: "user_id",
