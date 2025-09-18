@@ -97,6 +97,7 @@ async function $do(
   const query = encodeFormQuery({
     "channel_id": payload.channel_id,
     "end_le": payload.end_le,
+    "expand": payload.expand,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,

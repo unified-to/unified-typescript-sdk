@@ -21,6 +21,7 @@ export type ListMessagingMessagesRequest = {
    * The end date to filter by
    */
   endLe?: string | undefined;
+  expand?: string | undefined;
   /**
    * Comma-delimited fields to return
    */
@@ -60,6 +61,7 @@ export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
   channel_id: z.string().optional(),
   connection_id: z.string(),
   end_le: z.string().optional(),
+  expand: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -86,6 +88,7 @@ export type ListMessagingMessagesRequest$Outbound = {
   channel_id?: string | undefined;
   connection_id: string;
   end_le?: string | undefined;
+  expand?: string | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -107,6 +110,7 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   channelId: z.string().optional(),
   connectionId: z.string(),
   endLe: z.string().optional(),
+  expand: z.string().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

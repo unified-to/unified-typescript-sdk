@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 8eb07aa570ffe05397d47efd8d0eb6b7
+  docChecksum: 6ba38662f570a477a5eacdaf583b3b85
   docVersion: "1.0"
-  speakeasyVersion: 1.618.1
-  generationVersion: 2.702.0
-  releaseVersion: 2.73.24
-  configChecksum: 3e672660b27bc49a7ca9b29742078dbb
+  speakeasyVersion: 1.620.0
+  generationVersion: 2.706.1
+  releaseVersion: 2.73.25
+  configChecksum: 2fd55b60e19cd83be5cbc45e74a54049
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -7639,13 +7639,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `unified-to.accounting.getAccountingProfitloss()`:  `response.category_ids` **Added**
-  * `unified-to.accounting.getAccountingReport()`:  `response.profit_and_loss.categoryIds` **Added**
-  * `unified-to.accounting.listAccountingProfitlosses()`:  `response.[].categoryIds` **Added**
-  * `unified-to.accounting.listAccountingReports()`:  `response.[].profitAndLoss.categoryIds` **Added**
-  * `unified-to.profitloss.getAccountingProfitloss()`:  `response.category_ids` **Added**
-  * `unified-to.profitloss.listAccountingProfitlosses()`:  `response.[].categoryIds` **Added**
-  * `unified-to.report.getAccountingReport()`:  `response.profit_and_loss.categoryIds` **Added**
-  * `unified-to.report.listAccountingReports()`:  `response.[].profitAndLoss.categoryIds` **Added**
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.calendar.listCalendarEvents()`: \n  *  `request.expand` **Added**\n* `unified-to.event.listCalendarEvents()`: \n  *  `request.expand` **Added**\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.expand` **Added**\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.expand` **Added**\n"
