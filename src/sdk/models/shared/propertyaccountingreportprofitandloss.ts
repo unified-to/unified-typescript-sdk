@@ -21,6 +21,7 @@ import {
 } from "./accountingprofitlosssection.js";
 
 export type PropertyAccountingReportProfitAndLoss = {
+  categoryIds?: Array<string> | undefined;
   /**
    * @deprecated – use cost_of_goods_sold_sections instead
    */
@@ -58,6 +59,7 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  category_ids: z.array(z.string()).optional(),
   cost_of_goods_sold: z.array(AccountingProfitlossCategory$inboundSchema)
     .optional(),
   cost_of_goods_sold_sections: z.array(
@@ -89,6 +91,7 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "category_ids": "categoryIds",
     "cost_of_goods_sold": "costOfGoodsSold",
     "cost_of_goods_sold_sections": "costOfGoodsSoldSections",
     "cost_of_goods_sold_total_amount": "costOfGoodsSoldTotalAmount",
@@ -108,6 +111,7 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
 
 /** @internal */
 export type PropertyAccountingReportProfitAndLoss$Outbound = {
+  category_ids?: Array<string> | undefined;
   cost_of_goods_sold?: Array<AccountingProfitlossCategory$Outbound> | undefined;
   cost_of_goods_sold_sections?:
     | Array<AccountingProfitlossSection$Outbound>
@@ -138,6 +142,7 @@ export const PropertyAccountingReportProfitAndLoss$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   PropertyAccountingReportProfitAndLoss
 > = z.object({
+  categoryIds: z.array(z.string()).optional(),
   costOfGoodsSold: z.array(AccountingProfitlossCategory$outboundSchema)
     .optional(),
   costOfGoodsSoldSections: z.array(AccountingProfitlossSection$outboundSchema)
@@ -164,6 +169,7 @@ export const PropertyAccountingReportProfitAndLoss$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    categoryIds: "category_ids",
     costOfGoodsSold: "cost_of_goods_sold",
     costOfGoodsSoldSections: "cost_of_goods_sold_sections",
     costOfGoodsSoldTotalAmount: "cost_of_goods_sold_total_amount",
