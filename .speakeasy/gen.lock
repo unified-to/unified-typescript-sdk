@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 6ba38662f570a477a5eacdaf583b3b85
+  docChecksum: 3a2b9f42726c5dfd24761ce463b8da0d
   docVersion: "1.0"
-  speakeasyVersion: 1.620.0
-  generationVersion: 2.706.1
-  releaseVersion: 2.73.25
-  configChecksum: 2fd55b60e19cd83be5cbc45e74a54049
+  speakeasyVersion: 1.622.1
+  generationVersion: 2.709.0
+  releaseVersion: 2.73.26
+  configChecksum: 22f095b200a03bba8fb8810b9be08b47
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.22
+    core: 3.21.23
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -7639,4 +7639,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.calendar.listCalendarEvents()`: \n  *  `request.expand` **Added**\n* `unified-to.event.listCalendarEvents()`: \n  *  `request.expand` **Added**\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.expand` **Added**\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.expand` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.calendar.listCalendarEvents()`:  `request` **Changed** **Breaking** :warning:\n* `unified-to.event.listCalendarEvents()`:  `request` **Changed** **Breaking** :warning:\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.expand` **Changed** **Breaking** :warning:\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.expand` **Changed** **Breaking** :warning:\n"

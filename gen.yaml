@@ -22,7 +22,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.73.25
+  version: 2.73.26
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -52,6 +52,7 @@ typescript:
   jsonpath: legacy
   maxMethodParams: 0
   methodArguments: require-security-and-request
+  modelPropertyCasing: camel
   moduleFormat: commonjs
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'

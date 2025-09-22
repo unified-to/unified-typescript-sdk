@@ -21,11 +21,14 @@ export type ListCalendarEventsRequest = {
    * The end date to filter by
    */
   endLe?: string | undefined;
-  expand?: string | undefined;
+  /**
+   * Whether to flatten grouped or recurring items into individual entries.
+   */
+  expand?: boolean | undefined;
   /**
    * Whether to expand recurring calendar events
    */
-  expandRecurringEvents?: string | undefined;
+  expandRecurringEvents?: boolean | undefined;
   /**
    * Comma-delimited fields to return
    */
@@ -61,8 +64,8 @@ export const ListCalendarEventsRequest$inboundSchema: z.ZodType<
   calendar_id: z.string().optional(),
   connection_id: z.string(),
   end_le: z.string().optional(),
-  expand: z.string().optional(),
-  expand_recurring_events: z.string().optional(),
+  expand: z.boolean().optional(),
+  expand_recurring_events: z.boolean().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
@@ -88,8 +91,8 @@ export type ListCalendarEventsRequest$Outbound = {
   calendar_id?: string | undefined;
   connection_id: string;
   end_le?: string | undefined;
-  expand?: string | undefined;
-  expand_recurring_events?: string | undefined;
+  expand?: boolean | undefined;
+  expand_recurring_events?: boolean | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
@@ -110,8 +113,8 @@ export const ListCalendarEventsRequest$outboundSchema: z.ZodType<
   calendarId: z.string().optional(),
   connectionId: z.string(),
   endLe: z.string().optional(),
-  expand: z.string().optional(),
-  expandRecurringEvents: z.string().optional(),
+  expand: z.boolean().optional(),
+  expandRecurringEvents: z.boolean().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),

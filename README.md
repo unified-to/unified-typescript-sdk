@@ -182,7 +182,7 @@ httpClient.addHook("requestError", (error, request) => {
   console.groupEnd();
 });
 
-const sdk = new UnifiedTo({ httpClient });
+const sdk = new UnifiedTo({ httpClient: httpClient });
 ```
 <!-- End Custom HTTP Client [http-client] -->
 
