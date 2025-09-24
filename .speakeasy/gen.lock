@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 3a2b9f42726c5dfd24761ce463b8da0d
+  docChecksum: c7b234a89c45d96ea050dc7c9d6d4030
   docVersion: "1.0"
-  speakeasyVersion: 1.622.1
-  generationVersion: 2.709.0
-  releaseVersion: 2.74.0
-  configChecksum: 3230eade901f22392f411f78288d9412
+  speakeasyVersion: 1.623.0
+  generationVersion: 2.713.0
+  releaseVersion: 2.74.1
+  configChecksum: c54080dccfd3b54c8341dae204a4b518
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.23
+    core: 3.21.25
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -7123,3 +7123,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.parent_id` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[].parentId` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.parent_id` **Added**\n* `unified-to.message.listMessagingMessages()`:  `response.[].parentId` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n"
