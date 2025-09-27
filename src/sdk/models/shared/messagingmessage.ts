@@ -45,6 +45,7 @@ export type MessagingMessage = {
   hasChildren?: boolean | undefined;
   hiddenMembers?: Array<MessagingMember> | undefined;
   id?: string | undefined;
+  isUnread?: boolean | undefined;
   mentionedMembers?: Array<MessagingMember> | undefined;
   message?: string | undefined;
   messageHtml?: string | undefined;
@@ -76,6 +77,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   has_children: z.boolean().optional(),
   hidden_members: z.array(MessagingMember$inboundSchema).optional(),
   id: z.string().optional(),
+  is_unread: z.boolean().optional(),
   mentioned_members: z.array(MessagingMember$inboundSchema).optional(),
   message: z.string().optional(),
   message_html: z.string().optional(),
@@ -99,6 +101,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "destination_members": "destinationMembers",
     "has_children": "hasChildren",
     "hidden_members": "hiddenMembers",
+    "is_unread": "isUnread",
     "mentioned_members": "mentionedMembers",
     "message_html": "messageHtml",
     "message_markdown": "messageMarkdown",
@@ -121,6 +124,7 @@ export type MessagingMessage$Outbound = {
   has_children?: boolean | undefined;
   hidden_members?: Array<MessagingMember$Outbound> | undefined;
   id?: string | undefined;
+  is_unread?: boolean | undefined;
   mentioned_members?: Array<MessagingMember$Outbound> | undefined;
   message?: string | undefined;
   message_html?: string | undefined;
@@ -151,6 +155,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   hasChildren: z.boolean().optional(),
   hiddenMembers: z.array(MessagingMember$outboundSchema).optional(),
   id: z.string().optional(),
+  isUnread: z.boolean().optional(),
   mentionedMembers: z.array(MessagingMember$outboundSchema).optional(),
   message: z.string().optional(),
   messageHtml: z.string().optional(),
@@ -173,6 +178,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
     destinationMembers: "destination_members",
     hasChildren: "has_children",
     hiddenMembers: "hidden_members",
+    isUnread: "is_unread",
     mentionedMembers: "mentioned_members",
     messageHtml: "message_html",
     messageMarkdown: "message_markdown",

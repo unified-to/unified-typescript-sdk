@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: c7b234a89c45d96ea050dc7c9d6d4030
+  docChecksum: e9e9a75ee0b8df9aa855f2c91936efbd
   docVersion: "1.0"
-  speakeasyVersion: 1.623.0
-  generationVersion: 2.713.0
-  releaseVersion: 2.74.1
-  configChecksum: c54080dccfd3b54c8341dae204a4b518
+  speakeasyVersion: 1.631.0
+  generationVersion: 2.716.10
+  releaseVersion: 2.74.2
+  configChecksum: 46a35a557c231e28c0927625af13f4a0
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -28,7 +28,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.3.0
-    unions: 2.85.11
+    unions: 2.85.12
     uploadStreams: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -7123,4 +7123,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.parent_id` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[].parentId` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.parent_id` **Added**\n* `unified-to.message.listMessagingMessages()`:  `response.[].parentId` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.parentId` **Added**\n  *  `response.parent_id` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.is_unread` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[].isUnread` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.is_unread` **Added**\n* `unified-to.message.listMessagingMessages()`:  `response.[].isUnread` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n"
