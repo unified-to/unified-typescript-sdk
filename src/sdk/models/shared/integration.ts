@@ -39,6 +39,21 @@ export type Partnership =
   | boolean
   | Array<IntegrationSchemas1 | string | number | boolean>;
 
+export type IntegrationSchemasSaml1 = {};
+
+export type IntegrationSchemasSaml5 =
+  | IntegrationSchemasSaml1
+  | string
+  | number
+  | boolean;
+
+export type Saml =
+  | { [k: string]: any }
+  | string
+  | number
+  | boolean
+  | Array<IntegrationSchemasSaml1 | string | number | boolean>;
+
 export type IntegrationSchemasSandbox1 = {};
 
 export type IntegrationSchemasSandbox5 =
@@ -90,6 +105,13 @@ export type Integration = {
     | undefined;
   popularity?: number | undefined;
   rateLimitDescription?: string | undefined;
+  saml?:
+    | { [k: string]: any }
+    | string
+    | number
+    | boolean
+    | Array<IntegrationSchemasSaml1 | string | number | boolean>
+    | undefined;
   sandbox?:
     | { [k: string]: any }
     | string
@@ -471,6 +493,185 @@ export function partnershipFromJSON(
 }
 
 /** @internal */
+export const IntegrationSchemasSaml1$inboundSchema: z.ZodType<
+  IntegrationSchemasSaml1,
+  z.ZodTypeDef,
+  unknown
+> = z.object({});
+
+/** @internal */
+export type IntegrationSchemasSaml1$Outbound = {};
+
+/** @internal */
+export const IntegrationSchemasSaml1$outboundSchema: z.ZodType<
+  IntegrationSchemasSaml1$Outbound,
+  z.ZodTypeDef,
+  IntegrationSchemasSaml1
+> = z.object({});
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IntegrationSchemasSaml1$ {
+  /** @deprecated use `IntegrationSchemasSaml1$inboundSchema` instead. */
+  export const inboundSchema = IntegrationSchemasSaml1$inboundSchema;
+  /** @deprecated use `IntegrationSchemasSaml1$outboundSchema` instead. */
+  export const outboundSchema = IntegrationSchemasSaml1$outboundSchema;
+  /** @deprecated use `IntegrationSchemasSaml1$Outbound` instead. */
+  export type Outbound = IntegrationSchemasSaml1$Outbound;
+}
+
+export function integrationSchemasSaml1ToJSON(
+  integrationSchemasSaml1: IntegrationSchemasSaml1,
+): string {
+  return JSON.stringify(
+    IntegrationSchemasSaml1$outboundSchema.parse(integrationSchemasSaml1),
+  );
+}
+
+export function integrationSchemasSaml1FromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationSchemasSaml1, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationSchemasSaml1$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationSchemasSaml1' from JSON`,
+  );
+}
+
+/** @internal */
+export const IntegrationSchemasSaml5$inboundSchema: z.ZodType<
+  IntegrationSchemasSaml5,
+  z.ZodTypeDef,
+  unknown
+> = z.union([
+  z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/** @internal */
+export type IntegrationSchemasSaml5$Outbound =
+  | IntegrationSchemasSaml1$Outbound
+  | string
+  | number
+  | boolean;
+
+/** @internal */
+export const IntegrationSchemasSaml5$outboundSchema: z.ZodType<
+  IntegrationSchemasSaml5$Outbound,
+  z.ZodTypeDef,
+  IntegrationSchemasSaml5
+> = z.union([
+  z.lazy(() => IntegrationSchemasSaml1$outboundSchema),
+  z.string(),
+  z.number(),
+  z.boolean(),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace IntegrationSchemasSaml5$ {
+  /** @deprecated use `IntegrationSchemasSaml5$inboundSchema` instead. */
+  export const inboundSchema = IntegrationSchemasSaml5$inboundSchema;
+  /** @deprecated use `IntegrationSchemasSaml5$outboundSchema` instead. */
+  export const outboundSchema = IntegrationSchemasSaml5$outboundSchema;
+  /** @deprecated use `IntegrationSchemasSaml5$Outbound` instead. */
+  export type Outbound = IntegrationSchemasSaml5$Outbound;
+}
+
+export function integrationSchemasSaml5ToJSON(
+  integrationSchemasSaml5: IntegrationSchemasSaml5,
+): string {
+  return JSON.stringify(
+    IntegrationSchemasSaml5$outboundSchema.parse(integrationSchemasSaml5),
+  );
+}
+
+export function integrationSchemasSaml5FromJSON(
+  jsonString: string,
+): SafeParseResult<IntegrationSchemasSaml5, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => IntegrationSchemasSaml5$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'IntegrationSchemasSaml5' from JSON`,
+  );
+}
+
+/** @internal */
+export const Saml$inboundSchema: z.ZodType<Saml, z.ZodTypeDef, unknown> = z
+  .union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]);
+
+/** @internal */
+export type Saml$Outbound =
+  | { [k: string]: any }
+  | string
+  | number
+  | boolean
+  | Array<IntegrationSchemasSaml1$Outbound | string | number | boolean>;
+
+/** @internal */
+export const Saml$outboundSchema: z.ZodType<Saml$Outbound, z.ZodTypeDef, Saml> =
+  z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSaml1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace Saml$ {
+  /** @deprecated use `Saml$inboundSchema` instead. */
+  export const inboundSchema = Saml$inboundSchema;
+  /** @deprecated use `Saml$outboundSchema` instead. */
+  export const outboundSchema = Saml$outboundSchema;
+  /** @deprecated use `Saml$Outbound` instead. */
+  export type Outbound = Saml$Outbound;
+}
+
+export function samlToJSON(saml: Saml): string {
+  return JSON.stringify(Saml$outboundSchema.parse(saml));
+}
+
+export function samlFromJSON(
+  jsonString: string,
+): SafeParseResult<Saml, SDKValidationError> {
+  return safeParse(
+    jsonString,
+    (x) => Saml$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'Saml' from JSON`,
+  );
+}
+
+/** @internal */
 export const IntegrationSchemasSandbox1$inboundSchema: z.ZodType<
   IntegrationSchemasSandbox1,
   z.ZodTypeDef,
@@ -701,6 +902,20 @@ export const Integration$inboundSchema: z.ZodType<
   ]).optional(),
   popularity: z.number().optional(),
   rate_limit_description: z.string().optional(),
+  saml: z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSaml1$inboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]).optional(),
   sandbox: z.union([
     z.record(z.any()),
     z.string(),
@@ -774,6 +989,13 @@ export type Integration$Outbound = {
     | undefined;
   popularity?: number | undefined;
   rate_limit_description?: string | undefined;
+  saml?:
+    | { [k: string]: any }
+    | string
+    | number
+    | boolean
+    | Array<IntegrationSchemasSaml1$Outbound | string | number | boolean>
+    | undefined;
   sandbox?:
     | { [k: string]: any }
     | string
@@ -840,6 +1062,20 @@ export const Integration$outboundSchema: z.ZodType<
   ]).optional(),
   popularity: z.number().optional(),
   rateLimitDescription: z.string().optional(),
+  saml: z.union([
+    z.record(z.any()),
+    z.string(),
+    z.number(),
+    z.boolean(),
+    z.array(
+      z.union([
+        z.lazy(() => IntegrationSchemasSaml1$outboundSchema),
+        z.string(),
+        z.number(),
+        z.boolean(),
+      ]),
+    ),
+  ]).optional(),
   sandbox: z.union([
     z.record(z.any()),
     z.string(),

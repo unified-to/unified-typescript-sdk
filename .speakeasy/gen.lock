@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: e9e9a75ee0b8df9aa855f2c91936efbd
+  docChecksum: 877b52162b06392093c3efbd89172e36
   docVersion: "1.0"
-  speakeasyVersion: 1.631.0
-  generationVersion: 2.716.10
-  releaseVersion: 2.74.2
-  configChecksum: 46a35a557c231e28c0927625af13f4a0
+  speakeasyVersion: 1.631.5
+  generationVersion: 2.716.16
+  releaseVersion: 2.74.3
+  configChecksum: 2fee5d2beb75cc4ee12332f5e9fec5b8
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -838,6 +838,8 @@ generatedFiles:
   - docs/sdk/models/shared/integration5.md
   - docs/sdk/models/shared/integrationschemas1.md
   - docs/sdk/models/shared/integrationschemas5.md
+  - docs/sdk/models/shared/integrationschemassaml1.md
+  - docs/sdk/models/shared/integrationschemassaml5.md
   - docs/sdk/models/shared/integrationschemassandbox1.md
   - docs/sdk/models/shared/integrationschemassandbox5.md
   - docs/sdk/models/shared/intervalunit.md
@@ -971,6 +973,7 @@ generatedFiles:
   - docs/sdk/models/shared/resourcetype.md
   - docs/sdk/models/shared/responsestatus.md
   - docs/sdk/models/shared/role.md
+  - docs/sdk/models/shared/saml.md
   - docs/sdk/models/shared/sandbox.md
   - docs/sdk/models/shared/scimaddress.md
   - docs/sdk/models/shared/scimaddresstype.md
@@ -7123,4 +7126,9 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.is_unread` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[].isUnread` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.is_unread` **Added**\n* `unified-to.message.listMessagingMessages()`:  `response.[].isUnread` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.isUnread` **Added**\n  *  `response.is_unread` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].saml` **Added**
+  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].saml` **Added**
+  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].saml` **Added**
+  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].saml` **Added**
