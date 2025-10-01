@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 877b52162b06392093c3efbd89172e36
+  docChecksum: 93627d104d7b0fff5c900b54ba7421e8
   docVersion: "1.0"
   speakeasyVersion: 1.631.5
   generationVersion: 2.716.16
-  releaseVersion: 2.74.3
-  configChecksum: 2fee5d2beb75cc4ee12332f5e9fec5b8
+  releaseVersion: 2.74.4
+  configChecksum: 981bb9ab47dc73e42ce596df716b1ff5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -209,6 +209,7 @@ generatedFiles:
   - docs/sdk/models/operations/getunifiedconnectionrequest.md
   - docs/sdk/models/operations/getunifiedintegrationauthrequest.md
   - docs/sdk/models/operations/getunifiedintegrationloginrequest.md
+  - docs/sdk/models/operations/getunifiedissuerequest.md
   - docs/sdk/models/operations/getunifiedwebhookrequest.md
   - docs/sdk/models/operations/getverificationpackagerequest.md
   - docs/sdk/models/operations/getverificationrequestrequest.md
@@ -1645,6 +1646,7 @@ generatedFiles:
   - src/funcs/unifiedGetUnifiedApicall.ts
   - src/funcs/unifiedGetUnifiedConnection.ts
   - src/funcs/unifiedGetUnifiedIntegrationAuth.ts
+  - src/funcs/unifiedGetUnifiedIssue.ts
   - src/funcs/unifiedGetUnifiedWebhook.ts
   - src/funcs/unifiedListUnifiedApicalls.ts
   - src/funcs/unifiedListUnifiedConnections.ts
@@ -1924,6 +1926,7 @@ generatedFiles:
   - src/sdk/models/operations/getunifiedconnection.ts
   - src/sdk/models/operations/getunifiedintegrationauth.ts
   - src/sdk/models/operations/getunifiedintegrationlogin.ts
+  - src/sdk/models/operations/getunifiedissue.ts
   - src/sdk/models/operations/getunifiedwebhook.ts
   - src/sdk/models/operations/getverificationpackage.ts
   - src/sdk/models/operations/getverificationrequest.ts
@@ -7124,11 +7127,17 @@ examples:
       responses:
         "200":
           application/json: {}
+  getUnifiedIssue:
+    speakeasy-default-get-unified-issue:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
 releaseNotes: |
   ## Typescript SDK Changes Detected:
-  * `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].saml` **Added**
-  * `unified-to.unified.listUnifiedIntegrations()`:  `response.[].saml` **Added**
-  * `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].saml` **Added**
-  * `unified-to.integration.listUnifiedIntegrations()`:  `response.[].saml` **Added**
+  * `unified-to.unified.getUnifiedIssue()`: **Added**
+  * `unified-to.issue.getUnifiedIssue()`: **Added**

@@ -22,7 +22,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.74.3
+  version: 2.74.4
   additionalDependencies:
     dependencies: {}
     devDependencies: {}

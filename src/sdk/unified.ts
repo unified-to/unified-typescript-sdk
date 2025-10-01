@@ -7,6 +7,7 @@ import { unifiedCreateUnifiedWebhook } from "../funcs/unifiedCreateUnifiedWebhoo
 import { unifiedGetUnifiedApicall } from "../funcs/unifiedGetUnifiedApicall.js";
 import { unifiedGetUnifiedConnection } from "../funcs/unifiedGetUnifiedConnection.js";
 import { unifiedGetUnifiedIntegrationAuth } from "../funcs/unifiedGetUnifiedIntegrationAuth.js";
+import { unifiedGetUnifiedIssue } from "../funcs/unifiedGetUnifiedIssue.js";
 import { unifiedGetUnifiedWebhook } from "../funcs/unifiedGetUnifiedWebhook.js";
 import { unifiedListUnifiedApicalls } from "../funcs/unifiedListUnifiedApicalls.js";
 import { unifiedListUnifiedConnections } from "../funcs/unifiedListUnifiedConnections.js";
@@ -101,6 +102,20 @@ export class Unified extends ClientSDK {
     options?: RequestOptions,
   ): Promise<string> {
     return unwrapAsync(unifiedGetUnifiedIntegrationAuth(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve support issue
+   */
+  async getUnifiedIssue(
+    request: operations.GetUnifiedIssueRequest,
+    options?: RequestOptions,
+  ): Promise<shared.Issue> {
+    return unwrapAsync(unifiedGetUnifiedIssue(
       this,
       request,
       options,

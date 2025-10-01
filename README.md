@@ -1369,6 +1369,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/auth/README.md#getunifiedintegrationauth) - Authorize new connection
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/integration/README.md#getunifiedintegrationauth) - Authorize new connection
 - [`unifiedGetUnifiedIntegrationAuth`](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize new connection
+- [`unifiedGetUnifiedIssue`](docs/sdks/issue/README.md#getunifiedissue) - Retrieve support issue
+- [`unifiedGetUnifiedIssue`](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
 - [`unifiedGetUnifiedWebhook`](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedGetUnifiedWebhook`](docs/sdks/webhook/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 - [`unifiedListUnifiedApicalls`](docs/sdks/apicall/README.md#listunifiedapicalls) - Returns API Calls
