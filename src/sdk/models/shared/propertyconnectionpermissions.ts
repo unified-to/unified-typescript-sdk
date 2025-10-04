@@ -76,6 +76,7 @@ export const PropertyConnectionPermissions = {
   AtsJobRead: "ats_job_read",
   AtsJobWrite: "ats_job_write",
   AtsCompanyRead: "ats_company_read",
+  AtsCompanyWrite: "ats_company_write",
   AtsDocumentRead: "ats_document_read",
   AtsDocumentWrite: "ats_document_write",
   AtsScorecardRead: "ats_scorecard_read",

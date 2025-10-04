@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 93627d104d7b0fff5c900b54ba7421e8
+  docChecksum: 0b33a55547cf2ac860e6a35542823995
   docVersion: "1.0"
-  speakeasyVersion: 1.631.5
-  generationVersion: 2.716.16
-  releaseVersion: 2.74.4
-  configChecksum: 981bb9ab47dc73e42ce596df716b1ff5
+  speakeasyVersion: 1.634.2
+  generationVersion: 2.721.3
+  releaseVersion: 2.75.0
+  configChecksum: 1d0be3996e00441533adae1caa5660d2
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.25
+    core: 3.21.26
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -28,7 +28,7 @@ features:
     responseFormat: 0.2.3
     retries: 2.83.0
     sdkHooks: 0.3.0
-    unions: 2.85.12
+    unions: 2.86.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .gitattributes
@@ -7137,7 +7137,3 @@ examples:
           application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `unified-to.unified.getUnifiedIssue()`: **Added**
-  * `unified-to.issue.getUnifiedIssue()`: **Added**
