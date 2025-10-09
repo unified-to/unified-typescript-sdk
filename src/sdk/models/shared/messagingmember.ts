@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type MessagingMember = {
   email?: string | undefined;
+  imageUrl?: string | undefined;
   name?: string | undefined;
   userId?: string | undefined;
 };
@@ -21,10 +22,12 @@ export const MessagingMember$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   email: z.string().optional(),
+  image_url: z.string().optional(),
   name: z.string().optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    "image_url": "imageUrl",
     "user_id": "userId",
   });
 });
@@ -32,6 +35,7 @@ export const MessagingMember$inboundSchema: z.ZodType<
 /** @internal */
 export type MessagingMember$Outbound = {
   email?: string | undefined;
+  image_url?: string | undefined;
   name?: string | undefined;
   user_id?: string | undefined;
 };
@@ -43,10 +47,12 @@ export const MessagingMember$outboundSchema: z.ZodType<
   MessagingMember
 > = z.object({
   email: z.string().optional(),
+  imageUrl: z.string().optional(),
   name: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
+    imageUrl: "image_url",
     userId: "user_id",
   });
 });

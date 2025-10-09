@@ -54,6 +54,7 @@ export type AccountingSalesorder = {
   lineitems?: Array<AccountingLineitem> | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
+  salesChannel?: string | undefined;
   shippingAddress?: PropertyAccountingSalesorderShippingAddress | undefined;
   status?: AccountingSalesorderStatus | undefined;
   totalAmount?: number | undefined;
@@ -110,6 +111,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
+  sales_channel: z.string().optional(),
   shipping_address: PropertyAccountingSalesorderShippingAddress$inboundSchema
     .optional(),
   status: AccountingSalesorderStatus$inboundSchema.optional(),
@@ -123,6 +125,7 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "contact_id": "contactId",
     "created_at": "createdAt",
     "posted_at": "postedAt",
+    "sales_channel": "salesChannel",
     "shipping_address": "shippingAddress",
     "total_amount": "totalAmount",
     "updated_at": "updatedAt",
@@ -142,6 +145,7 @@ export type AccountingSalesorder$Outbound = {
   lineitems?: Array<AccountingLineitem$Outbound> | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  sales_channel?: string | undefined;
   shipping_address?:
     | PropertyAccountingSalesorderShippingAddress$Outbound
     | undefined;
@@ -166,6 +170,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   lineitems: z.array(AccountingLineitem$outboundSchema).optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
+  salesChannel: z.string().optional(),
   shippingAddress: PropertyAccountingSalesorderShippingAddress$outboundSchema
     .optional(),
   status: AccountingSalesorderStatus$outboundSchema.optional(),
@@ -178,6 +183,7 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
     contactId: "contact_id",
     createdAt: "created_at",
     postedAt: "posted_at",
+    salesChannel: "sales_channel",
     shippingAddress: "shipping_address",
     totalAmount: "total_amount",
     updatedAt: "updated_at",

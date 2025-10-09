@@ -134,6 +134,7 @@ export * from "./marketinglist.js";
 export * from "./marketingmember.js";
 export * from "./messagingattachment.js";
 export * from "./messagingchannel.js";
+export * from "./messagingchannelmessage.js";
 export * from "./messagingmember.js";
 export * from "./messagingmessage.js";
 export * from "./messagingreaction.js";

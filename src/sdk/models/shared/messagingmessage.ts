@@ -14,6 +14,12 @@ import {
   MessagingAttachment$outboundSchema,
 } from "./messagingattachment.js";
 import {
+  MessagingChannelMessage,
+  MessagingChannelMessage$inboundSchema,
+  MessagingChannelMessage$Outbound,
+  MessagingChannelMessage$outboundSchema,
+} from "./messagingchannelmessage.js";
+import {
   MessagingMember,
   MessagingMember$inboundSchema,
   MessagingMember$Outbound,
@@ -37,9 +43,13 @@ export type MessagingMessage = {
   authorMember?: PropertyMessagingMessageAuthorMember | undefined;
   channelId?: string | undefined;
   /**
-   * Represents the IDs of all channels to which the message is sent. Identifies the channels where the message is posted.
+   * @deprecated; use channels instead
    */
   channelIds?: Array<string> | undefined;
+  /**
+   * Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
+   */
+  channels?: Array<MessagingChannelMessage> | undefined;
   createdAt?: Date | undefined;
   destinationMembers?: Array<MessagingMember> | undefined;
   hasChildren?: boolean | undefined;
@@ -71,6 +81,7 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   author_member: PropertyMessagingMessageAuthorMember$inboundSchema.optional(),
   channel_id: z.string().optional(),
   channel_ids: z.array(z.string()).optional(),
+  channels: z.array(MessagingChannelMessage$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   destination_members: z.array(MessagingMember$inboundSchema).optional(),
@@ -119,6 +130,7 @@ export type MessagingMessage$Outbound = {
   author_member?: PropertyMessagingMessageAuthorMember$Outbound | undefined;
   channel_id?: string | undefined;
   channel_ids?: Array<string> | undefined;
+  channels?: Array<MessagingChannelMessage$Outbound> | undefined;
   created_at?: string | undefined;
   destination_members?: Array<MessagingMember$Outbound> | undefined;
   has_children?: boolean | undefined;
@@ -150,6 +162,7 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   authorMember: PropertyMessagingMessageAuthorMember$outboundSchema.optional(),
   channelId: z.string().optional(),
   channelIds: z.array(z.string()).optional(),
+  channels: z.array(MessagingChannelMessage$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   destinationMembers: z.array(MessagingMember$outboundSchema).optional(),
   hasChildren: z.boolean().optional(),

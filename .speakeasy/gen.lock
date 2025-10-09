@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 0b33a55547cf2ac860e6a35542823995
+  docChecksum: dc91eeac96415353b77e357c69ab74d6
   docVersion: "1.0"
-  speakeasyVersion: 1.634.2
-  generationVersion: 2.721.3
-  releaseVersion: 2.75.0
-  configChecksum: 1d0be3996e00441533adae1caa5660d2
+  speakeasyVersion: 1.636.2
+  generationVersion: 2.723.8
+  releaseVersion: 2.75.1
+  configChecksum: 6706a1c31dcbb981659b95004249d282
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -875,6 +875,7 @@ generatedFiles:
   - docs/sdk/models/shared/marketingmember.md
   - docs/sdk/models/shared/messagingattachment.md
   - docs/sdk/models/shared/messagingchannel.md
+  - docs/sdk/models/shared/messagingchannelmessage.md
   - docs/sdk/models/shared/messagingmember.md
   - docs/sdk/models/shared/messagingmessage.md
   - docs/sdk/models/shared/messagingreaction.md
@@ -1155,7 +1156,6 @@ generatedFiles:
   - docs/sdks/trialbalance/README.md
   - docs/sdks/uc/README.md
   - docs/sdks/unified/README.md
-  - docs/sdks/unifiedto/README.md
   - docs/sdks/user/README.md
   - docs/sdks/verification/README.md
   - docs/sdks/webhook/README.md
@@ -2395,6 +2395,7 @@ generatedFiles:
   - src/sdk/models/shared/marketingmember.ts
   - src/sdk/models/shared/messagingattachment.ts
   - src/sdk/models/shared/messagingchannel.ts
+  - src/sdk/models/shared/messagingchannelmessage.ts
   - src/sdk/models/shared/messagingmember.ts
   - src/sdk/models/shared/messagingmessage.ts
   - src/sdk/models/shared/messagingreaction.ts
@@ -7137,3 +7138,4 @@ examples:
           application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.accounting.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.accounting.getAccountingSalesorder()`:  `response.sales_channel` **Added**\n* `unified-to.accounting.listAccountingSalesorders()`:  `response.[].salesChannel` **Added**\n* `unified-to.accounting.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.accounting.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.salesorder.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.salesorder.getAccountingSalesorder()`:  `response.sales_channel` **Added**\n* `unified-to.salesorder.listAccountingSalesorders()`:  `response.[].salesChannel` **Added**\n* `unified-to.salesorder.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.salesorder.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.salesChannel` **Added**\n  *  `response.sales_channel` **Added**\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `unified-to.messaging.getMessagingChannel()`:  `response.members.[].imageUrl` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response` **Changed**\n* `unified-to.messaging.listMessagingChannels()`:  `response.[].members.[].imageUrl` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[]` **Changed**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `unified-to.channel.getMessagingChannel()`:  `response.members.[].imageUrl` **Added**\n* `unified-to.channel.listMessagingChannels()`:  `response.[].members.[].imageUrl` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `unified-to.message.getMessagingMessage()`:  `response` **Changed**\n* `unified-to.message.listMessagingMessages()`:  `response.[]` **Changed**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n"
