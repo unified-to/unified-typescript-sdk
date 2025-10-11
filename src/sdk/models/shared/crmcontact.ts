@@ -47,11 +47,13 @@ export type CrmContact = {
    * An array of deal IDs associated with this contact
    */
   dealIds?: Array<string> | undefined;
+  department?: string | undefined;
   /**
    * An array of email addresses for this contact
    */
   emails?: Array<CrmEmail> | undefined;
   id?: string | undefined;
+  imageUrl?: string | undefined;
   /**
    * Additional URLs associated with the contact e.g., LinkedIn, website, etc
    */
@@ -80,8 +82,10 @@ export const CrmContact$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   deal_ids: z.array(z.string()).optional(),
+  department: z.string().optional(),
   emails: z.array(CrmEmail$inboundSchema).optional(),
   id: z.string().optional(),
+  image_url: z.string().optional(),
   link_urls: z.array(z.string()).optional(),
   metadata: z.array(CrmMetadata$inboundSchema).optional(),
   name: z.string().optional(),
@@ -96,6 +100,7 @@ export const CrmContact$inboundSchema: z.ZodType<
     "company_ids": "companyIds",
     "created_at": "createdAt",
     "deal_ids": "dealIds",
+    "image_url": "imageUrl",
     "link_urls": "linkUrls",
     "updated_at": "updatedAt",
     "user_id": "userId",
@@ -109,8 +114,10 @@ export type CrmContact$Outbound = {
   company_ids?: Array<string> | undefined;
   created_at?: string | undefined;
   deal_ids?: Array<string> | undefined;
+  department?: string | undefined;
   emails?: Array<CrmEmail$Outbound> | undefined;
   id?: string | undefined;
+  image_url?: string | undefined;
   link_urls?: Array<string> | undefined;
   metadata?: Array<CrmMetadata$Outbound> | undefined;
   name?: string | undefined;
@@ -132,8 +139,10 @@ export const CrmContact$outboundSchema: z.ZodType<
   companyIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dealIds: z.array(z.string()).optional(),
+  department: z.string().optional(),
   emails: z.array(CrmEmail$outboundSchema).optional(),
   id: z.string().optional(),
+  imageUrl: z.string().optional(),
   linkUrls: z.array(z.string()).optional(),
   metadata: z.array(CrmMetadata$outboundSchema).optional(),
   name: z.string().optional(),
@@ -147,6 +156,7 @@ export const CrmContact$outboundSchema: z.ZodType<
     companyIds: "company_ids",
     createdAt: "created_at",
     dealIds: "deal_ids",
+    imageUrl: "image_url",
     linkUrls: "link_urls",
     updatedAt: "updated_at",
     userId: "user_id",

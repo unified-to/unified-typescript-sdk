@@ -5,6 +5,11 @@
 import * as z from "zod";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import {
+  catchUnrecognizedEnum,
+  OpenEnum,
+  Unrecognized,
+} from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -18,6 +23,23 @@ export type CrmMetadataExtraData =
   | number
   | boolean
   | Array<CrmMetadata1 | string | number | boolean>;
+
+export const CrmMetadataFormat = {
+  Text: "TEXT",
+  Number: "NUMBER",
+  Date: "DATE",
+  Boolean: "BOOLEAN",
+  File: "FILE",
+  Textarea: "TEXTAREA",
+  SingleSelect: "SINGLE_SELECT",
+  MultipleSelect: "MULTIPLE_SELECT",
+  Measurement: "MEASUREMENT",
+  Price: "PRICE",
+  YesNo: "YES_NO",
+  Currency: "CURRENCY",
+  Url: "URL",
+} as const;
+export type CrmMetadataFormat = OpenEnum<typeof CrmMetadataFormat>;
 
 export type CrmMetadataSchemas1 = {};
 
@@ -42,6 +64,7 @@ export type CrmMetadata = {
     | boolean
     | Array<CrmMetadata1 | string | number | boolean>
     | undefined;
+  format?: CrmMetadataFormat | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -235,6 +258,38 @@ export function crmMetadataExtraDataFromJSON(
     (x) => CrmMetadataExtraData$inboundSchema.parse(JSON.parse(x)),
     `Failed to parse 'CrmMetadataExtraData' from JSON`,
   );
+}
+
+/** @internal */
+export const CrmMetadataFormat$inboundSchema: z.ZodType<
+  CrmMetadataFormat,
+  z.ZodTypeDef,
+  unknown
+> = z
+  .union([
+    z.nativeEnum(CrmMetadataFormat),
+    z.string().transform(catchUnrecognizedEnum),
+  ]);
+
+/** @internal */
+export const CrmMetadataFormat$outboundSchema: z.ZodType<
+  CrmMetadataFormat,
+  z.ZodTypeDef,
+  CrmMetadataFormat
+> = z.union([
+  z.nativeEnum(CrmMetadataFormat),
+  z.string().and(z.custom<Unrecognized<string>>()),
+]);
+
+/**
+ * @internal
+ * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
+ */
+export namespace CrmMetadataFormat$ {
+  /** @deprecated use `CrmMetadataFormat$inboundSchema` instead. */
+  export const inboundSchema = CrmMetadataFormat$inboundSchema;
+  /** @deprecated use `CrmMetadataFormat$outboundSchema` instead. */
+  export const outboundSchema = CrmMetadataFormat$outboundSchema;
 }
 
 /** @internal */
@@ -446,6 +501,7 @@ export const CrmMetadata$inboundSchema: z.ZodType<
       ]),
     ),
   ]).optional(),
+  format: CrmMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
@@ -480,6 +536,7 @@ export type CrmMetadata$Outbound = {
     | boolean
     | Array<CrmMetadata1$Outbound | string | number | boolean>
     | undefined;
+  format?: string | undefined;
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
@@ -514,6 +571,7 @@ export const CrmMetadata$outboundSchema: z.ZodType<
       ]),
     ),
   ]).optional(),
+  format: CrmMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
