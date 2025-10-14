@@ -98,6 +98,8 @@ export type AtsJob = {
   id?: string | undefined;
   languageLocale?: string | undefined;
   metadata?: Array<AtsMetadata> | undefined;
+  minimumDegree?: string | undefined;
+  minimumExperienceYears?: number | undefined;
   name?: string | undefined;
   numberOfOpenings?: number | undefined;
   openings?: Array<AtsJobOpening> | undefined;
@@ -200,6 +202,8 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     id: z.string().optional(),
     language_locale: z.string().optional(),
     metadata: z.array(AtsMetadata$inboundSchema).optional(),
+    minimum_degree: z.string().optional(),
+    minimum_experience_years: z.number().optional(),
     name: z.string().optional(),
     number_of_openings: z.number().optional(),
     openings: z.array(AtsJobOpening$inboundSchema).optional(),
@@ -221,6 +225,8 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
       "employment_type": "employmentType",
       "hiring_manager_ids": "hiringManagerIds",
       "language_locale": "languageLocale",
+      "minimum_degree": "minimumDegree",
+      "minimum_experience_years": "minimumExperienceYears",
       "number_of_openings": "numberOfOpenings",
       "public_job_urls": "publicJobUrls",
       "recruiter_ids": "recruiterIds",
@@ -243,6 +249,8 @@ export type AtsJob$Outbound = {
   id?: string | undefined;
   language_locale?: string | undefined;
   metadata?: Array<AtsMetadata$Outbound> | undefined;
+  minimum_degree?: string | undefined;
+  minimum_experience_years?: number | undefined;
   name?: string | undefined;
   number_of_openings?: number | undefined;
   openings?: Array<AtsJobOpening$Outbound> | undefined;
@@ -275,6 +283,8 @@ export const AtsJob$outboundSchema: z.ZodType<
   id: z.string().optional(),
   languageLocale: z.string().optional(),
   metadata: z.array(AtsMetadata$outboundSchema).optional(),
+  minimumDegree: z.string().optional(),
+  minimumExperienceYears: z.number().optional(),
   name: z.string().optional(),
   numberOfOpenings: z.number().optional(),
   openings: z.array(AtsJobOpening$outboundSchema).optional(),
@@ -294,6 +304,8 @@ export const AtsJob$outboundSchema: z.ZodType<
     employmentType: "employment_type",
     hiringManagerIds: "hiring_manager_ids",
     languageLocale: "language_locale",
+    minimumDegree: "minimum_degree",
+    minimumExperienceYears: "minimum_experience_years",
     numberOfOpenings: "number_of_openings",
     publicJobUrls: "public_job_urls",
     recruiterIds: "recruiter_ids",
