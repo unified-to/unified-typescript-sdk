@@ -7,6 +7,7 @@ import { accountingCreateAccountingBill } from "../funcs/accountingCreateAccount
 import { accountingCreateAccountingCategory } from "../funcs/accountingCreateAccountingCategory.js";
 import { accountingCreateAccountingContact } from "../funcs/accountingCreateAccountingContact.js";
 import { accountingCreateAccountingCreditmemo } from "../funcs/accountingCreateAccountingCreditmemo.js";
+import { accountingCreateAccountingExpense } from "../funcs/accountingCreateAccountingExpense.js";
 import { accountingCreateAccountingInvoice } from "../funcs/accountingCreateAccountingInvoice.js";
 import { accountingCreateAccountingJournal } from "../funcs/accountingCreateAccountingJournal.js";
 import { accountingCreateAccountingOrder } from "../funcs/accountingCreateAccountingOrder.js";
@@ -20,6 +21,7 @@ import { accountingGetAccountingBill } from "../funcs/accountingGetAccountingBil
 import { accountingGetAccountingCategory } from "../funcs/accountingGetAccountingCategory.js";
 import { accountingGetAccountingContact } from "../funcs/accountingGetAccountingContact.js";
 import { accountingGetAccountingCreditmemo } from "../funcs/accountingGetAccountingCreditmemo.js";
+import { accountingGetAccountingExpense } from "../funcs/accountingGetAccountingExpense.js";
 import { accountingGetAccountingInvoice } from "../funcs/accountingGetAccountingInvoice.js";
 import { accountingGetAccountingJournal } from "../funcs/accountingGetAccountingJournal.js";
 import { accountingGetAccountingOrder } from "../funcs/accountingGetAccountingOrder.js";
@@ -37,6 +39,7 @@ import { accountingListAccountingBills } from "../funcs/accountingListAccounting
 import { accountingListAccountingCategories } from "../funcs/accountingListAccountingCategories.js";
 import { accountingListAccountingContacts } from "../funcs/accountingListAccountingContacts.js";
 import { accountingListAccountingCreditmemoes } from "../funcs/accountingListAccountingCreditmemoes.js";
+import { accountingListAccountingExpenses } from "../funcs/accountingListAccountingExpenses.js";
 import { accountingListAccountingInvoices } from "../funcs/accountingListAccountingInvoices.js";
 import { accountingListAccountingJournals } from "../funcs/accountingListAccountingJournals.js";
 import { accountingListAccountingOrders } from "../funcs/accountingListAccountingOrders.js";
@@ -53,6 +56,7 @@ import { accountingPatchAccountingBill } from "../funcs/accountingPatchAccountin
 import { accountingPatchAccountingCategory } from "../funcs/accountingPatchAccountingCategory.js";
 import { accountingPatchAccountingContact } from "../funcs/accountingPatchAccountingContact.js";
 import { accountingPatchAccountingCreditmemo } from "../funcs/accountingPatchAccountingCreditmemo.js";
+import { accountingPatchAccountingExpense } from "../funcs/accountingPatchAccountingExpense.js";
 import { accountingPatchAccountingInvoice } from "../funcs/accountingPatchAccountingInvoice.js";
 import { accountingPatchAccountingJournal } from "../funcs/accountingPatchAccountingJournal.js";
 import { accountingPatchAccountingOrder } from "../funcs/accountingPatchAccountingOrder.js";
@@ -65,6 +69,7 @@ import { accountingRemoveAccountingBill } from "../funcs/accountingRemoveAccount
 import { accountingRemoveAccountingCategory } from "../funcs/accountingRemoveAccountingCategory.js";
 import { accountingRemoveAccountingContact } from "../funcs/accountingRemoveAccountingContact.js";
 import { accountingRemoveAccountingCreditmemo } from "../funcs/accountingRemoveAccountingCreditmemo.js";
+import { accountingRemoveAccountingExpense } from "../funcs/accountingRemoveAccountingExpense.js";
 import { accountingRemoveAccountingInvoice } from "../funcs/accountingRemoveAccountingInvoice.js";
 import { accountingRemoveAccountingJournal } from "../funcs/accountingRemoveAccountingJournal.js";
 import { accountingRemoveAccountingOrder } from "../funcs/accountingRemoveAccountingOrder.js";
@@ -77,6 +82,7 @@ import { accountingUpdateAccountingBill } from "../funcs/accountingUpdateAccount
 import { accountingUpdateAccountingCategory } from "../funcs/accountingUpdateAccountingCategory.js";
 import { accountingUpdateAccountingContact } from "../funcs/accountingUpdateAccountingContact.js";
 import { accountingUpdateAccountingCreditmemo } from "../funcs/accountingUpdateAccountingCreditmemo.js";
+import { accountingUpdateAccountingExpense } from "../funcs/accountingUpdateAccountingExpense.js";
 import { accountingUpdateAccountingInvoice } from "../funcs/accountingUpdateAccountingInvoice.js";
 import { accountingUpdateAccountingJournal } from "../funcs/accountingUpdateAccountingJournal.js";
 import { accountingUpdateAccountingOrder } from "../funcs/accountingUpdateAccountingOrder.js";
@@ -154,6 +160,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCreditmemo> {
     return unwrapAsync(accountingCreateAccountingCreditmemo(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Create an expense
+   */
+  async createAccountingExpense(
+    request: operations.CreateAccountingExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingExpense> {
+    return unwrapAsync(accountingCreateAccountingExpense(
       this,
       request,
       options,
@@ -336,6 +356,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCreditmemo> {
     return unwrapAsync(accountingGetAccountingCreditmemo(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an expense
+   */
+  async getAccountingExpense(
+    request: operations.GetAccountingExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingExpense> {
+    return unwrapAsync(accountingGetAccountingExpense(
       this,
       request,
       options,
@@ -581,6 +615,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * List all expenses
+   */
+  async listAccountingExpenses(
+    request: operations.ListAccountingExpensesRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AccountingExpense>> {
+    return unwrapAsync(accountingListAccountingExpenses(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * List all invoices
    */
   async listAccountingInvoices(
@@ -805,6 +853,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Update an expense
+   */
+  async patchAccountingExpense(
+    request: operations.PatchAccountingExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingExpense> {
+    return unwrapAsync(accountingPatchAccountingExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update an invoice
    */
   async patchAccountingInvoice(
@@ -973,6 +1035,20 @@ export class Accounting extends ClientSDK {
   }
 
   /**
+   * Remove an expense
+   */
+  async removeAccountingExpense(
+    request: operations.RemoveAccountingExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAccountingExpenseResponse | undefined> {
+    return unwrapAsync(accountingRemoveAccountingExpense(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an invoice
    */
   async removeAccountingInvoice(
@@ -1134,6 +1210,20 @@ export class Accounting extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingCreditmemo> {
     return unwrapAsync(accountingUpdateAccountingCreditmemo(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an expense
+   */
+  async updateAccountingExpense(
+    request: operations.UpdateAccountingExpenseRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AccountingExpense> {
+    return unwrapAsync(accountingUpdateAccountingExpense(
       this,
       request,
       options,

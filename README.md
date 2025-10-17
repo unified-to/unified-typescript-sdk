@@ -452,6 +452,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingCreateAccountingContact`](docs/sdks/contact/README.md#createaccountingcontact) - Create a contact
 - [`accountingCreateAccountingCreditmemo`](docs/sdks/accounting/README.md#createaccountingcreditmemo) - Create a creditmemo
 - [`accountingCreateAccountingCreditmemo`](docs/sdks/creditmemo/README.md#createaccountingcreditmemo) - Create a creditmemo
+- [`accountingCreateAccountingExpense`](docs/sdks/accounting/README.md#createaccountingexpense) - Create an expense
+- [`accountingCreateAccountingExpense`](docs/sdks/expense/README.md#createaccountingexpense) - Create an expense
 - [`accountingCreateAccountingInvoice`](docs/sdks/accounting/README.md#createaccountinginvoice) - Create an invoice
 - [`accountingCreateAccountingInvoice`](docs/sdks/invoice/README.md#createaccountinginvoice) - Create an invoice
 - [`accountingCreateAccountingJournal`](docs/sdks/accounting/README.md#createaccountingjournal) - Create a journal
@@ -478,6 +480,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingContact`](docs/sdks/contact/README.md#getaccountingcontact) - Retrieve a contact
 - [`accountingGetAccountingCreditmemo`](docs/sdks/accounting/README.md#getaccountingcreditmemo) - Retrieve a creditmemo
 - [`accountingGetAccountingCreditmemo`](docs/sdks/creditmemo/README.md#getaccountingcreditmemo) - Retrieve a creditmemo
+- [`accountingGetAccountingExpense`](docs/sdks/accounting/README.md#getaccountingexpense) - Retrieve an expense
+- [`accountingGetAccountingExpense`](docs/sdks/expense/README.md#getaccountingexpense) - Retrieve an expense
 - [`accountingGetAccountingInvoice`](docs/sdks/accounting/README.md#getaccountinginvoice) - Retrieve an invoice
 - [`accountingGetAccountingInvoice`](docs/sdks/invoice/README.md#getaccountinginvoice) - Retrieve an invoice
 - [`accountingGetAccountingJournal`](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
@@ -512,6 +516,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingContacts`](docs/sdks/contact/README.md#listaccountingcontacts) - List all contacts
 - [`accountingListAccountingCreditmemoes`](docs/sdks/accounting/README.md#listaccountingcreditmemoes) - List all creditmemoes
 - [`accountingListAccountingCreditmemoes`](docs/sdks/creditmemo/README.md#listaccountingcreditmemoes) - List all creditmemoes
+- [`accountingListAccountingExpenses`](docs/sdks/accounting/README.md#listaccountingexpenses) - List all expenses
+- [`accountingListAccountingExpenses`](docs/sdks/expense/README.md#listaccountingexpenses) - List all expenses
 - [`accountingListAccountingInvoices`](docs/sdks/accounting/README.md#listaccountinginvoices) - List all invoices
 - [`accountingListAccountingInvoices`](docs/sdks/invoice/README.md#listaccountinginvoices) - List all invoices
 - [`accountingListAccountingJournals`](docs/sdks/accounting/README.md#listaccountingjournals) - List all journals
@@ -544,6 +550,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingPatchAccountingContact`](docs/sdks/contact/README.md#patchaccountingcontact) - Update a contact
 - [`accountingPatchAccountingCreditmemo`](docs/sdks/accounting/README.md#patchaccountingcreditmemo) - Update a creditmemo
 - [`accountingPatchAccountingCreditmemo`](docs/sdks/creditmemo/README.md#patchaccountingcreditmemo) - Update a creditmemo
+- [`accountingPatchAccountingExpense`](docs/sdks/accounting/README.md#patchaccountingexpense) - Update an expense
+- [`accountingPatchAccountingExpense`](docs/sdks/expense/README.md#patchaccountingexpense) - Update an expense
 - [`accountingPatchAccountingInvoice`](docs/sdks/accounting/README.md#patchaccountinginvoice) - Update an invoice
 - [`accountingPatchAccountingInvoice`](docs/sdks/invoice/README.md#patchaccountinginvoice) - Update an invoice
 - [`accountingPatchAccountingJournal`](docs/sdks/accounting/README.md#patchaccountingjournal) - Update a journal
@@ -568,6 +576,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingRemoveAccountingContact`](docs/sdks/contact/README.md#removeaccountingcontact) - Remove a contact
 - [`accountingRemoveAccountingCreditmemo`](docs/sdks/accounting/README.md#removeaccountingcreditmemo) - Remove a creditmemo
 - [`accountingRemoveAccountingCreditmemo`](docs/sdks/creditmemo/README.md#removeaccountingcreditmemo) - Remove a creditmemo
+- [`accountingRemoveAccountingExpense`](docs/sdks/accounting/README.md#removeaccountingexpense) - Remove an expense
+- [`accountingRemoveAccountingExpense`](docs/sdks/expense/README.md#removeaccountingexpense) - Remove an expense
 - [`accountingRemoveAccountingInvoice`](docs/sdks/accounting/README.md#removeaccountinginvoice) - Remove an invoice
 - [`accountingRemoveAccountingInvoice`](docs/sdks/invoice/README.md#removeaccountinginvoice) - Remove an invoice
 - [`accountingRemoveAccountingJournal`](docs/sdks/accounting/README.md#removeaccountingjournal) - Remove a journal
@@ -592,6 +602,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingContact`](docs/sdks/contact/README.md#updateaccountingcontact) - Update a contact
 - [`accountingUpdateAccountingCreditmemo`](docs/sdks/accounting/README.md#updateaccountingcreditmemo) - Update a creditmemo
 - [`accountingUpdateAccountingCreditmemo`](docs/sdks/creditmemo/README.md#updateaccountingcreditmemo) - Update a creditmemo
+- [`accountingUpdateAccountingExpense`](docs/sdks/accounting/README.md#updateaccountingexpense) - Update an expense
+- [`accountingUpdateAccountingExpense`](docs/sdks/expense/README.md#updateaccountingexpense) - Update an expense
 - [`accountingUpdateAccountingInvoice`](docs/sdks/accounting/README.md#updateaccountinginvoice) - Update an invoice
 - [`accountingUpdateAccountingInvoice`](docs/sdks/invoice/README.md#updateaccountinginvoice) - Update an invoice
 - [`accountingUpdateAccountingJournal`](docs/sdks/accounting/README.md#updateaccountingjournal) - Update a journal

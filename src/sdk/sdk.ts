@@ -40,6 +40,7 @@ import { Embedding } from "./embedding.js";
 import { Employee } from "./employee.js";
 import { Enrich } from "./enrich.js";
 import { Event } from "./event.js";
+import { Expense } from "./expense.js";
 import { FileT } from "./file.js";
 import { Genai } from "./genai.js";
 import { Group } from "./group.js";
@@ -144,6 +145,11 @@ export class UnifiedTo extends ClientSDK {
   private _creditmemo?: Creditmemo;
   get creditmemo(): Creditmemo {
     return (this._creditmemo ??= new Creditmemo(this._options));
+  }
+
+  private _expense?: Expense;
+  get expense(): Expense {
+    return (this._expense ??= new Expense(this._options));
   }
 
   private _invoice?: Invoice;

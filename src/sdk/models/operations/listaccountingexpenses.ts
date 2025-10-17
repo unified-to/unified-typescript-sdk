@@ -8,23 +8,11 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type ListMessagingMessagesRequest = {
-  /**
-   * The channel ID to filter by
-   */
-  channelId?: string | undefined;
+export type ListAccountingExpensesRequest = {
   /**
    * ID of the connection
    */
   connectionId: string;
-  /**
-   * The end date to filter by
-   */
-  endLe?: string | undefined;
-  /**
-   * Whether to flatten grouped or recurring items into individual entries.
-   */
-  expand?: boolean | undefined;
   /**
    * Comma-delimited fields to return
    */
@@ -32,10 +20,6 @@ export type ListMessagingMessagesRequest = {
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  /**
-   * The parent ID to filter by
-   */
-  parentId?: string | undefined;
   /**
    * Query string to search. eg. email address or name
    */
@@ -45,10 +29,6 @@ export type ListMessagingMessagesRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
-  /**
-   * The start date to filter by
-   */
-  startGte?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -60,85 +40,62 @@ export type ListMessagingMessagesRequest = {
 };
 
 /** @internal */
-export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
-  ListMessagingMessagesRequest,
+export const ListAccountingExpensesRequest$inboundSchema: z.ZodType<
+  ListAccountingExpensesRequest,
   z.ZodTypeDef,
   unknown
 > = z.object({
-  channel_id: z.string().optional(),
   connection_id: z.string(),
-  end_le: z.string().optional(),
-  expand: z.boolean().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
-  parent_id: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  start_gte: z.string().optional(),
   updated_gte: z.string().optional(),
   user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    "channel_id": "channelId",
     "connection_id": "connectionId",
-    "end_le": "endLe",
-    "parent_id": "parentId",
-    "start_gte": "startGte",
     "updated_gte": "updatedGte",
     "user_id": "userId",
   });
 });
 
 /** @internal */
-export type ListMessagingMessagesRequest$Outbound = {
-  channel_id?: string | undefined;
+export type ListAccountingExpensesRequest$Outbound = {
   connection_id: string;
-  end_le?: string | undefined;
-  expand?: boolean | undefined;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
-  start_gte?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
 };
 
 /** @internal */
-export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
-  ListMessagingMessagesRequest$Outbound,
+export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
+  ListAccountingExpensesRequest$Outbound,
   z.ZodTypeDef,
-  ListMessagingMessagesRequest
+  ListAccountingExpensesRequest
 > = z.object({
-  channelId: z.string().optional(),
   connectionId: z.string(),
-  endLe: z.string().optional(),
-  expand: z.boolean().optional(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
-  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
-  startGte: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
-    channelId: "channel_id",
     connectionId: "connection_id",
-    endLe: "end_le",
-    parentId: "parent_id",
-    startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",
   });
@@ -148,31 +105,31 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
  * @internal
  * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
  */
-export namespace ListMessagingMessagesRequest$ {
-  /** @deprecated use `ListMessagingMessagesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListMessagingMessagesRequest$inboundSchema;
-  /** @deprecated use `ListMessagingMessagesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListMessagingMessagesRequest$outboundSchema;
-  /** @deprecated use `ListMessagingMessagesRequest$Outbound` instead. */
-  export type Outbound = ListMessagingMessagesRequest$Outbound;
+export namespace ListAccountingExpensesRequest$ {
+  /** @deprecated use `ListAccountingExpensesRequest$inboundSchema` instead. */
+  export const inboundSchema = ListAccountingExpensesRequest$inboundSchema;
+  /** @deprecated use `ListAccountingExpensesRequest$outboundSchema` instead. */
+  export const outboundSchema = ListAccountingExpensesRequest$outboundSchema;
+  /** @deprecated use `ListAccountingExpensesRequest$Outbound` instead. */
+  export type Outbound = ListAccountingExpensesRequest$Outbound;
 }
 
-export function listMessagingMessagesRequestToJSON(
-  listMessagingMessagesRequest: ListMessagingMessagesRequest,
+export function listAccountingExpensesRequestToJSON(
+  listAccountingExpensesRequest: ListAccountingExpensesRequest,
 ): string {
   return JSON.stringify(
-    ListMessagingMessagesRequest$outboundSchema.parse(
-      listMessagingMessagesRequest,
+    ListAccountingExpensesRequest$outboundSchema.parse(
+      listAccountingExpensesRequest,
     ),
   );
 }
 
-export function listMessagingMessagesRequestFromJSON(
+export function listAccountingExpensesRequestFromJSON(
   jsonString: string,
-): SafeParseResult<ListMessagingMessagesRequest, SDKValidationError> {
+): SafeParseResult<ListAccountingExpensesRequest, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => ListMessagingMessagesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListMessagingMessagesRequest' from JSON`,
+    (x) => ListAccountingExpensesRequest$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'ListAccountingExpensesRequest' from JSON`,
   );
 }

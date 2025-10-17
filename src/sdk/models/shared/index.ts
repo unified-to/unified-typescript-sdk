@@ -13,6 +13,7 @@ export * from "./accountingcontact.js";
 export * from "./accountingcontactpaymentmethod.js";
 export * from "./accountingcreditmemo.js";
 export * from "./accountingemail.js";
+export * from "./accountingexpense.js";
 export * from "./accountinginvoice.js";
 export * from "./accountingjournal.js";
 export * from "./accountingjournallineitem.js";

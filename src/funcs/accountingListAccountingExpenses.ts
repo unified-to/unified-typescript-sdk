@@ -27,15 +27,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all messages
+ * List all expenses
  */
-export function messagingListMessagingMessages(
+export function accountingListAccountingExpenses(
   client: UnifiedToCore,
-  request: operations.ListMessagingMessagesRequest,
+  request: operations.ListAccountingExpensesRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.MessagingMessage>,
+    Array<shared.AccountingExpense>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +55,12 @@ export function messagingListMessagingMessages(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListMessagingMessagesRequest,
+  request: operations.ListAccountingExpensesRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.MessagingMessage>,
+      Array<shared.AccountingExpense>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ListMessagingMessagesRequest$outboundSchema.parse(value),
+      operations.ListAccountingExpensesRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -92,21 +92,16 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/messaging/{connection_id}/message")(pathParams);
+  const path = pathToFunc("/accounting/{connection_id}/expense")(pathParams);
 
   const query = encodeFormQuery({
-    "channel_id": payload.channel_id,
-    "end_le": payload.end_le,
-    "expand": payload.expand,
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
-    "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
     "sort": payload.sort,
-    "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
     "user_id": payload.user_id,
   });
@@ -121,7 +116,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listMessagingMessages",
+    operationID: "listAccountingExpenses",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -161,7 +156,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.MessagingMessage>,
+    Array<shared.AccountingExpense>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -171,7 +166,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.MessagingMessage$inboundSchema)),
+    M.json(200, z.array(shared.AccountingExpense$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

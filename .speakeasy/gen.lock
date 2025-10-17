@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: a340dff9ff9a611e83b0ac8c9df95754
+  docChecksum: 5e991f57774a394989eb351c469cc219
   docVersion: "1.0"
-  speakeasyVersion: 1.636.3
-  generationVersion: 2.723.11
-  releaseVersion: 2.75.3
-  configChecksum: ae49b4cb640b1db61cef858a061e1fe3
+  speakeasyVersion: 1.637.0
+  generationVersion: 2.727.4
+  releaseVersion: 2.76.0
+  configChecksum: 3e3a65a681c4c4f78d26d5b14c570b45
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.21.26
+    core: 3.22.0
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -43,6 +43,7 @@ generatedFiles:
   - docs/sdk/models/operations/createaccountingcategoryrequest.md
   - docs/sdk/models/operations/createaccountingcontactrequest.md
   - docs/sdk/models/operations/createaccountingcreditmemorequest.md
+  - docs/sdk/models/operations/createaccountingexpenserequest.md
   - docs/sdk/models/operations/createaccountinginvoicerequest.md
   - docs/sdk/models/operations/createaccountingjournalrequest.md
   - docs/sdk/models/operations/createaccountingorderrequest.md
@@ -126,6 +127,7 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingcategoryrequest.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
   - docs/sdk/models/operations/getaccountingcreditmemorequest.md
+  - docs/sdk/models/operations/getaccountingexpenserequest.md
   - docs/sdk/models/operations/getaccountinginvoicerequest.md
   - docs/sdk/models/operations/getaccountingjournalrequest.md
   - docs/sdk/models/operations/getaccountingorderrequest.md
@@ -219,6 +221,7 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingcategoriesrequest.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountingcreditmemoesrequest.md
+  - docs/sdk/models/operations/listaccountingexpensesrequest.md
   - docs/sdk/models/operations/listaccountinginvoicesrequest.md
   - docs/sdk/models/operations/listaccountingjournalsrequest.md
   - docs/sdk/models/operations/listaccountingordersrequest.md
@@ -320,6 +323,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchaccountingcategoryrequest.md
   - docs/sdk/models/operations/patchaccountingcontactrequest.md
   - docs/sdk/models/operations/patchaccountingcreditmemorequest.md
+  - docs/sdk/models/operations/patchaccountingexpenserequest.md
   - docs/sdk/models/operations/patchaccountinginvoicerequest.md
   - docs/sdk/models/operations/patchaccountingjournalrequest.md
   - docs/sdk/models/operations/patchaccountingorderrequest.md
@@ -409,6 +413,8 @@ generatedFiles:
   - docs/sdk/models/operations/removeaccountingcontactresponse.md
   - docs/sdk/models/operations/removeaccountingcreditmemorequest.md
   - docs/sdk/models/operations/removeaccountingcreditmemoresponse.md
+  - docs/sdk/models/operations/removeaccountingexpenserequest.md
+  - docs/sdk/models/operations/removeaccountingexpenseresponse.md
   - docs/sdk/models/operations/removeaccountinginvoicerequest.md
   - docs/sdk/models/operations/removeaccountinginvoiceresponse.md
   - docs/sdk/models/operations/removeaccountingjournalrequest.md
@@ -557,6 +563,7 @@ generatedFiles:
   - docs/sdk/models/operations/updateaccountingcategoryrequest.md
   - docs/sdk/models/operations/updateaccountingcontactrequest.md
   - docs/sdk/models/operations/updateaccountingcreditmemorequest.md
+  - docs/sdk/models/operations/updateaccountingexpenserequest.md
   - docs/sdk/models/operations/updateaccountinginvoicerequest.md
   - docs/sdk/models/operations/updateaccountingjournalrequest.md
   - docs/sdk/models/operations/updateaccountingorderrequest.md
@@ -651,6 +658,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingcreditmemostatus.md
   - docs/sdk/models/shared/accountingemail.md
   - docs/sdk/models/shared/accountingemailtype.md
+  - docs/sdk/models/shared/accountingexpense.md
   - docs/sdk/models/shared/accountinginvoice.md
   - docs/sdk/models/shared/accountinginvoicepaymentcollectionmethod.md
   - docs/sdk/models/shared/accountinginvoicestatus.md
@@ -1091,6 +1099,7 @@ generatedFiles:
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
   - docs/sdks/event/README.md
+  - docs/sdks/expense/README.md
   - docs/sdks/file/README.md
   - docs/sdks/genai/README.md
   - docs/sdks/group/README.md
@@ -1173,6 +1182,7 @@ generatedFiles:
   - src/funcs/accountingCreateAccountingCategory.ts
   - src/funcs/accountingCreateAccountingContact.ts
   - src/funcs/accountingCreateAccountingCreditmemo.ts
+  - src/funcs/accountingCreateAccountingExpense.ts
   - src/funcs/accountingCreateAccountingInvoice.ts
   - src/funcs/accountingCreateAccountingJournal.ts
   - src/funcs/accountingCreateAccountingOrder.ts
@@ -1186,6 +1196,7 @@ generatedFiles:
   - src/funcs/accountingGetAccountingCategory.ts
   - src/funcs/accountingGetAccountingContact.ts
   - src/funcs/accountingGetAccountingCreditmemo.ts
+  - src/funcs/accountingGetAccountingExpense.ts
   - src/funcs/accountingGetAccountingInvoice.ts
   - src/funcs/accountingGetAccountingJournal.ts
   - src/funcs/accountingGetAccountingOrder.ts
@@ -1203,6 +1214,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingCategories.ts
   - src/funcs/accountingListAccountingContacts.ts
   - src/funcs/accountingListAccountingCreditmemoes.ts
+  - src/funcs/accountingListAccountingExpenses.ts
   - src/funcs/accountingListAccountingInvoices.ts
   - src/funcs/accountingListAccountingJournals.ts
   - src/funcs/accountingListAccountingOrders.ts
@@ -1219,6 +1231,7 @@ generatedFiles:
   - src/funcs/accountingPatchAccountingCategory.ts
   - src/funcs/accountingPatchAccountingContact.ts
   - src/funcs/accountingPatchAccountingCreditmemo.ts
+  - src/funcs/accountingPatchAccountingExpense.ts
   - src/funcs/accountingPatchAccountingInvoice.ts
   - src/funcs/accountingPatchAccountingJournal.ts
   - src/funcs/accountingPatchAccountingOrder.ts
@@ -1231,6 +1244,7 @@ generatedFiles:
   - src/funcs/accountingRemoveAccountingCategory.ts
   - src/funcs/accountingRemoveAccountingContact.ts
   - src/funcs/accountingRemoveAccountingCreditmemo.ts
+  - src/funcs/accountingRemoveAccountingExpense.ts
   - src/funcs/accountingRemoveAccountingInvoice.ts
   - src/funcs/accountingRemoveAccountingJournal.ts
   - src/funcs/accountingRemoveAccountingOrder.ts
@@ -1243,6 +1257,7 @@ generatedFiles:
   - src/funcs/accountingUpdateAccountingCategory.ts
   - src/funcs/accountingUpdateAccountingContact.ts
   - src/funcs/accountingUpdateAccountingCreditmemo.ts
+  - src/funcs/accountingUpdateAccountingExpense.ts
   - src/funcs/accountingUpdateAccountingInvoice.ts
   - src/funcs/accountingUpdateAccountingJournal.ts
   - src/funcs/accountingUpdateAccountingOrder.ts
@@ -1727,6 +1742,7 @@ generatedFiles:
   - src/sdk/employee.ts
   - src/sdk/enrich.ts
   - src/sdk/event.ts
+  - src/sdk/expense.ts
   - src/sdk/file.ts
   - src/sdk/genai.ts
   - src/sdk/group.ts
@@ -1765,6 +1781,7 @@ generatedFiles:
   - src/sdk/models/operations/createaccountingcategory.ts
   - src/sdk/models/operations/createaccountingcontact.ts
   - src/sdk/models/operations/createaccountingcreditmemo.ts
+  - src/sdk/models/operations/createaccountingexpense.ts
   - src/sdk/models/operations/createaccountinginvoice.ts
   - src/sdk/models/operations/createaccountingjournal.ts
   - src/sdk/models/operations/createaccountingorder.ts
@@ -1844,6 +1861,7 @@ generatedFiles:
   - src/sdk/models/operations/getaccountingcategory.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountingcreditmemo.ts
+  - src/sdk/models/operations/getaccountingexpense.ts
   - src/sdk/models/operations/getaccountinginvoice.ts
   - src/sdk/models/operations/getaccountingjournal.ts
   - src/sdk/models/operations/getaccountingorder.ts
@@ -1938,6 +1956,7 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingcategories.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountingcreditmemoes.ts
+  - src/sdk/models/operations/listaccountingexpenses.ts
   - src/sdk/models/operations/listaccountinginvoices.ts
   - src/sdk/models/operations/listaccountingjournals.ts
   - src/sdk/models/operations/listaccountingorders.ts
@@ -2036,6 +2055,7 @@ generatedFiles:
   - src/sdk/models/operations/patchaccountingcategory.ts
   - src/sdk/models/operations/patchaccountingcontact.ts
   - src/sdk/models/operations/patchaccountingcreditmemo.ts
+  - src/sdk/models/operations/patchaccountingexpense.ts
   - src/sdk/models/operations/patchaccountinginvoice.ts
   - src/sdk/models/operations/patchaccountingjournal.ts
   - src/sdk/models/operations/patchaccountingorder.ts
@@ -2114,6 +2134,7 @@ generatedFiles:
   - src/sdk/models/operations/removeaccountingcategory.ts
   - src/sdk/models/operations/removeaccountingcontact.ts
   - src/sdk/models/operations/removeaccountingcreditmemo.ts
+  - src/sdk/models/operations/removeaccountingexpense.ts
   - src/sdk/models/operations/removeaccountinginvoice.ts
   - src/sdk/models/operations/removeaccountingjournal.ts
   - src/sdk/models/operations/removeaccountingorder.ts
@@ -2190,6 +2211,7 @@ generatedFiles:
   - src/sdk/models/operations/updateaccountingcategory.ts
   - src/sdk/models/operations/updateaccountingcontact.ts
   - src/sdk/models/operations/updateaccountingcreditmemo.ts
+  - src/sdk/models/operations/updateaccountingexpense.ts
   - src/sdk/models/operations/updateaccountinginvoice.ts
   - src/sdk/models/operations/updateaccountingjournal.ts
   - src/sdk/models/operations/updateaccountingorder.ts
@@ -2274,6 +2296,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
   - src/sdk/models/shared/accountingcreditmemo.ts
   - src/sdk/models/shared/accountingemail.ts
+  - src/sdk/models/shared/accountingexpense.ts
   - src/sdk/models/shared/accountinginvoice.ts
   - src/sdk/models/shared/accountingjournal.ts
   - src/sdk/models/shared/accountingjournallineitem.ts
@@ -7137,6 +7160,61 @@ examples:
       responses:
         "200":
           application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
+  createAccountingExpense:
+    speakeasy-default-create-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingExpense:
+    speakeasy-default-get-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingExpenses:
+    speakeasy-default-list-accounting-expenses:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingExpense:
+    speakeasy-default-patch-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingExpense:
+    speakeasy-default-remove-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingExpense:
+    speakeasy-default-update-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.ats.createAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `unified-to.ats.getAtsJob()`:  `response` **Changed**\n* `unified-to.ats.listAtsJobs()`:  `response.[]` **Changed**\n* `unified-to.ats.patchAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `unified-to.ats.updateAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `unified-to.job.createAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `unified-to.job.getAtsJob()`:  `response` **Changed**\n* `unified-to.job.listAtsJobs()`:  `response.[]` **Changed**\n* `unified-to.job.patchAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `unified-to.job.updateAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.accounting.createAccountingExpense()`: **Added**\n* `unified-to.accounting.getAccountingExpense()`: **Added**\n* `unified-to.accounting.listAccountingExpenses()`: **Added**\n* `unified-to.accounting.patchAccountingExpense()`: **Added**\n* `unified-to.accounting.removeAccountingExpense()`: **Added**\n* `unified-to.accounting.updateAccountingExpense()`: **Added**\n* `unified-to.expense.createAccountingExpense()`: **Added**\n* `unified-to.expense.getAccountingExpense()`: **Added**\n* `unified-to.expense.listAccountingExpenses()`: **Added**\n* `unified-to.expense.patchAccountingExpense()`: **Added**\n* `unified-to.expense.removeAccountingExpense()`: **Added**\n* `unified-to.expense.updateAccountingExpense()`: **Added**\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.userId` **Added**\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.userId` **Added**\n"
