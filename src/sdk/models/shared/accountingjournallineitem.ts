@@ -10,11 +10,14 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AccountingJournalLineitem = {
   accountId?: string | undefined;
+  categoryIds?: Array<string> | undefined;
   contactId?: string | undefined;
   description?: string | undefined;
+  groupId?: string | undefined;
   id?: string | undefined;
   invoiceId?: string | undefined;
   paymentId?: string | undefined;
+  projectId?: string | undefined;
   taxAmount?: number | undefined;
   totalAmount?: number | undefined;
 };
@@ -26,19 +29,25 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   account_id: z.string().optional(),
+  category_ids: z.array(z.string()).optional(),
   contact_id: z.string().optional(),
   description: z.string().optional(),
+  group_id: z.string().optional(),
   id: z.string().optional(),
   invoice_id: z.string().optional(),
   payment_id: z.string().optional(),
+  project_id: z.string().optional(),
   tax_amount: z.number().optional(),
   total_amount: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     "account_id": "accountId",
+    "category_ids": "categoryIds",
     "contact_id": "contactId",
+    "group_id": "groupId",
     "invoice_id": "invoiceId",
     "payment_id": "paymentId",
+    "project_id": "projectId",
     "tax_amount": "taxAmount",
     "total_amount": "totalAmount",
   });
@@ -47,11 +56,14 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
 /** @internal */
 export type AccountingJournalLineitem$Outbound = {
   account_id?: string | undefined;
+  category_ids?: Array<string> | undefined;
   contact_id?: string | undefined;
   description?: string | undefined;
+  group_id?: string | undefined;
   id?: string | undefined;
   invoice_id?: string | undefined;
   payment_id?: string | undefined;
+  project_id?: string | undefined;
   tax_amount?: number | undefined;
   total_amount?: number | undefined;
 };
@@ -63,19 +75,25 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   AccountingJournalLineitem
 > = z.object({
   accountId: z.string().optional(),
+  categoryIds: z.array(z.string()).optional(),
   contactId: z.string().optional(),
   description: z.string().optional(),
+  groupId: z.string().optional(),
   id: z.string().optional(),
   invoiceId: z.string().optional(),
   paymentId: z.string().optional(),
+  projectId: z.string().optional(),
   taxAmount: z.number().optional(),
   totalAmount: z.number().optional(),
 }).transform((v) => {
   return remap$(v, {
     accountId: "account_id",
+    categoryIds: "category_ids",
     contactId: "contact_id",
+    groupId: "group_id",
     invoiceId: "invoice_id",
     paymentId: "payment_id",
+    projectId: "project_id",
     taxAmount: "tax_amount",
     totalAmount: "total_amount",
   });

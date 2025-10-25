@@ -83,7 +83,7 @@ export const UpdateUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  Headers: z.record(z.array(z.string())),
+  Headers: z.record(z.array(z.string())).default({}),
 }).transform((v) => {
   return remap$(v, {
     "Headers": "headers",

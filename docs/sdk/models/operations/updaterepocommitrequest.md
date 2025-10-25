@@ -8,7 +8,6 @@ import { UpdateRepoCommitRequest } from "@unified-api/typescript-sdk/sdk/models/
 let value: UpdateRepoCommitRequest = {
   repoCommit: {
     repoId: "<id>",
-    userId: "<id>",
   },
   connectionId: "<id>",
   id: "<id>",

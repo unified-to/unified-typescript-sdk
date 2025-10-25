@@ -141,7 +141,6 @@ async function run() {
   const result = await unifiedTo.repo.createRepoCommit({
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
   });
@@ -172,7 +171,6 @@ async function run() {
   const res = await repoCreateRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
   });
@@ -1334,7 +1332,6 @@ async function run() {
   const result = await unifiedTo.repo.patchRepoCommit({
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -1366,7 +1363,6 @@ async function run() {
   const res = await repoPatchRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2150,7 +2146,6 @@ async function run() {
   const result = await unifiedTo.repo.updateRepoCommit({
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
     id: "<id>",
@@ -2182,7 +2177,6 @@ async function run() {
   const res = await repoUpdateRepoCommit(unifiedTo, {
     repoCommit: {
       repoId: "<id>",
-      userId: "<id>",
     },
     connectionId: "<id>",
     id: "<id>",

@@ -16,7 +16,7 @@ export type RepoCommit = {
   raw?: { [k: string]: any } | undefined;
   repoId: string;
   updatedAt?: Date | undefined;
-  userId: string;
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -34,7 +34,7 @@ export const RepoCommit$inboundSchema: z.ZodType<
   repo_id: z.string(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
-  user_id: z.string(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "branch_id": "branchId",
@@ -54,7 +54,7 @@ export type RepoCommit$Outbound = {
   raw?: { [k: string]: any } | undefined;
   repo_id: string;
   updated_at?: string | undefined;
-  user_id: string;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -70,7 +70,7 @@ export const RepoCommit$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   repoId: z.string(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     branchId: "branch_id",
