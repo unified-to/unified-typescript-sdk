@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 018de8bfc3ab59a73a1c069f241e60a4
+  docChecksum: 488263b38991bc1af62a3a84968ffb52
   docVersion: "1.0"
-  speakeasyVersion: 1.639.3
-  generationVersion: 2.730.5
-  releaseVersion: 2.78.0
-  configChecksum: f0570a7d72bbbd2e4732b05db9ced656
+  speakeasyVersion: 1.642.2
+  generationVersion: 2.731.6
+  releaseVersion: 2.78.1
+  configChecksum: 1e903dc48df46b731bfa3d035108daa9
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -124,6 +124,7 @@ generatedFiles:
   - docs/sdk/models/operations/getaccountingaccountrequest.md
   - docs/sdk/models/operations/getaccountingbalancesheetrequest.md
   - docs/sdk/models/operations/getaccountingbillrequest.md
+  - docs/sdk/models/operations/getaccountingcashflowrequest.md
   - docs/sdk/models/operations/getaccountingcategoryrequest.md
   - docs/sdk/models/operations/getaccountingcontactrequest.md
   - docs/sdk/models/operations/getaccountingcreditmemorequest.md
@@ -218,6 +219,7 @@ generatedFiles:
   - docs/sdk/models/operations/listaccountingaccountsrequest.md
   - docs/sdk/models/operations/listaccountingbalancesheetsrequest.md
   - docs/sdk/models/operations/listaccountingbillsrequest.md
+  - docs/sdk/models/operations/listaccountingcashflowsrequest.md
   - docs/sdk/models/operations/listaccountingcategoriesrequest.md
   - docs/sdk/models/operations/listaccountingcontactsrequest.md
   - docs/sdk/models/operations/listaccountingcreditmemoesrequest.md
@@ -649,6 +651,9 @@ generatedFiles:
   - docs/sdk/models/shared/accountingbalancesheetitem.md
   - docs/sdk/models/shared/accountingbill.md
   - docs/sdk/models/shared/accountingbillstatus.md
+  - docs/sdk/models/shared/accountingcashflow.md
+  - docs/sdk/models/shared/accountingcashflowitem.md
+  - docs/sdk/models/shared/accountingcashflowsection.md
   - docs/sdk/models/shared/accountingcategory.md
   - docs/sdk/models/shared/accountingcontact.md
   - docs/sdk/models/shared/accountingcontactpaymentmethod.md
@@ -909,6 +914,7 @@ generatedFiles:
   - docs/sdk/models/shared/priority.md
   - docs/sdk/models/shared/profilegender.md
   - docs/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.md
+  - docs/sdk/models/shared/propertyaccountingcashflowitemsubitems.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorderbillingaddress.md
@@ -1077,6 +1083,7 @@ generatedFiles:
   - docs/sdks/calendar/README.md
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
+  - docs/sdks/cashflow/README.md
   - docs/sdks/category/README.md
   - docs/sdks/change/README.md
   - docs/sdks/channel/README.md
@@ -1193,6 +1200,7 @@ generatedFiles:
   - src/funcs/accountingGetAccountingAccount.ts
   - src/funcs/accountingGetAccountingBalancesheet.ts
   - src/funcs/accountingGetAccountingBill.ts
+  - src/funcs/accountingGetAccountingCashflow.ts
   - src/funcs/accountingGetAccountingCategory.ts
   - src/funcs/accountingGetAccountingContact.ts
   - src/funcs/accountingGetAccountingCreditmemo.ts
@@ -1211,6 +1219,7 @@ generatedFiles:
   - src/funcs/accountingListAccountingAccounts.ts
   - src/funcs/accountingListAccountingBalancesheets.ts
   - src/funcs/accountingListAccountingBills.ts
+  - src/funcs/accountingListAccountingCashflows.ts
   - src/funcs/accountingListAccountingCategories.ts
   - src/funcs/accountingListAccountingContacts.ts
   - src/funcs/accountingListAccountingCreditmemoes.ts
@@ -1720,6 +1729,7 @@ generatedFiles:
   - src/sdk/calendar.ts
   - src/sdk/call.ts
   - src/sdk/candidate.ts
+  - src/sdk/cashflow.ts
   - src/sdk/category.ts
   - src/sdk/change.ts
   - src/sdk/channel.ts
@@ -1858,6 +1868,7 @@ generatedFiles:
   - src/sdk/models/operations/getaccountingaccount.ts
   - src/sdk/models/operations/getaccountingbalancesheet.ts
   - src/sdk/models/operations/getaccountingbill.ts
+  - src/sdk/models/operations/getaccountingcashflow.ts
   - src/sdk/models/operations/getaccountingcategory.ts
   - src/sdk/models/operations/getaccountingcontact.ts
   - src/sdk/models/operations/getaccountingcreditmemo.ts
@@ -1953,6 +1964,7 @@ generatedFiles:
   - src/sdk/models/operations/listaccountingaccounts.ts
   - src/sdk/models/operations/listaccountingbalancesheets.ts
   - src/sdk/models/operations/listaccountingbills.ts
+  - src/sdk/models/operations/listaccountingcashflows.ts
   - src/sdk/models/operations/listaccountingcategories.ts
   - src/sdk/models/operations/listaccountingcontacts.ts
   - src/sdk/models/operations/listaccountingcreditmemoes.ts
@@ -2291,6 +2303,9 @@ generatedFiles:
   - src/sdk/models/shared/accountingbalancesheet.ts
   - src/sdk/models/shared/accountingbalancesheetitem.ts
   - src/sdk/models/shared/accountingbill.ts
+  - src/sdk/models/shared/accountingcashflow.ts
+  - src/sdk/models/shared/accountingcashflowitem.ts
+  - src/sdk/models/shared/accountingcashflowsection.ts
   - src/sdk/models/shared/accountingcategory.ts
   - src/sdk/models/shared/accountingcontact.ts
   - src/sdk/models/shared/accountingcontactpaymentmethod.ts
@@ -2431,6 +2446,7 @@ generatedFiles:
   - src/sdk/models/shared/paymentrefund.ts
   - src/sdk/models/shared/paymentsubscription.ts
   - src/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.ts
+  - src/sdk/models/shared/propertyaccountingcashflowitemsubitems.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
@@ -7215,6 +7231,28 @@ examples:
       responses:
         "200":
           application/json: {}
+  getAccountingCashflow:
+    speakeasy-default-get-accounting-cashflow:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingCashflows:
+    speakeasy-default-list-accounting-cashflows:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.accounting.createAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.accounting.getAccountingJournal()`:  `response.lineitems.[]` **Changed**\n* `unified-to.accounting.listAccountingJournals()`:  `response.[].lineitems.[]` **Changed**\n* `unified-to.accounting.patchAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.accounting.updateAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.journal.createAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.journal.getAccountingJournal()`:  `response.lineitems.[]` **Changed**\n* `unified-to.journal.listAccountingJournals()`:  `response.[].lineitems.[]` **Changed**\n* `unified-to.journal.patchAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.journal.updateAccountingJournal()`: \n  *  `request.accountingJournal.lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `unified-to.repo.createRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n* `unified-to.repo.getRepoCommit()`:  `response.user_id` **Changed**\n* `unified-to.repo.listRepoCommits()`:  `response.[].userId` **Changed**\n* `unified-to.repo.patchRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n* `unified-to.repo.updateRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n* `unified-to.commit.createRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n* `unified-to.commit.getRepoCommit()`:  `response.user_id` **Changed**\n* `unified-to.commit.listRepoCommits()`:  `response.[].userId` **Changed**\n* `unified-to.commit.patchRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n* `unified-to.commit.updateRepoCommit()`: \n  *  `request.repoCommit.userId` **Changed**\n  *  `response.user_id` **Changed**\n"
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `unified-to.accounting.getAccountingCashflow()`: **Added**
+  * `unified-to.accounting.listAccountingCashflows()`: **Added**
+  * `unified-to.cashflow.getAccountingCashflow()`: **Added**
+  * `unified-to.cashflow.listAccountingCashflows()`: **Added**

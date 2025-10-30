@@ -47,6 +47,8 @@ export const PropertyConnectionPermissions = {
   AccountingCategoryWrite: "accounting_category_write",
   PaymentPaymentRead: "payment_payment_read",
   PaymentPaymentWrite: "payment_payment_write",
+  AccountingCashflowRead: "accounting_cashflow_read",
+  AccountingCashflowWrite: "accounting_cashflow_write",
   PaymentPayoutRead: "payment_payout_read",
   PaymentRefundRead: "payment_refund_read",
   PaymentLinkRead: "payment_link_read",

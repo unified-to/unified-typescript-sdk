@@ -1,21 +1,21 @@
-speakeasyVersion: 1.639.3
+speakeasyVersion: 1.642.2
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:10e098988b1b5fdda6e51ce97f961d11830be219121b89401e113f4ea20ee62a
-        sourceBlobDigest: sha256:191a671ff090d2417f6bd61c0e3aef66793fa85d46dae4c857f844fc9d2411e9
+        sourceRevisionDigest: sha256:d0ae4d23b07c5c3e51f64d60748afe93efce784b176818375059a42508ccc4bb
+        sourceBlobDigest: sha256:6b0a453b22b4a8a0526b858c94facf49fbd7bbd0bf73e2ca83d4ca6c1811ba82
         tags:
             - latest
-            - speakeasy-sdk-regen-1761351106
+            - speakeasy-sdk-regen-1761783166
             - "1.0"
 targets:
     typescript-target:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:10e098988b1b5fdda6e51ce97f961d11830be219121b89401e113f4ea20ee62a
-        sourceBlobDigest: sha256:191a671ff090d2417f6bd61c0e3aef66793fa85d46dae4c857f844fc9d2411e9
+        sourceRevisionDigest: sha256:d0ae4d23b07c5c3e51f64d60748afe93efce784b176818375059a42508ccc4bb
+        sourceBlobDigest: sha256:6b0a453b22b4a8a0526b858c94facf49fbd7bbd0bf73e2ca83d4ca6c1811ba82
         codeSamplesNamespace: my-source-typescript-code-samples
-        codeSamplesRevisionDigest: sha256:338dc69986674b91a7b5c933c3fb8abd4d9b7698c2700390d21ed40ab858919c
+        codeSamplesRevisionDigest: sha256:6f8d6a153be3f1d6cc6d6fb0125d2ec65703bf67e453c42bffd246eb7963843e
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -23,7 +23,6 @@ workflow:
         my-source:
             inputs:
                 - location: https://api.unified.to/openapi.json
-                  authSecret: $openapi_doc_auth_token
             registry:
                 location: registry.speakeasyapi.dev/unified/unified/my-source
     targets:

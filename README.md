@@ -474,6 +474,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingGetAccountingBalancesheet`](docs/sdks/balancesheet/README.md#getaccountingbalancesheet) - Retrieve a balancesheet
 - [`accountingGetAccountingBill`](docs/sdks/accounting/README.md#getaccountingbill) - Retrieve a bill
 - [`accountingGetAccountingBill`](docs/sdks/bill/README.md#getaccountingbill) - Retrieve a bill
+- [`accountingGetAccountingCashflow`](docs/sdks/accounting/README.md#getaccountingcashflow) - Retrieve a cashflow
+- [`accountingGetAccountingCashflow`](docs/sdks/cashflow/README.md#getaccountingcashflow) - Retrieve a cashflow
 - [`accountingGetAccountingCategory`](docs/sdks/accounting/README.md#getaccountingcategory) - Retrieve a category
 - [`accountingGetAccountingCategory`](docs/sdks/category/README.md#getaccountingcategory) - Retrieve a category
 - [`accountingGetAccountingContact`](docs/sdks/accounting/README.md#getaccountingcontact) - Retrieve a contact
@@ -510,6 +512,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingListAccountingBalancesheets`](docs/sdks/balancesheet/README.md#listaccountingbalancesheets) - List all balancesheets
 - [`accountingListAccountingBills`](docs/sdks/accounting/README.md#listaccountingbills) - List all bills
 - [`accountingListAccountingBills`](docs/sdks/bill/README.md#listaccountingbills) - List all bills
+- [`accountingListAccountingCashflows`](docs/sdks/accounting/README.md#listaccountingcashflows) - List all cashflows
+- [`accountingListAccountingCashflows`](docs/sdks/cashflow/README.md#listaccountingcashflows) - List all cashflows
 - [`accountingListAccountingCategories`](docs/sdks/accounting/README.md#listaccountingcategories) - List all categories
 - [`accountingListAccountingCategories`](docs/sdks/category/README.md#listaccountingcategories) - List all categories
 - [`accountingListAccountingContacts`](docs/sdks/accounting/README.md#listaccountingcontacts) - List all contacts
