@@ -89,7 +89,7 @@ You can override the default server globally by passing a server index to the `s
 import { UnifiedTo } from "@unified-api/typescript-sdk";
 
 const unifiedTo = new UnifiedTo({
-  serverIdx: 2,
+  serverIdx: 0,
   security: {
     jwt: "<YOUR_API_KEY_HERE>",
   },

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 488263b38991bc1af62a3a84968ffb52
+  docChecksum: 2cae2cbd3b5100db6145386c7734d017
   docVersion: "1.0"
-  speakeasyVersion: 1.642.2
-  generationVersion: 2.731.6
-  releaseVersion: 2.78.1
-  configChecksum: 1e903dc48df46b731bfa3d035108daa9
+  speakeasyVersion: 1.645.1
+  generationVersion: 2.735.1
+  releaseVersion: 2.79.0
+  configChecksum: 6ce1595a3ad017890074ed2d843c9052
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,14 +16,14 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.24.1
+    core: 3.24.2
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
     envVarSecurityUsage: 0.1.2
     globalSecurity: 2.82.14
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.5
+    globalServerURLs: 2.83.0
     openEnums: 0.1.1
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -7250,9 +7250,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `unified-to.accounting.getAccountingCashflow()`: **Added**
-  * `unified-to.accounting.listAccountingCashflows()`: **Added**
-  * `unified-to.cashflow.getAccountingCashflow()`: **Added**
-  * `unified-to.cashflow.listAccountingCashflows()`: **Added**
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.calendar.createCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.calendar.getCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.calendar.listCalendarEvents()`:  `response.[].recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.calendar.patchCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.calendar.updateCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.event.createCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.event.getCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.event.listCalendarEvents()`:  `response.[].recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.event.patchCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `unified-to.event.updateCalendarEvent()`: \n  *  `request.calendarEvent.recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n"

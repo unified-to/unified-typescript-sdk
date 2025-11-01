@@ -46,7 +46,11 @@ export type CalendarEventRecurrence = {
    * dates to exclude from the recurrence, defaults to undefined (no exclusions)
    */
   excludedDates?: Array<string> | undefined;
-  frequency: CalendarEventRecurrenceFrequency;
+  frequency?: CalendarEventRecurrenceFrequency | undefined;
+  /**
+   * dates to include in the recurrence, defaults to undefined (no inclusions)
+   */
+  includedDates?: Array<string> | undefined;
   interval?: number | undefined;
   /**
    * days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY
@@ -68,7 +72,10 @@ export type CalendarEventRecurrence = {
    * days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
    */
   onYearDays?: Array<number> | undefined;
-  timezone?: string | undefined;
+  /**
+   * timezone, defaults to undefined (no timezone)
+   */
+  timezone?: Array<string> | undefined;
   weekStart?: WeekStart | undefined;
 };
 
@@ -146,7 +153,8 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   excluded_dates: z.array(z.string()).optional(),
-  frequency: CalendarEventRecurrenceFrequency$inboundSchema,
+  frequency: CalendarEventRecurrenceFrequency$inboundSchema.optional(),
+  included_dates: z.array(z.string()).optional(),
   interval: z.number().optional(),
   on_days: z.array(PropertyCalendarEventRecurrenceOnDays$inboundSchema)
     .optional(),
@@ -154,12 +162,13 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
   on_months: z.array(z.number()).optional(),
   on_weeks: z.array(z.number()).optional(),
   on_year_days: z.array(z.number()).optional(),
-  timezone: z.string().optional(),
+  timezone: z.array(z.string()).optional(),
   week_start: WeekStart$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     "end_at": "endAt",
     "excluded_dates": "excludedDates",
+    "included_dates": "includedDates",
     "on_days": "onDays",
     "on_month_days": "onMonthDays",
     "on_months": "onMonths",
@@ -174,14 +183,15 @@ export type CalendarEventRecurrence$Outbound = {
   count?: number | undefined;
   end_at?: string | undefined;
   excluded_dates?: Array<string> | undefined;
-  frequency: string;
+  frequency?: string | undefined;
+  included_dates?: Array<string> | undefined;
   interval?: number | undefined;
   on_days?: Array<string> | undefined;
   on_month_days?: Array<number> | undefined;
   on_months?: Array<number> | undefined;
   on_weeks?: Array<number> | undefined;
   on_year_days?: Array<number> | undefined;
-  timezone?: string | undefined;
+  timezone?: Array<string> | undefined;
   week_start?: string | undefined;
 };
 
@@ -194,7 +204,8 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
   count: z.number().optional(),
   endAt: z.date().transform(v => v.toISOString()).optional(),
   excludedDates: z.array(z.string()).optional(),
-  frequency: CalendarEventRecurrenceFrequency$outboundSchema,
+  frequency: CalendarEventRecurrenceFrequency$outboundSchema.optional(),
+  includedDates: z.array(z.string()).optional(),
   interval: z.number().optional(),
   onDays: z.array(PropertyCalendarEventRecurrenceOnDays$outboundSchema)
     .optional(),
@@ -202,12 +213,13 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
   onMonths: z.array(z.number()).optional(),
   onWeeks: z.array(z.number()).optional(),
   onYearDays: z.array(z.number()).optional(),
-  timezone: z.string().optional(),
+  timezone: z.array(z.string()).optional(),
   weekStart: WeekStart$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
     endAt: "end_at",
     excludedDates: "excluded_dates",
+    includedDates: "included_dates",
     onDays: "on_days",
     onMonthDays: "on_month_days",
     onMonths: "on_months",

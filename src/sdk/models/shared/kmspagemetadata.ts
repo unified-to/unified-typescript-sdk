@@ -38,6 +38,11 @@ export const KmsPageMetadataFormat = {
   YesNo: "YES_NO",
   Currency: "CURRENCY",
   Url: "URL",
+  Percent: "PERCENT",
+  Email: "EMAIL",
+  Phone: "PHONE",
+  Reference: "REFERENCE",
+  Time: "TIME",
 } as const;
 export type KmsPageMetadataFormat = OpenEnum<typeof KmsPageMetadataFormat>;
 
