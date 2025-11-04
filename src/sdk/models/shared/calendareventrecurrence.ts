@@ -72,10 +72,7 @@ export type CalendarEventRecurrence = {
    * days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
    */
   onYearDays?: Array<number> | undefined;
-  /**
-   * timezone, defaults to undefined (no timezone)
-   */
-  timezone?: Array<string> | undefined;
+  timezone?: string | undefined;
   weekStart?: WeekStart | undefined;
 };
 
@@ -162,7 +159,7 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
   on_months: z.array(z.number()).optional(),
   on_weeks: z.array(z.number()).optional(),
   on_year_days: z.array(z.number()).optional(),
-  timezone: z.array(z.string()).optional(),
+  timezone: z.string().optional(),
   week_start: WeekStart$inboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {
@@ -191,7 +188,7 @@ export type CalendarEventRecurrence$Outbound = {
   on_months?: Array<number> | undefined;
   on_weeks?: Array<number> | undefined;
   on_year_days?: Array<number> | undefined;
-  timezone?: Array<string> | undefined;
+  timezone?: string | undefined;
   week_start?: string | undefined;
 };
 
@@ -213,7 +210,7 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
   onMonths: z.array(z.number()).optional(),
   onWeeks: z.array(z.number()).optional(),
   onYearDays: z.array(z.number()).optional(),
-  timezone: z.array(z.string()).optional(),
+  timezone: z.string().optional(),
   weekStart: WeekStart$outboundSchema.optional(),
 }).transform((v) => {
   return remap$(v, {

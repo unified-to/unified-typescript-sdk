@@ -8,6 +8,12 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
+  IntegrationSupport,
+  IntegrationSupport$inboundSchema,
+  IntegrationSupport$Outbound,
+  IntegrationSupport$outboundSchema,
+} from "./integrationsupport.js";
+import {
   PropertyIntegrationCategories,
   PropertyIntegrationCategories$inboundSchema,
   PropertyIntegrationCategories$outboundSchema,
@@ -119,7 +125,7 @@ export type Integration = {
     | boolean
     | Array<IntegrationSchemasSandbox1 | string | number | boolean>
     | undefined;
-  support?: { [k: string]: any } | undefined;
+  support?: { [k: string]: IntegrationSupport } | undefined;
   testedAt?: Date | undefined;
   textColor?: string | undefined;
   /**
@@ -930,7 +936,7 @@ export const Integration$inboundSchema: z.ZodType<
       ]),
     ),
   ]).optional(),
-  support: z.record(z.any()).optional(),
+  support: z.record(IntegrationSupport$inboundSchema).optional(),
   tested_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   text_color: z.string().optional(),
@@ -1003,7 +1009,7 @@ export type Integration$Outbound = {
     | boolean
     | Array<IntegrationSchemasSandbox1$Outbound | string | number | boolean>
     | undefined;
-  support?: { [k: string]: any } | undefined;
+  support?: { [k: string]: IntegrationSupport$Outbound } | undefined;
   tested_at?: string | undefined;
   text_color?: string | undefined;
   token_instructions?: Array<string> | undefined;
@@ -1090,7 +1096,7 @@ export const Integration$outboundSchema: z.ZodType<
       ]),
     ),
   ]).optional(),
-  support: z.record(z.any()).optional(),
+  support: z.record(IntegrationSupport$outboundSchema).optional(),
   testedAt: z.date().transform(v => v.toISOString()).optional(),
   textColor: z.string().optional(),
   tokenInstructions: z.array(z.string()).optional(),
