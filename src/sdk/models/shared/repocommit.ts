@@ -44,7 +44,6 @@ export const RepoCommit$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type RepoCommit$Outbound = {
   branch_id?: string | undefined;
@@ -81,23 +80,9 @@ export const RepoCommit$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoCommit$ {
-  /** @deprecated use `RepoCommit$inboundSchema` instead. */
-  export const inboundSchema = RepoCommit$inboundSchema;
-  /** @deprecated use `RepoCommit$outboundSchema` instead. */
-  export const outboundSchema = RepoCommit$outboundSchema;
-  /** @deprecated use `RepoCommit$Outbound` instead. */
-  export type Outbound = RepoCommit$Outbound;
-}
-
 export function repoCommitToJSON(repoCommit: RepoCommit): string {
   return JSON.stringify(RepoCommit$outboundSchema.parse(repoCommit));
 }
-
 export function repoCommitFromJSON(
   jsonString: string,
 ): SafeParseResult<RepoCommit, SDKValidationError> {

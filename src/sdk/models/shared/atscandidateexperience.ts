@@ -34,7 +34,6 @@ export const AtsCandidateExperience$inboundSchema: z.ZodType<
     "start_at": "startAt",
   });
 });
-
 /** @internal */
 export type AtsCandidateExperience$Outbound = {
   company_name?: string | undefined;
@@ -61,19 +60,6 @@ export const AtsCandidateExperience$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCandidateExperience$ {
-  /** @deprecated use `AtsCandidateExperience$inboundSchema` instead. */
-  export const inboundSchema = AtsCandidateExperience$inboundSchema;
-  /** @deprecated use `AtsCandidateExperience$outboundSchema` instead. */
-  export const outboundSchema = AtsCandidateExperience$outboundSchema;
-  /** @deprecated use `AtsCandidateExperience$Outbound` instead. */
-  export type Outbound = AtsCandidateExperience$Outbound;
-}
-
 export function atsCandidateExperienceToJSON(
   atsCandidateExperience: AtsCandidateExperience,
 ): string {
@@ -81,7 +67,6 @@ export function atsCandidateExperienceToJSON(
     AtsCandidateExperience$outboundSchema.parse(atsCandidateExperience),
   );
 }
-
 export function atsCandidateExperienceFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsCandidateExperience, SDKValidationError> {

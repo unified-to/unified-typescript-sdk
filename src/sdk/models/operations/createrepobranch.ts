@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoBranchRequest = {
@@ -24,23 +21,6 @@ export type CreateRepoBranchRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateRepoBranchRequest$inboundSchema: z.ZodType<
-  CreateRepoBranchRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoBranch: shared.RepoBranch$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoBranch": "repoBranch",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateRepoBranchRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateRepoBranchRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateRepoBranchRequest$ {
-  /** @deprecated use `CreateRepoBranchRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateRepoBranchRequest$inboundSchema;
-  /** @deprecated use `CreateRepoBranchRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateRepoBranchRequest$outboundSchema;
-  /** @deprecated use `CreateRepoBranchRequest$Outbound` instead. */
-  export type Outbound = CreateRepoBranchRequest$Outbound;
-}
-
 export function createRepoBranchRequestToJSON(
   createRepoBranchRequest: CreateRepoBranchRequest,
 ): string {
   return JSON.stringify(
     CreateRepoBranchRequest$outboundSchema.parse(createRepoBranchRequest),
-  );
-}
-
-export function createRepoBranchRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateRepoBranchRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateRepoBranchRequest' from JSON`,
   );
 }

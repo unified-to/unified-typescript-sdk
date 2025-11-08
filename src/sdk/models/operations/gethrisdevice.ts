@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisDeviceRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetHrisDeviceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetHrisDeviceRequest$inboundSchema: z.ZodType<
-  GetHrisDeviceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetHrisDeviceRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetHrisDeviceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetHrisDeviceRequest$ {
-  /** @deprecated use `GetHrisDeviceRequest$inboundSchema` instead. */
-  export const inboundSchema = GetHrisDeviceRequest$inboundSchema;
-  /** @deprecated use `GetHrisDeviceRequest$outboundSchema` instead. */
-  export const outboundSchema = GetHrisDeviceRequest$outboundSchema;
-  /** @deprecated use `GetHrisDeviceRequest$Outbound` instead. */
-  export type Outbound = GetHrisDeviceRequest$Outbound;
-}
-
 export function getHrisDeviceRequestToJSON(
   getHrisDeviceRequest: GetHrisDeviceRequest,
 ): string {
   return JSON.stringify(
     GetHrisDeviceRequest$outboundSchema.parse(getHrisDeviceRequest),
-  );
-}
-
-export function getHrisDeviceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetHrisDeviceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetHrisDeviceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetHrisDeviceRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingOrderRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingOrderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingOrderRequest$inboundSchema: z.ZodType<
-  CreateAccountingOrderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingOrder: shared.AccountingOrder$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingOrder": "accountingOrder",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingOrderRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateAccountingOrderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingOrderRequest$ {
-  /** @deprecated use `CreateAccountingOrderRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAccountingOrderRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingOrderRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAccountingOrderRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingOrderRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingOrderRequest$Outbound;
-}
-
 export function createAccountingOrderRequestToJSON(
   createAccountingOrderRequest: CreateAccountingOrderRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createAccountingOrderRequestToJSON(
     CreateAccountingOrderRequest$outboundSchema.parse(
       createAccountingOrderRequest,
     ),
-  );
-}
-
-export function createAccountingOrderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingOrderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAccountingOrderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingOrderRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchLmsStudentRequest = {
@@ -28,24 +25,6 @@ export type PatchLmsStudentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchLmsStudentRequest$inboundSchema: z.ZodType<
-  PatchLmsStudentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsStudent: shared.LmsStudent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsStudent": "lmsStudent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchLmsStudentRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchLmsStudentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchLmsStudentRequest$ {
-  /** @deprecated use `PatchLmsStudentRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchLmsStudentRequest$inboundSchema;
-  /** @deprecated use `PatchLmsStudentRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchLmsStudentRequest$outboundSchema;
-  /** @deprecated use `PatchLmsStudentRequest$Outbound` instead. */
-  export type Outbound = PatchLmsStudentRequest$Outbound;
-}
-
 export function patchLmsStudentRequestToJSON(
   patchLmsStudentRequest: PatchLmsStudentRequest,
 ): string {
   return JSON.stringify(
     PatchLmsStudentRequest$outboundSchema.parse(patchLmsStudentRequest),
-  );
-}
-
-export function patchLmsStudentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchLmsStudentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchLmsStudentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchLmsStudentRequest' from JSON`,
   );
 }

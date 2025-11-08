@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchTicketingCategoryRequest = {
@@ -28,24 +25,6 @@ export type PatchTicketingCategoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchTicketingCategoryRequest$inboundSchema: z.ZodType<
-  PatchTicketingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TicketingCategory: shared.TicketingCategory$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TicketingCategory": "ticketingCategory",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchTicketingCategoryRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchTicketingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchTicketingCategoryRequest$ {
-  /** @deprecated use `PatchTicketingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchTicketingCategoryRequest$inboundSchema;
-  /** @deprecated use `PatchTicketingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchTicketingCategoryRequest$outboundSchema;
-  /** @deprecated use `PatchTicketingCategoryRequest$Outbound` instead. */
-  export type Outbound = PatchTicketingCategoryRequest$Outbound;
-}
-
 export function patchTicketingCategoryRequestToJSON(
   patchTicketingCategoryRequest: PatchTicketingCategoryRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchTicketingCategoryRequestToJSON(
     PatchTicketingCategoryRequest$outboundSchema.parse(
       patchTicketingCategoryRequest,
     ),
-  );
-}
-
-export function patchTicketingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchTicketingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchTicketingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchTicketingCategoryRequest' from JSON`,
   );
 }

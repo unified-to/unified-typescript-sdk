@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCrmContactRequest = {
@@ -31,24 +28,6 @@ export type UpdateCrmContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateCrmContactRequest$inboundSchema: z.ZodType<
-  UpdateCrmContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmContact: shared.CrmContact$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmContact": "crmContact",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateCrmContactRequest$Outbound = {
@@ -77,33 +56,10 @@ export const UpdateCrmContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCrmContactRequest$ {
-  /** @deprecated use `UpdateCrmContactRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateCrmContactRequest$inboundSchema;
-  /** @deprecated use `UpdateCrmContactRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateCrmContactRequest$outboundSchema;
-  /** @deprecated use `UpdateCrmContactRequest$Outbound` instead. */
-  export type Outbound = UpdateCrmContactRequest$Outbound;
-}
-
 export function updateCrmContactRequestToJSON(
   updateCrmContactRequest: UpdateCrmContactRequest,
 ): string {
   return JSON.stringify(
     UpdateCrmContactRequest$outboundSchema.parse(updateCrmContactRequest),
-  );
-}
-
-export function updateCrmContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCrmContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCrmContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCrmContactRequest' from JSON`,
   );
 }

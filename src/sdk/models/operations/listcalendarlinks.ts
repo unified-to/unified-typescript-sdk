@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCalendarLinksRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListCalendarLinksRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListCalendarLinksRequest$inboundSchema: z.ZodType<
-  ListCalendarLinksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListCalendarLinksRequest$Outbound = {
@@ -92,33 +67,10 @@ export const ListCalendarLinksRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCalendarLinksRequest$ {
-  /** @deprecated use `ListCalendarLinksRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCalendarLinksRequest$inboundSchema;
-  /** @deprecated use `ListCalendarLinksRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCalendarLinksRequest$outboundSchema;
-  /** @deprecated use `ListCalendarLinksRequest$Outbound` instead. */
-  export type Outbound = ListCalendarLinksRequest$Outbound;
-}
-
 export function listCalendarLinksRequestToJSON(
   listCalendarLinksRequest: ListCalendarLinksRequest,
 ): string {
   return JSON.stringify(
     ListCalendarLinksRequest$outboundSchema.parse(listCalendarLinksRequest),
-  );
-}
-
-export function listCalendarLinksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCalendarLinksRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCalendarLinksRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCalendarLinksRequest' from JSON`,
   );
 }

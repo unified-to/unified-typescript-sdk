@@ -39,7 +39,6 @@ export const ScimAddressType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimAddressType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimAddressType$outboundSchema: z.ZodType<
   ScimAddressType,
@@ -49,17 +48,6 @@ export const ScimAddressType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimAddressType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimAddressType$ {
-  /** @deprecated use `ScimAddressType$inboundSchema` instead. */
-  export const inboundSchema = ScimAddressType$inboundSchema;
-  /** @deprecated use `ScimAddressType$outboundSchema` instead. */
-  export const outboundSchema = ScimAddressType$outboundSchema;
-}
 
 /** @internal */
 export const ScimAddress$inboundSchema: z.ZodType<
@@ -75,7 +63,6 @@ export const ScimAddress$inboundSchema: z.ZodType<
   streetAddress: z.string().optional(),
   type: ScimAddressType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type ScimAddress$Outbound = {
   country?: string | undefined;
@@ -102,23 +89,9 @@ export const ScimAddress$outboundSchema: z.ZodType<
   type: ScimAddressType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimAddress$ {
-  /** @deprecated use `ScimAddress$inboundSchema` instead. */
-  export const inboundSchema = ScimAddress$inboundSchema;
-  /** @deprecated use `ScimAddress$outboundSchema` instead. */
-  export const outboundSchema = ScimAddress$outboundSchema;
-  /** @deprecated use `ScimAddress$Outbound` instead. */
-  export type Outbound = ScimAddress$Outbound;
-}
-
 export function scimAddressToJSON(scimAddress: ScimAddress): string {
   return JSON.stringify(ScimAddress$outboundSchema.parse(scimAddress));
 }
-
 export function scimAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimAddress, SDKValidationError> {

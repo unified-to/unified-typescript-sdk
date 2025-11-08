@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchMartechListRequest = {
@@ -31,24 +28,6 @@ export type PatchMartechListRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchMartechListRequest$inboundSchema: z.ZodType<
-  PatchMartechListRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  MarketingList: shared.MarketingList$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "MarketingList": "marketingList",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchMartechListRequest$Outbound = {
@@ -77,33 +56,10 @@ export const PatchMartechListRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchMartechListRequest$ {
-  /** @deprecated use `PatchMartechListRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchMartechListRequest$inboundSchema;
-  /** @deprecated use `PatchMartechListRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchMartechListRequest$outboundSchema;
-  /** @deprecated use `PatchMartechListRequest$Outbound` instead. */
-  export type Outbound = PatchMartechListRequest$Outbound;
-}
-
 export function patchMartechListRequestToJSON(
   patchMartechListRequest: PatchMartechListRequest,
 ): string {
   return JSON.stringify(
     PatchMartechListRequest$outboundSchema.parse(patchMartechListRequest),
-  );
-}
-
-export function patchMartechListRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchMartechListRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchMartechListRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchMartechListRequest' from JSON`,
   );
 }

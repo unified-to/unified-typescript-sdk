@@ -24,20 +24,6 @@ export type RemoveCommerceCollectionResponse = {
 };
 
 /** @internal */
-export const RemoveCommerceCollectionRequest$inboundSchema: z.ZodType<
-  RemoveCommerceCollectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCommerceCollectionRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveCommerceCollectionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceCollectionRequest$ {
-  /** @deprecated use `RemoveCommerceCollectionRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceCollectionRequest$inboundSchema;
-  /** @deprecated use `RemoveCommerceCollectionRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceCollectionRequest$outboundSchema;
-  /** @deprecated use `RemoveCommerceCollectionRequest$Outbound` instead. */
-  export type Outbound = RemoveCommerceCollectionRequest$Outbound;
-}
-
 export function removeCommerceCollectionRequestToJSON(
   removeCommerceCollectionRequest: RemoveCommerceCollectionRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeCommerceCollectionRequestToJSON(
     RemoveCommerceCollectionRequest$outboundSchema.parse(
       removeCommerceCollectionRequest,
     ),
-  );
-}
-
-export function removeCommerceCollectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCommerceCollectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCommerceCollectionRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveCommerceCollectionResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCommerceCollectionResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCommerceCollectionResponse$outboundSchema: z.ZodType<
-  RemoveCommerceCollectionResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCommerceCollectionResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceCollectionResponse$ {
-  /** @deprecated use `RemoveCommerceCollectionResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceCollectionResponse$inboundSchema;
-  /** @deprecated use `RemoveCommerceCollectionResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceCollectionResponse$outboundSchema;
-  /** @deprecated use `RemoveCommerceCollectionResponse$Outbound` instead. */
-  export type Outbound = RemoveCommerceCollectionResponse$Outbound;
-}
-
-export function removeCommerceCollectionResponseToJSON(
-  removeCommerceCollectionResponse: RemoveCommerceCollectionResponse,
-): string {
-  return JSON.stringify(
-    RemoveCommerceCollectionResponse$outboundSchema.parse(
-      removeCommerceCollectionResponse,
-    ),
-  );
-}
 
 export function removeCommerceCollectionResponseFromJSON(
   jsonString: string,

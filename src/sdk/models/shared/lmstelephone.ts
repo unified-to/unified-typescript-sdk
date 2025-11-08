@@ -36,7 +36,6 @@ export const LmsTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(LmsTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const LmsTelephoneType$outboundSchema: z.ZodType<
   LmsTelephoneType,
@@ -47,17 +46,6 @@ export const LmsTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsTelephoneType$ {
-  /** @deprecated use `LmsTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = LmsTelephoneType$inboundSchema;
-  /** @deprecated use `LmsTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = LmsTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const LmsTelephone$inboundSchema: z.ZodType<
   LmsTelephone,
@@ -67,7 +55,6 @@ export const LmsTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: LmsTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type LmsTelephone$Outbound = {
   telephone: string;
@@ -84,23 +71,9 @@ export const LmsTelephone$outboundSchema: z.ZodType<
   type: LmsTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsTelephone$ {
-  /** @deprecated use `LmsTelephone$inboundSchema` instead. */
-  export const inboundSchema = LmsTelephone$inboundSchema;
-  /** @deprecated use `LmsTelephone$outboundSchema` instead. */
-  export const outboundSchema = LmsTelephone$outboundSchema;
-  /** @deprecated use `LmsTelephone$Outbound` instead. */
-  export type Outbound = LmsTelephone$Outbound;
-}
-
 export function lmsTelephoneToJSON(lmsTelephone: LmsTelephone): string {
   return JSON.stringify(LmsTelephone$outboundSchema.parse(lmsTelephone));
 }
-
 export function lmsTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsTelephone, SDKValidationError> {

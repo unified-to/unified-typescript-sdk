@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListVerificationPackagesRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListVerificationPackagesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListVerificationPackagesRequest$inboundSchema: z.ZodType<
-  ListVerificationPackagesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListVerificationPackagesRequest$Outbound = {
@@ -92,19 +67,6 @@ export const ListVerificationPackagesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListVerificationPackagesRequest$ {
-  /** @deprecated use `ListVerificationPackagesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListVerificationPackagesRequest$inboundSchema;
-  /** @deprecated use `ListVerificationPackagesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListVerificationPackagesRequest$outboundSchema;
-  /** @deprecated use `ListVerificationPackagesRequest$Outbound` instead. */
-  export type Outbound = ListVerificationPackagesRequest$Outbound;
-}
-
 export function listVerificationPackagesRequestToJSON(
   listVerificationPackagesRequest: ListVerificationPackagesRequest,
 ): string {
@@ -112,15 +74,5 @@ export function listVerificationPackagesRequestToJSON(
     ListVerificationPackagesRequest$outboundSchema.parse(
       listVerificationPackagesRequest,
     ),
-  );
-}
-
-export function listVerificationPackagesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListVerificationPackagesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListVerificationPackagesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListVerificationPackagesRequest' from JSON`,
   );
 }

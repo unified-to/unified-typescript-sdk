@@ -41,7 +41,6 @@ export const ScimImsType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimImsType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimImsType$outboundSchema: z.ZodType<
   ScimImsType,
@@ -52,17 +51,6 @@ export const ScimImsType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimImsType$ {
-  /** @deprecated use `ScimImsType$inboundSchema` instead. */
-  export const inboundSchema = ScimImsType$inboundSchema;
-  /** @deprecated use `ScimImsType$outboundSchema` instead. */
-  export const outboundSchema = ScimImsType$outboundSchema;
-}
-
 /** @internal */
 export const ScimIms$inboundSchema: z.ZodType<ScimIms, z.ZodTypeDef, unknown> =
   z.object({
@@ -71,7 +59,6 @@ export const ScimIms$inboundSchema: z.ZodType<ScimIms, z.ZodTypeDef, unknown> =
     type: ScimImsType$inboundSchema.optional(),
     value: z.string().optional(),
   });
-
 /** @internal */
 export type ScimIms$Outbound = {
   display?: string | undefined;
@@ -92,23 +79,9 @@ export const ScimIms$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimIms$ {
-  /** @deprecated use `ScimIms$inboundSchema` instead. */
-  export const inboundSchema = ScimIms$inboundSchema;
-  /** @deprecated use `ScimIms$outboundSchema` instead. */
-  export const outboundSchema = ScimIms$outboundSchema;
-  /** @deprecated use `ScimIms$Outbound` instead. */
-  export type Outbound = ScimIms$Outbound;
-}
-
 export function scimImsToJSON(scimIms: ScimIms): string {
   return JSON.stringify(ScimIms$outboundSchema.parse(scimIms));
 }
-
 export function scimImsFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimIms, SDKValidationError> {

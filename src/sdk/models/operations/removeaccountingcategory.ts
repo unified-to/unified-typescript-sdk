@@ -24,20 +24,6 @@ export type RemoveAccountingCategoryResponse = {
 };
 
 /** @internal */
-export const RemoveAccountingCategoryRequest$inboundSchema: z.ZodType<
-  RemoveAccountingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveAccountingCategoryRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveAccountingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAccountingCategoryRequest$ {
-  /** @deprecated use `RemoveAccountingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveAccountingCategoryRequest$inboundSchema;
-  /** @deprecated use `RemoveAccountingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveAccountingCategoryRequest$outboundSchema;
-  /** @deprecated use `RemoveAccountingCategoryRequest$Outbound` instead. */
-  export type Outbound = RemoveAccountingCategoryRequest$Outbound;
-}
-
 export function removeAccountingCategoryRequestToJSON(
   removeAccountingCategoryRequest: RemoveAccountingCategoryRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeAccountingCategoryRequestToJSON(
     RemoveAccountingCategoryRequest$outboundSchema.parse(
       removeAccountingCategoryRequest,
     ),
-  );
-}
-
-export function removeAccountingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveAccountingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveAccountingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveAccountingCategoryRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveAccountingCategoryResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveAccountingCategoryResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveAccountingCategoryResponse$outboundSchema: z.ZodType<
-  RemoveAccountingCategoryResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveAccountingCategoryResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAccountingCategoryResponse$ {
-  /** @deprecated use `RemoveAccountingCategoryResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveAccountingCategoryResponse$inboundSchema;
-  /** @deprecated use `RemoveAccountingCategoryResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveAccountingCategoryResponse$outboundSchema;
-  /** @deprecated use `RemoveAccountingCategoryResponse$Outbound` instead. */
-  export type Outbound = RemoveAccountingCategoryResponse$Outbound;
-}
-
-export function removeAccountingCategoryResponseToJSON(
-  removeAccountingCategoryResponse: RemoveAccountingCategoryResponse,
-): string {
-  return JSON.stringify(
-    RemoveAccountingCategoryResponse$outboundSchema.parse(
-      removeAccountingCategoryResponse,
-    ),
-  );
-}
 
 export function removeAccountingCategoryResponseFromJSON(
   jsonString: string,

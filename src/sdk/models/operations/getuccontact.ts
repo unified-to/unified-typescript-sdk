@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUcContactRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetUcContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetUcContactRequest$inboundSchema: z.ZodType<
-  GetUcContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetUcContactRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetUcContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetUcContactRequest$ {
-  /** @deprecated use `GetUcContactRequest$inboundSchema` instead. */
-  export const inboundSchema = GetUcContactRequest$inboundSchema;
-  /** @deprecated use `GetUcContactRequest$outboundSchema` instead. */
-  export const outboundSchema = GetUcContactRequest$outboundSchema;
-  /** @deprecated use `GetUcContactRequest$Outbound` instead. */
-  export type Outbound = GetUcContactRequest$Outbound;
-}
-
 export function getUcContactRequestToJSON(
   getUcContactRequest: GetUcContactRequest,
 ): string {
   return JSON.stringify(
     GetUcContactRequest$outboundSchema.parse(getUcContactRequest),
-  );
-}
-
-export function getUcContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetUcContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetUcContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetUcContactRequest' from JSON`,
   );
 }

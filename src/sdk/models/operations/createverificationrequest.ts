@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateVerificationRequestRequest = {
@@ -24,23 +21,6 @@ export type CreateVerificationRequestRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateVerificationRequestRequest$inboundSchema: z.ZodType<
-  CreateVerificationRequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  VerificationRequest: shared.VerificationRequest$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "VerificationRequest": "verificationRequest",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateVerificationRequestRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateVerificationRequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateVerificationRequestRequest$ {
-  /** @deprecated use `CreateVerificationRequestRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateVerificationRequestRequest$inboundSchema;
-  /** @deprecated use `CreateVerificationRequestRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateVerificationRequestRequest$outboundSchema;
-  /** @deprecated use `CreateVerificationRequestRequest$Outbound` instead. */
-  export type Outbound = CreateVerificationRequestRequest$Outbound;
-}
-
 export function createVerificationRequestRequestToJSON(
   createVerificationRequestRequest: CreateVerificationRequestRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createVerificationRequestRequestToJSON(
     CreateVerificationRequestRequest$outboundSchema.parse(
       createVerificationRequestRequest,
     ),
-  );
-}
-
-export function createVerificationRequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateVerificationRequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateVerificationRequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateVerificationRequestRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListEnrichPeopleRequest = {
   /**
@@ -34,26 +31,6 @@ export type ListEnrichPeopleRequest = {
    */
   twitter?: string | undefined;
 };
-
-/** @internal */
-export const ListEnrichPeopleRequest$inboundSchema: z.ZodType<
-  ListEnrichPeopleRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  company_name: z.string().optional(),
-  connection_id: z.string(),
-  email: z.string().optional(),
-  linkedin_url: z.string().optional(),
-  name: z.string().optional(),
-  twitter: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_name": "companyName",
-    "connection_id": "connectionId",
-    "linkedin_url": "linkedinUrl",
-  });
-});
 
 /** @internal */
 export type ListEnrichPeopleRequest$Outbound = {
@@ -85,33 +62,10 @@ export const ListEnrichPeopleRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEnrichPeopleRequest$ {
-  /** @deprecated use `ListEnrichPeopleRequest$inboundSchema` instead. */
-  export const inboundSchema = ListEnrichPeopleRequest$inboundSchema;
-  /** @deprecated use `ListEnrichPeopleRequest$outboundSchema` instead. */
-  export const outboundSchema = ListEnrichPeopleRequest$outboundSchema;
-  /** @deprecated use `ListEnrichPeopleRequest$Outbound` instead. */
-  export type Outbound = ListEnrichPeopleRequest$Outbound;
-}
-
 export function listEnrichPeopleRequestToJSON(
   listEnrichPeopleRequest: ListEnrichPeopleRequest,
 ): string {
   return JSON.stringify(
     ListEnrichPeopleRequest$outboundSchema.parse(listEnrichPeopleRequest),
-  );
-}
-
-export function listEnrichPeopleRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListEnrichPeopleRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListEnrichPeopleRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListEnrichPeopleRequest' from JSON`,
   );
 }

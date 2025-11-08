@@ -36,7 +36,6 @@ export const UcTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(UcTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const UcTelephoneType$outboundSchema: z.ZodType<
   UcTelephoneType,
@@ -47,17 +46,6 @@ export const UcTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcTelephoneType$ {
-  /** @deprecated use `UcTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = UcTelephoneType$inboundSchema;
-  /** @deprecated use `UcTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = UcTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const UcTelephone$inboundSchema: z.ZodType<
   UcTelephone,
@@ -67,7 +55,6 @@ export const UcTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: UcTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type UcTelephone$Outbound = {
   telephone: string;
@@ -84,23 +71,9 @@ export const UcTelephone$outboundSchema: z.ZodType<
   type: UcTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcTelephone$ {
-  /** @deprecated use `UcTelephone$inboundSchema` instead. */
-  export const inboundSchema = UcTelephone$inboundSchema;
-  /** @deprecated use `UcTelephone$outboundSchema` instead. */
-  export const outboundSchema = UcTelephone$outboundSchema;
-  /** @deprecated use `UcTelephone$Outbound` instead. */
-  export type Outbound = UcTelephone$Outbound;
-}
-
 export function ucTelephoneToJSON(ucTelephone: UcTelephone): string {
   return JSON.stringify(UcTelephone$outboundSchema.parse(ucTelephone));
 }
-
 export function ucTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<UcTelephone, SDKValidationError> {

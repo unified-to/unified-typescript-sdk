@@ -24,20 +24,6 @@ export type RemoveCommerceLocationResponse = {
 };
 
 /** @internal */
-export const RemoveCommerceLocationRequest$inboundSchema: z.ZodType<
-  RemoveCommerceLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCommerceLocationRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveCommerceLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceLocationRequest$ {
-  /** @deprecated use `RemoveCommerceLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceLocationRequest$inboundSchema;
-  /** @deprecated use `RemoveCommerceLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceLocationRequest$outboundSchema;
-  /** @deprecated use `RemoveCommerceLocationRequest$Outbound` instead. */
-  export type Outbound = RemoveCommerceLocationRequest$Outbound;
-}
-
 export function removeCommerceLocationRequestToJSON(
   removeCommerceLocationRequest: RemoveCommerceLocationRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeCommerceLocationRequestToJSON(
     RemoveCommerceLocationRequest$outboundSchema.parse(
       removeCommerceLocationRequest,
     ),
-  );
-}
-
-export function removeCommerceLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCommerceLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCommerceLocationRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveCommerceLocationResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCommerceLocationResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCommerceLocationResponse$outboundSchema: z.ZodType<
-  RemoveCommerceLocationResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCommerceLocationResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceLocationResponse$ {
-  /** @deprecated use `RemoveCommerceLocationResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceLocationResponse$inboundSchema;
-  /** @deprecated use `RemoveCommerceLocationResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceLocationResponse$outboundSchema;
-  /** @deprecated use `RemoveCommerceLocationResponse$Outbound` instead. */
-  export type Outbound = RemoveCommerceLocationResponse$Outbound;
-}
-
-export function removeCommerceLocationResponseToJSON(
-  removeCommerceLocationResponse: RemoveCommerceLocationResponse,
-): string {
-  return JSON.stringify(
-    RemoveCommerceLocationResponse$outboundSchema.parse(
-      removeCommerceLocationResponse,
-    ),
-  );
-}
 
 export function removeCommerceLocationResponseFromJSON(
   jsonString: string,

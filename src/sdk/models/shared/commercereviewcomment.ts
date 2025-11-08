@@ -57,7 +57,6 @@ export const CommerceReviewCommentStatus$inboundSchema: z.ZodType<
     z.nativeEnum(CommerceReviewCommentStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CommerceReviewCommentStatus$outboundSchema: z.ZodType<
   CommerceReviewCommentStatus,
@@ -67,17 +66,6 @@ export const CommerceReviewCommentStatus$outboundSchema: z.ZodType<
   z.nativeEnum(CommerceReviewCommentStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceReviewCommentStatus$ {
-  /** @deprecated use `CommerceReviewCommentStatus$inboundSchema` instead. */
-  export const inboundSchema = CommerceReviewCommentStatus$inboundSchema;
-  /** @deprecated use `CommerceReviewCommentStatus$outboundSchema` instead. */
-  export const outboundSchema = CommerceReviewCommentStatus$outboundSchema;
-}
 
 /** @internal */
 export const CommerceReviewComment$inboundSchema: z.ZodType<
@@ -116,7 +104,6 @@ export const CommerceReviewComment$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CommerceReviewComment$Outbound = {
   author_avatar_url?: string | undefined;
@@ -172,19 +159,6 @@ export const CommerceReviewComment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceReviewComment$ {
-  /** @deprecated use `CommerceReviewComment$inboundSchema` instead. */
-  export const inboundSchema = CommerceReviewComment$inboundSchema;
-  /** @deprecated use `CommerceReviewComment$outboundSchema` instead. */
-  export const outboundSchema = CommerceReviewComment$outboundSchema;
-  /** @deprecated use `CommerceReviewComment$Outbound` instead. */
-  export type Outbound = CommerceReviewComment$Outbound;
-}
-
 export function commerceReviewCommentToJSON(
   commerceReviewComment: CommerceReviewComment,
 ): string {
@@ -192,7 +166,6 @@ export function commerceReviewCommentToJSON(
     CommerceReviewComment$outboundSchema.parse(commerceReviewComment),
   );
 }
-
 export function commerceReviewCommentFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceReviewComment, SDKValidationError> {

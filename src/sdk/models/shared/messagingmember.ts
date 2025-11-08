@@ -31,7 +31,6 @@ export const MessagingMember$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type MessagingMember$Outbound = {
   email?: string | undefined;
@@ -57,25 +56,11 @@ export const MessagingMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessagingMember$ {
-  /** @deprecated use `MessagingMember$inboundSchema` instead. */
-  export const inboundSchema = MessagingMember$inboundSchema;
-  /** @deprecated use `MessagingMember$outboundSchema` instead. */
-  export const outboundSchema = MessagingMember$outboundSchema;
-  /** @deprecated use `MessagingMember$Outbound` instead. */
-  export type Outbound = MessagingMember$Outbound;
-}
-
 export function messagingMemberToJSON(
   messagingMember: MessagingMember,
 ): string {
   return JSON.stringify(MessagingMember$outboundSchema.parse(messagingMember));
 }
-
 export function messagingMemberFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingMember, SDKValidationError> {

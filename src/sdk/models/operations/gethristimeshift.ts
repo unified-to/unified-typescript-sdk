@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisTimeshiftRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetHrisTimeshiftRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetHrisTimeshiftRequest$inboundSchema: z.ZodType<
-  GetHrisTimeshiftRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetHrisTimeshiftRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetHrisTimeshiftRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetHrisTimeshiftRequest$ {
-  /** @deprecated use `GetHrisTimeshiftRequest$inboundSchema` instead. */
-  export const inboundSchema = GetHrisTimeshiftRequest$inboundSchema;
-  /** @deprecated use `GetHrisTimeshiftRequest$outboundSchema` instead. */
-  export const outboundSchema = GetHrisTimeshiftRequest$outboundSchema;
-  /** @deprecated use `GetHrisTimeshiftRequest$Outbound` instead. */
-  export type Outbound = GetHrisTimeshiftRequest$Outbound;
-}
-
 export function getHrisTimeshiftRequestToJSON(
   getHrisTimeshiftRequest: GetHrisTimeshiftRequest,
 ): string {
   return JSON.stringify(
     GetHrisTimeshiftRequest$outboundSchema.parse(getHrisTimeshiftRequest),
-  );
-}
-
-export function getHrisTimeshiftRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetHrisTimeshiftRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetHrisTimeshiftRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetHrisTimeshiftRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateMetadataMetadataRequest = {
@@ -28,24 +25,6 @@ export type UpdateMetadataMetadataRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateMetadataMetadataRequest$inboundSchema: z.ZodType<
-  UpdateMetadataMetadataRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  MetadataMetadata: shared.MetadataMetadata$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "MetadataMetadata": "metadataMetadata",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateMetadataMetadataRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateMetadataMetadataRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateMetadataMetadataRequest$ {
-  /** @deprecated use `UpdateMetadataMetadataRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateMetadataMetadataRequest$inboundSchema;
-  /** @deprecated use `UpdateMetadataMetadataRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateMetadataMetadataRequest$outboundSchema;
-  /** @deprecated use `UpdateMetadataMetadataRequest$Outbound` instead. */
-  export type Outbound = UpdateMetadataMetadataRequest$Outbound;
-}
-
 export function updateMetadataMetadataRequestToJSON(
   updateMetadataMetadataRequest: UpdateMetadataMetadataRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateMetadataMetadataRequestToJSON(
     UpdateMetadataMetadataRequest$outboundSchema.parse(
       updateMetadataMetadataRequest,
     ),
-  );
-}
-
-export function updateMetadataMetadataRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateMetadataMetadataRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateMetadataMetadataRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateMetadataMetadataRequest' from JSON`,
   );
 }

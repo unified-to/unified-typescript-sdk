@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisPayslipRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetHrisPayslipRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetHrisPayslipRequest$inboundSchema: z.ZodType<
-  GetHrisPayslipRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetHrisPayslipRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetHrisPayslipRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetHrisPayslipRequest$ {
-  /** @deprecated use `GetHrisPayslipRequest$inboundSchema` instead. */
-  export const inboundSchema = GetHrisPayslipRequest$inboundSchema;
-  /** @deprecated use `GetHrisPayslipRequest$outboundSchema` instead. */
-  export const outboundSchema = GetHrisPayslipRequest$outboundSchema;
-  /** @deprecated use `GetHrisPayslipRequest$Outbound` instead. */
-  export type Outbound = GetHrisPayslipRequest$Outbound;
-}
-
 export function getHrisPayslipRequestToJSON(
   getHrisPayslipRequest: GetHrisPayslipRequest,
 ): string {
   return JSON.stringify(
     GetHrisPayslipRequest$outboundSchema.parse(getHrisPayslipRequest),
-  );
-}
-
-export function getHrisPayslipRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetHrisPayslipRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetHrisPayslipRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetHrisPayslipRequest' from JSON`,
   );
 }

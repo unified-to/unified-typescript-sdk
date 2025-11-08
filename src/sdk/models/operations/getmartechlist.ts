@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetMartechListRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetMartechListRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetMartechListRequest$inboundSchema: z.ZodType<
-  GetMartechListRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetMartechListRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetMartechListRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetMartechListRequest$ {
-  /** @deprecated use `GetMartechListRequest$inboundSchema` instead. */
-  export const inboundSchema = GetMartechListRequest$inboundSchema;
-  /** @deprecated use `GetMartechListRequest$outboundSchema` instead. */
-  export const outboundSchema = GetMartechListRequest$outboundSchema;
-  /** @deprecated use `GetMartechListRequest$Outbound` instead. */
-  export type Outbound = GetMartechListRequest$Outbound;
-}
-
 export function getMartechListRequestToJSON(
   getMartechListRequest: GetMartechListRequest,
 ): string {
   return JSON.stringify(
     GetMartechListRequest$outboundSchema.parse(getMartechListRequest),
-  );
-}
-
-export function getMartechListRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetMartechListRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetMartechListRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetMartechListRequest' from JSON`,
   );
 }

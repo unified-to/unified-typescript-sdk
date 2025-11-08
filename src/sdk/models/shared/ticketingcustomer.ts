@@ -53,7 +53,6 @@ export const TicketingCustomer$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type TicketingCustomer$Outbound = {
   created_at?: string | undefined;
@@ -87,19 +86,6 @@ export const TicketingCustomer$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingCustomer$ {
-  /** @deprecated use `TicketingCustomer$inboundSchema` instead. */
-  export const inboundSchema = TicketingCustomer$inboundSchema;
-  /** @deprecated use `TicketingCustomer$outboundSchema` instead. */
-  export const outboundSchema = TicketingCustomer$outboundSchema;
-  /** @deprecated use `TicketingCustomer$Outbound` instead. */
-  export type Outbound = TicketingCustomer$Outbound;
-}
-
 export function ticketingCustomerToJSON(
   ticketingCustomer: TicketingCustomer,
 ): string {
@@ -107,7 +93,6 @@ export function ticketingCustomerToJSON(
     TicketingCustomer$outboundSchema.parse(ticketingCustomer),
   );
 }
-
 export function ticketingCustomerFromJSON(
   jsonString: string,
 ): SafeParseResult<TicketingCustomer, SDKValidationError> {

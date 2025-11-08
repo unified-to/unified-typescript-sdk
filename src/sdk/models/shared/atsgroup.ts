@@ -39,7 +39,6 @@ export const AtsGroupType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsGroupType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsGroupType$outboundSchema: z.ZodType<
   AtsGroupType,
@@ -49,17 +48,6 @@ export const AtsGroupType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsGroupType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsGroupType$ {
-  /** @deprecated use `AtsGroupType$inboundSchema` instead. */
-  export const inboundSchema = AtsGroupType$inboundSchema;
-  /** @deprecated use `AtsGroupType$outboundSchema` instead. */
-  export const outboundSchema = AtsGroupType$outboundSchema;
-}
 
 /** @internal */
 export const AtsGroup$inboundSchema: z.ZodType<
@@ -71,7 +59,6 @@ export const AtsGroup$inboundSchema: z.ZodType<
   name: z.string().optional(),
   type: AtsGroupType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AtsGroup$Outbound = {
   id?: string | undefined;
@@ -90,23 +77,9 @@ export const AtsGroup$outboundSchema: z.ZodType<
   type: AtsGroupType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsGroup$ {
-  /** @deprecated use `AtsGroup$inboundSchema` instead. */
-  export const inboundSchema = AtsGroup$inboundSchema;
-  /** @deprecated use `AtsGroup$outboundSchema` instead. */
-  export const outboundSchema = AtsGroup$outboundSchema;
-  /** @deprecated use `AtsGroup$Outbound` instead. */
-  export type Outbound = AtsGroup$Outbound;
-}
-
 export function atsGroupToJSON(atsGroup: AtsGroup): string {
   return JSON.stringify(AtsGroup$outboundSchema.parse(atsGroup));
 }
-
 export function atsGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsGroup, SDKValidationError> {

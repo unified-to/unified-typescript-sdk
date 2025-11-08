@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingSalesorderRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingSalesorderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingSalesorderRequest$inboundSchema: z.ZodType<
-  CreateAccountingSalesorderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingSalesorder: shared.AccountingSalesorder$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingSalesorder": "accountingSalesorder",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingSalesorderRequest$Outbound = {
@@ -67,20 +47,6 @@ export const CreateAccountingSalesorderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingSalesorderRequest$ {
-  /** @deprecated use `CreateAccountingSalesorderRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAccountingSalesorderRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingSalesorderRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CreateAccountingSalesorderRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingSalesorderRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingSalesorderRequest$Outbound;
-}
-
 export function createAccountingSalesorderRequestToJSON(
   createAccountingSalesorderRequest: CreateAccountingSalesorderRequest,
 ): string {
@@ -88,15 +54,5 @@ export function createAccountingSalesorderRequestToJSON(
     CreateAccountingSalesorderRequest$outboundSchema.parse(
       createAccountingSalesorderRequest,
     ),
-  );
-}
-
-export function createAccountingSalesorderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingSalesorderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAccountingSalesorderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingSalesorderRequest' from JSON`,
   );
 }

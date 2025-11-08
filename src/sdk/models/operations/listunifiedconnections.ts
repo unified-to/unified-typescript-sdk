@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const Categories = {
   Passthrough: "passthrough",
@@ -57,44 +54,8 @@ export type ListUnifiedConnectionsRequest = {
 };
 
 /** @internal */
-export const Categories$inboundSchema: z.ZodNativeEnum<typeof Categories> = z
+export const Categories$outboundSchema: z.ZodNativeEnum<typeof Categories> = z
   .nativeEnum(Categories);
-
-/** @internal */
-export const Categories$outboundSchema: z.ZodNativeEnum<typeof Categories> =
-  Categories$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Categories$ {
-  /** @deprecated use `Categories$inboundSchema` instead. */
-  export const inboundSchema = Categories$inboundSchema;
-  /** @deprecated use `Categories$outboundSchema` instead. */
-  export const outboundSchema = Categories$outboundSchema;
-}
-
-/** @internal */
-export const ListUnifiedConnectionsRequest$inboundSchema: z.ZodType<
-  ListUnifiedConnectionsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  categories: z.array(Categories$inboundSchema).optional(),
-  env: z.string().optional(),
-  external_xref: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "external_xref": "externalXref",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListUnifiedConnectionsRequest$Outbound = {
@@ -129,19 +90,6 @@ export const ListUnifiedConnectionsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedConnectionsRequest$ {
-  /** @deprecated use `ListUnifiedConnectionsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUnifiedConnectionsRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedConnectionsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUnifiedConnectionsRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedConnectionsRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedConnectionsRequest$Outbound;
-}
-
 export function listUnifiedConnectionsRequestToJSON(
   listUnifiedConnectionsRequest: ListUnifiedConnectionsRequest,
 ): string {
@@ -149,15 +97,5 @@ export function listUnifiedConnectionsRequestToJSON(
     ListUnifiedConnectionsRequest$outboundSchema.parse(
       listUnifiedConnectionsRequest,
     ),
-  );
-}
-
-export function listUnifiedConnectionsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUnifiedConnectionsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUnifiedConnectionsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUnifiedConnectionsRequest' from JSON`,
   );
 }

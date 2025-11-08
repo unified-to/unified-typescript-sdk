@@ -35,7 +35,6 @@ export const ScimPhotoType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimPhotoType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimPhotoType$outboundSchema: z.ZodType<
   ScimPhotoType,
@@ -45,17 +44,6 @@ export const ScimPhotoType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimPhotoType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimPhotoType$ {
-  /** @deprecated use `ScimPhotoType$inboundSchema` instead. */
-  export const inboundSchema = ScimPhotoType$inboundSchema;
-  /** @deprecated use `ScimPhotoType$outboundSchema` instead. */
-  export const outboundSchema = ScimPhotoType$outboundSchema;
-}
 
 /** @internal */
 export const ScimPhoto$inboundSchema: z.ZodType<
@@ -68,7 +56,6 @@ export const ScimPhoto$inboundSchema: z.ZodType<
   type: ScimPhotoType$inboundSchema.optional(),
   value: z.string().optional(),
 });
-
 /** @internal */
 export type ScimPhoto$Outbound = {
   display?: string | undefined;
@@ -89,23 +76,9 @@ export const ScimPhoto$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimPhoto$ {
-  /** @deprecated use `ScimPhoto$inboundSchema` instead. */
-  export const inboundSchema = ScimPhoto$inboundSchema;
-  /** @deprecated use `ScimPhoto$outboundSchema` instead. */
-  export const outboundSchema = ScimPhoto$outboundSchema;
-  /** @deprecated use `ScimPhoto$Outbound` instead. */
-  export type Outbound = ScimPhoto$Outbound;
-}
-
 export function scimPhotoToJSON(scimPhoto: ScimPhoto): string {
   return JSON.stringify(ScimPhoto$outboundSchema.parse(scimPhoto));
 }
-
 export function scimPhotoFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimPhoto, SDKValidationError> {

@@ -34,7 +34,6 @@ export const HrisEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(HrisEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisEmailType$outboundSchema: z.ZodType<
   HrisEmailType,
@@ -45,17 +44,6 @@ export const HrisEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisEmailType$ {
-  /** @deprecated use `HrisEmailType$inboundSchema` instead. */
-  export const inboundSchema = HrisEmailType$inboundSchema;
-  /** @deprecated use `HrisEmailType$outboundSchema` instead. */
-  export const outboundSchema = HrisEmailType$outboundSchema;
-}
-
 /** @internal */
 export const HrisEmail$inboundSchema: z.ZodType<
   HrisEmail,
@@ -65,7 +53,6 @@ export const HrisEmail$inboundSchema: z.ZodType<
   email: z.string(),
   type: HrisEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type HrisEmail$Outbound = {
   email: string;
@@ -82,23 +69,9 @@ export const HrisEmail$outboundSchema: z.ZodType<
   type: HrisEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisEmail$ {
-  /** @deprecated use `HrisEmail$inboundSchema` instead. */
-  export const inboundSchema = HrisEmail$inboundSchema;
-  /** @deprecated use `HrisEmail$outboundSchema` instead. */
-  export const outboundSchema = HrisEmail$outboundSchema;
-  /** @deprecated use `HrisEmail$Outbound` instead. */
-  export type Outbound = HrisEmail$Outbound;
-}
-
 export function hrisEmailToJSON(hrisEmail: HrisEmail): string {
   return JSON.stringify(HrisEmail$outboundSchema.parse(hrisEmail));
 }
-
 export function hrisEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisEmail, SDKValidationError> {

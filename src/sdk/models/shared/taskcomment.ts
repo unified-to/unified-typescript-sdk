@@ -44,7 +44,6 @@ export const TaskComment$inboundSchema: z.ZodType<
     "user_name": "userName",
   });
 });
-
 /** @internal */
 export type TaskComment$Outbound = {
   created_at?: string | undefined;
@@ -81,23 +80,9 @@ export const TaskComment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskComment$ {
-  /** @deprecated use `TaskComment$inboundSchema` instead. */
-  export const inboundSchema = TaskComment$inboundSchema;
-  /** @deprecated use `TaskComment$outboundSchema` instead. */
-  export const outboundSchema = TaskComment$outboundSchema;
-  /** @deprecated use `TaskComment$Outbound` instead. */
-  export type Outbound = TaskComment$Outbound;
-}
-
 export function taskCommentToJSON(taskComment: TaskComment): string {
   return JSON.stringify(TaskComment$outboundSchema.parse(taskComment));
 }
-
 export function taskCommentFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskComment, SDKValidationError> {

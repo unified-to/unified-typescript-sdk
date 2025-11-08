@@ -36,7 +36,6 @@ export const ResourceType$inboundSchema: z.ZodType<
     z.nativeEnum(ResourceType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ResourceType$outboundSchema: z.ZodType<
   ResourceType,
@@ -46,17 +45,6 @@ export const ResourceType$outboundSchema: z.ZodType<
   z.nativeEnum(ResourceType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResourceType$ {
-  /** @deprecated use `ResourceType$inboundSchema` instead. */
-  export const inboundSchema = ResourceType$inboundSchema;
-  /** @deprecated use `ResourceType$outboundSchema` instead. */
-  export const outboundSchema = ResourceType$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimGroupMeta$inboundSchema: z.ZodType<
@@ -70,7 +58,6 @@ export const PropertyScimGroupMeta$inboundSchema: z.ZodType<
   resourceType: ResourceType$inboundSchema.optional(),
   version: z.string().optional(),
 });
-
 /** @internal */
 export type PropertyScimGroupMeta$Outbound = {
   created?: string | undefined;
@@ -93,19 +80,6 @@ export const PropertyScimGroupMeta$outboundSchema: z.ZodType<
   version: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimGroupMeta$ {
-  /** @deprecated use `PropertyScimGroupMeta$inboundSchema` instead. */
-  export const inboundSchema = PropertyScimGroupMeta$inboundSchema;
-  /** @deprecated use `PropertyScimGroupMeta$outboundSchema` instead. */
-  export const outboundSchema = PropertyScimGroupMeta$outboundSchema;
-  /** @deprecated use `PropertyScimGroupMeta$Outbound` instead. */
-  export type Outbound = PropertyScimGroupMeta$Outbound;
-}
-
 export function propertyScimGroupMetaToJSON(
   propertyScimGroupMeta: PropertyScimGroupMeta,
 ): string {
@@ -113,7 +87,6 @@ export function propertyScimGroupMetaToJSON(
     PropertyScimGroupMeta$outboundSchema.parse(propertyScimGroupMeta),
   );
 }
-
 export function propertyScimGroupMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyScimGroupMeta, SDKValidationError> {

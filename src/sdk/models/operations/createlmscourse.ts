@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateLmsCourseRequest = {
@@ -24,23 +21,6 @@ export type CreateLmsCourseRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateLmsCourseRequest$inboundSchema: z.ZodType<
-  CreateLmsCourseRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsCourse: shared.LmsCourse$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsCourse": "lmsCourse",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateLmsCourseRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateLmsCourseRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateLmsCourseRequest$ {
-  /** @deprecated use `CreateLmsCourseRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateLmsCourseRequest$inboundSchema;
-  /** @deprecated use `CreateLmsCourseRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateLmsCourseRequest$outboundSchema;
-  /** @deprecated use `CreateLmsCourseRequest$Outbound` instead. */
-  export type Outbound = CreateLmsCourseRequest$Outbound;
-}
-
 export function createLmsCourseRequestToJSON(
   createLmsCourseRequest: CreateLmsCourseRequest,
 ): string {
   return JSON.stringify(
     CreateLmsCourseRequest$outboundSchema.parse(createLmsCourseRequest),
-  );
-}
-
-export function createLmsCourseRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateLmsCourseRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateLmsCourseRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateLmsCourseRequest' from JSON`,
   );
 }

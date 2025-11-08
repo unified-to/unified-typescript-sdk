@@ -19,7 +19,6 @@ export const GenaiEmbeddingContent$inboundSchema: z.ZodType<
 > = z.object({
   text: z.string(),
 });
-
 /** @internal */
 export type GenaiEmbeddingContent$Outbound = {
   text: string;
@@ -34,19 +33,6 @@ export const GenaiEmbeddingContent$outboundSchema: z.ZodType<
   text: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GenaiEmbeddingContent$ {
-  /** @deprecated use `GenaiEmbeddingContent$inboundSchema` instead. */
-  export const inboundSchema = GenaiEmbeddingContent$inboundSchema;
-  /** @deprecated use `GenaiEmbeddingContent$outboundSchema` instead. */
-  export const outboundSchema = GenaiEmbeddingContent$outboundSchema;
-  /** @deprecated use `GenaiEmbeddingContent$Outbound` instead. */
-  export type Outbound = GenaiEmbeddingContent$Outbound;
-}
-
 export function genaiEmbeddingContentToJSON(
   genaiEmbeddingContent: GenaiEmbeddingContent,
 ): string {
@@ -54,7 +40,6 @@ export function genaiEmbeddingContentToJSON(
     GenaiEmbeddingContent$outboundSchema.parse(genaiEmbeddingContent),
   );
 }
-
 export function genaiEmbeddingContentFromJSON(
   jsonString: string,
 ): SafeParseResult<GenaiEmbeddingContent, SDKValidationError> {

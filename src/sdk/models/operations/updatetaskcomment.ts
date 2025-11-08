@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateTaskCommentRequest = {
@@ -28,24 +25,6 @@ export type UpdateTaskCommentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateTaskCommentRequest$inboundSchema: z.ZodType<
-  UpdateTaskCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TaskComment: shared.TaskComment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TaskComment": "taskComment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateTaskCommentRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateTaskCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateTaskCommentRequest$ {
-  /** @deprecated use `UpdateTaskCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateTaskCommentRequest$inboundSchema;
-  /** @deprecated use `UpdateTaskCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateTaskCommentRequest$outboundSchema;
-  /** @deprecated use `UpdateTaskCommentRequest$Outbound` instead. */
-  export type Outbound = UpdateTaskCommentRequest$Outbound;
-}
-
 export function updateTaskCommentRequestToJSON(
   updateTaskCommentRequest: UpdateTaskCommentRequest,
 ): string {
   return JSON.stringify(
     UpdateTaskCommentRequest$outboundSchema.parse(updateTaskCommentRequest),
-  );
-}
-
-export function updateTaskCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateTaskCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateTaskCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateTaskCommentRequest' from JSON`,
   );
 }

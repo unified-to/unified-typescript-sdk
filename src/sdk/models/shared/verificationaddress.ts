@@ -40,7 +40,6 @@ export const VerificationAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type VerificationAddress$Outbound = {
   address1?: string | undefined;
@@ -75,19 +74,6 @@ export const VerificationAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationAddress$ {
-  /** @deprecated use `VerificationAddress$inboundSchema` instead. */
-  export const inboundSchema = VerificationAddress$inboundSchema;
-  /** @deprecated use `VerificationAddress$outboundSchema` instead. */
-  export const outboundSchema = VerificationAddress$outboundSchema;
-  /** @deprecated use `VerificationAddress$Outbound` instead. */
-  export type Outbound = VerificationAddress$Outbound;
-}
-
 export function verificationAddressToJSON(
   verificationAddress: VerificationAddress,
 ): string {
@@ -95,7 +81,6 @@ export function verificationAddressToJSON(
     VerificationAddress$outboundSchema.parse(verificationAddress),
   );
 }
-
 export function verificationAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<VerificationAddress, SDKValidationError> {

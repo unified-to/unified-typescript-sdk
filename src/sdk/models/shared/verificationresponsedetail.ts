@@ -37,7 +37,6 @@ export const VerificationResponseDetail$inboundSchema: z.ZodType<
     "parameter_id": "parameterId",
   });
 });
-
 /** @internal */
 export type VerificationResponseDetail$Outbound = {
   download_url?: string | undefined;
@@ -69,19 +68,6 @@ export const VerificationResponseDetail$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationResponseDetail$ {
-  /** @deprecated use `VerificationResponseDetail$inboundSchema` instead. */
-  export const inboundSchema = VerificationResponseDetail$inboundSchema;
-  /** @deprecated use `VerificationResponseDetail$outboundSchema` instead. */
-  export const outboundSchema = VerificationResponseDetail$outboundSchema;
-  /** @deprecated use `VerificationResponseDetail$Outbound` instead. */
-  export type Outbound = VerificationResponseDetail$Outbound;
-}
-
 export function verificationResponseDetailToJSON(
   verificationResponseDetail: VerificationResponseDetail,
 ): string {
@@ -89,7 +75,6 @@ export function verificationResponseDetailToJSON(
     VerificationResponseDetail$outboundSchema.parse(verificationResponseDetail),
   );
 }
-
 export function verificationResponseDetailFromJSON(
   jsonString: string,
 ): SafeParseResult<VerificationResponseDetail, SDKValidationError> {

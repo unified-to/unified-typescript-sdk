@@ -16,42 +16,6 @@ export const PropertyAccountingCashflowItemSubItems$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-/** @internal */
-export type PropertyAccountingCashflowItemSubItems$Outbound = {};
-
-/** @internal */
-export const PropertyAccountingCashflowItemSubItems$outboundSchema: z.ZodType<
-  PropertyAccountingCashflowItemSubItems$Outbound,
-  z.ZodTypeDef,
-  PropertyAccountingCashflowItemSubItems
-> = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingCashflowItemSubItems$ {
-  /** @deprecated use `PropertyAccountingCashflowItemSubItems$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingCashflowItemSubItems$inboundSchema;
-  /** @deprecated use `PropertyAccountingCashflowItemSubItems$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingCashflowItemSubItems$outboundSchema;
-  /** @deprecated use `PropertyAccountingCashflowItemSubItems$Outbound` instead. */
-  export type Outbound = PropertyAccountingCashflowItemSubItems$Outbound;
-}
-
-export function propertyAccountingCashflowItemSubItemsToJSON(
-  propertyAccountingCashflowItemSubItems:
-    PropertyAccountingCashflowItemSubItems,
-): string {
-  return JSON.stringify(
-    PropertyAccountingCashflowItemSubItems$outboundSchema.parse(
-      propertyAccountingCashflowItemSubItems,
-    ),
-  );
-}
-
 export function propertyAccountingCashflowItemSubItemsFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyAccountingCashflowItemSubItems, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoOrganizationRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetRepoOrganizationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetRepoOrganizationRequest$inboundSchema: z.ZodType<
-  GetRepoOrganizationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetRepoOrganizationRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetRepoOrganizationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetRepoOrganizationRequest$ {
-  /** @deprecated use `GetRepoOrganizationRequest$inboundSchema` instead. */
-  export const inboundSchema = GetRepoOrganizationRequest$inboundSchema;
-  /** @deprecated use `GetRepoOrganizationRequest$outboundSchema` instead. */
-  export const outboundSchema = GetRepoOrganizationRequest$outboundSchema;
-  /** @deprecated use `GetRepoOrganizationRequest$Outbound` instead. */
-  export type Outbound = GetRepoOrganizationRequest$Outbound;
-}
-
 export function getRepoOrganizationRequestToJSON(
   getRepoOrganizationRequest: GetRepoOrganizationRequest,
 ): string {
   return JSON.stringify(
     GetRepoOrganizationRequest$outboundSchema.parse(getRepoOrganizationRequest),
-  );
-}
-
-export function getRepoOrganizationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetRepoOrganizationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetRepoOrganizationRequest' from JSON`,
   );
 }

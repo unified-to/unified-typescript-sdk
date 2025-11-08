@@ -78,7 +78,6 @@ export const AtsApplicationStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AtsApplicationStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsApplicationStatus$outboundSchema: z.ZodType<
   AtsApplicationStatus,
@@ -88,17 +87,6 @@ export const AtsApplicationStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AtsApplicationStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsApplicationStatus$ {
-  /** @deprecated use `AtsApplicationStatus$inboundSchema` instead. */
-  export const inboundSchema = AtsApplicationStatus$inboundSchema;
-  /** @deprecated use `AtsApplicationStatus$outboundSchema` instead. */
-  export const outboundSchema = AtsApplicationStatus$outboundSchema;
-}
 
 /** @internal */
 export const AtsApplication$inboundSchema: z.ZodType<
@@ -140,7 +128,6 @@ export const AtsApplication$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AtsApplication$Outbound = {
   answers?: Array<AtsApplicationAnswer$Outbound> | undefined;
@@ -197,23 +184,9 @@ export const AtsApplication$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsApplication$ {
-  /** @deprecated use `AtsApplication$inboundSchema` instead. */
-  export const inboundSchema = AtsApplication$inboundSchema;
-  /** @deprecated use `AtsApplication$outboundSchema` instead. */
-  export const outboundSchema = AtsApplication$outboundSchema;
-  /** @deprecated use `AtsApplication$Outbound` instead. */
-  export type Outbound = AtsApplication$Outbound;
-}
-
 export function atsApplicationToJSON(atsApplication: AtsApplication): string {
   return JSON.stringify(AtsApplication$outboundSchema.parse(atsApplication));
 }
-
 export function atsApplicationFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsApplication, SDKValidationError> {

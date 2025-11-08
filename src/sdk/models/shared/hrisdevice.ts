@@ -79,7 +79,6 @@ export const HrisDevice$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type HrisDevice$Outbound = {
   admin_user_ids?: Array<string> | undefined;
@@ -148,23 +147,9 @@ export const HrisDevice$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisDevice$ {
-  /** @deprecated use `HrisDevice$inboundSchema` instead. */
-  export const inboundSchema = HrisDevice$inboundSchema;
-  /** @deprecated use `HrisDevice$outboundSchema` instead. */
-  export const outboundSchema = HrisDevice$outboundSchema;
-  /** @deprecated use `HrisDevice$Outbound` instead. */
-  export type Outbound = HrisDevice$Outbound;
-}
-
 export function hrisDeviceToJSON(hrisDevice: HrisDevice): string {
   return JSON.stringify(HrisDevice$outboundSchema.parse(hrisDevice));
 }
-
 export function hrisDeviceFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisDevice, SDKValidationError> {

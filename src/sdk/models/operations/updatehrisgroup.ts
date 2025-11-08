@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateHrisGroupRequest = {
@@ -28,24 +25,6 @@ export type UpdateHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateHrisGroupRequest$inboundSchema: z.ZodType<
-  UpdateHrisGroupRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisGroup: shared.HrisGroup$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisGroup": "hrisGroup",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateHrisGroupRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateHrisGroupRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateHrisGroupRequest$ {
-  /** @deprecated use `UpdateHrisGroupRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateHrisGroupRequest$inboundSchema;
-  /** @deprecated use `UpdateHrisGroupRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateHrisGroupRequest$outboundSchema;
-  /** @deprecated use `UpdateHrisGroupRequest$Outbound` instead. */
-  export type Outbound = UpdateHrisGroupRequest$Outbound;
-}
-
 export function updateHrisGroupRequestToJSON(
   updateHrisGroupRequest: UpdateHrisGroupRequest,
 ): string {
   return JSON.stringify(
     UpdateHrisGroupRequest$outboundSchema.parse(updateHrisGroupRequest),
-  );
-}
-
-export function updateHrisGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateHrisGroupRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateHrisGroupRequest' from JSON`,
   );
 }

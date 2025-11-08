@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchScimUsersRequest = {
@@ -20,22 +17,6 @@ export type PatchScimUsersRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const PatchScimUsersRequest$inboundSchema: z.ZodType<
-  PatchScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ScimUser: shared.ScimUser$inboundSchema,
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ScimUser": "scimUser",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchScimUsersRequest$Outbound = {
@@ -60,33 +41,10 @@ export const PatchScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchScimUsersRequest$ {
-  /** @deprecated use `PatchScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchScimUsersRequest$inboundSchema;
-  /** @deprecated use `PatchScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchScimUsersRequest$outboundSchema;
-  /** @deprecated use `PatchScimUsersRequest$Outbound` instead. */
-  export type Outbound = PatchScimUsersRequest$Outbound;
-}
-
 export function patchScimUsersRequestToJSON(
   patchScimUsersRequest: PatchScimUsersRequest,
 ): string {
   return JSON.stringify(
     PatchScimUsersRequest$outboundSchema.parse(patchScimUsersRequest),
-  );
-}
-
-export function patchScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchScimUsersRequest' from JSON`,
   );
 }

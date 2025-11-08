@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsCompanyRequest = {
@@ -24,23 +21,6 @@ export type CreateAtsCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAtsCompanyRequest$inboundSchema: z.ZodType<
-  CreateAtsCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsCompany: shared.AtsCompany$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsCompany": "atsCompany",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAtsCompanyRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateAtsCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAtsCompanyRequest$ {
-  /** @deprecated use `CreateAtsCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAtsCompanyRequest$inboundSchema;
-  /** @deprecated use `CreateAtsCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAtsCompanyRequest$outboundSchema;
-  /** @deprecated use `CreateAtsCompanyRequest$Outbound` instead. */
-  export type Outbound = CreateAtsCompanyRequest$Outbound;
-}
-
 export function createAtsCompanyRequestToJSON(
   createAtsCompanyRequest: CreateAtsCompanyRequest,
 ): string {
   return JSON.stringify(
     CreateAtsCompanyRequest$outboundSchema.parse(createAtsCompanyRequest),
-  );
-}
-
-export function createAtsCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAtsCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAtsCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAtsCompanyRequest' from JSON`,
   );
 }

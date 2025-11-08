@@ -3,11 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 
 export const PropertyIntegrationCategories = {
   Passthrough: "passthrough",
@@ -48,24 +44,3 @@ export const PropertyIntegrationCategories$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyIntegrationCategories),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const PropertyIntegrationCategories$outboundSchema: z.ZodType<
-  PropertyIntegrationCategories,
-  z.ZodTypeDef,
-  PropertyIntegrationCategories
-> = z.union([
-  z.nativeEnum(PropertyIntegrationCategories),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyIntegrationCategories$ {
-  /** @deprecated use `PropertyIntegrationCategories$inboundSchema` instead. */
-  export const inboundSchema = PropertyIntegrationCategories$inboundSchema;
-  /** @deprecated use `PropertyIntegrationCategories$outboundSchema` instead. */
-  export const outboundSchema = PropertyIntegrationCategories$outboundSchema;
-}

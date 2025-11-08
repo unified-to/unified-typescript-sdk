@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -52,27 +48,6 @@ export const ApiCallType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ApiCallType$outboundSchema: z.ZodType<
-  ApiCallType,
-  z.ZodTypeDef,
-  ApiCallType
-> = z.union([
-  z.nativeEnum(ApiCallType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ApiCallType$ {
-  /** @deprecated use `ApiCallType$inboundSchema` instead. */
-  export const inboundSchema = ApiCallType$inboundSchema;
-  /** @deprecated use `ApiCallType$outboundSchema` instead. */
-  export const outboundSchema = ApiCallType$outboundSchema;
-}
-
-/** @internal */
 export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
   z.object({
     connection_id: z.string().optional(),
@@ -106,80 +81,6 @@ export const ApiCall$inboundSchema: z.ZodType<ApiCall, z.ZodTypeDef, unknown> =
       "workspace_id": "workspaceId",
     });
   });
-
-/** @internal */
-export type ApiCall$Outbound = {
-  connection_id?: string | undefined;
-  created_at?: string | undefined;
-  environment: string;
-  error?: string | undefined;
-  external_xref?: string | undefined;
-  id?: string | undefined;
-  integration_type: string;
-  ip_address?: string | undefined;
-  is_billable?: boolean | undefined;
-  method: string;
-  name: string;
-  path: string;
-  size?: number | undefined;
-  status: string;
-  type: string;
-  webhook_id?: string | undefined;
-  workspace_id?: string | undefined;
-};
-
-/** @internal */
-export const ApiCall$outboundSchema: z.ZodType<
-  ApiCall$Outbound,
-  z.ZodTypeDef,
-  ApiCall
-> = z.object({
-  connectionId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  environment: z.string().default("Production"),
-  error: z.string().optional(),
-  externalXref: z.string().optional(),
-  id: z.string().optional(),
-  integrationType: z.string(),
-  ipAddress: z.string().optional(),
-  isBillable: z.boolean().optional(),
-  method: z.string(),
-  name: z.string(),
-  path: z.string(),
-  size: z.number().optional(),
-  status: z.string(),
-  type: ApiCallType$outboundSchema,
-  webhookId: z.string().optional(),
-  workspaceId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    connectionId: "connection_id",
-    createdAt: "created_at",
-    externalXref: "external_xref",
-    integrationType: "integration_type",
-    ipAddress: "ip_address",
-    isBillable: "is_billable",
-    webhookId: "webhook_id",
-    workspaceId: "workspace_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ApiCall$ {
-  /** @deprecated use `ApiCall$inboundSchema` instead. */
-  export const inboundSchema = ApiCall$inboundSchema;
-  /** @deprecated use `ApiCall$outboundSchema` instead. */
-  export const outboundSchema = ApiCall$outboundSchema;
-  /** @deprecated use `ApiCall$Outbound` instead. */
-  export type Outbound = ApiCall$Outbound;
-}
-
-export function apiCallToJSON(apiCall: ApiCall): string {
-  return JSON.stringify(ApiCall$outboundSchema.parse(apiCall));
-}
 
 export function apiCallFromJSON(
   jsonString: string,

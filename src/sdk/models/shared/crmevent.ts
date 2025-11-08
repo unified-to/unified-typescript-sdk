@@ -131,7 +131,6 @@ export const CrmEventType$inboundSchema: z.ZodType<
     z.nativeEnum(CrmEventType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CrmEventType$outboundSchema: z.ZodType<
   CrmEventType,
@@ -141,17 +140,6 @@ export const CrmEventType$outboundSchema: z.ZodType<
   z.nativeEnum(CrmEventType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEventType$ {
-  /** @deprecated use `CrmEventType$inboundSchema` instead. */
-  export const inboundSchema = CrmEventType$inboundSchema;
-  /** @deprecated use `CrmEventType$outboundSchema` instead. */
-  export const outboundSchema = CrmEventType$outboundSchema;
-}
 
 /** @internal */
 export const CrmEvent$inboundSchema: z.ZodType<
@@ -192,7 +180,6 @@ export const CrmEvent$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type CrmEvent$Outbound = {
   call?: PropertyCrmEventCall$Outbound | undefined;
@@ -253,23 +240,9 @@ export const CrmEvent$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEvent$ {
-  /** @deprecated use `CrmEvent$inboundSchema` instead. */
-  export const inboundSchema = CrmEvent$inboundSchema;
-  /** @deprecated use `CrmEvent$outboundSchema` instead. */
-  export const outboundSchema = CrmEvent$outboundSchema;
-  /** @deprecated use `CrmEvent$Outbound` instead. */
-  export type Outbound = CrmEvent$Outbound;
-}
-
 export function crmEventToJSON(crmEvent: CrmEvent): string {
   return JSON.stringify(CrmEvent$outboundSchema.parse(crmEvent));
 }
-
 export function crmEventFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmEvent, SDKValidationError> {

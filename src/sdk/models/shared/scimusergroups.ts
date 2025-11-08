@@ -36,7 +36,6 @@ export const ScimUserGroupsType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimUserGroupsType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimUserGroupsType$outboundSchema: z.ZodType<
   ScimUserGroupsType,
@@ -46,17 +45,6 @@ export const ScimUserGroupsType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimUserGroupsType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimUserGroupsType$ {
-  /** @deprecated use `ScimUserGroupsType$inboundSchema` instead. */
-  export const inboundSchema = ScimUserGroupsType$inboundSchema;
-  /** @deprecated use `ScimUserGroupsType$outboundSchema` instead. */
-  export const outboundSchema = ScimUserGroupsType$outboundSchema;
-}
 
 /** @internal */
 export const ScimUserGroups$inboundSchema: z.ZodType<
@@ -73,7 +61,6 @@ export const ScimUserGroups$inboundSchema: z.ZodType<
     "$ref": "dollarRef",
   });
 });
-
 /** @internal */
 export type ScimUserGroups$Outbound = {
   $ref?: string | undefined;
@@ -98,23 +85,9 @@ export const ScimUserGroups$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimUserGroups$ {
-  /** @deprecated use `ScimUserGroups$inboundSchema` instead. */
-  export const inboundSchema = ScimUserGroups$inboundSchema;
-  /** @deprecated use `ScimUserGroups$outboundSchema` instead. */
-  export const outboundSchema = ScimUserGroups$outboundSchema;
-  /** @deprecated use `ScimUserGroups$Outbound` instead. */
-  export type Outbound = ScimUserGroups$Outbound;
-}
-
 export function scimUserGroupsToJSON(scimUserGroups: ScimUserGroups): string {
   return JSON.stringify(ScimUserGroups$outboundSchema.parse(scimUserGroups));
 }
-
 export function scimUserGroupsFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimUserGroups, SDKValidationError> {

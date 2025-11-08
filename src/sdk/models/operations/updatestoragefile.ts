@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateStorageFileRequest = {
@@ -28,24 +25,6 @@ export type UpdateStorageFileRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateStorageFileRequest$inboundSchema: z.ZodType<
-  UpdateStorageFileRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  StorageFile: shared.StorageFile$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "StorageFile": "storageFile",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateStorageFileRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateStorageFileRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateStorageFileRequest$ {
-  /** @deprecated use `UpdateStorageFileRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateStorageFileRequest$inboundSchema;
-  /** @deprecated use `UpdateStorageFileRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateStorageFileRequest$outboundSchema;
-  /** @deprecated use `UpdateStorageFileRequest$Outbound` instead. */
-  export type Outbound = UpdateStorageFileRequest$Outbound;
-}
-
 export function updateStorageFileRequestToJSON(
   updateStorageFileRequest: UpdateStorageFileRequest,
 ): string {
   return JSON.stringify(
     UpdateStorageFileRequest$outboundSchema.parse(updateStorageFileRequest),
-  );
-}
-
-export function updateStorageFileRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateStorageFileRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateStorageFileRequest' from JSON`,
   );
 }

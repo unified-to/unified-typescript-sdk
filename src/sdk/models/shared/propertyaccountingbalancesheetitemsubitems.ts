@@ -14,43 +14,6 @@ export const PropertyAccountingBalancesheetItemSubItems$inboundSchema:
   z.ZodType<PropertyAccountingBalancesheetItemSubItems, z.ZodTypeDef, unknown> =
     z.object({});
 
-/** @internal */
-export type PropertyAccountingBalancesheetItemSubItems$Outbound = {};
-
-/** @internal */
-export const PropertyAccountingBalancesheetItemSubItems$outboundSchema:
-  z.ZodType<
-    PropertyAccountingBalancesheetItemSubItems$Outbound,
-    z.ZodTypeDef,
-    PropertyAccountingBalancesheetItemSubItems
-  > = z.object({});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingBalancesheetItemSubItems$ {
-  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingBalancesheetItemSubItems$inboundSchema;
-  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingBalancesheetItemSubItems$outboundSchema;
-  /** @deprecated use `PropertyAccountingBalancesheetItemSubItems$Outbound` instead. */
-  export type Outbound = PropertyAccountingBalancesheetItemSubItems$Outbound;
-}
-
-export function propertyAccountingBalancesheetItemSubItemsToJSON(
-  propertyAccountingBalancesheetItemSubItems:
-    PropertyAccountingBalancesheetItemSubItems,
-): string {
-  return JSON.stringify(
-    PropertyAccountingBalancesheetItemSubItems$outboundSchema.parse(
-      propertyAccountingBalancesheetItemSubItems,
-    ),
-  );
-}
-
 export function propertyAccountingBalancesheetItemSubItemsFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingContactRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingContactRequest$inboundSchema: z.ZodType<
-  UpdateAccountingContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingContact: shared.AccountingContact$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingContact": "accountingContact",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingContactRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingContactRequest$ {
-  /** @deprecated use `UpdateAccountingContactRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingContactRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingContactRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingContactRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingContactRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingContactRequest$Outbound;
-}
-
 export function updateAccountingContactRequestToJSON(
   updateAccountingContactRequest: UpdateAccountingContactRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingContactRequestToJSON(
     UpdateAccountingContactRequest$outboundSchema.parse(
       updateAccountingContactRequest,
     ),
-  );
-}
-
-export function updateAccountingContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingContactRequest' from JSON`,
   );
 }

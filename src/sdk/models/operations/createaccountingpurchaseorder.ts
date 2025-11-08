@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingPurchaseorderRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingPurchaseorderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingPurchaseorderRequest$inboundSchema: z.ZodType<
-  CreateAccountingPurchaseorderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingPurchaseorder: shared.AccountingPurchaseorder$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingPurchaseorder": "accountingPurchaseorder",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingPurchaseorderRequest$Outbound = {
@@ -67,21 +47,6 @@ export const CreateAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingPurchaseorderRequest$ {
-  /** @deprecated use `CreateAccountingPurchaseorderRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    CreateAccountingPurchaseorderRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingPurchaseorderRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CreateAccountingPurchaseorderRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingPurchaseorderRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingPurchaseorderRequest$Outbound;
-}
-
 export function createAccountingPurchaseorderRequestToJSON(
   createAccountingPurchaseorderRequest: CreateAccountingPurchaseorderRequest,
 ): string {
@@ -89,16 +54,5 @@ export function createAccountingPurchaseorderRequestToJSON(
     CreateAccountingPurchaseorderRequest$outboundSchema.parse(
       createAccountingPurchaseorderRequest,
     ),
-  );
-}
-
-export function createAccountingPurchaseorderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingPurchaseorderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      CreateAccountingPurchaseorderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingPurchaseorderRequest' from JSON`,
   );
 }

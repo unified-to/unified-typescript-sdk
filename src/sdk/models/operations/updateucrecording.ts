@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUcRecordingRequest = {
@@ -28,24 +25,6 @@ export type UpdateUcRecordingRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateUcRecordingRequest$inboundSchema: z.ZodType<
-  UpdateUcRecordingRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  UcRecording: shared.UcRecording$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "UcRecording": "ucRecording",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateUcRecordingRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateUcRecordingRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateUcRecordingRequest$ {
-  /** @deprecated use `UpdateUcRecordingRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateUcRecordingRequest$inboundSchema;
-  /** @deprecated use `UpdateUcRecordingRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateUcRecordingRequest$outboundSchema;
-  /** @deprecated use `UpdateUcRecordingRequest$Outbound` instead. */
-  export type Outbound = UpdateUcRecordingRequest$Outbound;
-}
-
 export function updateUcRecordingRequestToJSON(
   updateUcRecordingRequest: UpdateUcRecordingRequest,
 ): string {
   return JSON.stringify(
     UpdateUcRecordingRequest$outboundSchema.parse(updateUcRecordingRequest),
-  );
-}
-
-export function updateUcRecordingRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateUcRecordingRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateUcRecordingRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateUcRecordingRequest' from JSON`,
   );
 }

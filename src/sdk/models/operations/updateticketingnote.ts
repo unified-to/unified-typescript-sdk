@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateTicketingNoteRequest = {
@@ -28,24 +25,6 @@ export type UpdateTicketingNoteRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateTicketingNoteRequest$inboundSchema: z.ZodType<
-  UpdateTicketingNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TicketingNote: shared.TicketingNote$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TicketingNote": "ticketingNote",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateTicketingNoteRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateTicketingNoteRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateTicketingNoteRequest$ {
-  /** @deprecated use `UpdateTicketingNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateTicketingNoteRequest$inboundSchema;
-  /** @deprecated use `UpdateTicketingNoteRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateTicketingNoteRequest$outboundSchema;
-  /** @deprecated use `UpdateTicketingNoteRequest$Outbound` instead. */
-  export type Outbound = UpdateTicketingNoteRequest$Outbound;
-}
-
 export function updateTicketingNoteRequestToJSON(
   updateTicketingNoteRequest: UpdateTicketingNoteRequest,
 ): string {
   return JSON.stringify(
     UpdateTicketingNoteRequest$outboundSchema.parse(updateTicketingNoteRequest),
-  );
-}
-
-export function updateTicketingNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateTicketingNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateTicketingNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateTicketingNoteRequest' from JSON`,
   );
 }

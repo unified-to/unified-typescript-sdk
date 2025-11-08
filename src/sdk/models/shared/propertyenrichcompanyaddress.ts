@@ -44,63 +44,6 @@ export const PropertyEnrichCompanyAddress$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type PropertyEnrichCompanyAddress$Outbound = {
-  address1?: string | undefined;
-  address2?: string | undefined;
-  city?: string | undefined;
-  country?: string | undefined;
-  country_code?: string | undefined;
-  postal_code?: string | undefined;
-  region?: string | undefined;
-  region_code?: string | undefined;
-};
-
-/** @internal */
-export const PropertyEnrichCompanyAddress$outboundSchema: z.ZodType<
-  PropertyEnrichCompanyAddress$Outbound,
-  z.ZodTypeDef,
-  PropertyEnrichCompanyAddress
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  countryCode: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-  regionCode: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryCode: "country_code",
-    postalCode: "postal_code",
-    regionCode: "region_code",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyEnrichCompanyAddress$ {
-  /** @deprecated use `PropertyEnrichCompanyAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyEnrichCompanyAddress$inboundSchema;
-  /** @deprecated use `PropertyEnrichCompanyAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyEnrichCompanyAddress$outboundSchema;
-  /** @deprecated use `PropertyEnrichCompanyAddress$Outbound` instead. */
-  export type Outbound = PropertyEnrichCompanyAddress$Outbound;
-}
-
-export function propertyEnrichCompanyAddressToJSON(
-  propertyEnrichCompanyAddress: PropertyEnrichCompanyAddress,
-): string {
-  return JSON.stringify(
-    PropertyEnrichCompanyAddress$outboundSchema.parse(
-      propertyEnrichCompanyAddress,
-    ),
-  );
-}
-
 export function propertyEnrichCompanyAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyEnrichCompanyAddress, SDKValidationError> {

@@ -72,7 +72,6 @@ export const HrisLocation$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type HrisLocation$Outbound = {
   address?: PropertyHrisLocationAddress$Outbound | undefined;
@@ -125,23 +124,9 @@ export const HrisLocation$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisLocation$ {
-  /** @deprecated use `HrisLocation$inboundSchema` instead. */
-  export const inboundSchema = HrisLocation$inboundSchema;
-  /** @deprecated use `HrisLocation$outboundSchema` instead. */
-  export const outboundSchema = HrisLocation$outboundSchema;
-  /** @deprecated use `HrisLocation$Outbound` instead. */
-  export type Outbound = HrisLocation$Outbound;
-}
-
 export function hrisLocationToJSON(hrisLocation: HrisLocation): string {
   return JSON.stringify(HrisLocation$outboundSchema.parse(hrisLocation));
 }
-
 export function hrisLocationFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisLocation, SDKValidationError> {

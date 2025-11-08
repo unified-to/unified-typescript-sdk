@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateScimUsersRequest = {
@@ -20,22 +17,6 @@ export type UpdateScimUsersRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const UpdateScimUsersRequest$inboundSchema: z.ZodType<
-  UpdateScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ScimUser: shared.ScimUser$inboundSchema,
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ScimUser": "scimUser",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateScimUsersRequest$Outbound = {
@@ -60,33 +41,10 @@ export const UpdateScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateScimUsersRequest$ {
-  /** @deprecated use `UpdateScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateScimUsersRequest$inboundSchema;
-  /** @deprecated use `UpdateScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateScimUsersRequest$outboundSchema;
-  /** @deprecated use `UpdateScimUsersRequest$Outbound` instead. */
-  export type Outbound = UpdateScimUsersRequest$Outbound;
-}
-
 export function updateScimUsersRequestToJSON(
   updateScimUsersRequest: UpdateScimUsersRequest,
 ): string {
   return JSON.stringify(
     UpdateScimUsersRequest$outboundSchema.parse(updateScimUsersRequest),
-  );
-}
-
-export function updateScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateScimUsersRequest' from JSON`,
   );
 }

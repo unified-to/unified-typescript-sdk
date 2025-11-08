@@ -24,20 +24,6 @@ export type RemoveCommerceReviewResponse = {
 };
 
 /** @internal */
-export const RemoveCommerceReviewRequest$inboundSchema: z.ZodType<
-  RemoveCommerceReviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCommerceReviewRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveCommerceReviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceReviewRequest$ {
-  /** @deprecated use `RemoveCommerceReviewRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceReviewRequest$inboundSchema;
-  /** @deprecated use `RemoveCommerceReviewRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceReviewRequest$outboundSchema;
-  /** @deprecated use `RemoveCommerceReviewRequest$Outbound` instead. */
-  export type Outbound = RemoveCommerceReviewRequest$Outbound;
-}
-
 export function removeCommerceReviewRequestToJSON(
   removeCommerceReviewRequest: RemoveCommerceReviewRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeCommerceReviewRequestToJSON(
     RemoveCommerceReviewRequest$outboundSchema.parse(
       removeCommerceReviewRequest,
     ),
-  );
-}
-
-export function removeCommerceReviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCommerceReviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCommerceReviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCommerceReviewRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveCommerceReviewResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCommerceReviewResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCommerceReviewResponse$outboundSchema: z.ZodType<
-  RemoveCommerceReviewResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCommerceReviewResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCommerceReviewResponse$ {
-  /** @deprecated use `RemoveCommerceReviewResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCommerceReviewResponse$inboundSchema;
-  /** @deprecated use `RemoveCommerceReviewResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCommerceReviewResponse$outboundSchema;
-  /** @deprecated use `RemoveCommerceReviewResponse$Outbound` instead. */
-  export type Outbound = RemoveCommerceReviewResponse$Outbound;
-}
-
-export function removeCommerceReviewResponseToJSON(
-  removeCommerceReviewResponse: RemoveCommerceReviewResponse,
-): string {
-  return JSON.stringify(
-    RemoveCommerceReviewResponse$outboundSchema.parse(
-      removeCommerceReviewResponse,
-    ),
-  );
-}
 
 export function removeCommerceReviewResponseFromJSON(
   jsonString: string,

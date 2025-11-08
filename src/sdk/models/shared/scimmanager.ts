@@ -40,7 +40,6 @@ export const ScimManagerType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimManagerType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimManagerType$outboundSchema: z.ZodType<
   ScimManagerType,
@@ -50,17 +49,6 @@ export const ScimManagerType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimManagerType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimManagerType$ {
-  /** @deprecated use `ScimManagerType$inboundSchema` instead. */
-  export const inboundSchema = ScimManagerType$inboundSchema;
-  /** @deprecated use `ScimManagerType$outboundSchema` instead. */
-  export const outboundSchema = ScimManagerType$outboundSchema;
-}
 
 /** @internal */
 export const ScimManager$inboundSchema: z.ZodType<
@@ -78,7 +66,6 @@ export const ScimManager$inboundSchema: z.ZodType<
     "$ref": "dollarRef",
   });
 });
-
 /** @internal */
 export type ScimManager$Outbound = {
   $ref?: string | undefined;
@@ -105,23 +92,9 @@ export const ScimManager$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimManager$ {
-  /** @deprecated use `ScimManager$inboundSchema` instead. */
-  export const inboundSchema = ScimManager$inboundSchema;
-  /** @deprecated use `ScimManager$outboundSchema` instead. */
-  export const outboundSchema = ScimManager$outboundSchema;
-  /** @deprecated use `ScimManager$Outbound` instead. */
-  export type Outbound = ScimManager$Outbound;
-}
-
 export function scimManagerToJSON(scimManager: ScimManager): string {
   return JSON.stringify(ScimManager$outboundSchema.parse(scimManager));
 }
-
 export function scimManagerFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimManager, SDKValidationError> {

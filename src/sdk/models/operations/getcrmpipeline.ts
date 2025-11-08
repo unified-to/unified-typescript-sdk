@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCrmPipelineRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetCrmPipelineRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetCrmPipelineRequest$inboundSchema: z.ZodType<
-  GetCrmPipelineRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetCrmPipelineRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetCrmPipelineRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetCrmPipelineRequest$ {
-  /** @deprecated use `GetCrmPipelineRequest$inboundSchema` instead. */
-  export const inboundSchema = GetCrmPipelineRequest$inboundSchema;
-  /** @deprecated use `GetCrmPipelineRequest$outboundSchema` instead. */
-  export const outboundSchema = GetCrmPipelineRequest$outboundSchema;
-  /** @deprecated use `GetCrmPipelineRequest$Outbound` instead. */
-  export type Outbound = GetCrmPipelineRequest$Outbound;
-}
-
 export function getCrmPipelineRequestToJSON(
   getCrmPipelineRequest: GetCrmPipelineRequest,
 ): string {
   return JSON.stringify(
     GetCrmPipelineRequest$outboundSchema.parse(getCrmPipelineRequest),
-  );
-}
-
-export function getCrmPipelineRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetCrmPipelineRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetCrmPipelineRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCrmPipelineRequest' from JSON`,
   );
 }

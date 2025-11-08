@@ -24,20 +24,6 @@ export type RemovePaymentSubscriptionResponse = {
 };
 
 /** @internal */
-export const RemovePaymentSubscriptionRequest$inboundSchema: z.ZodType<
-  RemovePaymentSubscriptionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemovePaymentSubscriptionRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemovePaymentSubscriptionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePaymentSubscriptionRequest$ {
-  /** @deprecated use `RemovePaymentSubscriptionRequest$inboundSchema` instead. */
-  export const inboundSchema = RemovePaymentSubscriptionRequest$inboundSchema;
-  /** @deprecated use `RemovePaymentSubscriptionRequest$outboundSchema` instead. */
-  export const outboundSchema = RemovePaymentSubscriptionRequest$outboundSchema;
-  /** @deprecated use `RemovePaymentSubscriptionRequest$Outbound` instead. */
-  export type Outbound = RemovePaymentSubscriptionRequest$Outbound;
-}
-
 export function removePaymentSubscriptionRequestToJSON(
   removePaymentSubscriptionRequest: RemovePaymentSubscriptionRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removePaymentSubscriptionRequestToJSON(
     RemovePaymentSubscriptionRequest$outboundSchema.parse(
       removePaymentSubscriptionRequest,
     ),
-  );
-}
-
-export function removePaymentSubscriptionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemovePaymentSubscriptionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemovePaymentSubscriptionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemovePaymentSubscriptionRequest' from JSON`,
   );
 }
 
@@ -102,48 +65,6 @@ export const RemovePaymentSubscriptionResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemovePaymentSubscriptionResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemovePaymentSubscriptionResponse$outboundSchema: z.ZodType<
-  RemovePaymentSubscriptionResponse$Outbound,
-  z.ZodTypeDef,
-  RemovePaymentSubscriptionResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePaymentSubscriptionResponse$ {
-  /** @deprecated use `RemovePaymentSubscriptionResponse$inboundSchema` instead. */
-  export const inboundSchema = RemovePaymentSubscriptionResponse$inboundSchema;
-  /** @deprecated use `RemovePaymentSubscriptionResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RemovePaymentSubscriptionResponse$outboundSchema;
-  /** @deprecated use `RemovePaymentSubscriptionResponse$Outbound` instead. */
-  export type Outbound = RemovePaymentSubscriptionResponse$Outbound;
-}
-
-export function removePaymentSubscriptionResponseToJSON(
-  removePaymentSubscriptionResponse: RemovePaymentSubscriptionResponse,
-): string {
-  return JSON.stringify(
-    RemovePaymentSubscriptionResponse$outboundSchema.parse(
-      removePaymentSubscriptionResponse,
-    ),
-  );
-}
 
 export function removePaymentSubscriptionResponseFromJSON(
   jsonString: string,

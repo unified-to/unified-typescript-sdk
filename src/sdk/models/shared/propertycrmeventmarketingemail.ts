@@ -42,7 +42,6 @@ export const PropertyCrmEventMarketingEmail$inboundSchema: z.ZodType<
     "attachment_file_ids": "attachmentFileIds",
   });
 });
-
 /** @internal */
 export type PropertyCrmEventMarketingEmail$Outbound = {
   attachment_file_ids?: Array<string> | undefined;
@@ -73,19 +72,6 @@ export const PropertyCrmEventMarketingEmail$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventMarketingEmail$ {
-  /** @deprecated use `PropertyCrmEventMarketingEmail$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventMarketingEmail$inboundSchema;
-  /** @deprecated use `PropertyCrmEventMarketingEmail$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventMarketingEmail$outboundSchema;
-  /** @deprecated use `PropertyCrmEventMarketingEmail$Outbound` instead. */
-  export type Outbound = PropertyCrmEventMarketingEmail$Outbound;
-}
-
 export function propertyCrmEventMarketingEmailToJSON(
   propertyCrmEventMarketingEmail: PropertyCrmEventMarketingEmail,
 ): string {
@@ -95,7 +81,6 @@ export function propertyCrmEventMarketingEmailToJSON(
     ),
   );
 }
-
 export function propertyCrmEventMarketingEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventMarketingEmail, SDKValidationError> {

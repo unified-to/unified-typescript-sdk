@@ -85,7 +85,6 @@ export const TaskMetadata1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type TaskMetadata1$Outbound = {};
 
@@ -96,23 +95,9 @@ export const TaskMetadata1$outboundSchema: z.ZodType<
   TaskMetadata1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadata1$ {
-  /** @deprecated use `TaskMetadata1$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadata1$inboundSchema;
-  /** @deprecated use `TaskMetadata1$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadata1$outboundSchema;
-  /** @deprecated use `TaskMetadata1$Outbound` instead. */
-  export type Outbound = TaskMetadata1$Outbound;
-}
-
 export function taskMetadata1ToJSON(taskMetadata1: TaskMetadata1): string {
   return JSON.stringify(TaskMetadata1$outboundSchema.parse(taskMetadata1));
 }
-
 export function taskMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadata1, SDKValidationError> {
@@ -134,7 +119,6 @@ export const TaskMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type TaskMetadata5$Outbound =
   | TaskMetadata1$Outbound
@@ -154,23 +138,9 @@ export const TaskMetadata5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadata5$ {
-  /** @deprecated use `TaskMetadata5$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadata5$inboundSchema;
-  /** @deprecated use `TaskMetadata5$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadata5$outboundSchema;
-  /** @deprecated use `TaskMetadata5$Outbound` instead. */
-  export type Outbound = TaskMetadata5$Outbound;
-}
-
 export function taskMetadata5ToJSON(taskMetadata5: TaskMetadata5): string {
   return JSON.stringify(TaskMetadata5$outboundSchema.parse(taskMetadata5));
 }
-
 export function taskMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadata5, SDKValidationError> {
@@ -200,7 +170,6 @@ export const TaskMetadataExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type TaskMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -229,19 +198,6 @@ export const TaskMetadataExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadataExtraData$ {
-  /** @deprecated use `TaskMetadataExtraData$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadataExtraData$inboundSchema;
-  /** @deprecated use `TaskMetadataExtraData$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadataExtraData$outboundSchema;
-  /** @deprecated use `TaskMetadataExtraData$Outbound` instead. */
-  export type Outbound = TaskMetadataExtraData$Outbound;
-}
-
 export function taskMetadataExtraDataToJSON(
   taskMetadataExtraData: TaskMetadataExtraData,
 ): string {
@@ -249,7 +205,6 @@ export function taskMetadataExtraDataToJSON(
     TaskMetadataExtraData$outboundSchema.parse(taskMetadataExtraData),
   );
 }
-
 export function taskMetadataExtraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadataExtraData, SDKValidationError> {
@@ -270,7 +225,6 @@ export const TaskMetadataFormat$inboundSchema: z.ZodType<
     z.nativeEnum(TaskMetadataFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TaskMetadataFormat$outboundSchema: z.ZodType<
   TaskMetadataFormat,
@@ -281,24 +235,12 @@ export const TaskMetadataFormat$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadataFormat$ {
-  /** @deprecated use `TaskMetadataFormat$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadataFormat$inboundSchema;
-  /** @deprecated use `TaskMetadataFormat$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadataFormat$outboundSchema;
-}
-
 /** @internal */
 export const TaskMetadataSchemas1$inboundSchema: z.ZodType<
   TaskMetadataSchemas1,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type TaskMetadataSchemas1$Outbound = {};
 
@@ -309,19 +251,6 @@ export const TaskMetadataSchemas1$outboundSchema: z.ZodType<
   TaskMetadataSchemas1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadataSchemas1$ {
-  /** @deprecated use `TaskMetadataSchemas1$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadataSchemas1$inboundSchema;
-  /** @deprecated use `TaskMetadataSchemas1$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadataSchemas1$outboundSchema;
-  /** @deprecated use `TaskMetadataSchemas1$Outbound` instead. */
-  export type Outbound = TaskMetadataSchemas1$Outbound;
-}
-
 export function taskMetadataSchemas1ToJSON(
   taskMetadataSchemas1: TaskMetadataSchemas1,
 ): string {
@@ -329,7 +258,6 @@ export function taskMetadataSchemas1ToJSON(
     TaskMetadataSchemas1$outboundSchema.parse(taskMetadataSchemas1),
   );
 }
-
 export function taskMetadataSchemas1FromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadataSchemas1, SDKValidationError> {
@@ -351,7 +279,6 @@ export const TaskMetadataSchemas5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type TaskMetadataSchemas5$Outbound =
   | TaskMetadataSchemas1$Outbound
@@ -371,19 +298,6 @@ export const TaskMetadataSchemas5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadataSchemas5$ {
-  /** @deprecated use `TaskMetadataSchemas5$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadataSchemas5$inboundSchema;
-  /** @deprecated use `TaskMetadataSchemas5$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadataSchemas5$outboundSchema;
-  /** @deprecated use `TaskMetadataSchemas5$Outbound` instead. */
-  export type Outbound = TaskMetadataSchemas5$Outbound;
-}
-
 export function taskMetadataSchemas5ToJSON(
   taskMetadataSchemas5: TaskMetadataSchemas5,
 ): string {
@@ -391,7 +305,6 @@ export function taskMetadataSchemas5ToJSON(
     TaskMetadataSchemas5$outboundSchema.parse(taskMetadataSchemas5),
   );
 }
-
 export function taskMetadataSchemas5FromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadataSchemas5, SDKValidationError> {
@@ -421,7 +334,6 @@ export const TaskMetadataValue$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type TaskMetadataValue$Outbound =
   | { [k: string]: any }
@@ -450,19 +362,6 @@ export const TaskMetadataValue$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadataValue$ {
-  /** @deprecated use `TaskMetadataValue$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadataValue$inboundSchema;
-  /** @deprecated use `TaskMetadataValue$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadataValue$outboundSchema;
-  /** @deprecated use `TaskMetadataValue$Outbound` instead. */
-  export type Outbound = TaskMetadataValue$Outbound;
-}
-
 export function taskMetadataValueToJSON(
   taskMetadataValue: TaskMetadataValue,
 ): string {
@@ -470,7 +369,6 @@ export function taskMetadataValueToJSON(
     TaskMetadataValue$outboundSchema.parse(taskMetadataValue),
   );
 }
-
 export function taskMetadataValueFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadataValue, SDKValidationError> {
@@ -526,7 +424,6 @@ export const TaskMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
-
 /** @internal */
 export type TaskMetadata$Outbound = {
   extra_data?:
@@ -597,23 +494,9 @@ export const TaskMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskMetadata$ {
-  /** @deprecated use `TaskMetadata$inboundSchema` instead. */
-  export const inboundSchema = TaskMetadata$inboundSchema;
-  /** @deprecated use `TaskMetadata$outboundSchema` instead. */
-  export const outboundSchema = TaskMetadata$outboundSchema;
-  /** @deprecated use `TaskMetadata$Outbound` instead. */
-  export type Outbound = TaskMetadata$Outbound;
-}
-
 export function taskMetadataToJSON(taskMetadata: TaskMetadata): string {
   return JSON.stringify(TaskMetadata$outboundSchema.parse(taskMetadata));
 }
-
 export function taskMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskMetadata, SDKValidationError> {

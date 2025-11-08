@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmEventRequest = {
@@ -31,24 +28,6 @@ export type PatchCrmEventRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCrmEventRequest$inboundSchema: z.ZodType<
-  PatchCrmEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmEvent: shared.CrmEvent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmEvent": "crmEvent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCrmEventRequest$Outbound = {
@@ -77,33 +56,10 @@ export const PatchCrmEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCrmEventRequest$ {
-  /** @deprecated use `PatchCrmEventRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCrmEventRequest$inboundSchema;
-  /** @deprecated use `PatchCrmEventRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCrmEventRequest$outboundSchema;
-  /** @deprecated use `PatchCrmEventRequest$Outbound` instead. */
-  export type Outbound = PatchCrmEventRequest$Outbound;
-}
-
 export function patchCrmEventRequestToJSON(
   patchCrmEventRequest: PatchCrmEventRequest,
 ): string {
   return JSON.stringify(
     PatchCrmEventRequest$outboundSchema.parse(patchCrmEventRequest),
-  );
-}
-
-export function patchCrmEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCrmEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCrmEventRequest' from JSON`,
   );
 }

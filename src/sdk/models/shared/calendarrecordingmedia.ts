@@ -10,14 +10,10 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CalendarAttendee,
   CalendarAttendee$inboundSchema,
-  CalendarAttendee$Outbound,
-  CalendarAttendee$outboundSchema,
 } from "./calendarattendee.js";
 import {
   CalendarRecordingTranscript,
   CalendarRecordingTranscript$inboundSchema,
-  CalendarRecordingTranscript$Outbound,
-  CalendarRecordingTranscript$outboundSchema,
 } from "./calendarrecordingtranscript.js";
 
 export type CalendarRecordingMedia = {
@@ -53,60 +49,6 @@ export const CalendarRecordingMedia$inboundSchema: z.ZodType<
     "transcript_download_url": "transcriptDownloadUrl",
   });
 });
-
-/** @internal */
-export type CalendarRecordingMedia$Outbound = {
-  attendees?: Array<CalendarAttendee$Outbound> | undefined;
-  end_at?: string | undefined;
-  language?: string | undefined;
-  recording_download_url?: string | undefined;
-  start_at?: string | undefined;
-  transcript_download_url?: string | undefined;
-  transcripts?: Array<CalendarRecordingTranscript$Outbound> | undefined;
-};
-
-/** @internal */
-export const CalendarRecordingMedia$outboundSchema: z.ZodType<
-  CalendarRecordingMedia$Outbound,
-  z.ZodTypeDef,
-  CalendarRecordingMedia
-> = z.object({
-  attendees: z.array(CalendarAttendee$outboundSchema).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  language: z.string().optional(),
-  recordingDownloadUrl: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  transcriptDownloadUrl: z.string().optional(),
-  transcripts: z.array(CalendarRecordingTranscript$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    recordingDownloadUrl: "recording_download_url",
-    startAt: "start_at",
-    transcriptDownloadUrl: "transcript_download_url",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarRecordingMedia$ {
-  /** @deprecated use `CalendarRecordingMedia$inboundSchema` instead. */
-  export const inboundSchema = CalendarRecordingMedia$inboundSchema;
-  /** @deprecated use `CalendarRecordingMedia$outboundSchema` instead. */
-  export const outboundSchema = CalendarRecordingMedia$outboundSchema;
-  /** @deprecated use `CalendarRecordingMedia$Outbound` instead. */
-  export type Outbound = CalendarRecordingMedia$Outbound;
-}
-
-export function calendarRecordingMediaToJSON(
-  calendarRecordingMedia: CalendarRecordingMedia,
-): string {
-  return JSON.stringify(
-    CalendarRecordingMedia$outboundSchema.parse(calendarRecordingMedia),
-  );
-}
 
 export function calendarRecordingMediaFromJSON(
   jsonString: string,

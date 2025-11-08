@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTaskTaskRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetTaskTaskRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetTaskTaskRequest$inboundSchema: z.ZodType<
-  GetTaskTaskRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetTaskTaskRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetTaskTaskRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTaskTaskRequest$ {
-  /** @deprecated use `GetTaskTaskRequest$inboundSchema` instead. */
-  export const inboundSchema = GetTaskTaskRequest$inboundSchema;
-  /** @deprecated use `GetTaskTaskRequest$outboundSchema` instead. */
-  export const outboundSchema = GetTaskTaskRequest$outboundSchema;
-  /** @deprecated use `GetTaskTaskRequest$Outbound` instead. */
-  export type Outbound = GetTaskTaskRequest$Outbound;
-}
-
 export function getTaskTaskRequestToJSON(
   getTaskTaskRequest: GetTaskTaskRequest,
 ): string {
   return JSON.stringify(
     GetTaskTaskRequest$outboundSchema.parse(getTaskTaskRequest),
-  );
-}
-
-export function getTaskTaskRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTaskTaskRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTaskTaskRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTaskTaskRequest' from JSON`,
   );
 }

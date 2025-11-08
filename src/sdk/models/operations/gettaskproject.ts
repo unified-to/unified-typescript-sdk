@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTaskProjectRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetTaskProjectRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetTaskProjectRequest$inboundSchema: z.ZodType<
-  GetTaskProjectRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetTaskProjectRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetTaskProjectRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTaskProjectRequest$ {
-  /** @deprecated use `GetTaskProjectRequest$inboundSchema` instead. */
-  export const inboundSchema = GetTaskProjectRequest$inboundSchema;
-  /** @deprecated use `GetTaskProjectRequest$outboundSchema` instead. */
-  export const outboundSchema = GetTaskProjectRequest$outboundSchema;
-  /** @deprecated use `GetTaskProjectRequest$Outbound` instead. */
-  export type Outbound = GetTaskProjectRequest$Outbound;
-}
-
 export function getTaskProjectRequestToJSON(
   getTaskProjectRequest: GetTaskProjectRequest,
 ): string {
   return JSON.stringify(
     GetTaskProjectRequest$outboundSchema.parse(getTaskProjectRequest),
-  );
-}
-
-export function getTaskProjectRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTaskProjectRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTaskProjectRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTaskProjectRequest' from JSON`,
   );
 }

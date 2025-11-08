@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisTimeshiftRequest = {
@@ -24,23 +21,6 @@ export type CreateHrisTimeshiftRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateHrisTimeshiftRequest$inboundSchema: z.ZodType<
-  CreateHrisTimeshiftRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisTimeshift: shared.HrisTimeshift$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisTimeshift": "hrisTimeshift",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateHrisTimeshiftRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateHrisTimeshiftRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateHrisTimeshiftRequest$ {
-  /** @deprecated use `CreateHrisTimeshiftRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateHrisTimeshiftRequest$inboundSchema;
-  /** @deprecated use `CreateHrisTimeshiftRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateHrisTimeshiftRequest$outboundSchema;
-  /** @deprecated use `CreateHrisTimeshiftRequest$Outbound` instead. */
-  export type Outbound = CreateHrisTimeshiftRequest$Outbound;
-}
-
 export function createHrisTimeshiftRequestToJSON(
   createHrisTimeshiftRequest: CreateHrisTimeshiftRequest,
 ): string {
   return JSON.stringify(
     CreateHrisTimeshiftRequest$outboundSchema.parse(createHrisTimeshiftRequest),
-  );
-}
-
-export function createHrisTimeshiftRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateHrisTimeshiftRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateHrisTimeshiftRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateHrisTimeshiftRequest' from JSON`,
   );
 }

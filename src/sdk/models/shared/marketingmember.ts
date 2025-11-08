@@ -66,7 +66,6 @@ export const MarketingMember$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type MarketingMember$Outbound = {
   created_at?: string | undefined;
@@ -107,25 +106,11 @@ export const MarketingMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MarketingMember$ {
-  /** @deprecated use `MarketingMember$inboundSchema` instead. */
-  export const inboundSchema = MarketingMember$inboundSchema;
-  /** @deprecated use `MarketingMember$outboundSchema` instead. */
-  export const outboundSchema = MarketingMember$outboundSchema;
-  /** @deprecated use `MarketingMember$Outbound` instead. */
-  export type Outbound = MarketingMember$Outbound;
-}
-
 export function marketingMemberToJSON(
   marketingMember: MarketingMember,
 ): string {
   return JSON.stringify(MarketingMember$outboundSchema.parse(marketingMember));
 }
-
 export function marketingMemberFromJSON(
   jsonString: string,
 ): SafeParseResult<MarketingMember, SDKValidationError> {

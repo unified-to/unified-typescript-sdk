@@ -94,7 +94,6 @@ export const CommerceItem$inboundSchema: z.ZodType<
     "vendor_name": "vendorName",
   });
 });
-
 /** @internal */
 export type CommerceItem$Outbound = {
   account_id?: string | undefined;
@@ -160,23 +159,9 @@ export const CommerceItem$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceItem$ {
-  /** @deprecated use `CommerceItem$inboundSchema` instead. */
-  export const inboundSchema = CommerceItem$inboundSchema;
-  /** @deprecated use `CommerceItem$outboundSchema` instead. */
-  export const outboundSchema = CommerceItem$outboundSchema;
-  /** @deprecated use `CommerceItem$Outbound` instead. */
-  export type Outbound = CommerceItem$Outbound;
-}
-
 export function commerceItemToJSON(commerceItem: CommerceItem): string {
   return JSON.stringify(CommerceItem$outboundSchema.parse(commerceItem));
 }
-
 export function commerceItemFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceItem, SDKValidationError> {

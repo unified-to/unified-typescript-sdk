@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsJobRequest = {
@@ -28,24 +25,6 @@ export type UpdateAtsJobRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAtsJobRequest$inboundSchema: z.ZodType<
-  UpdateAtsJobRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsJob: shared.AtsJob$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsJob": "atsJob",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAtsJobRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateAtsJobRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAtsJobRequest$ {
-  /** @deprecated use `UpdateAtsJobRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAtsJobRequest$inboundSchema;
-  /** @deprecated use `UpdateAtsJobRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAtsJobRequest$outboundSchema;
-  /** @deprecated use `UpdateAtsJobRequest$Outbound` instead. */
-  export type Outbound = UpdateAtsJobRequest$Outbound;
-}
-
 export function updateAtsJobRequestToJSON(
   updateAtsJobRequest: UpdateAtsJobRequest,
 ): string {
   return JSON.stringify(
     UpdateAtsJobRequest$outboundSchema.parse(updateAtsJobRequest),
-  );
-}
-
-export function updateAtsJobRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAtsJobRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAtsJobRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAtsJobRequest' from JSON`,
   );
 }

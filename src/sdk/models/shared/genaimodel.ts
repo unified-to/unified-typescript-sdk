@@ -39,55 +39,6 @@ export const GenaiModel$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type GenaiModel$Outbound = {
-  description?: string | undefined;
-  has_temperature?: boolean | undefined;
-  id?: string | undefined;
-  max_tokens?: number | undefined;
-  name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  web_url?: string | undefined;
-};
-
-/** @internal */
-export const GenaiModel$outboundSchema: z.ZodType<
-  GenaiModel$Outbound,
-  z.ZodTypeDef,
-  GenaiModel
-> = z.object({
-  description: z.string().optional(),
-  hasTemperature: z.boolean().optional(),
-  id: z.string().optional(),
-  maxTokens: z.number().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    hasTemperature: "has_temperature",
-    maxTokens: "max_tokens",
-    webUrl: "web_url",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GenaiModel$ {
-  /** @deprecated use `GenaiModel$inboundSchema` instead. */
-  export const inboundSchema = GenaiModel$inboundSchema;
-  /** @deprecated use `GenaiModel$outboundSchema` instead. */
-  export const outboundSchema = GenaiModel$outboundSchema;
-  /** @deprecated use `GenaiModel$Outbound` instead. */
-  export type Outbound = GenaiModel$Outbound;
-}
-
-export function genaiModelToJSON(genaiModel: GenaiModel): string {
-  return JSON.stringify(GenaiModel$outboundSchema.parse(genaiModel));
-}
-
 export function genaiModelFromJSON(
   jsonString: string,
 ): SafeParseResult<GenaiModel, SDKValidationError> {

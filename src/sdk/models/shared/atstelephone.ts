@@ -36,7 +36,6 @@ export const AtsTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsTelephoneType$outboundSchema: z.ZodType<
   AtsTelephoneType,
@@ -47,17 +46,6 @@ export const AtsTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsTelephoneType$ {
-  /** @deprecated use `AtsTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = AtsTelephoneType$inboundSchema;
-  /** @deprecated use `AtsTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = AtsTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const AtsTelephone$inboundSchema: z.ZodType<
   AtsTelephone,
@@ -67,7 +55,6 @@ export const AtsTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: AtsTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AtsTelephone$Outbound = {
   telephone: string;
@@ -84,23 +71,9 @@ export const AtsTelephone$outboundSchema: z.ZodType<
   type: AtsTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsTelephone$ {
-  /** @deprecated use `AtsTelephone$inboundSchema` instead. */
-  export const inboundSchema = AtsTelephone$inboundSchema;
-  /** @deprecated use `AtsTelephone$outboundSchema` instead. */
-  export const outboundSchema = AtsTelephone$outboundSchema;
-  /** @deprecated use `AtsTelephone$Outbound` instead. */
-  export type Outbound = AtsTelephone$Outbound;
-}
-
 export function atsTelephoneToJSON(atsTelephone: AtsTelephone): string {
   return JSON.stringify(AtsTelephone$outboundSchema.parse(atsTelephone));
 }
-
 export function atsTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsTelephone, SDKValidationError> {

@@ -78,7 +78,6 @@ export const CommerceReviewStatus$inboundSchema: z.ZodType<
     z.nativeEnum(CommerceReviewStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CommerceReviewStatus$outboundSchema: z.ZodType<
   CommerceReviewStatus,
@@ -88,17 +87,6 @@ export const CommerceReviewStatus$outboundSchema: z.ZodType<
   z.nativeEnum(CommerceReviewStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceReviewStatus$ {
-  /** @deprecated use `CommerceReviewStatus$inboundSchema` instead. */
-  export const inboundSchema = CommerceReviewStatus$inboundSchema;
-  /** @deprecated use `CommerceReviewStatus$outboundSchema` instead. */
-  export const outboundSchema = CommerceReviewStatus$outboundSchema;
-}
 
 /** @internal */
 export const CommerceReview$inboundSchema: z.ZodType<
@@ -149,7 +137,6 @@ export const CommerceReview$inboundSchema: z.ZodType<
     "verified_purchase": "verifiedPurchase",
   });
 });
-
 /** @internal */
 export type CommerceReview$Outbound = {
   author_avatar_url?: string | undefined;
@@ -225,23 +212,9 @@ export const CommerceReview$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceReview$ {
-  /** @deprecated use `CommerceReview$inboundSchema` instead. */
-  export const inboundSchema = CommerceReview$inboundSchema;
-  /** @deprecated use `CommerceReview$outboundSchema` instead. */
-  export const outboundSchema = CommerceReview$outboundSchema;
-  /** @deprecated use `CommerceReview$Outbound` instead. */
-  export type Outbound = CommerceReview$Outbound;
-}
-
 export function commerceReviewToJSON(commerceReview: CommerceReview): string {
   return JSON.stringify(CommerceReview$outboundSchema.parse(commerceReview));
 }
-
 export function commerceReviewFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceReview, SDKValidationError> {

@@ -5,36 +5,21 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  EnrichEmail,
-  EnrichEmail$inboundSchema,
-  EnrichEmail$Outbound,
-  EnrichEmail$outboundSchema,
-} from "./enrichemail.js";
+import { EnrichEmail, EnrichEmail$inboundSchema } from "./enrichemail.js";
 import {
   EnrichPersonWorkHistory,
   EnrichPersonWorkHistory$inboundSchema,
-  EnrichPersonWorkHistory$Outbound,
-  EnrichPersonWorkHistory$outboundSchema,
 } from "./enrichpersonworkhistory.js";
 import {
   EnrichTelephone,
   EnrichTelephone$inboundSchema,
-  EnrichTelephone$Outbound,
-  EnrichTelephone$outboundSchema,
 } from "./enrichtelephone.js";
 import {
   PropertyEnrichPersonAddress,
   PropertyEnrichPersonAddress$inboundSchema,
-  PropertyEnrichPersonAddress$Outbound,
-  PropertyEnrichPersonAddress$outboundSchema,
 } from "./propertyenrichpersonaddress.js";
 
 export const Gender = {
@@ -92,24 +77,6 @@ export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> = z
   ]);
 
 /** @internal */
-export const Gender$outboundSchema: z.ZodType<Gender, z.ZodTypeDef, Gender> = z
-  .union([
-    z.nativeEnum(Gender),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Gender$ {
-  /** @deprecated use `Gender$inboundSchema` instead. */
-  export const inboundSchema = Gender$inboundSchema;
-  /** @deprecated use `Gender$outboundSchema` instead. */
-  export const outboundSchema = Gender$outboundSchema;
-}
-
-/** @internal */
 export const EnrichPerson$inboundSchema: z.ZodType<
   EnrichPerson,
   z.ZodTypeDef,
@@ -161,104 +128,6 @@ export const EnrichPerson$inboundSchema: z.ZodType<
     "work_histories": "workHistories",
   });
 });
-
-/** @internal */
-export type EnrichPerson$Outbound = {
-  address?: PropertyEnrichPersonAddress$Outbound | undefined;
-  bio?: string | undefined;
-  birthdate?: string | undefined;
-  company?: string | undefined;
-  company_domain?: string | undefined;
-  created_at?: string | undefined;
-  emails?: Array<EnrichEmail$Outbound> | undefined;
-  facebook_url?: string | undefined;
-  first_name?: string | undefined;
-  gender?: string | undefined;
-  github_url?: string | undefined;
-  github_username?: string | undefined;
-  id?: string | undefined;
-  image_url?: string | undefined;
-  last_name?: string | undefined;
-  linkedin_url?: string | undefined;
-  name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  telephones?: Array<EnrichTelephone$Outbound> | undefined;
-  timezone?: string | undefined;
-  title?: string | undefined;
-  twitter_handle?: string | undefined;
-  twitter_url?: string | undefined;
-  updated_at?: string | undefined;
-  utc_offset?: number | undefined;
-  work_histories?: Array<EnrichPersonWorkHistory$Outbound> | undefined;
-};
-
-/** @internal */
-export const EnrichPerson$outboundSchema: z.ZodType<
-  EnrichPerson$Outbound,
-  z.ZodTypeDef,
-  EnrichPerson
-> = z.object({
-  address: PropertyEnrichPersonAddress$outboundSchema.optional(),
-  bio: z.string().optional(),
-  birthdate: z.string().optional(),
-  company: z.string().optional(),
-  companyDomain: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  emails: z.array(EnrichEmail$outboundSchema).optional(),
-  facebookUrl: z.string().optional(),
-  firstName: z.string().optional(),
-  gender: Gender$outboundSchema.optional(),
-  githubUrl: z.string().optional(),
-  githubUsername: z.string().optional(),
-  id: z.string().optional(),
-  imageUrl: z.string().optional(),
-  lastName: z.string().optional(),
-  linkedinUrl: z.string().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  telephones: z.array(EnrichTelephone$outboundSchema).optional(),
-  timezone: z.string().optional(),
-  title: z.string().optional(),
-  twitterHandle: z.string().optional(),
-  twitterUrl: z.string().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  utcOffset: z.number().optional(),
-  workHistories: z.array(EnrichPersonWorkHistory$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyDomain: "company_domain",
-    createdAt: "created_at",
-    facebookUrl: "facebook_url",
-    firstName: "first_name",
-    githubUrl: "github_url",
-    githubUsername: "github_username",
-    imageUrl: "image_url",
-    lastName: "last_name",
-    linkedinUrl: "linkedin_url",
-    twitterHandle: "twitter_handle",
-    twitterUrl: "twitter_url",
-    updatedAt: "updated_at",
-    utcOffset: "utc_offset",
-    workHistories: "work_histories",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichPerson$ {
-  /** @deprecated use `EnrichPerson$inboundSchema` instead. */
-  export const inboundSchema = EnrichPerson$inboundSchema;
-  /** @deprecated use `EnrichPerson$outboundSchema` instead. */
-  export const outboundSchema = EnrichPerson$outboundSchema;
-  /** @deprecated use `EnrichPerson$Outbound` instead. */
-  export type Outbound = EnrichPerson$Outbound;
-}
-
-export function enrichPersonToJSON(enrichPerson: EnrichPerson): string {
-  return JSON.stringify(EnrichPerson$outboundSchema.parse(enrichPerson));
-}
 
 export function enrichPersonFromJSON(
   jsonString: string,

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchPaymentSubscriptionRequest = {
@@ -28,24 +25,6 @@ export type PatchPaymentSubscriptionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchPaymentSubscriptionRequest$inboundSchema: z.ZodType<
-  PatchPaymentSubscriptionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  PaymentSubscription: shared.PaymentSubscription$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "PaymentSubscription": "paymentSubscription",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchPaymentSubscriptionRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchPaymentSubscriptionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchPaymentSubscriptionRequest$ {
-  /** @deprecated use `PatchPaymentSubscriptionRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchPaymentSubscriptionRequest$inboundSchema;
-  /** @deprecated use `PatchPaymentSubscriptionRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchPaymentSubscriptionRequest$outboundSchema;
-  /** @deprecated use `PatchPaymentSubscriptionRequest$Outbound` instead. */
-  export type Outbound = PatchPaymentSubscriptionRequest$Outbound;
-}
-
 export function patchPaymentSubscriptionRequestToJSON(
   patchPaymentSubscriptionRequest: PatchPaymentSubscriptionRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchPaymentSubscriptionRequestToJSON(
     PatchPaymentSubscriptionRequest$outboundSchema.parse(
       patchPaymentSubscriptionRequest,
     ),
-  );
-}
-
-export function patchPaymentSubscriptionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchPaymentSubscriptionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchPaymentSubscriptionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchPaymentSubscriptionRequest' from JSON`,
   );
 }

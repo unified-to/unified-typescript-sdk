@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingBillsRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListAccountingBillsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAccountingBillsRequest$inboundSchema: z.ZodType<
-  ListAccountingBillsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  contact_id: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  org_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "contact_id": "contactId",
-    "org_id": "orgId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAccountingBillsRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListAccountingBillsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountingBillsRequest$ {
-  /** @deprecated use `ListAccountingBillsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAccountingBillsRequest$inboundSchema;
-  /** @deprecated use `ListAccountingBillsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAccountingBillsRequest$outboundSchema;
-  /** @deprecated use `ListAccountingBillsRequest$Outbound` instead. */
-  export type Outbound = ListAccountingBillsRequest$Outbound;
-}
-
 export function listAccountingBillsRequestToJSON(
   listAccountingBillsRequest: ListAccountingBillsRequest,
 ): string {
   return JSON.stringify(
     ListAccountingBillsRequest$outboundSchema.parse(listAccountingBillsRequest),
-  );
-}
-
-export function listAccountingBillsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAccountingBillsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAccountingBillsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAccountingBillsRequest' from JSON`,
   );
 }

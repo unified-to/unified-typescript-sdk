@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsScorecardRequest = {
@@ -28,24 +25,6 @@ export type UpdateAtsScorecardRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAtsScorecardRequest$inboundSchema: z.ZodType<
-  UpdateAtsScorecardRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsScorecard: shared.AtsScorecard$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsScorecard": "atsScorecard",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAtsScorecardRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateAtsScorecardRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAtsScorecardRequest$ {
-  /** @deprecated use `UpdateAtsScorecardRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAtsScorecardRequest$inboundSchema;
-  /** @deprecated use `UpdateAtsScorecardRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAtsScorecardRequest$outboundSchema;
-  /** @deprecated use `UpdateAtsScorecardRequest$Outbound` instead. */
-  export type Outbound = UpdateAtsScorecardRequest$Outbound;
-}
-
 export function updateAtsScorecardRequestToJSON(
   updateAtsScorecardRequest: UpdateAtsScorecardRequest,
 ): string {
   return JSON.stringify(
     UpdateAtsScorecardRequest$outboundSchema.parse(updateAtsScorecardRequest),
-  );
-}
-
-export function updateAtsScorecardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAtsScorecardRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAtsScorecardRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAtsScorecardRequest' from JSON`,
   );
 }

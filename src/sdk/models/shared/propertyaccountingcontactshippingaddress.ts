@@ -40,7 +40,6 @@ export const PropertyAccountingContactShippingAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyAccountingContactShippingAddress$Outbound = {
   address1?: string | undefined;
@@ -75,21 +74,6 @@ export const PropertyAccountingContactShippingAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingContactShippingAddress$ {
-  /** @deprecated use `PropertyAccountingContactShippingAddress$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingContactShippingAddress$inboundSchema;
-  /** @deprecated use `PropertyAccountingContactShippingAddress$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingContactShippingAddress$outboundSchema;
-  /** @deprecated use `PropertyAccountingContactShippingAddress$Outbound` instead. */
-  export type Outbound = PropertyAccountingContactShippingAddress$Outbound;
-}
-
 export function propertyAccountingContactShippingAddressToJSON(
   propertyAccountingContactShippingAddress:
     PropertyAccountingContactShippingAddress,
@@ -100,7 +84,6 @@ export function propertyAccountingContactShippingAddressToJSON(
     ),
   );
 }
-
 export function propertyAccountingContactShippingAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<

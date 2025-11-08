@@ -41,7 +41,6 @@ export const PropertyAccountingSalesorderShippingAddress$inboundSchema:
       "region_code": "regionCode",
     });
   });
-
 /** @internal */
 export type PropertyAccountingSalesorderShippingAddress$Outbound = {
   address1?: string | undefined;
@@ -77,21 +76,6 @@ export const PropertyAccountingSalesorderShippingAddress$outboundSchema:
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingSalesorderShippingAddress$ {
-  /** @deprecated use `PropertyAccountingSalesorderShippingAddress$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingSalesorderShippingAddress$inboundSchema;
-  /** @deprecated use `PropertyAccountingSalesorderShippingAddress$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingSalesorderShippingAddress$outboundSchema;
-  /** @deprecated use `PropertyAccountingSalesorderShippingAddress$Outbound` instead. */
-  export type Outbound = PropertyAccountingSalesorderShippingAddress$Outbound;
-}
-
 export function propertyAccountingSalesorderShippingAddressToJSON(
   propertyAccountingSalesorderShippingAddress:
     PropertyAccountingSalesorderShippingAddress,
@@ -102,7 +86,6 @@ export function propertyAccountingSalesorderShippingAddressToJSON(
     ),
   );
 }
-
 export function propertyAccountingSalesorderShippingAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<

@@ -32,51 +32,6 @@ export const AccountingProfitlossSubcategory$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type AccountingProfitlossSubcategory$Outbound = {
-  amount?: number | undefined;
-  name?: string | undefined;
-  transaction_ids?: Array<string> | undefined;
-};
-
-/** @internal */
-export const AccountingProfitlossSubcategory$outboundSchema: z.ZodType<
-  AccountingProfitlossSubcategory$Outbound,
-  z.ZodTypeDef,
-  AccountingProfitlossSubcategory
-> = z.object({
-  amount: z.number().optional(),
-  name: z.string().optional(),
-  transactionIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    transactionIds: "transaction_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingProfitlossSubcategory$ {
-  /** @deprecated use `AccountingProfitlossSubcategory$inboundSchema` instead. */
-  export const inboundSchema = AccountingProfitlossSubcategory$inboundSchema;
-  /** @deprecated use `AccountingProfitlossSubcategory$outboundSchema` instead. */
-  export const outboundSchema = AccountingProfitlossSubcategory$outboundSchema;
-  /** @deprecated use `AccountingProfitlossSubcategory$Outbound` instead. */
-  export type Outbound = AccountingProfitlossSubcategory$Outbound;
-}
-
-export function accountingProfitlossSubcategoryToJSON(
-  accountingProfitlossSubcategory: AccountingProfitlossSubcategory,
-): string {
-  return JSON.stringify(
-    AccountingProfitlossSubcategory$outboundSchema.parse(
-      accountingProfitlossSubcategory,
-    ),
-  );
-}
-
 export function accountingProfitlossSubcategoryFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingProfitlossSubcategory, SDKValidationError> {

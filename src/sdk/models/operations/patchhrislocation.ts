@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchHrisLocationRequest = {
@@ -28,24 +25,6 @@ export type PatchHrisLocationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchHrisLocationRequest$inboundSchema: z.ZodType<
-  PatchHrisLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisLocation: shared.HrisLocation$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisLocation": "hrisLocation",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchHrisLocationRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchHrisLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchHrisLocationRequest$ {
-  /** @deprecated use `PatchHrisLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchHrisLocationRequest$inboundSchema;
-  /** @deprecated use `PatchHrisLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchHrisLocationRequest$outboundSchema;
-  /** @deprecated use `PatchHrisLocationRequest$Outbound` instead. */
-  export type Outbound = PatchHrisLocationRequest$Outbound;
-}
-
 export function patchHrisLocationRequestToJSON(
   patchHrisLocationRequest: PatchHrisLocationRequest,
 ): string {
   return JSON.stringify(
     PatchHrisLocationRequest$outboundSchema.parse(patchHrisLocationRequest),
-  );
-}
-
-export function patchHrisLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchHrisLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchHrisLocationRequest' from JSON`,
   );
 }

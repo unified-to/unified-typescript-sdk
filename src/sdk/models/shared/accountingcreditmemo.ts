@@ -88,7 +88,6 @@ export const AccountingCreditmemoPaymentCollectionMethod$inboundSchema:
       z.nativeEnum(AccountingCreditmemoPaymentCollectionMethod),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
 /** @internal */
 export const AccountingCreditmemoPaymentCollectionMethod$outboundSchema:
   z.ZodType<
@@ -100,19 +99,6 @@ export const AccountingCreditmemoPaymentCollectionMethod$outboundSchema:
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCreditmemoPaymentCollectionMethod$ {
-  /** @deprecated use `AccountingCreditmemoPaymentCollectionMethod$inboundSchema` instead. */
-  export const inboundSchema =
-    AccountingCreditmemoPaymentCollectionMethod$inboundSchema;
-  /** @deprecated use `AccountingCreditmemoPaymentCollectionMethod$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountingCreditmemoPaymentCollectionMethod$outboundSchema;
-}
-
 /** @internal */
 export const AccountingCreditmemoStatus$inboundSchema: z.ZodType<
   AccountingCreditmemoStatus,
@@ -123,7 +109,6 @@ export const AccountingCreditmemoStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingCreditmemoStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingCreditmemoStatus$outboundSchema: z.ZodType<
   AccountingCreditmemoStatus,
@@ -133,17 +118,6 @@ export const AccountingCreditmemoStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingCreditmemoStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCreditmemoStatus$ {
-  /** @deprecated use `AccountingCreditmemoStatus$inboundSchema` instead. */
-  export const inboundSchema = AccountingCreditmemoStatus$inboundSchema;
-  /** @deprecated use `AccountingCreditmemoStatus$outboundSchema` instead. */
-  export const outboundSchema = AccountingCreditmemoStatus$outboundSchema;
-}
 
 /** @internal */
 export const AccountingCreditmemo$inboundSchema: z.ZodType<
@@ -207,7 +181,6 @@ export const AccountingCreditmemo$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingCreditmemo$Outbound = {
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
@@ -293,19 +266,6 @@ export const AccountingCreditmemo$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCreditmemo$ {
-  /** @deprecated use `AccountingCreditmemo$inboundSchema` instead. */
-  export const inboundSchema = AccountingCreditmemo$inboundSchema;
-  /** @deprecated use `AccountingCreditmemo$outboundSchema` instead. */
-  export const outboundSchema = AccountingCreditmemo$outboundSchema;
-  /** @deprecated use `AccountingCreditmemo$Outbound` instead. */
-  export type Outbound = AccountingCreditmemo$Outbound;
-}
-
 export function accountingCreditmemoToJSON(
   accountingCreditmemo: AccountingCreditmemo,
 ): string {
@@ -313,7 +273,6 @@ export function accountingCreditmemoToJSON(
     AccountingCreditmemo$outboundSchema.parse(accountingCreditmemo),
   );
 }
-
 export function accountingCreditmemoFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingCreditmemo, SDKValidationError> {

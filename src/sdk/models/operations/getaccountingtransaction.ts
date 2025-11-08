@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingTransactionRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingTransactionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingTransactionRequest$inboundSchema: z.ZodType<
-  GetAccountingTransactionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingTransactionRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingTransactionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingTransactionRequest$ {
-  /** @deprecated use `GetAccountingTransactionRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingTransactionRequest$inboundSchema;
-  /** @deprecated use `GetAccountingTransactionRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingTransactionRequest$outboundSchema;
-  /** @deprecated use `GetAccountingTransactionRequest$Outbound` instead. */
-  export type Outbound = GetAccountingTransactionRequest$Outbound;
-}
-
 export function getAccountingTransactionRequestToJSON(
   getAccountingTransactionRequest: GetAccountingTransactionRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingTransactionRequestToJSON(
     GetAccountingTransactionRequest$outboundSchema.parse(
       getAccountingTransactionRequest,
     ),
-  );
-}
-
-export function getAccountingTransactionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingTransactionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingTransactionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingTransactionRequest' from JSON`,
   );
 }

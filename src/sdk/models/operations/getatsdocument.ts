@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAtsDocumentRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAtsDocumentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAtsDocumentRequest$inboundSchema: z.ZodType<
-  GetAtsDocumentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAtsDocumentRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetAtsDocumentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAtsDocumentRequest$ {
-  /** @deprecated use `GetAtsDocumentRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAtsDocumentRequest$inboundSchema;
-  /** @deprecated use `GetAtsDocumentRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAtsDocumentRequest$outboundSchema;
-  /** @deprecated use `GetAtsDocumentRequest$Outbound` instead. */
-  export type Outbound = GetAtsDocumentRequest$Outbound;
-}
-
 export function getAtsDocumentRequestToJSON(
   getAtsDocumentRequest: GetAtsDocumentRequest,
 ): string {
   return JSON.stringify(
     GetAtsDocumentRequest$outboundSchema.parse(getAtsDocumentRequest),
-  );
-}
-
-export function getAtsDocumentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAtsDocumentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAtsDocumentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAtsDocumentRequest' from JSON`,
   );
 }

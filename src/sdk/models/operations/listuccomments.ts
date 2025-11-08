@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUcCommentsRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListUcCommentsRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListUcCommentsRequest$inboundSchema: z.ZodType<
-  ListUcCommentsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  call_id: z.string().optional(),
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "call_id": "callId",
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListUcCommentsRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListUcCommentsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUcCommentsRequest$ {
-  /** @deprecated use `ListUcCommentsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUcCommentsRequest$inboundSchema;
-  /** @deprecated use `ListUcCommentsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUcCommentsRequest$outboundSchema;
-  /** @deprecated use `ListUcCommentsRequest$Outbound` instead. */
-  export type Outbound = ListUcCommentsRequest$Outbound;
-}
-
 export function listUcCommentsRequestToJSON(
   listUcCommentsRequest: ListUcCommentsRequest,
 ): string {
   return JSON.stringify(
     ListUcCommentsRequest$outboundSchema.parse(listUcCommentsRequest),
-  );
-}
-
-export function listUcCommentsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUcCommentsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUcCommentsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUcCommentsRequest' from JSON`,
   );
 }

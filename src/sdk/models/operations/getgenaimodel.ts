@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetGenaiModelRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetGenaiModelRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetGenaiModelRequest$inboundSchema: z.ZodType<
-  GetGenaiModelRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetGenaiModelRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetGenaiModelRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetGenaiModelRequest$ {
-  /** @deprecated use `GetGenaiModelRequest$inboundSchema` instead. */
-  export const inboundSchema = GetGenaiModelRequest$inboundSchema;
-  /** @deprecated use `GetGenaiModelRequest$outboundSchema` instead. */
-  export const outboundSchema = GetGenaiModelRequest$outboundSchema;
-  /** @deprecated use `GetGenaiModelRequest$Outbound` instead. */
-  export type Outbound = GetGenaiModelRequest$Outbound;
-}
-
 export function getGenaiModelRequestToJSON(
   getGenaiModelRequest: GetGenaiModelRequest,
 ): string {
   return JSON.stringify(
     GetGenaiModelRequest$outboundSchema.parse(getGenaiModelRequest),
-  );
-}
-
-export function getGenaiModelRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetGenaiModelRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetGenaiModelRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetGenaiModelRequest' from JSON`,
   );
 }

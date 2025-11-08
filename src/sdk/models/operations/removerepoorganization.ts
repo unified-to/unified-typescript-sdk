@@ -24,20 +24,6 @@ export type RemoveRepoOrganizationResponse = {
 };
 
 /** @internal */
-export const RemoveRepoOrganizationRequest$inboundSchema: z.ZodType<
-  RemoveRepoOrganizationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveRepoOrganizationRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveRepoOrganizationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoOrganizationRequest$ {
-  /** @deprecated use `RemoveRepoOrganizationRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoOrganizationRequest$inboundSchema;
-  /** @deprecated use `RemoveRepoOrganizationRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoOrganizationRequest$outboundSchema;
-  /** @deprecated use `RemoveRepoOrganizationRequest$Outbound` instead. */
-  export type Outbound = RemoveRepoOrganizationRequest$Outbound;
-}
-
 export function removeRepoOrganizationRequestToJSON(
   removeRepoOrganizationRequest: RemoveRepoOrganizationRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeRepoOrganizationRequestToJSON(
     RemoveRepoOrganizationRequest$outboundSchema.parse(
       removeRepoOrganizationRequest,
     ),
-  );
-}
-
-export function removeRepoOrganizationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveRepoOrganizationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveRepoOrganizationRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveRepoOrganizationResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveRepoOrganizationResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveRepoOrganizationResponse$outboundSchema: z.ZodType<
-  RemoveRepoOrganizationResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveRepoOrganizationResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoOrganizationResponse$ {
-  /** @deprecated use `RemoveRepoOrganizationResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoOrganizationResponse$inboundSchema;
-  /** @deprecated use `RemoveRepoOrganizationResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoOrganizationResponse$outboundSchema;
-  /** @deprecated use `RemoveRepoOrganizationResponse$Outbound` instead. */
-  export type Outbound = RemoveRepoOrganizationResponse$Outbound;
-}
-
-export function removeRepoOrganizationResponseToJSON(
-  removeRepoOrganizationResponse: RemoveRepoOrganizationResponse,
-): string {
-  return JSON.stringify(
-    RemoveRepoOrganizationResponse$outboundSchema.parse(
-      removeRepoOrganizationResponse,
-    ),
-  );
-}
 
 export function removeRepoOrganizationResponseFromJSON(
   jsonString: string,

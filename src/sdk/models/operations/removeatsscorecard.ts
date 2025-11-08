@@ -24,20 +24,6 @@ export type RemoveAtsScorecardResponse = {
 };
 
 /** @internal */
-export const RemoveAtsScorecardRequest$inboundSchema: z.ZodType<
-  RemoveAtsScorecardRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveAtsScorecardRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveAtsScorecardRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAtsScorecardRequest$ {
-  /** @deprecated use `RemoveAtsScorecardRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveAtsScorecardRequest$inboundSchema;
-  /** @deprecated use `RemoveAtsScorecardRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveAtsScorecardRequest$outboundSchema;
-  /** @deprecated use `RemoveAtsScorecardRequest$Outbound` instead. */
-  export type Outbound = RemoveAtsScorecardRequest$Outbound;
-}
-
 export function removeAtsScorecardRequestToJSON(
   removeAtsScorecardRequest: RemoveAtsScorecardRequest,
 ): string {
   return JSON.stringify(
     RemoveAtsScorecardRequest$outboundSchema.parse(removeAtsScorecardRequest),
-  );
-}
-
-export function removeAtsScorecardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveAtsScorecardRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveAtsScorecardRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveAtsScorecardRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveAtsScorecardResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveAtsScorecardResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveAtsScorecardResponse$outboundSchema: z.ZodType<
-  RemoveAtsScorecardResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveAtsScorecardResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAtsScorecardResponse$ {
-  /** @deprecated use `RemoveAtsScorecardResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveAtsScorecardResponse$inboundSchema;
-  /** @deprecated use `RemoveAtsScorecardResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveAtsScorecardResponse$outboundSchema;
-  /** @deprecated use `RemoveAtsScorecardResponse$Outbound` instead. */
-  export type Outbound = RemoveAtsScorecardResponse$Outbound;
-}
-
-export function removeAtsScorecardResponseToJSON(
-  removeAtsScorecardResponse: RemoveAtsScorecardResponse,
-): string {
-  return JSON.stringify(
-    RemoveAtsScorecardResponse$outboundSchema.parse(removeAtsScorecardResponse),
-  );
-}
 
 export function removeAtsScorecardResponseFromJSON(
   jsonString: string,

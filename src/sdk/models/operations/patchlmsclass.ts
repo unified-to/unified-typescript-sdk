@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchLmsClassRequest = {
@@ -28,24 +25,6 @@ export type PatchLmsClassRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchLmsClassRequest$inboundSchema: z.ZodType<
-  PatchLmsClassRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsClass: shared.LmsClass$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsClass": "lmsClass",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchLmsClassRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchLmsClassRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchLmsClassRequest$ {
-  /** @deprecated use `PatchLmsClassRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchLmsClassRequest$inboundSchema;
-  /** @deprecated use `PatchLmsClassRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchLmsClassRequest$outboundSchema;
-  /** @deprecated use `PatchLmsClassRequest$Outbound` instead. */
-  export type Outbound = PatchLmsClassRequest$Outbound;
-}
-
 export function patchLmsClassRequestToJSON(
   patchLmsClassRequest: PatchLmsClassRequest,
 ): string {
   return JSON.stringify(
     PatchLmsClassRequest$outboundSchema.parse(patchLmsClassRequest),
-  );
-}
-
-export function patchLmsClassRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchLmsClassRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchLmsClassRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchLmsClassRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListRepoBranchesRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListRepoBranchesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListRepoBranchesRequest$inboundSchema: z.ZodType<
-  ListRepoBranchesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  repo_id: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "repo_id": "repoId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListRepoBranchesRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListRepoBranchesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListRepoBranchesRequest$ {
-  /** @deprecated use `ListRepoBranchesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListRepoBranchesRequest$inboundSchema;
-  /** @deprecated use `ListRepoBranchesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListRepoBranchesRequest$outboundSchema;
-  /** @deprecated use `ListRepoBranchesRequest$Outbound` instead. */
-  export type Outbound = ListRepoBranchesRequest$Outbound;
-}
-
 export function listRepoBranchesRequestToJSON(
   listRepoBranchesRequest: ListRepoBranchesRequest,
 ): string {
   return JSON.stringify(
     ListRepoBranchesRequest$outboundSchema.parse(listRepoBranchesRequest),
-  );
-}
-
-export function listRepoBranchesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListRepoBranchesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListRepoBranchesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListRepoBranchesRequest' from JSON`,
   );
 }

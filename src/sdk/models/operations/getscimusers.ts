@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetScimUsersRequest = {
   /**
@@ -18,20 +15,6 @@ export type GetScimUsersRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const GetScimUsersRequest$inboundSchema: z.ZodType<
-  GetScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetScimUsersRequest$Outbound = {
@@ -53,33 +36,10 @@ export const GetScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetScimUsersRequest$ {
-  /** @deprecated use `GetScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = GetScimUsersRequest$inboundSchema;
-  /** @deprecated use `GetScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = GetScimUsersRequest$outboundSchema;
-  /** @deprecated use `GetScimUsersRequest$Outbound` instead. */
-  export type Outbound = GetScimUsersRequest$Outbound;
-}
-
 export function getScimUsersRequestToJSON(
   getScimUsersRequest: GetScimUsersRequest,
 ): string {
   return JSON.stringify(
     GetScimUsersRequest$outboundSchema.parse(getScimUsersRequest),
-  );
-}
-
-export function getScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetScimUsersRequest' from JSON`,
   );
 }

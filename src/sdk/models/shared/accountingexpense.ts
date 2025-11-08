@@ -69,7 +69,6 @@ export const AccountingExpense$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type AccountingExpense$Outbound = {
   approved_at?: string | undefined;
@@ -122,19 +121,6 @@ export const AccountingExpense$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingExpense$ {
-  /** @deprecated use `AccountingExpense$inboundSchema` instead. */
-  export const inboundSchema = AccountingExpense$inboundSchema;
-  /** @deprecated use `AccountingExpense$outboundSchema` instead. */
-  export const outboundSchema = AccountingExpense$outboundSchema;
-  /** @deprecated use `AccountingExpense$Outbound` instead. */
-  export type Outbound = AccountingExpense$Outbound;
-}
-
 export function accountingExpenseToJSON(
   accountingExpense: AccountingExpense,
 ): string {
@@ -142,7 +128,6 @@ export function accountingExpenseToJSON(
     AccountingExpense$outboundSchema.parse(accountingExpense),
   );
 }
-
 export function accountingExpenseFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingExpense, SDKValidationError> {

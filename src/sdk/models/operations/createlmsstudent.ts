@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateLmsStudentRequest = {
@@ -24,23 +21,6 @@ export type CreateLmsStudentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateLmsStudentRequest$inboundSchema: z.ZodType<
-  CreateLmsStudentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsStudent: shared.LmsStudent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsStudent": "lmsStudent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateLmsStudentRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateLmsStudentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateLmsStudentRequest$ {
-  /** @deprecated use `CreateLmsStudentRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateLmsStudentRequest$inboundSchema;
-  /** @deprecated use `CreateLmsStudentRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateLmsStudentRequest$outboundSchema;
-  /** @deprecated use `CreateLmsStudentRequest$Outbound` instead. */
-  export type Outbound = CreateLmsStudentRequest$Outbound;
-}
-
 export function createLmsStudentRequestToJSON(
   createLmsStudentRequest: CreateLmsStudentRequest,
 ): string {
   return JSON.stringify(
     CreateLmsStudentRequest$outboundSchema.parse(createLmsStudentRequest),
-  );
-}
-
-export function createLmsStudentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateLmsStudentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateLmsStudentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateLmsStudentRequest' from JSON`,
   );
 }

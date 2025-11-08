@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateHrisTimeshiftRequest = {
@@ -28,24 +25,6 @@ export type UpdateHrisTimeshiftRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateHrisTimeshiftRequest$inboundSchema: z.ZodType<
-  UpdateHrisTimeshiftRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisTimeshift: shared.HrisTimeshift$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisTimeshift": "hrisTimeshift",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateHrisTimeshiftRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateHrisTimeshiftRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateHrisTimeshiftRequest$ {
-  /** @deprecated use `UpdateHrisTimeshiftRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateHrisTimeshiftRequest$inboundSchema;
-  /** @deprecated use `UpdateHrisTimeshiftRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateHrisTimeshiftRequest$outboundSchema;
-  /** @deprecated use `UpdateHrisTimeshiftRequest$Outbound` instead. */
-  export type Outbound = UpdateHrisTimeshiftRequest$Outbound;
-}
-
 export function updateHrisTimeshiftRequestToJSON(
   updateHrisTimeshiftRequest: UpdateHrisTimeshiftRequest,
 ): string {
   return JSON.stringify(
     UpdateHrisTimeshiftRequest$outboundSchema.parse(updateHrisTimeshiftRequest),
-  );
-}
-
-export function updateHrisTimeshiftRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateHrisTimeshiftRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateHrisTimeshiftRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateHrisTimeshiftRequest' from JSON`,
   );
 }

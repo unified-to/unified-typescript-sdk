@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisLocationRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetHrisLocationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetHrisLocationRequest$inboundSchema: z.ZodType<
-  GetHrisLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetHrisLocationRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetHrisLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetHrisLocationRequest$ {
-  /** @deprecated use `GetHrisLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = GetHrisLocationRequest$inboundSchema;
-  /** @deprecated use `GetHrisLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = GetHrisLocationRequest$outboundSchema;
-  /** @deprecated use `GetHrisLocationRequest$Outbound` instead. */
-  export type Outbound = GetHrisLocationRequest$Outbound;
-}
-
 export function getHrisLocationRequestToJSON(
   getHrisLocationRequest: GetHrisLocationRequest,
 ): string {
   return JSON.stringify(
     GetHrisLocationRequest$outboundSchema.parse(getHrisLocationRequest),
-  );
-}
-
-export function getHrisLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetHrisLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetHrisLocationRequest' from JSON`,
   );
 }

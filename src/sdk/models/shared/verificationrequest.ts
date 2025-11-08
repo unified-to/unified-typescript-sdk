@@ -89,7 +89,6 @@ export const ProfileGender$inboundSchema: z.ZodType<
     z.nativeEnum(ProfileGender),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ProfileGender$outboundSchema: z.ZodType<
   ProfileGender,
@@ -99,17 +98,6 @@ export const ProfileGender$outboundSchema: z.ZodType<
   z.nativeEnum(ProfileGender),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ProfileGender$ {
-  /** @deprecated use `ProfileGender$inboundSchema` instead. */
-  export const inboundSchema = ProfileGender$inboundSchema;
-  /** @deprecated use `ProfileGender$outboundSchema` instead. */
-  export const outboundSchema = ProfileGender$outboundSchema;
-}
 
 /** @internal */
 export const ResponseStatus$inboundSchema: z.ZodType<
@@ -121,7 +109,6 @@ export const ResponseStatus$inboundSchema: z.ZodType<
     z.nativeEnum(ResponseStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ResponseStatus$outboundSchema: z.ZodType<
   ResponseStatus,
@@ -131,17 +118,6 @@ export const ResponseStatus$outboundSchema: z.ZodType<
   z.nativeEnum(ResponseStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ResponseStatus$ {
-  /** @deprecated use `ResponseStatus$inboundSchema` instead. */
-  export const inboundSchema = ResponseStatus$inboundSchema;
-  /** @deprecated use `ResponseStatus$outboundSchema` instead. */
-  export const outboundSchema = ResponseStatus$outboundSchema;
-}
 
 /** @internal */
 export const VerificationRequest$inboundSchema: z.ZodType<
@@ -209,7 +185,6 @@ export const VerificationRequest$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type VerificationRequest$Outbound = {
   candidate_id?: string | undefined;
@@ -298,19 +273,6 @@ export const VerificationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationRequest$ {
-  /** @deprecated use `VerificationRequest$inboundSchema` instead. */
-  export const inboundSchema = VerificationRequest$inboundSchema;
-  /** @deprecated use `VerificationRequest$outboundSchema` instead. */
-  export const outboundSchema = VerificationRequest$outboundSchema;
-  /** @deprecated use `VerificationRequest$Outbound` instead. */
-  export type Outbound = VerificationRequest$Outbound;
-}
-
 export function verificationRequestToJSON(
   verificationRequest: VerificationRequest,
 ): string {
@@ -318,7 +280,6 @@ export function verificationRequestToJSON(
     VerificationRequest$outboundSchema.parse(verificationRequest),
   );
 }
-
 export function verificationRequestFromJSON(
   jsonString: string,
 ): SafeParseResult<VerificationRequest, SDKValidationError> {

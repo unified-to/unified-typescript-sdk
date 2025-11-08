@@ -32,7 +32,6 @@ export const PropertyCrmEventCall$inboundSchema: z.ZodType<
     "start_at": "startAt",
   });
 });
-
 /** @internal */
 export type PropertyCrmEventCall$Outbound = {
   description?: string | undefined;
@@ -55,19 +54,6 @@ export const PropertyCrmEventCall$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventCall$ {
-  /** @deprecated use `PropertyCrmEventCall$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventCall$inboundSchema;
-  /** @deprecated use `PropertyCrmEventCall$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventCall$outboundSchema;
-  /** @deprecated use `PropertyCrmEventCall$Outbound` instead. */
-  export type Outbound = PropertyCrmEventCall$Outbound;
-}
-
 export function propertyCrmEventCallToJSON(
   propertyCrmEventCall: PropertyCrmEventCall,
 ): string {
@@ -75,7 +61,6 @@ export function propertyCrmEventCallToJSON(
     PropertyCrmEventCall$outboundSchema.parse(propertyCrmEventCall),
   );
 }
-
 export function propertyCrmEventCallFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventCall, SDKValidationError> {

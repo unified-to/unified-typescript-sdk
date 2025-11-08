@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const QueryParamCategories = {
   Passthrough: "passthrough",
@@ -57,46 +54,9 @@ export type ListUnifiedIntegrationWorkspacesRequest = {
 };
 
 /** @internal */
-export const QueryParamCategories$inboundSchema: z.ZodNativeEnum<
-  typeof QueryParamCategories
-> = z.nativeEnum(QueryParamCategories);
-
-/** @internal */
 export const QueryParamCategories$outboundSchema: z.ZodNativeEnum<
   typeof QueryParamCategories
-> = QueryParamCategories$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace QueryParamCategories$ {
-  /** @deprecated use `QueryParamCategories$inboundSchema` instead. */
-  export const inboundSchema = QueryParamCategories$inboundSchema;
-  /** @deprecated use `QueryParamCategories$outboundSchema` instead. */
-  export const outboundSchema = QueryParamCategories$outboundSchema;
-}
-
-/** @internal */
-export const ListUnifiedIntegrationWorkspacesRequest$inboundSchema: z.ZodType<
-  ListUnifiedIntegrationWorkspacesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  active: z.boolean().optional(),
-  categories: z.array(QueryParamCategories$inboundSchema).optional(),
-  env: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  summary: z.boolean().optional(),
-  updated_gte: z.string().optional(),
-  workspace_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "updated_gte": "updatedGte",
-    "workspace_id": "workspaceId",
-  });
-});
+> = z.nativeEnum(QueryParamCategories);
 
 /** @internal */
 export type ListUnifiedIntegrationWorkspacesRequest$Outbound = {
@@ -131,21 +91,6 @@ export const ListUnifiedIntegrationWorkspacesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedIntegrationWorkspacesRequest$ {
-  /** @deprecated use `ListUnifiedIntegrationWorkspacesRequest$inboundSchema` instead. */
-  export const inboundSchema =
-    ListUnifiedIntegrationWorkspacesRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedIntegrationWorkspacesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ListUnifiedIntegrationWorkspacesRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedIntegrationWorkspacesRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedIntegrationWorkspacesRequest$Outbound;
-}
-
 export function listUnifiedIntegrationWorkspacesRequestToJSON(
   listUnifiedIntegrationWorkspacesRequest:
     ListUnifiedIntegrationWorkspacesRequest,
@@ -154,21 +99,5 @@ export function listUnifiedIntegrationWorkspacesRequestToJSON(
     ListUnifiedIntegrationWorkspacesRequest$outboundSchema.parse(
       listUnifiedIntegrationWorkspacesRequest,
     ),
-  );
-}
-
-export function listUnifiedIntegrationWorkspacesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<
-  ListUnifiedIntegrationWorkspacesRequest,
-  SDKValidationError
-> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      ListUnifiedIntegrationWorkspacesRequest$inboundSchema.parse(
-        JSON.parse(x),
-      ),
-    `Failed to parse 'ListUnifiedIntegrationWorkspacesRequest' from JSON`,
   );
 }

@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingCashflowItem,
   AccountingCashflowItem$inboundSchema,
-  AccountingCashflowItem$Outbound,
-  AccountingCashflowItem$outboundSchema,
 } from "./accountingcashflowitem.js";
 
 export type AccountingCashflowSection = {
@@ -35,50 +33,6 @@ export const AccountingCashflowSection$inboundSchema: z.ZodType<
     "total_amount": "totalAmount",
   });
 });
-
-/** @internal */
-export type AccountingCashflowSection$Outbound = {
-  items?: Array<AccountingCashflowItem$Outbound> | undefined;
-  section_name?: string | undefined;
-  total_amount?: number | undefined;
-};
-
-/** @internal */
-export const AccountingCashflowSection$outboundSchema: z.ZodType<
-  AccountingCashflowSection$Outbound,
-  z.ZodTypeDef,
-  AccountingCashflowSection
-> = z.object({
-  items: z.array(AccountingCashflowItem$outboundSchema).optional(),
-  sectionName: z.string().optional(),
-  totalAmount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    sectionName: "section_name",
-    totalAmount: "total_amount",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCashflowSection$ {
-  /** @deprecated use `AccountingCashflowSection$inboundSchema` instead. */
-  export const inboundSchema = AccountingCashflowSection$inboundSchema;
-  /** @deprecated use `AccountingCashflowSection$outboundSchema` instead. */
-  export const outboundSchema = AccountingCashflowSection$outboundSchema;
-  /** @deprecated use `AccountingCashflowSection$Outbound` instead. */
-  export type Outbound = AccountingCashflowSection$Outbound;
-}
-
-export function accountingCashflowSectionToJSON(
-  accountingCashflowSection: AccountingCashflowSection,
-): string {
-  return JSON.stringify(
-    AccountingCashflowSection$outboundSchema.parse(accountingCashflowSection),
-  );
-}
 
 export function accountingCashflowSectionFromJSON(
   jsonString: string,

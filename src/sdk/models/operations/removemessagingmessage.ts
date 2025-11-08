@@ -24,20 +24,6 @@ export type RemoveMessagingMessageResponse = {
 };
 
 /** @internal */
-export const RemoveMessagingMessageRequest$inboundSchema: z.ZodType<
-  RemoveMessagingMessageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveMessagingMessageRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveMessagingMessageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMessagingMessageRequest$ {
-  /** @deprecated use `RemoveMessagingMessageRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveMessagingMessageRequest$inboundSchema;
-  /** @deprecated use `RemoveMessagingMessageRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveMessagingMessageRequest$outboundSchema;
-  /** @deprecated use `RemoveMessagingMessageRequest$Outbound` instead. */
-  export type Outbound = RemoveMessagingMessageRequest$Outbound;
-}
-
 export function removeMessagingMessageRequestToJSON(
   removeMessagingMessageRequest: RemoveMessagingMessageRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeMessagingMessageRequestToJSON(
     RemoveMessagingMessageRequest$outboundSchema.parse(
       removeMessagingMessageRequest,
     ),
-  );
-}
-
-export function removeMessagingMessageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveMessagingMessageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveMessagingMessageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveMessagingMessageRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveMessagingMessageResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveMessagingMessageResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveMessagingMessageResponse$outboundSchema: z.ZodType<
-  RemoveMessagingMessageResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveMessagingMessageResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMessagingMessageResponse$ {
-  /** @deprecated use `RemoveMessagingMessageResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveMessagingMessageResponse$inboundSchema;
-  /** @deprecated use `RemoveMessagingMessageResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveMessagingMessageResponse$outboundSchema;
-  /** @deprecated use `RemoveMessagingMessageResponse$Outbound` instead. */
-  export type Outbound = RemoveMessagingMessageResponse$Outbound;
-}
-
-export function removeMessagingMessageResponseToJSON(
-  removeMessagingMessageResponse: RemoveMessagingMessageResponse,
-): string {
-  return JSON.stringify(
-    RemoveMessagingMessageResponse$outboundSchema.parse(
-      removeMessagingMessageResponse,
-    ),
-  );
-}
 
 export function removeMessagingMessageResponseFromJSON(
   jsonString: string,

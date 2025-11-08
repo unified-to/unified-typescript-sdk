@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetLmsInstructorRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetLmsInstructorRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetLmsInstructorRequest$inboundSchema: z.ZodType<
-  GetLmsInstructorRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetLmsInstructorRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetLmsInstructorRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetLmsInstructorRequest$ {
-  /** @deprecated use `GetLmsInstructorRequest$inboundSchema` instead. */
-  export const inboundSchema = GetLmsInstructorRequest$inboundSchema;
-  /** @deprecated use `GetLmsInstructorRequest$outboundSchema` instead. */
-  export const outboundSchema = GetLmsInstructorRequest$outboundSchema;
-  /** @deprecated use `GetLmsInstructorRequest$Outbound` instead. */
-  export type Outbound = GetLmsInstructorRequest$Outbound;
-}
-
 export function getLmsInstructorRequestToJSON(
   getLmsInstructorRequest: GetLmsInstructorRequest,
 ): string {
   return JSON.stringify(
     GetLmsInstructorRequest$outboundSchema.parse(getLmsInstructorRequest),
-  );
-}
-
-export function getLmsInstructorRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetLmsInstructorRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetLmsInstructorRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetLmsInstructorRequest' from JSON`,
   );
 }

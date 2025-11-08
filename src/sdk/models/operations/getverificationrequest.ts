@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetVerificationRequestRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetVerificationRequestRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetVerificationRequestRequest$inboundSchema: z.ZodType<
-  GetVerificationRequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetVerificationRequestRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetVerificationRequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetVerificationRequestRequest$ {
-  /** @deprecated use `GetVerificationRequestRequest$inboundSchema` instead. */
-  export const inboundSchema = GetVerificationRequestRequest$inboundSchema;
-  /** @deprecated use `GetVerificationRequestRequest$outboundSchema` instead. */
-  export const outboundSchema = GetVerificationRequestRequest$outboundSchema;
-  /** @deprecated use `GetVerificationRequestRequest$Outbound` instead. */
-  export type Outbound = GetVerificationRequestRequest$Outbound;
-}
-
 export function getVerificationRequestRequestToJSON(
   getVerificationRequestRequest: GetVerificationRequestRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getVerificationRequestRequestToJSON(
     GetVerificationRequestRequest$outboundSchema.parse(
       getVerificationRequestRequest,
     ),
-  );
-}
-
-export function getVerificationRequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetVerificationRequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetVerificationRequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetVerificationRequestRequest' from JSON`,
   );
 }

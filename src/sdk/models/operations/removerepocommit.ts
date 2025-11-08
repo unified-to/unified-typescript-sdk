@@ -24,20 +24,6 @@ export type RemoveRepoCommitResponse = {
 };
 
 /** @internal */
-export const RemoveRepoCommitRequest$inboundSchema: z.ZodType<
-  RemoveRepoCommitRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveRepoCommitRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveRepoCommitRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoCommitRequest$ {
-  /** @deprecated use `RemoveRepoCommitRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoCommitRequest$inboundSchema;
-  /** @deprecated use `RemoveRepoCommitRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoCommitRequest$outboundSchema;
-  /** @deprecated use `RemoveRepoCommitRequest$Outbound` instead. */
-  export type Outbound = RemoveRepoCommitRequest$Outbound;
-}
-
 export function removeRepoCommitRequestToJSON(
   removeRepoCommitRequest: RemoveRepoCommitRequest,
 ): string {
   return JSON.stringify(
     RemoveRepoCommitRequest$outboundSchema.parse(removeRepoCommitRequest),
-  );
-}
-
-export function removeRepoCommitRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveRepoCommitRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveRepoCommitRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveRepoCommitRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveRepoCommitResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveRepoCommitResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveRepoCommitResponse$outboundSchema: z.ZodType<
-  RemoveRepoCommitResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveRepoCommitResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoCommitResponse$ {
-  /** @deprecated use `RemoveRepoCommitResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoCommitResponse$inboundSchema;
-  /** @deprecated use `RemoveRepoCommitResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoCommitResponse$outboundSchema;
-  /** @deprecated use `RemoveRepoCommitResponse$Outbound` instead. */
-  export type Outbound = RemoveRepoCommitResponse$Outbound;
-}
-
-export function removeRepoCommitResponseToJSON(
-  removeRepoCommitResponse: RemoveRepoCommitResponse,
-): string {
-  return JSON.stringify(
-    RemoveRepoCommitResponse$outboundSchema.parse(removeRepoCommitResponse),
-  );
-}
 
 export function removeRepoCommitResponseFromJSON(
   jsonString: string,

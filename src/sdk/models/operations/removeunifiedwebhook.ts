@@ -20,15 +20,6 @@ export type RemoveUnifiedWebhookResponse = {
 };
 
 /** @internal */
-export const RemoveUnifiedWebhookRequest$inboundSchema: z.ZodType<
-  RemoveUnifiedWebhookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-});
-
-/** @internal */
 export type RemoveUnifiedWebhookRequest$Outbound = {
   id: string;
 };
@@ -42,19 +33,6 @@ export const RemoveUnifiedWebhookRequest$outboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUnifiedWebhookRequest$ {
-  /** @deprecated use `RemoveUnifiedWebhookRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveUnifiedWebhookRequest$inboundSchema;
-  /** @deprecated use `RemoveUnifiedWebhookRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveUnifiedWebhookRequest$outboundSchema;
-  /** @deprecated use `RemoveUnifiedWebhookRequest$Outbound` instead. */
-  export type Outbound = RemoveUnifiedWebhookRequest$Outbound;
-}
-
 export function removeUnifiedWebhookRequestToJSON(
   removeUnifiedWebhookRequest: RemoveUnifiedWebhookRequest,
 ): string {
@@ -62,16 +40,6 @@ export function removeUnifiedWebhookRequestToJSON(
     RemoveUnifiedWebhookRequest$outboundSchema.parse(
       removeUnifiedWebhookRequest,
     ),
-  );
-}
-
-export function removeUnifiedWebhookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveUnifiedWebhookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveUnifiedWebhookRequest' from JSON`,
   );
 }
 
@@ -87,47 +55,6 @@ export const RemoveUnifiedWebhookResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveUnifiedWebhookResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveUnifiedWebhookResponse$outboundSchema: z.ZodType<
-  RemoveUnifiedWebhookResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveUnifiedWebhookResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUnifiedWebhookResponse$ {
-  /** @deprecated use `RemoveUnifiedWebhookResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveUnifiedWebhookResponse$inboundSchema;
-  /** @deprecated use `RemoveUnifiedWebhookResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveUnifiedWebhookResponse$outboundSchema;
-  /** @deprecated use `RemoveUnifiedWebhookResponse$Outbound` instead. */
-  export type Outbound = RemoveUnifiedWebhookResponse$Outbound;
-}
-
-export function removeUnifiedWebhookResponseToJSON(
-  removeUnifiedWebhookResponse: RemoveUnifiedWebhookResponse,
-): string {
-  return JSON.stringify(
-    RemoveUnifiedWebhookResponse$outboundSchema.parse(
-      removeUnifiedWebhookResponse,
-    ),
-  );
-}
 
 export function removeUnifiedWebhookResponseFromJSON(
   jsonString: string,

@@ -10,14 +10,10 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingProfitlossCategory,
   AccountingProfitlossCategory$inboundSchema,
-  AccountingProfitlossCategory$Outbound,
-  AccountingProfitlossCategory$outboundSchema,
 } from "./accountingprofitlosscategory.js";
 import {
   AccountingProfitlossSection,
   AccountingProfitlossSection$inboundSchema,
-  AccountingProfitlossSection$Outbound,
-  AccountingProfitlossSection$outboundSchema,
 } from "./accountingprofitlosssection.js";
 
 export type PropertyAccountingReportProfitAndLoss = {
@@ -108,109 +104,6 @@ export const PropertyAccountingReportProfitAndLoss$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type PropertyAccountingReportProfitAndLoss$Outbound = {
-  category_ids?: Array<string> | undefined;
-  cost_of_goods_sold?: Array<AccountingProfitlossCategory$Outbound> | undefined;
-  cost_of_goods_sold_sections?:
-    | Array<AccountingProfitlossSection$Outbound>
-    | undefined;
-  cost_of_goods_sold_total_amount?: number | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  end_at?: string | undefined;
-  expenses?: Array<AccountingProfitlossCategory$Outbound> | undefined;
-  expenses_sections?: Array<AccountingProfitlossSection$Outbound> | undefined;
-  expenses_total_amount?: number | undefined;
-  gross_profit_amount?: number | undefined;
-  id?: string | undefined;
-  income?: Array<AccountingProfitlossCategory$Outbound> | undefined;
-  income_sections?: Array<AccountingProfitlossSection$Outbound> | undefined;
-  income_total_amount?: number | undefined;
-  name?: string | undefined;
-  net_income_amount?: number | undefined;
-  net_profit_amount?: number | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const PropertyAccountingReportProfitAndLoss$outboundSchema: z.ZodType<
-  PropertyAccountingReportProfitAndLoss$Outbound,
-  z.ZodTypeDef,
-  PropertyAccountingReportProfitAndLoss
-> = z.object({
-  categoryIds: z.array(z.string()).optional(),
-  costOfGoodsSold: z.array(AccountingProfitlossCategory$outboundSchema)
-    .optional(),
-  costOfGoodsSoldSections: z.array(AccountingProfitlossSection$outboundSchema)
-    .optional(),
-  costOfGoodsSoldTotalAmount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  expenses: z.array(AccountingProfitlossCategory$outboundSchema).optional(),
-  expensesSections: z.array(AccountingProfitlossSection$outboundSchema)
-    .optional(),
-  expensesTotalAmount: z.number().optional(),
-  grossProfitAmount: z.number().optional(),
-  id: z.string().optional(),
-  income: z.array(AccountingProfitlossCategory$outboundSchema).optional(),
-  incomeSections: z.array(AccountingProfitlossSection$outboundSchema)
-    .optional(),
-  incomeTotalAmount: z.number().optional(),
-  name: z.string().optional(),
-  netIncomeAmount: z.number().optional(),
-  netProfitAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    categoryIds: "category_ids",
-    costOfGoodsSold: "cost_of_goods_sold",
-    costOfGoodsSoldSections: "cost_of_goods_sold_sections",
-    costOfGoodsSoldTotalAmount: "cost_of_goods_sold_total_amount",
-    createdAt: "created_at",
-    endAt: "end_at",
-    expensesSections: "expenses_sections",
-    expensesTotalAmount: "expenses_total_amount",
-    grossProfitAmount: "gross_profit_amount",
-    incomeSections: "income_sections",
-    incomeTotalAmount: "income_total_amount",
-    netIncomeAmount: "net_income_amount",
-    netProfitAmount: "net_profit_amount",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingReportProfitAndLoss$ {
-  /** @deprecated use `PropertyAccountingReportProfitAndLoss$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingReportProfitAndLoss$inboundSchema;
-  /** @deprecated use `PropertyAccountingReportProfitAndLoss$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingReportProfitAndLoss$outboundSchema;
-  /** @deprecated use `PropertyAccountingReportProfitAndLoss$Outbound` instead. */
-  export type Outbound = PropertyAccountingReportProfitAndLoss$Outbound;
-}
-
-export function propertyAccountingReportProfitAndLossToJSON(
-  propertyAccountingReportProfitAndLoss: PropertyAccountingReportProfitAndLoss,
-): string {
-  return JSON.stringify(
-    PropertyAccountingReportProfitAndLoss$outboundSchema.parse(
-      propertyAccountingReportProfitAndLoss,
-    ),
-  );
-}
 
 export function propertyAccountingReportProfitAndLossFromJSON(
   jsonString: string,

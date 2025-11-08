@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedIssuesRequest = {
   limit?: number | undefined;
@@ -18,23 +15,6 @@ export type ListUnifiedIssuesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListUnifiedIssuesRequest$inboundSchema: z.ZodType<
-  ListUnifiedIssuesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListUnifiedIssuesRequest$Outbound = {
@@ -62,33 +42,10 @@ export const ListUnifiedIssuesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedIssuesRequest$ {
-  /** @deprecated use `ListUnifiedIssuesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUnifiedIssuesRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedIssuesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUnifiedIssuesRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedIssuesRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedIssuesRequest$Outbound;
-}
-
 export function listUnifiedIssuesRequestToJSON(
   listUnifiedIssuesRequest: ListUnifiedIssuesRequest,
 ): string {
   return JSON.stringify(
     ListUnifiedIssuesRequest$outboundSchema.parse(listUnifiedIssuesRequest),
-  );
-}
-
-export function listUnifiedIssuesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUnifiedIssuesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUnifiedIssuesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUnifiedIssuesRequest' from JSON`,
   );
 }

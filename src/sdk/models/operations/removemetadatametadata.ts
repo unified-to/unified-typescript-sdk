@@ -24,20 +24,6 @@ export type RemoveMetadataMetadataResponse = {
 };
 
 /** @internal */
-export const RemoveMetadataMetadataRequest$inboundSchema: z.ZodType<
-  RemoveMetadataMetadataRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveMetadataMetadataRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveMetadataMetadataRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMetadataMetadataRequest$ {
-  /** @deprecated use `RemoveMetadataMetadataRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveMetadataMetadataRequest$inboundSchema;
-  /** @deprecated use `RemoveMetadataMetadataRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveMetadataMetadataRequest$outboundSchema;
-  /** @deprecated use `RemoveMetadataMetadataRequest$Outbound` instead. */
-  export type Outbound = RemoveMetadataMetadataRequest$Outbound;
-}
-
 export function removeMetadataMetadataRequestToJSON(
   removeMetadataMetadataRequest: RemoveMetadataMetadataRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeMetadataMetadataRequestToJSON(
     RemoveMetadataMetadataRequest$outboundSchema.parse(
       removeMetadataMetadataRequest,
     ),
-  );
-}
-
-export function removeMetadataMetadataRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveMetadataMetadataRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveMetadataMetadataRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveMetadataMetadataRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveMetadataMetadataResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveMetadataMetadataResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveMetadataMetadataResponse$outboundSchema: z.ZodType<
-  RemoveMetadataMetadataResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveMetadataMetadataResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMetadataMetadataResponse$ {
-  /** @deprecated use `RemoveMetadataMetadataResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveMetadataMetadataResponse$inboundSchema;
-  /** @deprecated use `RemoveMetadataMetadataResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveMetadataMetadataResponse$outboundSchema;
-  /** @deprecated use `RemoveMetadataMetadataResponse$Outbound` instead. */
-  export type Outbound = RemoveMetadataMetadataResponse$Outbound;
-}
-
-export function removeMetadataMetadataResponseToJSON(
-  removeMetadataMetadataResponse: RemoveMetadataMetadataResponse,
-): string {
-  return JSON.stringify(
-    RemoveMetadataMetadataResponse$outboundSchema.parse(
-      removeMetadataMetadataResponse,
-    ),
-  );
-}
 
 export function removeMetadataMetadataResponseFromJSON(
   jsonString: string,

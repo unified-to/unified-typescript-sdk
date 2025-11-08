@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListMessagingChannelsRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListMessagingChannelsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListMessagingChannelsRequest$inboundSchema: z.ZodType<
-  ListMessagingChannelsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parent_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "parent_id": "parentId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListMessagingChannelsRequest$Outbound = {
@@ -101,19 +74,6 @@ export const ListMessagingChannelsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListMessagingChannelsRequest$ {
-  /** @deprecated use `ListMessagingChannelsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListMessagingChannelsRequest$inboundSchema;
-  /** @deprecated use `ListMessagingChannelsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListMessagingChannelsRequest$outboundSchema;
-  /** @deprecated use `ListMessagingChannelsRequest$Outbound` instead. */
-  export type Outbound = ListMessagingChannelsRequest$Outbound;
-}
-
 export function listMessagingChannelsRequestToJSON(
   listMessagingChannelsRequest: ListMessagingChannelsRequest,
 ): string {
@@ -121,15 +81,5 @@ export function listMessagingChannelsRequestToJSON(
     ListMessagingChannelsRequest$outboundSchema.parse(
       listMessagingChannelsRequest,
     ),
-  );
-}
-
-export function listMessagingChannelsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListMessagingChannelsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListMessagingChannelsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListMessagingChannelsRequest' from JSON`,
   );
 }

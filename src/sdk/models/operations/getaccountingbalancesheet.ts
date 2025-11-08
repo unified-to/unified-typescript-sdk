@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingBalancesheetRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingBalancesheetRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingBalancesheetRequest$inboundSchema: z.ZodType<
-  GetAccountingBalancesheetRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingBalancesheetRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingBalancesheetRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingBalancesheetRequest$ {
-  /** @deprecated use `GetAccountingBalancesheetRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingBalancesheetRequest$inboundSchema;
-  /** @deprecated use `GetAccountingBalancesheetRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingBalancesheetRequest$outboundSchema;
-  /** @deprecated use `GetAccountingBalancesheetRequest$Outbound` instead. */
-  export type Outbound = GetAccountingBalancesheetRequest$Outbound;
-}
-
 export function getAccountingBalancesheetRequestToJSON(
   getAccountingBalancesheetRequest: GetAccountingBalancesheetRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingBalancesheetRequestToJSON(
     GetAccountingBalancesheetRequest$outboundSchema.parse(
       getAccountingBalancesheetRequest,
     ),
-  );
-}
-
-export function getAccountingBalancesheetRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingBalancesheetRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingBalancesheetRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingBalancesheetRequest' from JSON`,
   );
 }

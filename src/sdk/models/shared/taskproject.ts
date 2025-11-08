@@ -52,7 +52,6 @@ export const TaskProject$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type TaskProject$Outbound = {
   created_at?: string | undefined;
@@ -97,23 +96,9 @@ export const TaskProject$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskProject$ {
-  /** @deprecated use `TaskProject$inboundSchema` instead. */
-  export const inboundSchema = TaskProject$inboundSchema;
-  /** @deprecated use `TaskProject$outboundSchema` instead. */
-  export const outboundSchema = TaskProject$outboundSchema;
-  /** @deprecated use `TaskProject$Outbound` instead. */
-  export type Outbound = TaskProject$Outbound;
-}
-
 export function taskProjectToJSON(taskProject: TaskProject): string {
   return JSON.stringify(TaskProject$outboundSchema.parse(taskProject));
 }
-
 export function taskProjectFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskProject, SDKValidationError> {

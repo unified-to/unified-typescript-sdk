@@ -44,63 +44,6 @@ export const PropertyEnrichPersonAddress$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type PropertyEnrichPersonAddress$Outbound = {
-  address1?: string | undefined;
-  address2?: string | undefined;
-  city?: string | undefined;
-  country?: string | undefined;
-  country_code?: string | undefined;
-  postal_code?: string | undefined;
-  region?: string | undefined;
-  region_code?: string | undefined;
-};
-
-/** @internal */
-export const PropertyEnrichPersonAddress$outboundSchema: z.ZodType<
-  PropertyEnrichPersonAddress$Outbound,
-  z.ZodTypeDef,
-  PropertyEnrichPersonAddress
-> = z.object({
-  address1: z.string().optional(),
-  address2: z.string().optional(),
-  city: z.string().optional(),
-  country: z.string().optional(),
-  countryCode: z.string().optional(),
-  postalCode: z.string().optional(),
-  region: z.string().optional(),
-  regionCode: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    countryCode: "country_code",
-    postalCode: "postal_code",
-    regionCode: "region_code",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyEnrichPersonAddress$ {
-  /** @deprecated use `PropertyEnrichPersonAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyEnrichPersonAddress$inboundSchema;
-  /** @deprecated use `PropertyEnrichPersonAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyEnrichPersonAddress$outboundSchema;
-  /** @deprecated use `PropertyEnrichPersonAddress$Outbound` instead. */
-  export type Outbound = PropertyEnrichPersonAddress$Outbound;
-}
-
-export function propertyEnrichPersonAddressToJSON(
-  propertyEnrichPersonAddress: PropertyEnrichPersonAddress,
-): string {
-  return JSON.stringify(
-    PropertyEnrichPersonAddress$outboundSchema.parse(
-      propertyEnrichPersonAddress,
-    ),
-  );
-}
-
 export function propertyEnrichPersonAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyEnrichPersonAddress, SDKValidationError> {

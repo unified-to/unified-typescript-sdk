@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAccountingCreditmemoRequest = {
@@ -28,24 +25,6 @@ export type PatchAccountingCreditmemoRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAccountingCreditmemoRequest$inboundSchema: z.ZodType<
-  PatchAccountingCreditmemoRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingCreditmemo: shared.AccountingCreditmemo$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingCreditmemo": "accountingCreditmemo",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAccountingCreditmemoRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAccountingCreditmemoRequest$ {
-  /** @deprecated use `PatchAccountingCreditmemoRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAccountingCreditmemoRequest$inboundSchema;
-  /** @deprecated use `PatchAccountingCreditmemoRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAccountingCreditmemoRequest$outboundSchema;
-  /** @deprecated use `PatchAccountingCreditmemoRequest$Outbound` instead. */
-  export type Outbound = PatchAccountingCreditmemoRequest$Outbound;
-}
-
 export function patchAccountingCreditmemoRequestToJSON(
   patchAccountingCreditmemoRequest: PatchAccountingCreditmemoRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchAccountingCreditmemoRequestToJSON(
     PatchAccountingCreditmemoRequest$outboundSchema.parse(
       patchAccountingCreditmemoRequest,
     ),
-  );
-}
-
-export function patchAccountingCreditmemoRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAccountingCreditmemoRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAccountingCreditmemoRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAccountingCreditmemoRequest' from JSON`,
   );
 }

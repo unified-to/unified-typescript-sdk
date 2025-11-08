@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAtsInterviewRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAtsInterviewRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAtsInterviewRequest$inboundSchema: z.ZodType<
-  GetAtsInterviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAtsInterviewRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetAtsInterviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAtsInterviewRequest$ {
-  /** @deprecated use `GetAtsInterviewRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAtsInterviewRequest$inboundSchema;
-  /** @deprecated use `GetAtsInterviewRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAtsInterviewRequest$outboundSchema;
-  /** @deprecated use `GetAtsInterviewRequest$Outbound` instead. */
-  export type Outbound = GetAtsInterviewRequest$Outbound;
-}
-
 export function getAtsInterviewRequestToJSON(
   getAtsInterviewRequest: GetAtsInterviewRequest,
 ): string {
   return JSON.stringify(
     GetAtsInterviewRequest$outboundSchema.parse(getAtsInterviewRequest),
-  );
-}
-
-export function getAtsInterviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAtsInterviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAtsInterviewRequest' from JSON`,
   );
 }

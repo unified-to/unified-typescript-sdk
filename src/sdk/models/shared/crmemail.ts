@@ -34,7 +34,6 @@ export const CrmEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(CrmEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CrmEmailType$outboundSchema: z.ZodType<
   CrmEmailType,
@@ -45,17 +44,6 @@ export const CrmEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEmailType$ {
-  /** @deprecated use `CrmEmailType$inboundSchema` instead. */
-  export const inboundSchema = CrmEmailType$inboundSchema;
-  /** @deprecated use `CrmEmailType$outboundSchema` instead. */
-  export const outboundSchema = CrmEmailType$outboundSchema;
-}
-
 /** @internal */
 export const CrmEmail$inboundSchema: z.ZodType<
   CrmEmail,
@@ -65,7 +53,6 @@ export const CrmEmail$inboundSchema: z.ZodType<
   email: z.string().optional(),
   type: CrmEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type CrmEmail$Outbound = {
   email?: string | undefined;
@@ -82,23 +69,9 @@ export const CrmEmail$outboundSchema: z.ZodType<
   type: CrmEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEmail$ {
-  /** @deprecated use `CrmEmail$inboundSchema` instead. */
-  export const inboundSchema = CrmEmail$inboundSchema;
-  /** @deprecated use `CrmEmail$outboundSchema` instead. */
-  export const outboundSchema = CrmEmail$outboundSchema;
-  /** @deprecated use `CrmEmail$Outbound` instead. */
-  export type Outbound = CrmEmail$Outbound;
-}
-
 export function crmEmailToJSON(crmEmail: CrmEmail): string {
   return JSON.stringify(CrmEmail$outboundSchema.parse(crmEmail));
 }
-
 export function crmEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmEmail, SDKValidationError> {

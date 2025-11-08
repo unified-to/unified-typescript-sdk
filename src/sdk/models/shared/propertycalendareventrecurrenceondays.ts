@@ -32,7 +32,6 @@ export const PropertyCalendarEventRecurrenceOnDays$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyCalendarEventRecurrenceOnDays),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyCalendarEventRecurrenceOnDays$outboundSchema: z.ZodType<
   PropertyCalendarEventRecurrenceOnDays,
@@ -42,16 +41,3 @@ export const PropertyCalendarEventRecurrenceOnDays$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyCalendarEventRecurrenceOnDays),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCalendarEventRecurrenceOnDays$ {
-  /** @deprecated use `PropertyCalendarEventRecurrenceOnDays$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyCalendarEventRecurrenceOnDays$inboundSchema;
-  /** @deprecated use `PropertyCalendarEventRecurrenceOnDays$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyCalendarEventRecurrenceOnDays$outboundSchema;
-}

@@ -3,11 +3,7 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 
 export const PropertyIntegrationSupportWebhookEventsCreated = {
   Virtual: "virtual",
@@ -28,27 +24,3 @@ export const PropertyIntegrationSupportWebhookEventsCreated$inboundSchema:
       z.nativeEnum(PropertyIntegrationSupportWebhookEventsCreated),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
-/** @internal */
-export const PropertyIntegrationSupportWebhookEventsCreated$outboundSchema:
-  z.ZodType<
-    PropertyIntegrationSupportWebhookEventsCreated,
-    z.ZodTypeDef,
-    PropertyIntegrationSupportWebhookEventsCreated
-  > = z.union([
-    z.nativeEnum(PropertyIntegrationSupportWebhookEventsCreated),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyIntegrationSupportWebhookEventsCreated$ {
-  /** @deprecated use `PropertyIntegrationSupportWebhookEventsCreated$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyIntegrationSupportWebhookEventsCreated$inboundSchema;
-  /** @deprecated use `PropertyIntegrationSupportWebhookEventsCreated$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyIntegrationSupportWebhookEventsCreated$outboundSchema;
-}

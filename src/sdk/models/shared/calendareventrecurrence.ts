@@ -86,7 +86,6 @@ export const CalendarEventRecurrenceFrequency$inboundSchema: z.ZodType<
     z.nativeEnum(CalendarEventRecurrenceFrequency),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodType<
   CalendarEventRecurrenceFrequency,
@@ -96,17 +95,6 @@ export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodType<
   z.nativeEnum(CalendarEventRecurrenceFrequency),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarEventRecurrenceFrequency$ {
-  /** @deprecated use `CalendarEventRecurrenceFrequency$inboundSchema` instead. */
-  export const inboundSchema = CalendarEventRecurrenceFrequency$inboundSchema;
-  /** @deprecated use `CalendarEventRecurrenceFrequency$outboundSchema` instead. */
-  export const outboundSchema = CalendarEventRecurrenceFrequency$outboundSchema;
-}
 
 /** @internal */
 export const WeekStart$inboundSchema: z.ZodType<
@@ -118,7 +106,6 @@ export const WeekStart$inboundSchema: z.ZodType<
     z.nativeEnum(WeekStart),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const WeekStart$outboundSchema: z.ZodType<
   WeekStart,
@@ -128,17 +115,6 @@ export const WeekStart$outboundSchema: z.ZodType<
   z.nativeEnum(WeekStart),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WeekStart$ {
-  /** @deprecated use `WeekStart$inboundSchema` instead. */
-  export const inboundSchema = WeekStart$inboundSchema;
-  /** @deprecated use `WeekStart$outboundSchema` instead. */
-  export const outboundSchema = WeekStart$outboundSchema;
-}
 
 /** @internal */
 export const CalendarEventRecurrence$inboundSchema: z.ZodType<
@@ -174,7 +150,6 @@ export const CalendarEventRecurrence$inboundSchema: z.ZodType<
     "week_start": "weekStart",
   });
 });
-
 /** @internal */
 export type CalendarEventRecurrence$Outbound = {
   count?: number | undefined;
@@ -226,19 +201,6 @@ export const CalendarEventRecurrence$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarEventRecurrence$ {
-  /** @deprecated use `CalendarEventRecurrence$inboundSchema` instead. */
-  export const inboundSchema = CalendarEventRecurrence$inboundSchema;
-  /** @deprecated use `CalendarEventRecurrence$outboundSchema` instead. */
-  export const outboundSchema = CalendarEventRecurrence$outboundSchema;
-  /** @deprecated use `CalendarEventRecurrence$Outbound` instead. */
-  export type Outbound = CalendarEventRecurrence$Outbound;
-}
-
 export function calendarEventRecurrenceToJSON(
   calendarEventRecurrence: CalendarEventRecurrence,
 ): string {
@@ -246,7 +208,6 @@ export function calendarEventRecurrenceToJSON(
     CalendarEventRecurrence$outboundSchema.parse(calendarEventRecurrence),
   );
 }
-
 export function calendarEventRecurrenceFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarEventRecurrence, SDKValidationError> {

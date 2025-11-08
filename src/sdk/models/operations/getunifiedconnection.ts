@@ -3,9 +3,6 @@
  */
 
 import * as z from "zod/v3";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedConnectionRequest = {
   /**
@@ -13,15 +10,6 @@ export type GetUnifiedConnectionRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const GetUnifiedConnectionRequest$inboundSchema: z.ZodType<
-  GetUnifiedConnectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-});
 
 /** @internal */
 export type GetUnifiedConnectionRequest$Outbound = {
@@ -37,19 +25,6 @@ export const GetUnifiedConnectionRequest$outboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetUnifiedConnectionRequest$ {
-  /** @deprecated use `GetUnifiedConnectionRequest$inboundSchema` instead. */
-  export const inboundSchema = GetUnifiedConnectionRequest$inboundSchema;
-  /** @deprecated use `GetUnifiedConnectionRequest$outboundSchema` instead. */
-  export const outboundSchema = GetUnifiedConnectionRequest$outboundSchema;
-  /** @deprecated use `GetUnifiedConnectionRequest$Outbound` instead. */
-  export type Outbound = GetUnifiedConnectionRequest$Outbound;
-}
-
 export function getUnifiedConnectionRequestToJSON(
   getUnifiedConnectionRequest: GetUnifiedConnectionRequest,
 ): string {
@@ -57,15 +32,5 @@ export function getUnifiedConnectionRequestToJSON(
     GetUnifiedConnectionRequest$outboundSchema.parse(
       getUnifiedConnectionRequest,
     ),
-  );
-}
-
-export function getUnifiedConnectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetUnifiedConnectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetUnifiedConnectionRequest' from JSON`,
   );
 }

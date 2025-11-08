@@ -36,21 +36,6 @@ export type ListPassthroughsResponse = {
 };
 
 /** @internal */
-export const ListPassthroughsRequest$inboundSchema: z.ZodType<
-  ListPassthroughsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type ListPassthroughsRequest$Outbound = {
   connection_id: string;
   path: string;
@@ -72,34 +57,11 @@ export const ListPassthroughsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPassthroughsRequest$ {
-  /** @deprecated use `ListPassthroughsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListPassthroughsRequest$inboundSchema;
-  /** @deprecated use `ListPassthroughsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListPassthroughsRequest$outboundSchema;
-  /** @deprecated use `ListPassthroughsRequest$Outbound` instead. */
-  export type Outbound = ListPassthroughsRequest$Outbound;
-}
-
 export function listPassthroughsRequestToJSON(
   listPassthroughsRequest: ListPassthroughsRequest,
 ): string {
   return JSON.stringify(
     ListPassthroughsRequest$outboundSchema.parse(listPassthroughsRequest),
-  );
-}
-
-export function listPassthroughsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListPassthroughsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListPassthroughsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListPassthroughsRequest' from JSON`,
   );
 }
 
@@ -115,50 +77,6 @@ export const ListPassthroughsResponseResult$inboundSchema: z.ZodType<
   z.string(),
   z.string(),
 ]);
-
-/** @internal */
-export type ListPassthroughsResponseResult$Outbound =
-  | ReadableStream<Uint8Array>
-  | any
-  | string
-  | string
-  | string;
-
-/** @internal */
-export const ListPassthroughsResponseResult$outboundSchema: z.ZodType<
-  ListPassthroughsResponseResult$Outbound,
-  z.ZodTypeDef,
-  ListPassthroughsResponseResult
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPassthroughsResponseResult$ {
-  /** @deprecated use `ListPassthroughsResponseResult$inboundSchema` instead. */
-  export const inboundSchema = ListPassthroughsResponseResult$inboundSchema;
-  /** @deprecated use `ListPassthroughsResponseResult$outboundSchema` instead. */
-  export const outboundSchema = ListPassthroughsResponseResult$outboundSchema;
-  /** @deprecated use `ListPassthroughsResponseResult$Outbound` instead. */
-  export type Outbound = ListPassthroughsResponseResult$Outbound;
-}
-
-export function listPassthroughsResponseResultToJSON(
-  listPassthroughsResponseResult: ListPassthroughsResponseResult,
-): string {
-  return JSON.stringify(
-    ListPassthroughsResponseResult$outboundSchema.parse(
-      listPassthroughsResponseResult,
-    ),
-  );
-}
 
 export function listPassthroughsResponseResultFromJSON(
   jsonString: string,
@@ -190,60 +108,6 @@ export const ListPassthroughsResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type ListPassthroughsResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-  Result?:
-    | ReadableStream<Uint8Array>
-    | any
-    | string
-    | string
-    | string
-    | undefined;
-};
-
-/** @internal */
-export const ListPassthroughsResponse$outboundSchema: z.ZodType<
-  ListPassthroughsResponse$Outbound,
-  z.ZodTypeDef,
-  ListPassthroughsResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-  result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPassthroughsResponse$ {
-  /** @deprecated use `ListPassthroughsResponse$inboundSchema` instead. */
-  export const inboundSchema = ListPassthroughsResponse$inboundSchema;
-  /** @deprecated use `ListPassthroughsResponse$outboundSchema` instead. */
-  export const outboundSchema = ListPassthroughsResponse$outboundSchema;
-  /** @deprecated use `ListPassthroughsResponse$Outbound` instead. */
-  export type Outbound = ListPassthroughsResponse$Outbound;
-}
-
-export function listPassthroughsResponseToJSON(
-  listPassthroughsResponse: ListPassthroughsResponse,
-): string {
-  return JSON.stringify(
-    ListPassthroughsResponse$outboundSchema.parse(listPassthroughsResponse),
-  );
-}
 
 export function listPassthroughsResponseFromJSON(
   jsonString: string,

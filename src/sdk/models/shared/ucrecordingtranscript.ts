@@ -37,7 +37,6 @@ export const UcRecordingTranscript$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type UcRecordingTranscript$Outbound = {
   contact_id?: string | undefined;
@@ -67,19 +66,6 @@ export const UcRecordingTranscript$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcRecordingTranscript$ {
-  /** @deprecated use `UcRecordingTranscript$inboundSchema` instead. */
-  export const inboundSchema = UcRecordingTranscript$inboundSchema;
-  /** @deprecated use `UcRecordingTranscript$outboundSchema` instead. */
-  export const outboundSchema = UcRecordingTranscript$outboundSchema;
-  /** @deprecated use `UcRecordingTranscript$Outbound` instead. */
-  export type Outbound = UcRecordingTranscript$Outbound;
-}
-
 export function ucRecordingTranscriptToJSON(
   ucRecordingTranscript: UcRecordingTranscript,
 ): string {
@@ -87,7 +73,6 @@ export function ucRecordingTranscriptToJSON(
     UcRecordingTranscript$outboundSchema.parse(ucRecordingTranscript),
   );
 }
-
 export function ucRecordingTranscriptFromJSON(
   jsonString: string,
 ): SafeParseResult<UcRecordingTranscript, SDKValidationError> {

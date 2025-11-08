@@ -31,7 +31,6 @@ export const CalendarAttachment$inboundSchema: z.ZodType<
     "mime_type": "mimeType",
   });
 });
-
 /** @internal */
 export type CalendarAttachment$Outbound = {
   download_url?: string | undefined;
@@ -57,19 +56,6 @@ export const CalendarAttachment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarAttachment$ {
-  /** @deprecated use `CalendarAttachment$inboundSchema` instead. */
-  export const inboundSchema = CalendarAttachment$inboundSchema;
-  /** @deprecated use `CalendarAttachment$outboundSchema` instead. */
-  export const outboundSchema = CalendarAttachment$outboundSchema;
-  /** @deprecated use `CalendarAttachment$Outbound` instead. */
-  export type Outbound = CalendarAttachment$Outbound;
-}
-
 export function calendarAttachmentToJSON(
   calendarAttachment: CalendarAttachment,
 ): string {
@@ -77,7 +63,6 @@ export function calendarAttachmentToJSON(
     CalendarAttachment$outboundSchema.parse(calendarAttachment),
   );
 }
-
 export function calendarAttachmentFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarAttachment, SDKValidationError> {

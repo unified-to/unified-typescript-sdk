@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUcContactRequest = {
@@ -31,24 +28,6 @@ export type PatchUcContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchUcContactRequest$inboundSchema: z.ZodType<
-  PatchUcContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  UcContact: shared.UcContact$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "UcContact": "ucContact",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchUcContactRequest$Outbound = {
@@ -77,33 +56,10 @@ export const PatchUcContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchUcContactRequest$ {
-  /** @deprecated use `PatchUcContactRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchUcContactRequest$inboundSchema;
-  /** @deprecated use `PatchUcContactRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchUcContactRequest$outboundSchema;
-  /** @deprecated use `PatchUcContactRequest$Outbound` instead. */
-  export type Outbound = PatchUcContactRequest$Outbound;
-}
-
 export function patchUcContactRequestToJSON(
   patchUcContactRequest: PatchUcContactRequest,
 ): string {
   return JSON.stringify(
     PatchUcContactRequest$outboundSchema.parse(patchUcContactRequest),
-  );
-}
-
-export function patchUcContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchUcContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchUcContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchUcContactRequest' from JSON`,
   );
 }

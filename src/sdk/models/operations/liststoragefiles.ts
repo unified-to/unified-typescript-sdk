@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListStorageFilesRequest = {
   /**
@@ -42,31 +39,6 @@ export type ListStorageFilesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListStorageFilesRequest$inboundSchema: z.ZodType<
-  ListStorageFilesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parent_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "parent_id": "parentId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListStorageFilesRequest$Outbound = {
@@ -108,33 +80,10 @@ export const ListStorageFilesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStorageFilesRequest$ {
-  /** @deprecated use `ListStorageFilesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListStorageFilesRequest$inboundSchema;
-  /** @deprecated use `ListStorageFilesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListStorageFilesRequest$outboundSchema;
-  /** @deprecated use `ListStorageFilesRequest$Outbound` instead. */
-  export type Outbound = ListStorageFilesRequest$Outbound;
-}
-
 export function listStorageFilesRequestToJSON(
   listStorageFilesRequest: ListStorageFilesRequest,
 ): string {
   return JSON.stringify(
     ListStorageFilesRequest$outboundSchema.parse(listStorageFilesRequest),
-  );
-}
-
-export function listStorageFilesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListStorageFilesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListStorageFilesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListStorageFilesRequest' from JSON`,
   );
 }

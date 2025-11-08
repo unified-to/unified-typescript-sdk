@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateStorageFileRequest = {
@@ -24,23 +21,6 @@ export type CreateStorageFileRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateStorageFileRequest$inboundSchema: z.ZodType<
-  CreateStorageFileRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  StorageFile: shared.StorageFile$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "StorageFile": "storageFile",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateStorageFileRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateStorageFileRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateStorageFileRequest$ {
-  /** @deprecated use `CreateStorageFileRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateStorageFileRequest$inboundSchema;
-  /** @deprecated use `CreateStorageFileRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateStorageFileRequest$outboundSchema;
-  /** @deprecated use `CreateStorageFileRequest$Outbound` instead. */
-  export type Outbound = CreateStorageFileRequest$Outbound;
-}
-
 export function createStorageFileRequestToJSON(
   createStorageFileRequest: CreateStorageFileRequest,
 ): string {
   return JSON.stringify(
     CreateStorageFileRequest$outboundSchema.parse(createStorageFileRequest),
-  );
-}
-
-export function createStorageFileRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateStorageFileRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateStorageFileRequest' from JSON`,
   );
 }

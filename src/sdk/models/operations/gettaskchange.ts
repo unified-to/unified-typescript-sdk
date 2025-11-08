@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTaskChangeRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetTaskChangeRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetTaskChangeRequest$inboundSchema: z.ZodType<
-  GetTaskChangeRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetTaskChangeRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetTaskChangeRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTaskChangeRequest$ {
-  /** @deprecated use `GetTaskChangeRequest$inboundSchema` instead. */
-  export const inboundSchema = GetTaskChangeRequest$inboundSchema;
-  /** @deprecated use `GetTaskChangeRequest$outboundSchema` instead. */
-  export const outboundSchema = GetTaskChangeRequest$outboundSchema;
-  /** @deprecated use `GetTaskChangeRequest$Outbound` instead. */
-  export type Outbound = GetTaskChangeRequest$Outbound;
-}
-
 export function getTaskChangeRequestToJSON(
   getTaskChangeRequest: GetTaskChangeRequest,
 ): string {
   return JSON.stringify(
     GetTaskChangeRequest$outboundSchema.parse(getTaskChangeRequest),
-  );
-}
-
-export function getTaskChangeRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTaskChangeRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTaskChangeRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTaskChangeRequest' from JSON`,
   );
 }

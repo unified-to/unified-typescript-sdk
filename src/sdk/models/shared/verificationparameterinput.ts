@@ -23,7 +23,6 @@ export const VerificationParameterInput$inboundSchema: z.ZodType<
   inputs: z.array(z.string()).optional(),
   name: z.string().optional(),
 });
-
 /** @internal */
 export type VerificationParameterInput$Outbound = {
   id?: string | undefined;
@@ -42,19 +41,6 @@ export const VerificationParameterInput$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationParameterInput$ {
-  /** @deprecated use `VerificationParameterInput$inboundSchema` instead. */
-  export const inboundSchema = VerificationParameterInput$inboundSchema;
-  /** @deprecated use `VerificationParameterInput$outboundSchema` instead. */
-  export const outboundSchema = VerificationParameterInput$outboundSchema;
-  /** @deprecated use `VerificationParameterInput$Outbound` instead. */
-  export type Outbound = VerificationParameterInput$Outbound;
-}
-
 export function verificationParameterInputToJSON(
   verificationParameterInput: VerificationParameterInput,
 ): string {
@@ -62,7 +48,6 @@ export function verificationParameterInputToJSON(
     VerificationParameterInput$outboundSchema.parse(verificationParameterInput),
   );
 }
-
 export function verificationParameterInputFromJSON(
   jsonString: string,
 ): SafeParseResult<VerificationParameterInput, SDKValidationError> {

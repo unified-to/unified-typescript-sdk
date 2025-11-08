@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetPaymentPayoutRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetPaymentPayoutRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetPaymentPayoutRequest$inboundSchema: z.ZodType<
-  GetPaymentPayoutRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetPaymentPayoutRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetPaymentPayoutRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetPaymentPayoutRequest$ {
-  /** @deprecated use `GetPaymentPayoutRequest$inboundSchema` instead. */
-  export const inboundSchema = GetPaymentPayoutRequest$inboundSchema;
-  /** @deprecated use `GetPaymentPayoutRequest$outboundSchema` instead. */
-  export const outboundSchema = GetPaymentPayoutRequest$outboundSchema;
-  /** @deprecated use `GetPaymentPayoutRequest$Outbound` instead. */
-  export type Outbound = GetPaymentPayoutRequest$Outbound;
-}
-
 export function getPaymentPayoutRequestToJSON(
   getPaymentPayoutRequest: GetPaymentPayoutRequest,
 ): string {
   return JSON.stringify(
     GetPaymentPayoutRequest$outboundSchema.parse(getPaymentPayoutRequest),
-  );
-}
-
-export function getPaymentPayoutRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetPaymentPayoutRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetPaymentPayoutRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetPaymentPayoutRequest' from JSON`,
   );
 }

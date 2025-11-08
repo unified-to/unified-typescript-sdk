@@ -5,18 +5,12 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyIntegrationSupportWebhookEvents,
   PropertyIntegrationSupportWebhookEvents$inboundSchema,
-  PropertyIntegrationSupportWebhookEvents$Outbound,
-  PropertyIntegrationSupportWebhookEvents$outboundSchema,
 } from "./propertyintegrationsupportwebhookevents.js";
 
 export const FromWebhook = {
@@ -919,27 +913,6 @@ export const FromWebhook$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const FromWebhook$outboundSchema: z.ZodType<
-  FromWebhook,
-  z.ZodTypeDef,
-  FromWebhook
-> = z.union([
-  z.nativeEnum(FromWebhook),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace FromWebhook$ {
-  /** @deprecated use `FromWebhook$inboundSchema` instead. */
-  export const inboundSchema = FromWebhook$inboundSchema;
-  /** @deprecated use `FromWebhook$outboundSchema` instead. */
-  export const outboundSchema = FromWebhook$outboundSchema;
-}
-
-/** @internal */
 export const ListAccountId$inboundSchema: z.ZodType<
   ListAccountId,
   z.ZodTypeDef,
@@ -949,27 +922,6 @@ export const ListAccountId$inboundSchema: z.ZodType<
     z.nativeEnum(ListAccountId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListAccountId$outboundSchema: z.ZodType<
-  ListAccountId,
-  z.ZodTypeDef,
-  ListAccountId
-> = z.union([
-  z.nativeEnum(ListAccountId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountId$ {
-  /** @deprecated use `ListAccountId$inboundSchema` instead. */
-  export const inboundSchema = ListAccountId$inboundSchema;
-  /** @deprecated use `ListAccountId$outboundSchema` instead. */
-  export const outboundSchema = ListAccountId$outboundSchema;
-}
 
 /** @internal */
 export const ListApplicationId$inboundSchema: z.ZodType<
@@ -983,27 +935,6 @@ export const ListApplicationId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListApplicationId$outboundSchema: z.ZodType<
-  ListApplicationId,
-  z.ZodTypeDef,
-  ListApplicationId
-> = z.union([
-  z.nativeEnum(ListApplicationId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListApplicationId$ {
-  /** @deprecated use `ListApplicationId$inboundSchema` instead. */
-  export const inboundSchema = ListApplicationId$inboundSchema;
-  /** @deprecated use `ListApplicationId$outboundSchema` instead. */
-  export const outboundSchema = ListApplicationId$outboundSchema;
-}
-
-/** @internal */
 export const ListBranchId$inboundSchema: z.ZodType<
   ListBranchId,
   z.ZodTypeDef,
@@ -1013,27 +944,6 @@ export const ListBranchId$inboundSchema: z.ZodType<
     z.nativeEnum(ListBranchId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListBranchId$outboundSchema: z.ZodType<
-  ListBranchId,
-  z.ZodTypeDef,
-  ListBranchId
-> = z.union([
-  z.nativeEnum(ListBranchId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListBranchId$ {
-  /** @deprecated use `ListBranchId$inboundSchema` instead. */
-  export const inboundSchema = ListBranchId$inboundSchema;
-  /** @deprecated use `ListBranchId$outboundSchema` instead. */
-  export const outboundSchema = ListBranchId$outboundSchema;
-}
 
 /** @internal */
 export const ListCalendarId$inboundSchema: z.ZodType<
@@ -1047,27 +957,6 @@ export const ListCalendarId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListCalendarId$outboundSchema: z.ZodType<
-  ListCalendarId,
-  z.ZodTypeDef,
-  ListCalendarId
-> = z.union([
-  z.nativeEnum(ListCalendarId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCalendarId$ {
-  /** @deprecated use `ListCalendarId$inboundSchema` instead. */
-  export const inboundSchema = ListCalendarId$inboundSchema;
-  /** @deprecated use `ListCalendarId$outboundSchema` instead. */
-  export const outboundSchema = ListCalendarId$outboundSchema;
-}
-
-/** @internal */
 export const ListCallId$inboundSchema: z.ZodType<
   ListCallId,
   z.ZodTypeDef,
@@ -1077,27 +966,6 @@ export const ListCallId$inboundSchema: z.ZodType<
     z.nativeEnum(ListCallId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListCallId$outboundSchema: z.ZodType<
-  ListCallId,
-  z.ZodTypeDef,
-  ListCallId
-> = z.union([
-  z.nativeEnum(ListCallId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCallId$ {
-  /** @deprecated use `ListCallId$inboundSchema` instead. */
-  export const inboundSchema = ListCallId$inboundSchema;
-  /** @deprecated use `ListCallId$outboundSchema` instead. */
-  export const outboundSchema = ListCallId$outboundSchema;
-}
 
 /** @internal */
 export const ListCandidateId$inboundSchema: z.ZodType<
@@ -1111,27 +979,6 @@ export const ListCandidateId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListCandidateId$outboundSchema: z.ZodType<
-  ListCandidateId,
-  z.ZodTypeDef,
-  ListCandidateId
-> = z.union([
-  z.nativeEnum(ListCandidateId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCandidateId$ {
-  /** @deprecated use `ListCandidateId$inboundSchema` instead. */
-  export const inboundSchema = ListCandidateId$inboundSchema;
-  /** @deprecated use `ListCandidateId$outboundSchema` instead. */
-  export const outboundSchema = ListCandidateId$outboundSchema;
-}
-
-/** @internal */
 export const ListCategoryId$inboundSchema: z.ZodType<
   ListCategoryId,
   z.ZodTypeDef,
@@ -1141,27 +988,6 @@ export const ListCategoryId$inboundSchema: z.ZodType<
     z.nativeEnum(ListCategoryId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListCategoryId$outboundSchema: z.ZodType<
-  ListCategoryId,
-  z.ZodTypeDef,
-  ListCategoryId
-> = z.union([
-  z.nativeEnum(ListCategoryId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCategoryId$ {
-  /** @deprecated use `ListCategoryId$inboundSchema` instead. */
-  export const inboundSchema = ListCategoryId$inboundSchema;
-  /** @deprecated use `ListCategoryId$outboundSchema` instead. */
-  export const outboundSchema = ListCategoryId$outboundSchema;
-}
 
 /** @internal */
 export const ListChannelId$inboundSchema: z.ZodType<
@@ -1175,27 +1001,6 @@ export const ListChannelId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListChannelId$outboundSchema: z.ZodType<
-  ListChannelId,
-  z.ZodTypeDef,
-  ListChannelId
-> = z.union([
-  z.nativeEnum(ListChannelId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListChannelId$ {
-  /** @deprecated use `ListChannelId$inboundSchema` instead. */
-  export const inboundSchema = ListChannelId$inboundSchema;
-  /** @deprecated use `ListChannelId$outboundSchema` instead. */
-  export const outboundSchema = ListChannelId$outboundSchema;
-}
-
-/** @internal */
 export const ListClassId$inboundSchema: z.ZodType<
   ListClassId,
   z.ZodTypeDef,
@@ -1205,27 +1010,6 @@ export const ListClassId$inboundSchema: z.ZodType<
     z.nativeEnum(ListClassId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListClassId$outboundSchema: z.ZodType<
-  ListClassId,
-  z.ZodTypeDef,
-  ListClassId
-> = z.union([
-  z.nativeEnum(ListClassId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListClassId$ {
-  /** @deprecated use `ListClassId$inboundSchema` instead. */
-  export const inboundSchema = ListClassId$inboundSchema;
-  /** @deprecated use `ListClassId$outboundSchema` instead. */
-  export const outboundSchema = ListClassId$outboundSchema;
-}
 
 /** @internal */
 export const ListCollectionId$inboundSchema: z.ZodType<
@@ -1239,27 +1023,6 @@ export const ListCollectionId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListCollectionId$outboundSchema: z.ZodType<
-  ListCollectionId,
-  z.ZodTypeDef,
-  ListCollectionId
-> = z.union([
-  z.nativeEnum(ListCollectionId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCollectionId$ {
-  /** @deprecated use `ListCollectionId$inboundSchema` instead. */
-  export const inboundSchema = ListCollectionId$inboundSchema;
-  /** @deprecated use `ListCollectionId$outboundSchema` instead. */
-  export const outboundSchema = ListCollectionId$outboundSchema;
-}
-
-/** @internal */
 export const ListCompanyId$inboundSchema: z.ZodType<
   ListCompanyId,
   z.ZodTypeDef,
@@ -1269,27 +1032,6 @@ export const ListCompanyId$inboundSchema: z.ZodType<
     z.nativeEnum(ListCompanyId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListCompanyId$outboundSchema: z.ZodType<
-  ListCompanyId,
-  z.ZodTypeDef,
-  ListCompanyId
-> = z.union([
-  z.nativeEnum(ListCompanyId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCompanyId$ {
-  /** @deprecated use `ListCompanyId$inboundSchema` instead. */
-  export const inboundSchema = ListCompanyId$inboundSchema;
-  /** @deprecated use `ListCompanyId$outboundSchema` instead. */
-  export const outboundSchema = ListCompanyId$outboundSchema;
-}
 
 /** @internal */
 export const ListContactId$inboundSchema: z.ZodType<
@@ -1303,27 +1045,6 @@ export const ListContactId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListContactId$outboundSchema: z.ZodType<
-  ListContactId,
-  z.ZodTypeDef,
-  ListContactId
-> = z.union([
-  z.nativeEnum(ListContactId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListContactId$ {
-  /** @deprecated use `ListContactId$inboundSchema` instead. */
-  export const inboundSchema = ListContactId$inboundSchema;
-  /** @deprecated use `ListContactId$outboundSchema` instead. */
-  export const outboundSchema = ListContactId$outboundSchema;
-}
-
-/** @internal */
 export const ListCourseId$inboundSchema: z.ZodType<
   ListCourseId,
   z.ZodTypeDef,
@@ -1333,27 +1054,6 @@ export const ListCourseId$inboundSchema: z.ZodType<
     z.nativeEnum(ListCourseId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListCourseId$outboundSchema: z.ZodType<
-  ListCourseId,
-  z.ZodTypeDef,
-  ListCourseId
-> = z.union([
-  z.nativeEnum(ListCourseId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCourseId$ {
-  /** @deprecated use `ListCourseId$inboundSchema` instead. */
-  export const inboundSchema = ListCourseId$inboundSchema;
-  /** @deprecated use `ListCourseId$outboundSchema` instead. */
-  export const outboundSchema = ListCourseId$outboundSchema;
-}
 
 /** @internal */
 export const ListCustomerId$inboundSchema: z.ZodType<
@@ -1367,27 +1067,6 @@ export const ListCustomerId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListCustomerId$outboundSchema: z.ZodType<
-  ListCustomerId,
-  z.ZodTypeDef,
-  ListCustomerId
-> = z.union([
-  z.nativeEnum(ListCustomerId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCustomerId$ {
-  /** @deprecated use `ListCustomerId$inboundSchema` instead. */
-  export const inboundSchema = ListCustomerId$inboundSchema;
-  /** @deprecated use `ListCustomerId$outboundSchema` instead. */
-  export const outboundSchema = ListCustomerId$outboundSchema;
-}
-
-/** @internal */
 export const ListDealId$inboundSchema: z.ZodType<
   ListDealId,
   z.ZodTypeDef,
@@ -1397,27 +1076,6 @@ export const ListDealId$inboundSchema: z.ZodType<
     z.nativeEnum(ListDealId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListDealId$outboundSchema: z.ZodType<
-  ListDealId,
-  z.ZodTypeDef,
-  ListDealId
-> = z.union([
-  z.nativeEnum(ListDealId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListDealId$ {
-  /** @deprecated use `ListDealId$inboundSchema` instead. */
-  export const inboundSchema = ListDealId$inboundSchema;
-  /** @deprecated use `ListDealId$outboundSchema` instead. */
-  export const outboundSchema = ListDealId$outboundSchema;
-}
 
 /** @internal */
 export const ListDocumentId$inboundSchema: z.ZodType<
@@ -1431,27 +1089,6 @@ export const ListDocumentId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListDocumentId$outboundSchema: z.ZodType<
-  ListDocumentId,
-  z.ZodTypeDef,
-  ListDocumentId
-> = z.union([
-  z.nativeEnum(ListDocumentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListDocumentId$ {
-  /** @deprecated use `ListDocumentId$inboundSchema` instead. */
-  export const inboundSchema = ListDocumentId$inboundSchema;
-  /** @deprecated use `ListDocumentId$outboundSchema` instead. */
-  export const outboundSchema = ListDocumentId$outboundSchema;
-}
-
-/** @internal */
 export const ListEndLe$inboundSchema: z.ZodType<
   ListEndLe,
   z.ZodTypeDef,
@@ -1461,27 +1098,6 @@ export const ListEndLe$inboundSchema: z.ZodType<
     z.nativeEnum(ListEndLe),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListEndLe$outboundSchema: z.ZodType<
-  ListEndLe,
-  z.ZodTypeDef,
-  ListEndLe
-> = z.union([
-  z.nativeEnum(ListEndLe),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEndLe$ {
-  /** @deprecated use `ListEndLe$inboundSchema` instead. */
-  export const inboundSchema = ListEndLe$inboundSchema;
-  /** @deprecated use `ListEndLe$outboundSchema` instead. */
-  export const outboundSchema = ListEndLe$outboundSchema;
-}
 
 /** @internal */
 export const ListEndLt$inboundSchema: z.ZodType<
@@ -1495,27 +1111,6 @@ export const ListEndLt$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListEndLt$outboundSchema: z.ZodType<
-  ListEndLt,
-  z.ZodTypeDef,
-  ListEndLt
-> = z.union([
-  z.nativeEnum(ListEndLt),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEndLt$ {
-  /** @deprecated use `ListEndLt$inboundSchema` instead. */
-  export const inboundSchema = ListEndLt$inboundSchema;
-  /** @deprecated use `ListEndLt$outboundSchema` instead. */
-  export const outboundSchema = ListEndLt$outboundSchema;
-}
-
-/** @internal */
 export const ListEventId$inboundSchema: z.ZodType<
   ListEventId,
   z.ZodTypeDef,
@@ -1525,27 +1120,6 @@ export const ListEventId$inboundSchema: z.ZodType<
     z.nativeEnum(ListEventId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListEventId$outboundSchema: z.ZodType<
-  ListEventId,
-  z.ZodTypeDef,
-  ListEventId
-> = z.union([
-  z.nativeEnum(ListEventId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEventId$ {
-  /** @deprecated use `ListEventId$inboundSchema` instead. */
-  export const inboundSchema = ListEventId$inboundSchema;
-  /** @deprecated use `ListEventId$outboundSchema` instead. */
-  export const outboundSchema = ListEventId$outboundSchema;
-}
 
 /** @internal */
 export const ListExpand$inboundSchema: z.ZodType<
@@ -1559,27 +1133,6 @@ export const ListExpand$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListExpand$outboundSchema: z.ZodType<
-  ListExpand,
-  z.ZodTypeDef,
-  ListExpand
-> = z.union([
-  z.nativeEnum(ListExpand),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListExpand$ {
-  /** @deprecated use `ListExpand$inboundSchema` instead. */
-  export const inboundSchema = ListExpand$inboundSchema;
-  /** @deprecated use `ListExpand$outboundSchema` instead. */
-  export const outboundSchema = ListExpand$outboundSchema;
-}
-
-/** @internal */
 export const ListExpandRecurringEvents$inboundSchema: z.ZodType<
   ListExpandRecurringEvents,
   z.ZodTypeDef,
@@ -1589,27 +1142,6 @@ export const ListExpandRecurringEvents$inboundSchema: z.ZodType<
     z.nativeEnum(ListExpandRecurringEvents),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListExpandRecurringEvents$outboundSchema: z.ZodType<
-  ListExpandRecurringEvents,
-  z.ZodTypeDef,
-  ListExpandRecurringEvents
-> = z.union([
-  z.nativeEnum(ListExpandRecurringEvents),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListExpandRecurringEvents$ {
-  /** @deprecated use `ListExpandRecurringEvents$inboundSchema` instead. */
-  export const inboundSchema = ListExpandRecurringEvents$inboundSchema;
-  /** @deprecated use `ListExpandRecurringEvents$outboundSchema` instead. */
-  export const outboundSchema = ListExpandRecurringEvents$outboundSchema;
-}
 
 /** @internal */
 export const ListInstructorId$inboundSchema: z.ZodType<
@@ -1623,27 +1155,6 @@ export const ListInstructorId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListInstructorId$outboundSchema: z.ZodType<
-  ListInstructorId,
-  z.ZodTypeDef,
-  ListInstructorId
-> = z.union([
-  z.nativeEnum(ListInstructorId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListInstructorId$ {
-  /** @deprecated use `ListInstructorId$inboundSchema` instead. */
-  export const inboundSchema = ListInstructorId$inboundSchema;
-  /** @deprecated use `ListInstructorId$outboundSchema` instead. */
-  export const outboundSchema = ListInstructorId$outboundSchema;
-}
-
-/** @internal */
 export const ListInterviewId$inboundSchema: z.ZodType<
   ListInterviewId,
   z.ZodTypeDef,
@@ -1653,27 +1164,6 @@ export const ListInterviewId$inboundSchema: z.ZodType<
     z.nativeEnum(ListInterviewId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListInterviewId$outboundSchema: z.ZodType<
-  ListInterviewId,
-  z.ZodTypeDef,
-  ListInterviewId
-> = z.union([
-  z.nativeEnum(ListInterviewId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListInterviewId$ {
-  /** @deprecated use `ListInterviewId$inboundSchema` instead. */
-  export const inboundSchema = ListInterviewId$inboundSchema;
-  /** @deprecated use `ListInterviewId$outboundSchema` instead. */
-  export const outboundSchema = ListInterviewId$outboundSchema;
-}
 
 /** @internal */
 export const ListInvoiceId$inboundSchema: z.ZodType<
@@ -1687,27 +1177,6 @@ export const ListInvoiceId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListInvoiceId$outboundSchema: z.ZodType<
-  ListInvoiceId,
-  z.ZodTypeDef,
-  ListInvoiceId
-> = z.union([
-  z.nativeEnum(ListInvoiceId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListInvoiceId$ {
-  /** @deprecated use `ListInvoiceId$inboundSchema` instead. */
-  export const inboundSchema = ListInvoiceId$inboundSchema;
-  /** @deprecated use `ListInvoiceId$outboundSchema` instead. */
-  export const outboundSchema = ListInvoiceId$outboundSchema;
-}
-
-/** @internal */
 export const ListItemId$inboundSchema: z.ZodType<
   ListItemId,
   z.ZodTypeDef,
@@ -1717,27 +1186,6 @@ export const ListItemId$inboundSchema: z.ZodType<
     z.nativeEnum(ListItemId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListItemId$outboundSchema: z.ZodType<
-  ListItemId,
-  z.ZodTypeDef,
-  ListItemId
-> = z.union([
-  z.nativeEnum(ListItemId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListItemId$ {
-  /** @deprecated use `ListItemId$inboundSchema` instead. */
-  export const inboundSchema = ListItemId$inboundSchema;
-  /** @deprecated use `ListItemId$outboundSchema` instead. */
-  export const outboundSchema = ListItemId$outboundSchema;
-}
 
 /** @internal */
 export const ListItemVariantId$inboundSchema: z.ZodType<
@@ -1751,27 +1199,6 @@ export const ListItemVariantId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListItemVariantId$outboundSchema: z.ZodType<
-  ListItemVariantId,
-  z.ZodTypeDef,
-  ListItemVariantId
-> = z.union([
-  z.nativeEnum(ListItemVariantId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListItemVariantId$ {
-  /** @deprecated use `ListItemVariantId$inboundSchema` instead. */
-  export const inboundSchema = ListItemVariantId$inboundSchema;
-  /** @deprecated use `ListItemVariantId$outboundSchema` instead. */
-  export const outboundSchema = ListItemVariantId$outboundSchema;
-}
-
-/** @internal */
 export const ListJobId$inboundSchema: z.ZodType<
   ListJobId,
   z.ZodTypeDef,
@@ -1781,27 +1208,6 @@ export const ListJobId$inboundSchema: z.ZodType<
     z.nativeEnum(ListJobId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListJobId$outboundSchema: z.ZodType<
-  ListJobId,
-  z.ZodTypeDef,
-  ListJobId
-> = z.union([
-  z.nativeEnum(ListJobId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListJobId$ {
-  /** @deprecated use `ListJobId$inboundSchema` instead. */
-  export const inboundSchema = ListJobId$inboundSchema;
-  /** @deprecated use `ListJobId$outboundSchema` instead. */
-  export const outboundSchema = ListJobId$outboundSchema;
-}
 
 /** @internal */
 export const ListLeadId$inboundSchema: z.ZodType<
@@ -1815,27 +1221,6 @@ export const ListLeadId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListLeadId$outboundSchema: z.ZodType<
-  ListLeadId,
-  z.ZodTypeDef,
-  ListLeadId
-> = z.union([
-  z.nativeEnum(ListLeadId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListLeadId$ {
-  /** @deprecated use `ListLeadId$inboundSchema` instead. */
-  export const inboundSchema = ListLeadId$inboundSchema;
-  /** @deprecated use `ListLeadId$outboundSchema` instead. */
-  export const outboundSchema = ListLeadId$outboundSchema;
-}
-
-/** @internal */
 export const ListLimit$inboundSchema: z.ZodType<
   ListLimit,
   z.ZodTypeDef,
@@ -1845,27 +1230,6 @@ export const ListLimit$inboundSchema: z.ZodType<
     z.nativeEnum(ListLimit),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListLimit$outboundSchema: z.ZodType<
-  ListLimit,
-  z.ZodTypeDef,
-  ListLimit
-> = z.union([
-  z.nativeEnum(ListLimit),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListLimit$ {
-  /** @deprecated use `ListLimit$inboundSchema` instead. */
-  export const inboundSchema = ListLimit$inboundSchema;
-  /** @deprecated use `ListLimit$outboundSchema` instead. */
-  export const outboundSchema = ListLimit$outboundSchema;
-}
 
 /** @internal */
 export const ListLinkId$inboundSchema: z.ZodType<
@@ -1879,27 +1243,6 @@ export const ListLinkId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListLinkId$outboundSchema: z.ZodType<
-  ListLinkId,
-  z.ZodTypeDef,
-  ListLinkId
-> = z.union([
-  z.nativeEnum(ListLinkId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListLinkId$ {
-  /** @deprecated use `ListLinkId$inboundSchema` instead. */
-  export const inboundSchema = ListLinkId$inboundSchema;
-  /** @deprecated use `ListLinkId$outboundSchema` instead. */
-  export const outboundSchema = ListLinkId$outboundSchema;
-}
-
-/** @internal */
 export const ListListId$inboundSchema: z.ZodType<
   ListListId,
   z.ZodTypeDef,
@@ -1909,27 +1252,6 @@ export const ListListId$inboundSchema: z.ZodType<
     z.nativeEnum(ListListId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListListId$outboundSchema: z.ZodType<
-  ListListId,
-  z.ZodTypeDef,
-  ListListId
-> = z.union([
-  z.nativeEnum(ListListId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListListId$ {
-  /** @deprecated use `ListListId$inboundSchema` instead. */
-  export const inboundSchema = ListListId$inboundSchema;
-  /** @deprecated use `ListListId$outboundSchema` instead. */
-  export const outboundSchema = ListListId$outboundSchema;
-}
 
 /** @internal */
 export const ListLocationId$inboundSchema: z.ZodType<
@@ -1943,27 +1265,6 @@ export const ListLocationId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListLocationId$outboundSchema: z.ZodType<
-  ListLocationId,
-  z.ZodTypeDef,
-  ListLocationId
-> = z.union([
-  z.nativeEnum(ListLocationId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListLocationId$ {
-  /** @deprecated use `ListLocationId$inboundSchema` instead. */
-  export const inboundSchema = ListLocationId$inboundSchema;
-  /** @deprecated use `ListLocationId$outboundSchema` instead. */
-  export const outboundSchema = ListLocationId$outboundSchema;
-}
-
-/** @internal */
 export const ListOffset$inboundSchema: z.ZodType<
   ListOffset,
   z.ZodTypeDef,
@@ -1973,27 +1274,6 @@ export const ListOffset$inboundSchema: z.ZodType<
     z.nativeEnum(ListOffset),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListOffset$outboundSchema: z.ZodType<
-  ListOffset,
-  z.ZodTypeDef,
-  ListOffset
-> = z.union([
-  z.nativeEnum(ListOffset),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListOffset$ {
-  /** @deprecated use `ListOffset$inboundSchema` instead. */
-  export const inboundSchema = ListOffset$inboundSchema;
-  /** @deprecated use `ListOffset$outboundSchema` instead. */
-  export const outboundSchema = ListOffset$outboundSchema;
-}
 
 /** @internal */
 export const ListOrder$inboundSchema: z.ZodType<
@@ -2007,27 +1287,6 @@ export const ListOrder$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListOrder$outboundSchema: z.ZodType<
-  ListOrder,
-  z.ZodTypeDef,
-  ListOrder
-> = z.union([
-  z.nativeEnum(ListOrder),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListOrder$ {
-  /** @deprecated use `ListOrder$inboundSchema` instead. */
-  export const inboundSchema = ListOrder$inboundSchema;
-  /** @deprecated use `ListOrder$outboundSchema` instead. */
-  export const outboundSchema = ListOrder$outboundSchema;
-}
-
-/** @internal */
 export const ListOrgId$inboundSchema: z.ZodType<
   ListOrgId,
   z.ZodTypeDef,
@@ -2037,27 +1296,6 @@ export const ListOrgId$inboundSchema: z.ZodType<
     z.nativeEnum(ListOrgId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListOrgId$outboundSchema: z.ZodType<
-  ListOrgId,
-  z.ZodTypeDef,
-  ListOrgId
-> = z.union([
-  z.nativeEnum(ListOrgId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListOrgId$ {
-  /** @deprecated use `ListOrgId$inboundSchema` instead. */
-  export const inboundSchema = ListOrgId$inboundSchema;
-  /** @deprecated use `ListOrgId$outboundSchema` instead. */
-  export const outboundSchema = ListOrgId$outboundSchema;
-}
 
 /** @internal */
 export const ListPackageId$inboundSchema: z.ZodType<
@@ -2071,27 +1309,6 @@ export const ListPackageId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListPackageId$outboundSchema: z.ZodType<
-  ListPackageId,
-  z.ZodTypeDef,
-  ListPackageId
-> = z.union([
-  z.nativeEnum(ListPackageId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPackageId$ {
-  /** @deprecated use `ListPackageId$inboundSchema` instead. */
-  export const inboundSchema = ListPackageId$inboundSchema;
-  /** @deprecated use `ListPackageId$outboundSchema` instead. */
-  export const outboundSchema = ListPackageId$outboundSchema;
-}
-
-/** @internal */
 export const ListPageId$inboundSchema: z.ZodType<
   ListPageId,
   z.ZodTypeDef,
@@ -2101,27 +1318,6 @@ export const ListPageId$inboundSchema: z.ZodType<
     z.nativeEnum(ListPageId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListPageId$outboundSchema: z.ZodType<
-  ListPageId,
-  z.ZodTypeDef,
-  ListPageId
-> = z.union([
-  z.nativeEnum(ListPageId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPageId$ {
-  /** @deprecated use `ListPageId$inboundSchema` instead. */
-  export const inboundSchema = ListPageId$inboundSchema;
-  /** @deprecated use `ListPageId$outboundSchema` instead. */
-  export const outboundSchema = ListPageId$outboundSchema;
-}
 
 /** @internal */
 export const ListParentId$inboundSchema: z.ZodType<
@@ -2135,27 +1331,6 @@ export const ListParentId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListParentId$outboundSchema: z.ZodType<
-  ListParentId,
-  z.ZodTypeDef,
-  ListParentId
-> = z.union([
-  z.nativeEnum(ListParentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListParentId$ {
-  /** @deprecated use `ListParentId$inboundSchema` instead. */
-  export const inboundSchema = ListParentId$inboundSchema;
-  /** @deprecated use `ListParentId$outboundSchema` instead. */
-  export const outboundSchema = ListParentId$outboundSchema;
-}
-
-/** @internal */
 export const ListPaymentId$inboundSchema: z.ZodType<
   ListPaymentId,
   z.ZodTypeDef,
@@ -2165,27 +1340,6 @@ export const ListPaymentId$inboundSchema: z.ZodType<
     z.nativeEnum(ListPaymentId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListPaymentId$outboundSchema: z.ZodType<
-  ListPaymentId,
-  z.ZodTypeDef,
-  ListPaymentId
-> = z.union([
-  z.nativeEnum(ListPaymentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPaymentId$ {
-  /** @deprecated use `ListPaymentId$inboundSchema` instead. */
-  export const inboundSchema = ListPaymentId$inboundSchema;
-  /** @deprecated use `ListPaymentId$outboundSchema` instead. */
-  export const outboundSchema = ListPaymentId$outboundSchema;
-}
 
 /** @internal */
 export const ListPipelineId$inboundSchema: z.ZodType<
@@ -2199,27 +1353,6 @@ export const ListPipelineId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListPipelineId$outboundSchema: z.ZodType<
-  ListPipelineId,
-  z.ZodTypeDef,
-  ListPipelineId
-> = z.union([
-  z.nativeEnum(ListPipelineId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPipelineId$ {
-  /** @deprecated use `ListPipelineId$inboundSchema` instead. */
-  export const inboundSchema = ListPipelineId$inboundSchema;
-  /** @deprecated use `ListPipelineId$outboundSchema` instead. */
-  export const outboundSchema = ListPipelineId$outboundSchema;
-}
-
-/** @internal */
 export const ListProjectId$inboundSchema: z.ZodType<
   ListProjectId,
   z.ZodTypeDef,
@@ -2229,27 +1362,6 @@ export const ListProjectId$inboundSchema: z.ZodType<
     z.nativeEnum(ListProjectId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListProjectId$outboundSchema: z.ZodType<
-  ListProjectId,
-  z.ZodTypeDef,
-  ListProjectId
-> = z.union([
-  z.nativeEnum(ListProjectId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListProjectId$ {
-  /** @deprecated use `ListProjectId$inboundSchema` instead. */
-  export const inboundSchema = ListProjectId$inboundSchema;
-  /** @deprecated use `ListProjectId$outboundSchema` instead. */
-  export const outboundSchema = ListProjectId$outboundSchema;
-}
 
 /** @internal */
 export const ListQuery$inboundSchema: z.ZodType<
@@ -2263,27 +1375,6 @@ export const ListQuery$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListQuery$outboundSchema: z.ZodType<
-  ListQuery,
-  z.ZodTypeDef,
-  ListQuery
-> = z.union([
-  z.nativeEnum(ListQuery),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListQuery$ {
-  /** @deprecated use `ListQuery$inboundSchema` instead. */
-  export const inboundSchema = ListQuery$inboundSchema;
-  /** @deprecated use `ListQuery$outboundSchema` instead. */
-  export const outboundSchema = ListQuery$outboundSchema;
-}
-
-/** @internal */
 export const ListRawFields$inboundSchema: z.ZodType<
   ListRawFields,
   z.ZodTypeDef,
@@ -2293,27 +1384,6 @@ export const ListRawFields$inboundSchema: z.ZodType<
     z.nativeEnum(ListRawFields),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListRawFields$outboundSchema: z.ZodType<
-  ListRawFields,
-  z.ZodTypeDef,
-  ListRawFields
-> = z.union([
-  z.nativeEnum(ListRawFields),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListRawFields$ {
-  /** @deprecated use `ListRawFields$inboundSchema` instead. */
-  export const inboundSchema = ListRawFields$inboundSchema;
-  /** @deprecated use `ListRawFields$outboundSchema` instead. */
-  export const outboundSchema = ListRawFields$outboundSchema;
-}
 
 /** @internal */
 export const ListRepoId$inboundSchema: z.ZodType<
@@ -2327,27 +1397,6 @@ export const ListRepoId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListRepoId$outboundSchema: z.ZodType<
-  ListRepoId,
-  z.ZodTypeDef,
-  ListRepoId
-> = z.union([
-  z.nativeEnum(ListRepoId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListRepoId$ {
-  /** @deprecated use `ListRepoId$inboundSchema` instead. */
-  export const inboundSchema = ListRepoId$inboundSchema;
-  /** @deprecated use `ListRepoId$outboundSchema` instead. */
-  export const outboundSchema = ListRepoId$outboundSchema;
-}
-
-/** @internal */
 export const ListRootId$inboundSchema: z.ZodType<
   ListRootId,
   z.ZodTypeDef,
@@ -2357,27 +1406,6 @@ export const ListRootId$inboundSchema: z.ZodType<
     z.nativeEnum(ListRootId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListRootId$outboundSchema: z.ZodType<
-  ListRootId,
-  z.ZodTypeDef,
-  ListRootId
-> = z.union([
-  z.nativeEnum(ListRootId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListRootId$ {
-  /** @deprecated use `ListRootId$inboundSchema` instead. */
-  export const inboundSchema = ListRootId$inboundSchema;
-  /** @deprecated use `ListRootId$outboundSchema` instead. */
-  export const outboundSchema = ListRootId$outboundSchema;
-}
 
 /** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodType<
@@ -2391,27 +1419,6 @@ export const ListSortByCreatedAt$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListSortByCreatedAt$outboundSchema: z.ZodType<
-  ListSortByCreatedAt,
-  z.ZodTypeDef,
-  ListSortByCreatedAt
-> = z.union([
-  z.nativeEnum(ListSortByCreatedAt),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListSortByCreatedAt$ {
-  /** @deprecated use `ListSortByCreatedAt$inboundSchema` instead. */
-  export const inboundSchema = ListSortByCreatedAt$inboundSchema;
-  /** @deprecated use `ListSortByCreatedAt$outboundSchema` instead. */
-  export const outboundSchema = ListSortByCreatedAt$outboundSchema;
-}
-
-/** @internal */
 export const ListSortByName$inboundSchema: z.ZodType<
   ListSortByName,
   z.ZodTypeDef,
@@ -2421,27 +1428,6 @@ export const ListSortByName$inboundSchema: z.ZodType<
     z.nativeEnum(ListSortByName),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListSortByName$outboundSchema: z.ZodType<
-  ListSortByName,
-  z.ZodTypeDef,
-  ListSortByName
-> = z.union([
-  z.nativeEnum(ListSortByName),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListSortByName$ {
-  /** @deprecated use `ListSortByName$inboundSchema` instead. */
-  export const inboundSchema = ListSortByName$inboundSchema;
-  /** @deprecated use `ListSortByName$outboundSchema` instead. */
-  export const outboundSchema = ListSortByName$outboundSchema;
-}
 
 /** @internal */
 export const ListSortByUpdatedAt$inboundSchema: z.ZodType<
@@ -2455,27 +1441,6 @@ export const ListSortByUpdatedAt$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListSortByUpdatedAt$outboundSchema: z.ZodType<
-  ListSortByUpdatedAt,
-  z.ZodTypeDef,
-  ListSortByUpdatedAt
-> = z.union([
-  z.nativeEnum(ListSortByUpdatedAt),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListSortByUpdatedAt$ {
-  /** @deprecated use `ListSortByUpdatedAt$inboundSchema` instead. */
-  export const inboundSchema = ListSortByUpdatedAt$inboundSchema;
-  /** @deprecated use `ListSortByUpdatedAt$outboundSchema` instead. */
-  export const outboundSchema = ListSortByUpdatedAt$outboundSchema;
-}
-
-/** @internal */
 export const ListSpaceId$inboundSchema: z.ZodType<
   ListSpaceId,
   z.ZodTypeDef,
@@ -2485,27 +1450,6 @@ export const ListSpaceId$inboundSchema: z.ZodType<
     z.nativeEnum(ListSpaceId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListSpaceId$outboundSchema: z.ZodType<
-  ListSpaceId,
-  z.ZodTypeDef,
-  ListSpaceId
-> = z.union([
-  z.nativeEnum(ListSpaceId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListSpaceId$ {
-  /** @deprecated use `ListSpaceId$inboundSchema` instead. */
-  export const inboundSchema = ListSpaceId$inboundSchema;
-  /** @deprecated use `ListSpaceId$outboundSchema` instead. */
-  export const outboundSchema = ListSpaceId$outboundSchema;
-}
 
 /** @internal */
 export const ListStartGte$inboundSchema: z.ZodType<
@@ -2519,27 +1463,6 @@ export const ListStartGte$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListStartGte$outboundSchema: z.ZodType<
-  ListStartGte,
-  z.ZodTypeDef,
-  ListStartGte
-> = z.union([
-  z.nativeEnum(ListStartGte),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStartGte$ {
-  /** @deprecated use `ListStartGte$inboundSchema` instead. */
-  export const inboundSchema = ListStartGte$inboundSchema;
-  /** @deprecated use `ListStartGte$outboundSchema` instead. */
-  export const outboundSchema = ListStartGte$outboundSchema;
-}
-
-/** @internal */
 export const ListStatus$inboundSchema: z.ZodType<
   ListStatus,
   z.ZodTypeDef,
@@ -2549,27 +1472,6 @@ export const ListStatus$inboundSchema: z.ZodType<
     z.nativeEnum(ListStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListStatus$outboundSchema: z.ZodType<
-  ListStatus,
-  z.ZodTypeDef,
-  ListStatus
-> = z.union([
-  z.nativeEnum(ListStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStatus$ {
-  /** @deprecated use `ListStatus$inboundSchema` instead. */
-  export const inboundSchema = ListStatus$inboundSchema;
-  /** @deprecated use `ListStatus$outboundSchema` instead. */
-  export const outboundSchema = ListStatus$outboundSchema;
-}
 
 /** @internal */
 export const ListStudentId$inboundSchema: z.ZodType<
@@ -2583,27 +1485,6 @@ export const ListStudentId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListStudentId$outboundSchema: z.ZodType<
-  ListStudentId,
-  z.ZodTypeDef,
-  ListStudentId
-> = z.union([
-  z.nativeEnum(ListStudentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListStudentId$ {
-  /** @deprecated use `ListStudentId$inboundSchema` instead. */
-  export const inboundSchema = ListStudentId$inboundSchema;
-  /** @deprecated use `ListStudentId$outboundSchema` instead. */
-  export const outboundSchema = ListStudentId$outboundSchema;
-}
-
-/** @internal */
 export const ListTaskId$inboundSchema: z.ZodType<
   ListTaskId,
   z.ZodTypeDef,
@@ -2613,27 +1494,6 @@ export const ListTaskId$inboundSchema: z.ZodType<
     z.nativeEnum(ListTaskId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListTaskId$outboundSchema: z.ZodType<
-  ListTaskId,
-  z.ZodTypeDef,
-  ListTaskId
-> = z.union([
-  z.nativeEnum(ListTaskId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTaskId$ {
-  /** @deprecated use `ListTaskId$inboundSchema` instead. */
-  export const inboundSchema = ListTaskId$inboundSchema;
-  /** @deprecated use `ListTaskId$outboundSchema` instead. */
-  export const outboundSchema = ListTaskId$outboundSchema;
-}
 
 /** @internal */
 export const ListTeacherId$inboundSchema: z.ZodType<
@@ -2647,27 +1507,6 @@ export const ListTeacherId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListTeacherId$outboundSchema: z.ZodType<
-  ListTeacherId,
-  z.ZodTypeDef,
-  ListTeacherId
-> = z.union([
-  z.nativeEnum(ListTeacherId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTeacherId$ {
-  /** @deprecated use `ListTeacherId$inboundSchema` instead. */
-  export const inboundSchema = ListTeacherId$inboundSchema;
-  /** @deprecated use `ListTeacherId$outboundSchema` instead. */
-  export const outboundSchema = ListTeacherId$outboundSchema;
-}
-
-/** @internal */
 export const ListTicketId$inboundSchema: z.ZodType<
   ListTicketId,
   z.ZodTypeDef,
@@ -2677,27 +1516,6 @@ export const ListTicketId$inboundSchema: z.ZodType<
     z.nativeEnum(ListTicketId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListTicketId$outboundSchema: z.ZodType<
-  ListTicketId,
-  z.ZodTypeDef,
-  ListTicketId
-> = z.union([
-  z.nativeEnum(ListTicketId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTicketId$ {
-  /** @deprecated use `ListTicketId$inboundSchema` instead. */
-  export const inboundSchema = ListTicketId$inboundSchema;
-  /** @deprecated use `ListTicketId$outboundSchema` instead. */
-  export const outboundSchema = ListTicketId$outboundSchema;
-}
 
 /** @internal */
 export const ListType$inboundSchema: z.ZodType<
@@ -2711,27 +1529,6 @@ export const ListType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListType$outboundSchema: z.ZodType<
-  ListType,
-  z.ZodTypeDef,
-  ListType
-> = z.union([
-  z.nativeEnum(ListType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListType$ {
-  /** @deprecated use `ListType$inboundSchema` instead. */
-  export const inboundSchema = ListType$inboundSchema;
-  /** @deprecated use `ListType$outboundSchema` instead. */
-  export const outboundSchema = ListType$outboundSchema;
-}
-
-/** @internal */
 export const ListUpdatedGte$inboundSchema: z.ZodType<
   ListUpdatedGte,
   z.ZodTypeDef,
@@ -2741,27 +1538,6 @@ export const ListUpdatedGte$inboundSchema: z.ZodType<
     z.nativeEnum(ListUpdatedGte),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const ListUpdatedGte$outboundSchema: z.ZodType<
-  ListUpdatedGte,
-  z.ZodTypeDef,
-  ListUpdatedGte
-> = z.union([
-  z.nativeEnum(ListUpdatedGte),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUpdatedGte$ {
-  /** @deprecated use `ListUpdatedGte$inboundSchema` instead. */
-  export const inboundSchema = ListUpdatedGte$inboundSchema;
-  /** @deprecated use `ListUpdatedGte$outboundSchema` instead. */
-  export const outboundSchema = ListUpdatedGte$outboundSchema;
-}
 
 /** @internal */
 export const ListUserId$inboundSchema: z.ZodType<
@@ -2775,27 +1551,6 @@ export const ListUserId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const ListUserId$outboundSchema: z.ZodType<
-  ListUserId,
-  z.ZodTypeDef,
-  ListUserId
-> = z.union([
-  z.nativeEnum(ListUserId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUserId$ {
-  /** @deprecated use `ListUserId$inboundSchema` instead. */
-  export const inboundSchema = ListUserId$inboundSchema;
-  /** @deprecated use `ListUserId$outboundSchema` instead. */
-  export const outboundSchema = ListUserId$outboundSchema;
-}
-
-/** @internal */
 export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
   NativeWebhookCalendarId,
   z.ZodTypeDef,
@@ -2805,27 +1560,6 @@ export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
     z.nativeEnum(NativeWebhookCalendarId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const NativeWebhookCalendarId$outboundSchema: z.ZodType<
-  NativeWebhookCalendarId,
-  z.ZodTypeDef,
-  NativeWebhookCalendarId
-> = z.union([
-  z.nativeEnum(NativeWebhookCalendarId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookCalendarId$ {
-  /** @deprecated use `NativeWebhookCalendarId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookCalendarId$inboundSchema;
-  /** @deprecated use `NativeWebhookCalendarId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookCalendarId$outboundSchema;
-}
 
 /** @internal */
 export const NativeWebhookChannelId$inboundSchema: z.ZodType<
@@ -2839,27 +1573,6 @@ export const NativeWebhookChannelId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const NativeWebhookChannelId$outboundSchema: z.ZodType<
-  NativeWebhookChannelId,
-  z.ZodTypeDef,
-  NativeWebhookChannelId
-> = z.union([
-  z.nativeEnum(NativeWebhookChannelId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookChannelId$ {
-  /** @deprecated use `NativeWebhookChannelId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookChannelId$inboundSchema;
-  /** @deprecated use `NativeWebhookChannelId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookChannelId$outboundSchema;
-}
-
-/** @internal */
 export const NativeWebhookCompanyId$inboundSchema: z.ZodType<
   NativeWebhookCompanyId,
   z.ZodTypeDef,
@@ -2869,27 +1582,6 @@ export const NativeWebhookCompanyId$inboundSchema: z.ZodType<
     z.nativeEnum(NativeWebhookCompanyId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const NativeWebhookCompanyId$outboundSchema: z.ZodType<
-  NativeWebhookCompanyId,
-  z.ZodTypeDef,
-  NativeWebhookCompanyId
-> = z.union([
-  z.nativeEnum(NativeWebhookCompanyId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookCompanyId$ {
-  /** @deprecated use `NativeWebhookCompanyId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookCompanyId$inboundSchema;
-  /** @deprecated use `NativeWebhookCompanyId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookCompanyId$outboundSchema;
-}
 
 /** @internal */
 export const NativeWebhookEventId$inboundSchema: z.ZodType<
@@ -2903,27 +1595,6 @@ export const NativeWebhookEventId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const NativeWebhookEventId$outboundSchema: z.ZodType<
-  NativeWebhookEventId,
-  z.ZodTypeDef,
-  NativeWebhookEventId
-> = z.union([
-  z.nativeEnum(NativeWebhookEventId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookEventId$ {
-  /** @deprecated use `NativeWebhookEventId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookEventId$inboundSchema;
-  /** @deprecated use `NativeWebhookEventId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookEventId$outboundSchema;
-}
-
-/** @internal */
 export const NativeWebhookParentId$inboundSchema: z.ZodType<
   NativeWebhookParentId,
   z.ZodTypeDef,
@@ -2933,27 +1604,6 @@ export const NativeWebhookParentId$inboundSchema: z.ZodType<
     z.nativeEnum(NativeWebhookParentId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const NativeWebhookParentId$outboundSchema: z.ZodType<
-  NativeWebhookParentId,
-  z.ZodTypeDef,
-  NativeWebhookParentId
-> = z.union([
-  z.nativeEnum(NativeWebhookParentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookParentId$ {
-  /** @deprecated use `NativeWebhookParentId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookParentId$inboundSchema;
-  /** @deprecated use `NativeWebhookParentId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookParentId$outboundSchema;
-}
 
 /** @internal */
 export const NativeWebhookProjectId$inboundSchema: z.ZodType<
@@ -2967,27 +1617,6 @@ export const NativeWebhookProjectId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const NativeWebhookProjectId$outboundSchema: z.ZodType<
-  NativeWebhookProjectId,
-  z.ZodTypeDef,
-  NativeWebhookProjectId
-> = z.union([
-  z.nativeEnum(NativeWebhookProjectId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookProjectId$ {
-  /** @deprecated use `NativeWebhookProjectId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookProjectId$inboundSchema;
-  /** @deprecated use `NativeWebhookProjectId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookProjectId$outboundSchema;
-}
-
-/** @internal */
 export const NativeWebhookTaskId$inboundSchema: z.ZodType<
   NativeWebhookTaskId,
   z.ZodTypeDef,
@@ -2997,27 +1626,6 @@ export const NativeWebhookTaskId$inboundSchema: z.ZodType<
     z.nativeEnum(NativeWebhookTaskId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const NativeWebhookTaskId$outboundSchema: z.ZodType<
-  NativeWebhookTaskId,
-  z.ZodTypeDef,
-  NativeWebhookTaskId
-> = z.union([
-  z.nativeEnum(NativeWebhookTaskId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace NativeWebhookTaskId$ {
-  /** @deprecated use `NativeWebhookTaskId$inboundSchema` instead. */
-  export const inboundSchema = NativeWebhookTaskId$inboundSchema;
-  /** @deprecated use `NativeWebhookTaskId$outboundSchema` instead. */
-  export const outboundSchema = NativeWebhookTaskId$outboundSchema;
-}
 
 /** @internal */
 export const SearchDomain$inboundSchema: z.ZodType<
@@ -3031,27 +1639,6 @@ export const SearchDomain$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const SearchDomain$outboundSchema: z.ZodType<
-  SearchDomain,
-  z.ZodTypeDef,
-  SearchDomain
-> = z.union([
-  z.nativeEnum(SearchDomain),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SearchDomain$ {
-  /** @deprecated use `SearchDomain$inboundSchema` instead. */
-  export const inboundSchema = SearchDomain$inboundSchema;
-  /** @deprecated use `SearchDomain$outboundSchema` instead. */
-  export const outboundSchema = SearchDomain$outboundSchema;
-}
-
-/** @internal */
 export const SearchEmail$inboundSchema: z.ZodType<
   SearchEmail,
   z.ZodTypeDef,
@@ -3061,27 +1648,6 @@ export const SearchEmail$inboundSchema: z.ZodType<
     z.nativeEnum(SearchEmail),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const SearchEmail$outboundSchema: z.ZodType<
-  SearchEmail,
-  z.ZodTypeDef,
-  SearchEmail
-> = z.union([
-  z.nativeEnum(SearchEmail),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SearchEmail$ {
-  /** @deprecated use `SearchEmail$inboundSchema` instead. */
-  export const inboundSchema = SearchEmail$inboundSchema;
-  /** @deprecated use `SearchEmail$outboundSchema` instead. */
-  export const outboundSchema = SearchEmail$outboundSchema;
-}
 
 /** @internal */
 export const SearchLinkedinurl$inboundSchema: z.ZodType<
@@ -3095,27 +1661,6 @@ export const SearchLinkedinurl$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const SearchLinkedinurl$outboundSchema: z.ZodType<
-  SearchLinkedinurl,
-  z.ZodTypeDef,
-  SearchLinkedinurl
-> = z.union([
-  z.nativeEnum(SearchLinkedinurl),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SearchLinkedinurl$ {
-  /** @deprecated use `SearchLinkedinurl$inboundSchema` instead. */
-  export const inboundSchema = SearchLinkedinurl$inboundSchema;
-  /** @deprecated use `SearchLinkedinurl$outboundSchema` instead. */
-  export const outboundSchema = SearchLinkedinurl$outboundSchema;
-}
-
-/** @internal */
 export const SearchName$inboundSchema: z.ZodType<
   SearchName,
   z.ZodTypeDef,
@@ -3125,27 +1670,6 @@ export const SearchName$inboundSchema: z.ZodType<
     z.nativeEnum(SearchName),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const SearchName$outboundSchema: z.ZodType<
-  SearchName,
-  z.ZodTypeDef,
-  SearchName
-> = z.union([
-  z.nativeEnum(SearchName),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SearchName$ {
-  /** @deprecated use `SearchName$inboundSchema` instead. */
-  export const inboundSchema = SearchName$inboundSchema;
-  /** @deprecated use `SearchName$outboundSchema` instead. */
-  export const outboundSchema = SearchName$outboundSchema;
-}
 
 /** @internal */
 export const SearchTwitter$inboundSchema: z.ZodType<
@@ -3159,27 +1683,6 @@ export const SearchTwitter$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const SearchTwitter$outboundSchema: z.ZodType<
-  SearchTwitter,
-  z.ZodTypeDef,
-  SearchTwitter
-> = z.union([
-  z.nativeEnum(SearchTwitter),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SearchTwitter$ {
-  /** @deprecated use `SearchTwitter$inboundSchema` instead. */
-  export const inboundSchema = SearchTwitter$inboundSchema;
-  /** @deprecated use `SearchTwitter$outboundSchema` instead. */
-  export const outboundSchema = SearchTwitter$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
   VirtualWebhookApplicationId,
   z.ZodTypeDef,
@@ -3189,27 +1692,6 @@ export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookApplicationId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookApplicationId$outboundSchema: z.ZodType<
-  VirtualWebhookApplicationId,
-  z.ZodTypeDef,
-  VirtualWebhookApplicationId
-> = z.union([
-  z.nativeEnum(VirtualWebhookApplicationId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookApplicationId$ {
-  /** @deprecated use `VirtualWebhookApplicationId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookApplicationId$inboundSchema;
-  /** @deprecated use `VirtualWebhookApplicationId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookApplicationId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
@@ -3223,27 +1705,6 @@ export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookBranchId$outboundSchema: z.ZodType<
-  VirtualWebhookBranchId,
-  z.ZodTypeDef,
-  VirtualWebhookBranchId
-> = z.union([
-  z.nativeEnum(VirtualWebhookBranchId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookBranchId$ {
-  /** @deprecated use `VirtualWebhookBranchId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookBranchId$inboundSchema;
-  /** @deprecated use `VirtualWebhookBranchId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookBranchId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
   VirtualWebhookCalendarId,
   z.ZodTypeDef,
@@ -3253,27 +1714,6 @@ export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookCalendarId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookCalendarId$outboundSchema: z.ZodType<
-  VirtualWebhookCalendarId,
-  z.ZodTypeDef,
-  VirtualWebhookCalendarId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCalendarId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCalendarId$ {
-  /** @deprecated use `VirtualWebhookCalendarId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCalendarId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCalendarId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCalendarId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookCallId$inboundSchema: z.ZodType<
@@ -3287,27 +1727,6 @@ export const VirtualWebhookCallId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookCallId$outboundSchema: z.ZodType<
-  VirtualWebhookCallId,
-  z.ZodTypeDef,
-  VirtualWebhookCallId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCallId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCallId$ {
-  /** @deprecated use `VirtualWebhookCallId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCallId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCallId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCallId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
   VirtualWebhookCandidateId,
   z.ZodTypeDef,
@@ -3317,27 +1736,6 @@ export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookCandidateId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookCandidateId$outboundSchema: z.ZodType<
-  VirtualWebhookCandidateId,
-  z.ZodTypeDef,
-  VirtualWebhookCandidateId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCandidateId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCandidateId$ {
-  /** @deprecated use `VirtualWebhookCandidateId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCandidateId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCandidateId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCandidateId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
@@ -3351,27 +1749,6 @@ export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookChannelId$outboundSchema: z.ZodType<
-  VirtualWebhookChannelId,
-  z.ZodTypeDef,
-  VirtualWebhookChannelId
-> = z.union([
-  z.nativeEnum(VirtualWebhookChannelId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookChannelId$ {
-  /** @deprecated use `VirtualWebhookChannelId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookChannelId$inboundSchema;
-  /** @deprecated use `VirtualWebhookChannelId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookChannelId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
   VirtualWebhookCollectionId,
   z.ZodTypeDef,
@@ -3381,27 +1758,6 @@ export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookCollectionId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookCollectionId$outboundSchema: z.ZodType<
-  VirtualWebhookCollectionId,
-  z.ZodTypeDef,
-  VirtualWebhookCollectionId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCollectionId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCollectionId$ {
-  /** @deprecated use `VirtualWebhookCollectionId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCollectionId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCollectionId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCollectionId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookCompanyId$inboundSchema: z.ZodType<
@@ -3415,27 +1771,6 @@ export const VirtualWebhookCompanyId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookCompanyId$outboundSchema: z.ZodType<
-  VirtualWebhookCompanyId,
-  z.ZodTypeDef,
-  VirtualWebhookCompanyId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCompanyId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCompanyId$ {
-  /** @deprecated use `VirtualWebhookCompanyId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCompanyId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCompanyId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCompanyId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookContactId$inboundSchema: z.ZodType<
   VirtualWebhookContactId,
   z.ZodTypeDef,
@@ -3445,27 +1780,6 @@ export const VirtualWebhookContactId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookContactId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookContactId$outboundSchema: z.ZodType<
-  VirtualWebhookContactId,
-  z.ZodTypeDef,
-  VirtualWebhookContactId
-> = z.union([
-  z.nativeEnum(VirtualWebhookContactId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookContactId$ {
-  /** @deprecated use `VirtualWebhookContactId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookContactId$inboundSchema;
-  /** @deprecated use `VirtualWebhookContactId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookContactId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
@@ -3479,27 +1793,6 @@ export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookCustomerId$outboundSchema: z.ZodType<
-  VirtualWebhookCustomerId,
-  z.ZodTypeDef,
-  VirtualWebhookCustomerId
-> = z.union([
-  z.nativeEnum(VirtualWebhookCustomerId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookCustomerId$ {
-  /** @deprecated use `VirtualWebhookCustomerId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookCustomerId$inboundSchema;
-  /** @deprecated use `VirtualWebhookCustomerId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookCustomerId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookDealId$inboundSchema: z.ZodType<
   VirtualWebhookDealId,
   z.ZodTypeDef,
@@ -3509,27 +1802,6 @@ export const VirtualWebhookDealId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookDealId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookDealId$outboundSchema: z.ZodType<
-  VirtualWebhookDealId,
-  z.ZodTypeDef,
-  VirtualWebhookDealId
-> = z.union([
-  z.nativeEnum(VirtualWebhookDealId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookDealId$ {
-  /** @deprecated use `VirtualWebhookDealId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookDealId$inboundSchema;
-  /** @deprecated use `VirtualWebhookDealId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookDealId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookEndLe$inboundSchema: z.ZodType<
@@ -3543,27 +1815,6 @@ export const VirtualWebhookEndLe$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookEndLe$outboundSchema: z.ZodType<
-  VirtualWebhookEndLe,
-  z.ZodTypeDef,
-  VirtualWebhookEndLe
-> = z.union([
-  z.nativeEnum(VirtualWebhookEndLe),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookEndLe$ {
-  /** @deprecated use `VirtualWebhookEndLe$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookEndLe$inboundSchema;
-  /** @deprecated use `VirtualWebhookEndLe$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookEndLe$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
   VirtualWebhookEndLt,
   z.ZodTypeDef,
@@ -3573,27 +1824,6 @@ export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookEndLt),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookEndLt$outboundSchema: z.ZodType<
-  VirtualWebhookEndLt,
-  z.ZodTypeDef,
-  VirtualWebhookEndLt
-> = z.union([
-  z.nativeEnum(VirtualWebhookEndLt),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookEndLt$ {
-  /** @deprecated use `VirtualWebhookEndLt$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookEndLt$inboundSchema;
-  /** @deprecated use `VirtualWebhookEndLt$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookEndLt$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookEventId$inboundSchema: z.ZodType<
@@ -3607,27 +1837,6 @@ export const VirtualWebhookEventId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookEventId$outboundSchema: z.ZodType<
-  VirtualWebhookEventId,
-  z.ZodTypeDef,
-  VirtualWebhookEventId
-> = z.union([
-  z.nativeEnum(VirtualWebhookEventId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookEventId$ {
-  /** @deprecated use `VirtualWebhookEventId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookEventId$inboundSchema;
-  /** @deprecated use `VirtualWebhookEventId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookEventId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookExpand$inboundSchema: z.ZodType<
   VirtualWebhookExpand,
   z.ZodTypeDef,
@@ -3637,27 +1846,6 @@ export const VirtualWebhookExpand$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookExpand),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookExpand$outboundSchema: z.ZodType<
-  VirtualWebhookExpand,
-  z.ZodTypeDef,
-  VirtualWebhookExpand
-> = z.union([
-  z.nativeEnum(VirtualWebhookExpand),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookExpand$ {
-  /** @deprecated use `VirtualWebhookExpand$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookExpand$inboundSchema;
-  /** @deprecated use `VirtualWebhookExpand$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookExpand$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookFields$inboundSchema: z.ZodType<
@@ -3671,27 +1859,6 @@ export const VirtualWebhookFields$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookFields$outboundSchema: z.ZodType<
-  VirtualWebhookFields,
-  z.ZodTypeDef,
-  VirtualWebhookFields
-> = z.union([
-  z.nativeEnum(VirtualWebhookFields),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookFields$ {
-  /** @deprecated use `VirtualWebhookFields$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookFields$inboundSchema;
-  /** @deprecated use `VirtualWebhookFields$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookFields$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
   VirtualWebhookItemId,
   z.ZodTypeDef,
@@ -3701,27 +1868,6 @@ export const VirtualWebhookItemId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookItemId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookItemId$outboundSchema: z.ZodType<
-  VirtualWebhookItemId,
-  z.ZodTypeDef,
-  VirtualWebhookItemId
-> = z.union([
-  z.nativeEnum(VirtualWebhookItemId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookItemId$ {
-  /** @deprecated use `VirtualWebhookItemId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookItemId$inboundSchema;
-  /** @deprecated use `VirtualWebhookItemId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookItemId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookItemVariantId$inboundSchema: z.ZodType<
@@ -3735,27 +1881,6 @@ export const VirtualWebhookItemVariantId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookItemVariantId$outboundSchema: z.ZodType<
-  VirtualWebhookItemVariantId,
-  z.ZodTypeDef,
-  VirtualWebhookItemVariantId
-> = z.union([
-  z.nativeEnum(VirtualWebhookItemVariantId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookItemVariantId$ {
-  /** @deprecated use `VirtualWebhookItemVariantId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookItemVariantId$inboundSchema;
-  /** @deprecated use `VirtualWebhookItemVariantId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookItemVariantId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookJobId$inboundSchema: z.ZodType<
   VirtualWebhookJobId,
   z.ZodTypeDef,
@@ -3765,27 +1890,6 @@ export const VirtualWebhookJobId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookJobId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookJobId$outboundSchema: z.ZodType<
-  VirtualWebhookJobId,
-  z.ZodTypeDef,
-  VirtualWebhookJobId
-> = z.union([
-  z.nativeEnum(VirtualWebhookJobId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookJobId$ {
-  /** @deprecated use `VirtualWebhookJobId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookJobId$inboundSchema;
-  /** @deprecated use `VirtualWebhookJobId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookJobId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookLimit$inboundSchema: z.ZodType<
@@ -3799,27 +1903,6 @@ export const VirtualWebhookLimit$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookLimit$outboundSchema: z.ZodType<
-  VirtualWebhookLimit,
-  z.ZodTypeDef,
-  VirtualWebhookLimit
-> = z.union([
-  z.nativeEnum(VirtualWebhookLimit),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookLimit$ {
-  /** @deprecated use `VirtualWebhookLimit$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookLimit$inboundSchema;
-  /** @deprecated use `VirtualWebhookLimit$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookLimit$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookListId$inboundSchema: z.ZodType<
   VirtualWebhookListId,
   z.ZodTypeDef,
@@ -3829,27 +1912,6 @@ export const VirtualWebhookListId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookListId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookListId$outboundSchema: z.ZodType<
-  VirtualWebhookListId,
-  z.ZodTypeDef,
-  VirtualWebhookListId
-> = z.union([
-  z.nativeEnum(VirtualWebhookListId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookListId$ {
-  /** @deprecated use `VirtualWebhookListId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookListId$inboundSchema;
-  /** @deprecated use `VirtualWebhookListId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookListId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
@@ -3863,27 +1925,6 @@ export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookLocationId$outboundSchema: z.ZodType<
-  VirtualWebhookLocationId,
-  z.ZodTypeDef,
-  VirtualWebhookLocationId
-> = z.union([
-  z.nativeEnum(VirtualWebhookLocationId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookLocationId$ {
-  /** @deprecated use `VirtualWebhookLocationId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookLocationId$inboundSchema;
-  /** @deprecated use `VirtualWebhookLocationId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookLocationId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookOrgId$inboundSchema: z.ZodType<
   VirtualWebhookOrgId,
   z.ZodTypeDef,
@@ -3893,27 +1934,6 @@ export const VirtualWebhookOrgId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookOrgId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookOrgId$outboundSchema: z.ZodType<
-  VirtualWebhookOrgId,
-  z.ZodTypeDef,
-  VirtualWebhookOrgId
-> = z.union([
-  z.nativeEnum(VirtualWebhookOrgId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookOrgId$ {
-  /** @deprecated use `VirtualWebhookOrgId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookOrgId$inboundSchema;
-  /** @deprecated use `VirtualWebhookOrgId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookOrgId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookPageId$inboundSchema: z.ZodType<
@@ -3927,27 +1947,6 @@ export const VirtualWebhookPageId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookPageId$outboundSchema: z.ZodType<
-  VirtualWebhookPageId,
-  z.ZodTypeDef,
-  VirtualWebhookPageId
-> = z.union([
-  z.nativeEnum(VirtualWebhookPageId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookPageId$ {
-  /** @deprecated use `VirtualWebhookPageId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookPageId$inboundSchema;
-  /** @deprecated use `VirtualWebhookPageId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookPageId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookParentId$inboundSchema: z.ZodType<
   VirtualWebhookParentId,
   z.ZodTypeDef,
@@ -3957,27 +1956,6 @@ export const VirtualWebhookParentId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookParentId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookParentId$outboundSchema: z.ZodType<
-  VirtualWebhookParentId,
-  z.ZodTypeDef,
-  VirtualWebhookParentId
-> = z.union([
-  z.nativeEnum(VirtualWebhookParentId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookParentId$ {
-  /** @deprecated use `VirtualWebhookParentId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookParentId$inboundSchema;
-  /** @deprecated use `VirtualWebhookParentId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookParentId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
@@ -3991,27 +1969,6 @@ export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookPipelineId$outboundSchema: z.ZodType<
-  VirtualWebhookPipelineId,
-  z.ZodTypeDef,
-  VirtualWebhookPipelineId
-> = z.union([
-  z.nativeEnum(VirtualWebhookPipelineId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookPipelineId$ {
-  /** @deprecated use `VirtualWebhookPipelineId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookPipelineId$inboundSchema;
-  /** @deprecated use `VirtualWebhookPipelineId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookPipelineId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
   VirtualWebhookProjectId,
   z.ZodTypeDef,
@@ -4021,27 +1978,6 @@ export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookProjectId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookProjectId$outboundSchema: z.ZodType<
-  VirtualWebhookProjectId,
-  z.ZodTypeDef,
-  VirtualWebhookProjectId
-> = z.union([
-  z.nativeEnum(VirtualWebhookProjectId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookProjectId$ {
-  /** @deprecated use `VirtualWebhookProjectId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookProjectId$inboundSchema;
-  /** @deprecated use `VirtualWebhookProjectId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookProjectId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
@@ -4055,27 +1991,6 @@ export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookRepoId$outboundSchema: z.ZodType<
-  VirtualWebhookRepoId,
-  z.ZodTypeDef,
-  VirtualWebhookRepoId
-> = z.union([
-  z.nativeEnum(VirtualWebhookRepoId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookRepoId$ {
-  /** @deprecated use `VirtualWebhookRepoId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookRepoId$inboundSchema;
-  /** @deprecated use `VirtualWebhookRepoId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookRepoId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
   VirtualWebhookSpaceId,
   z.ZodTypeDef,
@@ -4085,27 +2000,6 @@ export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookSpaceId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookSpaceId$outboundSchema: z.ZodType<
-  VirtualWebhookSpaceId,
-  z.ZodTypeDef,
-  VirtualWebhookSpaceId
-> = z.union([
-  z.nativeEnum(VirtualWebhookSpaceId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookSpaceId$ {
-  /** @deprecated use `VirtualWebhookSpaceId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookSpaceId$inboundSchema;
-  /** @deprecated use `VirtualWebhookSpaceId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookSpaceId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookStartGte$inboundSchema: z.ZodType<
@@ -4119,27 +2013,6 @@ export const VirtualWebhookStartGte$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookStartGte$outboundSchema: z.ZodType<
-  VirtualWebhookStartGte,
-  z.ZodTypeDef,
-  VirtualWebhookStartGte
-> = z.union([
-  z.nativeEnum(VirtualWebhookStartGte),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookStartGte$ {
-  /** @deprecated use `VirtualWebhookStartGte$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookStartGte$inboundSchema;
-  /** @deprecated use `VirtualWebhookStartGte$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookStartGte$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookStatus$inboundSchema: z.ZodType<
   VirtualWebhookStatus,
   z.ZodTypeDef,
@@ -4149,27 +2022,6 @@ export const VirtualWebhookStatus$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookStatus$outboundSchema: z.ZodType<
-  VirtualWebhookStatus,
-  z.ZodTypeDef,
-  VirtualWebhookStatus
-> = z.union([
-  z.nativeEnum(VirtualWebhookStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookStatus$ {
-  /** @deprecated use `VirtualWebhookStatus$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookStatus$inboundSchema;
-  /** @deprecated use `VirtualWebhookStatus$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookStatus$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
@@ -4183,27 +2035,6 @@ export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookTaskId$outboundSchema: z.ZodType<
-  VirtualWebhookTaskId,
-  z.ZodTypeDef,
-  VirtualWebhookTaskId
-> = z.union([
-  z.nativeEnum(VirtualWebhookTaskId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookTaskId$ {
-  /** @deprecated use `VirtualWebhookTaskId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookTaskId$inboundSchema;
-  /** @deprecated use `VirtualWebhookTaskId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookTaskId$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookTicketId$inboundSchema: z.ZodType<
   VirtualWebhookTicketId,
   z.ZodTypeDef,
@@ -4213,27 +2044,6 @@ export const VirtualWebhookTicketId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookTicketId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookTicketId$outboundSchema: z.ZodType<
-  VirtualWebhookTicketId,
-  z.ZodTypeDef,
-  VirtualWebhookTicketId
-> = z.union([
-  z.nativeEnum(VirtualWebhookTicketId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookTicketId$ {
-  /** @deprecated use `VirtualWebhookTicketId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookTicketId$inboundSchema;
-  /** @deprecated use `VirtualWebhookTicketId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookTicketId$outboundSchema;
-}
 
 /** @internal */
 export const VirtualWebhookType$inboundSchema: z.ZodType<
@@ -4247,27 +2057,6 @@ export const VirtualWebhookType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookType$outboundSchema: z.ZodType<
-  VirtualWebhookType,
-  z.ZodTypeDef,
-  VirtualWebhookType
-> = z.union([
-  z.nativeEnum(VirtualWebhookType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookType$ {
-  /** @deprecated use `VirtualWebhookType$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookType$inboundSchema;
-  /** @deprecated use `VirtualWebhookType$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookType$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookUpdatedGte$inboundSchema: z.ZodType<
   VirtualWebhookUpdatedGte,
   z.ZodTypeDef,
@@ -4279,27 +2068,6 @@ export const VirtualWebhookUpdatedGte$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VirtualWebhookUpdatedGte$outboundSchema: z.ZodType<
-  VirtualWebhookUpdatedGte,
-  z.ZodTypeDef,
-  VirtualWebhookUpdatedGte
-> = z.union([
-  z.nativeEnum(VirtualWebhookUpdatedGte),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookUpdatedGte$ {
-  /** @deprecated use `VirtualWebhookUpdatedGte$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookUpdatedGte$inboundSchema;
-  /** @deprecated use `VirtualWebhookUpdatedGte$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookUpdatedGte$outboundSchema;
-}
-
-/** @internal */
 export const VirtualWebhookUserId$inboundSchema: z.ZodType<
   VirtualWebhookUserId,
   z.ZodTypeDef,
@@ -4309,27 +2077,6 @@ export const VirtualWebhookUserId$inboundSchema: z.ZodType<
     z.nativeEnum(VirtualWebhookUserId),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const VirtualWebhookUserId$outboundSchema: z.ZodType<
-  VirtualWebhookUserId,
-  z.ZodTypeDef,
-  VirtualWebhookUserId
-> = z.union([
-  z.nativeEnum(VirtualWebhookUserId),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VirtualWebhookUserId$ {
-  /** @deprecated use `VirtualWebhookUserId$inboundSchema` instead. */
-  export const inboundSchema = VirtualWebhookUserId$inboundSchema;
-  /** @deprecated use `VirtualWebhookUserId$outboundSchema` instead. */
-  export const outboundSchema = VirtualWebhookUserId$outboundSchema;
-}
 
 /** @internal */
 export const IntegrationSupport$inboundSchema: z.ZodType<
@@ -4577,386 +2324,6 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "webhook_events": "webhookEvents",
   });
 });
-
-/** @internal */
-export type IntegrationSupport$Outbound = {
-  from_webhook?: string | undefined;
-  inbound_fields?: { [k: string]: string } | undefined;
-  list_account_id?: string | undefined;
-  list_application_id?: string | undefined;
-  list_branch_id?: string | undefined;
-  list_calendar_id?: string | undefined;
-  list_call_id?: string | undefined;
-  list_candidate_id?: string | undefined;
-  list_category_id?: string | undefined;
-  list_channel_id?: string | undefined;
-  list_class_id?: string | undefined;
-  list_collection_id?: string | undefined;
-  list_company_id?: string | undefined;
-  list_contact_id?: string | undefined;
-  list_course_id?: string | undefined;
-  list_customer_id?: string | undefined;
-  list_deal_id?: string | undefined;
-  list_document_id?: string | undefined;
-  list_end_le?: string | undefined;
-  list_end_lt?: string | undefined;
-  list_event_id?: string | undefined;
-  list_expand?: string | undefined;
-  list_expand_recurring_events?: string | undefined;
-  list_instructor_id?: string | undefined;
-  list_interview_id?: string | undefined;
-  list_invoice_id?: string | undefined;
-  list_item_id?: string | undefined;
-  list_item_variant_id?: string | undefined;
-  list_job_id?: string | undefined;
-  list_lead_id?: string | undefined;
-  list_limit?: string | undefined;
-  list_link_id?: string | undefined;
-  list_list_id?: string | undefined;
-  list_location_id?: string | undefined;
-  list_offset?: string | undefined;
-  list_order?: string | undefined;
-  list_org_id?: string | undefined;
-  list_package_id?: string | undefined;
-  list_page_id?: string | undefined;
-  list_parent_id?: string | undefined;
-  list_payment_id?: string | undefined;
-  list_pipeline_id?: string | undefined;
-  list_project_id?: string | undefined;
-  list_query?: string | undefined;
-  list_raw_fields?: string | undefined;
-  list_repo_id?: string | undefined;
-  list_root_id?: string | undefined;
-  list_sort_by_created_at?: string | undefined;
-  list_sort_by_name?: string | undefined;
-  list_sort_by_updated_at?: string | undefined;
-  list_space_id?: string | undefined;
-  list_start_gte?: string | undefined;
-  list_status?: string | undefined;
-  list_student_id?: string | undefined;
-  list_task_id?: string | undefined;
-  list_teacher_id?: string | undefined;
-  list_ticket_id?: string | undefined;
-  list_type?: string | undefined;
-  list_updated_gte?: string | undefined;
-  list_user_id?: string | undefined;
-  methods?: { [k: string]: boolean } | undefined;
-  native_webhook_calendar_id?: string | undefined;
-  native_webhook_channel_id?: string | undefined;
-  native_webhook_company_id?: string | undefined;
-  native_webhook_event_id?: string | undefined;
-  native_webhook_parent_id?: string | undefined;
-  native_webhook_project_id?: string | undefined;
-  native_webhook_task_id?: string | undefined;
-  outbound_fields?: { [k: string]: string } | undefined;
-  raw_objects?: Array<string> | undefined;
-  search_domain?: string | undefined;
-  search_email?: string | undefined;
-  search_linkedinurl?: string | undefined;
-  search_name?: string | undefined;
-  search_twitter?: string | undefined;
-  slow_fields?: Array<string> | undefined;
-  virtual_webhook_application_id?: string | undefined;
-  virtual_webhook_branch_id?: string | undefined;
-  virtual_webhook_calendar_id?: string | undefined;
-  virtual_webhook_call_id?: string | undefined;
-  virtual_webhook_candidate_id?: string | undefined;
-  virtual_webhook_channel_id?: string | undefined;
-  virtual_webhook_collection_id?: string | undefined;
-  virtual_webhook_company_id?: string | undefined;
-  virtual_webhook_contact_id?: string | undefined;
-  virtual_webhook_customer_id?: string | undefined;
-  virtual_webhook_deal_id?: string | undefined;
-  virtual_webhook_end_le?: string | undefined;
-  virtual_webhook_end_lt?: string | undefined;
-  virtual_webhook_event_id?: string | undefined;
-  virtual_webhook_expand?: string | undefined;
-  virtual_webhook_fields?: string | undefined;
-  virtual_webhook_item_id?: string | undefined;
-  virtual_webhook_item_variant_id?: string | undefined;
-  virtual_webhook_job_id?: string | undefined;
-  virtual_webhook_limit?: string | undefined;
-  virtual_webhook_list_id?: string | undefined;
-  virtual_webhook_location_id?: string | undefined;
-  virtual_webhook_org_id?: string | undefined;
-  virtual_webhook_page_id?: string | undefined;
-  virtual_webhook_parent_id?: string | undefined;
-  virtual_webhook_pipeline_id?: string | undefined;
-  virtual_webhook_project_id?: string | undefined;
-  virtual_webhook_repo_id?: string | undefined;
-  virtual_webhook_space_id?: string | undefined;
-  virtual_webhook_start_gte?: string | undefined;
-  virtual_webhook_status?: string | undefined;
-  virtual_webhook_task_id?: string | undefined;
-  virtual_webhook_ticket_id?: string | undefined;
-  virtual_webhook_type?: string | undefined;
-  virtual_webhook_updated_gte?: string | undefined;
-  virtual_webhook_user_id?: string | undefined;
-  webhook_events?: PropertyIntegrationSupportWebhookEvents$Outbound | undefined;
-};
-
-/** @internal */
-export const IntegrationSupport$outboundSchema: z.ZodType<
-  IntegrationSupport$Outbound,
-  z.ZodTypeDef,
-  IntegrationSupport
-> = z.object({
-  fromWebhook: FromWebhook$outboundSchema.optional(),
-  inboundFields: z.record(z.string()).optional(),
-  listAccountId: ListAccountId$outboundSchema.optional(),
-  listApplicationId: ListApplicationId$outboundSchema.optional(),
-  listBranchId: ListBranchId$outboundSchema.optional(),
-  listCalendarId: ListCalendarId$outboundSchema.optional(),
-  listCallId: ListCallId$outboundSchema.optional(),
-  listCandidateId: ListCandidateId$outboundSchema.optional(),
-  listCategoryId: ListCategoryId$outboundSchema.optional(),
-  listChannelId: ListChannelId$outboundSchema.optional(),
-  listClassId: ListClassId$outboundSchema.optional(),
-  listCollectionId: ListCollectionId$outboundSchema.optional(),
-  listCompanyId: ListCompanyId$outboundSchema.optional(),
-  listContactId: ListContactId$outboundSchema.optional(),
-  listCourseId: ListCourseId$outboundSchema.optional(),
-  listCustomerId: ListCustomerId$outboundSchema.optional(),
-  listDealId: ListDealId$outboundSchema.optional(),
-  listDocumentId: ListDocumentId$outboundSchema.optional(),
-  listEndLe: ListEndLe$outboundSchema.optional(),
-  listEndLt: ListEndLt$outboundSchema.optional(),
-  listEventId: ListEventId$outboundSchema.optional(),
-  listExpand: ListExpand$outboundSchema.optional(),
-  listExpandRecurringEvents: ListExpandRecurringEvents$outboundSchema
-    .optional(),
-  listInstructorId: ListInstructorId$outboundSchema.optional(),
-  listInterviewId: ListInterviewId$outboundSchema.optional(),
-  listInvoiceId: ListInvoiceId$outboundSchema.optional(),
-  listItemId: ListItemId$outboundSchema.optional(),
-  listItemVariantId: ListItemVariantId$outboundSchema.optional(),
-  listJobId: ListJobId$outboundSchema.optional(),
-  listLeadId: ListLeadId$outboundSchema.optional(),
-  listLimit: ListLimit$outboundSchema.optional(),
-  listLinkId: ListLinkId$outboundSchema.optional(),
-  listListId: ListListId$outboundSchema.optional(),
-  listLocationId: ListLocationId$outboundSchema.optional(),
-  listOffset: ListOffset$outboundSchema.optional(),
-  listOrder: ListOrder$outboundSchema.optional(),
-  listOrgId: ListOrgId$outboundSchema.optional(),
-  listPackageId: ListPackageId$outboundSchema.optional(),
-  listPageId: ListPageId$outboundSchema.optional(),
-  listParentId: ListParentId$outboundSchema.optional(),
-  listPaymentId: ListPaymentId$outboundSchema.optional(),
-  listPipelineId: ListPipelineId$outboundSchema.optional(),
-  listProjectId: ListProjectId$outboundSchema.optional(),
-  listQuery: ListQuery$outboundSchema.optional(),
-  listRawFields: ListRawFields$outboundSchema.optional(),
-  listRepoId: ListRepoId$outboundSchema.optional(),
-  listRootId: ListRootId$outboundSchema.optional(),
-  listSortByCreatedAt: ListSortByCreatedAt$outboundSchema.optional(),
-  listSortByName: ListSortByName$outboundSchema.optional(),
-  listSortByUpdatedAt: ListSortByUpdatedAt$outboundSchema.optional(),
-  listSpaceId: ListSpaceId$outboundSchema.optional(),
-  listStartGte: ListStartGte$outboundSchema.optional(),
-  listStatus: ListStatus$outboundSchema.optional(),
-  listStudentId: ListStudentId$outboundSchema.optional(),
-  listTaskId: ListTaskId$outboundSchema.optional(),
-  listTeacherId: ListTeacherId$outboundSchema.optional(),
-  listTicketId: ListTicketId$outboundSchema.optional(),
-  listType: ListType$outboundSchema.optional(),
-  listUpdatedGte: ListUpdatedGte$outboundSchema.optional(),
-  listUserId: ListUserId$outboundSchema.optional(),
-  methods: z.record(z.boolean()).optional(),
-  nativeWebhookCalendarId: NativeWebhookCalendarId$outboundSchema.optional(),
-  nativeWebhookChannelId: NativeWebhookChannelId$outboundSchema.optional(),
-  nativeWebhookCompanyId: NativeWebhookCompanyId$outboundSchema.optional(),
-  nativeWebhookEventId: NativeWebhookEventId$outboundSchema.optional(),
-  nativeWebhookParentId: NativeWebhookParentId$outboundSchema.optional(),
-  nativeWebhookProjectId: NativeWebhookProjectId$outboundSchema.optional(),
-  nativeWebhookTaskId: NativeWebhookTaskId$outboundSchema.optional(),
-  outboundFields: z.record(z.string()).optional(),
-  rawObjects: z.array(z.string()).optional(),
-  searchDomain: SearchDomain$outboundSchema.optional(),
-  searchEmail: SearchEmail$outboundSchema.optional(),
-  searchLinkedinurl: SearchLinkedinurl$outboundSchema.optional(),
-  searchName: SearchName$outboundSchema.optional(),
-  searchTwitter: SearchTwitter$outboundSchema.optional(),
-  slowFields: z.array(z.string()).optional(),
-  virtualWebhookApplicationId: VirtualWebhookApplicationId$outboundSchema
-    .optional(),
-  virtualWebhookBranchId: VirtualWebhookBranchId$outboundSchema.optional(),
-  virtualWebhookCalendarId: VirtualWebhookCalendarId$outboundSchema.optional(),
-  virtualWebhookCallId: VirtualWebhookCallId$outboundSchema.optional(),
-  virtualWebhookCandidateId: VirtualWebhookCandidateId$outboundSchema
-    .optional(),
-  virtualWebhookChannelId: VirtualWebhookChannelId$outboundSchema.optional(),
-  virtualWebhookCollectionId: VirtualWebhookCollectionId$outboundSchema
-    .optional(),
-  virtualWebhookCompanyId: VirtualWebhookCompanyId$outboundSchema.optional(),
-  virtualWebhookContactId: VirtualWebhookContactId$outboundSchema.optional(),
-  virtualWebhookCustomerId: VirtualWebhookCustomerId$outboundSchema.optional(),
-  virtualWebhookDealId: VirtualWebhookDealId$outboundSchema.optional(),
-  virtualWebhookEndLe: VirtualWebhookEndLe$outboundSchema.optional(),
-  virtualWebhookEndLt: VirtualWebhookEndLt$outboundSchema.optional(),
-  virtualWebhookEventId: VirtualWebhookEventId$outboundSchema.optional(),
-  virtualWebhookExpand: VirtualWebhookExpand$outboundSchema.optional(),
-  virtualWebhookFields: VirtualWebhookFields$outboundSchema.optional(),
-  virtualWebhookItemId: VirtualWebhookItemId$outboundSchema.optional(),
-  virtualWebhookItemVariantId: VirtualWebhookItemVariantId$outboundSchema
-    .optional(),
-  virtualWebhookJobId: VirtualWebhookJobId$outboundSchema.optional(),
-  virtualWebhookLimit: VirtualWebhookLimit$outboundSchema.optional(),
-  virtualWebhookListId: VirtualWebhookListId$outboundSchema.optional(),
-  virtualWebhookLocationId: VirtualWebhookLocationId$outboundSchema.optional(),
-  virtualWebhookOrgId: VirtualWebhookOrgId$outboundSchema.optional(),
-  virtualWebhookPageId: VirtualWebhookPageId$outboundSchema.optional(),
-  virtualWebhookParentId: VirtualWebhookParentId$outboundSchema.optional(),
-  virtualWebhookPipelineId: VirtualWebhookPipelineId$outboundSchema.optional(),
-  virtualWebhookProjectId: VirtualWebhookProjectId$outboundSchema.optional(),
-  virtualWebhookRepoId: VirtualWebhookRepoId$outboundSchema.optional(),
-  virtualWebhookSpaceId: VirtualWebhookSpaceId$outboundSchema.optional(),
-  virtualWebhookStartGte: VirtualWebhookStartGte$outboundSchema.optional(),
-  virtualWebhookStatus: VirtualWebhookStatus$outboundSchema.optional(),
-  virtualWebhookTaskId: VirtualWebhookTaskId$outboundSchema.optional(),
-  virtualWebhookTicketId: VirtualWebhookTicketId$outboundSchema.optional(),
-  virtualWebhookType: VirtualWebhookType$outboundSchema.optional(),
-  virtualWebhookUpdatedGte: VirtualWebhookUpdatedGte$outboundSchema.optional(),
-  virtualWebhookUserId: VirtualWebhookUserId$outboundSchema.optional(),
-  webhookEvents: PropertyIntegrationSupportWebhookEvents$outboundSchema
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fromWebhook: "from_webhook",
-    inboundFields: "inbound_fields",
-    listAccountId: "list_account_id",
-    listApplicationId: "list_application_id",
-    listBranchId: "list_branch_id",
-    listCalendarId: "list_calendar_id",
-    listCallId: "list_call_id",
-    listCandidateId: "list_candidate_id",
-    listCategoryId: "list_category_id",
-    listChannelId: "list_channel_id",
-    listClassId: "list_class_id",
-    listCollectionId: "list_collection_id",
-    listCompanyId: "list_company_id",
-    listContactId: "list_contact_id",
-    listCourseId: "list_course_id",
-    listCustomerId: "list_customer_id",
-    listDealId: "list_deal_id",
-    listDocumentId: "list_document_id",
-    listEndLe: "list_end_le",
-    listEndLt: "list_end_lt",
-    listEventId: "list_event_id",
-    listExpand: "list_expand",
-    listExpandRecurringEvents: "list_expand_recurring_events",
-    listInstructorId: "list_instructor_id",
-    listInterviewId: "list_interview_id",
-    listInvoiceId: "list_invoice_id",
-    listItemId: "list_item_id",
-    listItemVariantId: "list_item_variant_id",
-    listJobId: "list_job_id",
-    listLeadId: "list_lead_id",
-    listLimit: "list_limit",
-    listLinkId: "list_link_id",
-    listListId: "list_list_id",
-    listLocationId: "list_location_id",
-    listOffset: "list_offset",
-    listOrder: "list_order",
-    listOrgId: "list_org_id",
-    listPackageId: "list_package_id",
-    listPageId: "list_page_id",
-    listParentId: "list_parent_id",
-    listPaymentId: "list_payment_id",
-    listPipelineId: "list_pipeline_id",
-    listProjectId: "list_project_id",
-    listQuery: "list_query",
-    listRawFields: "list_raw_fields",
-    listRepoId: "list_repo_id",
-    listRootId: "list_root_id",
-    listSortByCreatedAt: "list_sort_by_created_at",
-    listSortByName: "list_sort_by_name",
-    listSortByUpdatedAt: "list_sort_by_updated_at",
-    listSpaceId: "list_space_id",
-    listStartGte: "list_start_gte",
-    listStatus: "list_status",
-    listStudentId: "list_student_id",
-    listTaskId: "list_task_id",
-    listTeacherId: "list_teacher_id",
-    listTicketId: "list_ticket_id",
-    listType: "list_type",
-    listUpdatedGte: "list_updated_gte",
-    listUserId: "list_user_id",
-    nativeWebhookCalendarId: "native_webhook_calendar_id",
-    nativeWebhookChannelId: "native_webhook_channel_id",
-    nativeWebhookCompanyId: "native_webhook_company_id",
-    nativeWebhookEventId: "native_webhook_event_id",
-    nativeWebhookParentId: "native_webhook_parent_id",
-    nativeWebhookProjectId: "native_webhook_project_id",
-    nativeWebhookTaskId: "native_webhook_task_id",
-    outboundFields: "outbound_fields",
-    rawObjects: "raw_objects",
-    searchDomain: "search_domain",
-    searchEmail: "search_email",
-    searchLinkedinurl: "search_linkedinurl",
-    searchName: "search_name",
-    searchTwitter: "search_twitter",
-    slowFields: "slow_fields",
-    virtualWebhookApplicationId: "virtual_webhook_application_id",
-    virtualWebhookBranchId: "virtual_webhook_branch_id",
-    virtualWebhookCalendarId: "virtual_webhook_calendar_id",
-    virtualWebhookCallId: "virtual_webhook_call_id",
-    virtualWebhookCandidateId: "virtual_webhook_candidate_id",
-    virtualWebhookChannelId: "virtual_webhook_channel_id",
-    virtualWebhookCollectionId: "virtual_webhook_collection_id",
-    virtualWebhookCompanyId: "virtual_webhook_company_id",
-    virtualWebhookContactId: "virtual_webhook_contact_id",
-    virtualWebhookCustomerId: "virtual_webhook_customer_id",
-    virtualWebhookDealId: "virtual_webhook_deal_id",
-    virtualWebhookEndLe: "virtual_webhook_end_le",
-    virtualWebhookEndLt: "virtual_webhook_end_lt",
-    virtualWebhookEventId: "virtual_webhook_event_id",
-    virtualWebhookExpand: "virtual_webhook_expand",
-    virtualWebhookFields: "virtual_webhook_fields",
-    virtualWebhookItemId: "virtual_webhook_item_id",
-    virtualWebhookItemVariantId: "virtual_webhook_item_variant_id",
-    virtualWebhookJobId: "virtual_webhook_job_id",
-    virtualWebhookLimit: "virtual_webhook_limit",
-    virtualWebhookListId: "virtual_webhook_list_id",
-    virtualWebhookLocationId: "virtual_webhook_location_id",
-    virtualWebhookOrgId: "virtual_webhook_org_id",
-    virtualWebhookPageId: "virtual_webhook_page_id",
-    virtualWebhookParentId: "virtual_webhook_parent_id",
-    virtualWebhookPipelineId: "virtual_webhook_pipeline_id",
-    virtualWebhookProjectId: "virtual_webhook_project_id",
-    virtualWebhookRepoId: "virtual_webhook_repo_id",
-    virtualWebhookSpaceId: "virtual_webhook_space_id",
-    virtualWebhookStartGte: "virtual_webhook_start_gte",
-    virtualWebhookStatus: "virtual_webhook_status",
-    virtualWebhookTaskId: "virtual_webhook_task_id",
-    virtualWebhookTicketId: "virtual_webhook_ticket_id",
-    virtualWebhookType: "virtual_webhook_type",
-    virtualWebhookUpdatedGte: "virtual_webhook_updated_gte",
-    virtualWebhookUserId: "virtual_webhook_user_id",
-    webhookEvents: "webhook_events",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntegrationSupport$ {
-  /** @deprecated use `IntegrationSupport$inboundSchema` instead. */
-  export const inboundSchema = IntegrationSupport$inboundSchema;
-  /** @deprecated use `IntegrationSupport$outboundSchema` instead. */
-  export const outboundSchema = IntegrationSupport$outboundSchema;
-  /** @deprecated use `IntegrationSupport$Outbound` instead. */
-  export type Outbound = IntegrationSupport$Outbound;
-}
-
-export function integrationSupportToJSON(
-  integrationSupport: IntegrationSupport,
-): string {
-  return JSON.stringify(
-    IntegrationSupport$outboundSchema.parse(integrationSupport),
-  );
-}
 
 export function integrationSupportFromJSON(
   jsonString: string,

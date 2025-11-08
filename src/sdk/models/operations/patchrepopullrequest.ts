@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchRepoPullrequestRequest = {
@@ -28,24 +25,6 @@ export type PatchRepoPullrequestRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchRepoPullrequestRequest$inboundSchema: z.ZodType<
-  PatchRepoPullrequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoPullrequest: shared.RepoPullrequest$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoPullrequest": "repoPullrequest",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchRepoPullrequestRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchRepoPullrequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchRepoPullrequestRequest$ {
-  /** @deprecated use `PatchRepoPullrequestRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchRepoPullrequestRequest$inboundSchema;
-  /** @deprecated use `PatchRepoPullrequestRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchRepoPullrequestRequest$outboundSchema;
-  /** @deprecated use `PatchRepoPullrequestRequest$Outbound` instead. */
-  export type Outbound = PatchRepoPullrequestRequest$Outbound;
-}
-
 export function patchRepoPullrequestRequestToJSON(
   patchRepoPullrequestRequest: PatchRepoPullrequestRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchRepoPullrequestRequestToJSON(
     PatchRepoPullrequestRequest$outboundSchema.parse(
       patchRepoPullrequestRequest,
     ),
-  );
-}
-
-export function patchRepoPullrequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchRepoPullrequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchRepoPullrequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchRepoPullrequestRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCommerceItemRequest = {
@@ -24,23 +21,6 @@ export type CreateCommerceItemRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCommerceItemRequest$inboundSchema: z.ZodType<
-  CreateCommerceItemRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceItem: shared.CommerceItem$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceItem": "commerceItem",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCommerceItemRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateCommerceItemRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCommerceItemRequest$ {
-  /** @deprecated use `CreateCommerceItemRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCommerceItemRequest$inboundSchema;
-  /** @deprecated use `CreateCommerceItemRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCommerceItemRequest$outboundSchema;
-  /** @deprecated use `CreateCommerceItemRequest$Outbound` instead. */
-  export type Outbound = CreateCommerceItemRequest$Outbound;
-}
-
 export function createCommerceItemRequestToJSON(
   createCommerceItemRequest: CreateCommerceItemRequest,
 ): string {
   return JSON.stringify(
     CreateCommerceItemRequest$outboundSchema.parse(createCommerceItemRequest),
-  );
-}
-
-export function createCommerceItemRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCommerceItemRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCommerceItemRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCommerceItemRequest' from JSON`,
   );
 }

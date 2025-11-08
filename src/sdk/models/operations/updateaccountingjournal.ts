@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingJournalRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingJournalRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingJournalRequest$inboundSchema: z.ZodType<
-  UpdateAccountingJournalRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingJournal: shared.AccountingJournal$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingJournal": "accountingJournal",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingJournalRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingJournalRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingJournalRequest$ {
-  /** @deprecated use `UpdateAccountingJournalRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingJournalRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingJournalRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingJournalRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingJournalRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingJournalRequest$Outbound;
-}
-
 export function updateAccountingJournalRequestToJSON(
   updateAccountingJournalRequest: UpdateAccountingJournalRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingJournalRequestToJSON(
     UpdateAccountingJournalRequest$outboundSchema.parse(
       updateAccountingJournalRequest,
     ),
-  );
-}
-
-export function updateAccountingJournalRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingJournalRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingJournalRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingJournalRequest' from JSON`,
   );
 }

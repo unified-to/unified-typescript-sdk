@@ -24,20 +24,6 @@ export type RemoveScimUsersResponse = {
 };
 
 /** @internal */
-export const RemoveScimUsersRequest$inboundSchema: z.ZodType<
-  RemoveScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveScimUsersRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveScimUsersRequest$ {
-  /** @deprecated use `RemoveScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveScimUsersRequest$inboundSchema;
-  /** @deprecated use `RemoveScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveScimUsersRequest$outboundSchema;
-  /** @deprecated use `RemoveScimUsersRequest$Outbound` instead. */
-  export type Outbound = RemoveScimUsersRequest$Outbound;
-}
-
 export function removeScimUsersRequestToJSON(
   removeScimUsersRequest: RemoveScimUsersRequest,
 ): string {
   return JSON.stringify(
     RemoveScimUsersRequest$outboundSchema.parse(removeScimUsersRequest),
-  );
-}
-
-export function removeScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveScimUsersRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveScimUsersResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveScimUsersResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveScimUsersResponse$outboundSchema: z.ZodType<
-  RemoveScimUsersResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveScimUsersResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveScimUsersResponse$ {
-  /** @deprecated use `RemoveScimUsersResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveScimUsersResponse$inboundSchema;
-  /** @deprecated use `RemoveScimUsersResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveScimUsersResponse$outboundSchema;
-  /** @deprecated use `RemoveScimUsersResponse$Outbound` instead. */
-  export type Outbound = RemoveScimUsersResponse$Outbound;
-}
-
-export function removeScimUsersResponseToJSON(
-  removeScimUsersResponse: RemoveScimUsersResponse,
-): string {
-  return JSON.stringify(
-    RemoveScimUsersResponse$outboundSchema.parse(removeScimUsersResponse),
-  );
-}
 
 export function removeScimUsersResponseFromJSON(
   jsonString: string,

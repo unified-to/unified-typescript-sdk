@@ -15,7 +15,6 @@ export const LmsEmail$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type LmsEmail$Outbound = {};
 
@@ -26,23 +25,9 @@ export const LmsEmail$outboundSchema: z.ZodType<
   LmsEmail
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsEmail$ {
-  /** @deprecated use `LmsEmail$inboundSchema` instead. */
-  export const inboundSchema = LmsEmail$inboundSchema;
-  /** @deprecated use `LmsEmail$outboundSchema` instead. */
-  export const outboundSchema = LmsEmail$outboundSchema;
-  /** @deprecated use `LmsEmail$Outbound` instead. */
-  export type Outbound = LmsEmail$Outbound;
-}
-
 export function lmsEmailToJSON(lmsEmail: LmsEmail): string {
   return JSON.stringify(LmsEmail$outboundSchema.parse(lmsEmail));
 }
-
 export function lmsEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsEmail, SDKValidationError> {

@@ -75,7 +75,6 @@ export const AccountingOrderStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingOrderStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingOrderStatus$outboundSchema: z.ZodType<
   AccountingOrderStatus,
@@ -85,17 +84,6 @@ export const AccountingOrderStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingOrderStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingOrderStatus$ {
-  /** @deprecated use `AccountingOrderStatus$inboundSchema` instead. */
-  export const inboundSchema = AccountingOrderStatus$inboundSchema;
-  /** @deprecated use `AccountingOrderStatus$outboundSchema` instead. */
-  export const outboundSchema = AccountingOrderStatus$outboundSchema;
-}
 
 /** @internal */
 export const AccountingOrderType$inboundSchema: z.ZodType<
@@ -107,7 +95,6 @@ export const AccountingOrderType$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingOrderType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingOrderType$outboundSchema: z.ZodType<
   AccountingOrderType,
@@ -117,17 +104,6 @@ export const AccountingOrderType$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingOrderType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingOrderType$ {
-  /** @deprecated use `AccountingOrderType$inboundSchema` instead. */
-  export const inboundSchema = AccountingOrderType$inboundSchema;
-  /** @deprecated use `AccountingOrderType$outboundSchema` instead. */
-  export const outboundSchema = AccountingOrderType$outboundSchema;
-}
 
 /** @internal */
 export const AccountingOrder$inboundSchema: z.ZodType<
@@ -166,7 +142,6 @@ export const AccountingOrder$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingOrder$Outbound = {
   account_id?: string | undefined;
@@ -222,25 +197,11 @@ export const AccountingOrder$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingOrder$ {
-  /** @deprecated use `AccountingOrder$inboundSchema` instead. */
-  export const inboundSchema = AccountingOrder$inboundSchema;
-  /** @deprecated use `AccountingOrder$outboundSchema` instead. */
-  export const outboundSchema = AccountingOrder$outboundSchema;
-  /** @deprecated use `AccountingOrder$Outbound` instead. */
-  export type Outbound = AccountingOrder$Outbound;
-}
-
 export function accountingOrderToJSON(
   accountingOrder: AccountingOrder,
 ): string {
   return JSON.stringify(AccountingOrder$outboundSchema.parse(accountingOrder));
 }
-
 export function accountingOrderFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingOrder, SDKValidationError> {

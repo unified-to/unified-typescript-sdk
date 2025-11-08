@@ -52,7 +52,6 @@ export const CrmPipeline$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CrmPipeline$Outbound = {
   created_at?: string | undefined;
@@ -91,23 +90,9 @@ export const CrmPipeline$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmPipeline$ {
-  /** @deprecated use `CrmPipeline$inboundSchema` instead. */
-  export const inboundSchema = CrmPipeline$inboundSchema;
-  /** @deprecated use `CrmPipeline$outboundSchema` instead. */
-  export const outboundSchema = CrmPipeline$outboundSchema;
-  /** @deprecated use `CrmPipeline$Outbound` instead. */
-  export type Outbound = CrmPipeline$Outbound;
-}
-
 export function crmPipelineToJSON(crmPipeline: CrmPipeline): string {
   return JSON.stringify(CrmPipeline$outboundSchema.parse(crmPipeline));
 }
-
 export function crmPipelineFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmPipeline, SDKValidationError> {

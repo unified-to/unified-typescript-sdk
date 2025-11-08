@@ -40,7 +40,6 @@ export const PropertyCalendarEventOrganizerStatus$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyCalendarEventOrganizerStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyCalendarEventOrganizerStatus$outboundSchema: z.ZodType<
   PropertyCalendarEventOrganizerStatus,
@@ -50,19 +49,6 @@ export const PropertyCalendarEventOrganizerStatus$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyCalendarEventOrganizerStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCalendarEventOrganizerStatus$ {
-  /** @deprecated use `PropertyCalendarEventOrganizerStatus$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyCalendarEventOrganizerStatus$inboundSchema;
-  /** @deprecated use `PropertyCalendarEventOrganizerStatus$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyCalendarEventOrganizerStatus$outboundSchema;
-}
 
 /** @internal */
 export const PropertyCalendarEventOrganizer$inboundSchema: z.ZodType<
@@ -80,7 +66,6 @@ export const PropertyCalendarEventOrganizer$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type PropertyCalendarEventOrganizer$Outbound = {
   email?: string | undefined;
@@ -107,19 +92,6 @@ export const PropertyCalendarEventOrganizer$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCalendarEventOrganizer$ {
-  /** @deprecated use `PropertyCalendarEventOrganizer$inboundSchema` instead. */
-  export const inboundSchema = PropertyCalendarEventOrganizer$inboundSchema;
-  /** @deprecated use `PropertyCalendarEventOrganizer$outboundSchema` instead. */
-  export const outboundSchema = PropertyCalendarEventOrganizer$outboundSchema;
-  /** @deprecated use `PropertyCalendarEventOrganizer$Outbound` instead. */
-  export type Outbound = PropertyCalendarEventOrganizer$Outbound;
-}
-
 export function propertyCalendarEventOrganizerToJSON(
   propertyCalendarEventOrganizer: PropertyCalendarEventOrganizer,
 ): string {
@@ -129,7 +101,6 @@ export function propertyCalendarEventOrganizerToJSON(
     ),
   );
 }
-
 export function propertyCalendarEventOrganizerFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCalendarEventOrganizer, SDKValidationError> {

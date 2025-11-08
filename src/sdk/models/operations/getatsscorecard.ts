@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAtsScorecardRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAtsScorecardRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAtsScorecardRequest$inboundSchema: z.ZodType<
-  GetAtsScorecardRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAtsScorecardRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetAtsScorecardRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAtsScorecardRequest$ {
-  /** @deprecated use `GetAtsScorecardRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAtsScorecardRequest$inboundSchema;
-  /** @deprecated use `GetAtsScorecardRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAtsScorecardRequest$outboundSchema;
-  /** @deprecated use `GetAtsScorecardRequest$Outbound` instead. */
-  export type Outbound = GetAtsScorecardRequest$Outbound;
-}
-
 export function getAtsScorecardRequestToJSON(
   getAtsScorecardRequest: GetAtsScorecardRequest,
 ): string {
   return JSON.stringify(
     GetAtsScorecardRequest$outboundSchema.parse(getAtsScorecardRequest),
-  );
-}
-
-export function getAtsScorecardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAtsScorecardRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAtsScorecardRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAtsScorecardRequest' from JSON`,
   );
 }

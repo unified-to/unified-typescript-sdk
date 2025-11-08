@@ -71,7 +71,6 @@ export const AtsActivityType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsActivityType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsActivityType$outboundSchema: z.ZodType<
   AtsActivityType,
@@ -81,17 +80,6 @@ export const AtsActivityType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsActivityType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsActivityType$ {
-  /** @deprecated use `AtsActivityType$inboundSchema` instead. */
-  export const inboundSchema = AtsActivityType$inboundSchema;
-  /** @deprecated use `AtsActivityType$outboundSchema` instead. */
-  export const outboundSchema = AtsActivityType$outboundSchema;
-}
 
 /** @internal */
 export const AtsActivity$inboundSchema: z.ZodType<
@@ -136,7 +124,6 @@ export const AtsActivity$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type AtsActivity$Outbound = {
   application_id?: string | undefined;
@@ -203,23 +190,9 @@ export const AtsActivity$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsActivity$ {
-  /** @deprecated use `AtsActivity$inboundSchema` instead. */
-  export const inboundSchema = AtsActivity$inboundSchema;
-  /** @deprecated use `AtsActivity$outboundSchema` instead. */
-  export const outboundSchema = AtsActivity$outboundSchema;
-  /** @deprecated use `AtsActivity$Outbound` instead. */
-  export type Outbound = AtsActivity$Outbound;
-}
-
 export function atsActivityToJSON(atsActivity: AtsActivity): string {
   return JSON.stringify(AtsActivity$outboundSchema.parse(atsActivity));
 }
-
 export function atsActivityFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsActivity, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmDealRequest = {
@@ -31,24 +28,6 @@ export type PatchCrmDealRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCrmDealRequest$inboundSchema: z.ZodType<
-  PatchCrmDealRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmDeal: shared.CrmDeal$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmDeal": "crmDeal",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCrmDealRequest$Outbound = {
@@ -77,33 +56,10 @@ export const PatchCrmDealRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCrmDealRequest$ {
-  /** @deprecated use `PatchCrmDealRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCrmDealRequest$inboundSchema;
-  /** @deprecated use `PatchCrmDealRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCrmDealRequest$outboundSchema;
-  /** @deprecated use `PatchCrmDealRequest$Outbound` instead. */
-  export type Outbound = PatchCrmDealRequest$Outbound;
-}
-
 export function patchCrmDealRequestToJSON(
   patchCrmDealRequest: PatchCrmDealRequest,
 ): string {
   return JSON.stringify(
     PatchCrmDealRequest$outboundSchema.parse(patchCrmDealRequest),
-  );
-}
-
-export function patchCrmDealRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCrmDealRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCrmDealRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCrmDealRequest' from JSON`,
   );
 }

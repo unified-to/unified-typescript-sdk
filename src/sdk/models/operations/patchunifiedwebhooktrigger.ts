@@ -20,15 +20,6 @@ export type PatchUnifiedWebhookTriggerResponse = {
 };
 
 /** @internal */
-export const PatchUnifiedWebhookTriggerRequest$inboundSchema: z.ZodType<
-  PatchUnifiedWebhookTriggerRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-});
-
-/** @internal */
 export type PatchUnifiedWebhookTriggerRequest$Outbound = {
   id: string;
 };
@@ -42,20 +33,6 @@ export const PatchUnifiedWebhookTriggerRequest$outboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchUnifiedWebhookTriggerRequest$ {
-  /** @deprecated use `PatchUnifiedWebhookTriggerRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchUnifiedWebhookTriggerRequest$inboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookTriggerRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    PatchUnifiedWebhookTriggerRequest$outboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookTriggerRequest$Outbound` instead. */
-  export type Outbound = PatchUnifiedWebhookTriggerRequest$Outbound;
-}
-
 export function patchUnifiedWebhookTriggerRequestToJSON(
   patchUnifiedWebhookTriggerRequest: PatchUnifiedWebhookTriggerRequest,
 ): string {
@@ -63,16 +40,6 @@ export function patchUnifiedWebhookTriggerRequestToJSON(
     PatchUnifiedWebhookTriggerRequest$outboundSchema.parse(
       patchUnifiedWebhookTriggerRequest,
     ),
-  );
-}
-
-export function patchUnifiedWebhookTriggerRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchUnifiedWebhookTriggerRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchUnifiedWebhookTriggerRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchUnifiedWebhookTriggerRequest' from JSON`,
   );
 }
 
@@ -88,48 +55,6 @@ export const PatchUnifiedWebhookTriggerResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type PatchUnifiedWebhookTriggerResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const PatchUnifiedWebhookTriggerResponse$outboundSchema: z.ZodType<
-  PatchUnifiedWebhookTriggerResponse$Outbound,
-  z.ZodTypeDef,
-  PatchUnifiedWebhookTriggerResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchUnifiedWebhookTriggerResponse$ {
-  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$inboundSchema` instead. */
-  export const inboundSchema = PatchUnifiedWebhookTriggerResponse$inboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    PatchUnifiedWebhookTriggerResponse$outboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookTriggerResponse$Outbound` instead. */
-  export type Outbound = PatchUnifiedWebhookTriggerResponse$Outbound;
-}
-
-export function patchUnifiedWebhookTriggerResponseToJSON(
-  patchUnifiedWebhookTriggerResponse: PatchUnifiedWebhookTriggerResponse,
-): string {
-  return JSON.stringify(
-    PatchUnifiedWebhookTriggerResponse$outboundSchema.parse(
-      patchUnifiedWebhookTriggerResponse,
-    ),
-  );
-}
 
 export function patchUnifiedWebhookTriggerResponseFromJSON(
   jsonString: string,

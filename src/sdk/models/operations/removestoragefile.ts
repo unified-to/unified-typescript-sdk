@@ -24,20 +24,6 @@ export type RemoveStorageFileResponse = {
 };
 
 /** @internal */
-export const RemoveStorageFileRequest$inboundSchema: z.ZodType<
-  RemoveStorageFileRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveStorageFileRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveStorageFileRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveStorageFileRequest$ {
-  /** @deprecated use `RemoveStorageFileRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveStorageFileRequest$inboundSchema;
-  /** @deprecated use `RemoveStorageFileRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveStorageFileRequest$outboundSchema;
-  /** @deprecated use `RemoveStorageFileRequest$Outbound` instead. */
-  export type Outbound = RemoveStorageFileRequest$Outbound;
-}
-
 export function removeStorageFileRequestToJSON(
   removeStorageFileRequest: RemoveStorageFileRequest,
 ): string {
   return JSON.stringify(
     RemoveStorageFileRequest$outboundSchema.parse(removeStorageFileRequest),
-  );
-}
-
-export function removeStorageFileRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveStorageFileRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveStorageFileRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveStorageFileResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveStorageFileResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveStorageFileResponse$outboundSchema: z.ZodType<
-  RemoveStorageFileResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveStorageFileResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveStorageFileResponse$ {
-  /** @deprecated use `RemoveStorageFileResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveStorageFileResponse$inboundSchema;
-  /** @deprecated use `RemoveStorageFileResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveStorageFileResponse$outboundSchema;
-  /** @deprecated use `RemoveStorageFileResponse$Outbound` instead. */
-  export type Outbound = RemoveStorageFileResponse$Outbound;
-}
-
-export function removeStorageFileResponseToJSON(
-  removeStorageFileResponse: RemoveStorageFileResponse,
-): string {
-  return JSON.stringify(
-    RemoveStorageFileResponse$outboundSchema.parse(removeStorageFileResponse),
-  );
-}
 
 export function removeStorageFileResponseFromJSON(
   jsonString: string,

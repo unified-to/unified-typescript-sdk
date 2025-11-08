@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedWebhookRequest = {
@@ -19,20 +16,6 @@ export type UpdateUnifiedWebhookRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const UpdateUnifiedWebhookRequest$inboundSchema: z.ZodType<
-  UpdateUnifiedWebhookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  Webhook: shared.Webhook$inboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "Webhook": "webhook",
-  });
-});
 
 /** @internal */
 export type UpdateUnifiedWebhookRequest$Outbound = {
@@ -54,19 +37,6 @@ export const UpdateUnifiedWebhookRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateUnifiedWebhookRequest$ {
-  /** @deprecated use `UpdateUnifiedWebhookRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateUnifiedWebhookRequest$inboundSchema;
-  /** @deprecated use `UpdateUnifiedWebhookRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateUnifiedWebhookRequest$outboundSchema;
-  /** @deprecated use `UpdateUnifiedWebhookRequest$Outbound` instead. */
-  export type Outbound = UpdateUnifiedWebhookRequest$Outbound;
-}
-
 export function updateUnifiedWebhookRequestToJSON(
   updateUnifiedWebhookRequest: UpdateUnifiedWebhookRequest,
 ): string {
@@ -74,15 +44,5 @@ export function updateUnifiedWebhookRequestToJSON(
     UpdateUnifiedWebhookRequest$outboundSchema.parse(
       updateUnifiedWebhookRequest,
     ),
-  );
-}
-
-export function updateUnifiedWebhookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateUnifiedWebhookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateUnifiedWebhookRequest' from JSON`,
   );
 }

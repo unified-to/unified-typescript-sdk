@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoCommitRequest = {
@@ -28,24 +25,6 @@ export type UpdateRepoCommitRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateRepoCommitRequest$inboundSchema: z.ZodType<
-  UpdateRepoCommitRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoCommit: shared.RepoCommit$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoCommit": "repoCommit",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateRepoCommitRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateRepoCommitRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateRepoCommitRequest$ {
-  /** @deprecated use `UpdateRepoCommitRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateRepoCommitRequest$inboundSchema;
-  /** @deprecated use `UpdateRepoCommitRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateRepoCommitRequest$outboundSchema;
-  /** @deprecated use `UpdateRepoCommitRequest$Outbound` instead. */
-  export type Outbound = UpdateRepoCommitRequest$Outbound;
-}
-
 export function updateRepoCommitRequestToJSON(
   updateRepoCommitRequest: UpdateRepoCommitRequest,
 ): string {
   return JSON.stringify(
     UpdateRepoCommitRequest$outboundSchema.parse(updateRepoCommitRequest),
-  );
-}
-
-export function updateRepoCommitRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateRepoCommitRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateRepoCommitRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateRepoCommitRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListMartechMembersRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListMartechMembersRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListMartechMembersRequest$inboundSchema: z.ZodType<
-  ListMartechMembersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  list_id: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "list_id": "listId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListMartechMembersRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListMartechMembersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListMartechMembersRequest$ {
-  /** @deprecated use `ListMartechMembersRequest$inboundSchema` instead. */
-  export const inboundSchema = ListMartechMembersRequest$inboundSchema;
-  /** @deprecated use `ListMartechMembersRequest$outboundSchema` instead. */
-  export const outboundSchema = ListMartechMembersRequest$outboundSchema;
-  /** @deprecated use `ListMartechMembersRequest$Outbound` instead. */
-  export type Outbound = ListMartechMembersRequest$Outbound;
-}
-
 export function listMartechMembersRequestToJSON(
   listMartechMembersRequest: ListMartechMembersRequest,
 ): string {
   return JSON.stringify(
     ListMartechMembersRequest$outboundSchema.parse(listMartechMembersRequest),
-  );
-}
-
-export function listMartechMembersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListMartechMembersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListMartechMembersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListMartechMembersRequest' from JSON`,
   );
 }

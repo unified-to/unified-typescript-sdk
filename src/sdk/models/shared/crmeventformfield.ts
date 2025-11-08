@@ -53,7 +53,6 @@ export const CrmEventFormFieldType$inboundSchema: z.ZodType<
     z.nativeEnum(CrmEventFormFieldType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CrmEventFormFieldType$outboundSchema: z.ZodType<
   CrmEventFormFieldType,
@@ -63,17 +62,6 @@ export const CrmEventFormFieldType$outboundSchema: z.ZodType<
   z.nativeEnum(CrmEventFormFieldType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEventFormFieldType$ {
-  /** @deprecated use `CrmEventFormFieldType$inboundSchema` instead. */
-  export const inboundSchema = CrmEventFormFieldType$inboundSchema;
-  /** @deprecated use `CrmEventFormFieldType$outboundSchema` instead. */
-  export const outboundSchema = CrmEventFormFieldType$outboundSchema;
-}
 
 /** @internal */
 export const CrmEventFormField$inboundSchema: z.ZodType<
@@ -86,7 +74,6 @@ export const CrmEventFormField$inboundSchema: z.ZodType<
   required: z.boolean().optional(),
   type: CrmEventFormFieldType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type CrmEventFormField$Outbound = {
   name?: string | undefined;
@@ -107,19 +94,6 @@ export const CrmEventFormField$outboundSchema: z.ZodType<
   type: CrmEventFormFieldType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEventFormField$ {
-  /** @deprecated use `CrmEventFormField$inboundSchema` instead. */
-  export const inboundSchema = CrmEventFormField$inboundSchema;
-  /** @deprecated use `CrmEventFormField$outboundSchema` instead. */
-  export const outboundSchema = CrmEventFormField$outboundSchema;
-  /** @deprecated use `CrmEventFormField$Outbound` instead. */
-  export type Outbound = CrmEventFormField$Outbound;
-}
-
 export function crmEventFormFieldToJSON(
   crmEventFormField: CrmEventFormField,
 ): string {
@@ -127,7 +101,6 @@ export function crmEventFormFieldToJSON(
     CrmEventFormField$outboundSchema.parse(crmEventFormField),
   );
 }
-
 export function crmEventFormFieldFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmEventFormField, SDKValidationError> {

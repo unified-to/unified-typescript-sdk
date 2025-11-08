@@ -81,7 +81,6 @@ export const PaymentCollectionMethod$inboundSchema: z.ZodType<
     z.nativeEnum(PaymentCollectionMethod),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PaymentCollectionMethod$outboundSchema: z.ZodType<
   PaymentCollectionMethod,
@@ -91,17 +90,6 @@ export const PaymentCollectionMethod$outboundSchema: z.ZodType<
   z.nativeEnum(PaymentCollectionMethod),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentCollectionMethod$ {
-  /** @deprecated use `PaymentCollectionMethod$inboundSchema` instead. */
-  export const inboundSchema = PaymentCollectionMethod$inboundSchema;
-  /** @deprecated use `PaymentCollectionMethod$outboundSchema` instead. */
-  export const outboundSchema = PaymentCollectionMethod$outboundSchema;
-}
 
 /** @internal */
 export const AccountingBillStatus$inboundSchema: z.ZodType<
@@ -113,7 +101,6 @@ export const AccountingBillStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingBillStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingBillStatus$outboundSchema: z.ZodType<
   AccountingBillStatus,
@@ -123,17 +110,6 @@ export const AccountingBillStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingBillStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingBillStatus$ {
-  /** @deprecated use `AccountingBillStatus$inboundSchema` instead. */
-  export const inboundSchema = AccountingBillStatus$inboundSchema;
-  /** @deprecated use `AccountingBillStatus$outboundSchema` instead. */
-  export const outboundSchema = AccountingBillStatus$outboundSchema;
-}
 
 /** @internal */
 export const AccountingBill$inboundSchema: z.ZodType<
@@ -196,7 +172,6 @@ export const AccountingBill$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingBill$Outbound = {
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
@@ -281,23 +256,9 @@ export const AccountingBill$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingBill$ {
-  /** @deprecated use `AccountingBill$inboundSchema` instead. */
-  export const inboundSchema = AccountingBill$inboundSchema;
-  /** @deprecated use `AccountingBill$outboundSchema` instead. */
-  export const outboundSchema = AccountingBill$outboundSchema;
-  /** @deprecated use `AccountingBill$Outbound` instead. */
-  export type Outbound = AccountingBill$Outbound;
-}
-
 export function accountingBillToJSON(accountingBill: AccountingBill): string {
   return JSON.stringify(AccountingBill$outboundSchema.parse(accountingBill));
 }
-
 export function accountingBillFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingBill, SDKValidationError> {

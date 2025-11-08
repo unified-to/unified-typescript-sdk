@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmContactRequest = {
@@ -31,24 +28,6 @@ export type PatchCrmContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCrmContactRequest$inboundSchema: z.ZodType<
-  PatchCrmContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmContact: shared.CrmContact$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmContact": "crmContact",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCrmContactRequest$Outbound = {
@@ -77,33 +56,10 @@ export const PatchCrmContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCrmContactRequest$ {
-  /** @deprecated use `PatchCrmContactRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCrmContactRequest$inboundSchema;
-  /** @deprecated use `PatchCrmContactRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCrmContactRequest$outboundSchema;
-  /** @deprecated use `PatchCrmContactRequest$Outbound` instead. */
-  export type Outbound = PatchCrmContactRequest$Outbound;
-}
-
 export function patchCrmContactRequestToJSON(
   patchCrmContactRequest: PatchCrmContactRequest,
 ): string {
   return JSON.stringify(
     PatchCrmContactRequest$outboundSchema.parse(patchCrmContactRequest),
-  );
-}
-
-export function patchCrmContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCrmContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCrmContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCrmContactRequest' from JSON`,
   );
 }

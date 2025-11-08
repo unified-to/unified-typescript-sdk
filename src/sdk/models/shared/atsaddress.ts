@@ -40,7 +40,6 @@ export const AtsAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type AtsAddress$Outbound = {
   address1?: string | undefined;
@@ -75,23 +74,9 @@ export const AtsAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsAddress$ {
-  /** @deprecated use `AtsAddress$inboundSchema` instead. */
-  export const inboundSchema = AtsAddress$inboundSchema;
-  /** @deprecated use `AtsAddress$outboundSchema` instead. */
-  export const outboundSchema = AtsAddress$outboundSchema;
-  /** @deprecated use `AtsAddress$Outbound` instead. */
-  export type Outbound = AtsAddress$Outbound;
-}
-
 export function atsAddressToJSON(atsAddress: AtsAddress): string {
   return JSON.stringify(AtsAddress$outboundSchema.parse(atsAddress));
 }
-
 export function atsAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsAddress, SDKValidationError> {

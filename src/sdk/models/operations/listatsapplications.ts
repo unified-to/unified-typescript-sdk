@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsApplicationsRequest = {
   /**
@@ -46,34 +43,6 @@ export type ListAtsApplicationsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAtsApplicationsRequest$inboundSchema: z.ZodType<
-  ListAtsApplicationsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  candidate_id: z.string().optional(),
-  company_id: z.string().optional(),
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  job_id: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "candidate_id": "candidateId",
-    "company_id": "companyId",
-    "connection_id": "connectionId",
-    "job_id": "jobId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAtsApplicationsRequest$Outbound = {
@@ -119,33 +88,10 @@ export const ListAtsApplicationsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAtsApplicationsRequest$ {
-  /** @deprecated use `ListAtsApplicationsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAtsApplicationsRequest$inboundSchema;
-  /** @deprecated use `ListAtsApplicationsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAtsApplicationsRequest$outboundSchema;
-  /** @deprecated use `ListAtsApplicationsRequest$Outbound` instead. */
-  export type Outbound = ListAtsApplicationsRequest$Outbound;
-}
-
 export function listAtsApplicationsRequestToJSON(
   listAtsApplicationsRequest: ListAtsApplicationsRequest,
 ): string {
   return JSON.stringify(
     ListAtsApplicationsRequest$outboundSchema.parse(listAtsApplicationsRequest),
-  );
-}
-
-export function listAtsApplicationsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAtsApplicationsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAtsApplicationsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAtsApplicationsRequest' from JSON`,
   );
 }

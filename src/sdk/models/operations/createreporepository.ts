@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoRepositoryRequest = {
@@ -24,23 +21,6 @@ export type CreateRepoRepositoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateRepoRepositoryRequest$inboundSchema: z.ZodType<
-  CreateRepoRepositoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoRepository: shared.RepoRepository$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoRepository": "repoRepository",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateRepoRepositoryRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateRepoRepositoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateRepoRepositoryRequest$ {
-  /** @deprecated use `CreateRepoRepositoryRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateRepoRepositoryRequest$inboundSchema;
-  /** @deprecated use `CreateRepoRepositoryRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateRepoRepositoryRequest$outboundSchema;
-  /** @deprecated use `CreateRepoRepositoryRequest$Outbound` instead. */
-  export type Outbound = CreateRepoRepositoryRequest$Outbound;
-}
-
 export function createRepoRepositoryRequestToJSON(
   createRepoRepositoryRequest: CreateRepoRepositoryRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createRepoRepositoryRequestToJSON(
     CreateRepoRepositoryRequest$outboundSchema.parse(
       createRepoRepositoryRequest,
     ),
-  );
-}
-
-export function createRepoRepositoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateRepoRepositoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateRepoRepositoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateRepoRepositoryRequest' from JSON`,
   );
 }

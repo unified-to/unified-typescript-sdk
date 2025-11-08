@@ -23,7 +23,6 @@ export const PropertyCrmEventPageView$inboundSchema: z.ZodType<
   count: z.number().optional(),
   url: z.string().optional(),
 });
-
 /** @internal */
 export type PropertyCrmEventPageView$Outbound = {
   average?: number | undefined;
@@ -42,19 +41,6 @@ export const PropertyCrmEventPageView$outboundSchema: z.ZodType<
   url: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventPageView$ {
-  /** @deprecated use `PropertyCrmEventPageView$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventPageView$inboundSchema;
-  /** @deprecated use `PropertyCrmEventPageView$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventPageView$outboundSchema;
-  /** @deprecated use `PropertyCrmEventPageView$Outbound` instead. */
-  export type Outbound = PropertyCrmEventPageView$Outbound;
-}
-
 export function propertyCrmEventPageViewToJSON(
   propertyCrmEventPageView: PropertyCrmEventPageView,
 ): string {
@@ -62,7 +48,6 @@ export function propertyCrmEventPageViewToJSON(
     PropertyCrmEventPageView$outboundSchema.parse(propertyCrmEventPageView),
   );
 }
-
 export function propertyCrmEventPageViewFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventPageView, SDKValidationError> {

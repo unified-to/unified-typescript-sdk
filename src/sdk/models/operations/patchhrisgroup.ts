@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchHrisGroupRequest = {
@@ -28,24 +25,6 @@ export type PatchHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchHrisGroupRequest$inboundSchema: z.ZodType<
-  PatchHrisGroupRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisGroup: shared.HrisGroup$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisGroup": "hrisGroup",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchHrisGroupRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchHrisGroupRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchHrisGroupRequest$ {
-  /** @deprecated use `PatchHrisGroupRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchHrisGroupRequest$inboundSchema;
-  /** @deprecated use `PatchHrisGroupRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchHrisGroupRequest$outboundSchema;
-  /** @deprecated use `PatchHrisGroupRequest$Outbound` instead. */
-  export type Outbound = PatchHrisGroupRequest$Outbound;
-}
-
 export function patchHrisGroupRequestToJSON(
   patchHrisGroupRequest: PatchHrisGroupRequest,
 ): string {
   return JSON.stringify(
     PatchHrisGroupRequest$outboundSchema.parse(patchHrisGroupRequest),
-  );
-}
-
-export function patchHrisGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchHrisGroupRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchHrisGroupRequest' from JSON`,
   );
 }

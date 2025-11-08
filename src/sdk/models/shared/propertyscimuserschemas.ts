@@ -31,7 +31,6 @@ export const PropertyScimUserSchemas$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyScimUserSchemas),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyScimUserSchemas$outboundSchema: z.ZodType<
   PropertyScimUserSchemas,
@@ -41,14 +40,3 @@ export const PropertyScimUserSchemas$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyScimUserSchemas),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserSchemas$ {
-  /** @deprecated use `PropertyScimUserSchemas$inboundSchema` instead. */
-  export const inboundSchema = PropertyScimUserSchemas$inboundSchema;
-  /** @deprecated use `PropertyScimUserSchemas$outboundSchema` instead. */
-  export const outboundSchema = PropertyScimUserSchemas$outboundSchema;
-}

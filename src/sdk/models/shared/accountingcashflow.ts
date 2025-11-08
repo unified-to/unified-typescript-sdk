@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingCashflowSection,
   AccountingCashflowSection$inboundSchema,
-  AccountingCashflowSection$Outbound,
-  AccountingCashflowSection$outboundSchema,
 } from "./accountingcashflowsection.js";
 
 /**
@@ -81,89 +79,6 @@ export const AccountingCashflow$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type AccountingCashflow$Outbound = {
-  cash_beginning_amount?: number | undefined;
-  cash_ending_amount?: number | undefined;
-  category_ids?: Array<string> | undefined;
-  contact_id?: string | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  end_at?: string | undefined;
-  financing_sections?: Array<AccountingCashflowSection$Outbound> | undefined;
-  id?: string | undefined;
-  investing_sections?: Array<AccountingCashflowSection$Outbound> | undefined;
-  name?: string | undefined;
-  net_change_in_cash_amount?: number | undefined;
-  operating_sections?: Array<AccountingCashflowSection$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const AccountingCashflow$outboundSchema: z.ZodType<
-  AccountingCashflow$Outbound,
-  z.ZodTypeDef,
-  AccountingCashflow
-> = z.object({
-  cashBeginningAmount: z.number().optional(),
-  cashEndingAmount: z.number().optional(),
-  categoryIds: z.array(z.string()).optional(),
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  financingSections: z.array(AccountingCashflowSection$outboundSchema)
-    .optional(),
-  id: z.string().optional(),
-  investingSections: z.array(AccountingCashflowSection$outboundSchema)
-    .optional(),
-  name: z.string().optional(),
-  netChangeInCashAmount: z.number().optional(),
-  operatingSections: z.array(AccountingCashflowSection$outboundSchema)
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    cashBeginningAmount: "cash_beginning_amount",
-    cashEndingAmount: "cash_ending_amount",
-    categoryIds: "category_ids",
-    contactId: "contact_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    financingSections: "financing_sections",
-    investingSections: "investing_sections",
-    netChangeInCashAmount: "net_change_in_cash_amount",
-    operatingSections: "operating_sections",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCashflow$ {
-  /** @deprecated use `AccountingCashflow$inboundSchema` instead. */
-  export const inboundSchema = AccountingCashflow$inboundSchema;
-  /** @deprecated use `AccountingCashflow$outboundSchema` instead. */
-  export const outboundSchema = AccountingCashflow$outboundSchema;
-  /** @deprecated use `AccountingCashflow$Outbound` instead. */
-  export type Outbound = AccountingCashflow$Outbound;
-}
-
-export function accountingCashflowToJSON(
-  accountingCashflow: AccountingCashflow,
-): string {
-  return JSON.stringify(
-    AccountingCashflow$outboundSchema.parse(accountingCashflow),
-  );
-}
 
 export function accountingCashflowFromJSON(
   jsonString: string,

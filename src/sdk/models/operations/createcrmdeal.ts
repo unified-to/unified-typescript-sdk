@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmDealRequest = {
@@ -27,23 +24,6 @@ export type CreateCrmDealRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCrmDealRequest$inboundSchema: z.ZodType<
-  CreateCrmDealRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmDeal: shared.CrmDeal$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmDeal": "crmDeal",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCrmDealRequest$Outbound = {
@@ -70,33 +50,10 @@ export const CreateCrmDealRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCrmDealRequest$ {
-  /** @deprecated use `CreateCrmDealRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCrmDealRequest$inboundSchema;
-  /** @deprecated use `CreateCrmDealRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCrmDealRequest$outboundSchema;
-  /** @deprecated use `CreateCrmDealRequest$Outbound` instead. */
-  export type Outbound = CreateCrmDealRequest$Outbound;
-}
-
 export function createCrmDealRequestToJSON(
   createCrmDealRequest: CreateCrmDealRequest,
 ): string {
   return JSON.stringify(
     CreateCrmDealRequest$outboundSchema.parse(createCrmDealRequest),
-  );
-}
-
-export function createCrmDealRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCrmDealRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCrmDealRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCrmDealRequest' from JSON`,
   );
 }

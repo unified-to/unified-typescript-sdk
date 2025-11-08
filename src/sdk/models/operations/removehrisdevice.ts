@@ -24,20 +24,6 @@ export type RemoveHrisDeviceResponse = {
 };
 
 /** @internal */
-export const RemoveHrisDeviceRequest$inboundSchema: z.ZodType<
-  RemoveHrisDeviceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveHrisDeviceRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveHrisDeviceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisDeviceRequest$ {
-  /** @deprecated use `RemoveHrisDeviceRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisDeviceRequest$inboundSchema;
-  /** @deprecated use `RemoveHrisDeviceRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisDeviceRequest$outboundSchema;
-  /** @deprecated use `RemoveHrisDeviceRequest$Outbound` instead. */
-  export type Outbound = RemoveHrisDeviceRequest$Outbound;
-}
-
 export function removeHrisDeviceRequestToJSON(
   removeHrisDeviceRequest: RemoveHrisDeviceRequest,
 ): string {
   return JSON.stringify(
     RemoveHrisDeviceRequest$outboundSchema.parse(removeHrisDeviceRequest),
-  );
-}
-
-export function removeHrisDeviceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveHrisDeviceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveHrisDeviceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveHrisDeviceRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveHrisDeviceResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveHrisDeviceResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveHrisDeviceResponse$outboundSchema: z.ZodType<
-  RemoveHrisDeviceResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveHrisDeviceResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisDeviceResponse$ {
-  /** @deprecated use `RemoveHrisDeviceResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisDeviceResponse$inboundSchema;
-  /** @deprecated use `RemoveHrisDeviceResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisDeviceResponse$outboundSchema;
-  /** @deprecated use `RemoveHrisDeviceResponse$Outbound` instead. */
-  export type Outbound = RemoveHrisDeviceResponse$Outbound;
-}
-
-export function removeHrisDeviceResponseToJSON(
-  removeHrisDeviceResponse: RemoveHrisDeviceResponse,
-): string {
-  return JSON.stringify(
-    RemoveHrisDeviceResponse$outboundSchema.parse(removeHrisDeviceResponse),
-  );
-}
 
 export function removeHrisDeviceResponseFromJSON(
   jsonString: string,

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchMetadataMetadataRequest = {
@@ -28,24 +25,6 @@ export type PatchMetadataMetadataRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchMetadataMetadataRequest$inboundSchema: z.ZodType<
-  PatchMetadataMetadataRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  MetadataMetadata: shared.MetadataMetadata$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "MetadataMetadata": "metadataMetadata",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchMetadataMetadataRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchMetadataMetadataRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchMetadataMetadataRequest$ {
-  /** @deprecated use `PatchMetadataMetadataRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchMetadataMetadataRequest$inboundSchema;
-  /** @deprecated use `PatchMetadataMetadataRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchMetadataMetadataRequest$outboundSchema;
-  /** @deprecated use `PatchMetadataMetadataRequest$Outbound` instead. */
-  export type Outbound = PatchMetadataMetadataRequest$Outbound;
-}
-
 export function patchMetadataMetadataRequestToJSON(
   patchMetadataMetadataRequest: PatchMetadataMetadataRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchMetadataMetadataRequestToJSON(
     PatchMetadataMetadataRequest$outboundSchema.parse(
       patchMetadataMetadataRequest,
     ),
-  );
-}
-
-export function patchMetadataMetadataRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchMetadataMetadataRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchMetadataMetadataRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchMetadataMetadataRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListTicketingTicketsRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListTicketingTicketsRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListTicketingTicketsRequest$inboundSchema: z.ZodType<
-  ListTicketingTicketsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  customer_id: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "customer_id": "customerId",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListTicketingTicketsRequest$Outbound = {
@@ -110,19 +81,6 @@ export const ListTicketingTicketsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTicketingTicketsRequest$ {
-  /** @deprecated use `ListTicketingTicketsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListTicketingTicketsRequest$inboundSchema;
-  /** @deprecated use `ListTicketingTicketsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListTicketingTicketsRequest$outboundSchema;
-  /** @deprecated use `ListTicketingTicketsRequest$Outbound` instead. */
-  export type Outbound = ListTicketingTicketsRequest$Outbound;
-}
-
 export function listTicketingTicketsRequestToJSON(
   listTicketingTicketsRequest: ListTicketingTicketsRequest,
 ): string {
@@ -130,15 +88,5 @@ export function listTicketingTicketsRequestToJSON(
     ListTicketingTicketsRequest$outboundSchema.parse(
       listTicketingTicketsRequest,
     ),
-  );
-}
-
-export function listTicketingTicketsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListTicketingTicketsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListTicketingTicketsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListTicketingTicketsRequest' from JSON`,
   );
 }

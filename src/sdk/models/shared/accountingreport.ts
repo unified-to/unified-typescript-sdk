@@ -5,30 +5,20 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyAccountingReportBalanceSheet,
   PropertyAccountingReportBalanceSheet$inboundSchema,
-  PropertyAccountingReportBalanceSheet$Outbound,
-  PropertyAccountingReportBalanceSheet$outboundSchema,
 } from "./propertyaccountingreportbalancesheet.js";
 import {
   PropertyAccountingReportProfitAndLoss,
   PropertyAccountingReportProfitAndLoss$inboundSchema,
-  PropertyAccountingReportProfitAndLoss$Outbound,
-  PropertyAccountingReportProfitAndLoss$outboundSchema,
 } from "./propertyaccountingreportprofitandloss.js";
 import {
   PropertyAccountingReportTrialBalance,
   PropertyAccountingReportTrialBalance$inboundSchema,
-  PropertyAccountingReportTrialBalance$Outbound,
-  PropertyAccountingReportTrialBalance$outboundSchema,
 } from "./propertyaccountingreporttrialbalance.js";
 
 export const AccountingReportType = {
@@ -65,27 +55,6 @@ export const AccountingReportType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const AccountingReportType$outboundSchema: z.ZodType<
-  AccountingReportType,
-  z.ZodTypeDef,
-  AccountingReportType
-> = z.union([
-  z.nativeEnum(AccountingReportType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingReportType$ {
-  /** @deprecated use `AccountingReportType$inboundSchema` instead. */
-  export const inboundSchema = AccountingReportType$inboundSchema;
-  /** @deprecated use `AccountingReportType$outboundSchema` instead. */
-  export const outboundSchema = AccountingReportType$outboundSchema;
-}
-
-/** @internal */
 export const AccountingReport$inboundSchema: z.ZodType<
   AccountingReport,
   z.ZodTypeDef,
@@ -119,74 +88,6 @@ export const AccountingReport$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type AccountingReport$Outbound = {
-  balance_sheet?: PropertyAccountingReportBalanceSheet$Outbound | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  end_at?: string | undefined;
-  id?: string | undefined;
-  name?: string | undefined;
-  profit_and_loss?: PropertyAccountingReportProfitAndLoss$Outbound | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  trial_balance?: PropertyAccountingReportTrialBalance$Outbound | undefined;
-  type?: string | undefined;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const AccountingReport$outboundSchema: z.ZodType<
-  AccountingReport$Outbound,
-  z.ZodTypeDef,
-  AccountingReport
-> = z.object({
-  balanceSheet: PropertyAccountingReportBalanceSheet$outboundSchema.optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  profitAndLoss: PropertyAccountingReportProfitAndLoss$outboundSchema
-    .optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  trialBalance: PropertyAccountingReportTrialBalance$outboundSchema.optional(),
-  type: AccountingReportType$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    balanceSheet: "balance_sheet",
-    createdAt: "created_at",
-    endAt: "end_at",
-    profitAndLoss: "profit_and_loss",
-    startAt: "start_at",
-    trialBalance: "trial_balance",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingReport$ {
-  /** @deprecated use `AccountingReport$inboundSchema` instead. */
-  export const inboundSchema = AccountingReport$inboundSchema;
-  /** @deprecated use `AccountingReport$outboundSchema` instead. */
-  export const outboundSchema = AccountingReport$outboundSchema;
-  /** @deprecated use `AccountingReport$Outbound` instead. */
-  export type Outbound = AccountingReport$Outbound;
-}
-
-export function accountingReportToJSON(
-  accountingReport: AccountingReport,
-): string {
-  return JSON.stringify(
-    AccountingReport$outboundSchema.parse(accountingReport),
-  );
-}
 
 export function accountingReportFromJSON(
   jsonString: string,

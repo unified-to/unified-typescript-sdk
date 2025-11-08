@@ -31,7 +31,6 @@ export const AccountingAttachment$inboundSchema: z.ZodType<
     "mime_type": "mimeType",
   });
 });
-
 /** @internal */
 export type AccountingAttachment$Outbound = {
   download_url?: string | undefined;
@@ -57,19 +56,6 @@ export const AccountingAttachment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingAttachment$ {
-  /** @deprecated use `AccountingAttachment$inboundSchema` instead. */
-  export const inboundSchema = AccountingAttachment$inboundSchema;
-  /** @deprecated use `AccountingAttachment$outboundSchema` instead. */
-  export const outboundSchema = AccountingAttachment$outboundSchema;
-  /** @deprecated use `AccountingAttachment$Outbound` instead. */
-  export type Outbound = AccountingAttachment$Outbound;
-}
-
 export function accountingAttachmentToJSON(
   accountingAttachment: AccountingAttachment,
 ): string {
@@ -77,7 +63,6 @@ export function accountingAttachmentToJSON(
     AccountingAttachment$outboundSchema.parse(accountingAttachment),
   );
 }
-
 export function accountingAttachmentFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingAttachment, SDKValidationError> {

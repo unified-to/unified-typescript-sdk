@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmPipelineRequest = {
@@ -28,24 +25,6 @@ export type PatchCrmPipelineRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCrmPipelineRequest$inboundSchema: z.ZodType<
-  PatchCrmPipelineRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmPipeline: shared.CrmPipeline$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmPipeline": "crmPipeline",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCrmPipelineRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchCrmPipelineRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCrmPipelineRequest$ {
-  /** @deprecated use `PatchCrmPipelineRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCrmPipelineRequest$inboundSchema;
-  /** @deprecated use `PatchCrmPipelineRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCrmPipelineRequest$outboundSchema;
-  /** @deprecated use `PatchCrmPipelineRequest$Outbound` instead. */
-  export type Outbound = PatchCrmPipelineRequest$Outbound;
-}
-
 export function patchCrmPipelineRequestToJSON(
   patchCrmPipelineRequest: PatchCrmPipelineRequest,
 ): string {
   return JSON.stringify(
     PatchCrmPipelineRequest$outboundSchema.parse(patchCrmPipelineRequest),
-  );
-}
-
-export function patchCrmPipelineRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCrmPipelineRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCrmPipelineRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCrmPipelineRequest' from JSON`,
   );
 }

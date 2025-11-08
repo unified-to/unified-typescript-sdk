@@ -71,7 +71,6 @@ export const UcRecording$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type UcRecording$Outbound = {
   call_id?: string | undefined;
@@ -126,23 +125,9 @@ export const UcRecording$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcRecording$ {
-  /** @deprecated use `UcRecording$inboundSchema` instead. */
-  export const inboundSchema = UcRecording$inboundSchema;
-  /** @deprecated use `UcRecording$outboundSchema` instead. */
-  export const outboundSchema = UcRecording$outboundSchema;
-  /** @deprecated use `UcRecording$Outbound` instead. */
-  export type Outbound = UcRecording$Outbound;
-}
-
 export function ucRecordingToJSON(ucRecording: UcRecording): string {
   return JSON.stringify(UcRecording$outboundSchema.parse(ucRecording));
 }
-
 export function ucRecordingFromJSON(
   jsonString: string,
 ): SafeParseResult<UcRecording, SDKValidationError> {

@@ -40,7 +40,6 @@ export const PropertyLmsStudentAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyLmsStudentAddress$Outbound = {
   address1?: string | undefined;
@@ -75,19 +74,6 @@ export const PropertyLmsStudentAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyLmsStudentAddress$ {
-  /** @deprecated use `PropertyLmsStudentAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyLmsStudentAddress$inboundSchema;
-  /** @deprecated use `PropertyLmsStudentAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyLmsStudentAddress$outboundSchema;
-  /** @deprecated use `PropertyLmsStudentAddress$Outbound` instead. */
-  export type Outbound = PropertyLmsStudentAddress$Outbound;
-}
-
 export function propertyLmsStudentAddressToJSON(
   propertyLmsStudentAddress: PropertyLmsStudentAddress,
 ): string {
@@ -95,7 +81,6 @@ export function propertyLmsStudentAddressToJSON(
     PropertyLmsStudentAddress$outboundSchema.parse(propertyLmsStudentAddress),
   );
 }
-
 export function propertyLmsStudentAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyLmsStudentAddress, SDKValidationError> {

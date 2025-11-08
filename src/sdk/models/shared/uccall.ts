@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyUcCallTelephone,
   PropertyUcCallTelephone$inboundSchema,
-  PropertyUcCallTelephone$Outbound,
-  PropertyUcCallTelephone$outboundSchema,
 } from "./propertyuccalltelephone.js";
 
 export type UcCall = {
@@ -57,62 +55,6 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       "user_id": "userId",
     });
   });
-
-/** @internal */
-export type UcCall$Outbound = {
-  contact_id?: string | undefined;
-  created_at?: string | undefined;
-  end_at?: string | undefined;
-  id?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  telephone?: PropertyUcCallTelephone$Outbound | undefined;
-  updated_at?: string | undefined;
-  user_id?: string | undefined;
-};
-
-/** @internal */
-export const UcCall$outboundSchema: z.ZodType<
-  UcCall$Outbound,
-  z.ZodTypeDef,
-  UcCall
-> = z.object({
-  contactId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  telephone: PropertyUcCallTelephone$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    contactId: "contact_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcCall$ {
-  /** @deprecated use `UcCall$inboundSchema` instead. */
-  export const inboundSchema = UcCall$inboundSchema;
-  /** @deprecated use `UcCall$outboundSchema` instead. */
-  export const outboundSchema = UcCall$outboundSchema;
-  /** @deprecated use `UcCall$Outbound` instead. */
-  export type Outbound = UcCall$Outbound;
-}
-
-export function ucCallToJSON(ucCall: UcCall): string {
-  return JSON.stringify(UcCall$outboundSchema.parse(ucCall));
-}
 
 export function ucCallFromJSON(
   jsonString: string,

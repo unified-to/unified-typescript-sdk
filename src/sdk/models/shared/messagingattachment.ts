@@ -37,7 +37,6 @@ export const MessagingAttachment$inboundSchema: z.ZodType<
     "message_id": "messageId",
   });
 });
-
 /** @internal */
 export type MessagingAttachment$Outbound = {
   content_identifier?: string | undefined;
@@ -69,19 +68,6 @@ export const MessagingAttachment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessagingAttachment$ {
-  /** @deprecated use `MessagingAttachment$inboundSchema` instead. */
-  export const inboundSchema = MessagingAttachment$inboundSchema;
-  /** @deprecated use `MessagingAttachment$outboundSchema` instead. */
-  export const outboundSchema = MessagingAttachment$outboundSchema;
-  /** @deprecated use `MessagingAttachment$Outbound` instead. */
-  export type Outbound = MessagingAttachment$Outbound;
-}
-
 export function messagingAttachmentToJSON(
   messagingAttachment: MessagingAttachment,
 ): string {
@@ -89,7 +75,6 @@ export function messagingAttachmentToJSON(
     MessagingAttachment$outboundSchema.parse(messagingAttachment),
   );
 }
-
 export function messagingAttachmentFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingAttachment, SDKValidationError> {

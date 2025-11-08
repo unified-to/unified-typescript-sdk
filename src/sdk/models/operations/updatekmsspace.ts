@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateKmsSpaceRequest = {
@@ -28,24 +25,6 @@ export type UpdateKmsSpaceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateKmsSpaceRequest$inboundSchema: z.ZodType<
-  UpdateKmsSpaceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsSpace: shared.KmsSpace$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsSpace": "kmsSpace",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateKmsSpaceRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateKmsSpaceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateKmsSpaceRequest$ {
-  /** @deprecated use `UpdateKmsSpaceRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateKmsSpaceRequest$inboundSchema;
-  /** @deprecated use `UpdateKmsSpaceRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateKmsSpaceRequest$outboundSchema;
-  /** @deprecated use `UpdateKmsSpaceRequest$Outbound` instead. */
-  export type Outbound = UpdateKmsSpaceRequest$Outbound;
-}
-
 export function updateKmsSpaceRequestToJSON(
   updateKmsSpaceRequest: UpdateKmsSpaceRequest,
 ): string {
   return JSON.stringify(
     UpdateKmsSpaceRequest$outboundSchema.parse(updateKmsSpaceRequest),
-  );
-}
-
-export function updateKmsSpaceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateKmsSpaceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateKmsSpaceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateKmsSpaceRequest' from JSON`,
   );
 }

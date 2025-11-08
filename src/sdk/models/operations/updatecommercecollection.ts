@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCommerceCollectionRequest = {
@@ -31,24 +28,6 @@ export type UpdateCommerceCollectionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateCommerceCollectionRequest$inboundSchema: z.ZodType<
-  UpdateCommerceCollectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceCollection: shared.CommerceCollection$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceCollection": "commerceCollection",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateCommerceCollectionRequest$Outbound = {
@@ -77,19 +56,6 @@ export const UpdateCommerceCollectionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCommerceCollectionRequest$ {
-  /** @deprecated use `UpdateCommerceCollectionRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateCommerceCollectionRequest$inboundSchema;
-  /** @deprecated use `UpdateCommerceCollectionRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateCommerceCollectionRequest$outboundSchema;
-  /** @deprecated use `UpdateCommerceCollectionRequest$Outbound` instead. */
-  export type Outbound = UpdateCommerceCollectionRequest$Outbound;
-}
-
 export function updateCommerceCollectionRequestToJSON(
   updateCommerceCollectionRequest: UpdateCommerceCollectionRequest,
 ): string {
@@ -97,15 +63,5 @@ export function updateCommerceCollectionRequestToJSON(
     UpdateCommerceCollectionRequest$outboundSchema.parse(
       updateCommerceCollectionRequest,
     ),
-  );
-}
-
-export function updateCommerceCollectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCommerceCollectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCommerceCollectionRequest' from JSON`,
   );
 }

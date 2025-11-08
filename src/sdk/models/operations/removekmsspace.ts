@@ -24,20 +24,6 @@ export type RemoveKmsSpaceResponse = {
 };
 
 /** @internal */
-export const RemoveKmsSpaceRequest$inboundSchema: z.ZodType<
-  RemoveKmsSpaceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveKmsSpaceRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveKmsSpaceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveKmsSpaceRequest$ {
-  /** @deprecated use `RemoveKmsSpaceRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveKmsSpaceRequest$inboundSchema;
-  /** @deprecated use `RemoveKmsSpaceRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveKmsSpaceRequest$outboundSchema;
-  /** @deprecated use `RemoveKmsSpaceRequest$Outbound` instead. */
-  export type Outbound = RemoveKmsSpaceRequest$Outbound;
-}
-
 export function removeKmsSpaceRequestToJSON(
   removeKmsSpaceRequest: RemoveKmsSpaceRequest,
 ): string {
   return JSON.stringify(
     RemoveKmsSpaceRequest$outboundSchema.parse(removeKmsSpaceRequest),
-  );
-}
-
-export function removeKmsSpaceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveKmsSpaceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveKmsSpaceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveKmsSpaceRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveKmsSpaceResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveKmsSpaceResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveKmsSpaceResponse$outboundSchema: z.ZodType<
-  RemoveKmsSpaceResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveKmsSpaceResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveKmsSpaceResponse$ {
-  /** @deprecated use `RemoveKmsSpaceResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveKmsSpaceResponse$inboundSchema;
-  /** @deprecated use `RemoveKmsSpaceResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveKmsSpaceResponse$outboundSchema;
-  /** @deprecated use `RemoveKmsSpaceResponse$Outbound` instead. */
-  export type Outbound = RemoveKmsSpaceResponse$Outbound;
-}
-
-export function removeKmsSpaceResponseToJSON(
-  removeKmsSpaceResponse: RemoveKmsSpaceResponse,
-): string {
-  return JSON.stringify(
-    RemoveKmsSpaceResponse$outboundSchema.parse(removeKmsSpaceResponse),
-  );
-}
 
 export function removeKmsSpaceResponseFromJSON(
   jsonString: string,

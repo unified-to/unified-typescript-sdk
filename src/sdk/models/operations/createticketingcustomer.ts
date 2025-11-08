@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateTicketingCustomerRequest = {
@@ -24,23 +21,6 @@ export type CreateTicketingCustomerRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateTicketingCustomerRequest$inboundSchema: z.ZodType<
-  CreateTicketingCustomerRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TicketingCustomer: shared.TicketingCustomer$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TicketingCustomer": "ticketingCustomer",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateTicketingCustomerRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateTicketingCustomerRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateTicketingCustomerRequest$ {
-  /** @deprecated use `CreateTicketingCustomerRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateTicketingCustomerRequest$inboundSchema;
-  /** @deprecated use `CreateTicketingCustomerRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateTicketingCustomerRequest$outboundSchema;
-  /** @deprecated use `CreateTicketingCustomerRequest$Outbound` instead. */
-  export type Outbound = CreateTicketingCustomerRequest$Outbound;
-}
-
 export function createTicketingCustomerRequestToJSON(
   createTicketingCustomerRequest: CreateTicketingCustomerRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createTicketingCustomerRequestToJSON(
     CreateTicketingCustomerRequest$outboundSchema.parse(
       createTicketingCustomerRequest,
     ),
-  );
-}
-
-export function createTicketingCustomerRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateTicketingCustomerRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateTicketingCustomerRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateTicketingCustomerRequest' from JSON`,
   );
 }

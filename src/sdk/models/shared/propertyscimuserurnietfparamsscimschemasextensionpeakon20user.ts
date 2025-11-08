@@ -45,7 +45,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
       ),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema:
   z.ZodType<
@@ -58,19 +57,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
     ),
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema:
@@ -95,7 +81,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inbou
       "Team": "team",
     });
   });
-
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$Outbound =
   {
@@ -127,22 +112,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outbo
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$outboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$Outbound` instead. */
-  export type Outbound =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$Outbound;
-}
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User:
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User,
@@ -152,7 +121,6 @@ export function propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserToJ
       .parse(propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User),
   );
 }
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserFromJSON(
   jsonString: string,
 ): SafeParseResult<

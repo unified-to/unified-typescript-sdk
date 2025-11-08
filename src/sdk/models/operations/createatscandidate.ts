@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsCandidateRequest = {
@@ -24,23 +21,6 @@ export type CreateAtsCandidateRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAtsCandidateRequest$inboundSchema: z.ZodType<
-  CreateAtsCandidateRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsCandidate: shared.AtsCandidate$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsCandidate": "atsCandidate",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAtsCandidateRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateAtsCandidateRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAtsCandidateRequest$ {
-  /** @deprecated use `CreateAtsCandidateRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAtsCandidateRequest$inboundSchema;
-  /** @deprecated use `CreateAtsCandidateRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAtsCandidateRequest$outboundSchema;
-  /** @deprecated use `CreateAtsCandidateRequest$Outbound` instead. */
-  export type Outbound = CreateAtsCandidateRequest$Outbound;
-}
-
 export function createAtsCandidateRequestToJSON(
   createAtsCandidateRequest: CreateAtsCandidateRequest,
 ): string {
   return JSON.stringify(
     CreateAtsCandidateRequest$outboundSchema.parse(createAtsCandidateRequest),
-  );
-}
-
-export function createAtsCandidateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAtsCandidateRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAtsCandidateRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAtsCandidateRequest' from JSON`,
   );
 }

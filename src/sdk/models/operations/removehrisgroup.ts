@@ -24,20 +24,6 @@ export type RemoveHrisGroupResponse = {
 };
 
 /** @internal */
-export const RemoveHrisGroupRequest$inboundSchema: z.ZodType<
-  RemoveHrisGroupRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveHrisGroupRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveHrisGroupRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisGroupRequest$ {
-  /** @deprecated use `RemoveHrisGroupRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisGroupRequest$inboundSchema;
-  /** @deprecated use `RemoveHrisGroupRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisGroupRequest$outboundSchema;
-  /** @deprecated use `RemoveHrisGroupRequest$Outbound` instead. */
-  export type Outbound = RemoveHrisGroupRequest$Outbound;
-}
-
 export function removeHrisGroupRequestToJSON(
   removeHrisGroupRequest: RemoveHrisGroupRequest,
 ): string {
   return JSON.stringify(
     RemoveHrisGroupRequest$outboundSchema.parse(removeHrisGroupRequest),
-  );
-}
-
-export function removeHrisGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveHrisGroupRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveHrisGroupRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveHrisGroupResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveHrisGroupResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveHrisGroupResponse$outboundSchema: z.ZodType<
-  RemoveHrisGroupResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveHrisGroupResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisGroupResponse$ {
-  /** @deprecated use `RemoveHrisGroupResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisGroupResponse$inboundSchema;
-  /** @deprecated use `RemoveHrisGroupResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisGroupResponse$outboundSchema;
-  /** @deprecated use `RemoveHrisGroupResponse$Outbound` instead. */
-  export type Outbound = RemoveHrisGroupResponse$Outbound;
-}
-
-export function removeHrisGroupResponseToJSON(
-  removeHrisGroupResponse: RemoveHrisGroupResponse,
-): string {
-  return JSON.stringify(
-    RemoveHrisGroupResponse$outboundSchema.parse(removeHrisGroupResponse),
-  );
-}
 
 export function removeHrisGroupResponseFromJSON(
   jsonString: string,

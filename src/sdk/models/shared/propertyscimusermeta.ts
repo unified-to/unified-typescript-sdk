@@ -38,7 +38,6 @@ export const PropertyScimUserMetaResourceType$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyScimUserMetaResourceType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyScimUserMetaResourceType$outboundSchema: z.ZodType<
   PropertyScimUserMetaResourceType,
@@ -48,17 +47,6 @@ export const PropertyScimUserMetaResourceType$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyScimUserMetaResourceType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserMetaResourceType$ {
-  /** @deprecated use `PropertyScimUserMetaResourceType$inboundSchema` instead. */
-  export const inboundSchema = PropertyScimUserMetaResourceType$inboundSchema;
-  /** @deprecated use `PropertyScimUserMetaResourceType$outboundSchema` instead. */
-  export const outboundSchema = PropertyScimUserMetaResourceType$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserMeta$inboundSchema: z.ZodType<
@@ -72,7 +60,6 @@ export const PropertyScimUserMeta$inboundSchema: z.ZodType<
   resourceType: PropertyScimUserMetaResourceType$inboundSchema.optional(),
   version: z.string().optional(),
 });
-
 /** @internal */
 export type PropertyScimUserMeta$Outbound = {
   created?: string | undefined;
@@ -95,19 +82,6 @@ export const PropertyScimUserMeta$outboundSchema: z.ZodType<
   version: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserMeta$ {
-  /** @deprecated use `PropertyScimUserMeta$inboundSchema` instead. */
-  export const inboundSchema = PropertyScimUserMeta$inboundSchema;
-  /** @deprecated use `PropertyScimUserMeta$outboundSchema` instead. */
-  export const outboundSchema = PropertyScimUserMeta$outboundSchema;
-  /** @deprecated use `PropertyScimUserMeta$Outbound` instead. */
-  export type Outbound = PropertyScimUserMeta$Outbound;
-}
-
 export function propertyScimUserMetaToJSON(
   propertyScimUserMeta: PropertyScimUserMeta,
 ): string {
@@ -115,7 +89,6 @@ export function propertyScimUserMetaToJSON(
     PropertyScimUserMeta$outboundSchema.parse(propertyScimUserMeta),
   );
 }
-
 export function propertyScimUserMetaFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyScimUserMeta, SDKValidationError> {

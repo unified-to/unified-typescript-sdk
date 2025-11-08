@@ -26,7 +26,6 @@ export const AtsApplicationAnswer$inboundSchema: z.ZodType<
     "question_id": "questionId",
   });
 });
-
 /** @internal */
 export type AtsApplicationAnswer$Outbound = {
   answers: Array<string>;
@@ -47,19 +46,6 @@ export const AtsApplicationAnswer$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsApplicationAnswer$ {
-  /** @deprecated use `AtsApplicationAnswer$inboundSchema` instead. */
-  export const inboundSchema = AtsApplicationAnswer$inboundSchema;
-  /** @deprecated use `AtsApplicationAnswer$outboundSchema` instead. */
-  export const outboundSchema = AtsApplicationAnswer$outboundSchema;
-  /** @deprecated use `AtsApplicationAnswer$Outbound` instead. */
-  export type Outbound = AtsApplicationAnswer$Outbound;
-}
-
 export function atsApplicationAnswerToJSON(
   atsApplicationAnswer: AtsApplicationAnswer,
 ): string {
@@ -67,7 +53,6 @@ export function atsApplicationAnswerToJSON(
     AtsApplicationAnswer$outboundSchema.parse(atsApplicationAnswer),
   );
 }
-
 export function atsApplicationAnswerFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsApplicationAnswer, SDKValidationError> {

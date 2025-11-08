@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateTaskTaskRequest = {
@@ -28,24 +25,6 @@ export type UpdateTaskTaskRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateTaskTaskRequest$inboundSchema: z.ZodType<
-  UpdateTaskTaskRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TaskTask: shared.TaskTask$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TaskTask": "taskTask",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateTaskTaskRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateTaskTaskRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateTaskTaskRequest$ {
-  /** @deprecated use `UpdateTaskTaskRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateTaskTaskRequest$inboundSchema;
-  /** @deprecated use `UpdateTaskTaskRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateTaskTaskRequest$outboundSchema;
-  /** @deprecated use `UpdateTaskTaskRequest$Outbound` instead. */
-  export type Outbound = UpdateTaskTaskRequest$Outbound;
-}
-
 export function updateTaskTaskRequestToJSON(
   updateTaskTaskRequest: UpdateTaskTaskRequest,
 ): string {
   return JSON.stringify(
     UpdateTaskTaskRequest$outboundSchema.parse(updateTaskTaskRequest),
-  );
-}
-
-export function updateTaskTaskRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateTaskTaskRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateTaskTaskRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateTaskTaskRequest' from JSON`,
   );
 }

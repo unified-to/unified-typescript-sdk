@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateGenaiEmbeddingRequest = {
@@ -24,23 +21,6 @@ export type CreateGenaiEmbeddingRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateGenaiEmbeddingRequest$inboundSchema: z.ZodType<
-  CreateGenaiEmbeddingRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  GenaiEmbedding: shared.GenaiEmbedding$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "GenaiEmbedding": "genaiEmbedding",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateGenaiEmbeddingRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateGenaiEmbeddingRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateGenaiEmbeddingRequest$ {
-  /** @deprecated use `CreateGenaiEmbeddingRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateGenaiEmbeddingRequest$inboundSchema;
-  /** @deprecated use `CreateGenaiEmbeddingRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateGenaiEmbeddingRequest$outboundSchema;
-  /** @deprecated use `CreateGenaiEmbeddingRequest$Outbound` instead. */
-  export type Outbound = CreateGenaiEmbeddingRequest$Outbound;
-}
-
 export function createGenaiEmbeddingRequestToJSON(
   createGenaiEmbeddingRequest: CreateGenaiEmbeddingRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createGenaiEmbeddingRequestToJSON(
     CreateGenaiEmbeddingRequest$outboundSchema.parse(
       createGenaiEmbeddingRequest,
     ),
-  );
-}
-
-export function createGenaiEmbeddingRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateGenaiEmbeddingRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateGenaiEmbeddingRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateGenaiEmbeddingRequest' from JSON`,
   );
 }

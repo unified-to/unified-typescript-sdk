@@ -94,7 +94,6 @@ export const AccountingInvoicePaymentCollectionMethod$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingInvoicePaymentCollectionMethod),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingInvoicePaymentCollectionMethod$outboundSchema: z.ZodType<
   AccountingInvoicePaymentCollectionMethod,
@@ -104,19 +103,6 @@ export const AccountingInvoicePaymentCollectionMethod$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingInvoicePaymentCollectionMethod),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingInvoicePaymentCollectionMethod$ {
-  /** @deprecated use `AccountingInvoicePaymentCollectionMethod$inboundSchema` instead. */
-  export const inboundSchema =
-    AccountingInvoicePaymentCollectionMethod$inboundSchema;
-  /** @deprecated use `AccountingInvoicePaymentCollectionMethod$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountingInvoicePaymentCollectionMethod$outboundSchema;
-}
 
 /** @internal */
 export const AccountingInvoiceStatus$inboundSchema: z.ZodType<
@@ -128,7 +114,6 @@ export const AccountingInvoiceStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingInvoiceStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingInvoiceStatus$outboundSchema: z.ZodType<
   AccountingInvoiceStatus,
@@ -138,17 +123,6 @@ export const AccountingInvoiceStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingInvoiceStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingInvoiceStatus$ {
-  /** @deprecated use `AccountingInvoiceStatus$inboundSchema` instead. */
-  export const inboundSchema = AccountingInvoiceStatus$inboundSchema;
-  /** @deprecated use `AccountingInvoiceStatus$outboundSchema` instead. */
-  export const outboundSchema = AccountingInvoiceStatus$outboundSchema;
-}
 
 /** @internal */
 export const AccountingInvoiceType$inboundSchema: z.ZodType<
@@ -160,7 +134,6 @@ export const AccountingInvoiceType$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingInvoiceType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingInvoiceType$outboundSchema: z.ZodType<
   AccountingInvoiceType,
@@ -170,17 +143,6 @@ export const AccountingInvoiceType$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingInvoiceType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingInvoiceType$ {
-  /** @deprecated use `AccountingInvoiceType$inboundSchema` instead. */
-  export const inboundSchema = AccountingInvoiceType$inboundSchema;
-  /** @deprecated use `AccountingInvoiceType$outboundSchema` instead. */
-  export const outboundSchema = AccountingInvoiceType$outboundSchema;
-}
 
 /** @internal */
 export const AccountingInvoice$inboundSchema: z.ZodType<
@@ -248,7 +210,6 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingInvoice$Outbound = {
   attachments?: Array<AccountingAttachment$Outbound> | undefined;
@@ -339,19 +300,6 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingInvoice$ {
-  /** @deprecated use `AccountingInvoice$inboundSchema` instead. */
-  export const inboundSchema = AccountingInvoice$inboundSchema;
-  /** @deprecated use `AccountingInvoice$outboundSchema` instead. */
-  export const outboundSchema = AccountingInvoice$outboundSchema;
-  /** @deprecated use `AccountingInvoice$Outbound` instead. */
-  export type Outbound = AccountingInvoice$Outbound;
-}
-
 export function accountingInvoiceToJSON(
   accountingInvoice: AccountingInvoice,
 ): string {
@@ -359,7 +307,6 @@ export function accountingInvoiceToJSON(
     AccountingInvoice$outboundSchema.parse(accountingInvoice),
   );
 }
-
 export function accountingInvoiceFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingInvoice, SDKValidationError> {

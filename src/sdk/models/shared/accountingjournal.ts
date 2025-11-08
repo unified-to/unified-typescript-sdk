@@ -60,7 +60,6 @@ export const AccountingJournal$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingJournal$Outbound = {
   created_at?: string | undefined;
@@ -103,19 +102,6 @@ export const AccountingJournal$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingJournal$ {
-  /** @deprecated use `AccountingJournal$inboundSchema` instead. */
-  export const inboundSchema = AccountingJournal$inboundSchema;
-  /** @deprecated use `AccountingJournal$outboundSchema` instead. */
-  export const outboundSchema = AccountingJournal$outboundSchema;
-  /** @deprecated use `AccountingJournal$Outbound` instead. */
-  export type Outbound = AccountingJournal$Outbound;
-}
-
 export function accountingJournalToJSON(
   accountingJournal: AccountingJournal,
 ): string {
@@ -123,7 +109,6 @@ export function accountingJournalToJSON(
     AccountingJournal$outboundSchema.parse(accountingJournal),
   );
 }
-
 export function accountingJournalFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingJournal, SDKValidationError> {

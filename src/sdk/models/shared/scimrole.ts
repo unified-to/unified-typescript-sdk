@@ -25,7 +25,6 @@ export const ScimRole$inboundSchema: z.ZodType<
   type: z.string().optional(),
   value: z.string(),
 });
-
 /** @internal */
 export type ScimRole$Outbound = {
   display?: string | undefined;
@@ -46,23 +45,9 @@ export const ScimRole$outboundSchema: z.ZodType<
   value: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimRole$ {
-  /** @deprecated use `ScimRole$inboundSchema` instead. */
-  export const inboundSchema = ScimRole$inboundSchema;
-  /** @deprecated use `ScimRole$outboundSchema` instead. */
-  export const outboundSchema = ScimRole$outboundSchema;
-  /** @deprecated use `ScimRole$Outbound` instead. */
-  export type Outbound = ScimRole$Outbound;
-}
-
 export function scimRoleToJSON(scimRole: ScimRole): string {
   return JSON.stringify(ScimRole$outboundSchema.parse(scimRole));
 }
-
 export function scimRoleFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimRole, SDKValidationError> {

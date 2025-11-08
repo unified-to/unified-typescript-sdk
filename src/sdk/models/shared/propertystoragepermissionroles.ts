@@ -28,7 +28,6 @@ export const PropertyStoragePermissionRoles$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyStoragePermissionRoles),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyStoragePermissionRoles$outboundSchema: z.ZodType<
   PropertyStoragePermissionRoles,
@@ -38,14 +37,3 @@ export const PropertyStoragePermissionRoles$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyStoragePermissionRoles),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyStoragePermissionRoles$ {
-  /** @deprecated use `PropertyStoragePermissionRoles$inboundSchema` instead. */
-  export const inboundSchema = PropertyStoragePermissionRoles$inboundSchema;
-  /** @deprecated use `PropertyStoragePermissionRoles$outboundSchema` instead. */
-  export const outboundSchema = PropertyStoragePermissionRoles$outboundSchema;
-}

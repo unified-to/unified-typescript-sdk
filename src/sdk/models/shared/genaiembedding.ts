@@ -52,7 +52,6 @@ export const EncondingFormat$inboundSchema: z.ZodType<
     z.nativeEnum(EncondingFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const EncondingFormat$outboundSchema: z.ZodType<
   EncondingFormat,
@@ -62,17 +61,6 @@ export const EncondingFormat$outboundSchema: z.ZodType<
   z.nativeEnum(EncondingFormat),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EncondingFormat$ {
-  /** @deprecated use `EncondingFormat$inboundSchema` instead. */
-  export const inboundSchema = EncondingFormat$inboundSchema;
-  /** @deprecated use `EncondingFormat$outboundSchema` instead. */
-  export const outboundSchema = EncondingFormat$outboundSchema;
-}
 
 /** @internal */
 export const GenaiEmbedding$inboundSchema: z.ZodType<
@@ -98,7 +86,6 @@ export const GenaiEmbedding$inboundSchema: z.ZodType<
     "tokens_used": "tokensUsed",
   });
 });
-
 /** @internal */
 export type GenaiEmbedding$Outbound = {
   content?: Array<GenaiEmbeddingContent$Outbound> | undefined;
@@ -138,23 +125,9 @@ export const GenaiEmbedding$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GenaiEmbedding$ {
-  /** @deprecated use `GenaiEmbedding$inboundSchema` instead. */
-  export const inboundSchema = GenaiEmbedding$inboundSchema;
-  /** @deprecated use `GenaiEmbedding$outboundSchema` instead. */
-  export const outboundSchema = GenaiEmbedding$outboundSchema;
-  /** @deprecated use `GenaiEmbedding$Outbound` instead. */
-  export type Outbound = GenaiEmbedding$Outbound;
-}
-
 export function genaiEmbeddingToJSON(genaiEmbedding: GenaiEmbedding): string {
   return JSON.stringify(GenaiEmbedding$outboundSchema.parse(genaiEmbedding));
 }
-
 export function genaiEmbeddingFromJSON(
   jsonString: string,
 ): SafeParseResult<GenaiEmbedding, SDKValidationError> {

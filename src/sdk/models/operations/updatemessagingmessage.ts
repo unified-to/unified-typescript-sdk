@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateMessagingMessageRequest = {
@@ -28,24 +25,6 @@ export type UpdateMessagingMessageRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateMessagingMessageRequest$inboundSchema: z.ZodType<
-  UpdateMessagingMessageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  MessagingMessage: shared.MessagingMessage$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "MessagingMessage": "messagingMessage",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateMessagingMessageRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateMessagingMessageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateMessagingMessageRequest$ {
-  /** @deprecated use `UpdateMessagingMessageRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateMessagingMessageRequest$inboundSchema;
-  /** @deprecated use `UpdateMessagingMessageRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateMessagingMessageRequest$outboundSchema;
-  /** @deprecated use `UpdateMessagingMessageRequest$Outbound` instead. */
-  export type Outbound = UpdateMessagingMessageRequest$Outbound;
-}
-
 export function updateMessagingMessageRequestToJSON(
   updateMessagingMessageRequest: UpdateMessagingMessageRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateMessagingMessageRequestToJSON(
     UpdateMessagingMessageRequest$outboundSchema.parse(
       updateMessagingMessageRequest,
     ),
-  );
-}
-
-export function updateMessagingMessageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateMessagingMessageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateMessagingMessageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateMessagingMessageRequest' from JSON`,
   );
 }

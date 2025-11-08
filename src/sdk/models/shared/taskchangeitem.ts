@@ -24,41 +24,6 @@ export const TaskChangeItem$inboundSchema: z.ZodType<
   to: z.string().optional(),
 });
 
-/** @internal */
-export type TaskChangeItem$Outbound = {
-  field: string;
-  from?: string | undefined;
-  to?: string | undefined;
-};
-
-/** @internal */
-export const TaskChangeItem$outboundSchema: z.ZodType<
-  TaskChangeItem$Outbound,
-  z.ZodTypeDef,
-  TaskChangeItem
-> = z.object({
-  field: z.string(),
-  from: z.string().optional(),
-  to: z.string().optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskChangeItem$ {
-  /** @deprecated use `TaskChangeItem$inboundSchema` instead. */
-  export const inboundSchema = TaskChangeItem$inboundSchema;
-  /** @deprecated use `TaskChangeItem$outboundSchema` instead. */
-  export const outboundSchema = TaskChangeItem$outboundSchema;
-  /** @deprecated use `TaskChangeItem$Outbound` instead. */
-  export type Outbound = TaskChangeItem$Outbound;
-}
-
-export function taskChangeItemToJSON(taskChangeItem: TaskChangeItem): string {
-  return JSON.stringify(TaskChangeItem$outboundSchema.parse(taskChangeItem));
-}
-
 export function taskChangeItemFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskChangeItem, SDKValidationError> {

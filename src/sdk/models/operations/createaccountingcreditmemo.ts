@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingCreditmemoRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingCreditmemoRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingCreditmemoRequest$inboundSchema: z.ZodType<
-  CreateAccountingCreditmemoRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingCreditmemo: shared.AccountingCreditmemo$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingCreditmemo": "accountingCreditmemo",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingCreditmemoRequest$Outbound = {
@@ -67,20 +47,6 @@ export const CreateAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingCreditmemoRequest$ {
-  /** @deprecated use `CreateAccountingCreditmemoRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAccountingCreditmemoRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingCreditmemoRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CreateAccountingCreditmemoRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingCreditmemoRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingCreditmemoRequest$Outbound;
-}
-
 export function createAccountingCreditmemoRequestToJSON(
   createAccountingCreditmemoRequest: CreateAccountingCreditmemoRequest,
 ): string {
@@ -88,15 +54,5 @@ export function createAccountingCreditmemoRequestToJSON(
     CreateAccountingCreditmemoRequest$outboundSchema.parse(
       createAccountingCreditmemoRequest,
     ),
-  );
-}
-
-export function createAccountingCreditmemoRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingCreditmemoRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAccountingCreditmemoRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingCreditmemoRequest' from JSON`,
   );
 }

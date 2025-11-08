@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetHrisGroupRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetHrisGroupRequest$inboundSchema: z.ZodType<
-  GetHrisGroupRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetHrisGroupRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetHrisGroupRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetHrisGroupRequest$ {
-  /** @deprecated use `GetHrisGroupRequest$inboundSchema` instead. */
-  export const inboundSchema = GetHrisGroupRequest$inboundSchema;
-  /** @deprecated use `GetHrisGroupRequest$outboundSchema` instead. */
-  export const outboundSchema = GetHrisGroupRequest$outboundSchema;
-  /** @deprecated use `GetHrisGroupRequest$Outbound` instead. */
-  export type Outbound = GetHrisGroupRequest$Outbound;
-}
-
 export function getHrisGroupRequestToJSON(
   getHrisGroupRequest: GetHrisGroupRequest,
 ): string {
   return JSON.stringify(
     GetHrisGroupRequest$outboundSchema.parse(getHrisGroupRequest),
-  );
-}
-
-export function getHrisGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetHrisGroupRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetHrisGroupRequest' from JSON`,
   );
 }

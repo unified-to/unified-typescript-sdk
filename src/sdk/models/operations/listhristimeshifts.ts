@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListHrisTimeshiftsRequest = {
   /**
@@ -58,40 +55,6 @@ export type ListHrisTimeshiftsRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListHrisTimeshiftsRequest$inboundSchema: z.ZodType<
-  ListHrisTimeshiftsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  company_id: z.string().optional(),
-  connection_id: z.string(),
-  end_le: z.string().optional(),
-  end_lt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  location_id: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  start_gte: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "connection_id": "connectionId",
-    "end_le": "endLe",
-    "end_lt": "endLt",
-    "location_id": "locationId",
-    "start_gte": "startGte",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListHrisTimeshiftsRequest$Outbound = {
@@ -146,33 +109,10 @@ export const ListHrisTimeshiftsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListHrisTimeshiftsRequest$ {
-  /** @deprecated use `ListHrisTimeshiftsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListHrisTimeshiftsRequest$inboundSchema;
-  /** @deprecated use `ListHrisTimeshiftsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListHrisTimeshiftsRequest$outboundSchema;
-  /** @deprecated use `ListHrisTimeshiftsRequest$Outbound` instead. */
-  export type Outbound = ListHrisTimeshiftsRequest$Outbound;
-}
-
 export function listHrisTimeshiftsRequestToJSON(
   listHrisTimeshiftsRequest: ListHrisTimeshiftsRequest,
 ): string {
   return JSON.stringify(
     ListHrisTimeshiftsRequest$outboundSchema.parse(listHrisTimeshiftsRequest),
-  );
-}
-
-export function listHrisTimeshiftsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListHrisTimeshiftsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListHrisTimeshiftsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListHrisTimeshiftsRequest' from JSON`,
   );
 }

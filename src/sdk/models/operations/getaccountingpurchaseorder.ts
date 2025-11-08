@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingPurchaseorderRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingPurchaseorderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingPurchaseorderRequest$inboundSchema: z.ZodType<
-  GetAccountingPurchaseorderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingPurchaseorderRequest$Outbound = {
@@ -67,20 +48,6 @@ export const GetAccountingPurchaseorderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingPurchaseorderRequest$ {
-  /** @deprecated use `GetAccountingPurchaseorderRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingPurchaseorderRequest$inboundSchema;
-  /** @deprecated use `GetAccountingPurchaseorderRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GetAccountingPurchaseorderRequest$outboundSchema;
-  /** @deprecated use `GetAccountingPurchaseorderRequest$Outbound` instead. */
-  export type Outbound = GetAccountingPurchaseorderRequest$Outbound;
-}
-
 export function getAccountingPurchaseorderRequestToJSON(
   getAccountingPurchaseorderRequest: GetAccountingPurchaseorderRequest,
 ): string {
@@ -88,15 +55,5 @@ export function getAccountingPurchaseorderRequestToJSON(
     GetAccountingPurchaseorderRequest$outboundSchema.parse(
       getAccountingPurchaseorderRequest,
     ),
-  );
-}
-
-export function getAccountingPurchaseorderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingPurchaseorderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingPurchaseorderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingPurchaseorderRequest' from JSON`,
   );
 }

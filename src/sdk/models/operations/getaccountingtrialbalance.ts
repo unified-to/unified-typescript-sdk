@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingTrialbalanceRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingTrialbalanceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingTrialbalanceRequest$inboundSchema: z.ZodType<
-  GetAccountingTrialbalanceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingTrialbalanceRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingTrialbalanceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingTrialbalanceRequest$ {
-  /** @deprecated use `GetAccountingTrialbalanceRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingTrialbalanceRequest$inboundSchema;
-  /** @deprecated use `GetAccountingTrialbalanceRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingTrialbalanceRequest$outboundSchema;
-  /** @deprecated use `GetAccountingTrialbalanceRequest$Outbound` instead. */
-  export type Outbound = GetAccountingTrialbalanceRequest$Outbound;
-}
-
 export function getAccountingTrialbalanceRequestToJSON(
   getAccountingTrialbalanceRequest: GetAccountingTrialbalanceRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingTrialbalanceRequestToJSON(
     GetAccountingTrialbalanceRequest$outboundSchema.parse(
       getAccountingTrialbalanceRequest,
     ),
-  );
-}
-
-export function getAccountingTrialbalanceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingTrialbalanceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingTrialbalanceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingTrialbalanceRequest' from JSON`,
   );
 }

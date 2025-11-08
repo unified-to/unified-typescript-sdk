@@ -48,7 +48,6 @@ export const AtsJobQuestionType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsJobQuestionType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsJobQuestionType$outboundSchema: z.ZodType<
   AtsJobQuestionType,
@@ -58,17 +57,6 @@ export const AtsJobQuestionType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsJobQuestionType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobQuestionType$ {
-  /** @deprecated use `AtsJobQuestionType$inboundSchema` instead. */
-  export const inboundSchema = AtsJobQuestionType$inboundSchema;
-  /** @deprecated use `AtsJobQuestionType$outboundSchema` instead. */
-  export const outboundSchema = AtsJobQuestionType$outboundSchema;
-}
 
 /** @internal */
 export const AtsJobQuestion$inboundSchema: z.ZodType<
@@ -84,7 +72,6 @@ export const AtsJobQuestion$inboundSchema: z.ZodType<
   required: z.boolean().optional(),
   type: AtsJobQuestionType$inboundSchema,
 });
-
 /** @internal */
 export type AtsJobQuestion$Outbound = {
   description?: string | undefined;
@@ -111,23 +98,9 @@ export const AtsJobQuestion$outboundSchema: z.ZodType<
   type: AtsJobQuestionType$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobQuestion$ {
-  /** @deprecated use `AtsJobQuestion$inboundSchema` instead. */
-  export const inboundSchema = AtsJobQuestion$inboundSchema;
-  /** @deprecated use `AtsJobQuestion$outboundSchema` instead. */
-  export const outboundSchema = AtsJobQuestion$outboundSchema;
-  /** @deprecated use `AtsJobQuestion$Outbound` instead. */
-  export type Outbound = AtsJobQuestion$Outbound;
-}
-
 export function atsJobQuestionToJSON(atsJobQuestion: AtsJobQuestion): string {
   return JSON.stringify(AtsJobQuestion$outboundSchema.parse(atsJobQuestion));
 }
-
 export function atsJobQuestionFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsJobQuestion, SDKValidationError> {

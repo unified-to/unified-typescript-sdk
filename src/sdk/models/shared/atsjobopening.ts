@@ -37,7 +37,6 @@ export const AtsJobOpeningStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AtsJobOpeningStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsJobOpeningStatus$outboundSchema: z.ZodType<
   AtsJobOpeningStatus,
@@ -47,17 +46,6 @@ export const AtsJobOpeningStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AtsJobOpeningStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobOpeningStatus$ {
-  /** @deprecated use `AtsJobOpeningStatus$inboundSchema` instead. */
-  export const inboundSchema = AtsJobOpeningStatus$inboundSchema;
-  /** @deprecated use `AtsJobOpeningStatus$outboundSchema` instead. */
-  export const outboundSchema = AtsJobOpeningStatus$outboundSchema;
-}
 
 /** @internal */
 export const AtsJobOpening$inboundSchema: z.ZodType<
@@ -80,7 +68,6 @@ export const AtsJobOpening$inboundSchema: z.ZodType<
     "opened_at": "openedAt",
   });
 });
-
 /** @internal */
 export type AtsJobOpening$Outbound = {
   application_id?: string | undefined;
@@ -110,23 +97,9 @@ export const AtsJobOpening$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobOpening$ {
-  /** @deprecated use `AtsJobOpening$inboundSchema` instead. */
-  export const inboundSchema = AtsJobOpening$inboundSchema;
-  /** @deprecated use `AtsJobOpening$outboundSchema` instead. */
-  export const outboundSchema = AtsJobOpening$outboundSchema;
-  /** @deprecated use `AtsJobOpening$Outbound` instead. */
-  export type Outbound = AtsJobOpening$Outbound;
-}
-
 export function atsJobOpeningToJSON(atsJobOpening: AtsJobOpening): string {
   return JSON.stringify(AtsJobOpening$outboundSchema.parse(atsJobOpening));
 }
-
 export function atsJobOpeningFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsJobOpening, SDKValidationError> {

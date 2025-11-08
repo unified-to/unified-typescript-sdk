@@ -49,7 +49,6 @@ export const HrisGroupType$inboundSchema: z.ZodType<
     z.nativeEnum(HrisGroupType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisGroupType$outboundSchema: z.ZodType<
   HrisGroupType,
@@ -59,17 +58,6 @@ export const HrisGroupType$outboundSchema: z.ZodType<
   z.nativeEnum(HrisGroupType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisGroupType$ {
-  /** @deprecated use `HrisGroupType$inboundSchema` instead. */
-  export const inboundSchema = HrisGroupType$inboundSchema;
-  /** @deprecated use `HrisGroupType$outboundSchema` instead. */
-  export const outboundSchema = HrisGroupType$outboundSchema;
-}
 
 /** @internal */
 export const HrisGroup$inboundSchema: z.ZodType<
@@ -102,7 +90,6 @@ export const HrisGroup$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type HrisGroup$Outbound = {
   company_id?: string | undefined;
@@ -149,23 +136,9 @@ export const HrisGroup$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisGroup$ {
-  /** @deprecated use `HrisGroup$inboundSchema` instead. */
-  export const inboundSchema = HrisGroup$inboundSchema;
-  /** @deprecated use `HrisGroup$outboundSchema` instead. */
-  export const outboundSchema = HrisGroup$outboundSchema;
-  /** @deprecated use `HrisGroup$Outbound` instead. */
-  export type Outbound = HrisGroup$Outbound;
-}
-
 export function hrisGroupToJSON(hrisGroup: HrisGroup): string {
   return JSON.stringify(HrisGroup$outboundSchema.parse(hrisGroup));
 }
-
 export function hrisGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisGroup, SDKValidationError> {

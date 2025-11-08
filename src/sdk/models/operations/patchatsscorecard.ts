@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsScorecardRequest = {
@@ -28,24 +25,6 @@ export type PatchAtsScorecardRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAtsScorecardRequest$inboundSchema: z.ZodType<
-  PatchAtsScorecardRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsScorecard: shared.AtsScorecard$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsScorecard": "atsScorecard",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAtsScorecardRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchAtsScorecardRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAtsScorecardRequest$ {
-  /** @deprecated use `PatchAtsScorecardRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAtsScorecardRequest$inboundSchema;
-  /** @deprecated use `PatchAtsScorecardRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAtsScorecardRequest$outboundSchema;
-  /** @deprecated use `PatchAtsScorecardRequest$Outbound` instead. */
-  export type Outbound = PatchAtsScorecardRequest$Outbound;
-}
-
 export function patchAtsScorecardRequestToJSON(
   patchAtsScorecardRequest: PatchAtsScorecardRequest,
 ): string {
   return JSON.stringify(
     PatchAtsScorecardRequest$outboundSchema.parse(patchAtsScorecardRequest),
-  );
-}
-
-export function patchAtsScorecardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAtsScorecardRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAtsScorecardRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAtsScorecardRequest' from JSON`,
   );
 }

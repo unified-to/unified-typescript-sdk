@@ -40,7 +40,6 @@ export const PropertyCrmLeadAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyCrmLeadAddress$Outbound = {
   address1?: string | undefined;
@@ -75,19 +74,6 @@ export const PropertyCrmLeadAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmLeadAddress$ {
-  /** @deprecated use `PropertyCrmLeadAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmLeadAddress$inboundSchema;
-  /** @deprecated use `PropertyCrmLeadAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmLeadAddress$outboundSchema;
-  /** @deprecated use `PropertyCrmLeadAddress$Outbound` instead. */
-  export type Outbound = PropertyCrmLeadAddress$Outbound;
-}
-
 export function propertyCrmLeadAddressToJSON(
   propertyCrmLeadAddress: PropertyCrmLeadAddress,
 ): string {
@@ -95,7 +81,6 @@ export function propertyCrmLeadAddressToJSON(
     PropertyCrmLeadAddress$outboundSchema.parse(propertyCrmLeadAddress),
   );
 }
-
 export function propertyCrmLeadAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmLeadAddress, SDKValidationError> {

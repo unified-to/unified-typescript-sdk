@@ -42,7 +42,6 @@ export const AccountingTaxrate$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingTaxrate$Outbound = {
   created_at?: string | undefined;
@@ -77,19 +76,6 @@ export const AccountingTaxrate$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTaxrate$ {
-  /** @deprecated use `AccountingTaxrate$inboundSchema` instead. */
-  export const inboundSchema = AccountingTaxrate$inboundSchema;
-  /** @deprecated use `AccountingTaxrate$outboundSchema` instead. */
-  export const outboundSchema = AccountingTaxrate$outboundSchema;
-  /** @deprecated use `AccountingTaxrate$Outbound` instead. */
-  export type Outbound = AccountingTaxrate$Outbound;
-}
-
 export function accountingTaxrateToJSON(
   accountingTaxrate: AccountingTaxrate,
 ): string {
@@ -97,7 +83,6 @@ export function accountingTaxrateToJSON(
     AccountingTaxrate$outboundSchema.parse(accountingTaxrate),
   );
 }
-
 export function accountingTaxrateFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingTaxrate, SDKValidationError> {

@@ -24,20 +24,6 @@ export type RemoveTicketingCategoryResponse = {
 };
 
 /** @internal */
-export const RemoveTicketingCategoryRequest$inboundSchema: z.ZodType<
-  RemoveTicketingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveTicketingCategoryRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveTicketingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTicketingCategoryRequest$ {
-  /** @deprecated use `RemoveTicketingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveTicketingCategoryRequest$inboundSchema;
-  /** @deprecated use `RemoveTicketingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveTicketingCategoryRequest$outboundSchema;
-  /** @deprecated use `RemoveTicketingCategoryRequest$Outbound` instead. */
-  export type Outbound = RemoveTicketingCategoryRequest$Outbound;
-}
-
 export function removeTicketingCategoryRequestToJSON(
   removeTicketingCategoryRequest: RemoveTicketingCategoryRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeTicketingCategoryRequestToJSON(
     RemoveTicketingCategoryRequest$outboundSchema.parse(
       removeTicketingCategoryRequest,
     ),
-  );
-}
-
-export function removeTicketingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveTicketingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveTicketingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveTicketingCategoryRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveTicketingCategoryResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveTicketingCategoryResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveTicketingCategoryResponse$outboundSchema: z.ZodType<
-  RemoveTicketingCategoryResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveTicketingCategoryResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTicketingCategoryResponse$ {
-  /** @deprecated use `RemoveTicketingCategoryResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveTicketingCategoryResponse$inboundSchema;
-  /** @deprecated use `RemoveTicketingCategoryResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveTicketingCategoryResponse$outboundSchema;
-  /** @deprecated use `RemoveTicketingCategoryResponse$Outbound` instead. */
-  export type Outbound = RemoveTicketingCategoryResponse$Outbound;
-}
-
-export function removeTicketingCategoryResponseToJSON(
-  removeTicketingCategoryResponse: RemoveTicketingCategoryResponse,
-): string {
-  return JSON.stringify(
-    RemoveTicketingCategoryResponse$outboundSchema.parse(
-      removeTicketingCategoryResponse,
-    ),
-  );
-}
 
 export function removeTicketingCategoryResponseFromJSON(
   jsonString: string,

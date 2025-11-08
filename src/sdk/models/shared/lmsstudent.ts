@@ -68,7 +68,6 @@ export const LmsStudent$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type LmsStudent$Outbound = {
   address?: PropertyLmsStudentAddress$Outbound | undefined;
@@ -111,23 +110,9 @@ export const LmsStudent$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsStudent$ {
-  /** @deprecated use `LmsStudent$inboundSchema` instead. */
-  export const inboundSchema = LmsStudent$inboundSchema;
-  /** @deprecated use `LmsStudent$outboundSchema` instead. */
-  export const outboundSchema = LmsStudent$outboundSchema;
-  /** @deprecated use `LmsStudent$Outbound` instead. */
-  export type Outbound = LmsStudent$Outbound;
-}
-
 export function lmsStudentToJSON(lmsStudent: LmsStudent): string {
   return JSON.stringify(LmsStudent$outboundSchema.parse(lmsStudent));
 }
-
 export function lmsStudentFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsStudent, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingTaxratesRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListAccountingTaxratesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAccountingTaxratesRequest$inboundSchema: z.ZodType<
-  ListAccountingTaxratesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  org_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "org_id": "orgId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAccountingTaxratesRequest$Outbound = {
@@ -101,19 +74,6 @@ export const ListAccountingTaxratesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountingTaxratesRequest$ {
-  /** @deprecated use `ListAccountingTaxratesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAccountingTaxratesRequest$inboundSchema;
-  /** @deprecated use `ListAccountingTaxratesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAccountingTaxratesRequest$outboundSchema;
-  /** @deprecated use `ListAccountingTaxratesRequest$Outbound` instead. */
-  export type Outbound = ListAccountingTaxratesRequest$Outbound;
-}
-
 export function listAccountingTaxratesRequestToJSON(
   listAccountingTaxratesRequest: ListAccountingTaxratesRequest,
 ): string {
@@ -121,15 +81,5 @@ export function listAccountingTaxratesRequestToJSON(
     ListAccountingTaxratesRequest$outboundSchema.parse(
       listAccountingTaxratesRequest,
     ),
-  );
-}
-
-export function listAccountingTaxratesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAccountingTaxratesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAccountingTaxratesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAccountingTaxratesRequest' from JSON`,
   );
 }

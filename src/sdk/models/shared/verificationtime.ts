@@ -30,47 +30,6 @@ export const VerificationTime$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type VerificationTime$Outbound = {
-  milliseconds?: number | undefined;
-  valid_regions?: Array<string> | undefined;
-};
-
-/** @internal */
-export const VerificationTime$outboundSchema: z.ZodType<
-  VerificationTime$Outbound,
-  z.ZodTypeDef,
-  VerificationTime
-> = z.object({
-  milliseconds: z.number().optional(),
-  validRegions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    validRegions: "valid_regions",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationTime$ {
-  /** @deprecated use `VerificationTime$inboundSchema` instead. */
-  export const inboundSchema = VerificationTime$inboundSchema;
-  /** @deprecated use `VerificationTime$outboundSchema` instead. */
-  export const outboundSchema = VerificationTime$outboundSchema;
-  /** @deprecated use `VerificationTime$Outbound` instead. */
-  export type Outbound = VerificationTime$Outbound;
-}
-
-export function verificationTimeToJSON(
-  verificationTime: VerificationTime,
-): string {
-  return JSON.stringify(
-    VerificationTime$outboundSchema.parse(verificationTime),
-  );
-}
-
 export function verificationTimeFromJSON(
   jsonString: string,
 ): SafeParseResult<VerificationTime, SDKValidationError> {

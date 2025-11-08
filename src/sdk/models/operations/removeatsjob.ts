@@ -24,20 +24,6 @@ export type RemoveAtsJobResponse = {
 };
 
 /** @internal */
-export const RemoveAtsJobRequest$inboundSchema: z.ZodType<
-  RemoveAtsJobRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveAtsJobRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveAtsJobRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAtsJobRequest$ {
-  /** @deprecated use `RemoveAtsJobRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveAtsJobRequest$inboundSchema;
-  /** @deprecated use `RemoveAtsJobRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveAtsJobRequest$outboundSchema;
-  /** @deprecated use `RemoveAtsJobRequest$Outbound` instead. */
-  export type Outbound = RemoveAtsJobRequest$Outbound;
-}
-
 export function removeAtsJobRequestToJSON(
   removeAtsJobRequest: RemoveAtsJobRequest,
 ): string {
   return JSON.stringify(
     RemoveAtsJobRequest$outboundSchema.parse(removeAtsJobRequest),
-  );
-}
-
-export function removeAtsJobRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveAtsJobRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveAtsJobRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveAtsJobRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveAtsJobResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveAtsJobResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveAtsJobResponse$outboundSchema: z.ZodType<
-  RemoveAtsJobResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveAtsJobResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAtsJobResponse$ {
-  /** @deprecated use `RemoveAtsJobResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveAtsJobResponse$inboundSchema;
-  /** @deprecated use `RemoveAtsJobResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveAtsJobResponse$outboundSchema;
-  /** @deprecated use `RemoveAtsJobResponse$Outbound` instead. */
-  export type Outbound = RemoveAtsJobResponse$Outbound;
-}
-
-export function removeAtsJobResponseToJSON(
-  removeAtsJobResponse: RemoveAtsJobResponse,
-): string {
-  return JSON.stringify(
-    RemoveAtsJobResponse$outboundSchema.parse(removeAtsJobResponse),
-  );
-}
 
 export function removeAtsJobResponseFromJSON(
   jsonString: string,

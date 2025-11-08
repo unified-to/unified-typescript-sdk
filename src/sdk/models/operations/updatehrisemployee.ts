@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateHrisEmployeeRequest = {
@@ -28,24 +25,6 @@ export type UpdateHrisEmployeeRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateHrisEmployeeRequest$inboundSchema: z.ZodType<
-  UpdateHrisEmployeeRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisEmployee: shared.HrisEmployee$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisEmployee": "hrisEmployee",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateHrisEmployeeRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateHrisEmployeeRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateHrisEmployeeRequest$ {
-  /** @deprecated use `UpdateHrisEmployeeRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateHrisEmployeeRequest$inboundSchema;
-  /** @deprecated use `UpdateHrisEmployeeRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateHrisEmployeeRequest$outboundSchema;
-  /** @deprecated use `UpdateHrisEmployeeRequest$Outbound` instead. */
-  export type Outbound = UpdateHrisEmployeeRequest$Outbound;
-}
-
 export function updateHrisEmployeeRequestToJSON(
   updateHrisEmployeeRequest: UpdateHrisEmployeeRequest,
 ): string {
   return JSON.stringify(
     UpdateHrisEmployeeRequest$outboundSchema.parse(updateHrisEmployeeRequest),
-  );
-}
-
-export function updateHrisEmployeeRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateHrisEmployeeRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateHrisEmployeeRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateHrisEmployeeRequest' from JSON`,
   );
 }

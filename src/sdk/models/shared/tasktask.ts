@@ -63,7 +63,6 @@ export const TaskTaskStatus$inboundSchema: z.ZodType<
     z.nativeEnum(TaskTaskStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TaskTaskStatus$outboundSchema: z.ZodType<
   TaskTaskStatus,
@@ -73,17 +72,6 @@ export const TaskTaskStatus$outboundSchema: z.ZodType<
   z.nativeEnum(TaskTaskStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskTaskStatus$ {
-  /** @deprecated use `TaskTaskStatus$inboundSchema` instead. */
-  export const inboundSchema = TaskTaskStatus$inboundSchema;
-  /** @deprecated use `TaskTaskStatus$outboundSchema` instead. */
-  export const outboundSchema = TaskTaskStatus$outboundSchema;
-}
 
 /** @internal */
 export const TaskTask$inboundSchema: z.ZodType<
@@ -133,7 +121,6 @@ export const TaskTask$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type TaskTask$Outbound = {
   assigned_user_ids?: Array<string> | undefined;
@@ -203,23 +190,9 @@ export const TaskTask$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaskTask$ {
-  /** @deprecated use `TaskTask$inboundSchema` instead. */
-  export const inboundSchema = TaskTask$inboundSchema;
-  /** @deprecated use `TaskTask$outboundSchema` instead. */
-  export const outboundSchema = TaskTask$outboundSchema;
-  /** @deprecated use `TaskTask$Outbound` instead. */
-  export type Outbound = TaskTask$Outbound;
-}
-
 export function taskTaskToJSON(taskTask: TaskTask): string {
   return JSON.stringify(TaskTask$outboundSchema.parse(taskTask));
 }
-
 export function taskTaskFromJSON(
   jsonString: string,
 ): SafeParseResult<TaskTask, SDKValidationError> {

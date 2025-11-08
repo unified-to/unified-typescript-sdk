@@ -24,20 +24,6 @@ export type RemoveScimGroupsResponse = {
 };
 
 /** @internal */
-export const RemoveScimGroupsRequest$inboundSchema: z.ZodType<
-  RemoveScimGroupsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveScimGroupsRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveScimGroupsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveScimGroupsRequest$ {
-  /** @deprecated use `RemoveScimGroupsRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveScimGroupsRequest$inboundSchema;
-  /** @deprecated use `RemoveScimGroupsRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveScimGroupsRequest$outboundSchema;
-  /** @deprecated use `RemoveScimGroupsRequest$Outbound` instead. */
-  export type Outbound = RemoveScimGroupsRequest$Outbound;
-}
-
 export function removeScimGroupsRequestToJSON(
   removeScimGroupsRequest: RemoveScimGroupsRequest,
 ): string {
   return JSON.stringify(
     RemoveScimGroupsRequest$outboundSchema.parse(removeScimGroupsRequest),
-  );
-}
-
-export function removeScimGroupsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveScimGroupsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveScimGroupsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveScimGroupsRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveScimGroupsResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveScimGroupsResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveScimGroupsResponse$outboundSchema: z.ZodType<
-  RemoveScimGroupsResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveScimGroupsResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveScimGroupsResponse$ {
-  /** @deprecated use `RemoveScimGroupsResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveScimGroupsResponse$inboundSchema;
-  /** @deprecated use `RemoveScimGroupsResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveScimGroupsResponse$outboundSchema;
-  /** @deprecated use `RemoveScimGroupsResponse$Outbound` instead. */
-  export type Outbound = RemoveScimGroupsResponse$Outbound;
-}
-
-export function removeScimGroupsResponseToJSON(
-  removeScimGroupsResponse: RemoveScimGroupsResponse,
-): string {
-  return JSON.stringify(
-    RemoveScimGroupsResponse$outboundSchema.parse(removeScimGroupsResponse),
-  );
-}
 
 export function removeScimGroupsResponseFromJSON(
   jsonString: string,

@@ -4,11 +4,7 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -43,27 +39,6 @@ export const PropertyUcCallTelephoneType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const PropertyUcCallTelephoneType$outboundSchema: z.ZodType<
-  PropertyUcCallTelephoneType,
-  z.ZodTypeDef,
-  PropertyUcCallTelephoneType
-> = z.union([
-  z.nativeEnum(PropertyUcCallTelephoneType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyUcCallTelephoneType$ {
-  /** @deprecated use `PropertyUcCallTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = PropertyUcCallTelephoneType$inboundSchema;
-  /** @deprecated use `PropertyUcCallTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = PropertyUcCallTelephoneType$outboundSchema;
-}
-
-/** @internal */
 export const PropertyUcCallTelephone$inboundSchema: z.ZodType<
   PropertyUcCallTelephone,
   z.ZodTypeDef,
@@ -72,43 +47,6 @@ export const PropertyUcCallTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: PropertyUcCallTelephoneType$inboundSchema.optional(),
 });
-
-/** @internal */
-export type PropertyUcCallTelephone$Outbound = {
-  telephone: string;
-  type?: string | undefined;
-};
-
-/** @internal */
-export const PropertyUcCallTelephone$outboundSchema: z.ZodType<
-  PropertyUcCallTelephone$Outbound,
-  z.ZodTypeDef,
-  PropertyUcCallTelephone
-> = z.object({
-  telephone: z.string(),
-  type: PropertyUcCallTelephoneType$outboundSchema.optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyUcCallTelephone$ {
-  /** @deprecated use `PropertyUcCallTelephone$inboundSchema` instead. */
-  export const inboundSchema = PropertyUcCallTelephone$inboundSchema;
-  /** @deprecated use `PropertyUcCallTelephone$outboundSchema` instead. */
-  export const outboundSchema = PropertyUcCallTelephone$outboundSchema;
-  /** @deprecated use `PropertyUcCallTelephone$Outbound` instead. */
-  export type Outbound = PropertyUcCallTelephone$Outbound;
-}
-
-export function propertyUcCallTelephoneToJSON(
-  propertyUcCallTelephone: PropertyUcCallTelephone,
-): string {
-  return JSON.stringify(
-    PropertyUcCallTelephone$outboundSchema.parse(propertyUcCallTelephone),
-  );
-}
 
 export function propertyUcCallTelephoneFromJSON(
   jsonString: string,

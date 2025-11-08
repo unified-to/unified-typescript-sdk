@@ -70,7 +70,6 @@ export const Ethnicity$inboundSchema: z.ZodType<
     z.nativeEnum(Ethnicity),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Ethnicity$outboundSchema: z.ZodType<
   Ethnicity,
@@ -80,17 +79,6 @@ export const Ethnicity$outboundSchema: z.ZodType<
   z.nativeEnum(Ethnicity),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Ethnicity$ {
-  /** @deprecated use `Ethnicity$inboundSchema` instead. */
-  export const inboundSchema = Ethnicity$inboundSchema;
-  /** @deprecated use `Ethnicity$outboundSchema` instead. */
-  export const outboundSchema = Ethnicity$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema:
@@ -105,7 +93,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
       ),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema:
   z.ZodType<
@@ -119,19 +106,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema;
-}
-
 /** @internal */
 export const SexualOrientation$inboundSchema: z.ZodType<
   SexualOrientation,
@@ -142,7 +116,6 @@ export const SexualOrientation$inboundSchema: z.ZodType<
     z.nativeEnum(SexualOrientation),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const SexualOrientation$outboundSchema: z.ZodType<
   SexualOrientation,
@@ -152,17 +125,6 @@ export const SexualOrientation$outboundSchema: z.ZodType<
   z.nativeEnum(SexualOrientation),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SexualOrientation$ {
-  /** @deprecated use `SexualOrientation$inboundSchema` instead. */
-  export const inboundSchema = SexualOrientation$inboundSchema;
-  /** @deprecated use `SexualOrientation$outboundSchema` instead. */
-  export const outboundSchema = SexualOrientation$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema:
@@ -194,7 +156,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
       "Sub Departments": "subDepartments",
     });
   });
-
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound =
   {
@@ -239,22 +200,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$outboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound` instead. */
-  export type Outbound =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$Outbound;
-}
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User:
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
@@ -266,7 +211,6 @@ export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttribut
       ),
   );
 }
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserFromJSON(
   jsonString: string,
 ): SafeParseResult<

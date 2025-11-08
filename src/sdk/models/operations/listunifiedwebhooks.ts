@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedWebhooksRequest = {
   /**
@@ -35,31 +32,6 @@ export type ListUnifiedWebhooksRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListUnifiedWebhooksRequest$inboundSchema: z.ZodType<
-  ListUnifiedWebhooksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string().optional(),
-  created_lte: z.string().optional(),
-  env: z.string().optional(),
-  integration_type: z.string().optional(),
-  limit: z.number().optional(),
-  object: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "created_lte": "createdLte",
-    "integration_type": "integrationType",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListUnifiedWebhooksRequest$Outbound = {
@@ -100,33 +72,10 @@ export const ListUnifiedWebhooksRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedWebhooksRequest$ {
-  /** @deprecated use `ListUnifiedWebhooksRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUnifiedWebhooksRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedWebhooksRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUnifiedWebhooksRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedWebhooksRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedWebhooksRequest$Outbound;
-}
-
 export function listUnifiedWebhooksRequestToJSON(
   listUnifiedWebhooksRequest: ListUnifiedWebhooksRequest,
 ): string {
   return JSON.stringify(
     ListUnifiedWebhooksRequest$outboundSchema.parse(listUnifiedWebhooksRequest),
-  );
-}
-
-export function listUnifiedWebhooksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUnifiedWebhooksRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUnifiedWebhooksRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUnifiedWebhooksRequest' from JSON`,
   );
 }

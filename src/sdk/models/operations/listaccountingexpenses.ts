@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingExpensesRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListAccountingExpensesRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListAccountingExpensesRequest$inboundSchema: z.ZodType<
-  ListAccountingExpensesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListAccountingExpensesRequest$Outbound = {
@@ -101,19 +74,6 @@ export const ListAccountingExpensesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountingExpensesRequest$ {
-  /** @deprecated use `ListAccountingExpensesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAccountingExpensesRequest$inboundSchema;
-  /** @deprecated use `ListAccountingExpensesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAccountingExpensesRequest$outboundSchema;
-  /** @deprecated use `ListAccountingExpensesRequest$Outbound` instead. */
-  export type Outbound = ListAccountingExpensesRequest$Outbound;
-}
-
 export function listAccountingExpensesRequestToJSON(
   listAccountingExpensesRequest: ListAccountingExpensesRequest,
 ): string {
@@ -121,15 +81,5 @@ export function listAccountingExpensesRequestToJSON(
     ListAccountingExpensesRequest$outboundSchema.parse(
       listAccountingExpensesRequest,
     ),
-  );
-}
-
-export function listAccountingExpensesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAccountingExpensesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAccountingExpensesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAccountingExpensesRequest' from JSON`,
   );
 }

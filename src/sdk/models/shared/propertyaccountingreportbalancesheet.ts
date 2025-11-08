@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingBalancesheetItem,
   AccountingBalancesheetItem$inboundSchema,
-  AccountingBalancesheetItem$Outbound,
-  AccountingBalancesheetItem$outboundSchema,
 } from "./accountingbalancesheetitem.js";
 
 export type PropertyAccountingReportBalanceSheet = {
@@ -60,75 +58,6 @@ export const PropertyAccountingReportBalanceSheet$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type PropertyAccountingReportBalanceSheet$Outbound = {
-  assets?: Array<AccountingBalancesheetItem$Outbound> | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  end_at?: string | undefined;
-  equity?: Array<AccountingBalancesheetItem$Outbound> | undefined;
-  id?: string | undefined;
-  liabilities?: Array<AccountingBalancesheetItem$Outbound> | undefined;
-  name?: string | undefined;
-  net_assets_amount?: number | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const PropertyAccountingReportBalanceSheet$outboundSchema: z.ZodType<
-  PropertyAccountingReportBalanceSheet$Outbound,
-  z.ZodTypeDef,
-  PropertyAccountingReportBalanceSheet
-> = z.object({
-  assets: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  equity: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
-  id: z.string().optional(),
-  liabilities: z.array(AccountingBalancesheetItem$outboundSchema).optional(),
-  name: z.string().optional(),
-  netAssetsAmount: z.number().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    endAt: "end_at",
-    netAssetsAmount: "net_assets_amount",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingReportBalanceSheet$ {
-  /** @deprecated use `PropertyAccountingReportBalanceSheet$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingReportBalanceSheet$inboundSchema;
-  /** @deprecated use `PropertyAccountingReportBalanceSheet$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingReportBalanceSheet$outboundSchema;
-  /** @deprecated use `PropertyAccountingReportBalanceSheet$Outbound` instead. */
-  export type Outbound = PropertyAccountingReportBalanceSheet$Outbound;
-}
-
-export function propertyAccountingReportBalanceSheetToJSON(
-  propertyAccountingReportBalanceSheet: PropertyAccountingReportBalanceSheet,
-): string {
-  return JSON.stringify(
-    PropertyAccountingReportBalanceSheet$outboundSchema.parse(
-      propertyAccountingReportBalanceSheet,
-    ),
-  );
-}
 
 export function propertyAccountingReportBalanceSheetFromJSON(
   jsonString: string,

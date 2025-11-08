@@ -98,7 +98,6 @@ export const PropertyConnectionAuth$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type PropertyConnectionAuth$Outbound = {
   access_token?: string | undefined;
@@ -182,19 +181,6 @@ export const PropertyConnectionAuth$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyConnectionAuth$ {
-  /** @deprecated use `PropertyConnectionAuth$inboundSchema` instead. */
-  export const inboundSchema = PropertyConnectionAuth$inboundSchema;
-  /** @deprecated use `PropertyConnectionAuth$outboundSchema` instead. */
-  export const outboundSchema = PropertyConnectionAuth$outboundSchema;
-  /** @deprecated use `PropertyConnectionAuth$Outbound` instead. */
-  export type Outbound = PropertyConnectionAuth$Outbound;
-}
-
 export function propertyConnectionAuthToJSON(
   propertyConnectionAuth: PropertyConnectionAuth,
 ): string {
@@ -202,7 +188,6 @@ export function propertyConnectionAuthToJSON(
     PropertyConnectionAuth$outboundSchema.parse(propertyConnectionAuth),
   );
 }
-
 export function propertyConnectionAuthFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyConnectionAuth, SDKValidationError> {

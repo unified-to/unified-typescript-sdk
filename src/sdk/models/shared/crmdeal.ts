@@ -84,7 +84,6 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
       "won_reason": "wonReason",
     });
   });
-
 /** @internal */
 export type CrmDeal$Outbound = {
   amount?: number | undefined;
@@ -152,23 +151,9 @@ export const CrmDeal$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmDeal$ {
-  /** @deprecated use `CrmDeal$inboundSchema` instead. */
-  export const inboundSchema = CrmDeal$inboundSchema;
-  /** @deprecated use `CrmDeal$outboundSchema` instead. */
-  export const outboundSchema = CrmDeal$outboundSchema;
-  /** @deprecated use `CrmDeal$Outbound` instead. */
-  export type Outbound = CrmDeal$Outbound;
-}
-
 export function crmDealToJSON(crmDeal: CrmDeal): string {
   return JSON.stringify(CrmDeal$outboundSchema.parse(crmDeal));
 }
-
 export function crmDealFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmDeal, SDKValidationError> {

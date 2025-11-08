@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyAccountingBalancesheetItemSubItems,
   PropertyAccountingBalancesheetItemSubItems$inboundSchema,
-  PropertyAccountingBalancesheetItemSubItems$Outbound,
-  PropertyAccountingBalancesheetItemSubItems$outboundSchema,
 } from "./propertyaccountingbalancesheetitemsubitems.js";
 
 export type AccountingBalancesheetItem = {
@@ -38,55 +36,6 @@ export const AccountingBalancesheetItem$inboundSchema: z.ZodType<
     "sub_items": "subItems",
   });
 });
-
-/** @internal */
-export type AccountingBalancesheetItem$Outbound = {
-  account_id?: string | undefined;
-  amount?: number | undefined;
-  name?: string | undefined;
-  sub_items?:
-    | Array<PropertyAccountingBalancesheetItemSubItems$Outbound>
-    | undefined;
-};
-
-/** @internal */
-export const AccountingBalancesheetItem$outboundSchema: z.ZodType<
-  AccountingBalancesheetItem$Outbound,
-  z.ZodTypeDef,
-  AccountingBalancesheetItem
-> = z.object({
-  accountId: z.string().optional(),
-  amount: z.number().optional(),
-  name: z.string().optional(),
-  subItems: z.array(PropertyAccountingBalancesheetItemSubItems$outboundSchema)
-    .optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    subItems: "sub_items",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingBalancesheetItem$ {
-  /** @deprecated use `AccountingBalancesheetItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingBalancesheetItem$inboundSchema;
-  /** @deprecated use `AccountingBalancesheetItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingBalancesheetItem$outboundSchema;
-  /** @deprecated use `AccountingBalancesheetItem$Outbound` instead. */
-  export type Outbound = AccountingBalancesheetItem$Outbound;
-}
-
-export function accountingBalancesheetItemToJSON(
-  accountingBalancesheetItem: AccountingBalancesheetItem,
-): string {
-  return JSON.stringify(
-    AccountingBalancesheetItem$outboundSchema.parse(accountingBalancesheetItem),
-  );
-}
 
 export function accountingBalancesheetItemFromJSON(
   jsonString: string,

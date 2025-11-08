@@ -36,7 +36,6 @@ export const PropertyCrmEventMeeting$inboundSchema: z.ZodType<
     "start_at": "startAt",
   });
 });
-
 /** @internal */
 export type PropertyCrmEventMeeting$Outbound = {
   description?: string | undefined;
@@ -62,19 +61,6 @@ export const PropertyCrmEventMeeting$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventMeeting$ {
-  /** @deprecated use `PropertyCrmEventMeeting$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventMeeting$inboundSchema;
-  /** @deprecated use `PropertyCrmEventMeeting$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventMeeting$outboundSchema;
-  /** @deprecated use `PropertyCrmEventMeeting$Outbound` instead. */
-  export type Outbound = PropertyCrmEventMeeting$Outbound;
-}
-
 export function propertyCrmEventMeetingToJSON(
   propertyCrmEventMeeting: PropertyCrmEventMeeting,
 ): string {
@@ -82,7 +68,6 @@ export function propertyCrmEventMeetingToJSON(
     PropertyCrmEventMeeting$outboundSchema.parse(propertyCrmEventMeeting),
   );
 }
-
 export function propertyCrmEventMeetingFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventMeeting, SDKValidationError> {

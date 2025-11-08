@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreatePaymentPaymentRequest = {
@@ -24,23 +21,6 @@ export type CreatePaymentPaymentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreatePaymentPaymentRequest$inboundSchema: z.ZodType<
-  CreatePaymentPaymentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  PaymentPayment: shared.PaymentPayment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "PaymentPayment": "paymentPayment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreatePaymentPaymentRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreatePaymentPaymentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreatePaymentPaymentRequest$ {
-  /** @deprecated use `CreatePaymentPaymentRequest$inboundSchema` instead. */
-  export const inboundSchema = CreatePaymentPaymentRequest$inboundSchema;
-  /** @deprecated use `CreatePaymentPaymentRequest$outboundSchema` instead. */
-  export const outboundSchema = CreatePaymentPaymentRequest$outboundSchema;
-  /** @deprecated use `CreatePaymentPaymentRequest$Outbound` instead. */
-  export type Outbound = CreatePaymentPaymentRequest$Outbound;
-}
-
 export function createPaymentPaymentRequestToJSON(
   createPaymentPaymentRequest: CreatePaymentPaymentRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createPaymentPaymentRequestToJSON(
     CreatePaymentPaymentRequest$outboundSchema.parse(
       createPaymentPaymentRequest,
     ),
-  );
-}
-
-export function createPaymentPaymentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreatePaymentPaymentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreatePaymentPaymentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreatePaymentPaymentRequest' from JSON`,
   );
 }

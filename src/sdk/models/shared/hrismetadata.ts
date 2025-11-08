@@ -85,7 +85,6 @@ export const HrisMetadata1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type HrisMetadata1$Outbound = {};
 
@@ -96,23 +95,9 @@ export const HrisMetadata1$outboundSchema: z.ZodType<
   HrisMetadata1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata1$ {
-  /** @deprecated use `HrisMetadata1$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata1$inboundSchema;
-  /** @deprecated use `HrisMetadata1$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata1$outboundSchema;
-  /** @deprecated use `HrisMetadata1$Outbound` instead. */
-  export type Outbound = HrisMetadata1$Outbound;
-}
-
 export function hrisMetadata1ToJSON(hrisMetadata1: HrisMetadata1): string {
   return JSON.stringify(HrisMetadata1$outboundSchema.parse(hrisMetadata1));
 }
-
 export function hrisMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadata1, SDKValidationError> {
@@ -134,7 +119,6 @@ export const HrisMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type HrisMetadata5$Outbound =
   | HrisMetadata1$Outbound
@@ -154,23 +138,9 @@ export const HrisMetadata5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata5$ {
-  /** @deprecated use `HrisMetadata5$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata5$inboundSchema;
-  /** @deprecated use `HrisMetadata5$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata5$outboundSchema;
-  /** @deprecated use `HrisMetadata5$Outbound` instead. */
-  export type Outbound = HrisMetadata5$Outbound;
-}
-
 export function hrisMetadata5ToJSON(hrisMetadata5: HrisMetadata5): string {
   return JSON.stringify(HrisMetadata5$outboundSchema.parse(hrisMetadata5));
 }
-
 export function hrisMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadata5, SDKValidationError> {
@@ -200,7 +170,6 @@ export const HrisMetadataExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type HrisMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -229,19 +198,6 @@ export const HrisMetadataExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataExtraData$ {
-  /** @deprecated use `HrisMetadataExtraData$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataExtraData$inboundSchema;
-  /** @deprecated use `HrisMetadataExtraData$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataExtraData$outboundSchema;
-  /** @deprecated use `HrisMetadataExtraData$Outbound` instead. */
-  export type Outbound = HrisMetadataExtraData$Outbound;
-}
-
 export function hrisMetadataExtraDataToJSON(
   hrisMetadataExtraData: HrisMetadataExtraData,
 ): string {
@@ -249,7 +205,6 @@ export function hrisMetadataExtraDataToJSON(
     HrisMetadataExtraData$outboundSchema.parse(hrisMetadataExtraData),
   );
 }
-
 export function hrisMetadataExtraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadataExtraData, SDKValidationError> {
@@ -270,7 +225,6 @@ export const HrisMetadataFormat$inboundSchema: z.ZodType<
     z.nativeEnum(HrisMetadataFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisMetadataFormat$outboundSchema: z.ZodType<
   HrisMetadataFormat,
@@ -281,24 +235,12 @@ export const HrisMetadataFormat$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataFormat$ {
-  /** @deprecated use `HrisMetadataFormat$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataFormat$inboundSchema;
-  /** @deprecated use `HrisMetadataFormat$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataFormat$outboundSchema;
-}
-
 /** @internal */
 export const HrisMetadataSchemas1$inboundSchema: z.ZodType<
   HrisMetadataSchemas1,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type HrisMetadataSchemas1$Outbound = {};
 
@@ -309,19 +251,6 @@ export const HrisMetadataSchemas1$outboundSchema: z.ZodType<
   HrisMetadataSchemas1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas1$ {
-  /** @deprecated use `HrisMetadataSchemas1$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas1$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas1$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas1$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas1$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas1$Outbound;
-}
-
 export function hrisMetadataSchemas1ToJSON(
   hrisMetadataSchemas1: HrisMetadataSchemas1,
 ): string {
@@ -329,7 +258,6 @@ export function hrisMetadataSchemas1ToJSON(
     HrisMetadataSchemas1$outboundSchema.parse(hrisMetadataSchemas1),
   );
 }
-
 export function hrisMetadataSchemas1FromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadataSchemas1, SDKValidationError> {
@@ -351,7 +279,6 @@ export const HrisMetadataSchemas5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type HrisMetadataSchemas5$Outbound =
   | HrisMetadataSchemas1$Outbound
@@ -371,19 +298,6 @@ export const HrisMetadataSchemas5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataSchemas5$ {
-  /** @deprecated use `HrisMetadataSchemas5$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataSchemas5$inboundSchema;
-  /** @deprecated use `HrisMetadataSchemas5$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataSchemas5$outboundSchema;
-  /** @deprecated use `HrisMetadataSchemas5$Outbound` instead. */
-  export type Outbound = HrisMetadataSchemas5$Outbound;
-}
-
 export function hrisMetadataSchemas5ToJSON(
   hrisMetadataSchemas5: HrisMetadataSchemas5,
 ): string {
@@ -391,7 +305,6 @@ export function hrisMetadataSchemas5ToJSON(
     HrisMetadataSchemas5$outboundSchema.parse(hrisMetadataSchemas5),
   );
 }
-
 export function hrisMetadataSchemas5FromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadataSchemas5, SDKValidationError> {
@@ -421,7 +334,6 @@ export const HrisMetadataValue$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type HrisMetadataValue$Outbound =
   | { [k: string]: any }
@@ -450,19 +362,6 @@ export const HrisMetadataValue$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadataValue$ {
-  /** @deprecated use `HrisMetadataValue$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadataValue$inboundSchema;
-  /** @deprecated use `HrisMetadataValue$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadataValue$outboundSchema;
-  /** @deprecated use `HrisMetadataValue$Outbound` instead. */
-  export type Outbound = HrisMetadataValue$Outbound;
-}
-
 export function hrisMetadataValueToJSON(
   hrisMetadataValue: HrisMetadataValue,
 ): string {
@@ -470,7 +369,6 @@ export function hrisMetadataValueToJSON(
     HrisMetadataValue$outboundSchema.parse(hrisMetadataValue),
   );
 }
-
 export function hrisMetadataValueFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadataValue, SDKValidationError> {
@@ -526,7 +424,6 @@ export const HrisMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
-
 /** @internal */
 export type HrisMetadata$Outbound = {
   extra_data?:
@@ -597,23 +494,9 @@ export const HrisMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisMetadata$ {
-  /** @deprecated use `HrisMetadata$inboundSchema` instead. */
-  export const inboundSchema = HrisMetadata$inboundSchema;
-  /** @deprecated use `HrisMetadata$outboundSchema` instead. */
-  export const outboundSchema = HrisMetadata$outboundSchema;
-  /** @deprecated use `HrisMetadata$Outbound` instead. */
-  export type Outbound = HrisMetadata$Outbound;
-}
-
 export function hrisMetadataToJSON(hrisMetadata: HrisMetadata): string {
   return JSON.stringify(HrisMetadata$outboundSchema.parse(hrisMetadata));
 }
-
 export function hrisMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisMetadata, SDKValidationError> {

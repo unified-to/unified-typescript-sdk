@@ -73,7 +73,6 @@ export const PaymentLineitem$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type PaymentLineitem$Outbound = {
   account_id?: string | undefined;
@@ -138,25 +137,11 @@ export const PaymentLineitem$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentLineitem$ {
-  /** @deprecated use `PaymentLineitem$inboundSchema` instead. */
-  export const inboundSchema = PaymentLineitem$inboundSchema;
-  /** @deprecated use `PaymentLineitem$outboundSchema` instead. */
-  export const outboundSchema = PaymentLineitem$outboundSchema;
-  /** @deprecated use `PaymentLineitem$Outbound` instead. */
-  export type Outbound = PaymentLineitem$Outbound;
-}
-
 export function paymentLineitemToJSON(
   paymentLineitem: PaymentLineitem,
 ): string {
   return JSON.stringify(PaymentLineitem$outboundSchema.parse(paymentLineitem));
 }
-
 export function paymentLineitemFromJSON(
   jsonString: string,
 ): SafeParseResult<PaymentLineitem, SDKValidationError> {

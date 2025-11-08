@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -55,27 +51,6 @@ export const HrisPayslipDetailType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const HrisPayslipDetailType$outboundSchema: z.ZodType<
-  HrisPayslipDetailType,
-  z.ZodTypeDef,
-  HrisPayslipDetailType
-> = z.union([
-  z.nativeEnum(HrisPayslipDetailType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisPayslipDetailType$ {
-  /** @deprecated use `HrisPayslipDetailType$inboundSchema` instead. */
-  export const inboundSchema = HrisPayslipDetailType$inboundSchema;
-  /** @deprecated use `HrisPayslipDetailType$outboundSchema` instead. */
-  export const outboundSchema = HrisPayslipDetailType$outboundSchema;
-}
-
-/** @internal */
 export const HrisPayslipDetail$inboundSchema: z.ZodType<
   HrisPayslipDetail,
   z.ZodTypeDef,
@@ -93,56 +68,6 @@ export const HrisPayslipDetail$inboundSchema: z.ZodType<
     "employee_amount": "employeeAmount",
   });
 });
-
-/** @internal */
-export type HrisPayslipDetail$Outbound = {
-  amount: number;
-  company_amount?: number | undefined;
-  description?: string | undefined;
-  employee_amount?: number | undefined;
-  name?: string | undefined;
-  type?: string | undefined;
-};
-
-/** @internal */
-export const HrisPayslipDetail$outboundSchema: z.ZodType<
-  HrisPayslipDetail$Outbound,
-  z.ZodTypeDef,
-  HrisPayslipDetail
-> = z.object({
-  amount: z.number(),
-  companyAmount: z.number().optional(),
-  description: z.string().optional(),
-  employeeAmount: z.number().optional(),
-  name: z.string().optional(),
-  type: HrisPayslipDetailType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyAmount: "company_amount",
-    employeeAmount: "employee_amount",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisPayslipDetail$ {
-  /** @deprecated use `HrisPayslipDetail$inboundSchema` instead. */
-  export const inboundSchema = HrisPayslipDetail$inboundSchema;
-  /** @deprecated use `HrisPayslipDetail$outboundSchema` instead. */
-  export const outboundSchema = HrisPayslipDetail$outboundSchema;
-  /** @deprecated use `HrisPayslipDetail$Outbound` instead. */
-  export type Outbound = HrisPayslipDetail$Outbound;
-}
-
-export function hrisPayslipDetailToJSON(
-  hrisPayslipDetail: HrisPayslipDetail,
-): string {
-  return JSON.stringify(
-    HrisPayslipDetail$outboundSchema.parse(hrisPayslipDetail),
-  );
-}
 
 export function hrisPayslipDetailFromJSON(
   jsonString: string,

@@ -36,7 +36,6 @@ export const CrmTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(CrmTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CrmTelephoneType$outboundSchema: z.ZodType<
   CrmTelephoneType,
@@ -47,17 +46,6 @@ export const CrmTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmTelephoneType$ {
-  /** @deprecated use `CrmTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = CrmTelephoneType$inboundSchema;
-  /** @deprecated use `CrmTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = CrmTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const CrmTelephone$inboundSchema: z.ZodType<
   CrmTelephone,
@@ -67,7 +55,6 @@ export const CrmTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: CrmTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type CrmTelephone$Outbound = {
   telephone: string;
@@ -84,23 +71,9 @@ export const CrmTelephone$outboundSchema: z.ZodType<
   type: CrmTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmTelephone$ {
-  /** @deprecated use `CrmTelephone$inboundSchema` instead. */
-  export const inboundSchema = CrmTelephone$inboundSchema;
-  /** @deprecated use `CrmTelephone$outboundSchema` instead. */
-  export const outboundSchema = CrmTelephone$outboundSchema;
-  /** @deprecated use `CrmTelephone$Outbound` instead. */
-  export type Outbound = CrmTelephone$Outbound;
-}
-
 export function crmTelephoneToJSON(crmTelephone: CrmTelephone): string {
   return JSON.stringify(CrmTelephone$outboundSchema.parse(crmTelephone));
 }
-
 export function crmTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmTelephone, SDKValidationError> {

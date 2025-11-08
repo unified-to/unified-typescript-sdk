@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsInterviewRequest = {
@@ -28,24 +25,6 @@ export type PatchAtsInterviewRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAtsInterviewRequest$inboundSchema: z.ZodType<
-  PatchAtsInterviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsInterview: shared.AtsInterview$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsInterview": "atsInterview",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAtsInterviewRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchAtsInterviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAtsInterviewRequest$ {
-  /** @deprecated use `PatchAtsInterviewRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAtsInterviewRequest$inboundSchema;
-  /** @deprecated use `PatchAtsInterviewRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAtsInterviewRequest$outboundSchema;
-  /** @deprecated use `PatchAtsInterviewRequest$Outbound` instead. */
-  export type Outbound = PatchAtsInterviewRequest$Outbound;
-}
-
 export function patchAtsInterviewRequestToJSON(
   patchAtsInterviewRequest: PatchAtsInterviewRequest,
 ): string {
   return JSON.stringify(
     PatchAtsInterviewRequest$outboundSchema.parse(patchAtsInterviewRequest),
-  );
-}
-
-export function patchAtsInterviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAtsInterviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAtsInterviewRequest' from JSON`,
   );
 }

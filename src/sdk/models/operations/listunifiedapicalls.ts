@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUnifiedApicallsRequest = {
   /**
@@ -47,36 +44,6 @@ export type ListUnifiedApicallsRequest = {
    */
   webhookId?: string | undefined;
 };
-
-/** @internal */
-export const ListUnifiedApicallsRequest$inboundSchema: z.ZodType<
-  ListUnifiedApicallsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string().optional(),
-  env: z.string().optional(),
-  error: z.boolean().optional(),
-  external_xref: z.string().optional(),
-  integration_type: z.string().optional(),
-  is_billable: z.boolean().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updated_gte: z.string().optional(),
-  webhook_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "external_xref": "externalXref",
-    "integration_type": "integrationType",
-    "is_billable": "isBillable",
-    "updated_gte": "updatedGte",
-    "webhook_id": "webhookId",
-  });
-});
 
 /** @internal */
 export type ListUnifiedApicallsRequest$Outbound = {
@@ -125,33 +92,10 @@ export const ListUnifiedApicallsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedApicallsRequest$ {
-  /** @deprecated use `ListUnifiedApicallsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUnifiedApicallsRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedApicallsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUnifiedApicallsRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedApicallsRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedApicallsRequest$Outbound;
-}
-
 export function listUnifiedApicallsRequestToJSON(
   listUnifiedApicallsRequest: ListUnifiedApicallsRequest,
 ): string {
   return JSON.stringify(
     ListUnifiedApicallsRequest$outboundSchema.parse(listUnifiedApicallsRequest),
-  );
-}
-
-export function listUnifiedApicallsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUnifiedApicallsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUnifiedApicallsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUnifiedApicallsRequest' from JSON`,
   );
 }

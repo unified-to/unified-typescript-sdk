@@ -34,56 +34,6 @@ export const AccountingProfitlossAccount$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type AccountingProfitlossAccount$Outbound = {
-  account_id?: string | undefined;
-  account_name?: string | undefined;
-  total_amount?: number | undefined;
-  transaction_ids?: Array<string> | undefined;
-};
-
-/** @internal */
-export const AccountingProfitlossAccount$outboundSchema: z.ZodType<
-  AccountingProfitlossAccount$Outbound,
-  z.ZodTypeDef,
-  AccountingProfitlossAccount
-> = z.object({
-  accountId: z.string().optional(),
-  accountName: z.string().optional(),
-  totalAmount: z.number().optional(),
-  transactionIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    accountName: "account_name",
-    totalAmount: "total_amount",
-    transactionIds: "transaction_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingProfitlossAccount$ {
-  /** @deprecated use `AccountingProfitlossAccount$inboundSchema` instead. */
-  export const inboundSchema = AccountingProfitlossAccount$inboundSchema;
-  /** @deprecated use `AccountingProfitlossAccount$outboundSchema` instead. */
-  export const outboundSchema = AccountingProfitlossAccount$outboundSchema;
-  /** @deprecated use `AccountingProfitlossAccount$Outbound` instead. */
-  export type Outbound = AccountingProfitlossAccount$Outbound;
-}
-
-export function accountingProfitlossAccountToJSON(
-  accountingProfitlossAccount: AccountingProfitlossAccount,
-): string {
-  return JSON.stringify(
-    AccountingProfitlossAccount$outboundSchema.parse(
-      accountingProfitlossAccount,
-    ),
-  );
-}
-
 export function accountingProfitlossAccountFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingProfitlossAccount, SDKValidationError> {

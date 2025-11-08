@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsCompaniesRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListAtsCompaniesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAtsCompaniesRequest$inboundSchema: z.ZodType<
-  ListAtsCompaniesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAtsCompaniesRequest$Outbound = {
@@ -92,33 +67,10 @@ export const ListAtsCompaniesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAtsCompaniesRequest$ {
-  /** @deprecated use `ListAtsCompaniesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAtsCompaniesRequest$inboundSchema;
-  /** @deprecated use `ListAtsCompaniesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAtsCompaniesRequest$outboundSchema;
-  /** @deprecated use `ListAtsCompaniesRequest$Outbound` instead. */
-  export type Outbound = ListAtsCompaniesRequest$Outbound;
-}
-
 export function listAtsCompaniesRequestToJSON(
   listAtsCompaniesRequest: ListAtsCompaniesRequest,
 ): string {
   return JSON.stringify(
     ListAtsCompaniesRequest$outboundSchema.parse(listAtsCompaniesRequest),
-  );
-}
-
-export function listAtsCompaniesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAtsCompaniesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAtsCompaniesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAtsCompaniesRequest' from JSON`,
   );
 }

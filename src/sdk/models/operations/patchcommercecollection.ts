@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCommerceCollectionRequest = {
@@ -31,24 +28,6 @@ export type PatchCommerceCollectionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCommerceCollectionRequest$inboundSchema: z.ZodType<
-  PatchCommerceCollectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceCollection: shared.CommerceCollection$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceCollection": "commerceCollection",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCommerceCollectionRequest$Outbound = {
@@ -77,19 +56,6 @@ export const PatchCommerceCollectionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCommerceCollectionRequest$ {
-  /** @deprecated use `PatchCommerceCollectionRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCommerceCollectionRequest$inboundSchema;
-  /** @deprecated use `PatchCommerceCollectionRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCommerceCollectionRequest$outboundSchema;
-  /** @deprecated use `PatchCommerceCollectionRequest$Outbound` instead. */
-  export type Outbound = PatchCommerceCollectionRequest$Outbound;
-}
-
 export function patchCommerceCollectionRequestToJSON(
   patchCommerceCollectionRequest: PatchCommerceCollectionRequest,
 ): string {
@@ -97,15 +63,5 @@ export function patchCommerceCollectionRequestToJSON(
     PatchCommerceCollectionRequest$outboundSchema.parse(
       patchCommerceCollectionRequest,
     ),
-  );
-}
-
-export function patchCommerceCollectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCommerceCollectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCommerceCollectionRequest' from JSON`,
   );
 }

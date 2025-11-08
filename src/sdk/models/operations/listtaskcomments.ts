@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListTaskCommentsRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListTaskCommentsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListTaskCommentsRequest$inboundSchema: z.ZodType<
-  ListTaskCommentsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  task_id: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "task_id": "taskId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListTaskCommentsRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListTaskCommentsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTaskCommentsRequest$ {
-  /** @deprecated use `ListTaskCommentsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListTaskCommentsRequest$inboundSchema;
-  /** @deprecated use `ListTaskCommentsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListTaskCommentsRequest$outboundSchema;
-  /** @deprecated use `ListTaskCommentsRequest$Outbound` instead. */
-  export type Outbound = ListTaskCommentsRequest$Outbound;
-}
-
 export function listTaskCommentsRequestToJSON(
   listTaskCommentsRequest: ListTaskCommentsRequest,
 ): string {
   return JSON.stringify(
     ListTaskCommentsRequest$outboundSchema.parse(listTaskCommentsRequest),
-  );
-}
-
-export function listTaskCommentsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListTaskCommentsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListTaskCommentsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListTaskCommentsRequest' from JSON`,
   );
 }

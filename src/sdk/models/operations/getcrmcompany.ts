@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCrmCompanyRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetCrmCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetCrmCompanyRequest$inboundSchema: z.ZodType<
-  GetCrmCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetCrmCompanyRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetCrmCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetCrmCompanyRequest$ {
-  /** @deprecated use `GetCrmCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = GetCrmCompanyRequest$inboundSchema;
-  /** @deprecated use `GetCrmCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = GetCrmCompanyRequest$outboundSchema;
-  /** @deprecated use `GetCrmCompanyRequest$Outbound` instead. */
-  export type Outbound = GetCrmCompanyRequest$Outbound;
-}
-
 export function getCrmCompanyRequestToJSON(
   getCrmCompanyRequest: GetCrmCompanyRequest,
 ): string {
   return JSON.stringify(
     GetCrmCompanyRequest$outboundSchema.parse(getCrmCompanyRequest),
-  );
-}
-
-export function getCrmCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetCrmCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetCrmCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCrmCompanyRequest' from JSON`,
   );
 }

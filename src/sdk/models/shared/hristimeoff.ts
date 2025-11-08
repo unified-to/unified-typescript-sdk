@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -49,27 +45,6 @@ export const HrisTimeoffStatus$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const HrisTimeoffStatus$outboundSchema: z.ZodType<
-  HrisTimeoffStatus,
-  z.ZodTypeDef,
-  HrisTimeoffStatus
-> = z.union([
-  z.nativeEnum(HrisTimeoffStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTimeoffStatus$ {
-  /** @deprecated use `HrisTimeoffStatus$inboundSchema` instead. */
-  export const inboundSchema = HrisTimeoffStatus$inboundSchema;
-  /** @deprecated use `HrisTimeoffStatus$outboundSchema` instead. */
-  export const outboundSchema = HrisTimeoffStatus$outboundSchema;
-}
-
-/** @internal */
 export const HrisTimeoff$inboundSchema: z.ZodType<
   HrisTimeoff,
   z.ZodTypeDef,
@@ -106,75 +81,6 @@ export const HrisTimeoff$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
-/** @internal */
-export type HrisTimeoff$Outbound = {
-  approved_at?: string | undefined;
-  approver_user_id?: string | undefined;
-  comments?: string | undefined;
-  company_id?: string | undefined;
-  created_at?: string | undefined;
-  end_at?: string | undefined;
-  id?: string | undefined;
-  is_paid?: boolean | undefined;
-  raw?: { [k: string]: any } | undefined;
-  reason?: string | undefined;
-  start_at: string;
-  status?: string | undefined;
-  updated_at?: string | undefined;
-  user_id?: string | undefined;
-};
-
-/** @internal */
-export const HrisTimeoff$outboundSchema: z.ZodType<
-  HrisTimeoff$Outbound,
-  z.ZodTypeDef,
-  HrisTimeoff
-> = z.object({
-  approvedAt: z.date().transform(v => v.toISOString()).optional(),
-  approverUserId: z.string().optional(),
-  comments: z.string().optional(),
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  isPaid: z.boolean().optional(),
-  raw: z.record(z.any()).optional(),
-  reason: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()),
-  status: HrisTimeoffStatus$outboundSchema.optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    approvedAt: "approved_at",
-    approverUserId: "approver_user_id",
-    companyId: "company_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    isPaid: "is_paid",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTimeoff$ {
-  /** @deprecated use `HrisTimeoff$inboundSchema` instead. */
-  export const inboundSchema = HrisTimeoff$inboundSchema;
-  /** @deprecated use `HrisTimeoff$outboundSchema` instead. */
-  export const outboundSchema = HrisTimeoff$outboundSchema;
-  /** @deprecated use `HrisTimeoff$Outbound` instead. */
-  export type Outbound = HrisTimeoff$Outbound;
-}
-
-export function hrisTimeoffToJSON(hrisTimeoff: HrisTimeoff): string {
-  return JSON.stringify(HrisTimeoff$outboundSchema.parse(hrisTimeoff));
-}
 
 export function hrisTimeoffFromJSON(
   jsonString: string,

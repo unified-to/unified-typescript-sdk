@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchTaskTaskRequest = {
@@ -28,24 +25,6 @@ export type PatchTaskTaskRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchTaskTaskRequest$inboundSchema: z.ZodType<
-  PatchTaskTaskRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TaskTask: shared.TaskTask$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TaskTask": "taskTask",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchTaskTaskRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchTaskTaskRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchTaskTaskRequest$ {
-  /** @deprecated use `PatchTaskTaskRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchTaskTaskRequest$inboundSchema;
-  /** @deprecated use `PatchTaskTaskRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchTaskTaskRequest$outboundSchema;
-  /** @deprecated use `PatchTaskTaskRequest$Outbound` instead. */
-  export type Outbound = PatchTaskTaskRequest$Outbound;
-}
-
 export function patchTaskTaskRequestToJSON(
   patchTaskTaskRequest: PatchTaskTaskRequest,
 ): string {
   return JSON.stringify(
     PatchTaskTaskRequest$outboundSchema.parse(patchTaskTaskRequest),
-  );
-}
-
-export function patchTaskTaskRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchTaskTaskRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchTaskTaskRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchTaskTaskRequest' from JSON`,
   );
 }

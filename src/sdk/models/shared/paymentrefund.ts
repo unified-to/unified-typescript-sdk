@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -46,27 +42,6 @@ export const PaymentRefundStatus$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const PaymentRefundStatus$outboundSchema: z.ZodType<
-  PaymentRefundStatus,
-  z.ZodTypeDef,
-  PaymentRefundStatus
-> = z.union([
-  z.nativeEnum(PaymentRefundStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentRefundStatus$ {
-  /** @deprecated use `PaymentRefundStatus$inboundSchema` instead. */
-  export const inboundSchema = PaymentRefundStatus$inboundSchema;
-  /** @deprecated use `PaymentRefundStatus$outboundSchema` instead. */
-  export const outboundSchema = PaymentRefundStatus$outboundSchema;
-}
-
-/** @internal */
 export const PaymentRefund$inboundSchema: z.ZodType<
   PaymentRefund,
   z.ZodTypeDef,
@@ -92,62 +67,6 @@ export const PaymentRefund$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type PaymentRefund$Outbound = {
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  id?: string | undefined;
-  notes?: string | undefined;
-  payment_id: string;
-  raw?: { [k: string]: any } | undefined;
-  reference?: string | undefined;
-  status?: string | undefined;
-  total_amount: number;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const PaymentRefund$outboundSchema: z.ZodType<
-  PaymentRefund$Outbound,
-  z.ZodTypeDef,
-  PaymentRefund
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  notes: z.string().optional(),
-  paymentId: z.string(),
-  raw: z.record(z.any()).optional(),
-  reference: z.string().optional(),
-  status: PaymentRefundStatus$outboundSchema.optional(),
-  totalAmount: z.number(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    paymentId: "payment_id",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentRefund$ {
-  /** @deprecated use `PaymentRefund$inboundSchema` instead. */
-  export const inboundSchema = PaymentRefund$inboundSchema;
-  /** @deprecated use `PaymentRefund$outboundSchema` instead. */
-  export const outboundSchema = PaymentRefund$outboundSchema;
-  /** @deprecated use `PaymentRefund$Outbound` instead. */
-  export type Outbound = PaymentRefund$Outbound;
-}
-
-export function paymentRefundToJSON(paymentRefund: PaymentRefund): string {
-  return JSON.stringify(PaymentRefund$outboundSchema.parse(paymentRefund));
-}
 
 export function paymentRefundFromJSON(
   jsonString: string,

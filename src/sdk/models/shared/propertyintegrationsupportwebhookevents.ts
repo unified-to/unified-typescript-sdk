@@ -9,17 +9,14 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyIntegrationSupportWebhookEventsCreated,
   PropertyIntegrationSupportWebhookEventsCreated$inboundSchema,
-  PropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
 } from "./propertyintegrationsupportwebhookeventscreated.js";
 import {
   PropertyIntegrationSupportWebhookEventsDeleted,
   PropertyIntegrationSupportWebhookEventsDeleted$inboundSchema,
-  PropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
 } from "./propertyintegrationsupportwebhookeventsdeleted.js";
 import {
   PropertyIntegrationSupportWebhookEventsUpdated,
   PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema,
-  PropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
 } from "./propertyintegrationsupportwebhookeventsupdated.js";
 
 export type PropertyIntegrationSupportWebhookEvents = {
@@ -41,56 +38,6 @@ export const PropertyIntegrationSupportWebhookEvents$inboundSchema: z.ZodType<
   updated: z.array(PropertyIntegrationSupportWebhookEventsUpdated$inboundSchema)
     .optional(),
 });
-
-/** @internal */
-export type PropertyIntegrationSupportWebhookEvents$Outbound = {
-  created?: Array<string> | undefined;
-  deleted?: Array<string> | undefined;
-  updated?: Array<string> | undefined;
-};
-
-/** @internal */
-export const PropertyIntegrationSupportWebhookEvents$outboundSchema: z.ZodType<
-  PropertyIntegrationSupportWebhookEvents$Outbound,
-  z.ZodTypeDef,
-  PropertyIntegrationSupportWebhookEvents
-> = z.object({
-  created: z.array(
-    PropertyIntegrationSupportWebhookEventsCreated$outboundSchema,
-  ).optional(),
-  deleted: z.array(
-    PropertyIntegrationSupportWebhookEventsDeleted$outboundSchema,
-  ).optional(),
-  updated: z.array(
-    PropertyIntegrationSupportWebhookEventsUpdated$outboundSchema,
-  ).optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyIntegrationSupportWebhookEvents$ {
-  /** @deprecated use `PropertyIntegrationSupportWebhookEvents$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyIntegrationSupportWebhookEvents$inboundSchema;
-  /** @deprecated use `PropertyIntegrationSupportWebhookEvents$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyIntegrationSupportWebhookEvents$outboundSchema;
-  /** @deprecated use `PropertyIntegrationSupportWebhookEvents$Outbound` instead. */
-  export type Outbound = PropertyIntegrationSupportWebhookEvents$Outbound;
-}
-
-export function propertyIntegrationSupportWebhookEventsToJSON(
-  propertyIntegrationSupportWebhookEvents:
-    PropertyIntegrationSupportWebhookEvents,
-): string {
-  return JSON.stringify(
-    PropertyIntegrationSupportWebhookEvents$outboundSchema.parse(
-      propertyIntegrationSupportWebhookEvents,
-    ),
-  );
-}
 
 export function propertyIntegrationSupportWebhookEventsFromJSON(
   jsonString: string,

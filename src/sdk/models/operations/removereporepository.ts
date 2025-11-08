@@ -24,20 +24,6 @@ export type RemoveRepoRepositoryResponse = {
 };
 
 /** @internal */
-export const RemoveRepoRepositoryRequest$inboundSchema: z.ZodType<
-  RemoveRepoRepositoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveRepoRepositoryRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveRepoRepositoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoRepositoryRequest$ {
-  /** @deprecated use `RemoveRepoRepositoryRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoRepositoryRequest$inboundSchema;
-  /** @deprecated use `RemoveRepoRepositoryRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoRepositoryRequest$outboundSchema;
-  /** @deprecated use `RemoveRepoRepositoryRequest$Outbound` instead. */
-  export type Outbound = RemoveRepoRepositoryRequest$Outbound;
-}
-
 export function removeRepoRepositoryRequestToJSON(
   removeRepoRepositoryRequest: RemoveRepoRepositoryRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeRepoRepositoryRequestToJSON(
     RemoveRepoRepositoryRequest$outboundSchema.parse(
       removeRepoRepositoryRequest,
     ),
-  );
-}
-
-export function removeRepoRepositoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveRepoRepositoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveRepoRepositoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveRepoRepositoryRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemoveRepoRepositoryResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveRepoRepositoryResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveRepoRepositoryResponse$outboundSchema: z.ZodType<
-  RemoveRepoRepositoryResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveRepoRepositoryResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoRepositoryResponse$ {
-  /** @deprecated use `RemoveRepoRepositoryResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoRepositoryResponse$inboundSchema;
-  /** @deprecated use `RemoveRepoRepositoryResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoRepositoryResponse$outboundSchema;
-  /** @deprecated use `RemoveRepoRepositoryResponse$Outbound` instead. */
-  export type Outbound = RemoveRepoRepositoryResponse$Outbound;
-}
-
-export function removeRepoRepositoryResponseToJSON(
-  removeRepoRepositoryResponse: RemoveRepoRepositoryResponse,
-): string {
-  return JSON.stringify(
-    RemoveRepoRepositoryResponse$outboundSchema.parse(
-      removeRepoRepositoryResponse,
-    ),
-  );
-}
 
 export function removeRepoRepositoryResponseFromJSON(
   jsonString: string,

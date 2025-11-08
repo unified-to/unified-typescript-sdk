@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmContactRequest = {
@@ -27,23 +24,6 @@ export type CreateCrmContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCrmContactRequest$inboundSchema: z.ZodType<
-  CreateCrmContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmContact: shared.CrmContact$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmContact": "crmContact",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCrmContactRequest$Outbound = {
@@ -70,33 +50,10 @@ export const CreateCrmContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCrmContactRequest$ {
-  /** @deprecated use `CreateCrmContactRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCrmContactRequest$inboundSchema;
-  /** @deprecated use `CreateCrmContactRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCrmContactRequest$outboundSchema;
-  /** @deprecated use `CreateCrmContactRequest$Outbound` instead. */
-  export type Outbound = CreateCrmContactRequest$Outbound;
-}
-
 export function createCrmContactRequestToJSON(
   createCrmContactRequest: CreateCrmContactRequest,
 ): string {
   return JSON.stringify(
     CreateCrmContactRequest$outboundSchema.parse(createCrmContactRequest),
-  );
-}
-
-export function createCrmContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCrmContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCrmContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCrmContactRequest' from JSON`,
   );
 }

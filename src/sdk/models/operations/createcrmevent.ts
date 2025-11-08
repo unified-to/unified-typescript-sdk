@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmEventRequest = {
@@ -27,23 +24,6 @@ export type CreateCrmEventRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCrmEventRequest$inboundSchema: z.ZodType<
-  CreateCrmEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmEvent: shared.CrmEvent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmEvent": "crmEvent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCrmEventRequest$Outbound = {
@@ -70,33 +50,10 @@ export const CreateCrmEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCrmEventRequest$ {
-  /** @deprecated use `CreateCrmEventRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCrmEventRequest$inboundSchema;
-  /** @deprecated use `CreateCrmEventRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCrmEventRequest$outboundSchema;
-  /** @deprecated use `CreateCrmEventRequest$Outbound` instead. */
-  export type Outbound = CreateCrmEventRequest$Outbound;
-}
-
 export function createCrmEventRequestToJSON(
   createCrmEventRequest: CreateCrmEventRequest,
 ): string {
   return JSON.stringify(
     CreateCrmEventRequest$outboundSchema.parse(createCrmEventRequest),
-  );
-}
-
-export function createCrmEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCrmEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCrmEventRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListEnrichCompaniesRequest = {
   /**
@@ -22,21 +19,6 @@ export type ListEnrichCompaniesRequest = {
    */
   name?: string | undefined;
 };
-
-/** @internal */
-export const ListEnrichCompaniesRequest$inboundSchema: z.ZodType<
-  ListEnrichCompaniesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  domain: z.string().optional(),
-  name: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type ListEnrichCompaniesRequest$Outbound = {
@@ -60,33 +42,10 @@ export const ListEnrichCompaniesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListEnrichCompaniesRequest$ {
-  /** @deprecated use `ListEnrichCompaniesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListEnrichCompaniesRequest$inboundSchema;
-  /** @deprecated use `ListEnrichCompaniesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListEnrichCompaniesRequest$outboundSchema;
-  /** @deprecated use `ListEnrichCompaniesRequest$Outbound` instead. */
-  export type Outbound = ListEnrichCompaniesRequest$Outbound;
-}
-
 export function listEnrichCompaniesRequestToJSON(
   listEnrichCompaniesRequest: ListEnrichCompaniesRequest,
 ): string {
   return JSON.stringify(
     ListEnrichCompaniesRequest$outboundSchema.parse(listEnrichCompaniesRequest),
-  );
-}
-
-export function listEnrichCompaniesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListEnrichCompaniesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListEnrichCompaniesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListEnrichCompaniesRequest' from JSON`,
   );
 }

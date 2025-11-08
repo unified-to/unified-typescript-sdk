@@ -24,20 +24,6 @@ export type RemoveCalendarEventResponse = {
 };
 
 /** @internal */
-export const RemoveCalendarEventRequest$inboundSchema: z.ZodType<
-  RemoveCalendarEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCalendarEventRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveCalendarEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCalendarEventRequest$ {
-  /** @deprecated use `RemoveCalendarEventRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCalendarEventRequest$inboundSchema;
-  /** @deprecated use `RemoveCalendarEventRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCalendarEventRequest$outboundSchema;
-  /** @deprecated use `RemoveCalendarEventRequest$Outbound` instead. */
-  export type Outbound = RemoveCalendarEventRequest$Outbound;
-}
-
 export function removeCalendarEventRequestToJSON(
   removeCalendarEventRequest: RemoveCalendarEventRequest,
 ): string {
   return JSON.stringify(
     RemoveCalendarEventRequest$outboundSchema.parse(removeCalendarEventRequest),
-  );
-}
-
-export function removeCalendarEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCalendarEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCalendarEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCalendarEventRequest' from JSON`,
   );
 }
 
@@ -100,47 +63,6 @@ export const RemoveCalendarEventResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCalendarEventResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCalendarEventResponse$outboundSchema: z.ZodType<
-  RemoveCalendarEventResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCalendarEventResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCalendarEventResponse$ {
-  /** @deprecated use `RemoveCalendarEventResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCalendarEventResponse$inboundSchema;
-  /** @deprecated use `RemoveCalendarEventResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCalendarEventResponse$outboundSchema;
-  /** @deprecated use `RemoveCalendarEventResponse$Outbound` instead. */
-  export type Outbound = RemoveCalendarEventResponse$Outbound;
-}
-
-export function removeCalendarEventResponseToJSON(
-  removeCalendarEventResponse: RemoveCalendarEventResponse,
-): string {
-  return JSON.stringify(
-    RemoveCalendarEventResponse$outboundSchema.parse(
-      removeCalendarEventResponse,
-    ),
-  );
-}
 
 export function removeCalendarEventResponseFromJSON(
   jsonString: string,

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingSalesorderRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingSalesorderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingSalesorderRequest$inboundSchema: z.ZodType<
-  UpdateAccountingSalesorderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingSalesorder: shared.AccountingSalesorder$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingSalesorder": "accountingSalesorder",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingSalesorderRequest$Outbound = {
@@ -74,20 +53,6 @@ export const UpdateAccountingSalesorderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingSalesorderRequest$ {
-  /** @deprecated use `UpdateAccountingSalesorderRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingSalesorderRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingSalesorderRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    UpdateAccountingSalesorderRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingSalesorderRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingSalesorderRequest$Outbound;
-}
-
 export function updateAccountingSalesorderRequestToJSON(
   updateAccountingSalesorderRequest: UpdateAccountingSalesorderRequest,
 ): string {
@@ -95,15 +60,5 @@ export function updateAccountingSalesorderRequestToJSON(
     UpdateAccountingSalesorderRequest$outboundSchema.parse(
       updateAccountingSalesorderRequest,
     ),
-  );
-}
-
-export function updateAccountingSalesorderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingSalesorderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingSalesorderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingSalesorderRequest' from JSON`,
   );
 }

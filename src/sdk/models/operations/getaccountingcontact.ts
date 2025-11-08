@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingContactRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingContactRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingContactRequest$inboundSchema: z.ZodType<
-  GetAccountingContactRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingContactRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingContactRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingContactRequest$ {
-  /** @deprecated use `GetAccountingContactRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingContactRequest$inboundSchema;
-  /** @deprecated use `GetAccountingContactRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingContactRequest$outboundSchema;
-  /** @deprecated use `GetAccountingContactRequest$Outbound` instead. */
-  export type Outbound = GetAccountingContactRequest$Outbound;
-}
-
 export function getAccountingContactRequestToJSON(
   getAccountingContactRequest: GetAccountingContactRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingContactRequestToJSON(
     GetAccountingContactRequest$outboundSchema.parse(
       getAccountingContactRequest,
     ),
-  );
-}
-
-export function getAccountingContactRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingContactRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingContactRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingContactRequest' from JSON`,
   );
 }

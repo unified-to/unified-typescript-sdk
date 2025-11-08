@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingSalesorderRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingSalesorderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingSalesorderRequest$inboundSchema: z.ZodType<
-  GetAccountingSalesorderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingSalesorderRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingSalesorderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingSalesorderRequest$ {
-  /** @deprecated use `GetAccountingSalesorderRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingSalesorderRequest$inboundSchema;
-  /** @deprecated use `GetAccountingSalesorderRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingSalesorderRequest$outboundSchema;
-  /** @deprecated use `GetAccountingSalesorderRequest$Outbound` instead. */
-  export type Outbound = GetAccountingSalesorderRequest$Outbound;
-}
-
 export function getAccountingSalesorderRequestToJSON(
   getAccountingSalesorderRequest: GetAccountingSalesorderRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingSalesorderRequestToJSON(
     GetAccountingSalesorderRequest$outboundSchema.parse(
       getAccountingSalesorderRequest,
     ),
-  );
-}
-
-export function getAccountingSalesorderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingSalesorderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingSalesorderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingSalesorderRequest' from JSON`,
   );
 }

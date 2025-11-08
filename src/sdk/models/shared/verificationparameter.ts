@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -57,27 +53,6 @@ export const VerificationParameterType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VerificationParameterType$outboundSchema: z.ZodType<
-  VerificationParameterType,
-  z.ZodTypeDef,
-  VerificationParameterType
-> = z.union([
-  z.nativeEnum(VerificationParameterType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationParameterType$ {
-  /** @deprecated use `VerificationParameterType$inboundSchema` instead. */
-  export const inboundSchema = VerificationParameterType$inboundSchema;
-  /** @deprecated use `VerificationParameterType$outboundSchema` instead. */
-  export const outboundSchema = VerificationParameterType$outboundSchema;
-}
-
-/** @internal */
 export const VerificationParameter$inboundSchema: z.ZodType<
   VerificationParameter,
   z.ZodTypeDef,
@@ -99,62 +74,6 @@ export const VerificationParameter$inboundSchema: z.ZodType<
     "valid_regions": "validRegions",
   });
 });
-
-/** @internal */
-export type VerificationParameter$Outbound = {
-  file_types?: Array<string> | undefined;
-  id?: string | undefined;
-  is_required?: boolean | undefined;
-  name: string;
-  options?: Array<string> | undefined;
-  public_question?: string | undefined;
-  type?: string | undefined;
-  valid_regions?: Array<string> | undefined;
-};
-
-/** @internal */
-export const VerificationParameter$outboundSchema: z.ZodType<
-  VerificationParameter$Outbound,
-  z.ZodTypeDef,
-  VerificationParameter
-> = z.object({
-  fileTypes: z.array(z.string()).optional(),
-  id: z.string().optional(),
-  isRequired: z.boolean().optional(),
-  name: z.string(),
-  options: z.array(z.string()).optional(),
-  publicQuestion: z.string().optional(),
-  type: VerificationParameterType$outboundSchema.optional(),
-  validRegions: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    fileTypes: "file_types",
-    isRequired: "is_required",
-    publicQuestion: "public_question",
-    validRegions: "valid_regions",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationParameter$ {
-  /** @deprecated use `VerificationParameter$inboundSchema` instead. */
-  export const inboundSchema = VerificationParameter$inboundSchema;
-  /** @deprecated use `VerificationParameter$outboundSchema` instead. */
-  export const outboundSchema = VerificationParameter$outboundSchema;
-  /** @deprecated use `VerificationParameter$Outbound` instead. */
-  export type Outbound = VerificationParameter$Outbound;
-}
-
-export function verificationParameterToJSON(
-  verificationParameter: VerificationParameter,
-): string {
-  return JSON.stringify(
-    VerificationParameter$outboundSchema.parse(verificationParameter),
-  );
-}
 
 export function verificationParameterFromJSON(
   jsonString: string,

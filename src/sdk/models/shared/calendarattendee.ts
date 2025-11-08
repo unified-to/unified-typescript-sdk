@@ -38,7 +38,6 @@ export const CalendarAttendeeStatus$inboundSchema: z.ZodType<
     z.nativeEnum(CalendarAttendeeStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CalendarAttendeeStatus$outboundSchema: z.ZodType<
   CalendarAttendeeStatus,
@@ -48,17 +47,6 @@ export const CalendarAttendeeStatus$outboundSchema: z.ZodType<
   z.nativeEnum(CalendarAttendeeStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarAttendeeStatus$ {
-  /** @deprecated use `CalendarAttendeeStatus$inboundSchema` instead. */
-  export const inboundSchema = CalendarAttendeeStatus$inboundSchema;
-  /** @deprecated use `CalendarAttendeeStatus$outboundSchema` instead. */
-  export const outboundSchema = CalendarAttendeeStatus$outboundSchema;
-}
 
 /** @internal */
 export const CalendarAttendee$inboundSchema: z.ZodType<
@@ -76,7 +64,6 @@ export const CalendarAttendee$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type CalendarAttendee$Outbound = {
   email?: string | undefined;
@@ -103,19 +90,6 @@ export const CalendarAttendee$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarAttendee$ {
-  /** @deprecated use `CalendarAttendee$inboundSchema` instead. */
-  export const inboundSchema = CalendarAttendee$inboundSchema;
-  /** @deprecated use `CalendarAttendee$outboundSchema` instead. */
-  export const outboundSchema = CalendarAttendee$outboundSchema;
-  /** @deprecated use `CalendarAttendee$Outbound` instead. */
-  export type Outbound = CalendarAttendee$Outbound;
-}
-
 export function calendarAttendeeToJSON(
   calendarAttendee: CalendarAttendee,
 ): string {
@@ -123,7 +97,6 @@ export function calendarAttendeeToJSON(
     CalendarAttendee$outboundSchema.parse(calendarAttendee),
   );
 }
-
 export function calendarAttendeeFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarAttendee, SDKValidationError> {

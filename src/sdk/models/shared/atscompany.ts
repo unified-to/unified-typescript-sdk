@@ -62,7 +62,6 @@ export const AtsCompany$inboundSchema: z.ZodType<
     "website_url": "websiteUrl",
   });
 });
-
 /** @internal */
 export type AtsCompany$Outbound = {
   address?: PropertyAtsCompanyAddress$Outbound | undefined;
@@ -105,23 +104,9 @@ export const AtsCompany$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCompany$ {
-  /** @deprecated use `AtsCompany$inboundSchema` instead. */
-  export const inboundSchema = AtsCompany$inboundSchema;
-  /** @deprecated use `AtsCompany$outboundSchema` instead. */
-  export const outboundSchema = AtsCompany$outboundSchema;
-  /** @deprecated use `AtsCompany$Outbound` instead. */
-  export type Outbound = AtsCompany$Outbound;
-}
-
 export function atsCompanyToJSON(atsCompany: AtsCompany): string {
   return JSON.stringify(AtsCompany$outboundSchema.parse(atsCompany));
 }
-
 export function atsCompanyFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsCompany, SDKValidationError> {

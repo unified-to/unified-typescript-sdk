@@ -54,7 +54,6 @@ export const ScimGroup$inboundSchema: z.ZodType<
   meta: PropertyScimGroupMeta$inboundSchema.optional(),
   schemas: z.array(PropertyScimGroupSchemas$inboundSchema).optional(),
 });
-
 /** @internal */
 export type ScimGroup$Outbound = {
   displayName: string;
@@ -81,23 +80,9 @@ export const ScimGroup$outboundSchema: z.ZodType<
   schemas: z.array(PropertyScimGroupSchemas$outboundSchema).optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimGroup$ {
-  /** @deprecated use `ScimGroup$inboundSchema` instead. */
-  export const inboundSchema = ScimGroup$inboundSchema;
-  /** @deprecated use `ScimGroup$outboundSchema` instead. */
-  export const outboundSchema = ScimGroup$outboundSchema;
-  /** @deprecated use `ScimGroup$Outbound` instead. */
-  export type Outbound = ScimGroup$Outbound;
-}
-
 export function scimGroupToJSON(scimGroup: ScimGroup): string {
   return JSON.stringify(ScimGroup$outboundSchema.parse(scimGroup));
 }
-
 export function scimGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimGroup, SDKValidationError> {

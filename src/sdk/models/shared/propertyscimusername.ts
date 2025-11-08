@@ -29,7 +29,6 @@ export const PropertyScimUserName$inboundSchema: z.ZodType<
   honorificSuffix: z.string().optional(),
   middleName: z.string().optional(),
 });
-
 /** @internal */
 export type PropertyScimUserName$Outbound = {
   familyName?: string | undefined;
@@ -54,19 +53,6 @@ export const PropertyScimUserName$outboundSchema: z.ZodType<
   middleName: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserName$ {
-  /** @deprecated use `PropertyScimUserName$inboundSchema` instead. */
-  export const inboundSchema = PropertyScimUserName$inboundSchema;
-  /** @deprecated use `PropertyScimUserName$outboundSchema` instead. */
-  export const outboundSchema = PropertyScimUserName$outboundSchema;
-  /** @deprecated use `PropertyScimUserName$Outbound` instead. */
-  export type Outbound = PropertyScimUserName$Outbound;
-}
-
 export function propertyScimUserNameToJSON(
   propertyScimUserName: PropertyScimUserName,
 ): string {
@@ -74,7 +60,6 @@ export function propertyScimUserNameToJSON(
     PropertyScimUserName$outboundSchema.parse(propertyScimUserName),
   );
 }
-
 export function propertyScimUserNameFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyScimUserName, SDKValidationError> {

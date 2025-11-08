@@ -39,7 +39,6 @@ export const UcComment$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type UcComment$Outbound = {
   call_id?: string | undefined;
@@ -73,23 +72,9 @@ export const UcComment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcComment$ {
-  /** @deprecated use `UcComment$inboundSchema` instead. */
-  export const inboundSchema = UcComment$inboundSchema;
-  /** @deprecated use `UcComment$outboundSchema` instead. */
-  export const outboundSchema = UcComment$outboundSchema;
-  /** @deprecated use `UcComment$Outbound` instead. */
-  export type Outbound = UcComment$Outbound;
-}
-
 export function ucCommentToJSON(ucComment: UcComment): string {
   return JSON.stringify(UcComment$outboundSchema.parse(ucComment));
 }
-
 export function ucCommentFromJSON(
   jsonString: string,
 ): SafeParseResult<UcComment, SDKValidationError> {

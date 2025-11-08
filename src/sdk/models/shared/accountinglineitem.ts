@@ -76,7 +76,6 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingLineitem$Outbound = {
   account_id?: string | undefined;
@@ -144,19 +143,6 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingLineitem$ {
-  /** @deprecated use `AccountingLineitem$inboundSchema` instead. */
-  export const inboundSchema = AccountingLineitem$inboundSchema;
-  /** @deprecated use `AccountingLineitem$outboundSchema` instead. */
-  export const outboundSchema = AccountingLineitem$outboundSchema;
-  /** @deprecated use `AccountingLineitem$Outbound` instead. */
-  export type Outbound = AccountingLineitem$Outbound;
-}
-
 export function accountingLineitemToJSON(
   accountingLineitem: AccountingLineitem,
 ): string {
@@ -164,7 +150,6 @@ export function accountingLineitemToJSON(
     AccountingLineitem$outboundSchema.parse(accountingLineitem),
   );
 }
-
 export function accountingLineitemFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingLineitem, SDKValidationError> {

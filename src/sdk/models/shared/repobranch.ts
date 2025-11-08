@@ -38,7 +38,6 @@ export const RepoBranch$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type RepoBranch$Outbound = {
   created_at?: string | undefined;
@@ -69,23 +68,9 @@ export const RepoBranch$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoBranch$ {
-  /** @deprecated use `RepoBranch$inboundSchema` instead. */
-  export const inboundSchema = RepoBranch$inboundSchema;
-  /** @deprecated use `RepoBranch$outboundSchema` instead. */
-  export const outboundSchema = RepoBranch$outboundSchema;
-  /** @deprecated use `RepoBranch$Outbound` instead. */
-  export type Outbound = RepoBranch$Outbound;
-}
-
 export function repoBranchToJSON(repoBranch: RepoBranch): string {
   return JSON.stringify(RepoBranch$outboundSchema.parse(repoBranch));
 }
-
 export function repoBranchFromJSON(
   jsonString: string,
 ): SafeParseResult<RepoBranch, SDKValidationError> {

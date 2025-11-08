@@ -34,7 +34,6 @@ export const MarketingEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(MarketingEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const MarketingEmailType$outboundSchema: z.ZodType<
   MarketingEmailType,
@@ -45,17 +44,6 @@ export const MarketingEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MarketingEmailType$ {
-  /** @deprecated use `MarketingEmailType$inboundSchema` instead. */
-  export const inboundSchema = MarketingEmailType$inboundSchema;
-  /** @deprecated use `MarketingEmailType$outboundSchema` instead. */
-  export const outboundSchema = MarketingEmailType$outboundSchema;
-}
-
 /** @internal */
 export const MarketingEmail$inboundSchema: z.ZodType<
   MarketingEmail,
@@ -65,7 +53,6 @@ export const MarketingEmail$inboundSchema: z.ZodType<
   email: z.string(),
   type: MarketingEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type MarketingEmail$Outbound = {
   email: string;
@@ -82,23 +69,9 @@ export const MarketingEmail$outboundSchema: z.ZodType<
   type: MarketingEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MarketingEmail$ {
-  /** @deprecated use `MarketingEmail$inboundSchema` instead. */
-  export const inboundSchema = MarketingEmail$inboundSchema;
-  /** @deprecated use `MarketingEmail$outboundSchema` instead. */
-  export const outboundSchema = MarketingEmail$outboundSchema;
-  /** @deprecated use `MarketingEmail$Outbound` instead. */
-  export type Outbound = MarketingEmail$Outbound;
-}
-
 export function marketingEmailToJSON(marketingEmail: MarketingEmail): string {
   return JSON.stringify(MarketingEmail$outboundSchema.parse(marketingEmail));
 }
-
 export function marketingEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<MarketingEmail, SDKValidationError> {

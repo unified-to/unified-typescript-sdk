@@ -52,7 +52,6 @@ export const KmsSpace$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type KmsSpace$Outbound = {
   created_at?: string | undefined;
@@ -97,23 +96,9 @@ export const KmsSpace$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsSpace$ {
-  /** @deprecated use `KmsSpace$inboundSchema` instead. */
-  export const inboundSchema = KmsSpace$inboundSchema;
-  /** @deprecated use `KmsSpace$outboundSchema` instead. */
-  export const outboundSchema = KmsSpace$outboundSchema;
-  /** @deprecated use `KmsSpace$Outbound` instead. */
-  export type Outbound = KmsSpace$Outbound;
-}
-
 export function kmsSpaceToJSON(kmsSpace: KmsSpace): string {
   return JSON.stringify(KmsSpace$outboundSchema.parse(kmsSpace));
 }
-
 export function kmsSpaceFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsSpace, SDKValidationError> {

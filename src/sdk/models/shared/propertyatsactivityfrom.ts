@@ -37,7 +37,6 @@ export const PropertyAtsActivityFromType$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyAtsActivityFromType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyAtsActivityFromType$outboundSchema: z.ZodType<
   PropertyAtsActivityFromType,
@@ -47,17 +46,6 @@ export const PropertyAtsActivityFromType$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyAtsActivityFromType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAtsActivityFromType$ {
-  /** @deprecated use `PropertyAtsActivityFromType$inboundSchema` instead. */
-  export const inboundSchema = PropertyAtsActivityFromType$inboundSchema;
-  /** @deprecated use `PropertyAtsActivityFromType$outboundSchema` instead. */
-  export const outboundSchema = PropertyAtsActivityFromType$outboundSchema;
-}
 
 /** @internal */
 export const PropertyAtsActivityFrom$inboundSchema: z.ZodType<
@@ -69,7 +57,6 @@ export const PropertyAtsActivityFrom$inboundSchema: z.ZodType<
   name: z.string().optional(),
   type: PropertyAtsActivityFromType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type PropertyAtsActivityFrom$Outbound = {
   email: string;
@@ -88,19 +75,6 @@ export const PropertyAtsActivityFrom$outboundSchema: z.ZodType<
   type: PropertyAtsActivityFromType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAtsActivityFrom$ {
-  /** @deprecated use `PropertyAtsActivityFrom$inboundSchema` instead. */
-  export const inboundSchema = PropertyAtsActivityFrom$inboundSchema;
-  /** @deprecated use `PropertyAtsActivityFrom$outboundSchema` instead. */
-  export const outboundSchema = PropertyAtsActivityFrom$outboundSchema;
-  /** @deprecated use `PropertyAtsActivityFrom$Outbound` instead. */
-  export type Outbound = PropertyAtsActivityFrom$Outbound;
-}
-
 export function propertyAtsActivityFromToJSON(
   propertyAtsActivityFrom: PropertyAtsActivityFrom,
 ): string {
@@ -108,7 +82,6 @@ export function propertyAtsActivityFromToJSON(
     PropertyAtsActivityFrom$outboundSchema.parse(propertyAtsActivityFrom),
   );
 }
-
 export function propertyAtsActivityFromFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyAtsActivityFrom, SDKValidationError> {

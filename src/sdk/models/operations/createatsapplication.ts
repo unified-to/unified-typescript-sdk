@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsApplicationRequest = {
@@ -24,23 +21,6 @@ export type CreateAtsApplicationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAtsApplicationRequest$inboundSchema: z.ZodType<
-  CreateAtsApplicationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsApplication: shared.AtsApplication$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsApplication": "atsApplication",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAtsApplicationRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateAtsApplicationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAtsApplicationRequest$ {
-  /** @deprecated use `CreateAtsApplicationRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAtsApplicationRequest$inboundSchema;
-  /** @deprecated use `CreateAtsApplicationRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAtsApplicationRequest$outboundSchema;
-  /** @deprecated use `CreateAtsApplicationRequest$Outbound` instead. */
-  export type Outbound = CreateAtsApplicationRequest$Outbound;
-}
-
 export function createAtsApplicationRequestToJSON(
   createAtsApplicationRequest: CreateAtsApplicationRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createAtsApplicationRequestToJSON(
     CreateAtsApplicationRequest$outboundSchema.parse(
       createAtsApplicationRequest,
     ),
-  );
-}
-
-export function createAtsApplicationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAtsApplicationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAtsApplicationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAtsApplicationRequest' from JSON`,
   );
 }

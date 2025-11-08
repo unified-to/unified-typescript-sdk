@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCalendarCalendarsRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListCalendarCalendarsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListCalendarCalendarsRequest$inboundSchema: z.ZodType<
-  ListCalendarCalendarsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListCalendarCalendarsRequest$Outbound = {
@@ -92,19 +67,6 @@ export const ListCalendarCalendarsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCalendarCalendarsRequest$ {
-  /** @deprecated use `ListCalendarCalendarsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCalendarCalendarsRequest$inboundSchema;
-  /** @deprecated use `ListCalendarCalendarsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCalendarCalendarsRequest$outboundSchema;
-  /** @deprecated use `ListCalendarCalendarsRequest$Outbound` instead. */
-  export type Outbound = ListCalendarCalendarsRequest$Outbound;
-}
-
 export function listCalendarCalendarsRequestToJSON(
   listCalendarCalendarsRequest: ListCalendarCalendarsRequest,
 ): string {
@@ -112,15 +74,5 @@ export function listCalendarCalendarsRequestToJSON(
     ListCalendarCalendarsRequest$outboundSchema.parse(
       listCalendarCalendarsRequest,
     ),
-  );
-}
-
-export function listCalendarCalendarsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCalendarCalendarsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCalendarCalendarsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCalendarCalendarsRequest' from JSON`,
   );
 }

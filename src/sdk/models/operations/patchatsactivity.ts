@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsActivityRequest = {
@@ -28,24 +25,6 @@ export type PatchAtsActivityRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAtsActivityRequest$inboundSchema: z.ZodType<
-  PatchAtsActivityRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsActivity: shared.AtsActivity$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsActivity": "atsActivity",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAtsActivityRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchAtsActivityRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAtsActivityRequest$ {
-  /** @deprecated use `PatchAtsActivityRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAtsActivityRequest$inboundSchema;
-  /** @deprecated use `PatchAtsActivityRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAtsActivityRequest$outboundSchema;
-  /** @deprecated use `PatchAtsActivityRequest$Outbound` instead. */
-  export type Outbound = PatchAtsActivityRequest$Outbound;
-}
-
 export function patchAtsActivityRequestToJSON(
   patchAtsActivityRequest: PatchAtsActivityRequest,
 ): string {
   return JSON.stringify(
     PatchAtsActivityRequest$outboundSchema.parse(patchAtsActivityRequest),
-  );
-}
-
-export function patchAtsActivityRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAtsActivityRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAtsActivityRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAtsActivityRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateLmsCourseRequest = {
@@ -28,24 +25,6 @@ export type UpdateLmsCourseRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateLmsCourseRequest$inboundSchema: z.ZodType<
-  UpdateLmsCourseRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsCourse: shared.LmsCourse$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsCourse": "lmsCourse",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateLmsCourseRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateLmsCourseRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateLmsCourseRequest$ {
-  /** @deprecated use `UpdateLmsCourseRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateLmsCourseRequest$inboundSchema;
-  /** @deprecated use `UpdateLmsCourseRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateLmsCourseRequest$outboundSchema;
-  /** @deprecated use `UpdateLmsCourseRequest$Outbound` instead. */
-  export type Outbound = UpdateLmsCourseRequest$Outbound;
-}
-
 export function updateLmsCourseRequestToJSON(
   updateLmsCourseRequest: UpdateLmsCourseRequest,
 ): string {
   return JSON.stringify(
     UpdateLmsCourseRequest$outboundSchema.parse(updateLmsCourseRequest),
-  );
-}
-
-export function updateLmsCourseRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateLmsCourseRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateLmsCourseRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateLmsCourseRequest' from JSON`,
   );
 }

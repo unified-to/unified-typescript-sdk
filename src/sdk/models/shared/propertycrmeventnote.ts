@@ -24,7 +24,6 @@ export const PropertyCrmEventNote$inboundSchema: z.ZodType<
   description: z.string().optional(),
   title: z.string().optional(),
 });
-
 /** @internal */
 export type PropertyCrmEventNote$Outbound = {
   description?: string | undefined;
@@ -41,19 +40,6 @@ export const PropertyCrmEventNote$outboundSchema: z.ZodType<
   title: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventNote$ {
-  /** @deprecated use `PropertyCrmEventNote$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventNote$inboundSchema;
-  /** @deprecated use `PropertyCrmEventNote$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventNote$outboundSchema;
-  /** @deprecated use `PropertyCrmEventNote$Outbound` instead. */
-  export type Outbound = PropertyCrmEventNote$Outbound;
-}
-
 export function propertyCrmEventNoteToJSON(
   propertyCrmEventNote: PropertyCrmEventNote,
 ): string {
@@ -61,7 +47,6 @@ export function propertyCrmEventNoteToJSON(
     PropertyCrmEventNote$outboundSchema.parse(propertyCrmEventNote),
   );
 }
-
 export function propertyCrmEventNoteFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventNote, SDKValidationError> {

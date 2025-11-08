@@ -24,20 +24,6 @@ export type RemoveHrisLocationResponse = {
 };
 
 /** @internal */
-export const RemoveHrisLocationRequest$inboundSchema: z.ZodType<
-  RemoveHrisLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveHrisLocationRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveHrisLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisLocationRequest$ {
-  /** @deprecated use `RemoveHrisLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisLocationRequest$inboundSchema;
-  /** @deprecated use `RemoveHrisLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisLocationRequest$outboundSchema;
-  /** @deprecated use `RemoveHrisLocationRequest$Outbound` instead. */
-  export type Outbound = RemoveHrisLocationRequest$Outbound;
-}
-
 export function removeHrisLocationRequestToJSON(
   removeHrisLocationRequest: RemoveHrisLocationRequest,
 ): string {
   return JSON.stringify(
     RemoveHrisLocationRequest$outboundSchema.parse(removeHrisLocationRequest),
-  );
-}
-
-export function removeHrisLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveHrisLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveHrisLocationRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveHrisLocationResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveHrisLocationResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveHrisLocationResponse$outboundSchema: z.ZodType<
-  RemoveHrisLocationResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveHrisLocationResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisLocationResponse$ {
-  /** @deprecated use `RemoveHrisLocationResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisLocationResponse$inboundSchema;
-  /** @deprecated use `RemoveHrisLocationResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisLocationResponse$outboundSchema;
-  /** @deprecated use `RemoveHrisLocationResponse$Outbound` instead. */
-  export type Outbound = RemoveHrisLocationResponse$Outbound;
-}
-
-export function removeHrisLocationResponseToJSON(
-  removeHrisLocationResponse: RemoveHrisLocationResponse,
-): string {
-  return JSON.stringify(
-    RemoveHrisLocationResponse$outboundSchema.parse(removeHrisLocationResponse),
-  );
-}
 
 export function removeHrisLocationResponseFromJSON(
   jsonString: string,

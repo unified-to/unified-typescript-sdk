@@ -86,7 +86,6 @@ export const CalendarEventStatus$inboundSchema: z.ZodType<
     z.nativeEnum(CalendarEventStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CalendarEventStatus$outboundSchema: z.ZodType<
   CalendarEventStatus,
@@ -96,17 +95,6 @@ export const CalendarEventStatus$outboundSchema: z.ZodType<
   z.nativeEnum(CalendarEventStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarEventStatus$ {
-  /** @deprecated use `CalendarEventStatus$inboundSchema` instead. */
-  export const inboundSchema = CalendarEventStatus$inboundSchema;
-  /** @deprecated use `CalendarEventStatus$outboundSchema` instead. */
-  export const outboundSchema = CalendarEventStatus$outboundSchema;
-}
 
 /** @internal */
 export const CalendarEvent$inboundSchema: z.ZodType<
@@ -152,7 +140,6 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type CalendarEvent$Outbound = {
   attachments?: Array<CalendarAttachment$Outbound> | undefined;
@@ -225,23 +212,9 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarEvent$ {
-  /** @deprecated use `CalendarEvent$inboundSchema` instead. */
-  export const inboundSchema = CalendarEvent$inboundSchema;
-  /** @deprecated use `CalendarEvent$outboundSchema` instead. */
-  export const outboundSchema = CalendarEvent$outboundSchema;
-  /** @deprecated use `CalendarEvent$Outbound` instead. */
-  export type Outbound = CalendarEvent$Outbound;
-}
-
 export function calendarEventToJSON(calendarEvent: CalendarEvent): string {
   return JSON.stringify(CalendarEvent$outboundSchema.parse(calendarEvent));
 }
-
 export function calendarEventFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarEvent, SDKValidationError> {

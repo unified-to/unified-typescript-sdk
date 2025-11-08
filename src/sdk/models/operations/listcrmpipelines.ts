@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCrmPipelinesRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListCrmPipelinesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListCrmPipelinesRequest$inboundSchema: z.ZodType<
-  ListCrmPipelinesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListCrmPipelinesRequest$Outbound = {
@@ -92,33 +67,10 @@ export const ListCrmPipelinesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCrmPipelinesRequest$ {
-  /** @deprecated use `ListCrmPipelinesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCrmPipelinesRequest$inboundSchema;
-  /** @deprecated use `ListCrmPipelinesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCrmPipelinesRequest$outboundSchema;
-  /** @deprecated use `ListCrmPipelinesRequest$Outbound` instead. */
-  export type Outbound = ListCrmPipelinesRequest$Outbound;
-}
-
 export function listCrmPipelinesRequestToJSON(
   listCrmPipelinesRequest: ListCrmPipelinesRequest,
 ): string {
   return JSON.stringify(
     ListCrmPipelinesRequest$outboundSchema.parse(listCrmPipelinesRequest),
-  );
-}
-
-export function listCrmPipelinesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCrmPipelinesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCrmPipelinesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCrmPipelinesRequest' from JSON`,
   );
 }

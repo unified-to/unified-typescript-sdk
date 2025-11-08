@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListRepoOrganizationsRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListRepoOrganizationsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListRepoOrganizationsRequest$inboundSchema: z.ZodType<
-  ListRepoOrganizationsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListRepoOrganizationsRequest$Outbound = {
@@ -92,19 +67,6 @@ export const ListRepoOrganizationsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListRepoOrganizationsRequest$ {
-  /** @deprecated use `ListRepoOrganizationsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListRepoOrganizationsRequest$inboundSchema;
-  /** @deprecated use `ListRepoOrganizationsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListRepoOrganizationsRequest$outboundSchema;
-  /** @deprecated use `ListRepoOrganizationsRequest$Outbound` instead. */
-  export type Outbound = ListRepoOrganizationsRequest$Outbound;
-}
-
 export function listRepoOrganizationsRequestToJSON(
   listRepoOrganizationsRequest: ListRepoOrganizationsRequest,
 ): string {
@@ -112,15 +74,5 @@ export function listRepoOrganizationsRequestToJSON(
     ListRepoOrganizationsRequest$outboundSchema.parse(
       listRepoOrganizationsRequest,
     ),
-  );
-}
-
-export function listRepoOrganizationsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListRepoOrganizationsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListRepoOrganizationsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListRepoOrganizationsRequest' from JSON`,
   );
 }

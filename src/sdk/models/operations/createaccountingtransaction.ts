@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingTransactionRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingTransactionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingTransactionRequest$inboundSchema: z.ZodType<
-  CreateAccountingTransactionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingTransaction: shared.AccountingTransaction$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingTransaction": "accountingTransaction",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingTransactionRequest$Outbound = {
@@ -67,20 +47,6 @@ export const CreateAccountingTransactionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingTransactionRequest$ {
-  /** @deprecated use `CreateAccountingTransactionRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAccountingTransactionRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingTransactionRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    CreateAccountingTransactionRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingTransactionRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingTransactionRequest$Outbound;
-}
-
 export function createAccountingTransactionRequestToJSON(
   createAccountingTransactionRequest: CreateAccountingTransactionRequest,
 ): string {
@@ -88,16 +54,5 @@ export function createAccountingTransactionRequestToJSON(
     CreateAccountingTransactionRequest$outboundSchema.parse(
       createAccountingTransactionRequest,
     ),
-  );
-}
-
-export function createAccountingTransactionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingTransactionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      CreateAccountingTransactionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingTransactionRequest' from JSON`,
   );
 }

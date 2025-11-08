@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsScorecardRequest = {
@@ -24,23 +21,6 @@ export type CreateAtsScorecardRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAtsScorecardRequest$inboundSchema: z.ZodType<
-  CreateAtsScorecardRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsScorecard: shared.AtsScorecard$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsScorecard": "atsScorecard",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAtsScorecardRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateAtsScorecardRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAtsScorecardRequest$ {
-  /** @deprecated use `CreateAtsScorecardRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAtsScorecardRequest$inboundSchema;
-  /** @deprecated use `CreateAtsScorecardRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAtsScorecardRequest$outboundSchema;
-  /** @deprecated use `CreateAtsScorecardRequest$Outbound` instead. */
-  export type Outbound = CreateAtsScorecardRequest$Outbound;
-}
-
 export function createAtsScorecardRequestToJSON(
   createAtsScorecardRequest: CreateAtsScorecardRequest,
 ): string {
   return JSON.stringify(
     CreateAtsScorecardRequest$outboundSchema.parse(createAtsScorecardRequest),
-  );
-}
-
-export function createAtsScorecardRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAtsScorecardRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAtsScorecardRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAtsScorecardRequest' from JSON`,
   );
 }

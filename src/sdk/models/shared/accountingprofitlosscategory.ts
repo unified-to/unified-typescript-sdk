@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingProfitlossSubcategory,
   AccountingProfitlossSubcategory$inboundSchema,
-  AccountingProfitlossSubcategory$Outbound,
-  AccountingProfitlossSubcategory$outboundSchema,
 } from "./accountingprofitlosssubcategory.js";
 
 /**
@@ -37,51 +35,6 @@ export const AccountingProfitlossCategory$inboundSchema: z.ZodType<
     "sub_items": "subItems",
   });
 });
-
-/** @internal */
-export type AccountingProfitlossCategory$Outbound = {
-  amount?: number | undefined;
-  name?: string | undefined;
-  sub_items?: Array<AccountingProfitlossSubcategory$Outbound> | undefined;
-};
-
-/** @internal */
-export const AccountingProfitlossCategory$outboundSchema: z.ZodType<
-  AccountingProfitlossCategory$Outbound,
-  z.ZodTypeDef,
-  AccountingProfitlossCategory
-> = z.object({
-  amount: z.number().optional(),
-  name: z.string().optional(),
-  subItems: z.array(AccountingProfitlossSubcategory$outboundSchema).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    subItems: "sub_items",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingProfitlossCategory$ {
-  /** @deprecated use `AccountingProfitlossCategory$inboundSchema` instead. */
-  export const inboundSchema = AccountingProfitlossCategory$inboundSchema;
-  /** @deprecated use `AccountingProfitlossCategory$outboundSchema` instead. */
-  export const outboundSchema = AccountingProfitlossCategory$outboundSchema;
-  /** @deprecated use `AccountingProfitlossCategory$Outbound` instead. */
-  export type Outbound = AccountingProfitlossCategory$Outbound;
-}
-
-export function accountingProfitlossCategoryToJSON(
-  accountingProfitlossCategory: AccountingProfitlossCategory,
-): string {
-  return JSON.stringify(
-    AccountingProfitlossCategory$outboundSchema.parse(
-      accountingProfitlossCategory,
-    ),
-  );
-}
 
 export function accountingProfitlossCategoryFromJSON(
   jsonString: string,

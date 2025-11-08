@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoBranchRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetRepoBranchRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetRepoBranchRequest$inboundSchema: z.ZodType<
-  GetRepoBranchRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetRepoBranchRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetRepoBranchRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetRepoBranchRequest$ {
-  /** @deprecated use `GetRepoBranchRequest$inboundSchema` instead. */
-  export const inboundSchema = GetRepoBranchRequest$inboundSchema;
-  /** @deprecated use `GetRepoBranchRequest$outboundSchema` instead. */
-  export const outboundSchema = GetRepoBranchRequest$outboundSchema;
-  /** @deprecated use `GetRepoBranchRequest$Outbound` instead. */
-  export type Outbound = GetRepoBranchRequest$Outbound;
-}
-
 export function getRepoBranchRequestToJSON(
   getRepoBranchRequest: GetRepoBranchRequest,
 ): string {
   return JSON.stringify(
     GetRepoBranchRequest$outboundSchema.parse(getRepoBranchRequest),
-  );
-}
-
-export function getRepoBranchRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetRepoBranchRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetRepoBranchRequest' from JSON`,
   );
 }

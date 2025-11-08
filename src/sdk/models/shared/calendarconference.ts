@@ -44,7 +44,6 @@ export const CalendarConference$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type CalendarConference$Outbound = {
   conference_identifier?: string | undefined;
@@ -83,19 +82,6 @@ export const CalendarConference$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarConference$ {
-  /** @deprecated use `CalendarConference$inboundSchema` instead. */
-  export const inboundSchema = CalendarConference$inboundSchema;
-  /** @deprecated use `CalendarConference$outboundSchema` instead. */
-  export const outboundSchema = CalendarConference$outboundSchema;
-  /** @deprecated use `CalendarConference$Outbound` instead. */
-  export type Outbound = CalendarConference$Outbound;
-}
-
 export function calendarConferenceToJSON(
   calendarConference: CalendarConference,
 ): string {
@@ -103,7 +89,6 @@ export function calendarConferenceToJSON(
     CalendarConference$outboundSchema.parse(calendarConference),
   );
 }
-
 export function calendarConferenceFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarConference, SDKValidationError> {

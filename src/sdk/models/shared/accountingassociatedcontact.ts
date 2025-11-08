@@ -29,7 +29,6 @@ export const AccountingAssociatedContact$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string().optional(),
 });
-
 /** @internal */
 export type AccountingAssociatedContact$Outbound = {
   emails?: Array<AccountingEmail$Outbound> | undefined;
@@ -48,19 +47,6 @@ export const AccountingAssociatedContact$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingAssociatedContact$ {
-  /** @deprecated use `AccountingAssociatedContact$inboundSchema` instead. */
-  export const inboundSchema = AccountingAssociatedContact$inboundSchema;
-  /** @deprecated use `AccountingAssociatedContact$outboundSchema` instead. */
-  export const outboundSchema = AccountingAssociatedContact$outboundSchema;
-  /** @deprecated use `AccountingAssociatedContact$Outbound` instead. */
-  export type Outbound = AccountingAssociatedContact$Outbound;
-}
-
 export function accountingAssociatedContactToJSON(
   accountingAssociatedContact: AccountingAssociatedContact,
 ): string {
@@ -70,7 +56,6 @@ export function accountingAssociatedContactToJSON(
     ),
   );
 }
-
 export function accountingAssociatedContactFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingAssociatedContact, SDKValidationError> {

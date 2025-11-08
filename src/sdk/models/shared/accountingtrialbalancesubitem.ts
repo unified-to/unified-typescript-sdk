@@ -30,52 +30,6 @@ export const AccountingTrialbalanceSubItem$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type AccountingTrialbalanceSubItem$Outbound = {
-  account_id?: string | undefined;
-  account_name?: string | undefined;
-  amount?: number | undefined;
-};
-
-/** @internal */
-export const AccountingTrialbalanceSubItem$outboundSchema: z.ZodType<
-  AccountingTrialbalanceSubItem$Outbound,
-  z.ZodTypeDef,
-  AccountingTrialbalanceSubItem
-> = z.object({
-  accountId: z.string().optional(),
-  accountName: z.string().optional(),
-  amount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    accountName: "account_name",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTrialbalanceSubItem$ {
-  /** @deprecated use `AccountingTrialbalanceSubItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingTrialbalanceSubItem$inboundSchema;
-  /** @deprecated use `AccountingTrialbalanceSubItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingTrialbalanceSubItem$outboundSchema;
-  /** @deprecated use `AccountingTrialbalanceSubItem$Outbound` instead. */
-  export type Outbound = AccountingTrialbalanceSubItem$Outbound;
-}
-
-export function accountingTrialbalanceSubItemToJSON(
-  accountingTrialbalanceSubItem: AccountingTrialbalanceSubItem,
-): string {
-  return JSON.stringify(
-    AccountingTrialbalanceSubItem$outboundSchema.parse(
-      accountingTrialbalanceSubItem,
-    ),
-  );
-}
-
 export function accountingTrialbalanceSubItemFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingTrialbalanceSubItem, SDKValidationError> {

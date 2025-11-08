@@ -35,7 +35,6 @@ export const AtsEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsEmailType$outboundSchema: z.ZodType<
   AtsEmailType,
@@ -45,17 +44,6 @@ export const AtsEmailType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsEmailType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsEmailType$ {
-  /** @deprecated use `AtsEmailType$inboundSchema` instead. */
-  export const inboundSchema = AtsEmailType$inboundSchema;
-  /** @deprecated use `AtsEmailType$outboundSchema` instead. */
-  export const outboundSchema = AtsEmailType$outboundSchema;
-}
 
 /** @internal */
 export const AtsEmail$inboundSchema: z.ZodType<
@@ -67,7 +55,6 @@ export const AtsEmail$inboundSchema: z.ZodType<
   name: z.string().optional(),
   type: AtsEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AtsEmail$Outbound = {
   email: string;
@@ -86,23 +73,9 @@ export const AtsEmail$outboundSchema: z.ZodType<
   type: AtsEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsEmail$ {
-  /** @deprecated use `AtsEmail$inboundSchema` instead. */
-  export const inboundSchema = AtsEmail$inboundSchema;
-  /** @deprecated use `AtsEmail$outboundSchema` instead. */
-  export const outboundSchema = AtsEmail$outboundSchema;
-  /** @deprecated use `AtsEmail$Outbound` instead. */
-  export type Outbound = AtsEmail$Outbound;
-}
-
 export function atsEmailToJSON(atsEmail: AtsEmail): string {
   return JSON.stringify(AtsEmail$outboundSchema.parse(atsEmail));
 }
-
 export function atsEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsEmail, SDKValidationError> {

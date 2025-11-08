@@ -50,7 +50,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
       ),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema:
   z.ZodType<
@@ -63,19 +62,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     ),
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema:
@@ -96,7 +82,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
       "$ref": "dollarRef",
     });
   });
-
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound =
   {
@@ -127,22 +112,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     });
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$outboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound` instead. */
-  export type Outbound =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$Outbound;
-}
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager:
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager,
@@ -154,7 +123,6 @@ export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20Use
       ),
   );
 }
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerFromJSON(
   jsonString: string,
 ): SafeParseResult<

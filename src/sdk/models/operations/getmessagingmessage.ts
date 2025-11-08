@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetMessagingMessageRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetMessagingMessageRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetMessagingMessageRequest$inboundSchema: z.ZodType<
-  GetMessagingMessageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetMessagingMessageRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetMessagingMessageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetMessagingMessageRequest$ {
-  /** @deprecated use `GetMessagingMessageRequest$inboundSchema` instead. */
-  export const inboundSchema = GetMessagingMessageRequest$inboundSchema;
-  /** @deprecated use `GetMessagingMessageRequest$outboundSchema` instead. */
-  export const outboundSchema = GetMessagingMessageRequest$outboundSchema;
-  /** @deprecated use `GetMessagingMessageRequest$Outbound` instead. */
-  export type Outbound = GetMessagingMessageRequest$Outbound;
-}
-
 export function getMessagingMessageRequestToJSON(
   getMessagingMessageRequest: GetMessagingMessageRequest,
 ): string {
   return JSON.stringify(
     GetMessagingMessageRequest$outboundSchema.parse(getMessagingMessageRequest),
-  );
-}
-
-export function getMessagingMessageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetMessagingMessageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetMessagingMessageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetMessagingMessageRequest' from JSON`,
   );
 }

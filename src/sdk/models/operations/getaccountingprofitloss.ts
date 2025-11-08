@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingProfitlossRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingProfitlossRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingProfitlossRequest$inboundSchema: z.ZodType<
-  GetAccountingProfitlossRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingProfitlossRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingProfitlossRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingProfitlossRequest$ {
-  /** @deprecated use `GetAccountingProfitlossRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingProfitlossRequest$inboundSchema;
-  /** @deprecated use `GetAccountingProfitlossRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingProfitlossRequest$outboundSchema;
-  /** @deprecated use `GetAccountingProfitlossRequest$Outbound` instead. */
-  export type Outbound = GetAccountingProfitlossRequest$Outbound;
-}
-
 export function getAccountingProfitlossRequestToJSON(
   getAccountingProfitlossRequest: GetAccountingProfitlossRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingProfitlossRequestToJSON(
     GetAccountingProfitlossRequest$outboundSchema.parse(
       getAccountingProfitlossRequest,
     ),
-  );
-}
-
-export function getAccountingProfitlossRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingProfitlossRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingProfitlossRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingProfitlossRequest' from JSON`,
   );
 }

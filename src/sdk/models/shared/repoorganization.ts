@@ -49,7 +49,6 @@ export const RepoOrganization$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type RepoOrganization$Outbound = {
   avatar_url?: string | undefined;
@@ -88,19 +87,6 @@ export const RepoOrganization$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoOrganization$ {
-  /** @deprecated use `RepoOrganization$inboundSchema` instead. */
-  export const inboundSchema = RepoOrganization$inboundSchema;
-  /** @deprecated use `RepoOrganization$outboundSchema` instead. */
-  export const outboundSchema = RepoOrganization$outboundSchema;
-  /** @deprecated use `RepoOrganization$Outbound` instead. */
-  export type Outbound = RepoOrganization$Outbound;
-}
-
 export function repoOrganizationToJSON(
   repoOrganization: RepoOrganization,
 ): string {
@@ -108,7 +94,6 @@ export function repoOrganizationToJSON(
     RepoOrganization$outboundSchema.parse(repoOrganization),
   );
 }
-
 export function repoOrganizationFromJSON(
   jsonString: string,
 ): SafeParseResult<RepoOrganization, SDKValidationError> {

@@ -24,20 +24,6 @@ export type RemoveCrmEventResponse = {
 };
 
 /** @internal */
-export const RemoveCrmEventRequest$inboundSchema: z.ZodType<
-  RemoveCrmEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCrmEventRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveCrmEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCrmEventRequest$ {
-  /** @deprecated use `RemoveCrmEventRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCrmEventRequest$inboundSchema;
-  /** @deprecated use `RemoveCrmEventRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCrmEventRequest$outboundSchema;
-  /** @deprecated use `RemoveCrmEventRequest$Outbound` instead. */
-  export type Outbound = RemoveCrmEventRequest$Outbound;
-}
-
 export function removeCrmEventRequestToJSON(
   removeCrmEventRequest: RemoveCrmEventRequest,
 ): string {
   return JSON.stringify(
     RemoveCrmEventRequest$outboundSchema.parse(removeCrmEventRequest),
-  );
-}
-
-export function removeCrmEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCrmEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCrmEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCrmEventRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveCrmEventResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCrmEventResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCrmEventResponse$outboundSchema: z.ZodType<
-  RemoveCrmEventResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCrmEventResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCrmEventResponse$ {
-  /** @deprecated use `RemoveCrmEventResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCrmEventResponse$inboundSchema;
-  /** @deprecated use `RemoveCrmEventResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCrmEventResponse$outboundSchema;
-  /** @deprecated use `RemoveCrmEventResponse$Outbound` instead. */
-  export type Outbound = RemoveCrmEventResponse$Outbound;
-}
-
-export function removeCrmEventResponseToJSON(
-  removeCrmEventResponse: RemoveCrmEventResponse,
-): string {
-  return JSON.stringify(
-    RemoveCrmEventResponse$outboundSchema.parse(removeCrmEventResponse),
-  );
-}
 
 export function removeCrmEventResponseFromJSON(
   jsonString: string,

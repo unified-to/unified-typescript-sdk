@@ -97,24 +97,12 @@ export const Origin$inboundSchema: z.ZodType<Origin, z.ZodTypeDef, unknown> = z
     z.nativeEnum(Origin),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Origin$outboundSchema: z.ZodType<Origin, z.ZodTypeDef, Origin> = z
   .union([
     z.nativeEnum(Origin),
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Origin$ {
-  /** @deprecated use `Origin$inboundSchema` instead. */
-  export const inboundSchema = Origin$inboundSchema;
-  /** @deprecated use `Origin$outboundSchema` instead. */
-  export const outboundSchema = Origin$outboundSchema;
-}
 
 /** @internal */
 export const AtsCandidate$inboundSchema: z.ZodType<
@@ -168,7 +156,6 @@ export const AtsCandidate$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type AtsCandidate$Outbound = {
   address?: PropertyAtsCandidateAddress$Outbound | undefined;
@@ -248,23 +235,9 @@ export const AtsCandidate$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCandidate$ {
-  /** @deprecated use `AtsCandidate$inboundSchema` instead. */
-  export const inboundSchema = AtsCandidate$inboundSchema;
-  /** @deprecated use `AtsCandidate$outboundSchema` instead. */
-  export const outboundSchema = AtsCandidate$outboundSchema;
-  /** @deprecated use `AtsCandidate$Outbound` instead. */
-  export type Outbound = AtsCandidate$Outbound;
-}
-
 export function atsCandidateToJSON(atsCandidate: AtsCandidate): string {
   return JSON.stringify(AtsCandidate$outboundSchema.parse(atsCandidate));
 }
-
 export function atsCandidateFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsCandidate, SDKValidationError> {

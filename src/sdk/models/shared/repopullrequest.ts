@@ -43,7 +43,6 @@ export const RepoPullrequestStatus$inboundSchema: z.ZodType<
     z.nativeEnum(RepoPullrequestStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const RepoPullrequestStatus$outboundSchema: z.ZodType<
   RepoPullrequestStatus,
@@ -53,17 +52,6 @@ export const RepoPullrequestStatus$outboundSchema: z.ZodType<
   z.nativeEnum(RepoPullrequestStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoPullrequestStatus$ {
-  /** @deprecated use `RepoPullrequestStatus$inboundSchema` instead. */
-  export const inboundSchema = RepoPullrequestStatus$inboundSchema;
-  /** @deprecated use `RepoPullrequestStatus$outboundSchema` instead. */
-  export const outboundSchema = RepoPullrequestStatus$outboundSchema;
-}
 
 /** @internal */
 export const RepoPullrequest$inboundSchema: z.ZodType<
@@ -94,7 +82,6 @@ export const RepoPullrequest$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type RepoPullrequest$Outbound = {
   closed_at?: string | undefined;
@@ -136,25 +123,11 @@ export const RepoPullrequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoPullrequest$ {
-  /** @deprecated use `RepoPullrequest$inboundSchema` instead. */
-  export const inboundSchema = RepoPullrequest$inboundSchema;
-  /** @deprecated use `RepoPullrequest$outboundSchema` instead. */
-  export const outboundSchema = RepoPullrequest$outboundSchema;
-  /** @deprecated use `RepoPullrequest$Outbound` instead. */
-  export type Outbound = RepoPullrequest$Outbound;
-}
-
 export function repoPullrequestToJSON(
   repoPullrequest: RepoPullrequest,
 ): string {
   return JSON.stringify(RepoPullrequest$outboundSchema.parse(repoPullrequest));
 }
-
 export function repoPullrequestFromJSON(
   jsonString: string,
 ): SafeParseResult<RepoPullrequest, SDKValidationError> {

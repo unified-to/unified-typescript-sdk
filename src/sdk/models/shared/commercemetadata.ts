@@ -57,6 +57,7 @@ export type CommerceMetadataValue =
   | Array<CommerceMetadataSchemas1 | string | number | boolean>;
 
 export type CommerceMetadata = {
+  description?: string | undefined;
   extraData?:
     | { [k: string]: any }
     | string
@@ -68,6 +69,7 @@ export type CommerceMetadata = {
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
+  required?: boolean | undefined;
   slug?: string | undefined;
   type?: string | undefined;
   value?:
@@ -85,7 +87,6 @@ export const CommerceMetadata1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type CommerceMetadata1$Outbound = {};
 
@@ -96,19 +97,6 @@ export const CommerceMetadata1$outboundSchema: z.ZodType<
   CommerceMetadata1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadata1$ {
-  /** @deprecated use `CommerceMetadata1$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadata1$inboundSchema;
-  /** @deprecated use `CommerceMetadata1$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadata1$outboundSchema;
-  /** @deprecated use `CommerceMetadata1$Outbound` instead. */
-  export type Outbound = CommerceMetadata1$Outbound;
-}
-
 export function commerceMetadata1ToJSON(
   commerceMetadata1: CommerceMetadata1,
 ): string {
@@ -116,7 +104,6 @@ export function commerceMetadata1ToJSON(
     CommerceMetadata1$outboundSchema.parse(commerceMetadata1),
   );
 }
-
 export function commerceMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadata1, SDKValidationError> {
@@ -138,7 +125,6 @@ export const CommerceMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type CommerceMetadata5$Outbound =
   | CommerceMetadata1$Outbound
@@ -158,19 +144,6 @@ export const CommerceMetadata5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadata5$ {
-  /** @deprecated use `CommerceMetadata5$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadata5$inboundSchema;
-  /** @deprecated use `CommerceMetadata5$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadata5$outboundSchema;
-  /** @deprecated use `CommerceMetadata5$Outbound` instead. */
-  export type Outbound = CommerceMetadata5$Outbound;
-}
-
 export function commerceMetadata5ToJSON(
   commerceMetadata5: CommerceMetadata5,
 ): string {
@@ -178,7 +151,6 @@ export function commerceMetadata5ToJSON(
     CommerceMetadata5$outboundSchema.parse(commerceMetadata5),
   );
 }
-
 export function commerceMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadata5, SDKValidationError> {
@@ -208,7 +180,6 @@ export const CommerceMetadataExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type CommerceMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -237,19 +208,6 @@ export const CommerceMetadataExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadataExtraData$ {
-  /** @deprecated use `CommerceMetadataExtraData$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadataExtraData$inboundSchema;
-  /** @deprecated use `CommerceMetadataExtraData$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadataExtraData$outboundSchema;
-  /** @deprecated use `CommerceMetadataExtraData$Outbound` instead. */
-  export type Outbound = CommerceMetadataExtraData$Outbound;
-}
-
 export function commerceMetadataExtraDataToJSON(
   commerceMetadataExtraData: CommerceMetadataExtraData,
 ): string {
@@ -257,7 +215,6 @@ export function commerceMetadataExtraDataToJSON(
     CommerceMetadataExtraData$outboundSchema.parse(commerceMetadataExtraData),
   );
 }
-
 export function commerceMetadataExtraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadataExtraData, SDKValidationError> {
@@ -278,7 +235,6 @@ export const CommerceMetadataFormat$inboundSchema: z.ZodType<
     z.nativeEnum(CommerceMetadataFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CommerceMetadataFormat$outboundSchema: z.ZodType<
   CommerceMetadataFormat,
@@ -289,24 +245,12 @@ export const CommerceMetadataFormat$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadataFormat$ {
-  /** @deprecated use `CommerceMetadataFormat$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadataFormat$inboundSchema;
-  /** @deprecated use `CommerceMetadataFormat$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadataFormat$outboundSchema;
-}
-
 /** @internal */
 export const CommerceMetadataSchemas1$inboundSchema: z.ZodType<
   CommerceMetadataSchemas1,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type CommerceMetadataSchemas1$Outbound = {};
 
@@ -317,19 +261,6 @@ export const CommerceMetadataSchemas1$outboundSchema: z.ZodType<
   CommerceMetadataSchemas1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadataSchemas1$ {
-  /** @deprecated use `CommerceMetadataSchemas1$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadataSchemas1$inboundSchema;
-  /** @deprecated use `CommerceMetadataSchemas1$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadataSchemas1$outboundSchema;
-  /** @deprecated use `CommerceMetadataSchemas1$Outbound` instead. */
-  export type Outbound = CommerceMetadataSchemas1$Outbound;
-}
-
 export function commerceMetadataSchemas1ToJSON(
   commerceMetadataSchemas1: CommerceMetadataSchemas1,
 ): string {
@@ -337,7 +268,6 @@ export function commerceMetadataSchemas1ToJSON(
     CommerceMetadataSchemas1$outboundSchema.parse(commerceMetadataSchemas1),
   );
 }
-
 export function commerceMetadataSchemas1FromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadataSchemas1, SDKValidationError> {
@@ -359,7 +289,6 @@ export const CommerceMetadataSchemas5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type CommerceMetadataSchemas5$Outbound =
   | CommerceMetadataSchemas1$Outbound
@@ -379,19 +308,6 @@ export const CommerceMetadataSchemas5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadataSchemas5$ {
-  /** @deprecated use `CommerceMetadataSchemas5$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadataSchemas5$inboundSchema;
-  /** @deprecated use `CommerceMetadataSchemas5$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadataSchemas5$outboundSchema;
-  /** @deprecated use `CommerceMetadataSchemas5$Outbound` instead. */
-  export type Outbound = CommerceMetadataSchemas5$Outbound;
-}
-
 export function commerceMetadataSchemas5ToJSON(
   commerceMetadataSchemas5: CommerceMetadataSchemas5,
 ): string {
@@ -399,7 +315,6 @@ export function commerceMetadataSchemas5ToJSON(
     CommerceMetadataSchemas5$outboundSchema.parse(commerceMetadataSchemas5),
   );
 }
-
 export function commerceMetadataSchemas5FromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadataSchemas5, SDKValidationError> {
@@ -429,7 +344,6 @@ export const CommerceMetadataValue$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type CommerceMetadataValue$Outbound =
   | { [k: string]: any }
@@ -458,19 +372,6 @@ export const CommerceMetadataValue$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadataValue$ {
-  /** @deprecated use `CommerceMetadataValue$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadataValue$inboundSchema;
-  /** @deprecated use `CommerceMetadataValue$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadataValue$outboundSchema;
-  /** @deprecated use `CommerceMetadataValue$Outbound` instead. */
-  export type Outbound = CommerceMetadataValue$Outbound;
-}
-
 export function commerceMetadataValueToJSON(
   commerceMetadataValue: CommerceMetadataValue,
 ): string {
@@ -478,7 +379,6 @@ export function commerceMetadataValueToJSON(
     CommerceMetadataValue$outboundSchema.parse(commerceMetadataValue),
   );
 }
-
 export function commerceMetadataValueFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadataValue, SDKValidationError> {
@@ -495,6 +395,7 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  description: z.string().optional(),
   extra_data: z.union([
     z.record(z.any()),
     z.string(),
@@ -513,6 +414,7 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
+  required: z.boolean().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
@@ -534,9 +436,9 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
-
 /** @internal */
 export type CommerceMetadata$Outbound = {
+  description?: string | undefined;
   extra_data?:
     | { [k: string]: any }
     | string
@@ -548,6 +450,7 @@ export type CommerceMetadata$Outbound = {
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
+  required?: boolean | undefined;
   slug?: string | undefined;
   type?: string | undefined;
   value?:
@@ -565,6 +468,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceMetadata
 > = z.object({
+  description: z.string().optional(),
   extraData: z.union([
     z.record(z.any()),
     z.string(),
@@ -583,6 +487,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
+  required: z.boolean().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
@@ -605,19 +510,6 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceMetadata$ {
-  /** @deprecated use `CommerceMetadata$inboundSchema` instead. */
-  export const inboundSchema = CommerceMetadata$inboundSchema;
-  /** @deprecated use `CommerceMetadata$outboundSchema` instead. */
-  export const outboundSchema = CommerceMetadata$outboundSchema;
-  /** @deprecated use `CommerceMetadata$Outbound` instead. */
-  export type Outbound = CommerceMetadata$Outbound;
-}
-
 export function commerceMetadataToJSON(
   commerceMetadata: CommerceMetadata,
 ): string {
@@ -625,7 +517,6 @@ export function commerceMetadataToJSON(
     CommerceMetadata$outboundSchema.parse(commerceMetadata),
   );
 }
-
 export function commerceMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceMetadata, SDKValidationError> {

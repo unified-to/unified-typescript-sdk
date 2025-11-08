@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAccountingCategoryRequest = {
@@ -24,23 +21,6 @@ export type CreateAccountingCategoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAccountingCategoryRequest$inboundSchema: z.ZodType<
-  CreateAccountingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingCategory: shared.AccountingCategory$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingCategory": "accountingCategory",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAccountingCategoryRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateAccountingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAccountingCategoryRequest$ {
-  /** @deprecated use `CreateAccountingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAccountingCategoryRequest$inboundSchema;
-  /** @deprecated use `CreateAccountingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAccountingCategoryRequest$outboundSchema;
-  /** @deprecated use `CreateAccountingCategoryRequest$Outbound` instead. */
-  export type Outbound = CreateAccountingCategoryRequest$Outbound;
-}
-
 export function createAccountingCategoryRequestToJSON(
   createAccountingCategoryRequest: CreateAccountingCategoryRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createAccountingCategoryRequestToJSON(
     CreateAccountingCategoryRequest$outboundSchema.parse(
       createAccountingCategoryRequest,
     ),
-  );
-}
-
-export function createAccountingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAccountingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAccountingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAccountingCategoryRequest' from JSON`,
   );
 }

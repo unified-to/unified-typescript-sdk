@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingCashflowRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingCashflowRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingCashflowRequest$inboundSchema: z.ZodType<
-  GetAccountingCashflowRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingCashflowRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingCashflowRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingCashflowRequest$ {
-  /** @deprecated use `GetAccountingCashflowRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingCashflowRequest$inboundSchema;
-  /** @deprecated use `GetAccountingCashflowRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingCashflowRequest$outboundSchema;
-  /** @deprecated use `GetAccountingCashflowRequest$Outbound` instead. */
-  export type Outbound = GetAccountingCashflowRequest$Outbound;
-}
-
 export function getAccountingCashflowRequestToJSON(
   getAccountingCashflowRequest: GetAccountingCashflowRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingCashflowRequestToJSON(
     GetAccountingCashflowRequest$outboundSchema.parse(
       getAccountingCashflowRequest,
     ),
-  );
-}
-
-export function getAccountingCashflowRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingCashflowRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingCashflowRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingCashflowRequest' from JSON`,
   );
 }

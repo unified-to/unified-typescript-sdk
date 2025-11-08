@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateTaskCommentRequest = {
@@ -24,23 +21,6 @@ export type CreateTaskCommentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateTaskCommentRequest$inboundSchema: z.ZodType<
-  CreateTaskCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  TaskComment: shared.TaskComment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "TaskComment": "taskComment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateTaskCommentRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateTaskCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateTaskCommentRequest$ {
-  /** @deprecated use `CreateTaskCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateTaskCommentRequest$inboundSchema;
-  /** @deprecated use `CreateTaskCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateTaskCommentRequest$outboundSchema;
-  /** @deprecated use `CreateTaskCommentRequest$Outbound` instead. */
-  export type Outbound = CreateTaskCommentRequest$Outbound;
-}
-
 export function createTaskCommentRequestToJSON(
   createTaskCommentRequest: CreateTaskCommentRequest,
 ): string {
   return JSON.stringify(
     CreateTaskCommentRequest$outboundSchema.parse(createTaskCommentRequest),
-  );
-}
-
-export function createTaskCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateTaskCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateTaskCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateTaskCommentRequest' from JSON`,
   );
 }

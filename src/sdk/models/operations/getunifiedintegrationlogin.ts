@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedIntegrationLoginRequest = {
   env?: string | undefined;
@@ -32,28 +29,6 @@ export type GetUnifiedIntegrationLoginRequest = {
    */
   workspaceId: string;
 };
-
-/** @internal */
-export const GetUnifiedIntegrationLoginRequest$inboundSchema: z.ZodType<
-  GetUnifiedIntegrationLoginRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  env: z.string().optional(),
-  failure_redirect: z.string().optional(),
-  integration_type: z.string(),
-  redirect: z.boolean().optional(),
-  state: z.string().optional(),
-  success_redirect: z.string().optional(),
-  workspace_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "failure_redirect": "failureRedirect",
-    "integration_type": "integrationType",
-    "success_redirect": "successRedirect",
-    "workspace_id": "workspaceId",
-  });
-});
 
 /** @internal */
 export type GetUnifiedIntegrationLoginRequest$Outbound = {
@@ -88,20 +63,6 @@ export const GetUnifiedIntegrationLoginRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetUnifiedIntegrationLoginRequest$ {
-  /** @deprecated use `GetUnifiedIntegrationLoginRequest$inboundSchema` instead. */
-  export const inboundSchema = GetUnifiedIntegrationLoginRequest$inboundSchema;
-  /** @deprecated use `GetUnifiedIntegrationLoginRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    GetUnifiedIntegrationLoginRequest$outboundSchema;
-  /** @deprecated use `GetUnifiedIntegrationLoginRequest$Outbound` instead. */
-  export type Outbound = GetUnifiedIntegrationLoginRequest$Outbound;
-}
-
 export function getUnifiedIntegrationLoginRequestToJSON(
   getUnifiedIntegrationLoginRequest: GetUnifiedIntegrationLoginRequest,
 ): string {
@@ -109,15 +70,5 @@ export function getUnifiedIntegrationLoginRequestToJSON(
     GetUnifiedIntegrationLoginRequest$outboundSchema.parse(
       getUnifiedIntegrationLoginRequest,
     ),
-  );
-}
-
-export function getUnifiedIntegrationLoginRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetUnifiedIntegrationLoginRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetUnifiedIntegrationLoginRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetUnifiedIntegrationLoginRequest' from JSON`,
   );
 }

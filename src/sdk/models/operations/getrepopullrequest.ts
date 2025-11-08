@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoPullrequestRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetRepoPullrequestRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetRepoPullrequestRequest$inboundSchema: z.ZodType<
-  GetRepoPullrequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetRepoPullrequestRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetRepoPullrequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetRepoPullrequestRequest$ {
-  /** @deprecated use `GetRepoPullrequestRequest$inboundSchema` instead. */
-  export const inboundSchema = GetRepoPullrequestRequest$inboundSchema;
-  /** @deprecated use `GetRepoPullrequestRequest$outboundSchema` instead. */
-  export const outboundSchema = GetRepoPullrequestRequest$outboundSchema;
-  /** @deprecated use `GetRepoPullrequestRequest$Outbound` instead. */
-  export type Outbound = GetRepoPullrequestRequest$Outbound;
-}
-
 export function getRepoPullrequestRequestToJSON(
   getRepoPullrequestRequest: GetRepoPullrequestRequest,
 ): string {
   return JSON.stringify(
     GetRepoPullrequestRequest$outboundSchema.parse(getRepoPullrequestRequest),
-  );
-}
-
-export function getRepoPullrequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetRepoPullrequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetRepoPullrequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetRepoPullrequestRequest' from JSON`,
   );
 }

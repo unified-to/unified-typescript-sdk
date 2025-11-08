@@ -54,7 +54,6 @@ export const MarketingList$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type MarketingList$Outbound = {
   created_at?: string | undefined;
@@ -96,23 +95,9 @@ export const MarketingList$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MarketingList$ {
-  /** @deprecated use `MarketingList$inboundSchema` instead. */
-  export const inboundSchema = MarketingList$inboundSchema;
-  /** @deprecated use `MarketingList$outboundSchema` instead. */
-  export const outboundSchema = MarketingList$outboundSchema;
-  /** @deprecated use `MarketingList$Outbound` instead. */
-  export type Outbound = MarketingList$Outbound;
-}
-
 export function marketingListToJSON(marketingList: MarketingList): string {
   return JSON.stringify(MarketingList$outboundSchema.parse(marketingList));
 }
-
 export function marketingListFromJSON(
   jsonString: string,
 ): SafeParseResult<MarketingList, SDKValidationError> {

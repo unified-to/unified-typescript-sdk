@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsCompanyRequest = {
@@ -28,24 +25,6 @@ export type UpdateAtsCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAtsCompanyRequest$inboundSchema: z.ZodType<
-  UpdateAtsCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsCompany: shared.AtsCompany$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsCompany": "atsCompany",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAtsCompanyRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateAtsCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAtsCompanyRequest$ {
-  /** @deprecated use `UpdateAtsCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAtsCompanyRequest$inboundSchema;
-  /** @deprecated use `UpdateAtsCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAtsCompanyRequest$outboundSchema;
-  /** @deprecated use `UpdateAtsCompanyRequest$Outbound` instead. */
-  export type Outbound = UpdateAtsCompanyRequest$Outbound;
-}
-
 export function updateAtsCompanyRequestToJSON(
   updateAtsCompanyRequest: UpdateAtsCompanyRequest,
 ): string {
   return JSON.stringify(
     UpdateAtsCompanyRequest$outboundSchema.parse(updateAtsCompanyRequest),
-  );
-}
-
-export function updateAtsCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAtsCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAtsCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAtsCompanyRequest' from JSON`,
   );
 }

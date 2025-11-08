@@ -36,7 +36,6 @@ export const TicketingTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(TicketingTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TicketingTelephoneType$outboundSchema: z.ZodType<
   TicketingTelephoneType,
@@ -47,17 +46,6 @@ export const TicketingTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingTelephoneType$ {
-  /** @deprecated use `TicketingTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = TicketingTelephoneType$inboundSchema;
-  /** @deprecated use `TicketingTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = TicketingTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const TicketingTelephone$inboundSchema: z.ZodType<
   TicketingTelephone,
@@ -67,7 +55,6 @@ export const TicketingTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: TicketingTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type TicketingTelephone$Outbound = {
   telephone: string;
@@ -84,19 +71,6 @@ export const TicketingTelephone$outboundSchema: z.ZodType<
   type: TicketingTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingTelephone$ {
-  /** @deprecated use `TicketingTelephone$inboundSchema` instead. */
-  export const inboundSchema = TicketingTelephone$inboundSchema;
-  /** @deprecated use `TicketingTelephone$outboundSchema` instead. */
-  export const outboundSchema = TicketingTelephone$outboundSchema;
-  /** @deprecated use `TicketingTelephone$Outbound` instead. */
-  export type Outbound = TicketingTelephone$Outbound;
-}
-
 export function ticketingTelephoneToJSON(
   ticketingTelephone: TicketingTelephone,
 ): string {
@@ -104,7 +78,6 @@ export function ticketingTelephoneToJSON(
     TicketingTelephone$outboundSchema.parse(ticketingTelephone),
   );
 }
-
 export function ticketingTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<TicketingTelephone, SDKValidationError> {

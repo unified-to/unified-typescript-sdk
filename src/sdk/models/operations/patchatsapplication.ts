@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsApplicationRequest = {
@@ -28,24 +25,6 @@ export type PatchAtsApplicationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAtsApplicationRequest$inboundSchema: z.ZodType<
-  PatchAtsApplicationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsApplication: shared.AtsApplication$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsApplication": "atsApplication",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAtsApplicationRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchAtsApplicationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAtsApplicationRequest$ {
-  /** @deprecated use `PatchAtsApplicationRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAtsApplicationRequest$inboundSchema;
-  /** @deprecated use `PatchAtsApplicationRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAtsApplicationRequest$outboundSchema;
-  /** @deprecated use `PatchAtsApplicationRequest$Outbound` instead. */
-  export type Outbound = PatchAtsApplicationRequest$Outbound;
-}
-
 export function patchAtsApplicationRequestToJSON(
   patchAtsApplicationRequest: PatchAtsApplicationRequest,
 ): string {
   return JSON.stringify(
     PatchAtsApplicationRequest$outboundSchema.parse(patchAtsApplicationRequest),
-  );
-}
-
-export function patchAtsApplicationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAtsApplicationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAtsApplicationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAtsApplicationRequest' from JSON`,
   );
 }

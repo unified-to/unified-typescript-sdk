@@ -21,7 +21,6 @@ export const CrmEventFormOption$inboundSchema: z.ZodType<
   label: z.string().optional(),
   value: z.string().optional(),
 });
-
 /** @internal */
 export type CrmEventFormOption$Outbound = {
   label?: string | undefined;
@@ -38,19 +37,6 @@ export const CrmEventFormOption$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmEventFormOption$ {
-  /** @deprecated use `CrmEventFormOption$inboundSchema` instead. */
-  export const inboundSchema = CrmEventFormOption$inboundSchema;
-  /** @deprecated use `CrmEventFormOption$outboundSchema` instead. */
-  export const outboundSchema = CrmEventFormOption$outboundSchema;
-  /** @deprecated use `CrmEventFormOption$Outbound` instead. */
-  export type Outbound = CrmEventFormOption$Outbound;
-}
-
 export function crmEventFormOptionToJSON(
   crmEventFormOption: CrmEventFormOption,
 ): string {
@@ -58,7 +44,6 @@ export function crmEventFormOptionToJSON(
     CrmEventFormOption$outboundSchema.parse(crmEventFormOption),
   );
 }
-
 export function crmEventFormOptionFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmEventFormOption, SDKValidationError> {

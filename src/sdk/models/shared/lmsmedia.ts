@@ -41,7 +41,6 @@ export const LmsMediaType$inboundSchema: z.ZodType<
     z.nativeEnum(LmsMediaType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const LmsMediaType$outboundSchema: z.ZodType<
   LmsMediaType,
@@ -51,17 +50,6 @@ export const LmsMediaType$outboundSchema: z.ZodType<
   z.nativeEnum(LmsMediaType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsMediaType$ {
-  /** @deprecated use `LmsMediaType$inboundSchema` instead. */
-  export const inboundSchema = LmsMediaType$inboundSchema;
-  /** @deprecated use `LmsMediaType$outboundSchema` instead. */
-  export const outboundSchema = LmsMediaType$outboundSchema;
-}
 
 /** @internal */
 export const LmsMedia$inboundSchema: z.ZodType<
@@ -79,7 +67,6 @@ export const LmsMedia$inboundSchema: z.ZodType<
     "thumbnail_url": "thumbnailUrl",
   });
 });
-
 /** @internal */
 export type LmsMedia$Outbound = {
   description?: string | undefined;
@@ -106,23 +93,9 @@ export const LmsMedia$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsMedia$ {
-  /** @deprecated use `LmsMedia$inboundSchema` instead. */
-  export const inboundSchema = LmsMedia$inboundSchema;
-  /** @deprecated use `LmsMedia$outboundSchema` instead. */
-  export const outboundSchema = LmsMedia$outboundSchema;
-  /** @deprecated use `LmsMedia$Outbound` instead. */
-  export type Outbound = LmsMedia$Outbound;
-}
-
 export function lmsMediaToJSON(lmsMedia: LmsMedia): string {
   return JSON.stringify(LmsMedia$outboundSchema.parse(lmsMedia));
 }
-
 export function lmsMediaFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsMedia, SDKValidationError> {

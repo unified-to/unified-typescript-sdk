@@ -40,23 +40,6 @@ export type CreatePassthroughJsonResponse = {
 };
 
 /** @internal */
-export const CreatePassthroughJsonRequest$inboundSchema: z.ZodType<
-  CreatePassthroughJsonRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RequestBody: z.any().optional(),
-  connection_id: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RequestBody": "requestBody",
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type CreatePassthroughJsonRequest$Outbound = {
   RequestBody?: any | undefined;
   connection_id: string;
@@ -81,19 +64,6 @@ export const CreatePassthroughJsonRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreatePassthroughJsonRequest$ {
-  /** @deprecated use `CreatePassthroughJsonRequest$inboundSchema` instead. */
-  export const inboundSchema = CreatePassthroughJsonRequest$inboundSchema;
-  /** @deprecated use `CreatePassthroughJsonRequest$outboundSchema` instead. */
-  export const outboundSchema = CreatePassthroughJsonRequest$outboundSchema;
-  /** @deprecated use `CreatePassthroughJsonRequest$Outbound` instead. */
-  export type Outbound = CreatePassthroughJsonRequest$Outbound;
-}
-
 export function createPassthroughJsonRequestToJSON(
   createPassthroughJsonRequest: CreatePassthroughJsonRequest,
 ): string {
@@ -101,16 +71,6 @@ export function createPassthroughJsonRequestToJSON(
     CreatePassthroughJsonRequest$outboundSchema.parse(
       createPassthroughJsonRequest,
     ),
-  );
-}
-
-export function createPassthroughJsonRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreatePassthroughJsonRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreatePassthroughJsonRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreatePassthroughJsonRequest' from JSON`,
   );
 }
 
@@ -126,52 +86,6 @@ export const CreatePassthroughJsonResponseResult$inboundSchema: z.ZodType<
   z.string(),
   z.string(),
 ]);
-
-/** @internal */
-export type CreatePassthroughJsonResponseResult$Outbound =
-  | ReadableStream<Uint8Array>
-  | any
-  | string
-  | string
-  | string;
-
-/** @internal */
-export const CreatePassthroughJsonResponseResult$outboundSchema: z.ZodType<
-  CreatePassthroughJsonResponseResult$Outbound,
-  z.ZodTypeDef,
-  CreatePassthroughJsonResponseResult
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreatePassthroughJsonResponseResult$ {
-  /** @deprecated use `CreatePassthroughJsonResponseResult$inboundSchema` instead. */
-  export const inboundSchema =
-    CreatePassthroughJsonResponseResult$inboundSchema;
-  /** @deprecated use `CreatePassthroughJsonResponseResult$outboundSchema` instead. */
-  export const outboundSchema =
-    CreatePassthroughJsonResponseResult$outboundSchema;
-  /** @deprecated use `CreatePassthroughJsonResponseResult$Outbound` instead. */
-  export type Outbound = CreatePassthroughJsonResponseResult$Outbound;
-}
-
-export function createPassthroughJsonResponseResultToJSON(
-  createPassthroughJsonResponseResult: CreatePassthroughJsonResponseResult,
-): string {
-  return JSON.stringify(
-    CreatePassthroughJsonResponseResult$outboundSchema.parse(
-      createPassthroughJsonResponseResult,
-    ),
-  );
-}
 
 export function createPassthroughJsonResponseResultFromJSON(
   jsonString: string,
@@ -204,62 +118,6 @@ export const CreatePassthroughJsonResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type CreatePassthroughJsonResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-  Result?:
-    | ReadableStream<Uint8Array>
-    | any
-    | string
-    | string
-    | string
-    | undefined;
-};
-
-/** @internal */
-export const CreatePassthroughJsonResponse$outboundSchema: z.ZodType<
-  CreatePassthroughJsonResponse$Outbound,
-  z.ZodTypeDef,
-  CreatePassthroughJsonResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-  result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreatePassthroughJsonResponse$ {
-  /** @deprecated use `CreatePassthroughJsonResponse$inboundSchema` instead. */
-  export const inboundSchema = CreatePassthroughJsonResponse$inboundSchema;
-  /** @deprecated use `CreatePassthroughJsonResponse$outboundSchema` instead. */
-  export const outboundSchema = CreatePassthroughJsonResponse$outboundSchema;
-  /** @deprecated use `CreatePassthroughJsonResponse$Outbound` instead. */
-  export type Outbound = CreatePassthroughJsonResponse$Outbound;
-}
-
-export function createPassthroughJsonResponseToJSON(
-  createPassthroughJsonResponse: CreatePassthroughJsonResponse,
-): string {
-  return JSON.stringify(
-    CreatePassthroughJsonResponse$outboundSchema.parse(
-      createPassthroughJsonResponse,
-    ),
-  );
-}
 
 export function createPassthroughJsonResponseFromJSON(
   jsonString: string,

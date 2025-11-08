@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateKmsPageRequest = {
@@ -28,24 +25,6 @@ export type UpdateKmsPageRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateKmsPageRequest$inboundSchema: z.ZodType<
-  UpdateKmsPageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsPage: shared.KmsPage$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsPage": "kmsPage",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateKmsPageRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateKmsPageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateKmsPageRequest$ {
-  /** @deprecated use `UpdateKmsPageRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateKmsPageRequest$inboundSchema;
-  /** @deprecated use `UpdateKmsPageRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateKmsPageRequest$outboundSchema;
-  /** @deprecated use `UpdateKmsPageRequest$Outbound` instead. */
-  export type Outbound = UpdateKmsPageRequest$Outbound;
-}
-
 export function updateKmsPageRequestToJSON(
   updateKmsPageRequest: UpdateKmsPageRequest,
 ): string {
   return JSON.stringify(
     UpdateKmsPageRequest$outboundSchema.parse(updateKmsPageRequest),
-  );
-}
-
-export function updateKmsPageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateKmsPageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateKmsPageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateKmsPageRequest' from JSON`,
   );
 }

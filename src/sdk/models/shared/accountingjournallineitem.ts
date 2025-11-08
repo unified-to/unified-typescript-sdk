@@ -52,7 +52,6 @@ export const AccountingJournalLineitem$inboundSchema: z.ZodType<
     "total_amount": "totalAmount",
   });
 });
-
 /** @internal */
 export type AccountingJournalLineitem$Outbound = {
   account_id?: string | undefined;
@@ -99,19 +98,6 @@ export const AccountingJournalLineitem$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingJournalLineitem$ {
-  /** @deprecated use `AccountingJournalLineitem$inboundSchema` instead. */
-  export const inboundSchema = AccountingJournalLineitem$inboundSchema;
-  /** @deprecated use `AccountingJournalLineitem$outboundSchema` instead. */
-  export const outboundSchema = AccountingJournalLineitem$outboundSchema;
-  /** @deprecated use `AccountingJournalLineitem$Outbound` instead. */
-  export type Outbound = AccountingJournalLineitem$Outbound;
-}
-
 export function accountingJournalLineitemToJSON(
   accountingJournalLineitem: AccountingJournalLineitem,
 ): string {
@@ -119,7 +105,6 @@ export function accountingJournalLineitemToJSON(
     AccountingJournalLineitem$outboundSchema.parse(accountingJournalLineitem),
   );
 }
-
 export function accountingJournalLineitemFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingJournalLineitem, SDKValidationError> {

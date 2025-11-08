@@ -43,7 +43,6 @@ export const AccountingCategory$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingCategory$Outbound = {
   created_at?: string | undefined;
@@ -79,19 +78,6 @@ export const AccountingCategory$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCategory$ {
-  /** @deprecated use `AccountingCategory$inboundSchema` instead. */
-  export const inboundSchema = AccountingCategory$inboundSchema;
-  /** @deprecated use `AccountingCategory$outboundSchema` instead. */
-  export const outboundSchema = AccountingCategory$outboundSchema;
-  /** @deprecated use `AccountingCategory$Outbound` instead. */
-  export type Outbound = AccountingCategory$Outbound;
-}
-
 export function accountingCategoryToJSON(
   accountingCategory: AccountingCategory,
 ): string {
@@ -99,7 +85,6 @@ export function accountingCategoryToJSON(
     AccountingCategory$outboundSchema.parse(accountingCategory),
   );
 }
-
 export function accountingCategoryFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingCategory, SDKValidationError> {

@@ -55,7 +55,6 @@ export const AtsOfferStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AtsOfferStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsOfferStatus$outboundSchema: z.ZodType<
   AtsOfferStatus,
@@ -65,17 +64,6 @@ export const AtsOfferStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AtsOfferStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsOfferStatus$ {
-  /** @deprecated use `AtsOfferStatus$inboundSchema` instead. */
-  export const inboundSchema = AtsOfferStatus$inboundSchema;
-  /** @deprecated use `AtsOfferStatus$outboundSchema` instead. */
-  export const outboundSchema = AtsOfferStatus$outboundSchema;
-}
 
 /** @internal */
 export const AtsOffer$inboundSchema: z.ZodType<
@@ -113,7 +101,6 @@ export const AtsOffer$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AtsOffer$Outbound = {
   accepted_at?: string | undefined;
@@ -161,23 +148,9 @@ export const AtsOffer$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsOffer$ {
-  /** @deprecated use `AtsOffer$inboundSchema` instead. */
-  export const inboundSchema = AtsOffer$inboundSchema;
-  /** @deprecated use `AtsOffer$outboundSchema` instead. */
-  export const outboundSchema = AtsOffer$outboundSchema;
-  /** @deprecated use `AtsOffer$Outbound` instead. */
-  export type Outbound = AtsOffer$Outbound;
-}
-
 export function atsOfferToJSON(atsOffer: AtsOffer): string {
   return JSON.stringify(AtsOffer$outboundSchema.parse(atsOffer));
 }
-
 export function atsOfferFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsOffer, SDKValidationError> {

@@ -24,20 +24,6 @@ export type RemoveMartechListResponse = {
 };
 
 /** @internal */
-export const RemoveMartechListRequest$inboundSchema: z.ZodType<
-  RemoveMartechListRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveMartechListRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveMartechListRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMartechListRequest$ {
-  /** @deprecated use `RemoveMartechListRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveMartechListRequest$inboundSchema;
-  /** @deprecated use `RemoveMartechListRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveMartechListRequest$outboundSchema;
-  /** @deprecated use `RemoveMartechListRequest$Outbound` instead. */
-  export type Outbound = RemoveMartechListRequest$Outbound;
-}
-
 export function removeMartechListRequestToJSON(
   removeMartechListRequest: RemoveMartechListRequest,
 ): string {
   return JSON.stringify(
     RemoveMartechListRequest$outboundSchema.parse(removeMartechListRequest),
-  );
-}
-
-export function removeMartechListRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveMartechListRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveMartechListRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveMartechListRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveMartechListResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveMartechListResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveMartechListResponse$outboundSchema: z.ZodType<
-  RemoveMartechListResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveMartechListResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveMartechListResponse$ {
-  /** @deprecated use `RemoveMartechListResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveMartechListResponse$inboundSchema;
-  /** @deprecated use `RemoveMartechListResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveMartechListResponse$outboundSchema;
-  /** @deprecated use `RemoveMartechListResponse$Outbound` instead. */
-  export type Outbound = RemoveMartechListResponse$Outbound;
-}
-
-export function removeMartechListResponseToJSON(
-  removeMartechListResponse: RemoveMartechListResponse,
-): string {
-  return JSON.stringify(
-    RemoveMartechListResponse$outboundSchema.parse(removeMartechListResponse),
-  );
-}
 
 export function removeMartechListResponseFromJSON(
   jsonString: string,

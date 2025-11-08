@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAccountingCategoryRequest = {
@@ -28,24 +25,6 @@ export type PatchAccountingCategoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAccountingCategoryRequest$inboundSchema: z.ZodType<
-  PatchAccountingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingCategory: shared.AccountingCategory$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingCategory": "accountingCategory",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAccountingCategoryRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchAccountingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAccountingCategoryRequest$ {
-  /** @deprecated use `PatchAccountingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAccountingCategoryRequest$inboundSchema;
-  /** @deprecated use `PatchAccountingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAccountingCategoryRequest$outboundSchema;
-  /** @deprecated use `PatchAccountingCategoryRequest$Outbound` instead. */
-  export type Outbound = PatchAccountingCategoryRequest$Outbound;
-}
-
 export function patchAccountingCategoryRequestToJSON(
   patchAccountingCategoryRequest: PatchAccountingCategoryRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchAccountingCategoryRequestToJSON(
     PatchAccountingCategoryRequest$outboundSchema.parse(
       patchAccountingCategoryRequest,
     ),
-  );
-}
-
-export function patchAccountingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAccountingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAccountingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAccountingCategoryRequest' from JSON`,
   );
 }

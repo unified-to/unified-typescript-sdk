@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListMessagingMessagesRequest = {
   /**
@@ -64,41 +61,6 @@ export type ListMessagingMessagesRequest = {
 };
 
 /** @internal */
-export const ListMessagingMessagesRequest$inboundSchema: z.ZodType<
-  ListMessagingMessagesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  channel_id: z.string().optional(),
-  connection_id: z.string(),
-  end_le: z.string().optional(),
-  end_lt: z.string().optional(),
-  expand: z.boolean().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parent_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  start_gte: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "channel_id": "channelId",
-    "connection_id": "connectionId",
-    "end_le": "endLe",
-    "end_lt": "endLt",
-    "parent_id": "parentId",
-    "start_gte": "startGte",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
-
-/** @internal */
 export type ListMessagingMessagesRequest$Outbound = {
   channel_id?: string | undefined;
   connection_id: string;
@@ -153,19 +115,6 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListMessagingMessagesRequest$ {
-  /** @deprecated use `ListMessagingMessagesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListMessagingMessagesRequest$inboundSchema;
-  /** @deprecated use `ListMessagingMessagesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListMessagingMessagesRequest$outboundSchema;
-  /** @deprecated use `ListMessagingMessagesRequest$Outbound` instead. */
-  export type Outbound = ListMessagingMessagesRequest$Outbound;
-}
-
 export function listMessagingMessagesRequestToJSON(
   listMessagingMessagesRequest: ListMessagingMessagesRequest,
 ): string {
@@ -173,15 +122,5 @@ export function listMessagingMessagesRequestToJSON(
     ListMessagingMessagesRequest$outboundSchema.parse(
       listMessagingMessagesRequest,
     ),
-  );
-}
-
-export function listMessagingMessagesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListMessagingMessagesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListMessagingMessagesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListMessagingMessagesRequest' from JSON`,
   );
 }

@@ -36,7 +36,6 @@ export const AccountingTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingTelephoneType$outboundSchema: z.ZodType<
   AccountingTelephoneType,
@@ -47,17 +46,6 @@ export const AccountingTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTelephoneType$ {
-  /** @deprecated use `AccountingTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = AccountingTelephoneType$inboundSchema;
-  /** @deprecated use `AccountingTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = AccountingTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const AccountingTelephone$inboundSchema: z.ZodType<
   AccountingTelephone,
@@ -67,7 +55,6 @@ export const AccountingTelephone$inboundSchema: z.ZodType<
   telephone: z.string().optional(),
   type: AccountingTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AccountingTelephone$Outbound = {
   telephone?: string | undefined;
@@ -84,19 +71,6 @@ export const AccountingTelephone$outboundSchema: z.ZodType<
   type: AccountingTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTelephone$ {
-  /** @deprecated use `AccountingTelephone$inboundSchema` instead. */
-  export const inboundSchema = AccountingTelephone$inboundSchema;
-  /** @deprecated use `AccountingTelephone$outboundSchema` instead. */
-  export const outboundSchema = AccountingTelephone$outboundSchema;
-  /** @deprecated use `AccountingTelephone$Outbound` instead. */
-  export type Outbound = AccountingTelephone$Outbound;
-}
-
 export function accountingTelephoneToJSON(
   accountingTelephone: AccountingTelephone,
 ): string {
@@ -104,7 +78,6 @@ export function accountingTelephoneToJSON(
     AccountingTelephone$outboundSchema.parse(accountingTelephone),
   );
 }
-
 export function accountingTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingTelephone, SDKValidationError> {

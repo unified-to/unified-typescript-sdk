@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListTaskProjectsRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListTaskProjectsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListTaskProjectsRequest$inboundSchema: z.ZodType<
-  ListTaskProjectsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  org_id: z.string().optional(),
-  parent_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "org_id": "orgId",
-    "parent_id": "parentId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListTaskProjectsRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListTaskProjectsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListTaskProjectsRequest$ {
-  /** @deprecated use `ListTaskProjectsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListTaskProjectsRequest$inboundSchema;
-  /** @deprecated use `ListTaskProjectsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListTaskProjectsRequest$outboundSchema;
-  /** @deprecated use `ListTaskProjectsRequest$Outbound` instead. */
-  export type Outbound = ListTaskProjectsRequest$Outbound;
-}
-
 export function listTaskProjectsRequestToJSON(
   listTaskProjectsRequest: ListTaskProjectsRequest,
 ): string {
   return JSON.stringify(
     ListTaskProjectsRequest$outboundSchema.parse(listTaskProjectsRequest),
-  );
-}
-
-export function listTaskProjectsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListTaskProjectsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListTaskProjectsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListTaskProjectsRequest' from JSON`,
   );
 }

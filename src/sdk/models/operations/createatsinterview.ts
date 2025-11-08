@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateAtsInterviewRequest = {
@@ -24,23 +21,6 @@ export type CreateAtsInterviewRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateAtsInterviewRequest$inboundSchema: z.ZodType<
-  CreateAtsInterviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsInterview: shared.AtsInterview$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsInterview": "atsInterview",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateAtsInterviewRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateAtsInterviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateAtsInterviewRequest$ {
-  /** @deprecated use `CreateAtsInterviewRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateAtsInterviewRequest$inboundSchema;
-  /** @deprecated use `CreateAtsInterviewRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateAtsInterviewRequest$outboundSchema;
-  /** @deprecated use `CreateAtsInterviewRequest$Outbound` instead. */
-  export type Outbound = CreateAtsInterviewRequest$Outbound;
-}
-
 export function createAtsInterviewRequestToJSON(
   createAtsInterviewRequest: CreateAtsInterviewRequest,
 ): string {
   return JSON.stringify(
     CreateAtsInterviewRequest$outboundSchema.parse(createAtsInterviewRequest),
-  );
-}
-
-export function createAtsInterviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateAtsInterviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateAtsInterviewRequest' from JSON`,
   );
 }

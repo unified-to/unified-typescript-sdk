@@ -38,7 +38,6 @@ export const PropertyCrmEventForm$inboundSchema: z.ZodType<
     "redirect_url": "redirectUrl",
   });
 });
-
 /** @internal */
 export type PropertyCrmEventForm$Outbound = {
   archived_at?: string | undefined;
@@ -64,19 +63,6 @@ export const PropertyCrmEventForm$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventForm$ {
-  /** @deprecated use `PropertyCrmEventForm$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventForm$inboundSchema;
-  /** @deprecated use `PropertyCrmEventForm$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventForm$outboundSchema;
-  /** @deprecated use `PropertyCrmEventForm$Outbound` instead. */
-  export type Outbound = PropertyCrmEventForm$Outbound;
-}
-
 export function propertyCrmEventFormToJSON(
   propertyCrmEventForm: PropertyCrmEventForm,
 ): string {
@@ -84,7 +70,6 @@ export function propertyCrmEventFormToJSON(
     PropertyCrmEventForm$outboundSchema.parse(propertyCrmEventForm),
   );
 }
-
 export function propertyCrmEventFormFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventForm, SDKValidationError> {

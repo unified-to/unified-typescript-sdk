@@ -54,7 +54,6 @@ export const MetadataMetadataFormat$inboundSchema: z.ZodType<
     z.nativeEnum(MetadataMetadataFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const MetadataMetadataFormat$outboundSchema: z.ZodType<
   MetadataMetadataFormat,
@@ -64,17 +63,6 @@ export const MetadataMetadataFormat$outboundSchema: z.ZodType<
   z.nativeEnum(MetadataMetadataFormat),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MetadataMetadataFormat$ {
-  /** @deprecated use `MetadataMetadataFormat$inboundSchema` instead. */
-  export const inboundSchema = MetadataMetadataFormat$inboundSchema;
-  /** @deprecated use `MetadataMetadataFormat$outboundSchema` instead. */
-  export const outboundSchema = MetadataMetadataFormat$outboundSchema;
-}
 
 /** @internal */
 export const MetadataMetadata$inboundSchema: z.ZodType<
@@ -103,7 +91,6 @@ export const MetadataMetadata$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type MetadataMetadata$Outbound = {
   created_at?: string | undefined;
@@ -145,19 +132,6 @@ export const MetadataMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MetadataMetadata$ {
-  /** @deprecated use `MetadataMetadata$inboundSchema` instead. */
-  export const inboundSchema = MetadataMetadata$inboundSchema;
-  /** @deprecated use `MetadataMetadata$outboundSchema` instead. */
-  export const outboundSchema = MetadataMetadata$outboundSchema;
-  /** @deprecated use `MetadataMetadata$Outbound` instead. */
-  export type Outbound = MetadataMetadata$Outbound;
-}
-
 export function metadataMetadataToJSON(
   metadataMetadata: MetadataMetadata,
 ): string {
@@ -165,7 +139,6 @@ export function metadataMetadataToJSON(
     MetadataMetadata$outboundSchema.parse(metadataMetadata),
   );
 }
-
 export function metadataMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<MetadataMetadata, SDKValidationError> {

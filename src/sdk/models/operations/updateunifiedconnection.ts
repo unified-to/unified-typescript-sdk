@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateUnifiedConnectionRequest = {
@@ -19,20 +16,6 @@ export type UpdateUnifiedConnectionRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const UpdateUnifiedConnectionRequest$inboundSchema: z.ZodType<
-  UpdateUnifiedConnectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  Connection: shared.Connection$inboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "Connection": "connection",
-  });
-});
 
 /** @internal */
 export type UpdateUnifiedConnectionRequest$Outbound = {
@@ -54,19 +37,6 @@ export const UpdateUnifiedConnectionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateUnifiedConnectionRequest$ {
-  /** @deprecated use `UpdateUnifiedConnectionRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateUnifiedConnectionRequest$inboundSchema;
-  /** @deprecated use `UpdateUnifiedConnectionRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateUnifiedConnectionRequest$outboundSchema;
-  /** @deprecated use `UpdateUnifiedConnectionRequest$Outbound` instead. */
-  export type Outbound = UpdateUnifiedConnectionRequest$Outbound;
-}
-
 export function updateUnifiedConnectionRequestToJSON(
   updateUnifiedConnectionRequest: UpdateUnifiedConnectionRequest,
 ): string {
@@ -74,15 +44,5 @@ export function updateUnifiedConnectionRequestToJSON(
     UpdateUnifiedConnectionRequest$outboundSchema.parse(
       updateUnifiedConnectionRequest,
     ),
-  );
-}
-
-export function updateUnifiedConnectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateUnifiedConnectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateUnifiedConnectionRequest' from JSON`,
   );
 }

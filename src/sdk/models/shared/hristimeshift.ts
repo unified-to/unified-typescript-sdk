@@ -71,7 +71,6 @@ export const HrisTimeshift$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type HrisTimeshift$Outbound = {
   approved_at?: string | undefined;
@@ -128,23 +127,9 @@ export const HrisTimeshift$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTimeshift$ {
-  /** @deprecated use `HrisTimeshift$inboundSchema` instead. */
-  export const inboundSchema = HrisTimeshift$inboundSchema;
-  /** @deprecated use `HrisTimeshift$outboundSchema` instead. */
-  export const outboundSchema = HrisTimeshift$outboundSchema;
-  /** @deprecated use `HrisTimeshift$Outbound` instead. */
-  export type Outbound = HrisTimeshift$Outbound;
-}
-
 export function hrisTimeshiftToJSON(hrisTimeshift: HrisTimeshift): string {
   return JSON.stringify(HrisTimeshift$outboundSchema.parse(hrisTimeshift));
 }
-
 export function hrisTimeshiftFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisTimeshift, SDKValidationError> {

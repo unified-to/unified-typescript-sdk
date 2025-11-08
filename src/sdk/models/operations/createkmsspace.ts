@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateKmsSpaceRequest = {
@@ -24,23 +21,6 @@ export type CreateKmsSpaceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateKmsSpaceRequest$inboundSchema: z.ZodType<
-  CreateKmsSpaceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsSpace: shared.KmsSpace$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsSpace": "kmsSpace",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateKmsSpaceRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateKmsSpaceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateKmsSpaceRequest$ {
-  /** @deprecated use `CreateKmsSpaceRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateKmsSpaceRequest$inboundSchema;
-  /** @deprecated use `CreateKmsSpaceRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateKmsSpaceRequest$outboundSchema;
-  /** @deprecated use `CreateKmsSpaceRequest$Outbound` instead. */
-  export type Outbound = CreateKmsSpaceRequest$Outbound;
-}
-
 export function createKmsSpaceRequestToJSON(
   createKmsSpaceRequest: CreateKmsSpaceRequest,
 ): string {
   return JSON.stringify(
     CreateKmsSpaceRequest$outboundSchema.parse(createKmsSpaceRequest),
-  );
-}
-
-export function createKmsSpaceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateKmsSpaceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateKmsSpaceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateKmsSpaceRequest' from JSON`,
   );
 }

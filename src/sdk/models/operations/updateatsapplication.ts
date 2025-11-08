@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsApplicationRequest = {
@@ -28,24 +25,6 @@ export type UpdateAtsApplicationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAtsApplicationRequest$inboundSchema: z.ZodType<
-  UpdateAtsApplicationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsApplication: shared.AtsApplication$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsApplication": "atsApplication",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAtsApplicationRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAtsApplicationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAtsApplicationRequest$ {
-  /** @deprecated use `UpdateAtsApplicationRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAtsApplicationRequest$inboundSchema;
-  /** @deprecated use `UpdateAtsApplicationRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAtsApplicationRequest$outboundSchema;
-  /** @deprecated use `UpdateAtsApplicationRequest$Outbound` instead. */
-  export type Outbound = UpdateAtsApplicationRequest$Outbound;
-}
-
 export function updateAtsApplicationRequestToJSON(
   updateAtsApplicationRequest: UpdateAtsApplicationRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAtsApplicationRequestToJSON(
     UpdateAtsApplicationRequest$outboundSchema.parse(
       updateAtsApplicationRequest,
     ),
-  );
-}
-
-export function updateAtsApplicationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAtsApplicationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAtsApplicationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAtsApplicationRequest' from JSON`,
   );
 }

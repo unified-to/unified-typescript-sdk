@@ -43,7 +43,6 @@ export const Operation$inboundSchema: z.ZodType<
     z.nativeEnum(Operation),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Operation$outboundSchema: z.ZodType<
   Operation,
@@ -53,17 +52,6 @@ export const Operation$outboundSchema: z.ZodType<
   z.nativeEnum(Operation),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Operation$ {
-  /** @deprecated use `Operation$inboundSchema` instead. */
-  export const inboundSchema = Operation$inboundSchema;
-  /** @deprecated use `Operation$outboundSchema` instead. */
-  export const outboundSchema = Operation$outboundSchema;
-}
 
 /** @internal */
 export const ScimGroupMemberType$inboundSchema: z.ZodType<
@@ -75,7 +63,6 @@ export const ScimGroupMemberType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimGroupMemberType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimGroupMemberType$outboundSchema: z.ZodType<
   ScimGroupMemberType,
@@ -85,17 +72,6 @@ export const ScimGroupMemberType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimGroupMemberType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimGroupMemberType$ {
-  /** @deprecated use `ScimGroupMemberType$inboundSchema` instead. */
-  export const inboundSchema = ScimGroupMemberType$inboundSchema;
-  /** @deprecated use `ScimGroupMemberType$outboundSchema` instead. */
-  export const outboundSchema = ScimGroupMemberType$outboundSchema;
-}
 
 /** @internal */
 export const ScimGroupMember$inboundSchema: z.ZodType<
@@ -113,7 +89,6 @@ export const ScimGroupMember$inboundSchema: z.ZodType<
     "$ref": "dollarRef",
   });
 });
-
 /** @internal */
 export type ScimGroupMember$Outbound = {
   $ref?: string | undefined;
@@ -140,25 +115,11 @@ export const ScimGroupMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimGroupMember$ {
-  /** @deprecated use `ScimGroupMember$inboundSchema` instead. */
-  export const inboundSchema = ScimGroupMember$inboundSchema;
-  /** @deprecated use `ScimGroupMember$outboundSchema` instead. */
-  export const outboundSchema = ScimGroupMember$outboundSchema;
-  /** @deprecated use `ScimGroupMember$Outbound` instead. */
-  export type Outbound = ScimGroupMember$Outbound;
-}
-
 export function scimGroupMemberToJSON(
   scimGroupMember: ScimGroupMember,
 ): string {
   return JSON.stringify(ScimGroupMember$outboundSchema.parse(scimGroupMember));
 }
-
 export function scimGroupMemberFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimGroupMember, SDKValidationError> {

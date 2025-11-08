@@ -40,7 +40,6 @@ export const PropertyHrisEmployeeAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyHrisEmployeeAddress$Outbound = {
   address1?: string | undefined;
@@ -75,19 +74,6 @@ export const PropertyHrisEmployeeAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyHrisEmployeeAddress$ {
-  /** @deprecated use `PropertyHrisEmployeeAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyHrisEmployeeAddress$inboundSchema;
-  /** @deprecated use `PropertyHrisEmployeeAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyHrisEmployeeAddress$outboundSchema;
-  /** @deprecated use `PropertyHrisEmployeeAddress$Outbound` instead. */
-  export type Outbound = PropertyHrisEmployeeAddress$Outbound;
-}
-
 export function propertyHrisEmployeeAddressToJSON(
   propertyHrisEmployeeAddress: PropertyHrisEmployeeAddress,
 ): string {
@@ -97,7 +83,6 @@ export function propertyHrisEmployeeAddressToJSON(
     ),
   );
 }
-
 export function propertyHrisEmployeeAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyHrisEmployeeAddress, SDKValidationError> {

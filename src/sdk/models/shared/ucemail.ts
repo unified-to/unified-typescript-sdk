@@ -34,7 +34,6 @@ export const UcEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(UcEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const UcEmailType$outboundSchema: z.ZodType<
   UcEmailType,
@@ -45,24 +44,12 @@ export const UcEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcEmailType$ {
-  /** @deprecated use `UcEmailType$inboundSchema` instead. */
-  export const inboundSchema = UcEmailType$inboundSchema;
-  /** @deprecated use `UcEmailType$outboundSchema` instead. */
-  export const outboundSchema = UcEmailType$outboundSchema;
-}
-
 /** @internal */
 export const UcEmail$inboundSchema: z.ZodType<UcEmail, z.ZodTypeDef, unknown> =
   z.object({
     email: z.string(),
     type: UcEmailType$inboundSchema.optional(),
   });
-
 /** @internal */
 export type UcEmail$Outbound = {
   email: string;
@@ -79,23 +66,9 @@ export const UcEmail$outboundSchema: z.ZodType<
   type: UcEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcEmail$ {
-  /** @deprecated use `UcEmail$inboundSchema` instead. */
-  export const inboundSchema = UcEmail$inboundSchema;
-  /** @deprecated use `UcEmail$outboundSchema` instead. */
-  export const outboundSchema = UcEmail$outboundSchema;
-  /** @deprecated use `UcEmail$Outbound` instead. */
-  export type Outbound = UcEmail$Outbound;
-}
-
 export function ucEmailToJSON(ucEmail: UcEmail): string {
   return JSON.stringify(UcEmail$outboundSchema.parse(ucEmail));
 }
-
 export function ucEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<UcEmail, SDKValidationError> {

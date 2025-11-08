@@ -74,7 +74,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGe
       ),
       z.string().transform(catchUnrecognizedEnum),
     ]);
-
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema:
   z.ZodType<
@@ -87,19 +86,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGe
     ),
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender$outboundSchema;
-}
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$inboundSchema:
@@ -129,7 +115,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$i
     startDate: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
   });
-
 /** @internal */
 export type PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Outbound =
   {
@@ -176,22 +161,6 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$o
     startDate: z.date().transform(v => v.toISOString()).optional(),
   });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$ {
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$inboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$outboundSchema;
-  /** @deprecated use `PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Outbound` instead. */
-  export type Outbound =
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User$Outbound;
-}
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserToJSON(
   propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User:
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User,
@@ -201,7 +170,6 @@ export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20Use
       .parse(propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User),
   );
 }
-
 export function propertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserFromJSON(
   jsonString: string,
 ): SafeParseResult<

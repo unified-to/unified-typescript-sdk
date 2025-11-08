@@ -36,7 +36,6 @@ export const ScimEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimEmailType$outboundSchema: z.ZodType<
   ScimEmailType,
@@ -46,17 +45,6 @@ export const ScimEmailType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimEmailType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimEmailType$ {
-  /** @deprecated use `ScimEmailType$inboundSchema` instead. */
-  export const inboundSchema = ScimEmailType$inboundSchema;
-  /** @deprecated use `ScimEmailType$outboundSchema` instead. */
-  export const outboundSchema = ScimEmailType$outboundSchema;
-}
 
 /** @internal */
 export const ScimEmail$inboundSchema: z.ZodType<
@@ -69,7 +57,6 @@ export const ScimEmail$inboundSchema: z.ZodType<
   type: ScimEmailType$inboundSchema,
   value: z.string().optional(),
 });
-
 /** @internal */
 export type ScimEmail$Outbound = {
   display?: string | undefined;
@@ -90,23 +77,9 @@ export const ScimEmail$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimEmail$ {
-  /** @deprecated use `ScimEmail$inboundSchema` instead. */
-  export const inboundSchema = ScimEmail$inboundSchema;
-  /** @deprecated use `ScimEmail$outboundSchema` instead. */
-  export const outboundSchema = ScimEmail$outboundSchema;
-  /** @deprecated use `ScimEmail$Outbound` instead. */
-  export type Outbound = ScimEmail$Outbound;
-}
-
 export function scimEmailToJSON(scimEmail: ScimEmail): string {
   return JSON.stringify(ScimEmail$outboundSchema.parse(scimEmail));
 }
-
 export function scimEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimEmail, SDKValidationError> {

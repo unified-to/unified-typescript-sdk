@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   CalendarRecordingMedia,
   CalendarRecordingMedia$inboundSchema,
-  CalendarRecordingMedia$Outbound,
-  CalendarRecordingMedia$outboundSchema,
 } from "./calendarrecordingmedia.js";
 
 export type CalendarRecording = {
@@ -59,69 +57,6 @@ export const CalendarRecording$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
-/** @internal */
-export type CalendarRecording$Outbound = {
-  created_at?: string | undefined;
-  end_at?: string | undefined;
-  event_id?: string | undefined;
-  expires_at?: string | undefined;
-  id?: string | undefined;
-  media?: Array<CalendarRecordingMedia$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  updated_at?: string | undefined;
-  web_url?: string | undefined;
-};
-
-/** @internal */
-export const CalendarRecording$outboundSchema: z.ZodType<
-  CalendarRecording$Outbound,
-  z.ZodTypeDef,
-  CalendarRecording
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  eventId: z.string().optional(),
-  expiresAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  media: z.array(CalendarRecordingMedia$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  webUrl: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    endAt: "end_at",
-    eventId: "event_id",
-    expiresAt: "expires_at",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    webUrl: "web_url",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarRecording$ {
-  /** @deprecated use `CalendarRecording$inboundSchema` instead. */
-  export const inboundSchema = CalendarRecording$inboundSchema;
-  /** @deprecated use `CalendarRecording$outboundSchema` instead. */
-  export const outboundSchema = CalendarRecording$outboundSchema;
-  /** @deprecated use `CalendarRecording$Outbound` instead. */
-  export type Outbound = CalendarRecording$Outbound;
-}
-
-export function calendarRecordingToJSON(
-  calendarRecording: CalendarRecording,
-): string {
-  return JSON.stringify(
-    CalendarRecording$outboundSchema.parse(calendarRecording),
-  );
-}
 
 export function calendarRecordingFromJSON(
   jsonString: string,

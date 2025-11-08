@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUcCommentRequest = {
@@ -28,24 +25,6 @@ export type PatchUcCommentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchUcCommentRequest$inboundSchema: z.ZodType<
-  PatchUcCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  UcComment: shared.UcComment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "UcComment": "ucComment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchUcCommentRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchUcCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchUcCommentRequest$ {
-  /** @deprecated use `PatchUcCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchUcCommentRequest$inboundSchema;
-  /** @deprecated use `PatchUcCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchUcCommentRequest$outboundSchema;
-  /** @deprecated use `PatchUcCommentRequest$Outbound` instead. */
-  export type Outbound = PatchUcCommentRequest$Outbound;
-}
-
 export function patchUcCommentRequestToJSON(
   patchUcCommentRequest: PatchUcCommentRequest,
 ): string {
   return JSON.stringify(
     PatchUcCommentRequest$outboundSchema.parse(patchUcCommentRequest),
-  );
-}
-
-export function patchUcCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchUcCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchUcCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchUcCommentRequest' from JSON`,
   );
 }

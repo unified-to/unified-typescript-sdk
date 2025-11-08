@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingProfitlossesRequest = {
   /**
@@ -54,38 +51,6 @@ export type ListAccountingProfitlossesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAccountingProfitlossesRequest$inboundSchema: z.ZodType<
-  ListAccountingProfitlossesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  category_id: z.string().optional(),
-  connection_id: z.string(),
-  contact_id: z.string().optional(),
-  end_le: z.string().optional(),
-  end_lt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  start_gte: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "category_id": "categoryId",
-    "connection_id": "connectionId",
-    "contact_id": "contactId",
-    "end_le": "endLe",
-    "end_lt": "endLt",
-    "start_gte": "startGte",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAccountingProfitlossesRequest$Outbound = {
@@ -137,20 +102,6 @@ export const ListAccountingProfitlossesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountingProfitlossesRequest$ {
-  /** @deprecated use `ListAccountingProfitlossesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAccountingProfitlossesRequest$inboundSchema;
-  /** @deprecated use `ListAccountingProfitlossesRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    ListAccountingProfitlossesRequest$outboundSchema;
-  /** @deprecated use `ListAccountingProfitlossesRequest$Outbound` instead. */
-  export type Outbound = ListAccountingProfitlossesRequest$Outbound;
-}
-
 export function listAccountingProfitlossesRequestToJSON(
   listAccountingProfitlossesRequest: ListAccountingProfitlossesRequest,
 ): string {
@@ -158,15 +109,5 @@ export function listAccountingProfitlossesRequestToJSON(
     ListAccountingProfitlossesRequest$outboundSchema.parse(
       listAccountingProfitlossesRequest,
     ),
-  );
-}
-
-export function listAccountingProfitlossesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAccountingProfitlossesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAccountingProfitlossesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAccountingProfitlossesRequest' from JSON`,
   );
 }

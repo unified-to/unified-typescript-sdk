@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCalendarLinkRequest = {
@@ -28,24 +25,6 @@ export type UpdateCalendarLinkRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateCalendarLinkRequest$inboundSchema: z.ZodType<
-  UpdateCalendarLinkRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CalendarLink: shared.CalendarLink$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CalendarLink": "calendarLink",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateCalendarLinkRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateCalendarLinkRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCalendarLinkRequest$ {
-  /** @deprecated use `UpdateCalendarLinkRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateCalendarLinkRequest$inboundSchema;
-  /** @deprecated use `UpdateCalendarLinkRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateCalendarLinkRequest$outboundSchema;
-  /** @deprecated use `UpdateCalendarLinkRequest$Outbound` instead. */
-  export type Outbound = UpdateCalendarLinkRequest$Outbound;
-}
-
 export function updateCalendarLinkRequestToJSON(
   updateCalendarLinkRequest: UpdateCalendarLinkRequest,
 ): string {
   return JSON.stringify(
     UpdateCalendarLinkRequest$outboundSchema.parse(updateCalendarLinkRequest),
-  );
-}
-
-export function updateCalendarLinkRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCalendarLinkRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCalendarLinkRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCalendarLinkRequest' from JSON`,
   );
 }

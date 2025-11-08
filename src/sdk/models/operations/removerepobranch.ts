@@ -24,20 +24,6 @@ export type RemoveRepoBranchResponse = {
 };
 
 /** @internal */
-export const RemoveRepoBranchRequest$inboundSchema: z.ZodType<
-  RemoveRepoBranchRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveRepoBranchRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveRepoBranchRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoBranchRequest$ {
-  /** @deprecated use `RemoveRepoBranchRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoBranchRequest$inboundSchema;
-  /** @deprecated use `RemoveRepoBranchRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoBranchRequest$outboundSchema;
-  /** @deprecated use `RemoveRepoBranchRequest$Outbound` instead. */
-  export type Outbound = RemoveRepoBranchRequest$Outbound;
-}
-
 export function removeRepoBranchRequestToJSON(
   removeRepoBranchRequest: RemoveRepoBranchRequest,
 ): string {
   return JSON.stringify(
     RemoveRepoBranchRequest$outboundSchema.parse(removeRepoBranchRequest),
-  );
-}
-
-export function removeRepoBranchRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveRepoBranchRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveRepoBranchRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveRepoBranchResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveRepoBranchResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveRepoBranchResponse$outboundSchema: z.ZodType<
-  RemoveRepoBranchResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveRepoBranchResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveRepoBranchResponse$ {
-  /** @deprecated use `RemoveRepoBranchResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveRepoBranchResponse$inboundSchema;
-  /** @deprecated use `RemoveRepoBranchResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveRepoBranchResponse$outboundSchema;
-  /** @deprecated use `RemoveRepoBranchResponse$Outbound` instead. */
-  export type Outbound = RemoveRepoBranchResponse$Outbound;
-}
-
-export function removeRepoBranchResponseToJSON(
-  removeRepoBranchResponse: RemoveRepoBranchResponse,
-): string {
-  return JSON.stringify(
-    RemoveRepoBranchResponse$outboundSchema.parse(removeRepoBranchResponse),
-  );
-}
 
 export function removeRepoBranchResponseFromJSON(
   jsonString: string,

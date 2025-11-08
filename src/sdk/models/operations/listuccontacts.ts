@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListUcContactsRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListUcContactsRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListUcContactsRequest$inboundSchema: z.ZodType<
-  ListUcContactsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListUcContactsRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListUcContactsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUcContactsRequest$ {
-  /** @deprecated use `ListUcContactsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUcContactsRequest$inboundSchema;
-  /** @deprecated use `ListUcContactsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUcContactsRequest$outboundSchema;
-  /** @deprecated use `ListUcContactsRequest$Outbound` instead. */
-  export type Outbound = ListUcContactsRequest$Outbound;
-}
-
 export function listUcContactsRequestToJSON(
   listUcContactsRequest: ListUcContactsRequest,
 ): string {
   return JSON.stringify(
     ListUcContactsRequest$outboundSchema.parse(listUcContactsRequest),
-  );
-}
-
-export function listUcContactsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUcContactsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUcContactsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUcContactsRequest' from JSON`,
   );
 }

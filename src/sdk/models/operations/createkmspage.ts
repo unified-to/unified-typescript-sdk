@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateKmsPageRequest = {
@@ -24,23 +21,6 @@ export type CreateKmsPageRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateKmsPageRequest$inboundSchema: z.ZodType<
-  CreateKmsPageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsPage: shared.KmsPage$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsPage": "kmsPage",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateKmsPageRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateKmsPageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateKmsPageRequest$ {
-  /** @deprecated use `CreateKmsPageRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateKmsPageRequest$inboundSchema;
-  /** @deprecated use `CreateKmsPageRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateKmsPageRequest$outboundSchema;
-  /** @deprecated use `CreateKmsPageRequest$Outbound` instead. */
-  export type Outbound = CreateKmsPageRequest$Outbound;
-}
-
 export function createKmsPageRequestToJSON(
   createKmsPageRequest: CreateKmsPageRequest,
 ): string {
   return JSON.stringify(
     CreateKmsPageRequest$outboundSchema.parse(createKmsPageRequest),
-  );
-}
-
-export function createKmsPageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateKmsPageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateKmsPageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateKmsPageRequest' from JSON`,
   );
 }

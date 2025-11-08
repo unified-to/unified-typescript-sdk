@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCommerceLocationRequest = {
@@ -24,23 +21,6 @@ export type CreateCommerceLocationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCommerceLocationRequest$inboundSchema: z.ZodType<
-  CreateCommerceLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceLocation: shared.CommerceLocation$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceLocation": "commerceLocation",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCommerceLocationRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateCommerceLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCommerceLocationRequest$ {
-  /** @deprecated use `CreateCommerceLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCommerceLocationRequest$inboundSchema;
-  /** @deprecated use `CreateCommerceLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCommerceLocationRequest$outboundSchema;
-  /** @deprecated use `CreateCommerceLocationRequest$Outbound` instead. */
-  export type Outbound = CreateCommerceLocationRequest$Outbound;
-}
-
 export function createCommerceLocationRequestToJSON(
   createCommerceLocationRequest: CreateCommerceLocationRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createCommerceLocationRequestToJSON(
     CreateCommerceLocationRequest$outboundSchema.parse(
       createCommerceLocationRequest,
     ),
-  );
-}
-
-export function createCommerceLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCommerceLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCommerceLocationRequest' from JSON`,
   );
 }

@@ -42,7 +42,6 @@ export const AccountingTransactionLineItem$inboundSchema: z.ZodType<
     "unit_quantity": "unitQuantity",
   });
 });
-
 /** @internal */
 export type AccountingTransactionLineItem$Outbound = {
   account_id?: string | undefined;
@@ -79,19 +78,6 @@ export const AccountingTransactionLineItem$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTransactionLineItem$ {
-  /** @deprecated use `AccountingTransactionLineItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingTransactionLineItem$inboundSchema;
-  /** @deprecated use `AccountingTransactionLineItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingTransactionLineItem$outboundSchema;
-  /** @deprecated use `AccountingTransactionLineItem$Outbound` instead. */
-  export type Outbound = AccountingTransactionLineItem$Outbound;
-}
-
 export function accountingTransactionLineItemToJSON(
   accountingTransactionLineItem: AccountingTransactionLineItem,
 ): string {
@@ -101,7 +87,6 @@ export function accountingTransactionLineItemToJSON(
     ),
   );
 }
-
 export function accountingTransactionLineItemFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingTransactionLineItem, SDKValidationError> {

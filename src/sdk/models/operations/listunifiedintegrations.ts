@@ -4,10 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
 import { ClosedEnum } from "../../types/enums.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export const ListUnifiedIntegrationsQueryParamCategories = {
   Passthrough: "passthrough",
@@ -59,48 +56,9 @@ export type ListUnifiedIntegrationsRequest = {
 };
 
 /** @internal */
-export const ListUnifiedIntegrationsQueryParamCategories$inboundSchema:
+export const ListUnifiedIntegrationsQueryParamCategories$outboundSchema:
   z.ZodNativeEnum<typeof ListUnifiedIntegrationsQueryParamCategories> = z
     .nativeEnum(ListUnifiedIntegrationsQueryParamCategories);
-
-/** @internal */
-export const ListUnifiedIntegrationsQueryParamCategories$outboundSchema:
-  z.ZodNativeEnum<typeof ListUnifiedIntegrationsQueryParamCategories> =
-    ListUnifiedIntegrationsQueryParamCategories$inboundSchema;
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedIntegrationsQueryParamCategories$ {
-  /** @deprecated use `ListUnifiedIntegrationsQueryParamCategories$inboundSchema` instead. */
-  export const inboundSchema =
-    ListUnifiedIntegrationsQueryParamCategories$inboundSchema;
-  /** @deprecated use `ListUnifiedIntegrationsQueryParamCategories$outboundSchema` instead. */
-  export const outboundSchema =
-    ListUnifiedIntegrationsQueryParamCategories$outboundSchema;
-}
-
-/** @internal */
-export const ListUnifiedIntegrationsRequest$inboundSchema: z.ZodType<
-  ListUnifiedIntegrationsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  active: z.boolean().optional(),
-  categories: z.array(ListUnifiedIntegrationsQueryParamCategories$inboundSchema)
-    .optional(),
-  env: z.string().optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  summary: z.boolean().optional(),
-  type: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListUnifiedIntegrationsRequest$Outbound = {
@@ -136,19 +94,6 @@ export const ListUnifiedIntegrationsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListUnifiedIntegrationsRequest$ {
-  /** @deprecated use `ListUnifiedIntegrationsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListUnifiedIntegrationsRequest$inboundSchema;
-  /** @deprecated use `ListUnifiedIntegrationsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListUnifiedIntegrationsRequest$outboundSchema;
-  /** @deprecated use `ListUnifiedIntegrationsRequest$Outbound` instead. */
-  export type Outbound = ListUnifiedIntegrationsRequest$Outbound;
-}
-
 export function listUnifiedIntegrationsRequestToJSON(
   listUnifiedIntegrationsRequest: ListUnifiedIntegrationsRequest,
 ): string {
@@ -156,15 +101,5 @@ export function listUnifiedIntegrationsRequestToJSON(
     ListUnifiedIntegrationsRequest$outboundSchema.parse(
       listUnifiedIntegrationsRequest,
     ),
-  );
-}
-
-export function listUnifiedIntegrationsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListUnifiedIntegrationsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListUnifiedIntegrationsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListUnifiedIntegrationsRequest' from JSON`,
   );
 }

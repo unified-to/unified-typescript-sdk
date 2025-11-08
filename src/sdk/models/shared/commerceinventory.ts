@@ -43,7 +43,6 @@ export const CommerceInventory$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CommerceInventory$Outbound = {
   available: number;
@@ -80,19 +79,6 @@ export const CommerceInventory$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceInventory$ {
-  /** @deprecated use `CommerceInventory$inboundSchema` instead. */
-  export const inboundSchema = CommerceInventory$inboundSchema;
-  /** @deprecated use `CommerceInventory$outboundSchema` instead. */
-  export const outboundSchema = CommerceInventory$outboundSchema;
-  /** @deprecated use `CommerceInventory$Outbound` instead. */
-  export type Outbound = CommerceInventory$Outbound;
-}
-
 export function commerceInventoryToJSON(
   commerceInventory: CommerceInventory,
 ): string {
@@ -100,7 +86,6 @@ export function commerceInventoryToJSON(
     CommerceInventory$outboundSchema.parse(commerceInventory),
   );
 }
-
 export function commerceInventoryFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceInventory, SDKValidationError> {

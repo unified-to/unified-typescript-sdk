@@ -56,7 +56,6 @@ export const CommerceLocation$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CommerceLocation$Outbound = {
   address?: PropertyCommerceLocationAddress$Outbound | undefined;
@@ -99,19 +98,6 @@ export const CommerceLocation$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceLocation$ {
-  /** @deprecated use `CommerceLocation$inboundSchema` instead. */
-  export const inboundSchema = CommerceLocation$inboundSchema;
-  /** @deprecated use `CommerceLocation$outboundSchema` instead. */
-  export const outboundSchema = CommerceLocation$outboundSchema;
-  /** @deprecated use `CommerceLocation$Outbound` instead. */
-  export type Outbound = CommerceLocation$Outbound;
-}
-
 export function commerceLocationToJSON(
   commerceLocation: CommerceLocation,
 ): string {
@@ -119,7 +105,6 @@ export function commerceLocationToJSON(
     CommerceLocation$outboundSchema.parse(commerceLocation),
   );
 }
-
 export function commerceLocationFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceLocation, SDKValidationError> {

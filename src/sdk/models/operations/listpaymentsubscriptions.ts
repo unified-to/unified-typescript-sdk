@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListPaymentSubscriptionsRequest = {
   /**
@@ -50,36 +47,6 @@ export type ListPaymentSubscriptionsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListPaymentSubscriptionsRequest$inboundSchema: z.ZodType<
-  ListPaymentSubscriptionsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  contact_id: z.string().optional(),
-  end_le: z.string().optional(),
-  end_lt: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  start_gte: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "contact_id": "contactId",
-    "end_le": "endLe",
-    "end_lt": "endLt",
-    "start_gte": "startGte",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListPaymentSubscriptionsRequest$Outbound = {
@@ -128,19 +95,6 @@ export const ListPaymentSubscriptionsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPaymentSubscriptionsRequest$ {
-  /** @deprecated use `ListPaymentSubscriptionsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListPaymentSubscriptionsRequest$inboundSchema;
-  /** @deprecated use `ListPaymentSubscriptionsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListPaymentSubscriptionsRequest$outboundSchema;
-  /** @deprecated use `ListPaymentSubscriptionsRequest$Outbound` instead. */
-  export type Outbound = ListPaymentSubscriptionsRequest$Outbound;
-}
-
 export function listPaymentSubscriptionsRequestToJSON(
   listPaymentSubscriptionsRequest: ListPaymentSubscriptionsRequest,
 ): string {
@@ -148,15 +102,5 @@ export function listPaymentSubscriptionsRequestToJSON(
     ListPaymentSubscriptionsRequest$outboundSchema.parse(
       listPaymentSubscriptionsRequest,
     ),
-  );
-}
-
-export function listPaymentSubscriptionsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListPaymentSubscriptionsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListPaymentSubscriptionsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListPaymentSubscriptionsRequest' from JSON`,
   );
 }

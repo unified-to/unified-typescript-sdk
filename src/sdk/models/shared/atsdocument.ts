@@ -48,7 +48,6 @@ export const AtsDocumentType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsDocumentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsDocumentType$outboundSchema: z.ZodType<
   AtsDocumentType,
@@ -58,17 +57,6 @@ export const AtsDocumentType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsDocumentType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsDocumentType$ {
-  /** @deprecated use `AtsDocumentType$inboundSchema` instead. */
-  export const inboundSchema = AtsDocumentType$inboundSchema;
-  /** @deprecated use `AtsDocumentType$outboundSchema` instead. */
-  export const outboundSchema = AtsDocumentType$outboundSchema;
-}
 
 /** @internal */
 export const AtsDocument$inboundSchema: z.ZodType<
@@ -102,7 +90,6 @@ export const AtsDocument$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type AtsDocument$Outbound = {
   application_id?: string | undefined;
@@ -150,23 +137,9 @@ export const AtsDocument$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsDocument$ {
-  /** @deprecated use `AtsDocument$inboundSchema` instead. */
-  export const inboundSchema = AtsDocument$inboundSchema;
-  /** @deprecated use `AtsDocument$outboundSchema` instead. */
-  export const outboundSchema = AtsDocument$outboundSchema;
-  /** @deprecated use `AtsDocument$Outbound` instead. */
-  export type Outbound = AtsDocument$Outbound;
-}
-
 export function atsDocumentToJSON(atsDocument: AtsDocument): string {
   return JSON.stringify(AtsDocument$outboundSchema.parse(atsDocument));
 }
-
 export function atsDocumentFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsDocument, SDKValidationError> {

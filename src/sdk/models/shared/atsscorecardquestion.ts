@@ -23,7 +23,6 @@ export const AtsScorecardQuestion$inboundSchema: z.ZodType<
   description: z.string().optional(),
   text: z.string(),
 });
-
 /** @internal */
 export type AtsScorecardQuestion$Outbound = {
   answer?: string | undefined;
@@ -42,19 +41,6 @@ export const AtsScorecardQuestion$outboundSchema: z.ZodType<
   text: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsScorecardQuestion$ {
-  /** @deprecated use `AtsScorecardQuestion$inboundSchema` instead. */
-  export const inboundSchema = AtsScorecardQuestion$inboundSchema;
-  /** @deprecated use `AtsScorecardQuestion$outboundSchema` instead. */
-  export const outboundSchema = AtsScorecardQuestion$outboundSchema;
-  /** @deprecated use `AtsScorecardQuestion$Outbound` instead. */
-  export type Outbound = AtsScorecardQuestion$Outbound;
-}
-
 export function atsScorecardQuestionToJSON(
   atsScorecardQuestion: AtsScorecardQuestion,
 ): string {
@@ -62,7 +48,6 @@ export function atsScorecardQuestionToJSON(
     AtsScorecardQuestion$outboundSchema.parse(atsScorecardQuestion),
   );
 }
-
 export function atsScorecardQuestionFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsScorecardQuestion, SDKValidationError> {

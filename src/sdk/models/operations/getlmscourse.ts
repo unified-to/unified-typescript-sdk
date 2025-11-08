@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetLmsCourseRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetLmsCourseRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetLmsCourseRequest$inboundSchema: z.ZodType<
-  GetLmsCourseRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetLmsCourseRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetLmsCourseRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetLmsCourseRequest$ {
-  /** @deprecated use `GetLmsCourseRequest$inboundSchema` instead. */
-  export const inboundSchema = GetLmsCourseRequest$inboundSchema;
-  /** @deprecated use `GetLmsCourseRequest$outboundSchema` instead. */
-  export const outboundSchema = GetLmsCourseRequest$outboundSchema;
-  /** @deprecated use `GetLmsCourseRequest$Outbound` instead. */
-  export type Outbound = GetLmsCourseRequest$Outbound;
-}
-
 export function getLmsCourseRequestToJSON(
   getLmsCourseRequest: GetLmsCourseRequest,
 ): string {
   return JSON.stringify(
     GetLmsCourseRequest$outboundSchema.parse(getLmsCourseRequest),
-  );
-}
-
-export function getLmsCourseRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetLmsCourseRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetLmsCourseRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetLmsCourseRequest' from JSON`,
   );
 }

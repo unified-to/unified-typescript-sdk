@@ -24,20 +24,6 @@ export type RemovePaymentPaymentResponse = {
 };
 
 /** @internal */
-export const RemovePaymentPaymentRequest$inboundSchema: z.ZodType<
-  RemovePaymentPaymentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemovePaymentPaymentRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemovePaymentPaymentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePaymentPaymentRequest$ {
-  /** @deprecated use `RemovePaymentPaymentRequest$inboundSchema` instead. */
-  export const inboundSchema = RemovePaymentPaymentRequest$inboundSchema;
-  /** @deprecated use `RemovePaymentPaymentRequest$outboundSchema` instead. */
-  export const outboundSchema = RemovePaymentPaymentRequest$outboundSchema;
-  /** @deprecated use `RemovePaymentPaymentRequest$Outbound` instead. */
-  export type Outbound = RemovePaymentPaymentRequest$Outbound;
-}
-
 export function removePaymentPaymentRequestToJSON(
   removePaymentPaymentRequest: RemovePaymentPaymentRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removePaymentPaymentRequestToJSON(
     RemovePaymentPaymentRequest$outboundSchema.parse(
       removePaymentPaymentRequest,
     ),
-  );
-}
-
-export function removePaymentPaymentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemovePaymentPaymentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemovePaymentPaymentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemovePaymentPaymentRequest' from JSON`,
   );
 }
 
@@ -102,47 +65,6 @@ export const RemovePaymentPaymentResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemovePaymentPaymentResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemovePaymentPaymentResponse$outboundSchema: z.ZodType<
-  RemovePaymentPaymentResponse$Outbound,
-  z.ZodTypeDef,
-  RemovePaymentPaymentResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePaymentPaymentResponse$ {
-  /** @deprecated use `RemovePaymentPaymentResponse$inboundSchema` instead. */
-  export const inboundSchema = RemovePaymentPaymentResponse$inboundSchema;
-  /** @deprecated use `RemovePaymentPaymentResponse$outboundSchema` instead. */
-  export const outboundSchema = RemovePaymentPaymentResponse$outboundSchema;
-  /** @deprecated use `RemovePaymentPaymentResponse$Outbound` instead. */
-  export type Outbound = RemovePaymentPaymentResponse$Outbound;
-}
-
-export function removePaymentPaymentResponseToJSON(
-  removePaymentPaymentResponse: RemovePaymentPaymentResponse,
-): string {
-  return JSON.stringify(
-    RemovePaymentPaymentResponse$outboundSchema.parse(
-      removePaymentPaymentResponse,
-    ),
-  );
-}
 
 export function removePaymentPaymentResponseFromJSON(
   jsonString: string,

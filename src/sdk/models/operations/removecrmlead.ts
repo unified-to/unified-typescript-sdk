@@ -24,20 +24,6 @@ export type RemoveCrmLeadResponse = {
 };
 
 /** @internal */
-export const RemoveCrmLeadRequest$inboundSchema: z.ZodType<
-  RemoveCrmLeadRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveCrmLeadRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveCrmLeadRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCrmLeadRequest$ {
-  /** @deprecated use `RemoveCrmLeadRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveCrmLeadRequest$inboundSchema;
-  /** @deprecated use `RemoveCrmLeadRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveCrmLeadRequest$outboundSchema;
-  /** @deprecated use `RemoveCrmLeadRequest$Outbound` instead. */
-  export type Outbound = RemoveCrmLeadRequest$Outbound;
-}
-
 export function removeCrmLeadRequestToJSON(
   removeCrmLeadRequest: RemoveCrmLeadRequest,
 ): string {
   return JSON.stringify(
     RemoveCrmLeadRequest$outboundSchema.parse(removeCrmLeadRequest),
-  );
-}
-
-export function removeCrmLeadRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveCrmLeadRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveCrmLeadRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveCrmLeadRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveCrmLeadResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveCrmLeadResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveCrmLeadResponse$outboundSchema: z.ZodType<
-  RemoveCrmLeadResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveCrmLeadResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveCrmLeadResponse$ {
-  /** @deprecated use `RemoveCrmLeadResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveCrmLeadResponse$inboundSchema;
-  /** @deprecated use `RemoveCrmLeadResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveCrmLeadResponse$outboundSchema;
-  /** @deprecated use `RemoveCrmLeadResponse$Outbound` instead. */
-  export type Outbound = RemoveCrmLeadResponse$Outbound;
-}
-
-export function removeCrmLeadResponseToJSON(
-  removeCrmLeadResponse: RemoveCrmLeadResponse,
-): string {
-  return JSON.stringify(
-    RemoveCrmLeadResponse$outboundSchema.parse(removeCrmLeadResponse),
-  );
-}
 
 export function removeCrmLeadResponseFromJSON(
   jsonString: string,

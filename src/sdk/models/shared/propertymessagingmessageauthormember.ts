@@ -31,7 +31,6 @@ export const PropertyMessagingMessageAuthorMember$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type PropertyMessagingMessageAuthorMember$Outbound = {
   email?: string | undefined;
@@ -57,21 +56,6 @@ export const PropertyMessagingMessageAuthorMember$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyMessagingMessageAuthorMember$ {
-  /** @deprecated use `PropertyMessagingMessageAuthorMember$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyMessagingMessageAuthorMember$inboundSchema;
-  /** @deprecated use `PropertyMessagingMessageAuthorMember$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyMessagingMessageAuthorMember$outboundSchema;
-  /** @deprecated use `PropertyMessagingMessageAuthorMember$Outbound` instead. */
-  export type Outbound = PropertyMessagingMessageAuthorMember$Outbound;
-}
-
 export function propertyMessagingMessageAuthorMemberToJSON(
   propertyMessagingMessageAuthorMember: PropertyMessagingMessageAuthorMember,
 ): string {
@@ -81,7 +65,6 @@ export function propertyMessagingMessageAuthorMemberToJSON(
     ),
   );
 }
-
 export function propertyMessagingMessageAuthorMemberFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyMessagingMessageAuthorMember, SDKValidationError> {

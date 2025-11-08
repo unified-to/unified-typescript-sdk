@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCalendarEventRequest = {
@@ -28,24 +25,6 @@ export type PatchCalendarEventRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCalendarEventRequest$inboundSchema: z.ZodType<
-  PatchCalendarEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CalendarEvent: shared.CalendarEvent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CalendarEvent": "calendarEvent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCalendarEventRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchCalendarEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCalendarEventRequest$ {
-  /** @deprecated use `PatchCalendarEventRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCalendarEventRequest$inboundSchema;
-  /** @deprecated use `PatchCalendarEventRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCalendarEventRequest$outboundSchema;
-  /** @deprecated use `PatchCalendarEventRequest$Outbound` instead. */
-  export type Outbound = PatchCalendarEventRequest$Outbound;
-}
-
 export function patchCalendarEventRequestToJSON(
   patchCalendarEventRequest: PatchCalendarEventRequest,
 ): string {
   return JSON.stringify(
     PatchCalendarEventRequest$outboundSchema.parse(patchCalendarEventRequest),
-  );
-}
-
-export function patchCalendarEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCalendarEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCalendarEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCalendarEventRequest' from JSON`,
   );
 }

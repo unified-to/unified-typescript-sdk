@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchKmsPageRequest = {
@@ -28,24 +25,6 @@ export type PatchKmsPageRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchKmsPageRequest$inboundSchema: z.ZodType<
-  PatchKmsPageRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsPage: shared.KmsPage$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsPage": "kmsPage",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchKmsPageRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchKmsPageRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchKmsPageRequest$ {
-  /** @deprecated use `PatchKmsPageRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchKmsPageRequest$inboundSchema;
-  /** @deprecated use `PatchKmsPageRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchKmsPageRequest$outboundSchema;
-  /** @deprecated use `PatchKmsPageRequest$Outbound` instead. */
-  export type Outbound = PatchKmsPageRequest$Outbound;
-}
-
 export function patchKmsPageRequestToJSON(
   patchKmsPageRequest: PatchKmsPageRequest,
 ): string {
   return JSON.stringify(
     PatchKmsPageRequest$outboundSchema.parse(patchKmsPageRequest),
-  );
-}
-
-export function patchKmsPageRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchKmsPageRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchKmsPageRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchKmsPageRequest' from JSON`,
   );
 }

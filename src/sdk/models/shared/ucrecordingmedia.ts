@@ -45,7 +45,6 @@ export const UcRecordingMedia$inboundSchema: z.ZodType<
     "transcript_download_url": "transcriptDownloadUrl",
   });
 });
-
 /** @internal */
 export type UcRecordingMedia$Outbound = {
   end_at?: string | undefined;
@@ -77,19 +76,6 @@ export const UcRecordingMedia$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcRecordingMedia$ {
-  /** @deprecated use `UcRecordingMedia$inboundSchema` instead. */
-  export const inboundSchema = UcRecordingMedia$inboundSchema;
-  /** @deprecated use `UcRecordingMedia$outboundSchema` instead. */
-  export const outboundSchema = UcRecordingMedia$outboundSchema;
-  /** @deprecated use `UcRecordingMedia$Outbound` instead. */
-  export type Outbound = UcRecordingMedia$Outbound;
-}
-
 export function ucRecordingMediaToJSON(
   ucRecordingMedia: UcRecordingMedia,
 ): string {
@@ -97,7 +83,6 @@ export function ucRecordingMediaToJSON(
     UcRecordingMedia$outboundSchema.parse(ucRecordingMedia),
   );
 }
-
 export function ucRecordingMediaFromJSON(
   jsonString: string,
 ): SafeParseResult<UcRecordingMedia, SDKValidationError> {

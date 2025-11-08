@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -43,30 +39,6 @@ export const PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema:
     ]);
 
 /** @internal */
-export const PropertyCalendarRecordingTranscriptAttendeeStatus$outboundSchema:
-  z.ZodType<
-    PropertyCalendarRecordingTranscriptAttendeeStatus,
-    z.ZodTypeDef,
-    PropertyCalendarRecordingTranscriptAttendeeStatus
-  > = z.union([
-    z.nativeEnum(PropertyCalendarRecordingTranscriptAttendeeStatus),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCalendarRecordingTranscriptAttendeeStatus$ {
-  /** @deprecated use `PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyCalendarRecordingTranscriptAttendeeStatus$inboundSchema;
-  /** @deprecated use `PropertyCalendarRecordingTranscriptAttendeeStatus$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyCalendarRecordingTranscriptAttendeeStatus$outboundSchema;
-}
-
-/** @internal */
 export const PropertyCalendarRecordingTranscriptAttendee$inboundSchema:
   z.ZodType<
     PropertyCalendarRecordingTranscriptAttendee,
@@ -84,60 +56,6 @@ export const PropertyCalendarRecordingTranscriptAttendee$inboundSchema:
       "user_id": "userId",
     });
   });
-
-/** @internal */
-export type PropertyCalendarRecordingTranscriptAttendee$Outbound = {
-  email?: string | undefined;
-  name?: string | undefined;
-  required?: boolean | undefined;
-  status?: string | undefined;
-  user_id?: string | undefined;
-};
-
-/** @internal */
-export const PropertyCalendarRecordingTranscriptAttendee$outboundSchema:
-  z.ZodType<
-    PropertyCalendarRecordingTranscriptAttendee$Outbound,
-    z.ZodTypeDef,
-    PropertyCalendarRecordingTranscriptAttendee
-  > = z.object({
-    email: z.string().optional(),
-    name: z.string().optional(),
-    required: z.boolean().optional(),
-    status: PropertyCalendarRecordingTranscriptAttendeeStatus$outboundSchema
-      .optional(),
-    userId: z.string().optional(),
-  }).transform((v) => {
-    return remap$(v, {
-      userId: "user_id",
-    });
-  });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCalendarRecordingTranscriptAttendee$ {
-  /** @deprecated use `PropertyCalendarRecordingTranscriptAttendee$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyCalendarRecordingTranscriptAttendee$inboundSchema;
-  /** @deprecated use `PropertyCalendarRecordingTranscriptAttendee$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyCalendarRecordingTranscriptAttendee$outboundSchema;
-  /** @deprecated use `PropertyCalendarRecordingTranscriptAttendee$Outbound` instead. */
-  export type Outbound = PropertyCalendarRecordingTranscriptAttendee$Outbound;
-}
-
-export function propertyCalendarRecordingTranscriptAttendeeToJSON(
-  propertyCalendarRecordingTranscriptAttendee:
-    PropertyCalendarRecordingTranscriptAttendee,
-): string {
-  return JSON.stringify(
-    PropertyCalendarRecordingTranscriptAttendee$outboundSchema.parse(
-      propertyCalendarRecordingTranscriptAttendee,
-    ),
-  );
-}
 
 export function propertyCalendarRecordingTranscriptAttendeeFromJSON(
   jsonString: string,

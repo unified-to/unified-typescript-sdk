@@ -24,20 +24,6 @@ export type RemoveAccountingCreditmemoResponse = {
 };
 
 /** @internal */
-export const RemoveAccountingCreditmemoRequest$inboundSchema: z.ZodType<
-  RemoveAccountingCreditmemoRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveAccountingCreditmemoRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,20 +43,6 @@ export const RemoveAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAccountingCreditmemoRequest$ {
-  /** @deprecated use `RemoveAccountingCreditmemoRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveAccountingCreditmemoRequest$inboundSchema;
-  /** @deprecated use `RemoveAccountingCreditmemoRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    RemoveAccountingCreditmemoRequest$outboundSchema;
-  /** @deprecated use `RemoveAccountingCreditmemoRequest$Outbound` instead. */
-  export type Outbound = RemoveAccountingCreditmemoRequest$Outbound;
-}
-
 export function removeAccountingCreditmemoRequestToJSON(
   removeAccountingCreditmemoRequest: RemoveAccountingCreditmemoRequest,
 ): string {
@@ -78,16 +50,6 @@ export function removeAccountingCreditmemoRequestToJSON(
     RemoveAccountingCreditmemoRequest$outboundSchema.parse(
       removeAccountingCreditmemoRequest,
     ),
-  );
-}
-
-export function removeAccountingCreditmemoRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveAccountingCreditmemoRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveAccountingCreditmemoRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveAccountingCreditmemoRequest' from JSON`,
   );
 }
 
@@ -103,48 +65,6 @@ export const RemoveAccountingCreditmemoResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveAccountingCreditmemoResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveAccountingCreditmemoResponse$outboundSchema: z.ZodType<
-  RemoveAccountingCreditmemoResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveAccountingCreditmemoResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveAccountingCreditmemoResponse$ {
-  /** @deprecated use `RemoveAccountingCreditmemoResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveAccountingCreditmemoResponse$inboundSchema;
-  /** @deprecated use `RemoveAccountingCreditmemoResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RemoveAccountingCreditmemoResponse$outboundSchema;
-  /** @deprecated use `RemoveAccountingCreditmemoResponse$Outbound` instead. */
-  export type Outbound = RemoveAccountingCreditmemoResponse$Outbound;
-}
-
-export function removeAccountingCreditmemoResponseToJSON(
-  removeAccountingCreditmemoResponse: RemoveAccountingCreditmemoResponse,
-): string {
-  return JSON.stringify(
-    RemoveAccountingCreditmemoResponse$outboundSchema.parse(
-      removeAccountingCreditmemoResponse,
-    ),
-  );
-}
 
 export function removeAccountingCreditmemoResponseFromJSON(
   jsonString: string,

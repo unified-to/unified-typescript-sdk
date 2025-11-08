@@ -153,7 +153,6 @@ export const EmploymentStatus$inboundSchema: z.ZodType<
     z.nativeEnum(EmploymentStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const EmploymentStatus$outboundSchema: z.ZodType<
   EmploymentStatus,
@@ -163,17 +162,6 @@ export const EmploymentStatus$outboundSchema: z.ZodType<
   z.nativeEnum(EmploymentStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmploymentStatus$ {
-  /** @deprecated use `EmploymentStatus$inboundSchema` instead. */
-  export const inboundSchema = EmploymentStatus$inboundSchema;
-  /** @deprecated use `EmploymentStatus$outboundSchema` instead. */
-  export const outboundSchema = EmploymentStatus$outboundSchema;
-}
 
 /** @internal */
 export const HrisEmployeeEmploymentType$inboundSchema: z.ZodType<
@@ -185,7 +173,6 @@ export const HrisEmployeeEmploymentType$inboundSchema: z.ZodType<
     z.nativeEnum(HrisEmployeeEmploymentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisEmployeeEmploymentType$outboundSchema: z.ZodType<
   HrisEmployeeEmploymentType,
@@ -195,17 +182,6 @@ export const HrisEmployeeEmploymentType$outboundSchema: z.ZodType<
   z.nativeEnum(HrisEmployeeEmploymentType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisEmployeeEmploymentType$ {
-  /** @deprecated use `HrisEmployeeEmploymentType$inboundSchema` instead. */
-  export const inboundSchema = HrisEmployeeEmploymentType$inboundSchema;
-  /** @deprecated use `HrisEmployeeEmploymentType$outboundSchema` instead. */
-  export const outboundSchema = HrisEmployeeEmploymentType$outboundSchema;
-}
 
 /** @internal */
 export const HrisEmployeeGender$inboundSchema: z.ZodType<
@@ -217,7 +193,6 @@ export const HrisEmployeeGender$inboundSchema: z.ZodType<
     z.nativeEnum(HrisEmployeeGender),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisEmployeeGender$outboundSchema: z.ZodType<
   HrisEmployeeGender,
@@ -227,17 +202,6 @@ export const HrisEmployeeGender$outboundSchema: z.ZodType<
   z.nativeEnum(HrisEmployeeGender),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisEmployeeGender$ {
-  /** @deprecated use `HrisEmployeeGender$inboundSchema` instead. */
-  export const inboundSchema = HrisEmployeeGender$inboundSchema;
-  /** @deprecated use `HrisEmployeeGender$outboundSchema` instead. */
-  export const outboundSchema = HrisEmployeeGender$outboundSchema;
-}
 
 /** @internal */
 export const MaritalStatus$inboundSchema: z.ZodType<
@@ -249,7 +213,6 @@ export const MaritalStatus$inboundSchema: z.ZodType<
     z.nativeEnum(MaritalStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const MaritalStatus$outboundSchema: z.ZodType<
   MaritalStatus,
@@ -259,17 +222,6 @@ export const MaritalStatus$outboundSchema: z.ZodType<
   z.nativeEnum(MaritalStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MaritalStatus$ {
-  /** @deprecated use `MaritalStatus$inboundSchema` instead. */
-  export const inboundSchema = MaritalStatus$inboundSchema;
-  /** @deprecated use `MaritalStatus$outboundSchema` instead. */
-  export const outboundSchema = MaritalStatus$outboundSchema;
-}
 
 /** @internal */
 export const HrisEmployee$inboundSchema: z.ZodType<
@@ -349,7 +301,6 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type HrisEmployee$Outbound = {
   address?: PropertyHrisEmployeeAddress$Outbound | undefined;
@@ -466,23 +417,9 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisEmployee$ {
-  /** @deprecated use `HrisEmployee$inboundSchema` instead. */
-  export const inboundSchema = HrisEmployee$inboundSchema;
-  /** @deprecated use `HrisEmployee$outboundSchema` instead. */
-  export const outboundSchema = HrisEmployee$outboundSchema;
-  /** @deprecated use `HrisEmployee$Outbound` instead. */
-  export type Outbound = HrisEmployee$Outbound;
-}
-
 export function hrisEmployeeToJSON(hrisEmployee: HrisEmployee): string {
   return JSON.stringify(HrisEmployee$outboundSchema.parse(hrisEmployee));
 }
-
 export function hrisEmployeeFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisEmployee, SDKValidationError> {

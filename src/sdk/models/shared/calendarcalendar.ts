@@ -41,7 +41,6 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CalendarCalendar$Outbound = {
   created_at?: string | undefined;
@@ -75,19 +74,6 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarCalendar$ {
-  /** @deprecated use `CalendarCalendar$inboundSchema` instead. */
-  export const inboundSchema = CalendarCalendar$inboundSchema;
-  /** @deprecated use `CalendarCalendar$outboundSchema` instead. */
-  export const outboundSchema = CalendarCalendar$outboundSchema;
-  /** @deprecated use `CalendarCalendar$Outbound` instead. */
-  export type Outbound = CalendarCalendar$Outbound;
-}
-
 export function calendarCalendarToJSON(
   calendarCalendar: CalendarCalendar,
 ): string {
@@ -95,7 +81,6 @@ export function calendarCalendarToJSON(
     CalendarCalendar$outboundSchema.parse(calendarCalendar),
   );
 }
-
 export function calendarCalendarFromJSON(
   jsonString: string,
 ): SafeParseResult<CalendarCalendar, SDKValidationError> {

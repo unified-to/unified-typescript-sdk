@@ -71,7 +71,6 @@ export const AccountingSalesorderStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingSalesorderStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingSalesorderStatus$outboundSchema: z.ZodType<
   AccountingSalesorderStatus,
@@ -81,17 +80,6 @@ export const AccountingSalesorderStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingSalesorderStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingSalesorderStatus$ {
-  /** @deprecated use `AccountingSalesorderStatus$inboundSchema` instead. */
-  export const inboundSchema = AccountingSalesorderStatus$inboundSchema;
-  /** @deprecated use `AccountingSalesorderStatus$outboundSchema` instead. */
-  export const outboundSchema = AccountingSalesorderStatus$outboundSchema;
-}
 
 /** @internal */
 export const AccountingSalesorder$inboundSchema: z.ZodType<
@@ -131,7 +119,6 @@ export const AccountingSalesorder$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingSalesorder$Outbound = {
   account_id?: string | undefined;
@@ -190,19 +177,6 @@ export const AccountingSalesorder$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingSalesorder$ {
-  /** @deprecated use `AccountingSalesorder$inboundSchema` instead. */
-  export const inboundSchema = AccountingSalesorder$inboundSchema;
-  /** @deprecated use `AccountingSalesorder$outboundSchema` instead. */
-  export const outboundSchema = AccountingSalesorder$outboundSchema;
-  /** @deprecated use `AccountingSalesorder$Outbound` instead. */
-  export type Outbound = AccountingSalesorder$Outbound;
-}
-
 export function accountingSalesorderToJSON(
   accountingSalesorder: AccountingSalesorder,
 ): string {
@@ -210,7 +184,6 @@ export function accountingSalesorderToJSON(
     AccountingSalesorder$outboundSchema.parse(accountingSalesorder),
   );
 }
-
 export function accountingSalesorderFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingSalesorder, SDKValidationError> {

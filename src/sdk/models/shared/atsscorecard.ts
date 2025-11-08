@@ -52,7 +52,6 @@ export const Recommendation$inboundSchema: z.ZodType<
     z.nativeEnum(Recommendation),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Recommendation$outboundSchema: z.ZodType<
   Recommendation,
@@ -62,17 +61,6 @@ export const Recommendation$outboundSchema: z.ZodType<
   z.nativeEnum(Recommendation),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Recommendation$ {
-  /** @deprecated use `Recommendation$inboundSchema` instead. */
-  export const inboundSchema = Recommendation$inboundSchema;
-  /** @deprecated use `Recommendation$outboundSchema` instead. */
-  export const outboundSchema = Recommendation$outboundSchema;
-}
 
 /** @internal */
 export const AtsScorecard$inboundSchema: z.ZodType<
@@ -105,7 +93,6 @@ export const AtsScorecard$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AtsScorecard$Outbound = {
   application_id?: string | undefined;
@@ -152,23 +139,9 @@ export const AtsScorecard$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsScorecard$ {
-  /** @deprecated use `AtsScorecard$inboundSchema` instead. */
-  export const inboundSchema = AtsScorecard$inboundSchema;
-  /** @deprecated use `AtsScorecard$outboundSchema` instead. */
-  export const outboundSchema = AtsScorecard$outboundSchema;
-  /** @deprecated use `AtsScorecard$Outbound` instead. */
-  export type Outbound = AtsScorecard$Outbound;
-}
-
 export function atsScorecardToJSON(atsScorecard: AtsScorecard): string {
   return JSON.stringify(AtsScorecard$outboundSchema.parse(atsScorecard));
 }
-
 export function atsScorecardFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsScorecard, SDKValidationError> {

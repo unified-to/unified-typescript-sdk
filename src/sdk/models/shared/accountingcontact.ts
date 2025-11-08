@@ -99,7 +99,6 @@ export const TaxExemption$inboundSchema: z.ZodType<
     z.nativeEnum(TaxExemption),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TaxExemption$outboundSchema: z.ZodType<
   TaxExemption,
@@ -109,17 +108,6 @@ export const TaxExemption$outboundSchema: z.ZodType<
   z.nativeEnum(TaxExemption),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TaxExemption$ {
-  /** @deprecated use `TaxExemption$inboundSchema` instead. */
-  export const inboundSchema = TaxExemption$inboundSchema;
-  /** @deprecated use `TaxExemption$outboundSchema` instead. */
-  export const outboundSchema = TaxExemption$outboundSchema;
-}
 
 /** @internal */
 export const AccountingContact$inboundSchema: z.ZodType<
@@ -174,7 +162,6 @@ export const AccountingContact$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingContact$Outbound = {
   associated_contacts?: Array<AccountingAssociatedContact$Outbound> | undefined;
@@ -257,19 +244,6 @@ export const AccountingContact$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingContact$ {
-  /** @deprecated use `AccountingContact$inboundSchema` instead. */
-  export const inboundSchema = AccountingContact$inboundSchema;
-  /** @deprecated use `AccountingContact$outboundSchema` instead. */
-  export const outboundSchema = AccountingContact$outboundSchema;
-  /** @deprecated use `AccountingContact$Outbound` instead. */
-  export type Outbound = AccountingContact$Outbound;
-}
-
 export function accountingContactToJSON(
   accountingContact: AccountingContact,
 ): string {
@@ -277,7 +251,6 @@ export function accountingContactToJSON(
     AccountingContact$outboundSchema.parse(accountingContact),
   );
 }
-
 export function accountingContactFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingContact, SDKValidationError> {

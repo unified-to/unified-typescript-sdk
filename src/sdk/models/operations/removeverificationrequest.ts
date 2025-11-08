@@ -24,20 +24,6 @@ export type RemoveVerificationRequestResponse = {
 };
 
 /** @internal */
-export const RemoveVerificationRequestRequest$inboundSchema: z.ZodType<
-  RemoveVerificationRequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveVerificationRequestRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,19 +43,6 @@ export const RemoveVerificationRequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveVerificationRequestRequest$ {
-  /** @deprecated use `RemoveVerificationRequestRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveVerificationRequestRequest$inboundSchema;
-  /** @deprecated use `RemoveVerificationRequestRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveVerificationRequestRequest$outboundSchema;
-  /** @deprecated use `RemoveVerificationRequestRequest$Outbound` instead. */
-  export type Outbound = RemoveVerificationRequestRequest$Outbound;
-}
-
 export function removeVerificationRequestRequestToJSON(
   removeVerificationRequestRequest: RemoveVerificationRequestRequest,
 ): string {
@@ -77,16 +50,6 @@ export function removeVerificationRequestRequestToJSON(
     RemoveVerificationRequestRequest$outboundSchema.parse(
       removeVerificationRequestRequest,
     ),
-  );
-}
-
-export function removeVerificationRequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveVerificationRequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveVerificationRequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveVerificationRequestRequest' from JSON`,
   );
 }
 
@@ -102,48 +65,6 @@ export const RemoveVerificationRequestResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveVerificationRequestResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveVerificationRequestResponse$outboundSchema: z.ZodType<
-  RemoveVerificationRequestResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveVerificationRequestResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveVerificationRequestResponse$ {
-  /** @deprecated use `RemoveVerificationRequestResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveVerificationRequestResponse$inboundSchema;
-  /** @deprecated use `RemoveVerificationRequestResponse$outboundSchema` instead. */
-  export const outboundSchema =
-    RemoveVerificationRequestResponse$outboundSchema;
-  /** @deprecated use `RemoveVerificationRequestResponse$Outbound` instead. */
-  export type Outbound = RemoveVerificationRequestResponse$Outbound;
-}
-
-export function removeVerificationRequestResponseToJSON(
-  removeVerificationRequestResponse: RemoveVerificationRequestResponse,
-): string {
-  return JSON.stringify(
-    RemoveVerificationRequestResponse$outboundSchema.parse(
-      removeVerificationRequestResponse,
-    ),
-  );
-}
 
 export function removeVerificationRequestResponseFromJSON(
   jsonString: string,

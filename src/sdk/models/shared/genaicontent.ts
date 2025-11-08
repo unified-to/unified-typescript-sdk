@@ -29,7 +29,6 @@ export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
     z.nativeEnum(Role),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Role$outboundSchema: z.ZodType<Role, z.ZodTypeDef, Role> = z.union(
   [
@@ -37,17 +36,6 @@ export const Role$outboundSchema: z.ZodType<Role, z.ZodTypeDef, Role> = z.union(
     z.string().and(z.custom<Unrecognized<string>>()),
   ],
 );
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Role$ {
-  /** @deprecated use `Role$inboundSchema` instead. */
-  export const inboundSchema = Role$inboundSchema;
-  /** @deprecated use `Role$outboundSchema` instead. */
-  export const outboundSchema = Role$outboundSchema;
-}
 
 /** @internal */
 export const GenaiContent$inboundSchema: z.ZodType<
@@ -58,7 +46,6 @@ export const GenaiContent$inboundSchema: z.ZodType<
   content: z.string(),
   role: Role$inboundSchema.optional(),
 });
-
 /** @internal */
 export type GenaiContent$Outbound = {
   content: string;
@@ -75,23 +62,9 @@ export const GenaiContent$outboundSchema: z.ZodType<
   role: Role$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GenaiContent$ {
-  /** @deprecated use `GenaiContent$inboundSchema` instead. */
-  export const inboundSchema = GenaiContent$inboundSchema;
-  /** @deprecated use `GenaiContent$outboundSchema` instead. */
-  export const outboundSchema = GenaiContent$outboundSchema;
-  /** @deprecated use `GenaiContent$Outbound` instead. */
-  export type Outbound = GenaiContent$Outbound;
-}
-
 export function genaiContentToJSON(genaiContent: GenaiContent): string {
   return JSON.stringify(GenaiContent$outboundSchema.parse(genaiContent));
 }
-
 export function genaiContentFromJSON(
   jsonString: string,
 ): SafeParseResult<GenaiContent, SDKValidationError> {

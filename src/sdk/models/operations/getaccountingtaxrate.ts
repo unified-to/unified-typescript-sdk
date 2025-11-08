@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingTaxrateRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingTaxrateRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingTaxrateRequest$inboundSchema: z.ZodType<
-  GetAccountingTaxrateRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingTaxrateRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingTaxrateRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingTaxrateRequest$ {
-  /** @deprecated use `GetAccountingTaxrateRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingTaxrateRequest$inboundSchema;
-  /** @deprecated use `GetAccountingTaxrateRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingTaxrateRequest$outboundSchema;
-  /** @deprecated use `GetAccountingTaxrateRequest$Outbound` instead. */
-  export type Outbound = GetAccountingTaxrateRequest$Outbound;
-}
-
 export function getAccountingTaxrateRequestToJSON(
   getAccountingTaxrateRequest: GetAccountingTaxrateRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingTaxrateRequestToJSON(
     GetAccountingTaxrateRequest$outboundSchema.parse(
       getAccountingTaxrateRequest,
     ),
-  );
-}
-
-export function getAccountingTaxrateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingTaxrateRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingTaxrateRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingTaxrateRequest' from JSON`,
   );
 }

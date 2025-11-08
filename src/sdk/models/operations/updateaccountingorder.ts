@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingOrderRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingOrderRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingOrderRequest$inboundSchema: z.ZodType<
-  UpdateAccountingOrderRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingOrder: shared.AccountingOrder$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingOrder": "accountingOrder",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingOrderRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingOrderRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingOrderRequest$ {
-  /** @deprecated use `UpdateAccountingOrderRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingOrderRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingOrderRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingOrderRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingOrderRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingOrderRequest$Outbound;
-}
-
 export function updateAccountingOrderRequestToJSON(
   updateAccountingOrderRequest: UpdateAccountingOrderRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingOrderRequestToJSON(
     UpdateAccountingOrderRequest$outboundSchema.parse(
       updateAccountingOrderRequest,
     ),
-  );
-}
-
-export function updateAccountingOrderRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingOrderRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingOrderRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingOrderRequest' from JSON`,
   );
 }

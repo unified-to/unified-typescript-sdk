@@ -5,18 +5,12 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   HrisPayslipDetail,
   HrisPayslipDetail$inboundSchema,
-  HrisPayslipDetail$Outbound,
-  HrisPayslipDetail$outboundSchema,
 } from "./hrispayslipdetail.js";
 
 export const PaymentType = {
@@ -53,27 +47,6 @@ export const PaymentType$inboundSchema: z.ZodType<
     z.nativeEnum(PaymentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
-/** @internal */
-export const PaymentType$outboundSchema: z.ZodType<
-  PaymentType,
-  z.ZodTypeDef,
-  PaymentType
-> = z.union([
-  z.nativeEnum(PaymentType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentType$ {
-  /** @deprecated use `PaymentType$inboundSchema` instead. */
-  export const inboundSchema = PaymentType$inboundSchema;
-  /** @deprecated use `PaymentType$outboundSchema` instead. */
-  export const outboundSchema = PaymentType$outboundSchema;
-}
 
 /** @internal */
 export const HrisPayslip$inboundSchema: z.ZodType<
@@ -114,76 +87,6 @@ export const HrisPayslip$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
-/** @internal */
-export type HrisPayslip$Outbound = {
-  company_id?: string | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  details?: Array<HrisPayslipDetail$Outbound> | undefined;
-  end_at?: string | undefined;
-  gross_amount?: number | undefined;
-  id?: string | undefined;
-  net_amount?: number | undefined;
-  paid_at?: string | undefined;
-  payment_type?: string | undefined;
-  raw: { [k: string]: any };
-  start_at?: string | undefined;
-  updated_at?: string | undefined;
-  user_id?: string | undefined;
-};
-
-/** @internal */
-export const HrisPayslip$outboundSchema: z.ZodType<
-  HrisPayslip$Outbound,
-  z.ZodTypeDef,
-  HrisPayslip
-> = z.object({
-  companyId: z.string().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  details: z.array(HrisPayslipDetail$outboundSchema).optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  grossAmount: z.number().optional(),
-  id: z.string().optional(),
-  netAmount: z.number().optional(),
-  paidAt: z.date().transform(v => v.toISOString()).optional(),
-  paymentType: PaymentType$outboundSchema.optional(),
-  raw: z.record(z.any()),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-  userId: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    companyId: "company_id",
-    createdAt: "created_at",
-    endAt: "end_at",
-    grossAmount: "gross_amount",
-    netAmount: "net_amount",
-    paidAt: "paid_at",
-    paymentType: "payment_type",
-    startAt: "start_at",
-    updatedAt: "updated_at",
-    userId: "user_id",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisPayslip$ {
-  /** @deprecated use `HrisPayslip$inboundSchema` instead. */
-  export const inboundSchema = HrisPayslip$inboundSchema;
-  /** @deprecated use `HrisPayslip$outboundSchema` instead. */
-  export const outboundSchema = HrisPayslip$outboundSchema;
-  /** @deprecated use `HrisPayslip$Outbound` instead. */
-  export type Outbound = HrisPayslip$Outbound;
-}
-
-export function hrisPayslipToJSON(hrisPayslip: HrisPayslip): string {
-  return JSON.stringify(HrisPayslip$outboundSchema.parse(hrisPayslip));
-}
 
 export function hrisPayslipFromJSON(
   jsonString: string,

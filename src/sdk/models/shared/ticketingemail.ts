@@ -34,7 +34,6 @@ export const TicketingEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(TicketingEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TicketingEmailType$outboundSchema: z.ZodType<
   TicketingEmailType,
@@ -45,17 +44,6 @@ export const TicketingEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingEmailType$ {
-  /** @deprecated use `TicketingEmailType$inboundSchema` instead. */
-  export const inboundSchema = TicketingEmailType$inboundSchema;
-  /** @deprecated use `TicketingEmailType$outboundSchema` instead. */
-  export const outboundSchema = TicketingEmailType$outboundSchema;
-}
-
 /** @internal */
 export const TicketingEmail$inboundSchema: z.ZodType<
   TicketingEmail,
@@ -65,7 +53,6 @@ export const TicketingEmail$inboundSchema: z.ZodType<
   email: z.string(),
   type: TicketingEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type TicketingEmail$Outbound = {
   email: string;
@@ -82,23 +69,9 @@ export const TicketingEmail$outboundSchema: z.ZodType<
   type: TicketingEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingEmail$ {
-  /** @deprecated use `TicketingEmail$inboundSchema` instead. */
-  export const inboundSchema = TicketingEmail$inboundSchema;
-  /** @deprecated use `TicketingEmail$outboundSchema` instead. */
-  export const outboundSchema = TicketingEmail$outboundSchema;
-  /** @deprecated use `TicketingEmail$Outbound` instead. */
-  export type Outbound = TicketingEmail$Outbound;
-}
-
 export function ticketingEmailToJSON(ticketingEmail: TicketingEmail): string {
   return JSON.stringify(TicketingEmail$outboundSchema.parse(ticketingEmail));
 }
-
 export function ticketingEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<TicketingEmail, SDKValidationError> {

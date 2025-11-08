@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAtsInterviewRequest = {
@@ -28,24 +25,6 @@ export type UpdateAtsInterviewRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAtsInterviewRequest$inboundSchema: z.ZodType<
-  UpdateAtsInterviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsInterview: shared.AtsInterview$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsInterview": "atsInterview",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAtsInterviewRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateAtsInterviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAtsInterviewRequest$ {
-  /** @deprecated use `UpdateAtsInterviewRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAtsInterviewRequest$inboundSchema;
-  /** @deprecated use `UpdateAtsInterviewRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAtsInterviewRequest$outboundSchema;
-  /** @deprecated use `UpdateAtsInterviewRequest$Outbound` instead. */
-  export type Outbound = UpdateAtsInterviewRequest$Outbound;
-}
-
 export function updateAtsInterviewRequestToJSON(
   updateAtsInterviewRequest: UpdateAtsInterviewRequest,
 ): string {
   return JSON.stringify(
     UpdateAtsInterviewRequest$outboundSchema.parse(updateAtsInterviewRequest),
-  );
-}
-
-export function updateAtsInterviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAtsInterviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAtsInterviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAtsInterviewRequest' from JSON`,
   );
 }

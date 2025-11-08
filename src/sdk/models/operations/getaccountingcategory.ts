@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingCategoryRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingCategoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingCategoryRequest$inboundSchema: z.ZodType<
-  GetAccountingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingCategoryRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingCategoryRequest$ {
-  /** @deprecated use `GetAccountingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingCategoryRequest$inboundSchema;
-  /** @deprecated use `GetAccountingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingCategoryRequest$outboundSchema;
-  /** @deprecated use `GetAccountingCategoryRequest$Outbound` instead. */
-  export type Outbound = GetAccountingCategoryRequest$Outbound;
-}
-
 export function getAccountingCategoryRequestToJSON(
   getAccountingCategoryRequest: GetAccountingCategoryRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingCategoryRequestToJSON(
     GetAccountingCategoryRequest$outboundSchema.parse(
       getAccountingCategoryRequest,
     ),
-  );
-}
-
-export function getAccountingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingCategoryRequest' from JSON`,
   );
 }

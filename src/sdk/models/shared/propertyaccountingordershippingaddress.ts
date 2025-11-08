@@ -40,7 +40,6 @@ export const PropertyAccountingOrderShippingAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyAccountingOrderShippingAddress$Outbound = {
   address1?: string | undefined;
@@ -75,21 +74,6 @@ export const PropertyAccountingOrderShippingAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingOrderShippingAddress$ {
-  /** @deprecated use `PropertyAccountingOrderShippingAddress$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingOrderShippingAddress$inboundSchema;
-  /** @deprecated use `PropertyAccountingOrderShippingAddress$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingOrderShippingAddress$outboundSchema;
-  /** @deprecated use `PropertyAccountingOrderShippingAddress$Outbound` instead. */
-  export type Outbound = PropertyAccountingOrderShippingAddress$Outbound;
-}
-
 export function propertyAccountingOrderShippingAddressToJSON(
   propertyAccountingOrderShippingAddress:
     PropertyAccountingOrderShippingAddress,
@@ -100,7 +84,6 @@ export function propertyAccountingOrderShippingAddressToJSON(
     ),
   );
 }
-
 export function propertyAccountingOrderShippingAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyAccountingOrderShippingAddress, SDKValidationError> {

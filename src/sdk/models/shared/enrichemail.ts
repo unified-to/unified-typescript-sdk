@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -38,27 +34,6 @@ export const EnrichEmailType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const EnrichEmailType$outboundSchema: z.ZodType<
-  EnrichEmailType,
-  z.ZodTypeDef,
-  EnrichEmailType
-> = z.union([
-  z.nativeEnum(EnrichEmailType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichEmailType$ {
-  /** @deprecated use `EnrichEmailType$inboundSchema` instead. */
-  export const inboundSchema = EnrichEmailType$inboundSchema;
-  /** @deprecated use `EnrichEmailType$outboundSchema` instead. */
-  export const outboundSchema = EnrichEmailType$outboundSchema;
-}
-
-/** @internal */
 export const EnrichEmail$inboundSchema: z.ZodType<
   EnrichEmail,
   z.ZodTypeDef,
@@ -72,45 +47,6 @@ export const EnrichEmail$inboundSchema: z.ZodType<
     "is_verified": "isVerified",
   });
 });
-
-/** @internal */
-export type EnrichEmail$Outbound = {
-  email: string;
-  is_verified?: boolean | undefined;
-  type?: string | undefined;
-};
-
-/** @internal */
-export const EnrichEmail$outboundSchema: z.ZodType<
-  EnrichEmail$Outbound,
-  z.ZodTypeDef,
-  EnrichEmail
-> = z.object({
-  email: z.string(),
-  isVerified: z.boolean().optional(),
-  type: EnrichEmailType$outboundSchema.optional(),
-}).transform((v) => {
-  return remap$(v, {
-    isVerified: "is_verified",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichEmail$ {
-  /** @deprecated use `EnrichEmail$inboundSchema` instead. */
-  export const inboundSchema = EnrichEmail$inboundSchema;
-  /** @deprecated use `EnrichEmail$outboundSchema` instead. */
-  export const outboundSchema = EnrichEmail$outboundSchema;
-  /** @deprecated use `EnrichEmail$Outbound` instead. */
-  export type Outbound = EnrichEmail$Outbound;
-}
-
-export function enrichEmailToJSON(enrichEmail: EnrichEmail): string {
-  return JSON.stringify(EnrichEmail$outboundSchema.parse(enrichEmail));
-}
 
 export function enrichEmailFromJSON(
   jsonString: string,

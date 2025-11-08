@@ -48,7 +48,6 @@ export const PropertyConnectionCategories$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyConnectionCategories),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyConnectionCategories$outboundSchema: z.ZodType<
   PropertyConnectionCategories,
@@ -58,14 +57,3 @@ export const PropertyConnectionCategories$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyConnectionCategories),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyConnectionCategories$ {
-  /** @deprecated use `PropertyConnectionCategories$inboundSchema` instead. */
-  export const inboundSchema = PropertyConnectionCategories$inboundSchema;
-  /** @deprecated use `PropertyConnectionCategories$outboundSchema` instead. */
-  export const outboundSchema = PropertyConnectionCategories$outboundSchema;
-}

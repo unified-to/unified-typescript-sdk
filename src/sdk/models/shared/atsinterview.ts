@@ -48,7 +48,6 @@ export const AtsInterviewStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AtsInterviewStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsInterviewStatus$outboundSchema: z.ZodType<
   AtsInterviewStatus,
@@ -58,17 +57,6 @@ export const AtsInterviewStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AtsInterviewStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsInterviewStatus$ {
-  /** @deprecated use `AtsInterviewStatus$inboundSchema` instead. */
-  export const inboundSchema = AtsInterviewStatus$inboundSchema;
-  /** @deprecated use `AtsInterviewStatus$outboundSchema` instead. */
-  export const outboundSchema = AtsInterviewStatus$outboundSchema;
-}
 
 /** @internal */
 export const AtsInterview$inboundSchema: z.ZodType<
@@ -106,7 +94,6 @@ export const AtsInterview$inboundSchema: z.ZodType<
     "user_ids": "userIds",
   });
 });
-
 /** @internal */
 export type AtsInterview$Outbound = {
   application_id?: string | undefined;
@@ -157,23 +144,9 @@ export const AtsInterview$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsInterview$ {
-  /** @deprecated use `AtsInterview$inboundSchema` instead. */
-  export const inboundSchema = AtsInterview$inboundSchema;
-  /** @deprecated use `AtsInterview$outboundSchema` instead. */
-  export const outboundSchema = AtsInterview$outboundSchema;
-  /** @deprecated use `AtsInterview$Outbound` instead. */
-  export type Outbound = AtsInterview$Outbound;
-}
-
 export function atsInterviewToJSON(atsInterview: AtsInterview): string {
   return JSON.stringify(AtsInterview$outboundSchema.parse(atsInterview));
 }
-
 export function atsInterviewFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsInterview, SDKValidationError> {

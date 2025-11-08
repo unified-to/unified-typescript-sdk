@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoPullrequestRequest = {
@@ -24,23 +21,6 @@ export type CreateRepoPullrequestRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateRepoPullrequestRequest$inboundSchema: z.ZodType<
-  CreateRepoPullrequestRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoPullrequest: shared.RepoPullrequest$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoPullrequest": "repoPullrequest",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateRepoPullrequestRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateRepoPullrequestRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateRepoPullrequestRequest$ {
-  /** @deprecated use `CreateRepoPullrequestRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateRepoPullrequestRequest$inboundSchema;
-  /** @deprecated use `CreateRepoPullrequestRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateRepoPullrequestRequest$outboundSchema;
-  /** @deprecated use `CreateRepoPullrequestRequest$Outbound` instead. */
-  export type Outbound = CreateRepoPullrequestRequest$Outbound;
-}
-
 export function createRepoPullrequestRequestToJSON(
   createRepoPullrequestRequest: CreateRepoPullrequestRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createRepoPullrequestRequestToJSON(
     CreateRepoPullrequestRequest$outboundSchema.parse(
       createRepoPullrequestRequest,
     ),
-  );
-}
-
-export function createRepoPullrequestRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateRepoPullrequestRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateRepoPullrequestRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateRepoPullrequestRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchUnifiedWebhookRequest = {
@@ -19,20 +16,6 @@ export type PatchUnifiedWebhookRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const PatchUnifiedWebhookRequest$inboundSchema: z.ZodType<
-  PatchUnifiedWebhookRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  Webhook: shared.Webhook$inboundSchema,
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "Webhook": "webhook",
-  });
-});
 
 /** @internal */
 export type PatchUnifiedWebhookRequest$Outbound = {
@@ -54,33 +37,10 @@ export const PatchUnifiedWebhookRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchUnifiedWebhookRequest$ {
-  /** @deprecated use `PatchUnifiedWebhookRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchUnifiedWebhookRequest$inboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchUnifiedWebhookRequest$outboundSchema;
-  /** @deprecated use `PatchUnifiedWebhookRequest$Outbound` instead. */
-  export type Outbound = PatchUnifiedWebhookRequest$Outbound;
-}
-
 export function patchUnifiedWebhookRequestToJSON(
   patchUnifiedWebhookRequest: PatchUnifiedWebhookRequest,
 ): string {
   return JSON.stringify(
     PatchUnifiedWebhookRequest$outboundSchema.parse(patchUnifiedWebhookRequest),
-  );
-}
-
-export function patchUnifiedWebhookRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchUnifiedWebhookRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchUnifiedWebhookRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchUnifiedWebhookRequest' from JSON`,
   );
 }

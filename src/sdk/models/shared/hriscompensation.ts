@@ -53,7 +53,6 @@ export const HrisCompensationFrequency$inboundSchema: z.ZodType<
     z.nativeEnum(HrisCompensationFrequency),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisCompensationFrequency$outboundSchema: z.ZodType<
   HrisCompensationFrequency,
@@ -63,17 +62,6 @@ export const HrisCompensationFrequency$outboundSchema: z.ZodType<
   z.nativeEnum(HrisCompensationFrequency),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisCompensationFrequency$ {
-  /** @deprecated use `HrisCompensationFrequency$inboundSchema` instead. */
-  export const inboundSchema = HrisCompensationFrequency$inboundSchema;
-  /** @deprecated use `HrisCompensationFrequency$outboundSchema` instead. */
-  export const outboundSchema = HrisCompensationFrequency$outboundSchema;
-}
 
 /** @internal */
 export const HrisCompensationType$inboundSchema: z.ZodType<
@@ -85,7 +73,6 @@ export const HrisCompensationType$inboundSchema: z.ZodType<
     z.nativeEnum(HrisCompensationType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisCompensationType$outboundSchema: z.ZodType<
   HrisCompensationType,
@@ -95,17 +82,6 @@ export const HrisCompensationType$outboundSchema: z.ZodType<
   z.nativeEnum(HrisCompensationType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisCompensationType$ {
-  /** @deprecated use `HrisCompensationType$inboundSchema` instead. */
-  export const inboundSchema = HrisCompensationType$inboundSchema;
-  /** @deprecated use `HrisCompensationType$outboundSchema` instead. */
-  export const outboundSchema = HrisCompensationType$outboundSchema;
-}
 
 /** @internal */
 export const HrisCompensation$inboundSchema: z.ZodType<
@@ -123,7 +99,6 @@ export const HrisCompensation$inboundSchema: z.ZodType<
     "group_id": "groupId",
   });
 });
-
 /** @internal */
 export type HrisCompensation$Outbound = {
   amount?: number | undefined;
@@ -150,19 +125,6 @@ export const HrisCompensation$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisCompensation$ {
-  /** @deprecated use `HrisCompensation$inboundSchema` instead. */
-  export const inboundSchema = HrisCompensation$inboundSchema;
-  /** @deprecated use `HrisCompensation$outboundSchema` instead. */
-  export const outboundSchema = HrisCompensation$outboundSchema;
-  /** @deprecated use `HrisCompensation$Outbound` instead. */
-  export type Outbound = HrisCompensation$Outbound;
-}
-
 export function hrisCompensationToJSON(
   hrisCompensation: HrisCompensation,
 ): string {
@@ -170,7 +132,6 @@ export function hrisCompensationToJSON(
     HrisCompensation$outboundSchema.parse(hrisCompensation),
   );
 }
-
 export function hrisCompensationFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisCompensation, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListScimUsersRequest = {
   /**
@@ -19,24 +16,6 @@ export type ListScimUsersRequest = {
   sortOrder?: string | undefined;
   startIndex?: number | undefined;
 };
-
-/** @internal */
-export const ListScimUsersRequest$inboundSchema: z.ZodType<
-  ListScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  count: z.number().optional(),
-  filter: z.string().optional(),
-  sortBy: z.string().optional(),
-  sortOrder: z.string().optional(),
-  startIndex: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type ListScimUsersRequest$Outbound = {
@@ -66,33 +45,10 @@ export const ListScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListScimUsersRequest$ {
-  /** @deprecated use `ListScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = ListScimUsersRequest$inboundSchema;
-  /** @deprecated use `ListScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = ListScimUsersRequest$outboundSchema;
-  /** @deprecated use `ListScimUsersRequest$Outbound` instead. */
-  export type Outbound = ListScimUsersRequest$Outbound;
-}
-
 export function listScimUsersRequestToJSON(
   listScimUsersRequest: ListScimUsersRequest,
 ): string {
   return JSON.stringify(
     ListScimUsersRequest$outboundSchema.parse(listScimUsersRequest),
-  );
-}
-
-export function listScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListScimUsersRequest' from JSON`,
   );
 }

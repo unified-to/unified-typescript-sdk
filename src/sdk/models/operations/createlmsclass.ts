@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateLmsClassRequest = {
@@ -24,23 +21,6 @@ export type CreateLmsClassRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateLmsClassRequest$inboundSchema: z.ZodType<
-  CreateLmsClassRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsClass: shared.LmsClass$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsClass": "lmsClass",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateLmsClassRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateLmsClassRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateLmsClassRequest$ {
-  /** @deprecated use `CreateLmsClassRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateLmsClassRequest$inboundSchema;
-  /** @deprecated use `CreateLmsClassRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateLmsClassRequest$outboundSchema;
-  /** @deprecated use `CreateLmsClassRequest$Outbound` instead. */
-  export type Outbound = CreateLmsClassRequest$Outbound;
-}
-
 export function createLmsClassRequestToJSON(
   createLmsClassRequest: CreateLmsClassRequest,
 ): string {
   return JSON.stringify(
     CreateLmsClassRequest$outboundSchema.parse(createLmsClassRequest),
-  );
-}
-
-export function createLmsClassRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateLmsClassRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateLmsClassRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateLmsClassRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingTransactionRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingTransactionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingTransactionRequest$inboundSchema: z.ZodType<
-  UpdateAccountingTransactionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingTransaction: shared.AccountingTransaction$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingTransaction": "accountingTransaction",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingTransactionRequest$Outbound = {
@@ -74,20 +53,6 @@ export const UpdateAccountingTransactionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingTransactionRequest$ {
-  /** @deprecated use `UpdateAccountingTransactionRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingTransactionRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingTransactionRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    UpdateAccountingTransactionRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingTransactionRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingTransactionRequest$Outbound;
-}
-
 export function updateAccountingTransactionRequestToJSON(
   updateAccountingTransactionRequest: UpdateAccountingTransactionRequest,
 ): string {
@@ -95,16 +60,5 @@ export function updateAccountingTransactionRequestToJSON(
     UpdateAccountingTransactionRequest$outboundSchema.parse(
       updateAccountingTransactionRequest,
     ),
-  );
-}
-
-export function updateAccountingTransactionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingTransactionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) =>
-      UpdateAccountingTransactionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingTransactionRequest' from JSON`,
   );
 }

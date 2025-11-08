@@ -40,7 +40,6 @@ export const PropertyCrmContactAddress$inboundSchema: z.ZodType<
     "region_code": "regionCode",
   });
 });
-
 /** @internal */
 export type PropertyCrmContactAddress$Outbound = {
   address1?: string | undefined;
@@ -75,19 +74,6 @@ export const PropertyCrmContactAddress$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmContactAddress$ {
-  /** @deprecated use `PropertyCrmContactAddress$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmContactAddress$inboundSchema;
-  /** @deprecated use `PropertyCrmContactAddress$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmContactAddress$outboundSchema;
-  /** @deprecated use `PropertyCrmContactAddress$Outbound` instead. */
-  export type Outbound = PropertyCrmContactAddress$Outbound;
-}
-
 export function propertyCrmContactAddressToJSON(
   propertyCrmContactAddress: PropertyCrmContactAddress,
 ): string {
@@ -95,7 +81,6 @@ export function propertyCrmContactAddressToJSON(
     PropertyCrmContactAddress$outboundSchema.parse(propertyCrmContactAddress),
   );
 }
-
 export function propertyCrmContactAddressFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmContactAddress, SDKValidationError> {

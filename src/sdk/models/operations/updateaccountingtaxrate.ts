@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingTaxrateRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingTaxrateRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingTaxrateRequest$inboundSchema: z.ZodType<
-  UpdateAccountingTaxrateRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingTaxrate: shared.AccountingTaxrate$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingTaxrate": "accountingTaxrate",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingTaxrateRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingTaxrateRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingTaxrateRequest$ {
-  /** @deprecated use `UpdateAccountingTaxrateRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingTaxrateRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingTaxrateRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingTaxrateRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingTaxrateRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingTaxrateRequest$Outbound;
-}
-
 export function updateAccountingTaxrateRequestToJSON(
   updateAccountingTaxrateRequest: UpdateAccountingTaxrateRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingTaxrateRequestToJSON(
     UpdateAccountingTaxrateRequest$outboundSchema.parse(
       updateAccountingTaxrateRequest,
     ),
-  );
-}
-
-export function updateAccountingTaxrateRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingTaxrateRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingTaxrateRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingTaxrateRequest' from JSON`,
   );
 }

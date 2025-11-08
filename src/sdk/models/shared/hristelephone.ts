@@ -36,7 +36,6 @@ export const HrisTelephoneType$inboundSchema: z.ZodType<
     z.nativeEnum(HrisTelephoneType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const HrisTelephoneType$outboundSchema: z.ZodType<
   HrisTelephoneType,
@@ -47,17 +46,6 @@ export const HrisTelephoneType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTelephoneType$ {
-  /** @deprecated use `HrisTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = HrisTelephoneType$inboundSchema;
-  /** @deprecated use `HrisTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = HrisTelephoneType$outboundSchema;
-}
-
 /** @internal */
 export const HrisTelephone$inboundSchema: z.ZodType<
   HrisTelephone,
@@ -67,7 +55,6 @@ export const HrisTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: HrisTelephoneType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type HrisTelephone$Outbound = {
   telephone: string;
@@ -84,23 +71,9 @@ export const HrisTelephone$outboundSchema: z.ZodType<
   type: HrisTelephoneType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace HrisTelephone$ {
-  /** @deprecated use `HrisTelephone$inboundSchema` instead. */
-  export const inboundSchema = HrisTelephone$inboundSchema;
-  /** @deprecated use `HrisTelephone$outboundSchema` instead. */
-  export const outboundSchema = HrisTelephone$outboundSchema;
-  /** @deprecated use `HrisTelephone$Outbound` instead. */
-  export type Outbound = HrisTelephone$Outbound;
-}
-
 export function hrisTelephoneToJSON(hrisTelephone: HrisTelephone): string {
   return JSON.stringify(HrisTelephone$outboundSchema.parse(hrisTelephone));
 }
-
 export function hrisTelephoneFromJSON(
   jsonString: string,
 ): SafeParseResult<HrisTelephone, SDKValidationError> {

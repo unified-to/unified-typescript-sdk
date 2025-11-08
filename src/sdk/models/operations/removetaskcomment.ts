@@ -24,20 +24,6 @@ export type RemoveTaskCommentResponse = {
 };
 
 /** @internal */
-export const RemoveTaskCommentRequest$inboundSchema: z.ZodType<
-  RemoveTaskCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveTaskCommentRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveTaskCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTaskCommentRequest$ {
-  /** @deprecated use `RemoveTaskCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveTaskCommentRequest$inboundSchema;
-  /** @deprecated use `RemoveTaskCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveTaskCommentRequest$outboundSchema;
-  /** @deprecated use `RemoveTaskCommentRequest$Outbound` instead. */
-  export type Outbound = RemoveTaskCommentRequest$Outbound;
-}
-
 export function removeTaskCommentRequestToJSON(
   removeTaskCommentRequest: RemoveTaskCommentRequest,
 ): string {
   return JSON.stringify(
     RemoveTaskCommentRequest$outboundSchema.parse(removeTaskCommentRequest),
-  );
-}
-
-export function removeTaskCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveTaskCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveTaskCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveTaskCommentRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveTaskCommentResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveTaskCommentResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveTaskCommentResponse$outboundSchema: z.ZodType<
-  RemoveTaskCommentResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveTaskCommentResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTaskCommentResponse$ {
-  /** @deprecated use `RemoveTaskCommentResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveTaskCommentResponse$inboundSchema;
-  /** @deprecated use `RemoveTaskCommentResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveTaskCommentResponse$outboundSchema;
-  /** @deprecated use `RemoveTaskCommentResponse$Outbound` instead. */
-  export type Outbound = RemoveTaskCommentResponse$Outbound;
-}
-
-export function removeTaskCommentResponseToJSON(
-  removeTaskCommentResponse: RemoveTaskCommentResponse,
-): string {
-  return JSON.stringify(
-    RemoveTaskCommentResponse$outboundSchema.parse(removeTaskCommentResponse),
-  );
-}
 
 export function removeTaskCommentResponseFromJSON(
   jsonString: string,

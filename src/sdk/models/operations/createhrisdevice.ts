@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisDeviceRequest = {
@@ -24,23 +21,6 @@ export type CreateHrisDeviceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateHrisDeviceRequest$inboundSchema: z.ZodType<
-  CreateHrisDeviceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisDevice: shared.HrisDevice$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisDevice": "hrisDevice",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateHrisDeviceRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateHrisDeviceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateHrisDeviceRequest$ {
-  /** @deprecated use `CreateHrisDeviceRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateHrisDeviceRequest$inboundSchema;
-  /** @deprecated use `CreateHrisDeviceRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateHrisDeviceRequest$outboundSchema;
-  /** @deprecated use `CreateHrisDeviceRequest$Outbound` instead. */
-  export type Outbound = CreateHrisDeviceRequest$Outbound;
-}
-
 export function createHrisDeviceRequestToJSON(
   createHrisDeviceRequest: CreateHrisDeviceRequest,
 ): string {
   return JSON.stringify(
     CreateHrisDeviceRequest$outboundSchema.parse(createHrisDeviceRequest),
-  );
-}
-
-export function createHrisDeviceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateHrisDeviceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateHrisDeviceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateHrisDeviceRequest' from JSON`,
   );
 }

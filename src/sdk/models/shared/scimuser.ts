@@ -184,7 +184,6 @@ export const ScimUser$inboundSchema: z.ZodType<
       "urnIetfParamsScimSchemasExtensionPeakon20User",
   });
 });
-
 /** @internal */
 export type ScimUser$Outbound = {
   active?: boolean | undefined;
@@ -274,23 +273,9 @@ export const ScimUser$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimUser$ {
-  /** @deprecated use `ScimUser$inboundSchema` instead. */
-  export const inboundSchema = ScimUser$inboundSchema;
-  /** @deprecated use `ScimUser$outboundSchema` instead. */
-  export const outboundSchema = ScimUser$outboundSchema;
-  /** @deprecated use `ScimUser$Outbound` instead. */
-  export type Outbound = ScimUser$Outbound;
-}
-
 export function scimUserToJSON(scimUser: ScimUser): string {
   return JSON.stringify(ScimUser$outboundSchema.parse(scimUser));
 }
-
 export function scimUserFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimUser, SDKValidationError> {

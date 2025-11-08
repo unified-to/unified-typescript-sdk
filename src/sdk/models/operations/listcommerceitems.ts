@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCommerceItemsRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListCommerceItemsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListCommerceItemsRequest$inboundSchema: z.ZodType<
-  ListCommerceItemsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  collection_id: z.string().optional(),
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "collection_id": "collectionId",
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListCommerceItemsRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListCommerceItemsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCommerceItemsRequest$ {
-  /** @deprecated use `ListCommerceItemsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCommerceItemsRequest$inboundSchema;
-  /** @deprecated use `ListCommerceItemsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCommerceItemsRequest$outboundSchema;
-  /** @deprecated use `ListCommerceItemsRequest$Outbound` instead. */
-  export type Outbound = ListCommerceItemsRequest$Outbound;
-}
-
 export function listCommerceItemsRequestToJSON(
   listCommerceItemsRequest: ListCommerceItemsRequest,
 ): string {
   return JSON.stringify(
     ListCommerceItemsRequest$outboundSchema.parse(listCommerceItemsRequest),
-  );
-}
-
-export function listCommerceItemsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCommerceItemsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCommerceItemsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCommerceItemsRequest' from JSON`,
   );
 }

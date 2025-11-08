@@ -28,7 +28,6 @@ export const CommerceItemPrice$inboundSchema: z.ZodType<
     "compare_at_price": "compareAtPrice",
   });
 });
-
 /** @internal */
 export type CommerceItemPrice$Outbound = {
   compare_at_price?: number | undefined;
@@ -51,19 +50,6 @@ export const CommerceItemPrice$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceItemPrice$ {
-  /** @deprecated use `CommerceItemPrice$inboundSchema` instead. */
-  export const inboundSchema = CommerceItemPrice$inboundSchema;
-  /** @deprecated use `CommerceItemPrice$outboundSchema` instead. */
-  export const outboundSchema = CommerceItemPrice$outboundSchema;
-  /** @deprecated use `CommerceItemPrice$Outbound` instead. */
-  export type Outbound = CommerceItemPrice$Outbound;
-}
-
 export function commerceItemPriceToJSON(
   commerceItemPrice: CommerceItemPrice,
 ): string {
@@ -71,7 +57,6 @@ export function commerceItemPriceToJSON(
     CommerceItemPrice$outboundSchema.parse(commerceItemPrice),
   );
 }
-
 export function commerceItemPriceFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceItemPrice, SDKValidationError> {

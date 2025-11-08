@@ -25,7 +25,6 @@ export const ScimEntitlement$inboundSchema: z.ZodType<
   type: z.string().optional(),
   value: z.string(),
 });
-
 /** @internal */
 export type ScimEntitlement$Outbound = {
   display?: string | undefined;
@@ -46,25 +45,11 @@ export const ScimEntitlement$outboundSchema: z.ZodType<
   value: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimEntitlement$ {
-  /** @deprecated use `ScimEntitlement$inboundSchema` instead. */
-  export const inboundSchema = ScimEntitlement$inboundSchema;
-  /** @deprecated use `ScimEntitlement$outboundSchema` instead. */
-  export const outboundSchema = ScimEntitlement$outboundSchema;
-  /** @deprecated use `ScimEntitlement$Outbound` instead. */
-  export type Outbound = ScimEntitlement$Outbound;
-}
-
 export function scimEntitlementToJSON(
   scimEntitlement: ScimEntitlement,
 ): string {
   return JSON.stringify(ScimEntitlement$outboundSchema.parse(scimEntitlement));
 }
-
 export function scimEntitlementFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimEntitlement, SDKValidationError> {

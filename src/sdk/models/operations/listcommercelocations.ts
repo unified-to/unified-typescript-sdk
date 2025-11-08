@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCommerceLocationsRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListCommerceLocationsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListCommerceLocationsRequest$inboundSchema: z.ZodType<
-  ListCommerceLocationsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListCommerceLocationsRequest$Outbound = {
@@ -92,19 +67,6 @@ export const ListCommerceLocationsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCommerceLocationsRequest$ {
-  /** @deprecated use `ListCommerceLocationsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCommerceLocationsRequest$inboundSchema;
-  /** @deprecated use `ListCommerceLocationsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCommerceLocationsRequest$outboundSchema;
-  /** @deprecated use `ListCommerceLocationsRequest$Outbound` instead. */
-  export type Outbound = ListCommerceLocationsRequest$Outbound;
-}
-
 export function listCommerceLocationsRequestToJSON(
   listCommerceLocationsRequest: ListCommerceLocationsRequest,
 ): string {
@@ -112,15 +74,5 @@ export function listCommerceLocationsRequestToJSON(
     ListCommerceLocationsRequest$outboundSchema.parse(
       listCommerceLocationsRequest,
     ),
-  );
-}
-
-export function listCommerceLocationsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCommerceLocationsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCommerceLocationsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCommerceLocationsRequest' from JSON`,
   );
 }

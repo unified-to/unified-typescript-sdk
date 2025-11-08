@@ -43,61 +43,6 @@ export const EnrichPersonWorkHistory$inboundSchema: z.ZodType<
   });
 });
 
-/** @internal */
-export type EnrichPersonWorkHistory$Outbound = {
-  company_domain?: string | undefined;
-  company_id?: string | undefined;
-  company_name?: string | undefined;
-  end_at?: string | undefined;
-  location?: string | undefined;
-  start_at?: string | undefined;
-  title: string;
-};
-
-/** @internal */
-export const EnrichPersonWorkHistory$outboundSchema: z.ZodType<
-  EnrichPersonWorkHistory$Outbound,
-  z.ZodTypeDef,
-  EnrichPersonWorkHistory
-> = z.object({
-  companyDomain: z.string().optional(),
-  companyId: z.string().optional(),
-  companyName: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  location: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  title: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    companyDomain: "company_domain",
-    companyId: "company_id",
-    companyName: "company_name",
-    endAt: "end_at",
-    startAt: "start_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichPersonWorkHistory$ {
-  /** @deprecated use `EnrichPersonWorkHistory$inboundSchema` instead. */
-  export const inboundSchema = EnrichPersonWorkHistory$inboundSchema;
-  /** @deprecated use `EnrichPersonWorkHistory$outboundSchema` instead. */
-  export const outboundSchema = EnrichPersonWorkHistory$outboundSchema;
-  /** @deprecated use `EnrichPersonWorkHistory$Outbound` instead. */
-  export type Outbound = EnrichPersonWorkHistory$Outbound;
-}
-
-export function enrichPersonWorkHistoryToJSON(
-  enrichPersonWorkHistory: EnrichPersonWorkHistory,
-): string {
-  return JSON.stringify(
-    EnrichPersonWorkHistory$outboundSchema.parse(enrichPersonWorkHistory),
-  );
-}
-
 export function enrichPersonWorkHistoryFromJSON(
   jsonString: string,
 ): SafeParseResult<EnrichPersonWorkHistory, SDKValidationError> {

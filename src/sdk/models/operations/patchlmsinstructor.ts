@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchLmsInstructorRequest = {
@@ -28,24 +25,6 @@ export type PatchLmsInstructorRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchLmsInstructorRequest$inboundSchema: z.ZodType<
-  PatchLmsInstructorRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  LmsInstructor: shared.LmsInstructor$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "LmsInstructor": "lmsInstructor",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchLmsInstructorRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchLmsInstructorRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchLmsInstructorRequest$ {
-  /** @deprecated use `PatchLmsInstructorRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchLmsInstructorRequest$inboundSchema;
-  /** @deprecated use `PatchLmsInstructorRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchLmsInstructorRequest$outboundSchema;
-  /** @deprecated use `PatchLmsInstructorRequest$Outbound` instead. */
-  export type Outbound = PatchLmsInstructorRequest$Outbound;
-}
-
 export function patchLmsInstructorRequestToJSON(
   patchLmsInstructorRequest: PatchLmsInstructorRequest,
 ): string {
   return JSON.stringify(
     PatchLmsInstructorRequest$outboundSchema.parse(patchLmsInstructorRequest),
-  );
-}
-
-export function patchLmsInstructorRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchLmsInstructorRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchLmsInstructorRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchLmsInstructorRequest' from JSON`,
   );
 }

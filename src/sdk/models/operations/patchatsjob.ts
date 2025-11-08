@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAtsJobRequest = {
@@ -28,24 +25,6 @@ export type PatchAtsJobRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAtsJobRequest$inboundSchema: z.ZodType<
-  PatchAtsJobRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AtsJob: shared.AtsJob$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AtsJob": "atsJob",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAtsJobRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchAtsJobRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAtsJobRequest$ {
-  /** @deprecated use `PatchAtsJobRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAtsJobRequest$inboundSchema;
-  /** @deprecated use `PatchAtsJobRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAtsJobRequest$outboundSchema;
-  /** @deprecated use `PatchAtsJobRequest$Outbound` instead. */
-  export type Outbound = PatchAtsJobRequest$Outbound;
-}
-
 export function patchAtsJobRequestToJSON(
   patchAtsJobRequest: PatchAtsJobRequest,
 ): string {
   return JSON.stringify(
     PatchAtsJobRequest$outboundSchema.parse(patchAtsJobRequest),
-  );
-}
-
-export function patchAtsJobRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAtsJobRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAtsJobRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAtsJobRequest' from JSON`,
   );
 }

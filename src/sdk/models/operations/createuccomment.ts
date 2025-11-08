@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateUcCommentRequest = {
@@ -24,23 +21,6 @@ export type CreateUcCommentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateUcCommentRequest$inboundSchema: z.ZodType<
-  CreateUcCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  UcComment: shared.UcComment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "UcComment": "ucComment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateUcCommentRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateUcCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateUcCommentRequest$ {
-  /** @deprecated use `CreateUcCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateUcCommentRequest$inboundSchema;
-  /** @deprecated use `CreateUcCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateUcCommentRequest$outboundSchema;
-  /** @deprecated use `CreateUcCommentRequest$Outbound` instead. */
-  export type Outbound = CreateUcCommentRequest$Outbound;
-}
-
 export function createUcCommentRequestToJSON(
   createUcCommentRequest: CreateUcCommentRequest,
 ): string {
   return JSON.stringify(
     CreateUcCommentRequest$outboundSchema.parse(createUcCommentRequest),
-  );
-}
-
-export function createUcCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateUcCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateUcCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateUcCommentRequest' from JSON`,
   );
 }

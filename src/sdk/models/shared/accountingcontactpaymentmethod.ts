@@ -44,7 +44,6 @@ export const AccountingContactPaymentMethodType$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingContactPaymentMethodType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingContactPaymentMethodType$outboundSchema: z.ZodType<
   AccountingContactPaymentMethodType,
@@ -54,18 +53,6 @@ export const AccountingContactPaymentMethodType$outboundSchema: z.ZodType<
   z.nativeEnum(AccountingContactPaymentMethodType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingContactPaymentMethodType$ {
-  /** @deprecated use `AccountingContactPaymentMethodType$inboundSchema` instead. */
-  export const inboundSchema = AccountingContactPaymentMethodType$inboundSchema;
-  /** @deprecated use `AccountingContactPaymentMethodType$outboundSchema` instead. */
-  export const outboundSchema =
-    AccountingContactPaymentMethodType$outboundSchema;
-}
 
 /** @internal */
 export const AccountingContactPaymentMethod$inboundSchema: z.ZodType<
@@ -78,7 +65,6 @@ export const AccountingContactPaymentMethod$inboundSchema: z.ZodType<
   name: z.string().optional(),
   type: AccountingContactPaymentMethodType$inboundSchema,
 });
-
 /** @internal */
 export type AccountingContactPaymentMethod$Outbound = {
   default?: boolean | undefined;
@@ -99,19 +85,6 @@ export const AccountingContactPaymentMethod$outboundSchema: z.ZodType<
   type: AccountingContactPaymentMethodType$outboundSchema,
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingContactPaymentMethod$ {
-  /** @deprecated use `AccountingContactPaymentMethod$inboundSchema` instead. */
-  export const inboundSchema = AccountingContactPaymentMethod$inboundSchema;
-  /** @deprecated use `AccountingContactPaymentMethod$outboundSchema` instead. */
-  export const outboundSchema = AccountingContactPaymentMethod$outboundSchema;
-  /** @deprecated use `AccountingContactPaymentMethod$Outbound` instead. */
-  export type Outbound = AccountingContactPaymentMethod$Outbound;
-}
-
 export function accountingContactPaymentMethodToJSON(
   accountingContactPaymentMethod: AccountingContactPaymentMethod,
 ): string {
@@ -121,7 +94,6 @@ export function accountingContactPaymentMethodToJSON(
     ),
   );
 }
-
 export function accountingContactPaymentMethodFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingContactPaymentMethod, SDKValidationError> {

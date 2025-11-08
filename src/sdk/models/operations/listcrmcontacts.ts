@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListCrmContactsRequest = {
   /**
@@ -46,34 +43,6 @@ export type ListCrmContactsRequest = {
    */
   userId?: string | undefined;
 };
-
-/** @internal */
-export const ListCrmContactsRequest$inboundSchema: z.ZodType<
-  ListCrmContactsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  company_id: z.string().optional(),
-  connection_id: z.string(),
-  deal_id: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-  user_id: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "connection_id": "connectionId",
-    "deal_id": "dealId",
-    "updated_gte": "updatedGte",
-    "user_id": "userId",
-  });
-});
 
 /** @internal */
 export type ListCrmContactsRequest$Outbound = {
@@ -119,33 +88,10 @@ export const ListCrmContactsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListCrmContactsRequest$ {
-  /** @deprecated use `ListCrmContactsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListCrmContactsRequest$inboundSchema;
-  /** @deprecated use `ListCrmContactsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListCrmContactsRequest$outboundSchema;
-  /** @deprecated use `ListCrmContactsRequest$Outbound` instead. */
-  export type Outbound = ListCrmContactsRequest$Outbound;
-}
-
 export function listCrmContactsRequestToJSON(
   listCrmContactsRequest: ListCrmContactsRequest,
 ): string {
   return JSON.stringify(
     ListCrmContactsRequest$outboundSchema.parse(listCrmContactsRequest),
-  );
-}
-
-export function listCrmContactsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListCrmContactsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListCrmContactsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListCrmContactsRequest' from JSON`,
   );
 }

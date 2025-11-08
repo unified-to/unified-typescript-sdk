@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCommerceReviewRequest = {
@@ -28,24 +25,6 @@ export type PatchCommerceReviewRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCommerceReviewRequest$inboundSchema: z.ZodType<
-  PatchCommerceReviewRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceReview: shared.CommerceReview$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceReview": "commerceReview",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCommerceReviewRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchCommerceReviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCommerceReviewRequest$ {
-  /** @deprecated use `PatchCommerceReviewRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCommerceReviewRequest$inboundSchema;
-  /** @deprecated use `PatchCommerceReviewRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCommerceReviewRequest$outboundSchema;
-  /** @deprecated use `PatchCommerceReviewRequest$Outbound` instead. */
-  export type Outbound = PatchCommerceReviewRequest$Outbound;
-}
-
 export function patchCommerceReviewRequestToJSON(
   patchCommerceReviewRequest: PatchCommerceReviewRequest,
 ): string {
   return JSON.stringify(
     PatchCommerceReviewRequest$outboundSchema.parse(patchCommerceReviewRequest),
-  );
-}
-
-export function patchCommerceReviewRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCommerceReviewRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCommerceReviewRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCommerceReviewRequest' from JSON`,
   );
 }

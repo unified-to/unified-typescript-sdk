@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingCreditmemoRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingCreditmemoRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingCreditmemoRequest$inboundSchema: z.ZodType<
-  UpdateAccountingCreditmemoRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingCreditmemo: shared.AccountingCreditmemo$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingCreditmemo": "accountingCreditmemo",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingCreditmemoRequest$Outbound = {
@@ -74,20 +53,6 @@ export const UpdateAccountingCreditmemoRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingCreditmemoRequest$ {
-  /** @deprecated use `UpdateAccountingCreditmemoRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingCreditmemoRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingCreditmemoRequest$outboundSchema` instead. */
-  export const outboundSchema =
-    UpdateAccountingCreditmemoRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingCreditmemoRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingCreditmemoRequest$Outbound;
-}
-
 export function updateAccountingCreditmemoRequestToJSON(
   updateAccountingCreditmemoRequest: UpdateAccountingCreditmemoRequest,
 ): string {
@@ -95,15 +60,5 @@ export function updateAccountingCreditmemoRequestToJSON(
     UpdateAccountingCreditmemoRequest$outboundSchema.parse(
       updateAccountingCreditmemoRequest,
     ),
-  );
-}
-
-export function updateAccountingCreditmemoRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingCreditmemoRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingCreditmemoRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingCreditmemoRequest' from JSON`,
   );
 }

@@ -112,7 +112,6 @@ export const CrmContact$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type CrmContact$Outbound = {
   address?: PropertyCrmContactAddress$Outbound | undefined;
@@ -175,23 +174,9 @@ export const CrmContact$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CrmContact$ {
-  /** @deprecated use `CrmContact$inboundSchema` instead. */
-  export const inboundSchema = CrmContact$inboundSchema;
-  /** @deprecated use `CrmContact$outboundSchema` instead. */
-  export const outboundSchema = CrmContact$outboundSchema;
-  /** @deprecated use `CrmContact$Outbound` instead. */
-  export type Outbound = CrmContact$Outbound;
-}
-
 export function crmContactToJSON(crmContact: CrmContact): string {
   return JSON.stringify(CrmContact$outboundSchema.parse(crmContact));
 }
-
 export function crmContactFromJSON(
   jsonString: string,
 ): SafeParseResult<CrmContact, SDKValidationError> {

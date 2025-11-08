@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchKmsCommentRequest = {
@@ -28,24 +25,6 @@ export type PatchKmsCommentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchKmsCommentRequest$inboundSchema: z.ZodType<
-  PatchKmsCommentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  KmsComment: shared.KmsComment$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "KmsComment": "kmsComment",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchKmsCommentRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchKmsCommentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchKmsCommentRequest$ {
-  /** @deprecated use `PatchKmsCommentRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchKmsCommentRequest$inboundSchema;
-  /** @deprecated use `PatchKmsCommentRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchKmsCommentRequest$outboundSchema;
-  /** @deprecated use `PatchKmsCommentRequest$Outbound` instead. */
-  export type Outbound = PatchKmsCommentRequest$Outbound;
-}
-
 export function patchKmsCommentRequestToJSON(
   patchKmsCommentRequest: PatchKmsCommentRequest,
 ): string {
   return JSON.stringify(
     PatchKmsCommentRequest$outboundSchema.parse(patchKmsCommentRequest),
-  );
-}
-
-export function patchKmsCommentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchKmsCommentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchKmsCommentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchKmsCommentRequest' from JSON`,
   );
 }

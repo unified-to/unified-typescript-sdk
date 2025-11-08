@@ -123,7 +123,6 @@ export const MessagingMessage$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type MessagingMessage$Outbound = {
   attachments?: Array<MessagingAttachment$Outbound> | undefined;
@@ -203,19 +202,6 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessagingMessage$ {
-  /** @deprecated use `MessagingMessage$inboundSchema` instead. */
-  export const inboundSchema = MessagingMessage$inboundSchema;
-  /** @deprecated use `MessagingMessage$outboundSchema` instead. */
-  export const outboundSchema = MessagingMessage$outboundSchema;
-  /** @deprecated use `MessagingMessage$Outbound` instead. */
-  export type Outbound = MessagingMessage$Outbound;
-}
-
 export function messagingMessageToJSON(
   messagingMessage: MessagingMessage,
 ): string {
@@ -223,7 +209,6 @@ export function messagingMessageToJSON(
     MessagingMessage$outboundSchema.parse(messagingMessage),
   );
 }
-
 export function messagingMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingMessage, SDKValidationError> {

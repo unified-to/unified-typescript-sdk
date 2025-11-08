@@ -34,7 +34,6 @@ export const AccountingEmailType$inboundSchema: z.ZodType<
     z.nativeEnum(AccountingEmailType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AccountingEmailType$outboundSchema: z.ZodType<
   AccountingEmailType,
@@ -45,17 +44,6 @@ export const AccountingEmailType$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingEmailType$ {
-  /** @deprecated use `AccountingEmailType$inboundSchema` instead. */
-  export const inboundSchema = AccountingEmailType$inboundSchema;
-  /** @deprecated use `AccountingEmailType$outboundSchema` instead. */
-  export const outboundSchema = AccountingEmailType$outboundSchema;
-}
-
 /** @internal */
 export const AccountingEmail$inboundSchema: z.ZodType<
   AccountingEmail,
@@ -65,7 +53,6 @@ export const AccountingEmail$inboundSchema: z.ZodType<
   email: z.string().optional(),
   type: AccountingEmailType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AccountingEmail$Outbound = {
   email?: string | undefined;
@@ -82,25 +69,11 @@ export const AccountingEmail$outboundSchema: z.ZodType<
   type: AccountingEmailType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingEmail$ {
-  /** @deprecated use `AccountingEmail$inboundSchema` instead. */
-  export const inboundSchema = AccountingEmail$inboundSchema;
-  /** @deprecated use `AccountingEmail$outboundSchema` instead. */
-  export const outboundSchema = AccountingEmail$outboundSchema;
-  /** @deprecated use `AccountingEmail$Outbound` instead. */
-  export type Outbound = AccountingEmail$Outbound;
-}
-
 export function accountingEmailToJSON(
   accountingEmail: AccountingEmail,
 ): string {
   return JSON.stringify(AccountingEmail$outboundSchema.parse(accountingEmail));
 }
-
 export function accountingEmailFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingEmail, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateScimUsersRequest = {
@@ -21,26 +18,6 @@ export type CreateScimUsersRequest = {
   sortOrder?: string | undefined;
   startIndex?: number | undefined;
 };
-
-/** @internal */
-export const CreateScimUsersRequest$inboundSchema: z.ZodType<
-  CreateScimUsersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ScimUser: shared.ScimUser$inboundSchema,
-  connection_id: z.string(),
-  count: z.number().optional(),
-  filter: z.string().optional(),
-  sortBy: z.string().optional(),
-  sortOrder: z.string().optional(),
-  startIndex: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "ScimUser": "scimUser",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateScimUsersRequest$Outbound = {
@@ -73,33 +50,10 @@ export const CreateScimUsersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateScimUsersRequest$ {
-  /** @deprecated use `CreateScimUsersRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateScimUsersRequest$inboundSchema;
-  /** @deprecated use `CreateScimUsersRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateScimUsersRequest$outboundSchema;
-  /** @deprecated use `CreateScimUsersRequest$Outbound` instead. */
-  export type Outbound = CreateScimUsersRequest$Outbound;
-}
-
 export function createScimUsersRequestToJSON(
   createScimUsersRequest: CreateScimUsersRequest,
 ): string {
   return JSON.stringify(
     CreateScimUsersRequest$outboundSchema.parse(createScimUsersRequest),
-  );
-}
-
-export function createScimUsersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateScimUsersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateScimUsersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateScimUsersRequest' from JSON`,
   );
 }

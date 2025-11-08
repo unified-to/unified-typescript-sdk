@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetUnifiedIntegrationAuthRequest = {
   env?: string | undefined;
@@ -42,33 +39,6 @@ export type GetUnifiedIntegrationAuthRequest = {
    */
   workspaceId: string;
 };
-
-/** @internal */
-export const GetUnifiedIntegrationAuthRequest$inboundSchema: z.ZodType<
-  GetUnifiedIntegrationAuthRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  env: z.string().optional(),
-  external_xref: z.string().optional(),
-  failure_redirect: z.string().optional(),
-  integration_type: z.string(),
-  lang: z.string().optional(),
-  redirect: z.boolean().optional(),
-  scopes: z.array(z.string()).optional(),
-  state: z.string().optional(),
-  subdomain: z.string().optional(),
-  success_redirect: z.string().optional(),
-  workspace_id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "external_xref": "externalXref",
-    "failure_redirect": "failureRedirect",
-    "integration_type": "integrationType",
-    "success_redirect": "successRedirect",
-    "workspace_id": "workspaceId",
-  });
-});
 
 /** @internal */
 export type GetUnifiedIntegrationAuthRequest$Outbound = {
@@ -112,19 +82,6 @@ export const GetUnifiedIntegrationAuthRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetUnifiedIntegrationAuthRequest$ {
-  /** @deprecated use `GetUnifiedIntegrationAuthRequest$inboundSchema` instead. */
-  export const inboundSchema = GetUnifiedIntegrationAuthRequest$inboundSchema;
-  /** @deprecated use `GetUnifiedIntegrationAuthRequest$outboundSchema` instead. */
-  export const outboundSchema = GetUnifiedIntegrationAuthRequest$outboundSchema;
-  /** @deprecated use `GetUnifiedIntegrationAuthRequest$Outbound` instead. */
-  export type Outbound = GetUnifiedIntegrationAuthRequest$Outbound;
-}
-
 export function getUnifiedIntegrationAuthRequestToJSON(
   getUnifiedIntegrationAuthRequest: GetUnifiedIntegrationAuthRequest,
 ): string {
@@ -132,15 +89,5 @@ export function getUnifiedIntegrationAuthRequestToJSON(
     GetUnifiedIntegrationAuthRequest$outboundSchema.parse(
       getUnifiedIntegrationAuthRequest,
     ),
-  );
-}
-
-export function getUnifiedIntegrationAuthRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetUnifiedIntegrationAuthRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetUnifiedIntegrationAuthRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetUnifiedIntegrationAuthRequest' from JSON`,
   );
 }

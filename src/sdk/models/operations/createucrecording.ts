@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateUcRecordingRequest = {
@@ -24,23 +21,6 @@ export type CreateUcRecordingRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateUcRecordingRequest$inboundSchema: z.ZodType<
-  CreateUcRecordingRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  UcRecording: shared.UcRecording$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "UcRecording": "ucRecording",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateUcRecordingRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateUcRecordingRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateUcRecordingRequest$ {
-  /** @deprecated use `CreateUcRecordingRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateUcRecordingRequest$inboundSchema;
-  /** @deprecated use `CreateUcRecordingRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateUcRecordingRequest$outboundSchema;
-  /** @deprecated use `CreateUcRecordingRequest$Outbound` instead. */
-  export type Outbound = CreateUcRecordingRequest$Outbound;
-}
-
 export function createUcRecordingRequestToJSON(
   createUcRecordingRequest: CreateUcRecordingRequest,
 ): string {
   return JSON.stringify(
     CreateUcRecordingRequest$outboundSchema.parse(createUcRecordingRequest),
-  );
-}
-
-export function createUcRecordingRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateUcRecordingRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateUcRecordingRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateUcRecordingRequest' from JSON`,
   );
 }

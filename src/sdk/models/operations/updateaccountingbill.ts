@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingBillRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingBillRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingBillRequest$inboundSchema: z.ZodType<
-  UpdateAccountingBillRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingBill: shared.AccountingBill$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingBill": "accountingBill",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingBillRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingBillRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingBillRequest$ {
-  /** @deprecated use `UpdateAccountingBillRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingBillRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingBillRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingBillRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingBillRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingBillRequest$Outbound;
-}
-
 export function updateAccountingBillRequestToJSON(
   updateAccountingBillRequest: UpdateAccountingBillRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingBillRequestToJSON(
     UpdateAccountingBillRequest$outboundSchema.parse(
       updateAccountingBillRequest,
     ),
-  );
-}
-
-export function updateAccountingBillRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingBillRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingBillRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingBillRequest' from JSON`,
   );
 }

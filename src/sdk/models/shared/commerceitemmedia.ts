@@ -45,7 +45,6 @@ export const CommerceItemMediaType$inboundSchema: z.ZodType<
     z.nativeEnum(CommerceItemMediaType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CommerceItemMediaType$outboundSchema: z.ZodType<
   CommerceItemMediaType,
@@ -55,17 +54,6 @@ export const CommerceItemMediaType$outboundSchema: z.ZodType<
   z.nativeEnum(CommerceItemMediaType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceItemMediaType$ {
-  /** @deprecated use `CommerceItemMediaType$inboundSchema` instead. */
-  export const inboundSchema = CommerceItemMediaType$inboundSchema;
-  /** @deprecated use `CommerceItemMediaType$outboundSchema` instead. */
-  export const outboundSchema = CommerceItemMediaType$outboundSchema;
-}
 
 /** @internal */
 export const CommerceItemMedia$inboundSchema: z.ZodType<
@@ -82,7 +70,6 @@ export const CommerceItemMedia$inboundSchema: z.ZodType<
   url: z.string(),
   width: z.number().optional(),
 });
-
 /** @internal */
 export type CommerceItemMedia$Outbound = {
   alt?: string | undefined;
@@ -111,19 +98,6 @@ export const CommerceItemMedia$outboundSchema: z.ZodType<
   width: z.number().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceItemMedia$ {
-  /** @deprecated use `CommerceItemMedia$inboundSchema` instead. */
-  export const inboundSchema = CommerceItemMedia$inboundSchema;
-  /** @deprecated use `CommerceItemMedia$outboundSchema` instead. */
-  export const outboundSchema = CommerceItemMedia$outboundSchema;
-  /** @deprecated use `CommerceItemMedia$Outbound` instead. */
-  export type Outbound = CommerceItemMedia$Outbound;
-}
-
 export function commerceItemMediaToJSON(
   commerceItemMedia: CommerceItemMedia,
 ): string {
@@ -131,7 +105,6 @@ export function commerceItemMediaToJSON(
     CommerceItemMedia$outboundSchema.parse(commerceItemMedia),
   );
 }
-
 export function commerceItemMediaFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceItemMedia, SDKValidationError> {

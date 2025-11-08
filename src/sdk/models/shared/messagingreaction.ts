@@ -27,7 +27,6 @@ export const MessagingReaction$inboundSchema: z.ZodType<
   member: PropertyMessagingReactionMember$inboundSchema,
   reaction: z.string(),
 });
-
 /** @internal */
 export type MessagingReaction$Outbound = {
   member: PropertyMessagingReactionMember$Outbound;
@@ -44,19 +43,6 @@ export const MessagingReaction$outboundSchema: z.ZodType<
   reaction: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessagingReaction$ {
-  /** @deprecated use `MessagingReaction$inboundSchema` instead. */
-  export const inboundSchema = MessagingReaction$inboundSchema;
-  /** @deprecated use `MessagingReaction$outboundSchema` instead. */
-  export const outboundSchema = MessagingReaction$outboundSchema;
-  /** @deprecated use `MessagingReaction$Outbound` instead. */
-  export type Outbound = MessagingReaction$Outbound;
-}
-
 export function messagingReactionToJSON(
   messagingReaction: MessagingReaction,
 ): string {
@@ -64,7 +50,6 @@ export function messagingReactionToJSON(
     MessagingReaction$outboundSchema.parse(messagingReaction),
   );
 }
-
 export function messagingReactionFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingReaction, SDKValidationError> {

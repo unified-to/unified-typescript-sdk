@@ -78,7 +78,6 @@ export type AtsMetadata = {
 /** @internal */
 export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
   .object({});
-
 /** @internal */
 export type One$Outbound = {};
 
@@ -86,23 +85,9 @@ export type One$Outbound = {};
 export const One$outboundSchema: z.ZodType<One$Outbound, z.ZodTypeDef, One> = z
   .object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace One$ {
-  /** @deprecated use `One$inboundSchema` instead. */
-  export const inboundSchema = One$inboundSchema;
-  /** @deprecated use `One$outboundSchema` instead. */
-  export const outboundSchema = One$outboundSchema;
-  /** @deprecated use `One$Outbound` instead. */
-  export type Outbound = One$Outbound;
-}
-
 export function oneToJSON(one: One): string {
   return JSON.stringify(One$outboundSchema.parse(one));
 }
-
 export function oneFromJSON(
   jsonString: string,
 ): SafeParseResult<One, SDKValidationError> {
@@ -121,7 +106,6 @@ export const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
     z.number(),
     z.boolean(),
   ]);
-
 /** @internal */
 export type Five$Outbound = One$Outbound | string | number | boolean;
 
@@ -134,23 +118,9 @@ export const Five$outboundSchema: z.ZodType<Five$Outbound, z.ZodTypeDef, Five> =
     z.boolean(),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Five$ {
-  /** @deprecated use `Five$inboundSchema` instead. */
-  export const inboundSchema = Five$inboundSchema;
-  /** @deprecated use `Five$outboundSchema` instead. */
-  export const outboundSchema = Five$outboundSchema;
-  /** @deprecated use `Five$Outbound` instead. */
-  export type Outbound = Five$Outbound;
-}
-
 export function fiveToJSON(five: Five): string {
   return JSON.stringify(Five$outboundSchema.parse(five));
 }
-
 export function fiveFromJSON(
   jsonString: string,
 ): SafeParseResult<Five, SDKValidationError> {
@@ -180,7 +150,6 @@ export const ExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type ExtraData$Outbound =
   | { [k: string]: any }
@@ -209,23 +178,9 @@ export const ExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ExtraData$ {
-  /** @deprecated use `ExtraData$inboundSchema` instead. */
-  export const inboundSchema = ExtraData$inboundSchema;
-  /** @deprecated use `ExtraData$outboundSchema` instead. */
-  export const outboundSchema = ExtraData$outboundSchema;
-  /** @deprecated use `ExtraData$Outbound` instead. */
-  export type Outbound = ExtraData$Outbound;
-}
-
 export function extraDataToJSON(extraData: ExtraData): string {
   return JSON.stringify(ExtraData$outboundSchema.parse(extraData));
 }
-
 export function extraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<ExtraData, SDKValidationError> {
@@ -242,7 +197,6 @@ export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> = z
     z.nativeEnum(Format),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Format$outboundSchema: z.ZodType<Format, z.ZodTypeDef, Format> = z
   .union([
@@ -250,24 +204,12 @@ export const Format$outboundSchema: z.ZodType<Format, z.ZodTypeDef, Format> = z
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Format$ {
-  /** @deprecated use `Format$inboundSchema` instead. */
-  export const inboundSchema = Format$inboundSchema;
-  /** @deprecated use `Format$outboundSchema` instead. */
-  export const outboundSchema = Format$outboundSchema;
-}
-
 /** @internal */
 export const AtsMetadata1$inboundSchema: z.ZodType<
   AtsMetadata1,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type AtsMetadata1$Outbound = {};
 
@@ -278,23 +220,9 @@ export const AtsMetadata1$outboundSchema: z.ZodType<
   AtsMetadata1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata1$ {
-  /** @deprecated use `AtsMetadata1$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata1$inboundSchema;
-  /** @deprecated use `AtsMetadata1$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata1$outboundSchema;
-  /** @deprecated use `AtsMetadata1$Outbound` instead. */
-  export type Outbound = AtsMetadata1$Outbound;
-}
-
 export function atsMetadata1ToJSON(atsMetadata1: AtsMetadata1): string {
   return JSON.stringify(AtsMetadata1$outboundSchema.parse(atsMetadata1));
 }
-
 export function atsMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<AtsMetadata1, SDKValidationError> {
@@ -316,7 +244,6 @@ export const AtsMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type AtsMetadata5$Outbound =
   | AtsMetadata1$Outbound
@@ -336,23 +263,9 @@ export const AtsMetadata5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata5$ {
-  /** @deprecated use `AtsMetadata5$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata5$inboundSchema;
-  /** @deprecated use `AtsMetadata5$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata5$outboundSchema;
-  /** @deprecated use `AtsMetadata5$Outbound` instead. */
-  export type Outbound = AtsMetadata5$Outbound;
-}
-
 export function atsMetadata5ToJSON(atsMetadata5: AtsMetadata5): string {
   return JSON.stringify(AtsMetadata5$outboundSchema.parse(atsMetadata5));
 }
-
 export function atsMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<AtsMetadata5, SDKValidationError> {
@@ -379,7 +292,6 @@ export const Value$inboundSchema: z.ZodType<Value, z.ZodTypeDef, unknown> = z
       ]),
     ),
   ]);
-
 /** @internal */
 export type Value$Outbound =
   | { [k: string]: any }
@@ -408,23 +320,9 @@ export const Value$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Value$ {
-  /** @deprecated use `Value$inboundSchema` instead. */
-  export const inboundSchema = Value$inboundSchema;
-  /** @deprecated use `Value$outboundSchema` instead. */
-  export const outboundSchema = Value$outboundSchema;
-  /** @deprecated use `Value$Outbound` instead. */
-  export type Outbound = Value$Outbound;
-}
-
 export function valueToJSON(value: Value): string {
   return JSON.stringify(Value$outboundSchema.parse(value));
 }
-
 export function valueFromJSON(
   jsonString: string,
 ): SafeParseResult<Value, SDKValidationError> {
@@ -480,7 +378,6 @@ export const AtsMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
-
 /** @internal */
 export type AtsMetadata$Outbound = {
   extra_data?:
@@ -551,23 +448,9 @@ export const AtsMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsMetadata$ {
-  /** @deprecated use `AtsMetadata$inboundSchema` instead. */
-  export const inboundSchema = AtsMetadata$inboundSchema;
-  /** @deprecated use `AtsMetadata$outboundSchema` instead. */
-  export const outboundSchema = AtsMetadata$outboundSchema;
-  /** @deprecated use `AtsMetadata$Outbound` instead. */
-  export type Outbound = AtsMetadata$Outbound;
-}
-
 export function atsMetadataToJSON(atsMetadata: AtsMetadata): string {
   return JSON.stringify(AtsMetadata$outboundSchema.parse(atsMetadata));
 }
-
 export function atsMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsMetadata, SDKValidationError> {

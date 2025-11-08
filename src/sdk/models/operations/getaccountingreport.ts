@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingReportRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingReportRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingReportRequest$inboundSchema: z.ZodType<
-  GetAccountingReportRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingReportRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetAccountingReportRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingReportRequest$ {
-  /** @deprecated use `GetAccountingReportRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingReportRequest$inboundSchema;
-  /** @deprecated use `GetAccountingReportRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingReportRequest$outboundSchema;
-  /** @deprecated use `GetAccountingReportRequest$Outbound` instead. */
-  export type Outbound = GetAccountingReportRequest$Outbound;
-}
-
 export function getAccountingReportRequestToJSON(
   getAccountingReportRequest: GetAccountingReportRequest,
 ): string {
   return JSON.stringify(
     GetAccountingReportRequest$outboundSchema.parse(getAccountingReportRequest),
-  );
-}
-
-export function getAccountingReportRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingReportRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingReportRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingReportRequest' from JSON`,
   );
 }

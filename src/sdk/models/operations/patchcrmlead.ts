@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCrmLeadRequest = {
@@ -28,24 +25,6 @@ export type PatchCrmLeadRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCrmLeadRequest$inboundSchema: z.ZodType<
-  PatchCrmLeadRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmLead: shared.CrmLead$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmLead": "crmLead",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCrmLeadRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchCrmLeadRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCrmLeadRequest$ {
-  /** @deprecated use `PatchCrmLeadRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCrmLeadRequest$inboundSchema;
-  /** @deprecated use `PatchCrmLeadRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCrmLeadRequest$outboundSchema;
-  /** @deprecated use `PatchCrmLeadRequest$Outbound` instead. */
-  export type Outbound = PatchCrmLeadRequest$Outbound;
-}
-
 export function patchCrmLeadRequestToJSON(
   patchCrmLeadRequest: PatchCrmLeadRequest,
 ): string {
   return JSON.stringify(
     PatchCrmLeadRequest$outboundSchema.parse(patchCrmLeadRequest),
-  );
-}
-
-export function patchCrmLeadRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCrmLeadRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCrmLeadRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCrmLeadRequest' from JSON`,
   );
 }

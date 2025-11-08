@@ -44,7 +44,6 @@ export const TicketingNote$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type TicketingNote$Outbound = {
   created_at?: string | undefined;
@@ -81,23 +80,9 @@ export const TicketingNote$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingNote$ {
-  /** @deprecated use `TicketingNote$inboundSchema` instead. */
-  export const inboundSchema = TicketingNote$inboundSchema;
-  /** @deprecated use `TicketingNote$outboundSchema` instead. */
-  export const outboundSchema = TicketingNote$outboundSchema;
-  /** @deprecated use `TicketingNote$Outbound` instead. */
-  export type Outbound = TicketingNote$Outbound;
-}
-
 export function ticketingNoteToJSON(ticketingNote: TicketingNote): string {
   return JSON.stringify(TicketingNote$outboundSchema.parse(ticketingNote));
 }
-
 export function ticketingNoteFromJSON(
   jsonString: string,
 ): SafeParseResult<TicketingNote, SDKValidationError> {

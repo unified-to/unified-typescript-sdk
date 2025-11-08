@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetLmsStudentRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetLmsStudentRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetLmsStudentRequest$inboundSchema: z.ZodType<
-  GetLmsStudentRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetLmsStudentRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetLmsStudentRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetLmsStudentRequest$ {
-  /** @deprecated use `GetLmsStudentRequest$inboundSchema` instead. */
-  export const inboundSchema = GetLmsStudentRequest$inboundSchema;
-  /** @deprecated use `GetLmsStudentRequest$outboundSchema` instead. */
-  export const outboundSchema = GetLmsStudentRequest$outboundSchema;
-  /** @deprecated use `GetLmsStudentRequest$Outbound` instead. */
-  export type Outbound = GetLmsStudentRequest$Outbound;
-}
-
 export function getLmsStudentRequestToJSON(
   getLmsStudentRequest: GetLmsStudentRequest,
 ): string {
   return JSON.stringify(
     GetLmsStudentRequest$outboundSchema.parse(getLmsStudentRequest),
-  );
-}
-
-export function getLmsStudentRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetLmsStudentRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetLmsStudentRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetLmsStudentRequest' from JSON`,
   );
 }

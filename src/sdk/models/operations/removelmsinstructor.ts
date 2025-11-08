@@ -24,20 +24,6 @@ export type RemoveLmsInstructorResponse = {
 };
 
 /** @internal */
-export const RemoveLmsInstructorRequest$inboundSchema: z.ZodType<
-  RemoveLmsInstructorRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveLmsInstructorRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveLmsInstructorRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveLmsInstructorRequest$ {
-  /** @deprecated use `RemoveLmsInstructorRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveLmsInstructorRequest$inboundSchema;
-  /** @deprecated use `RemoveLmsInstructorRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveLmsInstructorRequest$outboundSchema;
-  /** @deprecated use `RemoveLmsInstructorRequest$Outbound` instead. */
-  export type Outbound = RemoveLmsInstructorRequest$Outbound;
-}
-
 export function removeLmsInstructorRequestToJSON(
   removeLmsInstructorRequest: RemoveLmsInstructorRequest,
 ): string {
   return JSON.stringify(
     RemoveLmsInstructorRequest$outboundSchema.parse(removeLmsInstructorRequest),
-  );
-}
-
-export function removeLmsInstructorRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveLmsInstructorRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveLmsInstructorRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveLmsInstructorRequest' from JSON`,
   );
 }
 
@@ -100,47 +63,6 @@ export const RemoveLmsInstructorResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveLmsInstructorResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveLmsInstructorResponse$outboundSchema: z.ZodType<
-  RemoveLmsInstructorResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveLmsInstructorResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveLmsInstructorResponse$ {
-  /** @deprecated use `RemoveLmsInstructorResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveLmsInstructorResponse$inboundSchema;
-  /** @deprecated use `RemoveLmsInstructorResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveLmsInstructorResponse$outboundSchema;
-  /** @deprecated use `RemoveLmsInstructorResponse$Outbound` instead. */
-  export type Outbound = RemoveLmsInstructorResponse$Outbound;
-}
-
-export function removeLmsInstructorResponseToJSON(
-  removeLmsInstructorResponse: RemoveLmsInstructorResponse,
-): string {
-  return JSON.stringify(
-    RemoveLmsInstructorResponse$outboundSchema.parse(
-      removeLmsInstructorResponse,
-    ),
-  );
-}
 
 export function removeLmsInstructorResponseFromJSON(
   jsonString: string,

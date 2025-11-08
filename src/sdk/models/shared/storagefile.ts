@@ -55,7 +55,6 @@ export const StorageFileType$inboundSchema: z.ZodType<
     z.nativeEnum(StorageFileType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const StorageFileType$outboundSchema: z.ZodType<
   StorageFileType,
@@ -65,17 +64,6 @@ export const StorageFileType$outboundSchema: z.ZodType<
   z.nativeEnum(StorageFileType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StorageFileType$ {
-  /** @deprecated use `StorageFileType$inboundSchema` instead. */
-  export const inboundSchema = StorageFileType$inboundSchema;
-  /** @deprecated use `StorageFileType$outboundSchema` instead. */
-  export const outboundSchema = StorageFileType$outboundSchema;
-}
 
 /** @internal */
 export const StorageFile$inboundSchema: z.ZodType<
@@ -113,7 +101,6 @@ export const StorageFile$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type StorageFile$Outbound = {
   created_at?: string | undefined;
@@ -170,23 +157,9 @@ export const StorageFile$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StorageFile$ {
-  /** @deprecated use `StorageFile$inboundSchema` instead. */
-  export const inboundSchema = StorageFile$inboundSchema;
-  /** @deprecated use `StorageFile$outboundSchema` instead. */
-  export const outboundSchema = StorageFile$outboundSchema;
-  /** @deprecated use `StorageFile$Outbound` instead. */
-  export type Outbound = StorageFile$Outbound;
-}
-
 export function storageFileToJSON(storageFile: StorageFile): string {
   return JSON.stringify(StorageFile$outboundSchema.parse(storageFile));
 }
-
 export function storageFileFromJSON(
   jsonString: string,
 ): SafeParseResult<StorageFile, SDKValidationError> {

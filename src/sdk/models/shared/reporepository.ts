@@ -48,7 +48,6 @@ export const RepoRepository$inboundSchema: z.ZodType<
     "web_url": "webUrl",
   });
 });
-
 /** @internal */
 export type RepoRepository$Outbound = {
   created_at?: string | undefined;
@@ -89,23 +88,9 @@ export const RepoRepository$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RepoRepository$ {
-  /** @deprecated use `RepoRepository$inboundSchema` instead. */
-  export const inboundSchema = RepoRepository$inboundSchema;
-  /** @deprecated use `RepoRepository$outboundSchema` instead. */
-  export const outboundSchema = RepoRepository$outboundSchema;
-  /** @deprecated use `RepoRepository$Outbound` instead. */
-  export type Outbound = RepoRepository$Outbound;
-}
-
 export function repoRepositoryToJSON(repoRepository: RepoRepository): string {
   return JSON.stringify(RepoRepository$outboundSchema.parse(repoRepository));
 }
-
 export function repoRepositoryFromJSON(
   jsonString: string,
 ): SafeParseResult<RepoRepository, SDKValidationError> {

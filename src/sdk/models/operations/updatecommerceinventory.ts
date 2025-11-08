@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCommerceInventoryRequest = {
@@ -28,24 +25,6 @@ export type UpdateCommerceInventoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateCommerceInventoryRequest$inboundSchema: z.ZodType<
-  UpdateCommerceInventoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceInventory: shared.CommerceInventory$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceInventory": "commerceInventory",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateCommerceInventoryRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateCommerceInventoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCommerceInventoryRequest$ {
-  /** @deprecated use `UpdateCommerceInventoryRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateCommerceInventoryRequest$inboundSchema;
-  /** @deprecated use `UpdateCommerceInventoryRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateCommerceInventoryRequest$outboundSchema;
-  /** @deprecated use `UpdateCommerceInventoryRequest$Outbound` instead. */
-  export type Outbound = UpdateCommerceInventoryRequest$Outbound;
-}
-
 export function updateCommerceInventoryRequestToJSON(
   updateCommerceInventoryRequest: UpdateCommerceInventoryRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateCommerceInventoryRequestToJSON(
     UpdateCommerceInventoryRequest$outboundSchema.parse(
       updateCommerceInventoryRequest,
     ),
-  );
-}
-
-export function updateCommerceInventoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCommerceInventoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCommerceInventoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCommerceInventoryRequest' from JSON`,
   );
 }

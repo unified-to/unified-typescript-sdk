@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListPaymentLinksRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListPaymentLinksRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListPaymentLinksRequest$inboundSchema: z.ZodType<
-  ListPaymentLinksRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  contact_id: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  payment_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "contact_id": "contactId",
-    "payment_id": "paymentId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListPaymentLinksRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListPaymentLinksRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPaymentLinksRequest$ {
-  /** @deprecated use `ListPaymentLinksRequest$inboundSchema` instead. */
-  export const inboundSchema = ListPaymentLinksRequest$inboundSchema;
-  /** @deprecated use `ListPaymentLinksRequest$outboundSchema` instead. */
-  export const outboundSchema = ListPaymentLinksRequest$outboundSchema;
-  /** @deprecated use `ListPaymentLinksRequest$Outbound` instead. */
-  export type Outbound = ListPaymentLinksRequest$Outbound;
-}
-
 export function listPaymentLinksRequestToJSON(
   listPaymentLinksRequest: ListPaymentLinksRequest,
 ): string {
   return JSON.stringify(
     ListPaymentLinksRequest$outboundSchema.parse(listPaymentLinksRequest),
-  );
-}
-
-export function listPaymentLinksRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListPaymentLinksRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListPaymentLinksRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListPaymentLinksRequest' from JSON`,
   );
 }

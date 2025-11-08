@@ -24,20 +24,6 @@ export type RemoveUcRecordingResponse = {
 };
 
 /** @internal */
-export const RemoveUcRecordingRequest$inboundSchema: z.ZodType<
-  RemoveUcRecordingRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveUcRecordingRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveUcRecordingRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUcRecordingRequest$ {
-  /** @deprecated use `RemoveUcRecordingRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveUcRecordingRequest$inboundSchema;
-  /** @deprecated use `RemoveUcRecordingRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveUcRecordingRequest$outboundSchema;
-  /** @deprecated use `RemoveUcRecordingRequest$Outbound` instead. */
-  export type Outbound = RemoveUcRecordingRequest$Outbound;
-}
-
 export function removeUcRecordingRequestToJSON(
   removeUcRecordingRequest: RemoveUcRecordingRequest,
 ): string {
   return JSON.stringify(
     RemoveUcRecordingRequest$outboundSchema.parse(removeUcRecordingRequest),
-  );
-}
-
-export function removeUcRecordingRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveUcRecordingRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveUcRecordingRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveUcRecordingRequest' from JSON`,
   );
 }
 
@@ -100,45 +63,6 @@ export const RemoveUcRecordingResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveUcRecordingResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveUcRecordingResponse$outboundSchema: z.ZodType<
-  RemoveUcRecordingResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveUcRecordingResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUcRecordingResponse$ {
-  /** @deprecated use `RemoveUcRecordingResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveUcRecordingResponse$inboundSchema;
-  /** @deprecated use `RemoveUcRecordingResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveUcRecordingResponse$outboundSchema;
-  /** @deprecated use `RemoveUcRecordingResponse$Outbound` instead. */
-  export type Outbound = RemoveUcRecordingResponse$Outbound;
-}
-
-export function removeUcRecordingResponseToJSON(
-  removeUcRecordingResponse: RemoveUcRecordingResponse,
-): string {
-  return JSON.stringify(
-    RemoveUcRecordingResponse$outboundSchema.parse(removeUcRecordingResponse),
-  );
-}
 
 export function removeUcRecordingResponseFromJSON(
   jsonString: string,

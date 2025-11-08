@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAtsCandidatesRequest = {
   /**
@@ -38,30 +35,6 @@ export type ListAtsCandidatesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAtsCandidatesRequest$inboundSchema: z.ZodType<
-  ListAtsCandidatesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  company_id: z.string().optional(),
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "company_id": "companyId",
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAtsCandidatesRequest$Outbound = {
@@ -101,33 +74,10 @@ export const ListAtsCandidatesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAtsCandidatesRequest$ {
-  /** @deprecated use `ListAtsCandidatesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAtsCandidatesRequest$inboundSchema;
-  /** @deprecated use `ListAtsCandidatesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAtsCandidatesRequest$outboundSchema;
-  /** @deprecated use `ListAtsCandidatesRequest$Outbound` instead. */
-  export type Outbound = ListAtsCandidatesRequest$Outbound;
-}
-
 export function listAtsCandidatesRequestToJSON(
   listAtsCandidatesRequest: ListAtsCandidatesRequest,
 ): string {
   return JSON.stringify(
     ListAtsCandidatesRequest$outboundSchema.parse(listAtsCandidatesRequest),
-  );
-}
-
-export function listAtsCandidatesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAtsCandidatesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAtsCandidatesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAtsCandidatesRequest' from JSON`,
   );
 }

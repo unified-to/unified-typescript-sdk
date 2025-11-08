@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListPaymentPayoutsRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListPaymentPayoutsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListPaymentPayoutsRequest$inboundSchema: z.ZodType<
-  ListPaymentPayoutsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListPaymentPayoutsRequest$Outbound = {
@@ -92,33 +67,10 @@ export const ListPaymentPayoutsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListPaymentPayoutsRequest$ {
-  /** @deprecated use `ListPaymentPayoutsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListPaymentPayoutsRequest$inboundSchema;
-  /** @deprecated use `ListPaymentPayoutsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListPaymentPayoutsRequest$outboundSchema;
-  /** @deprecated use `ListPaymentPayoutsRequest$Outbound` instead. */
-  export type Outbound = ListPaymentPayoutsRequest$Outbound;
-}
-
 export function listPaymentPayoutsRequestToJSON(
   listPaymentPayoutsRequest: ListPaymentPayoutsRequest,
 ): string {
   return JSON.stringify(
     ListPaymentPayoutsRequest$outboundSchema.parse(listPaymentPayoutsRequest),
-  );
-}
-
-export function listPaymentPayoutsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListPaymentPayoutsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListPaymentPayoutsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListPaymentPayoutsRequest' from JSON`,
   );
 }

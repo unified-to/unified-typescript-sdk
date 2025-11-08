@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisLocationRequest = {
@@ -24,23 +21,6 @@ export type CreateHrisLocationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateHrisLocationRequest$inboundSchema: z.ZodType<
-  CreateHrisLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisLocation: shared.HrisLocation$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisLocation": "hrisLocation",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateHrisLocationRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateHrisLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateHrisLocationRequest$ {
-  /** @deprecated use `CreateHrisLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateHrisLocationRequest$inboundSchema;
-  /** @deprecated use `CreateHrisLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateHrisLocationRequest$outboundSchema;
-  /** @deprecated use `CreateHrisLocationRequest$Outbound` instead. */
-  export type Outbound = CreateHrisLocationRequest$Outbound;
-}
-
 export function createHrisLocationRequestToJSON(
   createHrisLocationRequest: CreateHrisLocationRequest,
 ): string {
   return JSON.stringify(
     CreateHrisLocationRequest$outboundSchema.parse(createHrisLocationRequest),
-  );
-}
-
-export function createHrisLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateHrisLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateHrisLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateHrisLocationRequest' from JSON`,
   );
 }

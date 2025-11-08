@@ -42,6 +42,10 @@ export type CommerceCollection = {
   isActive?: boolean | undefined;
   isFeatured?: boolean | undefined;
   isVisible?: boolean | undefined;
+  /**
+   * includes the list of metadata_metadata required to create a commerce_item under the respective commerce_collection
+   */
+  itemMetadata?: Array<CommerceMetadata> | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
   name: string;
@@ -64,7 +68,6 @@ export const CommerceCollectionType$inboundSchema: z.ZodType<
     z.nativeEnum(CommerceCollectionType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const CommerceCollectionType$outboundSchema: z.ZodType<
   CommerceCollectionType,
@@ -74,17 +77,6 @@ export const CommerceCollectionType$outboundSchema: z.ZodType<
   z.nativeEnum(CommerceCollectionType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceCollectionType$ {
-  /** @deprecated use `CommerceCollectionType$inboundSchema` instead. */
-  export const inboundSchema = CommerceCollectionType$inboundSchema;
-  /** @deprecated use `CommerceCollectionType$outboundSchema` instead. */
-  export const outboundSchema = CommerceCollectionType$outboundSchema;
-}
 
 /** @internal */
 export const CommerceCollection$inboundSchema: z.ZodType<
@@ -99,6 +91,7 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_featured: z.boolean().optional(),
   is_visible: z.boolean().optional(),
+  item_metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string(),
@@ -116,13 +109,13 @@ export const CommerceCollection$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_featured": "isFeatured",
     "is_visible": "isVisible",
+    "item_metadata": "itemMetadata",
     "parent_id": "parentId",
     "public_description": "publicDescription",
     "public_name": "publicName",
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type CommerceCollection$Outbound = {
   created_at?: string | undefined;
@@ -131,6 +124,7 @@ export type CommerceCollection$Outbound = {
   is_active?: boolean | undefined;
   is_featured?: boolean | undefined;
   is_visible?: boolean | undefined;
+  item_metadata?: Array<CommerceMetadata$Outbound> | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name: string;
@@ -155,6 +149,7 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
   isVisible: z.boolean().optional(),
+  itemMetadata: z.array(CommerceMetadata$outboundSchema).optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string(),
@@ -171,25 +166,13 @@ export const CommerceCollection$outboundSchema: z.ZodType<
     isActive: "is_active",
     isFeatured: "is_featured",
     isVisible: "is_visible",
+    itemMetadata: "item_metadata",
     parentId: "parent_id",
     publicDescription: "public_description",
     publicName: "public_name",
     updatedAt: "updated_at",
   });
 });
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceCollection$ {
-  /** @deprecated use `CommerceCollection$inboundSchema` instead. */
-  export const inboundSchema = CommerceCollection$inboundSchema;
-  /** @deprecated use `CommerceCollection$outboundSchema` instead. */
-  export const outboundSchema = CommerceCollection$outboundSchema;
-  /** @deprecated use `CommerceCollection$Outbound` instead. */
-  export type Outbound = CommerceCollection$Outbound;
-}
 
 export function commerceCollectionToJSON(
   commerceCollection: CommerceCollection,
@@ -198,7 +181,6 @@ export function commerceCollectionToJSON(
     CommerceCollection$outboundSchema.parse(commerceCollection),
   );
 }
-
 export function commerceCollectionFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceCollection, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCommerceCollectionRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetCommerceCollectionRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetCommerceCollectionRequest$inboundSchema: z.ZodType<
-  GetCommerceCollectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetCommerceCollectionRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetCommerceCollectionRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetCommerceCollectionRequest$ {
-  /** @deprecated use `GetCommerceCollectionRequest$inboundSchema` instead. */
-  export const inboundSchema = GetCommerceCollectionRequest$inboundSchema;
-  /** @deprecated use `GetCommerceCollectionRequest$outboundSchema` instead. */
-  export const outboundSchema = GetCommerceCollectionRequest$outboundSchema;
-  /** @deprecated use `GetCommerceCollectionRequest$Outbound` instead. */
-  export type Outbound = GetCommerceCollectionRequest$Outbound;
-}
-
 export function getCommerceCollectionRequestToJSON(
   getCommerceCollectionRequest: GetCommerceCollectionRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getCommerceCollectionRequestToJSON(
     GetCommerceCollectionRequest$outboundSchema.parse(
       getCommerceCollectionRequest,
     ),
-  );
-}
-
-export function getCommerceCollectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetCommerceCollectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetCommerceCollectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCommerceCollectionRequest' from JSON`,
   );
 }

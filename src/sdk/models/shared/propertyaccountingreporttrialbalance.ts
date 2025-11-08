@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingTrialbalanceSubItem,
   AccountingTrialbalanceSubItem$inboundSchema,
-  AccountingTrialbalanceSubItem$Outbound,
-  AccountingTrialbalanceSubItem$outboundSchema,
 } from "./accountingtrialbalancesubitem.js";
 
 export type PropertyAccountingReportTrialBalance = {
@@ -60,75 +58,6 @@ export const PropertyAccountingReportTrialBalance$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type PropertyAccountingReportTrialBalance$Outbound = {
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  end_at?: string | undefined;
-  id?: string | undefined;
-  name?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  start_at?: string | undefined;
-  sub_items?: Array<AccountingTrialbalanceSubItem$Outbound> | undefined;
-  total_credit_amount?: number | undefined;
-  total_debit_amount?: number | undefined;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const PropertyAccountingReportTrialBalance$outboundSchema: z.ZodType<
-  PropertyAccountingReportTrialBalance$Outbound,
-  z.ZodTypeDef,
-  PropertyAccountingReportTrialBalance
-> = z.object({
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  id: z.string().optional(),
-  name: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  subItems: z.array(AccountingTrialbalanceSubItem$outboundSchema).optional(),
-  totalCreditAmount: z.number().optional(),
-  totalDebitAmount: z.number().optional(),
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    endAt: "end_at",
-    startAt: "start_at",
-    subItems: "sub_items",
-    totalCreditAmount: "total_credit_amount",
-    totalDebitAmount: "total_debit_amount",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyAccountingReportTrialBalance$ {
-  /** @deprecated use `PropertyAccountingReportTrialBalance$inboundSchema` instead. */
-  export const inboundSchema =
-    PropertyAccountingReportTrialBalance$inboundSchema;
-  /** @deprecated use `PropertyAccountingReportTrialBalance$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyAccountingReportTrialBalance$outboundSchema;
-  /** @deprecated use `PropertyAccountingReportTrialBalance$Outbound` instead. */
-  export type Outbound = PropertyAccountingReportTrialBalance$Outbound;
-}
-
-export function propertyAccountingReportTrialBalanceToJSON(
-  propertyAccountingReportTrialBalance: PropertyAccountingReportTrialBalance,
-): string {
-  return JSON.stringify(
-    PropertyAccountingReportTrialBalance$outboundSchema.parse(
-      propertyAccountingReportTrialBalance,
-    ),
-  );
-}
 
 export function propertyAccountingReportTrialBalanceFromJSON(
   jsonString: string,

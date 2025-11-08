@@ -24,20 +24,6 @@ export type RemoveTicketingNoteResponse = {
 };
 
 /** @internal */
-export const RemoveTicketingNoteRequest$inboundSchema: z.ZodType<
-  RemoveTicketingNoteRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveTicketingNoteRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveTicketingNoteRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTicketingNoteRequest$ {
-  /** @deprecated use `RemoveTicketingNoteRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveTicketingNoteRequest$inboundSchema;
-  /** @deprecated use `RemoveTicketingNoteRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveTicketingNoteRequest$outboundSchema;
-  /** @deprecated use `RemoveTicketingNoteRequest$Outbound` instead. */
-  export type Outbound = RemoveTicketingNoteRequest$Outbound;
-}
-
 export function removeTicketingNoteRequestToJSON(
   removeTicketingNoteRequest: RemoveTicketingNoteRequest,
 ): string {
   return JSON.stringify(
     RemoveTicketingNoteRequest$outboundSchema.parse(removeTicketingNoteRequest),
-  );
-}
-
-export function removeTicketingNoteRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveTicketingNoteRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveTicketingNoteRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveTicketingNoteRequest' from JSON`,
   );
 }
 
@@ -100,47 +63,6 @@ export const RemoveTicketingNoteResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveTicketingNoteResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveTicketingNoteResponse$outboundSchema: z.ZodType<
-  RemoveTicketingNoteResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveTicketingNoteResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveTicketingNoteResponse$ {
-  /** @deprecated use `RemoveTicketingNoteResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveTicketingNoteResponse$inboundSchema;
-  /** @deprecated use `RemoveTicketingNoteResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveTicketingNoteResponse$outboundSchema;
-  /** @deprecated use `RemoveTicketingNoteResponse$Outbound` instead. */
-  export type Outbound = RemoveTicketingNoteResponse$Outbound;
-}
-
-export function removeTicketingNoteResponseToJSON(
-  removeTicketingNoteResponse: RemoveTicketingNoteResponse,
-): string {
-  return JSON.stringify(
-    RemoveTicketingNoteResponse$outboundSchema.parse(
-      removeTicketingNoteResponse,
-    ),
-  );
-}
 
 export function removeTicketingNoteResponseFromJSON(
   jsonString: string,

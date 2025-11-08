@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateRepoBranchRequest = {
@@ -28,24 +25,6 @@ export type UpdateRepoBranchRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateRepoBranchRequest$inboundSchema: z.ZodType<
-  UpdateRepoBranchRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoBranch: shared.RepoBranch$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoBranch": "repoBranch",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateRepoBranchRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateRepoBranchRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateRepoBranchRequest$ {
-  /** @deprecated use `UpdateRepoBranchRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateRepoBranchRequest$inboundSchema;
-  /** @deprecated use `UpdateRepoBranchRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateRepoBranchRequest$outboundSchema;
-  /** @deprecated use `UpdateRepoBranchRequest$Outbound` instead. */
-  export type Outbound = UpdateRepoBranchRequest$Outbound;
-}
-
 export function updateRepoBranchRequestToJSON(
   updateRepoBranchRequest: UpdateRepoBranchRequest,
 ): string {
   return JSON.stringify(
     UpdateRepoBranchRequest$outboundSchema.parse(updateRepoBranchRequest),
-  );
-}
-
-export function updateRepoBranchRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateRepoBranchRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateRepoBranchRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateRepoBranchRequest' from JSON`,
   );
 }

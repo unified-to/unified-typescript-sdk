@@ -129,7 +129,6 @@ export const EmploymentType$inboundSchema: z.ZodType<
     z.nativeEnum(EmploymentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const EmploymentType$outboundSchema: z.ZodType<
   EmploymentType,
@@ -139,17 +138,6 @@ export const EmploymentType$outboundSchema: z.ZodType<
   z.nativeEnum(EmploymentType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EmploymentType$ {
-  /** @deprecated use `EmploymentType$inboundSchema` instead. */
-  export const inboundSchema = EmploymentType$inboundSchema;
-  /** @deprecated use `EmploymentType$outboundSchema` instead. */
-  export const outboundSchema = EmploymentType$outboundSchema;
-}
 
 /** @internal */
 export const AtsJobStatus$inboundSchema: z.ZodType<
@@ -161,7 +149,6 @@ export const AtsJobStatus$inboundSchema: z.ZodType<
     z.nativeEnum(AtsJobStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsJobStatus$outboundSchema: z.ZodType<
   AtsJobStatus,
@@ -171,17 +158,6 @@ export const AtsJobStatus$outboundSchema: z.ZodType<
   z.nativeEnum(AtsJobStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobStatus$ {
-  /** @deprecated use `AtsJobStatus$inboundSchema` instead. */
-  export const inboundSchema = AtsJobStatus$inboundSchema;
-  /** @deprecated use `AtsJobStatus$outboundSchema` instead. */
-  export const outboundSchema = AtsJobStatus$outboundSchema;
-}
 
 /** @internal */
 export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
@@ -233,7 +209,6 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
       "updated_at": "updatedAt",
     });
   });
-
 /** @internal */
 export type AtsJob$Outbound = {
   addresses?: Array<AtsAddress$Outbound> | undefined;
@@ -313,23 +288,9 @@ export const AtsJob$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJob$ {
-  /** @deprecated use `AtsJob$inboundSchema` instead. */
-  export const inboundSchema = AtsJob$inboundSchema;
-  /** @deprecated use `AtsJob$outboundSchema` instead. */
-  export const outboundSchema = AtsJob$outboundSchema;
-  /** @deprecated use `AtsJob$Outbound` instead. */
-  export type Outbound = AtsJob$Outbound;
-}
-
 export function atsJobToJSON(atsJob: AtsJob): string {
   return JSON.stringify(AtsJob$outboundSchema.parse(atsJob));
 }
-
 export function atsJobFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsJob, SDKValidationError> {

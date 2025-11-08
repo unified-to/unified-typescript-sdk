@@ -30,7 +30,6 @@ export const PropertyHrisEmployeeEmployeeRoles$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyHrisEmployeeEmployeeRoles$outboundSchema: z.ZodType<
   PropertyHrisEmployeeEmployeeRoles,
@@ -40,15 +39,3 @@ export const PropertyHrisEmployeeEmployeeRoles$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyHrisEmployeeEmployeeRoles$ {
-  /** @deprecated use `PropertyHrisEmployeeEmployeeRoles$inboundSchema` instead. */
-  export const inboundSchema = PropertyHrisEmployeeEmployeeRoles$inboundSchema;
-  /** @deprecated use `PropertyHrisEmployeeEmployeeRoles$outboundSchema` instead. */
-  export const outboundSchema =
-    PropertyHrisEmployeeEmployeeRoles$outboundSchema;
-}

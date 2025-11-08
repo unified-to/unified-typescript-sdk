@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyCalendarRecordingTranscriptAttendee,
   PropertyCalendarRecordingTranscriptAttendee$inboundSchema,
-  PropertyCalendarRecordingTranscriptAttendee$Outbound,
-  PropertyCalendarRecordingTranscriptAttendee$outboundSchema,
 } from "./propertycalendarrecordingtranscriptattendee.js";
 
 export type CalendarRecordingTranscript = {
@@ -42,57 +40,6 @@ export const CalendarRecordingTranscript$inboundSchema: z.ZodType<
     "start_at": "startAt",
   });
 });
-
-/** @internal */
-export type CalendarRecordingTranscript$Outbound = {
-  attendee?: PropertyCalendarRecordingTranscriptAttendee$Outbound | undefined;
-  end_at?: string | undefined;
-  language?: string | undefined;
-  start_at?: string | undefined;
-  text: string;
-};
-
-/** @internal */
-export const CalendarRecordingTranscript$outboundSchema: z.ZodType<
-  CalendarRecordingTranscript$Outbound,
-  z.ZodTypeDef,
-  CalendarRecordingTranscript
-> = z.object({
-  attendee: PropertyCalendarRecordingTranscriptAttendee$outboundSchema
-    .optional(),
-  endAt: z.date().transform(v => v.toISOString()).optional(),
-  language: z.string().optional(),
-  startAt: z.date().transform(v => v.toISOString()).optional(),
-  text: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    endAt: "end_at",
-    startAt: "start_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CalendarRecordingTranscript$ {
-  /** @deprecated use `CalendarRecordingTranscript$inboundSchema` instead. */
-  export const inboundSchema = CalendarRecordingTranscript$inboundSchema;
-  /** @deprecated use `CalendarRecordingTranscript$outboundSchema` instead. */
-  export const outboundSchema = CalendarRecordingTranscript$outboundSchema;
-  /** @deprecated use `CalendarRecordingTranscript$Outbound` instead. */
-  export type Outbound = CalendarRecordingTranscript$Outbound;
-}
-
-export function calendarRecordingTranscriptToJSON(
-  calendarRecordingTranscript: CalendarRecordingTranscript,
-): string {
-  return JSON.stringify(
-    CalendarRecordingTranscript$outboundSchema.parse(
-      calendarRecordingTranscript,
-    ),
-  );
-}
 
 export function calendarRecordingTranscriptFromJSON(
   jsonString: string,

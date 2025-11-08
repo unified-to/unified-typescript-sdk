@@ -70,7 +70,6 @@ export const UcContact$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type UcContact$Outbound = {
   company?: string | undefined;
@@ -112,23 +111,9 @@ export const UcContact$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UcContact$ {
-  /** @deprecated use `UcContact$inboundSchema` instead. */
-  export const inboundSchema = UcContact$inboundSchema;
-  /** @deprecated use `UcContact$outboundSchema` instead. */
-  export const outboundSchema = UcContact$outboundSchema;
-  /** @deprecated use `UcContact$Outbound` instead. */
-  export type Outbound = UcContact$Outbound;
-}
-
 export function ucContactToJSON(ucContact: UcContact): string {
   return JSON.stringify(UcContact$outboundSchema.parse(ucContact));
 }
-
 export function ucContactFromJSON(
   jsonString: string,
 ): SafeParseResult<UcContact, SDKValidationError> {

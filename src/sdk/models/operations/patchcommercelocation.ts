@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCommerceLocationRequest = {
@@ -28,24 +25,6 @@ export type PatchCommerceLocationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCommerceLocationRequest$inboundSchema: z.ZodType<
-  PatchCommerceLocationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceLocation: shared.CommerceLocation$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceLocation": "commerceLocation",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCommerceLocationRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchCommerceLocationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCommerceLocationRequest$ {
-  /** @deprecated use `PatchCommerceLocationRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCommerceLocationRequest$inboundSchema;
-  /** @deprecated use `PatchCommerceLocationRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCommerceLocationRequest$outboundSchema;
-  /** @deprecated use `PatchCommerceLocationRequest$Outbound` instead. */
-  export type Outbound = PatchCommerceLocationRequest$Outbound;
-}
-
 export function patchCommerceLocationRequestToJSON(
   patchCommerceLocationRequest: PatchCommerceLocationRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchCommerceLocationRequestToJSON(
     PatchCommerceLocationRequest$outboundSchema.parse(
       patchCommerceLocationRequest,
     ),
-  );
-}
-
-export function patchCommerceLocationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCommerceLocationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCommerceLocationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCommerceLocationRequest' from JSON`,
   );
 }

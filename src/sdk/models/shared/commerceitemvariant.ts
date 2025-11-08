@@ -88,7 +88,6 @@ export const SizeUnit$inboundSchema: z.ZodType<
     z.nativeEnum(SizeUnit),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const SizeUnit$outboundSchema: z.ZodType<
   SizeUnit,
@@ -98,17 +97,6 @@ export const SizeUnit$outboundSchema: z.ZodType<
   z.nativeEnum(SizeUnit),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace SizeUnit$ {
-  /** @deprecated use `SizeUnit$inboundSchema` instead. */
-  export const inboundSchema = SizeUnit$inboundSchema;
-  /** @deprecated use `SizeUnit$outboundSchema` instead. */
-  export const outboundSchema = SizeUnit$outboundSchema;
-}
 
 /** @internal */
 export const WeightUnit$inboundSchema: z.ZodType<
@@ -120,7 +108,6 @@ export const WeightUnit$inboundSchema: z.ZodType<
     z.nativeEnum(WeightUnit),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const WeightUnit$outboundSchema: z.ZodType<
   WeightUnit,
@@ -130,17 +117,6 @@ export const WeightUnit$outboundSchema: z.ZodType<
   z.nativeEnum(WeightUnit),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WeightUnit$ {
-  /** @deprecated use `WeightUnit$inboundSchema` instead. */
-  export const inboundSchema = WeightUnit$inboundSchema;
-  /** @deprecated use `WeightUnit$outboundSchema` instead. */
-  export const outboundSchema = WeightUnit$outboundSchema;
-}
 
 /** @internal */
 export const CommerceItemVariant$inboundSchema: z.ZodType<
@@ -189,7 +165,6 @@ export const CommerceItemVariant$inboundSchema: z.ZodType<
     "weight_unit": "weightUnit",
   });
 });
-
 /** @internal */
 export type CommerceItemVariant$Outbound = {
   available_at?: string | undefined;
@@ -264,19 +239,6 @@ export const CommerceItemVariant$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CommerceItemVariant$ {
-  /** @deprecated use `CommerceItemVariant$inboundSchema` instead. */
-  export const inboundSchema = CommerceItemVariant$inboundSchema;
-  /** @deprecated use `CommerceItemVariant$outboundSchema` instead. */
-  export const outboundSchema = CommerceItemVariant$outboundSchema;
-  /** @deprecated use `CommerceItemVariant$Outbound` instead. */
-  export type Outbound = CommerceItemVariant$Outbound;
-}
-
 export function commerceItemVariantToJSON(
   commerceItemVariant: CommerceItemVariant,
 ): string {
@@ -284,7 +246,6 @@ export function commerceItemVariantToJSON(
     CommerceItemVariant$outboundSchema.parse(commerceItemVariant),
   );
 }
-
 export function commerceItemVariantFromJSON(
   jsonString: string,
 ): SafeParseResult<CommerceItemVariant, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetCrmLeadRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetCrmLeadRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetCrmLeadRequest$inboundSchema: z.ZodType<
-  GetCrmLeadRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetCrmLeadRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetCrmLeadRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetCrmLeadRequest$ {
-  /** @deprecated use `GetCrmLeadRequest$inboundSchema` instead. */
-  export const inboundSchema = GetCrmLeadRequest$inboundSchema;
-  /** @deprecated use `GetCrmLeadRequest$outboundSchema` instead. */
-  export const outboundSchema = GetCrmLeadRequest$outboundSchema;
-  /** @deprecated use `GetCrmLeadRequest$Outbound` instead. */
-  export type Outbound = GetCrmLeadRequest$Outbound;
-}
-
 export function getCrmLeadRequestToJSON(
   getCrmLeadRequest: GetCrmLeadRequest,
 ): string {
   return JSON.stringify(
     GetCrmLeadRequest$outboundSchema.parse(getCrmLeadRequest),
-  );
-}
-
-export function getCrmLeadRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetCrmLeadRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetCrmLeadRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetCrmLeadRequest' from JSON`,
   );
 }

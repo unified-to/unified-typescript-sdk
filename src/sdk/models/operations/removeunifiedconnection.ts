@@ -20,15 +20,6 @@ export type RemoveUnifiedConnectionResponse = {
 };
 
 /** @internal */
-export const RemoveUnifiedConnectionRequest$inboundSchema: z.ZodType<
-  RemoveUnifiedConnectionRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  id: z.string(),
-});
-
-/** @internal */
 export type RemoveUnifiedConnectionRequest$Outbound = {
   id: string;
 };
@@ -42,19 +33,6 @@ export const RemoveUnifiedConnectionRequest$outboundSchema: z.ZodType<
   id: z.string(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUnifiedConnectionRequest$ {
-  /** @deprecated use `RemoveUnifiedConnectionRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveUnifiedConnectionRequest$inboundSchema;
-  /** @deprecated use `RemoveUnifiedConnectionRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveUnifiedConnectionRequest$outboundSchema;
-  /** @deprecated use `RemoveUnifiedConnectionRequest$Outbound` instead. */
-  export type Outbound = RemoveUnifiedConnectionRequest$Outbound;
-}
-
 export function removeUnifiedConnectionRequestToJSON(
   removeUnifiedConnectionRequest: RemoveUnifiedConnectionRequest,
 ): string {
@@ -62,16 +40,6 @@ export function removeUnifiedConnectionRequestToJSON(
     RemoveUnifiedConnectionRequest$outboundSchema.parse(
       removeUnifiedConnectionRequest,
     ),
-  );
-}
-
-export function removeUnifiedConnectionRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveUnifiedConnectionRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveUnifiedConnectionRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveUnifiedConnectionRequest' from JSON`,
   );
 }
 
@@ -87,47 +55,6 @@ export const RemoveUnifiedConnectionResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveUnifiedConnectionResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveUnifiedConnectionResponse$outboundSchema: z.ZodType<
-  RemoveUnifiedConnectionResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveUnifiedConnectionResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveUnifiedConnectionResponse$ {
-  /** @deprecated use `RemoveUnifiedConnectionResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveUnifiedConnectionResponse$inboundSchema;
-  /** @deprecated use `RemoveUnifiedConnectionResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveUnifiedConnectionResponse$outboundSchema;
-  /** @deprecated use `RemoveUnifiedConnectionResponse$Outbound` instead. */
-  export type Outbound = RemoveUnifiedConnectionResponse$Outbound;
-}
-
-export function removeUnifiedConnectionResponseToJSON(
-  removeUnifiedConnectionResponse: RemoveUnifiedConnectionResponse,
-): string {
-  return JSON.stringify(
-    RemoveUnifiedConnectionResponse$outboundSchema.parse(
-      removeUnifiedConnectionResponse,
-    ),
-  );
-}
 
 export function removeUnifiedConnectionResponseFromJSON(
   jsonString: string,

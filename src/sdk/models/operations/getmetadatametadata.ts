@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetMetadataMetadataRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetMetadataMetadataRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetMetadataMetadataRequest$inboundSchema: z.ZodType<
-  GetMetadataMetadataRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetMetadataMetadataRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetMetadataMetadataRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetMetadataMetadataRequest$ {
-  /** @deprecated use `GetMetadataMetadataRequest$inboundSchema` instead. */
-  export const inboundSchema = GetMetadataMetadataRequest$inboundSchema;
-  /** @deprecated use `GetMetadataMetadataRequest$outboundSchema` instead. */
-  export const outboundSchema = GetMetadataMetadataRequest$outboundSchema;
-  /** @deprecated use `GetMetadataMetadataRequest$Outbound` instead. */
-  export type Outbound = GetMetadataMetadataRequest$Outbound;
-}
-
 export function getMetadataMetadataRequestToJSON(
   getMetadataMetadataRequest: GetMetadataMetadataRequest,
 ): string {
   return JSON.stringify(
     GetMetadataMetadataRequest$outboundSchema.parse(getMetadataMetadataRequest),
-  );
-}
-
-export function getMetadataMetadataRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetMetadataMetadataRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetMetadataMetadataRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetMetadataMetadataRequest' from JSON`,
   );
 }

@@ -40,7 +40,6 @@ export const StoragePermission$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type StoragePermission$Outbound = {
   group_id?: string | undefined;
@@ -70,19 +69,6 @@ export const StoragePermission$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace StoragePermission$ {
-  /** @deprecated use `StoragePermission$inboundSchema` instead. */
-  export const inboundSchema = StoragePermission$inboundSchema;
-  /** @deprecated use `StoragePermission$outboundSchema` instead. */
-  export const outboundSchema = StoragePermission$outboundSchema;
-  /** @deprecated use `StoragePermission$Outbound` instead. */
-  export type Outbound = StoragePermission$Outbound;
-}
-
 export function storagePermissionToJSON(
   storagePermission: StoragePermission,
 ): string {
@@ -90,7 +76,6 @@ export function storagePermissionToJSON(
     StoragePermission$outboundSchema.parse(storagePermission),
   );
 }
-
 export function storagePermissionFromJSON(
   jsonString: string,
 ): SafeParseResult<StoragePermission, SDKValidationError> {

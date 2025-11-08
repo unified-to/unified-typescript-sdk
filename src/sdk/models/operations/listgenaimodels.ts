@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListGenaiModelsRequest = {
   /**
@@ -34,28 +31,6 @@ export type ListGenaiModelsRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListGenaiModelsRequest$inboundSchema: z.ZodType<
-  ListGenaiModelsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListGenaiModelsRequest$Outbound = {
@@ -92,33 +67,10 @@ export const ListGenaiModelsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListGenaiModelsRequest$ {
-  /** @deprecated use `ListGenaiModelsRequest$inboundSchema` instead. */
-  export const inboundSchema = ListGenaiModelsRequest$inboundSchema;
-  /** @deprecated use `ListGenaiModelsRequest$outboundSchema` instead. */
-  export const outboundSchema = ListGenaiModelsRequest$outboundSchema;
-  /** @deprecated use `ListGenaiModelsRequest$Outbound` instead. */
-  export type Outbound = ListGenaiModelsRequest$Outbound;
-}
-
 export function listGenaiModelsRequestToJSON(
   listGenaiModelsRequest: ListGenaiModelsRequest,
 ): string {
   return JSON.stringify(
     ListGenaiModelsRequest$outboundSchema.parse(listGenaiModelsRequest),
-  );
-}
-
-export function listGenaiModelsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListGenaiModelsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListGenaiModelsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListGenaiModelsRequest' from JSON`,
   );
 }

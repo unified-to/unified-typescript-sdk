@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCrmCompanyRequest = {
@@ -27,23 +24,6 @@ export type CreateCrmCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCrmCompanyRequest$inboundSchema: z.ZodType<
-  CreateCrmCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmCompany: shared.CrmCompany$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmCompany": "crmCompany",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCrmCompanyRequest$Outbound = {
@@ -70,33 +50,10 @@ export const CreateCrmCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCrmCompanyRequest$ {
-  /** @deprecated use `CreateCrmCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCrmCompanyRequest$inboundSchema;
-  /** @deprecated use `CreateCrmCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCrmCompanyRequest$outboundSchema;
-  /** @deprecated use `CreateCrmCompanyRequest$Outbound` instead. */
-  export type Outbound = CreateCrmCompanyRequest$Outbound;
-}
-
 export function createCrmCompanyRequestToJSON(
   createCrmCompanyRequest: CreateCrmCompanyRequest,
 ): string {
   return JSON.stringify(
     CreateCrmCompanyRequest$outboundSchema.parse(createCrmCompanyRequest),
-  );
-}
-
-export function createCrmCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCrmCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCrmCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCrmCompanyRequest' from JSON`,
   );
 }

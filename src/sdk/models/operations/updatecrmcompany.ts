@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateCrmCompanyRequest = {
@@ -31,24 +28,6 @@ export type UpdateCrmCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateCrmCompanyRequest$inboundSchema: z.ZodType<
-  UpdateCrmCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CrmCompany: shared.CrmCompany$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CrmCompany": "crmCompany",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateCrmCompanyRequest$Outbound = {
@@ -77,33 +56,10 @@ export const UpdateCrmCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateCrmCompanyRequest$ {
-  /** @deprecated use `UpdateCrmCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateCrmCompanyRequest$inboundSchema;
-  /** @deprecated use `UpdateCrmCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateCrmCompanyRequest$outboundSchema;
-  /** @deprecated use `UpdateCrmCompanyRequest$Outbound` instead. */
-  export type Outbound = UpdateCrmCompanyRequest$Outbound;
-}
-
 export function updateCrmCompanyRequestToJSON(
   updateCrmCompanyRequest: UpdateCrmCompanyRequest,
 ): string {
   return JSON.stringify(
     UpdateCrmCompanyRequest$outboundSchema.parse(updateCrmCompanyRequest),
-  );
-}
-
-export function updateCrmCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateCrmCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateCrmCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateCrmCompanyRequest' from JSON`,
   );
 }

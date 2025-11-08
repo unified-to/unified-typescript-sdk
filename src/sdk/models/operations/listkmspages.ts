@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListKmsPagesRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListKmsPagesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListKmsPagesRequest$inboundSchema: z.ZodType<
-  ListKmsPagesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  parent_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  space_id: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "parent_id": "parentId",
-    "space_id": "spaceId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListKmsPagesRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListKmsPagesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListKmsPagesRequest$ {
-  /** @deprecated use `ListKmsPagesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListKmsPagesRequest$inboundSchema;
-  /** @deprecated use `ListKmsPagesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListKmsPagesRequest$outboundSchema;
-  /** @deprecated use `ListKmsPagesRequest$Outbound` instead. */
-  export type Outbound = ListKmsPagesRequest$Outbound;
-}
-
 export function listKmsPagesRequestToJSON(
   listKmsPagesRequest: ListKmsPagesRequest,
 ): string {
   return JSON.stringify(
     ListKmsPagesRequest$outboundSchema.parse(listKmsPagesRequest),
-  );
-}
-
-export function listKmsPagesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListKmsPagesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListKmsPagesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListKmsPagesRequest' from JSON`,
   );
 }

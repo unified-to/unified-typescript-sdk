@@ -38,7 +38,6 @@ export const AtsCandidateEducation$inboundSchema: z.ZodType<
     "start_at": "startAt",
   });
 });
-
 /** @internal */
 export type AtsCandidateEducation$Outbound = {
   degree?: string | undefined;
@@ -69,19 +68,6 @@ export const AtsCandidateEducation$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCandidateEducation$ {
-  /** @deprecated use `AtsCandidateEducation$inboundSchema` instead. */
-  export const inboundSchema = AtsCandidateEducation$inboundSchema;
-  /** @deprecated use `AtsCandidateEducation$outboundSchema` instead. */
-  export const outboundSchema = AtsCandidateEducation$outboundSchema;
-  /** @deprecated use `AtsCandidateEducation$Outbound` instead. */
-  export type Outbound = AtsCandidateEducation$Outbound;
-}
-
 export function atsCandidateEducationToJSON(
   atsCandidateEducation: AtsCandidateEducation,
 ): string {
@@ -89,7 +75,6 @@ export function atsCandidateEducationToJSON(
     AtsCandidateEducation$outboundSchema.parse(atsCandidateEducation),
   );
 }
-
 export function atsCandidateEducationFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsCandidateEducation, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListLmsClassesRequest = {
   /**
@@ -42,32 +39,6 @@ export type ListLmsClassesRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListLmsClassesRequest$inboundSchema: z.ZodType<
-  ListLmsClassesRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  course_id: z.string().optional(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  location_id: z.string().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "course_id": "courseId",
-    "location_id": "locationId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListLmsClassesRequest$Outbound = {
@@ -110,33 +81,10 @@ export const ListLmsClassesRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListLmsClassesRequest$ {
-  /** @deprecated use `ListLmsClassesRequest$inboundSchema` instead. */
-  export const inboundSchema = ListLmsClassesRequest$inboundSchema;
-  /** @deprecated use `ListLmsClassesRequest$outboundSchema` instead. */
-  export const outboundSchema = ListLmsClassesRequest$outboundSchema;
-  /** @deprecated use `ListLmsClassesRequest$Outbound` instead. */
-  export type Outbound = ListLmsClassesRequest$Outbound;
-}
-
 export function listLmsClassesRequestToJSON(
   listLmsClassesRequest: ListLmsClassesRequest,
 ): string {
   return JSON.stringify(
     ListLmsClassesRequest$outboundSchema.parse(listLmsClassesRequest),
-  );
-}
-
-export function listLmsClassesRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListLmsClassesRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListLmsClassesRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListLmsClassesRequest' from JSON`,
   );
 }

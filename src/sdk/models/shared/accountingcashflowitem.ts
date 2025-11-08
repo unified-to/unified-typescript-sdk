@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   PropertyAccountingCashflowItemSubItems,
   PropertyAccountingCashflowItemSubItems$inboundSchema,
-  PropertyAccountingCashflowItemSubItems$Outbound,
-  PropertyAccountingCashflowItemSubItems$outboundSchema,
 } from "./propertyaccountingcashflowitemsubitems.js";
 
 export type AccountingCashflowItem = {
@@ -44,58 +42,6 @@ export const AccountingCashflowItem$inboundSchema: z.ZodType<
     "transaction_ids": "transactionIds",
   });
 });
-
-/** @internal */
-export type AccountingCashflowItem$Outbound = {
-  account_id?: string | undefined;
-  amount?: number | undefined;
-  name?: string | undefined;
-  sub_items?:
-    | Array<PropertyAccountingCashflowItemSubItems$Outbound>
-    | undefined;
-  transaction_ids?: Array<string> | undefined;
-};
-
-/** @internal */
-export const AccountingCashflowItem$outboundSchema: z.ZodType<
-  AccountingCashflowItem$Outbound,
-  z.ZodTypeDef,
-  AccountingCashflowItem
-> = z.object({
-  accountId: z.string().optional(),
-  amount: z.number().optional(),
-  name: z.string().optional(),
-  subItems: z.array(PropertyAccountingCashflowItemSubItems$outboundSchema)
-    .optional(),
-  transactionIds: z.array(z.string()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    accountId: "account_id",
-    subItems: "sub_items",
-    transactionIds: "transaction_ids",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingCashflowItem$ {
-  /** @deprecated use `AccountingCashflowItem$inboundSchema` instead. */
-  export const inboundSchema = AccountingCashflowItem$inboundSchema;
-  /** @deprecated use `AccountingCashflowItem$outboundSchema` instead. */
-  export const outboundSchema = AccountingCashflowItem$outboundSchema;
-  /** @deprecated use `AccountingCashflowItem$Outbound` instead. */
-  export type Outbound = AccountingCashflowItem$Outbound;
-}
-
-export function accountingCashflowItemToJSON(
-  accountingCashflowItem: AccountingCashflowItem,
-): string {
-  return JSON.stringify(
-    AccountingCashflowItem$outboundSchema.parse(accountingCashflowItem),
-  );
-}
 
 export function accountingCashflowItemFromJSON(
   jsonString: string,

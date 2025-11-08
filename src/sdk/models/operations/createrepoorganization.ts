@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateRepoOrganizationRequest = {
@@ -24,23 +21,6 @@ export type CreateRepoOrganizationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateRepoOrganizationRequest$inboundSchema: z.ZodType<
-  CreateRepoOrganizationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoOrganization: shared.RepoOrganization$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoOrganization": "repoOrganization",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateRepoOrganizationRequest$Outbound = {
@@ -67,19 +47,6 @@ export const CreateRepoOrganizationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateRepoOrganizationRequest$ {
-  /** @deprecated use `CreateRepoOrganizationRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateRepoOrganizationRequest$inboundSchema;
-  /** @deprecated use `CreateRepoOrganizationRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateRepoOrganizationRequest$outboundSchema;
-  /** @deprecated use `CreateRepoOrganizationRequest$Outbound` instead. */
-  export type Outbound = CreateRepoOrganizationRequest$Outbound;
-}
-
 export function createRepoOrganizationRequestToJSON(
   createRepoOrganizationRequest: CreateRepoOrganizationRequest,
 ): string {
@@ -87,15 +54,5 @@ export function createRepoOrganizationRequestToJSON(
     CreateRepoOrganizationRequest$outboundSchema.parse(
       createRepoOrganizationRequest,
     ),
-  );
-}
-
-export function createRepoOrganizationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateRepoOrganizationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateRepoOrganizationRequest' from JSON`,
   );
 }

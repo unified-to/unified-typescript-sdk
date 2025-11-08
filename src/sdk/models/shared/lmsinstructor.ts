@@ -62,7 +62,6 @@ export const LmsInstructor$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type LmsInstructor$Outbound = {
   created_at?: string | undefined;
@@ -105,23 +104,9 @@ export const LmsInstructor$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsInstructor$ {
-  /** @deprecated use `LmsInstructor$inboundSchema` instead. */
-  export const inboundSchema = LmsInstructor$inboundSchema;
-  /** @deprecated use `LmsInstructor$outboundSchema` instead. */
-  export const outboundSchema = LmsInstructor$outboundSchema;
-  /** @deprecated use `LmsInstructor$Outbound` instead. */
-  export type Outbound = LmsInstructor$Outbound;
-}
-
 export function lmsInstructorToJSON(lmsInstructor: LmsInstructor): string {
   return JSON.stringify(LmsInstructor$outboundSchema.parse(lmsInstructor));
 }
-
 export function lmsInstructorFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsInstructor, SDKValidationError> {

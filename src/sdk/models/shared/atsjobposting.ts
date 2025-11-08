@@ -54,7 +54,6 @@ export const AtsJobPosting$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AtsJobPosting$Outbound = {
   address?: PropertyAtsJobPostingAddress$Outbound | undefined;
@@ -92,23 +91,9 @@ export const AtsJobPosting$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsJobPosting$ {
-  /** @deprecated use `AtsJobPosting$inboundSchema` instead. */
-  export const inboundSchema = AtsJobPosting$inboundSchema;
-  /** @deprecated use `AtsJobPosting$outboundSchema` instead. */
-  export const outboundSchema = AtsJobPosting$outboundSchema;
-  /** @deprecated use `AtsJobPosting$Outbound` instead. */
-  export type Outbound = AtsJobPosting$Outbound;
-}
-
 export function atsJobPostingToJSON(atsJobPosting: AtsJobPosting): string {
   return JSON.stringify(AtsJobPosting$outboundSchema.parse(atsJobPosting));
 }
-
 export function atsJobPostingFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsJobPosting, SDKValidationError> {

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCalendarCalendarRequest = {
@@ -28,24 +25,6 @@ export type PatchCalendarCalendarRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCalendarCalendarRequest$inboundSchema: z.ZodType<
-  PatchCalendarCalendarRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CalendarCalendar: shared.CalendarCalendar$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CalendarCalendar": "calendarCalendar",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCalendarCalendarRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchCalendarCalendarRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCalendarCalendarRequest$ {
-  /** @deprecated use `PatchCalendarCalendarRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCalendarCalendarRequest$inboundSchema;
-  /** @deprecated use `PatchCalendarCalendarRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCalendarCalendarRequest$outboundSchema;
-  /** @deprecated use `PatchCalendarCalendarRequest$Outbound` instead. */
-  export type Outbound = PatchCalendarCalendarRequest$Outbound;
-}
-
 export function patchCalendarCalendarRequestToJSON(
   patchCalendarCalendarRequest: PatchCalendarCalendarRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchCalendarCalendarRequestToJSON(
     PatchCalendarCalendarRequest$outboundSchema.parse(
       patchCalendarCalendarRequest,
     ),
-  );
-}
-
-export function patchCalendarCalendarRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCalendarCalendarRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCalendarCalendarRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCalendarCalendarRequest' from JSON`,
   );
 }

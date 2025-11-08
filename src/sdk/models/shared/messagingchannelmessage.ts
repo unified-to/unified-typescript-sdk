@@ -21,7 +21,6 @@ export const MessagingChannelMessage$inboundSchema: z.ZodType<
   id: z.string().optional(),
   name: z.string().optional(),
 });
-
 /** @internal */
 export type MessagingChannelMessage$Outbound = {
   id?: string | undefined;
@@ -38,19 +37,6 @@ export const MessagingChannelMessage$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace MessagingChannelMessage$ {
-  /** @deprecated use `MessagingChannelMessage$inboundSchema` instead. */
-  export const inboundSchema = MessagingChannelMessage$inboundSchema;
-  /** @deprecated use `MessagingChannelMessage$outboundSchema` instead. */
-  export const outboundSchema = MessagingChannelMessage$outboundSchema;
-  /** @deprecated use `MessagingChannelMessage$Outbound` instead. */
-  export type Outbound = MessagingChannelMessage$Outbound;
-}
-
 export function messagingChannelMessageToJSON(
   messagingChannelMessage: MessagingChannelMessage,
 ): string {
@@ -58,7 +44,6 @@ export function messagingChannelMessageToJSON(
     MessagingChannelMessage$outboundSchema.parse(messagingChannelMessage),
   );
 }
-
 export function messagingChannelMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagingChannelMessage, SDKValidationError> {

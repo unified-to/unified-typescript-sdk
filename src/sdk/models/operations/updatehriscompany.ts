@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateHrisCompanyRequest = {
@@ -28,24 +25,6 @@ export type UpdateHrisCompanyRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateHrisCompanyRequest$inboundSchema: z.ZodType<
-  UpdateHrisCompanyRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisCompany: shared.HrisCompany$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisCompany": "hrisCompany",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateHrisCompanyRequest$Outbound = {
@@ -74,33 +53,10 @@ export const UpdateHrisCompanyRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateHrisCompanyRequest$ {
-  /** @deprecated use `UpdateHrisCompanyRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateHrisCompanyRequest$inboundSchema;
-  /** @deprecated use `UpdateHrisCompanyRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateHrisCompanyRequest$outboundSchema;
-  /** @deprecated use `UpdateHrisCompanyRequest$Outbound` instead. */
-  export type Outbound = UpdateHrisCompanyRequest$Outbound;
-}
-
 export function updateHrisCompanyRequestToJSON(
   updateHrisCompanyRequest: UpdateHrisCompanyRequest,
 ): string {
   return JSON.stringify(
     UpdateHrisCompanyRequest$outboundSchema.parse(updateHrisCompanyRequest),
-  );
-}
-
-export function updateHrisCompanyRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateHrisCompanyRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateHrisCompanyRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateHrisCompanyRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type ListAccountingOrdersRequest = {
   /**
@@ -39,31 +36,6 @@ export type ListAccountingOrdersRequest = {
    */
   updatedGte?: string | undefined;
 };
-
-/** @internal */
-export const ListAccountingOrdersRequest$inboundSchema: z.ZodType<
-  ListAccountingOrdersRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  limit: z.number().optional(),
-  offset: z.number().optional(),
-  order: z.string().optional(),
-  org_id: z.string().optional(),
-  query: z.string().optional(),
-  raw: z.string().optional(),
-  sort: z.string().optional(),
-  type: z.string().optional(),
-  updated_gte: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-    "org_id": "orgId",
-    "updated_gte": "updatedGte",
-  });
-});
 
 /** @internal */
 export type ListAccountingOrdersRequest$Outbound = {
@@ -105,19 +77,6 @@ export const ListAccountingOrdersRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ListAccountingOrdersRequest$ {
-  /** @deprecated use `ListAccountingOrdersRequest$inboundSchema` instead. */
-  export const inboundSchema = ListAccountingOrdersRequest$inboundSchema;
-  /** @deprecated use `ListAccountingOrdersRequest$outboundSchema` instead. */
-  export const outboundSchema = ListAccountingOrdersRequest$outboundSchema;
-  /** @deprecated use `ListAccountingOrdersRequest$Outbound` instead. */
-  export type Outbound = ListAccountingOrdersRequest$Outbound;
-}
-
 export function listAccountingOrdersRequestToJSON(
   listAccountingOrdersRequest: ListAccountingOrdersRequest,
 ): string {
@@ -125,15 +84,5 @@ export function listAccountingOrdersRequestToJSON(
     ListAccountingOrdersRequest$outboundSchema.parse(
       listAccountingOrdersRequest,
     ),
-  );
-}
-
-export function listAccountingOrdersRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<ListAccountingOrdersRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => ListAccountingOrdersRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'ListAccountingOrdersRequest' from JSON`,
   );
 }

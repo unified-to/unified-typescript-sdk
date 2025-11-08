@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchAccountingExpenseRequest = {
@@ -28,24 +25,6 @@ export type PatchAccountingExpenseRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchAccountingExpenseRequest$inboundSchema: z.ZodType<
-  PatchAccountingExpenseRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingExpense: shared.AccountingExpense$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingExpense": "accountingExpense",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchAccountingExpenseRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchAccountingExpenseRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchAccountingExpenseRequest$ {
-  /** @deprecated use `PatchAccountingExpenseRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchAccountingExpenseRequest$inboundSchema;
-  /** @deprecated use `PatchAccountingExpenseRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchAccountingExpenseRequest$outboundSchema;
-  /** @deprecated use `PatchAccountingExpenseRequest$Outbound` instead. */
-  export type Outbound = PatchAccountingExpenseRequest$Outbound;
-}
-
 export function patchAccountingExpenseRequestToJSON(
   patchAccountingExpenseRequest: PatchAccountingExpenseRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchAccountingExpenseRequestToJSON(
     PatchAccountingExpenseRequest$outboundSchema.parse(
       patchAccountingExpenseRequest,
     ),
-  );
-}
-
-export function patchAccountingExpenseRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchAccountingExpenseRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchAccountingExpenseRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchAccountingExpenseRequest' from JSON`,
   );
 }

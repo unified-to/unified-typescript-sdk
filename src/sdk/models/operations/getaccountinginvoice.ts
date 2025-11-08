@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetAccountingInvoiceRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetAccountingInvoiceRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetAccountingInvoiceRequest$inboundSchema: z.ZodType<
-  GetAccountingInvoiceRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetAccountingInvoiceRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetAccountingInvoiceRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetAccountingInvoiceRequest$ {
-  /** @deprecated use `GetAccountingInvoiceRequest$inboundSchema` instead. */
-  export const inboundSchema = GetAccountingInvoiceRequest$inboundSchema;
-  /** @deprecated use `GetAccountingInvoiceRequest$outboundSchema` instead. */
-  export const outboundSchema = GetAccountingInvoiceRequest$outboundSchema;
-  /** @deprecated use `GetAccountingInvoiceRequest$Outbound` instead. */
-  export type Outbound = GetAccountingInvoiceRequest$Outbound;
-}
-
 export function getAccountingInvoiceRequestToJSON(
   getAccountingInvoiceRequest: GetAccountingInvoiceRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getAccountingInvoiceRequestToJSON(
     GetAccountingInvoiceRequest$outboundSchema.parse(
       getAccountingInvoiceRequest,
     ),
-  );
-}
-
-export function getAccountingInvoiceRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetAccountingInvoiceRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetAccountingInvoiceRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetAccountingInvoiceRequest' from JSON`,
   );
 }

@@ -92,7 +92,6 @@ export const Connection$inboundSchema: z.ZodType<
     "workspace_id": "workspaceId",
   });
 });
-
 /** @internal */
 export type Connection$Outbound = {
   auth?: PropertyConnectionAuth$Outbound | undefined;
@@ -148,23 +147,9 @@ export const Connection$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Connection$ {
-  /** @deprecated use `Connection$inboundSchema` instead. */
-  export const inboundSchema = Connection$inboundSchema;
-  /** @deprecated use `Connection$outboundSchema` instead. */
-  export const outboundSchema = Connection$outboundSchema;
-  /** @deprecated use `Connection$Outbound` instead. */
-  export type Outbound = Connection$Outbound;
-}
-
 export function connectionToJSON(connection: Connection): string {
   return JSON.stringify(Connection$outboundSchema.parse(connection));
 }
-
 export function connectionFromJSON(
   jsonString: string,
 ): SafeParseResult<Connection, SDKValidationError> {

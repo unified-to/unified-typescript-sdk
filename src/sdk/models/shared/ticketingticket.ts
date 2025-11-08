@@ -49,7 +49,6 @@ export const TicketingTicketStatus$inboundSchema: z.ZodType<
     z.nativeEnum(TicketingTicketStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const TicketingTicketStatus$outboundSchema: z.ZodType<
   TicketingTicketStatus,
@@ -59,17 +58,6 @@ export const TicketingTicketStatus$outboundSchema: z.ZodType<
   z.nativeEnum(TicketingTicketStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingTicketStatus$ {
-  /** @deprecated use `TicketingTicketStatus$inboundSchema` instead. */
-  export const inboundSchema = TicketingTicketStatus$inboundSchema;
-  /** @deprecated use `TicketingTicketStatus$outboundSchema` instead. */
-  export const outboundSchema = TicketingTicketStatus$outboundSchema;
-}
 
 /** @internal */
 export const TicketingTicket$inboundSchema: z.ZodType<
@@ -108,7 +96,6 @@ export const TicketingTicket$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type TicketingTicket$Outbound = {
   category?: string | undefined;
@@ -165,25 +152,11 @@ export const TicketingTicket$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace TicketingTicket$ {
-  /** @deprecated use `TicketingTicket$inboundSchema` instead. */
-  export const inboundSchema = TicketingTicket$inboundSchema;
-  /** @deprecated use `TicketingTicket$outboundSchema` instead. */
-  export const outboundSchema = TicketingTicket$outboundSchema;
-  /** @deprecated use `TicketingTicket$Outbound` instead. */
-  export type Outbound = TicketingTicket$Outbound;
-}
-
 export function ticketingTicketToJSON(
   ticketingTicket: TicketingTicket,
 ): string {
   return JSON.stringify(TicketingTicket$outboundSchema.parse(ticketingTicket));
 }
-
 export function ticketingTicketFromJSON(
   jsonString: string,
 ): SafeParseResult<TicketingTicket, SDKValidationError> {

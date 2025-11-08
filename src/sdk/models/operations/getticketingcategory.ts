@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetTicketingCategoryRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetTicketingCategoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetTicketingCategoryRequest$inboundSchema: z.ZodType<
-  GetTicketingCategoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetTicketingCategoryRequest$Outbound = {
@@ -67,19 +48,6 @@ export const GetTicketingCategoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetTicketingCategoryRequest$ {
-  /** @deprecated use `GetTicketingCategoryRequest$inboundSchema` instead. */
-  export const inboundSchema = GetTicketingCategoryRequest$inboundSchema;
-  /** @deprecated use `GetTicketingCategoryRequest$outboundSchema` instead. */
-  export const outboundSchema = GetTicketingCategoryRequest$outboundSchema;
-  /** @deprecated use `GetTicketingCategoryRequest$Outbound` instead. */
-  export type Outbound = GetTicketingCategoryRequest$Outbound;
-}
-
 export function getTicketingCategoryRequestToJSON(
   getTicketingCategoryRequest: GetTicketingCategoryRequest,
 ): string {
@@ -87,15 +55,5 @@ export function getTicketingCategoryRequestToJSON(
     GetTicketingCategoryRequest$outboundSchema.parse(
       getTicketingCategoryRequest,
     ),
-  );
-}
-
-export function getTicketingCategoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetTicketingCategoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetTicketingCategoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetTicketingCategoryRequest' from JSON`,
   );
 }

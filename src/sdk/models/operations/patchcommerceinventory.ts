@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchCommerceInventoryRequest = {
@@ -28,24 +25,6 @@ export type PatchCommerceInventoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchCommerceInventoryRequest$inboundSchema: z.ZodType<
-  PatchCommerceInventoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CommerceInventory: shared.CommerceInventory$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CommerceInventory": "commerceInventory",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchCommerceInventoryRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchCommerceInventoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchCommerceInventoryRequest$ {
-  /** @deprecated use `PatchCommerceInventoryRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchCommerceInventoryRequest$inboundSchema;
-  /** @deprecated use `PatchCommerceInventoryRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchCommerceInventoryRequest$outboundSchema;
-  /** @deprecated use `PatchCommerceInventoryRequest$Outbound` instead. */
-  export type Outbound = PatchCommerceInventoryRequest$Outbound;
-}
-
 export function patchCommerceInventoryRequestToJSON(
   patchCommerceInventoryRequest: PatchCommerceInventoryRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchCommerceInventoryRequestToJSON(
     PatchCommerceInventoryRequest$outboundSchema.parse(
       patchCommerceInventoryRequest,
     ),
-  );
-}
-
-export function patchCommerceInventoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchCommerceInventoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchCommerceInventoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchCommerceInventoryRequest' from JSON`,
   );
 }

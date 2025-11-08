@@ -4,11 +4,7 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -38,27 +34,6 @@ export const EnrichTelephoneType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const EnrichTelephoneType$outboundSchema: z.ZodType<
-  EnrichTelephoneType,
-  z.ZodTypeDef,
-  EnrichTelephoneType
-> = z.union([
-  z.nativeEnum(EnrichTelephoneType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichTelephoneType$ {
-  /** @deprecated use `EnrichTelephoneType$inboundSchema` instead. */
-  export const inboundSchema = EnrichTelephoneType$inboundSchema;
-  /** @deprecated use `EnrichTelephoneType$outboundSchema` instead. */
-  export const outboundSchema = EnrichTelephoneType$outboundSchema;
-}
-
-/** @internal */
 export const EnrichTelephone$inboundSchema: z.ZodType<
   EnrichTelephone,
   z.ZodTypeDef,
@@ -67,41 +42,6 @@ export const EnrichTelephone$inboundSchema: z.ZodType<
   telephone: z.string(),
   type: EnrichTelephoneType$inboundSchema.optional(),
 });
-
-/** @internal */
-export type EnrichTelephone$Outbound = {
-  telephone: string;
-  type?: string | undefined;
-};
-
-/** @internal */
-export const EnrichTelephone$outboundSchema: z.ZodType<
-  EnrichTelephone$Outbound,
-  z.ZodTypeDef,
-  EnrichTelephone
-> = z.object({
-  telephone: z.string(),
-  type: EnrichTelephoneType$outboundSchema.optional(),
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace EnrichTelephone$ {
-  /** @deprecated use `EnrichTelephone$inboundSchema` instead. */
-  export const inboundSchema = EnrichTelephone$inboundSchema;
-  /** @deprecated use `EnrichTelephone$outboundSchema` instead. */
-  export const outboundSchema = EnrichTelephone$outboundSchema;
-  /** @deprecated use `EnrichTelephone$Outbound` instead. */
-  export type Outbound = EnrichTelephone$Outbound;
-}
-
-export function enrichTelephoneToJSON(
-  enrichTelephone: EnrichTelephone,
-): string {
-  return JSON.stringify(EnrichTelephone$outboundSchema.parse(enrichTelephone));
-}
 
 export function enrichTelephoneFromJSON(
   jsonString: string,

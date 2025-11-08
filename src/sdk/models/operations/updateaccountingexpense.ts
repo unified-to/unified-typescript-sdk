@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateAccountingExpenseRequest = {
@@ -28,24 +25,6 @@ export type UpdateAccountingExpenseRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const UpdateAccountingExpenseRequest$inboundSchema: z.ZodType<
-  UpdateAccountingExpenseRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  AccountingExpense: shared.AccountingExpense$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "AccountingExpense": "accountingExpense",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateAccountingExpenseRequest$Outbound = {
@@ -74,19 +53,6 @@ export const UpdateAccountingExpenseRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateAccountingExpenseRequest$ {
-  /** @deprecated use `UpdateAccountingExpenseRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateAccountingExpenseRequest$inboundSchema;
-  /** @deprecated use `UpdateAccountingExpenseRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateAccountingExpenseRequest$outboundSchema;
-  /** @deprecated use `UpdateAccountingExpenseRequest$Outbound` instead. */
-  export type Outbound = UpdateAccountingExpenseRequest$Outbound;
-}
-
 export function updateAccountingExpenseRequestToJSON(
   updateAccountingExpenseRequest: UpdateAccountingExpenseRequest,
 ): string {
@@ -94,15 +60,5 @@ export function updateAccountingExpenseRequestToJSON(
     UpdateAccountingExpenseRequest$outboundSchema.parse(
       updateAccountingExpenseRequest,
     ),
-  );
-}
-
-export function updateAccountingExpenseRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateAccountingExpenseRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateAccountingExpenseRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateAccountingExpenseRequest' from JSON`,
   );
 }

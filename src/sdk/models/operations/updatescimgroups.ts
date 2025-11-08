@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type UpdateScimGroupsRequest = {
@@ -20,22 +17,6 @@ export type UpdateScimGroupsRequest = {
    */
   id: string;
 };
-
-/** @internal */
-export const UpdateScimGroupsRequest$inboundSchema: z.ZodType<
-  UpdateScimGroupsRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  ScimGroup: shared.ScimGroup$inboundSchema,
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "ScimGroup": "scimGroup",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type UpdateScimGroupsRequest$Outbound = {
@@ -60,33 +41,10 @@ export const UpdateScimGroupsRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace UpdateScimGroupsRequest$ {
-  /** @deprecated use `UpdateScimGroupsRequest$inboundSchema` instead. */
-  export const inboundSchema = UpdateScimGroupsRequest$inboundSchema;
-  /** @deprecated use `UpdateScimGroupsRequest$outboundSchema` instead. */
-  export const outboundSchema = UpdateScimGroupsRequest$outboundSchema;
-  /** @deprecated use `UpdateScimGroupsRequest$Outbound` instead. */
-  export type Outbound = UpdateScimGroupsRequest$Outbound;
-}
-
 export function updateScimGroupsRequestToJSON(
   updateScimGroupsRequest: UpdateScimGroupsRequest,
 ): string {
   return JSON.stringify(
     UpdateScimGroupsRequest$outboundSchema.parse(updateScimGroupsRequest),
-  );
-}
-
-export function updateScimGroupsRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<UpdateScimGroupsRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => UpdateScimGroupsRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'UpdateScimGroupsRequest' from JSON`,
   );
 }

@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateCalendarEventRequest = {
@@ -24,23 +21,6 @@ export type CreateCalendarEventRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateCalendarEventRequest$inboundSchema: z.ZodType<
-  CreateCalendarEventRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  CalendarEvent: shared.CalendarEvent$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "CalendarEvent": "calendarEvent",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateCalendarEventRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateCalendarEventRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateCalendarEventRequest$ {
-  /** @deprecated use `CreateCalendarEventRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateCalendarEventRequest$inboundSchema;
-  /** @deprecated use `CreateCalendarEventRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateCalendarEventRequest$outboundSchema;
-  /** @deprecated use `CreateCalendarEventRequest$Outbound` instead. */
-  export type Outbound = CreateCalendarEventRequest$Outbound;
-}
-
 export function createCalendarEventRequestToJSON(
   createCalendarEventRequest: CreateCalendarEventRequest,
 ): string {
   return JSON.stringify(
     CreateCalendarEventRequest$outboundSchema.parse(createCalendarEventRequest),
-  );
-}
-
-export function createCalendarEventRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateCalendarEventRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateCalendarEventRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateCalendarEventRequest' from JSON`,
   );
 }

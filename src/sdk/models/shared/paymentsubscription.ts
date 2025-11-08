@@ -70,7 +70,6 @@ export const IntervalUnit$inboundSchema: z.ZodType<
     z.nativeEnum(IntervalUnit),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const IntervalUnit$outboundSchema: z.ZodType<
   IntervalUnit,
@@ -80,17 +79,6 @@ export const IntervalUnit$outboundSchema: z.ZodType<
   z.nativeEnum(IntervalUnit),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace IntervalUnit$ {
-  /** @deprecated use `IntervalUnit$inboundSchema` instead. */
-  export const inboundSchema = IntervalUnit$inboundSchema;
-  /** @deprecated use `IntervalUnit$outboundSchema` instead. */
-  export const outboundSchema = IntervalUnit$outboundSchema;
-}
 
 /** @internal */
 export const PaymentSubscriptionStatus$inboundSchema: z.ZodType<
@@ -102,7 +90,6 @@ export const PaymentSubscriptionStatus$inboundSchema: z.ZodType<
     z.nativeEnum(PaymentSubscriptionStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PaymentSubscriptionStatus$outboundSchema: z.ZodType<
   PaymentSubscriptionStatus,
@@ -112,17 +99,6 @@ export const PaymentSubscriptionStatus$outboundSchema: z.ZodType<
   z.nativeEnum(PaymentSubscriptionStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentSubscriptionStatus$ {
-  /** @deprecated use `PaymentSubscriptionStatus$inboundSchema` instead. */
-  export const inboundSchema = PaymentSubscriptionStatus$inboundSchema;
-  /** @deprecated use `PaymentSubscriptionStatus$outboundSchema` instead. */
-  export const outboundSchema = PaymentSubscriptionStatus$outboundSchema;
-}
 
 /** @internal */
 export const PaymentSubscription$inboundSchema: z.ZodType<
@@ -175,7 +151,6 @@ export const PaymentSubscription$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type PaymentSubscription$Outbound = {
   canceled_at?: string | undefined;
@@ -243,19 +218,6 @@ export const PaymentSubscription$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentSubscription$ {
-  /** @deprecated use `PaymentSubscription$inboundSchema` instead. */
-  export const inboundSchema = PaymentSubscription$inboundSchema;
-  /** @deprecated use `PaymentSubscription$outboundSchema` instead. */
-  export const outboundSchema = PaymentSubscription$outboundSchema;
-  /** @deprecated use `PaymentSubscription$Outbound` instead. */
-  export type Outbound = PaymentSubscription$Outbound;
-}
-
 export function paymentSubscriptionToJSON(
   paymentSubscription: PaymentSubscription,
 ): string {
@@ -263,7 +225,6 @@ export function paymentSubscriptionToJSON(
     PaymentSubscription$outboundSchema.parse(paymentSubscription),
   );
 }
-
 export function paymentSubscriptionFromJSON(
   jsonString: string,
 ): SafeParseResult<PaymentSubscription, SDKValidationError> {

@@ -174,7 +174,6 @@ export const DbType$inboundSchema: z.ZodType<DbType, z.ZodTypeDef, unknown> = z
     z.nativeEnum(DbType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const DbType$outboundSchema: z.ZodType<DbType, z.ZodTypeDef, DbType> = z
   .union([
@@ -182,41 +181,18 @@ export const DbType$outboundSchema: z.ZodType<DbType, z.ZodTypeDef, DbType> = z
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace DbType$ {
-  /** @deprecated use `DbType$inboundSchema` instead. */
-  export const inboundSchema = DbType$inboundSchema;
-  /** @deprecated use `DbType$outboundSchema` instead. */
-  export const outboundSchema = DbType$outboundSchema;
-}
-
 /** @internal */
 export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> = z
   .union([
     z.nativeEnum(Event),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Event$outboundSchema: z.ZodType<Event, z.ZodTypeDef, Event> = z
   .union([
     z.nativeEnum(Event),
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Event$ {
-  /** @deprecated use `Event$inboundSchema` instead. */
-  export const inboundSchema = Event$inboundSchema;
-  /** @deprecated use `Event$outboundSchema` instead. */
-  export const outboundSchema = Event$outboundSchema;
-}
 
 /** @internal */
 export const ObjectType$inboundSchema: z.ZodType<
@@ -228,7 +204,6 @@ export const ObjectType$inboundSchema: z.ZodType<
     z.nativeEnum(ObjectType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ObjectType$outboundSchema: z.ZodType<
   ObjectType,
@@ -238,17 +213,6 @@ export const ObjectType$outboundSchema: z.ZodType<
   z.nativeEnum(ObjectType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ObjectType$ {
-  /** @deprecated use `ObjectType$inboundSchema` instead. */
-  export const inboundSchema = ObjectType$inboundSchema;
-  /** @deprecated use `ObjectType$outboundSchema` instead. */
-  export const outboundSchema = ObjectType$outboundSchema;
-}
 
 /** @internal */
 export const WebhookType$inboundSchema: z.ZodType<
@@ -260,7 +224,6 @@ export const WebhookType$inboundSchema: z.ZodType<
     z.nativeEnum(WebhookType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const WebhookType$outboundSchema: z.ZodType<
   WebhookType,
@@ -270,17 +233,6 @@ export const WebhookType$outboundSchema: z.ZodType<
   z.nativeEnum(WebhookType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace WebhookType$ {
-  /** @deprecated use `WebhookType$inboundSchema` instead. */
-  export const inboundSchema = WebhookType$inboundSchema;
-  /** @deprecated use `WebhookType$outboundSchema` instead. */
-  export const outboundSchema = WebhookType$outboundSchema;
-}
 
 /** @internal */
 export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
@@ -334,7 +286,6 @@ export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =
       "workspace_id": "workspaceId",
     });
   });
-
 /** @internal */
 export type Webhook$Outbound = {
   checked_at?: string | undefined;
@@ -412,23 +363,9 @@ export const Webhook$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Webhook$ {
-  /** @deprecated use `Webhook$inboundSchema` instead. */
-  export const inboundSchema = Webhook$inboundSchema;
-  /** @deprecated use `Webhook$outboundSchema` instead. */
-  export const outboundSchema = Webhook$outboundSchema;
-  /** @deprecated use `Webhook$Outbound` instead. */
-  export type Outbound = Webhook$Outbound;
-}
-
 export function webhookToJSON(webhook: Webhook): string {
   return JSON.stringify(Webhook$outboundSchema.parse(webhook));
 }
-
 export function webhookFromJSON(
   jsonString: string,
 ): SafeParseResult<Webhook, SDKValidationError> {

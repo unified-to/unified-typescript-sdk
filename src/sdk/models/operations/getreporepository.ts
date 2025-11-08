@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetRepoRepositoryRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetRepoRepositoryRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetRepoRepositoryRequest$inboundSchema: z.ZodType<
-  GetRepoRepositoryRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetRepoRepositoryRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetRepoRepositoryRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetRepoRepositoryRequest$ {
-  /** @deprecated use `GetRepoRepositoryRequest$inboundSchema` instead. */
-  export const inboundSchema = GetRepoRepositoryRequest$inboundSchema;
-  /** @deprecated use `GetRepoRepositoryRequest$outboundSchema` instead. */
-  export const outboundSchema = GetRepoRepositoryRequest$outboundSchema;
-  /** @deprecated use `GetRepoRepositoryRequest$Outbound` instead. */
-  export type Outbound = GetRepoRepositoryRequest$Outbound;
-}
-
 export function getRepoRepositoryRequestToJSON(
   getRepoRepositoryRequest: GetRepoRepositoryRequest,
 ): string {
   return JSON.stringify(
     GetRepoRepositoryRequest$outboundSchema.parse(getRepoRepositoryRequest),
-  );
-}
-
-export function getRepoRepositoryRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetRepoRepositoryRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetRepoRepositoryRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetRepoRepositoryRequest' from JSON`,
   );
 }

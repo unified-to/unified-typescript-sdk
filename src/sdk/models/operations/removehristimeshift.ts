@@ -24,20 +24,6 @@ export type RemoveHrisTimeshiftResponse = {
 };
 
 /** @internal */
-export const RemoveHrisTimeshiftRequest$inboundSchema: z.ZodType<
-  RemoveHrisTimeshiftRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  id: z.string(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemoveHrisTimeshiftRequest$Outbound = {
   connection_id: string;
   id: string;
@@ -57,34 +43,11 @@ export const RemoveHrisTimeshiftRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisTimeshiftRequest$ {
-  /** @deprecated use `RemoveHrisTimeshiftRequest$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisTimeshiftRequest$inboundSchema;
-  /** @deprecated use `RemoveHrisTimeshiftRequest$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisTimeshiftRequest$outboundSchema;
-  /** @deprecated use `RemoveHrisTimeshiftRequest$Outbound` instead. */
-  export type Outbound = RemoveHrisTimeshiftRequest$Outbound;
-}
-
 export function removeHrisTimeshiftRequestToJSON(
   removeHrisTimeshiftRequest: RemoveHrisTimeshiftRequest,
 ): string {
   return JSON.stringify(
     RemoveHrisTimeshiftRequest$outboundSchema.parse(removeHrisTimeshiftRequest),
-  );
-}
-
-export function removeHrisTimeshiftRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemoveHrisTimeshiftRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemoveHrisTimeshiftRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemoveHrisTimeshiftRequest' from JSON`,
   );
 }
 
@@ -100,47 +63,6 @@ export const RemoveHrisTimeshiftResponse$inboundSchema: z.ZodType<
     "Headers": "headers",
   });
 });
-
-/** @internal */
-export type RemoveHrisTimeshiftResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-};
-
-/** @internal */
-export const RemoveHrisTimeshiftResponse$outboundSchema: z.ZodType<
-  RemoveHrisTimeshiftResponse$Outbound,
-  z.ZodTypeDef,
-  RemoveHrisTimeshiftResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemoveHrisTimeshiftResponse$ {
-  /** @deprecated use `RemoveHrisTimeshiftResponse$inboundSchema` instead. */
-  export const inboundSchema = RemoveHrisTimeshiftResponse$inboundSchema;
-  /** @deprecated use `RemoveHrisTimeshiftResponse$outboundSchema` instead. */
-  export const outboundSchema = RemoveHrisTimeshiftResponse$outboundSchema;
-  /** @deprecated use `RemoveHrisTimeshiftResponse$Outbound` instead. */
-  export type Outbound = RemoveHrisTimeshiftResponse$Outbound;
-}
-
-export function removeHrisTimeshiftResponseToJSON(
-  removeHrisTimeshiftResponse: RemoveHrisTimeshiftResponse,
-): string {
-  return JSON.stringify(
-    RemoveHrisTimeshiftResponse$outboundSchema.parse(
-      removeHrisTimeshiftResponse,
-    ),
-  );
-}
 
 export function removeHrisTimeshiftResponseFromJSON(
   jsonString: string,

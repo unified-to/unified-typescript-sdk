@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type GetStorageFileRequest = {
   /**
@@ -26,22 +23,6 @@ export type GetStorageFileRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const GetStorageFileRequest$inboundSchema: z.ZodType<
-  GetStorageFileRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type GetStorageFileRequest$Outbound = {
@@ -67,33 +48,10 @@ export const GetStorageFileRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace GetStorageFileRequest$ {
-  /** @deprecated use `GetStorageFileRequest$inboundSchema` instead. */
-  export const inboundSchema = GetStorageFileRequest$inboundSchema;
-  /** @deprecated use `GetStorageFileRequest$outboundSchema` instead. */
-  export const outboundSchema = GetStorageFileRequest$outboundSchema;
-  /** @deprecated use `GetStorageFileRequest$Outbound` instead. */
-  export type Outbound = GetStorageFileRequest$Outbound;
-}
-
 export function getStorageFileRequestToJSON(
   getStorageFileRequest: GetStorageFileRequest,
 ): string {
   return JSON.stringify(
     GetStorageFileRequest$outboundSchema.parse(getStorageFileRequest),
-  );
-}
-
-export function getStorageFileRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<GetStorageFileRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => GetStorageFileRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'GetStorageFileRequest' from JSON`,
   );
 }

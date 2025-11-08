@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchRepoOrganizationRequest = {
@@ -28,24 +25,6 @@ export type PatchRepoOrganizationRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchRepoOrganizationRequest$inboundSchema: z.ZodType<
-  PatchRepoOrganizationRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  RepoOrganization: shared.RepoOrganization$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "RepoOrganization": "repoOrganization",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchRepoOrganizationRequest$Outbound = {
@@ -74,19 +53,6 @@ export const PatchRepoOrganizationRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchRepoOrganizationRequest$ {
-  /** @deprecated use `PatchRepoOrganizationRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchRepoOrganizationRequest$inboundSchema;
-  /** @deprecated use `PatchRepoOrganizationRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchRepoOrganizationRequest$outboundSchema;
-  /** @deprecated use `PatchRepoOrganizationRequest$Outbound` instead. */
-  export type Outbound = PatchRepoOrganizationRequest$Outbound;
-}
-
 export function patchRepoOrganizationRequestToJSON(
   patchRepoOrganizationRequest: PatchRepoOrganizationRequest,
 ): string {
@@ -94,15 +60,5 @@ export function patchRepoOrganizationRequestToJSON(
     PatchRepoOrganizationRequest$outboundSchema.parse(
       patchRepoOrganizationRequest,
     ),
-  );
-}
-
-export function patchRepoOrganizationRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchRepoOrganizationRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchRepoOrganizationRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchRepoOrganizationRequest' from JSON`,
   );
 }

@@ -51,7 +51,6 @@ export const Priority$inboundSchema: z.ZodType<
     z.nativeEnum(Priority),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Priority$outboundSchema: z.ZodType<
   Priority,
@@ -61,17 +60,6 @@ export const Priority$outboundSchema: z.ZodType<
   z.nativeEnum(Priority),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Priority$ {
-  /** @deprecated use `Priority$inboundSchema` instead. */
-  export const inboundSchema = Priority$inboundSchema;
-  /** @deprecated use `Priority$outboundSchema` instead. */
-  export const outboundSchema = Priority$outboundSchema;
-}
 
 /** @internal */
 export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodType<
@@ -83,7 +71,6 @@ export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodType<
     z.nativeEnum(PropertyCrmEventTaskStatus),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodType<
   PropertyCrmEventTaskStatus,
@@ -93,17 +80,6 @@ export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodType<
   z.nativeEnum(PropertyCrmEventTaskStatus),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventTaskStatus$ {
-  /** @deprecated use `PropertyCrmEventTaskStatus$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventTaskStatus$inboundSchema;
-  /** @deprecated use `PropertyCrmEventTaskStatus$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventTaskStatus$outboundSchema;
-}
 
 /** @internal */
 export const PropertyCrmEventTask$inboundSchema: z.ZodType<
@@ -122,7 +98,6 @@ export const PropertyCrmEventTask$inboundSchema: z.ZodType<
     "due_at": "dueAt",
   });
 });
-
 /** @internal */
 export type PropertyCrmEventTask$Outbound = {
   description?: string | undefined;
@@ -149,19 +124,6 @@ export const PropertyCrmEventTask$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PropertyCrmEventTask$ {
-  /** @deprecated use `PropertyCrmEventTask$inboundSchema` instead. */
-  export const inboundSchema = PropertyCrmEventTask$inboundSchema;
-  /** @deprecated use `PropertyCrmEventTask$outboundSchema` instead. */
-  export const outboundSchema = PropertyCrmEventTask$outboundSchema;
-  /** @deprecated use `PropertyCrmEventTask$Outbound` instead. */
-  export type Outbound = PropertyCrmEventTask$Outbound;
-}
-
 export function propertyCrmEventTaskToJSON(
   propertyCrmEventTask: PropertyCrmEventTask,
 ): string {
@@ -169,7 +131,6 @@ export function propertyCrmEventTaskToJSON(
     PropertyCrmEventTask$outboundSchema.parse(propertyCrmEventTask),
   );
 }
-
 export function propertyCrmEventTaskFromJSON(
   jsonString: string,
 ): SafeParseResult<PropertyCrmEventTask, SDKValidationError> {

@@ -50,7 +50,6 @@ export const ContentType$inboundSchema: z.ZodType<
     z.nativeEnum(ContentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ContentType$outboundSchema: z.ZodType<
   ContentType,
@@ -60,17 +59,6 @@ export const ContentType$outboundSchema: z.ZodType<
   z.nativeEnum(ContentType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ContentType$ {
-  /** @deprecated use `ContentType$inboundSchema` instead. */
-  export const inboundSchema = ContentType$inboundSchema;
-  /** @deprecated use `ContentType$outboundSchema` instead. */
-  export const outboundSchema = ContentType$outboundSchema;
-}
 
 /** @internal */
 export const KmsCommentType$inboundSchema: z.ZodType<
@@ -82,7 +70,6 @@ export const KmsCommentType$inboundSchema: z.ZodType<
     z.nativeEnum(KmsCommentType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const KmsCommentType$outboundSchema: z.ZodType<
   KmsCommentType,
@@ -92,17 +79,6 @@ export const KmsCommentType$outboundSchema: z.ZodType<
   z.nativeEnum(KmsCommentType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsCommentType$ {
-  /** @deprecated use `KmsCommentType$inboundSchema` instead. */
-  export const inboundSchema = KmsCommentType$inboundSchema;
-  /** @deprecated use `KmsCommentType$outboundSchema` instead. */
-  export const outboundSchema = KmsCommentType$outboundSchema;
-}
 
 /** @internal */
 export const KmsComment$inboundSchema: z.ZodType<
@@ -132,7 +108,6 @@ export const KmsComment$inboundSchema: z.ZodType<
     "user_id": "userId",
   });
 });
-
 /** @internal */
 export type KmsComment$Outbound = {
   content: string;
@@ -174,23 +149,9 @@ export const KmsComment$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsComment$ {
-  /** @deprecated use `KmsComment$inboundSchema` instead. */
-  export const inboundSchema = KmsComment$inboundSchema;
-  /** @deprecated use `KmsComment$outboundSchema` instead. */
-  export const outboundSchema = KmsComment$outboundSchema;
-  /** @deprecated use `KmsComment$Outbound` instead. */
-  export type Outbound = KmsComment$Outbound;
-}
-
 export function kmsCommentToJSON(kmsComment: KmsComment): string {
   return JSON.stringify(KmsComment$outboundSchema.parse(kmsComment));
 }
-
 export function kmsCommentFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsComment, SDKValidationError> {

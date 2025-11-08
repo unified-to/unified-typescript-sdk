@@ -36,21 +36,6 @@ export type RemovePassthroughResponse = {
 };
 
 /** @internal */
-export const RemovePassthroughRequest$inboundSchema: z.ZodType<
-  RemovePassthroughRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  connection_id: z.string(),
-  path: z.string(),
-  query: z.record(z.any()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "connection_id": "connectionId",
-  });
-});
-
-/** @internal */
 export type RemovePassthroughRequest$Outbound = {
   connection_id: string;
   path: string;
@@ -72,34 +57,11 @@ export const RemovePassthroughRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePassthroughRequest$ {
-  /** @deprecated use `RemovePassthroughRequest$inboundSchema` instead. */
-  export const inboundSchema = RemovePassthroughRequest$inboundSchema;
-  /** @deprecated use `RemovePassthroughRequest$outboundSchema` instead. */
-  export const outboundSchema = RemovePassthroughRequest$outboundSchema;
-  /** @deprecated use `RemovePassthroughRequest$Outbound` instead. */
-  export type Outbound = RemovePassthroughRequest$Outbound;
-}
-
 export function removePassthroughRequestToJSON(
   removePassthroughRequest: RemovePassthroughRequest,
 ): string {
   return JSON.stringify(
     RemovePassthroughRequest$outboundSchema.parse(removePassthroughRequest),
-  );
-}
-
-export function removePassthroughRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<RemovePassthroughRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => RemovePassthroughRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'RemovePassthroughRequest' from JSON`,
   );
 }
 
@@ -115,50 +77,6 @@ export const RemovePassthroughResponseResult$inboundSchema: z.ZodType<
   z.string(),
   z.string(),
 ]);
-
-/** @internal */
-export type RemovePassthroughResponseResult$Outbound =
-  | ReadableStream<Uint8Array>
-  | any
-  | string
-  | string
-  | string;
-
-/** @internal */
-export const RemovePassthroughResponseResult$outboundSchema: z.ZodType<
-  RemovePassthroughResponseResult$Outbound,
-  z.ZodTypeDef,
-  RemovePassthroughResponseResult
-> = z.union([
-  z.instanceof(ReadableStream<Uint8Array>),
-  z.any(),
-  z.string(),
-  z.string(),
-  z.string(),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePassthroughResponseResult$ {
-  /** @deprecated use `RemovePassthroughResponseResult$inboundSchema` instead. */
-  export const inboundSchema = RemovePassthroughResponseResult$inboundSchema;
-  /** @deprecated use `RemovePassthroughResponseResult$outboundSchema` instead. */
-  export const outboundSchema = RemovePassthroughResponseResult$outboundSchema;
-  /** @deprecated use `RemovePassthroughResponseResult$Outbound` instead. */
-  export type Outbound = RemovePassthroughResponseResult$Outbound;
-}
-
-export function removePassthroughResponseResultToJSON(
-  removePassthroughResponseResult: RemovePassthroughResponseResult,
-): string {
-  return JSON.stringify(
-    RemovePassthroughResponseResult$outboundSchema.parse(
-      removePassthroughResponseResult,
-    ),
-  );
-}
 
 export function removePassthroughResponseResultFromJSON(
   jsonString: string,
@@ -190,60 +108,6 @@ export const RemovePassthroughResponse$inboundSchema: z.ZodType<
     "Result": "result",
   });
 });
-
-/** @internal */
-export type RemovePassthroughResponse$Outbound = {
-  Headers: { [k: string]: Array<string> };
-  Result?:
-    | ReadableStream<Uint8Array>
-    | any
-    | string
-    | string
-    | string
-    | undefined;
-};
-
-/** @internal */
-export const RemovePassthroughResponse$outboundSchema: z.ZodType<
-  RemovePassthroughResponse$Outbound,
-  z.ZodTypeDef,
-  RemovePassthroughResponse
-> = z.object({
-  headers: z.record(z.array(z.string())),
-  result: z.union([
-    z.instanceof(ReadableStream<Uint8Array>),
-    z.any(),
-    z.string(),
-    z.string(),
-    z.string(),
-  ]).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    headers: "Headers",
-    result: "Result",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace RemovePassthroughResponse$ {
-  /** @deprecated use `RemovePassthroughResponse$inboundSchema` instead. */
-  export const inboundSchema = RemovePassthroughResponse$inboundSchema;
-  /** @deprecated use `RemovePassthroughResponse$outboundSchema` instead. */
-  export const outboundSchema = RemovePassthroughResponse$outboundSchema;
-  /** @deprecated use `RemovePassthroughResponse$Outbound` instead. */
-  export type Outbound = RemovePassthroughResponse$Outbound;
-}
-
-export function removePassthroughResponseToJSON(
-  removePassthroughResponse: RemovePassthroughResponse,
-): string {
-  return JSON.stringify(
-    RemovePassthroughResponse$outboundSchema.parse(removePassthroughResponse),
-  );
-}
 
 export function removePassthroughResponseFromJSON(
   jsonString: string,

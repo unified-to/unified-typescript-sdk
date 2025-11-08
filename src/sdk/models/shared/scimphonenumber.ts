@@ -39,7 +39,6 @@ export const ScimPhoneNumberType$inboundSchema: z.ZodType<
     z.nativeEnum(ScimPhoneNumberType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const ScimPhoneNumberType$outboundSchema: z.ZodType<
   ScimPhoneNumberType,
@@ -49,17 +48,6 @@ export const ScimPhoneNumberType$outboundSchema: z.ZodType<
   z.nativeEnum(ScimPhoneNumberType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimPhoneNumberType$ {
-  /** @deprecated use `ScimPhoneNumberType$inboundSchema` instead. */
-  export const inboundSchema = ScimPhoneNumberType$inboundSchema;
-  /** @deprecated use `ScimPhoneNumberType$outboundSchema` instead. */
-  export const outboundSchema = ScimPhoneNumberType$outboundSchema;
-}
 
 /** @internal */
 export const ScimPhoneNumber$inboundSchema: z.ZodType<
@@ -72,7 +60,6 @@ export const ScimPhoneNumber$inboundSchema: z.ZodType<
   type: ScimPhoneNumberType$inboundSchema.optional(),
   value: z.string().optional(),
 });
-
 /** @internal */
 export type ScimPhoneNumber$Outbound = {
   display?: string | undefined;
@@ -93,25 +80,11 @@ export const ScimPhoneNumber$outboundSchema: z.ZodType<
   value: z.string().optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace ScimPhoneNumber$ {
-  /** @deprecated use `ScimPhoneNumber$inboundSchema` instead. */
-  export const inboundSchema = ScimPhoneNumber$inboundSchema;
-  /** @deprecated use `ScimPhoneNumber$outboundSchema` instead. */
-  export const outboundSchema = ScimPhoneNumber$outboundSchema;
-  /** @deprecated use `ScimPhoneNumber$Outbound` instead. */
-  export type Outbound = ScimPhoneNumber$Outbound;
-}
-
 export function scimPhoneNumberToJSON(
   scimPhoneNumber: ScimPhoneNumber,
 ): string {
   return JSON.stringify(ScimPhoneNumber$outboundSchema.parse(scimPhoneNumber));
 }
-
 export function scimPhoneNumberFromJSON(
   jsonString: string,
 ): SafeParseResult<ScimPhoneNumber, SDKValidationError> {

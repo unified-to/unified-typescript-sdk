@@ -56,7 +56,6 @@ export const LmsClass$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type LmsClass$Outbound = {
   course_id: string;
@@ -99,23 +98,9 @@ export const LmsClass$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace LmsClass$ {
-  /** @deprecated use `LmsClass$inboundSchema` instead. */
-  export const inboundSchema = LmsClass$inboundSchema;
-  /** @deprecated use `LmsClass$outboundSchema` instead. */
-  export const outboundSchema = LmsClass$outboundSchema;
-  /** @deprecated use `LmsClass$Outbound` instead. */
-  export type Outbound = LmsClass$Outbound;
-}
-
 export function lmsClassToJSON(lmsClass: LmsClass): string {
   return JSON.stringify(LmsClass$outboundSchema.parse(lmsClass));
 }
-
 export function lmsClassFromJSON(
   jsonString: string,
 ): SafeParseResult<LmsClass, SDKValidationError> {

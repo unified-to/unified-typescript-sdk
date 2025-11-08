@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type PatchHrisEmployeeRequest = {
@@ -28,24 +25,6 @@ export type PatchHrisEmployeeRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const PatchHrisEmployeeRequest$inboundSchema: z.ZodType<
-  PatchHrisEmployeeRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisEmployee: shared.HrisEmployee$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  id: z.string(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisEmployee": "hrisEmployee",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type PatchHrisEmployeeRequest$Outbound = {
@@ -74,33 +53,10 @@ export const PatchHrisEmployeeRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PatchHrisEmployeeRequest$ {
-  /** @deprecated use `PatchHrisEmployeeRequest$inboundSchema` instead. */
-  export const inboundSchema = PatchHrisEmployeeRequest$inboundSchema;
-  /** @deprecated use `PatchHrisEmployeeRequest$outboundSchema` instead. */
-  export const outboundSchema = PatchHrisEmployeeRequest$outboundSchema;
-  /** @deprecated use `PatchHrisEmployeeRequest$Outbound` instead. */
-  export type Outbound = PatchHrisEmployeeRequest$Outbound;
-}
-
 export function patchHrisEmployeeRequestToJSON(
   patchHrisEmployeeRequest: PatchHrisEmployeeRequest,
 ): string {
   return JSON.stringify(
     PatchHrisEmployeeRequest$outboundSchema.parse(patchHrisEmployeeRequest),
-  );
-}
-
-export function patchHrisEmployeeRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<PatchHrisEmployeeRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => PatchHrisEmployeeRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'PatchHrisEmployeeRequest' from JSON`,
   );
 }

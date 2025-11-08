@@ -63,7 +63,6 @@ export const Status$inboundSchema: z.ZodType<Status, z.ZodTypeDef, unknown> = z
     z.nativeEnum(Status),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Status$outboundSchema: z.ZodType<Status, z.ZodTypeDef, Status> = z
   .union([
@@ -71,24 +70,12 @@ export const Status$outboundSchema: z.ZodType<Status, z.ZodTypeDef, Status> = z
     z.string().and(z.custom<Unrecognized<string>>()),
   ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Status$ {
-  /** @deprecated use `Status$inboundSchema` instead. */
-  export const inboundSchema = Status$inboundSchema;
-  /** @deprecated use `Status$outboundSchema` instead. */
-  export const outboundSchema = Status$outboundSchema;
-}
-
 /** @internal */
 export const Type$inboundSchema: z.ZodType<Type, z.ZodTypeDef, unknown> = z
   .union([
     z.nativeEnum(Type),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Type$outboundSchema: z.ZodType<Type, z.ZodTypeDef, Type> = z.union(
   [
@@ -96,17 +83,6 @@ export const Type$outboundSchema: z.ZodType<Type, z.ZodTypeDef, Type> = z.union(
     z.string().and(z.custom<Unrecognized<string>>()),
   ],
 );
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Type$ {
-  /** @deprecated use `Type$inboundSchema` instead. */
-  export const inboundSchema = Type$inboundSchema;
-  /** @deprecated use `Type$outboundSchema` instead. */
-  export const outboundSchema = Type$outboundSchema;
-}
 
 /** @internal */
 export const AccountingAccount$inboundSchema: z.ZodType<
@@ -144,7 +120,6 @@ export const AccountingAccount$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
 /** @internal */
 export type AccountingAccount$Outbound = {
   balance?: number | undefined;
@@ -202,19 +177,6 @@ export const AccountingAccount$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingAccount$ {
-  /** @deprecated use `AccountingAccount$inboundSchema` instead. */
-  export const inboundSchema = AccountingAccount$inboundSchema;
-  /** @deprecated use `AccountingAccount$outboundSchema` instead. */
-  export const outboundSchema = AccountingAccount$outboundSchema;
-  /** @deprecated use `AccountingAccount$Outbound` instead. */
-  export type Outbound = AccountingAccount$Outbound;
-}
-
 export function accountingAccountToJSON(
   accountingAccount: AccountingAccount,
 ): string {
@@ -222,7 +184,6 @@ export function accountingAccountToJSON(
     AccountingAccount$outboundSchema.parse(accountingAccount),
   );
 }
-
 export function accountingAccountFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingAccount, SDKValidationError> {

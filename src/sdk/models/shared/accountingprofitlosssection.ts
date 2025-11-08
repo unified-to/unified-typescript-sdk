@@ -10,8 +10,6 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   AccountingProfitlossAccount,
   AccountingProfitlossAccount$inboundSchema,
-  AccountingProfitlossAccount$Outbound,
-  AccountingProfitlossAccount$outboundSchema,
 } from "./accountingprofitlossaccount.js";
 
 export type AccountingProfitlossSection = {
@@ -38,55 +36,6 @@ export const AccountingProfitlossSection$inboundSchema: z.ZodType<
     "total_amount": "totalAmount",
   });
 });
-
-/** @internal */
-export type AccountingProfitlossSection$Outbound = {
-  accounts?: Array<AccountingProfitlossAccount$Outbound> | undefined;
-  section_name?: string | undefined;
-  section_type?: string | undefined;
-  total_amount?: number | undefined;
-};
-
-/** @internal */
-export const AccountingProfitlossSection$outboundSchema: z.ZodType<
-  AccountingProfitlossSection$Outbound,
-  z.ZodTypeDef,
-  AccountingProfitlossSection
-> = z.object({
-  accounts: z.array(AccountingProfitlossAccount$outboundSchema).optional(),
-  sectionName: z.string().optional(),
-  sectionType: z.string().optional(),
-  totalAmount: z.number().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    sectionName: "section_name",
-    sectionType: "section_type",
-    totalAmount: "total_amount",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingProfitlossSection$ {
-  /** @deprecated use `AccountingProfitlossSection$inboundSchema` instead. */
-  export const inboundSchema = AccountingProfitlossSection$inboundSchema;
-  /** @deprecated use `AccountingProfitlossSection$outboundSchema` instead. */
-  export const outboundSchema = AccountingProfitlossSection$outboundSchema;
-  /** @deprecated use `AccountingProfitlossSection$Outbound` instead. */
-  export type Outbound = AccountingProfitlossSection$Outbound;
-}
-
-export function accountingProfitlossSectionToJSON(
-  accountingProfitlossSection: AccountingProfitlossSection,
-): string {
-  return JSON.stringify(
-    AccountingProfitlossSection$outboundSchema.parse(
-      accountingProfitlossSection,
-    ),
-  );
-}
 
 export function accountingProfitlossSectionFromJSON(
   jsonString: string,

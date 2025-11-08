@@ -29,7 +29,6 @@ export const AccountingTransactionContact$inboundSchema: z.ZodType<
     "is_supplier": "isSupplier",
   });
 });
-
 /** @internal */
 export type AccountingTransactionContact$Outbound = {
   id: string;
@@ -53,19 +52,6 @@ export const AccountingTransactionContact$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AccountingTransactionContact$ {
-  /** @deprecated use `AccountingTransactionContact$inboundSchema` instead. */
-  export const inboundSchema = AccountingTransactionContact$inboundSchema;
-  /** @deprecated use `AccountingTransactionContact$outboundSchema` instead. */
-  export const outboundSchema = AccountingTransactionContact$outboundSchema;
-  /** @deprecated use `AccountingTransactionContact$Outbound` instead. */
-  export type Outbound = AccountingTransactionContact$Outbound;
-}
-
 export function accountingTransactionContactToJSON(
   accountingTransactionContact: AccountingTransactionContact,
 ): string {
@@ -75,7 +61,6 @@ export function accountingTransactionContactToJSON(
     ),
   );
 }
-
 export function accountingTransactionContactFromJSON(
   jsonString: string,
 ): SafeParseResult<AccountingTransactionContact, SDKValidationError> {

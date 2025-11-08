@@ -55,7 +55,6 @@ export const KmsPageType$inboundSchema: z.ZodType<
     z.nativeEnum(KmsPageType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const KmsPageType$outboundSchema: z.ZodType<
   KmsPageType,
@@ -65,17 +64,6 @@ export const KmsPageType$outboundSchema: z.ZodType<
   z.nativeEnum(KmsPageType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageType$ {
-  /** @deprecated use `KmsPageType$inboundSchema` instead. */
-  export const inboundSchema = KmsPageType$inboundSchema;
-  /** @deprecated use `KmsPageType$outboundSchema` instead. */
-  export const outboundSchema = KmsPageType$outboundSchema;
-}
 
 /** @internal */
 export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
@@ -113,7 +101,6 @@ export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =
       "web_url": "webUrl",
     });
   });
-
 /** @internal */
 export type KmsPage$Outbound = {
   created_at?: string | undefined;
@@ -169,23 +156,9 @@ export const KmsPage$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPage$ {
-  /** @deprecated use `KmsPage$inboundSchema` instead. */
-  export const inboundSchema = KmsPage$inboundSchema;
-  /** @deprecated use `KmsPage$outboundSchema` instead. */
-  export const outboundSchema = KmsPage$outboundSchema;
-  /** @deprecated use `KmsPage$Outbound` instead. */
-  export type Outbound = KmsPage$Outbound;
-}
-
 export function kmsPageToJSON(kmsPage: KmsPage): string {
   return JSON.stringify(KmsPage$outboundSchema.parse(kmsPage));
 }
-
 export function kmsPageFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPage, SDKValidationError> {

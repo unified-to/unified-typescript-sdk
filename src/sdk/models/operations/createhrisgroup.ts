@@ -4,9 +4,6 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
-import { safeParse } from "../../../lib/schemas.js";
-import { Result as SafeParseResult } from "../../types/fp.js";
-import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import * as shared from "../shared/index.js";
 
 export type CreateHrisGroupRequest = {
@@ -24,23 +21,6 @@ export type CreateHrisGroupRequest = {
    */
   raw?: string | undefined;
 };
-
-/** @internal */
-export const CreateHrisGroupRequest$inboundSchema: z.ZodType<
-  CreateHrisGroupRequest,
-  z.ZodTypeDef,
-  unknown
-> = z.object({
-  HrisGroup: shared.HrisGroup$inboundSchema,
-  connection_id: z.string(),
-  fields: z.array(z.string()).optional(),
-  raw: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    "HrisGroup": "hrisGroup",
-    "connection_id": "connectionId",
-  });
-});
 
 /** @internal */
 export type CreateHrisGroupRequest$Outbound = {
@@ -67,33 +47,10 @@ export const CreateHrisGroupRequest$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace CreateHrisGroupRequest$ {
-  /** @deprecated use `CreateHrisGroupRequest$inboundSchema` instead. */
-  export const inboundSchema = CreateHrisGroupRequest$inboundSchema;
-  /** @deprecated use `CreateHrisGroupRequest$outboundSchema` instead. */
-  export const outboundSchema = CreateHrisGroupRequest$outboundSchema;
-  /** @deprecated use `CreateHrisGroupRequest$Outbound` instead. */
-  export type Outbound = CreateHrisGroupRequest$Outbound;
-}
-
 export function createHrisGroupRequestToJSON(
   createHrisGroupRequest: CreateHrisGroupRequest,
 ): string {
   return JSON.stringify(
     CreateHrisGroupRequest$outboundSchema.parse(createHrisGroupRequest),
-  );
-}
-
-export function createHrisGroupRequestFromJSON(
-  jsonString: string,
-): SafeParseResult<CreateHrisGroupRequest, SDKValidationError> {
-  return safeParse(
-    jsonString,
-    (x) => CreateHrisGroupRequest$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'CreateHrisGroupRequest' from JSON`,
   );
 }

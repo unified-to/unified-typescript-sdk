@@ -5,24 +5,16 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
   VerificationParameter,
   VerificationParameter$inboundSchema,
-  VerificationParameter$Outbound,
-  VerificationParameter$outboundSchema,
 } from "./verificationparameter.js";
 import {
   VerificationTime,
   VerificationTime$inboundSchema,
-  VerificationTime$Outbound,
-  VerificationTime$outboundSchema,
 } from "./verificationtime.js";
 
 export const VerificationPackageType = {
@@ -79,27 +71,6 @@ export const VerificationPackageType$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const VerificationPackageType$outboundSchema: z.ZodType<
-  VerificationPackageType,
-  z.ZodTypeDef,
-  VerificationPackageType
-> = z.union([
-  z.nativeEnum(VerificationPackageType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationPackageType$ {
-  /** @deprecated use `VerificationPackageType$inboundSchema` instead. */
-  export const inboundSchema = VerificationPackageType$inboundSchema;
-  /** @deprecated use `VerificationPackageType$outboundSchema` instead. */
-  export const outboundSchema = VerificationPackageType$outboundSchema;
-}
-
-/** @internal */
 export const VerificationPackage$inboundSchema: z.ZodType<
   VerificationPackage,
   z.ZodTypeDef,
@@ -138,87 +109,6 @@ export const VerificationPackage$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type VerificationPackage$Outbound = {
-  aliases?: Array<string> | undefined;
-  average_processing_times?: Array<VerificationTime$Outbound> | undefined;
-  cost_amount?: number | undefined;
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  description?: string | undefined;
-  has_redirect_url?: boolean | undefined;
-  has_target_url?: boolean | undefined;
-  id: string;
-  info_url?: string | undefined;
-  max_score?: number | undefined;
-  name: string;
-  needs_ip_address?: boolean | undefined;
-  parameters?: Array<VerificationParameter$Outbound> | undefined;
-  raw?: { [k: string]: any } | undefined;
-  tags?: Array<string> | undefined;
-  type: string;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const VerificationPackage$outboundSchema: z.ZodType<
-  VerificationPackage$Outbound,
-  z.ZodTypeDef,
-  VerificationPackage
-> = z.object({
-  aliases: z.array(z.string()).optional(),
-  averageProcessingTimes: z.array(VerificationTime$outboundSchema).optional(),
-  costAmount: z.number().optional(),
-  createdAt: z.date().transform(v => v.toISOString()).optional(),
-  currency: z.string().optional(),
-  description: z.string().optional(),
-  hasRedirectUrl: z.boolean().optional(),
-  hasTargetUrl: z.boolean().optional(),
-  id: z.string(),
-  infoUrl: z.string().optional(),
-  maxScore: z.number().optional(),
-  name: z.string(),
-  needsIpAddress: z.boolean().optional(),
-  parameters: z.array(VerificationParameter$outboundSchema).optional(),
-  raw: z.record(z.any()).optional(),
-  tags: z.array(z.string()).optional(),
-  type: VerificationPackageType$outboundSchema,
-  updatedAt: z.date().transform(v => v.toISOString()).optional(),
-}).transform((v) => {
-  return remap$(v, {
-    averageProcessingTimes: "average_processing_times",
-    costAmount: "cost_amount",
-    createdAt: "created_at",
-    hasRedirectUrl: "has_redirect_url",
-    hasTargetUrl: "has_target_url",
-    infoUrl: "info_url",
-    maxScore: "max_score",
-    needsIpAddress: "needs_ip_address",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace VerificationPackage$ {
-  /** @deprecated use `VerificationPackage$inboundSchema` instead. */
-  export const inboundSchema = VerificationPackage$inboundSchema;
-  /** @deprecated use `VerificationPackage$outboundSchema` instead. */
-  export const outboundSchema = VerificationPackage$outboundSchema;
-  /** @deprecated use `VerificationPackage$Outbound` instead. */
-  export type Outbound = VerificationPackage$Outbound;
-}
-
-export function verificationPackageToJSON(
-  verificationPackage: VerificationPackage,
-): string {
-  return JSON.stringify(
-    VerificationPackage$outboundSchema.parse(verificationPackage),
-  );
-}
 
 export function verificationPackageFromJSON(
   jsonString: string,

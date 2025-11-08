@@ -90,7 +90,6 @@ export const KmsPageMetadata1$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type KmsPageMetadata1$Outbound = {};
 
@@ -101,19 +100,6 @@ export const KmsPageMetadata1$outboundSchema: z.ZodType<
   KmsPageMetadata1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadata1$ {
-  /** @deprecated use `KmsPageMetadata1$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadata1$inboundSchema;
-  /** @deprecated use `KmsPageMetadata1$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadata1$outboundSchema;
-  /** @deprecated use `KmsPageMetadata1$Outbound` instead. */
-  export type Outbound = KmsPageMetadata1$Outbound;
-}
-
 export function kmsPageMetadata1ToJSON(
   kmsPageMetadata1: KmsPageMetadata1,
 ): string {
@@ -121,7 +107,6 @@ export function kmsPageMetadata1ToJSON(
     KmsPageMetadata1$outboundSchema.parse(kmsPageMetadata1),
   );
 }
-
 export function kmsPageMetadata1FromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadata1, SDKValidationError> {
@@ -143,7 +128,6 @@ export const KmsPageMetadata5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type KmsPageMetadata5$Outbound =
   | KmsPageMetadata1$Outbound
@@ -163,19 +147,6 @@ export const KmsPageMetadata5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadata5$ {
-  /** @deprecated use `KmsPageMetadata5$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadata5$inboundSchema;
-  /** @deprecated use `KmsPageMetadata5$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadata5$outboundSchema;
-  /** @deprecated use `KmsPageMetadata5$Outbound` instead. */
-  export type Outbound = KmsPageMetadata5$Outbound;
-}
-
 export function kmsPageMetadata5ToJSON(
   kmsPageMetadata5: KmsPageMetadata5,
 ): string {
@@ -183,7 +154,6 @@ export function kmsPageMetadata5ToJSON(
     KmsPageMetadata5$outboundSchema.parse(kmsPageMetadata5),
   );
 }
-
 export function kmsPageMetadata5FromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadata5, SDKValidationError> {
@@ -213,7 +183,6 @@ export const KmsPageMetadataExtraData$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type KmsPageMetadataExtraData$Outbound =
   | { [k: string]: any }
@@ -242,19 +211,6 @@ export const KmsPageMetadataExtraData$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadataExtraData$ {
-  /** @deprecated use `KmsPageMetadataExtraData$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadataExtraData$inboundSchema;
-  /** @deprecated use `KmsPageMetadataExtraData$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadataExtraData$outboundSchema;
-  /** @deprecated use `KmsPageMetadataExtraData$Outbound` instead. */
-  export type Outbound = KmsPageMetadataExtraData$Outbound;
-}
-
 export function kmsPageMetadataExtraDataToJSON(
   kmsPageMetadataExtraData: KmsPageMetadataExtraData,
 ): string {
@@ -262,7 +218,6 @@ export function kmsPageMetadataExtraDataToJSON(
     KmsPageMetadataExtraData$outboundSchema.parse(kmsPageMetadataExtraData),
   );
 }
-
 export function kmsPageMetadataExtraDataFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadataExtraData, SDKValidationError> {
@@ -283,7 +238,6 @@ export const KmsPageMetadataFormat$inboundSchema: z.ZodType<
     z.nativeEnum(KmsPageMetadataFormat),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const KmsPageMetadataFormat$outboundSchema: z.ZodType<
   KmsPageMetadataFormat,
@@ -294,24 +248,12 @@ export const KmsPageMetadataFormat$outboundSchema: z.ZodType<
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadataFormat$ {
-  /** @deprecated use `KmsPageMetadataFormat$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadataFormat$inboundSchema;
-  /** @deprecated use `KmsPageMetadataFormat$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadataFormat$outboundSchema;
-}
-
 /** @internal */
 export const KmsPageMetadataSchemas1$inboundSchema: z.ZodType<
   KmsPageMetadataSchemas1,
   z.ZodTypeDef,
   unknown
 > = z.object({});
-
 /** @internal */
 export type KmsPageMetadataSchemas1$Outbound = {};
 
@@ -322,19 +264,6 @@ export const KmsPageMetadataSchemas1$outboundSchema: z.ZodType<
   KmsPageMetadataSchemas1
 > = z.object({});
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadataSchemas1$ {
-  /** @deprecated use `KmsPageMetadataSchemas1$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadataSchemas1$inboundSchema;
-  /** @deprecated use `KmsPageMetadataSchemas1$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadataSchemas1$outboundSchema;
-  /** @deprecated use `KmsPageMetadataSchemas1$Outbound` instead. */
-  export type Outbound = KmsPageMetadataSchemas1$Outbound;
-}
-
 export function kmsPageMetadataSchemas1ToJSON(
   kmsPageMetadataSchemas1: KmsPageMetadataSchemas1,
 ): string {
@@ -342,7 +271,6 @@ export function kmsPageMetadataSchemas1ToJSON(
     KmsPageMetadataSchemas1$outboundSchema.parse(kmsPageMetadataSchemas1),
   );
 }
-
 export function kmsPageMetadataSchemas1FromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadataSchemas1, SDKValidationError> {
@@ -364,7 +292,6 @@ export const KmsPageMetadataSchemas5$inboundSchema: z.ZodType<
   z.number(),
   z.boolean(),
 ]);
-
 /** @internal */
 export type KmsPageMetadataSchemas5$Outbound =
   | KmsPageMetadataSchemas1$Outbound
@@ -384,19 +311,6 @@ export const KmsPageMetadataSchemas5$outboundSchema: z.ZodType<
   z.boolean(),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadataSchemas5$ {
-  /** @deprecated use `KmsPageMetadataSchemas5$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadataSchemas5$inboundSchema;
-  /** @deprecated use `KmsPageMetadataSchemas5$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadataSchemas5$outboundSchema;
-  /** @deprecated use `KmsPageMetadataSchemas5$Outbound` instead. */
-  export type Outbound = KmsPageMetadataSchemas5$Outbound;
-}
-
 export function kmsPageMetadataSchemas5ToJSON(
   kmsPageMetadataSchemas5: KmsPageMetadataSchemas5,
 ): string {
@@ -404,7 +318,6 @@ export function kmsPageMetadataSchemas5ToJSON(
     KmsPageMetadataSchemas5$outboundSchema.parse(kmsPageMetadataSchemas5),
   );
 }
-
 export function kmsPageMetadataSchemas5FromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadataSchemas5, SDKValidationError> {
@@ -434,7 +347,6 @@ export const KmsPageMetadataValue$inboundSchema: z.ZodType<
     ]),
   ),
 ]);
-
 /** @internal */
 export type KmsPageMetadataValue$Outbound =
   | { [k: string]: any }
@@ -463,19 +375,6 @@ export const KmsPageMetadataValue$outboundSchema: z.ZodType<
   ),
 ]);
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadataValue$ {
-  /** @deprecated use `KmsPageMetadataValue$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadataValue$inboundSchema;
-  /** @deprecated use `KmsPageMetadataValue$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadataValue$outboundSchema;
-  /** @deprecated use `KmsPageMetadataValue$Outbound` instead. */
-  export type Outbound = KmsPageMetadataValue$Outbound;
-}
-
 export function kmsPageMetadataValueToJSON(
   kmsPageMetadataValue: KmsPageMetadataValue,
 ): string {
@@ -483,7 +382,6 @@ export function kmsPageMetadataValueToJSON(
     KmsPageMetadataValue$outboundSchema.parse(kmsPageMetadataValue),
   );
 }
-
 export function kmsPageMetadataValueFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadataValue, SDKValidationError> {
@@ -539,7 +437,6 @@ export const KmsPageMetadata$inboundSchema: z.ZodType<
     "extra_data": "extraData",
   });
 });
-
 /** @internal */
 export type KmsPageMetadata$Outbound = {
   extra_data?:
@@ -610,25 +507,11 @@ export const KmsPageMetadata$outboundSchema: z.ZodType<
   });
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace KmsPageMetadata$ {
-  /** @deprecated use `KmsPageMetadata$inboundSchema` instead. */
-  export const inboundSchema = KmsPageMetadata$inboundSchema;
-  /** @deprecated use `KmsPageMetadata$outboundSchema` instead. */
-  export const outboundSchema = KmsPageMetadata$outboundSchema;
-  /** @deprecated use `KmsPageMetadata$Outbound` instead. */
-  export type Outbound = KmsPageMetadata$Outbound;
-}
-
 export function kmsPageMetadataToJSON(
   kmsPageMetadata: KmsPageMetadata,
 ): string {
   return JSON.stringify(KmsPageMetadata$outboundSchema.parse(kmsPageMetadata));
 }
-
 export function kmsPageMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<KmsPageMetadata, SDKValidationError> {

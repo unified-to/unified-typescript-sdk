@@ -50,7 +50,6 @@ export const Frequency$inboundSchema: z.ZodType<
     z.nativeEnum(Frequency),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const Frequency$outboundSchema: z.ZodType<
   Frequency,
@@ -60,17 +59,6 @@ export const Frequency$outboundSchema: z.ZodType<
   z.nativeEnum(Frequency),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace Frequency$ {
-  /** @deprecated use `Frequency$inboundSchema` instead. */
-  export const inboundSchema = Frequency$inboundSchema;
-  /** @deprecated use `Frequency$outboundSchema` instead. */
-  export const outboundSchema = Frequency$outboundSchema;
-}
 
 /** @internal */
 export const AtsCompensationType$inboundSchema: z.ZodType<
@@ -82,7 +70,6 @@ export const AtsCompensationType$inboundSchema: z.ZodType<
     z.nativeEnum(AtsCompensationType),
     z.string().transform(catchUnrecognizedEnum),
   ]);
-
 /** @internal */
 export const AtsCompensationType$outboundSchema: z.ZodType<
   AtsCompensationType,
@@ -92,17 +79,6 @@ export const AtsCompensationType$outboundSchema: z.ZodType<
   z.nativeEnum(AtsCompensationType),
   z.string().and(z.custom<Unrecognized<string>>()),
 ]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCompensationType$ {
-  /** @deprecated use `AtsCompensationType$inboundSchema` instead. */
-  export const inboundSchema = AtsCompensationType$inboundSchema;
-  /** @deprecated use `AtsCompensationType$outboundSchema` instead. */
-  export const outboundSchema = AtsCompensationType$outboundSchema;
-}
 
 /** @internal */
 export const AtsCompensation$inboundSchema: z.ZodType<
@@ -116,7 +92,6 @@ export const AtsCompensation$inboundSchema: z.ZodType<
   min: z.number().optional(),
   type: AtsCompensationType$inboundSchema.optional(),
 });
-
 /** @internal */
 export type AtsCompensation$Outbound = {
   currency?: string | undefined;
@@ -139,25 +114,11 @@ export const AtsCompensation$outboundSchema: z.ZodType<
   type: AtsCompensationType$outboundSchema.optional(),
 });
 
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace AtsCompensation$ {
-  /** @deprecated use `AtsCompensation$inboundSchema` instead. */
-  export const inboundSchema = AtsCompensation$inboundSchema;
-  /** @deprecated use `AtsCompensation$outboundSchema` instead. */
-  export const outboundSchema = AtsCompensation$outboundSchema;
-  /** @deprecated use `AtsCompensation$Outbound` instead. */
-  export type Outbound = AtsCompensation$Outbound;
-}
-
 export function atsCompensationToJSON(
   atsCompensation: AtsCompensation,
 ): string {
   return JSON.stringify(AtsCompensation$outboundSchema.parse(atsCompensation));
 }
-
 export function atsCompensationFromJSON(
   jsonString: string,
 ): SafeParseResult<AtsCompensation, SDKValidationError> {

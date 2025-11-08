@@ -5,11 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,27 +40,6 @@ export const PaymentPayoutStatus$inboundSchema: z.ZodType<
   ]);
 
 /** @internal */
-export const PaymentPayoutStatus$outboundSchema: z.ZodType<
-  PaymentPayoutStatus,
-  z.ZodTypeDef,
-  PaymentPayoutStatus
-> = z.union([
-  z.nativeEnum(PaymentPayoutStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentPayoutStatus$ {
-  /** @deprecated use `PaymentPayoutStatus$inboundSchema` instead. */
-  export const inboundSchema = PaymentPayoutStatus$inboundSchema;
-  /** @deprecated use `PaymentPayoutStatus$outboundSchema` instead. */
-  export const outboundSchema = PaymentPayoutStatus$outboundSchema;
-}
-
-/** @internal */
 export const PaymentPayout$inboundSchema: z.ZodType<
   PaymentPayout,
   z.ZodTypeDef,
@@ -85,57 +60,6 @@ export const PaymentPayout$inboundSchema: z.ZodType<
     "updated_at": "updatedAt",
   });
 });
-
-/** @internal */
-export type PaymentPayout$Outbound = {
-  created_at?: string | undefined;
-  currency?: string | undefined;
-  id?: string | undefined;
-  notes?: string | undefined;
-  raw?: { [k: string]: any } | undefined;
-  status?: string | undefined;
-  total_amount: number;
-  updated_at?: string | undefined;
-};
-
-/** @internal */
-export const PaymentPayout$outboundSchema: z.ZodType<
-  PaymentPayout$Outbound,
-  z.ZodTypeDef,
-  PaymentPayout
-> = z.object({
-  createdAt: z.string().optional(),
-  currency: z.string().optional(),
-  id: z.string().optional(),
-  notes: z.string().optional(),
-  raw: z.record(z.any()).optional(),
-  status: PaymentPayoutStatus$outboundSchema.optional(),
-  totalAmount: z.number(),
-  updatedAt: z.string().optional(),
-}).transform((v) => {
-  return remap$(v, {
-    createdAt: "created_at",
-    totalAmount: "total_amount",
-    updatedAt: "updated_at",
-  });
-});
-
-/**
- * @internal
- * @deprecated This namespace will be removed in future versions. Use schemas and types that are exported directly from this module.
- */
-export namespace PaymentPayout$ {
-  /** @deprecated use `PaymentPayout$inboundSchema` instead. */
-  export const inboundSchema = PaymentPayout$inboundSchema;
-  /** @deprecated use `PaymentPayout$outboundSchema` instead. */
-  export const outboundSchema = PaymentPayout$outboundSchema;
-  /** @deprecated use `PaymentPayout$Outbound` instead. */
-  export type Outbound = PaymentPayout$Outbound;
-}
-
-export function paymentPayoutToJSON(paymentPayout: PaymentPayout): string {
-  return JSON.stringify(PaymentPayout$outboundSchema.parse(paymentPayout));
-}
 
 export function paymentPayoutFromJSON(
   jsonString: string,
