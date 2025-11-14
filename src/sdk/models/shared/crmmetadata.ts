@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -220,20 +217,13 @@ export const CrmMetadataFormat$inboundSchema: z.ZodType<
   CrmMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(CrmMetadataFormat),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(CrmMetadataFormat);
 /** @internal */
 export const CrmMetadataFormat$outboundSchema: z.ZodType<
-  CrmMetadataFormat,
+  string,
   z.ZodTypeDef,
   CrmMetadataFormat
-> = z.union([
-  z.nativeEnum(CrmMetadataFormat),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(CrmMetadataFormat);
 
 /** @internal */
 export const CrmMetadataSchemas1$inboundSchema: z.ZodType<

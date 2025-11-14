@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -38,25 +35,18 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
     z.ZodTypeDef,
     unknown
-  > = z
-    .union([
-      z.nativeEnum(
-        PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
-      ),
-      z.string().transform(catchUnrecognizedEnum),
-    ]);
+  > = openEnums.inboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+  );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender$outboundSchema:
   z.ZodType<
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+    string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender
-  > = z.union([
-    z.nativeEnum(
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
-    ),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+  > = openEnums.outboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender,
+  );
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User$inboundSchema:

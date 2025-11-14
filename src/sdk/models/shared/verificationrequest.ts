@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -84,40 +81,26 @@ export const ProfileGender$inboundSchema: z.ZodType<
   ProfileGender,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ProfileGender),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ProfileGender);
 /** @internal */
 export const ProfileGender$outboundSchema: z.ZodType<
-  ProfileGender,
+  string,
   z.ZodTypeDef,
   ProfileGender
-> = z.union([
-  z.nativeEnum(ProfileGender),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ProfileGender);
 
 /** @internal */
 export const ResponseStatus$inboundSchema: z.ZodType<
   ResponseStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ResponseStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ResponseStatus);
 /** @internal */
 export const ResponseStatus$outboundSchema: z.ZodType<
-  ResponseStatus,
+  string,
   z.ZodTypeDef,
   ResponseStatus
-> = z.union([
-  z.nativeEnum(ResponseStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ResponseStatus);
 
 /** @internal */
 export const VerificationRequest$inboundSchema: z.ZodType<

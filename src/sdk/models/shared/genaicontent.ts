@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -24,18 +21,11 @@ export type GenaiContent = {
 };
 
 /** @internal */
-export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(Role),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const Role$inboundSchema: z.ZodType<Role, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Role);
 /** @internal */
-export const Role$outboundSchema: z.ZodType<Role, z.ZodTypeDef, Role> = z.union(
-  [
-    z.nativeEnum(Role),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ],
-);
+export const Role$outboundSchema: z.ZodType<string, z.ZodTypeDef, Role> =
+  openEnums.outboundSchema(Role);
 
 /** @internal */
 export const GenaiContent$inboundSchema: z.ZodType<

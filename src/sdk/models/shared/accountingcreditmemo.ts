@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -83,41 +80,24 @@ export const AccountingCreditmemoPaymentCollectionMethod$inboundSchema:
     AccountingCreditmemoPaymentCollectionMethod,
     z.ZodTypeDef,
     unknown
-  > = z
-    .union([
-      z.nativeEnum(AccountingCreditmemoPaymentCollectionMethod),
-      z.string().transform(catchUnrecognizedEnum),
-    ]);
+  > = openEnums.inboundSchema(AccountingCreditmemoPaymentCollectionMethod);
 /** @internal */
 export const AccountingCreditmemoPaymentCollectionMethod$outboundSchema:
-  z.ZodType<
-    AccountingCreditmemoPaymentCollectionMethod,
-    z.ZodTypeDef,
-    AccountingCreditmemoPaymentCollectionMethod
-  > = z.union([
-    z.nativeEnum(AccountingCreditmemoPaymentCollectionMethod),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+  z.ZodType<string, z.ZodTypeDef, AccountingCreditmemoPaymentCollectionMethod> =
+    openEnums.outboundSchema(AccountingCreditmemoPaymentCollectionMethod);
 
 /** @internal */
 export const AccountingCreditmemoStatus$inboundSchema: z.ZodType<
   AccountingCreditmemoStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AccountingCreditmemoStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AccountingCreditmemoStatus);
 /** @internal */
 export const AccountingCreditmemoStatus$outboundSchema: z.ZodType<
-  AccountingCreditmemoStatus,
+  string,
   z.ZodTypeDef,
   AccountingCreditmemoStatus
-> = z.union([
-  z.nativeEnum(AccountingCreditmemoStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AccountingCreditmemoStatus);
 
 /** @internal */
 export const AccountingCreditmemo$inboundSchema: z.ZodType<

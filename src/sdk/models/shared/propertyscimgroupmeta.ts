@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,20 +28,13 @@ export const ResourceType$inboundSchema: z.ZodType<
   ResourceType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ResourceType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ResourceType);
 /** @internal */
 export const ResourceType$outboundSchema: z.ZodType<
-  ResourceType,
+  string,
   z.ZodTypeDef,
   ResourceType
-> = z.union([
-  z.nativeEnum(ResourceType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ResourceType);
 
 /** @internal */
 export const PropertyScimGroupMeta$inboundSchema: z.ZodType<

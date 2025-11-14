@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyIntegrationSupportWebhookEventsCreated = {
   Virtual: "virtual",
@@ -19,8 +20,4 @@ export const PropertyIntegrationSupportWebhookEventsCreated$inboundSchema:
     PropertyIntegrationSupportWebhookEventsCreated,
     z.ZodTypeDef,
     unknown
-  > = z
-    .union([
-      z.nativeEnum(PropertyIntegrationSupportWebhookEventsCreated),
-      z.string().transform(catchUnrecognizedEnum),
-    ]);
+  > = openEnums.inboundSchema(PropertyIntegrationSupportWebhookEventsCreated);

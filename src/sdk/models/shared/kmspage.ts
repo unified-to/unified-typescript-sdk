@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -50,20 +47,13 @@ export const KmsPageType$inboundSchema: z.ZodType<
   KmsPageType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(KmsPageType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(KmsPageType);
 /** @internal */
 export const KmsPageType$outboundSchema: z.ZodType<
-  KmsPageType,
+  string,
   z.ZodTypeDef,
   KmsPageType
-> = z.union([
-  z.nativeEnum(KmsPageType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(KmsPageType);
 
 /** @internal */
 export const KmsPage$inboundSchema: z.ZodType<KmsPage, z.ZodTypeDef, unknown> =

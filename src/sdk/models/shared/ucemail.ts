@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -29,20 +26,13 @@ export const UcEmailType$inboundSchema: z.ZodType<
   UcEmailType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(UcEmailType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(UcEmailType);
 /** @internal */
 export const UcEmailType$outboundSchema: z.ZodType<
-  UcEmailType,
+  string,
   z.ZodTypeDef,
   UcEmailType
-> = z.union([
-  z.nativeEnum(UcEmailType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(UcEmailType);
 
 /** @internal */
 export const UcEmail$inboundSchema: z.ZodType<UcEmail, z.ZodTypeDef, unknown> =

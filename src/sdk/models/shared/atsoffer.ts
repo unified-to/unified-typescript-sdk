@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -50,20 +47,13 @@ export const AtsOfferStatus$inboundSchema: z.ZodType<
   AtsOfferStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AtsOfferStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AtsOfferStatus);
 /** @internal */
 export const AtsOfferStatus$outboundSchema: z.ZodType<
-  AtsOfferStatus,
+  string,
   z.ZodTypeDef,
   AtsOfferStatus
-> = z.union([
-  z.nativeEnum(AtsOfferStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AtsOfferStatus);
 
 /** @internal */
 export const AtsOffer$inboundSchema: z.ZodType<

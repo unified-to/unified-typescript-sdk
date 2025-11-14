@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -81,40 +78,26 @@ export const CalendarEventRecurrenceFrequency$inboundSchema: z.ZodType<
   CalendarEventRecurrenceFrequency,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(CalendarEventRecurrenceFrequency),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(CalendarEventRecurrenceFrequency);
 /** @internal */
 export const CalendarEventRecurrenceFrequency$outboundSchema: z.ZodType<
-  CalendarEventRecurrenceFrequency,
+  string,
   z.ZodTypeDef,
   CalendarEventRecurrenceFrequency
-> = z.union([
-  z.nativeEnum(CalendarEventRecurrenceFrequency),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(CalendarEventRecurrenceFrequency);
 
 /** @internal */
 export const WeekStart$inboundSchema: z.ZodType<
   WeekStart,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(WeekStart),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(WeekStart);
 /** @internal */
 export const WeekStart$outboundSchema: z.ZodType<
-  WeekStart,
+  string,
   z.ZodTypeDef,
   WeekStart
-> = z.union([
-  z.nativeEnum(WeekStart),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(WeekStart);
 
 /** @internal */
 export const CalendarEventRecurrence$inboundSchema: z.ZodType<

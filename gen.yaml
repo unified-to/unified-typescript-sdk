@@ -25,7 +25,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.80.2
+  version: 2.80.3
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -66,6 +66,7 @@ typescript:
   responseFormat: flat
   sseFlatResponse: false
   templateVersion: v2
+  unionStrategy: left-to-right
   usageSDKInitImports: []
   useIndexModules: true
   zodVersion: v3

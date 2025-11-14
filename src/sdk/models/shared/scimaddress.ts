@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -34,20 +31,13 @@ export const ScimAddressType$inboundSchema: z.ZodType<
   ScimAddressType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimAddressType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimAddressType);
 /** @internal */
 export const ScimAddressType$outboundSchema: z.ZodType<
-  ScimAddressType,
+  string,
   z.ZodTypeDef,
   ScimAddressType
-> = z.union([
-  z.nativeEnum(ScimAddressType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimAddressType);
 
 /** @internal */
 export const ScimAddress$inboundSchema: z.ZodType<

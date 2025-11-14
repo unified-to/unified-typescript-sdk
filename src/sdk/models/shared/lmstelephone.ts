@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,20 +28,13 @@ export const LmsTelephoneType$inboundSchema: z.ZodType<
   LmsTelephoneType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(LmsTelephoneType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(LmsTelephoneType);
 /** @internal */
 export const LmsTelephoneType$outboundSchema: z.ZodType<
-  LmsTelephoneType,
+  string,
   z.ZodTypeDef,
   LmsTelephoneType
-> = z.union([
-  z.nativeEnum(LmsTelephoneType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(LmsTelephoneType);
 
 /** @internal */
 export const LmsTelephone$inboundSchema: z.ZodType<

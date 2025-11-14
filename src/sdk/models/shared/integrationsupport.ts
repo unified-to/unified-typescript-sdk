@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -906,1177 +907,749 @@ export const FromWebhook$inboundSchema: z.ZodType<
   FromWebhook,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(FromWebhook),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(FromWebhook);
 
 /** @internal */
 export const ListAccountId$inboundSchema: z.ZodType<
   ListAccountId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListAccountId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListAccountId);
 
 /** @internal */
 export const ListApplicationId$inboundSchema: z.ZodType<
   ListApplicationId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListApplicationId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListApplicationId);
 
 /** @internal */
 export const ListBranchId$inboundSchema: z.ZodType<
   ListBranchId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListBranchId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListBranchId);
 
 /** @internal */
 export const ListCalendarId$inboundSchema: z.ZodType<
   ListCalendarId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCalendarId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCalendarId);
 
 /** @internal */
 export const ListCallId$inboundSchema: z.ZodType<
   ListCallId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCallId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCallId);
 
 /** @internal */
 export const ListCandidateId$inboundSchema: z.ZodType<
   ListCandidateId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCandidateId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCandidateId);
 
 /** @internal */
 export const ListCategoryId$inboundSchema: z.ZodType<
   ListCategoryId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCategoryId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCategoryId);
 
 /** @internal */
 export const ListChannelId$inboundSchema: z.ZodType<
   ListChannelId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListChannelId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListChannelId);
 
 /** @internal */
 export const ListClassId$inboundSchema: z.ZodType<
   ListClassId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListClassId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListClassId);
 
 /** @internal */
 export const ListCollectionId$inboundSchema: z.ZodType<
   ListCollectionId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCollectionId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCollectionId);
 
 /** @internal */
 export const ListCompanyId$inboundSchema: z.ZodType<
   ListCompanyId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCompanyId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCompanyId);
 
 /** @internal */
 export const ListContactId$inboundSchema: z.ZodType<
   ListContactId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListContactId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListContactId);
 
 /** @internal */
 export const ListCourseId$inboundSchema: z.ZodType<
   ListCourseId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCourseId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCourseId);
 
 /** @internal */
 export const ListCustomerId$inboundSchema: z.ZodType<
   ListCustomerId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListCustomerId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListCustomerId);
 
 /** @internal */
 export const ListDealId$inboundSchema: z.ZodType<
   ListDealId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListDealId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListDealId);
 
 /** @internal */
 export const ListDocumentId$inboundSchema: z.ZodType<
   ListDocumentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListDocumentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListDocumentId);
 
 /** @internal */
 export const ListEndLe$inboundSchema: z.ZodType<
   ListEndLe,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListEndLe),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListEndLe);
 
 /** @internal */
 export const ListEndLt$inboundSchema: z.ZodType<
   ListEndLt,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListEndLt),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListEndLt);
 
 /** @internal */
 export const ListEventId$inboundSchema: z.ZodType<
   ListEventId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListEventId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListEventId);
 
 /** @internal */
 export const ListExpand$inboundSchema: z.ZodType<
   ListExpand,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListExpand),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListExpand);
 
 /** @internal */
 export const ListExpandRecurringEvents$inboundSchema: z.ZodType<
   ListExpandRecurringEvents,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListExpandRecurringEvents),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListExpandRecurringEvents);
 
 /** @internal */
 export const ListInstructorId$inboundSchema: z.ZodType<
   ListInstructorId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListInstructorId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListInstructorId);
 
 /** @internal */
 export const ListInterviewId$inboundSchema: z.ZodType<
   ListInterviewId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListInterviewId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListInterviewId);
 
 /** @internal */
 export const ListInvoiceId$inboundSchema: z.ZodType<
   ListInvoiceId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListInvoiceId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListInvoiceId);
 
 /** @internal */
 export const ListItemId$inboundSchema: z.ZodType<
   ListItemId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListItemId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListItemId);
 
 /** @internal */
 export const ListItemVariantId$inboundSchema: z.ZodType<
   ListItemVariantId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListItemVariantId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListItemVariantId);
 
 /** @internal */
 export const ListJobId$inboundSchema: z.ZodType<
   ListJobId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListJobId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListJobId);
 
 /** @internal */
 export const ListLeadId$inboundSchema: z.ZodType<
   ListLeadId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListLeadId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListLeadId);
 
 /** @internal */
 export const ListLimit$inboundSchema: z.ZodType<
   ListLimit,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListLimit),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListLimit);
 
 /** @internal */
 export const ListLinkId$inboundSchema: z.ZodType<
   ListLinkId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListLinkId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListLinkId);
 
 /** @internal */
 export const ListListId$inboundSchema: z.ZodType<
   ListListId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListListId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListListId);
 
 /** @internal */
 export const ListLocationId$inboundSchema: z.ZodType<
   ListLocationId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListLocationId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListLocationId);
 
 /** @internal */
 export const ListOffset$inboundSchema: z.ZodType<
   ListOffset,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListOffset),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListOffset);
 
 /** @internal */
 export const ListOrder$inboundSchema: z.ZodType<
   ListOrder,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListOrder),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListOrder);
 
 /** @internal */
 export const ListOrgId$inboundSchema: z.ZodType<
   ListOrgId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListOrgId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListOrgId);
 
 /** @internal */
 export const ListPackageId$inboundSchema: z.ZodType<
   ListPackageId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListPackageId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListPackageId);
 
 /** @internal */
 export const ListPageId$inboundSchema: z.ZodType<
   ListPageId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListPageId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListPageId);
 
 /** @internal */
 export const ListParentId$inboundSchema: z.ZodType<
   ListParentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListParentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListParentId);
 
 /** @internal */
 export const ListPaymentId$inboundSchema: z.ZodType<
   ListPaymentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListPaymentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListPaymentId);
 
 /** @internal */
 export const ListPipelineId$inboundSchema: z.ZodType<
   ListPipelineId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListPipelineId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListPipelineId);
 
 /** @internal */
 export const ListProjectId$inboundSchema: z.ZodType<
   ListProjectId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListProjectId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListProjectId);
 
 /** @internal */
 export const ListQuery$inboundSchema: z.ZodType<
   ListQuery,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListQuery),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListQuery);
 
 /** @internal */
 export const ListRawFields$inboundSchema: z.ZodType<
   ListRawFields,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListRawFields),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListRawFields);
 
 /** @internal */
 export const ListRepoId$inboundSchema: z.ZodType<
   ListRepoId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListRepoId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListRepoId);
 
 /** @internal */
 export const ListRootId$inboundSchema: z.ZodType<
   ListRootId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListRootId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListRootId);
 
 /** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodType<
   ListSortByCreatedAt,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListSortByCreatedAt),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListSortByCreatedAt);
 
 /** @internal */
 export const ListSortByName$inboundSchema: z.ZodType<
   ListSortByName,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListSortByName),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListSortByName);
 
 /** @internal */
 export const ListSortByUpdatedAt$inboundSchema: z.ZodType<
   ListSortByUpdatedAt,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListSortByUpdatedAt),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListSortByUpdatedAt);
 
 /** @internal */
 export const ListSpaceId$inboundSchema: z.ZodType<
   ListSpaceId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListSpaceId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListSpaceId);
 
 /** @internal */
 export const ListStartGte$inboundSchema: z.ZodType<
   ListStartGte,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListStartGte),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListStartGte);
 
 /** @internal */
 export const ListStatus$inboundSchema: z.ZodType<
   ListStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListStatus);
 
 /** @internal */
 export const ListStudentId$inboundSchema: z.ZodType<
   ListStudentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListStudentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListStudentId);
 
 /** @internal */
 export const ListTaskId$inboundSchema: z.ZodType<
   ListTaskId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListTaskId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListTaskId);
 
 /** @internal */
 export const ListTeacherId$inboundSchema: z.ZodType<
   ListTeacherId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListTeacherId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListTeacherId);
 
 /** @internal */
 export const ListTicketId$inboundSchema: z.ZodType<
   ListTicketId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListTicketId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListTicketId);
 
 /** @internal */
 export const ListType$inboundSchema: z.ZodType<
   ListType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListType);
 
 /** @internal */
 export const ListUpdatedGte$inboundSchema: z.ZodType<
   ListUpdatedGte,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListUpdatedGte),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListUpdatedGte);
 
 /** @internal */
 export const ListUserId$inboundSchema: z.ZodType<
   ListUserId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ListUserId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ListUserId);
 
 /** @internal */
 export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
   NativeWebhookCalendarId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookCalendarId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookCalendarId);
 
 /** @internal */
 export const NativeWebhookChannelId$inboundSchema: z.ZodType<
   NativeWebhookChannelId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookChannelId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookChannelId);
 
 /** @internal */
 export const NativeWebhookCompanyId$inboundSchema: z.ZodType<
   NativeWebhookCompanyId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookCompanyId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookCompanyId);
 
 /** @internal */
 export const NativeWebhookEventId$inboundSchema: z.ZodType<
   NativeWebhookEventId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookEventId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookEventId);
 
 /** @internal */
 export const NativeWebhookParentId$inboundSchema: z.ZodType<
   NativeWebhookParentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookParentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookParentId);
 
 /** @internal */
 export const NativeWebhookProjectId$inboundSchema: z.ZodType<
   NativeWebhookProjectId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookProjectId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookProjectId);
 
 /** @internal */
 export const NativeWebhookTaskId$inboundSchema: z.ZodType<
   NativeWebhookTaskId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(NativeWebhookTaskId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(NativeWebhookTaskId);
 
 /** @internal */
 export const SearchDomain$inboundSchema: z.ZodType<
   SearchDomain,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SearchDomain),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SearchDomain);
 
 /** @internal */
 export const SearchEmail$inboundSchema: z.ZodType<
   SearchEmail,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SearchEmail),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SearchEmail);
 
 /** @internal */
 export const SearchLinkedinurl$inboundSchema: z.ZodType<
   SearchLinkedinurl,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SearchLinkedinurl),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SearchLinkedinurl);
 
 /** @internal */
 export const SearchName$inboundSchema: z.ZodType<
   SearchName,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SearchName),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SearchName);
 
 /** @internal */
 export const SearchTwitter$inboundSchema: z.ZodType<
   SearchTwitter,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SearchTwitter),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SearchTwitter);
 
 /** @internal */
 export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
   VirtualWebhookApplicationId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookApplicationId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookApplicationId);
 
 /** @internal */
 export const VirtualWebhookBranchId$inboundSchema: z.ZodType<
   VirtualWebhookBranchId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookBranchId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookBranchId);
 
 /** @internal */
 export const VirtualWebhookCalendarId$inboundSchema: z.ZodType<
   VirtualWebhookCalendarId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCalendarId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCalendarId);
 
 /** @internal */
 export const VirtualWebhookCallId$inboundSchema: z.ZodType<
   VirtualWebhookCallId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCallId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCallId);
 
 /** @internal */
 export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
   VirtualWebhookCandidateId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCandidateId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCandidateId);
 
 /** @internal */
 export const VirtualWebhookChannelId$inboundSchema: z.ZodType<
   VirtualWebhookChannelId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookChannelId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookChannelId);
 
 /** @internal */
 export const VirtualWebhookCollectionId$inboundSchema: z.ZodType<
   VirtualWebhookCollectionId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCollectionId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCollectionId);
 
 /** @internal */
 export const VirtualWebhookCompanyId$inboundSchema: z.ZodType<
   VirtualWebhookCompanyId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCompanyId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCompanyId);
 
 /** @internal */
 export const VirtualWebhookContactId$inboundSchema: z.ZodType<
   VirtualWebhookContactId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookContactId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookContactId);
 
 /** @internal */
 export const VirtualWebhookCustomerId$inboundSchema: z.ZodType<
   VirtualWebhookCustomerId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookCustomerId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookCustomerId);
 
 /** @internal */
 export const VirtualWebhookDealId$inboundSchema: z.ZodType<
   VirtualWebhookDealId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookDealId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookDealId);
 
 /** @internal */
 export const VirtualWebhookEndLe$inboundSchema: z.ZodType<
   VirtualWebhookEndLe,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookEndLe),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookEndLe);
 
 /** @internal */
 export const VirtualWebhookEndLt$inboundSchema: z.ZodType<
   VirtualWebhookEndLt,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookEndLt),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookEndLt);
 
 /** @internal */
 export const VirtualWebhookEventId$inboundSchema: z.ZodType<
   VirtualWebhookEventId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookEventId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookEventId);
 
 /** @internal */
 export const VirtualWebhookExpand$inboundSchema: z.ZodType<
   VirtualWebhookExpand,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookExpand),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookExpand);
 
 /** @internal */
 export const VirtualWebhookFields$inboundSchema: z.ZodType<
   VirtualWebhookFields,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookFields),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookFields);
 
 /** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
   VirtualWebhookItemId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookItemId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookItemId);
 
 /** @internal */
 export const VirtualWebhookItemVariantId$inboundSchema: z.ZodType<
   VirtualWebhookItemVariantId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookItemVariantId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookItemVariantId);
 
 /** @internal */
 export const VirtualWebhookJobId$inboundSchema: z.ZodType<
   VirtualWebhookJobId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookJobId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookJobId);
 
 /** @internal */
 export const VirtualWebhookLimit$inboundSchema: z.ZodType<
   VirtualWebhookLimit,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookLimit),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookLimit);
 
 /** @internal */
 export const VirtualWebhookListId$inboundSchema: z.ZodType<
   VirtualWebhookListId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookListId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookListId);
 
 /** @internal */
 export const VirtualWebhookLocationId$inboundSchema: z.ZodType<
   VirtualWebhookLocationId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookLocationId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookLocationId);
 
 /** @internal */
 export const VirtualWebhookOrgId$inboundSchema: z.ZodType<
   VirtualWebhookOrgId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookOrgId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookOrgId);
 
 /** @internal */
 export const VirtualWebhookPageId$inboundSchema: z.ZodType<
   VirtualWebhookPageId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookPageId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookPageId);
 
 /** @internal */
 export const VirtualWebhookParentId$inboundSchema: z.ZodType<
   VirtualWebhookParentId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookParentId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookParentId);
 
 /** @internal */
 export const VirtualWebhookPipelineId$inboundSchema: z.ZodType<
   VirtualWebhookPipelineId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookPipelineId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookPipelineId);
 
 /** @internal */
 export const VirtualWebhookProjectId$inboundSchema: z.ZodType<
   VirtualWebhookProjectId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookProjectId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookProjectId);
 
 /** @internal */
 export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
   VirtualWebhookRepoId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookRepoId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookRepoId);
 
 /** @internal */
 export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
   VirtualWebhookSpaceId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookSpaceId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookSpaceId);
 
 /** @internal */
 export const VirtualWebhookStartGte$inboundSchema: z.ZodType<
   VirtualWebhookStartGte,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookStartGte),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookStartGte);
 
 /** @internal */
 export const VirtualWebhookStatus$inboundSchema: z.ZodType<
   VirtualWebhookStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookStatus);
 
 /** @internal */
 export const VirtualWebhookTaskId$inboundSchema: z.ZodType<
   VirtualWebhookTaskId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookTaskId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookTaskId);
 
 /** @internal */
 export const VirtualWebhookTicketId$inboundSchema: z.ZodType<
   VirtualWebhookTicketId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookTicketId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookTicketId);
 
 /** @internal */
 export const VirtualWebhookType$inboundSchema: z.ZodType<
   VirtualWebhookType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookType);
 
 /** @internal */
 export const VirtualWebhookUpdatedGte$inboundSchema: z.ZodType<
   VirtualWebhookUpdatedGte,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookUpdatedGte),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookUpdatedGte);
 
 /** @internal */
 export const VirtualWebhookUserId$inboundSchema: z.ZodType<
   VirtualWebhookUserId,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VirtualWebhookUserId),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VirtualWebhookUserId);
 
 /** @internal */
 export const IntegrationSupport$inboundSchema: z.ZodType<

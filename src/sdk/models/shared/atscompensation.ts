@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -45,40 +42,26 @@ export const Frequency$inboundSchema: z.ZodType<
   Frequency,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(Frequency),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(Frequency);
 /** @internal */
 export const Frequency$outboundSchema: z.ZodType<
-  Frequency,
+  string,
   z.ZodTypeDef,
   Frequency
-> = z.union([
-  z.nativeEnum(Frequency),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(Frequency);
 
 /** @internal */
 export const AtsCompensationType$inboundSchema: z.ZodType<
   AtsCompensationType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AtsCompensationType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AtsCompensationType);
 /** @internal */
 export const AtsCompensationType$outboundSchema: z.ZodType<
-  AtsCompensationType,
+  string,
   z.ZodTypeDef,
   AtsCompensationType
-> = z.union([
-  z.nativeEnum(AtsCompensationType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AtsCompensationType);
 
 /** @internal */
 export const AtsCompensation$inboundSchema: z.ZodType<

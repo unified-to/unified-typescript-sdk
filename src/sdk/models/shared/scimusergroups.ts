@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -31,20 +28,13 @@ export const ScimUserGroupsType$inboundSchema: z.ZodType<
   ScimUserGroupsType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimUserGroupsType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimUserGroupsType);
 /** @internal */
 export const ScimUserGroupsType$outboundSchema: z.ZodType<
-  ScimUserGroupsType,
+  string,
   z.ZodTypeDef,
   ScimUserGroupsType
-> = z.union([
-  z.nativeEnum(ScimUserGroupsType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimUserGroupsType);
 
 /** @internal */
 export const ScimUserGroups$inboundSchema: z.ZodType<

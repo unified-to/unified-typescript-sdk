@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyIntegrationCategories = {
   Passthrough: "passthrough",
@@ -39,8 +40,4 @@ export const PropertyIntegrationCategories$inboundSchema: z.ZodType<
   PropertyIntegrationCategories,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyIntegrationCategories),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyIntegrationCategories);

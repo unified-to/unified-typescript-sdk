@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -38,40 +35,26 @@ export const Operation$inboundSchema: z.ZodType<
   Operation,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(Operation),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(Operation);
 /** @internal */
 export const Operation$outboundSchema: z.ZodType<
-  Operation,
+  string,
   z.ZodTypeDef,
   Operation
-> = z.union([
-  z.nativeEnum(Operation),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(Operation);
 
 /** @internal */
 export const ScimGroupMemberType$inboundSchema: z.ZodType<
   ScimGroupMemberType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimGroupMemberType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimGroupMemberType);
 /** @internal */
 export const ScimGroupMemberType$outboundSchema: z.ZodType<
-  ScimGroupMemberType,
+  string,
   z.ZodTypeDef,
   ScimGroupMemberType
-> = z.union([
-  z.nativeEnum(ScimGroupMemberType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimGroupMemberType);
 
 /** @internal */
 export const ScimGroupMember$inboundSchema: z.ZodType<

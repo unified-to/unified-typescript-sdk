@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 44e3c827bc1f0ba4a6b13ebfe4c949dc
+  docChecksum: 5c2a3f40eea3f879043c36a4d45e9686
   docVersion: "1.0"
-  speakeasyVersion: 1.651.0
-  generationVersion: 2.745.2
-  releaseVersion: 2.80.2
-  configChecksum: 5b2d3f6fed33628be7d7fc0e5484f95c
+  speakeasyVersion: 1.656.2
+  generationVersion: 2.753.6
+  releaseVersion: 2.80.3
+  configChecksum: aab222d56223d6b3963f1a02a6e3a165
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.3
+    core: 3.26.6
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -7367,4 +7367,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.commerce.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.getCommerceCollection()`:  `response` **Changed**\n* `unified-to.commerce.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.listCommerceCollections()`:  `response.[]` **Changed**\n* `unified-to.commerce.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed**\n* `unified-to.commerce.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.collection.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.collection.getCommerceCollection()`:  `response` **Changed**\n* `unified-to.collection.listCommerceCollections()`:  `response.[]` **Changed**\n* `unified-to.collection.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.collection.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.item.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed**\n* `unified-to.item.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed**\n* `unified-to.item.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.item.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.review.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed**\n* `unified-to.review.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.ats.createAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.ats.getAtsApplication()`:  `response.user_id` **Added**\n* `unified-to.ats.listAtsApplications()`:  `response.[].userId` **Added**\n* `unified-to.ats.patchAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.ats.updateAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.createAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.getAtsApplication()`:  `response.user_id` **Added**\n* `unified-to.application.listAtsApplications()`:  `response.[].userId` **Added**\n* `unified-to.application.patchAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.updateAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n"

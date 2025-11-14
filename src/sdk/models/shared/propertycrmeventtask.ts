@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -46,40 +43,26 @@ export const Priority$inboundSchema: z.ZodType<
   Priority,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(Priority),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(Priority);
 /** @internal */
 export const Priority$outboundSchema: z.ZodType<
-  Priority,
+  string,
   z.ZodTypeDef,
   Priority
-> = z.union([
-  z.nativeEnum(Priority),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(Priority);
 
 /** @internal */
 export const PropertyCrmEventTaskStatus$inboundSchema: z.ZodType<
   PropertyCrmEventTaskStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyCrmEventTaskStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyCrmEventTaskStatus);
 /** @internal */
 export const PropertyCrmEventTaskStatus$outboundSchema: z.ZodType<
-  PropertyCrmEventTaskStatus,
+  string,
   z.ZodTypeDef,
   PropertyCrmEventTaskStatus
-> = z.union([
-  z.nativeEnum(PropertyCrmEventTaskStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyCrmEventTaskStatus);
 
 /** @internal */
 export const PropertyCrmEventTask$inboundSchema: z.ZodType<

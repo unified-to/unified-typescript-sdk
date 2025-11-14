@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -70,40 +67,26 @@ export const AccountingOrderStatus$inboundSchema: z.ZodType<
   AccountingOrderStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AccountingOrderStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AccountingOrderStatus);
 /** @internal */
 export const AccountingOrderStatus$outboundSchema: z.ZodType<
-  AccountingOrderStatus,
+  string,
   z.ZodTypeDef,
   AccountingOrderStatus
-> = z.union([
-  z.nativeEnum(AccountingOrderStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AccountingOrderStatus);
 
 /** @internal */
 export const AccountingOrderType$inboundSchema: z.ZodType<
   AccountingOrderType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AccountingOrderType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AccountingOrderType);
 /** @internal */
 export const AccountingOrderType$outboundSchema: z.ZodType<
-  AccountingOrderType,
+  string,
   z.ZodTypeDef,
   AccountingOrderType
-> = z.union([
-  z.nativeEnum(AccountingOrderType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AccountingOrderType);
 
 /** @internal */
 export const AccountingOrder$inboundSchema: z.ZodType<

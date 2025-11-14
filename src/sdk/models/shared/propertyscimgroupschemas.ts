@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyScimGroupSchemas = {
   UrnIetfParamsScimSchemasCore20Group:
@@ -22,17 +19,10 @@ export const PropertyScimGroupSchemas$inboundSchema: z.ZodType<
   PropertyScimGroupSchemas,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyScimGroupSchemas),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyScimGroupSchemas);
 /** @internal */
 export const PropertyScimGroupSchemas$outboundSchema: z.ZodType<
-  PropertyScimGroupSchemas,
+  string,
   z.ZodTypeDef,
   PropertyScimGroupSchemas
-> = z.union([
-  z.nativeEnum(PropertyScimGroupSchemas),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyScimGroupSchemas);

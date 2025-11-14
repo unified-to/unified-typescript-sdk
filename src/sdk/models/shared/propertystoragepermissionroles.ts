@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyStoragePermissionRoles = {
   Owner: "OWNER",
@@ -23,17 +20,10 @@ export const PropertyStoragePermissionRoles$inboundSchema: z.ZodType<
   PropertyStoragePermissionRoles,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyStoragePermissionRoles),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyStoragePermissionRoles);
 /** @internal */
 export const PropertyStoragePermissionRoles$outboundSchema: z.ZodType<
-  PropertyStoragePermissionRoles,
+  string,
   z.ZodTypeDef,
   PropertyStoragePermissionRoles
-> = z.union([
-  z.nativeEnum(PropertyStoragePermissionRoles),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyStoragePermissionRoles);

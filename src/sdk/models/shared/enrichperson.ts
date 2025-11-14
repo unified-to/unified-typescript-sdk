@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import { EnrichEmail, EnrichEmail$inboundSchema } from "./enrichemail.js";
@@ -70,11 +71,8 @@ export type EnrichPerson = {
 };
 
 /** @internal */
-export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(Gender),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const Gender$inboundSchema: z.ZodType<Gender, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Gender);
 
 /** @internal */
 export const EnrichPerson$inboundSchema: z.ZodType<

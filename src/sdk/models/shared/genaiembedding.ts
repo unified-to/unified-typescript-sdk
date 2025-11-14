@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -47,20 +44,13 @@ export const EncondingFormat$inboundSchema: z.ZodType<
   EncondingFormat,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(EncondingFormat),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(EncondingFormat);
 /** @internal */
 export const EncondingFormat$outboundSchema: z.ZodType<
-  EncondingFormat,
+  string,
   z.ZodTypeDef,
   EncondingFormat
-> = z.union([
-  z.nativeEnum(EncondingFormat),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(EncondingFormat);
 
 /** @internal */
 export const GenaiEmbedding$inboundSchema: z.ZodType<

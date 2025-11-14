@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyConnectionCategories = {
   Passthrough: "passthrough",
@@ -43,17 +40,10 @@ export const PropertyConnectionCategories$inboundSchema: z.ZodType<
   PropertyConnectionCategories,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyConnectionCategories),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyConnectionCategories);
 /** @internal */
 export const PropertyConnectionCategories$outboundSchema: z.ZodType<
-  PropertyConnectionCategories,
+  string,
   z.ZodTypeDef,
   PropertyConnectionCategories
-> = z.union([
-  z.nativeEnum(PropertyConnectionCategories),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyConnectionCategories);

@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -169,70 +166,44 @@ export type Webhook = {
 };
 
 /** @internal */
-export const DbType$inboundSchema: z.ZodType<DbType, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(DbType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const DbType$inboundSchema: z.ZodType<DbType, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(DbType);
 /** @internal */
-export const DbType$outboundSchema: z.ZodType<DbType, z.ZodTypeDef, DbType> = z
-  .union([
-    z.nativeEnum(DbType),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+export const DbType$outboundSchema: z.ZodType<string, z.ZodTypeDef, DbType> =
+  openEnums.outboundSchema(DbType);
 
 /** @internal */
-export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(Event),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const Event$inboundSchema: z.ZodType<Event, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Event);
 /** @internal */
-export const Event$outboundSchema: z.ZodType<Event, z.ZodTypeDef, Event> = z
-  .union([
-    z.nativeEnum(Event),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+export const Event$outboundSchema: z.ZodType<string, z.ZodTypeDef, Event> =
+  openEnums.outboundSchema(Event);
 
 /** @internal */
 export const ObjectType$inboundSchema: z.ZodType<
   ObjectType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ObjectType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ObjectType);
 /** @internal */
 export const ObjectType$outboundSchema: z.ZodType<
-  ObjectType,
+  string,
   z.ZodTypeDef,
   ObjectType
-> = z.union([
-  z.nativeEnum(ObjectType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ObjectType);
 
 /** @internal */
 export const WebhookType$inboundSchema: z.ZodType<
   WebhookType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(WebhookType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(WebhookType);
 /** @internal */
 export const WebhookType$outboundSchema: z.ZodType<
-  WebhookType,
+  string,
   z.ZodTypeDef,
   WebhookType
-> = z.union([
-  z.nativeEnum(WebhookType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(WebhookType);
 
 /** @internal */
 export const Webhook$inboundSchema: z.ZodType<Webhook, z.ZodTypeDef, unknown> =

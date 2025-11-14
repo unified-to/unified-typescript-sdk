@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -92,17 +89,11 @@ export type AtsCandidate = {
 };
 
 /** @internal */
-export const Origin$inboundSchema: z.ZodType<Origin, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(Origin),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const Origin$inboundSchema: z.ZodType<Origin, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Origin);
 /** @internal */
-export const Origin$outboundSchema: z.ZodType<Origin, z.ZodTypeDef, Origin> = z
-  .union([
-    z.nativeEnum(Origin),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+export const Origin$outboundSchema: z.ZodType<string, z.ZodTypeDef, Origin> =
+  openEnums.outboundSchema(Origin);
 
 /** @internal */
 export const AtsCandidate$inboundSchema: z.ZodType<

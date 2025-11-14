@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -35,20 +32,13 @@ export const ScimManagerType$inboundSchema: z.ZodType<
   ScimManagerType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimManagerType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimManagerType);
 /** @internal */
 export const ScimManagerType$outboundSchema: z.ZodType<
-  ScimManagerType,
+  string,
   z.ZodTypeDef,
   ScimManagerType
-> = z.union([
-  z.nativeEnum(ScimManagerType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimManagerType);
 
 /** @internal */
 export const ScimManager$inboundSchema: z.ZodType<

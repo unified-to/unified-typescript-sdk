@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -43,25 +40,18 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserMa
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
     z.ZodTypeDef,
     unknown
-  > = z
-    .union([
-      z.nativeEnum(
-        PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
-      ),
-      z.string().transform(catchUnrecognizedEnum),
-    ]);
+  > = openEnums.inboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+  );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType$outboundSchema:
   z.ZodType<
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+    string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
-  > = z.union([
-    z.nativeEnum(
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
-    ),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+  > = openEnums.outboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType,
+  );
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager$inboundSchema:

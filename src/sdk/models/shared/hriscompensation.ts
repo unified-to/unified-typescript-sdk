@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -48,40 +45,26 @@ export const HrisCompensationFrequency$inboundSchema: z.ZodType<
   HrisCompensationFrequency,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(HrisCompensationFrequency),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(HrisCompensationFrequency);
 /** @internal */
 export const HrisCompensationFrequency$outboundSchema: z.ZodType<
-  HrisCompensationFrequency,
+  string,
   z.ZodTypeDef,
   HrisCompensationFrequency
-> = z.union([
-  z.nativeEnum(HrisCompensationFrequency),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(HrisCompensationFrequency);
 
 /** @internal */
 export const HrisCompensationType$inboundSchema: z.ZodType<
   HrisCompensationType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(HrisCompensationType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(HrisCompensationType);
 /** @internal */
 export const HrisCompensationType$outboundSchema: z.ZodType<
-  HrisCompensationType,
+  string,
   z.ZodTypeDef,
   HrisCompensationType
-> = z.union([
-  z.nativeEnum(HrisCompensationType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(HrisCompensationType);
 
 /** @internal */
 export const HrisCompensation$inboundSchema: z.ZodType<

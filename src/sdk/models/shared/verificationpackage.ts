@@ -5,7 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import { catchUnrecognizedEnum, OpenEnum } from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -64,11 +65,7 @@ export const VerificationPackageType$inboundSchema: z.ZodType<
   VerificationPackageType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(VerificationPackageType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(VerificationPackageType);
 
 /** @internal */
 export const VerificationPackage$inboundSchema: z.ZodType<

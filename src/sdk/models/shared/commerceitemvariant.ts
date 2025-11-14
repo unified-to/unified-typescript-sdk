@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -83,40 +80,26 @@ export const SizeUnit$inboundSchema: z.ZodType<
   SizeUnit,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SizeUnit),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SizeUnit);
 /** @internal */
 export const SizeUnit$outboundSchema: z.ZodType<
-  SizeUnit,
+  string,
   z.ZodTypeDef,
   SizeUnit
-> = z.union([
-  z.nativeEnum(SizeUnit),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(SizeUnit);
 
 /** @internal */
 export const WeightUnit$inboundSchema: z.ZodType<
   WeightUnit,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(WeightUnit),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(WeightUnit);
 /** @internal */
 export const WeightUnit$outboundSchema: z.ZodType<
-  WeightUnit,
+  string,
   z.ZodTypeDef,
   WeightUnit
-> = z.union([
-  z.nativeEnum(WeightUnit),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(WeightUnit);
 
 /** @internal */
 export const CommerceItemVariant$inboundSchema: z.ZodType<

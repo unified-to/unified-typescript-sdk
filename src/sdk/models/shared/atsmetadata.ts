@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -192,17 +189,11 @@ export function extraDataFromJSON(
 }
 
 /** @internal */
-export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> = z
-  .union([
-    z.nativeEnum(Format),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+export const Format$inboundSchema: z.ZodType<Format, z.ZodTypeDef, unknown> =
+  openEnums.inboundSchema(Format);
 /** @internal */
-export const Format$outboundSchema: z.ZodType<Format, z.ZodTypeDef, Format> = z
-  .union([
-    z.nativeEnum(Format),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+export const Format$outboundSchema: z.ZodType<string, z.ZodTypeDef, Format> =
+  openEnums.outboundSchema(Format);
 
 /** @internal */
 export const AtsMetadata1$inboundSchema: z.ZodType<

@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -44,20 +41,13 @@ export const HrisGroupType$inboundSchema: z.ZodType<
   HrisGroupType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(HrisGroupType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(HrisGroupType);
 /** @internal */
 export const HrisGroupType$outboundSchema: z.ZodType<
-  HrisGroupType,
+  string,
   z.ZodTypeDef,
   HrisGroupType
-> = z.union([
-  z.nativeEnum(HrisGroupType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(HrisGroupType);
 
 /** @internal */
 export const HrisGroup$inboundSchema: z.ZodType<

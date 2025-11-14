@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -50,20 +47,13 @@ export const StorageFileType$inboundSchema: z.ZodType<
   StorageFileType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(StorageFileType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(StorageFileType);
 /** @internal */
 export const StorageFileType$outboundSchema: z.ZodType<
-  StorageFileType,
+  string,
   z.ZodTypeDef,
   StorageFileType
-> = z.union([
-  z.nativeEnum(StorageFileType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(StorageFileType);
 
 /** @internal */
 export const StorageFile$inboundSchema: z.ZodType<

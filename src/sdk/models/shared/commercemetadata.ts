@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -230,20 +227,13 @@ export const CommerceMetadataFormat$inboundSchema: z.ZodType<
   CommerceMetadataFormat,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(CommerceMetadataFormat),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(CommerceMetadataFormat);
 /** @internal */
 export const CommerceMetadataFormat$outboundSchema: z.ZodType<
-  CommerceMetadataFormat,
+  string,
   z.ZodTypeDef,
   CommerceMetadataFormat
-> = z.union([
-  z.nativeEnum(CommerceMetadataFormat),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(CommerceMetadataFormat);
 
 /** @internal */
 export const CommerceMetadataSchemas1$inboundSchema: z.ZodType<

@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -65,20 +62,13 @@ export const Ethnicity$inboundSchema: z.ZodType<
   Ethnicity,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(Ethnicity),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(Ethnicity);
 /** @internal */
 export const Ethnicity$outboundSchema: z.ZodType<
-  Ethnicity,
+  string,
   z.ZodTypeDef,
   Ethnicity
-> = z.union([
-  z.nativeEnum(Ethnicity),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(Ethnicity);
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$inboundSchema:
@@ -86,45 +76,31 @@ export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes1
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
     z.ZodTypeDef,
     unknown
-  > = z
-    .union([
-      z.nativeEnum(
-        PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
-      ),
-      z.string().transform(catchUnrecognizedEnum),
-    ]);
+  > = openEnums.inboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+  );
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender$outboundSchema:
   z.ZodType<
-    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+    string,
     z.ZodTypeDef,
     PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender
-  > = z.union([
-    z.nativeEnum(
-      PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
-    ),
-    z.string().and(z.custom<Unrecognized<string>>()),
-  ]);
+  > = openEnums.outboundSchema(
+    PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender,
+  );
 
 /** @internal */
 export const SexualOrientation$inboundSchema: z.ZodType<
   SexualOrientation,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(SexualOrientation),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(SexualOrientation);
 /** @internal */
 export const SexualOrientation$outboundSchema: z.ZodType<
-  SexualOrientation,
+  string,
   z.ZodTypeDef,
   SexualOrientation
-> = z.union([
-  z.nativeEnum(SexualOrientation),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(SexualOrientation);
 
 /** @internal */
 export const PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User$inboundSchema:

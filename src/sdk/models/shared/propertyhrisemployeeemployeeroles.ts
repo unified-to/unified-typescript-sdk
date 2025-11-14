@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyHrisEmployeeEmployeeRoles = {
   Admin: "ADMIN",
@@ -25,17 +22,10 @@ export const PropertyHrisEmployeeEmployeeRoles$inboundSchema: z.ZodType<
   PropertyHrisEmployeeEmployeeRoles,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyHrisEmployeeEmployeeRoles);
 /** @internal */
 export const PropertyHrisEmployeeEmployeeRoles$outboundSchema: z.ZodType<
-  PropertyHrisEmployeeEmployeeRoles,
+  string,
   z.ZodTypeDef,
   PropertyHrisEmployeeEmployeeRoles
-> = z.union([
-  z.nativeEnum(PropertyHrisEmployeeEmployeeRoles),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyHrisEmployeeEmployeeRoles);

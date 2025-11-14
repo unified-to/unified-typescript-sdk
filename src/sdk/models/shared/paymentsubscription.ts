@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -65,40 +62,26 @@ export const IntervalUnit$inboundSchema: z.ZodType<
   IntervalUnit,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(IntervalUnit),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(IntervalUnit);
 /** @internal */
 export const IntervalUnit$outboundSchema: z.ZodType<
-  IntervalUnit,
+  string,
   z.ZodTypeDef,
   IntervalUnit
-> = z.union([
-  z.nativeEnum(IntervalUnit),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(IntervalUnit);
 
 /** @internal */
 export const PaymentSubscriptionStatus$inboundSchema: z.ZodType<
   PaymentSubscriptionStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PaymentSubscriptionStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PaymentSubscriptionStatus);
 /** @internal */
 export const PaymentSubscriptionStatus$outboundSchema: z.ZodType<
-  PaymentSubscriptionStatus,
+  string,
   z.ZodTypeDef,
   PaymentSubscriptionStatus
-> = z.union([
-  z.nativeEnum(PaymentSubscriptionStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PaymentSubscriptionStatus);
 
 /** @internal */
 export const PaymentSubscription$inboundSchema: z.ZodType<

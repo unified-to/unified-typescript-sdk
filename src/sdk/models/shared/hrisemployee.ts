@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -148,80 +145,52 @@ export const EmploymentStatus$inboundSchema: z.ZodType<
   EmploymentStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(EmploymentStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(EmploymentStatus);
 /** @internal */
 export const EmploymentStatus$outboundSchema: z.ZodType<
-  EmploymentStatus,
+  string,
   z.ZodTypeDef,
   EmploymentStatus
-> = z.union([
-  z.nativeEnum(EmploymentStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(EmploymentStatus);
 
 /** @internal */
 export const HrisEmployeeEmploymentType$inboundSchema: z.ZodType<
   HrisEmployeeEmploymentType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(HrisEmployeeEmploymentType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(HrisEmployeeEmploymentType);
 /** @internal */
 export const HrisEmployeeEmploymentType$outboundSchema: z.ZodType<
-  HrisEmployeeEmploymentType,
+  string,
   z.ZodTypeDef,
   HrisEmployeeEmploymentType
-> = z.union([
-  z.nativeEnum(HrisEmployeeEmploymentType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(HrisEmployeeEmploymentType);
 
 /** @internal */
 export const HrisEmployeeGender$inboundSchema: z.ZodType<
   HrisEmployeeGender,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(HrisEmployeeGender),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(HrisEmployeeGender);
 /** @internal */
 export const HrisEmployeeGender$outboundSchema: z.ZodType<
-  HrisEmployeeGender,
+  string,
   z.ZodTypeDef,
   HrisEmployeeGender
-> = z.union([
-  z.nativeEnum(HrisEmployeeGender),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(HrisEmployeeGender);
 
 /** @internal */
 export const MaritalStatus$inboundSchema: z.ZodType<
   MaritalStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(MaritalStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(MaritalStatus);
 /** @internal */
 export const MaritalStatus$outboundSchema: z.ZodType<
-  MaritalStatus,
+  string,
   z.ZodTypeDef,
   MaritalStatus
-> = z.union([
-  z.nativeEnum(MaritalStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(MaritalStatus);
 
 /** @internal */
 export const HrisEmployee$inboundSchema: z.ZodType<

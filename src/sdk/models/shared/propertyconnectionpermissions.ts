@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyConnectionPermissions = {
   AccountingAccountRead: "accounting_account_read",
@@ -200,17 +197,10 @@ export const PropertyConnectionPermissions$inboundSchema: z.ZodType<
   PropertyConnectionPermissions,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyConnectionPermissions),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyConnectionPermissions);
 /** @internal */
 export const PropertyConnectionPermissions$outboundSchema: z.ZodType<
-  PropertyConnectionPermissions,
+  string,
   z.ZodTypeDef,
   PropertyConnectionPermissions
-> = z.union([
-  z.nativeEnum(PropertyConnectionPermissions),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyConnectionPermissions);

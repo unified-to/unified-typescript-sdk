@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -66,6 +63,7 @@ export type AtsApplication = {
   source?: string | undefined;
   status?: AtsApplicationStatus | undefined;
   updatedAt?: Date | undefined;
+  userId?: string | undefined;
 };
 
 /** @internal */
@@ -73,20 +71,13 @@ export const AtsApplicationStatus$inboundSchema: z.ZodType<
   AtsApplicationStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(AtsApplicationStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(AtsApplicationStatus);
 /** @internal */
 export const AtsApplicationStatus$outboundSchema: z.ZodType<
-  AtsApplicationStatus,
+  string,
   z.ZodTypeDef,
   AtsApplicationStatus
-> = z.union([
-  z.nativeEnum(AtsApplicationStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(AtsApplicationStatus);
 
 /** @internal */
 export const AtsApplication$inboundSchema: z.ZodType<
@@ -115,6 +106,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
   status: AtsApplicationStatus$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  user_id: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     "applied_at": "appliedAt",
@@ -126,6 +118,7 @@ export const AtsApplication$inboundSchema: z.ZodType<
     "rejected_at": "rejectedAt",
     "rejected_reason": "rejectedReason",
     "updated_at": "updatedAt",
+    "user_id": "userId",
   });
 });
 /** @internal */
@@ -146,6 +139,7 @@ export type AtsApplication$Outbound = {
   source?: string | undefined;
   status?: string | undefined;
   updated_at?: string | undefined;
+  user_id?: string | undefined;
 };
 
 /** @internal */
@@ -170,6 +164,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
   source: z.string().optional(),
   status: AtsApplicationStatus$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
+  userId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     appliedAt: "applied_at",
@@ -181,6 +176,7 @@ export const AtsApplication$outboundSchema: z.ZodType<
     rejectedAt: "rejected_at",
     rejectedReason: "rejected_reason",
     updatedAt: "updated_at",
+    userId: "user_id",
   });
 });
 

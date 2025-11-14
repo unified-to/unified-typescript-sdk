@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -73,20 +70,13 @@ export const CommerceReviewStatus$inboundSchema: z.ZodType<
   CommerceReviewStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(CommerceReviewStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(CommerceReviewStatus);
 /** @internal */
 export const CommerceReviewStatus$outboundSchema: z.ZodType<
-  CommerceReviewStatus,
+  string,
   z.ZodTypeDef,
   CommerceReviewStatus
-> = z.union([
-  z.nativeEnum(CommerceReviewStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(CommerceReviewStatus);
 
 /** @internal */
 export const CommerceReview$inboundSchema: z.ZodType<

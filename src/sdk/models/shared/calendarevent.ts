@@ -5,11 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -81,20 +78,13 @@ export const CalendarEventStatus$inboundSchema: z.ZodType<
   CalendarEventStatus,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(CalendarEventStatus),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(CalendarEventStatus);
 /** @internal */
 export const CalendarEventStatus$outboundSchema: z.ZodType<
-  CalendarEventStatus,
+  string,
   z.ZodTypeDef,
   CalendarEventStatus
-> = z.union([
-  z.nativeEnum(CalendarEventStatus),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(CalendarEventStatus);
 
 /** @internal */
 export const CalendarEvent$inboundSchema: z.ZodType<

@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 
 export const PropertyCalendarEventRecurrenceOnDays = {
   Su: "SU",
@@ -27,17 +24,10 @@ export const PropertyCalendarEventRecurrenceOnDays$inboundSchema: z.ZodType<
   PropertyCalendarEventRecurrenceOnDays,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(PropertyCalendarEventRecurrenceOnDays),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(PropertyCalendarEventRecurrenceOnDays);
 /** @internal */
 export const PropertyCalendarEventRecurrenceOnDays$outboundSchema: z.ZodType<
-  PropertyCalendarEventRecurrenceOnDays,
+  string,
   z.ZodTypeDef,
   PropertyCalendarEventRecurrenceOnDays
-> = z.union([
-  z.nativeEnum(PropertyCalendarEventRecurrenceOnDays),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(PropertyCalendarEventRecurrenceOnDays);

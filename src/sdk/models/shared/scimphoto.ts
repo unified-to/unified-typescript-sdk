@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -30,20 +27,13 @@ export const ScimPhotoType$inboundSchema: z.ZodType<
   ScimPhotoType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimPhotoType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimPhotoType);
 /** @internal */
 export const ScimPhotoType$outboundSchema: z.ZodType<
-  ScimPhotoType,
+  string,
   z.ZodTypeDef,
   ScimPhotoType
-> = z.union([
-  z.nativeEnum(ScimPhotoType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimPhotoType);
 
 /** @internal */
 export const ScimPhoto$inboundSchema: z.ZodType<

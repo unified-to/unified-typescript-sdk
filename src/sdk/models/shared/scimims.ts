@@ -4,11 +4,8 @@
 
 import * as z from "zod/v3";
 import { safeParse } from "../../../lib/schemas.js";
-import {
-  catchUnrecognizedEnum,
-  OpenEnum,
-  Unrecognized,
-} from "../../types/enums.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
@@ -36,20 +33,13 @@ export const ScimImsType$inboundSchema: z.ZodType<
   ScimImsType,
   z.ZodTypeDef,
   unknown
-> = z
-  .union([
-    z.nativeEnum(ScimImsType),
-    z.string().transform(catchUnrecognizedEnum),
-  ]);
+> = openEnums.inboundSchema(ScimImsType);
 /** @internal */
 export const ScimImsType$outboundSchema: z.ZodType<
-  ScimImsType,
+  string,
   z.ZodTypeDef,
   ScimImsType
-> = z.union([
-  z.nativeEnum(ScimImsType),
-  z.string().and(z.custom<Unrecognized<string>>()),
-]);
+> = openEnums.outboundSchema(ScimImsType);
 
 /** @internal */
 export const ScimIms$inboundSchema: z.ZodType<ScimIms, z.ZodTypeDef, unknown> =
