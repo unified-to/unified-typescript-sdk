@@ -12,6 +12,7 @@ export type CalendarCalendar = {
   createdAt?: Date | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  isPrimary?: boolean | undefined;
   name: string;
   primary?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -29,6 +30,7 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
     .optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  is_primary: z.boolean().optional(),
   name: z.string(),
   primary: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
@@ -38,6 +40,7 @@ export const CalendarCalendar$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "is_primary": "isPrimary",
     "updated_at": "updatedAt",
   });
 });
@@ -46,6 +49,7 @@ export type CalendarCalendar$Outbound = {
   created_at?: string | undefined;
   description?: string | undefined;
   id?: string | undefined;
+  is_primary?: boolean | undefined;
   name: string;
   primary?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
@@ -62,6 +66,7 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   id: z.string().optional(),
+  isPrimary: z.boolean().optional(),
   name: z.string(),
   primary: z.boolean().optional(),
   raw: z.record(z.any()).optional(),
@@ -70,6 +75,7 @@ export const CalendarCalendar$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    isPrimary: "is_primary",
     updatedAt: "updated_at",
   });
 });

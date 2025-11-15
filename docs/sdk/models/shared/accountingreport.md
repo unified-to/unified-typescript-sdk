@@ -1,5 +1,7 @@
 # AccountingReport
 
+@deprecated; use either AccountingProfitandloss, AccountingTrialbalance, AccountingBalancesheet, or AccountingCashflow instead
+
 ## Example Usage
 
 ```typescript

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5c2a3f40eea3f879043c36a4d45e9686
+  docChecksum: 8e0da3e048dab0529dab732bc1eb6105
   docVersion: "1.0"
-  speakeasyVersion: 1.656.2
-  generationVersion: 2.753.6
-  releaseVersion: 2.80.3
-  configChecksum: aab222d56223d6b3963f1a02a6e3a165
+  speakeasyVersion: 1.657.0
+  generationVersion: 2.755.0
+  releaseVersion: 2.80.4
+  configChecksum: c754680f5dbe0da3e90d4671a527c7d8
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.6
+    core: 3.26.7
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -1159,6 +1159,7 @@ generatedFiles:
   - docs/sdk/models/shared/virtualwebhookitemid.md
   - docs/sdk/models/shared/virtualwebhookitemvariantid.md
   - docs/sdk/models/shared/virtualwebhookjobid.md
+  - docs/sdk/models/shared/virtualwebhookleadid.md
   - docs/sdk/models/shared/virtualwebhooklimit.md
   - docs/sdk/models/shared/virtualwebhooklistid.md
   - docs/sdk/models/shared/virtualwebhooklocationid.md
@@ -7367,4 +7368,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.ats.createAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.ats.getAtsApplication()`:  `response.user_id` **Added**\n* `unified-to.ats.listAtsApplications()`:  `response.[].userId` **Added**\n* `unified-to.ats.patchAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.ats.updateAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.createAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.getAtsApplication()`:  `response.user_id` **Added**\n* `unified-to.application.listAtsApplications()`:  `response.[].userId` **Added**\n* `unified-to.application.patchAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n* `unified-to.application.updateAtsApplication()`: \n  *  `request.atsApplication.userId` **Added**\n  *  `response.user_id` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.ats.createAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.ats.getAtsJob()`:  `response.skills` **Added**\n* `unified-to.ats.listAtsJobs()`:  `response.[].skills` **Added**\n* `unified-to.ats.patchAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.ats.updateAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.createAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.getAtsJob()`:  `response.skills` **Added**\n* `unified-to.job.listAtsJobs()`:  `response.[].skills` **Added**\n* `unified-to.job.patchAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.updateAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.calendar.createCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.calendar.getCalendarCalendar()`:  `response.is_primary` **Added**\n* `unified-to.calendar.listCalendarCalendars()`:  `response.[].isPrimary` **Added**\n* `unified-to.calendar.patchCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.calendar.updateCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n"

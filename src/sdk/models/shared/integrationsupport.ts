@@ -658,6 +658,13 @@ export const VirtualWebhookJobId = {
 } as const;
 export type VirtualWebhookJobId = OpenEnum<typeof VirtualWebhookJobId>;
 
+export const VirtualWebhookLeadId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookLeadId = OpenEnum<typeof VirtualWebhookLeadId>;
+
 export const VirtualWebhookLimit = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -882,6 +889,7 @@ export type IntegrationSupport = {
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
+  virtualWebhookLeadId?: VirtualWebhookLeadId | undefined;
   virtualWebhookLimit?: VirtualWebhookLimit | undefined;
   virtualWebhookListId?: VirtualWebhookListId | undefined;
   virtualWebhookLocationId?: VirtualWebhookLocationId | undefined;
@@ -1533,6 +1541,13 @@ export const VirtualWebhookJobId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookJobId);
 
 /** @internal */
+export const VirtualWebhookLeadId$inboundSchema: z.ZodType<
+  VirtualWebhookLeadId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookLeadId);
+
+/** @internal */
 export const VirtualWebhookLimit$inboundSchema: z.ZodType<
   VirtualWebhookLimit,
   z.ZodTypeDef,
@@ -1759,6 +1774,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
   virtual_webhook_job_id: VirtualWebhookJobId$inboundSchema.optional(),
+  virtual_webhook_lead_id: VirtualWebhookLeadId$inboundSchema.optional(),
   virtual_webhook_limit: VirtualWebhookLimit$inboundSchema.optional(),
   virtual_webhook_list_id: VirtualWebhookListId$inboundSchema.optional(),
   virtual_webhook_location_id: VirtualWebhookLocationId$inboundSchema
@@ -1877,6 +1893,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",
+    "virtual_webhook_lead_id": "virtualWebhookLeadId",
     "virtual_webhook_limit": "virtualWebhookLimit",
     "virtual_webhook_list_id": "virtualWebhookListId",
     "virtual_webhook_location_id": "virtualWebhookLocationId",

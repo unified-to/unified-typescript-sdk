@@ -29,6 +29,9 @@ export const AccountingReportType = {
 } as const;
 export type AccountingReportType = OpenEnum<typeof AccountingReportType>;
 
+/**
+ * @deprecated; use either AccountingProfitandloss, AccountingTrialbalance, AccountingBalancesheet, or AccountingCashflow instead
+ */
 export type AccountingReport = {
   balanceSheet?: PropertyAccountingReportBalanceSheet | undefined;
   createdAt?: Date | undefined;

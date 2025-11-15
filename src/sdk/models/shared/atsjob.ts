@@ -112,6 +112,7 @@ export type AtsJob = {
   raw?: { [k: string]: any } | undefined;
   recruiterIds?: Array<string> | undefined;
   remote?: boolean | undefined;
+  skills?: Array<string> | undefined;
   status?: AtsJobStatus | undefined;
   updatedAt?: Date | undefined;
 };
@@ -172,6 +173,7 @@ export const AtsJob$inboundSchema: z.ZodType<AtsJob, z.ZodTypeDef, unknown> = z
     raw: z.record(z.any()).optional(),
     recruiter_ids: z.array(z.string()).optional(),
     remote: z.boolean().optional(),
+    skills: z.array(z.string()).optional(),
     status: AtsJobStatus$inboundSchema.optional(),
     updated_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
@@ -218,6 +220,7 @@ export type AtsJob$Outbound = {
   raw?: { [k: string]: any } | undefined;
   recruiter_ids?: Array<string> | undefined;
   remote?: boolean | undefined;
+  skills?: Array<string> | undefined;
   status?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -252,6 +255,7 @@ export const AtsJob$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recruiterIds: z.array(z.string()).optional(),
   remote: z.boolean().optional(),
+  skills: z.array(z.string()).optional(),
   status: AtsJobStatus$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {

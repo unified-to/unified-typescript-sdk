@@ -11,7 +11,7 @@ let value: ApiCall = {
   name: "<value>",
   path: "/etc/defaults",
   status: "<value>",
-  type: "login",
+  type: "webhook",
 };
 ```
 

@@ -14,6 +14,7 @@ export const ApiCallType = {
   Login: "login",
   Webhook: "webhook",
   Inbound: "inbound",
+  Mcp: "mcp",
 } as const;
 export type ApiCallType = OpenEnum<typeof ApiCallType>;
 

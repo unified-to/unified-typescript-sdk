@@ -5,7 +5,7 @@
 ```typescript
 import { ApiCallType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: ApiCallType = "webhook";
+let value: ApiCallType = "inbound";
 ```
 
 ## Values
@@ -13,5 +13,5 @@ let value: ApiCallType = "webhook";
 This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
-"login" | "webhook" | "inbound" | Unrecognized<string>
+"login" | "webhook" | "inbound" | "mcp" | Unrecognized<string>
 ```
