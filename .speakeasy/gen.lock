@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 8e0da3e048dab0529dab732bc1eb6105
+  docChecksum: fa8f7d5197bb46b9818ca5a0bf429fe1
   docVersion: "1.0"
-  speakeasyVersion: 1.657.0
-  generationVersion: 2.755.0
-  releaseVersion: 2.80.4
-  configChecksum: c754680f5dbe0da3e90d4671a527c7d8
+  speakeasyVersion: 1.658.2
+  generationVersion: 2.755.9
+  releaseVersion: 2.80.5
+  configChecksum: 43a51cbce84d2fd4525d71b19d49a205
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -7368,4 +7368,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.ats.createAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.ats.getAtsJob()`:  `response.skills` **Added**\n* `unified-to.ats.listAtsJobs()`:  `response.[].skills` **Added**\n* `unified-to.ats.patchAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.ats.updateAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.createAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.getAtsJob()`:  `response.skills` **Added**\n* `unified-to.job.listAtsJobs()`:  `response.[].skills` **Added**\n* `unified-to.job.patchAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.job.updateAtsJob()`: \n  *  `request.atsJob.skills` **Added**\n  *  `response.skills` **Added**\n* `unified-to.calendar.createCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.calendar.getCalendarCalendar()`:  `response.is_primary` **Added**\n* `unified-to.calendar.listCalendarCalendars()`:  `response.[].isPrimary` **Added**\n* `unified-to.calendar.patchCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.calendar.updateCalendarCalendar()`: \n  *  `request.calendarCalendar.isPrimary` **Added**\n  *  `response.is_primary` **Added**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.{}.virtualWebhookLeadId` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.company.createCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.company.getCrmCompany()`:  `response.domains` **Added**\n* `unified-to.company.listCrmCompanies()`:  `response.[].domains` **Added**\n* `unified-to.company.patchCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.company.updateCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.createCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.getCrmCompany()`:  `response.domains` **Added**\n* `unified-to.crm.listCrmCompanies()`:  `response.[].domains` **Added**\n* `unified-to.crm.patchCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.updateCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n"

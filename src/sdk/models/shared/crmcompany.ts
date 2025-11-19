@@ -47,6 +47,7 @@ export type CrmCompany = {
    */
   dealIds?: Array<string> | undefined;
   description?: string | undefined;
+  domains?: Array<string> | undefined;
   emails?: Array<CrmEmail> | undefined;
   employees?: number | undefined;
   id?: string | undefined;
@@ -79,6 +80,7 @@ export const CrmCompany$inboundSchema: z.ZodType<
     .optional(),
   deal_ids: z.array(z.string()).optional(),
   description: z.string().optional(),
+  domains: z.array(z.string()).optional(),
   emails: z.array(CrmEmail$inboundSchema).optional(),
   employees: z.number().optional(),
   id: z.string().optional(),
@@ -113,6 +115,7 @@ export type CrmCompany$Outbound = {
   created_at?: string | undefined;
   deal_ids?: Array<string> | undefined;
   description?: string | undefined;
+  domains?: Array<string> | undefined;
   emails?: Array<CrmEmail$Outbound> | undefined;
   employees?: number | undefined;
   id?: string | undefined;
@@ -141,6 +144,7 @@ export const CrmCompany$outboundSchema: z.ZodType<
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   dealIds: z.array(z.string()).optional(),
   description: z.string().optional(),
+  domains: z.array(z.string()).optional(),
   emails: z.array(CrmEmail$outboundSchema).optional(),
   employees: z.number().optional(),
   id: z.string().optional(),
