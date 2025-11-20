@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: fa8f7d5197bb46b9818ca5a0bf429fe1
+  docChecksum: d3236800ede7509df7bab0e934cc59f0
   docVersion: "1.0"
   speakeasyVersion: 1.658.2
   generationVersion: 2.755.9
-  releaseVersion: 2.80.5
-  configChecksum: 43a51cbce84d2fd4525d71b19d49a205
+  releaseVersion: 2.80.6
+  configChecksum: 3e4bc4c6567c84fe04ca086418271a63
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -205,6 +205,7 @@ generatedFiles:
   - docs/sdk/models/operations/getticketingcustomerrequest.md
   - docs/sdk/models/operations/getticketingnoterequest.md
   - docs/sdk/models/operations/getticketingticketrequest.md
+  - docs/sdk/models/operations/getuccallrequest.md
   - docs/sdk/models/operations/getuccommentrequest.md
   - docs/sdk/models/operations/getuccontactrequest.md
   - docs/sdk/models/operations/getucrecordingrequest.md
@@ -1778,6 +1779,7 @@ generatedFiles:
   - src/funcs/ticketingUpdateTicketingCustomer.ts
   - src/funcs/ticketingUpdateTicketingNote.ts
   - src/funcs/ticketingUpdateTicketingTicket.ts
+  - src/funcs/ucGetUcCall.ts
   - src/funcs/ucListUcCalls.ts
   - src/funcs/unifiedCreateUnifiedConnection.ts
   - src/funcs/unifiedCreateUnifiedWebhook.ts
@@ -2062,6 +2064,7 @@ generatedFiles:
   - src/sdk/models/operations/getticketingcustomer.ts
   - src/sdk/models/operations/getticketingnote.ts
   - src/sdk/models/operations/getticketingticket.ts
+  - src/sdk/models/operations/getuccall.ts
   - src/sdk/models/operations/getuccomment.ts
   - src/sdk/models/operations/getuccontact.ts
   - src/sdk/models/operations/getucrecording.ts
@@ -7366,6 +7369,18 @@ examples:
       responses:
         "200":
           application/json: [{}]
+  getUcCall:
+    speakeasy-default-get-uc-call:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.company.createCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.company.getCrmCompany()`:  `response.domains` **Added**\n* `unified-to.company.listCrmCompanies()`:  `response.[].domains` **Added**\n* `unified-to.company.patchCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.company.updateCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.createCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.getCrmCompany()`:  `response.domains` **Added**\n* `unified-to.crm.listCrmCompanies()`:  `response.[].domains` **Added**\n* `unified-to.crm.patchCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n* `unified-to.crm.updateCrmCompany()`: \n  *  `request.crmCompany.domains` **Added**\n  *  `response.domains` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `unified-to.uc.getUcCall()`: **Added**
+  * `unified-to.call.getUcCall()`: **Added**

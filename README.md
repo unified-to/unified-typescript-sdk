@@ -1372,6 +1372,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ticketingUpdateTicketingNote`](docs/sdks/ticketing/README.md#updateticketingnote) - Update a note
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticket/README.md#updateticketingticket) - Update a ticket
 - [`ticketingUpdateTicketingTicket`](docs/sdks/ticketing/README.md#updateticketingticket) - Update a ticket
+- [`ucGetUcCall`](docs/sdks/call/README.md#getuccall) - Retrieve a call
+- [`ucGetUcCall`](docs/sdks/uc/README.md#getuccall) - Retrieve a call
 - [`ucListUcCalls`](docs/sdks/call/README.md#listuccalls) - List all calls
 - [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
 - [`unifiedCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection

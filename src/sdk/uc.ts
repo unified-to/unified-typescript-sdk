@@ -20,6 +20,7 @@ import { recordingListUcRecordings } from "../funcs/recordingListUcRecordings.js
 import { recordingPatchUcRecording } from "../funcs/recordingPatchUcRecording.js";
 import { recordingRemoveUcRecording } from "../funcs/recordingRemoveUcRecording.js";
 import { recordingUpdateUcRecording } from "../funcs/recordingUpdateUcRecording.js";
+import { ucGetUcCall } from "../funcs/ucGetUcCall.js";
 import { ucListUcCalls } from "../funcs/ucListUcCalls.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -63,6 +64,20 @@ export class Uc extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.UcRecording> {
     return unwrapAsync(recordingCreateUcRecording(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a call
+   */
+  async getUcCall(
+    request: operations.GetUcCallRequest,
+    options?: RequestOptions,
+  ): Promise<shared.UcCall> {
+    return unwrapAsync(ucGetUcCall(
       this,
       request,
       options,

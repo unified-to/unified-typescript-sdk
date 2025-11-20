@@ -165,6 +165,7 @@ export * from "./getticketingcategory.js";
 export * from "./getticketingcustomer.js";
 export * from "./getticketingnote.js";
 export * from "./getticketingticket.js";
+export * from "./getuccall.js";
 export * from "./getuccomment.js";
 export * from "./getuccontact.js";
 export * from "./getucrecording.js";
