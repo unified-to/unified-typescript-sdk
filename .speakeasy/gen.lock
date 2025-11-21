@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: d3236800ede7509df7bab0e934cc59f0
+  docChecksum: 67f7d6d0c66da74ba7cdc2b88db1c97d
   docVersion: "1.0"
-  speakeasyVersion: 1.658.2
+  speakeasyVersion: 1.659.0
   generationVersion: 2.755.9
-  releaseVersion: 2.80.6
-  configChecksum: 3e4bc4c6567c84fe04ca086418271a63
+  releaseVersion: 2.80.7
+  configChecksum: 32b734722583d3782fab74090990aacd
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -75,7 +75,9 @@ generatedFiles:
   - docs/sdk/models/operations/createcrmpipelinerequest.md
   - docs/sdk/models/operations/creategenaiembeddingrequest.md
   - docs/sdk/models/operations/creategenaipromptrequest.md
+  - docs/sdk/models/operations/createhrisbenefitrequest.md
   - docs/sdk/models/operations/createhriscompanyrequest.md
+  - docs/sdk/models/operations/createhrisdeductionrequest.md
   - docs/sdk/models/operations/createhrisdevicerequest.md
   - docs/sdk/models/operations/createhrisemployeerequest.md
   - docs/sdk/models/operations/createhrisgrouprequest.md
@@ -164,7 +166,9 @@ generatedFiles:
   - docs/sdk/models/operations/getcrmleadrequest.md
   - docs/sdk/models/operations/getcrmpipelinerequest.md
   - docs/sdk/models/operations/getgenaimodelrequest.md
+  - docs/sdk/models/operations/gethrisbenefitrequest.md
   - docs/sdk/models/operations/gethriscompanyrequest.md
+  - docs/sdk/models/operations/gethrisdeductionrequest.md
   - docs/sdk/models/operations/gethrisdevicerequest.md
   - docs/sdk/models/operations/gethrisemployeerequest.md
   - docs/sdk/models/operations/gethrisgrouprequest.md
@@ -264,7 +268,9 @@ generatedFiles:
   - docs/sdk/models/operations/listenrichcompaniesrequest.md
   - docs/sdk/models/operations/listenrichpeoplerequest.md
   - docs/sdk/models/operations/listgenaimodelsrequest.md
+  - docs/sdk/models/operations/listhrisbenefitsrequest.md
   - docs/sdk/models/operations/listhriscompaniesrequest.md
+  - docs/sdk/models/operations/listhrisdeductionsrequest.md
   - docs/sdk/models/operations/listhrisdevicesrequest.md
   - docs/sdk/models/operations/listhrisemployeesrequest.md
   - docs/sdk/models/operations/listhrisgroupsrequest.md
@@ -356,7 +362,9 @@ generatedFiles:
   - docs/sdk/models/operations/patchcrmeventrequest.md
   - docs/sdk/models/operations/patchcrmleadrequest.md
   - docs/sdk/models/operations/patchcrmpipelinerequest.md
+  - docs/sdk/models/operations/patchhrisbenefitrequest.md
   - docs/sdk/models/operations/patchhriscompanyrequest.md
+  - docs/sdk/models/operations/patchhrisdeductionrequest.md
   - docs/sdk/models/operations/patchhrisdevicerequest.md
   - docs/sdk/models/operations/patchhrisemployeerequest.md
   - docs/sdk/models/operations/patchhrisgrouprequest.md
@@ -476,8 +484,12 @@ generatedFiles:
   - docs/sdk/models/operations/removecrmleadresponse.md
   - docs/sdk/models/operations/removecrmpipelinerequest.md
   - docs/sdk/models/operations/removecrmpipelineresponse.md
+  - docs/sdk/models/operations/removehrisbenefitrequest.md
+  - docs/sdk/models/operations/removehrisbenefitresponse.md
   - docs/sdk/models/operations/removehriscompanyrequest.md
   - docs/sdk/models/operations/removehriscompanyresponse.md
+  - docs/sdk/models/operations/removehrisdeductionrequest.md
+  - docs/sdk/models/operations/removehrisdeductionresponse.md
   - docs/sdk/models/operations/removehrisdevicerequest.md
   - docs/sdk/models/operations/removehrisdeviceresponse.md
   - docs/sdk/models/operations/removehrisemployeerequest.md
@@ -596,7 +608,9 @@ generatedFiles:
   - docs/sdk/models/operations/updatecrmeventrequest.md
   - docs/sdk/models/operations/updatecrmleadrequest.md
   - docs/sdk/models/operations/updatecrmpipelinerequest.md
+  - docs/sdk/models/operations/updatehrisbenefitrequest.md
   - docs/sdk/models/operations/updatehriscompanyrequest.md
+  - docs/sdk/models/operations/updatehrisdeductionrequest.md
   - docs/sdk/models/operations/updatehrisdevicerequest.md
   - docs/sdk/models/operations/updatehrisemployeerequest.md
   - docs/sdk/models/operations/updatehrisgrouprequest.md
@@ -683,6 +697,7 @@ generatedFiles:
   - docs/sdk/models/shared/accountingprofitlosssubcategory.md
   - docs/sdk/models/shared/accountingpurchaseorder.md
   - docs/sdk/models/shared/accountingpurchaseorderstatus.md
+  - docs/sdk/models/shared/accountingreference.md
   - docs/sdk/models/shared/accountingreport.md
   - docs/sdk/models/shared/accountingreporttype.md
   - docs/sdk/models/shared/accountingsalesorder.md
@@ -774,6 +789,7 @@ generatedFiles:
   - docs/sdk/models/shared/commercereviewstatus.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
+  - docs/sdk/models/shared/coveragelevel.md
   - docs/sdk/models/shared/crmcompany.md
   - docs/sdk/models/shared/crmcontact.md
   - docs/sdk/models/shared/crmdeal.md
@@ -798,6 +814,7 @@ generatedFiles:
   - docs/sdk/models/shared/crmtelephone.md
   - docs/sdk/models/shared/crmtelephonetype.md
   - docs/sdk/models/shared/dbtype.md
+  - docs/sdk/models/shared/employercontributiontype.md
   - docs/sdk/models/shared/employmentstatus.md
   - docs/sdk/models/shared/employmenttype.md
   - docs/sdk/models/shared/encondingformat.md
@@ -821,10 +838,17 @@ generatedFiles:
   - docs/sdk/models/shared/genaimodel.md
   - docs/sdk/models/shared/genaiprompt.md
   - docs/sdk/models/shared/gender.md
+  - docs/sdk/models/shared/hrisbenefit.md
+  - docs/sdk/models/shared/hrisbenefitfrequency.md
+  - docs/sdk/models/shared/hrisbenefittype.md
   - docs/sdk/models/shared/hriscompany.md
   - docs/sdk/models/shared/hriscompensation.md
   - docs/sdk/models/shared/hriscompensationfrequency.md
   - docs/sdk/models/shared/hriscompensationtype.md
+  - docs/sdk/models/shared/hrisdeduction.md
+  - docs/sdk/models/shared/hrisdeductioncoveragelevel.md
+  - docs/sdk/models/shared/hrisdeductionfrequency.md
+  - docs/sdk/models/shared/hrisdeductiontype.md
   - docs/sdk/models/shared/hrisdevice.md
   - docs/sdk/models/shared/hrisemail.md
   - docs/sdk/models/shared/hrisemailtype.md
@@ -915,6 +939,7 @@ generatedFiles:
   - docs/sdk/models/shared/listpageid.md
   - docs/sdk/models/shared/listparentid.md
   - docs/sdk/models/shared/listpaymentid.md
+  - docs/sdk/models/shared/listpayslipid.md
   - docs/sdk/models/shared/listpipelineid.md
   - docs/sdk/models/shared/listprojectid.md
   - docs/sdk/models/shared/listquery.md
@@ -934,6 +959,7 @@ generatedFiles:
   - docs/sdk/models/shared/listtype.md
   - docs/sdk/models/shared/listupdatedgte.md
   - docs/sdk/models/shared/listuserid.md
+  - docs/sdk/models/shared/listusermentionedid.md
   - docs/sdk/models/shared/lmsclass.md
   - docs/sdk/models/shared/lmscourse.md
   - docs/sdk/models/shared/lmsemail.md
@@ -1027,6 +1053,10 @@ generatedFiles:
   - docs/sdk/models/shared/propertyhrisemployeeaddress.md
   - docs/sdk/models/shared/propertyhrisemployeeemployeeroles.md
   - docs/sdk/models/shared/propertyhrislocationaddress.md
+  - docs/sdk/models/shared/propertyhrispayslipdeduction.md
+  - docs/sdk/models/shared/propertyhrispayslipdeductioncoveragelevel.md
+  - docs/sdk/models/shared/propertyhrispayslipdeductionfrequency.md
+  - docs/sdk/models/shared/propertyhrispayslipdeductiontype.md
   - docs/sdk/models/shared/propertyintegrationcategories.md
   - docs/sdk/models/shared/propertyintegrationsupportwebhookevents.md
   - docs/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.md
@@ -1110,6 +1140,7 @@ generatedFiles:
   - docs/sdk/models/shared/taskproject.md
   - docs/sdk/models/shared/tasktask.md
   - docs/sdk/models/shared/tasktaskstatus.md
+  - docs/sdk/models/shared/tax.md
   - docs/sdk/models/shared/taxexemption.md
   - docs/sdk/models/shared/ticketingcategory.md
   - docs/sdk/models/shared/ticketingcustomer.md
@@ -1178,6 +1209,7 @@ generatedFiles:
   - docs/sdk/models/shared/virtualwebhooktype.md
   - docs/sdk/models/shared/virtualwebhookupdatedgte.md
   - docs/sdk/models/shared/virtualwebhookuserid.md
+  - docs/sdk/models/shared/virtualwebhookusermentionedid.md
   - docs/sdk/models/shared/webhook.md
   - docs/sdk/models/shared/webhooktype.md
   - docs/sdk/models/shared/weekstart.md
@@ -1191,6 +1223,7 @@ generatedFiles:
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
   - docs/sdks/balancesheet/README.md
+  - docs/sdks/benefit/README.md
   - docs/sdks/bill/README.md
   - docs/sdks/branch/README.md
   - docs/sdks/busy/README.md
@@ -1214,6 +1247,7 @@ generatedFiles:
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
+  - docs/sdks/deduction/README.md
   - docs/sdks/device/README.md
   - docs/sdks/document/README.md
   - docs/sdks/embedding/README.md
@@ -1567,30 +1601,42 @@ generatedFiles:
   - src/funcs/groupPatchScimGroups.ts
   - src/funcs/groupRemoveScimGroups.ts
   - src/funcs/groupUpdateScimGroups.ts
+  - src/funcs/hrisCreateHrisBenefit.ts
+  - src/funcs/hrisCreateHrisDeduction.ts
   - src/funcs/hrisCreateHrisDevice.ts
   - src/funcs/hrisCreateHrisEmployee.ts
   - src/funcs/hrisCreateHrisGroup.ts
   - src/funcs/hrisCreateHrisTimeshift.ts
+  - src/funcs/hrisGetHrisBenefit.ts
+  - src/funcs/hrisGetHrisDeduction.ts
   - src/funcs/hrisGetHrisDevice.ts
   - src/funcs/hrisGetHrisEmployee.ts
   - src/funcs/hrisGetHrisGroup.ts
   - src/funcs/hrisGetHrisPayslip.ts
   - src/funcs/hrisGetHrisTimeoff.ts
   - src/funcs/hrisGetHrisTimeshift.ts
+  - src/funcs/hrisListHrisBenefits.ts
+  - src/funcs/hrisListHrisDeductions.ts
   - src/funcs/hrisListHrisDevices.ts
   - src/funcs/hrisListHrisEmployees.ts
   - src/funcs/hrisListHrisGroups.ts
   - src/funcs/hrisListHrisPayslips.ts
   - src/funcs/hrisListHrisTimeoffs.ts
   - src/funcs/hrisListHrisTimeshifts.ts
+  - src/funcs/hrisPatchHrisBenefit.ts
+  - src/funcs/hrisPatchHrisDeduction.ts
   - src/funcs/hrisPatchHrisDevice.ts
   - src/funcs/hrisPatchHrisEmployee.ts
   - src/funcs/hrisPatchHrisGroup.ts
   - src/funcs/hrisPatchHrisTimeshift.ts
+  - src/funcs/hrisRemoveHrisBenefit.ts
+  - src/funcs/hrisRemoveHrisDeduction.ts
   - src/funcs/hrisRemoveHrisDevice.ts
   - src/funcs/hrisRemoveHrisEmployee.ts
   - src/funcs/hrisRemoveHrisGroup.ts
   - src/funcs/hrisRemoveHrisTimeshift.ts
+  - src/funcs/hrisUpdateHrisBenefit.ts
+  - src/funcs/hrisUpdateHrisDeduction.ts
   - src/funcs/hrisUpdateHrisDevice.ts
   - src/funcs/hrisUpdateHrisEmployee.ts
   - src/funcs/hrisUpdateHrisGroup.ts
@@ -1838,6 +1884,7 @@ generatedFiles:
   - src/sdk/ats.ts
   - src/sdk/auth.ts
   - src/sdk/balancesheet.ts
+  - src/sdk/benefit.ts
   - src/sdk/bill.ts
   - src/sdk/branch.ts
   - src/sdk/busy.ts
@@ -1861,6 +1908,7 @@ generatedFiles:
   - src/sdk/crm.ts
   - src/sdk/customer.ts
   - src/sdk/deal.ts
+  - src/sdk/deduction.ts
   - src/sdk/device.ts
   - src/sdk/document.ts
   - src/sdk/embedding.ts
@@ -1938,7 +1986,9 @@ generatedFiles:
   - src/sdk/models/operations/createcrmpipeline.ts
   - src/sdk/models/operations/creategenaiembedding.ts
   - src/sdk/models/operations/creategenaiprompt.ts
+  - src/sdk/models/operations/createhrisbenefit.ts
   - src/sdk/models/operations/createhriscompany.ts
+  - src/sdk/models/operations/createhrisdeduction.ts
   - src/sdk/models/operations/createhrisdevice.ts
   - src/sdk/models/operations/createhrisemployee.ts
   - src/sdk/models/operations/createhrisgroup.ts
@@ -2023,7 +2073,9 @@ generatedFiles:
   - src/sdk/models/operations/getcrmlead.ts
   - src/sdk/models/operations/getcrmpipeline.ts
   - src/sdk/models/operations/getgenaimodel.ts
+  - src/sdk/models/operations/gethrisbenefit.ts
   - src/sdk/models/operations/gethriscompany.ts
+  - src/sdk/models/operations/gethrisdeduction.ts
   - src/sdk/models/operations/gethrisdevice.ts
   - src/sdk/models/operations/gethrisemployee.ts
   - src/sdk/models/operations/gethrisgroup.ts
@@ -2124,7 +2176,9 @@ generatedFiles:
   - src/sdk/models/operations/listenrichcompanies.ts
   - src/sdk/models/operations/listenrichpeople.ts
   - src/sdk/models/operations/listgenaimodels.ts
+  - src/sdk/models/operations/listhrisbenefits.ts
   - src/sdk/models/operations/listhriscompanies.ts
+  - src/sdk/models/operations/listhrisdeductions.ts
   - src/sdk/models/operations/listhrisdevices.ts
   - src/sdk/models/operations/listhrisemployees.ts
   - src/sdk/models/operations/listhrisgroups.ts
@@ -2213,7 +2267,9 @@ generatedFiles:
   - src/sdk/models/operations/patchcrmevent.ts
   - src/sdk/models/operations/patchcrmlead.ts
   - src/sdk/models/operations/patchcrmpipeline.ts
+  - src/sdk/models/operations/patchhrisbenefit.ts
   - src/sdk/models/operations/patchhriscompany.ts
+  - src/sdk/models/operations/patchhrisdeduction.ts
   - src/sdk/models/operations/patchhrisdevice.ts
   - src/sdk/models/operations/patchhrisemployee.ts
   - src/sdk/models/operations/patchhrisgroup.ts
@@ -2292,7 +2348,9 @@ generatedFiles:
   - src/sdk/models/operations/removecrmevent.ts
   - src/sdk/models/operations/removecrmlead.ts
   - src/sdk/models/operations/removecrmpipeline.ts
+  - src/sdk/models/operations/removehrisbenefit.ts
   - src/sdk/models/operations/removehriscompany.ts
+  - src/sdk/models/operations/removehrisdeduction.ts
   - src/sdk/models/operations/removehrisdevice.ts
   - src/sdk/models/operations/removehrisemployee.ts
   - src/sdk/models/operations/removehrisgroup.ts
@@ -2369,7 +2427,9 @@ generatedFiles:
   - src/sdk/models/operations/updatecrmevent.ts
   - src/sdk/models/operations/updatecrmlead.ts
   - src/sdk/models/operations/updatecrmpipeline.ts
+  - src/sdk/models/operations/updatehrisbenefit.ts
   - src/sdk/models/operations/updatehriscompany.ts
+  - src/sdk/models/operations/updatehrisdeduction.ts
   - src/sdk/models/operations/updatehrisdevice.ts
   - src/sdk/models/operations/updatehrisemployee.ts
   - src/sdk/models/operations/updatehrisgroup.ts
@@ -2440,6 +2500,7 @@ generatedFiles:
   - src/sdk/models/shared/accountingprofitlosssection.ts
   - src/sdk/models/shared/accountingprofitlosssubcategory.ts
   - src/sdk/models/shared/accountingpurchaseorder.ts
+  - src/sdk/models/shared/accountingreference.ts
   - src/sdk/models/shared/accountingreport.ts
   - src/sdk/models/shared/accountingsalesorder.ts
   - src/sdk/models/shared/accountingtaxrate.ts
@@ -2518,8 +2579,10 @@ generatedFiles:
   - src/sdk/models/shared/genaiembeddingcontent.ts
   - src/sdk/models/shared/genaimodel.ts
   - src/sdk/models/shared/genaiprompt.ts
+  - src/sdk/models/shared/hrisbenefit.ts
   - src/sdk/models/shared/hriscompany.ts
   - src/sdk/models/shared/hriscompensation.ts
+  - src/sdk/models/shared/hrisdeduction.ts
   - src/sdk/models/shared/hrisdevice.ts
   - src/sdk/models/shared/hrisemail.ts
   - src/sdk/models/shared/hrisemployee.ts
@@ -2604,6 +2667,7 @@ generatedFiles:
   - src/sdk/models/shared/propertyhrisemployeeaddress.ts
   - src/sdk/models/shared/propertyhrisemployeeemployeeroles.ts
   - src/sdk/models/shared/propertyhrislocationaddress.ts
+  - src/sdk/models/shared/propertyhrispayslipdeduction.ts
   - src/sdk/models/shared/propertyintegrationcategories.ts
   - src/sdk/models/shared/propertyintegrationsupportwebhookevents.ts
   - src/sdk/models/shared/propertyintegrationsupportwebhookeventscreated.ts
@@ -7378,9 +7442,116 @@ examples:
       responses:
         "200":
           application/json: {}
+  createHrisBenefit:
+    speakeasy-default-create-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createHrisDeduction:
+    speakeasy-default-create-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getHrisBenefit:
+    speakeasy-default-get-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getHrisDeduction:
+    speakeasy-default-get-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisBenefits:
+    speakeasy-default-list-hris-benefits:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listHrisDeductions:
+    speakeasy-default-list-hris-deductions:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchHrisBenefit:
+    speakeasy-default-patch-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchHrisDeduction:
+    speakeasy-default-patch-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeHrisBenefit:
+    speakeasy-default-remove-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeHrisDeduction:
+    speakeasy-default-remove-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisBenefit:
+    speakeasy-default-update-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateHrisDeduction:
+    speakeasy-default-update-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `unified-to.uc.getUcCall()`: **Added**
-  * `unified-to.call.getUcCall()`: **Added**
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.hris.createHrisBenefit()`: **Added**\n* `unified-to.hris.createHrisDeduction()`: **Added**\n* `unified-to.hris.getHrisBenefit()`: **Added**\n* `unified-to.hris.getHrisDeduction()`: **Added**\n* `unified-to.hris.listHrisBenefits()`: **Added**\n* `unified-to.hris.listHrisDeductions()`: **Added**\n* `unified-to.hris.patchHrisBenefit()`: **Added**\n* `unified-to.hris.patchHrisDeduction()`: **Added**\n* `unified-to.hris.removeHrisBenefit()`: **Added**\n* `unified-to.hris.removeHrisDeduction()`: **Added**\n* `unified-to.hris.updateHrisBenefit()`: **Added**\n* `unified-to.hris.updateHrisDeduction()`: **Added**\n* `unified-to.benefit.createHrisBenefit()`: **Added**\n* `unified-to.benefit.getHrisBenefit()`: **Added**\n* `unified-to.benefit.listHrisBenefits()`: **Added**\n* `unified-to.benefit.patchHrisBenefit()`: **Added**\n* `unified-to.benefit.removeHrisBenefit()`: **Added**\n* `unified-to.benefit.updateHrisBenefit()`: **Added**\n* `unified-to.deduction.createHrisDeduction()`: **Added**\n* `unified-to.deduction.getHrisDeduction()`: **Added**\n* `unified-to.deduction.listHrisDeductions()`: **Added**\n* `unified-to.deduction.patchHrisDeduction()`: **Added**\n* `unified-to.deduction.removeHrisDeduction()`: **Added**\n* `unified-to.deduction.updateHrisDeduction()`: **Added**\n* `unified-to.accounting.createAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingBill()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingCreditmemo()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingExpense()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingInvoice()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingOrder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingPurchaseorder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.getAccountingSalesorder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingBills()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingCreditmemoes()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingExpenses()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingInvoices()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingOrders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingPurchaseorders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.listAccountingSalesorders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.accounting.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.bill.createAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.bill.getAccountingBill()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.bill.listAccountingBills()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.bill.patchAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.bill.updateAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.creditmemo.createAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.creditmemo.getAccountingCreditmemo()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.creditmemo.listAccountingCreditmemoes()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.creditmemo.patchAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.creditmemo.updateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.expense.createAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.expense.getAccountingExpense()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.expense.listAccountingExpenses()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.expense.patchAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.expense.updateAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.invoice.createAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.invoice.getAccountingInvoice()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.invoice.listAccountingInvoices()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.invoice.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.invoice.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.order.createAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.order.getAccountingOrder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.order.listAccountingOrders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.order.patchAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.order.updateAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.purchaseorder.createAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.purchaseorder.getAccountingPurchaseorder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.purchaseorder.listAccountingPurchaseorders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.purchaseorder.patchAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.purchaseorder.updateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.salesorder.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.salesorder.getAccountingSalesorder()`:  `response.lineitems.[].locations` **Added**\n* `unified-to.salesorder.listAccountingSalesorders()`:  `response.[].lineitems.[].locations` **Added**\n* `unified-to.salesorder.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.salesorder.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].locations` **Added**\n  *  `response.lineitems.[].locations` **Added**\n* `unified-to.hris.getHrisPayslip()`:  `response.deduction` **Added**\n* `unified-to.hris.listHrisPayslips()`:  `response.[].deduction` **Added**\n* `unified-to.payslip.getHrisPayslip()`:  `response.deduction` **Added**\n* `unified-to.payslip.listHrisPayslips()`:  `response.[].deduction` **Added**\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.message_thread_identifier` **Added**\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.userMentionedId` **Added**\n  *  `response.[].messageThreadIdentifier` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.message_thread_identifier` **Added**\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.userMentionedId` **Added**\n  *  `response.[].messageThreadIdentifier` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.messageThreadIdentifier` **Added**\n  *  `response.message_thread_identifier` **Added**\n* `unified-to.uc.getUcCall()`:  `response` **Changed**\n* `unified-to.uc.listUcCalls()`:  `response.[]` **Changed**\n* `unified-to.call.getUcCall()`:  `response` **Changed**\n* `unified-to.call.listUcCalls()`:  `response.[]` **Changed**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.{}` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.{}` **Changed**\n"

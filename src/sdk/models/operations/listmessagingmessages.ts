@@ -7,7 +7,7 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 
 export type ListMessagingMessagesRequest = {
   /**
-   * The channel ID to filter by
+   * The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT
    */
   channelId?: string | undefined;
   /**
@@ -58,6 +58,10 @@ export type ListMessagingMessagesRequest = {
    * The user/employee ID to filter by
    */
   userId?: string | undefined;
+  /**
+   * The user/employee ID to filter by
+   */
+  userMentionedId?: string | undefined;
 };
 
 /** @internal */
@@ -78,6 +82,7 @@ export type ListMessagingMessagesRequest$Outbound = {
   start_gte?: string | undefined;
   updated_gte?: string | undefined;
   user_id?: string | undefined;
+  user_mentioned_id?: string | undefined;
 };
 
 /** @internal */
@@ -102,6 +107,7 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
   startGte: z.string().optional(),
   updatedGte: z.string().optional(),
   userId: z.string().optional(),
+  userMentionedId: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     channelId: "channel_id",
@@ -112,6 +118,7 @@ export const ListMessagingMessagesRequest$outboundSchema: z.ZodType<
     startGte: "start_gte",
     updatedGte: "updated_gte",
     userId: "user_id",
+    userMentionedId: "user_mentioned_id",
   });
 });
 

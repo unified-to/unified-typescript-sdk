@@ -11,12 +11,15 @@ import {
   PropertyUcCallTelephone,
   PropertyUcCallTelephone$inboundSchema,
 } from "./propertyuccalltelephone.js";
+import { UcContact, UcContact$inboundSchema } from "./uccontact.js";
 
 export type UcCall = {
   contactId?: string | undefined;
+  contacts?: Array<UcContact> | undefined;
   createdAt?: Date | undefined;
   endAt?: Date | undefined;
   id?: string | undefined;
+  isPrivate?: boolean | undefined;
   raw?: { [k: string]: any } | undefined;
   startAt?: Date | undefined;
   /**
@@ -31,12 +34,14 @@ export type UcCall = {
 export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
   .object({
     contact_id: z.string().optional(),
+    contacts: z.array(UcContact$inboundSchema).optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
       new Date(v)
     ).optional(),
     end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
     id: z.string().optional(),
+    is_private: z.boolean().optional(),
     raw: z.record(z.any()).optional(),
     start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
@@ -50,6 +55,7 @@ export const UcCall$inboundSchema: z.ZodType<UcCall, z.ZodTypeDef, unknown> = z
       "contact_id": "contactId",
       "created_at": "createdAt",
       "end_at": "endAt",
+      "is_private": "isPrivate",
       "start_at": "startAt",
       "updated_at": "updatedAt",
       "user_id": "userId",

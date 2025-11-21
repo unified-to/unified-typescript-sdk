@@ -7,6 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
+import {
+  AccountingReference,
+  AccountingReference$inboundSchema,
+  AccountingReference$Outbound,
+  AccountingReference$outboundSchema,
+} from "./accountingreference.js";
 
 export type AccountingLineitem = {
   accountId?: string | undefined;
@@ -18,6 +24,7 @@ export type AccountingLineitem = {
   itemId?: string | undefined;
   itemName?: string | undefined;
   itemSku?: string | undefined;
+  locations?: Array<AccountingReference> | undefined;
   notes?: string | undefined;
   refundAmount?: number | undefined;
   refundedAt?: Date | undefined;
@@ -45,6 +52,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   item_id: z.string().optional(),
   item_name: z.string().optional(),
   item_sku: z.string().optional(),
+  locations: z.array(AccountingReference$inboundSchema).optional(),
   notes: z.string().optional(),
   refund_amount: z.number().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -87,6 +95,7 @@ export type AccountingLineitem$Outbound = {
   item_id?: string | undefined;
   item_name?: string | undefined;
   item_sku?: string | undefined;
+  locations?: Array<AccountingReference$Outbound> | undefined;
   notes?: string | undefined;
   refund_amount?: number | undefined;
   refunded_at?: string | undefined;
@@ -113,6 +122,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   itemId: z.string().optional(),
   itemName: z.string().optional(),
   itemSku: z.string().optional(),
+  locations: z.array(AccountingReference$outboundSchema).optional(),
   notes: z.string().optional(),
   refundAmount: z.number().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),

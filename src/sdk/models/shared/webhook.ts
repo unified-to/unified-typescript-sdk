@@ -81,6 +81,8 @@ export const ObjectType = {
   HrisLocation: "hris_location",
   HrisDevice: "hris_device",
   HrisTimeshift: "hris_timeshift",
+  HrisDeduction: "hris_deduction",
+  HrisBenefit: "hris_benefit",
   MartechList: "martech_list",
   MartechMember: "martech_member",
   Passthrough: "passthrough",

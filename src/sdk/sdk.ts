@@ -12,6 +12,7 @@ import { Applicationstatus } from "./applicationstatus.js";
 import { Ats } from "./ats.js";
 import { Auth } from "./auth.js";
 import { Balancesheet } from "./balancesheet.js";
+import { Benefit } from "./benefit.js";
 import { Bill } from "./bill.js";
 import { Branch } from "./branch.js";
 import { Busy } from "./busy.js";
@@ -35,6 +36,7 @@ import { Creditmemo } from "./creditmemo.js";
 import { Crm } from "./crm.js";
 import { Customer } from "./customer.js";
 import { Deal } from "./deal.js";
+import { Deduction } from "./deduction.js";
 import { Device } from "./device.js";
 import { Document } from "./document.js";
 import { Embedding } from "./embedding.js";
@@ -371,6 +373,16 @@ export class UnifiedTo extends ClientSDK {
   private _hris?: Hris;
   get hris(): Hris {
     return (this._hris ??= new Hris(this._options));
+  }
+
+  private _benefit?: Benefit;
+  get benefit(): Benefit {
+    return (this._benefit ??= new Benefit(this._options));
+  }
+
+  private _deduction?: Deduction;
+  get deduction(): Deduction {
+    return (this._deduction ??= new Deduction(this._options));
   }
 
   private _device?: Device;

@@ -296,6 +296,13 @@ export const ListPaymentId = {
 } as const;
 export type ListPaymentId = OpenEnum<typeof ListPaymentId>;
 
+export const ListPayslipId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListPayslipId = OpenEnum<typeof ListPayslipId>;
+
 export const ListPipelineId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -428,6 +435,13 @@ export const ListUserId = {
   NotSupported: "not-supported",
 } as const;
 export type ListUserId = OpenEnum<typeof ListUserId>;
+
+export const ListUserMentionedId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListUserMentionedId = OpenEnum<typeof ListUserMentionedId>;
 
 export const NativeWebhookCalendarId = {
   SupportedRequired: "supported-required",
@@ -790,6 +804,15 @@ export const VirtualWebhookUserId = {
 } as const;
 export type VirtualWebhookUserId = OpenEnum<typeof VirtualWebhookUserId>;
 
+export const VirtualWebhookUserMentionedId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookUserMentionedId = OpenEnum<
+  typeof VirtualWebhookUserMentionedId
+>;
+
 export type IntegrationSupport = {
   fromWebhook?: FromWebhook | undefined;
   inboundFields?: { [k: string]: string } | undefined;
@@ -832,6 +855,7 @@ export type IntegrationSupport = {
   listPageId?: ListPageId | undefined;
   listParentId?: ListParentId | undefined;
   listPaymentId?: ListPaymentId | undefined;
+  listPayslipId?: ListPayslipId | undefined;
   listPipelineId?: ListPipelineId | undefined;
   listProjectId?: ListProjectId | undefined;
   listQuery?: ListQuery | undefined;
@@ -851,6 +875,7 @@ export type IntegrationSupport = {
   listType?: ListType | undefined;
   listUpdatedGte?: ListUpdatedGte | undefined;
   listUserId?: ListUserId | undefined;
+  listUserMentionedId?: ListUserMentionedId | undefined;
   methods?: { [k: string]: boolean } | undefined;
   nativeWebhookCalendarId?: NativeWebhookCalendarId | undefined;
   nativeWebhookChannelId?: NativeWebhookChannelId | undefined;
@@ -907,6 +932,7 @@ export type IntegrationSupport = {
   virtualWebhookType?: VirtualWebhookType | undefined;
   virtualWebhookUpdatedGte?: VirtualWebhookUpdatedGte | undefined;
   virtualWebhookUserId?: VirtualWebhookUserId | undefined;
+  virtualWebhookUserMentionedId?: VirtualWebhookUserMentionedId | undefined;
   webhookEvents?: PropertyIntegrationSupportWebhookEvents | undefined;
 };
 
@@ -1191,6 +1217,13 @@ export const ListPaymentId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListPaymentId);
 
 /** @internal */
+export const ListPayslipId$inboundSchema: z.ZodType<
+  ListPayslipId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListPayslipId);
+
+/** @internal */
 export const ListPipelineId$inboundSchema: z.ZodType<
   ListPipelineId,
   z.ZodTypeDef,
@@ -1322,6 +1355,13 @@ export const ListUserId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListUserId);
+
+/** @internal */
+export const ListUserMentionedId$inboundSchema: z.ZodType<
+  ListUserMentionedId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListUserMentionedId);
 
 /** @internal */
 export const NativeWebhookCalendarId$inboundSchema: z.ZodType<
@@ -1667,6 +1707,13 @@ export const VirtualWebhookUserId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookUserId);
 
 /** @internal */
+export const VirtualWebhookUserMentionedId$inboundSchema: z.ZodType<
+  VirtualWebhookUserMentionedId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookUserMentionedId);
+
+/** @internal */
 export const IntegrationSupport$inboundSchema: z.ZodType<
   IntegrationSupport,
   z.ZodTypeDef,
@@ -1714,6 +1761,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_page_id: ListPageId$inboundSchema.optional(),
   list_parent_id: ListParentId$inboundSchema.optional(),
   list_payment_id: ListPaymentId$inboundSchema.optional(),
+  list_payslip_id: ListPayslipId$inboundSchema.optional(),
   list_pipeline_id: ListPipelineId$inboundSchema.optional(),
   list_project_id: ListProjectId$inboundSchema.optional(),
   list_query: ListQuery$inboundSchema.optional(),
@@ -1733,6 +1781,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_type: ListType$inboundSchema.optional(),
   list_updated_gte: ListUpdatedGte$inboundSchema.optional(),
   list_user_id: ListUserId$inboundSchema.optional(),
+  list_user_mentioned_id: ListUserMentionedId$inboundSchema.optional(),
   methods: z.record(z.boolean()).optional(),
   native_webhook_calendar_id: NativeWebhookCalendarId$inboundSchema.optional(),
   native_webhook_channel_id: NativeWebhookChannelId$inboundSchema.optional(),
@@ -1795,6 +1844,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_updated_gte: VirtualWebhookUpdatedGte$inboundSchema
     .optional(),
   virtual_webhook_user_id: VirtualWebhookUserId$inboundSchema.optional(),
+  virtual_webhook_user_mentioned_id: VirtualWebhookUserMentionedId$inboundSchema
+    .optional(),
   webhook_events: PropertyIntegrationSupportWebhookEvents$inboundSchema
     .optional(),
 }).transform((v) => {
@@ -1840,6 +1891,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_page_id": "listPageId",
     "list_parent_id": "listParentId",
     "list_payment_id": "listPaymentId",
+    "list_payslip_id": "listPayslipId",
     "list_pipeline_id": "listPipelineId",
     "list_project_id": "listProjectId",
     "list_query": "listQuery",
@@ -1859,6 +1911,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_type": "listType",
     "list_updated_gte": "listUpdatedGte",
     "list_user_id": "listUserId",
+    "list_user_mentioned_id": "listUserMentionedId",
     "native_webhook_calendar_id": "nativeWebhookCalendarId",
     "native_webhook_channel_id": "nativeWebhookChannelId",
     "native_webhook_company_id": "nativeWebhookCompanyId",
@@ -1911,6 +1964,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_type": "virtualWebhookType",
     "virtual_webhook_updated_gte": "virtualWebhookUpdatedGte",
     "virtual_webhook_user_id": "virtualWebhookUserId",
+    "virtual_webhook_user_mentioned_id": "virtualWebhookUserMentionedId",
     "webhook_events": "webhookEvents",
   });
 });

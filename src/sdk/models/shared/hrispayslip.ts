@@ -13,6 +13,10 @@ import {
   HrisPayslipDetail,
   HrisPayslipDetail$inboundSchema,
 } from "./hrispayslipdetail.js";
+import {
+  PropertyHrisPayslipDeduction,
+  PropertyHrisPayslipDeduction$inboundSchema,
+} from "./propertyhrispayslipdeduction.js";
 
 export const PaymentType = {
   Direct: "DIRECT",
@@ -25,6 +29,10 @@ export type HrisPayslip = {
   companyId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
+  /**
+   * // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+   */
+  deduction?: PropertyHrisPayslipDeduction | undefined;
   details?: Array<HrisPayslipDetail> | undefined;
   endAt?: Date | undefined;
   grossAmount?: number | undefined;
@@ -55,6 +63,7 @@ export const HrisPayslip$inboundSchema: z.ZodType<
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
+  deduction: PropertyHrisPayslipDeduction$inboundSchema.optional(),
   details: z.array(HrisPayslipDetail$inboundSchema).optional(),
   end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),

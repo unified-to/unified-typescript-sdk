@@ -110,6 +110,7 @@ async function $do(
     "start_gte": payload.start_gte,
     "updated_gte": payload.updated_gte,
     "user_id": payload.user_id,
+    "user_mentioned_id": payload.user_mentioned_id,
   });
 
   const headers = new Headers(compactMap({

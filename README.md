@@ -974,6 +974,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`groupRemoveScimGroups`](docs/sdks/scim/README.md#removescimgroups) - Delete group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
+- [`hrisCreateHrisBenefit`](docs/sdks/benefit/README.md#createhrisbenefit) - Create a benefit
+- [`hrisCreateHrisBenefit`](docs/sdks/hris/README.md#createhrisbenefit) - Create a benefit
+- [`hrisCreateHrisDeduction`](docs/sdks/deduction/README.md#createhrisdeduction) - Create a deduction
+- [`hrisCreateHrisDeduction`](docs/sdks/hris/README.md#createhrisdeduction) - Create a deduction
 - [`hrisCreateHrisDevice`](docs/sdks/device/README.md#createhrisdevice) - Create a device
 - [`hrisCreateHrisDevice`](docs/sdks/hris/README.md#createhrisdevice) - Create a device
 - [`hrisCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
@@ -982,6 +986,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 - [`hrisCreateHrisTimeshift`](docs/sdks/timeshift/README.md#createhristimeshift) - Create a timeshift
+- [`hrisGetHrisBenefit`](docs/sdks/benefit/README.md#gethrisbenefit) - Retrieve a benefit
+- [`hrisGetHrisBenefit`](docs/sdks/hris/README.md#gethrisbenefit) - Retrieve a benefit
+- [`hrisGetHrisDeduction`](docs/sdks/deduction/README.md#gethrisdeduction) - Retrieve a deduction
+- [`hrisGetHrisDeduction`](docs/sdks/hris/README.md#gethrisdeduction) - Retrieve a deduction
 - [`hrisGetHrisDevice`](docs/sdks/device/README.md#gethrisdevice) - Retrieve a device
 - [`hrisGetHrisDevice`](docs/sdks/hris/README.md#gethrisdevice) - Retrieve a device
 - [`hrisGetHrisEmployee`](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
@@ -994,6 +1002,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisTimeoff`](docs/sdks/timeoff/README.md#gethristimeoff) - Retrieve a timeoff
 - [`hrisGetHrisTimeshift`](docs/sdks/hris/README.md#gethristimeshift) - Retrieve a timeshift
 - [`hrisGetHrisTimeshift`](docs/sdks/timeshift/README.md#gethristimeshift) - Retrieve a timeshift
+- [`hrisListHrisBenefits`](docs/sdks/benefit/README.md#listhrisbenefits) - List all benefits
+- [`hrisListHrisBenefits`](docs/sdks/hris/README.md#listhrisbenefits) - List all benefits
+- [`hrisListHrisDeductions`](docs/sdks/deduction/README.md#listhrisdeductions) - List all deductions
+- [`hrisListHrisDeductions`](docs/sdks/hris/README.md#listhrisdeductions) - List all deductions
 - [`hrisListHrisDevices`](docs/sdks/device/README.md#listhrisdevices) - List all devices
 - [`hrisListHrisDevices`](docs/sdks/hris/README.md#listhrisdevices) - List all devices
 - [`hrisListHrisEmployees`](docs/sdks/employee/README.md#listhrisemployees) - List all employees
@@ -1006,6 +1018,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisTimeoffs`](docs/sdks/timeoff/README.md#listhristimeoffs) - List all timeoffs
 - [`hrisListHrisTimeshifts`](docs/sdks/hris/README.md#listhristimeshifts) - List all timeshifts
 - [`hrisListHrisTimeshifts`](docs/sdks/timeshift/README.md#listhristimeshifts) - List all timeshifts
+- [`hrisPatchHrisBenefit`](docs/sdks/benefit/README.md#patchhrisbenefit) - Update a benefit
+- [`hrisPatchHrisBenefit`](docs/sdks/hris/README.md#patchhrisbenefit) - Update a benefit
+- [`hrisPatchHrisDeduction`](docs/sdks/deduction/README.md#patchhrisdeduction) - Update a deduction
+- [`hrisPatchHrisDeduction`](docs/sdks/hris/README.md#patchhrisdeduction) - Update a deduction
 - [`hrisPatchHrisDevice`](docs/sdks/device/README.md#patchhrisdevice) - Update a device
 - [`hrisPatchHrisDevice`](docs/sdks/hris/README.md#patchhrisdevice) - Update a device
 - [`hrisPatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
@@ -1014,6 +1030,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisGroup`](docs/sdks/hris/README.md#patchhrisgroup) - Update a group
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisPatchHrisTimeshift`](docs/sdks/timeshift/README.md#patchhristimeshift) - Update a timeshift
+- [`hrisRemoveHrisBenefit`](docs/sdks/benefit/README.md#removehrisbenefit) - Remove a benefit
+- [`hrisRemoveHrisBenefit`](docs/sdks/hris/README.md#removehrisbenefit) - Remove a benefit
+- [`hrisRemoveHrisDeduction`](docs/sdks/deduction/README.md#removehrisdeduction) - Remove a deduction
+- [`hrisRemoveHrisDeduction`](docs/sdks/hris/README.md#removehrisdeduction) - Remove a deduction
 - [`hrisRemoveHrisDevice`](docs/sdks/device/README.md#removehrisdevice) - Remove a device
 - [`hrisRemoveHrisDevice`](docs/sdks/hris/README.md#removehrisdevice) - Remove a device
 - [`hrisRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
@@ -1022,6 +1042,10 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisGroup`](docs/sdks/hris/README.md#removehrisgroup) - Remove a group
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisRemoveHrisTimeshift`](docs/sdks/timeshift/README.md#removehristimeshift) - Remove a timeshift
+- [`hrisUpdateHrisBenefit`](docs/sdks/benefit/README.md#updatehrisbenefit) - Update a benefit
+- [`hrisUpdateHrisBenefit`](docs/sdks/hris/README.md#updatehrisbenefit) - Update a benefit
+- [`hrisUpdateHrisDeduction`](docs/sdks/deduction/README.md#updatehrisdeduction) - Update a deduction
+- [`hrisUpdateHrisDeduction`](docs/sdks/hris/README.md#updatehrisdeduction) - Update a deduction
 - [`hrisUpdateHrisDevice`](docs/sdks/device/README.md#updatehrisdevice) - Update a device
 - [`hrisUpdateHrisDevice`](docs/sdks/hris/README.md#updatehrisdevice) - Update a device
 - [`hrisUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
