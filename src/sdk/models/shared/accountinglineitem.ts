@@ -24,6 +24,7 @@ export type AccountingLineitem = {
   itemId?: string | undefined;
   itemName?: string | undefined;
   itemSku?: string | undefined;
+  itemVariants?: Array<AccountingReference> | undefined;
   locations?: Array<AccountingReference> | undefined;
   notes?: string | undefined;
   refundAmount?: number | undefined;
@@ -52,6 +53,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
   item_id: z.string().optional(),
   item_name: z.string().optional(),
   item_sku: z.string().optional(),
+  item_variants: z.array(AccountingReference$inboundSchema).optional(),
   locations: z.array(AccountingReference$inboundSchema).optional(),
   notes: z.string().optional(),
   refund_amount: z.number().optional(),
@@ -74,6 +76,7 @@ export const AccountingLineitem$inboundSchema: z.ZodType<
     "item_id": "itemId",
     "item_name": "itemName",
     "item_sku": "itemSku",
+    "item_variants": "itemVariants",
     "refund_amount": "refundAmount",
     "refunded_at": "refundedAt",
     "tax_amount": "taxAmount",
@@ -95,6 +98,7 @@ export type AccountingLineitem$Outbound = {
   item_id?: string | undefined;
   item_name?: string | undefined;
   item_sku?: string | undefined;
+  item_variants?: Array<AccountingReference$Outbound> | undefined;
   locations?: Array<AccountingReference$Outbound> | undefined;
   notes?: string | undefined;
   refund_amount?: number | undefined;
@@ -122,6 +126,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
   itemId: z.string().optional(),
   itemName: z.string().optional(),
   itemSku: z.string().optional(),
+  itemVariants: z.array(AccountingReference$outboundSchema).optional(),
   locations: z.array(AccountingReference$outboundSchema).optional(),
   notes: z.string().optional(),
   refundAmount: z.number().optional(),
@@ -142,6 +147,7 @@ export const AccountingLineitem$outboundSchema: z.ZodType<
     itemId: "item_id",
     itemName: "item_name",
     itemSku: "item_sku",
+    itemVariants: "item_variants",
     refundAmount: "refund_amount",
     refundedAt: "refunded_at",
     taxAmount: "tax_amount",
