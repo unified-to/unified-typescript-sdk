@@ -5,7 +5,7 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 
-export type ListCommerceCollectionsRequest = {
+export type ListCommerceSaleschannelsRequest = {
   /**
    * ID of the connection
    */
@@ -18,10 +18,6 @@ export type ListCommerceCollectionsRequest = {
   offset?: number | undefined;
   order?: string | undefined;
   /**
-   * The parent ID to filter by
-   */
-  parentId?: string | undefined;
-  /**
    * Query string to search. eg. email address or name
    */
   query?: string | undefined;
@@ -29,12 +25,7 @@ export type ListCommerceCollectionsRequest = {
    * Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar
    */
   raw?: string | undefined;
-  /**
-   * The saleschannel ID to filter by
-   */
-  saleschannelId?: string | undefined;
   sort?: string | undefined;
-  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -42,54 +33,46 @@ export type ListCommerceCollectionsRequest = {
 };
 
 /** @internal */
-export type ListCommerceCollectionsRequest$Outbound = {
+export type ListCommerceSaleschannelsRequest$Outbound = {
   connection_id: string;
   fields?: Array<string> | undefined;
   limit?: number | undefined;
   offset?: number | undefined;
   order?: string | undefined;
-  parent_id?: string | undefined;
   query?: string | undefined;
   raw?: string | undefined;
-  saleschannel_id?: string | undefined;
   sort?: string | undefined;
-  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
 /** @internal */
-export const ListCommerceCollectionsRequest$outboundSchema: z.ZodType<
-  ListCommerceCollectionsRequest$Outbound,
+export const ListCommerceSaleschannelsRequest$outboundSchema: z.ZodType<
+  ListCommerceSaleschannelsRequest$Outbound,
   z.ZodTypeDef,
-  ListCommerceCollectionsRequest
+  ListCommerceSaleschannelsRequest
 > = z.object({
   connectionId: z.string(),
   fields: z.array(z.string()).optional(),
   limit: z.number().optional(),
   offset: z.number().optional(),
   order: z.string().optional(),
-  parentId: z.string().optional(),
   query: z.string().optional(),
   raw: z.string().optional(),
-  saleschannelId: z.string().optional(),
   sort: z.string().optional(),
-  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {
     connectionId: "connection_id",
-    parentId: "parent_id",
-    saleschannelId: "saleschannel_id",
     updatedGte: "updated_gte",
   });
 });
 
-export function listCommerceCollectionsRequestToJSON(
-  listCommerceCollectionsRequest: ListCommerceCollectionsRequest,
+export function listCommerceSaleschannelsRequestToJSON(
+  listCommerceSaleschannelsRequest: ListCommerceSaleschannelsRequest,
 ): string {
   return JSON.stringify(
-    ListCommerceCollectionsRequest$outboundSchema.parse(
-      listCommerceCollectionsRequest,
+    ListCommerceSaleschannelsRequest$outboundSchema.parse(
+      listCommerceSaleschannelsRequest,
     ),
   );
 }

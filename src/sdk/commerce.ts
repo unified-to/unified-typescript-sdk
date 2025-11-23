@@ -7,31 +7,37 @@ import { commerceCreateCommerceInventory } from "../funcs/commerceCreateCommerce
 import { commerceCreateCommerceItem } from "../funcs/commerceCreateCommerceItem.js";
 import { commerceCreateCommerceLocation } from "../funcs/commerceCreateCommerceLocation.js";
 import { commerceCreateCommerceReview } from "../funcs/commerceCreateCommerceReview.js";
+import { commerceCreateCommerceSaleschannel } from "../funcs/commerceCreateCommerceSaleschannel.js";
 import { commerceGetCommerceCollection } from "../funcs/commerceGetCommerceCollection.js";
 import { commerceGetCommerceInventory } from "../funcs/commerceGetCommerceInventory.js";
 import { commerceGetCommerceItem } from "../funcs/commerceGetCommerceItem.js";
 import { commerceGetCommerceLocation } from "../funcs/commerceGetCommerceLocation.js";
 import { commerceGetCommerceReview } from "../funcs/commerceGetCommerceReview.js";
+import { commerceGetCommerceSaleschannel } from "../funcs/commerceGetCommerceSaleschannel.js";
 import { commerceListCommerceCollections } from "../funcs/commerceListCommerceCollections.js";
 import { commerceListCommerceInventories } from "../funcs/commerceListCommerceInventories.js";
 import { commerceListCommerceItems } from "../funcs/commerceListCommerceItems.js";
 import { commerceListCommerceLocations } from "../funcs/commerceListCommerceLocations.js";
 import { commerceListCommerceReviews } from "../funcs/commerceListCommerceReviews.js";
+import { commerceListCommerceSaleschannels } from "../funcs/commerceListCommerceSaleschannels.js";
 import { commercePatchCommerceCollection } from "../funcs/commercePatchCommerceCollection.js";
 import { commercePatchCommerceInventory } from "../funcs/commercePatchCommerceInventory.js";
 import { commercePatchCommerceItem } from "../funcs/commercePatchCommerceItem.js";
 import { commercePatchCommerceLocation } from "../funcs/commercePatchCommerceLocation.js";
 import { commercePatchCommerceReview } from "../funcs/commercePatchCommerceReview.js";
+import { commercePatchCommerceSaleschannel } from "../funcs/commercePatchCommerceSaleschannel.js";
 import { commerceRemoveCommerceCollection } from "../funcs/commerceRemoveCommerceCollection.js";
 import { commerceRemoveCommerceInventory } from "../funcs/commerceRemoveCommerceInventory.js";
 import { commerceRemoveCommerceItem } from "../funcs/commerceRemoveCommerceItem.js";
 import { commerceRemoveCommerceLocation } from "../funcs/commerceRemoveCommerceLocation.js";
 import { commerceRemoveCommerceReview } from "../funcs/commerceRemoveCommerceReview.js";
+import { commerceRemoveCommerceSaleschannel } from "../funcs/commerceRemoveCommerceSaleschannel.js";
 import { commerceUpdateCommerceCollection } from "../funcs/commerceUpdateCommerceCollection.js";
 import { commerceUpdateCommerceInventory } from "../funcs/commerceUpdateCommerceInventory.js";
 import { commerceUpdateCommerceItem } from "../funcs/commerceUpdateCommerceItem.js";
 import { commerceUpdateCommerceLocation } from "../funcs/commerceUpdateCommerceLocation.js";
 import { commerceUpdateCommerceReview } from "../funcs/commerceUpdateCommerceReview.js";
+import { commerceUpdateCommerceSaleschannel } from "../funcs/commerceUpdateCommerceSaleschannel.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -109,6 +115,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Create a saleschannel
+   */
+  async createCommerceSaleschannel(
+    request: operations.CreateCommerceSaleschannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceSaleschannel> {
+    return unwrapAsync(commerceCreateCommerceSaleschannel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Retrieve a collection
    */
   async getCommerceCollection(
@@ -172,6 +192,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commerceGetCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve a saleschannel
+   */
+  async getCommerceSaleschannel(
+    request: operations.GetCommerceSaleschannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceSaleschannel> {
+    return unwrapAsync(commerceGetCommerceSaleschannel(
       this,
       request,
       options,
@@ -249,6 +283,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * List all saleschannels
+   */
+  async listCommerceSaleschannels(
+    request: operations.ListCommerceSaleschannelsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.CommerceSaleschannel>> {
+    return unwrapAsync(commerceListCommerceSaleschannels(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async patchCommerceCollection(
@@ -312,6 +360,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commercePatchCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a saleschannel
+   */
+  async patchCommerceSaleschannel(
+    request: operations.PatchCommerceSaleschannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceSaleschannel> {
+    return unwrapAsync(commercePatchCommerceSaleschannel(
       this,
       request,
       options,
@@ -389,6 +451,20 @@ export class Commerce extends ClientSDK {
   }
 
   /**
+   * Remove a saleschannel
+   */
+  async removeCommerceSaleschannel(
+    request: operations.RemoveCommerceSaleschannelRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveCommerceSaleschannelResponse | undefined> {
+    return unwrapAsync(commerceRemoveCommerceSaleschannel(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Update a collection
    */
   async updateCommerceCollection(
@@ -452,6 +528,20 @@ export class Commerce extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CommerceReview> {
     return unwrapAsync(commerceUpdateCommerceReview(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update a saleschannel
+   */
+  async updateCommerceSaleschannel(
+    request: operations.UpdateCommerceSaleschannelRequest,
+    options?: RequestOptions,
+  ): Promise<shared.CommerceSaleschannel> {
+    return unwrapAsync(commerceUpdateCommerceSaleschannel(
       this,
       request,
       options,

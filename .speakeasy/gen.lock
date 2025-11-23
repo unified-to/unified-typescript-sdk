@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: c6058565310b31d840e18ece25ff2318
+  docChecksum: 0cbfedd6f5ab2e89dc21eefa192c619d
   docVersion: "1.0"
   speakeasyVersion: 1.660.0
   generationVersion: 2.760.2
-  releaseVersion: 2.80.8
-  configChecksum: 6427be7cf2c77113dd25083435319b09
+  releaseVersion: 2.80.9
+  configChecksum: 8dcda1d5a31bdb578834fd657f5671e0
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -67,6 +67,7 @@ generatedFiles:
   - docs/sdk/models/operations/createcommerceitemrequest.md
   - docs/sdk/models/operations/createcommercelocationrequest.md
   - docs/sdk/models/operations/createcommercereviewrequest.md
+  - docs/sdk/models/operations/createcommercesaleschannelrequest.md
   - docs/sdk/models/operations/createcrmcompanyrequest.md
   - docs/sdk/models/operations/createcrmcontactrequest.md
   - docs/sdk/models/operations/createcrmdealrequest.md
@@ -159,6 +160,7 @@ generatedFiles:
   - docs/sdk/models/operations/getcommerceitemrequest.md
   - docs/sdk/models/operations/getcommercelocationrequest.md
   - docs/sdk/models/operations/getcommercereviewrequest.md
+  - docs/sdk/models/operations/getcommercesaleschannelrequest.md
   - docs/sdk/models/operations/getcrmcompanyrequest.md
   - docs/sdk/models/operations/getcrmcontactrequest.md
   - docs/sdk/models/operations/getcrmdealrequest.md
@@ -259,6 +261,7 @@ generatedFiles:
   - docs/sdk/models/operations/listcommerceitemsrequest.md
   - docs/sdk/models/operations/listcommercelocationsrequest.md
   - docs/sdk/models/operations/listcommercereviewsrequest.md
+  - docs/sdk/models/operations/listcommercesaleschannelsrequest.md
   - docs/sdk/models/operations/listcrmcompaniesrequest.md
   - docs/sdk/models/operations/listcrmcontactsrequest.md
   - docs/sdk/models/operations/listcrmdealsrequest.md
@@ -356,6 +359,7 @@ generatedFiles:
   - docs/sdk/models/operations/patchcommerceitemrequest.md
   - docs/sdk/models/operations/patchcommercelocationrequest.md
   - docs/sdk/models/operations/patchcommercereviewrequest.md
+  - docs/sdk/models/operations/patchcommercesaleschannelrequest.md
   - docs/sdk/models/operations/patchcrmcompanyrequest.md
   - docs/sdk/models/operations/patchcrmcontactrequest.md
   - docs/sdk/models/operations/patchcrmdealrequest.md
@@ -472,6 +476,8 @@ generatedFiles:
   - docs/sdk/models/operations/removecommercelocationresponse.md
   - docs/sdk/models/operations/removecommercereviewrequest.md
   - docs/sdk/models/operations/removecommercereviewresponse.md
+  - docs/sdk/models/operations/removecommercesaleschannelrequest.md
+  - docs/sdk/models/operations/removecommercesaleschannelresponse.md
   - docs/sdk/models/operations/removecrmcompanyrequest.md
   - docs/sdk/models/operations/removecrmcompanyresponse.md
   - docs/sdk/models/operations/removecrmcontactrequest.md
@@ -602,6 +608,7 @@ generatedFiles:
   - docs/sdk/models/operations/updatecommerceitemrequest.md
   - docs/sdk/models/operations/updatecommercelocationrequest.md
   - docs/sdk/models/operations/updatecommercereviewrequest.md
+  - docs/sdk/models/operations/updatecommercesaleschannelrequest.md
   - docs/sdk/models/operations/updatecrmcompanyrequest.md
   - docs/sdk/models/operations/updatecrmcontactrequest.md
   - docs/sdk/models/operations/updatecrmdealrequest.md
@@ -783,10 +790,12 @@ generatedFiles:
   - docs/sdk/models/shared/commercemetadataschemas1.md
   - docs/sdk/models/shared/commercemetadataschemas5.md
   - docs/sdk/models/shared/commercemetadatavalue.md
+  - docs/sdk/models/shared/commercereference.md
   - docs/sdk/models/shared/commercereview.md
   - docs/sdk/models/shared/commercereviewcomment.md
   - docs/sdk/models/shared/commercereviewcommentstatus.md
   - docs/sdk/models/shared/commercereviewstatus.md
+  - docs/sdk/models/shared/commercesaleschannel.md
   - docs/sdk/models/shared/connection.md
   - docs/sdk/models/shared/contenttype.md
   - docs/sdk/models/shared/coveragelevel.md
@@ -902,6 +911,7 @@ generatedFiles:
   - docs/sdk/models/shared/kmsspace.md
   - docs/sdk/models/shared/listaccountid.md
   - docs/sdk/models/shared/listapplicationid.md
+  - docs/sdk/models/shared/listbenefitid.md
   - docs/sdk/models/shared/listbranchid.md
   - docs/sdk/models/shared/listcalendarid.md
   - docs/sdk/models/shared/listcallid.md
@@ -946,6 +956,7 @@ generatedFiles:
   - docs/sdk/models/shared/listrawfields.md
   - docs/sdk/models/shared/listrepoid.md
   - docs/sdk/models/shared/listrootid.md
+  - docs/sdk/models/shared/listsaleschannelid.md
   - docs/sdk/models/shared/listsortbycreatedat.md
   - docs/sdk/models/shared/listsortbyname.md
   - docs/sdk/models/shared/listsortbyupdatedat.md
@@ -1201,6 +1212,7 @@ generatedFiles:
   - docs/sdk/models/shared/virtualwebhookpipelineid.md
   - docs/sdk/models/shared/virtualwebhookprojectid.md
   - docs/sdk/models/shared/virtualwebhookrepoid.md
+  - docs/sdk/models/shared/virtualwebhooksaleschannelid.md
   - docs/sdk/models/shared/virtualwebhookspaceid.md
   - docs/sdk/models/shared/virtualwebhookstartgte.md
   - docs/sdk/models/shared/virtualwebhookstatus.md
@@ -1304,6 +1316,7 @@ generatedFiles:
   - docs/sdks/repository/README.md
   - docs/sdks/request/README.md
   - docs/sdks/review/README.md
+  - docs/sdks/saleschannel/README.md
   - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
@@ -1516,31 +1529,37 @@ generatedFiles:
   - src/funcs/commerceCreateCommerceItem.ts
   - src/funcs/commerceCreateCommerceLocation.ts
   - src/funcs/commerceCreateCommerceReview.ts
+  - src/funcs/commerceCreateCommerceSaleschannel.ts
   - src/funcs/commerceGetCommerceCollection.ts
   - src/funcs/commerceGetCommerceInventory.ts
   - src/funcs/commerceGetCommerceItem.ts
   - src/funcs/commerceGetCommerceLocation.ts
   - src/funcs/commerceGetCommerceReview.ts
+  - src/funcs/commerceGetCommerceSaleschannel.ts
   - src/funcs/commerceListCommerceCollections.ts
   - src/funcs/commerceListCommerceInventories.ts
   - src/funcs/commerceListCommerceItems.ts
   - src/funcs/commerceListCommerceLocations.ts
   - src/funcs/commerceListCommerceReviews.ts
+  - src/funcs/commerceListCommerceSaleschannels.ts
   - src/funcs/commercePatchCommerceCollection.ts
   - src/funcs/commercePatchCommerceInventory.ts
   - src/funcs/commercePatchCommerceItem.ts
   - src/funcs/commercePatchCommerceLocation.ts
   - src/funcs/commercePatchCommerceReview.ts
+  - src/funcs/commercePatchCommerceSaleschannel.ts
   - src/funcs/commerceRemoveCommerceCollection.ts
   - src/funcs/commerceRemoveCommerceInventory.ts
   - src/funcs/commerceRemoveCommerceItem.ts
   - src/funcs/commerceRemoveCommerceLocation.ts
   - src/funcs/commerceRemoveCommerceReview.ts
+  - src/funcs/commerceRemoveCommerceSaleschannel.ts
   - src/funcs/commerceUpdateCommerceCollection.ts
   - src/funcs/commerceUpdateCommerceInventory.ts
   - src/funcs/commerceUpdateCommerceItem.ts
   - src/funcs/commerceUpdateCommerceLocation.ts
   - src/funcs/commerceUpdateCommerceReview.ts
+  - src/funcs/commerceUpdateCommerceSaleschannel.ts
   - src/funcs/companyCreateCrmCompany.ts
   - src/funcs/companyCreateHrisCompany.ts
   - src/funcs/companyGetCrmCompany.ts
@@ -1978,6 +1997,7 @@ generatedFiles:
   - src/sdk/models/operations/createcommerceitem.ts
   - src/sdk/models/operations/createcommercelocation.ts
   - src/sdk/models/operations/createcommercereview.ts
+  - src/sdk/models/operations/createcommercesaleschannel.ts
   - src/sdk/models/operations/createcrmcompany.ts
   - src/sdk/models/operations/createcrmcontact.ts
   - src/sdk/models/operations/createcrmdeal.ts
@@ -2066,6 +2086,7 @@ generatedFiles:
   - src/sdk/models/operations/getcommerceitem.ts
   - src/sdk/models/operations/getcommercelocation.ts
   - src/sdk/models/operations/getcommercereview.ts
+  - src/sdk/models/operations/getcommercesaleschannel.ts
   - src/sdk/models/operations/getcrmcompany.ts
   - src/sdk/models/operations/getcrmcontact.ts
   - src/sdk/models/operations/getcrmdeal.ts
@@ -2167,6 +2188,7 @@ generatedFiles:
   - src/sdk/models/operations/listcommerceitems.ts
   - src/sdk/models/operations/listcommercelocations.ts
   - src/sdk/models/operations/listcommercereviews.ts
+  - src/sdk/models/operations/listcommercesaleschannels.ts
   - src/sdk/models/operations/listcrmcompanies.ts
   - src/sdk/models/operations/listcrmcontacts.ts
   - src/sdk/models/operations/listcrmdeals.ts
@@ -2261,6 +2283,7 @@ generatedFiles:
   - src/sdk/models/operations/patchcommerceitem.ts
   - src/sdk/models/operations/patchcommercelocation.ts
   - src/sdk/models/operations/patchcommercereview.ts
+  - src/sdk/models/operations/patchcommercesaleschannel.ts
   - src/sdk/models/operations/patchcrmcompany.ts
   - src/sdk/models/operations/patchcrmcontact.ts
   - src/sdk/models/operations/patchcrmdeal.ts
@@ -2342,6 +2365,7 @@ generatedFiles:
   - src/sdk/models/operations/removecommerceitem.ts
   - src/sdk/models/operations/removecommercelocation.ts
   - src/sdk/models/operations/removecommercereview.ts
+  - src/sdk/models/operations/removecommercesaleschannel.ts
   - src/sdk/models/operations/removecrmcompany.ts
   - src/sdk/models/operations/removecrmcontact.ts
   - src/sdk/models/operations/removecrmdeal.ts
@@ -2421,6 +2445,7 @@ generatedFiles:
   - src/sdk/models/operations/updatecommerceitem.ts
   - src/sdk/models/operations/updatecommercelocation.ts
   - src/sdk/models/operations/updatecommercereview.ts
+  - src/sdk/models/operations/updatecommercesaleschannel.ts
   - src/sdk/models/operations/updatecrmcompany.ts
   - src/sdk/models/operations/updatecrmcontact.ts
   - src/sdk/models/operations/updatecrmdeal.ts
@@ -2554,8 +2579,10 @@ generatedFiles:
   - src/sdk/models/shared/commerceitemvariant.ts
   - src/sdk/models/shared/commercelocation.ts
   - src/sdk/models/shared/commercemetadata.ts
+  - src/sdk/models/shared/commercereference.ts
   - src/sdk/models/shared/commercereview.ts
   - src/sdk/models/shared/commercereviewcomment.ts
+  - src/sdk/models/shared/commercesaleschannel.ts
   - src/sdk/models/shared/connection.ts
   - src/sdk/models/shared/crmcompany.ts
   - src/sdk/models/shared/crmcontact.ts
@@ -2758,6 +2785,7 @@ generatedFiles:
   - src/sdk/repository.ts
   - src/sdk/request.ts
   - src/sdk/review.ts
+  - src/sdk/saleschannel.ts
   - src/sdk/salesorder.ts
   - src/sdk/scim.ts
   - src/sdk/scorecard.ts
@@ -7553,6 +7581,61 @@ examples:
       responses:
         "200":
           application/json: {}
+  createCommerceSaleschannel:
+    speakeasy-default-create-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getCommerceSaleschannel:
+    speakeasy-default-get-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listCommerceSaleschannels:
+    speakeasy-default-list-commerce-saleschannels:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchCommerceSaleschannel:
+    speakeasy-default-patch-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeCommerceSaleschannel:
+    speakeasy-default-remove-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceSaleschannel:
+    speakeasy-default-update-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.accounting.createAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingBill()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingCreditmemo()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingExpense()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingInvoice()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingOrder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingPurchaseorder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.getAccountingSalesorder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingBills()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingCreditmemoes()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingExpenses()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingInvoices()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingOrders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingPurchaseorders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.listAccountingSalesorders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.accounting.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.bill.createAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.bill.getAccountingBill()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.bill.listAccountingBills()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.bill.patchAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.bill.updateAccountingBill()`: \n  *  `request.accountingBill.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.creditmemo.createAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.creditmemo.getAccountingCreditmemo()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.creditmemo.listAccountingCreditmemoes()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.creditmemo.patchAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.creditmemo.updateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.expense.createAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.expense.getAccountingExpense()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.expense.listAccountingExpenses()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.expense.patchAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.expense.updateAccountingExpense()`: \n  *  `request.accountingExpense.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.invoice.createAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.invoice.getAccountingInvoice()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.invoice.listAccountingInvoices()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.invoice.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.invoice.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.order.createAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.order.getAccountingOrder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.order.listAccountingOrders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.order.patchAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.order.updateAccountingOrder()`: \n  *  `request.accountingOrder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.purchaseorder.createAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.purchaseorder.getAccountingPurchaseorder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.purchaseorder.listAccountingPurchaseorders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.purchaseorder.patchAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.purchaseorder.updateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.salesorder.createAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.salesorder.getAccountingSalesorder()`:  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.salesorder.listAccountingSalesorders()`:  `response.[].lineitems.[].itemVariants` **Added**\n* `unified-to.salesorder.patchAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n* `unified-to.salesorder.updateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.lineitems.[].itemVariants` **Added**\n  *  `response.lineitems.[].itemVariants` **Added**\n"
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.item.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.getCommerceCollection()`:  `response` **Changed** **Breaking** :warning:\n* `unified-to.review.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.review.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.review.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.review.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.item.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.item.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.item.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.item.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.collection.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.commerce.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.listCommerceCollections()`: \n  *  `request.saleschannelId` **Added**\n  *  `response.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.collection.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.review.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].metadata.[]` **Changed** **Breaking** :warning:\n* `unified-to.collection.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `unified-to.collection.getCommerceCollection()`:  `response` **Changed** **Breaking** :warning:\n* `unified-to.collection.listCommerceCollections()`: \n  *  `request.saleschannelId` **Added**\n  *  `response.[]` **Changed** **Breaking** :warning:\n* `unified-to.commerce.updateCommerceSaleschannel()`: **Added**\n* `unified-to.saleschannel.createCommerceSaleschannel()`: **Added**\n* `unified-to.saleschannel.removeCommerceSaleschannel()`: **Added**\n* `unified-to.commerce.createCommerceSaleschannel()`: **Added**\n* `unified-to.saleschannel.patchCommerceSaleschannel()`: **Added**\n* `unified-to.saleschannel.listCommerceSaleschannels()`: **Added**\n* `unified-to.saleschannel.updateCommerceSaleschannel()`: **Added**\n* `unified-to.saleschannel.getCommerceSaleschannel()`: **Added**\n* `unified-to.commerce.removeCommerceSaleschannel()`: **Added**\n* `unified-to.commerce.getCommerceSaleschannel()`: **Added**\n* `unified-to.commerce.patchCommerceSaleschannel()`: **Added**\n* `unified-to.commerce.listCommerceSaleschannels()`: **Added**\n* `unified-to.unified.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}` **Changed**\n* `unified-to.unified.listUnifiedIntegrations()`:  `response.[].support.{}` **Changed**\n* `unified-to.integration.listUnifiedIntegrationWorkspaces()`:  `response.[].support.{}` **Changed**\n* `unified-to.integration.listUnifiedIntegrations()`:  `response.[].support.{}` **Changed**\n"

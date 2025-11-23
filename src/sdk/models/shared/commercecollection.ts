@@ -39,10 +39,6 @@ export type CommerceCollection = {
   isActive?: boolean | undefined;
   isFeatured?: boolean | undefined;
   isVisible?: boolean | undefined;
-  /**
-   * includes the list of metadata_metadata required to create a commerce_item under the respective commerce_collection
-   */
-  itemMetadata?: Array<CommerceMetadata> | undefined;
   media?: Array<CommerceItemMedia> | undefined;
   metadata?: Array<CommerceMetadata> | undefined;
   name: string;
@@ -81,7 +77,6 @@ export const CommerceCollection$inboundSchema: z.ZodType<
   is_active: z.boolean().optional(),
   is_featured: z.boolean().optional(),
   is_visible: z.boolean().optional(),
-  item_metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   media: z.array(CommerceItemMedia$inboundSchema).optional(),
   metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   name: z.string(),
@@ -99,7 +94,6 @@ export const CommerceCollection$inboundSchema: z.ZodType<
     "is_active": "isActive",
     "is_featured": "isFeatured",
     "is_visible": "isVisible",
-    "item_metadata": "itemMetadata",
     "parent_id": "parentId",
     "public_description": "publicDescription",
     "public_name": "publicName",
@@ -114,7 +108,6 @@ export type CommerceCollection$Outbound = {
   is_active?: boolean | undefined;
   is_featured?: boolean | undefined;
   is_visible?: boolean | undefined;
-  item_metadata?: Array<CommerceMetadata$Outbound> | undefined;
   media?: Array<CommerceItemMedia$Outbound> | undefined;
   metadata?: Array<CommerceMetadata$Outbound> | undefined;
   name: string;
@@ -139,7 +132,6 @@ export const CommerceCollection$outboundSchema: z.ZodType<
   isActive: z.boolean().optional(),
   isFeatured: z.boolean().optional(),
   isVisible: z.boolean().optional(),
-  itemMetadata: z.array(CommerceMetadata$outboundSchema).optional(),
   media: z.array(CommerceItemMedia$outboundSchema).optional(),
   metadata: z.array(CommerceMetadata$outboundSchema).optional(),
   name: z.string(),
@@ -156,7 +148,6 @@ export const CommerceCollection$outboundSchema: z.ZodType<
     isActive: "is_active",
     isFeatured: "is_featured",
     isVisible: "is_visible",
-    itemMetadata: "item_metadata",
     parentId: "parent_id",
     publicDescription: "public_description",
     publicName: "public_name",

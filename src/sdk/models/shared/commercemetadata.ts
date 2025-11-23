@@ -54,7 +54,6 @@ export type CommerceMetadataValue =
   | Array<CommerceMetadataSchemas1 | string | number | boolean>;
 
 export type CommerceMetadata = {
-  description?: string | undefined;
   extraData?:
     | { [k: string]: any }
     | string
@@ -66,7 +65,6 @@ export type CommerceMetadata = {
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
-  required?: boolean | undefined;
   slug?: string | undefined;
   type?: string | undefined;
   value?:
@@ -385,7 +383,6 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
-  description: z.string().optional(),
   extra_data: z.union([
     z.record(z.any()),
     z.string(),
@@ -404,7 +401,6 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
-  required: z.boolean().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([
@@ -428,7 +424,6 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
 });
 /** @internal */
 export type CommerceMetadata$Outbound = {
-  description?: string | undefined;
   extra_data?:
     | { [k: string]: any }
     | string
@@ -440,7 +435,6 @@ export type CommerceMetadata$Outbound = {
   id?: string | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
-  required?: boolean | undefined;
   slug?: string | undefined;
   type?: string | undefined;
   value?:
@@ -458,7 +452,6 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceMetadata
 > = z.object({
-  description: z.string().optional(),
   extraData: z.union([
     z.record(z.any()),
     z.string(),
@@ -477,7 +470,6 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   id: z.string().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
-  required: z.boolean().optional(),
   slug: z.string().optional(),
   type: z.string().optional(),
   value: z.union([

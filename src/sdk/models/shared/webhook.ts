@@ -56,6 +56,7 @@ export const ObjectType = {
   CommerceInventory: "commerce_inventory",
   CommerceLocation: "commerce_location",
   CommerceReview: "commerce_review",
+  CommerceSaleschannel: "commerce_saleschannel",
   VerificationPackage: "verification_package",
   VerificationRequest: "verification_request",
   AtsActivity: "ats_activity",

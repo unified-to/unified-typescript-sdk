@@ -27,15 +27,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * List all collections
+ * List all saleschannels
  */
-export function commerceListCommerceCollections(
+export function commerceListCommerceSaleschannels(
   client: UnifiedToCore,
-  request: operations.ListCommerceCollectionsRequest,
+  request: operations.ListCommerceSaleschannelsRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    Array<shared.CommerceCollection>,
+    Array<shared.CommerceSaleschannel>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -55,12 +55,12 @@ export function commerceListCommerceCollections(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.ListCommerceCollectionsRequest,
+  request: operations.ListCommerceSaleschannelsRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      Array<shared.CommerceCollection>,
+      Array<shared.CommerceSaleschannel>,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -76,7 +76,7 @@ async function $do(
   const parsed = safeParse(
     request,
     (value) =>
-      operations.ListCommerceCollectionsRequest$outboundSchema.parse(value),
+      operations.ListCommerceSaleschannelsRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -92,19 +92,16 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/commerce/{connection_id}/collection")(pathParams);
+  const path = pathToFunc("/commerce/{connection_id}/saleschannel")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
     "limit": payload.limit,
     "offset": payload.offset,
     "order": payload.order,
-    "parent_id": payload.parent_id,
     "query": payload.query,
     "raw": payload.raw,
-    "saleschannel_id": payload.saleschannel_id,
     "sort": payload.sort,
-    "type": payload.type,
     "updated_gte": payload.updated_gte,
   });
 
@@ -118,7 +115,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "listCommerceCollections",
+    operationID: "listCommerceSaleschannels",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -158,7 +155,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    Array<shared.CommerceCollection>,
+    Array<shared.CommerceSaleschannel>,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -168,7 +165,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, z.array(shared.CommerceCollection$inboundSchema)),
+    M.json(200, z.array(shared.CommerceSaleschannel$inboundSchema)),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

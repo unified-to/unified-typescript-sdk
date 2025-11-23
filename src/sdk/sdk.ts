@@ -93,6 +93,7 @@ import { Report } from "./report.js";
 import { Repository } from "./repository.js";
 import { RequestT } from "./request.js";
 import { Review } from "./review.js";
+import { Saleschannel } from "./saleschannel.js";
 import { Salesorder } from "./salesorder.js";
 import { Scim } from "./scim.js";
 import { Scorecard } from "./scorecard.js";
@@ -318,6 +319,11 @@ export class UnifiedTo extends ClientSDK {
   private _review?: Review;
   get review(): Review {
     return (this._review ??= new Review(this._options));
+  }
+
+  private _saleschannel?: Saleschannel;
+  get saleschannel(): Saleschannel {
+    return (this._saleschannel ??= new Saleschannel(this._options));
   }
 
   private _crm?: Crm;

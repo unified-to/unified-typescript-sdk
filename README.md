@@ -804,6 +804,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceCreateCommerceLocation`](docs/sdks/location/README.md#createcommercelocation) - Create a location
 - [`commerceCreateCommerceReview`](docs/sdks/commerce/README.md#createcommercereview) - Create a review
 - [`commerceCreateCommerceReview`](docs/sdks/review/README.md#createcommercereview) - Create a review
+- [`commerceCreateCommerceSaleschannel`](docs/sdks/commerce/README.md#createcommercesaleschannel) - Create a saleschannel
+- [`commerceCreateCommerceSaleschannel`](docs/sdks/saleschannel/README.md#createcommercesaleschannel) - Create a saleschannel
 - [`commerceGetCommerceCollection`](docs/sdks/collection/README.md#getcommercecollection) - Retrieve a collection
 - [`commerceGetCommerceCollection`](docs/sdks/commerce/README.md#getcommercecollection) - Retrieve a collection
 - [`commerceGetCommerceInventory`](docs/sdks/commerce/README.md#getcommerceinventory) - Retrieve an inventory
@@ -814,6 +816,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceGetCommerceLocation`](docs/sdks/location/README.md#getcommercelocation) - Retrieve a location
 - [`commerceGetCommerceReview`](docs/sdks/commerce/README.md#getcommercereview) - Retrieve a review
 - [`commerceGetCommerceReview`](docs/sdks/review/README.md#getcommercereview) - Retrieve a review
+- [`commerceGetCommerceSaleschannel`](docs/sdks/commerce/README.md#getcommercesaleschannel) - Retrieve a saleschannel
+- [`commerceGetCommerceSaleschannel`](docs/sdks/saleschannel/README.md#getcommercesaleschannel) - Retrieve a saleschannel
 - [`commerceListCommerceCollections`](docs/sdks/collection/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceCollections`](docs/sdks/commerce/README.md#listcommercecollections) - List all collections
 - [`commerceListCommerceInventories`](docs/sdks/commerce/README.md#listcommerceinventories) - List all inventories
@@ -824,6 +828,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceListCommerceLocations`](docs/sdks/location/README.md#listcommercelocations) - List all locations
 - [`commerceListCommerceReviews`](docs/sdks/commerce/README.md#listcommercereviews) - List all reviews
 - [`commerceListCommerceReviews`](docs/sdks/review/README.md#listcommercereviews) - List all reviews
+- [`commerceListCommerceSaleschannels`](docs/sdks/commerce/README.md#listcommercesaleschannels) - List all saleschannels
+- [`commerceListCommerceSaleschannels`](docs/sdks/saleschannel/README.md#listcommercesaleschannels) - List all saleschannels
 - [`commercePatchCommerceCollection`](docs/sdks/collection/README.md#patchcommercecollection) - Update a collection
 - [`commercePatchCommerceCollection`](docs/sdks/commerce/README.md#patchcommercecollection) - Update a collection
 - [`commercePatchCommerceInventory`](docs/sdks/commerce/README.md#patchcommerceinventory) - Update an inventory
@@ -834,6 +840,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commercePatchCommerceLocation`](docs/sdks/location/README.md#patchcommercelocation) - Update a location
 - [`commercePatchCommerceReview`](docs/sdks/commerce/README.md#patchcommercereview) - Update a review
 - [`commercePatchCommerceReview`](docs/sdks/review/README.md#patchcommercereview) - Update a review
+- [`commercePatchCommerceSaleschannel`](docs/sdks/commerce/README.md#patchcommercesaleschannel) - Update a saleschannel
+- [`commercePatchCommerceSaleschannel`](docs/sdks/saleschannel/README.md#patchcommercesaleschannel) - Update a saleschannel
 - [`commerceRemoveCommerceCollection`](docs/sdks/collection/README.md#removecommercecollection) - Remove a collection
 - [`commerceRemoveCommerceCollection`](docs/sdks/commerce/README.md#removecommercecollection) - Remove a collection
 - [`commerceRemoveCommerceInventory`](docs/sdks/commerce/README.md#removecommerceinventory) - Remove an inventory
@@ -844,6 +852,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceRemoveCommerceLocation`](docs/sdks/location/README.md#removecommercelocation) - Remove a location
 - [`commerceRemoveCommerceReview`](docs/sdks/commerce/README.md#removecommercereview) - Remove a review
 - [`commerceRemoveCommerceReview`](docs/sdks/review/README.md#removecommercereview) - Remove a review
+- [`commerceRemoveCommerceSaleschannel`](docs/sdks/commerce/README.md#removecommercesaleschannel) - Remove a saleschannel
+- [`commerceRemoveCommerceSaleschannel`](docs/sdks/saleschannel/README.md#removecommercesaleschannel) - Remove a saleschannel
 - [`commerceUpdateCommerceCollection`](docs/sdks/collection/README.md#updatecommercecollection) - Update a collection
 - [`commerceUpdateCommerceCollection`](docs/sdks/commerce/README.md#updatecommercecollection) - Update a collection
 - [`commerceUpdateCommerceInventory`](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
@@ -854,6 +864,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`commerceUpdateCommerceLocation`](docs/sdks/location/README.md#updatecommercelocation) - Update a location
 - [`commerceUpdateCommerceReview`](docs/sdks/commerce/README.md#updatecommercereview) - Update a review
 - [`commerceUpdateCommerceReview`](docs/sdks/review/README.md#updatecommercereview) - Update a review
+- [`commerceUpdateCommerceSaleschannel`](docs/sdks/commerce/README.md#updatecommercesaleschannel) - Update a saleschannel
+- [`commerceUpdateCommerceSaleschannel`](docs/sdks/saleschannel/README.md#updatecommercesaleschannel) - Update a saleschannel
 - [`companyCreateCrmCompany`](docs/sdks/company/README.md#createcrmcompany) - Create a company
 - [`companyCreateCrmCompany`](docs/sdks/crm/README.md#createcrmcompany) - Create a company
 - [`companyCreateHrisCompany`](docs/sdks/company/README.md#createhriscompany) - Create a company

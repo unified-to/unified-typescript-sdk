@@ -62,6 +62,8 @@ export const PropertyConnectionPermissions = {
   CommerceLocationWrite: "commerce_location_write",
   CommerceReviewRead: "commerce_review_read",
   CommerceReviewWrite: "commerce_review_write",
+  CommerceSaleschannelRead: "commerce_saleschannel_read",
+  CommerceSaleschannelWrite: "commerce_saleschannel_write",
   VerificationPackageRead: "verification_package_read",
   VerificationRequestRead: "verification_request_read",
   VerificationRequestWrite: "verification_request_write",

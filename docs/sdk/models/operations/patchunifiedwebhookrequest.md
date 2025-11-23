@@ -9,7 +9,7 @@ let value: PatchUnifiedWebhookRequest = {
   webhook: {
     connectionId: "<id>",
     event: "updated",
-    objectType: "genai_model",
+    objectType: "storage_file",
   },
   id: "<id>",
 };

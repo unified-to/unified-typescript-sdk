@@ -35,6 +35,13 @@ export const ListApplicationId = {
 } as const;
 export type ListApplicationId = OpenEnum<typeof ListApplicationId>;
 
+export const ListBenefitId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListBenefitId = OpenEnum<typeof ListBenefitId>;
+
 export const ListBranchId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -344,6 +351,13 @@ export const ListRootId = {
   NotSupported: "not-supported",
 } as const;
 export type ListRootId = OpenEnum<typeof ListRootId>;
+
+export const ListSaleschannelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListSaleschannelId = OpenEnum<typeof ListSaleschannelId>;
 
 export const ListSortByCreatedAt = {
   SupportedRequired: "supported-required",
@@ -746,6 +760,15 @@ export const VirtualWebhookRepoId = {
 } as const;
 export type VirtualWebhookRepoId = OpenEnum<typeof VirtualWebhookRepoId>;
 
+export const VirtualWebhookSaleschannelId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookSaleschannelId = OpenEnum<
+  typeof VirtualWebhookSaleschannelId
+>;
+
 export const VirtualWebhookSpaceId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -818,6 +841,7 @@ export type IntegrationSupport = {
   inboundFields?: { [k: string]: string } | undefined;
   listAccountId?: ListAccountId | undefined;
   listApplicationId?: ListApplicationId | undefined;
+  listBenefitId?: ListBenefitId | undefined;
   listBranchId?: ListBranchId | undefined;
   listCalendarId?: ListCalendarId | undefined;
   listCallId?: ListCallId | undefined;
@@ -862,6 +886,7 @@ export type IntegrationSupport = {
   listRawFields?: ListRawFields | undefined;
   listRepoId?: ListRepoId | undefined;
   listRootId?: ListRootId | undefined;
+  listSaleschannelId?: ListSaleschannelId | undefined;
   listSortByCreatedAt?: ListSortByCreatedAt | undefined;
   listSortByName?: ListSortByName | undefined;
   listSortByUpdatedAt?: ListSortByUpdatedAt | undefined;
@@ -924,6 +949,7 @@ export type IntegrationSupport = {
   virtualWebhookPipelineId?: VirtualWebhookPipelineId | undefined;
   virtualWebhookProjectId?: VirtualWebhookProjectId | undefined;
   virtualWebhookRepoId?: VirtualWebhookRepoId | undefined;
+  virtualWebhookSaleschannelId?: VirtualWebhookSaleschannelId | undefined;
   virtualWebhookSpaceId?: VirtualWebhookSpaceId | undefined;
   virtualWebhookStartGte?: VirtualWebhookStartGte | undefined;
   virtualWebhookStatus?: VirtualWebhookStatus | undefined;
@@ -956,6 +982,13 @@ export const ListApplicationId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListApplicationId);
+
+/** @internal */
+export const ListBenefitId$inboundSchema: z.ZodType<
+  ListBenefitId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListBenefitId);
 
 /** @internal */
 export const ListBranchId$inboundSchema: z.ZodType<
@@ -1264,6 +1297,13 @@ export const ListRootId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListRootId);
+
+/** @internal */
+export const ListSaleschannelId$inboundSchema: z.ZodType<
+  ListSaleschannelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListSaleschannelId);
 
 /** @internal */
 export const ListSortByCreatedAt$inboundSchema: z.ZodType<
@@ -1651,6 +1691,13 @@ export const VirtualWebhookRepoId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(VirtualWebhookRepoId);
 
 /** @internal */
+export const VirtualWebhookSaleschannelId$inboundSchema: z.ZodType<
+  VirtualWebhookSaleschannelId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookSaleschannelId);
+
+/** @internal */
 export const VirtualWebhookSpaceId$inboundSchema: z.ZodType<
   VirtualWebhookSpaceId,
   z.ZodTypeDef,
@@ -1723,6 +1770,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   inbound_fields: z.record(z.string()).optional(),
   list_account_id: ListAccountId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
+  list_benefit_id: ListBenefitId$inboundSchema.optional(),
   list_branch_id: ListBranchId$inboundSchema.optional(),
   list_calendar_id: ListCalendarId$inboundSchema.optional(),
   list_call_id: ListCallId$inboundSchema.optional(),
@@ -1768,6 +1816,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_raw_fields: ListRawFields$inboundSchema.optional(),
   list_repo_id: ListRepoId$inboundSchema.optional(),
   list_root_id: ListRootId$inboundSchema.optional(),
+  list_saleschannel_id: ListSaleschannelId$inboundSchema.optional(),
   list_sort_by_created_at: ListSortByCreatedAt$inboundSchema.optional(),
   list_sort_by_name: ListSortByName$inboundSchema.optional(),
   list_sort_by_updated_at: ListSortByUpdatedAt$inboundSchema.optional(),
@@ -1835,6 +1884,8 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     .optional(),
   virtual_webhook_project_id: VirtualWebhookProjectId$inboundSchema.optional(),
   virtual_webhook_repo_id: VirtualWebhookRepoId$inboundSchema.optional(),
+  virtual_webhook_saleschannel_id: VirtualWebhookSaleschannelId$inboundSchema
+    .optional(),
   virtual_webhook_space_id: VirtualWebhookSpaceId$inboundSchema.optional(),
   virtual_webhook_start_gte: VirtualWebhookStartGte$inboundSchema.optional(),
   virtual_webhook_status: VirtualWebhookStatus$inboundSchema.optional(),
@@ -1854,6 +1905,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "inbound_fields": "inboundFields",
     "list_account_id": "listAccountId",
     "list_application_id": "listApplicationId",
+    "list_benefit_id": "listBenefitId",
     "list_branch_id": "listBranchId",
     "list_calendar_id": "listCalendarId",
     "list_call_id": "listCallId",
@@ -1898,6 +1950,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_raw_fields": "listRawFields",
     "list_repo_id": "listRepoId",
     "list_root_id": "listRootId",
+    "list_saleschannel_id": "listSaleschannelId",
     "list_sort_by_created_at": "listSortByCreatedAt",
     "list_sort_by_name": "listSortByName",
     "list_sort_by_updated_at": "listSortByUpdatedAt",
@@ -1956,6 +2009,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_pipeline_id": "virtualWebhookPipelineId",
     "virtual_webhook_project_id": "virtualWebhookProjectId",
     "virtual_webhook_repo_id": "virtualWebhookRepoId",
+    "virtual_webhook_saleschannel_id": "virtualWebhookSaleschannelId",
     "virtual_webhook_space_id": "virtualWebhookSpaceId",
     "virtual_webhook_start_gte": "virtualWebhookStartGte",
     "virtual_webhook_status": "virtualWebhookStatus",
