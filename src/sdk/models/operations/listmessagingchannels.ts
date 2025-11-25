@@ -30,6 +30,7 @@ export type ListMessagingChannelsRequest = {
    */
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   /**
    * Return only results whose updated date is equal or greater to this value
    */
@@ -47,6 +48,7 @@ export type ListMessagingChannelsRequest$Outbound = {
   query?: string | undefined;
   raw?: string | undefined;
   sort?: string | undefined;
+  type?: string | undefined;
   updated_gte?: string | undefined;
 };
 
@@ -65,6 +67,7 @@ export const ListMessagingChannelsRequest$outboundSchema: z.ZodType<
   query: z.string().optional(),
   raw: z.string().optional(),
   sort: z.string().optional(),
+  type: z.string().optional(),
   updatedGte: z.string().optional(),
 }).transform((v) => {
   return remap$(v, {

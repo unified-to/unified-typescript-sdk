@@ -54,6 +54,7 @@ export type CommerceMetadataValue =
   | Array<CommerceMetadataSchemas1 | string | number | boolean>;
 
 export type CommerceMetadata = {
+  description?: string | undefined;
   extraData?:
     | { [k: string]: any }
     | string
@@ -63,6 +64,7 @@ export type CommerceMetadata = {
     | undefined;
   format?: CommerceMetadataFormat | undefined;
   id?: string | undefined;
+  isRequired?: boolean | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
@@ -383,6 +385,7 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  description: z.string().optional(),
   extra_data: z.union([
     z.record(z.any()),
     z.string(),
@@ -399,6 +402,7 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
   ]).optional(),
   format: CommerceMetadataFormat$inboundSchema.optional(),
   id: z.string().optional(),
+  is_required: z.boolean().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
@@ -420,10 +424,12 @@ export const CommerceMetadata$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "extra_data": "extraData",
+    "is_required": "isRequired",
   });
 });
 /** @internal */
 export type CommerceMetadata$Outbound = {
+  description?: string | undefined;
   extra_data?:
     | { [k: string]: any }
     | string
@@ -433,6 +439,7 @@ export type CommerceMetadata$Outbound = {
     | undefined;
   format?: string | undefined;
   id?: string | undefined;
+  is_required?: boolean | undefined;
   key?: string | undefined;
   namespace?: string | undefined;
   slug?: string | undefined;
@@ -452,6 +459,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   CommerceMetadata
 > = z.object({
+  description: z.string().optional(),
   extraData: z.union([
     z.record(z.any()),
     z.string(),
@@ -468,6 +476,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
   ]).optional(),
   format: CommerceMetadataFormat$outboundSchema.optional(),
   id: z.string().optional(),
+  isRequired: z.boolean().optional(),
   key: z.string().optional(),
   namespace: z.string().optional(),
   slug: z.string().optional(),
@@ -489,6 +498,7 @@ export const CommerceMetadata$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     extraData: "extra_data",
+    isRequired: "is_required",
   });
 });
 

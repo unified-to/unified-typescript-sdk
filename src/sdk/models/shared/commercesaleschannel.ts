@@ -8,12 +8,6 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
-  CommerceMetadata,
-  CommerceMetadata$inboundSchema,
-  CommerceMetadata$Outbound,
-  CommerceMetadata$outboundSchema,
-} from "./commercemetadata.js";
-import {
   CommerceReference,
   CommerceReference$inboundSchema,
   CommerceReference$Outbound,
@@ -29,7 +23,6 @@ export type CommerceSaleschannel = {
   description?: string | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
-  itemMetadata?: Array<CommerceMetadata> | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   updatedAt?: Date | undefined;
@@ -47,7 +40,6 @@ export const CommerceSaleschannel$inboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
-  item_metadata: z.array(CommerceMetadata$inboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -56,7 +48,6 @@ export const CommerceSaleschannel$inboundSchema: z.ZodType<
   return remap$(v, {
     "created_at": "createdAt",
     "is_active": "isActive",
-    "item_metadata": "itemMetadata",
     "updated_at": "updatedAt",
   });
 });
@@ -67,7 +58,6 @@ export type CommerceSaleschannel$Outbound = {
   description?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
-  item_metadata?: Array<CommerceMetadata$Outbound> | undefined;
   raw?: { [k: string]: any } | undefined;
   slug?: string | undefined;
   updated_at?: string | undefined;
@@ -84,7 +74,6 @@ export const CommerceSaleschannel$outboundSchema: z.ZodType<
   description: z.string().optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
-  itemMetadata: z.array(CommerceMetadata$outboundSchema).optional(),
   raw: z.record(z.any()).optional(),
   slug: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -92,7 +81,6 @@ export const CommerceSaleschannel$outboundSchema: z.ZodType<
   return remap$(v, {
     createdAt: "created_at",
     isActive: "is_active",
-    itemMetadata: "item_metadata",
     updatedAt: "updated_at",
   });
 });
