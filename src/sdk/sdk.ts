@@ -42,6 +42,7 @@ import { Document } from "./document.js";
 import { Embedding } from "./embedding.js";
 import { Employee } from "./employee.js";
 import { Enrich } from "./enrich.js";
+import { Environment } from "./environment.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
 import { FileT } from "./file.js";
@@ -629,6 +630,11 @@ export class UnifiedTo extends ClientSDK {
   private _connection?: Connection;
   get connection(): Connection {
     return (this._connection ??= new Connection(this._options));
+  }
+
+  private _environment?: Environment;
+  get environment(): Environment {
+    return (this._environment ??= new Environment(this._options));
   }
 
   private _integration?: Integration;

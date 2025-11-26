@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: e5fd42ded6b39076e927e9c9bcaeaeda
+  docChecksum: 7e48c8065cf75c07215a397f53c91620
   docVersion: "1.0"
-  speakeasyVersion: 1.660.0
-  generationVersion: 2.760.2
-  releaseVersion: 2.80.10
-  configChecksum: 64daabe0c9d67f4f5cf53df50d0827e4
+  speakeasyVersion: 1.661.2
+  generationVersion: 2.763.3
+  releaseVersion: 2.80.11
+  configChecksum: d56c97c06422d5fd69369b06e16ae350
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -16,7 +16,7 @@ features:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.9
+    core: 3.26.10
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -575,6 +575,7 @@ generatedFiles:
   - docs/sdk/models/operations/removeucrecordingresponse.md
   - docs/sdk/models/operations/removeunifiedconnectionrequest.md
   - docs/sdk/models/operations/removeunifiedconnectionresponse.md
+  - docs/sdk/models/operations/removeunifiedenvironmentrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookrequest.md
   - docs/sdk/models/operations/removeunifiedwebhookresponse.md
   - docs/sdk/models/operations/removeverificationrequestrequest.md
@@ -1265,6 +1266,7 @@ generatedFiles:
   - docs/sdks/embedding/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
+  - docs/sdks/environment/README.md
   - docs/sdks/event/README.md
   - docs/sdks/expense/README.md
   - docs/sdks/file/README.md
@@ -1847,6 +1849,7 @@ generatedFiles:
   - src/funcs/ucGetUcCall.ts
   - src/funcs/ucListUcCalls.ts
   - src/funcs/unifiedCreateUnifiedConnection.ts
+  - src/funcs/unifiedCreateUnifiedEnvironment.ts
   - src/funcs/unifiedCreateUnifiedWebhook.ts
   - src/funcs/unifiedGetUnifiedApicall.ts
   - src/funcs/unifiedGetUnifiedConnection.ts
@@ -1855,6 +1858,7 @@ generatedFiles:
   - src/funcs/unifiedGetUnifiedWebhook.ts
   - src/funcs/unifiedListUnifiedApicalls.ts
   - src/funcs/unifiedListUnifiedConnections.ts
+  - src/funcs/unifiedListUnifiedEnvironments.ts
   - src/funcs/unifiedListUnifiedIntegrationWorkspaces.ts
   - src/funcs/unifiedListUnifiedIntegrations.ts
   - src/funcs/unifiedListUnifiedIssues.ts
@@ -1863,6 +1867,7 @@ generatedFiles:
   - src/funcs/unifiedPatchUnifiedWebhook.ts
   - src/funcs/unifiedPatchUnifiedWebhookTrigger.ts
   - src/funcs/unifiedRemoveUnifiedConnection.ts
+  - src/funcs/unifiedRemoveUnifiedEnvironment.ts
   - src/funcs/unifiedRemoveUnifiedWebhook.ts
   - src/funcs/unifiedUpdateUnifiedConnection.ts
   - src/funcs/unifiedUpdateUnifiedWebhook.ts
@@ -1933,6 +1938,7 @@ generatedFiles:
   - src/sdk/embedding.ts
   - src/sdk/employee.ts
   - src/sdk/enrich.ts
+  - src/sdk/environment.ts
   - src/sdk/event.ts
   - src/sdk/expense.ts
   - src/sdk/file.ts
@@ -2414,6 +2420,7 @@ generatedFiles:
   - src/sdk/models/operations/removeuccontact.ts
   - src/sdk/models/operations/removeucrecording.ts
   - src/sdk/models/operations/removeunifiedconnection.ts
+  - src/sdk/models/operations/removeunifiedenvironment.ts
   - src/sdk/models/operations/removeunifiedwebhook.ts
   - src/sdk/models/operations/removeverificationrequest.ts
   - src/sdk/models/operations/updateaccountingaccount.ts
@@ -7636,6 +7643,33 @@ examples:
       responses:
         "200":
           application/json: {}
+  createUnifiedEnvironment:
+    speakeasy-default-create-unified-environment:
+      requestBody:
+        application/json: []
+      responses:
+        "200":
+          application/json: ["<value 1>", "<value 2>", "<value 3>"]
+  listUnifiedEnvironments:
+    speakeasy-default-list-unified-environments:
+      responses:
+        "200":
+          application/json: ["<value 1>", "<value 2>", "<value 3>"]
+  removeUnifiedEnvironment:
+    speakeasy-default-remove-unified-environment:
+      parameters:
+        path:
+          env: "<value>"
+      responses:
+        "200":
+          application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.commerce.listCommerceSaleschannels()`:  `response.[].itemMetadata` **Removed** **Breaking** :warning:\n* `unified-to.saleschannel.updateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.saleschannel.patchCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.commerce.createCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.saleschannel.listCommerceSaleschannels()`:  `response.[].itemMetadata` **Removed** **Breaking** :warning:\n* `unified-to.saleschannel.getCommerceSaleschannel()`:  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.saleschannel.createCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.commerce.getCommerceSaleschannel()`:  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.commerce.updateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.commerce.patchCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.itemMetadata` **Removed** **Breaking** :warning:\n  *  `response.item_metadata` **Removed** **Breaking** :warning:\n* `unified-to.collection.listCommerceCollections()`:  `response.[]` **Changed**\n* `unified-to.item.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed**\n* `unified-to.commerce.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.listCommerceItems()`:  `response.[].media.[].metadata.[]` **Changed**\n* `unified-to.commerce.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.listCommerceCollections()`:  `response.[]` **Changed**\n* `unified-to.collection.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.collection.getCommerceCollection()`:  `response` **Changed**\n* `unified-to.commerce.createCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.collection.patchCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.collection.updateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed**\n  *  `response` **Changed**\n* `unified-to.item.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.item.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed**\n* `unified-to.item.patchCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.item.updateCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.review.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.listCommerceReviews()`:  `response.[].comments.[].metadata.[]` **Changed**\n* `unified-to.review.patchCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.review.updateCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.getCommerceReview()`:  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.getCommerceItem()`:  `response.media.[].metadata.[]` **Changed**\n* `unified-to.commerce.getCommerceCollection()`:  `response` **Changed**\n* `unified-to.commerce.createCommerceReview()`: \n  *  `request.commerceReview.comments.[].metadata.[]` **Changed**\n  *  `response.comments.[].metadata.[]` **Changed**\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request.commerceItem.media.[].metadata.[]` **Changed**\n  *  `response.media.[].metadata.[]` **Changed**\n* `unified-to.messaging.listMessagingChannels()`: \n  *  `request.type` **Added**\n* `unified-to.messaging.listMessagingMessages()`: \n  *  `request.type` **Added**\n* `unified-to.channel.listMessagingChannels()`: \n  *  `request.type` **Added**\n* `unified-to.message.listMessagingMessages()`: \n  *  `request.type` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes Detected:
+  * `unified-to.unified.createUnifiedEnvironment()`: **Added**
+  * `unified-to.unified.listUnifiedEnvironments()`: **Added**
+  * `unified-to.unified.removeUnifiedEnvironment()`: **Added**
+  * `unified-to.environment.createUnifiedEnvironment()`: **Added**
+  * `unified-to.environment.listUnifiedEnvironments()`: **Added**
+  * `unified-to.environment.removeUnifiedEnvironment()`: **Added**

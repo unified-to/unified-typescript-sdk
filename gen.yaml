@@ -25,7 +25,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.80.10
+  version: 2.80.11
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -46,6 +46,7 @@ typescript:
   exportZodModelNamespace: false
   flattenGlobalSecurity: false
   flatteningOrder: body-first
+  formStringArrayEncodeMode: encoded-string
   forwardCompatibleEnumsByDefault: false
   generateExamples: true
   imports:
@@ -56,6 +57,7 @@ typescript:
       operations: sdk/models/operations
       shared: sdk/models/shared
       webhooks: sdk/models/webhooks
+  inferUnionDiscriminators: true
   inputModelSuffix: input
   jsonpath: legacy
   laxMode: strict

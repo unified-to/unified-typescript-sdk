@@ -447,6 +447,7 @@ export * from "./removeuccomment.js";
 export * from "./removeuccontact.js";
 export * from "./removeucrecording.js";
 export * from "./removeunifiedconnection.js";
+export * from "./removeunifiedenvironment.js";
 export * from "./removeunifiedwebhook.js";
 export * from "./removeverificationrequest.js";
 export * from "./updateaccountingaccount.js";
