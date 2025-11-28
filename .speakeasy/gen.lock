@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 7e48c8065cf75c07215a397f53c91620
+  docChecksum: 312aee283a626a1a256d39c734a429ac
   docVersion: "1.0"
-  speakeasyVersion: 1.661.2
+  speakeasyVersion: 1.662.0
   generationVersion: 2.763.3
-  releaseVersion: 2.80.11
-  configChecksum: d56c97c06422d5fd69369b06e16ae350
+  releaseVersion: 2.80.12
+  configChecksum: 80e6a870565ad7b4180975af8b3094eb
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -7665,11 +7665,4 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Typescript SDK Changes Detected:
-  * `unified-to.unified.createUnifiedEnvironment()`: **Added**
-  * `unified-to.unified.listUnifiedEnvironments()`: **Added**
-  * `unified-to.unified.removeUnifiedEnvironment()`: **Added**
-  * `unified-to.environment.createUnifiedEnvironment()`: **Added**
-  * `unified-to.environment.listUnifiedEnvironments()`: **Added**
-  * `unified-to.environment.removeUnifiedEnvironment()`: **Added**
+releaseNotes: "## Typescript SDK Changes Detected:\n* `unified-to.calendar.createCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n* `unified-to.calendar.getCalendarEvent()`:  `response.send_notifications` **Added**\n* `unified-to.calendar.listCalendarEvents()`:  `response.[].sendNotifications` **Added**\n* `unified-to.calendar.patchCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n* `unified-to.calendar.updateCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n* `unified-to.event.createCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n* `unified-to.event.getCalendarEvent()`:  `response.send_notifications` **Added**\n* `unified-to.event.listCalendarEvents()`:  `response.[].sendNotifications` **Added**\n* `unified-to.event.patchCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n* `unified-to.event.updateCalendarEvent()`: \n  *  `request.calendarEvent.sendNotifications` **Added**\n  *  `response.send_notifications` **Added**\n"

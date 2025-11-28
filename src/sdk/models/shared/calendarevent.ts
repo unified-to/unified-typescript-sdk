@@ -65,6 +65,7 @@ export type CalendarEvent = {
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence> | undefined;
   recurringEventId?: string | undefined;
+  sendNotifications?: boolean | undefined;
   startAt?: string | undefined;
   status?: CalendarEventStatus | undefined;
   subject?: string | undefined;
@@ -109,6 +110,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$inboundSchema).optional(),
   recurring_event_id: z.string().optional(),
+  send_notifications: z.boolean().optional(),
   start_at: z.string().optional(),
   status: CalendarEventStatus$inboundSchema.optional(),
   subject: z.string().optional(),
@@ -125,6 +127,7 @@ export const CalendarEvent$inboundSchema: z.ZodType<
     "is_free": "isFree",
     "is_private": "isPrivate",
     "recurring_event_id": "recurringEventId",
+    "send_notifications": "sendNotifications",
     "start_at": "startAt",
     "updated_at": "updatedAt",
     "web_url": "webUrl",
@@ -149,6 +152,7 @@ export type CalendarEvent$Outbound = {
   raw?: { [k: string]: any } | undefined;
   recurrence?: Array<CalendarEventRecurrence$Outbound> | undefined;
   recurring_event_id?: string | undefined;
+  send_notifications?: boolean | undefined;
   start_at?: string | undefined;
   status?: string | undefined;
   subject?: string | undefined;
@@ -180,6 +184,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
   raw: z.record(z.any()).optional(),
   recurrence: z.array(CalendarEventRecurrence$outboundSchema).optional(),
   recurringEventId: z.string().optional(),
+  sendNotifications: z.boolean().optional(),
   startAt: z.string().optional(),
   status: CalendarEventStatus$outboundSchema.optional(),
   subject: z.string().optional(),
@@ -196,6 +201,7 @@ export const CalendarEvent$outboundSchema: z.ZodType<
     isFree: "is_free",
     isPrivate: "is_private",
     recurringEventId: "recurring_event_id",
+    sendNotifications: "send_notifications",
     startAt: "start_at",
     updatedAt: "updated_at",
     webUrl: "web_url",
