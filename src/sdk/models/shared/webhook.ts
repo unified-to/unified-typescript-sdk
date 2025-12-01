@@ -16,6 +16,7 @@ export const DbType = {
   Postgres: "postgres",
   Mssql: "mssql",
   Mariadb: "mariadb",
+  Supabase: "supabase",
 } as const;
 export type DbType = OpenEnum<typeof DbType>;
 
