@@ -25,7 +25,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 typescript:
-  version: 2.81.0
+  version: 2.82.0
   acceptHeaderEnum: true
   additionalDependencies:
     dependencies: {}
@@ -37,7 +37,7 @@ typescript:
   author: Unified
   baseErrorName: UnifiedToError
   clientServerStatusCodesAsErrors: true
-  constFieldsAlwaysOptional: true
+  constFieldsAlwaysOptional: false
   defaultErrorName: SDKError
   enableCustomCodeRegions: false
   enableMCPServer: false
@@ -65,10 +65,11 @@ typescript:
   maxMethodParams: 0
   methodArguments: require-security-and-request
   modelPropertyCasing: camel
-  moduleFormat: commonjs
+  moduleFormat: dual
   multipartArrayFormat: legacy
   outputModelSuffix: output
   packageName: '@unified-api/typescript-sdk'
+  preApplyUnionDiscriminators: true
   responseFormat: flat
   sseFlatResponse: false
   templateVersion: v2
