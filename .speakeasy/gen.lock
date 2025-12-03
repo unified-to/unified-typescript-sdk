@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 5cc9bd003a02a42d13a2683d5b08bc71
+  docChecksum: 24772a040a22188e844daea3d8d85bf5
   docVersion: "1.0"
-  speakeasyVersion: 1.666.2
-  generationVersion: 2.768.1
-  releaseVersion: 2.81.1
-  configChecksum: cb53434de0635643ecbf94aca9e4408c
+  speakeasyVersion: 1.667.0
+  generationVersion: 2.769.1
+  releaseVersion: 2.82.0
+  configChecksum: 553d648b8c8a634794af94d280a2c42f
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
@@ -24,6 +24,7 @@ features:
     globalSecurity: 2.82.14
     globalSecurityCallbacks: 0.1.0
     globalServerURLs: 2.83.0
+    inputOutputModels: 2.82.0
     openEnums: 0.1.1
     responseFormat: 0.2.3
     retries: 2.83.0
@@ -1019,8 +1020,6 @@ generatedFiles:
   - docs/sdk/models/shared/paymenttype.md
   - docs/sdk/models/shared/priority.md
   - docs/sdk/models/shared/profilegender.md
-  - docs/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.md
-  - docs/sdk/models/shared/propertyaccountingcashflowitemsubitems.md
   - docs/sdk/models/shared/propertyaccountingcontactbillingaddress.md
   - docs/sdk/models/shared/propertyaccountingcontactshippingaddress.md
   - docs/sdk/models/shared/propertyaccountingorderbillingaddress.md
@@ -2659,8 +2658,6 @@ generatedFiles:
   - src/sdk/models/shared/paymentpayout.ts
   - src/sdk/models/shared/paymentrefund.ts
   - src/sdk/models/shared/paymentsubscription.ts
-  - src/sdk/models/shared/propertyaccountingbalancesheetitemsubitems.ts
-  - src/sdk/models/shared/propertyaccountingcashflowitemsubitems.ts
   - src/sdk/models/shared/propertyaccountingcontactbillingaddress.ts
   - src/sdk/models/shared/propertyaccountingcontactshippingaddress.ts
   - src/sdk/models/shared/propertyaccountingorderbillingaddress.ts
@@ -7665,4 +7662,17 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.commerce.createCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.commerce.createCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n* `unified-to.commerce.getCommerceItem()`:  `response.collections` **Added**\n* `unified-to.commerce.getCommerceSaleschannel()`:  `response.collections.[].type` **Added**\n* `unified-to.commerce.listCommerceItems()`:  `response.[].collections` **Added**\n* `unified-to.commerce.listCommerceSaleschannels()`:  `response.[].collections.[].type` **Added**\n* `unified-to.commerce.patchCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.commerce.patchCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n* `unified-to.commerce.updateCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.commerce.updateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n* `unified-to.item.createCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.item.getCommerceItem()`:  `response.collections` **Added**\n* `unified-to.item.listCommerceItems()`:  `response.[].collections` **Added**\n* `unified-to.item.patchCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.item.updateCommerceItem()`: \n  *  `request.commerceItem.collections` **Added**\n  *  `response.collections` **Added**\n* `unified-to.saleschannel.createCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n* `unified-to.saleschannel.getCommerceSaleschannel()`:  `response.collections.[].type` **Added**\n* `unified-to.saleschannel.listCommerceSaleschannels()`:  `response.[].collections.[].type` **Added**\n* `unified-to.saleschannel.patchCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n* `unified-to.saleschannel.updateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.collections.[].type` **Added**\n  *  `response.collections.[].type` **Added**\n"
+releaseNotes: |
+  ## Typescript SDK Changes:
+  * `unified-to.accounting.getAccountingBalancesheet()`:  `response.assets.[].subItems.[]` **Changed**
+  * `unified-to.accounting.getAccountingCashflow()`:  `response.financing_sections.[].items.[].subItems.[]` **Changed**
+  * `unified-to.accounting.getAccountingReport()`:  `response.balance_sheet.assets.[].subItems.[]` **Changed**
+  * `unified-to.accounting.listAccountingBalancesheets()`:  `response.[].assets.[].subItems.[]` **Changed**
+  * `unified-to.accounting.listAccountingCashflows()`:  `response.[].financingSections.[].items.[].subItems.[]` **Changed**
+  * `unified-to.accounting.listAccountingReports()`:  `response.[].balanceSheet.assets.[].subItems.[]` **Changed**
+  * `unified-to.balancesheet.getAccountingBalancesheet()`:  `response.assets.[].subItems.[]` **Changed**
+  * `unified-to.balancesheet.listAccountingBalancesheets()`:  `response.[].assets.[].subItems.[]` **Changed**
+  * `unified-to.cashflow.getAccountingCashflow()`:  `response.financing_sections.[].items.[].subItems.[]` **Changed**
+  * `unified-to.cashflow.listAccountingCashflows()`:  `response.[].financingSections.[].items.[].subItems.[]` **Changed**
+  * `unified-to.report.getAccountingReport()`:  `response.balance_sheet.assets.[].subItems.[]` **Changed**
+  * `unified-to.report.listAccountingReports()`:  `response.[].balanceSheet.assets.[].subItems.[]` **Changed**

@@ -7,16 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  PropertyAccountingCashflowItemSubItems,
-  PropertyAccountingCashflowItemSubItems$inboundSchema,
-} from "./propertyaccountingcashflowitemsubitems.js";
 
 export type AccountingCashflowItem = {
   accountId?: string | undefined;
   amount?: number | undefined;
   name?: string | undefined;
-  subItems?: Array<PropertyAccountingCashflowItemSubItems> | undefined;
+  subItems?: Array<AccountingCashflowItem> | undefined;
   /**
    * Optional linkage to transactions
    */
@@ -32,7 +28,7 @@ export const AccountingCashflowItem$inboundSchema: z.ZodType<
   account_id: z.string().optional(),
   amount: z.number().optional(),
   name: z.string().optional(),
-  sub_items: z.array(PropertyAccountingCashflowItemSubItems$inboundSchema)
+  sub_items: z.array(z.lazy(() => AccountingCashflowItem$inboundSchema))
     .optional(),
   transaction_ids: z.array(z.string()).optional(),
 }).transform((v) => {

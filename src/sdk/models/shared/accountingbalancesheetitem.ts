@@ -7,16 +7,12 @@ import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  PropertyAccountingBalancesheetItemSubItems,
-  PropertyAccountingBalancesheetItemSubItems$inboundSchema,
-} from "./propertyaccountingbalancesheetitemsubitems.js";
 
 export type AccountingBalancesheetItem = {
   accountId?: string | undefined;
   amount?: number | undefined;
   name?: string | undefined;
-  subItems?: Array<PropertyAccountingBalancesheetItemSubItems> | undefined;
+  subItems?: Array<AccountingBalancesheetItem> | undefined;
 };
 
 /** @internal */
@@ -28,7 +24,7 @@ export const AccountingBalancesheetItem$inboundSchema: z.ZodType<
   account_id: z.string().optional(),
   amount: z.number().optional(),
   name: z.string().optional(),
-  sub_items: z.array(PropertyAccountingBalancesheetItemSubItems$inboundSchema)
+  sub_items: z.array(z.lazy(() => AccountingBalancesheetItem$inboundSchema))
     .optional(),
 }).transform((v) => {
   return remap$(v, {

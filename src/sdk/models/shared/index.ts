@@ -155,8 +155,6 @@ export * from "./paymentpayment.js";
 export * from "./paymentpayout.js";
 export * from "./paymentrefund.js";
 export * from "./paymentsubscription.js";
-export * from "./propertyaccountingbalancesheetitemsubitems.js";
-export * from "./propertyaccountingcashflowitemsubitems.js";
 export * from "./propertyaccountingcontactbillingaddress.js";
 export * from "./propertyaccountingcontactshippingaddress.js";
 export * from "./propertyaccountingorderbillingaddress.js";
