@@ -25,10 +25,23 @@ import {
   CommerceMetadata$Outbound,
   CommerceMetadata$outboundSchema,
 } from "./commercemetadata.js";
+import {
+  CommerceReference,
+  CommerceReference$inboundSchema,
+  CommerceReference$Outbound,
+  CommerceReference$outboundSchema,
+} from "./commercereference.js";
 
 export type CommerceItem = {
   accountId?: string | undefined;
+  /**
+   *  @deprecated; use collections instead
+   */
   collectionIds?: Array<string> | undefined;
+  /**
+   * points to Collection with id, name, and type fields
+   */
+  collections?: Array<CommerceReference> | undefined;
   createdAt?: Date | undefined;
   description?: string | undefined;
   globalCode?: string | undefined;
@@ -60,6 +73,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
 > = z.object({
   account_id: z.string().optional(),
   collection_ids: z.array(z.string()).optional(),
+  collections: z.array(CommerceReference$inboundSchema).optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   description: z.string().optional(),
@@ -98,6 +112,7 @@ export const CommerceItem$inboundSchema: z.ZodType<
 export type CommerceItem$Outbound = {
   account_id?: string | undefined;
   collection_ids?: Array<string> | undefined;
+  collections?: Array<CommerceReference$Outbound> | undefined;
   created_at?: string | undefined;
   description?: string | undefined;
   global_code?: string | undefined;
@@ -126,6 +141,7 @@ export const CommerceItem$outboundSchema: z.ZodType<
 > = z.object({
   accountId: z.string().optional(),
   collectionIds: z.array(z.string()).optional(),
+  collections: z.array(CommerceReference$outboundSchema).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   description: z.string().optional(),
   globalCode: z.string().optional(),

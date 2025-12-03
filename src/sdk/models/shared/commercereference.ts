@@ -10,6 +10,7 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type CommerceReference = {
   id?: string | undefined;
   name?: string | undefined;
+  type?: string | undefined;
 };
 
 /** @internal */
@@ -20,11 +21,13 @@ export const CommerceReference$inboundSchema: z.ZodType<
 > = z.object({
   id: z.string().optional(),
   name: z.string().optional(),
+  type: z.string().optional(),
 });
 /** @internal */
 export type CommerceReference$Outbound = {
   id?: string | undefined;
   name?: string | undefined;
+  type?: string | undefined;
 };
 
 /** @internal */
@@ -35,6 +38,7 @@ export const CommerceReference$outboundSchema: z.ZodType<
 > = z.object({
   id: z.string().optional(),
   name: z.string().optional(),
+  type: z.string().optional(),
 });
 
 export function commerceReferenceToJSON(
