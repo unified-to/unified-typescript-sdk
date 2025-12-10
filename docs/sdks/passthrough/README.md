@@ -1,5 +1,4 @@
 # Passthrough
-(*passthrough*)
 
 ## Overview
 

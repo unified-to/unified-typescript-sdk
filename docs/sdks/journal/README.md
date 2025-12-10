@@ -1,5 +1,4 @@
 # Journal
-(*journal*)
 
 ## Overview
 

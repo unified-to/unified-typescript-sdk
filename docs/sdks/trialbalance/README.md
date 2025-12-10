@@ -1,5 +1,4 @@
 # Trialbalance
-(*trialbalance*)
 
 ## Overview
 

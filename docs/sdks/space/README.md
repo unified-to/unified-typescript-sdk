@@ -1,5 +1,4 @@
 # Space
-(*space*)
 
 ## Overview
 

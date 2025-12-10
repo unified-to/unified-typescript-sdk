@@ -1,5 +1,4 @@
 # Repo
-(*repo*)
 
 ## Overview
 

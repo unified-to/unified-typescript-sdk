@@ -1,5 +1,4 @@
 # Payslip
-(*payslip*)
 
 ## Overview
 

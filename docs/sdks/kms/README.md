@@ -1,5 +1,4 @@
 # Kms
-(*kms*)
 
 ## Overview
 

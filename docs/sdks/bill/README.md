@@ -1,5 +1,4 @@
 # Bill
-(*bill*)
 
 ## Overview
 

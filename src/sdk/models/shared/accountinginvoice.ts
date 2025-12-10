@@ -69,6 +69,7 @@ export type AccountingInvoice = {
     | undefined;
   postedAt?: Date | undefined;
   raw?: { [k: string]: any } | undefined;
+  reference?: string | undefined;
   refundAmount?: number | undefined;
   refundReason?: string | undefined;
   refundedAt?: Date | undefined;
@@ -152,6 +153,7 @@ export const AccountingInvoice$inboundSchema: z.ZodType<
   posted_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   raw: z.record(z.any()).optional(),
+  reference: z.string().optional(),
   refund_amount: z.number().optional(),
   refund_reason: z.string().optional(),
   refunded_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -206,6 +208,7 @@ export type AccountingInvoice$Outbound = {
   payment_collection_method?: string | undefined;
   posted_at?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  reference?: string | undefined;
   refund_amount?: number | undefined;
   refund_reason?: string | undefined;
   refunded_at?: string | undefined;
@@ -243,6 +246,7 @@ export const AccountingInvoice$outboundSchema: z.ZodType<
     AccountingInvoicePaymentCollectionMethod$outboundSchema.optional(),
   postedAt: z.date().transform(v => v.toISOString()).optional(),
   raw: z.record(z.any()).optional(),
+  reference: z.string().optional(),
   refundAmount: z.number().optional(),
   refundReason: z.string().optional(),
   refundedAt: z.date().transform(v => v.toISOString()).optional(),

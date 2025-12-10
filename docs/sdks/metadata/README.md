@@ -1,5 +1,4 @@
 # Metadata
-(*metadata*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Saleschannel
-(*saleschannel*)
 
 ## Overview
 

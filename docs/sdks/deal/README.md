@@ -1,5 +1,4 @@
 # Deal
-(*deal*)
 
 ## Overview
 

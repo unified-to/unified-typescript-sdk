@@ -1,5 +1,4 @@
 # Company
-(*company*)
 
 ## Overview
 

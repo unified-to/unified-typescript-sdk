@@ -1,5 +1,4 @@
 # Course
-(*course*)
 
 ## Overview
 

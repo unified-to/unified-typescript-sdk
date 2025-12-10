@@ -1,5 +1,4 @@
 # Crm
-(*crm*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Expense
-(*expense*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Lms
-(*lms*)
 
 ## Overview
 

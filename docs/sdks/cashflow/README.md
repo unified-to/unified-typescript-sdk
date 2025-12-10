@@ -1,5 +1,4 @@
 # Cashflow
-(*cashflow*)
 
 ## Overview
 

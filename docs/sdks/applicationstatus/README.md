@@ -1,5 +1,4 @@
 # Applicationstatus
-(*applicationstatus*)
 
 ## Overview
 

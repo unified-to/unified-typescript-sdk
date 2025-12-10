@@ -1,5 +1,4 @@
 # Martech
-(*martech*)
 
 ## Overview
 

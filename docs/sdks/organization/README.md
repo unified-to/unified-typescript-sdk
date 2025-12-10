@@ -1,5 +1,4 @@
 # Organization
-(*organization*)
 
 ## Overview
 

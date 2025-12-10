@@ -1,5 +1,4 @@
 # Branch
-(*branch*)
 
 ## Overview
 

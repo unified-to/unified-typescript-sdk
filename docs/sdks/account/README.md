@@ -1,5 +1,4 @@
 # Account
-(*account*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Ticketing
-(*ticketing*)
 
 ## Overview
 

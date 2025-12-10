@@ -1,5 +1,4 @@
 # Instructor
-(*instructor*)
 
 ## Overview
 

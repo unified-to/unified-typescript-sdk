@@ -1,5 +1,4 @@
 # Student
-(*student*)
 
 ## Overview
 

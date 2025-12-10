@@ -1,5 +1,4 @@
 # Accounting
-(*accounting*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Ticket
-(*ticket*)
 
 ## Overview
 

@@ -1,5 +1,4 @@
 # Task
-(*task*)
 
 ## Overview
 

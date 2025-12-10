@@ -1,5 +1,4 @@
 # Comment
-(*comment*)
 
 ## Overview
 

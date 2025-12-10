@@ -1,5 +1,4 @@
 # Genai
-(*genai*)
 
 ## Overview
 

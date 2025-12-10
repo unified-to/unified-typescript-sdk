@@ -1,5 +1,4 @@
 # Taxrate
-(*taxrate*)
 
 ## Overview
 

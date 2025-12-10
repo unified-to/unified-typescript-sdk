@@ -1,5 +1,4 @@
 # Repository
-(*repository*)
 
 ## Overview
 

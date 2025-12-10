@@ -1,5 +1,4 @@
 # Message
-(*message*)
 
 ## Overview
 

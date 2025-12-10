@@ -1,5 +1,4 @@
 # Balancesheet
-(*balancesheet*)
 
 ## Overview
 
