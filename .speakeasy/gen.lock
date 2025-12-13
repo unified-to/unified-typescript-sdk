@@ -1,26 +1,26 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 7ef3d1caec75891711e5e81373e284c3
+  docChecksum: dbaf8b38742d89e3249fbd4c5a4e2a74
   docVersion: "1.0"
-  speakeasyVersion: 1.674.0
-  generationVersion: 2.778.0
-  releaseVersion: 2.82.1
-  configChecksum: 3e8748144338de0e23c473a45516b3f7
+  speakeasyVersion: 1.676.1
+  generationVersion: 2.781.2
+  releaseVersion: 2.82.2
+  configChecksum: cbb7a256a837453aa08e9fc78d9159fb
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 137d7f34-e2fa-4580-81b7-3dc091fb1dde
-  pristine_commit_hash: 7947c877511487adae3c49d28218c24f960ce8ff
-  pristine_tree_hash: ba3a297867a2497c6c5f07c39f8656c1c78b499a
+  generation_id: b93595fb-b9e5-400a-a1d4-1f3b47041113
+  pristine_commit_hash: 1a0ba469da7a67f0dd6eee887e0659f9f4fe838c
+  pristine_tree_hash: 468703e7276bcecc82ba865f74c058f2fa6ef237
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.12
-    core: 3.26.14
+    core: 3.26.15
     defaultEnabledRetries: 0.1.0
     downloadStreams: 0.1.1
     enumUnions: 0.1.0
@@ -3194,8 +3194,8 @@ trackedFiles:
     pristine_git_object: e6e0a56eac5c81a43ab3d7053e7727c54d1f56f1
   docs/sdk/models/shared/crmstage.md:
     id: f7dee93f2166
-    last_write_checksum: sha1:c19857c0df89f2adcc891bc58b20c4771ee8b228
-    pristine_git_object: a438ea57b09109d0401581803a394bf4317511c2
+    last_write_checksum: sha1:9be78326c4672532202ef9d195ffefa54c531ffc
+    pristine_git_object: 094606b77ddff6ed12aa71934249df3468d01fb3
   docs/sdk/models/shared/crmtelephone.md:
     id: 00f1b4a2bb81
     last_write_checksum: sha1:167173b6c9cf49f27289331226546ea7082cc8ec
@@ -5282,12 +5282,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:ca364517caefd575c3229ada8d9906a9950ca336
-    pristine_git_object: c55ac6615a0b8800dde95906b74c2157597b816c
+    last_write_checksum: sha1:fb3a9ea0d35b3147198d302b9c7f2c0e630502dd
+    pristine_git_object: 6ad3fee0ae57b0adcd84157873d816798ecdaa7d
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:3bf4e0142ea37419fe3f1188cf0bf887ecc7d0f6
-    pristine_git_object: 363ea9bc6b047f9b4ddc68fe51c58b28aa34e535
+    last_write_checksum: sha1:597124e40251528af0efd0ebb1cfba3e5451797c
+    pristine_git_object: 19b8c8f49651751e99587b499576c1e364a33a6f
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -7446,8 +7446,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ea8121bbb4210cab9a6a3b9b4122aad54044845d
-    pristine_git_object: 5f668e72e112e75b2331ce594c9225260446aeb8
+    last_write_checksum: sha1:ca114e3697302474c64206789c801f48c12362a7
+    pristine_git_object: 4423e6b283f8eade2c34847d4644104b4f7aa2a1
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -10310,8 +10310,8 @@ trackedFiles:
     pristine_git_object: 17b544aeef1cea1201c7276bd89b9bddebf0b8fd
   src/sdk/models/shared/crmstage.ts:
     id: cc90f2673e7b
-    last_write_checksum: sha1:1bb6a5e6a81662a70fe2ceda12d74ecb099cefd8
-    pristine_git_object: 008fb813f4c26a5abddd6e3d8ab9776bce356a23
+    last_write_checksum: sha1:3554f11b3bc499ac7c0f5113bb44d595c19328e6
+    pristine_git_object: 504039e6521db599454729ffadc3eeafd9543dc6
   src/sdk/models/shared/crmtelephone.ts:
     id: 9d21da1245f7
     last_write_checksum: sha1:38eb30cb6e62eb495405a3a9c5c2d93041136315
@@ -16036,7 +16036,7 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.accounting.createAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n* `unified-to.accounting.getAccountingInvoice()`:  `response.reference` **Added**\n* `unified-to.accounting.listAccountingInvoices()`:  `response.[].reference` **Added**\n* `unified-to.accounting.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n* `unified-to.accounting.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n* `unified-to.invoice.createAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n* `unified-to.invoice.getAccountingInvoice()`:  `response.reference` **Added**\n* `unified-to.invoice.listAccountingInvoices()`:  `response.[].reference` **Added**\n* `unified-to.invoice.patchAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n* `unified-to.invoice.updateAccountingInvoice()`: \n  *  `request.accountingInvoice.reference` **Added**\n  *  `response.reference` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.crm.createCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.getCrmPipeline()`:  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.listCrmPipelines()`:  `response.[].stages.[].isClosed` **Added**\n* `unified-to.crm.patchCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.updateCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.createCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.getCrmPipeline()`:  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.listCrmPipelines()`:  `response.[].stages.[].isClosed` **Added**\n* `unified-to.pipeline.patchCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.updateCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

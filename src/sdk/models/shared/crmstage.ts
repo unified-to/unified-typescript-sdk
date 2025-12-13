@@ -14,6 +14,7 @@ export type CrmStage = {
   dealProbability?: number | undefined;
   displayOrder?: number | undefined;
   id?: string | undefined;
+  isClosed?: boolean | undefined;
   name?: string | undefined;
   updatedAt?: Date | undefined;
 };
@@ -30,6 +31,7 @@ export const CrmStage$inboundSchema: z.ZodType<
   deal_probability: z.number().optional(),
   display_order: z.number().optional(),
   id: z.string().optional(),
+  is_closed: z.boolean().optional(),
   name: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
@@ -38,6 +40,7 @@ export const CrmStage$inboundSchema: z.ZodType<
     "created_at": "createdAt",
     "deal_probability": "dealProbability",
     "display_order": "displayOrder",
+    "is_closed": "isClosed",
     "updated_at": "updatedAt",
   });
 });
@@ -48,6 +51,7 @@ export type CrmStage$Outbound = {
   deal_probability?: number | undefined;
   display_order?: number | undefined;
   id?: string | undefined;
+  is_closed?: boolean | undefined;
   name?: string | undefined;
   updated_at?: string | undefined;
 };
@@ -63,6 +67,7 @@ export const CrmStage$outboundSchema: z.ZodType<
   dealProbability: z.number().optional(),
   displayOrder: z.number().optional(),
   id: z.string().optional(),
+  isClosed: z.boolean().optional(),
   name: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
@@ -70,6 +75,7 @@ export const CrmStage$outboundSchema: z.ZodType<
     createdAt: "created_at",
     dealProbability: "deal_probability",
     displayOrder: "display_order",
+    isClosed: "is_closed",
     updatedAt: "updated_at",
   });
 });
