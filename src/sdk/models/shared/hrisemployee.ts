@@ -22,6 +22,12 @@ import {
   HrisEmail$outboundSchema,
 } from "./hrisemail.js";
 import {
+  HrisEmployeerelationship,
+  HrisEmployeerelationship$inboundSchema,
+  HrisEmployeerelationship$Outbound,
+  HrisEmployeerelationship$outboundSchema,
+} from "./hrisemployeerelationship.js";
+import {
   HrisGroup,
   HrisGroup$inboundSchema,
   HrisGroup$Outbound,
@@ -128,6 +134,10 @@ export type HrisEmployee = {
   name?: string | undefined;
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  /**
+   * the employee's personal relationships (eg. emergency contacts, spouse, dependants, ...)
+   */
+  relationships?: Array<HrisEmployeerelationship> | undefined;
   salutation?: string | undefined;
   ssnSin?: string | undefined;
   storageQuotaAllocated?: number | undefined;
@@ -233,6 +243,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   name: z.string().optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  relationships: z.array(HrisEmployeerelationship$inboundSchema).optional(),
   salutation: z.string().optional(),
   ssn_sin: z.string().optional(),
   storage_quota_allocated: z.number().optional(),
@@ -302,6 +313,7 @@ export type HrisEmployee$Outbound = {
   name?: string | undefined;
   pronouns?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  relationships?: Array<HrisEmployeerelationship$Outbound> | undefined;
   salutation?: string | undefined;
   ssn_sin?: string | undefined;
   storage_quota_allocated?: number | undefined;
@@ -351,6 +363,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   name: z.string().optional(),
   pronouns: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  relationships: z.array(HrisEmployeerelationship$outboundSchema).optional(),
   salutation: z.string().optional(),
   ssnSin: z.string().optional(),
   storageQuotaAllocated: z.number().optional(),

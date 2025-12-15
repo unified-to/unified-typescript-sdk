@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: dbaf8b38742d89e3249fbd4c5a4e2a74
+  docChecksum: 4b755486531295c10ba7a2e07a4c42c1
   docVersion: "1.0"
   speakeasyVersion: 1.676.1
   generationVersion: 2.781.2
-  releaseVersion: 2.82.2
-  configChecksum: cbb7a256a837453aa08e9fc78d9159fb
+  releaseVersion: 2.82.3
+  configChecksum: 176caa8846a254af1def8dd6e3077547
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: b93595fb-b9e5-400a-a1d4-1f3b47041113
-  pristine_commit_hash: 1a0ba469da7a67f0dd6eee887e0659f9f4fe838c
-  pristine_tree_hash: 468703e7276bcecc82ba865f74c058f2fa6ef237
+  generation_id: 883b1163-0f59-4c3c-aaba-8365dc86abd5
+  pristine_commit_hash: e552f4fbee9990d0708ccaacad73c80bce47e35a
+  pristine_tree_hash: 155461db73247a13ce16de1a204572523776ccfc
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -3362,8 +3362,8 @@ trackedFiles:
     pristine_git_object: 22f7a9aee6f95bed40849849230c458770347b3e
   docs/sdk/models/shared/hrisemployee.md:
     id: 4a3045e0576d
-    last_write_checksum: sha1:1b976f2a1e57e1025a6d127a96697b625c170d0b
-    pristine_git_object: d4abe4a934f5c0a78414047c09c6865da6799cd0
+    last_write_checksum: sha1:90506e6f84def2f6939f1df1ccac8186d8532110
+    pristine_git_object: d7940b04eb3166fbff5ca232efcc3f4331fb6816
   docs/sdk/models/shared/hrisemployeeemploymenttype.md:
     id: 0aba654a7944
     last_write_checksum: sha1:e2d787ab1a32e8599a9d969502401abbfe6add99
@@ -3372,6 +3372,14 @@ trackedFiles:
     id: 5d460c6db3c8
     last_write_checksum: sha1:6a022a78ab7429729f8475e8be963a84045f87ee
     pristine_git_object: 92fb3e8903fb5ad19e6406dbf3a4972491c3c79c
+  docs/sdk/models/shared/hrisemployeerelationship.md:
+    id: 8028f685fea3
+    last_write_checksum: sha1:8b821fc12ae1c66c6ce0bba2af55485c1011df4c
+    pristine_git_object: ffae3eaacdba090729ac7914e389e050dc7ae102
+  docs/sdk/models/shared/hrisemployeerelationshiptype.md:
+    id: 26405396667e
+    last_write_checksum: sha1:9e37b41412ea6bfd24b0570a584481c99ef05dc4
+    pristine_git_object: c96e3afaf18b7f5069258c8378577a3abbf9b1a9
   docs/sdk/models/shared/hrisgroup.md:
     id: 374266cbea64
     last_write_checksum: sha1:61d347ca50bf7f6367aa282fe283d98fe1055c9f
@@ -4160,6 +4168,10 @@ trackedFiles:
     id: 6a7b28a751c8
     last_write_checksum: sha1:adf5021e009c87b6ca300e5e403dd572d6012d00
     pristine_git_object: 7e1737866c36c6e9a1b7b165a803641d447e7f06
+  docs/sdk/models/shared/propertyhrisemployeerelationshipaddress.md:
+    id: 37101e6f5952
+    last_write_checksum: sha1:bcd0ae3715e3ce35ce24208ad7bbc852e683e8c6
+    pristine_git_object: 8ec3699980d6a2dfd172d9300cac7c10de4c4a14
   docs/sdk/models/shared/propertyhrislocationaddress.md:
     id: 1a2cb28222fa
     last_write_checksum: sha1:0ea94f3dcee2c7398d3ffb7a21071df5b015a5db
@@ -5282,12 +5294,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:fb3a9ea0d35b3147198d302b9c7f2c0e630502dd
-    pristine_git_object: 6ad3fee0ae57b0adcd84157873d816798ecdaa7d
+    last_write_checksum: sha1:dc7a6bf209fad74f0c5d31e233374bbbd6b21088
+    pristine_git_object: f980e60a2052044e1a92e5563b7aab6e425b0428
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:597124e40251528af0efd0ebb1cfba3e5451797c
-    pristine_git_object: 19b8c8f49651751e99587b499576c1e364a33a6f
+    last_write_checksum: sha1:0f81cb8c111f5091fea44d27aff91476c7ba0c71
+    pristine_git_object: fa17a64327454c0927550e865c0436ff75a7b1db
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -7446,8 +7458,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:ca114e3697302474c64206789c801f48c12362a7
-    pristine_git_object: 4423e6b283f8eade2c34847d4644104b4f7aa2a1
+    last_write_checksum: sha1:6aa6e217107068eec6f3074dc51c40a184ba0bd3
+    pristine_git_object: b7f775c27125045084c0adf71ba970f772e18141
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -10382,8 +10394,12 @@ trackedFiles:
     pristine_git_object: e5b6cfe70773d498fbd928b65ab4d51929271e24
   src/sdk/models/shared/hrisemployee.ts:
     id: e917aa0a9e51
-    last_write_checksum: sha1:c01e1760d53b5bfbcce99b92578be6e94b57d578
-    pristine_git_object: ccebbff899c6a18d856a8733327addc3b865db1f
+    last_write_checksum: sha1:87f0127d74a6c1e75102bef127095bd63c13b67c
+    pristine_git_object: 42f9d97e950a45bcd8c8c35ac97640a586a15666
+  src/sdk/models/shared/hrisemployeerelationship.ts:
+    id: 766daacbdb17
+    last_write_checksum: sha1:5981a9b668c69bfaa0b47ec3ff78767945d497d3
+    pristine_git_object: f35393b4eaca76a8d574e9a919e0a12dfabd43dc
   src/sdk/models/shared/hrisgroup.ts:
     id: 14ae31d1b2d1
     last_write_checksum: sha1:9f7cb185cb1db66eb337aff4a537d8acce445e37
@@ -10418,8 +10434,8 @@ trackedFiles:
     pristine_git_object: c65c1e1ae74a86db783ce21cc309bbfaa5bf9581
   src/sdk/models/shared/index.ts:
     id: e97e906e3c14
-    last_write_checksum: sha1:a495e11c5d953399a80982e4c048a55eae498443
-    pristine_git_object: 6a3c9213456bbe76005c4414aff0c9be6891e1b4
+    last_write_checksum: sha1:4a5a1e3243d02dd24f5aed85a58378f1589888c2
+    pristine_git_object: dee72c121580b8990d5549f922aa99eef7f1b8d2
   src/sdk/models/shared/integration.ts:
     id: 7dddee0366e4
     last_write_checksum: sha1:febbe9d7dad4073133d5cf3fc897d66d3df00b29
@@ -10696,6 +10712,10 @@ trackedFiles:
     id: b94968c068c5
     last_write_checksum: sha1:f8ef5a484b12b092e8cab6f5d112dd8db414cdf3
     pristine_git_object: f95a9ace904976b4e261e4f7fec226cd19c2add8
+  src/sdk/models/shared/propertyhrisemployeerelationshipaddress.ts:
+    id: f5aec4d0bcbc
+    last_write_checksum: sha1:5e7761ea97164691da0bcc1f36b064c3a4239669
+    pristine_git_object: 3950c182a911ceae31425a9c3c6098c66337cde9
   src/sdk/models/shared/propertyhrislocationaddress.ts:
     id: 26dc5ad07147
     last_write_checksum: sha1:3e092ace6706c196758a8d569808aafdfcb637fc
@@ -16036,7 +16056,7 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.crm.createCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.getCrmPipeline()`:  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.listCrmPipelines()`:  `response.[].stages.[].isClosed` **Added**\n* `unified-to.crm.patchCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.crm.updateCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.createCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.getCrmPipeline()`:  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.listCrmPipelines()`:  `response.[].stages.[].isClosed` **Added**\n* `unified-to.pipeline.patchCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n* `unified-to.pipeline.updateCrmPipeline()`: \n  *  `request.crmPipeline.stages.[].isClosed` **Added**\n  *  `response.stages.[].isClosed` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.hris.getHrisEmployee()`:  `response.relationships` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].relationships` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.relationships` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].relationships` **Added**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
