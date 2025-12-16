@@ -22,6 +22,7 @@ import {
 
 export type HrisLocation = {
   address?: PropertyHrisLocationAddress | undefined;
+  companyId?: string | undefined;
   createdAt?: Date | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -45,6 +46,7 @@ export const HrisLocation$inboundSchema: z.ZodType<
   unknown
 > = z.object({
   address: PropertyHrisLocationAddress$inboundSchema.optional(),
+  company_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   currency: z.string().optional(),
@@ -63,6 +65,7 @@ export const HrisLocation$inboundSchema: z.ZodType<
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "company_id": "companyId",
     "created_at": "createdAt",
     "external_identifier": "externalIdentifier",
     "is_active": "isActive",
@@ -75,6 +78,7 @@ export const HrisLocation$inboundSchema: z.ZodType<
 /** @internal */
 export type HrisLocation$Outbound = {
   address?: PropertyHrisLocationAddress$Outbound | undefined;
+  company_id?: string | undefined;
   created_at?: string | undefined;
   currency?: string | undefined;
   description?: string | undefined;
@@ -98,6 +102,7 @@ export const HrisLocation$outboundSchema: z.ZodType<
   HrisLocation
 > = z.object({
   address: PropertyHrisLocationAddress$outboundSchema.optional(),
+  companyId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
   currency: z.string().optional(),
   description: z.string().optional(),
@@ -114,6 +119,7 @@ export const HrisLocation$outboundSchema: z.ZodType<
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    companyId: "company_id",
     createdAt: "created_at",
     externalIdentifier: "external_identifier",
     isActive: "is_active",

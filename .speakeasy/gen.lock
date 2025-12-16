@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 4b755486531295c10ba7a2e07a4c42c1
+  docChecksum: 72dca536fc3e4387cdd9f33a075cc801
   docVersion: "1.0"
   speakeasyVersion: 1.676.1
   generationVersion: 2.781.2
-  releaseVersion: 2.82.3
-  configChecksum: 176caa8846a254af1def8dd6e3077547
+  releaseVersion: 2.82.4
+  configChecksum: 559277d048961cdf2fb6df9ad56a7c98
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 883b1163-0f59-4c3c-aaba-8365dc86abd5
-  pristine_commit_hash: e552f4fbee9990d0708ccaacad73c80bce47e35a
-  pristine_tree_hash: 155461db73247a13ce16de1a204572523776ccfc
+  generation_id: 69fe7339-bb7c-4892-bd49-9cdc3c3a10f8
+  pristine_commit_hash: 9a973a5006d92ed51ebeed88356338e1687e0cb2
+  pristine_tree_hash: 14777e8c445f89c3d1cc520e57c39679962df72f
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -3390,8 +3390,8 @@ trackedFiles:
     pristine_git_object: e004b6a2df0e34120016f90615e4dd542ce9bfe6
   docs/sdk/models/shared/hrislocation.md:
     id: ecdbf662b9f4
-    last_write_checksum: sha1:d3fa8731e8e407ab6cd225a2d8fdf937e87af3a1
-    pristine_git_object: b640c73f20661c956d10139bf7a8fb47366fe0aa
+    last_write_checksum: sha1:92263734fb17bf7e9e74075abf7496677f169176
+    pristine_git_object: e9a51ba885c2444f34ae18f5bd30b4d8c0bb2297
   docs/sdk/models/shared/hrismetadata.md:
     id: d690eb4e431e
     last_write_checksum: sha1:b79afa10a2d013ae9ccfbf3dfdcb425d1e7d9e9b
@@ -5294,12 +5294,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:dc7a6bf209fad74f0c5d31e233374bbbd6b21088
-    pristine_git_object: f980e60a2052044e1a92e5563b7aab6e425b0428
+    last_write_checksum: sha1:ef69eadbf6c2de551fc3a3895a366ee7401ee82e
+    pristine_git_object: 181c207dce68b8962f96177ba559eff487578a0e
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:0f81cb8c111f5091fea44d27aff91476c7ba0c71
-    pristine_git_object: fa17a64327454c0927550e865c0436ff75a7b1db
+    last_write_checksum: sha1:d4914d29861b14ffa4e122170682297be79ab2e1
+    pristine_git_object: 34ef871ca7d9b181fe34f5ba01054ab0d3dcc161
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -7458,8 +7458,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:6aa6e217107068eec6f3074dc51c40a184ba0bd3
-    pristine_git_object: b7f775c27125045084c0adf71ba970f772e18141
+    last_write_checksum: sha1:2e13a282dfc9a89856ab8548ef8393e37908c62a
+    pristine_git_object: c8a32779dd89e2c8b78ec4793bc75e1bb09d3cb7
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -10406,8 +10406,8 @@ trackedFiles:
     pristine_git_object: e2cc4a5c27648fe407943858ca95b24c1d554a96
   src/sdk/models/shared/hrislocation.ts:
     id: 49f9d807ff44
-    last_write_checksum: sha1:a9b59d7e6d4ba6bc63f14df20169ca500b906e42
-    pristine_git_object: 8764ae0896cb7528e896bda8dbb2aab6fe3d3062
+    last_write_checksum: sha1:e69b0c3a2d71e9795108aa007c24b28d7f77af73
+    pristine_git_object: 4be5aa14a27d9777708596f0f5df64d9b4f4e4b8
   src/sdk/models/shared/hrismetadata.ts:
     id: e5734e35f78f
     last_write_checksum: sha1:09d0814dfd3a41ececa232b3578140aae50f04e6
@@ -16056,7 +16056,7 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.hris.getHrisEmployee()`:  `response.relationships` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].relationships` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.relationships` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].relationships` **Added**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.relationships` **Added**\n  *  `response.relationships` **Added**\n"
+releaseNotes: "## Typescript SDK Changes:\n* `unified-to.location.createHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.location.getHrisLocation()`:  `response.company_id` **Added**\n* `unified-to.location.listHrisLocations()`:  `response.[].companyId` **Added**\n* `unified-to.location.patchHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.location.updateHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.hris.createHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n* `unified-to.hris.createHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.hris.getHrisEmployee()`:  `response.locations.[].companyId` **Added**\n* `unified-to.hris.getHrisLocation()`:  `response.company_id` **Added**\n* `unified-to.hris.listHrisEmployees()`:  `response.[].locations.[].companyId` **Added**\n* `unified-to.hris.listHrisLocations()`:  `response.[].companyId` **Added**\n* `unified-to.hris.patchHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n* `unified-to.hris.patchHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.hris.updateHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n* `unified-to.hris.updateHrisLocation()`: \n  *  `request.hrisLocation.companyId` **Added**\n  *  `response.company_id` **Added**\n* `unified-to.employee.createHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n* `unified-to.employee.getHrisEmployee()`:  `response.locations.[].companyId` **Added**\n* `unified-to.employee.listHrisEmployees()`:  `response.[].locations.[].companyId` **Added**\n* `unified-to.employee.patchHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n* `unified-to.employee.updateHrisEmployee()`: \n  *  `request.hrisEmployee.locations.[].companyId` **Added**\n  *  `response.locations.[].companyId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore
