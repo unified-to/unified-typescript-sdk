@@ -12,8 +12,10 @@ import { eventCreateCrmEvent } from "../funcs/eventCreateCrmEvent.js";
 import { eventGetCrmEvent } from "../funcs/eventGetCrmEvent.js";
 import { eventListCrmEvents } from "../funcs/eventListCrmEvents.js";
 import { eventPatchCrmEvent } from "../funcs/eventPatchCrmEvent.js";
+import { eventPatchMessagingEvent } from "../funcs/eventPatchMessagingEvent.js";
 import { eventRemoveCrmEvent } from "../funcs/eventRemoveCrmEvent.js";
 import { eventUpdateCrmEvent } from "../funcs/eventUpdateCrmEvent.js";
+import { eventUpdateMessagingEvent } from "../funcs/eventUpdateMessagingEvent.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -133,6 +135,20 @@ export class Event extends ClientSDK {
   }
 
   /**
+   * Update an event
+   */
+  async patchMessagingEvent(
+    request: operations.PatchMessagingEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingEvent> {
+    return unwrapAsync(eventPatchMessagingEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
    * Remove an event
    */
   async removeCalendarEvent(
@@ -182,6 +198,20 @@ export class Event extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.CrmEvent> {
     return unwrapAsync(eventUpdateCrmEvent(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an event
+   */
+  async updateMessagingEvent(
+    request: operations.UpdateMessagingEventRequest,
+    options?: RequestOptions,
+  ): Promise<shared.MessagingEvent> {
+    return unwrapAsync(eventUpdateMessagingEvent(
       this,
       request,
       options,

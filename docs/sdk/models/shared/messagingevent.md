@@ -1,0 +1,24 @@
+# MessagingEvent
+
+## Example Usage
+
+```typescript
+import { MessagingEvent } from "@unified-api/typescript-sdk/sdk/models/shared";
+
+let value: MessagingEvent = {
+  type: "CHANNEL_CREATED",
+};
+```
+
+## Fields
+
+| Field                                                                                               | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `button`                                                                                            | [shared.PropertyMessagingEventButton](../../../sdk/models/shared/propertymessagingeventbutton.md)   | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `channel`                                                                                           | [shared.PropertyMessagingEventChannel](../../../sdk/models/shared/propertymessagingeventchannel.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `createdAt`                                                                                         | [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)       | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `id`                                                                                                | *string*                                                                                            | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `message`                                                                                           | [shared.PropertyMessagingEventMessage](../../../sdk/models/shared/propertymessagingeventmessage.md) | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `raw`                                                                                               | Record<string, *any*>                                                                               | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |
+| `type`                                                                                              | [shared.MessagingEventType](../../../sdk/models/shared/messagingeventtype.md)                       | :heavy_check_mark:                                                                                  | N/A                                                                                                 |
+| `user`                                                                                              | [shared.PropertyMessagingEventUser](../../../sdk/models/shared/propertymessagingeventuser.md)       | :heavy_minus_sign:                                                                                  | N/A                                                                                                 |

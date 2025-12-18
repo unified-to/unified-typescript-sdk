@@ -964,10 +964,14 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`eventListCrmEvents`](docs/sdks/event/README.md#listcrmevents) - List all events
 - [`eventPatchCrmEvent`](docs/sdks/crm/README.md#patchcrmevent) - Update an event
 - [`eventPatchCrmEvent`](docs/sdks/event/README.md#patchcrmevent) - Update an event
+- [`eventPatchMessagingEvent`](docs/sdks/event/README.md#patchmessagingevent) - Update an event
+- [`eventPatchMessagingEvent`](docs/sdks/messaging/README.md#patchmessagingevent) - Update an event
 - [`eventRemoveCrmEvent`](docs/sdks/crm/README.md#removecrmevent) - Remove an event
 - [`eventRemoveCrmEvent`](docs/sdks/event/README.md#removecrmevent) - Remove an event
 - [`eventUpdateCrmEvent`](docs/sdks/crm/README.md#updatecrmevent) - Update an event
 - [`eventUpdateCrmEvent`](docs/sdks/event/README.md#updatecrmevent) - Update an event
+- [`eventUpdateMessagingEvent`](docs/sdks/event/README.md#updatemessagingevent) - Update an event
+- [`eventUpdateMessagingEvent`](docs/sdks/messaging/README.md#updatemessagingevent) - Update an event
 - [`genaiCreateGenaiEmbedding`](docs/sdks/embedding/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiEmbedding`](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt

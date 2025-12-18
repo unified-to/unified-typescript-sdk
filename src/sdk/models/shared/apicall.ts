@@ -21,7 +21,7 @@ export type ApiCallType = OpenEnum<typeof ApiCallType>;
 export type ApiCall = {
   connectionId?: string | undefined;
   createdAt?: Date | undefined;
-  environment?: string | undefined;
+  environment: string;
   error?: string | undefined;
   externalXref?: string | undefined;
   id?: string | undefined;

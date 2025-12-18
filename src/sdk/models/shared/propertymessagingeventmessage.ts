@@ -38,15 +38,15 @@ import {
   MessagingReference$outboundSchema,
 } from "./messagingreference.js";
 import {
-  PropertyMessagingMessageAuthorMember,
-  PropertyMessagingMessageAuthorMember$inboundSchema,
-  PropertyMessagingMessageAuthorMember$Outbound,
-  PropertyMessagingMessageAuthorMember$outboundSchema,
-} from "./propertymessagingmessageauthormember.js";
+  PropertyMessagingEventMessageAuthorMember,
+  PropertyMessagingEventMessageAuthorMember$inboundSchema,
+  PropertyMessagingEventMessageAuthorMember$Outbound,
+  PropertyMessagingEventMessageAuthorMember$outboundSchema,
+} from "./propertymessagingeventmessageauthormember.js";
 
-export type MessagingMessage = {
+export type PropertyMessagingEventMessage = {
   attachments?: Array<MessagingAttachment> | undefined;
-  authorMember?: PropertyMessagingMessageAuthorMember | undefined;
+  authorMember?: PropertyMessagingEventMessageAuthorMember | undefined;
   buttons?: Array<MessagingButton> | undefined;
   channelId?: string | undefined;
   /**
@@ -80,13 +80,14 @@ export type MessagingMessage = {
 };
 
 /** @internal */
-export const MessagingMessage$inboundSchema: z.ZodType<
-  MessagingMessage,
+export const PropertyMessagingEventMessage$inboundSchema: z.ZodType<
+  PropertyMessagingEventMessage,
   z.ZodTypeDef,
   unknown
 > = z.object({
   attachments: z.array(MessagingAttachment$inboundSchema).optional(),
-  author_member: PropertyMessagingMessageAuthorMember$inboundSchema.optional(),
+  author_member: PropertyMessagingEventMessageAuthorMember$inboundSchema
+    .optional(),
   buttons: z.array(MessagingButton$inboundSchema).optional(),
   channel_id: z.string().optional(),
   channel_ids: z.array(z.string()).optional(),
@@ -135,9 +136,11 @@ export const MessagingMessage$inboundSchema: z.ZodType<
   });
 });
 /** @internal */
-export type MessagingMessage$Outbound = {
+export type PropertyMessagingEventMessage$Outbound = {
   attachments?: Array<MessagingAttachment$Outbound> | undefined;
-  author_member?: PropertyMessagingMessageAuthorMember$Outbound | undefined;
+  author_member?:
+    | PropertyMessagingEventMessageAuthorMember$Outbound
+    | undefined;
   buttons?: Array<MessagingButton$Outbound> | undefined;
   channel_id?: string | undefined;
   channel_ids?: Array<string> | undefined;
@@ -165,13 +168,14 @@ export type MessagingMessage$Outbound = {
 };
 
 /** @internal */
-export const MessagingMessage$outboundSchema: z.ZodType<
-  MessagingMessage$Outbound,
+export const PropertyMessagingEventMessage$outboundSchema: z.ZodType<
+  PropertyMessagingEventMessage$Outbound,
   z.ZodTypeDef,
-  MessagingMessage
+  PropertyMessagingEventMessage
 > = z.object({
   attachments: z.array(MessagingAttachment$outboundSchema).optional(),
-  authorMember: PropertyMessagingMessageAuthorMember$outboundSchema.optional(),
+  authorMember: PropertyMessagingEventMessageAuthorMember$outboundSchema
+    .optional(),
   buttons: z.array(MessagingButton$outboundSchema).optional(),
   channelId: z.string().optional(),
   channelIds: z.array(z.string()).optional(),
@@ -218,19 +222,21 @@ export const MessagingMessage$outboundSchema: z.ZodType<
   });
 });
 
-export function messagingMessageToJSON(
-  messagingMessage: MessagingMessage,
+export function propertyMessagingEventMessageToJSON(
+  propertyMessagingEventMessage: PropertyMessagingEventMessage,
 ): string {
   return JSON.stringify(
-    MessagingMessage$outboundSchema.parse(messagingMessage),
+    PropertyMessagingEventMessage$outboundSchema.parse(
+      propertyMessagingEventMessage,
+    ),
   );
 }
-export function messagingMessageFromJSON(
+export function propertyMessagingEventMessageFromJSON(
   jsonString: string,
-): SafeParseResult<MessagingMessage, SDKValidationError> {
+): SafeParseResult<PropertyMessagingEventMessage, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => MessagingMessage$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MessagingMessage' from JSON`,
+    (x) => PropertyMessagingEventMessage$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyMessagingEventMessage' from JSON`,
   );
 }

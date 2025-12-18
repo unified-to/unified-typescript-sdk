@@ -7,14 +7,14 @@ import { safeParse } from "../../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type MessagingChannelMessage = {
+export type PropertyMessagingEventUser = {
   id?: string | undefined;
   name?: string | undefined;
 };
 
 /** @internal */
-export const MessagingChannelMessage$inboundSchema: z.ZodType<
-  MessagingChannelMessage,
+export const PropertyMessagingEventUser$inboundSchema: z.ZodType<
+  PropertyMessagingEventUser,
   z.ZodTypeDef,
   unknown
 > = z.object({
@@ -22,34 +22,34 @@ export const MessagingChannelMessage$inboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 /** @internal */
-export type MessagingChannelMessage$Outbound = {
+export type PropertyMessagingEventUser$Outbound = {
   id?: string | undefined;
   name?: string | undefined;
 };
 
 /** @internal */
-export const MessagingChannelMessage$outboundSchema: z.ZodType<
-  MessagingChannelMessage$Outbound,
+export const PropertyMessagingEventUser$outboundSchema: z.ZodType<
+  PropertyMessagingEventUser$Outbound,
   z.ZodTypeDef,
-  MessagingChannelMessage
+  PropertyMessagingEventUser
 > = z.object({
   id: z.string().optional(),
   name: z.string().optional(),
 });
 
-export function messagingChannelMessageToJSON(
-  messagingChannelMessage: MessagingChannelMessage,
+export function propertyMessagingEventUserToJSON(
+  propertyMessagingEventUser: PropertyMessagingEventUser,
 ): string {
   return JSON.stringify(
-    MessagingChannelMessage$outboundSchema.parse(messagingChannelMessage),
+    PropertyMessagingEventUser$outboundSchema.parse(propertyMessagingEventUser),
   );
 }
-export function messagingChannelMessageFromJSON(
+export function propertyMessagingEventUserFromJSON(
   jsonString: string,
-): SafeParseResult<MessagingChannelMessage, SDKValidationError> {
+): SafeParseResult<PropertyMessagingEventUser, SDKValidationError> {
   return safeParse(
     jsonString,
-    (x) => MessagingChannelMessage$inboundSchema.parse(JSON.parse(x)),
-    `Failed to parse 'MessagingChannelMessage' from JSON`,
+    (x) => PropertyMessagingEventUser$inboundSchema.parse(JSON.parse(x)),
+    `Failed to parse 'PropertyMessagingEventUser' from JSON`,
   );
 }

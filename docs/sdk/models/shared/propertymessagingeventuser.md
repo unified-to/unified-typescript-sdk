@@ -1,11 +1,11 @@
-# MessagingChannelMessage
+# PropertyMessagingEventUser
 
 ## Example Usage
 
 ```typescript
-import { MessagingChannelMessage } from "@unified-api/typescript-sdk/sdk/models/shared";
+import { PropertyMessagingEventUser } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: MessagingChannelMessage = {};
+let value: PropertyMessagingEventUser = {};
 ```
 
 ## Fields
