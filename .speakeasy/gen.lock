@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: dd0bf346-ec89-49c3-bc0f-8c1fabe92815
 management:
-  docChecksum: 1a896c50bc225151e4415d9bcea95f29
+  docChecksum: 333cdf57ecb8fc0562c8da2e5dd0fd38
   docVersion: "1.0"
-  speakeasyVersion: 1.680.0
-  generationVersion: 2.788.4
-  releaseVersion: 2.82.5
-  configChecksum: 98ab2adfc58f39012b011ba5bbc76aa8
+  speakeasyVersion: 1.680.3
+  generationVersion: 2.788.5
+  releaseVersion: 2.82.6
+  configChecksum: b1d057bc5de3b2b24e3d425cf494f5d5
   repoURL: https://github.com/unified-to/unified-typescript-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-typescript-sdk
   published: true
 persistentEdits:
-  generation_id: 74c3fe22-11d5-4d87-8294-3606fbd508bc
-  pristine_commit_hash: f42def87870b2eb0683954c34810374bb7c30cd6
-  pristine_tree_hash: c7a8342b84e019397b775ea73fa1279b8055462a
+  generation_id: 09b9e99d-84b4-4395-ba7e-0618fb181afb
+  pristine_commit_hash: cf6f2f585e1fe6c9e9fc9fd6503acd36c0a94a9f
+  pristine_tree_hash: acf85aae62b59a993c7253baadded2c976757bca
 features:
   typescript:
     acceptHeaders: 2.81.2
@@ -2614,8 +2614,8 @@ trackedFiles:
     pristine_git_object: 8f504de261f184be050b188036a197e5491cc845
   docs/sdk/models/shared/accountingbillstatus.md:
     id: 32edc334fbc2
-    last_write_checksum: sha1:cf41b9d8266f90c38a406b9cf9da995150beeaf8
-    pristine_git_object: 08b8d32e157aea4fd1968569c22e53146899ceee
+    last_write_checksum: sha1:08f14b361a412291c988329849c166cb7743f837
+    pristine_git_object: e4f92e2ca26626c57892cff1d44f15f260291082
   docs/sdk/models/shared/accountingcashflow.md:
     id: 47becb21b12e
     last_write_checksum: sha1:5d567d5eba0d9765dec022ed6f1456c971e5d6af
@@ -2654,8 +2654,8 @@ trackedFiles:
     pristine_git_object: e997af86cedfcc2898a0f68ef54b84af77f9160f
   docs/sdk/models/shared/accountingcreditmemostatus.md:
     id: 9fac417f51a0
-    last_write_checksum: sha1:d126bfcc4b9c0c51748ab25cd6e58e5bf1150602
-    pristine_git_object: aace3b7d00ce505dab1548207728c894634365dd
+    last_write_checksum: sha1:f95245d2bfd546dadad471de444308025e7d50aa
+    pristine_git_object: 002917bec4b6d8dbe671888af3998caa5ce8d5a3
   docs/sdk/models/shared/accountingemail.md:
     id: adcc4a84e2eb
     last_write_checksum: sha1:db3308e49fdca53a945963ede51bd36cf940fed5
@@ -2678,8 +2678,8 @@ trackedFiles:
     pristine_git_object: be12528bec05b5381387c0d970086fbe3578c2c6
   docs/sdk/models/shared/accountinginvoicestatus.md:
     id: de6470f4c457
-    last_write_checksum: sha1:cb5a0383b97491a835785bdec8f398faed582d82
-    pristine_git_object: d089f56dc2bafc45f30b1015d57a18e75bb880ab
+    last_write_checksum: sha1:f9ddb43954e875c41e508b4eb34e24afc22e6994
+    pristine_git_object: 50cd88eb996d08e385c8c1fbff892dc33e14d267
   docs/sdk/models/shared/accountinginvoicetype.md:
     id: 3a3924f37dfa
     last_write_checksum: sha1:98ad843cd17cae298fc047379eb3fd106cb1d5da
@@ -5334,12 +5334,12 @@ trackedFiles:
     pristine_git_object: ca6070d1cd648d054b83c5cceba2c1e116735959
   jsr.json:
     id: 7f6ab7767282
-    last_write_checksum: sha1:4f7db93a26e194d4b78ce764a5cae6ea161c0335
-    pristine_git_object: 5252b34d83a3fccdafd14897050b2f5c0e1c901b
+    last_write_checksum: sha1:bc236ff975edac88b79d4c345c7bd08744f47fd6
+    pristine_git_object: 7280ac2da3523e753b53700b174661b62f89d239
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:5845404929f11427dfe8ac5e17604e4595869e45
-    pristine_git_object: 3e3f4a5b180895da7a9b667bba2f4790c17c936b
+    last_write_checksum: sha1:4a90f47d7939d83ed7af1ccf1bf2c52fb44afe2e
+    pristine_git_object: 2564f7e6ac2175b6c956ddabf0e1d82e3a0321ab
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:a1af7e87fc47f629e14f8836be0d97c74986d242
@@ -7506,8 +7506,8 @@ trackedFiles:
     pristine_git_object: 0aebd8b0a4867e35cb3348fc52921c3c0b4725b7
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:6893d5671b5eb5e077c2fd1cdd1994d7b59dc302
-    pristine_git_object: 7f0b8836f12ed5ee1c1baaa8b370e2c42a722aed
+    last_write_checksum: sha1:d33642b14fedd48f158e5cd492edf5c6ef440515
+    pristine_git_object: f4901889833a9f4f9430af356c45ac8eb16108ca
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
@@ -10014,8 +10014,8 @@ trackedFiles:
     pristine_git_object: 07e6ee186e01165f6dced0fb270105dab3af2216
   src/sdk/models/shared/accountingbill.ts:
     id: dc5992ea2b8b
-    last_write_checksum: sha1:25e0cd7044ceb9b382213a3d83f9d24db8dc4654
-    pristine_git_object: c709b0af84baefc9afba4a197d73bf0198b83e91
+    last_write_checksum: sha1:f6c24a04cb62f1b471acda7c7dae74bf4ed2fd8d
+    pristine_git_object: 30c12984b03b0a103fef8e946ae2468d2a1ec8ab
   src/sdk/models/shared/accountingcashflow.ts:
     id: bb0f5cda8321
     last_write_checksum: sha1:640c5fef0141ad13c8ba0896d0fd4d7abf34390b
@@ -10042,8 +10042,8 @@ trackedFiles:
     pristine_git_object: 11acfd37ac2487d2d36e5053d18930113a2e624a
   src/sdk/models/shared/accountingcreditmemo.ts:
     id: 7550a18aebaf
-    last_write_checksum: sha1:b03d1e71fc8faae47ff9b70e8cfec3cff6bf8382
-    pristine_git_object: e9cc8bc7e7b42345da6a423346d72c0cd6ea62e0
+    last_write_checksum: sha1:0cb783ca38beae04aad2c7cf1f9c059ecb8c11a7
+    pristine_git_object: 3f2fc3397ceea4e8a41fcf48fba5997ea6248495
   src/sdk/models/shared/accountingemail.ts:
     id: db7c654cc617
     last_write_checksum: sha1:ee71cd6e0e9acf708b5b2288516d506a172c3fab
@@ -10054,8 +10054,8 @@ trackedFiles:
     pristine_git_object: 3706c42770f5d42e36eff15207b48d4731bf51bc
   src/sdk/models/shared/accountinginvoice.ts:
     id: 8fe3bd102d75
-    last_write_checksum: sha1:d569904608d1359d87adca20071cc248f9ff5765
-    pristine_git_object: 7cbf6258d1b38a71703343bd77762f9f7ca31dc4
+    last_write_checksum: sha1:00ab7933cf04f8ce563d788dd625a691541ac22d
+    pristine_git_object: 4a9b76ef4b35e79dab4fdca9b0e5d94ee1cd6e3e
   src/sdk/models/shared/accountingjournal.ts:
     id: 3abb84bdb597
     last_write_checksum: sha1:d75c478719e9c458850d80f7a2a078d8c24eaf08
@@ -16162,7 +16162,6 @@ examples:
           application/json: {"type": "CHANNEL_LEFT"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Typescript SDK Changes:\n* `unified-to.event.patchMessagingEvent()`: **Added**\n* `unified-to.event.updateMessagingEvent()`: **Added**\n* `unified-to.messaging.patchMessagingEvent()`: **Added**\n* `unified-to.messaging.updateMessagingEvent()`: **Added**\n* `unified-to.messaging.createMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n* `unified-to.messaging.getMessagingMessage()`:  `response.buttons` **Added**\n* `unified-to.messaging.listMessagingMessages()`:  `response.[].buttons` **Added**\n* `unified-to.messaging.patchMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n* `unified-to.messaging.updateMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n* `unified-to.message.createMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n* `unified-to.message.getMessagingMessage()`:  `response.buttons` **Added**\n* `unified-to.message.listMessagingMessages()`:  `response.[].buttons` **Added**\n* `unified-to.message.patchMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n* `unified-to.message.updateMessagingMessage()`: \n  *  `request.messagingMessage.buttons` **Added**\n  *  `response.buttons` **Added**\n"
 generatedFiles:
   - .gitattributes
   - .npmignore

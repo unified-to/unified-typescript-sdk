@@ -38,6 +38,7 @@ export const AccountingInvoiceStatus = {
   PartiallyPaid: "PARTIALLY_PAID",
   PartiallyRefunded: "PARTIALLY_REFUNDED",
   Refunded: "REFUNDED",
+  Overdue: "OVERDUE",
 } as const;
 export type AccountingInvoiceStatus = OpenEnum<typeof AccountingInvoiceStatus>;
 
