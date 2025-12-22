@@ -104,6 +104,7 @@ export const ObjectType = {
   GenaiEmbedding: "genai_embedding",
   MessagingMessage: "messaging_message",
   MessagingChannel: "messaging_channel",
+  MessagingEvent: "messaging_event",
   KmsSpace: "kms_space",
   KmsPage: "kms_page",
   KmsComment: "kms_comment",
