@@ -36,6 +36,8 @@ export const AccountingSalesorderStatus = {
   PartiallyPaid: "PARTIALLY_PAID",
   PartiallyRefunded: "PARTIALLY_REFUNDED",
   Refunded: "REFUNDED",
+  Submitted: "SUBMITTED",
+  Deleted: "DELETED",
 } as const;
 export type AccountingSalesorderStatus = OpenEnum<
   typeof AccountingSalesorderStatus
