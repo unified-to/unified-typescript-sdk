@@ -8,8 +8,8 @@ import { PatchHrisTimeshiftRequest } from "@unified-api/typescript-sdk/sdk/model
 let value: PatchHrisTimeshiftRequest = {
   hrisTimeshift: {
     employeeUserId: "<id>",
-    endAt: new Date("2024-01-10T03:18:33.365Z"),
-    startAt: new Date("2023-11-26T23:12:10.451Z"),
+    endAt: new Date("2025-01-09T03:18:33.365Z"),
+    startAt: new Date("2024-11-25T23:12:10.451Z"),
   },
   connectionId: "<id>",
   id: "<id>",

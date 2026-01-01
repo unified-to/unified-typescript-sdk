@@ -4,6 +4,7 @@
 
 import { accountingGetAccountingReport } from "../funcs/accountingGetAccountingReport.js";
 import { accountingListAccountingReports } from "../funcs/accountingListAccountingReports.js";
+import { reportListAdsReports } from "../funcs/reportListAdsReports.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
 import * as shared from "./models/shared/index.js";
@@ -32,6 +33,20 @@ export class Report extends ClientSDK {
     options?: RequestOptions,
   ): Promise<Array<shared.AccountingReport>> {
     return unwrapAsync(accountingListAccountingReports(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all reports
+   */
+  async listAdsReports(
+    request: operations.ListAdsReportsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsReport>> {
+    return unwrapAsync(reportListAdsReports(
       this,
       request,
       options,

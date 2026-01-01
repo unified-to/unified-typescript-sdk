@@ -30,6 +30,7 @@ export const Categories = {
   Metadata: "metadata",
   Calendar: "calendar",
   Verification: "verification",
+  Ads: "ads",
 } as const;
 export type Categories = ClosedEnum<typeof Categories>;
 

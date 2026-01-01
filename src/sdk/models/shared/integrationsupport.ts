@@ -28,6 +28,13 @@ export const ListAccountId = {
 } as const;
 export type ListAccountId = OpenEnum<typeof ListAccountId>;
 
+export const ListAdId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListAdId = OpenEnum<typeof ListAdId>;
+
 export const ListApplicationId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -62,6 +69,13 @@ export const ListCallId = {
   NotSupported: "not-supported",
 } as const;
 export type ListCallId = OpenEnum<typeof ListCallId>;
+
+export const ListCampaignId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListCampaignId = OpenEnum<typeof ListCampaignId>;
 
 export const ListCandidateId = {
   SupportedRequired: "supported-required",
@@ -176,6 +190,13 @@ export const ListExpandRecurringEvents = {
 export type ListExpandRecurringEvents = OpenEnum<
   typeof ListExpandRecurringEvents
 >;
+
+export const ListGroupId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type ListGroupId = OpenEnum<typeof ListGroupId>;
 
 export const ListInstructorId = {
   SupportedRequired: "supported-required",
@@ -541,6 +562,13 @@ export const SearchTwitter = {
 } as const;
 export type SearchTwitter = OpenEnum<typeof SearchTwitter>;
 
+export const VirtualWebhookAdId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookAdId = OpenEnum<typeof VirtualWebhookAdId>;
+
 export const VirtualWebhookApplicationId = {
   SupportedRequired: "supported-required",
   Supported: "supported",
@@ -572,6 +600,15 @@ export const VirtualWebhookCallId = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookCallId = OpenEnum<typeof VirtualWebhookCallId>;
+
+export const VirtualWebhookCampaignId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookCampaignId = OpenEnum<
+  typeof VirtualWebhookCampaignId
+>;
 
 export const VirtualWebhookCandidateId = {
   SupportedRequired: "supported-required",
@@ -662,6 +699,13 @@ export const VirtualWebhookFields = {
   NotSupported: "not-supported",
 } as const;
 export type VirtualWebhookFields = OpenEnum<typeof VirtualWebhookFields>;
+
+export const VirtualWebhookGroupId = {
+  SupportedRequired: "supported-required",
+  Supported: "supported",
+  NotSupported: "not-supported",
+} as const;
+export type VirtualWebhookGroupId = OpenEnum<typeof VirtualWebhookGroupId>;
 
 export const VirtualWebhookItemId = {
   SupportedRequired: "supported-required",
@@ -840,11 +884,13 @@ export type IntegrationSupport = {
   fromWebhook?: FromWebhook | undefined;
   inboundFields?: { [k: string]: string } | undefined;
   listAccountId?: ListAccountId | undefined;
+  listAdId?: ListAdId | undefined;
   listApplicationId?: ListApplicationId | undefined;
   listBenefitId?: ListBenefitId | undefined;
   listBranchId?: ListBranchId | undefined;
   listCalendarId?: ListCalendarId | undefined;
   listCallId?: ListCallId | undefined;
+  listCampaignId?: ListCampaignId | undefined;
   listCandidateId?: ListCandidateId | undefined;
   listCategoryId?: ListCategoryId | undefined;
   listChannelId?: ListChannelId | undefined;
@@ -861,6 +907,7 @@ export type IntegrationSupport = {
   listEventId?: ListEventId | undefined;
   listExpand?: ListExpand | undefined;
   listExpandRecurringEvents?: ListExpandRecurringEvents | undefined;
+  listGroupId?: ListGroupId | undefined;
   listInstructorId?: ListInstructorId | undefined;
   listInterviewId?: ListInterviewId | undefined;
   listInvoiceId?: ListInvoiceId | undefined;
@@ -920,10 +967,12 @@ export type IntegrationSupport = {
   searchName?: SearchName | undefined;
   searchTwitter?: SearchTwitter | undefined;
   slowFields?: Array<string> | undefined;
+  virtualWebhookAdId?: VirtualWebhookAdId | undefined;
   virtualWebhookApplicationId?: VirtualWebhookApplicationId | undefined;
   virtualWebhookBranchId?: VirtualWebhookBranchId | undefined;
   virtualWebhookCalendarId?: VirtualWebhookCalendarId | undefined;
   virtualWebhookCallId?: VirtualWebhookCallId | undefined;
+  virtualWebhookCampaignId?: VirtualWebhookCampaignId | undefined;
   virtualWebhookCandidateId?: VirtualWebhookCandidateId | undefined;
   virtualWebhookChannelId?: VirtualWebhookChannelId | undefined;
   virtualWebhookCollectionId?: VirtualWebhookCollectionId | undefined;
@@ -936,6 +985,7 @@ export type IntegrationSupport = {
   virtualWebhookEventId?: VirtualWebhookEventId | undefined;
   virtualWebhookExpand?: VirtualWebhookExpand | undefined;
   virtualWebhookFields?: VirtualWebhookFields | undefined;
+  virtualWebhookGroupId?: VirtualWebhookGroupId | undefined;
   virtualWebhookItemId?: VirtualWebhookItemId | undefined;
   virtualWebhookItemVariantId?: VirtualWebhookItemVariantId | undefined;
   virtualWebhookJobId?: VirtualWebhookJobId | undefined;
@@ -977,6 +1027,13 @@ export const ListAccountId$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(ListAccountId);
 
 /** @internal */
+export const ListAdId$inboundSchema: z.ZodType<
+  ListAdId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListAdId);
+
+/** @internal */
 export const ListApplicationId$inboundSchema: z.ZodType<
   ListApplicationId,
   z.ZodTypeDef,
@@ -1010,6 +1067,13 @@ export const ListCallId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListCallId);
+
+/** @internal */
+export const ListCampaignId$inboundSchema: z.ZodType<
+  ListCampaignId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListCampaignId);
 
 /** @internal */
 export const ListCandidateId$inboundSchema: z.ZodType<
@@ -1122,6 +1186,13 @@ export const ListExpandRecurringEvents$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(ListExpandRecurringEvents);
+
+/** @internal */
+export const ListGroupId$inboundSchema: z.ZodType<
+  ListGroupId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(ListGroupId);
 
 /** @internal */
 export const ListInstructorId$inboundSchema: z.ZodType<
@@ -1488,6 +1559,13 @@ export const SearchTwitter$inboundSchema: z.ZodType<
 > = openEnums.inboundSchema(SearchTwitter);
 
 /** @internal */
+export const VirtualWebhookAdId$inboundSchema: z.ZodType<
+  VirtualWebhookAdId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookAdId);
+
+/** @internal */
 export const VirtualWebhookApplicationId$inboundSchema: z.ZodType<
   VirtualWebhookApplicationId,
   z.ZodTypeDef,
@@ -1514,6 +1592,13 @@ export const VirtualWebhookCallId$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookCallId);
+
+/** @internal */
+export const VirtualWebhookCampaignId$inboundSchema: z.ZodType<
+  VirtualWebhookCampaignId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookCampaignId);
 
 /** @internal */
 export const VirtualWebhookCandidateId$inboundSchema: z.ZodType<
@@ -1598,6 +1683,13 @@ export const VirtualWebhookFields$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = openEnums.inboundSchema(VirtualWebhookFields);
+
+/** @internal */
+export const VirtualWebhookGroupId$inboundSchema: z.ZodType<
+  VirtualWebhookGroupId,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(VirtualWebhookGroupId);
 
 /** @internal */
 export const VirtualWebhookItemId$inboundSchema: z.ZodType<
@@ -1769,11 +1861,13 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   from_webhook: FromWebhook$inboundSchema.optional(),
   inbound_fields: z.record(z.string()).optional(),
   list_account_id: ListAccountId$inboundSchema.optional(),
+  list_ad_id: ListAdId$inboundSchema.optional(),
   list_application_id: ListApplicationId$inboundSchema.optional(),
   list_benefit_id: ListBenefitId$inboundSchema.optional(),
   list_branch_id: ListBranchId$inboundSchema.optional(),
   list_calendar_id: ListCalendarId$inboundSchema.optional(),
   list_call_id: ListCallId$inboundSchema.optional(),
+  list_campaign_id: ListCampaignId$inboundSchema.optional(),
   list_candidate_id: ListCandidateId$inboundSchema.optional(),
   list_category_id: ListCategoryId$inboundSchema.optional(),
   list_channel_id: ListChannelId$inboundSchema.optional(),
@@ -1791,6 +1885,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   list_expand: ListExpand$inboundSchema.optional(),
   list_expand_recurring_events: ListExpandRecurringEvents$inboundSchema
     .optional(),
+  list_group_id: ListGroupId$inboundSchema.optional(),
   list_instructor_id: ListInstructorId$inboundSchema.optional(),
   list_interview_id: ListInterviewId$inboundSchema.optional(),
   list_invoice_id: ListInvoiceId$inboundSchema.optional(),
@@ -1847,12 +1942,15 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   search_name: SearchName$inboundSchema.optional(),
   search_twitter: SearchTwitter$inboundSchema.optional(),
   slow_fields: z.array(z.string()).optional(),
+  virtual_webhook_ad_id: VirtualWebhookAdId$inboundSchema.optional(),
   virtual_webhook_application_id: VirtualWebhookApplicationId$inboundSchema
     .optional(),
   virtual_webhook_branch_id: VirtualWebhookBranchId$inboundSchema.optional(),
   virtual_webhook_calendar_id: VirtualWebhookCalendarId$inboundSchema
     .optional(),
   virtual_webhook_call_id: VirtualWebhookCallId$inboundSchema.optional(),
+  virtual_webhook_campaign_id: VirtualWebhookCampaignId$inboundSchema
+    .optional(),
   virtual_webhook_candidate_id: VirtualWebhookCandidateId$inboundSchema
     .optional(),
   virtual_webhook_channel_id: VirtualWebhookChannelId$inboundSchema.optional(),
@@ -1868,6 +1966,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
   virtual_webhook_event_id: VirtualWebhookEventId$inboundSchema.optional(),
   virtual_webhook_expand: VirtualWebhookExpand$inboundSchema.optional(),
   virtual_webhook_fields: VirtualWebhookFields$inboundSchema.optional(),
+  virtual_webhook_group_id: VirtualWebhookGroupId$inboundSchema.optional(),
   virtual_webhook_item_id: VirtualWebhookItemId$inboundSchema.optional(),
   virtual_webhook_item_variant_id: VirtualWebhookItemVariantId$inboundSchema
     .optional(),
@@ -1904,11 +2003,13 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "from_webhook": "fromWebhook",
     "inbound_fields": "inboundFields",
     "list_account_id": "listAccountId",
+    "list_ad_id": "listAdId",
     "list_application_id": "listApplicationId",
     "list_benefit_id": "listBenefitId",
     "list_branch_id": "listBranchId",
     "list_calendar_id": "listCalendarId",
     "list_call_id": "listCallId",
+    "list_campaign_id": "listCampaignId",
     "list_candidate_id": "listCandidateId",
     "list_category_id": "listCategoryId",
     "list_channel_id": "listChannelId",
@@ -1925,6 +2026,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "list_event_id": "listEventId",
     "list_expand": "listExpand",
     "list_expand_recurring_events": "listExpandRecurringEvents",
+    "list_group_id": "listGroupId",
     "list_instructor_id": "listInstructorId",
     "list_interview_id": "listInterviewId",
     "list_invoice_id": "listInvoiceId",
@@ -1980,10 +2082,12 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "search_name": "searchName",
     "search_twitter": "searchTwitter",
     "slow_fields": "slowFields",
+    "virtual_webhook_ad_id": "virtualWebhookAdId",
     "virtual_webhook_application_id": "virtualWebhookApplicationId",
     "virtual_webhook_branch_id": "virtualWebhookBranchId",
     "virtual_webhook_calendar_id": "virtualWebhookCalendarId",
     "virtual_webhook_call_id": "virtualWebhookCallId",
+    "virtual_webhook_campaign_id": "virtualWebhookCampaignId",
     "virtual_webhook_candidate_id": "virtualWebhookCandidateId",
     "virtual_webhook_channel_id": "virtualWebhookChannelId",
     "virtual_webhook_collection_id": "virtualWebhookCollectionId",
@@ -1996,6 +2100,7 @@ export const IntegrationSupport$inboundSchema: z.ZodType<
     "virtual_webhook_event_id": "virtualWebhookEventId",
     "virtual_webhook_expand": "virtualWebhookExpand",
     "virtual_webhook_fields": "virtualWebhookFields",
+    "virtual_webhook_group_id": "virtualWebhookGroupId",
     "virtual_webhook_item_id": "virtualWebhookItemId",
     "virtual_webhook_item_variant_id": "virtualWebhookItemVariantId",
     "virtual_webhook_job_id": "virtualWebhookJobId",

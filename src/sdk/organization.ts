@@ -4,11 +4,17 @@
 
 import { accountingGetAccountingOrganization } from "../funcs/accountingGetAccountingOrganization.js";
 import { accountingListAccountingOrganizations } from "../funcs/accountingListAccountingOrganizations.js";
+import { organizationCreateAdsOrganization } from "../funcs/organizationCreateAdsOrganization.js";
 import { organizationCreateRepoOrganization } from "../funcs/organizationCreateRepoOrganization.js";
+import { organizationGetAdsOrganization } from "../funcs/organizationGetAdsOrganization.js";
 import { organizationGetRepoOrganization } from "../funcs/organizationGetRepoOrganization.js";
+import { organizationListAdsOrganizations } from "../funcs/organizationListAdsOrganizations.js";
 import { organizationListRepoOrganizations } from "../funcs/organizationListRepoOrganizations.js";
+import { organizationPatchAdsOrganization } from "../funcs/organizationPatchAdsOrganization.js";
 import { organizationPatchRepoOrganization } from "../funcs/organizationPatchRepoOrganization.js";
+import { organizationRemoveAdsOrganization } from "../funcs/organizationRemoveAdsOrganization.js";
 import { organizationRemoveRepoOrganization } from "../funcs/organizationRemoveRepoOrganization.js";
+import { organizationUpdateAdsOrganization } from "../funcs/organizationUpdateAdsOrganization.js";
 import { organizationUpdateRepoOrganization } from "../funcs/organizationUpdateRepoOrganization.js";
 import { ClientSDK, RequestOptions } from "../lib/sdks.js";
 import * as operations from "./models/operations/index.js";
@@ -16,6 +22,20 @@ import * as shared from "./models/shared/index.js";
 import { unwrapAsync } from "./types/fp.js";
 
 export class Organization extends ClientSDK {
+  /**
+   * Create an organization
+   */
+  async createAdsOrganization(
+    request: operations.CreateAdsOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsOrganization> {
+    return unwrapAsync(organizationCreateAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
   /**
    * Create an organization
    */
@@ -38,6 +58,20 @@ export class Organization extends ClientSDK {
     options?: RequestOptions,
   ): Promise<shared.AccountingOrganization> {
     return unwrapAsync(accountingGetAccountingOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Retrieve an organization
+   */
+  async getAdsOrganization(
+    request: operations.GetAdsOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsOrganization> {
+    return unwrapAsync(organizationGetAdsOrganization(
       this,
       request,
       options,
@@ -75,11 +109,39 @@ export class Organization extends ClientSDK {
   /**
    * List all organizations
    */
+  async listAdsOrganizations(
+    request: operations.ListAdsOrganizationsRequest,
+    options?: RequestOptions,
+  ): Promise<Array<shared.AdsOrganization>> {
+    return unwrapAsync(organizationListAdsOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * List all organizations
+   */
   async listRepoOrganizations(
     request: operations.ListRepoOrganizationsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.RepoOrganization>> {
     return unwrapAsync(organizationListRepoOrganizations(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an organization
+   */
+  async patchAdsOrganization(
+    request: operations.PatchAdsOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsOrganization> {
+    return unwrapAsync(organizationPatchAdsOrganization(
       this,
       request,
       options,
@@ -103,11 +165,39 @@ export class Organization extends ClientSDK {
   /**
    * Remove an organization
    */
+  async removeAdsOrganization(
+    request: operations.RemoveAdsOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<operations.RemoveAdsOrganizationResponse | undefined> {
+    return unwrapAsync(organizationRemoveAdsOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Remove an organization
+   */
   async removeRepoOrganization(
     request: operations.RemoveRepoOrganizationRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveRepoOrganizationResponse | undefined> {
     return unwrapAsync(organizationRemoveRepoOrganization(
+      this,
+      request,
+      options,
+    ));
+  }
+
+  /**
+   * Update an organization
+   */
+  async updateAdsOrganization(
+    request: operations.UpdateAdsOrganizationRequest,
+    options?: RequestOptions,
+  ): Promise<shared.AdsOrganization> {
+    return unwrapAsync(organizationUpdateAdsOrganization(
       this,
       request,
       options,

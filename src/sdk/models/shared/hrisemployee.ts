@@ -121,6 +121,7 @@ export type HrisEmployee = {
    * Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.
    */
   groups?: Array<HrisGroup> | undefined;
+  hasMfa?: boolean | undefined;
   hiredAt?: Date | undefined;
   id?: string | undefined;
   imageUrl?: string | undefined;
@@ -229,6 +230,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   first_name: z.string().optional(),
   gender: HrisEmployeeGender$inboundSchema.optional(),
   groups: z.array(HrisGroup$inboundSchema).optional(),
+  has_mfa: z.boolean().optional(),
   hired_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
@@ -267,6 +269,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "employment_status": "employmentStatus",
     "employment_type": "employmentType",
     "first_name": "firstName",
+    "has_mfa": "hasMfa",
     "hired_at": "hiredAt",
     "image_url": "imageUrl",
     "language_locale": "languageLocale",
@@ -300,6 +303,7 @@ export type HrisEmployee$Outbound = {
   first_name?: string | undefined;
   gender?: string | undefined;
   groups?: Array<HrisGroup$Outbound> | undefined;
+  has_mfa?: boolean | undefined;
   hired_at?: string | undefined;
   id?: string | undefined;
   image_url?: string | undefined;
@@ -350,6 +354,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   firstName: z.string().optional(),
   gender: HrisEmployeeGender$outboundSchema.optional(),
   groups: z.array(HrisGroup$outboundSchema).optional(),
+  hasMfa: z.boolean().optional(),
   hiredAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   imageUrl: z.string().optional(),
@@ -384,6 +389,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     employmentStatus: "employment_status",
     employmentType: "employment_type",
     firstName: "first_name",
+    hasMfa: "has_mfa",
     hiredAt: "hired_at",
     imageUrl: "image_url",
     languageLocale: "language_locale",

@@ -8,17 +8,21 @@ import { companyListHrisCompanies } from "../funcs/companyListHrisCompanies.js";
 import { companyPatchHrisCompany } from "../funcs/companyPatchHrisCompany.js";
 import { companyRemoveHrisCompany } from "../funcs/companyRemoveHrisCompany.js";
 import { companyUpdateHrisCompany } from "../funcs/companyUpdateHrisCompany.js";
+import { groupCreateHrisGroup } from "../funcs/groupCreateHrisGroup.js";
+import { groupGetHrisGroup } from "../funcs/groupGetHrisGroup.js";
+import { groupListHrisGroups } from "../funcs/groupListHrisGroups.js";
+import { groupPatchHrisGroup } from "../funcs/groupPatchHrisGroup.js";
+import { groupRemoveHrisGroup } from "../funcs/groupRemoveHrisGroup.js";
+import { groupUpdateHrisGroup } from "../funcs/groupUpdateHrisGroup.js";
 import { hrisCreateHrisBenefit } from "../funcs/hrisCreateHrisBenefit.js";
 import { hrisCreateHrisDeduction } from "../funcs/hrisCreateHrisDeduction.js";
 import { hrisCreateHrisDevice } from "../funcs/hrisCreateHrisDevice.js";
 import { hrisCreateHrisEmployee } from "../funcs/hrisCreateHrisEmployee.js";
-import { hrisCreateHrisGroup } from "../funcs/hrisCreateHrisGroup.js";
 import { hrisCreateHrisTimeshift } from "../funcs/hrisCreateHrisTimeshift.js";
 import { hrisGetHrisBenefit } from "../funcs/hrisGetHrisBenefit.js";
 import { hrisGetHrisDeduction } from "../funcs/hrisGetHrisDeduction.js";
 import { hrisGetHrisDevice } from "../funcs/hrisGetHrisDevice.js";
 import { hrisGetHrisEmployee } from "../funcs/hrisGetHrisEmployee.js";
-import { hrisGetHrisGroup } from "../funcs/hrisGetHrisGroup.js";
 import { hrisGetHrisPayslip } from "../funcs/hrisGetHrisPayslip.js";
 import { hrisGetHrisTimeoff } from "../funcs/hrisGetHrisTimeoff.js";
 import { hrisGetHrisTimeshift } from "../funcs/hrisGetHrisTimeshift.js";
@@ -26,7 +30,6 @@ import { hrisListHrisBenefits } from "../funcs/hrisListHrisBenefits.js";
 import { hrisListHrisDeductions } from "../funcs/hrisListHrisDeductions.js";
 import { hrisListHrisDevices } from "../funcs/hrisListHrisDevices.js";
 import { hrisListHrisEmployees } from "../funcs/hrisListHrisEmployees.js";
-import { hrisListHrisGroups } from "../funcs/hrisListHrisGroups.js";
 import { hrisListHrisPayslips } from "../funcs/hrisListHrisPayslips.js";
 import { hrisListHrisTimeoffs } from "../funcs/hrisListHrisTimeoffs.js";
 import { hrisListHrisTimeshifts } from "../funcs/hrisListHrisTimeshifts.js";
@@ -34,19 +37,16 @@ import { hrisPatchHrisBenefit } from "../funcs/hrisPatchHrisBenefit.js";
 import { hrisPatchHrisDeduction } from "../funcs/hrisPatchHrisDeduction.js";
 import { hrisPatchHrisDevice } from "../funcs/hrisPatchHrisDevice.js";
 import { hrisPatchHrisEmployee } from "../funcs/hrisPatchHrisEmployee.js";
-import { hrisPatchHrisGroup } from "../funcs/hrisPatchHrisGroup.js";
 import { hrisPatchHrisTimeshift } from "../funcs/hrisPatchHrisTimeshift.js";
 import { hrisRemoveHrisBenefit } from "../funcs/hrisRemoveHrisBenefit.js";
 import { hrisRemoveHrisDeduction } from "../funcs/hrisRemoveHrisDeduction.js";
 import { hrisRemoveHrisDevice } from "../funcs/hrisRemoveHrisDevice.js";
 import { hrisRemoveHrisEmployee } from "../funcs/hrisRemoveHrisEmployee.js";
-import { hrisRemoveHrisGroup } from "../funcs/hrisRemoveHrisGroup.js";
 import { hrisRemoveHrisTimeshift } from "../funcs/hrisRemoveHrisTimeshift.js";
 import { hrisUpdateHrisBenefit } from "../funcs/hrisUpdateHrisBenefit.js";
 import { hrisUpdateHrisDeduction } from "../funcs/hrisUpdateHrisDeduction.js";
 import { hrisUpdateHrisDevice } from "../funcs/hrisUpdateHrisDevice.js";
 import { hrisUpdateHrisEmployee } from "../funcs/hrisUpdateHrisEmployee.js";
-import { hrisUpdateHrisGroup } from "../funcs/hrisUpdateHrisGroup.js";
 import { hrisUpdateHrisTimeshift } from "../funcs/hrisUpdateHrisTimeshift.js";
 import { locationCreateHrisLocation } from "../funcs/locationCreateHrisLocation.js";
 import { locationGetHrisLocation } from "../funcs/locationGetHrisLocation.js";
@@ -137,7 +137,7 @@ export class Hris extends ClientSDK {
     request: operations.CreateHrisGroupRequest,
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
-    return unwrapAsync(hrisCreateHrisGroup(
+    return unwrapAsync(groupCreateHrisGroup(
       this,
       request,
       options,
@@ -249,7 +249,7 @@ export class Hris extends ClientSDK {
     request: operations.GetHrisGroupRequest,
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
-    return unwrapAsync(hrisGetHrisGroup(
+    return unwrapAsync(groupGetHrisGroup(
       this,
       request,
       options,
@@ -389,7 +389,7 @@ export class Hris extends ClientSDK {
     request: operations.ListHrisGroupsRequest,
     options?: RequestOptions,
   ): Promise<Array<shared.HrisGroup>> {
-    return unwrapAsync(hrisListHrisGroups(
+    return unwrapAsync(groupListHrisGroups(
       this,
       request,
       options,
@@ -529,7 +529,7 @@ export class Hris extends ClientSDK {
     request: operations.PatchHrisGroupRequest,
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
-    return unwrapAsync(hrisPatchHrisGroup(
+    return unwrapAsync(groupPatchHrisGroup(
       this,
       request,
       options,
@@ -641,7 +641,7 @@ export class Hris extends ClientSDK {
     request: operations.RemoveHrisGroupRequest,
     options?: RequestOptions,
   ): Promise<operations.RemoveHrisGroupResponse | undefined> {
-    return unwrapAsync(hrisRemoveHrisGroup(
+    return unwrapAsync(groupRemoveHrisGroup(
       this,
       request,
       options,
@@ -753,7 +753,7 @@ export class Hris extends ClientSDK {
     request: operations.UpdateHrisGroupRequest,
     options?: RequestOptions,
   ): Promise<shared.HrisGroup> {
-    return unwrapAsync(hrisUpdateHrisGroup(
+    return unwrapAsync(groupUpdateHrisGroup(
       this,
       request,
       options,

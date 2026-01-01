@@ -195,6 +195,15 @@ export const PropertyConnectionPermissions = {
   CalendarRecordingWrite: "calendar_recording_write",
   EnrichPersonRead: "enrich_person_read",
   EnrichCompanyRead: "enrich_company_read",
+  AdsAdRead: "ads_ad_read",
+  AdsAdWrite: "ads_ad_write",
+  AdsCampaignRead: "ads_campaign_read",
+  AdsCampaignWrite: "ads_campaign_write",
+  AdsGroupRead: "ads_group_read",
+  AdsGroupWrite: "ads_group_write",
+  AdsReportRead: "ads_report_read",
+  AdsOrganizationRead: "ads_organization_read",
+  AdsOrganizationWrite: "ads_organization_write",
 } as const;
 export type PropertyConnectionPermissions = OpenEnum<
   typeof PropertyConnectionPermissions

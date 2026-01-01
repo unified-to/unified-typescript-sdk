@@ -7,8 +7,8 @@ import { HrisTimeshift } from "@unified-api/typescript-sdk/sdk/models/shared";
 
 let value: HrisTimeshift = {
   employeeUserId: "<id>",
-  endAt: new Date("2023-04-19T18:54:08.811Z"),
-  startAt: new Date("2023-02-08T17:22:51.971Z"),
+  endAt: new Date("2024-04-18T18:54:08.811Z"),
+  startAt: new Date("2024-02-08T17:22:51.971Z"),
 };
 ```
 

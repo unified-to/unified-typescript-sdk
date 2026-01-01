@@ -26,15 +26,15 @@ import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Update a group
+ * Update an organization
  */
-export function hrisUpdateHrisGroup(
+export function organizationUpdateAdsOrganization(
   client: UnifiedToCore,
-  request: operations.UpdateHrisGroupRequest,
+  request: operations.UpdateAdsOrganizationRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    shared.HrisGroup,
+    shared.AdsOrganization,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -54,12 +54,12 @@ export function hrisUpdateHrisGroup(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.UpdateHrisGroupRequest,
+  request: operations.UpdateAdsOrganizationRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      shared.HrisGroup,
+      shared.AdsOrganization,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -74,14 +74,15 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.UpdateHrisGroupRequest$outboundSchema.parse(value),
+    (value) =>
+      operations.UpdateAdsOrganizationRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
     return [parsed, { status: "invalid" }];
   }
   const payload = parsed.value;
-  const body = encodeJSON("body", payload.HrisGroup, { explode: true });
+  const body = encodeJSON("body", payload.AdsOrganization, { explode: true });
 
   const pathParams = {
     connection_id: encodeSimple("connection_id", payload.connection_id, {
@@ -94,7 +95,7 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/hris/{connection_id}/group/{id}")(pathParams);
+  const path = pathToFunc("/ads/{connection_id}/organization/{id}")(pathParams);
 
   const query = encodeFormQuery({
     "fields": payload.fields,
@@ -112,7 +113,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "updateHrisGroup",
+    operationID: "updateAdsOrganization",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -152,7 +153,7 @@ async function $do(
   const response = doResult.value;
 
   const [result] = await M.match<
-    shared.HrisGroup,
+    shared.AdsOrganization,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -162,7 +163,7 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.json(200, shared.HrisGroup$inboundSchema),
+    M.json(200, shared.AdsOrganization$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
   )(response, req);

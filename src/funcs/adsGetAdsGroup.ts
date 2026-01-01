@@ -3,7 +3,7 @@
  */
 
 import { UnifiedToCore } from "../core.js";
-import { encodeSimple } from "../lib/encodings.js";
+import { encodeFormQuery, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
@@ -21,19 +21,20 @@ import { ResponseValidationError } from "../sdk/models/errors/responsevalidation
 import { SDKValidationError } from "../sdk/models/errors/sdkvalidationerror.js";
 import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import * as operations from "../sdk/models/operations/index.js";
+import * as shared from "../sdk/models/shared/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
 /**
- * Remove a group
+ * Retrieve a group
  */
-export function hrisRemoveHrisGroup(
+export function adsGetAdsGroup(
   client: UnifiedToCore,
-  request: operations.RemoveHrisGroupRequest,
+  request: operations.GetAdsGroupRequest,
   options?: RequestOptions,
 ): APIPromise<
   Result<
-    operations.RemoveHrisGroupResponse | undefined,
+    shared.AdsGroup,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -53,12 +54,12 @@ export function hrisRemoveHrisGroup(
 
 async function $do(
   client: UnifiedToCore,
-  request: operations.RemoveHrisGroupRequest,
+  request: operations.GetAdsGroupRequest,
   options?: RequestOptions,
 ): Promise<
   [
     Result<
-      operations.RemoveHrisGroupResponse | undefined,
+      shared.AdsGroup,
       | UnifiedToError
       | ResponseValidationError
       | ConnectionError
@@ -73,7 +74,7 @@ async function $do(
 > {
   const parsed = safeParse(
     request,
-    (value) => operations.RemoveHrisGroupRequest$outboundSchema.parse(value),
+    (value) => operations.GetAdsGroupRequest$outboundSchema.parse(value),
     "Input validation failed",
   );
   if (!parsed.ok) {
@@ -93,10 +94,15 @@ async function $do(
     }),
   };
 
-  const path = pathToFunc("/hris/{connection_id}/group/{id}")(pathParams);
+  const path = pathToFunc("/ads/{connection_id}/group/{id}")(pathParams);
+
+  const query = encodeFormQuery({
+    "fields": payload.fields,
+    "raw": payload.raw,
+  });
 
   const headers = new Headers(compactMap({
-    Accept: "*/*",
+    Accept: "application/json",
   }));
 
   const securityInput = await extractSecurity(client._options.security);
@@ -105,7 +111,7 @@ async function $do(
   const context = {
     options: client._options,
     baseURL: options?.serverURL ?? client._baseURL ?? "",
-    operationID: "removeHrisGroup",
+    operationID: "getAdsGroup",
     oAuth2Scopes: null,
 
     resolvedSecurity: requestSecurity,
@@ -119,10 +125,11 @@ async function $do(
 
   const requestRes = client._createRequest(context, {
     security: requestSecurity,
-    method: "DELETE",
+    method: "GET",
     baseURL: options?.serverURL,
     path: path,
     headers: headers,
+    query: query,
     body: body,
     userAgent: client._options.userAgent,
     timeoutMs: options?.timeoutMs || client._options.timeoutMs || -1,
@@ -143,12 +150,8 @@ async function $do(
   }
   const response = doResult.value;
 
-  const responseFields = {
-    HttpMeta: { Response: response, Request: req },
-  };
-
   const [result] = await M.match<
-    operations.RemoveHrisGroupResponse | undefined,
+    shared.AdsGroup,
     | UnifiedToError
     | ResponseValidationError
     | ConnectionError
@@ -158,15 +161,10 @@ async function $do(
     | UnexpectedClientError
     | SDKValidationError
   >(
-    M.nil(200, operations.RemoveHrisGroupResponse$inboundSchema.optional()),
+    M.json(200, shared.AdsGroup$inboundSchema),
     M.fail("4XX"),
     M.fail("5XX"),
-    M.nil(
-      "default",
-      operations.RemoveHrisGroupResponse$inboundSchema.optional(),
-      { hdrs: true },
-    ),
-  )(response, req, { extraFields: responseFields });
+  )(response, req);
   if (!result.ok) {
     return [result, { status: "complete", request: req, response }];
   }

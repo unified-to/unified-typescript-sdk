@@ -6,6 +6,8 @@ import { ClientSDK } from "../lib/sdks.js";
 import { Account } from "./account.js";
 import { Accounting } from "./accounting.js";
 import { Activity } from "./activity.js";
+import { Ad } from "./ad.js";
+import { Ads } from "./ads.js";
 import { Apicall } from "./apicall.js";
 import { Application } from "./application.js";
 import { Applicationstatus } from "./applicationstatus.js";
@@ -18,6 +20,7 @@ import { Branch } from "./branch.js";
 import { Busy } from "./busy.js";
 import { Calendar } from "./calendar.js";
 import { Call } from "./call.js";
+import { Campaign } from "./campaign.js";
 import { Candidate } from "./candidate.js";
 import { Cashflow } from "./cashflow.js";
 import { Category } from "./category.js";
@@ -217,6 +220,26 @@ export class UnifiedTo extends ClientSDK {
     return (this._trialbalance ??= new Trialbalance(this._options));
   }
 
+  private _ads?: Ads;
+  get ads(): Ads {
+    return (this._ads ??= new Ads(this._options));
+  }
+
+  private _ad?: Ad;
+  get ad(): Ad {
+    return (this._ad ??= new Ad(this._options));
+  }
+
+  private _campaign?: Campaign;
+  get campaign(): Campaign {
+    return (this._campaign ??= new Campaign(this._options));
+  }
+
+  private _group?: Group;
+  get group(): Group {
+    return (this._group ??= new Group(this._options));
+  }
+
   private _ats?: Ats;
   get ats(): Ats {
     return (this._ats ??= new Ats(this._options));
@@ -400,11 +423,6 @@ export class UnifiedTo extends ClientSDK {
   private _employee?: Employee;
   get employee(): Employee {
     return (this._employee ??= new Employee(this._options));
-  }
-
-  private _group?: Group;
-  get group(): Group {
-    return (this._group ??= new Group(this._options));
   }
 
   private _payslip?: Payslip;

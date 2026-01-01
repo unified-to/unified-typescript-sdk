@@ -129,6 +129,11 @@ export const ObjectType = {
   CalendarBusy: "calendar_busy",
   CalendarLink: "calendar_link",
   CalendarRecording: "calendar_recording",
+  AdsOrganization: "ads_organization",
+  AdsAd: "ads_ad",
+  AdsCampaign: "ads_campaign",
+  AdsReport: "ads_report",
+  AdsGroup: "ads_group",
 } as const;
 export type ObjectType = OpenEnum<typeof ObjectType>;
 

@@ -624,6 +624,42 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`accountingUpdateAccountingTaxrate`](docs/sdks/taxrate/README.md#updateaccountingtaxrate) - Update a taxrate
 - [`accountingUpdateAccountingTransaction`](docs/sdks/accounting/README.md#updateaccountingtransaction) - Update a transaction
 - [`accountingUpdateAccountingTransaction`](docs/sdks/transaction/README.md#updateaccountingtransaction) - Update a transaction
+- [`adsCreateAdsAd`](docs/sdks/ad/README.md#createadsad) - Create an ad
+- [`adsCreateAdsAd`](docs/sdks/ads/README.md#createadsad) - Create an ad
+- [`adsCreateAdsCampaign`](docs/sdks/ads/README.md#createadscampaign) - Create a campaign
+- [`adsCreateAdsCampaign`](docs/sdks/campaign/README.md#createadscampaign) - Create a campaign
+- [`adsCreateAdsGroup`](docs/sdks/ads/README.md#createadsgroup) - Create a group
+- [`adsCreateAdsGroup`](docs/sdks/group/README.md#createadsgroup) - Create a group
+- [`adsGetAdsAd`](docs/sdks/ad/README.md#getadsad) - Retrieve an ad
+- [`adsGetAdsAd`](docs/sdks/ads/README.md#getadsad) - Retrieve an ad
+- [`adsGetAdsCampaign`](docs/sdks/ads/README.md#getadscampaign) - Retrieve a campaign
+- [`adsGetAdsCampaign`](docs/sdks/campaign/README.md#getadscampaign) - Retrieve a campaign
+- [`adsGetAdsGroup`](docs/sdks/ads/README.md#getadsgroup) - Retrieve a group
+- [`adsGetAdsGroup`](docs/sdks/group/README.md#getadsgroup) - Retrieve a group
+- [`adsListAdsAds`](docs/sdks/ad/README.md#listadsads) - List all ads
+- [`adsListAdsAds`](docs/sdks/ads/README.md#listadsads) - List all ads
+- [`adsListAdsCampaigns`](docs/sdks/ads/README.md#listadscampaigns) - List all campaigns
+- [`adsListAdsCampaigns`](docs/sdks/campaign/README.md#listadscampaigns) - List all campaigns
+- [`adsListAdsGroups`](docs/sdks/ads/README.md#listadsgroups) - List all groups
+- [`adsListAdsGroups`](docs/sdks/group/README.md#listadsgroups) - List all groups
+- [`adsPatchAdsAd`](docs/sdks/ad/README.md#patchadsad) - Update an ad
+- [`adsPatchAdsAd`](docs/sdks/ads/README.md#patchadsad) - Update an ad
+- [`adsPatchAdsCampaign`](docs/sdks/ads/README.md#patchadscampaign) - Update a campaign
+- [`adsPatchAdsCampaign`](docs/sdks/campaign/README.md#patchadscampaign) - Update a campaign
+- [`adsPatchAdsGroup`](docs/sdks/ads/README.md#patchadsgroup) - Update a group
+- [`adsPatchAdsGroup`](docs/sdks/group/README.md#patchadsgroup) - Update a group
+- [`adsRemoveAdsAd`](docs/sdks/ad/README.md#removeadsad) - Remove an ad
+- [`adsRemoveAdsAd`](docs/sdks/ads/README.md#removeadsad) - Remove an ad
+- [`adsRemoveAdsCampaign`](docs/sdks/ads/README.md#removeadscampaign) - Remove a campaign
+- [`adsRemoveAdsCampaign`](docs/sdks/campaign/README.md#removeadscampaign) - Remove a campaign
+- [`adsRemoveAdsGroup`](docs/sdks/ads/README.md#removeadsgroup) - Remove a group
+- [`adsRemoveAdsGroup`](docs/sdks/group/README.md#removeadsgroup) - Remove a group
+- [`adsUpdateAdsAd`](docs/sdks/ad/README.md#updateadsad) - Update an ad
+- [`adsUpdateAdsAd`](docs/sdks/ads/README.md#updateadsad) - Update an ad
+- [`adsUpdateAdsCampaign`](docs/sdks/ads/README.md#updateadscampaign) - Update a campaign
+- [`adsUpdateAdsCampaign`](docs/sdks/campaign/README.md#updateadscampaign) - Update a campaign
+- [`adsUpdateAdsGroup`](docs/sdks/ads/README.md#updateadsgroup) - Update a group
+- [`adsUpdateAdsGroup`](docs/sdks/group/README.md#updateadsgroup) - Update a group
 - [`atsCreateAtsActivity`](docs/sdks/activity/README.md#createatsactivity) - Create an activity
 - [`atsCreateAtsActivity`](docs/sdks/ats/README.md#createatsactivity) - Create an activity
 - [`atsCreateAtsApplication`](docs/sdks/application/README.md#createatsapplication) - Create an application
@@ -980,16 +1016,28 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`genaiGetGenaiModel`](docs/sdks/model/README.md#getgenaimodel) - Retrieve a model
 - [`genaiListGenaiModels`](docs/sdks/genai/README.md#listgenaimodels) - List all models
 - [`genaiListGenaiModels`](docs/sdks/model/README.md#listgenaimodels) - List all models
+- [`groupCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
+- [`groupCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`groupCreateScimGroups`](docs/sdks/group/README.md#createscimgroups) - Create group
 - [`groupCreateScimGroups`](docs/sdks/scim/README.md#createscimgroups) - Create group
+- [`groupGetHrisGroup`](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
+- [`groupGetHrisGroup`](docs/sdks/hris/README.md#gethrisgroup) - Retrieve a group
 - [`groupGetScimGroups`](docs/sdks/group/README.md#getscimgroups) - Get group
 - [`groupGetScimGroups`](docs/sdks/scim/README.md#getscimgroups) - Get group
+- [`groupListHrisGroups`](docs/sdks/group/README.md#listhrisgroups) - List all groups
+- [`groupListHrisGroups`](docs/sdks/hris/README.md#listhrisgroups) - List all groups
 - [`groupListScimGroups`](docs/sdks/group/README.md#listscimgroups) - List groups
 - [`groupListScimGroups`](docs/sdks/scim/README.md#listscimgroups) - List groups
+- [`groupPatchHrisGroup`](docs/sdks/group/README.md#patchhrisgroup) - Update a group
+- [`groupPatchHrisGroup`](docs/sdks/hris/README.md#patchhrisgroup) - Update a group
 - [`groupPatchScimGroups`](docs/sdks/group/README.md#patchscimgroups) - Update group
 - [`groupPatchScimGroups`](docs/sdks/scim/README.md#patchscimgroups) - Update group
+- [`groupRemoveHrisGroup`](docs/sdks/group/README.md#removehrisgroup) - Remove a group
+- [`groupRemoveHrisGroup`](docs/sdks/hris/README.md#removehrisgroup) - Remove a group
 - [`groupRemoveScimGroups`](docs/sdks/group/README.md#removescimgroups) - Delete group
 - [`groupRemoveScimGroups`](docs/sdks/scim/README.md#removescimgroups) - Delete group
+- [`groupUpdateHrisGroup`](docs/sdks/group/README.md#updatehrisgroup) - Update a group
+- [`groupUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`groupUpdateScimGroups`](docs/sdks/group/README.md#updatescimgroups) - Update group
 - [`groupUpdateScimGroups`](docs/sdks/scim/README.md#updatescimgroups) - Update group
 - [`hrisCreateHrisBenefit`](docs/sdks/benefit/README.md#createhrisbenefit) - Create a benefit
@@ -1000,8 +1048,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisCreateHrisDevice`](docs/sdks/hris/README.md#createhrisdevice) - Create a device
 - [`hrisCreateHrisEmployee`](docs/sdks/employee/README.md#createhrisemployee) - Create an employee
 - [`hrisCreateHrisEmployee`](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
-- [`hrisCreateHrisGroup`](docs/sdks/group/README.md#createhrisgroup) - Create a group
-- [`hrisCreateHrisGroup`](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 - [`hrisCreateHrisTimeshift`](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 - [`hrisCreateHrisTimeshift`](docs/sdks/timeshift/README.md#createhristimeshift) - Create a timeshift
 - [`hrisGetHrisBenefit`](docs/sdks/benefit/README.md#gethrisbenefit) - Retrieve a benefit
@@ -1012,8 +1058,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisGetHrisDevice`](docs/sdks/hris/README.md#gethrisdevice) - Retrieve a device
 - [`hrisGetHrisEmployee`](docs/sdks/employee/README.md#gethrisemployee) - Retrieve an employee
 - [`hrisGetHrisEmployee`](docs/sdks/hris/README.md#gethrisemployee) - Retrieve an employee
-- [`hrisGetHrisGroup`](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
-- [`hrisGetHrisGroup`](docs/sdks/hris/README.md#gethrisgroup) - Retrieve a group
 - [`hrisGetHrisPayslip`](docs/sdks/hris/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisPayslip`](docs/sdks/payslip/README.md#gethrispayslip) - Retrieve a payslip
 - [`hrisGetHrisTimeoff`](docs/sdks/hris/README.md#gethristimeoff) - Retrieve a timeoff
@@ -1028,8 +1072,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisListHrisDevices`](docs/sdks/hris/README.md#listhrisdevices) - List all devices
 - [`hrisListHrisEmployees`](docs/sdks/employee/README.md#listhrisemployees) - List all employees
 - [`hrisListHrisEmployees`](docs/sdks/hris/README.md#listhrisemployees) - List all employees
-- [`hrisListHrisGroups`](docs/sdks/group/README.md#listhrisgroups) - List all groups
-- [`hrisListHrisGroups`](docs/sdks/hris/README.md#listhrisgroups) - List all groups
 - [`hrisListHrisPayslips`](docs/sdks/hris/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisPayslips`](docs/sdks/payslip/README.md#listhrispayslips) - List all payslips
 - [`hrisListHrisTimeoffs`](docs/sdks/hris/README.md#listhristimeoffs) - List all timeoffs
@@ -1044,8 +1086,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisPatchHrisDevice`](docs/sdks/hris/README.md#patchhrisdevice) - Update a device
 - [`hrisPatchHrisEmployee`](docs/sdks/employee/README.md#patchhrisemployee) - Update an employee
 - [`hrisPatchHrisEmployee`](docs/sdks/hris/README.md#patchhrisemployee) - Update an employee
-- [`hrisPatchHrisGroup`](docs/sdks/group/README.md#patchhrisgroup) - Update a group
-- [`hrisPatchHrisGroup`](docs/sdks/hris/README.md#patchhrisgroup) - Update a group
 - [`hrisPatchHrisTimeshift`](docs/sdks/hris/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisPatchHrisTimeshift`](docs/sdks/timeshift/README.md#patchhristimeshift) - Update a timeshift
 - [`hrisRemoveHrisBenefit`](docs/sdks/benefit/README.md#removehrisbenefit) - Remove a benefit
@@ -1056,8 +1096,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisRemoveHrisDevice`](docs/sdks/hris/README.md#removehrisdevice) - Remove a device
 - [`hrisRemoveHrisEmployee`](docs/sdks/employee/README.md#removehrisemployee) - Remove an employee
 - [`hrisRemoveHrisEmployee`](docs/sdks/hris/README.md#removehrisemployee) - Remove an employee
-- [`hrisRemoveHrisGroup`](docs/sdks/group/README.md#removehrisgroup) - Remove a group
-- [`hrisRemoveHrisGroup`](docs/sdks/hris/README.md#removehrisgroup) - Remove a group
 - [`hrisRemoveHrisTimeshift`](docs/sdks/hris/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisRemoveHrisTimeshift`](docs/sdks/timeshift/README.md#removehristimeshift) - Remove a timeshift
 - [`hrisUpdateHrisBenefit`](docs/sdks/benefit/README.md#updatehrisbenefit) - Update a benefit
@@ -1068,8 +1106,6 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`hrisUpdateHrisDevice`](docs/sdks/hris/README.md#updatehrisdevice) - Update a device
 - [`hrisUpdateHrisEmployee`](docs/sdks/employee/README.md#updatehrisemployee) - Update an employee
 - [`hrisUpdateHrisEmployee`](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
-- [`hrisUpdateHrisGroup`](docs/sdks/group/README.md#updatehrisgroup) - Update a group
-- [`hrisUpdateHrisGroup`](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 - [`hrisUpdateHrisTimeshift`](docs/sdks/hris/README.md#updatehristimeshift) - Update a timeshift
 - [`hrisUpdateHrisTimeshift`](docs/sdks/timeshift/README.md#updatehristimeshift) - Update a timeshift
 - [`kmsCreateKmsComment`](docs/sdks/comment/README.md#createkmscomment) - Create a comment
@@ -1226,16 +1262,28 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`metadataPatchMetadataMetadata`](docs/sdks/metadata/README.md#patchmetadatametadata) - Update a metadata
 - [`metadataRemoveMetadataMetadata`](docs/sdks/metadata/README.md#removemetadatametadata) - Remove a metadata
 - [`metadataUpdateMetadataMetadata`](docs/sdks/metadata/README.md#updatemetadatametadata) - Update a metadata
+- [`organizationCreateAdsOrganization`](docs/sdks/ads/README.md#createadsorganization) - Create an organization
+- [`organizationCreateAdsOrganization`](docs/sdks/organization/README.md#createadsorganization) - Create an organization
 - [`organizationCreateRepoOrganization`](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
 - [`organizationCreateRepoOrganization`](docs/sdks/repo/README.md#createrepoorganization) - Create an organization
+- [`organizationGetAdsOrganization`](docs/sdks/ads/README.md#getadsorganization) - Retrieve an organization
+- [`organizationGetAdsOrganization`](docs/sdks/organization/README.md#getadsorganization) - Retrieve an organization
 - [`organizationGetRepoOrganization`](docs/sdks/organization/README.md#getrepoorganization) - Retrieve an organization
 - [`organizationGetRepoOrganization`](docs/sdks/repo/README.md#getrepoorganization) - Retrieve an organization
+- [`organizationListAdsOrganizations`](docs/sdks/ads/README.md#listadsorganizations) - List all organizations
+- [`organizationListAdsOrganizations`](docs/sdks/organization/README.md#listadsorganizations) - List all organizations
 - [`organizationListRepoOrganizations`](docs/sdks/organization/README.md#listrepoorganizations) - List all organizations
 - [`organizationListRepoOrganizations`](docs/sdks/repo/README.md#listrepoorganizations) - List all organizations
+- [`organizationPatchAdsOrganization`](docs/sdks/ads/README.md#patchadsorganization) - Update an organization
+- [`organizationPatchAdsOrganization`](docs/sdks/organization/README.md#patchadsorganization) - Update an organization
 - [`organizationPatchRepoOrganization`](docs/sdks/organization/README.md#patchrepoorganization) - Update an organization
 - [`organizationPatchRepoOrganization`](docs/sdks/repo/README.md#patchrepoorganization) - Update an organization
+- [`organizationRemoveAdsOrganization`](docs/sdks/ads/README.md#removeadsorganization) - Remove an organization
+- [`organizationRemoveAdsOrganization`](docs/sdks/organization/README.md#removeadsorganization) - Remove an organization
 - [`organizationRemoveRepoOrganization`](docs/sdks/organization/README.md#removerepoorganization) - Remove an organization
 - [`organizationRemoveRepoOrganization`](docs/sdks/repo/README.md#removerepoorganization) - Remove an organization
+- [`organizationUpdateAdsOrganization`](docs/sdks/ads/README.md#updateadsorganization) - Update an organization
+- [`organizationUpdateAdsOrganization`](docs/sdks/organization/README.md#updateadsorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 - [`organizationUpdateRepoOrganization`](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
 - [`passthroughCreatePassthroughJson`](docs/sdks/passthrough/README.md#createpassthroughjson) - Passthrough POST
@@ -1324,6 +1372,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`repoRemoveRepoPullrequest`](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
 - [`repoRemoveRepoRepository`](docs/sdks/repo/README.md#removereporepository) - Remove a repository
 - [`repoRemoveRepoRepository`](docs/sdks/repository/README.md#removereporepository) - Remove a repository
+- [`reportListAdsReports`](docs/sdks/ads/README.md#listadsreports) - List all reports
+- [`reportListAdsReports`](docs/sdks/report/README.md#listadsreports) - List all reports
 - [`repoUpdateRepoBranch`](docs/sdks/branch/README.md#updaterepobranch) - Update a branch
 - [`repoUpdateRepoBranch`](docs/sdks/repo/README.md#updaterepobranch) - Update a branch
 - [`repoUpdateRepoCommit`](docs/sdks/commit/README.md#updaterepocommit) - Update a commit
