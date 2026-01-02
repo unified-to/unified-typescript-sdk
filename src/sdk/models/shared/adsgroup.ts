@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -14,17 +16,43 @@ import {
   PropertyAdsGroupTargeting$outboundSchema,
 } from "./propertyadsgrouptargeting.js";
 
+export const AdsGroupBudgetPeriod = {
+  Daily: "DAILY",
+  Monthly: "MONTHLY",
+  Total: "TOTAL",
+  Lifetime: "LIFETIME",
+} as const;
+export type AdsGroupBudgetPeriod = OpenEnum<typeof AdsGroupBudgetPeriod>;
+
 export type AdsGroup = {
+  bidAmount?: number | undefined;
+  budgetAmount?: number | undefined;
+  budgetPeriod?: AdsGroupBudgetPeriod | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
+  endAt?: Date | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
   targeting?: PropertyAdsGroupTargeting | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const AdsGroupBudgetPeriod$inboundSchema: z.ZodType<
+  AdsGroupBudgetPeriod,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(AdsGroupBudgetPeriod);
+/** @internal */
+export const AdsGroupBudgetPeriod$outboundSchema: z.ZodType<
+  string,
+  z.ZodTypeDef,
+  AdsGroupBudgetPeriod
+> = openEnums.outboundSchema(AdsGroupBudgetPeriod);
 
 /** @internal */
 export const AdsGroup$inboundSchema: z.ZodType<
@@ -32,35 +60,52 @@ export const AdsGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  bid_amount: z.number().optional(),
+  budget_amount: z.number().optional(),
+  budget_period: AdsGroupBudgetPeriod$inboundSchema.optional(),
   campaign_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   targeting: PropertyAdsGroupTargeting$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "bid_amount": "bidAmount",
+    "budget_amount": "budgetAmount",
+    "budget_period": "budgetPeriod",
     "campaign_id": "campaignId",
     "created_at": "createdAt",
+    "end_at": "endAt",
     "is_active": "isActive",
     "organization_id": "organizationId",
+    "start_at": "startAt",
     "updated_at": "updatedAt",
   });
 });
 /** @internal */
 export type AdsGroup$Outbound = {
+  bid_amount?: number | undefined;
+  budget_amount?: number | undefined;
+  budget_period?: string | undefined;
   campaign_id?: string | undefined;
   created_at?: string | undefined;
+  end_at?: string | undefined;
   id?: string | undefined;
   is_active?: boolean | undefined;
   name?: string | undefined;
   organization_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  start_at?: string | undefined;
   targeting?: PropertyAdsGroupTargeting$Outbound | undefined;
   updated_at?: string | undefined;
 };
@@ -71,21 +116,31 @@ export const AdsGroup$outboundSchema: z.ZodType<
   z.ZodTypeDef,
   AdsGroup
 > = z.object({
+  bidAmount: z.number().optional(),
+  budgetAmount: z.number().optional(),
+  budgetPeriod: AdsGroupBudgetPeriod$outboundSchema.optional(),
   campaignId: z.string().optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  endAt: z.date().transform(v => v.toISOString()).optional(),
   id: z.string().optional(),
   isActive: z.boolean().optional(),
   name: z.string().optional(),
   organizationId: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  startAt: z.date().transform(v => v.toISOString()).optional(),
   targeting: PropertyAdsGroupTargeting$outboundSchema.optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
+    bidAmount: "bid_amount",
+    budgetAmount: "budget_amount",
+    budgetPeriod: "budget_period",
     campaignId: "campaign_id",
     createdAt: "created_at",
+    endAt: "end_at",
     isActive: "is_active",
     organizationId: "organization_id",
+    startAt: "start_at",
     updatedAt: "updated_at",
   });
 });

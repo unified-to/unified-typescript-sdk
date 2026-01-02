@@ -31,6 +31,14 @@ export const AdsReportMetricsType = {
   ConversionValue: "CONVERSION_VALUE",
   Cpa: "CPA",
   Roas: "ROAS",
+  Cpm: "CPM",
+  Ecpm: "ECPM",
+  Engagement: "ENGAGEMENT",
+  VideoCompletions: "VIDEO_COMPLETIONS",
+  VideoViews: "VIDEO_VIEWS",
+  Leads: "LEADS",
+  Engagements: "ENGAGEMENTS",
+  Saves: "SAVES",
 } as const;
 export type AdsReportMetricsType = OpenEnum<typeof AdsReportMetricsType>;
 

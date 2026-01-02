@@ -5,6 +5,8 @@
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../../lib/primitives.js";
 import { safeParse } from "../../../lib/schemas.js";
+import * as openEnums from "../../types/enums.js";
+import { OpenEnum } from "../../types/enums.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 import {
@@ -12,17 +14,39 @@ import {
   PropertyAdsReportMetricsGroupTargeting$inboundSchema,
 } from "./propertyadsreportmetricsgrouptargeting.js";
 
+export const PropertyAdsReportMetricsGroupBudgetPeriod = {
+  Daily: "DAILY",
+  Monthly: "MONTHLY",
+  Total: "TOTAL",
+  Lifetime: "LIFETIME",
+} as const;
+export type PropertyAdsReportMetricsGroupBudgetPeriod = OpenEnum<
+  typeof PropertyAdsReportMetricsGroupBudgetPeriod
+>;
+
 export type PropertyAdsReportMetricsGroup = {
+  bidAmount?: number | undefined;
+  budgetAmount?: number | undefined;
+  budgetPeriod?: PropertyAdsReportMetricsGroupBudgetPeriod | undefined;
   campaignId?: string | undefined;
   createdAt?: Date | undefined;
+  endAt?: Date | undefined;
   id?: string | undefined;
   isActive?: boolean | undefined;
   name?: string | undefined;
   organizationId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  startAt?: Date | undefined;
   targeting?: PropertyAdsReportMetricsGroupTargeting | undefined;
   updatedAt?: Date | undefined;
 };
+
+/** @internal */
+export const PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema: z.ZodType<
+  PropertyAdsReportMetricsGroupBudgetPeriod,
+  z.ZodTypeDef,
+  unknown
+> = openEnums.inboundSchema(PropertyAdsReportMetricsGroupBudgetPeriod);
 
 /** @internal */
 export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
@@ -30,23 +54,36 @@ export const PropertyAdsReportMetricsGroup$inboundSchema: z.ZodType<
   z.ZodTypeDef,
   unknown
 > = z.object({
+  bid_amount: z.number().optional(),
+  budget_amount: z.number().optional(),
+  budget_period: PropertyAdsReportMetricsGroupBudgetPeriod$inboundSchema
+    .optional(),
   campaign_id: z.string().optional(),
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
+  end_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
   id: z.string().optional(),
   is_active: z.boolean().optional(),
   name: z.string().optional(),
   organization_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  start_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
+    .optional(),
   targeting: PropertyAdsReportMetricsGroupTargeting$inboundSchema.optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
   return remap$(v, {
+    "bid_amount": "bidAmount",
+    "budget_amount": "budgetAmount",
+    "budget_period": "budgetPeriod",
     "campaign_id": "campaignId",
     "created_at": "createdAt",
+    "end_at": "endAt",
     "is_active": "isActive",
     "organization_id": "organizationId",
+    "start_at": "startAt",
     "updated_at": "updatedAt",
   });
 });

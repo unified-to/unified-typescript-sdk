@@ -11,12 +11,22 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 export type PropertyAdsAdTargeting = {
   ageRanges?: Array<string> | undefined;
   audiences?: Array<string> | undefined;
+  companies?: Array<string> | undefined;
+  companySizes?: Array<string> | undefined;
+  degrees?: Array<string> | undefined;
   devices?: Array<string> | undefined;
   genders?: Array<string> | undefined;
+  industries?: Array<string> | undefined;
+  interests?: Array<string> | undefined;
+  jobFunctions?: Array<string> | undefined;
+  jobTitles?: Array<string> | undefined;
   keywords?: Array<string> | undefined;
   languages?: Array<string> | undefined;
   locations?: Array<string> | undefined;
   placements?: Array<string> | undefined;
+  schools?: Array<string> | undefined;
+  seniorities?: Array<string> | undefined;
+  skills?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -27,27 +37,50 @@ export const PropertyAdsAdTargeting$inboundSchema: z.ZodType<
 > = z.object({
   age_ranges: z.array(z.string()).optional(),
   audiences: z.array(z.string()).optional(),
+  companies: z.array(z.string()).optional(),
+  company_sizes: z.array(z.string()).optional(),
+  degrees: z.array(z.string()).optional(),
   devices: z.array(z.string()).optional(),
   genders: z.array(z.string()).optional(),
+  industries: z.array(z.string()).optional(),
+  interests: z.array(z.string()).optional(),
+  job_functions: z.array(z.string()).optional(),
+  job_titles: z.array(z.string()).optional(),
   keywords: z.array(z.string()).optional(),
   languages: z.array(z.string()).optional(),
   locations: z.array(z.string()).optional(),
   placements: z.array(z.string()).optional(),
+  schools: z.array(z.string()).optional(),
+  seniorities: z.array(z.string()).optional(),
+  skills: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     "age_ranges": "ageRanges",
+    "company_sizes": "companySizes",
+    "job_functions": "jobFunctions",
+    "job_titles": "jobTitles",
   });
 });
 /** @internal */
 export type PropertyAdsAdTargeting$Outbound = {
   age_ranges?: Array<string> | undefined;
   audiences?: Array<string> | undefined;
+  companies?: Array<string> | undefined;
+  company_sizes?: Array<string> | undefined;
+  degrees?: Array<string> | undefined;
   devices?: Array<string> | undefined;
   genders?: Array<string> | undefined;
+  industries?: Array<string> | undefined;
+  interests?: Array<string> | undefined;
+  job_functions?: Array<string> | undefined;
+  job_titles?: Array<string> | undefined;
   keywords?: Array<string> | undefined;
   languages?: Array<string> | undefined;
   locations?: Array<string> | undefined;
   placements?: Array<string> | undefined;
+  schools?: Array<string> | undefined;
+  seniorities?: Array<string> | undefined;
+  skills?: Array<string> | undefined;
 };
 
 /** @internal */
@@ -58,15 +91,28 @@ export const PropertyAdsAdTargeting$outboundSchema: z.ZodType<
 > = z.object({
   ageRanges: z.array(z.string()).optional(),
   audiences: z.array(z.string()).optional(),
+  companies: z.array(z.string()).optional(),
+  companySizes: z.array(z.string()).optional(),
+  degrees: z.array(z.string()).optional(),
   devices: z.array(z.string()).optional(),
   genders: z.array(z.string()).optional(),
+  industries: z.array(z.string()).optional(),
+  interests: z.array(z.string()).optional(),
+  jobFunctions: z.array(z.string()).optional(),
+  jobTitles: z.array(z.string()).optional(),
   keywords: z.array(z.string()).optional(),
   languages: z.array(z.string()).optional(),
   locations: z.array(z.string()).optional(),
   placements: z.array(z.string()).optional(),
+  schools: z.array(z.string()).optional(),
+  seniorities: z.array(z.string()).optional(),
+  skills: z.array(z.string()).optional(),
 }).transform((v) => {
   return remap$(v, {
     ageRanges: "age_ranges",
+    companySizes: "company_sizes",
+    jobFunctions: "job_functions",
+    jobTitles: "job_titles",
   });
 });
 

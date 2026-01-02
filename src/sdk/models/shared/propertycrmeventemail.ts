@@ -15,13 +15,13 @@ export type PropertyCrmEventEmail = {
   attachmentFileIds?: Array<string> | undefined;
   body?: string | undefined;
   /**
-   * The event email's cc name & email (name <test@test.com>)
+   * The event email's cc name & email (name )
    */
   cc?: Array<string> | undefined;
   from?: string | undefined;
   subject?: string | undefined;
   /**
-   * The event email's "to" name & email (name <test@test.com>)
+   * The event email's "to" name & email (name )
    */
   to?: Array<string> | undefined;
 };

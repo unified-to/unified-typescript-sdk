@@ -5,7 +5,7 @@
 ```typescript
 import { AdsReportMetricsType } from "@unified-api/typescript-sdk/sdk/models/shared";
 
-let value: AdsReportMetricsType = "CPC";
+let value: AdsReportMetricsType = "CPM";
 ```
 
 ## Values
@@ -13,5 +13,5 @@ let value: AdsReportMetricsType = "CPC";
 This is an open enum. Unrecognized values will be captured as the `Unrecognized<string>` branded type.
 
 ```typescript
-"CLICKS" | "IMPRESSIONS" | "CONVERSIONS" | "COST" | "CTR" | "CPC" | "CONVERSION_VALUE" | "CPA" | "ROAS" | Unrecognized<string>
+"CLICKS" | "IMPRESSIONS" | "CONVERSIONS" | "COST" | "CTR" | "CPC" | "CONVERSION_VALUE" | "CPA" | "ROAS" | "CPM" | "ECPM" | "ENGAGEMENT" | "VIDEO_COMPLETIONS" | "VIDEO_VIEWS" | "LEADS" | "ENGAGEMENTS" | "SAVES" | Unrecognized<string>
 ```

@@ -10,9 +10,11 @@ import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
 export type AdsOrganization = {
   createdAt?: Date | undefined;
+  currency?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  timezone?: string | undefined;
   updatedAt?: Date | undefined;
 };
 
@@ -24,9 +26,11 @@ export const AdsOrganization$inboundSchema: z.ZodType<
 > = z.object({
   created_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
+  currency: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
     .optional(),
 }).transform((v) => {
@@ -38,9 +42,11 @@ export const AdsOrganization$inboundSchema: z.ZodType<
 /** @internal */
 export type AdsOrganization$Outbound = {
   created_at?: string | undefined;
+  currency?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
   raw?: { [k: string]: any } | undefined;
+  timezone?: string | undefined;
   updated_at?: string | undefined;
 };
 
@@ -51,9 +57,11 @@ export const AdsOrganization$outboundSchema: z.ZodType<
   AdsOrganization
 > = z.object({
   createdAt: z.date().transform(v => v.toISOString()).optional(),
+  currency: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
   raw: z.record(z.any()).optional(),
+  timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {

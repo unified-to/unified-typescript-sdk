@@ -24,6 +24,8 @@ export const AdType = {
   Shopping: "SHOPPING",
   App: "APP",
   Call: "CALL",
+  Carousel: "CAROUSEL",
+  Social: "SOCIAL",
 } as const;
 export type AdType = OpenEnum<typeof AdType>;
 

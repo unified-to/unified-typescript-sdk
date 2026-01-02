@@ -20,6 +20,7 @@ import {
 export type CrmDeal = {
   amount?: number | undefined;
   closedAt?: Date | undefined;
+  closingAt?: Date | undefined;
   companyIds?: Array<string> | undefined;
   contactIds?: Array<string> | undefined;
   createdAt?: Date | undefined;
@@ -47,6 +48,9 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
     amount: z.number().optional(),
     closed_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
       .optional(),
+    closing_at: z.string().datetime({ offset: true }).transform(v =>
+      new Date(v)
+    ).optional(),
     company_ids: z.array(z.string()).optional(),
     contact_ids: z.array(z.string()).optional(),
     created_at: z.string().datetime({ offset: true }).transform(v =>
@@ -73,6 +77,7 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
   }).transform((v) => {
     return remap$(v, {
       "closed_at": "closedAt",
+      "closing_at": "closingAt",
       "company_ids": "companyIds",
       "contact_ids": "contactIds",
       "created_at": "createdAt",
@@ -88,6 +93,7 @@ export const CrmDeal$inboundSchema: z.ZodType<CrmDeal, z.ZodTypeDef, unknown> =
 export type CrmDeal$Outbound = {
   amount?: number | undefined;
   closed_at?: string | undefined;
+  closing_at?: string | undefined;
   company_ids?: Array<string> | undefined;
   contact_ids?: Array<string> | undefined;
   created_at?: string | undefined;
@@ -117,6 +123,7 @@ export const CrmDeal$outboundSchema: z.ZodType<
 > = z.object({
   amount: z.number().optional(),
   closedAt: z.date().transform(v => v.toISOString()).optional(),
+  closingAt: z.date().transform(v => v.toISOString()).optional(),
   companyIds: z.array(z.string()).optional(),
   contactIds: z.array(z.string()).optional(),
   createdAt: z.date().transform(v => v.toISOString()).optional(),
@@ -139,6 +146,7 @@ export const CrmDeal$outboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     closedAt: "closed_at",
+    closingAt: "closing_at",
     companyIds: "company_ids",
     contactIds: "contact_ids",
     createdAt: "created_at",
