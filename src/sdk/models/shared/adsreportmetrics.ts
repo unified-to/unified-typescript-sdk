@@ -39,6 +39,10 @@ export const AdsReportMetricsType = {
   Leads: "LEADS",
   Engagements: "ENGAGEMENTS",
   Saves: "SAVES",
+  Likes: "LIKES",
+  Shares: "SHARES",
+  Comments: "COMMENTS",
+  Follows: "FOLLOWS",
 } as const;
 export type AdsReportMetricsType = OpenEnum<typeof AdsReportMetricsType>;
 

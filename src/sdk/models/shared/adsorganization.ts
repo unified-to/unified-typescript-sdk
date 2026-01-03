@@ -13,6 +13,7 @@ export type AdsOrganization = {
   currency?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
+  parentId?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updatedAt?: Date | undefined;
@@ -29,6 +30,7 @@ export const AdsOrganization$inboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
+  parent_id: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -36,6 +38,7 @@ export const AdsOrganization$inboundSchema: z.ZodType<
 }).transform((v) => {
   return remap$(v, {
     "created_at": "createdAt",
+    "parent_id": "parentId",
     "updated_at": "updatedAt",
   });
 });
@@ -45,6 +48,7 @@ export type AdsOrganization$Outbound = {
   currency?: string | undefined;
   id?: string | undefined;
   name?: string | undefined;
+  parent_id?: string | undefined;
   raw?: { [k: string]: any } | undefined;
   timezone?: string | undefined;
   updated_at?: string | undefined;
@@ -60,12 +64,14 @@ export const AdsOrganization$outboundSchema: z.ZodType<
   currency: z.string().optional(),
   id: z.string().optional(),
   name: z.string().optional(),
+  parentId: z.string().optional(),
   raw: z.record(z.any()).optional(),
   timezone: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
 }).transform((v) => {
   return remap$(v, {
     createdAt: "created_at",
+    parentId: "parent_id",
     updatedAt: "updated_at",
   });
 });
