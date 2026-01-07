@@ -5,7 +5,7 @@
 ### Available Operations
 
 * [createUnifiedConnection](#createunifiedconnection) - Create connection
-* [createUnifiedEnvironment](#createunifiedenvironment)
+* [createUnifiedEnvironment](#createunifiedenvironment) - Create new environments
 * [createUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [getUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [getUnifiedConnection](#getunifiedconnection) - Retrieve connection
@@ -14,7 +14,7 @@
 * [getUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [listUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [listUnifiedConnections](#listunifiedconnections) - List all connections
-* [listUnifiedEnvironments](#listunifiedenvironments)
+* [listUnifiedEnvironments](#listunifiedenvironments) - Returns all environments
 * [listUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [listUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [listUnifiedIssues](#listunifiedissues) - List support issues
@@ -23,7 +23,7 @@
 * [patchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [patchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [removeUnifiedConnection](#removeunifiedconnection) - Remove connection
-* [removeUnifiedEnvironment](#removeunifiedenvironment)
+* [removeUnifiedEnvironment](#removeunifiedenvironment) - Remove an environment
 * [removeUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [updateUnifiedConnection](#updateunifiedconnection) - Update connection
 * [updateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
@@ -115,6 +115,8 @@ run();
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## createUnifiedEnvironment
+
+Create new environments
 
 ### Example Usage
 
@@ -804,6 +806,8 @@ run();
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## listUnifiedEnvironments
+
+Returns all environments
 
 ### Example Usage
 
@@ -1506,6 +1510,8 @@ run();
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## removeUnifiedEnvironment
+
+Remove an environment
 
 ### Example Usage
 

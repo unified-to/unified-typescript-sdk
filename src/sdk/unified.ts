@@ -49,6 +49,9 @@ export class Unified extends ClientSDK {
     ));
   }
 
+  /**
+   * Create new environments
+   */
   async createUnifiedEnvironment(
     request: Array<string>,
     options?: RequestOptions,
@@ -178,6 +181,9 @@ export class Unified extends ClientSDK {
     ));
   }
 
+  /**
+   * Returns all environments
+   */
   async listUnifiedEnvironments(
     options?: RequestOptions,
   ): Promise<Array<string>> {
@@ -302,6 +308,9 @@ export class Unified extends ClientSDK {
     ));
   }
 
+  /**
+   * Remove an environment
+   */
   async removeUnifiedEnvironment(
     request: operations.RemoveUnifiedEnvironmentRequest,
     options?: RequestOptions,

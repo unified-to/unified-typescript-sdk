@@ -22,6 +22,9 @@ import { UnifiedToError } from "../sdk/models/errors/unifiedtoerror.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
+/**
+ * Returns all environments
+ */
 export function unifiedListUnifiedEnvironments(
   client: UnifiedToCore,
   options?: RequestOptions,

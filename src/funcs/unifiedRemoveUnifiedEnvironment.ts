@@ -25,6 +25,9 @@ import * as operations from "../sdk/models/operations/index.js";
 import { APICall, APIPromise } from "../sdk/types/async.js";
 import { Result } from "../sdk/types/fp.js";
 
+/**
+ * Remove an environment
+ */
 export function unifiedRemoveUnifiedEnvironment(
   client: UnifiedToCore,
   request: operations.RemoveUnifiedEnvironmentRequest,

@@ -4,11 +4,13 @@
 
 ### Available Operations
 
-* [createUnifiedEnvironment](#createunifiedenvironment)
-* [listUnifiedEnvironments](#listunifiedenvironments)
-* [removeUnifiedEnvironment](#removeunifiedenvironment)
+* [createUnifiedEnvironment](#createunifiedenvironment) - Create new environments
+* [listUnifiedEnvironments](#listunifiedenvironments) - Returns all environments
+* [removeUnifiedEnvironment](#removeunifiedenvironment) - Remove an environment
 
 ## createUnifiedEnvironment
+
+Create new environments
 
 ### Example Usage
 
@@ -81,6 +83,8 @@ run();
 
 ## listUnifiedEnvironments
 
+Returns all environments
+
 ### Example Usage
 
 <!-- UsageSnippet language="typescript" operationID="listUnifiedEnvironments" method="get" path="/unified/environment" -->
@@ -150,6 +154,8 @@ run();
 | errors.SDKError | 4XX, 5XX        | \*/\*           |
 
 ## removeUnifiedEnvironment
+
+Remove an environment
 
 ### Example Usage
 

@@ -49,6 +49,8 @@ import { Environment } from "./environment.js";
 import { Event } from "./event.js";
 import { Expense } from "./expense.js";
 import { FileT } from "./file.js";
+import { Form } from "./form.js";
+import { Forms } from "./forms.js";
 import { Genai } from "./genai.js";
 import { Group } from "./group.js";
 import { Hris } from "./hris.js";
@@ -104,6 +106,7 @@ import { Scorecard } from "./scorecard.js";
 import { Space } from "./space.js";
 import { Storage } from "./storage.js";
 import { Student } from "./student.js";
+import { Submission } from "./submission.js";
 import { Subscription } from "./subscription.js";
 import { Task } from "./task.js";
 import { Taxrate } from "./taxrate.js";
@@ -378,6 +381,21 @@ export class UnifiedTo extends ClientSDK {
   private _person?: Person;
   get person(): Person {
     return (this._person ??= new Person(this._options));
+  }
+
+  private _forms?: Forms;
+  get forms(): Forms {
+    return (this._forms ??= new Forms(this._options));
+  }
+
+  private _form?: Form;
+  get form(): Form {
+    return (this._form ??= new Form(this._options));
+  }
+
+  private _submission?: Submission;
+  get submission(): Submission {
+    return (this._submission ??= new Submission(this._options));
   }
 
   private _genai?: Genai;

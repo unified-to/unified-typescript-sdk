@@ -1008,6 +1008,22 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`eventUpdateCrmEvent`](docs/sdks/event/README.md#updatecrmevent) - Update an event
 - [`eventUpdateMessagingEvent`](docs/sdks/event/README.md#updatemessagingevent) - Update an event
 - [`eventUpdateMessagingEvent`](docs/sdks/messaging/README.md#updatemessagingevent) - Update an event
+- [`formsCreateFormsForm`](docs/sdks/form/README.md#createformsform) - Create a form
+- [`formsCreateFormsForm`](docs/sdks/forms/README.md#createformsform) - Create a form
+- [`formsGetFormsForm`](docs/sdks/form/README.md#getformsform) - Retrieve a form
+- [`formsGetFormsForm`](docs/sdks/forms/README.md#getformsform) - Retrieve a form
+- [`formsGetFormsSubmission`](docs/sdks/forms/README.md#getformssubmission) - Retrieve a submission
+- [`formsGetFormsSubmission`](docs/sdks/submission/README.md#getformssubmission) - Retrieve a submission
+- [`formsListFormsForms`](docs/sdks/form/README.md#listformsforms) - List all forms
+- [`formsListFormsForms`](docs/sdks/forms/README.md#listformsforms) - List all forms
+- [`formsListFormsSubmissions`](docs/sdks/forms/README.md#listformssubmissions) - List all submissions
+- [`formsListFormsSubmissions`](docs/sdks/submission/README.md#listformssubmissions) - List all submissions
+- [`formsPatchFormsForm`](docs/sdks/form/README.md#patchformsform) - Update a form
+- [`formsPatchFormsForm`](docs/sdks/forms/README.md#patchformsform) - Update a form
+- [`formsRemoveFormsForm`](docs/sdks/form/README.md#removeformsform) - Remove a form
+- [`formsRemoveFormsForm`](docs/sdks/forms/README.md#removeformsform) - Remove a form
+- [`formsUpdateFormsForm`](docs/sdks/form/README.md#updateformsform) - Update a form
+- [`formsUpdateFormsForm`](docs/sdks/forms/README.md#updateformsform) - Update a form
 - [`genaiCreateGenaiEmbedding`](docs/sdks/embedding/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiEmbedding`](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
 - [`genaiCreateGenaiPrompt`](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
@@ -1470,8 +1486,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`ucListUcCalls`](docs/sdks/uc/README.md#listuccalls) - List all calls
 - [`unifiedCreateUnifiedConnection`](docs/sdks/connection/README.md#createunifiedconnection) - Create connection
 - [`unifiedCreateUnifiedConnection`](docs/sdks/unified/README.md#createunifiedconnection) - Create connection
-- [`unifiedCreateUnifiedEnvironment`](docs/sdks/environment/README.md#createunifiedenvironment)
-- [`unifiedCreateUnifiedEnvironment`](docs/sdks/unified/README.md#createunifiedenvironment)
+- [`unifiedCreateUnifiedEnvironment`](docs/sdks/environment/README.md#createunifiedenvironment) - Create new environments
+- [`unifiedCreateUnifiedEnvironment`](docs/sdks/unified/README.md#createunifiedenvironment) - Create new environments
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/unified/README.md#createunifiedwebhook) - Create webhook subscription
 - [`unifiedCreateUnifiedWebhook`](docs/sdks/webhook/README.md#createunifiedwebhook) - Create webhook subscription
 - [`unifiedGetUnifiedApicall`](docs/sdks/apicall/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
@@ -1489,8 +1505,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedListUnifiedApicalls`](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
 - [`unifiedListUnifiedConnections`](docs/sdks/connection/README.md#listunifiedconnections) - List all connections
 - [`unifiedListUnifiedConnections`](docs/sdks/unified/README.md#listunifiedconnections) - List all connections
-- [`unifiedListUnifiedEnvironments`](docs/sdks/environment/README.md#listunifiedenvironments)
-- [`unifiedListUnifiedEnvironments`](docs/sdks/unified/README.md#listunifiedenvironments)
+- [`unifiedListUnifiedEnvironments`](docs/sdks/environment/README.md#listunifiedenvironments) - Returns all environments
+- [`unifiedListUnifiedEnvironments`](docs/sdks/unified/README.md#listunifiedenvironments) - Returns all environments
 - [`unifiedListUnifiedIntegrations`](docs/sdks/integration/README.md#listunifiedintegrations) - Returns all integrations
 - [`unifiedListUnifiedIntegrations`](docs/sdks/unified/README.md#listunifiedintegrations) - Returns all integrations
 - [`unifiedListUnifiedIntegrationWorkspaces`](docs/sdks/integration/README.md#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
@@ -1507,8 +1523,8 @@ To read more about standalone functions, check [FUNCTIONS.md](./FUNCTIONS.md).
 - [`unifiedPatchUnifiedWebhookTrigger`](docs/sdks/webhook/README.md#patchunifiedwebhooktrigger) - Trigger webhook
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/connection/README.md#removeunifiedconnection) - Remove connection
 - [`unifiedRemoveUnifiedConnection`](docs/sdks/unified/README.md#removeunifiedconnection) - Remove connection
-- [`unifiedRemoveUnifiedEnvironment`](docs/sdks/environment/README.md#removeunifiedenvironment)
-- [`unifiedRemoveUnifiedEnvironment`](docs/sdks/unified/README.md#removeunifiedenvironment)
+- [`unifiedRemoveUnifiedEnvironment`](docs/sdks/environment/README.md#removeunifiedenvironment) - Remove an environment
+- [`unifiedRemoveUnifiedEnvironment`](docs/sdks/unified/README.md#removeunifiedenvironment) - Remove an environment
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/unified/README.md#removeunifiedwebhook) - Remove webhook subscription
 - [`unifiedRemoveUnifiedWebhook`](docs/sdks/webhook/README.md#removeunifiedwebhook) - Remove webhook subscription
 - [`unifiedUpdateUnifiedConnection`](docs/sdks/connection/README.md#updateunifiedconnection) - Update connection

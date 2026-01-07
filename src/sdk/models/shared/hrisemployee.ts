@@ -146,6 +146,7 @@ export type HrisEmployee = {
   storageQuotaUsed?: number | undefined;
   telephones?: Array<HrisTelephone> | undefined;
   terminatedAt?: Date | undefined;
+  terminationReason?: string | undefined;
   timezone?: string | undefined;
   title?: string | undefined;
   updatedAt?: Date | undefined;
@@ -255,6 +256,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
   terminated_at: z.string().datetime({ offset: true }).transform(v =>
     new Date(v)
   ).optional(),
+  termination_reason: z.string().optional(),
   timezone: z.string().optional(),
   title: z.string().optional(),
   updated_at: z.string().datetime({ offset: true }).transform(v => new Date(v))
@@ -281,6 +283,7 @@ export const HrisEmployee$inboundSchema: z.ZodType<
     "storage_quota_available": "storageQuotaAvailable",
     "storage_quota_used": "storageQuotaUsed",
     "terminated_at": "terminatedAt",
+    "termination_reason": "terminationReason",
     "updated_at": "updatedAt",
   });
 });
@@ -325,6 +328,7 @@ export type HrisEmployee$Outbound = {
   storage_quota_used?: number | undefined;
   telephones?: Array<HrisTelephone$Outbound> | undefined;
   terminated_at?: string | undefined;
+  termination_reason?: string | undefined;
   timezone?: string | undefined;
   title?: string | undefined;
   updated_at?: string | undefined;
@@ -376,6 +380,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
   storageQuotaUsed: z.number().optional(),
   telephones: z.array(HrisTelephone$outboundSchema).optional(),
   terminatedAt: z.date().transform(v => v.toISOString()).optional(),
+  terminationReason: z.string().optional(),
   timezone: z.string().optional(),
   title: z.string().optional(),
   updatedAt: z.date().transform(v => v.toISOString()).optional(),
@@ -401,6 +406,7 @@ export const HrisEmployee$outboundSchema: z.ZodType<
     storageQuotaAvailable: "storage_quota_available",
     storageQuotaUsed: "storage_quota_used",
     terminatedAt: "terminated_at",
+    terminationReason: "termination_reason",
     updatedAt: "updated_at",
   });
 });

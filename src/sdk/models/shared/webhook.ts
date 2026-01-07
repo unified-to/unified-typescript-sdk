@@ -134,6 +134,8 @@ export const ObjectType = {
   AdsCampaign: "ads_campaign",
   AdsReport: "ads_report",
   AdsGroup: "ads_group",
+  FormsForm: "forms_form",
+  FormsSubmission: "forms_submission",
 } as const;
 export type ObjectType = OpenEnum<typeof ObjectType>;
 
